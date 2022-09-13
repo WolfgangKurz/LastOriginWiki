@@ -8,6 +8,23 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11890" date="2022-09-14"
+		skin={ <>
+			<li>
+				<BY>므네모시네</BY>의 스킨
+				<BR>fleurir en memoire</BR>의 이미지가 올바르게 조립되어있지 않던 점을 수정했습니다.
+			</li>
+			<li>
+				<BY>T-4 케시크</BY>의 스킨
+				<BR>단둘만의 온천</BR>의 이미지가 올바르게 조립되어있지 않던 점을 수정했습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><BY>AA-7 임펫</BY>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><BY>질주하는 아탈란테</BY>의 서약 대사 세트가 추가되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2022-09-14 00:23:11</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11889" date="2022-09-06"
 		update={ <>
 			<li><BY>해가 지지 않는 워터파크</BY> 이벤트가 종료되었습니다.</li>

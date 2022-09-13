@@ -1,7 +1,7 @@
 import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 
-import { AssetsRoot, CurrentEvent, EventFrom, EventTo, Host, ImageExtension, IsAprilFool, IsStaging } from "@/libs/Const";
+import { AssetsRoot, CurrentEvent, EventFrom, EventTo, Host, ImageExtension, IsAprilFool } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { CurrentLocale } from "@/libs/Locale";
 
@@ -77,17 +77,14 @@ const Home: FunctionalComponent = () => {
 			/>
 			<span class={ style["home-title"] }>
 				<i class={ style["_official"] }>
-					{ IsStaging
-						? <>Staging</>
-						: <Locale
-							k="COMMON_TITLE_SUB"
-							preprocessor={ (x) => x
-								.replace(/\$\~\//g, `${Host}/`)
-								.replace(/!!icon!!/g, "50")
-								.replace(/!!iconm!!/g, "1em")
-							}
-						/>
-					}
+					<Locale
+						k="COMMON_TITLE_SUB"
+						preprocessor={ (x) => x
+							.replace(/\$\~\//g, `${Host}/`)
+							.replace(/!!icon!!/g, "50")
+							.replace(/!!iconm!!/g, "1em")
+						}
+					/>
 				</i>
 				<span class="font-ibm">
 					<Locale k={ IsAprilFool ? "CONSUMABLE_Consumable_TacticRecord_T3" : "COMMON_TITLE" } />
