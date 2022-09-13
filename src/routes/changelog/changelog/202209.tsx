@@ -8,7 +8,7 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 11891" date="2022-09-14"
+	<ChangelogItem title="Build 11892" date="2022-09-14"
 		new={ <>
 			<li>신규 장비 <BY>네이팜 탄환</BY>의 정보가 추가되었습니다.</li>
 			<li>신규 장비 <BY>초저온액화 탄환</BY>의 정보가 추가되었습니다.</li>
