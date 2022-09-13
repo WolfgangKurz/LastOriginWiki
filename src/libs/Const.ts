@@ -9,14 +9,11 @@ export type ImageExtensionTypes = "webp" | "png";
 export const ImageExtensionList: ImageExtensionTypes[] = ["webp", "png"];
 
 export const IsDev = import.meta.env.DEV;
-export const IsStaging = false; // IsDev || false;
 export const IsAprilFool = false; // (d => d.getMonth() === 3 && d.getDate() === 1)(new Date()); // 04-01
 
 export const Host = IsDev
 	? `http://${import.meta.env.VITE_LOCALHOST}:${import.meta.env.VITE_ASSET_PORT}`
-	: IsStaging
-		? "https://staging-lo.swaytwig.com"
-		: "https://lo.swaytwig.com";
+	: "https://lo.swaytwig.com";
 
 export const AssetsRoot = `${Host}/assets`;
 export const DOTRoot = `${Host}/dot`;
