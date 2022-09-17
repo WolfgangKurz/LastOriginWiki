@@ -488,7 +488,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 											<div class="col border border-top-0 text-start p-3">
 												<ElemIcon elem={ skill.type } />
 												<strong>
-													<Locale k={ skill.key } />
+													<Locale plain k={ skill.key } />
 												</strong>
 												<small class="ms-1">Lv.1</small>
 

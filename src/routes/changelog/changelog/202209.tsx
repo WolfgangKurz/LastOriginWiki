@@ -8,6 +8,21 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11896" date="2022-09-18"
+		update={ <>
+			<li>일러스트레이터가 둘 이상인 스킨의 일러스트레이터 표기가 개선되었습니다.</li>
+			<li>전투원정보의 상한 확장 정보 표기가 개선되었습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>적 정보에서 일부 적의 스킬이 표시되지 않던 문제를 수정했습니다.</li>
+		</> }
+	/>
+	<ChangelogItem title="Build 11894" date="2022-09-15"
+		bugfix={ <>
+			<li><BY>AA-7 임펫</BY>의 서약 대사 세트가 표시되지 않던 문제를 수정했습니다.</li>
+			<li><BY>질주하는 아탈란테</BY>의 서약 대사 세트가 표시되지 않던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11893" date="2022-09-14"
 		new={ <>
 			<li>신규 장비 <BY>네이팜 탄환</BY>의 정보가 추가되었습니다.</li>
