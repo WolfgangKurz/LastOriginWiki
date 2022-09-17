@@ -84,6 +84,33 @@
 	user-select: none;
 }
 
+.LvLimitTableWrapper {
+	table th, table td {
+		vertical-align: middle;
+	}
+
+	.LvLimitHeaderItem {
+		white-space: nowrap;
+		word-break: keep-all;
+		font-size: 80%;
+	}
+	.LvLimitItemIcon {
+		float: left;
+	}
+	.LvLimitCount {
+		display: inline-block;
+		margin-left: 0.5em;
+		white-space: nowrap;
+
+		@include font-exo2;
+
+		&::before {
+			content: "x ";
+			opacity: 0.5;
+		}
+	}
+}
+
 table.InfoTable {
 	th {
 		vertical-align: middle;

@@ -3027,7 +3027,7 @@ export default {
 			"BR_RoyalArsenal": "13010425",
 			"BR_Salamander": "42b46b32",
 			"BR_SandMan": "9b01f819",
-			"BR_Scarabya": "a524d32f",
+			"BR_Scarabya": "a6996114",
 			"BR_Scathy": "bb4efeb3",
 			"BR_Shirayuri": "174a9ba1",
 			"BR_Sirene": "a92da156",
@@ -3119,9 +3119,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "b8f4ebff",
-		"JP": "da3dc2d6",
-		"KR": "c21fbda5",
-		"TC": "86bd4aa7"
+		"EN": "ee667a54",
+		"JP": "1369c11b",
+		"KR": "b47c0fa2",
+		"TC": "e56d0465"
 	}
 } as DBHashType;

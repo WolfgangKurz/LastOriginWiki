@@ -31,6 +31,21 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 	const IsBlackBG = objState<boolean>(false);
 	const HideGroup = objState<boolean>(false);
 
+	function compileArtist (artist: string): preact.ComponentChildren {
+		return artist.split("\n")
+			.map(a => {
+				if (a.includes(":")) {
+					const o = a.indexOf(":");
+					const tag = a.substring(0, o);
+					const body = a.substring(o + 1);
+					return <Locale k={ `UNIT_VIEW_ILLUSTRATOR_TAG_${tag}` } p={ [body] } />;
+				} else {
+					return <span class="badge bg-primary">{ a }</span>;
+				}
+			})
+			.map(x => <div>{ x }</div>);
+	}
+
 	return <div style={ { display: display ? "" : "none" } }>
 		<div class={ `flex-nowrap ${style.SkinTabs}` }>
 			<ul class="nav nav-tabs justify-content-start">
@@ -111,8 +126,11 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 				</div>
 
 				<div class="p-2">
-					{ skin.artist || categories.length > 0
-						? <div class="alert alert-primary py-2">
+					{ categories.length > 0
+						? <div class="alert alert-secondary py-2">
+							<div class="mb-1">
+								<Locale k="UNIT_VIEW_SKIN_CATEGORY" />
+							</div>
 							{ categories.length > 0
 								? <div class="mb-1">
 									{ categories.map(x => <span class="badge bg-success me-1">
@@ -121,20 +139,25 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 								</div>
 								: <></>
 							}
+						</div>
+						: <></>
+					}
 
-							{ skin.artist
-								? <>
-									<Locale k="UNIT_VIEW_ILLUSTRATOR" /> : { skin.artist === "???"
-										? <BootstrapTooltip content={ <Locale k="UNIT_VIEW_ILLUSTRATOR_HIDDEN_TOOLTIP" /> }>
-											<span class={ `badge ${style.IllustratorHidden}` }>
-												<Locale k="UNIT_VIEW_ILLUSTRATOR_HIDDEN" />
+					{ skin.artist
+						? <div class="alert alert-primary py-2">
+							<div class="mb-1">
+								<Locale k="UNIT_VIEW_ILLUSTRATOR" />
+							</div>
+							{
+								skin.artist === "???"
+									? <BootstrapTooltip content={ <Locale k="UNIT_VIEW_ILLUSTRATOR_HIDDEN_TOOLTIP" /> }>
+										<span class={ `badge ${style.IllustratorHidden}` }>
+											<Locale k="UNIT_VIEW_ILLUSTRATOR_HIDDEN" />
 
-												<Icon class="ms-1" icon="question-circle-fill" />
-											</span>
-										</BootstrapTooltip>
-										: skin.artist }
-								</>
-								: <></>
+											<Icon class="ms-1" icon="question-circle-fill" />
+										</span>
+									</BootstrapTooltip>
+									: compileArtist(skin.artist)
 							}
 						</div>
 						: <></>
