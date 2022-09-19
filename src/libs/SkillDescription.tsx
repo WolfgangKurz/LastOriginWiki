@@ -15,7 +15,7 @@ type PrebuiltSectionType = (slot: string, values: Record<string, SkillDescriptio
 
 export interface ParamWithSlot {
 	slot: string;
-	index: number;
+	index: number | undefined;
 }
 
 let PrebuiltSections: Record<string, PrebuiltSectionType> | undefined;
@@ -41,7 +41,6 @@ function InitPrebuiltSections (): void {
 				}
 
 				const pp = p.replace(/param="([^"]+)"/g, (p0, p1) => {
-					console.log(p0);
 					const reg = /^\$([0-9]+)(:([PpNn]))?$/;
 					if (reg.test(p1)) {
 						const m = reg.exec(p1)!;
@@ -51,8 +50,12 @@ function InitPrebuiltSections (): void {
 						if (!(idx in props.params)) return "base=\"0\" per=\"0\"";
 
 						const val = props.params[idx];
-						if (typeof val === "number") return `idx="${val}" ${pn ? `forcePN=${pn}` : ""}`;
-						return `idx="${val.index}" slot="${val.slot}" ${pn ? `forcePN=${pn}` : ""}`;
+						if (typeof val === "number")
+							return `idx="${val}" ${pn ? `forcePN="${pn}"` : ""}`;
+						else if (val === undefined)
+							return pn ? `forcePN="${pn}"` : "";
+						else
+							return `idx="${val.index}" slot="${val.slot}" ${pn ? `forcePN="${pn}"` : ""}`;
 					}
 
 					return "base=\"0\" per=\"0\"";
@@ -111,8 +114,12 @@ export function GetSkillDescription (content: string, slot: string, values: Valu
 						if (!(idx in props.params)) return "base=\"0\" per=\"0\"";
 
 						const val = props.params[idx];
-						if (typeof val === "number") return `idx="${val}" ${pn ? `forcePN=${pn}` : ""}`;
-						return `idx="${val.index}" slot="${val.slot}" ${pn ? `forcePN=${pn}` : ""}`;
+						if (typeof val === "number")
+							return `idx="${val}" ${pn ? `forcePN="${pn}"` : ""}`;
+						else if (val === undefined)
+							return pn ? `forcePN="${pn}"` : "";
+						else
+							return `idx="${val.index}" slot="${val.slot}" ${pn ? `forcePN="${pn}"` : ""}`;
 					}
 
 					return "base=\"0\" per=\"0\"";
@@ -138,19 +145,19 @@ export function GetSkillDescription (content: string, slot: string, values: Valu
 	return { lines, sections };
 }
 
-export function parseParams (p: string): Array<number | ParamWithSlot> {
+export function parseParams (p: string): Array<number | undefined | ParamWithSlot> {
 	return p.split(",").map(x => {
 		if (x.includes("@")) {
 			const s = x.split("@");
-			if (s.length !== 2 || !/^F?[0-9]+$/.test(s[0]) || !/^[0-9]+$/.test(s[1])) return 0;
+			if (s.length !== 2 || !/^F?[0-9]+$/.test(s[0]) || !(s[1] === "?" || /^[0-9]+$/.test(s[1]))) return 0;
 
 			return {
 				slot: s[0],
-				index: parseInt(s[1], 10),
+				index: s[1] === "?" ? undefined : parseInt(s[1], 10),
 			};
 		}
 
-		if (!/^[0-9]+$/.test(x)) return 0;
-		return parseInt(x, 10);
+		if (x !== "?" && !/^-?[0-9]+$/.test(x)) return 0;
+		return x === "?" ? undefined : parseInt(x, 10);
 	});
 }

@@ -8,6 +8,27 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11898" date="2022-09-19"
+		update={ <>
+			<li><BY>이그니스</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li><BY>엘리 퀵핸드</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li><BY>엠프리스</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>그 외 <BO>인화물 부착</BO> 버프를 가지고 있던 전투원들의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>에라토</BY>의 스킨
+				<BR>드림위버 웨딩 스페셜 : 최고의 무대 위에서</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>뮤즈</BY>의 스킨
+				<BR>프로젝트 오르카: 뮤즈</BR>의 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-09-19 18:36:19</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11896" date="2022-09-18"
 		update={ <>
 			<li>일러스트레이터가 둘 이상인 스킨의 일러스트레이터 표기가 개선되었습니다.</li>
