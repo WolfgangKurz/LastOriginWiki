@@ -22,7 +22,7 @@ const Changelog: FunctionalComponent = () => <>
 			</li>
 			<li>
 				<BY>뮤즈</BY>의 스킨
-				<BR>프로젝트 오르카: 뮤즈</BR>의 정보가 추가되었습니다.
+				<BR>드림위버 웨딩 스페셜 : 세 사람을 위한 축가</BR>의 정보가 추가되었습니다.
 			</li>
 		</> }
 		dialogue={ <>
