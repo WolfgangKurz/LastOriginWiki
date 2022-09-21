@@ -57,13 +57,15 @@ export function ParseDescriptionText (text: string): preact.VNode[] {
 					if (tag === "-") {
 						if (parseColor.length > 0)
 							parseColor.pop();
-					} else if (tag === "i")
+					} else if (tag === "i") {
 						parseItalic = true;
-					else if (parseMode[parseMode.length - 1] === "c")
+						parseMode.push("i");
+					} else if (parseMode[parseMode.length - 1] === "c")
 						parseColor.push(tag);
 					else if (tag[0] === "/") {
-						const ctag = tag.substr(1);
-						while (parseMode.pop() !== ctag);
+						const ctag = tag.substring(1);
+						const offset = parseMode.lastIndexOf(ctag);
+						if (offset >= 0) parseMode.splice(offset, parseMode.length - offset);
 
 						if (ctag === "c")
 							parseColor.pop();

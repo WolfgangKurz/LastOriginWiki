@@ -1399,7 +1399,7 @@ export default {
 		}
 	},
 	"korea": {
-		"consumable": "127ac03c",
+		"consumable": "c7059986",
 		"enemy": {
 			"AMG11_TU2": "deff24c0",
 			"AMG11_TU3": "42c6885f",
@@ -2860,7 +2860,7 @@ export default {
 		"filterable.enemy": "23f43c2e",
 		"filterable.equip": "f5948e08",
 		"filterable.facility": "16568438",
-		"filterable.unit": "e56c76fd",
+		"filterable.unit": "945a1a00",
 		"gacha": "6685b5f8",
 		"map": {
 			"Cha": "4bc9f11c",
@@ -3075,7 +3075,7 @@ export default {
 			"PECS_Ella": "7f7ff612",
 			"PECS_ElvenForestmaker": "530a9916",
 			"PECS_Empress": "9b53473a",
-			"PECS_Erato": "2d0a214f",
+			"PECS_Erato": "9c320279",
 			"PECS_Express76": "aedf9cba",
 			"PECS_Fortune": "6988d803",
 			"PECS_Glacias": "c6b5cdee",
@@ -3091,7 +3091,7 @@ export default {
 			"PECS_MightyR": "f81ead35",
 			"PECS_MissSafety": "155a7a2b",
 			"PECS_Mnemosyne": "dba6c7e1",
-			"PECS_Muse": "8734e496",
+			"PECS_Muse": "71c9d8b2",
 			"PECS_Orangeade": "2a2c4ddc",
 			"PECS_Peregrinus": "e6b75a6f",
 			"PECS_PuppHead": "80cd33a8",
@@ -3119,9 +3119,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "64f4bc7c",
-		"JP": "8d4c3d99",
-		"KR": "17d304d3",
-		"TC": "bf1e487f"
+		"EN": "19aee6dc",
+		"JP": "73352cec",
+		"KR": "7b6458c4",
+		"TC": "8a7e97ce"
 	}
 } as DBHashType;

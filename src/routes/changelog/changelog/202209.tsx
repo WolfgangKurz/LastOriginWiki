@@ -8,6 +8,18 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11902" date="2022-09-21"
+		skin={ <>
+			<li>
+				<BY>에라토</BY>의 스킨
+				<BR>드림위버 웨딩 스페셜 : 최고의 무대 위에서</BR>의 정보가 수정되었습니다.
+			</li>
+			<li>
+				<BY>뮤즈</BY>의 스킨
+				<BR>드림위버 웨딩 스페셜 : 세 사람을 위한 축가</BR>의 정보가 수정되었습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11898" date="2022-09-19"
 		update={ <>
 			<li><BY>이그니스</BY>의 스킬 정보가 갱신되었습니다.</li>

@@ -4,7 +4,7 @@ import { objState } from "@/libs/State";
 import { AssetsRoot } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 
-import Locale from "@/components/locale";
+import Locale, { LocaleGet } from "@/components/locale";
 import Icon from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import RarityBadge from "@/components/rarity-badge";
@@ -16,12 +16,13 @@ import UnitFace2 from "../../components/unit-face2";
 import { SubpageProps } from "..";
 
 import style from "../style.module.scss";
+import { ParseDescriptionText } from "@/libs/FunctionsX";
 
 const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList }) => {
 	const skin = SkinList[skinIndex.value];
 
 	const ssid = skin && skin.sid
-		? skin.sid >= 20
+		? Math.floor(skin.sid / 10) === 2
 			? `S${skin.sid - 20}`
 			: skin.sid?.toString()
 		: "";
@@ -44,6 +45,14 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 				}
 			})
 			.map(x => <div>{ x }</div>);
+	}
+
+	function ParseDesc (key: string): preact.VNode[] {
+		return ParseDescriptionText(
+			(LocaleGet(`CONSUMABLE_DESC_${key}`) || "")
+				.toString()
+				.replace(/&([lg]t);/g, (p0, p1) => p1 === "lt" ? "<" : ">")
+		);
 	}
 
 	return <div style={ { display: display ? "" : "none" } }>
@@ -105,7 +114,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 					<Locale plain k={ `CONSUMABLE_Skin_${unit.uid}_${ssid}` } />
 				</div>
 				<div class="card-body">
-					<Locale plain k={ `CONSUMABLE_DESC_Skin_${unit.uid}_${skin.sid}` } fallback="" />
+					{ ParseDesc(`Skin_${unit.uid}_${skin.sid}`) }
 				</div>
 			</div>
 			: <></>
