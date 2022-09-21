@@ -12,7 +12,7 @@ import * as Components from "./components";
 import style from "./components/style.module.scss";
 
 export interface SectionProps {
-	params: Array<number | ParamWithSlot>;
+	params: Array<number | undefined | ParamWithSlot>;
 }
 
 export interface SkillDescriptionValueData {
@@ -47,7 +47,7 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 
 		const tags: Record<string, preact.FunctionalComponent<unknown>> = {};
 		if (props.sections) {
-			text = text.replace(/\$\$([A-Za-z0-9\-_]+)((:?([F0-9,@]+))\$|\$?)/g, (p0, p1, p2, p3, p4) => {
+			text = text.replace(/\$\$([A-Za-z0-9\-_]+)((:?([?F0-9,@]+))\$|\$?)/g, (p0, p1, p2, p3, p4) => {
 				// eslint-disable-next-line react/display-name
 				tags[`SECTION_${p1}`] = (): preact.VNode => <>{
 					(props.sections![p1] || [])
@@ -85,7 +85,7 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 				if (_props.base !== undefined)
 					return _props.base;
 
-				if (_props.idx !== undefined && props.values) {
+				if (_props.idx !== undefined && _props.idx >= 0 && props.values) {
 					if (_props.slot && (_props.slot in props.values) && props.values[_props.slot][_props.idx])
 						return props.values[_props.slot][_props.idx].base;
 					else if (props.slot && (props.slot in props.values) && props.values[props.slot][_props.idx])
@@ -99,7 +99,7 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 				if (_props.per !== undefined)
 					return _props.per;
 
-				if (_props.idx !== undefined && props.values) {
+				if (_props.idx !== undefined && _props.idx >= 0 && props.values) {
 					if (_props.slot && (_props.slot in props.values) && props.values[_props.slot][_props.idx])
 						return props.values[_props.slot][_props.idx].per;
 					else if (props.slot && (props.slot in props.values) && props.values[props.slot][_props.idx])

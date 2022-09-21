@@ -23,33 +23,33 @@ export const Value: FunctionalComponent<ValueProps> = (props) => {
 		const positive = v.isPositive();
 		const sign = props.invert ? !positive : positive;
 
-		const signFlag = v.isZero()
-			? ""
-			: sign ? "+" : "-";
+		const signFlag = props.forcePN
+			? props.forcePN === "p"
+				? "+"
+				: "-"
+			: v.isZero()
+				? ""
+				: sign
+					? "+" : "-";
 
 		v = v.abs();
 		if (props.floor) v = v.floor();
 
-		if (
-			(props.forcePN === "p" && v.isNegative()) ||
-			(props.forcePN === "n" && v.isPositive())
-		)
-			v = v.neg();
+		if (signFlag && !props.signless)
+			v = v.abs();
 
 		return <span class={ style.Value } data-sign={ signFlag }>
 			{ !props.signless ? signFlag : <></> }
 			{ v.toFixed(10).replace(/\.?0+$/, "") }
 			{ (props.ratio || props.ratio2) && "%" }
 		</span>;
-	} else {
-		if (props.forcePN) {
-			const signFlag = props.forcePN === "p" ? "+" : "-";
+	} else if (props.forcePN) {
+		const signFlag = props.forcePN === "p" ? "+" : "-";
 
-			return <span class={ style.Value } data-sign={ signFlag }>
-				{ !props.signless ? signFlag : <></> }
-			</span>;
-		}
-
-		return <span class={ style.Value } data-sign="" />;
+		return <span class={ style.Value } data-sign={ signFlag }>
+			{ !props.signless ? signFlag : <></> }?
+		</span>;
 	}
+	else
+		return <span class={ style.Value } data-sign="">?</span>;
 };
