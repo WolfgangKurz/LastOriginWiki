@@ -376,7 +376,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 					<td>
 						<SkillIcon icon={ skill.icon } passive={ skill.isPassive } />
 						<div class="text-bold">
-							<Locale k={ `UNIT_SKILL_${unit.uid}_${skill.key}` } />
+							<Locale plain k={ `UNIT_SKILL_${unit.uid}_${skill.key}` } />
 						</div>
 
 						<ElemIcon elem={ skill.buffs.data[skill.buffs.index[skillLevel.value]].type } class="mx-0" />

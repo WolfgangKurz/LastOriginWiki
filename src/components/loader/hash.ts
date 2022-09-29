@@ -1399,7 +1399,7 @@ export default {
 		}
 	},
 	"korea": {
-		"consumable": "c7059986",
+		"consumable": "c47036a3",
 		"enemy": {
 			"AMG11_TU2": "deff24c0",
 			"AMG11_TU3": "42c6885f",
@@ -2860,7 +2860,7 @@ export default {
 		"filterable.enemy": "23f43c2e",
 		"filterable.equip": "f5948e08",
 		"filterable.facility": "16568438",
-		"filterable.unit": "945a1a00",
+		"filterable.unit": "7422cb96",
 		"gacha": "6685b5f8",
 		"map": {
 			"Cha": "4bc9f11c",
@@ -2897,7 +2897,7 @@ export default {
 			"node": "831bd741",
 			"quest": "372e37a9"
 		},
-		"skill-from": "778176e0",
+		"skill-from": "3b1d66b2",
 		"sticker": "a2f2cd8b",
 		"story": "a6628263",
 		"summon": {
@@ -2989,7 +2989,7 @@ export default {
 			"BR_DrM": "5793c6af",
 			"BR_Echidna": "b22e2c0e",
 			"BR_Efreeti": "d813519e",
-			"BR_Ellie": "3399937c",
+			"BR_Ellie": "cdcb58b2",
 			"BR_Emily": "0afa5e54",
 			"BR_Gnome": "d85f1f3c",
 			"BR_Gremlin": "7c92be83",
@@ -3011,7 +3011,7 @@ export default {
 			"BR_May": "26cfea41",
 			"BR_Miho": "67b96dc5",
 			"BR_Neodym": "5cb3cd4e",
-			"BR_Nereid": "b9bcdf46",
+			"BR_Nereid": "91639253",
 			"BR_NickyTracy": "e8ef5616",
 			"BR_NightAngel": "d220ce86",
 			"BR_Nymph": "51d3905c",
@@ -3036,7 +3036,7 @@ export default {
 			"BR_StratoAngel": "414d08e7",
 			"BR_Sylphid": "716258b1",
 			"BR_TalonFeather": "2c267f52",
-			"BR_Thetis": "3c8f2cf3",
+			"BR_Thetis": "3d1ac5bd",
 			"BR_Tomoe": "6b417bc3",
 			"BR_Undine": "c3634b80",
 			"BR_Valkyrie": "315c28dd",
@@ -3053,8 +3053,9 @@ export default {
 			"DS_Cloverace": "98ede9a3",
 			"DS_Faucre": "5c2c5f66",
 			"DS_Johanna": "32b9a1ba",
-			"DS_KunoichiKaen": "2d322f04",
-			"DS_KunoichiZero": "da79f044",
+			"DS_KunoichiEnrai": "8947790d",
+			"DS_KunoichiKaen": "c15976b9",
+			"DS_KunoichiZero": "8400bf2a",
 			"DS_MoMo": "0fdc8cd3",
 			"DS_Ramiel": "f312e605",
 			"DS_Saraqael": "93e864a3",
@@ -3074,14 +3075,14 @@ export default {
 			"PECS_DutchGirl": "1e2b6bf1",
 			"PECS_Ella": "7f7ff612",
 			"PECS_ElvenForestmaker": "530a9916",
-			"PECS_Empress": "9b53473a",
+			"PECS_Empress": "56d79f0b",
 			"PECS_Erato": "9c320279",
 			"PECS_Express76": "aedf9cba",
 			"PECS_Fortune": "6988d803",
 			"PECS_Glacias": "c6b5cdee",
 			"PECS_HighElven": "7b5e98ab",
 			"PECS_Hussar": "99ef4bec",
-			"PECS_Ignis": "9913c352",
+			"PECS_Ignis": "b57a32b7",
 			"PECS_Leanne": "8de36cea",
 			"PECS_LemonadeAlpha": "db976d79",
 			"PECS_LRL": "af31b8c0",
@@ -3119,9 +3120,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "19aee6dc",
-		"JP": "73352cec",
-		"KR": "7b6458c4",
-		"TC": "8a7e97ce"
+		"EN": "1203b9f4",
+		"JP": "02800e3d",
+		"KR": "e08f26ff",
+		"TC": "98acb09a"
 	}
 } as DBHashType;
