@@ -8,7 +8,7 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 11907" date="2022-10-06"
+	<ChangelogItem title="Build 11909" date="2022-10-06"
 		update={ <>
 			<li>이벤트 <BY>Project ORCA, 별밤의 무대</BY>의 정보가 갱신되었습니다.</li>
 			<li>일부 이벤트 맵의 드랍 정보 및 적 정보가 갱신되었습니다.</li>
@@ -22,6 +22,10 @@ const Changelog: FunctionalComponent = () => <>
 			<li>
 				<BY>AO-2 레이븐</BY>의 스킨
 				<BR>꿈속에서의 밀회</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>엘리 퀵핸드</BY>의 스킨
+				<BR>기대하던 피크닉</BR>의 중파 정보가 추가되었습니다.
 			</li>
 		</> }
 	/>
