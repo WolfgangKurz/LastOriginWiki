@@ -95,7 +95,7 @@ const EffectFilterPopup: FunctionalComponent<EffectFilterPopupProps> = (props) =
 						<td class="align-middle pe-2">
 							<span class={ `effect-group-name ${style["effect-group-name"]}` }>{ EffectGroupNames[gkey] } :</span>
 						</td>
-						<td>
+						<td class={ style["effect-buttons"] }>
 							{ group.map((entity, ei) => Array.isArray(entity)
 								? <div class="btn-group me-1 mb-1">
 									{ entity.map((subentity, sei) => <button
