@@ -2860,7 +2860,7 @@ export default {
 		"filterable.enemy": "90de2ca4",
 		"filterable.equip": "233c39bc",
 		"filterable.facility": "16568438",
-		"filterable.unit": "87e742c6",
+		"filterable.unit": "20d16f01",
 		"gacha": "3d44d722",
 		"map": {
 			"Cha": "4bc9f11c",
@@ -3053,7 +3053,7 @@ export default {
 			"DS_Cloverace": "98ede9a3",
 			"DS_Faucre": "5c2c5f66",
 			"DS_Johanna": "32b9a1ba",
-			"DS_KunoichiEnrai": "a924a4c5",
+			"DS_KunoichiEnrai": "bf7e7071",
 			"DS_KunoichiKaen": "c15976b9",
 			"DS_KunoichiZero": "8400bf2a",
 			"DS_MoMo": "0fdc8cd3",
