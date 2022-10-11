@@ -8,6 +8,12 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11912" date="2022-10-07"
+		update={ <>
+			<li><BR>변화의 성소</BR> 4지역이 확장되었습니다.</li>
+			<li>일부 적의 정보가 수정되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11910" date="2022-10-07"
 		bugfix={ <>
 			<li><BY>쿠노이치 엔라이</BY>의 일러스트레이터 정보가 잘못 기입되어있던 점을 수정했습니다.</li>

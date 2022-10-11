@@ -2010,10 +2010,10 @@ export default {
 			"NightChickDEG_TU2": "bfb0b00b",
 			"NightChickDEG_TU3": "eb6b3fe7",
 			"NightChickDEG_TU4": "3e513146",
-			"NightChickDEX_N": "5a1e57d7",
-			"NightChickDEX_TU2": "8f168771",
-			"NightChickDEX_TU3": "ecce568a",
-			"NightChickDEX_TU4": "6fa69e2d",
+			"NightChickDEX_N": "410716bd",
+			"NightChickDEX_TU2": "60c6e02b",
+			"NightChickDEX_TU3": "aac20a5f",
+			"NightChickDEX_TU4": "85c91946",
 			"NightChickEX_EV1": "b43f8778",
 			"NightChickEX_EW": "f7f618fa",
 			"NightChickEX_N": "b02dc037",
@@ -2088,11 +2088,11 @@ export default {
 			"NightChickSP_TU8": "0481fe47",
 			"NightChickSP_TU9": "7b5987c0",
 			"NightChickSpCH_B0208": "fe09f891",
-			"NightChickSpCH_B0308": "23f0102f",
-			"NightChickSpCH_C": "bee338af",
-			"NightChickSpCH_Challenge1": "37f3a11a",
-			"NightChickSpCH_Challenge2": "4c5b5bd9",
-			"NightChickSpCH_N": "dbb62aae",
+			"NightChickSpCH_B0308": "0136b3a4",
+			"NightChickSpCH_C": "de6ca56f",
+			"NightChickSpCH_Challenge1": "ddbee4ed",
+			"NightChickSpCH_Challenge2": "b607f01d",
+			"NightChickSpCH_N": "af5e0b78",
 			"NightChickSPV_TU": "238c8622",
 			"NightChickSPV_TU2": "7baa58b3",
 			"NightChickSPV_TU3": "6880059b",
@@ -2428,7 +2428,7 @@ export default {
 			"ZapperEX_TU5": "a122c09c",
 			"ZapperEX_TU6": "57e9cf13"
 		},
-		"enemygroup": "9fafc93c",
+		"enemygroup": "803a8143",
 		"equip": {
 			"Chip_Acc_T1": "bde58d23",
 			"Chip_Acc_T2": "ec939bdc",
@@ -2820,7 +2820,7 @@ export default {
 			"System_Sniper_T3": "e0e7ee40",
 			"System_Sniper_T4": "8d39cd53"
 		},
-		"ew": "03f87d22",
+		"ew": "3042ce86",
 		"exchange": "4facdf06",
 		"facility": {
 			"Cafeteria": "17d2e600",
@@ -2857,7 +2857,7 @@ export default {
 			"WoodMaking2": "389f24f0",
 			"WoodMaking3": "15217130"
 		},
-		"filterable.enemy": "90de2ca4",
+		"filterable.enemy": "efa93dd8",
 		"filterable.equip": "233c39bc",
 		"filterable.facility": "16568438",
 		"filterable.unit": "20d16f01",
@@ -3120,9 +3120,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "1f94c7f0",
-		"JP": "2b211bea",
-		"KR": "4f9509a9",
-		"TC": "53e43680"
+		"EN": "e4bbf513",
+		"JP": "f9112505",
+		"KR": "be512367",
+		"TC": "93208ef3"
 	}
 } as DBHashType;
