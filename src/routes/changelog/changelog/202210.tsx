@@ -8,6 +8,30 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11916" date="2022-10-18"
+		bugfix={ <>
+			<li><BR>변화의 성소</BR> 4지역 일부 구역의 적 정보가 잘못 입력되어있던 점을 수정했습니다.</li>
+		</> }
+		new={ <>
+			<li>전투원 <BY>마법소녀 매지컬 백토</BY>의 SS 승급 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>전투원 <BY>뽀끄루 대마왕</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>골타리온 XIII세</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>마법소녀 매지컬 모모</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>마법소녀 매지컬 백토</BY>의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>뽀끄루 대마왕</BY>의 스킨
+				<BR>미스오르카 : New Page</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>프레스터 요안나</BY>의 스킨
+				<BR>수호성인 요안나</BR>의 정보가 추가되었습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11912" date="2022-10-07"
 		update={ <>
 			<li><BR>변화의 성소</BR> 4지역이 확장되었습니다.</li>

@@ -1399,7 +1399,7 @@ export default {
 		}
 	},
 	"korea": {
-		"consumable": "ee1cc6d4",
+		"consumable": "f19c2616",
 		"enemy": {
 			"AMG11_TU2": "deff24c0",
 			"AMG11_TU3": "42c6885f",
@@ -2428,7 +2428,7 @@ export default {
 			"ZapperEX_TU5": "a122c09c",
 			"ZapperEX_TU6": "57e9cf13"
 		},
-		"enemygroup": "803a8143",
+		"enemygroup": "3b75676e",
 		"equip": {
 			"Chip_Acc_T1": "bde58d23",
 			"Chip_Acc_T2": "ec939bdc",
@@ -2602,7 +2602,7 @@ export default {
 			"Sub_Hologram_T2": "e228ff91",
 			"Sub_Hologram_T3": "a2018778",
 			"Sub_Hologram_T4": "1f6881aa",
-			"Sub_HornOfBADK_T4": "294539d1",
+			"Sub_HornOfBADK_T4": "3220aaf2",
 			"Sub_HotPack_T4": "05bfb21a",
 			"Sub_IcePack_T4": "6a840ffe",
 			"Sub_ImAdvRada_T4": "80eee3d6",
@@ -2629,7 +2629,7 @@ export default {
 			"Sub_MiniPoi_T4": "0456f05b",
 			"Sub_MiniSnowFeather_T4": "53cd9cbf",
 			"Sub_MKEngine_T4": "b38027ed",
-			"Sub_MoonCake_T4": "91e904b9",
+			"Sub_MoonCake_T4": "7558717e",
 			"Sub_NapalmRounds_T4": "6d3f905f",
 			"Sub_NitroEx3000_T4": "efa00719",
 			"Sub_Observer_T1": "a7048502",
@@ -2820,7 +2820,7 @@ export default {
 			"System_Sniper_T3": "e0e7ee40",
 			"System_Sniper_T4": "8d39cd53"
 		},
-		"ew": "3042ce86",
+		"ew": "550960b2",
 		"exchange": "4facdf06",
 		"facility": {
 			"Cafeteria": "17d2e600",
@@ -2858,9 +2858,9 @@ export default {
 			"WoodMaking3": "15217130"
 		},
 		"filterable.enemy": "efa93dd8",
-		"filterable.equip": "233c39bc",
+		"filterable.equip": "6e4881f1",
 		"filterable.facility": "16568438",
-		"filterable.unit": "20d16f01",
+		"filterable.unit": "62816e73",
 		"gacha": "3d44d722",
 		"map": {
 			"Cha": "4bc9f11c",
@@ -2956,7 +2956,7 @@ export default {
 			"AGS_Fallen": "fbb47b5c",
 			"AGS_Fortress": "05a27f8b",
 			"AGS_Gigantes": "70201b82",
-			"AGS_Goltarion": "2411e3a5",
+			"AGS_Goltarion": "8e384427",
 			"AGS_MrAlfred2": "48717f0c",
 			"AGS_Rampart": "23ac3bf2",
 			"AGS_RheinRitter": "9abcc5e0",
@@ -3002,7 +3002,7 @@ export default {
 			"BR_InvDragon": "18c03c4e",
 			"BR_Io": "c05b4fa7",
 			"BR_JangHwa": "72c8212b",
-			"BR_Khan": "2bd4a7ec",
+			"BR_Khan": "f157ee3f",
 			"BR_Kheshig": "66378828",
 			"BR_Leona": "509cc3b6",
 			"BR_Leprechaun": "d3bdb233",
@@ -3021,7 +3021,7 @@ export default {
 			"BR_Phoenix": "69ae66d8",
 			"BR_PoniesAnger": "af3707e3",
 			"BR_PXSilky": "a351b459",
-			"BR_QuickCamel": "0607c14e",
+			"BR_QuickCamel": "401e0b9f",
 			"BR_Raven": "6f969d8b",
 			"BR_RedHood": "8784519d",
 			"BR_RoyalArsenal": "13010425",
@@ -3047,16 +3047,16 @@ export default {
 			"DS_Arman": "58fa77bd",
 			"DS_Atalanta": "93d339fc",
 			"DS_Azazel": "54b0653c",
-			"DS_Baekto": "56f72159",
+			"DS_Baekto": "2c94cfeb",
 			"DS_BunnySlayer": "576fd518",
 			"DS_Charlotte": "78b870fa",
 			"DS_Cloverace": "98ede9a3",
-			"DS_Faucre": "5c2c5f66",
-			"DS_Johanna": "32b9a1ba",
+			"DS_Faucre": "9b60fd44",
+			"DS_Johanna": "629c238f",
 			"DS_KunoichiEnrai": "bf7e7071",
-			"DS_KunoichiKaen": "c15976b9",
-			"DS_KunoichiZero": "8400bf2a",
-			"DS_MoMo": "0fdc8cd3",
+			"DS_KunoichiKaen": "3632a02f",
+			"DS_KunoichiZero": "642e4246",
+			"DS_MoMo": "9f3cdb29",
 			"DS_Ramiel": "f312e605",
 			"DS_Saraqael": "93e864a3",
 			"PECS_Audrey": "f30bf391",
@@ -3120,9 +3120,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "e4bbf513",
-		"JP": "f9112505",
-		"KR": "be512367",
-		"TC": "93208ef3"
+		"EN": "e4579b9b",
+		"JP": "de7c4b94",
+		"KR": "d1beaeac",
+		"TC": "6cd1803e"
 	}
 } as DBHashType;

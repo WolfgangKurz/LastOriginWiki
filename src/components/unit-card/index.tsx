@@ -102,7 +102,7 @@ const UnitCard: FunctionalComponent<UnitCardProps> & {
 		.filter(x => x > rarity)
 		.pop();
 
-	return <div class="card unit-card position-relative my-1 bg-dark text-light">
+	return <div class={`card unit-card position-relative my-1 bg-dark text-light ${props.class || ""}`}>
 		<img class="card-img-top" src={ UnitFaceUrl } alt="" />
 		<div class="card-body">
 			{ unit.id > 0
