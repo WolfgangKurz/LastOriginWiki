@@ -4,6 +4,7 @@
 
 	&.card {
 		border-radius: 9px;
+		text-align: left;
 
 		.card-img-top {
 			position: relative;
@@ -106,6 +107,21 @@
 				&:not(.badge-info) {
 					color: #000;
 				}
+			}
+		}
+	}
+
+	&.unit-card-h {
+		text-align: left;
+
+		@include media-breakpoint-down("md") {
+			text-align: center;
+
+			> img.unit-face {
+				margin-right: 0 !important;
+			}
+			> div.unit-flag > div.float-end {
+				float: none !important;
 			}
 		}
 	}

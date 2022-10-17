@@ -25,7 +25,7 @@ const EnemiesGroup: FunctionalComponent<EnemiesGroupProps> = (props) => {
 				.map((_, i) => `World${i + 1}`),
 		);
 		ret.push(
-			new Array(16)
+			new Array(18)
 				.fill(0)
 				.map((_, i) => `Ev${i + 1}`),
 		);

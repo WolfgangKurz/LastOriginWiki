@@ -8,6 +8,15 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11904" date="2022-09-29"
+		new={ <>
+			<li>신규 전투원 <BY>쿠노이치 엔라이</BY>의 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li><BY>쿠노이치 제로</BY> 및 <BY>쿠노이치 카엔</BY>의 승급 정보가 추가되었습니다.</li>
+			<li><BY>이그니스</BY>의 스킬 정보가 수정되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11902" date="2022-09-21"
 		skin={ <>
 			<li>

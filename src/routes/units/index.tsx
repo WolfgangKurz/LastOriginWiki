@@ -353,7 +353,7 @@ const Units: FunctionalComponent = () => {
 							<hr class="my-2" />
 
 							{ [0, 1].map(i => <>
-								<div class="row">
+								<div class={ `row ${style.ActiveSkillFilterRow}` }>
 									<div class=" col-md-auto col-12 filter-label">
 										<Locale k="UNITS_FILTERS_ACTIVE_LABEL" p={ [i + 1] } />
 									</div>
@@ -436,7 +436,7 @@ const Units: FunctionalComponent = () => {
 									<Locale k="UNITS_FILTERS_SKILL_EFFECTS_LABEL" />
 								</div>
 								<div class="col-md col-12">
-									<div class="btn-group me-1">
+									<div class="btn-group mx-1 mb-2">
 										<button
 											class={ `btn btn-outline-success ${isActive(Filters.EffectTarget.includes("self"))}` }
 											onClick={ (): void => toggleUnitsFilterEffectTarget("self") }
@@ -458,7 +458,7 @@ const Units: FunctionalComponent = () => {
 									</div>
 
 									<EffectFilterPopup
-										class="ms-2"
+										class="mx-1 mb-2"
 										display="UNITS_FILTERS_SKILL_EFFECTS_TOGGLE"
 										effects={ UnitEffects }
 										list={ Filters.EffectFilters }

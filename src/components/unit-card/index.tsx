@@ -31,8 +31,8 @@ const Horizontal: FunctionalComponent<UnitCardProps> = (props) => {
 		.filter(x => x > rarity)
 		.pop();
 
-	return <div class={ `unit-card text-start clearfix ${props.class || ""}` } onClick={ props.onClick }>
-		<UnitFace uid={ props.unit.uid } class="float-start" />
+	return <div class={ `unit-card unit-card-h clearfix ${props.class || ""}` } onClick={ props.onClick }>
+		<UnitFace uid={ props.unit.uid } class="float-md-start" />
 
 		<div class="unit-name font-ibm">
 			<Locale plain k={ `UNIT_${props.unit.uid}` } />
@@ -102,7 +102,7 @@ const UnitCard: FunctionalComponent<UnitCardProps> & {
 		.filter(x => x > rarity)
 		.pop();
 
-	return <div class="card unit-card position-relative my-1 bg-dark text-light">
+	return <div class={`card unit-card position-relative my-1 bg-dark text-light ${props.class || ""}`}>
 		<img class="card-img-top" src={ UnitFaceUrl } alt="" />
 		<div class="card-body">
 			{ unit.id > 0
@@ -113,7 +113,6 @@ const UnitCard: FunctionalComponent<UnitCardProps> & {
 			}
 
 			<h4 class="card-title">
-
 				<div class="unit-info">
 					<RarityBadge rarity={ unit.rarity } />
 					<span>

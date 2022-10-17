@@ -231,13 +231,15 @@ class MapGrid extends Component<MapGridProps>{
 								const fromY = y;
 								const toY = baseY + posY2 * vh;
 
-								lines.push(line(
-									fromX + h,
-									fromY + hh,
-									toX + h,
-									toY + hh,
-									node, n,
-								));
+								if (fromX <= toX) {
+									lines.push(line(
+										fromX + h,
+										fromY + hh,
+										toX + h,
+										toY + hh,
+										node, n,
+									));
+								}
 							}
 						}
 
