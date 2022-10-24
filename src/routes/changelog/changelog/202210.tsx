@@ -8,7 +8,7 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 11921" date="2022-10-24"
+	<ChangelogItem title="Build 11922" date="2022-10-24"
 		bugfix={ <>
 			<li><BR>에라토</BR> 전투원의 풀링크 보너스 일부가 표시되지 않던 점을 수정했습니다.</li>
 		</> }
