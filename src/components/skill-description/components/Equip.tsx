@@ -41,7 +41,10 @@ export const Equip: FunctionalComponent<EquipProps> = (props) =>
 						props.onEquip(equip!);
 				} }
 			>
-				<BootstrapTooltip placement="top" content={ <EquipCard class="text-center" equip={ equip } no-link /> }>
+				<BootstrapTooltip
+					placement="top"
+					content={ <EquipCard class="text-center" equip={ equip } no-link /> }
+				>
 					<RarityBadge rarity="A">
 						{ name || k } <Icon icon="link-45deg" />
 					</RarityBadge>

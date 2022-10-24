@@ -21,10 +21,13 @@ class BootstrapTooltip extends Component<BootstrapTooltipProps> {
 	updateBootstrap (): void {
 		const el = this.el.current;
 		if (el) {
-			const content = render(this.props.content || <></>);
-
 			const instance = Tooltip.getInstance(el);
 			if (instance) instance.hide();
+
+			if (!this.props.content || Array.isArray(this.props.content))
+				return; // invalid child
+
+			const content = render(this.props.content || <></>);
 
 			new Tooltip(el, {
 				// container: "body",
@@ -49,7 +52,10 @@ class BootstrapTooltip extends Component<BootstrapTooltipProps> {
 	componentWillUnmount (): void {
 		if (this.el.current) {
 			const instance = Tooltip.getInstance(this.el.current);
-			if (instance) instance.hide();
+			if (instance) {
+				instance.hide();
+				instance.dispose();
+			}
 		}
 	}
 

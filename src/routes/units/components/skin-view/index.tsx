@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 
-import { SKIN_IN_PARTS } from "@/types/Enums";
+import { FACETYPE, SKIN_IN_PARTS } from "@/types/Enums";
 import { SKIN_ANIM_SUBSET_ENUM, SKIN_SUBSET_ENUM, Unit, UnitSkin } from "@/types/DB/Unit";
 
 import { AssetsRoot, CanPlayWebM, ImageExtension } from "@/libs/Const";
@@ -11,7 +11,7 @@ import { objState } from "@/libs/State";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import MergedVideo from "@/components/merged-video";
 import Pinch from "@/components/pinch";
-// import Renderer from "@/components/model-renderer";
+import SpineRenderer from "@/components/spine-renderer";
 
 import style from "./style.module.scss";
 
@@ -38,19 +38,16 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 	// const skinDirection = objState<"" | "horz" | "vert">("");
 
-	const SDAnimList = skin.SD || [""];
 	const face = objState<string>("");
 	const faceList = objState<string[]>([]);
-
-	const IsSD = objState<boolean>(false);
-	const SDAnim = objState<string>(SDAnimList[0]);
 
 	const IsDamaged = objState<boolean>(false);
 	const IsSimplified = objState<boolean>(false);
 	const IsBG = objState<boolean>(false);
 	const IsGoogle = objState<boolean>(false);
+	const IsSpecialTouch = objState<boolean>(false);
 
-	const IsAnimating = objState<boolean>(false);
+	const IsAnimating = objState<boolean>(true);
 	const IsBlackBG = objState<boolean>(false);
 	const HideGroup = objState<boolean>(false);
 
@@ -122,15 +119,6 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		const skinId = skin.isDef ? 0 : skin.sid;
 		return `${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}${postfix}`;
 	})();
-	const SDVideoURL = ((): string => {
-		if (!props.collapsed && !props.animate) return "";
-		if (!skin.SD) return "";
-
-		const postfix = SDAnim.value;
-
-		const skinId = skin.isDef ? 0 : skin.sid;
-		return `${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}_${postfix}`;
-	})();
 
 	if (!skin.G && IsGoogle.value) // not have google
 		IsGoogle.set(false);
@@ -180,6 +168,8 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		: skin.subset[SKIN_SUBSET_ENUM.DB_] || (skin.subset[SKIN_SUBSET_ENUM.DBS] && IsSimplified.value);
 
 	const AvailableAnim = (() => {
+		if (skin.Spine) return true;
+
 		if (IsSimplified.value && IsBG.value)
 			return skin.anim[SKIN_ANIM_SUBSET_ENUM.BS];
 		else if (IsSimplified.value && !IsBG.value)
@@ -190,7 +180,8 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			return skin.anim[SKIN_ANIM_SUBSET_ENUM.__];
 	})();
 
-	const modelId = `2DModel_${unit.uid}_N${skin.isDef ? "" : `S${skin.sid}`}`;
+	const modelId = `${unit.uid}_N${skin.isDef ? "" : `S${skin.sid}`}`;
+	const DisplaySpine = skin.Spine && (props.animate || props.collapsed) && !IsDamaged.value;
 
 	return <div class={ style.SkinView }>
 		<div class={ `ratio ${Aspect} ${style.SkinFull} ${props.collapsed ? style.Collapsed : ""}` }>
@@ -203,20 +194,37 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 				</div>
 				<div class={ [
 					style.FullUnit,
-					!(skin.SD && IsSD.value) && !props.collapsed && style.FullUnitMarginless,
+					(!props.collapsed || DisplaySpine) && style.FullUnitMarginless,
 				].filter(x => x).join(" ") }>
-					{ skin.SD && IsSD.value
-						? CanPlayWebM()
-							? <video
-								class={ style.SDVideo }
-								autoPlay muted loop
-								src={ `${AssetsRoot}/webm/SD/${SDVideoURL}.webm` }
-							/>
-							: <MergedVideo
-								class={ style.SDVideo }
-								src={ `${AssetsRoot}/webm/SD.Legacy/${SDVideoURL}.mp4` }
-								type="video/mp4"
-							/>
+					{ DisplaySpine
+						? <SpineRenderer
+							uid={ modelId }
+							google={ IsGoogle.value }
+							specialTouch={ IsSpecialTouch.value }
+
+							// collider={ true }
+							// hidePart={ IsSimplified.value }
+							// hideBg={ IsBG.value }
+							// hideDialog={ false }
+
+							face={ face.value }
+							onFaceList={ (list) => {
+								faceList.set(list);
+
+								if (list.includes("Idle"))
+									face.set("Idle");
+								else {
+									const listU = list.map(f => f.toUpperCase());
+									for (const ft of Object.keys(FACETYPE)) {
+										const index = listU.indexOf(ft);
+										if (index >= 0) {
+											face.set(list[index]);
+											break;
+										}
+									}
+								}
+							} }
+						/>
 						: SkinVideoURL.length > 0
 							? CanPlayWebM()
 								? <video
@@ -239,18 +247,6 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 										src={ SkinImageURL }
 									/>
 								</Pinch>
-								// 	<Renderer
-								// 		uid={ modelId }
-								// 		root={ `${AssetsRoot}/models` }
-
-								// 		collider={ true }
-								// 		hidePart={ IsSimplified.value }
-								// 		hideBg={ IsBG.value }
-								// 		hideDialog={ false }
-
-								// 		face={ face.value }
-								// 		onFaceList={ (list) => faceList.set(list) }
-								// 	/>
 								: <img
 									style={ ImageStyle }
 									src={ SkinImageURL }
@@ -383,54 +379,47 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					</div>
 				</>
 
-				{ !IsSD.value
-					? [
-						skin.subset[SKIN_SUBSET_ENUM.D__]
-							? <div
-								class={ `${style.SkinToggle} ${style.Damaged}` }
-								data-damaged={ IsDamaged.value ? 1 : 0 }
-								onClick={ (): void => IsDamaged.set(!IsDamaged.value) }
-							/>
-							: <></>,
-						AvailableS
-							? <div
-								class={ `${style.SkinToggle} ${style.Simplified}` }
-								data-simplified={ IsSimplified.value ? 1 : 0 }
-								onClick={ (): void => IsSimplified.set(!IsSimplified.value) }
-							/>
-							: <></>,
-						AvailableBG
-							? <div
-								class={ `${style.SkinToggle} ${style.BG}` }
-								data-bg={ IsBG.value ? 1 : 0 }
-								onClick={ (): void => IsBG.set(!IsBG.value) }
-							/>
-							: <></>,
-						skin.G
-							? <div
-								class={ `${style.SkinToggle} ${style.Platform}` }
-								data-platform={ IsGoogle.value ? 1 : 0 }
-								onClick={ (): void => IsGoogle.set(!IsGoogle.value) }
-							/>
-							: <></>,
-					]
-					: <select
-						class={ `form-select ${style.SDList}` }
-						value={ SDAnim.value }
-						onChange={ (e): void => {
-							const value = (e.target as HTMLSelectElement).value;
-							SDAnim.set(value);
-						} }
-					>
-						{ SDAnimList.map(anim => <option value={ anim }>
-							<Locale k={ `UNIT_VIEW_SKIN_ANIM_${anim}` } />
-						</option>) }
-					</select>
-				}
+				{ [
+					skin.subset[SKIN_SUBSET_ENUM.D__]
+						? <div
+							class={ `${style.SkinToggle} ${style.Damaged}` }
+							data-damaged={ IsDamaged.value ? 1 : 0 }
+							onClick={ (): void => IsDamaged.set(!IsDamaged.value) }
+						/>
+						: <></>,
+					AvailableS
+						? <div
+							class={ `${style.SkinToggle} ${style.Simplified}` }
+							data-simplified={ IsSimplified.value ? 1 : 0 }
+							onClick={ (): void => IsSimplified.set(!IsSimplified.value) }
+						/>
+						: <></>,
+					AvailableBG
+						? <div
+							class={ `${style.SkinToggle} ${style.BG}` }
+							data-bg={ IsBG.value ? 1 : 0 }
+							onClick={ (): void => IsBG.set(!IsBG.value) }
+						/>
+						: <></>,
+					skin.G
+						? <div
+							class={ `${style.SkinToggle} ${style.Platform}` }
+							data-platform={ IsGoogle.value ? 1 : 0 }
+							onClick={ (): void => IsGoogle.set(!IsGoogle.value) }
+						/>
+						: <></>,
+					DisplaySpine
+						? <div
+							class={ `${style.SkinToggle} ${style.Touch}` }
+							data-touch={ IsSpecialTouch.value ? 1 : 0 }
+							onClick={ (): void => IsSpecialTouch.set(!IsSpecialTouch.value) }
+						/>
+						: <></>,
+				] }
 
-				{ false && !props.collapsed
+				{ skin.Spine && props.animate && !IsDamaged.value && !props.collapsed
 					? <select
-						class={ `form-select ${style.SDList}` }
+						class={ `form-select ${style.FaceList}` }
 						value={ face.value }
 						onChange={ (e): void => {
 							const value = (e.target as HTMLSelectElement).value;
@@ -438,21 +427,11 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 						} }
 					>
 						{ faceList.value.map(f => <option value={ f }>
-							{/* <Locale k={ `FACE_TYPE_${f}` } /> */ }
-							{ f }
+							<Locale k={ `FACE_TYPE_${FACETYPE[f.toUpperCase()]}` } />
 						</option>) }
 					</select>
 					: <></>
 				}
-
-				{/* { skin.SD
-					? <div
-						class={ `${style.SkinToggle} ${style.SD}` }
-						data-sd={ IsSD.value ? 1 : 0 }
-						onClick={ (): void => IsSD.set(!IsSD.value) }
-					/>
-					: <></>
-				} */}
 
 				{ props.detailable
 					? <>
