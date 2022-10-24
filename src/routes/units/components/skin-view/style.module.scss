@@ -123,25 +123,25 @@
 			background-position-x: 0;
 		}
 	}
-	&.SD {
+	&.Touch {
 		top: 18px;
-		right: 130px;
+		right: 118px;
 		width: 28px;
 		height: 28px;
-		background-image: url($assetsRoot + "/ui/icon-skin-sd.png");
-		background-position-x: 0px;
+		background-image: url($assetsRoot + "/ui/icon-skin-touch.png");
+		background-position-x: 0;
 		background-size: 56px 28px;
 
-		&[data-sd="1"] {
+		&[data-touch="1"] {
 			background-position-x: -28px;
 		}
 	}
 }
-.SDList {
+.FaceList {
 	position: absolute;
-	top: 16px;
-	right: 16px;
-	width: 104px;
+	bottom: 12px;
+	right: 8px;
+	width: 184px;
 	height: auto;
 	font-size: 85%;
 	z-index: 4;
@@ -275,10 +275,6 @@
 				&:focus {
 					outline: none !important;
 				}
-			}
-
-			> .SDVideo {
-				object-fit: scale-down !important;
 			}
 		}
 		&:not(.Collapsed) .FullUnit {

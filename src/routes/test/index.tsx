@@ -1,10 +1,12 @@
 import { FunctionalComponent } from "preact";
 
+import { FACETYPE } from "@/types/Enums";
+
 import { objState } from "@/libs/State";
 import { AssetsRoot } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 
-import Renderer from "@/components/model-renderer";
+import SpineRenderer from "@/components/spine-renderer";
 
 import style from "./style.module.scss";
 
@@ -23,7 +25,7 @@ const TestPage: FunctionalComponent<TestPageProps> = ({ uid }) => {
 	const faces = objState<string[]>([]);
 
 	return <div>
-		<button
+		{/* <button
 			class={ `mx-1 btn btn-outline-success ${isActive(collider.value)}` }
 			onClick={ (e) => {
 				e.preventDefault();
@@ -58,7 +60,7 @@ const TestPage: FunctionalComponent<TestPageProps> = ({ uid }) => {
 			} }
 		>
 			Hide Dialog Deactive Parts
-		</button>
+		</button> */}
 
 		<button
 			class="btn btn-substory dropdown-toggle"
@@ -86,17 +88,32 @@ const TestPage: FunctionalComponent<TestPageProps> = ({ uid }) => {
 		</ul>
 
 		<div class={ style.TEST }>
-			<Renderer
+			<SpineRenderer
 				uid={ uid || "2DModel_PECS_LRL_N" }
 				root={ `${AssetsRoot}/models` }
 
-				collider={ collider.value }
-				hidePart={ hideParts.value }
-				hideBg={ hideBg.value }
-				hideDialog={ hideDialogDeactive.value }
+				// collider={ collider.value }
+				// hidePart={ hideParts.value }
+				// hideBg={ hideBg.value }
+				// hideDialog={ hideDialogDeactive.value }
 
 				face={ face.value }
-				onFaceList={ (list) => faces.set(list) }
+				onFaceList={ (list) => {
+					faces.set(list);
+
+					if (list.includes("Idle"))
+						face.set("Idle");
+					else {
+						const listU = list.map(f => f.toUpperCase());
+						for (const ft of Object.keys(FACETYPE)) {
+							const index = listU.indexOf(ft);
+							if (index >= 0) {
+								face.set(list[index]);
+								break;
+							}
+						}
+					}
+				} }
 			/>
 		</div>
 	</div>;

@@ -162,8 +162,8 @@ export default ({ mode }) => {
 						if (id.includes("/node_modules/preact-transition")) return "vendor.transition";
 						if (id.includes("/node_modules/html2canvas/")) return "vendor.html2canvas";
 						if (id.includes("/node_modules/bootstrap")) return "vendor.bootstrap";
-						if (id.includes("/node_modules/acorn/") || id.includes("/node_modules/react")) return "vendor.ext";
-						if (id.includes("/node_modules/pako/")) return "vendor.pako";
+						if (id.includes("/node_modules/react")) return "vendor.ext";
+						if (id.includes("/node_modules/@esotericsoftware/")) return "vendor.spine";
 						if (id.includes("/node_modules/")) return "vendor";
 
 						// components/bootstrap-icon/es/*

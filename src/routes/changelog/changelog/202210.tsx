@@ -8,6 +8,31 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11924" date="2022-10-24"
+		bugfix={ <>
+			<li>전투원의 스킨 정보가 올바르지 않게 표시되던 점을 수정했습니다.</li>
+		</> }
+	/>
+	<ChangelogItem title="Build 11922" date="2022-10-24"
+		bugfix={ <>
+			<li><BR>에라토</BR> 전투원의 풀링크 보너스 일부가 표시되지 않던 점을 수정했습니다.</li>
+		</> }
+		new={ <>
+			<li>
+				전투원 <BY>스킨 정보</BY>에 Spine 로비 애니메이션이 적용된 스킨 뷰어가 추가되었습니다.<br />
+				이 뷰어는 일반 터치와 특수 터치 기능도 포함되어있습니다.
+			</li>
+		</> }
+		update={ <>
+			<li>전투원 <BY>골타리온 XIII세</BY>의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>CS 페로</BY>의 스킨
+				<BR>CAFE amor : dolce</BR>의 로비 애니메이션 정보가 추가되었습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11916" date="2022-10-18"
 		bugfix={ <>
 			<li><BR>변화의 성소</BR> 4지역 일부 구역의 적 정보가 잘못 입력되어있던 점을 수정했습니다.</li>

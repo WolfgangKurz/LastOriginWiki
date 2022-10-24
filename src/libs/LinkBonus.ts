@@ -27,6 +27,7 @@ export function GetLinkBonus (type: LinkBonusType, links: number): LinkBonusData
 		case "ATK_20":
 		case "ATK_25":
 		case "ATK_30":
+		case "ATK_50":
 			return {
 				Key: type,
 				Name: "LINKBONUS_ATK",

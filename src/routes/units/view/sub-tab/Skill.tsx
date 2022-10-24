@@ -19,7 +19,7 @@ import { SubpageProps } from "..";
 
 const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 	const CurrentResists = unit.stat[0].Resist;
-	const ExLevel = objState<number>(9);
+	// const ExLevel = objState<number>(9);
 
 	const linkCount = objState<number>(5);
 	const LinkBonus = unit.linkBonus

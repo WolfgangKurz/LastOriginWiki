@@ -9,7 +9,7 @@ import RoguelikeSkill from "./Roguelike.Skill";
 export type LinkBonusType =
 	"" |
 	"HP_15" | "HP_20" | "HP_25" | "HP_30" | "HP_35" | "HP_40" | "HP_45" | "HP_50" |
-	"ATK_10" | "ATK_15" | "ATK_20" | "ATK_25" | "ATK_30" |
+	"ATK_10" | "ATK_15" | "ATK_20" | "ATK_25" | "ATK_30" | "ATK_50" |
 	"DEF_3" | "DEF_5" | "DEF_10" | "DEF_15" | "DEF_20" | "DEF_30" |
 	"ACC_5" | "ACC_10" | "ACC_25" | "ACC_50" | "ACC_75" |
 	"EV_3" | "EV_10" | "EV_15" | "EV_20" | "EV_25" | "EV_30" | "EV_40" | "EV_50" |
@@ -76,8 +76,11 @@ export interface UnitSkinEntity {
 	/** has Google CG */
 	G: boolean;
 
+	/** animated by Spine */
+	Spine: boolean;
+
 	/** has SD video */
-	SD: false | string[];
+	// SD: false | string[];
 
 	/** Parts, see SKIN_IN_PARTS */
 	parts: number;
@@ -245,10 +248,12 @@ export namespace Unit {
 		dialogue: {
 			KR: null,
 			JP: null,
+			EN: null,
+			TC: null,
 		},
 		skins: {
 			G: false,
-			SD: false,
+			Spine: false,
 			parts: 0,
 			stage: false,
 
