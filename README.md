@@ -56,7 +56,7 @@ Ways to data mining and tools will not provided.
 
 ## 데이터베이스 / Database
 데이터베이스는 구글 스프레드시트를 사용하고 있습니다.\
-I using google spreadsheet for Database.
+Using google spreadsheet for Database.
 
 - [KR Database Spreadsheet](https://docs.google.com/spreadsheets/d/11IxebdUQ_VHbaP79sN8KxZ87n3c5rG42DL8TQOK9h1k)
 - [Website Locale Spreadsheet](https://docs.google.com/spreadsheets/d/1Q2tpfQntZxmI0Xbx9HZo0vjBY7kQGZGmH1MBGTzrnvo)
