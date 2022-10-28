@@ -34,7 +34,7 @@ const UnitSelectorPopup: FunctionalComponent<UnitSelectorPopupProps> = (props) =
 	const Filter = objState({
 		Type: {
 			[ACTOR_CLASS.LIGHT]: true,
-			[ACTOR_CLASS.MOBILITY]: true,
+			[ACTOR_CLASS.FLYING]: true,
 			[ACTOR_CLASS.HEAVY]: true,
 		},
 		Role: {
@@ -146,9 +146,9 @@ const UnitSelectorPopup: FunctionalComponent<UnitSelectorPopupProps> = (props) =
 							<Locale k="COMMON_UNIT_TYPE_LIGHT" />
 						</button>
 						<button
-							class={ `btn btn-outline-success ${isActive(Filters.Type[ACTOR_CLASS.MOBILITY])}` }
+							class={ `btn btn-outline-success ${isActive(Filters.Type[ACTOR_CLASS.FLYING])}` }
 							onClick={ (): void => {
-								Filters.Type[ACTOR_CLASS.MOBILITY] = !Filters.Type[ACTOR_CLASS.MOBILITY];
+								Filters.Type[ACTOR_CLASS.FLYING] = !Filters.Type[ACTOR_CLASS.FLYING];
 								Filter.set(Filters);
 							} }
 						>

@@ -8,6 +8,12 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11927" date="2022-10-28"
+		bugfix={ <>
+			<li>일부 버프에 <BR>[object Object]</BR>가 표시되던 문제를 수정했습니다.</li>
+			<li><BY>변화의 성소</BY> 적합 및 제약 표기가 올바르지 않게 표시되던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11924" date="2022-10-24"
 		bugfix={ <>
 			<li>전투원의 스킨 정보가 올바르지 않게 표시되던 점을 수정했습니다.</li>

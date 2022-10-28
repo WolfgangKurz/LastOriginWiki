@@ -22,6 +22,7 @@ import BuffList from "@/components/buff-list";
 import { Char } from "@/components/skill-description/components";
 
 import style from "./style.module.scss";
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ROLE_TYPE } from "@/types/Enums";
 
 interface EternalWarProps {
 	mid?: string;
@@ -93,11 +94,11 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 
 		return <div class={ style.EternalWarPage }>
 			<div class="mb-3">
-				<h2 >
+				<h2 class="font-ibm">
 					<Locale k="MENU_ETERNALWAR" />
 				</h2>
 				{ state.mid
-					? <h4>
+					? <h4 class="font-ibm">
 						<Locale k={ `EW_${mid}` } />
 					</h4>
 					: <></>
@@ -144,6 +145,21 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 				const SuitabilityProhibitionArea = (): preact.VNode => {
 					const d = EWDB[mid][state.sid];
 
+					const BodyDisplay = {
+						[ACTOR_BODY_TYPE.BIOROID]: <Locale k="COMMON_UNIT_BODY_BIOROID" />,
+						[ACTOR_BODY_TYPE.AGS]: <Locale k="COMMON_UNIT_BODY_AGS" />,
+					};
+					const RoleDisplay = {
+						[ROLE_TYPE.ATTACKER]: <Locale k="COMMON_UNIT_ROLE_ATTACKER" />,
+						[ROLE_TYPE.DEFENDER]: <Locale k="COMMON_UNIT_ROLE_DEFENDER" />,
+						[ROLE_TYPE.SUPPORTER]: <Locale k="COMMON_UNIT_ROLE_SUPPORTER" />,
+					};
+					const ClassDisplay = {
+						[ACTOR_CLASS.LIGHT]: <Locale k="COMMON_UNIT_TYPE_LIGHT" />,
+						[ACTOR_CLASS.HEAVY]: <Locale k="COMMON_UNIT_TYPE_HEAVY" />,
+						[ACTOR_CLASS.FLYING]: <Locale k="COMMON_UNIT_TYPE_MOBILITY" />,
+					};
+
 					return <>
 						{ d.prohibition.map(x => <div class="mt-2 card bg-dark text-light text-start">
 							<div class="card-header text-center">
@@ -158,21 +174,35 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 											<Icon icon="dot" />
 											<Locale plain k="EW_PROHIBITION_SQUAD" />
 										</strong>
-										<span class="badge bg-warning text-dark">
-											<Locale plain k={ `UNIT_GROUP_${x.squad}` } />
+										<span class="mx-2 badge bg-warning text-dark">
+											<Locale plain k={ `UNIT_GROUP_${x.squad.substr(6)}` } />
 										</span>
 									</div>
 									: <></>
 								}
 
-								<div class="mx-2">
-									<strong>
-										<Locale plain k="EW_PROHIBITION_UNIT" />
-									</strong>
-									<span class="mx-2 badge bg-warning text-dark">
-										<Locale plain k={ x.desc } />
-									</span>
-								</div>
+								{ x.char.body !== ACTOR_BODY_TYPE.__MAX__ || x.char.role !== ROLE_TYPE.__MAX__ || x.char.class !== ACTOR_CLASS.__MAX__
+									? <div>
+										<strong>
+											<Icon icon="dot" />
+											<Locale plain k="EW_PROHIBITION_UNIT" />
+										</strong>
+										<span class="mx-2 badge bg-warning text-dark">
+											{ [
+												x.char.body !== ACTOR_BODY_TYPE.__MAX__
+													? BodyDisplay[x.char.body]
+													: <></>,
+												x.char.class !== ACTOR_CLASS.__MAX__
+													? ClassDisplay[x.char.class]
+													: <></>,
+												x.char.role !== ROLE_TYPE.__MAX__
+													? RoleDisplay[x.char.role]
+													: <></>,
+											].gap(" ") }
+										</span>
+									</div>
+									: <></>
+								}
 							</div>
 						</div>) }
 

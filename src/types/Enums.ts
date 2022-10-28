@@ -273,7 +273,7 @@ export enum ACTOR_BODY_TYPE {
 	/** 사용처 없음, 아마도 헬키스트 던전의 잔재 */
 	TOTEM = 3,
 
-	// __MAX__ = 4,
+	__MAX__ = 4,
 }
 
 /** 전투원 유형 */
@@ -284,10 +284,10 @@ export enum ACTOR_CLASS {
 	ARMORED = 1,
 	HEAVY = 1,
 
-	MOBILITY = 2,
+	FLYING = 2,
 	AIR = 2,
 
-	// __MAX__ = 3,
+	__MAX__ = 3,
 }
 
 /** 전투원 역할 */
@@ -300,7 +300,7 @@ export enum ROLE_TYPE {
 
 	SUPPORTER = 2,
 
-	// __MAX__ = 3,
+	__MAX__ = 3,
 }
 
 /** 전투원 등급 */

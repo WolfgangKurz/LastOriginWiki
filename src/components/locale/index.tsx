@@ -110,6 +110,7 @@ const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
 				t = props.preprocessor(t);
 
 			if (props.plain) {
+				console.log(t, props.p);
 				return <>{ (t).split(paramRegex).map(x => {
 					const r = paramRegex.exec(x);
 					return r
