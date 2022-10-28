@@ -134,7 +134,7 @@ const Store = new StoreClass(
 			},
 			Type: {
 				[ACTOR_CLASS.LIGHT]: true,
-				[ACTOR_CLASS.MOBILITY]: true,
+				[ACTOR_CLASS.FLYING]: true,
 				[ACTOR_CLASS.HEAVY]: true,
 			},
 			Role: {
@@ -227,7 +227,7 @@ const Store = new StoreClass(
 		Enemies: {
 			Type: {
 				[ACTOR_CLASS.LIGHT]: true,
-				[ACTOR_CLASS.MOBILITY]: true,
+				[ACTOR_CLASS.FLYING]: true,
 				[ACTOR_CLASS.HEAVY]: true,
 			},
 			Role: {
@@ -254,7 +254,7 @@ const Store = new StoreClass(
 		toggleUnitsFilterRaritySS: (state) => merge(state, { Units: { Rarity: { [ACTOR_GRADE.SS]: !state.Units.Rarity[ACTOR_GRADE.SS] } } }),
 
 		toggleUnitsFilterTypeLight: (state) => merge(state, { Units: { Type: { [ACTOR_CLASS.LIGHT]: !state.Units.Type[ACTOR_CLASS.LIGHT] } } }),
-		toggleUnitsFilterTypeMobility: (state) => merge(state, { Units: { Type: { [ACTOR_CLASS.MOBILITY]: !state.Units.Type[ACTOR_CLASS.MOBILITY] } } }),
+		toggleUnitsFilterTypeMobility: (state) => merge(state, { Units: { Type: { [ACTOR_CLASS.FLYING]: !state.Units.Type[ACTOR_CLASS.FLYING] } } }),
 		toggleUnitsFilterTypeHeavy: (state) => merge(state, { Units: { Type: { [ACTOR_CLASS.HEAVY]: !state.Units.Type[ACTOR_CLASS.HEAVY] } } }),
 
 		toggleUnitsFilterRoleAttacker: (state) => merge(state, { Units: { Role: { [ROLE_TYPE.ATTACKER]: !state.Units.Role[ROLE_TYPE.ATTACKER] } } }),
@@ -374,7 +374,7 @@ const Store = new StoreClass(
 		////////////////////////////////////////////////////////////////////////////////
 
 		toggleEnemiesFilterTypeLight: (state) => merge(state, { Enemies: { Type: { [ACTOR_CLASS.LIGHT]: !state.Enemies.Type[ACTOR_CLASS.LIGHT] } } }),
-		toggleEnemiesFilterTypeMobility: (state) => merge(state, { Enemies: { Type: { [ACTOR_CLASS.MOBILITY]: !state.Enemies.Type[ACTOR_CLASS.MOBILITY] } } }),
+		toggleEnemiesFilterTypeMobility: (state) => merge(state, { Enemies: { Type: { [ACTOR_CLASS.FLYING]: !state.Enemies.Type[ACTOR_CLASS.FLYING] } } }),
 		toggleEnemiesFilterTypeHeavy: (state) => merge(state, { Enemies: { Type: { [ACTOR_CLASS.HEAVY]: !state.Enemies.Type[ACTOR_CLASS.HEAVY] } } }),
 
 		toggleEnemiesFilterRoleAttacker: (state) => merge(state, { Enemies: { Role: { [ROLE_TYPE.ATTACKER]: !state.Enemies.Role[ROLE_TYPE.ATTACKER] } } }),

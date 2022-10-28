@@ -24,7 +24,7 @@ interface EnemiesListState {
 	Filters: {
 		Type: {
 			[ACTOR_CLASS.LIGHT]: boolean;
-			[ACTOR_CLASS.MOBILITY]: boolean;
+			[ACTOR_CLASS.FLYING]: boolean;
 			[ACTOR_CLASS.HEAVY]: boolean;
 		},
 		Role: {
@@ -74,7 +74,7 @@ class EnemiesList extends Component<EnemiesListProps, EnemiesListState> {
 			Filters: {
 				Type: {
 					[ACTOR_CLASS.LIGHT]: true,
-					[ACTOR_CLASS.MOBILITY]: true,
+					[ACTOR_CLASS.FLYING]: true,
 					[ACTOR_CLASS.HEAVY]: true,
 				},
 				Role: {

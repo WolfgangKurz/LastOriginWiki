@@ -138,7 +138,7 @@ export function groupBy<K extends keyof any, T> (
 	return ret;
 }
 
-export function diff2<T, K> (A: T, B: K): boolean {
+export function diff2<T extends object, K extends object> (A: T, B: K): boolean {
 	if (typeof A !== typeof B) return true;
 	const aA = Array.isArray(A);
 	const aB = Array.isArray(B);

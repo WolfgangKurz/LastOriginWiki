@@ -66,7 +66,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 
 	const UnitTypeTable: Record<ACTOR_CLASS, string> = {
 		[ACTOR_CLASS.LIGHT]: "LIGHT",
-		[ACTOR_CLASS.MOBILITY]: "MOBILITY",
+		[ACTOR_CLASS.FLYING]: "MOBILITY",
 		[ACTOR_CLASS.HEAVY]: "HEAVY",
 	};
 	const UnitRoleTable: Record<ROLE_TYPE, string> = {
@@ -186,7 +186,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 			 * @param value base-per 값
 			 * @param level 장비/수치 레벨
 			 * @param type 0: 구분 없음 / 1: 비 % 값만 / 2: % 값만
-			 * @returns 
+			 * @returns
 			 */
 			function levelV (value: BuffEffectValue, level: number, type: 0 | 1 | 2 = 0): number {
 				if (type === 1 && !(typeof value.base === "number" || !value.base.endsWith("%")))

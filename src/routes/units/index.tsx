@@ -285,7 +285,7 @@ const Units: FunctionalComponent = () => {
 											<Locale k="COMMON_UNIT_TYPE_LIGHT" />
 										</button>
 										<button
-											class={ `btn btn-outline-success ${isActive(Filters.Type[ACTOR_CLASS.MOBILITY])}` }
+											class={ `btn btn-outline-success ${isActive(Filters.Type[ACTOR_CLASS.FLYING])}` }
 											onClick={ toggleUnitsFilterTypeMobility }
 										>
 											<Locale k="COMMON_UNIT_TYPE_MOBILITY" />
