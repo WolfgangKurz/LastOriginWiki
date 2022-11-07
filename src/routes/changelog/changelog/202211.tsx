@@ -8,6 +8,27 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11934" date="2022-11-07"
+		bugfix={ <>
+			<li>스킨 정보에 추가됐던 표정이 표시되지 않던 문제를 수정했습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>블랙 리리스</BY>의 스킨
+				<BR>미스오르카 : 주인님 Overdose</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>사멸의 세크메트</BY>의 스킨
+				<BR>미스오르카 : 들려주고픈 이야기</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>쿠노이치 엔라이</BY>의 기본 스킨의 중파 이미지가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-11-07 15:40:33</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11930" date="2022-11-03"
 		new={ <>
 			<li>신규 전투원 <BY>헬라</BY>의 정보가 추가되었습니다.</li>
