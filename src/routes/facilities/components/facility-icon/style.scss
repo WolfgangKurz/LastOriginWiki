@@ -2,6 +2,21 @@
 	position: relative;
 	display: inline-block;
 
+	> svg {
+		max-width: 100%;
+		max-height: 244px;
+
+		&[data-size="1"] {
+			width: 230px;
+		}
+		&[data-size="2"] {
+			width: 460px;
+		}
+		&[data-size="3"] {
+			width: 690px;
+		}
+	}
+
 	> div.facility-image {
 		border-radius: 6px;
 		background-repeat: no-repeat;

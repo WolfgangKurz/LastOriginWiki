@@ -8,6 +8,30 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11937" date="2022-11-15"
+		bugfix={ <>
+			<li>일부 스킬 플레이버 텍스트에 오타가 있던 점을 수정했습니다.</li>
+		</> }
+		site={ <>
+			<li>운영사가 변경됨에 따라 사이트 문구가 일부 변경되었습니다.</li>
+		</> }
+		new={ <>
+			<li>신규 장비 <span class="badge bg-warning text-dark">S.P.A.C.E</span>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">파랑새가 있던 새장</span>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">MMORPG</span>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">아나톨리아 산 물담배</span>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">라플라시안 글로브</span>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <span class="badge bg-warning text-dark">삼정</span>의 정보가 추가되었습니다.</li>
+			<li>신규 적의 정보가 추가되었습니다.</li>
+			<li>메인스토리 2부 2지역 (10지역) 정보가 추가되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>사멸의 세크메트</BY>의 스킨
+				<BR>미스오르카 : 들려주고픈 이야기</BR>의 소품 정보 및 표정 정보가 추가되었습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11934" date="2022-11-07"
 		bugfix={ <>
 			<li>스킨 정보에 추가됐던 표정이 표시되지 않던 문제를 수정했습니다.</li>
