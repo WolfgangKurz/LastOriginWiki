@@ -123,29 +123,18 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 		} else if (targetEnemy.value)
 			targetEnemy.set(null);
 
-		const Skills = ((): EnemySkill[] => {
+		const Skills = ((): Array<EnemySkill | undefined> => {
 			if (!targetEnemy.value) return [];
-			// const list: EnemySkill[] = targetEnemy.value.rarity === ACTOR_GRADE.SS
-			// 	? targetEnemy.value.skills
-			// 	: targetEnemy.value.skills.slice(0, targetEnemy.value.rarity);
-			const list = targetEnemy.value.skills;
+			const enemy = targetEnemy.value;
+			const list = enemy.skills
+				.map(s => {
+					console.log(s.key, s.leastGrade, enemy.rarity);
+					if (s.leastGrade && enemy.rarity < s.leastGrade) return undefined;
+					return s;
+				});
 
-			let passive = false;
-			for (let i = 0; i < list.length; i++) {
-				const e = list[i];
-				if (!e) break;
-				if (e.passive) passive = true;
-				else if (passive) {
-					list.splice(i, list.length - i);
-					break;
-				}
-			}
-
-			// while (list.length < 6) list.push(undefined);
-			return list;
+			return list.least(6);
 		})();
-
-		const SkillsTab = Skills.least(6);
 
 		function Description (skill: EnemySkill): string {
 			if (!targetEnemy.value) return "";
@@ -448,7 +437,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 						? <>
 							<div class="container">
 								<div class="row row-cols-4 row-cols-md-8 enemy-display-tabs mt-1">
-									{ SkillsTab.map((skill, idx) => skill
+									{ Skills.map((skill, idx) => skill
 										? <div
 											class={ `col mt-1 ${displayTab.value === `skill${idx + 1}`
 												? "border border-bottom-0"
@@ -583,7 +572,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 									? <div class="row">
 										<div class="col border border-top-0 text-start p-3">
 											{ targetEnemy.value.ai
-												? <AIList aiKey={ targetEnemy.value.ai } skills={ Skills } enemy />
+												? <AIList aiKey={ targetEnemy.value.ai } enemy />
 												: <>Not ready yet</>
 											}
 										</div>

@@ -8,6 +8,11 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11946" date="2022-11-17"
+		bugfix={ <>
+			<li>일부 적에게 가지고 있지 않은 스킬이 표시되던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11937" date="2022-11-15"
 		bugfix={ <>
 			<li>일부 스킬 플레이버 텍스트에 오타가 있던 점을 수정했습니다.</li>
