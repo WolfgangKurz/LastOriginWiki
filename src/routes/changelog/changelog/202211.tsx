@@ -8,6 +8,27 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11948" date="2022-11-22"
+		update={ <>
+			<li>전투원 <BY>토미 워커</BY>의 SS 승급 정보가 추가되었습니다.</li>
+			<li>전투원 <BY>드론 08</BY>의 SS 승급 정보가 추가되었습니다.</li>
+			<li>전투원 <BY>와쳐 MQ-20</BY>의 SS 승급 정보가 추가되었습니다.</li>
+			<li>전투원 <BY>CT103 포트리스</BY>의 SS 승급 정보가 추가되었습니다.</li>
+			<li>일부 적의 정보가 갱신되었습니다.</li>
+			<li>메인스토리 2부 2지역 (10지역) 일부의 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>이터니티</BY>의 스킨 <BR>미스오르카 : 북극성</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>바르그</BY>의 스킨 <BR>늑! 대! 무녀 바르그</BR>의 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-11-22 00:43:10</span>까지의 사용자 참여로 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11946" date="2022-11-17"
 		bugfix={ <>
 			<li>일부 적에게 가지고 있지 않은 스킬이 표시되던 문제를 수정했습니다.</li>
