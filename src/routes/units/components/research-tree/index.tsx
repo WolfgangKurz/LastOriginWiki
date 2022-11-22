@@ -1,7 +1,7 @@
-import { ComponentChild, FunctionalComponent } from "preact";
+import { ComponentChild, FunctionalComponent, VNode } from "preact";
 import { createPortal } from "preact/compat";
 
-import UseGraphviz from "@/external/graphviz";
+import mermaid from "mermaid";
 
 import { ResearchTreeData, Unit } from "@/types/DB/Unit";
 import { Research } from "@/types/DB/Research";
@@ -9,11 +9,11 @@ import { Consumable } from "@/types/DB/Consumable";
 
 import { ImageExtension, AssetsRoot } from "@/libs/Const";
 import { objState } from "@/libs/State";
-import ParseVDOM, { TravelVDOM } from "@/libs/VDomParser";
+import { TravelVDOM } from "@/libs/VDomParser";
 import { FormatNumber } from "@/libs/Functions";
 
 import Loader, { StaticDB, GetJson } from "@/components/loader";
-import UnitFace, { GetUnitFaceURL } from "@/components/unit-face";
+import { GetUnitFaceURL } from "@/components/unit-face";
 
 import Locale from "@/components/locale";
 import PopupBase from "@/components/popup/base";
@@ -21,11 +21,18 @@ import Icon from "@/components/bootstrap-icon";
 import EquipIcon from "@/components/equip-icon";
 
 import style from "./style.module.scss";
+import { parseVNode } from "@/libs/VNode";
+import { renderToString } from "preact-render-to-string";
 
 interface ResearchTreeProps {
 	unit: Unit;
 	research: ResearchTreeData[];
 }
+
+mermaid.mermaidAPI.initialize({
+	startOnLoad: false,
+	theme: "dark",
+});
 
 const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {
 	const graph = objState<preact.VNode | boolean>(false);
@@ -40,140 +47,124 @@ const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {
 		const imgExt = ImageExtension();
 
 		const keyTable: string[] = ["start"];
+		const tree: Record<string | number, number[]> = {};
 		const content: string[] = [];
 		const trace = (from: number, parent: ResearchTreeData) => {
 			if (!(parent.key in keyTable)) keyTable.push(parent.key);
 			const idx = keyTable.indexOf(parent.key);
 
-			const v = `${from} -> ${idx} [dir=back arrowsize=0.5 color=white];`;
-			if (!content.includes(v)) content.push(v);
-
-			const s = `${idx}:e [width=0.784 height=0.784 shape=square];`;
-			if (!content.includes(s)) content.push(s);
+			if (!(idx in tree)) tree[idx] = [];
+			if (!tree[idx].includes(from)) tree[idx].push(from);
 
 			if (parent.next)
 				parent.next.forEach(n => trace(idx, n));
 		};
 		props.research.forEach(n => trace(0, n));
 
+		{ // build graph script
+			const f = (r: string | number): string =>
+				`${r}[<span class='${style.ResearchEntity}'>$$${r}</span>]`;
+
+			const taked: string[] = [];
+			const keys = Object.keys(tree);
+			for (let i = 0; i < keys.length; i++) {
+				let k = keys[i];
+
+				if (taked.includes(k)) continue;
+				taked.push(k);
+
+				let to = tree[k];
+				let v = `${f(k)} --> ${to.map(f).join(" & ")}`;
+
+				while (to.length === 1) { // to single node
+					k = to[0].toString();
+
+					if (taked.includes(k)) break;
+					taked.push(k);
+
+					to = tree[k];
+					if (!to) break;
+					v += ` --> ${to.map(f).join(" & ")}`;
+				}
+
+				content.push(v);
+			}
+		}
+
 		if (graph.value === false) {
 			graph.set(true);
 
-			(async () => {
-				const graphviz = await UseGraphviz();
+			const script = `flowchart LR\n${content.join("\n")}`;
 
-				const raw = graphviz.dot(`digraph G {
-					rankdir=RL;
-					fixedsize=true;
-					concentrate=true;
-					${content.join("")}
-					0:e [width=0.784 height=0.784 shape=square];
-				}`, "svg");
+			mermaid.mermaidAPI.render("research-tree", script, (svg, f) => {
+				const _style = svg
+					.replace(/.*<style>(.+)<\/style>.*/g, "$1")
+					.replaceAll("&gt;", ">");
 
-				const wrapper = document.createElement("div");
-				wrapper.innerHTML = raw;
-				const svg = wrapper.firstElementChild as SVGSVGElement;
+				const node = parseVNode(
+					svg.replace(/(.*<style>).+(<\/style>.*)/g, `$1${_style}$2`),
+					[], {},
+				)[0];
 
-				const node = ParseVDOM(svg) as preact.VNode;
-				const next = (list: ComponentChild[], idx: number): number => {
-					let offset = 1;
-					while (idx + offset < list.length) {
-						const e = list[idx + offset];
-						if (typeof e === "object" && e !== null && "props" in e)
-							return idx + offset;
-						offset++;
-					}
-					return -1;
-				};
+				TravelVDOM(node, (rel) => {
+					if ((rel.props as any).class !== "root") return;
 
-				TravelVDOM(node, (el, parent, depth) => {
-					// if (el.type === "g" && depth === 1) { // container
-					// 	const p = el.props as Record<string, string>;
-					// 	const tf = p.transform.split(/([^ (]+\([^)]+\))/g)
-					// 		.filter(tf => !/^ +$/.test(tf))
-					// 		.map(tf => {
-					// 			if (tf.startsWith("rotate"))
-					// 				return "rotate(90)";
-					// 			else if (tf.startsWith("translate")) {
-					// 				const value = tf.substring(10, tf.length - 1);
-					// 				const vp = value.split(" ");
-					// 				return `translate(${-vp[0]} ${-vp[0]})`;
-					// 			}
-					// 			return tf;
-					// 		});
-					// 	p.transform = tf.join(" ");
-					// }
+					TravelVDOM(rel, (el, parent, depth) => {
+						if (el.type === "rect") { // node
+							const childs = parent!.props.children as ComponentChild[];
 
-					if ((el.type === "polygon" && depth === 2) || el.type === "title") {
-						const childs = parent!.props.children as ComponentChild[];
-						const cidx = childs.indexOf(el);
-						childs.splice(cidx, 1); // remove this
-						return;
-					}
+							const size = (el.props as any).width as number;
 
-					if (el.type === "polygon" && depth === 3) {
-						const childs = parent!.props.children as ComponentChild[];
-						if (!childs.some(x => typeof x === "object" && x && ("type" in x) && x.type === "text"))
-							return; // not node
+							let index = -1;
+							TravelVDOM(childs[1] as VNode, (_el) => {
+								if (_el && _el.type === "span" && (_el.props as any).class === style.ResearchEntity) {
+									const $$idx = renderToString(<>{ _el.props.children }</>);
+									if ($$idx && $$idx.startsWith("$$"))
+										index = parseInt($$idx.substring(2), 10);
+								}
+							});
+							if (index === -1) return;
 
-						const pt = ((el.props as any).points as string)
-							.split(" ")
-							.map(p => p.split(",").map(v => parseFloat(v)));
+							const source = keyTable[index];
+							childs.splice(0, childs.length);
 
-						const [x, y] = pt[1];
-						const w = pt[0][0] - x;
-						const h = pt[2][1] - y;
-
-						const cidx = childs.indexOf(el);
-						const nidx = next(childs, cidx);
-						if (nidx === -1) {
-							childs.splice(cidx, 1);
-							return;
+							if (source === "start") {
+								childs.push(<image
+									class={ style.ResearchIcon }
+									href={ GetUnitFaceURL(unit.uid) }
+									width={ size }
+									height={ size }
+									x={ -size / 2 }
+									y={ -size / 2 }
+								/>);
+							} else {
+								const research = ResearchDB.find(x => x.key === source);
+								if (research) {
+									childs.push(<a
+										href="#"
+										onClick={ (e): void => {
+											e.preventDefault();
+											curResearch.set(research.key);
+											display.set(true);
+										} }
+									>
+										<image
+											class={ style.ResearchIcon }
+											href={ `${AssetsRoot}/${imgExt}/research/${research.icon}.${imgExt}` }
+											width={ size }
+											height={ size }
+											x={ -size / 2 }
+											y={ -size / 2 }
+										/>
+									</a>);
+								}
+							}
 						}
-
-						const content = ((childs[nidx] as preact.VNode).props.children as ComponentChild[])[0] as string;
-						const index = parseInt(content, 10);
-						const source = keyTable[index];
-						if (source === "start") {
-							childs.splice(cidx, nidx - cidx + 1, <image
-								class={ style.ResearchIcon }
-								href={ GetUnitFaceURL(unit.uid) }
-								x={ x } y={ y }
-								width={ w } height={ h }
-							/>);
-						} else {
-							const research = ResearchDB.find(x => x.key === source);
-							if (research) {
-								childs.splice(cidx, nidx - cidx + 1, <a
-									href="#"
-									onClick={ (e): void => {
-										e.preventDefault();
-										curResearch.set(research.key);
-										display.set(true);
-									} }
-								>
-									<image
-										class={ style.ResearchIcon }
-										href={ `${AssetsRoot}/${imgExt}/research/${research.icon}.${imgExt}` }
-										x={ x } y={ y }
-										width={ w } height={ h }
-									/>
-								</a>);
-							} else
-								childs.splice(cidx, nidx - cidx + 1);
-						}
-
-					}
+					});
 				});
 
-				// const p = (node.props as any);
-				// const vb = (p.viewBox as string).split(" ").map(x => parseFloat(x));
-				// p.viewBox = `${vb[0]} ${vb[1]} ${vb[3]} ${vb[2]}`;
-				// delete p.width;
-				// delete p.height;
-
 				graph.set(node);
-			})();
+			});
 		}
 
 		const research = curResearch.value && ResearchDB.find(x => x.key === curResearch.value);

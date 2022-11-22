@@ -28,6 +28,7 @@ import UnitBadge from "@/components/unit-badge";
 import EquipIcon from "@/components/equip-icon";
 import SourceBadge from "@/components/source-badge";
 import DropEquip from "@/components/drop-equip";
+import PopupBase from "@/components/popup/base";
 import EquipPopup from "@/components/popup/equip-popup";
 
 import ResearchTree from "../../components/research-tree";
@@ -51,6 +52,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 
 	const selectedEquip = objState<FilterableEquip | null>(null);
 	const equipPopupDisplay = objState<boolean>(false);
+	const researchTreeDisplay = objState<boolean>(false);
 
 	const imageExt = ImageExtension();
 
@@ -424,12 +426,6 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 				: <></>
 			}
 
-			{ unit.research && <div class="container my-3">
-				<div class="row bg-dark text-light gx-0">
-					<ResearchTree unit={ unit } research={ unit.research } />
-				</div>
-			</div> }
-
 			<div class="container">
 				<table class="table table-bordered table-fixed text-center table-unit-modal">
 					<thead class="thead-dark">
@@ -469,6 +465,33 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 															<Icon class="me-1" icon="hourglass-split" />
 															<span class="font-exo2">{ CraftTime }</span>
 														</span>
+
+														{ unit.research && <span>
+															<PopupBase
+																display={ researchTreeDisplay.value }
+																size="lg"
+																footerVariant="dark"
+																footerText="white"
+																footerClass="justify-content-start"
+																header={ <div class="text-start">
+																	<Locale k="UNIT_RESEARCH_TREE" />
+																</div> }
+																onHidden={ (): void => researchTreeDisplay.set(false) }
+															>
+																<div class="bg-dark">
+																	<ResearchTree unit={ unit } research={ unit.research } />
+																</div>
+															</PopupBase>
+															<button
+																class="ms-3 btn btn-light btn-sm"
+																onClick={ (e) => {
+																	e.preventDefault();
+																	researchTreeDisplay.set(true);
+																} }
+															>
+																<Locale k="UNIT_RESEARCH_TREE" />
+															</button>
+														</span> }
 
 														<hr class="my-2" />
 

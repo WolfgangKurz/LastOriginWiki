@@ -625,12 +625,14 @@ export const UnitClassDisplay: Record<ACTOR_CLASS, string> = {
 	[ACTOR_CLASS.LIGHT]: "경장",
 	[ACTOR_CLASS.AIR]: "기동",
 	[ACTOR_CLASS.HEAVY]: "중장",
+	[ACTOR_CLASS.__MAX__]: "",
 };
 
 export const UnitRoleDisplay: Record<ROLE_TYPE, string> = {
 	[ROLE_TYPE.ATTACKER]: "공격기",
 	[ROLE_TYPE.DEFENDER]: "보호기",
 	[ROLE_TYPE.SUPPORTER]: "지원기",
+	[ROLE_TYPE.__MAX__]: "",
 };
 
 export const TroopNameTable: Record<string, string> = {
@@ -725,7 +727,7 @@ export const SubStoryUnit: Record<string, string> = {
 
 export const PermanentEvents: string[] = ["Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6"];
 export const NewMapList: string[] = [];
-export const CurrentEvent = "Ev11";
+export const CurrentEvent = "";
 export const EventFrom = new Date(2022, 10 - 1, 4);
 export const EventTo = new Date(2022, 11 - 1, 7);
 

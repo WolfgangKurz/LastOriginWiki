@@ -1,13 +1,11 @@
 import { SkillEntity, SkillEntryData } from "@/types/DB/Skill";
 import { SKILL_ATTR, ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE } from "@/types/Enums";
 
-export interface EnemySkill extends SkillEntity {
-	// name: string;
-	// desc: string;
+export type EnemySkill = Omit<SkillEntity & {
 	passive: boolean;
 	type: SKILL_ATTR;
 	buff: SkillEntryData;
-}
+}, "buffs" | "values">;
 
 export interface Enemy {
 	id: string;

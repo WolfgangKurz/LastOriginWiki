@@ -11,8 +11,8 @@ export interface SortieCostBody {
 }
 export type SortieCostType = {
 	[key in ACTOR_GRADE]: {
-		[key in ACTOR_CLASS]: {
-			[key in ROLE_TYPE]: SortieCostBody;
+		[key in Exclude<ACTOR_CLASS, ACTOR_CLASS.__MAX__>]: {
+			[key in Exclude<ROLE_TYPE, ROLE_TYPE.__MAX__>]: SortieCostBody;
 		};
 	};
 };

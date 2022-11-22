@@ -104,7 +104,6 @@ export function GetSkillDescription (content: string, slot: string, values: Valu
 				}
 
 				const pp = p.replace(/param="([^"]+)"/g, (p0, p1) => {
-					console.log(p0);
 					const reg = /^\$([0-9]+)(:([PpNn]))?$/;
 					if (reg.test(p1)) {
 						const m = reg.exec(p1)!;

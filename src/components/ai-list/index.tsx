@@ -352,7 +352,6 @@ function parseAI (ai: string): ParsedAI[] {
 interface AIListProps {
 	enemy: boolean;
 	aiKey: string;
-	skills: SkillEntity[];
 }
 
 const AIList: FunctionalComponent<AIListProps> = (props) => {

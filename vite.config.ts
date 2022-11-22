@@ -162,8 +162,14 @@ export default ({ mode }) => {
 						if (id.includes("/node_modules/preact-transition")) return "vendor.transition";
 						if (id.includes("/node_modules/html2canvas/")) return "vendor.html2canvas";
 						if (id.includes("/node_modules/bootstrap")) return "vendor.bootstrap";
-						if (id.includes("/node_modules/react")) return "vendor.ext";
+						if (id.includes("/node_modules/react")) return "vendor.react";
 						if (id.includes("/node_modules/@esotericsoftware/")) return "vendor.spine";
+						if (id.includes("/node_modules/@popperjs/")) return "vendor.popperjs";
+						if (id.includes("/node_modules/graphlib/")) return "vendor.graphlib";
+						if (id.includes("/node_modules/lodash/")) return "vendor.lodash";
+						if (id.includes("/node_modules/mermaid/")) return "vendor.mermaid";
+						if (id.includes("/node_modules/dagre")) return "vendor.mermaid.dagre";
+						if (id.includes("/node_modules/d3")) return "vendor.mermaid.d3";
 						if (id.includes("/node_modules/")) return "vendor";
 
 						// components/bootstrap-icon/es/*
@@ -171,7 +177,8 @@ export default ({ mode }) => {
 							const _ = "/components/bootstrap-icon/es/";
 							const idx = id.indexOf(_) + _.length;
 							const name = id.substring(idx)[0];
-							return `components.bootstrap.icon.${name}`;
+							// return `components.bootstrap.icon.${name}`;
+							return `cbi.${name}`;
 						}
 
 						// types & libs & loader hash -> base
@@ -206,21 +213,14 @@ export default ({ mode }) => {
 						// // routes
 						if (id.includes("/src/routes/changelog/changelog/")) {
 							const y = id.replace(/.*\/src\/routes\/changelog\/changelog\/([0-9]+).*/g, "$1");
-							return `routes.changelog.changelog.${y}`;
+							return `routes.changelog.${y}`;
 						}
 						if (id.includes("/src/routes/changelog/")) return "routes.changelog";
 
-						if (id.includes("/src/routes/bgm/")) return "routes.bgm";
-						if (id.includes("/src/routes/calc/")) return "routes.calc";
-						if (id.includes("/src/routes/enemies/")) return "routes.enemy";
-						if (id.includes("/src/routes/equips/")) return "routes.equip";
-						if (id.includes("/src/routes/eternalwar/")) return "routes.ew";
-						if (id.includes("/src/routes/facilities/")) return "routes.facility";
-						if (id.includes("/src/routes/roguelike/")) return "routes.roguelike";
-						if (id.includes("/src/routes/simulator/")) return "routes.simulator";
-						if (id.includes("/src/routes/units/")) return "routes.unit";
-						if (id.includes("/src/routes/worlds/")) return "routes.worlds";
-						if (id.includes("/src/routes/")) return "routes";
+						if (id.includes("/src/routes/")) {
+							const y = id.replace(/.*\/src\/routes\/([^/]+)\/?.*/g, "$1");
+							return `routes.${y}`;
+						}
 					},
 				},
 			},

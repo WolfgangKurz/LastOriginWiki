@@ -3426,6 +3426,7 @@
     "icon": "P.SelfDefBuff",
     "target": "team",
     "delayed": false,
+    "leastGrade": 3,
     "buffs": {
       "index": [
         0,
@@ -3708,13 +3709,17 @@
             },
             {
               "key": "Effect_AGS_Goltarion_N_35",
-              "on": "attack",
+              "on": "attack_success",
               "if": [
                 {
-                  "in_squad": [
-                    "Char_DS_Baekto_N",
-                    "Char_DS_MoMo_N"
-                  ]
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_AGS_Goltarion_N_52",
+                      "Effect_AGS_Goltarion_N_53"
+                    ],
+                    "attr": 6
+                  }
                 },
                 false
               ],
@@ -3760,7 +3765,7 @@
                   "overlap": 4
                 }
               ],
-              "maxStack": 1
+              "maxStack": 0
             }
           ]
         }
@@ -3848,6 +3853,7 @@
     "icon": "P.TeamDefBuff",
     "target": "team",
     "delayed": false,
+    "leastGrade": 4,
     "buffs": {
       "index": [
         0,
@@ -5427,6 +5433,7 @@
     "icon": "P.SelfAtkBuff",
     "target": "team",
     "delayed": false,
+    "leastGrade": 5,
     "buffs": {
       "index": [
         0,

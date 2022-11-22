@@ -1,19 +1,7 @@
 import { BuffStat } from "@/types/Buffs";
-import { NUM_OUTPUTTYPE, SKILL_ATTR } from "@/types/Enums";
+import { ACTOR_GRADE, NUM_OUTPUTTYPE, SKILL_ATTR } from "@/types/Enums";
 
 /* eslint-disable camelcase */
-export interface RawSkillEntity {
-	key: string;
-	// name: string;
-	icon: string;
-	type: SKILL_ATTR;
-	target: "enemy" | "team";
-	buffs: {
-		index: number[];
-		data: SkillEntryData[];
-	};
-	// desc: string[];
-}
 export interface SkillSummonInfo {
 	char: string;
 	lv: number;
@@ -54,6 +42,8 @@ export interface SkillValueData {
 	};
 }
 export interface SkillEntity {
+	leastGrade?: ACTOR_GRADE;
+
 	key: string;
 	// name: string;
 	icon: string;

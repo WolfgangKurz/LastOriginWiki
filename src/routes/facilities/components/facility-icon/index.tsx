@@ -28,7 +28,7 @@ const FacilityIcon: FunctionalComponent<FacilityIconProps> = (props) => {
 	})();
 
 	return <div class="facility-icon">
-		<svg viewBox={ `0 0 ${230 * props.facility.size} 244` } style="max-height: 244px">
+		<svg viewBox={ `0 0 ${230 * props.facility.size} 244` } data-size={ props.facility.size }>
 			<image xlinkHref={ `${AssetsRoot}/${imageExt}/facility/${props.facility.image}.${imageExt}` } x="0" y={ -244 * step } />
 		</svg>
 		<span class="facility-size" data-size={ props.facility.size } />

@@ -68,6 +68,14 @@ const Home: FunctionalComponent = () => {
 					</div>
 				</Link>
 				: <></> }
+			<Link href="/worlds/Story/10" class="text-dark" style={ { textDecoration: "none" } }>
+				<img
+					src={ `${AssetsRoot}/world/banner/Main10.png` }
+					class="mb-1"
+					height="120"
+					style={ { verticalAlign: "middle" } }
+				/>
+			</Link>
 		</div>
 
 		<h2>
