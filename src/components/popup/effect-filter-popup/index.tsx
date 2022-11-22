@@ -22,7 +22,7 @@ interface EffectFilterPopupProps {
 const EffectFilterPopup: FunctionalComponent<EffectFilterPopupProps> = (props) => {
 	const popupDisplay = objState<boolean>(false);
 
-	const EffectGroupNames: Record<string, preact.VNode> = {
+	const EffectGroupNames: Record<BuffEffectListGroupKeys, preact.VNode> = {
 		stats: <Locale k="BUFF_GROUP_STATS" />,
 		damageAdd: <Locale k="BUFF_GROUP_DMG_UP" />,
 		damageReduce: <Locale k="BUFF_GROUP_DMG_REDUCE" />,
@@ -33,7 +33,7 @@ const EffectFilterPopup: FunctionalComponent<EffectFilterPopupProps> = (props) =
 		damage: <Locale k="BUFF_GROUP_DMG" />,
 		etcBuff: <Locale k="BUFF_GROUP_ETC_BUFF" />,
 		etcDebuff: <Locale k="BUFF_GROUP_ETC_DEBUFF" />,
-	} as Record<BuffEffectListGroupKeys, preact.VNode>;
+	};
 
 	function Fill (value: boolean): void {
 		const list: EffectFilterListType = [];
