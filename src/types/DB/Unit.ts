@@ -1,5 +1,5 @@
 import EntitySource from "@/libs/EntitySource";
-import { UnitDialogueDataType } from "@/types/DB/Dialogue";
+import { UnitDialogueAudioType, UnitDialogueDataType } from "@/types/DB/Dialogue";
 import { MapWaveDrop } from "@/types/DB/Map";
 import { SkillGroup } from "@/types/DB/Skill";
 import { UnitStats } from "@/types/DB/UnitStats";
@@ -138,6 +138,8 @@ export interface UnitCost {
  */
 export type UnitSpecChart = [number, number, number, number, number, number];
 
+export type UnitCV = Partial<Record<number | "M", Record<UnitDialogueAudioType, string>>>;
+
 export interface Unit {
 	id: number;
 	uid: string;
@@ -184,6 +186,7 @@ export interface Unit {
 
 	stat: UnitStats[];
 	chart: UnitSpecChart;
+	cv: UnitCV;
 
 	skills: Partial<SkillGroup>;
 	dialogue: UnitDialogueDataType;
@@ -239,6 +242,7 @@ export namespace Unit {
 
 		stat: [],
 		chart: [0, 0, 0, 0, 0, 0],
+		cv: {},
 
 		source: [],
 		cost: undefined,

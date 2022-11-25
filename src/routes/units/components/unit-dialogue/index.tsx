@@ -162,6 +162,12 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 
 	const collapseId = UniqueID("unit-dialogue-");
 
+	const cv: string | undefined = props.voice.sid === null
+		? voice.isMarriage
+			? unit.cv.M && unit.cv.M[props.audio]
+			: unit.cv[""] && unit.cv[""][props.audio]
+		: unit.cv[props.voice.sid] && unit.cv[props.voice.sid]![props.audio];
+
 	return IsVoiceAvailable
 		? <div class="card mt-2 text-start" lang={ props.lang }>
 			<div
@@ -190,10 +196,17 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 						: <></>
 					}
 					{ IsMissing
-						? <span class="badge bg-secondary"><Locale k="UNIT_DIALOGUE_EMPTY" /></span>
+						? <span class="badge bg-secondary me-2"><Locale k="UNIT_DIALOGUE_EMPTY" /></span>
 						: IsPartial
-							? <span class="badge bg-warning text-dark"><Locale k="UNIT_DIALOGUE_MISSING" /></span>
+							? <span class="badge bg-warning text-dark me-2"><Locale k="UNIT_DIALOGUE_MISSING" /></span>
 							: <></>
+					}
+					{ cv
+						? <span class="badge bg-success me-2">
+							<strong class="me-2">CV</strong>
+							{ cv }
+						</span>
+						: <></>
 					}
 				</div>
 			</div>

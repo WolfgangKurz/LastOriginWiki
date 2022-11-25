@@ -8,6 +8,14 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11951" date="2022-11-26"
+		new={ <>
+			<li>
+				일부 전투원의 대사 탭에 성우 정보가 추가되었습니다.<br />
+				현재는 일어(日本語 N, 日本語 R) 성우 일부만 추가되었습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11949" date="2022-11-22"
 		update={ <>
 			<li>전투원 <BY>토미 워커</BY>의 SS 승급 정보가 추가되었습니다.</li>
