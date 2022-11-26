@@ -8,6 +8,11 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11954" date="2022-11-26"
+		bugfix={ <>
+			<li>전투원의 능력 차트가 올바르지 않게 표시되던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11952" date="2022-11-26"
 		bugfix={ <>
 			<li>일부 전투원의 페이지가 열리지 않는 문제를 수정했습니다.</li>

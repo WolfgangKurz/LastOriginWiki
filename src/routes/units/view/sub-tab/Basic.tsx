@@ -142,7 +142,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 								id: "_a",
 								afterDraw (chart, args, options) {
 									const ctx = chart.ctx;
-									const box = chart.scales.radar;
+									const box = chart.scales.r;
 
 									const _font = chart.options.font || {};
 									const font = `11px ${_font.family || "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif"}`;
@@ -189,7 +189,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 									legend: { display: false },
 								},
 								scales: {
-									radar: {
+									r: {
 										min: 0,
 										max: 10,
 										ticks: { display: false },
@@ -198,7 +198,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 										pointLabels: {
 											font: { size: 10 },
 											color: "transparent",
-										}
+										},
 									},
 								},
 							} }
