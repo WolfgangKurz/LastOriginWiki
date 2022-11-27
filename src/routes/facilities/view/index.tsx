@@ -297,7 +297,7 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 
 				<div class="card">
 					<div class="card-header">
-						<Locale k={ `FACILITY_${facility.uid}` } />
+						<Locale plain k={ `FACILITY_${facility.uid}` } />
 					</div>
 					<div class="card-body">
 						<FacilityIcon facility={ facility } level={ level.value } />

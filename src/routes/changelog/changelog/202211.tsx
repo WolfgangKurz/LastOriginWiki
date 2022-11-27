@@ -8,6 +8,11 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11957" date="2022-11-27"
+		bugfix={ <>
+			<li>일부 언어에서 설비정보 페이지가 올바르지 않게 표시되는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11955" date="2022-11-26"
 		update={ <>
 			<li>일부 한국 성우 정보가 추가되었습니다.</li>
