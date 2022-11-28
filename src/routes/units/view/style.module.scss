@@ -36,11 +36,50 @@
 	text-align: left;
 	word-break: keep-all;
 	white-space: pre-line;
+
+	background-color: $dark;
+	background-image: radial-gradient($dark, darken($dark, 6%));
+
+	> div.IntroduceVoice {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		margin: -0.5em;
+		margin-top: 1em;
+		padding: 0.5em;
+		border-radius: 0.5em;
+		background-color: rgba($black, 0.5);
+
+		> div {
+			margin-bottom: 0.5em;
+			width: auto;
+		}
+		> audio {
+			flex: 1;
+			border-radius: 0.375em;
+		}
+
+		@include media-breakpoint-up("xxl") {
+			flex-direction: row;
+
+			> div {
+				margin-bottom: 0;
+			}
+			> audio {
+				margin-left: 0.5em;
+			}
+		}
+	}
 }
 
 .SpecChartWrapper {
 	// display: inline-block;
 	padding: 1em;
+
+	background-color: $dark;
+	background-image: radial-gradient($dark, darken($dark, 6%));
 
 	> canvas {
 		margin: auto;
@@ -85,7 +124,8 @@
 }
 
 .LvLimitTableWrapper {
-	table th, table td {
+	table th,
+	table td {
 		vertical-align: middle;
 	}
 

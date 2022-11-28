@@ -167,6 +167,7 @@ export interface Unit {
 	age: string;
 
 	marriageVoice: boolean;
+	introVoice: UnitDialogueAudioType[];
 	favor: {
 		present: number;
 		clear: number;
@@ -227,6 +228,7 @@ export namespace Unit {
 		age: "",
 
 		marriageVoice: false,
+		introVoice: [],
 		favor: {
 			present: 0,
 			clear: 0,
