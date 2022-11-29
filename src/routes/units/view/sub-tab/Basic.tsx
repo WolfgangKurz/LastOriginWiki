@@ -141,22 +141,22 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 					{ unit.introVoice.length > 0
 						? <div class={ style.IntroduceVoice }>
 							<div class="input-group">
-								<div class="input-group-text">
+								<div class="input-group-text text-sm">
 									<Icon icon="mic-fill" class="me-1" />
 								</div>
 
 								<button
-									class={ `btn btn-primary ${isActive(introAudioLocale.value === "ko")}` }
+									class={ `btn btn-sm btn-primary ${isActive(introAudioLocale.value === "ko")}` }
 									disabled={ !unit.introVoice.includes("ko") }
 									onClick={ (): void => introAudioLocale.set("ko") }
 								>한국어</button>
 								<button
-									class={ `btn btn-primary ${isActive(introAudioLocale.value === "jp")}` }
+									class={ `btn btn-sm btn-primary ${isActive(introAudioLocale.value === "jp")}` }
 									disabled={ !unit.introVoice.includes("jp") }
 									onClick={ (): void => introAudioLocale.set("jp") }
 								>日本語 N</button>
 								<button
-									class={ `btn btn-primary ${isActive(introAudioLocale.value === "jpdmm")}` }
+									class={ `btn btn-sm btn-primary ${isActive(introAudioLocale.value === "jpdmm")}` }
 									disabled={ !unit.introVoice.includes("jpdmm") }
 									onClick={ (): void => introAudioLocale.set("jpdmm") }
 								>日本語 R</button>

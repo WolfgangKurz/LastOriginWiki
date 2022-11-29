@@ -8,6 +8,12 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11968" date="2022-11-29"
+		bugfix={ <>
+			<li><BY>테일러 클로스컷</BY>의 스킬 정보 일부가 올바르게 표시되지 않는 문제를 수정했습니다.</li>
+			<li>일부 환경에서 전투원 소개글 오디오가 표시되지 않던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11964" date="2022-11-29"
 		new={ <>
 			<li>신규 전투원 <BY>테일러 클로스컷</BY>의 정보가 추가되었습니다.</li>
