@@ -45,14 +45,11 @@ import preact from "@preact/preset-vite";
 	}
 
 	const jsonDir = path.resolve(__dirname, "external", "json");
-	const locales = fs.readdirSync(jsonDir)
-		.filter(x => x !== "locale");
-
 	const list = (() => {
 		const baseDir = path.resolve(__dirname, "external", "json");
 		const globPath = path.join(baseDir, "**", "*.json");
 
-		return glob.sync(globPath)
+		return glob.sync(globPath.replace(/\\/g, "/"))
 			.filter(f => !f.endsWith("/buildtime.json"))
 			.map(f => {
 				const rel = path.relative(baseDir, f).replace(/\\/g, "/");
@@ -131,8 +128,8 @@ export default ({ mode }) => {
 		},
 		build: {
 			assetsDir: "build",
-			polyfillModulePreload: false,
 			reportCompressedSize: false,
+			modulePreload: { polyfill: false },
 
 			minify: isProd,
 			sourcemap: isDev,
