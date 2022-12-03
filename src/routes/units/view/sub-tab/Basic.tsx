@@ -15,10 +15,11 @@ import Decimal from "decimal.js";
 import { ACTOR_BODY_TYPE } from "@/types/Enums";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { Consumable } from "@/types/DB/Consumable";
+import { UnitDialogueAudioType } from "@/types/DB/Dialogue";
 
 import { objState } from "@/libs/State";
 import { AssetsRoot, ImageExtension, RarityDisplay } from "@/libs/Const";
-import { FormatNumber } from "@/libs/Functions";
+import { FormatNumber, isActive } from "@/libs/Functions";
 
 import { DBSourceConverter, GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
@@ -53,6 +54,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 	const selectedEquip = objState<FilterableEquip | null>(null);
 	const equipPopupDisplay = objState<boolean>(false);
 	const researchTreeDisplay = objState<boolean>(false);
+	const introAudioLocale = objState<UnitDialogueAudioType>(unit.introVoice[0] || "ko");
 
 	const imageExt = ImageExtension();
 
@@ -117,6 +119,8 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 		});
 	}
 
+	const introVoiceUrl = `${AssetsRoot}/audio/voice-${introAudioLocale.value}/${unit.uid}_Intro.mp3`;
+
 	return <div style={ { display: display ? "" : "none" } }>
 		{/* 번호, 소속, 등급, 승급, 유형, 역할 */ }
 
@@ -131,18 +135,47 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 
 		<div class="row pt-2">
 			<div class="col-12 col-lg-7">
-				<div class={ `card bg-dark text-light mx-3 mt-3 p-3 ${style.IntroduceText}` }>
+				<div class={ `card text-light mx-3 mt-3 p-3 ${style.IntroduceText}` }>
 					<Locale plain k={ `UNIT_INTRO_${unit.uid}` } />
+
+					{ unit.introVoice.length > 0
+						? <div class={ style.IntroduceVoice }>
+							<div class="input-group">
+								<div class="input-group-text text-sm">
+									<Icon icon="mic-fill" class="me-1" />
+								</div>
+
+								<button
+									class={ `btn btn-sm btn-primary ${isActive(introAudioLocale.value === "ko")}` }
+									disabled={ !unit.introVoice.includes("ko") }
+									onClick={ (): void => introAudioLocale.set("ko") }
+								>한국어</button>
+								<button
+									class={ `btn btn-sm btn-primary ${isActive(introAudioLocale.value === "jp")}` }
+									disabled={ !unit.introVoice.includes("jp") }
+									onClick={ (): void => introAudioLocale.set("jp") }
+								>日本語 N</button>
+								<button
+									class={ `btn btn-sm btn-primary ${isActive(introAudioLocale.value === "jpdmm")}` }
+									disabled={ !unit.introVoice.includes("jpdmm") }
+									onClick={ (): void => introAudioLocale.set("jpdmm") }
+								>日本語 R</button>
+							</div>
+
+							<audio src={ introVoiceUrl } type="audio/mp3" controls preload="none" volume="0.5" />
+						</div>
+						: <></>
+					}
 				</div>
 
 				<div class="my-4 mx-3">
-					<div class={ `card bg-dark ${style.SpecChartWrapper}` }>
+					<div class={ `card ${style.SpecChartWrapper}` }>
 						<Radar
 							plugins={ [{
 								id: "_a",
 								afterDraw (chart, args, options) {
 									const ctx = chart.ctx;
-									const box = chart.scales.radar;
+									const box = chart.scales.r;
 
 									const _font = chart.options.font || {};
 									const font = `11px ${_font.family || "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif"}`;
@@ -189,7 +222,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 									legend: { display: false },
 								},
 								scales: {
-									radar: {
+									r: {
 										min: 0,
 										max: 10,
 										ticks: { display: false },
@@ -198,7 +231,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 										pointLabels: {
 											font: { size: 10 },
 											color: "transparent",
-										}
+										},
 									},
 								},
 							} }

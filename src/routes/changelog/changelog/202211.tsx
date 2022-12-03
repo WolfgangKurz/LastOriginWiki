@@ -8,6 +8,50 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11968" date="2022-11-29"
+		bugfix={ <>
+			<li><BY>테일러 클로스컷</BY>의 스킬 정보 일부가 올바르게 표시되지 않는 문제를 수정했습니다.</li>
+			<li>일부 환경에서 전투원 소개글 오디오가 표시되지 않던 문제를 수정했습니다.</li>
+		</> }
+	/>
+	<ChangelogItem title="Build 11964" date="2022-11-29"
+		new={ <>
+			<li>신규 전투원 <BY>테일러 클로스컷</BY>의 정보가 추가되었습니다.</li>
+			<li>전투원 기본 정보의 소개 대사의 오디오가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+	/>
+	<ChangelogItem title="Build 11957" date="2022-11-27"
+		bugfix={ <>
+			<li>일부 언어에서 설비정보 페이지가 올바르지 않게 표시되는 문제를 수정했습니다.</li>
+		</> }
+	/>
+	<ChangelogItem title="Build 11955" date="2022-11-26"
+		update={ <>
+			<li>일부 한국 성우 정보가 추가되었습니다.</li>
+		</> }
+	/>
+	<ChangelogItem title="Build 11954" date="2022-11-26"
+		bugfix={ <>
+			<li>전투원의 능력 차트가 올바르지 않게 표시되던 문제를 수정했습니다.</li>
+		</> }
+	/>
+	<ChangelogItem title="Build 11952" date="2022-11-26"
+		bugfix={ <>
+			<li>일부 전투원의 페이지가 열리지 않는 문제를 수정했습니다.</li>
+			<li>일부 성우 정보가 표시되지 않는 문제를 수정했습니다.</li>
+		</> }
+	/>
+	<ChangelogItem title="Build 11951" date="2022-11-26"
+		new={ <>
+			<li>
+				일부 전투원의 대사 탭에 성우 정보가 추가되었습니다.<br />
+				현재는 일어(日本語 N, 日本語 R) 성우 일부만 추가되었습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11949" date="2022-11-22"
 		update={ <>
 			<li>전투원 <BY>토미 워커</BY>의 SS 승급 정보가 추가되었습니다.</li>

@@ -14,7 +14,7 @@ interface FacilityCardProps {
 const FacilityCard: FunctionalComponent<FacilityCardProps> = (props) => {
 	return <div class="card mb-4 facility-card">
 		<div class="card-header">
-			<Locale k={ `FACILITY_${props.facility.uid}` } />
+			<Locale plain k={ `FACILITY_${props.facility.uid}` } />
 		</div>
 		<div class="card-body">
 			<FacilityIcon facility={ props.facility } level={ 25 } />
