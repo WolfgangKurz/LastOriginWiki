@@ -37,6 +37,9 @@ export interface FilterableUnit {
 	// shortgroup: string;
 	// groupKey: string;
 
+	/** timestamp */
+	releaseDate: number;
+
 	craft: false | number;
 
 	buffs: FilterableUnitBuff[][]; // FilterableUnitBuffGroup[];
@@ -65,6 +68,7 @@ export namespace FilterableUnit {
 		group: "",
 		// shortgroup: "",
 
+		releaseDate: 0,
 		craft: false,
 
 		buffs: [],
@@ -82,7 +86,8 @@ export namespace FilterableUnit {
 		},
 		skins: {
 			G: false,
-			SD: false,
+			// SD: false,
+			Spine: false,
 			parts: 0,
 			stage: false,
 

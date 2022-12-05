@@ -13,7 +13,7 @@ import { IsAprilFool } from "@/libs/Const";
 
 import { GetJson, JsonLoaderCore } from "@/components/loader";
 import buildtime from "@/buildtime";
-import Store from "@/store";
+import OldStore from "@/oldstore";
 
 Extend();
 
@@ -24,7 +24,7 @@ JsonLoaderCore("!", buildtimeJson)
 		const currentBuildNo = buildtime.build;
 
 		if (latestBuildNo !== currentBuildNo)
-			Store.Actions().markAsRequireReload();
+			OldStore.Actions().markAsRequireReload();
 	});
 
 render(h(App, {}), document.getElementById("page")!);

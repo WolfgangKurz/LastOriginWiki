@@ -64,7 +64,7 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 
 		<div class="row row-cols-2 row-cols-sm-3 row-cols-md-5 row-cols-lg-6 row-cols-xl-8">
 			{ UnitList.map(unit => <div class="col mt-3">
-				<UnitCard unit={ unit } class={ !unit.group ? "invalid" : "" } shortName={ ShortName.value } />
+				<UnitCard unit={ unit } class={ `text-center ${!unit.group ? "invalid" : ""}` } shortName={ ShortName.value } />
 			</div>) }
 		</div>
 	</div>;

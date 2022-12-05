@@ -108,6 +108,9 @@ export interface UnitSkinEntity {
 	// /** Skin Item Description */
 	// desc: string;
 
+	/** timestamp */
+	releaseDate: number;
+
 	category: string[];
 }
 
@@ -156,6 +159,8 @@ export interface Unit {
 	group: string;
 	shortgroup: string;
 
+	/** timestamp */
+	releaseDate: number;
 	height: string;
 	weight: string;
 	weapon1: string;
@@ -217,6 +222,7 @@ export namespace Unit {
 
 		lvLimits: [],
 
+		releaseDate: 0,
 		height: "",
 		weight: "",
 		weapon1: "",
@@ -286,6 +292,7 @@ export namespace Unit {
 				FACETYPE.NONE,
 			],
 
+			releaseDate: 0,
 			category: [],
 			artist: "",
 			sid: 0,

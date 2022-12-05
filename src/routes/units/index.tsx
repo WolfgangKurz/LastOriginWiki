@@ -1,5 +1,6 @@
 import { FunctionalComponent } from "preact";
 
+import OldStore from "@/oldstore";
 import Store from "@/store";
 
 import { DecomposeHangulSyllable, isActive } from "@/libs/Functions";
@@ -33,7 +34,7 @@ const Units: FunctionalComponent = () => {
 	SetMeta(["twitter:image", "og:image"], null);
 	UpdateTitle(LocaleGet("MENU_UNITS"));
 
-	return Store.ConnectDirect(
+	return OldStore.ConnectDirect(
 		"Units",
 		({
 			Units: Filters,
@@ -61,7 +62,6 @@ const Units: FunctionalComponent = () => {
 			// toggleUnitsFilterRoguelikeSkill,
 			setUnitEffectFilters,
 
-			setUnitDisplayType: setDisplayType,
 			setUnitSearchText: setSearchText,
 		}) => <Loader json={ StaticDB.FilterableUnit } content={ ((): preact.VNode => {
 			const UnitEffects = ((): Record<string, EffectFilterListType> => {
@@ -133,7 +133,7 @@ const Units: FunctionalComponent = () => {
 				const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 				if (!FilterableUnitDB) return [];
 
-				if (Filters.DisplayType === "skin") return FilterableUnitDB;
+				if (Store.Units.DisplayType.value === "skin") return FilterableUnitDB;
 
 				const elem = new Array(2)
 					.fill(0)
@@ -213,40 +213,40 @@ const Units: FunctionalComponent = () => {
 					<div class={ `btn-group ${style.TabButtons}` }>
 						<button
 							type="button"
-							class={ `btn btn-outline-primary ${isActive(Filters.DisplayType === "table")}` }
-							onClick={ (): void => setDisplayType("table") }
+							class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "table")}` }
+							onClick={ (): void => void(Store.Units.DisplayType.value = "table") }
 						>
 							<Icon icon="table" class="me-1" />
 							<Locale k="UNITS_VIEW_TABLE" />
 						</button>
 						<button
 							type="button"
-							class={ `btn btn-outline-primary ${isActive(Filters.DisplayType === "list")}` }
-							onClick={ (): void => setDisplayType("list") }
+							class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "list")}` }
+							onClick={ (): void => void(Store.Units.DisplayType.value = "list") }
 						>
 							<Icon icon="grid-3x3-gap-fill" class="me-1" />
 							<Locale k="UNITS_VIEW_LIST" />
 						</button>
 						<button
 							type="button"
-							class={ `btn btn-outline-primary ${isActive(Filters.DisplayType === "group")}` }
-							onClick={ (): void => setDisplayType("group") }
+							class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "group")}` }
+							onClick={ (): void => void(Store.Units.DisplayType.value = "group") }
 						>
 							<Icon icon="tags-fill" class="me-1" />
 							<Locale k="UNITS_VIEW_GROUP" />
 						</button>
 						<button
 							type="button"
-							class={ `btn btn-outline-primary ${isActive(Filters.DisplayType === "skin")}` }
-							onClick={ (): void => setDisplayType("skin") }
+							class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "skin")}` }
+							onClick={ (): void => void(Store.Units.DisplayType.value = "skin") }
 						>
 							<Icon icon="tshirt" class="me-1" />
 							<Locale k="UNITS_VIEW_SKIN" />
 						</button>
 						<button
 							type="button"
-							class={ `btn btn-outline-primary ${isActive(Filters.DisplayType === "time")}` }
-							onClick={ (): void => setDisplayType("time") }
+							class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "time")}` }
+							onClick={ (): void => void(Store.Units.DisplayType.value = "time") }
 						>
 							<Icon icon="hammer" class="me-1" />
 							<Locale k="UNITS_VIEW_CREATIONTIME" />
@@ -254,7 +254,7 @@ const Units: FunctionalComponent = () => {
 					</div>
 				</div>
 
-				{ Filters.DisplayType !== "skin"
+				{ Store.Units.DisplayType.value !== "skin"
 					? <div class="card text-start mb-4">
 						<div class="card-body">
 							<div class="row mb-2">
@@ -507,11 +507,11 @@ const Units: FunctionalComponent = () => {
 					: <></>
 				}
 
-				{ Filters.DisplayType === "table" ? <UnitsTable list={ UnitList() } /> : <></> }
-				{ Filters.DisplayType === "list" ? <UnitsList list={ UnitList() } /> : <></> }
-				{ Filters.DisplayType === "group" ? <UnitsGroup list={ UnitList() } /> : <></> }
-				{ Filters.DisplayType === "skin" ? <UnitsSkin list={ UnitList() } /> : <></> }
-				{ Filters.DisplayType === "time" ? <UnitsTimetable list={ UnitList() } /> : <></> }
+				{ Store.Units.DisplayType.value === "table" ? <UnitsTable list={ UnitList() } /> : <></> }
+				{ Store.Units.DisplayType.value === "list" ? <UnitsList list={ UnitList() } /> : <></> }
+				{ Store.Units.DisplayType.value === "group" ? <UnitsGroup list={ UnitList() } /> : <></> }
+				{ Store.Units.DisplayType.value === "skin" ? <UnitsSkin list={ UnitList() } /> : <></> }
+				{ Store.Units.DisplayType.value === "time" ? <UnitsTimetable list={ UnitList() } /> : <></> }
 			</div>;
 		}) } />,
 	);

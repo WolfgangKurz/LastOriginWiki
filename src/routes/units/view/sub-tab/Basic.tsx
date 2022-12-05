@@ -19,7 +19,7 @@ import { UnitDialogueAudioType } from "@/types/DB/Dialogue";
 
 import { objState } from "@/libs/State";
 import { AssetsRoot, ImageExtension, RarityDisplay } from "@/libs/Const";
-import { FormatNumber, isActive } from "@/libs/Functions";
+import { FormatDate, FormatNumber, isActive } from "@/libs/Functions";
 
 import { DBSourceConverter, GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
@@ -258,6 +258,10 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 										<Locale k={ `UNIT_GROUP_${unit.group}` } />
 									</span>
 								</td>
+							</tr>
+							<tr>
+								<th class="bg-dark text-light"><Locale k="UNIT_VIEW_RELEASEDATE" /></th>
+								<td class="font-exo2">{ FormatDate(new Date(unit.releaseDate)) }</td>
 							</tr>
 							<tr>
 								<th class="bg-dark text-light"><Locale k="UNIT_VIEW_HEIGHT" /></th>

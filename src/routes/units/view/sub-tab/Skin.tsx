@@ -1,8 +1,10 @@
 import { FunctionComponent } from "preact";
+import { Link } from "preact-router";
 
 import { objState } from "@/libs/State";
 import { AssetsRoot } from "@/libs/Const";
-import { isActive } from "@/libs/Functions";
+import { FormatDate, isActive } from "@/libs/Functions";
+import { ParseDescriptionText } from "@/libs/FunctionsX";
 
 import Locale, { LocaleGet } from "@/components/locale";
 import Icon from "@/components/bootstrap-icon";
@@ -16,7 +18,6 @@ import UnitFace2 from "../../components/unit-face2";
 import { SubpageProps } from "..";
 
 import style from "../style.module.scss";
-import { ParseDescriptionText } from "@/libs/FunctionsX";
 
 const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList }) => {
 	const skin = SkinList[skinIndex.value];
@@ -31,6 +32,11 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 
 	const IsBlackBG = objState<boolean>(false);
 	const HideGroup = objState<boolean>(false);
+
+	const SkinLink = ((): string => {
+		const loc = window.location;
+		return `${loc.origin}/units/${unit.uid}/s${skin.sid || 0}`;
+	})();
 
 	function compileArtist (artist: string): preact.ComponentChildren {
 		return artist.split("\n")
@@ -109,7 +115,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 		</div>
 
 		{ skin.sid && !skin.isPro
-			? <div class={ `card mb-2 mt-3 ${style.SkinNameDesc}` }>
+			? <div class={ `card mt-3 ${style.SkinNameDesc}` }>
 				<div class="card-header">
 					<Locale plain k={ `CONSUMABLE_Skin_${unit.uid}_${ssid}` } />
 				</div>
@@ -119,61 +125,85 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 			</div>
 			: <></>
 		}
+
+		<div class="mt-2">
+			<Link href={ SkinLink }>
+				<small>{ SkinLink }</small>
+			</Link>
+		</div>
+
 		<div class="row pt-3">
 			<div class="col-12 col-lg-auto">
-				<div class="p-2 d-inline-block d-lg-block">
-					<UnitFace uid={ unit.uid } skin={ SkinList[skinIndex.value].sid || 0 } size="88" />
-				</div>
+				<div class="row gx-0">
+					<div class="col-auto me-2">
+						<div class="pb-2">
+							<UnitFace uid={ unit.uid } skin={ SkinList[skinIndex.value].sid || 0 } size="88" />
+						</div>
+						<div class="pb-2">
+							<UnitFace
+								uid={ unit.uid }
+								skin={ SkinList[skinIndex.value].sid || 0 }
+								sd
+								size="88"
+							/>
+						</div>
+					</div>
 
-				<div class="p-2 d-inline-block d-lg-block">
-					<UnitFace
-						uid={ unit.uid }
-						skin={ SkinList[skinIndex.value].sid || 0 }
-						sd
-						size="88"
-					/>
-				</div>
-
-				<div class="p-2">
-					{ categories.length > 0
-						? <div class="alert alert-secondary py-2">
-							<div class="mb-1">
-								<Locale k="UNIT_VIEW_SKIN_CATEGORY" />
-							</div>
-							{ categories.length > 0
-								? <div class="mb-1">
-									{ categories.map(x => <span class="badge bg-success me-1">
-										<Locale plain k={ `SKIN_CATEGORY_${x}` } />
-									</span>) }
+					<div class="col">
+						{ categories.length > 0
+							? <div class="alert alert-secondary py-2">
+								<div class="mb-1">
+									<Locale k="UNIT_VIEW_SKIN_CATEGORY" />
 								</div>
-								: <></>
-							}
-						</div>
-						: <></>
-					}
-
-					{ skin.artist
-						? <div class="alert alert-primary py-2">
-							<div class="mb-1">
-								<Locale k="UNIT_VIEW_ILLUSTRATOR" />
+								{ categories.length > 0
+									? <div class="mb-1">
+										{ categories.map(x => <span class="badge bg-success me-1">
+											<Locale plain k={ `SKIN_CATEGORY_${x}` } />
+										</span>) }
+									</div>
+									: <></>
+								}
 							</div>
-							{
-								skin.artist === "???"
-									? <BootstrapTooltip content={ <Locale k="UNIT_VIEW_ILLUSTRATOR_HIDDEN_TOOLTIP" /> }>
-										<span class={ `badge ${style.IllustratorHidden}` }>
-											<Locale k="UNIT_VIEW_ILLUSTRATOR_HIDDEN" />
+							: <></>
+						}
 
-											<Icon class="ms-1" icon="question-circle-fill" />
-										</span>
-									</BootstrapTooltip>
-									: compileArtist(skin.artist)
-							}
-						</div>
-						: <></>
-					}
+						{ skin.artist
+							? <div class="alert alert-primary py-2">
+								<div class="mb-1">
+									<Locale k="UNIT_VIEW_ILLUSTRATOR" />
+								</div>
+								{
+									skin.artist === "???"
+										? <BootstrapTooltip content={ <Locale k="UNIT_VIEW_ILLUSTRATOR_HIDDEN_TOOLTIP" /> }>
+											<span class={ `badge ${style.IllustratorHidden}` }>
+												<Locale k="UNIT_VIEW_ILLUSTRATOR_HIDDEN" />
+
+												<Icon class="ms-1" icon="question-circle-fill" />
+											</span>
+										</BootstrapTooltip>
+										: compileArtist(skin.artist)
+								}
+							</div>
+							: <></>
+						}
+
+						{ skin.releaseDate
+							? <div class="alert alert-warning text-dark py-2">
+								<div class="mb-1">
+									<Locale k="UNIT_VIEW_RELEASEDATE" />
+								</div>
+								<div class="mb-1">
+									<span class="badge bg-warning text-dark">
+										{ FormatDate(new Date(skin.releaseDate)) }
+									</span>
+								</div>
+							</div>
+							: <></>
+						}
+					</div>
 				</div>
 
-				<ul class="list-group text-start">
+				<ul class="list-group text-start mb-2">
 					<li class="list-group-item">
 						<div class="form-check form-switch">
 							<label class="form-check-label">
@@ -224,7 +254,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 					/>) }
 				</div>
 			</div>
-		</div>
-	</div>;
+		</div >
+	</div >;
 };
 export default SkinTab;
