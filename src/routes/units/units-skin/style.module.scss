@@ -101,6 +101,15 @@ a.SkinCol {
 			border-bottom: 1px solid $dark;
 		}
 	}
+
+	@include media-breakpoint-down("md") {
+		grid-template-columns: 1fr;
+		grid-auto-rows: auto auto;
+
+		.ArtistBody {
+			border-left: 1px solid $dark;
+		}
+	}
 }
 .ReleaseDateTimeline {
 	text-align: left;

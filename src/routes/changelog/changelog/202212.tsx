@@ -8,7 +8,7 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB, BG } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 11974" date="2022-12-06"
+	<ChangelogItem title="Build 11975" date="2022-12-06"
 		new={ <>
 			<li>전투원 및 스킨의 출시일 정보가 추가되었습니다.</li>
 			<li>

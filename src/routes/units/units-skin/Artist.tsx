@@ -90,7 +90,7 @@ const Artist: FunctionalComponent<UnitsListProps> = (props) => {
 								{ FormatNumber(units) } units
 							</div>
 						</div>
-						<div class={ `col p-2 ${style.ArtistBody}` }>
+						<div class={ `p-2 ${style.ArtistBody}` }>
 							{ skins[artist].map(skin => <div>
 								<BootstrapTooltip
 									placement="top"
