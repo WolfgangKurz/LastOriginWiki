@@ -8,6 +8,18 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB, BG } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11977" date="2022-12-06"
+		bugfix={ <>
+			<li>일부 스킨의 출시일이 지정되지 않아 전투원 출시일로 표시되던 점을 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li>
+				<BY>전투원정보</BY>의 <BY>스킨 보기</BY>의 <BG>작가</BG>, <BG>출시일</BG> 표시 방식에
+				<BB>전투원 출시도 표시</BB>가 삭제되고
+				<BB>전투원 출시 표시</BB>, <BB>스킨 출시 표시</BB>로 변경되었습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11975" date="2022-12-06"
 		new={ <>
 			<li>전투원 및 스킨의 출시일 정보가 추가되었습니다.</li>

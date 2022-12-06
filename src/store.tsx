@@ -8,6 +8,15 @@ const Store = {
 
 		Skins: {
 			Tab: signal<"" | "artist" | "releaseDate">(""),
+
+			Artist: {
+				DisplayUnitRelease: signal(true),
+				DisplaySkinRelease: signal(true),
+			},
+			ReleaseDate: {
+				DisplayUnitRelease: signal(true),
+				DisplaySkinRelease: signal(true),
+			},
 		},
 	},
 };

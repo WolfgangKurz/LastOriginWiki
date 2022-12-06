@@ -4,13 +4,15 @@ import { Link } from "preact-router";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
+import Store from "@/store";
+
 import { UnitSkinEntity } from "@/types/DB/Unit";
 import { UnitsListProps } from "..";
 
-import { FormatDate } from "@/libs/Functions";
-import { objState } from "@/libs/State";
+import { FormatDate, isActive } from "@/libs/Functions";
 
 import Locale from "@/components/locale";
+import Icon from "@/components/bootstrap-icon";
 import UnitFace from "@/components/unit-face";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 
@@ -21,7 +23,8 @@ interface SkinData extends UnitSkinEntity {
 }
 
 const ReleaseDate: FunctionalComponent<UnitsListProps> = (props) => {
-	const displayUnitRelease = objState(true);
+	const displayUnitRelease = Store.Units.Skins.ReleaseDate.DisplayUnitRelease;
+	const displaySkinRelease = Store.Units.Skins.ReleaseDate.DisplaySkinRelease;
 
 	const skins = (() => {
 		const skins: SkinData[] = [];
@@ -43,6 +46,7 @@ const ReleaseDate: FunctionalComponent<UnitsListProps> = (props) => {
 		skins
 			.map(s => {
 				if (!displayUnitRelease.value && !s.releaseDate) return null!;
+				if (!displaySkinRelease.value && s.releaseDate) return null!;
 
 				const unit = list.find(u => u.uid === s.uid)!;
 				return [s.releaseDate || unit.releaseDate, s] as [number, SkinData];
@@ -75,16 +79,27 @@ const ReleaseDate: FunctionalComponent<UnitsListProps> = (props) => {
 	}
 
 	return <div class="container mb-3">
-		<div class="form-check form-switch mb-3">
-			<label class="form-check-label">
-				<input
-					class="form-check-input"
-					type="checkbox"
-					checked={ displayUnitRelease.value }
-					onClick={ (): void => displayUnitRelease.set(!displayUnitRelease.value) }
-				/>
+		<div class="btn-group mb-3">
+			<button
+				class={ `btn btn-outline-dark ${isActive(displayUnitRelease.value)}` }
+				onClick={ e => {
+					e.preventDefault();
+					displayUnitRelease.value = !displayUnitRelease.value;
+				} }
+			>
+				<Icon class="me-1" icon="person-fill" />
 				<Locale k="UNIT_VIEW_SKIN_RELEASEDATE_DISPLAY_UNIT" />
-			</label>
+			</button>
+			<button
+				class={ `btn btn-outline-dark ${isActive(displaySkinRelease.value)}` }
+				onClick={ e => {
+					e.preventDefault();
+					displaySkinRelease.value = !displaySkinRelease.value;
+				} }
+			>
+				<Icon class="me-1" icon="tshirt" />
+				<Locale k="UNIT_VIEW_SKIN_RELEASEDATE_DISPLAY_SKIN" />
+			</button>
 		</div>
 
 		<div class={ style.ReleaseDateTimeline }>

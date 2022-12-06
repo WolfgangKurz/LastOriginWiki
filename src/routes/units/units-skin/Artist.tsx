@@ -1,12 +1,15 @@
 import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 
+import Store from "@/store";
+
 import { UnitSkinEntity } from "@/types/DB/Unit";
 import { UnitsListProps } from "..";
 
-import { FormatNumber } from "@/libs/Functions";
+import { FormatNumber, isActive } from "@/libs/Functions";
 
 import Locale from "@/components/locale";
+import Icon from "@/components/bootstrap-icon";
 import UnitFace from "@/components/unit-face";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 
@@ -17,6 +20,11 @@ interface SkinData extends UnitSkinEntity {
 }
 
 const Artist: FunctionalComponent<UnitsListProps> = (props) => {
+	const displayUnitRelease = Store.Units.Skins.Artist.DisplayUnitRelease;
+	const displaySkinRelease = Store.Units.Skins.Artist.DisplaySkinRelease;
+
+	const unitCount: Record<string, number> = {};
+	const skinCount: Record<string, number> = {};
 	const skins = (() => {
 		const skins: SkinData[] = [];
 		const list = props.list;
@@ -53,8 +61,13 @@ const Artist: FunctionalComponent<UnitsListProps> = (props) => {
 					} else
 						target = a;
 
-					if (!(target in ret)) ret[target] = [];
-					ret[target].push(s);
+					if ((displayUnitRelease.value && !s.sid) || (displaySkinRelease.value && s.sid)) {
+						if (!(target in ret)) ret[target] = [];
+						ret[target].push(s);
+					}
+
+					if (!s.sid) unitCount[target] = (unitCount[target] || 0) + 1;
+					if (s.sid) skinCount[target] = (skinCount[target] || 0) + 1;
 				});
 		});
 
@@ -72,11 +85,34 @@ const Artist: FunctionalComponent<UnitsListProps> = (props) => {
 	}
 
 	return <div class="container mb-3">
+		<div class="btn-group mb-3">
+			<button
+				class={ `btn btn-outline-dark ${isActive(displayUnitRelease.value)}` }
+				onClick={ e => {
+					e.preventDefault();
+					displayUnitRelease.value = !displayUnitRelease.value;
+				} }
+			>
+				<Icon class="me-1" icon="person-fill" />
+				<Locale k="UNIT_VIEW_SKIN_RELEASEDATE_DISPLAY_UNIT" />
+			</button>
+			<button
+				class={ `btn btn-outline-dark ${isActive(displaySkinRelease.value)}` }
+				onClick={ e => {
+					e.preventDefault();
+					displaySkinRelease.value = !displaySkinRelease.value;
+				} }
+			>
+				<Icon class="me-1" icon="tshirt" />
+				<Locale k="UNIT_VIEW_SKIN_RELEASEDATE_DISPLAY_SKIN" />
+			</button>
+		</div>
+
 		<div class={ style.ArtistGroup }>
 			{ Object.keys(skins)
 				.sort((a, b) => skins[b].length - skins[a].length)
 				.map(artist => {
-					const units = skins[artist].filter(x => !x.sid).length;
+					const drawings = (skinCount[artist] || 0) + (unitCount[artist] || 0);
 
 					return <>
 						<div class={ `bg-dark text-light ${style.ArtistHeader}` }>
@@ -84,10 +120,10 @@ const Artist: FunctionalComponent<UnitsListProps> = (props) => {
 								{ CompileArtist(artist) }
 							</div>
 							<div class={ style.ArtistSkins }>
-								{ FormatNumber(skins[artist].length) } drawings
+								{ FormatNumber(drawings) } drawings
 							</div>
-							<div class={ style.ArtistSkins } data-size={ units }>
-								{ FormatNumber(units) } units
+							<div class={ style.ArtistSkins } data-size={ unitCount[artist] }>
+								{ FormatNumber(unitCount[artist] || 0) } units
 							</div>
 						</div>
 						<div class={ `p-2 ${style.ArtistBody}` }>
@@ -119,6 +155,10 @@ const Artist: FunctionalComponent<UnitsListProps> = (props) => {
 				})
 			}
 		</div>
+		{ Object.keys(skins).length === 0
+			? <div class="p-5 text-secondary text-center">...</div>
+			: <></>
+		}
 	</div>;
 };
 export default Artist;
