@@ -2886,7 +2886,7 @@ export default {
 		"filterable.enemy": "a3adc453",
 		"filterable.equip": "70c93ba4",
 		"filterable.facility": "16568438",
-		"filterable.unit": "f061a2d5",
+		"filterable.unit": "2be83f17",
 		"gacha": "6011c661",
 		"map": {
 			"Cha": "4bc9f11c",
@@ -3054,7 +3054,7 @@ export default {
 			"BR_RoyalArsenal": "52836acd",
 			"BR_Salamander": "e1d06707",
 			"BR_SandMan": "6d660130",
-			"BR_Scarabya": "f13db5ae",
+			"BR_Scarabya": "0db09ae5",
 			"BR_Scathy": "f7569f66",
 			"BR_Shirayuri": "0d929528",
 			"BR_Sirene": "162fed1d",
