@@ -8,6 +8,14 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB, BG } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11978" date="2022-12-06"
+		bugfix={ <>
+			<li>
+				<BY>전투원정보</BY>의 <BY>스킨 보기</BY>의 <BG>작가</BG>표시 방식에서
+				<BR>Corgi</BR> 작가가 <BR>CORGI</BR>로 분리되어 표시되던 문제를 수정했습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11977" date="2022-12-06"
 		bugfix={ <>
 			<li>일부 스킨의 출시일이 지정되지 않아 전투원 출시일로 표시되던 점을 수정했습니다.</li>

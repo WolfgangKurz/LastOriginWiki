@@ -2886,7 +2886,7 @@ export default {
 		"filterable.enemy": "a3adc453",
 		"filterable.equip": "70c93ba4",
 		"filterable.facility": "16568438",
-		"filterable.unit": "9f895070",
+		"filterable.unit": "f061a2d5",
 		"gacha": "6011c661",
 		"map": {
 			"Cha": "4bc9f11c",
@@ -2944,7 +2944,7 @@ export default {
 			"SUMMON_SU_TrenchBomb_N": "f766e9c4"
 		},
 		"unit": {
-			"3P_Ajax": "5c33a57e",
+			"3P_Ajax": "97769fa0",
 			"3P_Alexandra": "1ae4fa93",
 			"3P_Alice": "ee5b4c68",
 			"3P_Amphitrite": "7356ce3b",
