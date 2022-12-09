@@ -4,6 +4,7 @@ export const StaticDB = {
 	FilterableEnemy: "filterable.enemy",
 	FilterableFacility: "filterable.facility",
 	EnemyGroup: "enemygroup",
+	BG: "bg",
 	Consumable: "consumable",
 	Gacha: "gacha",
 	Sticker: "sticker",

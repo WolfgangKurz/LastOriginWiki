@@ -8,6 +8,13 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB, BG } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11982" date="2022-12-10"
+		new={ <>
+			<li>
+				<BY>기타</BY>의 하위 메뉴에 <BY>BG</BY> 메뉴가 추가되었습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11979" date="2022-12-07"
 		bugfix={ <>
 			<li>

@@ -1399,6 +1399,7 @@ export default {
 		}
 	},
 	"korea": {
+		"bg": "43f6f4f0",
 		"consumable": "02b33f97",
 		"enemy": {
 			"AMG11_TU2": "deff24c0",
@@ -3148,9 +3149,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "82efc667",
-		"JP": "64b17047",
-		"KR": "5ccef0d6",
-		"TC": "3c86447b"
+		"EN": "4c6cb40f",
+		"JP": "4a646f7f",
+		"KR": "138e14cb",
+		"TC": "d2be5889"
 	}
 } as DBHashType;
