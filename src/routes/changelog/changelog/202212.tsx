@@ -8,6 +8,17 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB, BG } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11983" date="2022-12-13"
+		update={ <>
+			<li>
+				<BY>요정 마을의 아리아</BY> 이벤트가 상시로 전환되었습니다.
+			</li>
+			<li>
+				<BY>요정 마을의 아리아</BY> 이벤트의 일부 정보가 갱신되었습니다.
+			</li>
+			<li>일부 전투원의 스킬의 버프 정보가 갱신되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11982" date="2022-12-10"
 		new={ <>
 			<li>
