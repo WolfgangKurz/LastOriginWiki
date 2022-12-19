@@ -322,13 +322,13 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					case BUFFEFFECT_TYPE.STAGE_REMOVE_ALL_DEBUFF: // 100
 						return <Locale plain k="BUFFTYPE_OFF" />;
 					case BUFFEFFECT_TYPE.STAGE_PHYSICS_DAMAGE_APPLY: // 70
-						return <Locale plain k="BUFFTYPE_DMG_PHYSICS_BY_HP" />;
+						return <Locale plain k="BUFFTYPE_DMG_PHYSICS_BY_ATK" />;
 					case BUFFEFFECT_TYPE.STAGE_FIRE_DAMAGE_APPLY: // 71
-						return <Locale plain k="BUFFTYPE_DMG_FIRE_BY_HP" />;
+						return <Locale plain k="BUFFTYPE_DMG_FIRE_BY_ATK" />;
 					case BUFFEFFECT_TYPE.STAGE_ICE_DAMAGE_APPLY: // 72
-						return <Locale plain k="BUFFTYPE_DMG_ICE_BY_HP" />;
+						return <Locale plain k="BUFFTYPE_DMG_ICE_BY_ATK" />;
 					case BUFFEFFECT_TYPE.STAGE_LIGHTNING_DAMAGE_APPLY: // 73
-						return <Locale plain k="BUFFTYPE_DMG_THUNDER_BY_HP" />;
+						return <Locale plain k="BUFFTYPE_DMG_THUNDER_BY_ATK" />;
 					case BUFFEFFECT_TYPE.STAGE_PROVOKE: // 74
 						return <Locale plain k="BUFFTYPE_PROVOKE" />;
 					case BUFFEFFECT_TYPE.STAGE_BLOCK_ROW: // 75
@@ -1060,19 +1060,23 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			if ("elem" in stat.fixed_damage) {
 				switch (stat.fixed_damage.elem) {
 					case "fire":
-						return <Locale plain k={ isRatioValue(stat.fixed_damage.damage) ? "BUFFEFFECT_DOT_FIRE_RATIO" : "BUFFEFFECT_DOT_FIRE" } p={ [
-							nsignedValue(stat.fixed_damage.damage, level),
-							<ElemIcon elem={ stat.fixed_damage.elem } class="me-1 mb-0" />,
-						] } />;
+						return <Locale
+							plain
+							k={ isRatioValue(stat.fixed_damage.damage, "1", "") ? "BUFFEFFECT_DOT_FIRE_RATIO" : "BUFFEFFECT_DOT_FIRE" }
+							p={ [
+								nsignedValue(stat.fixed_damage.damage, level),
+								<ElemIcon elem={ stat.fixed_damage.elem } class="me-1 mb-0" />,
+							] }
+						/>;
 					case "ice":
-						return <Locale plain k={ isRatioValue(stat.fixed_damage.damage) ? "BUFFEFFECT_DOT_ICE_RATIO" : "BUFFEFFECT_DOT_ICE" } p={ [
+						return <Locale plain k={ isRatioValue(stat.fixed_damage.damage, "1", "") ? "BUFFEFFECT_DOT_ICE_RATIO" : "BUFFEFFECT_DOT_ICE" } p={ [
 							nsignedValue(stat.fixed_damage.damage, level),
 							<ElemIcon elem={ stat.fixed_damage.elem } class="me-1 mb-0" />,
 						] } />;
 					case "lightning":
 						return <Locale
 							plain
-							k={ isRatioValue(stat.fixed_damage.damage) ? "BUFFEFFECT_DOT_THUNDER_RATIO" : "BUFFEFFECT_DOT_THUNDER" }
+							k={ isRatioValue(stat.fixed_damage.damage, "1", "") ? "BUFFEFFECT_DOT_THUNDER_RATIO" : "BUFFEFFECT_DOT_THUNDER" }
 							p={ [
 								nsignedValue(stat.fixed_damage.damage, level),
 								<ElemIcon elem={ stat.fixed_damage.elem } class="me-1 mb-0" />,
@@ -1080,7 +1084,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						/>;
 				}
 			}
-			return <Locale plain k={ isRatioValue(stat.fixed_damage) ? "BUFFEFFECT_DOT_PHYSICS_RATIO" : "BUFFEFFECT_DOT_PHYSICS" } p={ [
+			return <Locale plain k={ isRatioValue(stat.fixed_damage, "1", "") ? "BUFFEFFECT_DOT_PHYSICS_RATIO" : "BUFFEFFECT_DOT_PHYSICS" } p={ [
 				nsignedValue(stat.fixed_damage, level),
 				<ElemIcon elem={ SKILL_ATTR.PHYSICS } class="me-1 mb-0" />,
 			] } />;

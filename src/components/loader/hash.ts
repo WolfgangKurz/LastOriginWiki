@@ -3070,7 +3070,7 @@ export default {
 			"BR_Valkyrie": "3f2bcb25",
 			"BR_Vargr": "259b4eac",
 			"BR_WarWolf": "2220e2d3",
-			"BR_Wraithy": "c28eb542",
+			"BR_Wraithy": "57767294",
 			"DS_Angel": "140ef346",
 			"DS_Arman": "969d72a9",
 			"DS_Atalanta": "b3db00bc",
