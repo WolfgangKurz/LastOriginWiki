@@ -8,6 +8,12 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB, BG } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11991" date="2022-12-20"
+		bugfix={ <>
+			<li>버프 보기에서 <BR>공격력 비례 지속 피해</BR> 버프가 비례 수치 없이 표시되던 점을 수정했습니다.</li>
+			<li>버프 보기에서 <BR>공격력 비례 속성 지속 피해</BR> 버프가 모두 화염 속성으로 표시되던 점을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11988" date="2022-12-20"
 		new={ <>
 			<li>전투원 <BY>화롯가의 포티아</BY>의 승급 정보가 추가되었습니다.</li>
