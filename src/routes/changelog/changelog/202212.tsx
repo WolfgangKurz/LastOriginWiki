@@ -8,7 +8,7 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB, BG } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 11987" date="2022-12-20"
+	<ChangelogItem title="Build 11988" date="2022-12-20"
 		new={ <>
 			<li>전투원 <BY>화롯가의 포티아</BY>의 승급 정보가 추가되었습니다.</li>
 			<li>전투원 <BY>트리아이나</BY>의 승급 정보가 추가되었습니다.</li>
@@ -16,6 +16,7 @@ const Changelog: FunctionalComponent = () => <>
 		</> }
 		update={ <>
 			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
+			<li>가챠 시뮬레이터 정보가 갱신되었습니다.</li>
 			<li>감자튀김이 조금 눅눅해졌습니다.</li>
 		</> }
 		skin={ <>
