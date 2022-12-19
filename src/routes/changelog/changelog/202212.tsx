@@ -8,6 +8,33 @@ import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB, BG } from "../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11987" date="2022-12-20"
+		new={ <>
+			<li>전투원 <BY>화롯가의 포티아</BY>의 승급 정보가 추가되었습니다.</li>
+			<li>전투원 <BY>트리아이나</BY>의 승급 정보가 추가되었습니다.</li>
+			<li>전투원 <BY>보속의 마리아</BY>의 승급 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
+			<li>감자튀김이 조금 눅눅해졌습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>보속의 마리아</BY>의 스킨 <BR>어린이들의 기쁨</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>레이시</BY>의 스킨 <BR>진짜 크리스마스</BR>의 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li>
+				전투원 <BY>엠피트리테</BY>, <BY>천아</BY>, <BY>T-20S 노움</BY>, <BY>AC-6 후사르</BY>, <BY>멸망의 메이</BY>,
+				<BY>B-11 나이트 앤젤</BY>, <BY>오렌지에이드</BY>, <BY>살라시아</BY>, <BY>B-7 스트라토 엔젤</BY>의
+				일본어 오디오 파일이 추가되었습니다.
+			</li>
+			<li><span class="badge bg-light text-dark">KST 2022-12-20 01:39:36</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11983" date="2022-12-13"
 		update={ <>
 			<li>
