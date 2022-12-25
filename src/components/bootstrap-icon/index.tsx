@@ -123,7 +123,7 @@ export type IconList = "alarm" | "alarm-fill" | "align-bottom" | "align-center" 
 	"exclamation-diamond" | "exclamation-diamond-fill" | "exclamation-octagon" |
 	"exclamation-octagon-fill" | "exclamation-square" | "exclamation-square-fill" |
 	"exclamation-triangle" | "exclamation-triangle-fill" | "exclude" | "eye" | "eye-fill" |
-	"eye-slash" | "eye-slash-fill" | "eyedropper" | "eyeglasses" | "facebook" | "file" |
+	"eye-slash" | "eye-slash-fill" | "eyedropper" | "eyeglasses" | "facebook" | "fast-forward-fill" | "file" |
 	"file-arrow-down" | "file-arrow-down-fill" | "file-arrow-up" | "file-arrow-up-fill" |
 	"file-bar-graph" | "file-bar-graph-fill" | "file-binary" | "file-binary-fill" | "file-break" |
 	"file-break-fill" | "file-check" | "file-check-fill" | "file-code" | "file-code-fill" |
