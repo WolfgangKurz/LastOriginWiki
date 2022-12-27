@@ -2887,7 +2887,7 @@ export default {
 		"filterable.enemy": "87c83e5b",
 		"filterable.equip": "70c93ba4",
 		"filterable.facility": "16568438",
-		"filterable.unit": "cb951bb0",
+		"filterable.unit": "22572db8",
 		"gacha": "a34bbe5c",
 		"map": {
 			"Cha": "4bc9f11c",
@@ -3091,7 +3091,7 @@ export default {
 			"PECS_Audrey": "952f6e6d",
 			"PECS_Azaz": "22c4f153",
 			"PECS_Babariana": "ba2afc25",
-			"PECS_BlindPrincess": "bf556e91",
+			"PECS_BlindPrincess": "c2b39085",
 			"PECS_Boryeon": "6ed8ebc7",
 			"PECS_BS": "c070b7bf",
 			"PECS_Carolina": "7dc90f31",
