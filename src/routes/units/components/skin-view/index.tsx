@@ -84,7 +84,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		};
 	})();
 	const SkinImageURL = ((): string => {
-		const skinId = skin.isDef ? 0 : skin.sid;
+		const skinId = skin.isDef ? 0 : skin.metadata.imageId;
 		const ext = imageExt;
 
 		const postfix = ((): string => {
@@ -116,7 +116,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		})();
 		if (!skin.anim[flag]) return "";
 
-		const skinId = skin.isDef ? 0 : skin.sid;
+		const skinId = skin.isDef ? 0 : skin.metadata.imageId;
 		return `${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}${postfix}`;
 	})();
 
@@ -180,7 +180,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			return skin.anim[SKIN_ANIM_SUBSET_ENUM.__];
 	})();
 
-	const modelId = `${unit.uid}_N${skin.isDef ? "" : `S${skin.sid}`}`;
+	const modelId = `${unit.uid}_N${skin.isDef ? "" : `S${skin.metadata.imageId}`}`;
 	const DisplaySpine = skin.Spine && (props.animate || props.collapsed) && !IsDamaged.value;
 
 	return <div class={ style.SkinView }>
@@ -441,7 +441,10 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								<div class="modal-content">
 									<div class="modal-header">
 										<h5 class="modal-title">
-											<Locale plain k={ skin.sid ? `UNIT_SKIN_${unit.uid}_${skin.sid}` : `UNIT_${unit.uid}` } />
+											<Locale
+												plain
+												k={ skin.sid ? `UNIT_SKIN_${unit.uid}_${skin.sid}` : `UNIT_${unit.uid}` }
+											/>
 										</h5>
 										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" />
 									</div>

@@ -6,8 +6,33 @@ import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../components/changelog-item";
 import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB, BG } from "../components/badges";
+import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 11997" date="2022-12-27"
+		new={ <>
+			<li>신규 전투원 <BY>블라인드 프린세스</BY>의 정보가 추가되었습니다.</li>
+			<li>신규 이벤트 <BY>눈먼공주와 안개의 나라</BY>의 정보가 추가되었습니다.</li>
+			<li>
+				<img
+					src={ `${AssetsRoot}/etc/lise202212.png` }
+					style={ { maxWidth: "6rem", maxHeight: "6rem" } }
+				/>
+			</li>
+		</> }
+		update={ <>
+			<li>전투원 <BY>화롯가의 포티아</BY>의 스킬 정보가 수정되었습니다.</li>
+			<li>전투원 <BY>CT103 포트리스</BY>의 스킬 정보가 수정되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>바르그</BY>의 스킨 <BR>충성스러운 늑대 바르그</BR>의 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2022-12-27 14:02:01</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 11991" date="2022-12-20"
 		bugfix={ <>
 			<li>버프 보기에서 <BR>공격력 비례 지속 피해</BR> 버프가 비례 수치 없이 표시되던 점을 수정했습니다.</li>

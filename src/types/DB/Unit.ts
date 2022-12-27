@@ -90,6 +90,7 @@ export interface UnitSkinEntity {
 
 	/** Price */
 	price?: number;
+	priceEx?: string;
 
 	/** Skin Artist */
 	artist: string;
@@ -112,6 +113,12 @@ export interface UnitSkinEntity {
 	releaseDate: number;
 
 	category: string[];
+
+	metadata: {
+		imageId: number;
+		voiceId?: number;
+		consumableKey?: string;
+	};
 }
 
 export interface ResearchTreeData {
@@ -296,6 +303,10 @@ export namespace Unit {
 			category: [],
 			artist: "",
 			sid: 0,
+
+			metadata: {
+				imageId: 0,
+			},
 		},
 
 		roguelike: [],

@@ -20,7 +20,8 @@
 			top: -0.5em;
 			border-radius: 0;
 			background-color: transparent;
-			transform: rotate(20deg);
+			transform: translate(-1em, -3em) rotate(10deg);
+			transform-origin: 50% 50%;
 			font-weight: bold;
 			font-style: normal;
 			font-size: 50%;
@@ -29,6 +30,12 @@
 			user-select: none !important;
 			color: transparentize($dark, 0.5);
 			// opacity: 0.5;
+
+			> img {
+				max-width: 4em;
+				max-height: 4em;
+				object-fit: contain;
+			}
 		}
 	}
 }

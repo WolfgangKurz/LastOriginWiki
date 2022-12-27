@@ -155,7 +155,9 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 			if (voice.isMarriage) return "_Marriage";
 			if (voice.isDef) return "";
 			if (voice.isPro) return "_PS1";
-			return `_NS${props.id}`;
+
+			if (props.voice.metadata.voiceId === undefined) return "";
+			return `_NS${props.voice.metadata.voiceId}`;
 		})();
 		return `${uid}${postfix}`;
 	})();
@@ -178,7 +180,7 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 				aria-controls={ collapseId }
 				role="button"
 			>
-				<UnitFace class="float-start me-3" uid={ unit.uid } skin={ voice.sid || 0 } size="56" />
+				<UnitFace class="float-start me-3" uid={ unit.uid } skin={ voice.metadata.imageId || 0 } size="56" />
 
 				<div>
 					<strong>

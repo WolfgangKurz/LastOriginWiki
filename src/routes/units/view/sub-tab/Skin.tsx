@@ -77,7 +77,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 							skinIndex.set(index);
 						} }
 					>
-						<UnitFace uid={ unit.uid } skin={ skin.sid || 0 } size="64" />
+						<UnitFace uid={ unit.uid } skin={ skin.metadata.imageId || 0 } size="64" />
 						<br />
 
 						<span>
@@ -101,9 +101,13 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 									<Locale k="UNIT_VIEW_SKIN_BADGE_DEFAULT" />
 								</span>
 								: !skin.price
-									? <span class="badge bg-danger">
-										<Locale k="UNIT_VIEW_SKIN_BADGE_NOTFORSALE" />
-									</span>
+									? skin.priceEx === "Exchange"
+										? <span class="badge bg-substory">
+											<Locale k="UNIT_VIEW_SKIN_BADGE_EXCHANGE" />
+										</span>
+										: <span class="badge bg-danger">
+											<Locale k="UNIT_VIEW_SKIN_BADGE_NOTFORSALE" />
+										</span>
 									: <span class={ `badge bg-warning text-dark ${style.SkinPrice}` }>
 										<img src={ `${AssetsRoot}/tuna.png` } />
 										{ skin.price }
@@ -117,10 +121,13 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 		{ skin.sid && !skin.isPro
 			? <div class={ `card mt-3 ${style.SkinNameDesc}` }>
 				<div class="card-header">
-					<Locale plain k={ `CONSUMABLE_Skin_${unit.uid}_${ssid}` } />
+					<Locale plain k={ skin.metadata.consumableKey
+						? `CONSUMABLE_${skin.metadata.consumableKey}`
+						: `CONSUMABLE_Skin_${unit.uid}_${ssid}`
+					} />
 				</div>
 				<div class="card-body">
-					{ ParseDesc(`Skin_${unit.uid}_${skin.sid}`) }
+					{ ParseDesc(skin.metadata.consumableKey || `Skin_${unit.uid}_${skin.sid}`) }
 				</div>
 			</div>
 			: <></>
@@ -137,12 +144,12 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 				<div class="row gx-0">
 					<div class="col-auto me-2">
 						<div class="pb-2">
-							<UnitFace uid={ unit.uid } skin={ SkinList[skinIndex.value].sid || 0 } size="88" />
+							<UnitFace uid={ unit.uid } skin={ SkinList[skinIndex.value].metadata.imageId || 0 } size="88" />
 						</div>
 						<div class="pb-2">
 							<UnitFace
 								uid={ unit.uid }
-								skin={ SkinList[skinIndex.value].sid || 0 }
+								skin={ SkinList[skinIndex.value].metadata.imageId || 0 }
 								sd
 								size="88"
 							/>
@@ -249,7 +256,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 					{ SkinList[skinIndex.value].facelist.map(fid => <UnitFace2
 						uid={ unit.uid }
 						type={ fid }
-						skin={ SkinList[skinIndex.value].sid || 0 }
+						skin={ SkinList[skinIndex.value].metadata.imageId || 0 }
 						size="120"
 					/>) }
 				</div>
