@@ -9,7 +9,7 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12009" date="2022-12-31"
+	<ChangelogItem title="Build 12011" date="2022-12-31"
 		bugfix={ <>
 			<li>
 				<BY>효과 저항 증가</BY> 및 <BY>효과 저항 감소</BY>가 잘못 표시되고 있던 점을 수정했습니다.<br />

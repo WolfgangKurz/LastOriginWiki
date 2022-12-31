@@ -179,7 +179,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			<u>
 				<Locale plain k={ `BUFFEFFECT_ATTR_PREFIX_${target}` } />
 			</u>
-			&nbsp;
+			<> </>
 
 			{ ((): preact.VNode => {
 				switch (type) {
