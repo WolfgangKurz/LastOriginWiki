@@ -1,4 +1,5 @@
 import { FunctionalComponent } from "preact";
+import { useState } from "preact/hooks";
 
 import { FACETYPE, SKIN_IN_PARTS } from "@/types/Enums";
 import { SKIN_ANIM_SUBSET_ENUM, SKIN_SUBSET_ENUM, Unit, UnitSkin } from "@/types/DB/Unit";
@@ -8,6 +9,7 @@ import { AssetsRoot, CanPlayWebM, ImageExtension } from "@/libs/Const";
 import Locale from "@/components/locale";
 import { objState } from "@/libs/State";
 
+import PopupBase from "@/components/popup/base";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import MergedVideo from "@/components/merged-video";
 import Pinch from "@/components/pinch";
@@ -50,6 +52,8 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const IsAnimating = objState<boolean>(true);
 	const IsBlackBG = objState<boolean>(false);
 	const HideGroup = objState<boolean>(false);
+
+	const [detailView, setDetailView] = useState(false);
 
 	// const Aspect = props.collapsed ? style["ratio-2x5"] : "ratio-4x3";
 	const Aspect = "ratio-2x4 ratio-lg-5x3";
@@ -203,7 +207,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							specialTouch={ IsSpecialTouch.value }
 
 							// collider={ true }
-							// hidePart={ IsSimplified.value }
+							hidePart={ IsSimplified.value }
 							// hideBg={ IsBG.value }
 							// hideDialog={ false }
 
@@ -435,74 +439,77 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 				{ props.detailable
 					? <>
-						<div class={ style.Detail } data-bs-toggle="modal" data-bs-target="#UnitSkinViewDetail" />
-						<div class="modal fade" tabIndex={ -1 } id="UnitSkinViewDetail">
-							<div class="modal-dialog modal-xl modal-dialog-centered">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title">
-											<Locale
-												plain
-												k={ skin.sid ? `UNIT_SKIN_${unit.uid}_${skin.sid}` : `UNIT_${unit.uid}` }
-											/>
-										</h5>
-										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" />
-									</div>
-									<div class="modal-body">
-										<div class="text-start mb-2">
-											<div class="form-check d-inline-block form-switch">
-												<label class="form-check-label">
-													<input
-														class="form-check-input"
-														type="checkbox"
-														disabled={ !AvailableAnim }
-														checked={ IsAnimating.value }
-														onClick={ (): void => IsAnimating.set(!IsAnimating.value) }
-													/>
-													<Locale k="UNIT_VIEW_SKIN_ANIMATION_SWITCH" />
-												</label>
-											</div>
+						<div
+							class={ style.Detail }
+							onClick={ (e) => {
+								e.preventDefault();
+								setDetailView(true);
+							} }
+						/>
 
-											<span class="text-secondary px-2">|</span>
-
-											<div class="form-check d-inline-block form-switch">
-												<label class="form-check-label">
-													<input
-														class="form-check-input"
-														type="checkbox"
-														checked={ IsBlackBG.value }
-														onClick={ (): void => IsBlackBG.set(!IsBlackBG.value) }
-													/>
-													<Locale k="UNIT_VIEW_SKIN_BLACKBG_SWITCH" />
-												</label>
-											</div>
-
-											<span class="text-secondary px-2">|</span>
-
-											<div class="form-check d-inline-block form-switch">
-												<label class="form-check-label">
-													<input
-														class="form-check-input"
-														type="checkbox"
-														checked={ HideGroup.value }
-														onClick={ (): void => HideGroup.set(!HideGroup.value) }
-													/>
-													<Locale k="UNIT_VIEW_SKIN_HIDEGROUP_SWITCH" />
-												</label>
-											</div>
-										</div>
-
-										<SkinView
-											unit={ unit }
-											skin={ skin }
-											animate={ IsAnimating.value }
-											black={ IsBlackBG.value }
-											hideGroup={ HideGroup.value }
+						<PopupBase
+							display={ detailView }
+							size="xl"
+							header={ <>
+								<Locale
+									plain
+									k={ skin.sid ? `UNIT_SKIN_${unit.uid}_${skin.sid}` : `UNIT_${unit.uid}` }
+								/>
+								{/* <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" /> */ }
+							</> }
+							onHidden={ () => setDetailView(false) }
+						>
+							<div class="text-start mb-2">
+								<div class="form-check d-inline-block form-switch">
+									<label class="form-check-label">
+										<input
+											class="form-check-input"
+											type="checkbox"
+											disabled={ !AvailableAnim }
+											checked={ IsAnimating.value }
+											onClick={ (): void => IsAnimating.set(!IsAnimating.value) }
 										/>
-									</div>
+										<Locale k="UNIT_VIEW_SKIN_ANIMATION_SWITCH" />
+									</label>
+								</div>
+
+								<span class="text-secondary px-2">|</span>
+
+								<div class="form-check d-inline-block form-switch">
+									<label class="form-check-label">
+										<input
+											class="form-check-input"
+											type="checkbox"
+											checked={ IsBlackBG.value }
+											onClick={ (): void => IsBlackBG.set(!IsBlackBG.value) }
+										/>
+										<Locale k="UNIT_VIEW_SKIN_BLACKBG_SWITCH" />
+									</label>
+								</div>
+
+								<span class="text-secondary px-2">|</span>
+
+								<div class="form-check d-inline-block form-switch">
+									<label class="form-check-label">
+										<input
+											class="form-check-input"
+											type="checkbox"
+											checked={ HideGroup.value }
+											onClick={ (): void => HideGroup.set(!HideGroup.value) }
+										/>
+										<Locale k="UNIT_VIEW_SKIN_HIDEGROUP_SWITCH" />
+									</label>
 								</div>
 							</div>
-						</div>
+
+							{ detailView && <SkinView
+								unit={ unit }
+								skin={ skin }
+								animate={ IsAnimating.value }
+								black={ IsBlackBG.value }
+								hideGroup={ HideGroup.value }
+							/> }
+						</PopupBase>
 					</>
 					: <></>
 				}

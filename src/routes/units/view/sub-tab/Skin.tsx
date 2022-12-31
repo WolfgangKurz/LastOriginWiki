@@ -54,8 +54,11 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 	}
 
 	function ParseDesc (key: string): preact.VNode[] {
+		const locKey = `CONSUMABLE_DESC_${key}`;
+		const desc = LocaleGet(locKey);
+
 		return ParseDescriptionText(
-			(LocaleGet(`CONSUMABLE_DESC_${key}`) || "")
+			(desc === locKey ? "" : desc)
 				.toString()
 				.replace(/&([lg]t);/g, (p0, p1) => p1 === "lt" ? "<" : ">")
 		);

@@ -27,7 +27,6 @@ import TbarIcon from "@/components/tbar-icon";
 import UnitFace from "@/components/unit-face";
 import EnemyPopup from "@/components/popup/enemy-popup";
 import EquipPopup from "@/components/popup/equip-popup";
-import UnitReference from "@/components/unit-reference";
 import MapSearchInfo from "../components/map-search-info";
 import MapGrid from "../components/map-grid";
 import PCIcon from "../components/pc-icon";
@@ -905,7 +904,14 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												<span class="badge bg-substory mx-1">
 													<Locale
 														k="WORLD_VIEW_ENEMY_PLAYER_EXP"
-														p={ [<span class="font-exo2">{ PlayerExp }</span>] }
+														p={ [<span class="font-exo2">
+															{ PlayerExp >= 0
+																? PlayerExp
+																: <span class="text-secondary">
+																	<Locale k="WORLD_VIEW_ENEMY_PLAYER_EXP_NONE" />
+																</span>
+															}
+														</span>] }
 													/>
 												</span>
 											</div>

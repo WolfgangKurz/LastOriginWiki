@@ -11,7 +11,7 @@ import UnitFace from "@/components/unit-face";
 import DialogueRow from "../dialogue-row";
 
 export interface VoiceItem extends UnitSkin {
-	id: number;
+	id: string;
 	isDef: boolean;
 	isPro: boolean;
 	isMarriage: boolean;
@@ -20,7 +20,7 @@ export interface VoiceItem extends UnitSkin {
 interface UnitDialogueProps {
 	unit: Unit;
 	voice: VoiceItem;
-	id: number;
+	id: string;
 	lang: keyof UnitDialogueDataType;
 	audio: UnitDialogueAudioType;
 }
@@ -30,10 +30,10 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 	const voice = props.voice;
 
 	const VoiceKey = ((v): string => {
-		if (v.isMarriage) return "M";
-		if (v.isPro) return "P";
-		if (v.isDef) return "0";
-		return v.id.toString();
+		if (v.isMarriage) return `${v.id}M`;
+		if (v.isPro) return `${v.id}P`;
+		if (v.isDef) return "";
+		return v.id;
 	})(voice);
 
 	const TypeList = ((): Array<keyof RawUnitDialogueEntity> => {
@@ -152,9 +152,17 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 	const unitId = ((): string => {
 		const uid = unit.uid || "";
 		const postfix = ((): string => {
-			if (voice.isMarriage) return "_Marriage";
+			if (voice.isMarriage) {
+				if (props.voice.metadata.voiceId !== undefined)
+					return `_NS${props.voice.metadata.voiceId}_Marriage`;
+				return "_Marriage";
+			}
+			if (voice.isPro) {
+				if (props.voice.metadata.voiceId !== undefined)
+					return `_NS${props.voice.metadata.voiceId}_PS1`;
+				return "_PS1";
+			}
 			if (voice.isDef) return "";
-			if (voice.isPro) return "_PS1";
 
 			if (props.voice.metadata.voiceId === undefined) return "";
 			return `_NS${props.voice.metadata.voiceId}`;

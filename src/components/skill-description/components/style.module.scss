@@ -70,7 +70,7 @@ strike {
 
 	> button {
 		position: absolute;
-		margin :0;
+		margin: 0;
 		padding: 0;
 		left: 0;
 		top: 0;
@@ -80,6 +80,9 @@ strike {
 
 		&:focus + .CommentPopup {
 			opacity: 1;
+		}
+		:not(:focus) + .CommentPopup {
+			pointer-events: none !important;
 		}
 	}
 
@@ -97,7 +100,6 @@ strike {
 		font-weight: normal;
 		font-size: 1rem;
 		text-decoration: none;
-		pointer-events: none !important;
 		word-break: keep-all;
 		cursor: default;
 		color: $dark;

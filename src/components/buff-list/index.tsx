@@ -359,8 +359,9 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					case BUFFEFFECT_TYPE.STAGE_MARKING: // 87
 						return <Locale plain k="BUFFTYPE_MARKING" />;
 					case BUFFEFFECT_TYPE.STAGE_DEBUFF_RATEUP: // 90
+						return <Locale plain k="BUFFTYPE_RES_DEBUFF_UP" />;
 					case BUFFEFFECT_TYPE.STAGE_DEBUFF_PERDOWN: // 91
-						return <Locale plain k="BUFFTYPE_RES_DEBUFF" />;
+						return <Locale plain k="BUFFTYPE_RES_DEBUFF_DOWN" />;
 					case BUFFEFFECT_TYPE.STAGE_BUFFEFFECTRATE_CHANGE: // 92
 						return <Locale plain k="BUFFTYPE_EFFECT_RATE" />;
 					case BUFFEFFECT_TYPE.REMOVE_SUMMON_INSTENV: // 93

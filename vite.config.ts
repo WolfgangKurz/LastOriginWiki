@@ -140,7 +140,7 @@ export default ({ mode }) => {
 					manualChunks (id) {
 						// entry
 						if (
-							id.includes("/src/components/app.") ||
+							id.includes("/src/app/") ||
 							id.includes("/src/components/dynamic-route/")
 						) return undefined;
 
