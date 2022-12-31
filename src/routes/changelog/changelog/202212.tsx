@@ -9,6 +9,14 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12009" date="2022-12-31"
+		bugfix={ <>
+			<li>
+				<BY>효과 저항 증가</BY> 및 <BY>효과 저항 감소</BY>가 잘못 표시되고 있던 점을 수정했습니다.<br />
+				이제 <BY>효과 저항</BY> 및 <BY>효과 저항 감소</BY> 두 종류로 표시됩니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem tag="Rhine" title="Build 12007" date="2022-12-31"
 		site={ <>
 			<li>Spine 로비 애니메이션의 파일 용량을 개선했습니다. (스킨당 약 2MBs <Icon icon="arrow-right" /> 약 800KBs)</li>
