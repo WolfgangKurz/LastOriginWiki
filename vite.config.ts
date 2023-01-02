@@ -187,8 +187,11 @@ export default ({ mode }) => {
 						if (id.includes("/src/external/")) {
 							const _ = "/src/external/";
 							const idx = id.indexOf(_) + _.length;
-							const name = id.substring(idx, id.indexOf("/", idx));
-							return `external.${name}`;
+							const _name = id.substring(idx);
+							if (_name.indexOf("/") >= 0)
+								return `external.${_name.substring(0, _name.indexOf("/"))}`;
+							else
+								return `external.${_name.substring(0, _name.lastIndexOf("."))}`;
 						}
 
 						// components

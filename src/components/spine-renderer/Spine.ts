@@ -36,12 +36,12 @@ class Spine {
 		{
 			let path = `${this.assetName}.json`;
 			path = assetManager["start"](path);
-			console.log(path);
 
 			assetManager["downloader"].downloadBinary(
 				`${path}.lzma`,
 				(binary) => {
-					LZMADecompression(binary)
+					LZMADecompression(binary, "json.lzma")
+						.then(ab => new TextDecoder().decode(ab))
 						.then(json => assetManager["success"](undefined, path, json));
 				},
 				(status, responseText) => {
@@ -51,6 +51,8 @@ class Spine {
 		}
 
 		{ // load alpha-separated image
+			const changeExt = (path: string, ext: string): string => `${path.substring(0, path.lastIndexOf("."))}.${ext}`;
+
 			let path = `${this.assetName}.atlas`;
 			path = assetManager["start"](path);
 
@@ -63,15 +65,15 @@ class Spine {
 
 				for (let page of atlas.pages) { // texture pages
 					const [alpha, texture] = await Promise.all([
-						new Promise<Uint8Array>((resolve, reject) => assetManager.loadBinary(
-							`${page.name.substring(0, page.name.lastIndexOf("."))}.alpha`, // alpha channel data
-							(_, binary) => resolve(binary),
-							(_, message) => reject(new Error(message)),
+						new Promise<Uint8Array>((resolve, reject) => assetManager["downloader"].downloadBinary(
+							changeExt(assetManager["pathPrefix"] + page.name, "alpha"), // alpha channel data
+							(binary: Uint8Array) => resolve(binary),
+							(status, responseText) => reject(new Error(`${status} :: ${responseText}`)),
 						))
-							.then(binary => LZMADecompression(binary))
+							.then(binary => LZMADecompression(binary, "alpha"))
 							.then(binary => binary.map(v => v < 0 ? v + 256 : v)),
 						new Promise<spine.Texture>((resolve, reject) => assetManager["downloader"].downloadBinary(
-							assetManager["pathPrefix"] + page.name, // alpha-less image
+							changeExt(assetManager["pathPrefix"] + page.name, "jpg"), // alpha-less image
 							(binary: Uint8Array) => {
 								const _img = new Image();
 								_img.onload = () => {
