@@ -9,6 +9,12 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12037" date="2023-01-09" tag="Danube"
+		update={ <>
+			<li>로비 애니메이션을 가지는 전투원을 포함해 일부를 제외한 전체 전투원의 스킨 보기에 표정 선택이 추가되었습니다.</li>
+			<li>둥굴레차가 더 따뜻해졌습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12017" date="2023-01-03"
 		site={ <>
 			<li>Spine 로비 애니메이션의 로딩 시간을 약 8.5배 개선했습니다.</li>

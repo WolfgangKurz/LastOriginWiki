@@ -1,5 +1,6 @@
 import { FunctionalComponent } from "preact";
-import { useState } from "preact/hooks";
+import { useEffect, useRef, useState } from "preact/hooks";
+import ResizeObserver from "resize-observer-polyfill";
 
 import { FACETYPE, SKIN_IN_PARTS } from "@/types/Enums";
 import { SKIN_ANIM_SUBSET_ENUM, SKIN_SUBSET_ENUM, Unit, UnitSkin } from "@/types/DB/Unit";
@@ -14,8 +15,10 @@ import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import MergedVideo from "@/components/merged-video";
 import Pinch from "@/components/pinch";
 import SpineRenderer from "@/components/spine-renderer";
+import U2DModelRenderer from "@/components/u2dmodel-renderer";
 
 import style from "./style.module.scss";
+import Icon from "@/components/bootstrap-icon";
 
 interface SkinItem extends UnitSkin {
 	isDef: boolean;
@@ -40,6 +43,10 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 	// const skinDirection = objState<"" | "horz" | "vert">("");
 
+	const [resizeObserver, setResizeObserver] = useState<ResizeObserver | null>(null);
+	const [FullUnitSize, setFullUnitSize] = useState<[number, number]>([0, 0]);
+	const FullUnitEl = useRef<HTMLDivElement>(null);
+
 	const face = objState<string>("");
 	const faceList = objState<string[]>([]);
 
@@ -54,6 +61,28 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const HideGroup = objState<boolean>(false);
 
 	const [detailView, setDetailView] = useState(false);
+
+	useEffect(() => {
+		if (FullUnitEl.current) {
+			const observer = new ResizeObserver((entries) => {
+				const rc = (entries[0].contentRect as DOMRectReadOnly);
+				setFullUnitSize([
+					Math.floor(rc.width / 2) * 2,
+					Math.floor(rc.height / 2) * 2,
+				]);
+			});
+			setResizeObserver(observer);
+
+			observer.observe(FullUnitEl.current);
+		}
+
+		return () => {
+			if (resizeObserver)
+				resizeObserver.disconnect();
+
+			setResizeObserver(null);
+		};
+	}, [FullUnitEl.current]);
 
 	// const Aspect = props.collapsed ? style["ratio-2x5"] : "ratio-4x3";
 	const Aspect = "ratio-2x4 ratio-lg-5x3";
@@ -186,6 +215,8 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 	const modelId = `${unit.uid}_N${skin.isDef ? "" : `S${skin.metadata.imageId}`}`;
 	const DisplaySpine = skin.Spine && (props.animate || props.collapsed) && !IsDamaged.value;
+	const Display2DModel = (!IsDamaged.value && !!skin.metadata["2dmodel"]) ||
+		(IsDamaged.value && !!skin.metadata["2dmodel_dam"]);
 
 	return <div class={ style.SkinView }>
 		<div class={ `ratio ${Aspect} ${style.SkinFull} ${props.collapsed ? style.Collapsed : ""}` }>
@@ -196,10 +227,13 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 						<img src={ `${AssetsRoot}/${imageExt}/group/${unit.group.replace(/_[0-9]+$/, "")}.${imageExt}` } />
 					</div>
 				</div>
-				<div class={ [
-					style.FullUnit,
-					(!props.collapsed || DisplaySpine) && style.FullUnitMarginless,
-				].filter(x => x).join(" ") }>
+				<div
+					class={ [
+						style.FullUnit,
+						(!props.collapsed || DisplaySpine || Display2DModel) && style.FullUnitMarginless,
+					].filter(x => x).join(" ") }
+					ref={ FullUnitEl }
+				>
 					{ DisplaySpine
 						? <SpineRenderer
 							uid={ modelId }
@@ -241,20 +275,57 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 									src={ `${AssetsRoot}/webm/HD.Legacy/${SkinVideoURL}.mp4` }
 									type="video/mp4"
 								/>
-							: !props.collapsed // && !AvailableAnim
+							: Display2DModel
 								? <Pinch
 									minScale={ 0.5 }
 									maxScale={ 3 }
 								>
-									<img
+									<U2DModelRenderer
+										root={ `${AssetsRoot}/2dmodel/${IsGoogle.value ? "G" : "O"}/` }
+										target={ !IsDamaged.value ? skin.metadata["2dmodel"]! : skin.metadata["2dmodel_dam"]! }
+
+										scale={ 1.5 }
+										textureExt={ imageExt }
+
+										width={ FullUnitSize[0] }
+										height={ FullUnitSize[1] }
+
+										hideParts={ IsSimplified.value }
+										hideBG={ IsBG.value }
+
+										face={ face.value }
+										onFaceList={ (list) => {
+											faceList.set(list);
+
+											if (list.includes("Idle"))
+												face.set("Idle");
+											else {
+												const listU = list.map(f => f.toUpperCase());
+												for (const ft of Object.keys(FACETYPE)) {
+													const index = listU.indexOf(ft);
+													if (index >= 0) {
+														face.set(list[index]);
+														break;
+													}
+												}
+											}
+										} }
+									/>
+								</Pinch>
+								: !props.collapsed // && !AvailableAnim
+									? <Pinch
+										minScale={ 0.5 }
+										maxScale={ 3 }
+									>
+										<img
+											style={ ImageStyle }
+											src={ SkinImageURL }
+										/>
+									</Pinch>
+									: <img
 										style={ ImageStyle }
 										src={ SkinImageURL }
 									/>
-								</Pinch>
-								: <img
-									style={ ImageStyle }
-									src={ SkinImageURL }
-								/>
 					}
 				</div>
 
@@ -421,19 +492,31 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 						: <></>,
 				] }
 
-				{ skin.Spine && props.animate && !IsDamaged.value && !props.collapsed
-					? <select
-						class={ `form-select ${style.FaceList}` }
-						value={ face.value }
-						onChange={ (e): void => {
-							const value = (e.target as HTMLSelectElement).value;
-							face.set(value);
-						} }
-					>
-						{ faceList.value.map(f => <option value={ f }>
-							<Locale k={ `FACE_TYPE_${FACETYPE[f.toUpperCase()]}` } />
-						</option>) }
-					</select>
+				{ (
+					(skin.Spine && props.animate && !IsDamaged.value && !props.collapsed) ||
+					Display2DModel
+				) && faceList.value.length > 0
+					? <div class={ `${style.FaceList} ${props.collapsed ? style.FaceListMargin : ""}` }>
+						<select
+							class={ `form-select form-select-sm ${style.FaceList}` }
+							value={ face.value }
+							onChange={ (e): void => {
+								const value = (e.target as HTMLSelectElement).value;
+								face.set(value);
+							} }
+						>
+							{ faceList.value.map(f => {
+								const ft = FACETYPE[f.toUpperCase()];
+								return <option value={ f }>
+									{ ft
+										? <Locale k={ `FACE_TYPE_${ft}` } />
+										: f.toUpperCase()
+									}
+								</option>;
+							}) }
+						</select>
+						<Icon icon="emoji-smile-fill" />
+					</div>
 					: <></>
 				}
 

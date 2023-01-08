@@ -871,10 +871,12 @@ export enum FACETYPE {
 	EXPRESSIONLESS = 1,
 	RESOLVE = 2,
 	CLOSEEYE = 3,
+	CLOSEDEYE = 3, // Bad LO devs
 	EMBARRASS = 4,
 	WORRY = 5,
 	BIGSMILE = 6,
 	SURPRISED = 7,
+	SUPRISE = 7, // Bad LO devs
 	SMILE = 8,
 	WHAT = 9,
 	BLUNT = 10,

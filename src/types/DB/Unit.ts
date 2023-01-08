@@ -118,6 +118,8 @@ export interface UnitSkinEntity {
 		imageId: number;
 		voiceId?: number;
 		consumableKey?: string;
+		"2dmodel"?: string;
+		"2dmodel_dam"?: string;
 	};
 }
 

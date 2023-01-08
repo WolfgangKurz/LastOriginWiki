@@ -100,6 +100,20 @@ class Pinch extends Component<PinchProps, PinchState> {
 		if (this.evCache.length < 2)
 			this.prevDiff = -1;
 	}
+	Wheel (ev: WheelEvent) {
+		ev.stopImmediatePropagation();
+		ev.preventDefault();
+
+		this.setState({
+			scale: Math.min(
+				Math.max(
+					0.25,
+					this.state.scale - (ev.deltaY / 1000),
+				),
+				3,
+			),
+		});
+	}
 
 	Style (): JSX.CSSProperties {
 		const { x, y, scale } = this.state;
@@ -111,7 +125,6 @@ class Pinch extends Component<PinchProps, PinchState> {
 
 	render (props: RenderableProps<PinchProps>, state: Readonly<PinchState>) {
 		return <div
-			ref={ this.ContainerRef }
 			class="Pinch"
 			onPointerDown={ (e) => this.PointerDown(e) }
 			onPointerMove={ (e) => this.PointerMove(e) }
@@ -119,6 +132,8 @@ class Pinch extends Component<PinchProps, PinchState> {
 			onPointerCancel={ (e) => this.PointerUp(e) }
 			onPointerOut={ (e) => this.PointerUp(e) }
 			onPointerLeave={ (e) => this.PointerUp(e) }
+			onWheel={ (e) => this.Wheel(e) }
+			ref={ this.ContainerRef }
 		>
 			<div
 				style={ {
