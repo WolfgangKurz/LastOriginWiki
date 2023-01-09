@@ -177,9 +177,6 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 		const mat = [
 			Matrix3D.translate(props.width / 2, props.height / 2, 0),
 
-			// flip
-			Matrix3D.scale(obj.flip[0] ? -1 : 1, obj.flip[1] ? -1 : 1, 1),
-
 			// global transform
 			Matrix3D.scale(2, 2, 2), // default scale
 			Matrix3D.scale(opt.scale, opt.scale, opt.scale),
@@ -208,7 +205,13 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 
 		// 100 = camera ppu
 		mat.push(
+			// ppu
 			Matrix3D.scale(ppum, ppum, ppum),
+
+			// flip
+			Matrix3D.scale(obj.flip[0] ? -1 : 1, obj.flip[1] ? -1 : 1, 1),
+
+			// pivot
 			Matrix3D.translate(-sprite.vector.rc.w / 2, -sprite.vector.rc.h / 2, 0),
 		);
 

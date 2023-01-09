@@ -9,6 +9,14 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12043" date="2023-01-09"
+		update={ <>
+			<li>스킨 보기에 다운로드 버튼이 추가되었습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>일부 전투원 스킨이 잘못 표시되던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12041" date="2023-01-09"
 		bugfix={ <>
 			<li>일부 전투원 스킨에서 "일반" 표정이 표시되지 않는 문제를 수정했습니다.</li>

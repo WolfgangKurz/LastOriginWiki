@@ -65,6 +65,7 @@
 
 .SkinToggle {
 	position: absolute;
+	display: block;
 	background-repeat: no-repeat;
 	filter: drop-shadow(0 0 4px #000);
 	cursor: pointer;
@@ -135,6 +136,15 @@
 		&[data-touch="1"] {
 			background-position-x: -28px;
 		}
+	}
+	&.Download {
+		bottom: 64px;
+		right: 12px;
+		width: 32px;
+		height: 32px;
+		filter: drop-shadow(0 0 1px transparentize($light, 0.3));
+		font-size: 32px;
+		color: $light;
 	}
 }
 div.FaceList {
@@ -325,7 +335,7 @@ div.FaceList {
 			position: absolute;
 			padding: 1px 6px 3px;
 			bottom: 5px;
-			right: 5px;
+			right: 52px;
 			border-radius: 4px;
 			background-color: rgba(0, 0, 0, 0.6);
 			text-shadow: 0 0 4px #000;
