@@ -10,6 +10,13 @@ import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 12043" date="2023-01-09"
+		new={ <>
+			<li>이벤트 <BY>눈먼공주와 안개의 나라</BY>의 2부 정보가 추가되었습니다.</li>
+			<li>신규 적의 정보가 추가되었습니다.</li>
+			<li>신규 장식품의 정보가 추가되었습니다.</li>
+		</> }
+	/>
+	<ChangelogItem title="Build 12043" date="2023-01-09"
 		update={ <>
 			<li>스킨 보기에 다운로드 버튼이 추가되었습니다.</li>
 		</> }
