@@ -295,20 +295,12 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 										face={ face.value }
 										onFaceList={ (list) => {
-											faceList.set(list);
+											const _list = [...list];
+											if (!_list.includes("Idle"))
+												_list.splice(0, 0, "Idle"); // insert into 0
 
-											if (list.includes("Idle"))
-												face.set("Idle");
-											else {
-												const listU = list.map(f => f.toUpperCase());
-												for (const ft of Object.keys(FACETYPE)) {
-													const index = listU.indexOf(ft);
-													if (index >= 0) {
-														face.set(list[index]);
-														break;
-													}
-												}
-											}
+											faceList.set(_list);
+											face.set("Idle");
 										} }
 									/>
 								</Pinch>

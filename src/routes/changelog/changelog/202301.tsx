@@ -9,6 +9,11 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12041" date="2023-01-09"
+		bugfix={ <>
+			<li>일부 전투원 스킨에서 "일반" 표정이 표시되지 않는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12037" date="2023-01-09" tag="Danube"
 		update={ <>
 			<li>로비 애니메이션을 가지는 전투원을 포함해 일부를 제외한 전체 전투원의 스킨 보기에 표정 선택이 추가되었습니다.</li>
