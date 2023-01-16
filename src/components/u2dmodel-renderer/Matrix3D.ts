@@ -1,6 +1,4 @@
-import { Repeat } from "@/types/Repeat";
-
-type Matrix3DMatrix = Repeat<number, 16>;
+type Matrix3DMatrix = Tuple<number, 16>;
 
 export default class Matrix3D {
 	public static toString (m: Matrix3DMatrix) {
@@ -143,7 +141,7 @@ export default class Matrix3D {
 	}
 
 	public static compose (...mx: Matrix3DMatrix[]): Matrix3DMatrix {
-		type Matrix3DRow = Repeat<number, 4>;
+		type Matrix3DRow = Tuple<number, 4>;
 
 		function multiplyMatrixAndPoint (m: Matrix3DMatrix, p: Matrix3DRow): Matrix3DRow {
 			return (new Array(16).fill(0) as Matrix3DMatrix)

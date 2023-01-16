@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 
-import { Repeat } from "@/types/Repeat";
-
 import Matrix3D from "./Matrix3D";
 
 import style from "./style.module.scss";
@@ -60,7 +58,7 @@ interface MODEL_DATA {
 
 interface GameObjectFilter {
 	id: string;
-	values: Repeat<number, 20>; // 5 x 4
+	values: Tuple<number, 20>; // 5 x 4
 }
 interface GameObjectData {
 	id: number;
@@ -109,7 +107,7 @@ interface _2DModelRendererProps {
 const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => {
 	const opt = { scale: props.scale || 1, translate: props.translate || [0, 0] };
 
-	function quat2eul (quat: Repeat<number, 4>) { // quat2eul (radian)
+	function quat2eul (quat: Tuple<number, 4>) { // quat2eul (radian)
 		const q = {
 			x: quat[0],
 			y: quat[1],
@@ -195,7 +193,7 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 		tree.reverse();
 
 		tree.forEach(cur => {
-			const rot = quat2eul(cur.vector.slice(6, 10) as Repeat<number, 4>);
+			const rot = quat2eul(cur.vector.slice(6, 10) as Tuple<number, 4>);
 			mat.push(
 				Matrix3D.translate(cur.vector[0] * 100, -cur.vector[1] * 100, cur.vector[2] * 100),
 				Matrix3D.scale(cur.vector[3], cur.vector[4], cur.vector[5]),
