@@ -1,9 +1,8 @@
 import { render, h } from "preact";
 
-import App from "@/app/app";
+import App from "@/app";
 
 import "bootstrap/scss/bootstrap.scss";
-// import "bootstrap";
 
 import "@/themes/index.scss";
 import "@/themes/patch.scss";

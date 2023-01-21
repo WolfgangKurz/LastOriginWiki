@@ -1,12 +1,32 @@
-.changelog-item {
+.ChangelogItem {
 	margin-bottom: 4em;
 	text-align: left;
 
-	.tags {
+	h3 {
+		&::after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+		.ReleaseTag {
+			float: right;
+			margin-right: 0.8em;
+			line-height: 1.75rem;
+			font-size: 60%;
+			color: $substory;
+
+			> svg {
+				margin-top: -0.1em;
+			}
+		}
+	}
+
+	.Tags {
 		font-size: 80%;
 	}
 
-	.badge {
+	:global(.badge) {
 		margin-left: 0.25em;
 		margin-right: 0.25em;
 		margin-bottom: 5px;
@@ -19,9 +39,10 @@
 	}
 
 	@each $key, $color in $theme-colors {
-		.sector-variant-#{$key} {
+		.SectorVariant-#{$key} {
 			padding: 0.25em 0;
 			border-left: 0.25em solid $color;
+			background-color: rgba($color, 0.07);
 
 			> h5 {
 				display: inline-block;
@@ -33,7 +54,7 @@
 			}
 		}
 	}
-	.sector-variant-substory {
+	.SectorVariant-substory {
 		padding: 0.25em 0;
 		border-left: 0.25em solid #07499b;
 

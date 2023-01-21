@@ -259,7 +259,7 @@ interface BuffEffect_ResistReverse_Elem {
 /** 효과저항/강화해제 증가/감소 */
 interface BuffEffect_Resist_Debuff {
 	resist: {
-		type: "debuff" | "off";
+		type: "debuff_rateup" | "debuff_perdown" | "off";
 		value: BuffEffectValue_Percent;
 	};
 }

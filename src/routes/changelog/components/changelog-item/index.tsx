@@ -1,10 +1,12 @@
 import { FunctionalComponent } from "preact";
 
-import { LocaleGet } from "@/components/locale";
+import Locale from "@/components/locale";
 
-import "./style.scss";
+import style from "./style.module.scss";
+import Icon from "@/components/bootstrap-icon";
 
 interface ChangelogItemProps {
+	tag?: string;
 	title: string;
 	date: string;
 
@@ -18,7 +20,7 @@ interface ChangelogItemProps {
 }
 
 const ChangelogItem: FunctionalComponent<ChangelogItemProps> = (props) => {
-	const tags = ["site", "bugfix", "delete", "new", "skin", "update", "dialogue"]
+	const tags = ["site", "bugfix", "delete", "new", "update", "skin", "dialogue"]
 		.filter(x => props[x as keyof ChangelogItemProps]);
 
 	function TagVariant (tag: string): string[] {
@@ -42,44 +44,55 @@ const ChangelogItem: FunctionalComponent<ChangelogItemProps> = (props) => {
 				return ["success", "bg-success"];
 		}
 	}
-	const TagVariant2 = (tag: string): string => TagVariant(tag)
+	const TagVariantList = (tag: string): string => TagVariant(tag)
 		.slice(1)
 		.join(" ");
 
-	function TagName (tag: string): string {
+	function TagName (tag: string): preact.VNode {
 		switch (tag) {
 			default:
 			case "default":
-				return LocaleGet("CHANGELOG_CATEGORY_UNCATEGORIZED");
+				return <Locale k="CHANGELOG_CATEGORY_UNCATEGORIZED" />;
 			case "site":
-				return LocaleGet("CHANGELOG_CATEGORY_SITE");
+				return <Locale k="CHANGELOG_CATEGORY_SITE" />;
 			case "bugfix":
-				return LocaleGet("CHANGELOG_CATEGORY_BUGFIX");
+				return <Locale k="CHANGELOG_CATEGORY_BUGFIX" />;
 			case "delete":
-				return LocaleGet("CHANGELOG_CATEGORY_DELETE");
+				return <Locale k="CHANGELOG_CATEGORY_DELETE" />;
 			case "new":
-				return LocaleGet("CHANGELOG_CATEGORY_NEW");
+				return <Locale k="CHANGELOG_CATEGORY_NEW" />;
 			case "skin":
-				return LocaleGet("CHANGELOG_CATEGORY_SKIN");
+				return <Locale k="CHANGELOG_CATEGORY_SKIN" />;
 			case "update":
-				return LocaleGet("CHANGELOG_CATEGORY_UPDATE");
+				return <Locale k="CHANGELOG_CATEGORY_UPDATE" />;
 			case "dialogue":
-				return LocaleGet("CHANGELOG_CATEGORY_QUOTE");
+				return <Locale k="CHANGELOG_CATEGORY_QUOTE" />;
 		}
 	}
 
-	return <div class="changelog-item">
+	return <div class={ style.ChangelogItem }>
 		<h3>
 			{ props.title }
 			<small class="ps-3 float-end float-md-none text-secondary">{ props.date }</small>
+			{ props.tag
+				? <span class={ style.ReleaseTag }>
+					<Icon class="me-1" icon="tag-fill" />
+					{ props.tag }
+				</span>
+				: <></>
+			}
 		</h3>
-		<div class="tags ms-2 pb-1">
-			{ tags.map(x => <span class={ `badge ${TagVariant2(x)} me-1` }>{ TagName(x) }</span>) }
+		<div class={ `${style.Tags} ms-2 pb-1` }>
+			{ tags.map(x => <span class={ `badge ${TagVariantList(x)} me-1` }>
+				{ TagName(x) }
+			</span>) }
 		</div>
 
-		{ tags.map(x => <div class={ `mt-2 ms-1 sector-${x} sector-variant-${TagVariant(x)[0]}` }>
+		{ tags.map(x => <div class={ `mt-2 ms-1 sector-${x} ${style[`SectorVariant-${TagVariant(x)[0]}`]}` }>
 			<h5>
-				<strong>{ TagName(x) }</strong>
+				<strong>
+					{ TagName(x) }
+				</strong>
 			</h5>
 			<ol>{ props[x as keyof ChangelogItemProps] }</ol>
 		</div>) }

@@ -3,7 +3,7 @@ import { UnitDialogueAudioType, UnitDialogueDataType } from "@/types/DB/Dialogue
 import { MapWaveDrop } from "@/types/DB/Map";
 import { SkillGroup } from "@/types/DB/Skill";
 import { UnitStats } from "@/types/DB/UnitStats";
-import { ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, ITEM_TYPE, FACETYPE } from "@/types/Enums";
+import { ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, ITEM_TYPE, FACETYPE, CHARTYPE_GIFTITEM_DAMAGE_TYPE } from "@/types/Enums";
 import RoguelikeSkill from "./Roguelike.Skill";
 
 export type LinkBonusType =
@@ -90,6 +90,7 @@ export interface UnitSkinEntity {
 
 	/** Price */
 	price?: number;
+	priceEx?: string;
 
 	/** Skin Artist */
 	artist: string;
@@ -112,6 +113,14 @@ export interface UnitSkinEntity {
 	releaseDate: number;
 
 	category: string[];
+
+	metadata: {
+		imageId: number;
+		voiceId?: number;
+		consumableKey?: string;
+		"2dmodel"?: string;
+		"2dmodel_dam"?: string;
+	};
 }
 
 export interface ResearchTreeData {
@@ -171,6 +180,7 @@ export interface Unit {
 	country: string;
 	age: string;
 
+	secretRoomType: CHARTYPE_GIFTITEM_DAMAGE_TYPE;
 	marriageVoice: boolean;
 	introVoice: UnitDialogueAudioType[];
 	favor: {
@@ -233,6 +243,7 @@ export namespace Unit {
 		country: "",
 		age: "",
 
+		secretRoomType: CHARTYPE_GIFTITEM_DAMAGE_TYPE.NONE,
 		marriageVoice: false,
 		introVoice: [],
 		favor: {
@@ -296,6 +307,10 @@ export namespace Unit {
 			category: [],
 			artist: "",
 			sid: 0,
+
+			metadata: {
+				imageId: 0,
+			},
 		},
 
 		roguelike: [],

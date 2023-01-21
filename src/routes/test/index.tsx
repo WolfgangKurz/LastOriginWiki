@@ -89,8 +89,9 @@ const TestPage: FunctionalComponent<TestPageProps> = ({ uid }) => {
 
 		<div class={ style.TEST }>
 			<SpineRenderer
-				uid={ uid || "2DModel_PECS_LRL_N" }
-				root={ `${AssetsRoot}/models` }
+				uid={ uid || "ST_Mercury_NS1" }
+				google={false}
+				specialTouch
 
 				// collider={ collider.value }
 				// hidePart={ hideParts.value }

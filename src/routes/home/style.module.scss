@@ -1,5 +1,6 @@
 .home {
 	img.heading-icon {
+		margin-right: 0.4em;
 		width: 80px;
 		height: 80px;
 	}
@@ -16,19 +17,30 @@
 			position: absolute;
 			margin-left: -0.3em;
 			padding: 0;
-			left: 100%;
-			top: -0.5em;
 			border-radius: 0;
 			background-color: transparent;
-			transform: rotate(20deg);
+			// left: 100%;
+			// top: -0.5em;
+			// transform: translate(-1em, -3em) rotate(10deg);
+			left: 50%;
+			top: -1.2em;
+			transform: translate(-50%, 0);
+			transform-origin: 50% 50%;
 			font-weight: bold;
 			font-style: normal;
 			font-size: 50%;
 			white-space: nowrap;
 			pointer-events: none !important;
 			user-select: none !important;
-			color: transparentize($dark, 0.5);
+			// color: transparentize($dark, 0.5);
+			color: transparentize($dark, 0.1);
 			// opacity: 0.5;
+
+			> img {
+				max-width: 4em;
+				max-height: 4em;
+				object-fit: contain;
+			}
 		}
 	}
 }

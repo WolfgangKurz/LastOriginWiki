@@ -27,7 +27,6 @@ import TbarIcon from "@/components/tbar-icon";
 import UnitFace from "@/components/unit-face";
 import EnemyPopup from "@/components/popup/enemy-popup";
 import EquipPopup from "@/components/popup/equip-popup";
-import UnitReference from "@/components/unit-reference";
 import MapSearchInfo from "../components/map-search-info";
 import MapGrid from "../components/map-grid";
 import PCIcon from "../components/pc-icon";
@@ -905,7 +904,14 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												<span class="badge bg-substory mx-1">
 													<Locale
 														k="WORLD_VIEW_ENEMY_PLAYER_EXP"
-														p={ [<span class="font-exo2">{ PlayerExp }</span>] }
+														p={ [<span class="font-exo2">
+															{ PlayerExp >= 0
+																? PlayerExp
+																: <span class="text-secondary">
+																	<Locale k="WORLD_VIEW_ENEMY_PLAYER_EXP_NONE" />
+																</span>
+															}
+														</span>] }
 													/>
 												</span>
 											</div>
@@ -1039,10 +1045,15 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 						<div class="card-body">
 							<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
 								{ props.mid in MapDB && MapDB[props.mid].substory.map(x => <div class={ `col mt-1 mb-4 ${style.SubStoryGroup}` }>
-									<PCIcon item={ x.icon } />
-									<span class="ms-3">
+									<div class="float-start me-2">
+										<PCIcon class={ style.SubStoryGroupIcon } item={ x.icon } />
+									</div>
+
+									<span>
 										<Locale plain k={ x.char } />
 									</span>
+
+									<div class="clearfix" />
 									<div class={ style.SubStoryList }>
 										{ x.list.map(y => {
 											function conv (id: string | string[]): preact.VNode {
@@ -1051,7 +1062,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 													if (!wid) // Not event
 														return <>{ id[2] }</>;
 
-													return <span class="badge bg-warning text-dark">
+													return <span class={ `badge ${style.SubStoryUnlockCondStage}` }>
 														<Locale plain k={ `WORLD_${wid[1]}` } />
 														<span class="ms-2">{ id[2] }</span>
 													</span>;
@@ -1062,31 +1073,27 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 											return <div class={ style.SubStory }>
 												<PCIcon item={ y.icon } size={ 40 } />
 
-												<div class="float-end">
-													<BootstrapTooltip
-														placement="top"
-														content={ <div>
-															{ y.unlock.params
-																.map(p => <span class={ style.SubStoryUnlockCond }>
-																	<Locale
-																		plain
-																		k={ `SUBSTORY_UNLOCK_${y.unlock.cond}` }
-																		p={ [conv(p)] }
-																	/>
-																</span>)
-																.gap(<Locale plain k={ `SUBSTORY_UNLOCK_JOIN_${y.unlock.type}` } />)
-															}
-														</div> }
-													>
-														<div class={ style.SubStoryUnlock }>
-															<Icon icon="unlock-fill" />
-														</div>
-													</BootstrapTooltip>
-												</div>
-
 												<span class="ms-2">
-													<Locale k={ y.key } />
+													<Locale plain k={ y.key } />
 												</span>
+
+												<div class={ style.SubStoryUnlock }>
+													<Icon
+														class="me-2"
+														icon="unlock-fill"
+													/>
+
+													{ y.unlock.params
+														.map(p => <span class={ style.SubStoryUnlockCond }>
+															<Locale
+																plain
+																k={ `SUBSTORY_UNLOCK_${y.unlock.cond}` }
+																p={ [conv(p)] }
+															/>
+														</span>)
+														.gap(<Locale plain k={ `SUBSTORY_UNLOCK_JOIN_${y.unlock.type}` } />)
+													}
+												</div>
 											</div>;
 										}) }
 									</div>

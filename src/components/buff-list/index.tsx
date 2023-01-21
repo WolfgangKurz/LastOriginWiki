@@ -359,8 +359,9 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					case BUFFEFFECT_TYPE.STAGE_MARKING: // 87
 						return <Locale plain k="BUFFTYPE_MARKING" />;
 					case BUFFEFFECT_TYPE.STAGE_DEBUFF_RATEUP: // 90
+						return <Locale plain k="BUFFTYPE_RES_DEBUFF_RATEUP1" />;
 					case BUFFEFFECT_TYPE.STAGE_DEBUFF_PERDOWN: // 91
-						return <Locale plain k="BUFFTYPE_RES_DEBUFF" />;
+						return <Locale plain k="BUFFTYPE_RES_DEBUFF_PERDOWN" />;
 					case BUFFEFFECT_TYPE.STAGE_BUFFEFFECTRATE_CHANGE: // 92
 						return <Locale plain k="BUFFTYPE_EFFECT_RATE" />;
 					case BUFFEFFECT_TYPE.REMOVE_SUMMON_INSTENV: // 93
@@ -953,8 +954,10 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			}
 
 			switch (stat.resist.type) {
-				case "debuff":
-					return <Locale plain k="BUFFEFFECT_RES_DEBUFF" p={ [signedValue(stat.resist.value, level)] } />;
+				case "debuff_rateup":
+					return <Locale plain k="BUFFEFFECT_RES_DEBUFF_RATEUP" p={ [signedValue(stat.resist.value, level)] } />;
+				case "debuff_perdown":
+					return <Locale plain k="BUFFEFFECT_RES_DEBUFF_PERDOWN" p={ [signedValue(stat.resist.value, level)] } />;
 				case "off":
 					return <Locale plain k="BUFFEFFECT_RES_OFF" p={ [signedValue(stat.resist.value, level)] } />;
 			}

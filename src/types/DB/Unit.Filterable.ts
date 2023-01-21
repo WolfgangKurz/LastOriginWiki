@@ -1,6 +1,6 @@
 import { UnitSkin } from "@/types/DB/Unit";
 import { BUFFEFFECT_TYPE } from "../BuffEffect";
-import { SKILL_ATTR, ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, ROGUE_SKILL_TYPE } from "../Enums";
+import { SKILL_ATTR, ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, ROGUE_SKILL_TYPE, CHARTYPE_GIFTITEM_DAMAGE_TYPE } from "../Enums";
 
 export interface FilterableUnitBuff {
 	target: "self" | "team" | "enemy";
@@ -39,6 +39,8 @@ export interface FilterableUnit {
 
 	/** timestamp */
 	releaseDate: number;
+
+	secretRoomType: CHARTYPE_GIFTITEM_DAMAGE_TYPE;
 
 	craft: false | number;
 
@@ -112,8 +114,11 @@ export namespace FilterableUnit {
 			facelist: [],
 
 			category: [],
+			releaseDate: 0,
 			artist: "",
 			sid: 0,
+
+			metadata: { imageId: 0 },
 		},
 
 		roguelike: [],

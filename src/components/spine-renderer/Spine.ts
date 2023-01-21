@@ -1,4 +1,6 @@
 import * as spine from "@esotericsoftware/spine-webgl";
+import { GLTexture } from "@esotericsoftware/spine-webgl";
+import LZMADecompression from "@/external/lzma";
 
 import { CameraController } from "./CameraController";
 
@@ -29,8 +31,89 @@ class Spine {
 	}
 
 	loadAssets (canvas: spine.SpineCanvas) {
-		canvas.assetManager.loadText(`${this.assetName}.json`);
-		canvas.assetManager.loadTextureAtlas(`${this.assetName}.atlas`);
+		const assetManager = canvas.assetManager;
+
+		{
+			let path = `${this.assetName}.json`;
+			path = assetManager["start"](path);
+
+			assetManager["downloader"].downloadBinary(
+				`${path}.lzma`,
+				(binary) => {
+					LZMADecompression(binary, "json.lzma")
+						.then(ab => new TextDecoder().decode(ab))
+						.then(json => assetManager["success"](undefined, path, json));
+				},
+				(status, responseText) => {
+					throw new Error(`${status} :: ${responseText}`);
+				},
+			);
+		}
+
+		{ // load alpha-separated image
+			const changeExt = (path: string, ext: string): string => `${path.substring(0, path.lastIndexOf("."))}.${ext}`;
+
+			let path = `${this.assetName}.atlas`;
+			path = assetManager["start"](path);
+
+			new Promise<string>((resolve, reject) => assetManager["downloader"].downloadText(
+				path, // download atlas file
+				(text) => resolve(text),
+				(status, responseText) => reject(new Error(`${status} :: ${responseText}`)),
+			)).then(async (atlasText) => {
+				const atlas = new spine.TextureAtlas(atlasText); // parse atlas
+
+				for (let page of atlas.pages) { // texture pages
+					const [alpha, texture] = await Promise.all([
+						new Promise<Uint8Array>((resolve, reject) => assetManager["downloader"].downloadBinary(
+							changeExt(assetManager["pathPrefix"] + page.name, "alpha"), // alpha channel data
+							(binary: Uint8Array) => resolve(binary),
+							(status, responseText) => reject(new Error(`${status} :: ${responseText}`)),
+						))
+							.then(binary => LZMADecompression(binary, "alpha"))
+							.then(binary => binary.map(v => v < 0 ? v + 256 : v)),
+						new Promise<spine.Texture>((resolve, reject) => assetManager["downloader"].downloadBinary(
+							changeExt(assetManager["pathPrefix"] + page.name, "jpg"), // alpha-less image
+							(binary: Uint8Array) => {
+								const _img = new Image();
+								_img.onload = () => {
+									resolve(new GLTexture(canvas.context, _img));
+								};
+								_img.src = URL.createObjectURL(new Blob([binary]));
+							},
+							(status, responseText) => reject(new Error(`${status} :: ${responseText}`)),
+						)),
+					]);
+
+					const img = texture.getImage();
+					const glTex = await new Promise<GLTexture>(async resolve => {
+						const texPath = assetManager["start"](page.name);
+
+						const cv = document.createElement("canvas");
+						cv.width = img.width;
+						cv.height = img.height;
+
+						const ctx = cv.getContext("2d")!;
+						ctx.drawImage(img, 0, 0);
+
+						const data = ctx.getImageData(0, 0, img.width, img.height);
+						const arr = data.data.slice(); // clone
+						alpha.forEach((a, i) => (arr[i * 4 + 3] = a)); // apply alpha channel
+
+						const bitmap = await createImageBitmap(
+							new ImageData(arr, img.width, img.height),
+							{ premultiplyAlpha: "none", colorSpaceConversion: "none" },
+						);
+						const tex = new GLTexture(canvas.context, bitmap);
+						assetManager["success"]((_, tex) => resolve(tex), texPath, tex);
+					});
+
+					page.setTexture(glTex);
+				}
+
+				assetManager["success"](undefined, path, atlas);
+			});
+		}
 	}
 
 	initialize (canvas: spine.SpineCanvas) {
@@ -46,15 +129,18 @@ class Spine {
 
 		const stateData = new spine.AnimationStateData(this.skeletonData);
 		this.state = new spine.AnimationState(stateData);
-		this.state.setAnimation(0, "idle", true);
 
-		{ // animation init
-			this.state.setEmptyAnimation(1, 0);
-			const entry = this.state.setAnimation(1, "idle", false);
-			entry.mixDuration = 0.3;
-			entry.animationEnd = 0;
-			entry.mixBlend = spine.MixBlend.add;
-		}
+		this.state.addListener({
+			complete: (entry) => {
+				if (entry.trackIndex === 0 && entry.animation) {
+					if (entry.animation.duration > 0 && entry.animation.name !== "idle")
+						this.idle();
+				}
+			},
+		});
+
+		// animation init
+		this.idle();
 
 		new CameraController(this.canvas.htmlCanvas, this.canvas.renderer.camera);
 
@@ -77,8 +163,10 @@ class Spine {
 	updateSkin () {
 		// Create a new skin from all the selected skins.
 		const newSkin = new spine.Skin("result-skin");
-		for (const skinName of this.selectedSkins)
-			newSkin.addSkin(this.skeletonData.findSkin(skinName)!);
+		for (const skinName of this.selectedSkins) {
+			const skin = this.skeletonData.findSkin(skinName);
+			if (skin) newSkin.addSkin(skin);
+		}
 
 		this.skeleton.setSkin(newSkin);
 		this.skeleton.setToSetupPose();
@@ -119,15 +207,24 @@ class Spine {
 		renderer.end();
 	}
 
-	play (name: string) {
+	play (anim: spine.Animation) {
 		const state = this.state;
 
-		const current = state.getCurrent(1);
-		if (current && !current.isComplete()) return;
+		const current = state.getCurrent(0)!;
+		if (current.animation && current.animation.name !== "idle") return false;
 
-		const entry = state.addAnimation(1, name, false, 0);
-		entry.mixDuration = 0.3;
-		entry.mixBlend = spine.MixBlend.add;
+		const entry = state.setAnimationWith(0, anim, false);
+		entry.mixDuration = 0.5;
+		return true;
+	}
+
+	idle () {
+		const entry = this.state.setAnimation(0, "idle", true);
+		entry.mixDuration = 0.5;
+	}
+
+	animationList () {
+		return this.state.data.skeletonData.animations;
 	}
 }
 export default Spine;

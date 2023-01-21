@@ -871,10 +871,12 @@ export enum FACETYPE {
 	EXPRESSIONLESS = 1,
 	RESOLVE = 2,
 	CLOSEEYE = 3,
+	CLOSEDEYE = 3, // Bad LO devs
 	EMBARRASS = 4,
 	WORRY = 5,
 	BIGSMILE = 6,
 	SURPRISED = 7,
+	SUPRISE = 7, // Bad LO devs
 	SMILE = 8,
 	WHAT = 9,
 	BLUNT = 10,
@@ -1025,4 +1027,11 @@ export enum MISSION_OBJECT_TYPE {
 	STAGE_CLEAR = 0,
 	KILL_ENEMY = 1,
 	KILL_SPCENEMY = 2,
+}
+
+export enum CHARTYPE_GIFTITEM_DAMAGE_TYPE {
+	NONE = 0,
+	ADULT = 1,
+	CHILD = 2,
+	AGS = 3,
 }
