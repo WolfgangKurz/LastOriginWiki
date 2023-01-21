@@ -23,7 +23,7 @@
           "type": 0,
           "range": 3,
           "ap": 7,
-          "grid": "0,0.5,0,0,1,0,0,0.5,0",
+          "grid": "0,1,0,0,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -36,17 +36,7 @@
               "key": "Effect_PECS_Lumberjane_N_1",
               "on": "attack_success",
               "if": [
-                {
-                  "on": {
-                    "target": "target",
-                    "func": "OR",
-                    "select": [
-                      2,
-                      3
-                    ],
-                    "attr": 1
-                  }
-                },
+                false,
                 false
               ],
               "body": [
@@ -66,23 +56,45 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_1_1",
                     "type": 1,
-                    "value": "0.265000",
-                    "level": "0.015000"
+                    "value": "-0.250000",
+                    "level": "-0.010000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 3
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "26.5%",
-                      "per": "1.5%"
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -90,12 +102,12 @@
                 {
                   "icon": "BuffIcon_ARMORED_DMG_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "desc": "Effect_PECS_Lumberjane_N_1_3",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -106,7 +118,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -128,7 +140,9 @@
                 1
               ],
               "class": [
-                1
+                0,
+                1,
+                2
               ],
               "role": [
                 0,
@@ -142,7 +156,7 @@
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_11_1",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
                   "attr": 0,
@@ -155,7 +169,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -172,7 +186,7 @@
           "type": 0,
           "range": 3,
           "ap": 7,
-          "grid": "0,0.5,0,0,1,0,0,0.5,0",
+          "grid": "0,1,0,0,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -185,17 +199,7 @@
               "key": "Effect_PECS_Lumberjane_N_1",
               "on": "attack_success",
               "if": [
-                {
-                  "on": {
-                    "target": "target",
-                    "func": "OR",
-                    "select": [
-                      2,
-                      3
-                    ],
-                    "attr": 1
-                  }
-                },
+                false,
                 false
               ],
               "body": [
@@ -215,23 +219,45 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_1_1",
                     "type": 1,
-                    "value": "0.265000",
-                    "level": "0.015000"
+                    "value": "-0.250000",
+                    "level": "-0.010000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 3
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "26.5%",
-                      "per": "1.5%"
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -239,12 +265,12 @@
                 {
                   "icon": "BuffIcon_ARMORED_DMG_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "desc": "Effect_PECS_Lumberjane_N_1_3",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -255,7 +281,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -277,7 +303,9 @@
                 1
               ],
               "class": [
-                1
+                0,
+                1,
+                2
               ],
               "role": [
                 0,
@@ -291,7 +319,7 @@
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_11_1",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
                   "attr": 0,
@@ -304,7 +332,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -321,7 +349,7 @@
           "type": 0,
           "range": 3,
           "ap": 7,
-          "grid": "0,0.5,0,0,1,0,0,0.5,0",
+          "grid": "0,1,0,0,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -334,17 +362,7 @@
               "key": "Effect_PECS_Lumberjane_N_1",
               "on": "attack_success",
               "if": [
-                {
-                  "on": {
-                    "target": "target",
-                    "func": "OR",
-                    "select": [
-                      2,
-                      3
-                    ],
-                    "attr": 1
-                  }
-                },
+                false,
                 false
               ],
               "body": [
@@ -364,23 +382,45 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_1_1",
                     "type": 1,
-                    "value": "0.265000",
-                    "level": "0.015000"
+                    "value": "-0.250000",
+                    "level": "-0.010000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 3
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "26.5%",
-                      "per": "1.5%"
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -388,12 +428,12 @@
                 {
                   "icon": "BuffIcon_ARMORED_DMG_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "desc": "Effect_PECS_Lumberjane_N_1_3",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -404,7 +444,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -426,7 +466,9 @@
                 1
               ],
               "class": [
-                1
+                0,
+                1,
+                2
               ],
               "role": [
                 0,
@@ -440,7 +482,7 @@
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_11_1",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
                   "attr": 0,
@@ -453,7 +495,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -470,7 +512,7 @@
           "type": 0,
           "range": 3,
           "ap": 7,
-          "grid": "0,0.5,0,0,1,0,0,0.5,0",
+          "grid": "0,1,0,0,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -483,17 +525,7 @@
               "key": "Effect_PECS_Lumberjane_N_1",
               "on": "attack_success",
               "if": [
-                {
-                  "on": {
-                    "target": "target",
-                    "func": "OR",
-                    "select": [
-                      2,
-                      3
-                    ],
-                    "attr": 1
-                  }
-                },
+                false,
                 false
               ],
               "body": [
@@ -513,23 +545,45 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_1_1",
                     "type": 1,
-                    "value": "0.265000",
-                    "level": "0.015000"
+                    "value": "-0.250000",
+                    "level": "-0.010000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 3
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "26.5%",
-                      "per": "1.5%"
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -537,12 +591,12 @@
                 {
                   "icon": "BuffIcon_ARMORED_DMG_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "desc": "Effect_PECS_Lumberjane_N_1_3",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -553,7 +607,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -575,7 +629,9 @@
                 1
               ],
               "class": [
-                1
+                0,
+                1,
+                2
               ],
               "role": [
                 0,
@@ -589,7 +645,7 @@
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_11_1",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
                   "attr": 0,
@@ -602,7 +658,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -619,7 +675,7 @@
           "type": 0,
           "range": 3,
           "ap": 7,
-          "grid": "0,0.5,0,0,1,0,0,0.5,0",
+          "grid": "0,1,0,0,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -632,17 +688,7 @@
               "key": "Effect_PECS_Lumberjane_N_1",
               "on": "attack_success",
               "if": [
-                {
-                  "on": {
-                    "target": "target",
-                    "func": "OR",
-                    "select": [
-                      2,
-                      3
-                    ],
-                    "attr": 1
-                  }
-                },
+                false,
                 false
               ],
               "body": [
@@ -662,23 +708,45 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_1_1",
                     "type": 1,
-                    "value": "0.265000",
-                    "level": "0.015000"
+                    "value": "-0.250000",
+                    "level": "-0.010000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 3
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "26.5%",
-                      "per": "1.5%"
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -686,12 +754,12 @@
                 {
                   "icon": "BuffIcon_ARMORED_DMG_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "desc": "Effect_PECS_Lumberjane_N_1_3",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -702,7 +770,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -724,7 +792,9 @@
                 1
               ],
               "class": [
-                1
+                0,
+                1,
+                2
               ],
               "role": [
                 0,
@@ -738,7 +808,7 @@
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_11_1",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
                   "attr": 0,
@@ -751,7 +821,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -768,7 +838,7 @@
           "type": 0,
           "range": 3,
           "ap": 7,
-          "grid": "0,0.5,0,0,1,0,0,0.5,0",
+          "grid": "0,1,0,0,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -781,17 +851,7 @@
               "key": "Effect_PECS_Lumberjane_N_1",
               "on": "attack_success",
               "if": [
-                {
-                  "on": {
-                    "target": "target",
-                    "func": "OR",
-                    "select": [
-                      2,
-                      3
-                    ],
-                    "attr": 1
-                  }
-                },
+                false,
                 false
               ],
               "body": [
@@ -811,23 +871,45 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_1_1",
                     "type": 1,
-                    "value": "0.265000",
-                    "level": "0.015000"
+                    "value": "-0.250000",
+                    "level": "-0.010000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 3
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "26.5%",
-                      "per": "1.5%"
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -835,12 +917,12 @@
                 {
                   "icon": "BuffIcon_ARMORED_DMG_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "desc": "Effect_PECS_Lumberjane_N_1_3",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -851,7 +933,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -873,7 +955,9 @@
                 1
               ],
               "class": [
-                1
+                0,
+                1,
+                2
               ],
               "role": [
                 0,
@@ -887,7 +971,7 @@
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_11_1",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
                   "attr": 0,
@@ -900,7 +984,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -917,7 +1001,7 @@
           "type": 0,
           "range": 3,
           "ap": 7,
-          "grid": "0,0.5,0,0,1,0,0,0.5,0",
+          "grid": "0,1,0,0,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -930,17 +1014,7 @@
               "key": "Effect_PECS_Lumberjane_N_1",
               "on": "attack_success",
               "if": [
-                {
-                  "on": {
-                    "target": "target",
-                    "func": "OR",
-                    "select": [
-                      2,
-                      3
-                    ],
-                    "attr": 1
-                  }
-                },
+                false,
                 false
               ],
               "body": [
@@ -960,23 +1034,45 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_1_1",
                     "type": 1,
-                    "value": "0.265000",
-                    "level": "0.015000"
+                    "value": "-0.250000",
+                    "level": "-0.010000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 3
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "26.5%",
-                      "per": "1.5%"
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -984,12 +1080,12 @@
                 {
                   "icon": "BuffIcon_ARMORED_DMG_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "desc": "Effect_PECS_Lumberjane_N_1_3",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1000,7 +1096,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -1022,7 +1118,9 @@
                 1
               ],
               "class": [
-                1
+                0,
+                1,
+                2
               ],
               "role": [
                 0,
@@ -1036,7 +1134,7 @@
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_11_1",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
                   "attr": 0,
@@ -1049,7 +1147,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -1066,7 +1164,7 @@
           "type": 0,
           "range": 3,
           "ap": 7,
-          "grid": "0,0.5,0,0,1,0,0,0.5,0",
+          "grid": "0,1,0,0,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -1079,17 +1177,7 @@
               "key": "Effect_PECS_Lumberjane_N_1",
               "on": "attack_success",
               "if": [
-                {
-                  "on": {
-                    "target": "target",
-                    "func": "OR",
-                    "select": [
-                      2,
-                      3
-                    ],
-                    "attr": 1
-                  }
-                },
+                false,
                 false
               ],
               "body": [
@@ -1109,23 +1197,45 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_1_1",
                     "type": 1,
-                    "value": "0.265000",
-                    "level": "0.015000"
+                    "value": "-0.250000",
+                    "level": "-0.010000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 3
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "26.5%",
-                      "per": "1.5%"
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -1133,12 +1243,12 @@
                 {
                   "icon": "BuffIcon_ARMORED_DMG_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "desc": "Effect_PECS_Lumberjane_N_1_3",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1149,7 +1259,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -1171,7 +1281,9 @@
                 1
               ],
               "class": [
-                1
+                0,
+                1,
+                2
               ],
               "role": [
                 0,
@@ -1185,7 +1297,7 @@
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_11_1",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
                   "attr": 0,
@@ -1198,7 +1310,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -1215,7 +1327,7 @@
           "type": 0,
           "range": 3,
           "ap": 7,
-          "grid": "0,0.5,0,0,1,0,0,0.5,0",
+          "grid": "0,1,0,0,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -1228,17 +1340,7 @@
               "key": "Effect_PECS_Lumberjane_N_1",
               "on": "attack_success",
               "if": [
-                {
-                  "on": {
-                    "target": "target",
-                    "func": "OR",
-                    "select": [
-                      2,
-                      3
-                    ],
-                    "attr": 1
-                  }
-                },
+                false,
                 false
               ],
               "body": [
@@ -1258,23 +1360,45 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_1_1",
                     "type": 1,
-                    "value": "0.265000",
-                    "level": "0.015000"
+                    "value": "-0.250000",
+                    "level": "-0.010000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 3
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "26.5%",
-                      "per": "1.5%"
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -1282,12 +1406,12 @@
                 {
                   "icon": "BuffIcon_ARMORED_DMG_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "desc": "Effect_PECS_Lumberjane_N_1_3",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1298,7 +1422,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -1320,7 +1444,9 @@
                 1
               ],
               "class": [
-                1
+                0,
+                1,
+                2
               ],
               "role": [
                 0,
@@ -1334,7 +1460,7 @@
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_11_1",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
                   "attr": 0,
@@ -1347,7 +1473,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -1364,7 +1490,7 @@
           "type": 0,
           "range": 3,
           "ap": 7,
-          "grid": "0,0.5,0,0,1,0,0,0.5,0",
+          "grid": "0,1,0,0,1,0,0,1,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -1377,17 +1503,7 @@
               "key": "Effect_PECS_Lumberjane_N_1",
               "on": "attack_success",
               "if": [
-                {
-                  "on": {
-                    "target": "target",
-                    "func": "OR",
-                    "select": [
-                      2,
-                      3
-                    ],
-                    "attr": 1
-                  }
-                },
+                false,
                 false
               ],
               "body": [
@@ -1407,23 +1523,45 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_1_1",
                     "type": 1,
-                    "value": "0.265000",
-                    "level": "0.015000"
+                    "value": "-0.250000",
+                    "level": "-0.010000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 3
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "26.5%",
-                      "per": "1.5%"
+                    "type": 3,
+                    "defense": {
+                      "base": "-25%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "-0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "-0.5%"
                     }
                   },
                   "overlap": 4
@@ -1431,12 +1569,12 @@
                 {
                   "icon": "BuffIcon_ARMORED_DMG_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_1_2",
+                    "desc": "Effect_PECS_Lumberjane_N_1_3",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
                     "rounds": 0
                   },
@@ -1447,7 +1585,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -1469,7 +1607,9 @@
                 1
               ],
               "class": [
-                1
+                0,
+                1,
+                2
               ],
               "role": [
                 0,
@@ -1483,7 +1623,7 @@
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_11_1",
                     "type": 1,
-                    "value": "0.165000",
+                    "value": "0.200000",
                     "level": "0.015000"
                   },
                   "attr": 0,
@@ -1496,7 +1636,7 @@
                     "damage_multiply": {
                       "target": "heavy",
                       "value": {
-                        "base": "16.5%",
+                        "base": "20%",
                         "per": "1.5%"
                       }
                     }
@@ -1526,26 +1666,38 @@
       "data": [
         [
           {
-            "icon": "BuffIcon_PhyATK_UP",
+            "icon": "BuffIcon_DEF_DOWN",
             "desc": {
               "desc": "Effect_PECS_Lumberjane_N_1_1",
               "type": 1,
-              "value": "0.265000",
-              "level": "0.015000"
+              "value": "-0.250000",
+              "level": "-0.010000"
             },
-            "base": 0.265,
-            "per": 0.015,
+            "base": -0.25,
+            "per": -0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_DOWN",
+            "desc": {
+              "desc": "Effect_PECS_Lumberjane_N_1_2",
+              "type": 1,
+              "value": "-0.050000",
+              "level": "-0.005000"
+            },
+            "base": -0.05,
+            "per": -0.005,
             "chance": 1
           },
           {
             "icon": "BuffIcon_ARMORED_DMG_UP",
             "desc": {
-              "desc": "Effect_PECS_Lumberjane_N_1_2",
+              "desc": "Effect_PECS_Lumberjane_N_1_3",
               "type": 1,
-              "value": "0.165000",
+              "value": "0.200000",
               "level": "0.015000"
             },
-            "base": 0.165,
+            "base": 0.2,
             "per": 0.015,
             "chance": 0
           },
@@ -1554,10 +1706,10 @@
             "desc": {
               "desc": "Effect_PECS_Lumberjane_N_11_1",
               "type": 1,
-              "value": "0.165000",
+              "value": "0.200000",
               "level": "0.015000"
             },
-            "base": 0.165,
+            "base": 0.2,
             "per": 0.015,
             "chance": 1
           }
@@ -1602,7 +1754,17 @@
               "key": "Effect_PECS_Lumberjane_N_2",
               "on": "attack_success",
               "if": [
-                false,
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 1
+                  }
+                },
                 false
               ],
               "body": [
@@ -1622,46 +1784,189 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_DOWN",
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_2_1",
                     "type": 1,
-                    "value": "-0.275000",
-                    "level": "-0.025000"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-27.5%",
-                      "per": "-2.5%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_21",
+              "on": "attack_success",
+              "if": [
                 {
-                  "icon": "BuffIcon_AP_DOWN",
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_2_2",
+                    "desc": "Effect_PECS_Lumberjane_N_21_1",
                     "type": 1,
-                    "value": "-0.087500",
-                    "level": "-0.012500"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 13,
-                    "turnSpeed": {
-                      "base": "-8.75%",
-                      "per": "-1.25%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_22",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_4"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_22_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_23",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_41"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_23_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
                   },
                   "overlap": 4
                 }
@@ -1688,7 +1993,17 @@
               "key": "Effect_PECS_Lumberjane_N_2",
               "on": "attack_success",
               "if": [
-                false,
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 1
+                  }
+                },
                 false
               ],
               "body": [
@@ -1708,46 +2023,189 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_DOWN",
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_2_1",
                     "type": 1,
-                    "value": "-0.275000",
-                    "level": "-0.025000"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-27.5%",
-                      "per": "-2.5%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_21",
+              "on": "attack_success",
+              "if": [
                 {
-                  "icon": "BuffIcon_AP_DOWN",
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_2_2",
+                    "desc": "Effect_PECS_Lumberjane_N_21_1",
                     "type": 1,
-                    "value": "-0.087500",
-                    "level": "-0.012500"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 13,
-                    "turnSpeed": {
-                      "base": "-8.75%",
-                      "per": "-1.25%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_22",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_4"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_22_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_23",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_41"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_23_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
                   },
                   "overlap": 4
                 }
@@ -1774,7 +2232,17 @@
               "key": "Effect_PECS_Lumberjane_N_2",
               "on": "attack_success",
               "if": [
-                false,
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 1
+                  }
+                },
                 false
               ],
               "body": [
@@ -1794,46 +2262,189 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_DOWN",
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_2_1",
                     "type": 1,
-                    "value": "-0.275000",
-                    "level": "-0.025000"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-27.5%",
-                      "per": "-2.5%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_21",
+              "on": "attack_success",
+              "if": [
                 {
-                  "icon": "BuffIcon_AP_DOWN",
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_2_2",
+                    "desc": "Effect_PECS_Lumberjane_N_21_1",
                     "type": 1,
-                    "value": "-0.087500",
-                    "level": "-0.012500"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 13,
-                    "turnSpeed": {
-                      "base": "-8.75%",
-                      "per": "-1.25%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_22",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_4"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_22_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_23",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_41"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_23_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
                   },
                   "overlap": 4
                 }
@@ -1860,7 +2471,17 @@
               "key": "Effect_PECS_Lumberjane_N_2",
               "on": "attack_success",
               "if": [
-                false,
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 1
+                  }
+                },
                 false
               ],
               "body": [
@@ -1880,46 +2501,189 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_DOWN",
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_2_1",
                     "type": 1,
-                    "value": "-0.275000",
-                    "level": "-0.025000"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-27.5%",
-                      "per": "-2.5%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_21",
+              "on": "attack_success",
+              "if": [
                 {
-                  "icon": "BuffIcon_AP_DOWN",
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_2_2",
+                    "desc": "Effect_PECS_Lumberjane_N_21_1",
                     "type": 1,
-                    "value": "-0.087500",
-                    "level": "-0.012500"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 13,
-                    "turnSpeed": {
-                      "base": "-8.75%",
-                      "per": "-1.25%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_22",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_4"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_22_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_23",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_41"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_23_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
                   },
                   "overlap": 4
                 }
@@ -1946,7 +2710,17 @@
               "key": "Effect_PECS_Lumberjane_N_2",
               "on": "attack_success",
               "if": [
-                false,
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 1
+                  }
+                },
                 false
               ],
               "body": [
@@ -1966,46 +2740,189 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_DOWN",
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_2_1",
                     "type": 1,
-                    "value": "-0.275000",
-                    "level": "-0.025000"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-27.5%",
-                      "per": "-2.5%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_21",
+              "on": "attack_success",
+              "if": [
                 {
-                  "icon": "BuffIcon_AP_DOWN",
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_2_2",
+                    "desc": "Effect_PECS_Lumberjane_N_21_1",
                     "type": 1,
-                    "value": "-0.087500",
-                    "level": "-0.012500"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 13,
-                    "turnSpeed": {
-                      "base": "-8.75%",
-                      "per": "-1.25%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_22",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_4"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_22_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_23",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_41"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_23_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
                   },
                   "overlap": 4
                 }
@@ -2032,7 +2949,17 @@
               "key": "Effect_PECS_Lumberjane_N_2",
               "on": "attack_success",
               "if": [
-                false,
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 1
+                  }
+                },
                 false
               ],
               "body": [
@@ -2052,46 +2979,189 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_DOWN",
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_2_1",
                     "type": 1,
-                    "value": "-0.275000",
-                    "level": "-0.025000"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-27.5%",
-                      "per": "-2.5%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_21",
+              "on": "attack_success",
+              "if": [
                 {
-                  "icon": "BuffIcon_AP_DOWN",
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_2_2",
+                    "desc": "Effect_PECS_Lumberjane_N_21_1",
                     "type": 1,
-                    "value": "-0.087500",
-                    "level": "-0.012500"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 13,
-                    "turnSpeed": {
-                      "base": "-8.75%",
-                      "per": "-1.25%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_22",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_4"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_22_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_23",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_41"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_23_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
                   },
                   "overlap": 4
                 }
@@ -2118,7 +3188,17 @@
               "key": "Effect_PECS_Lumberjane_N_2",
               "on": "attack_success",
               "if": [
-                false,
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 1
+                  }
+                },
                 false
               ],
               "body": [
@@ -2138,46 +3218,189 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_DOWN",
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_2_1",
                     "type": 1,
-                    "value": "-0.275000",
-                    "level": "-0.025000"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-27.5%",
-                      "per": "-2.5%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_21",
+              "on": "attack_success",
+              "if": [
                 {
-                  "icon": "BuffIcon_AP_DOWN",
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_2_2",
+                    "desc": "Effect_PECS_Lumberjane_N_21_1",
                     "type": 1,
-                    "value": "-0.087500",
-                    "level": "-0.012500"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 13,
-                    "turnSpeed": {
-                      "base": "-8.75%",
-                      "per": "-1.25%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_22",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_4"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_22_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_23",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_41"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_23_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
                   },
                   "overlap": 4
                 }
@@ -2204,7 +3427,17 @@
               "key": "Effect_PECS_Lumberjane_N_2",
               "on": "attack_success",
               "if": [
-                false,
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 1
+                  }
+                },
                 false
               ],
               "body": [
@@ -2224,46 +3457,189 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_DOWN",
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_2_1",
                     "type": 1,
-                    "value": "-0.275000",
-                    "level": "-0.025000"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-27.5%",
-                      "per": "-2.5%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_21",
+              "on": "attack_success",
+              "if": [
                 {
-                  "icon": "BuffIcon_AP_DOWN",
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_2_2",
+                    "desc": "Effect_PECS_Lumberjane_N_21_1",
                     "type": 1,
-                    "value": "-0.087500",
-                    "level": "-0.012500"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 13,
-                    "turnSpeed": {
-                      "base": "-8.75%",
-                      "per": "-1.25%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_22",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_4"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_22_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_23",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_41"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_23_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
                   },
                   "overlap": 4
                 }
@@ -2290,7 +3666,17 @@
               "key": "Effect_PECS_Lumberjane_N_2",
               "on": "attack_success",
               "if": [
-                false,
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 1
+                  }
+                },
                 false
               ],
               "body": [
@@ -2310,46 +3696,189 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_DOWN",
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_2_1",
                     "type": 1,
-                    "value": "-0.275000",
-                    "level": "-0.025000"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-27.5%",
-                      "per": "-2.5%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_21",
+              "on": "attack_success",
+              "if": [
                 {
-                  "icon": "BuffIcon_AP_DOWN",
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_2_2",
+                    "desc": "Effect_PECS_Lumberjane_N_21_1",
                     "type": 1,
-                    "value": "-0.087500",
-                    "level": "-0.012500"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 13,
-                    "turnSpeed": {
-                      "base": "-8.75%",
-                      "per": "-1.25%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_22",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_4"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_22_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_23",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_41"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_23_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
                   },
                   "overlap": 4
                 }
@@ -2376,7 +3905,17 @@
               "key": "Effect_PECS_Lumberjane_N_2",
               "on": "attack_success",
               "if": [
-                false,
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      2,
+                      3
+                    ],
+                    "attr": 1
+                  }
+                },
                 false
               ],
               "body": [
@@ -2396,46 +3935,189 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_DOWN",
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
                     "desc": "Effect_PECS_Lumberjane_N_2_1",
                     "type": 1,
-                    "value": "-0.275000",
-                    "level": "-0.025000"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-27.5%",
-                      "per": "-2.5%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_21",
+              "on": "attack_success",
+              "if": [
                 {
-                  "icon": "BuffIcon_AP_DOWN",
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      13
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_2_2",
+                    "desc": "Effect_PECS_Lumberjane_N_21_1",
                     "type": 1,
-                    "value": "-0.087500",
-                    "level": "-0.012500"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
-                  "attr": 1,
+                  "attr": 3,
                   "erase": {
-                    "rounds": 3
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 13,
-                    "turnSpeed": {
-                      "base": "-8.75%",
-                      "per": "-1.25%"
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
                     }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_22",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_4"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_22_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_23",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_41"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_23_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 99,
+                    "off": 0
                   },
                   "overlap": 4
                 }
@@ -2462,27 +4144,51 @@
       "data": [
         [
           {
-            "icon": "BuffIcon_DEF_DOWN",
+            "icon": "BuffIcon_PhyATK_UP",
             "desc": {
               "desc": "Effect_PECS_Lumberjane_N_2_1",
               "type": 1,
-              "value": "-0.275000",
-              "level": "-0.025000"
+              "value": "0.200000",
+              "level": "0.020000"
             },
-            "base": -0.275,
-            "per": -0.025,
+            "base": 0.2,
+            "per": 0.02,
             "chance": 1
           },
           {
-            "icon": "BuffIcon_AP_DOWN",
+            "icon": "BuffIcon_PhyATK_UP",
             "desc": {
-              "desc": "Effect_PECS_Lumberjane_N_2_2",
+              "desc": "Effect_PECS_Lumberjane_N_21_1",
               "type": 1,
-              "value": "-0.087500",
-              "level": "-0.012500"
+              "value": "0.200000",
+              "level": "0.020000"
             },
-            "base": -0.0875,
-            "per": -0.0125,
+            "base": 0.2,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "Effect_PECS_Lumberjane_N_22_1",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "Effect_PECS_Lumberjane_N_23_1",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
             "chance": 1
           }
         ]
@@ -2525,9 +4231,170 @@
           "buffs": [
             {
               "key": "Effect_PECS_Lumberjane_N_3",
+              "on": "round",
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_3_1",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "10%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_3_2",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 58,
+                    "penetration": {
+                      "base": "5%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_3_3",
+                    "type": 0,
+                    "value": "0.500000",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": 0.5,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 4
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_31",
+              "on": "round",
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_31_1",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "5%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 4
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_32",
               "on": "attack_success",
               "if": [
-                false,
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_31"
+                    ],
+                    "stack": 1,
+                    "attr": 6
+                  }
+                },
                 false
               ],
               "body": [
@@ -2549,71 +4416,477 @@
                 {
                   "icon": "BuffIcon_AP_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_3_1",
-                    "type": 1,
-                    "value": "0.033000",
-                    "level": "0.013000"
+                    "desc": "Effect_PECS_Lumberjane_N_32_1",
+                    "type": 0,
+                    "value": "0.500000",
+                    "level": "0"
                   },
                   "attr": 0,
                   "erase": {
-                    "rounds": 4
+                    "rounds": 0
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 13,
-                    "turnSpeed": {
-                      "base": "3.3%",
-                      "per": "1.3%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_PIERCE_UP",
-                  "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_3_2",
-                    "type": 1,
-                    "value": "0.060000",
-                    "level": "0.010000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 4
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 58,
-                    "penetration": {
-                      "base": "6%",
-                      "per": "1%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_ATK_UP",
-                  "desc": {
-                    "desc": "Effect_PECS_Lumberjane_N_3_3",
-                    "type": 1,
-                    "value": "0.150000",
-                    "level": "0.006500"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 4
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 1,
-                    "attack": {
-                      "base": "15%",
-                      "per": "0.65%"
+                    "type": 20,
+                    "ap": {
+                      "base": 0.5,
+                      "per": 0
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 9
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_33",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_31"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_33_1",
+                    "type": 0,
+                    "value": "0.500000",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 0.5,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_34",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_31"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_34_1",
+                    "type": 0,
+                    "value": "0.500000",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 0.5,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_35",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_31"
+                    ],
+                    "stack": 4,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_35_1",
+                    "type": 0,
+                    "value": "0.500000",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 0.5,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_36",
+              "on": "round",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_36_1",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 3
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_37",
+              "on": "round",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_37_1",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "10%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 3
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_38",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_37"
+                    ],
+                    "stack": 1,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_38_1",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_39",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_37"
+                    ],
+                    "stack": 2,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_39_1",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_310",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_37"
+                    ],
+                    "stack": 3,
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_310_1",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -2635,15 +4908,15 @@
       "data": [
         [
           {
-            "icon": "BuffIcon_AP_UP",
+            "icon": "BuffIcon_ATK_UP",
             "desc": {
               "desc": "Effect_PECS_Lumberjane_N_3_1",
               "type": 1,
-              "value": "0.033000",
-              "level": "0.013000"
+              "value": "0.100000",
+              "level": "0.010000"
             },
-            "base": 0.033,
-            "per": 0.013,
+            "base": 0.1,
+            "per": 0.01,
             "chance": 1
           },
           {
@@ -2651,24 +4924,519 @@
             "desc": {
               "desc": "Effect_PECS_Lumberjane_N_3_2",
               "type": 1,
-              "value": "0.060000",
+              "value": "0.050000",
               "level": "0.010000"
             },
-            "base": 0.06,
+            "base": 0.05,
+            "per": 0.01,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_Lumberjane_N_3_3",
+              "type": 0,
+              "value": "0.500000",
+              "level": "0"
+            },
+            "base": 0.5,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_DEF_PIERCE_UP",
+            "desc": {
+              "desc": "Effect_PECS_Lumberjane_N_31_1",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.010000"
+            },
+            "base": 0.05,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_Lumberjane_N_32_1",
+              "type": 0,
+              "value": "0.500000",
+              "level": "0"
+            },
+            "base": 0.5,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_Lumberjane_N_33_1",
+              "type": 0,
+              "value": "0.500000",
+              "level": "0"
+            },
+            "base": 0.5,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_Lumberjane_N_34_1",
+              "type": 0,
+              "value": "0.500000",
+              "level": "0"
+            },
+            "base": 0.5,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_Lumberjane_N_35_1",
+              "type": 0,
+              "value": "0.500000",
+              "level": "0"
+            },
+            "base": 0.5,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Effect_PECS_Lumberjane_N_36_1",
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.020000"
+            },
+            "base": 0.2,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_PIERCE_UP",
+            "desc": {
+              "desc": "Effect_PECS_Lumberjane_N_37_1",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.020000"
+            },
+            "base": 0.1,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_Lumberjane_N_38_1",
+              "type": 0,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_Lumberjane_N_39_1",
+              "type": 0,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_Lumberjane_N_310_1",
+              "type": 0,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "4": {
+    "key": "4",
+    "icon": "P.SelfDefDeBuff",
+    "target": "enemy",
+    "delayed": false,
+    "leastGrade": 4,
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "F>1,1,1,1,1,1,1,1,1",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "enabled": true,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Lumberjane_N_4",
+              "on": "round",
+              "if": [
+                {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_4_1",
+                    "type": 1,
+                    "value": "0.010000",
+                    "level": "0.005000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "999%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "1%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_4_2",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 99,
+                    "off": 0
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Lumberjane_N_41",
+              "on": "round",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Lumberjane_N_5"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_41_1",
+                    "type": 1,
+                    "value": "0.010000",
+                    "level": "0.005000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "1%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "Effect_PECS_Lumberjane_N_4_1",
+              "type": 1,
+              "value": "0.010000",
+              "level": "0.005000"
+            },
+            "base": 0.01,
+            "per": 0.005,
+            "chance": 9.99
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "Effect_PECS_Lumberjane_N_4_2",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "Effect_PECS_Lumberjane_N_41_1",
+              "type": 1,
+              "value": "0.010000",
+              "level": "0.005000"
+            },
+            "base": 0.01,
+            "per": 0.005,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "5": {
+    "key": "5",
+    "icon": "P.SelfSpdBuff",
+    "target": "team",
+    "delayed": false,
+    "leastGrade": 5,
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "enabled": true,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Lumberjane_N_5",
+              "on": "wave",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_5_1",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.010000"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "15%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Lumberjane_N_5_2",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 0,
+                    "attack": {
+                      "base": 0,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "Effect_PECS_Lumberjane_N_5_1",
+              "type": 1,
+              "value": "0.150000",
+              "level": "0.010000"
+            },
+            "base": 0.15,
             "per": 0.01,
             "chance": 1
           },
           {
             "icon": "BuffIcon_ATK_UP",
             "desc": {
-              "desc": "Effect_PECS_Lumberjane_N_3_3",
+              "desc": "Effect_PECS_Lumberjane_N_5_2",
               "type": 1,
-              "value": "0.150000",
-              "level": "0.006500"
+              "value": "0",
+              "level": "0"
             },
-            "base": 0.15,
-            "per": 0.0065,
-            "chance": 1
+            "base": 0,
+            "per": 0,
+            "chance": 0
           }
         ]
       ]

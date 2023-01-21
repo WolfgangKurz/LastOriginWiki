@@ -3,7 +3,7 @@ import { UnitDialogueAudioType, UnitDialogueDataType } from "@/types/DB/Dialogue
 import { MapWaveDrop } from "@/types/DB/Map";
 import { SkillGroup } from "@/types/DB/Skill";
 import { UnitStats } from "@/types/DB/UnitStats";
-import { ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, ITEM_TYPE, FACETYPE } from "@/types/Enums";
+import { ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, ITEM_TYPE, FACETYPE, CHARTYPE_GIFTITEM_DAMAGE_TYPE } from "@/types/Enums";
 import RoguelikeSkill from "./Roguelike.Skill";
 
 export type LinkBonusType =
@@ -180,6 +180,7 @@ export interface Unit {
 	country: string;
 	age: string;
 
+	secretRoomType: CHARTYPE_GIFTITEM_DAMAGE_TYPE;
 	marriageVoice: boolean;
 	introVoice: UnitDialogueAudioType[];
 	favor: {
@@ -242,6 +243,7 @@ export namespace Unit {
 		country: "",
 		age: "",
 
+		secretRoomType: CHARTYPE_GIFTITEM_DAMAGE_TYPE.NONE,
 		marriageVoice: false,
 		introVoice: [],
 		favor: {

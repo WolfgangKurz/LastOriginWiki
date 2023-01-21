@@ -1028,3 +1028,10 @@ export enum MISSION_OBJECT_TYPE {
 	KILL_ENEMY = 1,
 	KILL_SPCENEMY = 2,
 }
+
+export enum CHARTYPE_GIFTITEM_DAMAGE_TYPE {
+	NONE = 0,
+	ADULT = 1,
+	CHILD = 2,
+	AGS = 3,
+}

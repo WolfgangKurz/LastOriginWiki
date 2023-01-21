@@ -295,27 +295,28 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 			// pre-apply filters on all sprites
 			const _spriteMap: SPRITE_MAP = {};
 			await new Promise<void>(resolve => {
-				let count = 0;
 				const sl = [
 					...r.sprite,
 					...r.face.map(f => ({ ...f, name: `FACE__${f.name}` })), // face sprite name
 				];
-				sl.forEach(s => applyFilter(texMap[s.tex], s.vector, s.v, image => {
-					image.toBlob(blob => {
-						if (!blob) {
-							console.error(`[2DModelRenderer] Failed to apply filter to texture ${s.tex} from sprite ${s.name}`);
-							return;
-						}
 
-						_spriteMap[s.name] = {
-							...s,
-							url: URL.createObjectURL(blob),
-						};
+				Promise.all(sl.map(s => new Promise<void>(resolve2 => {
+					applyFilter(texMap[s.tex], s.vector, s.v, image => {
+						image.toBlob(blob => {
+							if (!blob) {
+								console.error(`[2DModelRenderer] Failed to apply filter to texture ${s.tex} from sprite ${s.name}`);
+								return;
+							}
 
-						count++;
-						if (count >= sl.length) resolve();
-					}, "image/png");
-				}));
+							_spriteMap[s.name] = {
+								...s,
+								url: URL.createObjectURL(blob),
+							};
+
+							resolve2();
+						}, "image/png");
+					});
+				}))).then(() => resolve());
 			});
 			setSpriteMap(_spriteMap);
 

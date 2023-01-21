@@ -9,6 +9,34 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12048" date="2023-01-21"
+		new={ <>
+			<li>전투원 정보에 <BY>비밀의 방 유형</BY> 정보가 추가되었습니다.</li>
+			<li><BY>질주하는 아탈란테</BY>의 승급 정보가 추가되었습니다.</li>
+			<li><BY>바바리아나</BY>의 승급 정보가 추가되었습니다.</li>
+			<li><BY>럼버제인</BY>의 승급 정보가 추가되었습니다.</li>
+			<li><BY>퀸오브메인</BY>의 승급 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li><BY>질주하는 아탈란테</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li><BY>바바리아나</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li><BY>럼버제인</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li><BY>퀸오브메인</BY>의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>레나 더 챔피언</BY>의 스킨 <BR>챔피언 난입 1초 전</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>P-18 실피드</BY>의 스킨 <BR>자유로운 영혼 실피드</BR>의 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li>일부 전투원의 일어 보이스가 추가되었습니다.</li>
+			<li>일부 전투원의 성우 정보가 갱신되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2023-01-21 19:59:36</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12043" date="2023-01-09"
 		new={ <>
 			<li>이벤트 <BY>눈먼공주와 안개의 나라</BY>의 2부 정보가 추가되었습니다.</li>
