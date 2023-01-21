@@ -4,6 +4,10 @@
 }
 
 .SubStoryGroup {
+	img.SubStoryGroupIcon {
+		border-radius: 0.25em;
+	}
+
 	> span {
 		font-size: 120%;
 	}
@@ -24,17 +28,22 @@
 			}
 
 			.SubStoryUnlock {
-				margin: 0.25em 0;
-				padding: 0.5em;
+				margin: 0.5em 0 0;
+				padding: 0.25em 0.5em;
 				border-radius: 0.25em;
 				background-color: transparentize($light, 0.9);
 				line-height: 0;
+				font-size: 95%;
 			}
 		}
 	}
 }
 .SubStoryUnlockCond {
 	word-break: keep-all;
+}
+.SubStoryUnlockCondStage {
+	background-color: transparentize($black, 0.4);
+	color: $light;
 }
 
 .BadgeImage {

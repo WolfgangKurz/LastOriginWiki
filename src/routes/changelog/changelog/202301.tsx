@@ -9,7 +9,7 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12048" date="2023-01-21"
+	<ChangelogItem title="Build 12050" date="2023-01-21"
 		new={ <>
 			<li>전투원 정보에 <BY>비밀의 방 유형</BY> 정보가 추가되었습니다.</li>
 			<li><BY>질주하는 아탈란테</BY>의 승급 정보가 추가되었습니다.</li>
@@ -17,11 +17,15 @@ const Changelog: FunctionalComponent = () => <>
 			<li><BY>럼버제인</BY>의 승급 정보가 추가되었습니다.</li>
 			<li><BY>퀸오브메인</BY>의 승급 정보가 추가되었습니다.</li>
 		</> }
+		bugfix={ <>
+			<li>세계정보에서 일부 서브스토리의 제목이 표시되지 않던 점을 수정했습니다.</li>
+		</> }
 		update={ <>
 			<li><BY>질주하는 아탈란테</BY>의 스킬 정보가 갱신되었습니다.</li>
 			<li><BY>바바리아나</BY>의 스킬 정보가 갱신되었습니다.</li>
 			<li><BY>럼버제인</BY>의 스킬 정보가 갱신되었습니다.</li>
 			<li><BY>퀸오브메인</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>세계정보의 서브스토리 정보에 해금 조건 표기를 수정했습니다.</li>
 		</> }
 		skin={ <>
 			<li>
