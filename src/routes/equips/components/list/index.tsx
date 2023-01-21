@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
-import Store from "@/store";
+import OldStore from "@/oldstore";
 
 import { EffectFilterListItemPM, EffectFilterListItemSingle, EffectFilterListType } from "@/types/Buff";
 import { BuffEffectList, BuffEffectListGroupKeys } from "@/types/BuffEffect";
@@ -43,7 +43,7 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 		return <>
 			<EquipPopup key="equip-popup" equip={ selectedEquip } display />
 
-			{ Store.ConnectDirect(
+			{ OldStore.ConnectDirect(
 				"Equips",
 				({
 					Equips: Filters,

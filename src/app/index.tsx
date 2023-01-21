@@ -1,7 +1,7 @@
 import { FunctionalComponent } from "preact";
 import { Router } from "preact-router";
 import AsyncRoute from "preact-async-route";
-import Store from "@/store";
+import OldStore from "@/oldstore";
 
 import { CurrentLocale } from "@/libs/Locale";
 import { Host, IsAprilFool } from "@/libs/Const";
@@ -41,7 +41,7 @@ const App: FunctionalComponent = () => {
 		getComponent: () => component().then(x => x.default),
 	});
 
-	return <Store.Provider>
+	return <OldStore.Provider>
 		<div id="app">
 			<link href={ `${Host}/assets/font/SpoqaHanSans-kr.css` } rel="stylesheet" />
 			<link href={ `${Host}/assets/font/SpoqaHanSans-jp.css` } rel="stylesheet" />
@@ -54,7 +54,8 @@ const App: FunctionalComponent = () => {
 						<AsyncRoute path="/" { ...pRoute(() => import("@/routes/home")) } />
 
 						<AsyncRoute path="/units" { ...pRoute(() => import("@/routes/units")) } />
-						<AsyncRoute path="/units/:uid" { ...pRoute(() => import("@/routes/units/view")) } />
+						<AsyncRoute path="/units/:uid/:sub?" { ...pRoute(() => import("@/routes/units/view")) } />
+						{/* <AsyncRoute path="/units/:uid/s:sid" { ...pRoute(() => import("@/routes/units/view")) } /> */}
 
 						<AsyncRoute path="/equips/:uid?" { ...pRoute(() => import("@/routes/equips")) } />
 
@@ -86,6 +87,7 @@ const App: FunctionalComponent = () => {
 						<AsyncRoute path="/calc/exp" { ...pRoute(() => import("@/routes/calc/exp")) } />
 						{/* <AsyncRoute {...p}  path="/roguelike" component={() => Roguelike } /> */ }
 
+						<AsyncRoute path="/bg" { ...pRoute(() => import("@/routes/bg")) } />
 						<AsyncRoute path="/bgm" { ...pRoute(() => import("@/routes/bgm")) } />
 						<AsyncRoute path="/sticker" { ...pRoute(() => import("@/routes/sticker")) } />
 
@@ -97,7 +99,7 @@ const App: FunctionalComponent = () => {
 					</Router>
 				</div>
 
-				{ Store.ConnectDirect("requireReload", ({ requireReload }) =>
+				{ OldStore.ConnectDirect("requireReload", ({ requireReload }) =>
 					requireReload
 						? <PopupBase display>
 							<div class="text-center m-0" style={ { lineHeight: "1.3", fontSize: "5rem" } }>
@@ -111,6 +113,6 @@ const App: FunctionalComponent = () => {
 				) }
 			</Loader>
 		</div>
-	</Store.Provider>;
+	</OldStore.Provider>;
 };
 export default App;

@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "preact";
-import Store from "@/store";
+import OldStore from "@/oldstore";
 
 import { isActive } from "@/libs/Functions";
 
@@ -21,12 +21,12 @@ interface EnemiesProps {
 const Enemies: FunctionalComponent<EnemiesProps> = (props) => {
 	const DisplayType = objState<"list" | "group">("list");
 
-	const storeUnsubscriber = Store.Subscribe(state => {
+	const storeUnsubscriber = OldStore.Subscribe(state => {
 		const d = state.Enemies.DisplayType;
 		if (d !== DisplayType.value)
 			DisplayType.set(d);
 	}, true);
-	const { setEnemiesDisplayType: setDisplayType } = Store.Actions();
+	const { setEnemiesDisplayType: setDisplayType } = OldStore.Actions();
 
 	useEffect(() => {
 		// Nothing to do

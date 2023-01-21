@@ -7,7 +7,7 @@ import { MapEnemyData } from "@/types/DB/Map";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { isActive } from "@/libs/Functions";
+import { FormatNumber, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
@@ -121,6 +121,52 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 
 				const alterium = ConsumableDB.find(y => y.key === "Consumable_EWMPMetal");
 				const rAlterium = ConsumableDB.find(y => y.key === "Consumable_RefinedMineral");
+
+				const [alterGet, alterMax, alterPer, refAlterGet, refAlterMax, refAlterPer] = (() => {
+					let alterGet = 0;
+					let alterMax = 0;
+					let alterPer = 0;
+					let refAlterGet = 0;
+					let refAlterMax = 0;
+					let refAlterPer = 0;
+
+					const _idx = /([0-9]+)/.exec(mid);
+					const idx = _idx && _idx[1];
+					const base = idx ? mid.substring(0, mid.indexOf(idx)) : mid;
+
+					const dbKeys = Object.keys(EWDB)
+						.filter(k => k.startsWith(base))
+						.filter(k => k <= mid);
+
+					dbKeys.forEach(k => {
+						const db = EWDB[k];
+						if (k === mid) {
+							Object.keys(db)
+								.filter(k2 => parseInt(k2, 10) <= parseInt(this.state.sid, 10))
+								.map(k2 => db[k2])
+								.forEach(r => {
+									alterGet += r.rewards.find(w => w.item === "Consumable_EWMPMetal")?.count ?? 0;
+									alterMax += r.reward.mineral.max;
+									alterPer += r.reward.mineral.regen;
+									refAlterGet += r.rewards.find(w => w.item === "Consumable_RefinedMineral")?.count ?? 0;
+									refAlterMax += r.reward.refined.max;
+									refAlterPer += r.reward.refined.regen;
+								});
+						} else {
+							Object.values(db)
+								.forEach(r => {
+									alterGet += r.rewards.find(w => w.item === "Consumable_EWMPMetal")?.count ?? 0;
+									alterMax += r.reward.mineral.max;
+									alterPer += r.reward.mineral.regen;
+									refAlterGet += r.rewards.find(w => w.item === "Consumable_RefinedMineral")?.count ?? 0;
+									refAlterMax += r.reward.refined.max;
+									refAlterPer += r.reward.refined.regen;
+								});
+						}
+					});
+
+					return [alterGet, alterMax, alterPer, refAlterGet, refAlterMax, refAlterPer];
+				})();
 
 				const CurrentWave = mid
 					? ((): Array<WaveEnemyInfo | null> => {
@@ -435,6 +481,64 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 										</a>
 									</li>) }
 								</ul>
+
+								<div class="my-4">
+									<div class="card mt-2">
+										<div class="card-header bg-warning">
+											<Locale k="EW_STAGE_REWARD_SUMMARY" />
+										</div>
+										<div class="card-body">
+											<div class="row">
+												<div class="col-6">
+													<DropItem
+														item={ alterium! }
+														countPart={ <div class="text-end clear-both">
+															<span class="badge bg-dark text-warning ms-1 mt-1">
+																<Locale
+																	k="EW_STAGE_REWARD_INSTANT"
+																	p={ [FormatNumber(alterGet)] }
+																/>
+															</span>
+															<span class="badge bg-dark text-warning ms-1 mt-1">
+																<Locale
+																	k="EW_STAGE_REWARD_MAXIMUM"
+																	p={ [FormatNumber(alterMax)] }
+																/>
+															</span>
+															<span class="badge bg-dark text-warning ms-1 mt-1">
+																+{ alterPer } / 1h
+															</span>
+														</div> }
+														noIcon
+													/>
+												</div>
+												<div class="col-6">
+													<DropItem
+														item={ rAlterium! }
+														countPart={ <div class="text-end clear-both">
+															<span class="badge bg-dark text-warning ms-1 mt-1">
+																<Locale
+																	k="EW_STAGE_REWARD_INSTANT"
+																	p={ [FormatNumber(refAlterGet)] }
+																/>
+															</span>
+															<span class="badge bg-dark text-warning ms-1 mt-1">
+																<Locale
+																	k="EW_STAGE_REWARD_MAXIMUM"
+																	p={ [FormatNumber(refAlterMax)] }
+																/>
+															</span>
+															<span class="badge bg-dark text-warning ms-1 mt-1">
+																+{ refAlterPer } / 1h
+															</span>
+														</div> }
+														noIcon
+													/>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class={ `col-12 col-lg-6 ${style.RightSide}` }>

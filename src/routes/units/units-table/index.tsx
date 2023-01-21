@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 
-import Store from "@/store";
+import OldStore from "@/oldstore";
 
 import { ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/types/Enums";
 import { UnitsListProps } from "../";
@@ -52,7 +52,7 @@ const UnitsTable: FunctionalComponent<UnitsListProps> = (props) => {
 			});
 	}
 
-	return Store.ConnectDirect("Units", ({ Units: Filters }) => {
+	return OldStore.ConnectDirect("Units", ({ Units: Filters }) => {
 		return <div class="unit-table">
 			{/* <div class="mb-2">
 				<div class="btn-group mx-2 mb-2">

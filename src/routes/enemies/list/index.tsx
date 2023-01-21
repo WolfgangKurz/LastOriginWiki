@@ -1,5 +1,5 @@
 import { Component, FunctionalComponent, RenderableProps } from "preact";
-import Store, { Unsubscribe } from "@/store";
+import OldStore, { Unsubscribe } from "@/oldstore";
 
 import { ACTOR_CLASS, ROLE_TYPE } from "@/types/Enums";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
@@ -92,7 +92,7 @@ class EnemiesList extends Component<EnemiesListProps, EnemiesListState> {
 			},
 		};
 
-		this.filtersUnsubscribe = Store.Subscribe(state => {
+		this.filtersUnsubscribe = OldStore.Subscribe(state => {
 			if (diff2(state.Enemies, this.state.Filters)) {
 				this.setState(() => ({
 					Filters: { ...state.Enemies },
@@ -112,7 +112,7 @@ class EnemiesList extends Component<EnemiesListProps, EnemiesListState> {
 			toggleEnemiesFilterUnused,
 			toggleEnemiesFilterNEW,
 			setEnemiesSearchText,
-		} = Store.Actions();
+		} = OldStore.Actions();
 		this.toggleEnemiesFilterTypeLight = toggleEnemiesFilterTypeLight;
 		this.toggleEnemiesFilterTypeMobility = toggleEnemiesFilterTypeMobility;
 		this.toggleEnemiesFilterTypeHeavy = toggleEnemiesFilterTypeHeavy;

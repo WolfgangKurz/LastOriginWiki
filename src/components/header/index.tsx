@@ -47,13 +47,6 @@ const DBDisp: Record<DBTypes, string> = {
 };
 
 const Header: FunctionalComponent = (): preact.VNode => {
-	const AprilFoolTitle = {
-		KR: <>멸망 전의<br />전쟁 기록</>,
-		EN: <>War<br />Record</>,
-		JP: <>滅亡前の<br />戦争記録</>,
-		TC: <>滅亡前的<br />戰爭記錄</>,
-	};
-
 	return <nav class={ `${style.navbar} navbar navbar-expand-lg navbar-dark bg-dark px-3` }>
 		<div class="container-fluid">
 			<div class={ `${style["navbar-brand"]} navbar-brand` }>
@@ -72,10 +65,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 						/>
 					</i>
 					<span class="font-ibm">
-						{ IsAprilFool
-							? AprilFoolTitle[CurrentLocale]
-							: <Locale k="MENU_TITLE" />
-						}
+						<Locale k="MENU_TITLE" />
 					</span>
 				</span>
 			</div>
@@ -137,6 +127,9 @@ const Header: FunctionalComponent = (): preact.VNode => {
 								<Locale k="MENU_EXCHANGES" />
 								<span class="badge bg-secondary ms-2">TBA</span>
 							</DropdownItem> */}
+							<DropdownItem href="/bg">
+								<Locale k="MENU_ETC_BG" />
+							</DropdownItem>
 							<DropdownItem href="/bgm">
 								<Locale k="MENU_ETC_BGM" />
 							</DropdownItem>

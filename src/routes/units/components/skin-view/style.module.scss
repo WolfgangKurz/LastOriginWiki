@@ -65,6 +65,7 @@
 
 .SkinToggle {
 	position: absolute;
+	display: block;
 	background-repeat: no-repeat;
 	filter: drop-shadow(0 0 4px #000);
 	cursor: pointer;
@@ -136,15 +137,45 @@
 			background-position-x: -28px;
 		}
 	}
+	&.Download {
+		bottom: 64px;
+		right: 12px;
+		width: 32px;
+		height: 32px;
+		filter: drop-shadow(0 0 1px transparentize($light, 0.3));
+		font-size: 32px;
+		color: $light;
+	}
 }
-.FaceList {
+div.FaceList {
 	position: absolute;
 	bottom: 12px;
 	right: 8px;
-	width: 184px;
+	min-width: 100px;
+	max-width: calc(100% - 110px);
+	width: auto;
 	height: auto;
 	font-size: 85%;
 	z-index: 4;
+
+	&.FaceListMargin {
+		right: 52px;
+		max-width: calc(100% - 150px);
+	}
+
+	svg {
+		position: absolute;
+		left: 6px;
+		top: calc(50% + 1px);
+		transform: translateY(-50%);
+		font-size: 130%;
+		pointer-events: none !important;
+	}
+
+	select.FaceList {
+		padding-left: 30px;
+		width: 100%;
+	}
 }
 
 .SkinView {
@@ -304,7 +335,7 @@
 			position: absolute;
 			padding: 1px 6px 3px;
 			bottom: 5px;
-			right: 5px;
+			right: 52px;
 			border-radius: 4px;
 			background-color: rgba(0, 0, 0, 0.6);
 			text-shadow: 0 0 4px #000;

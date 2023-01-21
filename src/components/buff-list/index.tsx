@@ -322,13 +322,13 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					case BUFFEFFECT_TYPE.STAGE_REMOVE_ALL_DEBUFF: // 100
 						return <Locale plain k="BUFFTYPE_OFF" />;
 					case BUFFEFFECT_TYPE.STAGE_PHYSICS_DAMAGE_APPLY: // 70
-						return <Locale plain k="BUFFTYPE_DMG_PHYSICS_BY_HP" />;
+						return <Locale plain k="BUFFTYPE_DMG_PHYSICS_BY_ATK" />;
 					case BUFFEFFECT_TYPE.STAGE_FIRE_DAMAGE_APPLY: // 71
-						return <Locale plain k="BUFFTYPE_DMG_FIRE_BY_HP" />;
+						return <Locale plain k="BUFFTYPE_DMG_FIRE_BY_ATK" />;
 					case BUFFEFFECT_TYPE.STAGE_ICE_DAMAGE_APPLY: // 72
-						return <Locale plain k="BUFFTYPE_DMG_ICE_BY_HP" />;
+						return <Locale plain k="BUFFTYPE_DMG_ICE_BY_ATK" />;
 					case BUFFEFFECT_TYPE.STAGE_LIGHTNING_DAMAGE_APPLY: // 73
-						return <Locale plain k="BUFFTYPE_DMG_THUNDER_BY_HP" />;
+						return <Locale plain k="BUFFTYPE_DMG_THUNDER_BY_ATK" />;
 					case BUFFEFFECT_TYPE.STAGE_PROVOKE: // 74
 						return <Locale plain k="BUFFTYPE_PROVOKE" />;
 					case BUFFEFFECT_TYPE.STAGE_BLOCK_ROW: // 75
@@ -359,8 +359,9 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					case BUFFEFFECT_TYPE.STAGE_MARKING: // 87
 						return <Locale plain k="BUFFTYPE_MARKING" />;
 					case BUFFEFFECT_TYPE.STAGE_DEBUFF_RATEUP: // 90
+						return <Locale plain k="BUFFTYPE_RES_DEBUFF_RATEUP1" />;
 					case BUFFEFFECT_TYPE.STAGE_DEBUFF_PERDOWN: // 91
-						return <Locale plain k="BUFFTYPE_RES_DEBUFF" />;
+						return <Locale plain k="BUFFTYPE_RES_DEBUFF_PERDOWN" />;
 					case BUFFEFFECT_TYPE.STAGE_BUFFEFFECTRATE_CHANGE: // 92
 						return <Locale plain k="BUFFTYPE_EFFECT_RATE" />;
 					case BUFFEFFECT_TYPE.REMOVE_SUMMON_INSTENV: // 93
@@ -953,8 +954,10 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			}
 
 			switch (stat.resist.type) {
-				case "debuff":
-					return <Locale plain k="BUFFEFFECT_RES_DEBUFF" p={ [signedValue(stat.resist.value, level)] } />;
+				case "debuff_rateup":
+					return <Locale plain k="BUFFEFFECT_RES_DEBUFF_RATEUP" p={ [signedValue(stat.resist.value, level)] } />;
+				case "debuff_perdown":
+					return <Locale plain k="BUFFEFFECT_RES_DEBUFF_PERDOWN" p={ [signedValue(stat.resist.value, level)] } />;
 				case "off":
 					return <Locale plain k="BUFFEFFECT_RES_OFF" p={ [signedValue(stat.resist.value, level)] } />;
 			}
@@ -1060,19 +1063,23 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			if ("elem" in stat.fixed_damage) {
 				switch (stat.fixed_damage.elem) {
 					case "fire":
-						return <Locale plain k={ isRatioValue(stat.fixed_damage.damage) ? "BUFFEFFECT_DOT_FIRE_RATIO" : "BUFFEFFECT_DOT_FIRE" } p={ [
-							nsignedValue(stat.fixed_damage.damage, level),
-							<ElemIcon elem={ stat.fixed_damage.elem } class="me-1 mb-0" />,
-						] } />;
+						return <Locale
+							plain
+							k={ isRatioValue(stat.fixed_damage.damage, "1", "") ? "BUFFEFFECT_DOT_FIRE_RATIO" : "BUFFEFFECT_DOT_FIRE" }
+							p={ [
+								nsignedValue(stat.fixed_damage.damage, level),
+								<ElemIcon elem={ stat.fixed_damage.elem } class="me-1 mb-0" />,
+							] }
+						/>;
 					case "ice":
-						return <Locale plain k={ isRatioValue(stat.fixed_damage.damage) ? "BUFFEFFECT_DOT_ICE_RATIO" : "BUFFEFFECT_DOT_ICE" } p={ [
+						return <Locale plain k={ isRatioValue(stat.fixed_damage.damage, "1", "") ? "BUFFEFFECT_DOT_ICE_RATIO" : "BUFFEFFECT_DOT_ICE" } p={ [
 							nsignedValue(stat.fixed_damage.damage, level),
 							<ElemIcon elem={ stat.fixed_damage.elem } class="me-1 mb-0" />,
 						] } />;
 					case "lightning":
 						return <Locale
 							plain
-							k={ isRatioValue(stat.fixed_damage.damage) ? "BUFFEFFECT_DOT_THUNDER_RATIO" : "BUFFEFFECT_DOT_THUNDER" }
+							k={ isRatioValue(stat.fixed_damage.damage, "1", "") ? "BUFFEFFECT_DOT_THUNDER_RATIO" : "BUFFEFFECT_DOT_THUNDER" }
 							p={ [
 								nsignedValue(stat.fixed_damage.damage, level),
 								<ElemIcon elem={ stat.fixed_damage.elem } class="me-1 mb-0" />,
@@ -1080,7 +1087,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						/>;
 				}
 			}
-			return <Locale plain k={ isRatioValue(stat.fixed_damage) ? "BUFFEFFECT_DOT_PHYSICS_RATIO" : "BUFFEFFECT_DOT_PHYSICS" } p={ [
+			return <Locale plain k={ isRatioValue(stat.fixed_damage, "1", "") ? "BUFFEFFECT_DOT_PHYSICS_RATIO" : "BUFFEFFECT_DOT_PHYSICS" } p={ [
 				nsignedValue(stat.fixed_damage, level),
 				<ElemIcon elem={ SKILL_ATTR.PHYSICS } class="me-1 mb-0" />,
 			] } />;

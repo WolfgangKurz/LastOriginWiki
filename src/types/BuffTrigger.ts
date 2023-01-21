@@ -234,7 +234,7 @@ interface BuffTrigger_On_BuffExists {
 
 /** 대상이 유닛 목록 중 하나일 때 */
 interface BuffTrigger_Target {
-	target: string[];
+	target: string | string[];
 }
 
 type BuffTrigger_UnitCount_Types = "enemy" | "squad" | "all" |

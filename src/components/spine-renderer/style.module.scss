@@ -20,4 +20,24 @@
 		color: #fff;
 		font-size: 14px;
 	}
+
+	.AnimationCircle {
+		position: absolute;
+		bottom: 14px;
+		left: 94px;
+		width: 30px;
+		height: 30px;
+		transition: opacity 0.5s ease;
+		opacity: 0;
+
+		&::before {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 100%;
+			border-radius: 9999px;
+			mask-image: radial-gradient(transparent 38%, #fff 42%);
+			background-color: white;
+		}
+	}
 }

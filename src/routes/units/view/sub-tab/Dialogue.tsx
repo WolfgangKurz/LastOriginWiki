@@ -20,24 +20,40 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 
 	const VoiceList: VoiceItem[] = [
 		{
-			id: 0,
+			id: "",
 			...SkinList[0],
 			isMarriage: false,
 		},
 		...(unit.marriageVoice
 			? [{
-				id: 0,
+				id: "",
 				...SkinList[0],
 				isMarriage: true,
 			}]
 			: []),
+
 		...SkinList
 			.slice(1)
-			.map((x, i) => ({
-				id: i + 1,
-				...x,
-				isMarriage: false,
-			})),
+			.flatMap((x, i) => {
+				const r: VoiceItem[] = [{
+					id: `${i + 1}`,
+					...x,
+					isMarriage: false,
+				}];
+
+				if (LangList.some(l => {
+					const d = unit.dialogue[l];
+					return d && `${i + 1}M` in d;
+				})) {
+					r.push({
+						id: `${i + 1}`,
+						...x,
+						isMarriage: true,
+					});
+				}
+
+				return r;
+			}),
 	];
 
 	return <div style={ { display: display ? "" : "none" } }>

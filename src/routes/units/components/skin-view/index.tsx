@@ -1,4 +1,6 @@
 import { FunctionalComponent } from "preact";
+import { useEffect, useRef, useState } from "preact/hooks";
+import ResizeObserver from "resize-observer-polyfill";
 
 import { FACETYPE, SKIN_IN_PARTS } from "@/types/Enums";
 import { SKIN_ANIM_SUBSET_ENUM, SKIN_SUBSET_ENUM, Unit, UnitSkin } from "@/types/DB/Unit";
@@ -8,12 +10,15 @@ import { AssetsRoot, CanPlayWebM, ImageExtension } from "@/libs/Const";
 import Locale from "@/components/locale";
 import { objState } from "@/libs/State";
 
+import PopupBase from "@/components/popup/base";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import MergedVideo from "@/components/merged-video";
 import Pinch from "@/components/pinch";
 import SpineRenderer from "@/components/spine-renderer";
+import U2DModelRenderer from "@/components/u2dmodel-renderer";
 
 import style from "./style.module.scss";
+import Icon from "@/components/bootstrap-icon";
 
 interface SkinItem extends UnitSkin {
 	isDef: boolean;
@@ -38,6 +43,10 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 	// const skinDirection = objState<"" | "horz" | "vert">("");
 
+	const [resizeObserver, setResizeObserver] = useState<ResizeObserver | null>(null);
+	const [FullUnitSize, setFullUnitSize] = useState<[number, number]>([0, 0]);
+	const FullUnitEl = useRef<HTMLDivElement>(null);
+
 	const face = objState<string>("");
 	const faceList = objState<string[]>([]);
 
@@ -50,6 +59,30 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const IsAnimating = objState<boolean>(true);
 	const IsBlackBG = objState<boolean>(false);
 	const HideGroup = objState<boolean>(false);
+
+	const [detailView, setDetailView] = useState(false);
+
+	useEffect(() => {
+		if (FullUnitEl.current) {
+			const observer = new ResizeObserver((entries) => {
+				const rc = (entries[0].contentRect as DOMRectReadOnly);
+				setFullUnitSize([
+					Math.floor(rc.width / 2) * 2,
+					Math.floor(rc.height / 2) * 2,
+				]);
+			});
+			setResizeObserver(observer);
+
+			observer.observe(FullUnitEl.current);
+		}
+
+		return () => {
+			if (resizeObserver)
+				resizeObserver.disconnect();
+
+			setResizeObserver(null);
+		};
+	}, [FullUnitEl.current]);
 
 	// const Aspect = props.collapsed ? style["ratio-2x5"] : "ratio-4x3";
 	const Aspect = "ratio-2x4 ratio-lg-5x3";
@@ -84,7 +117,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		};
 	})();
 	const SkinImageURL = ((): string => {
-		const skinId = skin.isDef ? 0 : skin.sid;
+		const skinId = skin.isDef ? 0 : skin.metadata.imageId;
 		const ext = imageExt;
 
 		const postfix = ((): string => {
@@ -116,7 +149,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		})();
 		if (!skin.anim[flag]) return "";
 
-		const skinId = skin.isDef ? 0 : skin.sid;
+		const skinId = skin.isDef ? 0 : skin.metadata.imageId;
 		return `${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}${postfix}`;
 	})();
 
@@ -180,8 +213,10 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			return skin.anim[SKIN_ANIM_SUBSET_ENUM.__];
 	})();
 
-	const modelId = `${unit.uid}_N${skin.isDef ? "" : `S${skin.sid}`}`;
+	const modelId = `${unit.uid}_N${skin.isDef ? "" : `S${skin.metadata.imageId}`}`;
 	const DisplaySpine = skin.Spine && (props.animate || props.collapsed) && !IsDamaged.value;
+	const Display2DModel = (!IsDamaged.value && !!skin.metadata["2dmodel"]) ||
+		(IsDamaged.value && !!skin.metadata["2dmodel_dam"]);
 
 	return <div class={ style.SkinView }>
 		<div class={ `ratio ${Aspect} ${style.SkinFull} ${props.collapsed ? style.Collapsed : ""}` }>
@@ -192,10 +227,13 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 						<img src={ `${AssetsRoot}/${imageExt}/group/${unit.group.replace(/_[0-9]+$/, "")}.${imageExt}` } />
 					</div>
 				</div>
-				<div class={ [
-					style.FullUnit,
-					(!props.collapsed || DisplaySpine) && style.FullUnitMarginless,
-				].filter(x => x).join(" ") }>
+				<div
+					class={ [
+						style.FullUnit,
+						(!props.collapsed || DisplaySpine || Display2DModel) && style.FullUnitMarginless,
+					].filter(x => x).join(" ") }
+					ref={ FullUnitEl }
+				>
 					{ DisplaySpine
 						? <SpineRenderer
 							uid={ modelId }
@@ -203,7 +241,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							specialTouch={ IsSpecialTouch.value }
 
 							// collider={ true }
-							// hidePart={ IsSimplified.value }
+							hidePart={ IsSimplified.value }
 							// hideBg={ IsBG.value }
 							// hideDialog={ false }
 
@@ -237,22 +275,65 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 									src={ `${AssetsRoot}/webm/HD.Legacy/${SkinVideoURL}.mp4` }
 									type="video/mp4"
 								/>
-							: !props.collapsed // && !AvailableAnim
+							: Display2DModel
 								? <Pinch
 									minScale={ 0.5 }
 									maxScale={ 3 }
 								>
-									<img
+									<U2DModelRenderer
+										root={ `${AssetsRoot}/2dmodel/${IsGoogle.value ? "G" : "O"}/` }
+										target={ !IsDamaged.value ? skin.metadata["2dmodel"]! : skin.metadata["2dmodel_dam"]! }
+
+										scale={ 1.5 }
+										textureExt={ imageExt }
+
+										width={ FullUnitSize[0] }
+										height={ FullUnitSize[1] }
+
+										hideParts={ IsSimplified.value }
+										hideBG={ IsBG.value }
+
+										face={ face.value }
+										onFaceList={ (list) => {
+											const _list = [...list];
+											if (!_list.includes("Idle"))
+												_list.splice(0, 0, "Idle"); // insert into 0
+
+											faceList.set(_list);
+											face.set("Idle");
+										} }
+									/>
+								</Pinch>
+								: !props.collapsed // && !AvailableAnim
+									? <Pinch
+										minScale={ 0.5 }
+										maxScale={ 3 }
+									>
+										<img
+											style={ ImageStyle }
+											src={ SkinImageURL }
+										/>
+									</Pinch>
+									: <img
 										style={ ImageStyle }
 										src={ SkinImageURL }
 									/>
-								</Pinch>
-								: <img
-									style={ ImageStyle }
-									src={ SkinImageURL }
-								/>
 					}
 				</div>
+
+				{ !DisplaySpine && !SkinVideoURL.length
+					? <a
+						class={ `${style.SkinToggle} ${style.Download}` }
+						href={ SkinImageURL }
+						download={ SkinImageURL.substring(SkinImageURL.lastIndexOf("/") + 1) }
+						target="_blank"
+					>
+						<svg width="1em" height="1em" viewBox="0 0 24 24">
+							<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+						</svg>
+					</a>
+					: <></>
+				}
 
 				{ !(skin.isPro || skin.isDef) && skin.price
 					? <div class={ style.Price }>
@@ -417,89 +498,107 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 						: <></>,
 				] }
 
-				{ skin.Spine && props.animate && !IsDamaged.value && !props.collapsed
-					? <select
-						class={ `form-select ${style.FaceList}` }
-						value={ face.value }
-						onChange={ (e): void => {
-							const value = (e.target as HTMLSelectElement).value;
-							face.set(value);
-						} }
-					>
-						{ faceList.value.map(f => <option value={ f }>
-							<Locale k={ `FACE_TYPE_${FACETYPE[f.toUpperCase()]}` } />
-						</option>) }
-					</select>
+				{ (
+					(skin.Spine && props.animate && !IsDamaged.value && !props.collapsed) ||
+					Display2DModel
+				) && faceList.value.length > 0
+					? <div class={ `${style.FaceList} ${props.collapsed ? style.FaceListMargin : ""}` }>
+						<select
+							class={ `form-select form-select-sm ${style.FaceList}` }
+							value={ face.value }
+							onChange={ (e): void => {
+								const value = (e.target as HTMLSelectElement).value;
+								face.set(value);
+							} }
+						>
+							{ faceList.value.map(f => {
+								const ft = FACETYPE[f.toUpperCase()];
+								return <option value={ f }>
+									{ ft
+										? <Locale k={ `FACE_TYPE_${ft}` } />
+										: f.toUpperCase()
+									}
+								</option>;
+							}) }
+						</select>
+						<Icon icon="emoji-smile-fill" />
+					</div>
 					: <></>
 				}
 
 				{ props.detailable
 					? <>
-						<div class={ style.Detail } data-bs-toggle="modal" data-bs-target="#UnitSkinViewDetail" />
-						<div class="modal fade" tabIndex={ -1 } id="UnitSkinViewDetail">
-							<div class="modal-dialog modal-xl modal-dialog-centered">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title">
-											<Locale plain k={ skin.sid ? `UNIT_SKIN_${unit.uid}_${skin.sid}` : `UNIT_${unit.uid}` } />
-										</h5>
-										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" />
-									</div>
-									<div class="modal-body">
-										<div class="text-start mb-2">
-											<div class="form-check d-inline-block form-switch">
-												<label class="form-check-label">
-													<input
-														class="form-check-input"
-														type="checkbox"
-														disabled={ !AvailableAnim }
-														checked={ IsAnimating.value }
-														onClick={ (): void => IsAnimating.set(!IsAnimating.value) }
-													/>
-													<Locale k="UNIT_VIEW_SKIN_ANIMATION_SWITCH" />
-												</label>
-											</div>
+						<div
+							class={ style.Detail }
+							onClick={ (e) => {
+								e.preventDefault();
+								setDetailView(true);
+							} }
+						/>
 
-											<span class="text-secondary px-2">|</span>
-
-											<div class="form-check d-inline-block form-switch">
-												<label class="form-check-label">
-													<input
-														class="form-check-input"
-														type="checkbox"
-														checked={ IsBlackBG.value }
-														onClick={ (): void => IsBlackBG.set(!IsBlackBG.value) }
-													/>
-													<Locale k="UNIT_VIEW_SKIN_BLACKBG_SWITCH" />
-												</label>
-											</div>
-
-											<span class="text-secondary px-2">|</span>
-
-											<div class="form-check d-inline-block form-switch">
-												<label class="form-check-label">
-													<input
-														class="form-check-input"
-														type="checkbox"
-														checked={ HideGroup.value }
-														onClick={ (): void => HideGroup.set(!HideGroup.value) }
-													/>
-													<Locale k="UNIT_VIEW_SKIN_HIDEGROUP_SWITCH" />
-												</label>
-											</div>
-										</div>
-
-										<SkinView
-											unit={ unit }
-											skin={ skin }
-											animate={ IsAnimating.value }
-											black={ IsBlackBG.value }
-											hideGroup={ HideGroup.value }
+						<PopupBase
+							display={ detailView }
+							size="xl"
+							header={ <>
+								<Locale
+									plain
+									k={ skin.sid ? `UNIT_SKIN_${unit.uid}_${skin.sid}` : `UNIT_${unit.uid}` }
+								/>
+								{/* <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" /> */ }
+							</> }
+							onHidden={ () => setDetailView(false) }
+						>
+							<div class="text-start mb-2">
+								<div class="form-check d-inline-block form-switch">
+									<label class="form-check-label">
+										<input
+											class="form-check-input"
+											type="checkbox"
+											disabled={ !AvailableAnim }
+											checked={ IsAnimating.value }
+											onClick={ (): void => IsAnimating.set(!IsAnimating.value) }
 										/>
-									</div>
+										<Locale k="UNIT_VIEW_SKIN_ANIMATION_SWITCH" />
+									</label>
+								</div>
+
+								<span class="text-secondary px-2">|</span>
+
+								<div class="form-check d-inline-block form-switch">
+									<label class="form-check-label">
+										<input
+											class="form-check-input"
+											type="checkbox"
+											checked={ IsBlackBG.value }
+											onClick={ (): void => IsBlackBG.set(!IsBlackBG.value) }
+										/>
+										<Locale k="UNIT_VIEW_SKIN_BLACKBG_SWITCH" />
+									</label>
+								</div>
+
+								<span class="text-secondary px-2">|</span>
+
+								<div class="form-check d-inline-block form-switch">
+									<label class="form-check-label">
+										<input
+											class="form-check-input"
+											type="checkbox"
+											checked={ HideGroup.value }
+											onClick={ (): void => HideGroup.set(!HideGroup.value) }
+										/>
+										<Locale k="UNIT_VIEW_SKIN_HIDEGROUP_SWITCH" />
+									</label>
 								</div>
 							</div>
-						</div>
+
+							{ detailView && <SkinView
+								unit={ unit }
+								skin={ skin }
+								animate={ IsAnimating.value }
+								black={ IsBlackBG.value }
+								hideGroup={ HideGroup.value }
+							/> }
+						</PopupBase>
 					</>
 					: <></>
 				}

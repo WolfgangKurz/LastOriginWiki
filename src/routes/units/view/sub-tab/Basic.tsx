@@ -12,14 +12,14 @@ import {
 import { Radar } from "react-chartjs-2";
 import Decimal from "decimal.js";
 
-import { ACTOR_BODY_TYPE } from "@/types/Enums";
+import { ACTOR_BODY_TYPE, CHARTYPE_GIFTITEM_DAMAGE_TYPE } from "@/types/Enums";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { Consumable } from "@/types/DB/Consumable";
 import { UnitDialogueAudioType } from "@/types/DB/Dialogue";
 
 import { objState } from "@/libs/State";
 import { AssetsRoot, ImageExtension, RarityDisplay } from "@/libs/Const";
-import { FormatNumber, isActive } from "@/libs/Functions";
+import { FormatDate, FormatNumber, isActive } from "@/libs/Functions";
 
 import { DBSourceConverter, GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
@@ -84,7 +84,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 
 	function convWeapon (inp: string): preact.ComponentChildren {
 		return inp.split(" / ")
-			.gap(<hr class="my-1" />);
+			.gap(<hr class="my-1 mx-2" />);
 	}
 
 	function convData (data: number[]): number[] {
@@ -258,6 +258,23 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 										<Locale k={ `UNIT_GROUP_${unit.group}` } />
 									</span>
 								</td>
+							</tr>
+							<tr>
+								<th class="bg-dark text-light">
+									<EquipIcon
+										class="me-2"
+										image="UI_Icon_Consumable_GiftItem_Damage"
+										size="small"
+									/>
+									<Locale k="UNIT_VIEW_SECRETROOM_TYPE" />
+								</th>
+								<td class="font-exo2 align-middle">
+									<Locale k={ `UNIT_VIEW_SECRETROOM_TYPE_${CHARTYPE_GIFTITEM_DAMAGE_TYPE[unit.secretRoomType]}` } />
+								</td>
+							</tr>
+							<tr>
+								<th class="bg-dark text-light"><Locale k="UNIT_VIEW_RELEASEDATE" /></th>
+								<td class="font-exo2">{ FormatDate(new Date(unit.releaseDate)) }</td>
 							</tr>
 							<tr>
 								<th class="bg-dark text-light"><Locale k="UNIT_VIEW_HEIGHT" /></th>

@@ -119,10 +119,10 @@
                     "chance": "0%",
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -141,10 +141,29 @@
                     "func": "OR",
                     "select": [
                       "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
                       "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
                       "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
                       "Effect_BUFF_Flood_N_11",
-                      "Effect_BUFF_Flood_N_14"
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16",
+                      "Effect_BUFF_Flood_N_17",
+                      "Effect_BUFF_Flood_N_18",
+                      "Effect_BUFF_Flood_N_19",
+                      "Effect_BUFF_Flood_N_20",
+                      "Effect_BUFF_Flood_N_21",
+                      "Effect_BUFF_Flood_N_22",
+                      "Effect_BUFF_Flood_N_23",
+                      "Effect_BUFF_Flood_N_24",
+                      "Effect_BUFF_Flood_N_25"
                     ],
                     "attr": 0
                   }
@@ -183,10 +202,10 @@
                     "isBuff": true,
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -459,6 +478,114 @@
                     "isBuff": true,
                     "type": 97,
                     "off": "Effect_BUFF_Flood_N_14"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_17",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_20"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_17_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_20",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_20"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_18",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_23"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_18_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_23",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_23"
                   },
                   "overlap": 4
                 }
@@ -568,10 +695,10 @@
                     "chance": "0%",
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -590,10 +717,29 @@
                     "func": "OR",
                     "select": [
                       "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
                       "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
                       "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
                       "Effect_BUFF_Flood_N_11",
-                      "Effect_BUFF_Flood_N_14"
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16",
+                      "Effect_BUFF_Flood_N_17",
+                      "Effect_BUFF_Flood_N_18",
+                      "Effect_BUFF_Flood_N_19",
+                      "Effect_BUFF_Flood_N_20",
+                      "Effect_BUFF_Flood_N_21",
+                      "Effect_BUFF_Flood_N_22",
+                      "Effect_BUFF_Flood_N_23",
+                      "Effect_BUFF_Flood_N_24",
+                      "Effect_BUFF_Flood_N_25"
                     ],
                     "attr": 0
                   }
@@ -632,10 +778,10 @@
                     "isBuff": true,
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -908,6 +1054,114 @@
                     "isBuff": true,
                     "type": 97,
                     "off": "Effect_BUFF_Flood_N_14"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_17",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_20"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_17_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_20",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_20"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_18",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_23"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_18_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_23",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_23"
                   },
                   "overlap": 4
                 }
@@ -1017,10 +1271,10 @@
                     "chance": "0%",
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -1039,10 +1293,29 @@
                     "func": "OR",
                     "select": [
                       "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
                       "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
                       "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
                       "Effect_BUFF_Flood_N_11",
-                      "Effect_BUFF_Flood_N_14"
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16",
+                      "Effect_BUFF_Flood_N_17",
+                      "Effect_BUFF_Flood_N_18",
+                      "Effect_BUFF_Flood_N_19",
+                      "Effect_BUFF_Flood_N_20",
+                      "Effect_BUFF_Flood_N_21",
+                      "Effect_BUFF_Flood_N_22",
+                      "Effect_BUFF_Flood_N_23",
+                      "Effect_BUFF_Flood_N_24",
+                      "Effect_BUFF_Flood_N_25"
                     ],
                     "attr": 0
                   }
@@ -1081,10 +1354,10 @@
                     "isBuff": true,
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -1357,6 +1630,114 @@
                     "isBuff": true,
                     "type": 97,
                     "off": "Effect_BUFF_Flood_N_14"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_17",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_20"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_17_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_20",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_20"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_18",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_23"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_18_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_23",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_23"
                   },
                   "overlap": 4
                 }
@@ -1466,10 +1847,10 @@
                     "chance": "0%",
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -1488,10 +1869,29 @@
                     "func": "OR",
                     "select": [
                       "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
                       "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
                       "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
                       "Effect_BUFF_Flood_N_11",
-                      "Effect_BUFF_Flood_N_14"
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16",
+                      "Effect_BUFF_Flood_N_17",
+                      "Effect_BUFF_Flood_N_18",
+                      "Effect_BUFF_Flood_N_19",
+                      "Effect_BUFF_Flood_N_20",
+                      "Effect_BUFF_Flood_N_21",
+                      "Effect_BUFF_Flood_N_22",
+                      "Effect_BUFF_Flood_N_23",
+                      "Effect_BUFF_Flood_N_24",
+                      "Effect_BUFF_Flood_N_25"
                     ],
                     "attr": 0
                   }
@@ -1530,10 +1930,10 @@
                     "isBuff": true,
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -1806,6 +2206,114 @@
                     "isBuff": true,
                     "type": 97,
                     "off": "Effect_BUFF_Flood_N_14"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_17",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_20"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_17_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_20",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_20"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_18",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_23"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_18_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_23",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_23"
                   },
                   "overlap": 4
                 }
@@ -1915,10 +2423,10 @@
                     "chance": "0%",
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -1937,10 +2445,29 @@
                     "func": "OR",
                     "select": [
                       "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
                       "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
                       "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
                       "Effect_BUFF_Flood_N_11",
-                      "Effect_BUFF_Flood_N_14"
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16",
+                      "Effect_BUFF_Flood_N_17",
+                      "Effect_BUFF_Flood_N_18",
+                      "Effect_BUFF_Flood_N_19",
+                      "Effect_BUFF_Flood_N_20",
+                      "Effect_BUFF_Flood_N_21",
+                      "Effect_BUFF_Flood_N_22",
+                      "Effect_BUFF_Flood_N_23",
+                      "Effect_BUFF_Flood_N_24",
+                      "Effect_BUFF_Flood_N_25"
                     ],
                     "attr": 0
                   }
@@ -1979,10 +2506,10 @@
                     "isBuff": true,
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -2255,6 +2782,114 @@
                     "isBuff": true,
                     "type": 97,
                     "off": "Effect_BUFF_Flood_N_14"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_17",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_20"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_17_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_20",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_20"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_18",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_23"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_18_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_23",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_23"
                   },
                   "overlap": 4
                 }
@@ -2364,10 +2999,10 @@
                     "chance": "0%",
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -2386,10 +3021,29 @@
                     "func": "OR",
                     "select": [
                       "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
                       "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
                       "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
                       "Effect_BUFF_Flood_N_11",
-                      "Effect_BUFF_Flood_N_14"
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16",
+                      "Effect_BUFF_Flood_N_17",
+                      "Effect_BUFF_Flood_N_18",
+                      "Effect_BUFF_Flood_N_19",
+                      "Effect_BUFF_Flood_N_20",
+                      "Effect_BUFF_Flood_N_21",
+                      "Effect_BUFF_Flood_N_22",
+                      "Effect_BUFF_Flood_N_23",
+                      "Effect_BUFF_Flood_N_24",
+                      "Effect_BUFF_Flood_N_25"
                     ],
                     "attr": 0
                   }
@@ -2428,10 +3082,10 @@
                     "isBuff": true,
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -2704,6 +3358,114 @@
                     "isBuff": true,
                     "type": 97,
                     "off": "Effect_BUFF_Flood_N_14"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_17",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_20"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_17_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_20",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_20"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_18",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_23"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_18_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_23",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_23"
                   },
                   "overlap": 4
                 }
@@ -2813,10 +3575,10 @@
                     "chance": "0%",
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -2835,10 +3597,29 @@
                     "func": "OR",
                     "select": [
                       "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
                       "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
                       "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
                       "Effect_BUFF_Flood_N_11",
-                      "Effect_BUFF_Flood_N_14"
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16",
+                      "Effect_BUFF_Flood_N_17",
+                      "Effect_BUFF_Flood_N_18",
+                      "Effect_BUFF_Flood_N_19",
+                      "Effect_BUFF_Flood_N_20",
+                      "Effect_BUFF_Flood_N_21",
+                      "Effect_BUFF_Flood_N_22",
+                      "Effect_BUFF_Flood_N_23",
+                      "Effect_BUFF_Flood_N_24",
+                      "Effect_BUFF_Flood_N_25"
                     ],
                     "attr": 0
                   }
@@ -2877,10 +3658,10 @@
                     "isBuff": true,
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -3153,6 +3934,114 @@
                     "isBuff": true,
                     "type": 97,
                     "off": "Effect_BUFF_Flood_N_14"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_17",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_20"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_17_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_20",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_20"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_18",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_23"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_18_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_23",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_23"
                   },
                   "overlap": 4
                 }
@@ -3262,10 +4151,10 @@
                     "chance": "0%",
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -3284,10 +4173,29 @@
                     "func": "OR",
                     "select": [
                       "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
                       "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
                       "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
                       "Effect_BUFF_Flood_N_11",
-                      "Effect_BUFF_Flood_N_14"
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16",
+                      "Effect_BUFF_Flood_N_17",
+                      "Effect_BUFF_Flood_N_18",
+                      "Effect_BUFF_Flood_N_19",
+                      "Effect_BUFF_Flood_N_20",
+                      "Effect_BUFF_Flood_N_21",
+                      "Effect_BUFF_Flood_N_22",
+                      "Effect_BUFF_Flood_N_23",
+                      "Effect_BUFF_Flood_N_24",
+                      "Effect_BUFF_Flood_N_25"
                     ],
                     "attr": 0
                   }
@@ -3326,10 +4234,10 @@
                     "isBuff": true,
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -3602,6 +4510,114 @@
                     "isBuff": true,
                     "type": 97,
                     "off": "Effect_BUFF_Flood_N_14"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_17",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_20"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_17_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_20",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_20"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_18",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_23"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_18_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_23",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_23"
                   },
                   "overlap": 4
                 }
@@ -3711,10 +4727,10 @@
                     "chance": "0%",
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -3733,10 +4749,29 @@
                     "func": "OR",
                     "select": [
                       "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
                       "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
                       "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
                       "Effect_BUFF_Flood_N_11",
-                      "Effect_BUFF_Flood_N_14"
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16",
+                      "Effect_BUFF_Flood_N_17",
+                      "Effect_BUFF_Flood_N_18",
+                      "Effect_BUFF_Flood_N_19",
+                      "Effect_BUFF_Flood_N_20",
+                      "Effect_BUFF_Flood_N_21",
+                      "Effect_BUFF_Flood_N_22",
+                      "Effect_BUFF_Flood_N_23",
+                      "Effect_BUFF_Flood_N_24",
+                      "Effect_BUFF_Flood_N_25"
                     ],
                     "attr": 0
                   }
@@ -3775,10 +4810,10 @@
                     "isBuff": true,
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -4051,6 +5086,114 @@
                     "isBuff": true,
                     "type": 97,
                     "off": "Effect_BUFF_Flood_N_14"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_17",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_20"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_17_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_20",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_20"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_18",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_23"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_18_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_23",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_23"
                   },
                   "overlap": 4
                 }
@@ -4160,10 +5303,10 @@
                     "chance": "0%",
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -4182,10 +5325,29 @@
                     "func": "OR",
                     "select": [
                       "Effect_BUFF_Flood_N_1",
+                      "Effect_BUFF_Flood_N_2",
+                      "Effect_BUFF_Flood_N_3",
                       "Effect_BUFF_Flood_N_4",
+                      "Effect_BUFF_Flood_N_5",
+                      "Effect_BUFF_Flood_N_6",
                       "Effect_BUFF_Flood_N_7",
+                      "Effect_BUFF_Flood_N_8",
+                      "Effect_BUFF_Flood_N_9",
                       "Effect_BUFF_Flood_N_11",
-                      "Effect_BUFF_Flood_N_14"
+                      "Effect_BUFF_Flood_N_12",
+                      "Effect_BUFF_Flood_N_13",
+                      "Effect_BUFF_Flood_N_14",
+                      "Effect_BUFF_Flood_N_15",
+                      "Effect_BUFF_Flood_N_16",
+                      "Effect_BUFF_Flood_N_17",
+                      "Effect_BUFF_Flood_N_18",
+                      "Effect_BUFF_Flood_N_19",
+                      "Effect_BUFF_Flood_N_20",
+                      "Effect_BUFF_Flood_N_21",
+                      "Effect_BUFF_Flood_N_22",
+                      "Effect_BUFF_Flood_N_23",
+                      "Effect_BUFF_Flood_N_24",
+                      "Effect_BUFF_Flood_N_25"
                     ],
                     "attr": 0
                   }
@@ -4224,10 +5386,10 @@
                     "isBuff": true,
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-25%",
-                        "per": "-2.5%"
+                        "base": "25%",
+                        "per": "2.5%"
                       }
                     }
                   },
@@ -4500,6 +5662,114 @@
                     "isBuff": true,
                     "type": 97,
                     "off": "Effect_BUFF_Flood_N_14"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_17",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_20"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_17_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_20",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_20"
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Sonia_N_18",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_Flood_N_23"
+                    ],
+                    "attr": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "",
+                  "desc": {
+                    "desc": "Effect_PECS_Sonia_N_18_1",
+                    "type": 0,
+                    "value": "Effect_BUFF_Flood_N_23",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 97,
+                    "off": "Effect_BUFF_Flood_N_23"
                   },
                   "overlap": 4
                 }
@@ -4627,6 +5897,28 @@
             },
             "value": "Effect_BUFF_Flood_N_14",
             "chance": 1
+          },
+          {
+            "icon": "",
+            "desc": {
+              "desc": "Effect_PECS_Sonia_N_17_1",
+              "type": 0,
+              "value": "Effect_BUFF_Flood_N_20",
+              "level": "0"
+            },
+            "value": "Effect_BUFF_Flood_N_20",
+            "chance": 1
+          },
+          {
+            "icon": "",
+            "desc": {
+              "desc": "Effect_PECS_Sonia_N_18_1",
+              "type": 0,
+              "value": "Effect_BUFF_Flood_N_23",
+              "level": "0"
+            },
+            "value": "Effect_BUFF_Flood_N_23",
+            "chance": 1
           }
         ]
       ]
@@ -4750,6 +6042,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 1,
                     "attack": {
                       "base": "-10%",
@@ -5035,6 +6328,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 1,
                     "attack": {
                       "base": "-10%",
@@ -5320,6 +6614,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 1,
                     "attack": {
                       "base": "-10%",
@@ -5605,6 +6900,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 1,
                     "attack": {
                       "base": "-10%",
@@ -5890,6 +7186,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 1,
                     "attack": {
                       "base": "-10%",
@@ -6175,6 +7472,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 1,
                     "attack": {
                       "base": "-10%",
@@ -6460,6 +7758,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 1,
                     "attack": {
                       "base": "-10%",
@@ -6745,6 +8044,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 1,
                     "attack": {
                       "base": "-10%",
@@ -7030,6 +8330,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 1,
                     "attack": {
                       "base": "-10%",
@@ -7315,6 +8616,7 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 1,
                     "attack": {
                       "base": "-10%",
@@ -7552,7 +8854,7 @@
             },
             "base": -0.1,
             "per": -0.01,
-            "chance": 1
+            "chance": 0
           },
           {
             "icon": "BuffIcon_TOGETHER_ATTACK",
@@ -9133,10 +10435,10 @@
                     "chance": "0%",
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-15%",
-                        "per": "-1.5%"
+                        "base": "15%",
+                        "per": "1.5%"
                       }
                     }
                   },
@@ -9216,10 +10518,10 @@
                     "isBuff": true,
                     "type": 90,
                     "resist": {
-                      "type": "debuff",
+                      "type": "debuff_rateup",
                       "value": {
-                        "base": "-15%",
-                        "per": "-1.5%"
+                        "base": "15%",
+                        "per": "1.5%"
                       }
                     }
                   },

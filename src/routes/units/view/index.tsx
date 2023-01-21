@@ -1,4 +1,4 @@
-import { FunctionalComponent } from "preact";
+import { createElement, FunctionalComponent, RenderableProps } from "preact";
 
 import { Unit, UnitSkin } from "@/types/DB/Unit";
 
@@ -17,6 +17,7 @@ import DialogueTab from "./sub-tab/Dialogue";
 import LvLimitTab from "./sub-tab/LvLimit";
 import SkillTab from "./sub-tab/Skill";
 import SkinTab from "./sub-tab/Skin";
+import { route } from "preact-router";
 
 type TabTypes = "basic" | "skin" | "lvlimit" | "skills" | "dialogue";
 
@@ -34,16 +35,28 @@ export interface SubpageProps {
 
 interface UnitsViewProps {
 	uid: string;
+	sub?: string;
 }
 
 const View: FunctionalComponent<UnitsViewProps> = (props) => {
-	const DisplayTab = objState<TabTypes>("basic");
+	const DisplayTab = objState<TabTypes>(
+		props.sub && props.sub.startsWith("s")
+			? "skin"
+			: "basic"
+	);
 
 	function GoBack (): void {
 		window.history.back();
 	}
 
-	const skinIndex = objState<number>(0);
+	const skinIndex = objState<number>(
+		props.sub && props.sub.startsWith("s")
+			? -parseInt(props.sub.substring(1), 10)
+			: 0
+	);
+
+	if (props.sub)
+		route(`/units/${props.uid}`, true);
 
 	return <Loader json={ [StaticDB.FilterableEquip, StaticDB.Consumable, `unit/${props.uid}`] } content={ ((): preact.VNode => {
 		const unit = ((): Unit => {
@@ -92,6 +105,9 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 			return list;
 		})();
 
+		if (skinIndex.value < 0)
+			skinIndex.set(SkinList.findIndex(s => s.sid === -skinIndex.value) || 0);
+
 		SetMeta(
 			["description", "twitter:description"],
 			`${RarityDisplay[unit.rarity]}급 ${UnitClassDisplay[unit.type]} ${UnitRoleDisplay[unit.role]} ` +
@@ -108,6 +124,14 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 			true,
 		);
 		UpdateTitle(LocaleGet("MENU_UNITS"), LocaleGet(`UNIT_${unit.uid}`));
+
+		const TabContents: Record<TabTypes, FunctionalComponent<SubpageProps>> = {
+			basic: BasicTab,
+			skin: SkinTab,
+			lvlimit: LvLimitTab,
+			skills: SkillTab,
+			dialogue: DialogueTab,
+		};
 
 		return <div class="unit-view">
 			<div class="row">
@@ -200,12 +224,14 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 				</div>
 			</div>
 
-			<BasicTab display={ DisplayTab.value === "basic" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
-			<SkinTab display={ DisplayTab.value === "skin" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
-			<LvLimitTab display={ DisplayTab.value === "lvlimit" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
-			<SkillTab display={ DisplayTab.value === "skills" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
-			{/* <RoguelikeTab display={ DisplayTab.value === "roguelike" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } /> */ }
-			<DialogueTab display={ DisplayTab.value === "dialogue" } unit={ unit } skinIndex={ skinIndex } SkinList={ SkinList } />
+			{ Object.keys(TabContents).map(k =>
+				createElement(TabContents[k as TabTypes], {
+					display: DisplayTab.value === k,
+					unit,
+					skinIndex,
+					SkinList,
+				}))
+			}
 		</div>;
 	}) } />;
 };

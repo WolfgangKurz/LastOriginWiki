@@ -1,4 +1,5 @@
-import { Component, createRef, RenderableProps } from "preact";
+import { FunctionalComponent } from "preact";
+import { useEffect, useRef, useState } from "preact/hooks";
 
 import * as spine from "@esotericsoftware/spine-webgl";
 import Spine from "./Spine";
@@ -27,8 +28,8 @@ export interface RendererProps {
 	// /** display collider box? */
 	// collider?: boolean;
 
-	// /** hide parts? */
-	// hidePart?: boolean;
+	/** hide parts? */
+	hidePart?: boolean;
 
 	// /** hide bg? */
 	// hideBg?: boolean;
@@ -37,217 +38,225 @@ export interface RendererProps {
 	// hideDialog?: boolean;
 }
 
-interface RendererState {
-	state: RendererStateEnum;
-	error: string;
+const touchNameList = ["touch", "touth"];
+const specialNameList = ["special"];
 
-	uid: string;
-	google: boolean;
-	face: string | undefined;
+const SpineRenderer: FunctionalComponent<RendererProps> = (props) => {
+	const WrapperRef = useRef<HTMLDivElement>(null);
+	const CanvasRef = useRef<HTMLCanvasElement>(null);
+	const AnimCircleRef = useRef<HTMLDivElement>(null);
 
-	width?: number;
-	height?: number;
-}
+	const canvas = useRef<spine.SpineCanvas | null>(null);
+	const app = useRef<Spine | null>(null);
 
-const texExt = "webp";
+	const [pointerDownOffset, setPointerDownOffset] = useState<[number, number]>([0, 0]);
 
-class SpineRenderer extends Component<RendererProps, RendererState>{
-	private WrapperRef = createRef<HTMLDivElement>();
-	private CanvasRef = createRef<HTMLCanvasElement>();
+	const [hasGoogle, setHasGoogle] = useState(false);
+	const [skinList, setSkinList] = useState<string[]>([]);
+	const [lastFace, setLastFace] = useState("");
+	const [facePrefix, setFacePrefix] = useState("");
 
-	private canvas: spine.SpineCanvas | null = null;
-	private app: Spine | null = null;
+	const [state, setState] = useState<RendererStateEnum>(RendererStateEnum.None);
+	const [error, setError] = useState<string>("");
 
-	private updateGoogle: ((value: boolean, prev: boolean) => void) | null = null;
-	private updateFace: ((value: string | undefined, prev: string | undefined) => void) | null = null;
-
-	private pointerDownOffset: [number, number] = [0, 0];
-	private playTouch: (() => void) | null = null;
-	private playSpecialTouch: (() => void) | null = null;
-
-	private facePrefix: string = "";
-
-	constructor (props: Readonly<RendererProps>) {
-		super(props);
-
-		if (!props.uid) {
-			this.state = {
-				state: RendererStateEnum.Error,
-				error: "Invalid parameters",
-
-				uid: props.uid,
-				google: props.google || false,
-				face: props.face,
-			};
-			return;
-		}
-
-		this.state = {
-			state: RendererStateEnum.None,
-			error: "",
-
-			uid: props.uid,
-			google: props.google || false,
-			face: props.face,
-		};
-	}
-
-	componentDidMount () {
-		this.init();
-	}
-
-	componentDidUpdate () {
-		if (this.state.uid !== this.props.uid) {
-			this.canvas?.assetManager.dispose();
-			this.canvas?.renderer.dispose();
-
-			this.canvas = null;
-			this.app = null;
-			this.updateFace = null;
-
-			this.setState({
-				state: RendererStateEnum.None,
-				error: "",
-
-				uid: this.props.uid,
-				face: this.props.face,
-			}, () => this.init());
-			return;
-		}
-
-		// isGoogle change
-		if (this.props.google !== this.state.google) {
-			if (this.updateGoogle)
-				this.updateGoogle(this.props.google, this.state.google);
-			this.setState({ google: this.props.google });
-		}
-
-		// face change
-		if (this.props.face !== this.state.face) {
-			if (this.updateFace && this.props.face)
-				this.updateFace(this.props.face, this.state.face);
-			this.setState({ face: this.props.face });
-		}
-	}
-
-	private init () {
-		const { current: canvas } = this.CanvasRef;
+	function Initialize () {
+		const { current: canvas } = CanvasRef;
 		if (!canvas) {
-			this.setState({
-				state: RendererStateEnum.Error,
-				error: "Invalid element",
-			});
+			setState(RendererStateEnum.Error);
+			setError("Invalid element");
 			return;
 		}
 
-		this.setState(
-			{ state: RendererStateEnum.Loading },
-			() => {
-				try {
-					this.app = new Spine(
-						this.props.uid,
-						(app, names) => {
-							app.addSkin("skin_base");
-
-							const hasGoogle = names.includes("breast/Censorship");
-							if (hasGoogle) {
-								if (this.state.google)
-									app.addSkin("breast/Censorship");
-								else
-									app.addSkin("breast/Unedited");
-							}
-
-							const faces = names.filter(x => x.startsWith("face/"));
-							const list = faces.map(face => face.replace(/^.+_([^_]+)$/, "$1"));
-
-							const prefix = faces[0].replace(/^(.+_)[^_]+$/, "$1");
-							this.facePrefix = prefix;
-
-							if (this.props.onFaceList)
-								this.props.onFaceList(list);
-
-							this.updateGoogle = (value, prev) => {
-								if (!hasGoogle) return;
-
-								if (value) {
-									app.removeSkin("breast/Unedited");
-									app.addSkin("breast/Censorship");
-								} else {
-									app.removeSkin("breast/Censorship");
-									app.addSkin("breast/Unedited");
-								}
-							};
-							this.updateFace = (value, prev) => {
-								app.removeSkin(this.facePrefix + prev);
-								app.addSkin(this.facePrefix + value);
-							};
-							this.playTouch = () => app.play("touch");
-							this.playSpecialTouch = () => app.play("touch_special");
-
-							if (this.props.face)
-								app.addSkin(this.facePrefix + this.props.face);
-
-							this.setState(
-								{ state: RendererStateEnum.OK },
-								() => {
-									app.updateCamera();
-								},
-							);
-						},
-					);
-					this.canvas = new SpineCanvas(canvas, {
-						app: this.app,
-						pathPrefix: `${AssetsRoot}/spine/${this.props.uid}/`,
-					});
-				} catch (e) {
-					this.setState({
-						state: RendererStateEnum.Error,
-						error: "Spine Error\n\n" + (e instanceof Error ? e.toString() : e),
-					});
-				}
-			},
-		);
+		setSkinList([]);
+		setLastFace("");
+		setState(RendererStateEnum.Loading);
 	}
 
-	render (props: RenderableProps<RendererProps>, state: Readonly<RendererState>) {
-		const overlayTexts: Record<RendererStateEnum, string> = {
-			[RendererStateEnum.OK]: "",
-			[RendererStateEnum.None]: "We still love you",
-			[RendererStateEnum.Loading]: "Searching fooling around Efreeti",
-			[RendererStateEnum.Error]: `Error - ${state.error}`,
+	function applyAnimCircle (duration: number) {
+		const { current: el } = AnimCircleRef;
+		if (!el) return;
+		if (el.style.opacity === "1") return;
+
+		el.style.maskImage = "conic-gradient(transparent, transparent)";
+		el.style.opacity = "1";
+
+		const begin = Date.now();
+		let frameId = 0;
+
+		const frame = () => {
+			const p = (Date.now() - begin) / 10 / duration;
+			const progress = Math.min(p, 99.99);
+			el.style.maskImage = `conic-gradient(#fff ${progress}%, transparent ${progress + 0.01}%)`;
+
+			if (p >= 100) {
+				el.style.opacity = "";
+				el.style.maskImage = "";
+			} else
+				frameId = requestAnimationFrame(frame);
 		};
-
-		return <div class={ style.SpineRenderer } ref={ this.WrapperRef }>
-			<canvas
-				width={ state.width }
-				height={ state.height }
-				onPointerDown={ e => {
-					this.pointerDownOffset = [e.x, e.y];
-				} }
-				onPointerUp={ e => {
-					const dX = Math.abs(e.x - this.pointerDownOffset[0]);
-					const dY = Math.abs(e.y - this.pointerDownOffset[1]);
-
-					if (dX < 5 && dY < 5) {
-						if (props.specialTouch) {
-							if (this.playSpecialTouch)
-								this.playSpecialTouch();
-						} else {
-							if (this.playTouch)
-								this.playTouch();
-						}
-					}
-				} }
-				ref={ this.CanvasRef }
-			/>
-
-			{ state.state !== RendererStateEnum.OK
-				? <div class={ style.OverlayText }>
-					{ overlayTexts[state.state] }
-				</div>
-				: <></>
-			}
-		</div>;
+		frameId = requestAnimationFrame(frame);
 	}
-}
+
+	function updateGoogle () {
+		const _app = app.current;
+		if (!_app) return;
+
+		if (!hasGoogle) return;
+
+
+		if (props.google) {
+			_app.removeSkin("breast/Unedited");
+			_app.addSkin("breast/Censorship");
+		} else {
+			_app.removeSkin("breast/Censorship");
+			_app.addSkin("breast/Unedited");
+		}
+	}
+	function updateFace () {
+		const _app = app.current;
+		if (!_app) return;
+
+		if (lastFace) _app.removeSkin(facePrefix + lastFace);
+		_app.addSkin(facePrefix + props.face);
+		setLastFace(props.face || "");
+	}
+	function updateDecorations () {
+		const _app = app.current;
+		if (!_app) return;
+
+		skinList.filter(x => x.startsWith("decoration"))
+			.forEach(skin => props.hidePart ? _app.removeSkin(skin) : _app.addSkin(skin));
+	}
+
+	function playTouch (isSpecial: boolean) {
+		const _app = app.current;
+		if (!_app) return;
+
+		const anims = _app.animationList();
+		const anim = anims.filter(x => {
+			const lowerName = x.name.toLowerCase();
+			return touchNameList.some(r => lowerName.includes(r)) &&
+				(isSpecial
+					? specialNameList.some(r => lowerName.includes(r))
+					: !specialNameList.some(r => lowerName.includes(r))
+				);
+		})[0];
+		if (anim) {
+			if (_app.play(anim))
+				applyAnimCircle(anim.duration);
+		}
+	}
+
+	useEffect(() => {
+		if (!props.uid) {
+			setState(RendererStateEnum.Error);
+			setError("Invalid uid parameter");
+		} else {
+			if (canvas.current) {
+				canvas.current.assetManager.dispose();
+				canvas.current.renderer.dispose();
+			}
+
+			canvas.current = null;
+			app.current = null;
+
+			setState(RendererStateEnum.None);
+			setError("");
+
+			Initialize();
+		}
+	}, [props.uid]);
+
+	useEffect(() => updateGoogle(), [props.google]);
+	useEffect(() => updateFace(), [props.face]);
+	useEffect(() => updateDecorations(), [props.hidePart]);
+
+	useEffect(() => {
+		if (state === RendererStateEnum.Loading) { // from Initialize
+			const { current: canvasEl } = CanvasRef;
+			if (!canvasEl) return;
+
+			try {
+				app.current = new Spine(
+					props.uid,
+					(app, names) => {
+						app.addSkin("skin_base");
+
+						setSkinList(names);
+						names.filter(x => x.startsWith("decoration"))
+							.forEach(skin => app.addSkin(skin));
+
+						const _hasGoogle = names.includes("breast/Censorship");
+						setHasGoogle(_hasGoogle);
+						if (_hasGoogle) {
+							if (props.google)
+								app.addSkin("breast/Censorship");
+							else
+								app.addSkin("breast/Unedited");
+						}
+
+						const faces = names.filter(x => x.startsWith("face/"));
+						const list = faces.map(face => face.replace(/^.+_([^_]+)$/, "$1"));
+
+						const prefix = faces[0].replace(/^(.+_)[^_]+$/, "$1");
+						setFacePrefix(prefix);
+
+						if (props.onFaceList)
+							props.onFaceList(list);
+
+						if (props.face)
+							app.addSkin(prefix + props.face);
+
+						setState(RendererStateEnum.OK);
+					},
+				);
+
+				canvas.current = new SpineCanvas(canvasEl, {
+					app: app.current,
+					pathPrefix: `${AssetsRoot}/spine/${props.uid}/`,
+				});
+			} catch (e) {
+				setState(RendererStateEnum.Error);
+				setError("Spine Error\n\n" + (e instanceof Error ? e.toString() : e));
+			}
+		} else if (state === RendererStateEnum.OK) {
+			if (app.current)
+				app.current.updateCamera();
+		}
+	}, [state]);
+
+	const overlayTexts: Record<RendererStateEnum, string> = {
+		[RendererStateEnum.OK]: "",
+		[RendererStateEnum.None]: "We still love you",
+		[RendererStateEnum.Loading]: "Finding fooling around Efreeti",
+		[RendererStateEnum.Error]: `Error - ${error}`,
+	};
+
+	return <div class={ style.SpineRenderer } ref={ WrapperRef }>
+		<canvas
+			onPointerDown={ e => setPointerDownOffset([e.x, e.y]) }
+			onPointerUp={ e => {
+				const dX = Math.abs(e.x - pointerDownOffset[0]);
+				const dY = Math.abs(e.y - pointerDownOffset[1]);
+
+				if (dX < 5 && dY < 5) {
+					playTouch(!!props.specialTouch);
+				}
+			} }
+			ref={ CanvasRef }
+		/>
+
+		{ state !== RendererStateEnum.OK
+			? <div class={ style.OverlayText }>
+				{ overlayTexts[state] }
+			</div>
+			: <></>
+		}
+
+		<div
+			class={ style.AnimationCircle }
+			ref={ AnimCircleRef }
+		/>
+	</div>;
+};
 export default SpineRenderer;

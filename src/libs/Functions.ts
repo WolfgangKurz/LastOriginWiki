@@ -21,6 +21,18 @@ export function FormatNumber (num: number): string {
 	return n;
 }
 
+export function FormatDate (timestamp: number | Date): string {
+	let date = timestamp;
+	if (typeof date === "number")
+		date = new Date(date);
+
+	return [
+		date.getUTCFullYear(),
+		(date.getUTCMonth() + 1).toString().padStart(2, "0"),
+		date.getUTCDate().toString().padStart(2, "0"),
+	].join("-");
+}
+
 export function ToOrdinal (num: number): string {
 	// 11, 12, 13 ...
 	if (Math.floor(num / 10) === 1) return `${num}th`;
