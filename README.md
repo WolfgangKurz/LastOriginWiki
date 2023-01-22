@@ -1,4 +1,4 @@
-# 멸망 전의 전술교본 (Tactics Manual)
+# 멸망 전의 전술 교본 (Tactics Manual)
 <p align="center">
   <img src="external/assets/icon.png" alt="Icon" />
 </p>
