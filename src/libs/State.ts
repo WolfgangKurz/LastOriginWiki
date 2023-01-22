@@ -11,6 +11,7 @@ export function objStated<T> (state: [T, StateUpdater<T>]): ObjectState<T> {
 	return {
 		value,
 		set (value: T | Updater<T>): void {
+			// DANGEROUS CODE
 			if (typeof value === "function")
 				(this.value as T) = (value as Updater<T>)(this.value);
 			else

@@ -18,6 +18,8 @@ import Icon from "@/components/bootstrap-icon";
 
 // import AIList from "@/components/ai-list/new.index";
 
+import "./style.scss";
+
 const App: FunctionalComponent = () => {
 	if (typeof window !== "undefined") {
 		const pageonloading = document.querySelector("#pageonloading");

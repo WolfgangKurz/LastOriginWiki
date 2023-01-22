@@ -1,0 +1,32 @@
+@keyframes marquee {
+	0% {
+		transform: translate(0%);
+	}
+	49.9999% {
+		transform: translate(-100%);
+	}
+	50% {
+		transform: translate(calc(100vw - 2rem - 2rem + 1em)); // 1em gap
+	}
+	100% {
+		transform: translate(0%);
+	}
+}
+
+.Marquee {
+	width: 100%;
+	white-space: nowrap;
+
+	&.active {
+		mask-image: linear-gradient(to right, transparent, #fff 10%, #fff 90%, transparent);
+		-webkit-mask-box-image: linear-gradient(to bottom, transparent, #fff 10%, #fff 90%, transparent);
+
+		> div {
+			display: inline-block;
+			animation-name: marquee;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			animation-duration: 10s;
+		}
+	}
+}

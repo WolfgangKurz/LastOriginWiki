@@ -1,0 +1,33 @@
+.Slider {
+	position: relative;
+	height: 14px;
+	cursor: pointer;
+
+	&.Disabled {
+		cursor: default;
+	}
+
+	> .Track {
+		position: relative;
+		top: (7px - 1px); // half of parent height, half of track height
+		height: 2px;
+		background-color: rgba($light, 0.2);
+
+		> .Progress {
+			width: 0%;
+			height: 100%;
+			background-color: $light;
+		}
+		> .Thumb {
+			position: absolute;
+			margin-top: 1px; // half of height
+			margin-left: -7px; // half of thumb width
+			left: 0%;
+			top: -7px; // half of thumb height
+			width: 14px;
+			height: 14px;
+			border-radius: 9999px;
+			background-color: $light;
+		}
+	}
+}
