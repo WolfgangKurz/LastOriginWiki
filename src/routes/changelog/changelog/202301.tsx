@@ -9,6 +9,21 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12063" date="2023-01-22" tag="Elbe"
+		new={ <>
+			<li>BGM 페이지를 개편했습니다.</li>
+			<li>생강차가 조금 더 진해졌습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>전투원의 기업 정보에 무기 정보가 표시되던 문제를 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li>전투원 정보의 비밀의 방 유형의 표현 일부가 수정되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li>일부 전투원의 소개 보이스가 누락된 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12050" date="2023-01-21"
 		new={ <>
 			<li>전투원 정보에 <BY>비밀의 방 유형</BY> 정보가 추가되었습니다.</li>
