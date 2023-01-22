@@ -1,4 +1,5 @@
-import { Component, RenderableProps } from "preact";
+import { FunctionalComponent } from "preact";
+import { useLayoutEffect, useState } from "react";
 import Icons from "./icons";
 
 import "./style.scss";
@@ -275,50 +276,29 @@ interface IconState {
 	child: preact.VNode;
 }
 
-class Icon extends Component<IconProps, IconState> {
-	private mounted: boolean = true;
+const Icon: FunctionalComponent<IconProps> = (props) => {
+	const [content, setContent] = useState<preact.VNode | null>(null);
 
-	constructor (props: RenderableProps<IconProps>) {
-		super();
+	const size = props.size || "1em";
+	const color = props.color || "currentColor";
 
-		this.state = { child: <></> };
-		this.UpdateIcon(props.icon);
-	}
+	useLayoutEffect(() => {
+		setContent(null);
 
-	UpdateIcon (iconId: IconList) {
-		const icon: Promise<{ default: preact.VNode; }> | null = Icons.includes(iconId)
-			? import(`./es/${iconId}.ts`)
-			: null;
-
-		this.setState({ child: <></> });
-		if (icon !== null) {
-			icon.then(node => {
-				if (this.mounted)
-					this.setState(s => ({ ...s, child: node.default }));
+		if (Icons.includes(props.icon)) {
+			import(`./es/${props.icon}.ts`).then(node => {
+				setContent(node.default);
 			});
 		}
-	}
+	}, [props.icon]);
 
-	componentWillUnmount () {
-		this.mounted = false;
-	}
-
-	componentWillReceiveProps (nextProps: RenderableProps<IconProps>) {
-		this.UpdateIcon(nextProps.icon);
-	}
-
-	render (props: RenderableProps<IconProps>, state: IconState) {
-		const size = props.size || "1em";
-		const color = props.color || "currentColor";
-
-		return <svg
-			class={ `bi bi-${props.icon} ${props.class || ""}` }
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 16 16"
-			width={ size }
-			height={ size }
-			fill={ color }
-		>{ state.child }</svg>;
-	}
+	return <svg
+		class={ `bi bi-${props.icon} ${props.class || ""}` }
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 16 16"
+		width={ size }
+		height={ size }
+		fill={ color }
+	>{ content }</svg>;
 };
 export default Icon;

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<meta content="IE=edge" http-equiv="X-UA-Compatible">
+		<title>Youtube Bridge</title>
+		<style type="text/css">
+			#yt-player {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+			#yt-player iframe {
+				width: 100%;
+				height: 100%;
+				border: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="yt-player"></div>
+		<script type="text/javascript">
+			window.Initialize = function () {
+				var tag = document.createElement("script");
+				tag.src = "https://www.youtube.com/iframe_api";
+				var firstScriptTag = document.getElementsByTagName("script")[0];
+				firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+				const ad1 = setInterval(function () {
+					if (window.yt && window.yt.ads_ && window.yt.ads_.signals_) {
+						window.yt.ads_.signals_.getAdSignalsString = function () { };
+						clearInterval(ad1);
+					}
+				}, 0);
+
+				var updator = null;
+				window.onYouTubeIframeAPIReady = function () {
+					var ev = window.EventDelegator;
+					window.ytPlayer = new YT.Player("yt-player", {
+						playerVars: {
+							autoplay: 0,
+							controls: 1,
+							modestbranding: 0,
+							showinfo: 0,
+							mute: 0,
+							rel: 0,
+							fs: 1,
+							hl: "ko",
+							iv_load_policy: 1,
+							cc_load_policy: 1,
+							playsinline: 1,
+							wmode: "opaque",
+						},
+						events: {
+							onReady: function () {
+								window.ytPlayer.destroy2 = function () {
+									clearInterval(updator);
+									window.ytPlayer.destroy();
+								};
+
+								ev.Ready(window.ytPlayer);
+
+								if (!updator) {
+									updator = setInterval(function () {
+										ev.TimeUpdate(window.ytPlayer.getCurrentTime());
+									}, 100);
+								}
+							},
+							onStateChange: function (event) {
+								ev.State(event.data);
+							},
+							onPlaybackQualityChange: function (event) {
+								ev.QualityUpdate(event.data);
+							},
+							onError: function (e) {
+								ev.Error(e);
+							}
+						}
+					});
+				};
+			}
+		</script>
+	</body>
+</html>
