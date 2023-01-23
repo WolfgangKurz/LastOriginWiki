@@ -933,7 +933,7 @@ const BGMAlbums: BGMAlbum[] = [
 					{ time: 86.52, text: "이정표의 끝까지 Fly Away" },
 					{ time: 93.93, text: "" },
 					{ time: 96.55, text: "노을에 그을린 비행운" },
-					{ time: 101.28, text: "은빛 바다 위를, 뒤따라 바라봐" },
+					{ time: 101.28, text: "은빛 바다 위를 뒤따라 바라봐" },
 					{ time: 107.72, text: "타오르는 마음 품에 안고" },
 					{ time: 111.89, text: "이글거리는 결의의 눈빛" },
 					{ time: 114.44, text: "기세로는 절대 지지 않아" },
