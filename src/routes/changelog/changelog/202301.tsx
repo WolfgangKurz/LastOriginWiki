@@ -9,6 +9,11 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12067" date="2023-01-24"
+		update={ <>
+			<li>BGM 페이지에 MISS ORCA 2nd season 앨범의 음원이 추가되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12066" date="2023-01-23"
 		bugfix={ <>
 			<li>BGM 페이지에서 Boss Battle C 가 삭제되었습니다.</li>

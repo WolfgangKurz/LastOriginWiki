@@ -792,10 +792,11 @@ const BGMAlbums: BGMAlbum[] = [
 		image: "album_missorca_2nd",
 		songs: [
 			{
-				type: "placeholder",
+				type: "youtube",
 				id: "track1",
 				title: "호접지몽",
 				duration: 348,
+				url: "ffSWaF-byGw",
 				lyrics: [
 					{ time: 0, text: "호접지몽 - 천향의 히루메" },
 					{ time: 19.6, text: "" },
@@ -851,10 +852,11 @@ const BGMAlbums: BGMAlbum[] = [
 				],
 			},
 			{
-				type: "placeholder",
+				type: "youtube",
 				id: "track2",
 				title: "MY LOVE",
 				duration: 238,
+				url: "x__gIBqOU28",
 				lyrics: [
 					{ time: 0, text: "My Love - 멸망의 메이" },
 					{ time: 9.22, text: "" },
@@ -901,10 +903,11 @@ const BGMAlbums: BGMAlbum[] = [
 				],
 			},
 			{
-				type: "placeholder",
+				type: "youtube",
 				id: "track3",
 				title: "FLIGHT AGAIN",
 				duration: 262,
+				url: "al2KUW6Tt80",
 				lyrics: [
 					{ time: 0, text: "FLIGHT AGAIN - B-11 나이트앤젤" },
 					{ time: 0.83, text: "" },
