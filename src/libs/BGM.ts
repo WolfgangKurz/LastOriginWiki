@@ -165,14 +165,6 @@ const BGMAlbums: BGMAlbum[] = [
 			},
 			{
 				type: "audio",
-				id: "track_battle_boss_03",
-				title: "Boss Battle C",
-				duration: 67,
-				filename: "Album01/Battle_Boss_03.mp3",
-				lyrics: [{ time: 0, text: "Battle Boss 03" }],
-			},
-			{
-				type: "audio",
 				id: "track_battle_boss_04",
 				title: "Boss Battle D - Iron Prince",
 				duration: 100,
@@ -201,8 +193,8 @@ const BGMAlbums: BGMAlbum[] = [
 				id: "track_irontower_battle_boss",
 				title: "Iron Tower Boss Battle",
 				duration: 67,
-				filename: "Album01/Battle_Boss_03b.mp3",
-				lyrics: [{ time: 0, text: "Battle Boss 03b" }],
+				filename: "Album01/Battle_Boss_03.mp3",
+				lyrics: [{ time: 0, text: "Battle Boss 03" }],
 			},
 
 			{

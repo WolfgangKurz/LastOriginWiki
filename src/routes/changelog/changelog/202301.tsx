@@ -9,9 +9,9 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12065" date="2023-01-23"
+	<ChangelogItem title="Build 12066" date="2023-01-23"
 		bugfix={ <>
-			<li>BGM 페이지에서 Boss Battle C 가 Boss Battle B 로 재생되던 점을 수정했습니다.</li>
+			<li>BGM 페이지에서 Boss Battle C 가 삭제되었습니다.</li>
 			<li><BY>뮤즈</BY>의 스킨 <BR>舊 드림위버 웨딩 스페셜 : 세 사람을 위한 축가</BR>가 잘못 표시되던 점을 수정했습니다.</li>
 		</> }
 	/>
