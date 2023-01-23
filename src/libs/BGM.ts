@@ -167,7 +167,7 @@ const BGMAlbums: BGMAlbum[] = [
 				type: "audio",
 				id: "track_battle_boss_03",
 				title: "Boss Battle C",
-				duration: 58,
+				duration: 67,
 				filename: "Album01/Battle_Boss_03.mp3",
 				lyrics: [{ time: 0, text: "Battle Boss 03" }],
 			},
