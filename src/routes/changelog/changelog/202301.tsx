@@ -9,6 +9,15 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12071" date="2023-01-29"
+		new={ <>
+			<li>이벤트 <BY>눈먼공주와 안개의 나라</BY>의 3부 정보가 추가되었습니다.</li>
+			<li>신규 전투원 <BY>멀린</BY>의 정보가 추가되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li>일부 전투원의 소개 보이스가 누락된 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12067" date="2023-01-24"
 		update={ <>
 			<li>BGM 페이지에 MISS ORCA 2nd season 앨범의 음원이 추가되었습니다.</li>
