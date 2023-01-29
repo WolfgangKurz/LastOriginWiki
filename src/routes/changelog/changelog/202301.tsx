@@ -9,6 +9,41 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12071" date="2023-01-29"
+		new={ <>
+			<li>이벤트 <BY>눈먼공주와 안개의 나라</BY>의 3부 정보가 추가되었습니다.</li>
+			<li>신규 전투원 <BY>멀린</BY>의 정보가 추가되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li>일부 전투원의 소개 보이스가 누락된 문제를 수정했습니다.</li>
+		</> }
+	/>
+	<ChangelogItem title="Build 12067" date="2023-01-24"
+		update={ <>
+			<li>BGM 페이지에 MISS ORCA 2nd season 앨범의 음원이 추가되었습니다.</li>
+		</> }
+	/>
+	<ChangelogItem title="Build 12066" date="2023-01-23"
+		bugfix={ <>
+			<li>BGM 페이지에서 Boss Battle C 가 삭제되었습니다.</li>
+			<li><BY>뮤즈</BY>의 스킨 <BR>舊 드림위버 웨딩 스페셜 : 세 사람을 위한 축가</BR>가 잘못 표시되던 점을 수정했습니다.</li>
+		</> }
+	/>
+	<ChangelogItem title="Build 12063" date="2023-01-22" tag="Elbe"
+		new={ <>
+			<li>BGM 페이지를 개편했습니다.</li>
+			<li>생강차가 조금 더 진해졌습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>전투원의 기업 정보에 무기 정보가 표시되던 문제를 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li>전투원 정보의 비밀의 방 유형의 표현 일부가 수정되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li>일부 전투원의 소개 보이스가 누락된 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12050" date="2023-01-21"
 		new={ <>
 			<li>전투원 정보에 <BY>비밀의 방 유형</BY> 정보가 추가되었습니다.</li>
