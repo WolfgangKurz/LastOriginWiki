@@ -11,6 +11,7 @@ interface ChangelogItemProps {
 	date: string;
 
 	site?: preact.VNode;
+	knownissue?: preact.VNode;
 	bugfix?: preact.VNode;
 	delete?: preact.VNode;
 	new?: preact.VNode;
@@ -20,7 +21,7 @@ interface ChangelogItemProps {
 }
 
 const ChangelogItem: FunctionalComponent<ChangelogItemProps> = (props) => {
-	const tags = ["site", "bugfix", "delete", "new", "update", "skin", "dialogue"]
+	const tags = ["site", "knownissue", "bugfix", "delete", "new", "update", "skin", "dialogue"]
 		.filter(x => props[x as keyof ChangelogItemProps]);
 
 	function TagVariant (tag: string): string[] {
@@ -30,6 +31,8 @@ const ChangelogItem: FunctionalComponent<ChangelogItemProps> = (props) => {
 				return ["", ""];
 			case "site":
 				return ["secondary", "bg-secondary"];
+			case "knownissue":
+				return ["danger-dark", "bg-danger-dark"];
 			case "bugfix":
 				return ["danger", "bg-danger"];
 			case "delete":
@@ -55,6 +58,8 @@ const ChangelogItem: FunctionalComponent<ChangelogItemProps> = (props) => {
 				return <Locale k="CHANGELOG_CATEGORY_UNCATEGORIZED" />;
 			case "site":
 				return <Locale k="CHANGELOG_CATEGORY_SITE" />;
+			case "knownissue":
+				return <Locale k="CHANGELOG_CATEGORY_KNOWNISSUE" />;
 			case "bugfix":
 				return <Locale k="CHANGELOG_CATEGORY_BUGFIX" />;
 			case "delete":

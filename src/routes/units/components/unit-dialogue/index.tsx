@@ -97,7 +97,7 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 
 		/* eslint-disable camelcase */
 		return {
-			Intro: "???",
+			// Intro: "???",
 			Join: "???",
 			SquadJoin: "???",
 			Leader: "???",

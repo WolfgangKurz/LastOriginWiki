@@ -144,7 +144,7 @@ const Artist: FunctionalComponent<UnitsListProps> = (props) => {
 										<UnitFace
 											class={ skin.sid ? style.SkinFace : style.DefaultFace }
 											uid={ skin.uid }
-											skin={ skin.sid || undefined }
+											skin={ skin.metadata.imageId }
 											size={ 56 }
 										/>
 									</Link>
