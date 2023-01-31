@@ -2890,7 +2890,7 @@ export default {
 		"filterable.enemy": "59a29910",
 		"filterable.equip": "6ab7dcce",
 		"filterable.facility": "16568438",
-		"filterable.unit": "be8a49da",
+		"filterable.unit": "9d169bb6",
 		"gacha": "44b9c464",
 		"map": {
 			"Cha": "4bc9f11c",
@@ -3121,7 +3121,7 @@ export default {
 			"PECS_LRL": "bfa9422b",
 			"PECS_Lumberjane": "bb406a76",
 			"PECS_Machina": "1c81aaac",
-			"PECS_Merlin": "17cec0c5",
+			"PECS_Merlin": "7f5713af",
 			"PECS_Mery": "49404009",
 			"PECS_MightyR": "0618ab54",
 			"PECS_MissSafety": "53d5e569",
