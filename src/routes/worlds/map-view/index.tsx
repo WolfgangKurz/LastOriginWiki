@@ -27,9 +27,9 @@ import TbarIcon from "@/components/tbar-icon";
 import UnitFace from "@/components/unit-face";
 import EnemyPopup from "@/components/popup/enemy-popup";
 import EquipPopup from "@/components/popup/equip-popup";
+import PCIcon from "@/components/pc-icon";
 import MapSearchInfo from "../components/map-search-info";
 import MapGrid from "../components/map-grid";
-import PCIcon from "../components/pc-icon";
 
 import style from "./style.module.scss";
 import MissionText from "@/components/mission-text";

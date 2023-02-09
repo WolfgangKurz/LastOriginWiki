@@ -133,6 +133,9 @@ const Header: FunctionalComponent = (): preact.VNode => {
 							<DropdownItem href="/bgm">
 								<Locale k="MENU_ETC_BGM" />
 							</DropdownItem>
+							<DropdownItem href="/consumable">
+								<Locale k="MENU_ETC_CONSUMABLE" />
+							</DropdownItem>
 							<DropdownItem href="/sticker">
 								<Locale k="MENU_ETC_STICKER" />
 							</DropdownItem>

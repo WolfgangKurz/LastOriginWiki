@@ -1400,7 +1400,7 @@ export default {
 	},
 	"korea": {
 		"bg": "43f6f4f0",
-		"consumable": "df41d70c",
+		"consumable": "8a29f451",
 		"enemy": {
 			"AMG11_TU2": "deff24c0",
 			"AMG11_TU3": "42c6885f",
@@ -2898,7 +2898,7 @@ export default {
 			"Ev1": "e2bc8d31",
 			"Ev10": "889cf2cd",
 			"Ev11": "314ab468",
-			"Ev12": "7850c092",
+			"Ev12": "7fc5824f",
 			"Ev13": "43581c06",
 			"Ev14": "3001d39a",
 			"Ev15": "f7f0203d",
@@ -2929,7 +2929,7 @@ export default {
 			"quest": "372e37a9"
 		},
 		"skill-from": "44974849",
-		"sticker": "0a36f935",
+		"sticker": "592a4649",
 		"story": "a6628263",
 		"summon": {
 			"SUMMON_SU_AMG11_N": "a613e391",
@@ -3048,13 +3048,13 @@ export default {
 			"BR_NightAngel": "47ac861b",
 			"BR_Nymph": "a9ab173e",
 			"BR_PA00EL": "13e237b0",
-			"BR_Pani": "fe385c39",
+			"BR_Pani": "c0d70c02",
 			"BR_Phantom": "e8ca710d",
 			"BR_Phoenix": "1d4caa48",
 			"BR_PoniesAnger": "70ffdcce",
 			"BR_PXSilky": "f2f1ca18",
 			"BR_QuickCamel": "8084984a",
-			"BR_Raven": "db1d78c4",
+			"BR_Raven": "83427e92",
 			"BR_RedHood": "f8e5c6a3",
 			"BR_RoyalArsenal": "541c64d8",
 			"BR_Salamander": "dd4535be",
@@ -3066,7 +3066,7 @@ export default {
 			"BR_Sleipnir": "4b286f01",
 			"BR_Spriggan": "5c46297d",
 			"BR_StratoAngel": "a9163160",
-			"BR_Sylphid": "825015e0",
+			"BR_Sylphid": "2cca4247",
 			"BR_TalonFeather": "f7a8aa9c",
 			"BR_Thetis": "4a3839cb",
 			"BR_Tomoe": "acdc3690",
@@ -3155,9 +3155,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "8bcd55e8",
-		"JP": "814bca83",
-		"KR": "ff656c09",
-		"TC": "d28323ca"
+		"EN": "2b832604",
+		"JP": "3f279dd7",
+		"KR": "486f4cf1",
+		"TC": "97cca1aa"
 	}
 } as DBHashType;
