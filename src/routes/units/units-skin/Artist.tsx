@@ -135,7 +135,7 @@ const Artist: FunctionalComponent<UnitsListProps> = (props) => {
 										<div class={ style.SkinTooltipName }>
 											{ !skin.sid
 												? <Locale k="SKIN_CATEGORY_" />
-												: <Locale k={ `UNIT_SKIN_${skin.uid}_${skin.sid}` } />
+												: <Locale k={ `UNIT_SKIN_${skin.uid}_${skin.sid}` } plain />
 											}
 										</div>
 									</div> }

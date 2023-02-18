@@ -9,6 +9,36 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12080" date="2023-02-18"
+		new={ <>
+			<li>전투원 <BY>CM67 스팅어</BY>의 승급 정보가 추가되었습니다.</li>
+			<li>전투원 <BY>AC-6 후사르</BY>의 승급 정보가 추가되었습니다.</li>
+			<li>전투원 <BY>코코 인 화이트셸</BY>의 승급 정보가 추가되었습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>전투원정보의 스킨보기에서 일부 스킨의 이름이 표시되지 않는 문제가 수정되었습니다.</li>
+		</> }
+		update={ <>
+			<li>전투원 <BY>에이다 Type-G</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>CM67 스팅어</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>AC-6 후사르</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>코코 인 화이트셸</BY>의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>마이티R</BY>의 스킨 <BR>마이티 더 브레이커</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>P-18 실피드</BY>의 스킨 <BR>자유로운 영혼 실피드</BR>의 중파 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>펜리르</BY>의 스킨 <BR>종교의 자유(?)를 원하는 펜리르</BR>의 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2023-02-18 18:53:34</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12078" date="2023-02-09"
 		new={ <>
 			<li>
