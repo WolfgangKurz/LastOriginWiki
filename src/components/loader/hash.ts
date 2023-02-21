@@ -3127,7 +3127,7 @@ export default {
 			"PECS_MissSafety": "53d5e569",
 			"PECS_Mnemosyne": "7cabf96e",
 			"PECS_Muse": "73ff00ef",
-			"PECS_Olivia": "3027aec5",
+			"PECS_Olivia": "a4ab6ea8",
 			"PECS_Orangeade": "cbb22812",
 			"PECS_Peregrinus": "903d5ca4",
 			"PECS_PuppHead": "1d64e3ed",
@@ -3156,9 +3156,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "a4b0b842",
+		"EN": "b8704a88",
 		"JP": "8361d724",
-		"KR": "c7397e9d",
-		"TC": "a06bfa29"
+		"KR": "a61452fe",
+		"TC": "6aca1b30"
 	}
 } as DBHashType;

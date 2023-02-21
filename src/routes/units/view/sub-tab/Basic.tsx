@@ -16,6 +16,7 @@ import { ACTOR_BODY_TYPE, CHARTYPE_GIFTITEM_DAMAGE_TYPE } from "@/types/Enums";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { Consumable } from "@/types/DB/Consumable";
 import { UnitDialogueAudioType } from "@/types/DB/Dialogue";
+import { Unit } from "@/types/DB/Unit";
 
 import { objState } from "@/libs/State";
 import { CurrentLocale } from "@/libs/Locale";
@@ -49,13 +50,25 @@ ChartJS.register(
 );
 
 const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList }) => {
+	function getLangFromIntroVoice (voice: Unit["introVoice"][0]): UnitDialogueAudioType {
+		if (!voice) return voice;
+		if (Array.isArray(voice)) return voice[0];
+		return voice;
+	}
+	function getIntroVoice (voices: Unit["introVoice"], target: UnitDialogueAudioType): Unit["introVoice"][0] | undefined {
+		return voices.find(r => Array.isArray(r) ? r[0] === target : r === target);
+	}
+	function hasIntroVoice (voices: Unit["introVoice"], target: UnitDialogueAudioType): boolean {
+		return !!getIntroVoice(voices, target);
+	}
+
 	const FilterableEquipDB = GetJson<FilterableEquip[]>(StaticDB.FilterableEquip, DBSourceConverter);
 	const ConsumableDB = GetJson<Consumable[]>(StaticDB.Consumable);
 
 	const selectedEquip = objState<FilterableEquip | null>(null);
 	const equipPopupDisplay = objState<boolean>(false);
 	const researchTreeDisplay = objState<boolean>(false);
-	const introAudioLocale = objState<UnitDialogueAudioType>(unit.introVoice[0] || "ko");
+	const introAudioLocale = objState<Unit["introVoice"][0]>(unit.introVoice[0] || "ko");
 
 	const imageExt = ImageExtension();
 
@@ -148,7 +161,12 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 		return <>{ src }</>;
 	}
 
-	const introVoiceUrl = `${AssetsRoot}/audio/voice-${introAudioLocale.value}/${unit.uid}_Intro.mp3`;
+	const introVoiceUrl = (() => {
+		const v = introAudioLocale.value;
+		if (Array.isArray(v))
+			return `${AssetsRoot}/audio/voice-${v[0]}/${unit.uid}_${v[1]}.mp3`;
+		return `${AssetsRoot}/audio/voice-${v}/${unit.uid}_Intro.mp3`;
+	})();
 
 	return <div style={ { display: display ? "" : "none" } }>
 		{/* 번호, 소속, 등급, 승급, 유형, 역할 */ }
@@ -181,18 +199,18 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 
 								<button
 									class={ `btn btn-sm btn-primary ${isActive(introAudioLocale.value === "ko")}` }
-									disabled={ !unit.introVoice.includes("ko") }
-									onClick={ (): void => introAudioLocale.set("ko") }
+									disabled={ !hasIntroVoice(unit.introVoice, "ko") }
+									onClick={ (): void => introAudioLocale.set(getIntroVoice(unit.introVoice, "ko")!) }
 								>한국어</button>
 								<button
 									class={ `btn btn-sm btn-primary ${isActive(introAudioLocale.value === "jp")}` }
-									disabled={ !unit.introVoice.includes("jp") }
-									onClick={ (): void => introAudioLocale.set("jp") }
+									disabled={ !hasIntroVoice(unit.introVoice, "jp") }
+									onClick={ (): void => introAudioLocale.set(getIntroVoice(unit.introVoice, "jp")!) }
 								>日本語 N</button>
 								<button
 									class={ `btn btn-sm btn-primary ${isActive(introAudioLocale.value === "jpdmm")}` }
-									disabled={ !unit.introVoice.includes("jpdmm") }
-									onClick={ (): void => introAudioLocale.set("jpdmm") }
+									disabled={ !hasIntroVoice(unit.introVoice, "jpdmm") }
+									onClick={ (): void => introAudioLocale.set(getIntroVoice(unit.introVoice, "jpdmm")!) }
 								>日本語 R</button>
 							</div>
 
