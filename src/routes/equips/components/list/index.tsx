@@ -259,8 +259,8 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 
 									const firstName = Name
 										.split("")
-										.map(DecomposeHangulSyllable)
-										.map(x => x.initial)
+										.map(x => DecomposeHangulSyllable(x) || x)
+										.map(x => typeof x === "object" ? x.initial || "" : x)
 										.join("");
 
 									return new RegExp(Filters.SearchText, "i").test(Name) ||

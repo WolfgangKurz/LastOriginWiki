@@ -1,6 +1,8 @@
 export interface LyricsData {
 	time: number;
 	text: string;
+	color?: string | string[];
+	raw?: boolean;
 }
 
 export interface BGMInfo_Base {
@@ -8,6 +10,8 @@ export interface BGMInfo_Base {
 	id: string;
 	title: string;
 	duration: number;
+	image?: string; // 앨범아트 교체용
+	headers?: Omit<LyricsData, "time" | "color">[];
 	lyrics?: LyricsData[];
 }
 export interface BGMInfo_Placeholder extends BGMInfo_Base {

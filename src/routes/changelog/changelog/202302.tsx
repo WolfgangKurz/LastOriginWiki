@@ -9,6 +9,31 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12089" date="2023-02-21"
+		new={ <>
+			<li>신규 전투원 <BY>올리비아 스타수어</BY>의 정보가 추가되었습니다.</li>
+			<li>THE RADIANT SOUNDS에 CAFE amor 앨범이 추가되었습니다.</li>
+		</> }
+		bugfix={<>
+			<li>이제 THE RADIANT SOUNDS는 앨범 이미지를 모두 불러온 후에 시작됩니다.</li>
+			<li>전투원정보의 스킨보기의 상세검색 탭의 스킨 이미지가 잘못 표시되던 점을 수정했습니다.</li>
+		</>}
+		update={ <>
+			<li>전투원 <BY>오드리 드림위버</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>테일러 클로스컷</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>이벤트 <BY>흐린 기억 속의 나라</BY>가 상시 이벤트에 추가되었습니다.</li>
+			<li>THE RADIANT SOUNDS에 CAFE amor 및 CAFE amor x Horizon 앨범이 추가되었습니다.</li>
+			<li>THE RADIANT SOUNDS에서 모바일 환경의 사용 경험이 개선되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>P-18 실피드</BY>의 스킨 <BR>자유로운 영혼 실피드</BR>의 이미지가 수정되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2023-02-21 20:55:17</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12080" date="2023-02-18"
 		new={ <>
 			<li>전투원 <BY>CM67 스팅어</BY>의 승급 정보가 추가되었습니다.</li>

@@ -4465,6 +4465,209 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_TaylorClothcut_N_24",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": [
+                {
+                  "on": {
+                    "target": "squad",
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_TaylorClothcut_N_3",
+                      "Effect_PECS_TaylorClothcut_N_31",
+                      "Effect_PECS_Audrey_N_3"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "target": [
+                    "Char_PECS_Olivia_N"
+                  ]
+                }
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TROOPER_DMG_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_TaylorClothcut_N_24_1",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 60,
+                    "damage_multiply": {
+                      "target": "light",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_TaylorClothcut_N_25",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": [
+                {
+                  "on": {
+                    "target": "squad",
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_TaylorClothcut_N_32",
+                      "Effect_PECS_Audrey_N_17"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "target": [
+                    "Char_PECS_Olivia_N"
+                  ]
+                }
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MOBILITY_DMG_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_TaylorClothcut_N_25_1",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 62,
+                    "damage_multiply": {
+                      "target": "air",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_TaylorClothcut_N_26",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": [
+                {
+                  "on": {
+                    "target": "squad",
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_TaylorClothcut_N_33",
+                      "Effect_PECS_TaylorClothcut_N_34",
+                      "Effect_PECS_Audrey_N_18"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "target": [
+                    "Char_PECS_Olivia_N"
+                  ]
+                }
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 1,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ARMORED_DMG_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_TaylorClothcut_N_26_1",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 61,
+                    "damage_multiply": {
+                      "target": "heavy",
+                      "value": {
+                        "base": "10%",
+                        "per": "0.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -4561,6 +4764,42 @@
             "icon": "BuffIcon_ARMORED_DMG_UP",
             "desc": {
               "desc": "Effect_PECS_TaylorClothcut_N_23_1",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.005000"
+            },
+            "base": 0.1,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_TROOPER_DMG_UP",
+            "desc": {
+              "desc": "Effect_PECS_TaylorClothcut_N_24_1",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.005000"
+            },
+            "base": 0.1,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_MOBILITY_DMG_UP",
+            "desc": {
+              "desc": "Effect_PECS_TaylorClothcut_N_25_1",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.005000"
+            },
+            "base": 0.1,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ARMORED_DMG_UP",
+            "desc": {
+              "desc": "Effect_PECS_TaylorClothcut_N_26_1",
               "type": 1,
               "value": "0.100000",
               "level": "0.005000"
@@ -5708,7 +5947,8 @@
                 {
                   "target": [
                     "Char_PECS_Audrey_N",
-                    "Char_PECS_TaylorClothcut_N"
+                    "Char_PECS_TaylorClothcut_N",
+                    "Char_PECS_Olivia_N"
                   ]
                 },
                 false
@@ -5811,7 +6051,8 @@
                       "Effect_PECS_Audrey_N_16",
                       "Effect_PECS_TaylorClothcut_N_21",
                       "Effect_PECS_TaylorClothcut_N_22",
-                      "Effect_PECS_TaylorClothcut_N_23"
+                      "Effect_PECS_TaylorClothcut_N_23",
+                      "Effect_PECS_Olivia_N_42"
                     ],
                     "attr": 0
                   }
@@ -5878,7 +6119,8 @@
                       "Effect_PECS_TaylorClothcut_N_13",
                       "Effect_PECS_TaylorClothcut_N_14",
                       "Effect_PECS_TaylorClothcut_N_15",
-                      "Effect_PECS_TaylorClothcut_N_16"
+                      "Effect_PECS_TaylorClothcut_N_16",
+                      "Effect_PECS_Olivia_N_12"
                     ],
                     "attr": 0
                   }
@@ -5919,6 +6161,73 @@
                     "ap": {
                       "base": -0.5,
                       "per": -0.05
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_TaylorClothcut_N_53",
+              "on": "round",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Audrey_N_14",
+                      "Effect_PECS_Audrey_N_15",
+                      "Effect_PECS_Audrey_N_16",
+                      "Effect_PECS_TaylorClothcut_N_21",
+                      "Effect_PECS_TaylorClothcut_N_22",
+                      "Effect_PECS_TaylorClothcut_N_23",
+                      "Effect_PECS_Olivia_N_42"
+                    ],
+                    "attr": 0
+                  }
+                },
+                {
+                  "target": [
+                    "Char_PECS_Olivia_N"
+                  ]
+                }
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_TaylorClothcut_N_53_1",
+                    "type": 0,
+                    "value": "0.250000",
+                    "level": "0.025000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 0.25,
+                      "per": 0.025
                     }
                   },
                   "overlap": 4
@@ -6003,6 +6312,18 @@
             },
             "base": -0.5,
             "per": -0.05,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_TaylorClothcut_N_53_1",
+              "type": 0,
+              "value": "0.250000",
+              "level": "0.025000"
+            },
+            "base": 0.25,
+            "per": 0.025,
             "chance": 1
           }
         ]

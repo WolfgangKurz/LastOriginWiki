@@ -4385,7 +4385,7 @@
                     "type": 23,
                     "scout": true
                   },
-                  "overlap": 4
+                  "overlap": 1
                 },
                 {
                   "icon": "BuffIcon_AP_DOWN",
@@ -4554,6 +4554,51 @@
                       "base": "5%",
                       "per": "0%"
                     }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_AGS_Aeda_N_53",
+              "on": "wave_end",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SCOUTING",
+                  "desc": {
+                    "desc": "Effect_AGS_Aeda_N_53_1",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 23,
+                    "scout": true
                   },
                   "overlap": 4
                 }
@@ -5210,6 +5255,18 @@
               "level": "0"
             },
             "base": 0.05,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SCOUTING",
+            "desc": {
+              "desc": "Effect_AGS_Aeda_N_53_1",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
             "per": 0,
             "chance": 1
           },

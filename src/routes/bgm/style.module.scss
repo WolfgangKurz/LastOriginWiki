@@ -55,6 +55,7 @@ $cols: (
 	animation-iteration-count: 1;
 	animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 	animation-duration: $startup-duration;
+	animation-play-state: paused;
 
 	--album-col: 6;
 	@each $breakpoint, $col in $cols {
@@ -111,6 +112,7 @@ $cols: (
 		animation-iteration-count: 1;
 		animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 		animation-duration: $startup-duration;
+		animation-play-state: paused;
 		transform-origin: 50% 50%;
 
 		height: 100%;
@@ -420,18 +422,66 @@ $cols: (
 				}
 			}
 
-			> img {
-				grid-row: 1 / 3;
+			> .SelectedImagePlaceholder {
+				position: relative;
 				margin: auto;
+				grid-row: 1 / 3;
 
-				// 앨범아트
 				height: 100%;
 				max-width: 24rem;
 				max-height: 24rem;
+
 				visibility: hidden;
 
 				&.Done {
 					visibility: visible;
+				}
+
+				img {
+					// 앨범아트
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+				}
+
+				img.Alt {
+					position: absolute;
+					left: 0;
+					top: 0;
+					transition: opacity 0.23s ease-in-out;
+					opacity: 0;
+					pointer-events: none;
+
+					&.Display {
+						opacity: 1;
+						pointer-events: auto;
+					}
+				}
+
+				.LyricHeader {
+					position: absolute;
+					display: none;
+					left: 0;
+					top: 0;
+					padding-bottom: 1em;
+					width: 100%;
+					background: linear-gradient(to bottom, rgba(0, 0, 0, 0.56) calc(100% - 1em), transparent);
+					text-shadow: 0 0 0.3em #000;
+					pointer-events: none;
+					font-size: 0.82rem;
+
+					&:empty {
+						display: none;
+					}
+
+					span {
+						display: inline-block;
+					}
+				}
+				@include media-breakpoint-down(md) {
+					.LyricHeader {
+						display: block;
+					}
 				}
 			}
 
@@ -583,6 +633,34 @@ $cols: (
 					height: 100%;
 					overflow: hidden;
 
+					display: grid;
+					grid-template-rows: auto 1fr;
+
+					line-height: 1.4;
+					font-size: 0.9rem;
+
+					.LyricHeader {
+						position: sticky;
+						top: 0;
+						padding-bottom: 0.2em;
+						border-bottom: 1px solid transparentize($secondary, 0.5);
+						font-size: 0.9em;
+
+						&:empty {
+							display: none;
+						}
+
+						span {
+							display: inline-block;
+						}
+					}
+
+					@include media-breakpoint-down(md) {
+						> .LyricHeader {
+							display: none;
+						}
+					}
+
 					.Lyrics {
 						position: relative;
 						padding-right: 20px;
@@ -593,8 +671,6 @@ $cols: (
 						width: 100%;
 						height: 100%;
 						border-radius: 0.3em;
-						line-height: 1.4;
-						font-size: 0.9rem;
 
 						mask-image: linear-gradient(to bottom, transparent, #fff 10%, #fff 80%, transparent);
 						-webkit-mask-box-image: linear-gradient(
@@ -606,13 +682,45 @@ $cols: (
 						);
 
 						> .Lyric {
-							padding: 0.18em 0.35em;
+							padding: 0.2em 0.35em;
 							min-height: 1.4em;
 							text-shadow: 0 0 6px $black, 0 0 6px $black;
-							color: mix($white, $black, 50%);
+							color: var(--color, $light);
 
-							&.Current {
-								color: $light;
+							&:not(.Current) {
+								color: mix($white, $black, 50%) !important;
+							}
+
+							&.Colored {
+								margin: 0.2em 0;
+								padding: 0 0.35em 0 0;
+
+								&:not(.ColoredCustom) {
+									padding-left: 0.25em;
+
+									&::before {
+										content: "";
+										display: inline-block;
+										margin-right: 0.3em;
+										width: 0.4em;
+										height: 0.4em;
+										background-color: var(--color);
+										transform: translate(0, -0.2em) rotate(45deg);
+									}
+								}
+							}
+
+							> .Colors {
+								display: inline-block;
+								margin-right: 0.3em;
+								width: 0.4em;
+								height: 0.4em;
+								background-color: var(--color);
+								transform: translate(0, -0.2em) rotate(45deg);
+
+								&:first-child {
+									margin-left: 0.3em;
+								}
 							}
 
 							&:first-child {
@@ -764,11 +872,16 @@ $cols: (
 				transform: none;
 				max-height: unset;
 
-				> img {
-					margin: auto;
-					width: 100%;
-					height: 100%;
-					object-fit: contain;
+				> .SelectedImagePlaceholder {
+					max-width: 11.2rem;
+					max-height: 11.2rem;
+
+					img {
+						margin: auto;
+						width: 100%;
+						height: 100%;
+						object-fit: contain;
+					}
 				}
 
 				.PlayerInfo {
@@ -793,6 +906,12 @@ $cols: (
 					> .Author {
 						padding-right: 0;
 					}
+					> .Title {
+						font-size: 1.2rem;
+					}
+					> .Author {
+						font-size: 0.9rem;
+					}
 
 					> .Author::after {
 						background-image: linear-gradient(
@@ -806,28 +925,31 @@ $cols: (
 						display: none;
 					}
 
-					.LyricsContainer .Lyrics {
-						mask-image: linear-gradient(
-							to bottom,
-							transparent,
-							#fff 4rem,
-							#fff calc(100% - 4rem),
-							transparent
-						);
-						-webkit-mask-box-image: linear-gradient(
-							to bottom,
-							transparent,
-							#fff 4rem,
-							#fff calc(100% - 4rem),
-							transparent
-						);
+					.LyricsContainer {
+						.Lyrics {
+							$mask-size: 2em;
+							mask-image: linear-gradient(
+								to bottom,
+								transparent,
+								#fff $mask-size,
+								#fff calc(100% - $mask-size),
+								transparent
+							);
+							-webkit-mask-box-image: linear-gradient(
+								to bottom,
+								transparent,
+								#fff $mask-size,
+								#fff calc(100% - $mask-size),
+								transparent
+							);
 
-						> .Lyric {
-							&:first-child {
-								margin-top: 4rem;
-							}
-							&:last-child {
-								margin-bottom: 4rem;
+							> .Lyric {
+								&:first-child {
+									margin-top: $mask-size;
+								}
+								&:last-child {
+									margin-bottom: $mask-size;
+								}
 							}
 						}
 					}

@@ -18,8 +18,9 @@ import { Consumable } from "@/types/DB/Consumable";
 import { UnitDialogueAudioType } from "@/types/DB/Dialogue";
 
 import { objState } from "@/libs/State";
+import { CurrentLocale } from "@/libs/Locale";
 import { AssetsRoot, ImageExtension, RarityDisplay } from "@/libs/Const";
-import { FormatDate, FormatNumber, isActive } from "@/libs/Functions";
+import { DecomposeHangulSyllable, FormatDate, FormatNumber, isActive } from "@/libs/Functions";
 
 import { DBSourceConverter, GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
@@ -119,6 +120,34 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 		});
 	}
 
+	function PreprocessUnitIntro (uid: string): preact.VNode {
+		const src = LocaleGet(`UNIT_INTRO_${uid}`);
+		const ret: Array<string | preact.VNode> = [];
+
+		if (uid === "PECS_Olivia") {
+			const para = src.split("\n\n");
+			const words = para[0].split(/(\s)/g);
+			for (const word of words) {
+				const cc = DecomposeHangulSyllable(word);
+
+				const emp = !!cc && cc.initial === "ㅇ"; // is Hangul and ㅇ character
+				if (emp) {
+					ret.push(
+						<strong class="text-warning">{ word[0] }</strong>,
+						word.slice(1),
+					);
+				} else
+					ret.push(word);
+			}
+			ret.push("\n\n");
+			ret.push(para[1]);
+
+			return <>{ ret.filter(x => x) }</>;
+		}
+
+		return <>{ src }</>;
+	}
+
 	const introVoiceUrl = `${AssetsRoot}/audio/voice-${introAudioLocale.value}/${unit.uid}_Intro.mp3`;
 
 	return <div style={ { display: display ? "" : "none" } }>
@@ -136,7 +165,12 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 		<div class="row pt-2">
 			<div class="col-12 col-lg-7">
 				<div class={ `card text-light mx-3 mt-3 p-3 ${style.IntroduceText}` }>
-					<Locale plain k={ `UNIT_INTRO_${unit.uid}` } />
+					<div class="card-body p-0">
+						{ unit.uid === "PECS_Olivia" && CurrentLocale === "KR"
+							? PreprocessUnitIntro(unit.uid)
+							: <Locale plain k={ `UNIT_INTRO_${unit.uid}` } />
+						}
+					</div>
 
 					{ unit.introVoice.length > 0
 						? <div class={ style.IntroduceVoice }>

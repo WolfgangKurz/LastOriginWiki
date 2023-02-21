@@ -205,7 +205,7 @@ const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 					{ filtered[y].map(x => <div class="col">
 						<Link class={ style.SkinCol } href={ `/units/${x.uid}/s${x.sid || 0}` }>
 							<div class={ style.SkinCol }>
-								<UnitFace uid={ x.uid } skin={ x.sid || undefined } size={ 56 } />
+								<UnitFace uid={ x.uid } skin={ x.metadata.imageId } size={ 56 } />
 								<span>
 									<Locale plain k={ `UNIT_${x.uid}` } />
 								</span>
