@@ -9,6 +9,11 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12095" date="2023-02-28"
+		bugfix={ <>
+			<li>적 정보 페이지가 올바르게 작동하지 않는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12094" date="2023-02-28"
 		bugfix={ <>
 			<li>서약 대사가 표시되지 않던 문제를 수정했습니다.</li>

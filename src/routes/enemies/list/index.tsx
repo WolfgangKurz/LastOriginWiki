@@ -165,8 +165,8 @@ class EnemiesList extends Component<EnemiesListProps, EnemiesListState> {
 						const name = x.localeName;
 						const firstName = name
 							.split("")
-							.map(DecomposeHangulSyllable)
-							.map(x => x.initial)
+							.map(x => DecomposeHangulSyllable(x) || x)
+							.map(x => typeof x === "object" ? x.initial || "" : x)
 							.join("");
 
 						if (!(new RegExp(state.Filters.SearchText, "i").test(name) ||
