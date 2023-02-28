@@ -9,6 +9,11 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12094" date="2023-02-28"
+		bugfix={ <>
+			<li>서약 대사가 표시되지 않던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12093" date="2023-02-28"
 		new={ <>
 			<li>변화의 성소 5지역의 정보가 추가되었습니다.</li>
