@@ -34,7 +34,7 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 
 		...SkinList
 			.slice(1)
-			.filter(x => !x.isPro)
+			// .filter(x => !x.isPro)
 			.flatMap((x, i) => {
 				const r: VoiceItem[] = [{
 					id: `${i + 1}`,

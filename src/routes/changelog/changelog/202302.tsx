@@ -9,15 +9,41 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12093" date="2023-02-28"
+		new={ <>
+			<li>변화의 성소 5지역의 정보가 추가되었습니다.</li>
+			<li>신규 적 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>일부 적 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>AL 팬텀</BY>의 스킨 <BR>AL 큐트 : 팬텀 블랙</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>금란 S7</BY>의 스킨 <BR>모던 드레스 금란</BR>의 중파 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>펜리르</BY>의 스킨 <BR>종교의 자유(?)를 원하는 펜리르</BR>의 중파 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>브륀힐데</BY>의 스킨 <BR>화염의 지배자 브륀힐드</BR>의 중파 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2023-02-28 12:59:34</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12089" date="2023-02-21"
 		new={ <>
 			<li>신규 전투원 <BY>올리비아 스타수어</BY>의 정보가 추가되었습니다.</li>
 			<li>THE RADIANT SOUNDS에 CAFE amor 앨범이 추가되었습니다.</li>
 		</> }
-		bugfix={<>
+		bugfix={ <>
 			<li>이제 THE RADIANT SOUNDS는 앨범 이미지를 모두 불러온 후에 시작됩니다.</li>
 			<li>전투원정보의 스킨보기의 상세검색 탭의 스킨 이미지가 잘못 표시되던 점을 수정했습니다.</li>
-		</>}
+		</> }
 		update={ <>
 			<li>전투원 <BY>오드리 드림위버</BY>의 스킬 정보가 갱신되었습니다.</li>
 			<li>전투원 <BY>테일러 클로스컷</BY>의 스킬 정보가 갱신되었습니다.</li>

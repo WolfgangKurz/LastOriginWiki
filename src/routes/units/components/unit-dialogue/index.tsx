@@ -30,8 +30,8 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 	const voice = props.voice;
 
 	const VoiceKey = ((v): string => {
-		if (v.isMarriage) return `${v.id}M`;
-		if (v.isPro) return `${v.id}P`;
+		if (v.isMarriage) return `${v.sid}M`;
+		if (v.isPro) return `${v.sid}`; // `${v.id}P`;
 		if (v.isDef) return "";
 		return v.id;
 	})(voice);
@@ -135,6 +135,7 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 		/* eslint-enable camelcase */
 	})();
 
+	console.log(voice);
 	const IsVoiceAvailable = (voice.parts & (1 << SKIN_IN_PARTS.VOICE)) > 0 || voice.isDef;
 
 	const IsMissing = ((): boolean => {

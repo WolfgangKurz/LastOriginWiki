@@ -1400,7 +1400,7 @@ export default {
 	},
 	"korea": {
 		"bg": "43f6f4f0",
-		"consumable": "a749247e",
+		"consumable": "fb1bbc3e",
 		"enemy": {
 			"AMG11_TU2": "deff24c0",
 			"AMG11_TU3": "42c6885f",
@@ -1796,9 +1796,10 @@ export default {
 			"Kidnapper_B0308": "10f87719",
 			"Kidnapper_CH": "14c582f8",
 			"Kidnapper_EV1": "54d1e59f",
-			"Kidnapper_EV19_C": "30837348",
+			"Kidnapper_EV19_C": "46870a99",
 			"Kidnapper_EV19_TU": "36de28f1",
 			"Kidnapper_EV19_TU2": "9ec0d939",
+			"Kidnapper_EV19_TU3": "12b3dcfa",
 			"Kidnapper_EW": "f139d23e",
 			"Legion_N": "681edcdb",
 			"Legion_TU4": "c11df9b6",
@@ -2452,7 +2453,7 @@ export default {
 			"ZapperEX_TU5": "f6bb26fc",
 			"ZapperEX_TU6": "b8e7c886"
 		},
-		"enemygroup": "84ec5d82",
+		"enemygroup": "a59ee108",
 		"equip": {
 			"Chip_Acc_T1": "4d5f14e0",
 			"Chip_Acc_T2": "bbc34ae2",
@@ -2850,7 +2851,7 @@ export default {
 			"System_Sniper_T3": "712d0871",
 			"System_Sniper_T4": "8d39cd53"
 		},
-		"ew": "550960b2",
+		"ew": "09c24fc8",
 		"exchange": "b506d35e",
 		"facility": {
 			"Cafeteria": "17d2e600",
@@ -2887,11 +2888,11 @@ export default {
 			"WoodMaking2": "389f24f0",
 			"WoodMaking3": "15217130"
 		},
-		"filterable.enemy": "00fa9ccb",
+		"filterable.enemy": "5f3a0fb4",
 		"filterable.equip": "6ab7dcce",
 		"filterable.facility": "16568438",
-		"filterable.unit": "48c84190",
-		"gacha": "6540735f",
+		"filterable.unit": "d415c50e",
+		"gacha": "f2af6bd2",
 		"map": {
 			"Cha": "4bc9f11c",
 			"Daily": "fa719b85",
@@ -2928,7 +2929,7 @@ export default {
 			"node": "831bd741",
 			"quest": "372e37a9"
 		},
-		"skill-from": "a5a4750d",
+		"skill-from": "8fa575d3",
 		"sticker": "592a4649",
 		"story": "a6628263",
 		"summon": {
@@ -2958,12 +2959,12 @@ export default {
 			"3P_Aurora": "849409bd",
 			"3P_BlackLilith": "295f9cba",
 			"3P_BlackWyrm": "08d7c0f7",
-			"3P_ConstantiaS2": "dad204e2",
+			"3P_ConstantiaS2": "dc8330af",
 			"3P_CSPerrault": "766e7572",
 			"3P_Daphne": "488b9f77",
 			"3P_Dryad": "7cd711ce",
 			"3P_Eternity": "84299da4",
-			"3P_Fenrir": "b2650c78",
+			"3P_Fenrir": "d2859db5",
 			"3P_Fotia": "7dae2802",
 			"3P_Frigga": "9bbc8228",
 			"3P_Galatea": "c5b6163f",
@@ -2973,7 +2974,7 @@ export default {
 			"3P_Maria": "f867790f",
 			"3P_Melite": "2244585a",
 			"3P_Poi": "89494e3c",
-			"3P_Ran": "c5574a3f",
+			"3P_Ran": "5e56e354",
 			"3P_Rhea": "d37fe482",
 			"3P_Salacia": "32eaa97f",
 			"3P_ScissorsLise": "78544b4c",
@@ -3011,7 +3012,7 @@ export default {
 			"BR_Blackhound": "9c84a3b0",
 			"BR_BloodyPanther": "bf542ff2",
 			"BR_Brownie": "086fbb2b",
-			"BR_Brunhild": "790cf869",
+			"BR_Brunhild": "4312d8c3",
 			"BR_Bulgasari": "34fc6a11",
 			"BR_Calista": "91fd9d2b",
 			"BR_Cheona": "630faafa",
@@ -3049,7 +3050,7 @@ export default {
 			"BR_Nymph": "a9ab173e",
 			"BR_PA00EL": "13e237b0",
 			"BR_Pani": "c0d70c02",
-			"BR_Phantom": "e8ca710d",
+			"BR_Phantom": "4a3a5964",
 			"BR_Phoenix": "1d4caa48",
 			"BR_PoniesAnger": "70ffdcce",
 			"BR_PXSilky": "f2f1ca18",
@@ -3072,7 +3073,7 @@ export default {
 			"BR_Tomoe": "acdc3690",
 			"BR_Undine": "759b389f",
 			"BR_Valkyrie": "4ba85807",
-			"BR_Vargr": "92c53798",
+			"BR_Vargr": "11e5efb3",
 			"BR_WarWolf": "fcaa4097",
 			"BR_Wraithy": "6b4b7343",
 			"DS_Angel": "8ab7c806",
@@ -3126,7 +3127,7 @@ export default {
 			"PECS_MightyR": "f326aa43",
 			"PECS_MissSafety": "53d5e569",
 			"PECS_Mnemosyne": "7cabf96e",
-			"PECS_Muse": "73ff00ef",
+			"PECS_Muse": "26b28142",
 			"PECS_Olivia": "a4ab6ea8",
 			"PECS_Orangeade": "cbb22812",
 			"PECS_Peregrinus": "903d5ca4",
@@ -3156,9 +3157,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "b8704a88",
-		"JP": "8361d724",
-		"KR": "a61452fe",
-		"TC": "6aca1b30"
+		"EN": "9003f24e",
+		"JP": "44be278b",
+		"KR": "f656d029",
+		"TC": "ff8e0a40"
 	}
 } as DBHashType;
