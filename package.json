@@ -4,7 +4,7 @@
 	"version": "0.2.0",
 	"scripts": {
 		"dev": "yarn node tools/debug.mjs",
-		"build": "vite build",
+		"build": "ts-node tools/sitemap && vite build",
 		"lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'"
 	},
 	"dependencies": {

@@ -11,6 +11,7 @@ import preact from "@preact/preset-vite";
 
 // buildtime
 (() => {
+	console.log("buildtime updating...");
 	const dest = path.resolve(__dirname, "src", "buildtime.ts");
 	const destJson = path.resolve(__dirname, "external", "json", "buildtime.json");
 
@@ -40,6 +41,7 @@ import preact from "@preact/preset-vite";
 
 // json hash
 (() => {
+	console.log("json hash updating...");
 	interface DBHashType {
 		[K: string]: string | DBHashType;
 	}
@@ -101,6 +103,7 @@ import preact from "@preact/preset-vite";
 	);
 })();
 
+console.log("building...");
 export default ({ mode }) => {
 	const viteEnv = loadEnv(mode, process.cwd());
 

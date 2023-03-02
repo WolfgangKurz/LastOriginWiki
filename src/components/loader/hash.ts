@@ -2891,7 +2891,7 @@ export default {
 		"filterable.enemy": "5f3a0fb4",
 		"filterable.equip": "6ab7dcce",
 		"filterable.facility": "16568438",
-		"filterable.unit": "d415c50e",
+		"filterable.unit": "b8229e1d",
 		"gacha": "f2af6bd2",
 		"map": {
 			"Cha": "4bc9f11c",
@@ -2974,7 +2974,7 @@ export default {
 			"3P_Maria": "f867790f",
 			"3P_Melite": "2244585a",
 			"3P_Poi": "89494e3c",
-			"3P_Ran": "5e56e354",
+			"3P_Ran": "c0caac65",
 			"3P_Rhea": "d37fe482",
 			"3P_Salacia": "32eaa97f",
 			"3P_ScissorsLise": "78544b4c",
