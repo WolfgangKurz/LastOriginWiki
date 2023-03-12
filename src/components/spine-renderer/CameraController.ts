@@ -43,7 +43,7 @@ export class CameraController {
 					? 1000 / canvas.width
 					: 1000 / canvas.height) / window.devicePixelRatio;
 				const max = min * 10;
-				console.log(min, max);
+				// console.log(min, max);
 				const newZoom = clamp(camera.zoom + zoomAmount, min, max);
 
 				if (newZoom > 0) {

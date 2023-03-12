@@ -180,18 +180,29 @@ const SpineRenderer: FunctionalComponent<RendererProps> = (props) => {
 				app.current = new Spine(
 					props.uid,
 					(app, names) => {
-						app.addSkin("skin_base");
+						for (const skin of names) { // find Skin_Base
+							if (skin.toLowerCase() === "skin_base") {
+								app.addSkin(skin);
+								break;
+							}
+						}
 
 						setSkinList(names);
 						names.filter(x => x.startsWith("decoration"))
 							.forEach(skin => app.addSkin(skin));
 
-						const _hasGoogle = names.includes("breast/Censorship");
+						const _hasGoogle = names.includes("breast/Censorship") && names.includes("breast/Unedited");
 						setHasGoogle(_hasGoogle);
+
 						if (_hasGoogle) {
 							if (props.google)
 								app.addSkin("breast/Censorship");
 							else
+								app.addSkin("breast/Unedited");
+						} else {
+							if (names.includes("breast/Censorship"))
+								app.addSkin("breast/Censorship");
+							else if (names.includes("breast/Unedited"))
 								app.addSkin("breast/Unedited");
 						}
 

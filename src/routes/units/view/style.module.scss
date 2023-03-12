@@ -77,8 +77,24 @@
 		@include media-breakpoint-down("sm") {
 			padding: 0;
 
-			> audio {
+			> div {
+				// btn-group
+				margin: 2px;
 				width: 100%;
+				width: calc(100% - 4px);
+				justify-content: center;
+
+				> :first-child {
+					padding: 0.2em;
+					max-width: 3em;
+					flex: 1;
+					justify-content: center;
+				}
+			}
+			> audio {
+				margin: 2px;
+				width: 100%;
+				width: calc(100% - 4px);
 				min-height: 2.5em;
 			}
 		}

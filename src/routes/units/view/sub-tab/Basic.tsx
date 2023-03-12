@@ -20,6 +20,7 @@ import { Unit } from "@/types/DB/Unit";
 
 import { objState } from "@/libs/State";
 import { CurrentLocale } from "@/libs/Locale";
+import { BuildClass } from "@/libs/Class";
 import { AssetsRoot, ImageExtension, RarityDisplay } from "@/libs/Const";
 import { DecomposeHangulSyllable, FormatDate, FormatNumber, isActive } from "@/libs/Functions";
 
@@ -68,7 +69,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 	const selectedEquip = objState<FilterableEquip | null>(null);
 	const equipPopupDisplay = objState<boolean>(false);
 	const researchTreeDisplay = objState<boolean>(false);
-	const introAudioLocale = objState<Unit["introVoice"][0]>(unit.introVoice[0] || "ko");
+	const introAudioLocale = objState<Unit["introVoice"][0]>(unit.introVoice.includes("ko") ? "ko" : unit.introVoice[0] || "ko");
 
 	const imageExt = ImageExtension();
 
@@ -168,6 +169,13 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 		return `${AssetsRoot}/audio/voice-${v}/${unit.uid}_Intro.mp3`;
 	})();
 
+	const introVoiceTable: Record<UnitDialogueAudioType, string> = {
+		"ko": "한국어",
+		"jp": "日本語 N",
+		"jpdmm": "日本語 R",
+	};
+	const introVoiceTableKeys = Object.keys(introVoiceTable) as UnitDialogueAudioType[];
+
 	return <div style={ { display: display ? "" : "none" } }>
 		{/* 번호, 소속, 등급, 승급, 유형, 역할 */ }
 
@@ -194,24 +202,27 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 						? <div class={ style.IntroduceVoice }>
 							<div class="input-group">
 								<div class="input-group-text text-sm">
-									<Icon icon="mic-fill" class="me-1" />
+									<Icon icon="mic-fill" />
 								</div>
 
-								<button
-									class={ `btn btn-sm btn-primary ${isActive(introAudioLocale.value === "ko")}` }
-									disabled={ !hasIntroVoice(unit.introVoice, "ko") }
-									onClick={ (): void => introAudioLocale.set(getIntroVoice(unit.introVoice, "ko")!) }
-								>한국어</button>
-								<button
-									class={ `btn btn-sm btn-primary ${isActive(introAudioLocale.value === "jp")}` }
-									disabled={ !hasIntroVoice(unit.introVoice, "jp") }
-									onClick={ (): void => introAudioLocale.set(getIntroVoice(unit.introVoice, "jp")!) }
-								>日本語 N</button>
-								<button
-									class={ `btn btn-sm btn-primary ${isActive(introAudioLocale.value === "jpdmm")}` }
-									disabled={ !hasIntroVoice(unit.introVoice, "jpdmm") }
-									onClick={ (): void => introAudioLocale.set(getIntroVoice(unit.introVoice, "jpdmm")!) }
-								>日本語 R</button>
+								{ introVoiceTableKeys.map(vk => <button
+									class={ BuildClass(
+										"btn",
+										"btn-sm",
+										isActive(
+											introAudioLocale.value === vk,
+											"btn-primary active",
+											!hasIntroVoice(unit.introVoice, vk)
+												? "btn-secondary"
+												: "btn-primary",
+										),
+									) }
+									disabled={ !hasIntroVoice(unit.introVoice, vk) }
+									onClick={ (): void => introAudioLocale.set(getIntroVoice(unit.introVoice, vk)!) }
+								>
+									{ introAudioLocale.value === vk && <Icon class="me-1" icon="volume-up-fill" /> }
+									{ introVoiceTable[vk] }
+								</button>) }
 							</div>
 
 							<audio src={ introVoiceUrl } type="audio/mp3" controls preload="none" volume="0.5" />

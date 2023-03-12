@@ -9,6 +9,22 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12098" date="2023-03-12"
+		new={ <>
+			<li>신규 배경이 추가되었습니다.</li>
+			<li>신규 소모품이 추가되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>C-77 홍련</BY>의 기본 스킨의 로비 애니메이션 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li>일부 전투원의 소개 보이스가 추가되었습니다.</li>
+			<li>일부 일본어 보이스가 추가되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2023-03-12 19:52:11</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12096" date="2023-03-03"
 		skin={ <>
 			<li>
