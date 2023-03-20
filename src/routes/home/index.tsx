@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "preact";
-import { Link } from "preact-router";
+import { Link, route } from "preact-router";
 
 import { AssetsRoot, CurrentEvent, EventFrom, EventTo, Host, ImageExtension, IsAprilFool } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
@@ -12,6 +12,41 @@ import Icon from "@/components/bootstrap-icon";
 import BuildInfo from "@/buildtime";
 
 import style from "./style.module.scss";
+
+interface LinkData {
+	href: string;
+	text?: string;
+}
+
+const NavItem: FunctionalComponent<LinkData> = (props) => (
+	<button
+		class="btn btn-rarity-A"
+		onClick={ e => {
+			e.preventDefault();
+			route(props.href);
+		} }
+	>
+		{ props.children ? props.children : <Locale k={ props.text || "" } /> }
+	</button>
+);
+
+const NavItemExternal: FunctionalComponent<LinkData> = (props) => (
+	<button
+		class="btn btn-rarity-A"
+		onClick={ e => {
+			e.preventDefault();
+
+			const _a = document.createElement("a");
+			_a.target = "_blank";
+			_a.href = props.href;
+			_a.rel = "noreferrer";
+			_a.click();
+		} }
+	>
+		{ props.children ? props.children : <Locale k={ props.text || "" } /> }
+		<Icon icon="link-45deg" class="ms-1" />
+	</button>
+);
 
 const Home: FunctionalComponent = () => {
 	const ext = ImageExtension();
@@ -77,7 +112,7 @@ const Home: FunctionalComponent = () => {
 				src={ `${AssetsRoot}/${IsAprilFool ? "icon2" : "icon"}.png` }
 			/>
 			<span class={ style["home-title"] }>
-				<i class={ style["_official"] }>
+				<i class={ style.subtitle }>
 					<Locale
 						k="COMMON_TITLE_SUB"
 						preprocessor={ (x) => x
@@ -85,6 +120,7 @@ const Home: FunctionalComponent = () => {
 							.replace(/!!icon!!/g, "50")
 							.replace(/!!iconm!!/g, "1em")
 						}
+						fallback=""
 					/>
 				</i>
 				<span class="font-ibm">
@@ -102,7 +138,76 @@ const Home: FunctionalComponent = () => {
 		</div>
 
 		<HomeConfigSelector />
-		<p>
+
+		<div class={ style.MenuBox }>
+			<div class={ style["home-nav"] }>
+				<div class="btn-group">
+					<NavItem href="/units" text="MENU_UNITS" />
+					<NavItem href="/equips" text="MENU_EQUIPS" />
+					<NavItem href="/facilities" text="MENU_FACILITIES" />
+
+					<NavItem href="/enemies" text="MENU_ENEMIES" />
+					<NavItem href="/worlds" text="MENU_WORLDS" />
+
+					<NavItem href="/eternalwar" text="MENU_ETERNALWAR" />
+
+					<NavItem href="/simulator" text="MENU_SIMULATOR" />
+				</div>
+			</div>
+
+			<div class={ style.GroupName }>
+				<Locale k="MENU_ETC" />
+			</div>
+
+			<div class={ style["home-nav"] }>
+				<NavItem href="/changelog">
+					<Locale k="MENU_CHANGELOG" />
+				</NavItem>
+
+				<span class={ style.divider } />
+
+				<NavItem href="/calc/exp">
+					<Locale k="MENU_ETC_EXPCALC" />
+				</NavItem>
+
+
+				<span class={ style.divider } />
+
+				<div class="btn-group">
+					<NavItem href="/bg">
+						<Locale k="MENU_ETC_BG" />
+					</NavItem>
+					<NavItem href="/bgm">
+						<Locale k="MENU_ETC_BGM" />
+					</NavItem>
+					<NavItem href="/consumable">
+						<Locale k="MENU_ETC_CONSUMABLE" />
+					</NavItem>
+					<NavItem href="/sticker">
+						<Locale k="MENU_ETC_STICKER" />
+					</NavItem>
+				</div>
+
+				<span class={ style.divider } />
+
+				<NavItem href="/gacha">
+					<Locale k="MENU_ETC_GACHA" />
+				</NavItem>
+
+				<span class={ style.divider } />
+
+				<div class="btn-group">
+					<NavItemExternal href="https://arca.live/b/lastorigin/4474753">
+						<Locale k="MENU_ETC_EX01" />
+					</NavItemExternal>
+					<NavItemExternal href="https://arca.live/b/lastorigin/10674899">
+						<Locale k="MENU_ETC_EX03" />
+					</NavItemExternal>
+				</div>
+			</div>
+		</div>
+
+		<p class="mt-4">
 			<Locale k="HOME_DESCRIPTION" />
 		</p>
 		<p>
@@ -141,14 +246,14 @@ const Home: FunctionalComponent = () => {
 			<Locale k="HOME_COPYRIGHT" />
 		</p>
 
-		<div class="mt-4">
+		{/* <div class="mt-4">
 			<a href="https://toon.at/donate/wolfgangkurzdev" target="_blank">
 				<img
 					src={ `${AssetsRoot}/btn-toonation.png` }
 					style={ { height: "40px" } }
 				/>
 			</a>
-		</div>
+		</div> */}
 	</div>;
 };
 

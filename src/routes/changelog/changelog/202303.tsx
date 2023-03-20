@@ -9,6 +9,29 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12100" date="2023-03-20"
+		new={ <>
+			<li>홈 페이지의 모바일 환경의 사용자 경험이 개선되었습니다.</li>
+		</> }
+		update={ <>
+			<li><BY>낙원으로부터 온 초대장</BY> 이벤트가 상시로 전환되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>무적의 용</BY>의 스킨 <BY>CAFE Horizon : 신입 바리스타 용</BY>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>AS-12 스틸 드라코</BY>의 스킨 <BY>데이트는 전투다</BY>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>마이티R</BY>의 스킨 <BY>특수 전투원 마이티R</BY>의 중파 이미지가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li>일부 전투원의 대사가 수정되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2023-03-20 15:36:22</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12098" date="2023-03-12"
 		new={ <>
 			<li>신규 배경이 추가되었습니다.</li>

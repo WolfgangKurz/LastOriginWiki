@@ -54,7 +54,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 					src={ `${AssetsRoot}/${IsAprilFool ? "icon2" : "icon"}.png` }
 				/>
 				<span>
-					<i class={ style["_official"] } data-locale={ CurrentLocale }>
+					<i class={ style.subtitle } data-locale={ CurrentLocale }>
 						<Locale
 							k="COMMON_TITLE_SUB"
 							preprocessor={ (x) => x
@@ -62,6 +62,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 								.replace(/!!icon!!/g, "30")
 								.replace(/!!iconm!!/g, "2.5em")
 							}
+							fallback=""
 						/>
 					</i>
 					<span class="font-ibm">
