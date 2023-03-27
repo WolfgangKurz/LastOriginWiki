@@ -2891,7 +2891,7 @@ export default {
 		"filterable.enemy": "5f3a0fb4",
 		"filterable.equip": "6ab7dcce",
 		"filterable.facility": "16568438",
-		"filterable.unit": "09ff5dd9",
+		"filterable.unit": "4e3d49e6",
 		"gacha": "738eb0dc",
 		"map": {
 			"Cha": "4bc9f11c",
@@ -3005,7 +3005,7 @@ export default {
 			"BR_ALWraith": "86c9f464",
 			"BR_Amy": "d533716b",
 			"BR_Andvari": "cdcad045",
-			"BR_AS12TurtleDragon": "f3a4408a",
+			"BR_AS12TurtleDragon": "18097212",
 			"BR_Banshee": "eb5e7c42",
 			"BR_BeastHunter": "bf3d4b81",
 			"BR_Bheur": "f940096b",
@@ -3013,7 +3013,7 @@ export default {
 			"BR_BloodyPanther": "bf542ff2",
 			"BR_Brownie": "086fbb2b",
 			"BR_Brunhild": "4312d8c3",
-			"BR_Bulgasari": "34fc6a11",
+			"BR_Bulgasari": "1fd5548b",
 			"BR_Calista": "91fd9d2b",
 			"BR_Cheona": "630faafa",
 			"BR_Daika": "be65c25e",
@@ -3028,7 +3028,7 @@ export default {
 			"BR_Habetrot": "d5606537",
 			"BR_Harpy": "4f285817",
 			"BR_Hela": "75fc6c8f",
-			"BR_HongRyun": "29a3501b",
+			"BR_HongRyun": "c54398ea",
 			"BR_Hraesvelgr": "8b9844b9",
 			"BR_Hyena": "6bad5d44",
 			"BR_Impet": "9061c746",
@@ -3042,7 +3042,7 @@ export default {
 			"BR_Lindwurm": "b5f4dd4f",
 			"BR_Marie": "6bed1496",
 			"BR_May": "1153bb41",
-			"BR_Miho": "8af769ef",
+			"BR_Miho": "62650324",
 			"BR_Neodym": "d7d0fbb0",
 			"BR_Nereid": "e9e4963a",
 			"BR_NickyTracy": "5d3e4b0e",
@@ -3052,7 +3052,7 @@ export default {
 			"BR_Pani": "c0d70c02",
 			"BR_Phantom": "43ae1c2c",
 			"BR_Phoenix": "1d4caa48",
-			"BR_PoniesAnger": "70ffdcce",
+			"BR_PoniesAnger": "e7a22510",
 			"BR_PXSilky": "f2f1ca18",
 			"BR_QuickCamel": "8084984a",
 			"BR_Raven": "83427e92",
@@ -3157,9 +3157,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "828f9e09",
-		"JP": "bf78d9e2",
-		"KR": "4d5a11d3",
-		"TC": "63c37304"
+		"EN": "b1becefa",
+		"JP": "aa88b0c3",
+		"KR": "be0480a7",
+		"TC": "6fcca247"
 	}
 } as DBHashType;

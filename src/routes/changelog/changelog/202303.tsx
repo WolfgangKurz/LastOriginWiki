@@ -9,6 +9,23 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12103" date="2023-03-27"
+		new={ <>
+			<li>전투원 <BY>AS-12 스틸 드라코</BY>의 승급 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>전투원 <BY>C-77 홍련</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>AS-12 스틸 드라코</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>T-14 미호</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>T-60 불가사리</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>P-24 핀토</BY>의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>펜리르</BY>의 스킨 <BR>종교의 자유(?)를 원하는 펜리르</BR>의 이미지가 수정되었습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12100" date="2023-03-20"
 		new={ <>
 			<li>홈 페이지의 모바일 환경의 사용자 경험이 개선되었습니다.</li>
