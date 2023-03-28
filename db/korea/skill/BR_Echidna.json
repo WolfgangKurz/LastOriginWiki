@@ -86,7 +86,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -106,7 +106,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -129,7 +129,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -214,28 +214,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_2",
+                    "desc": "Effect_BR_Echidna_N_12_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.010000"
@@ -253,31 +234,9 @@
                     }
                   },
                   "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_3",
-                    "type": 1,
-                    "value": "-0.200000",
-                    "level": "-0.030000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-20%",
-                      "per": "-3%"
-                    }
-                  },
-                  "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -301,28 +260,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_2",
+                    "desc": "Effect_BR_Echidna_N_13_1",
                     "type": 1,
                     "value": "-0.050000",
                     "level": "-0.005000"
@@ -340,11 +280,126 @@
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_14",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_14_1",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_15",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_3",
+                    "desc": "Effect_BR_Echidna_N_15_1",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.030000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_16",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                1
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_16_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.015000"
@@ -364,7 +419,7 @@
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             }
           ]
         },
@@ -436,7 +491,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -456,7 +511,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -479,7 +534,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -564,28 +619,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_2",
+                    "desc": "Effect_BR_Echidna_N_12_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.010000"
@@ -603,31 +639,9 @@
                     }
                   },
                   "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_3",
-                    "type": 1,
-                    "value": "-0.200000",
-                    "level": "-0.030000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-20%",
-                      "per": "-3%"
-                    }
-                  },
-                  "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -651,28 +665,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_2",
+                    "desc": "Effect_BR_Echidna_N_13_1",
                     "type": 1,
                     "value": "-0.050000",
                     "level": "-0.005000"
@@ -690,11 +685,126 @@
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_14",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_14_1",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_15",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_3",
+                    "desc": "Effect_BR_Echidna_N_15_1",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.030000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_16",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                1
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_16_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.015000"
@@ -714,7 +824,7 @@
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             }
           ]
         },
@@ -786,7 +896,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -806,7 +916,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -829,7 +939,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -914,28 +1024,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_2",
+                    "desc": "Effect_BR_Echidna_N_12_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.010000"
@@ -953,31 +1044,9 @@
                     }
                   },
                   "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_3",
-                    "type": 1,
-                    "value": "-0.200000",
-                    "level": "-0.030000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-20%",
-                      "per": "-3%"
-                    }
-                  },
-                  "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -1001,28 +1070,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_2",
+                    "desc": "Effect_BR_Echidna_N_13_1",
                     "type": 1,
                     "value": "-0.050000",
                     "level": "-0.005000"
@@ -1040,11 +1090,126 @@
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_14",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_14_1",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_15",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_3",
+                    "desc": "Effect_BR_Echidna_N_15_1",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.030000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_16",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                1
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_16_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.015000"
@@ -1064,7 +1229,7 @@
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             }
           ]
         },
@@ -1136,7 +1301,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -1156,7 +1321,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -1179,7 +1344,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -1264,28 +1429,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_2",
+                    "desc": "Effect_BR_Echidna_N_12_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.010000"
@@ -1303,31 +1449,9 @@
                     }
                   },
                   "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_3",
-                    "type": 1,
-                    "value": "-0.200000",
-                    "level": "-0.030000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-20%",
-                      "per": "-3%"
-                    }
-                  },
-                  "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -1351,28 +1475,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_2",
+                    "desc": "Effect_BR_Echidna_N_13_1",
                     "type": 1,
                     "value": "-0.050000",
                     "level": "-0.005000"
@@ -1390,11 +1495,126 @@
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_14",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_14_1",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_15",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_3",
+                    "desc": "Effect_BR_Echidna_N_15_1",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.030000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_16",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                1
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_16_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.015000"
@@ -1414,7 +1634,7 @@
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             }
           ]
         },
@@ -1486,7 +1706,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -1506,7 +1726,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -1529,7 +1749,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -1614,28 +1834,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_2",
+                    "desc": "Effect_BR_Echidna_N_12_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.010000"
@@ -1653,31 +1854,9 @@
                     }
                   },
                   "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_3",
-                    "type": 1,
-                    "value": "-0.200000",
-                    "level": "-0.030000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-20%",
-                      "per": "-3%"
-                    }
-                  },
-                  "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -1701,28 +1880,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_2",
+                    "desc": "Effect_BR_Echidna_N_13_1",
                     "type": 1,
                     "value": "-0.050000",
                     "level": "-0.005000"
@@ -1740,11 +1900,126 @@
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_14",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_14_1",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_15",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_3",
+                    "desc": "Effect_BR_Echidna_N_15_1",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.030000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_16",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                1
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_16_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.015000"
@@ -1764,7 +2039,7 @@
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             }
           ]
         },
@@ -1836,7 +2111,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -1856,7 +2131,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -1879,7 +2154,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -1964,28 +2239,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_2",
+                    "desc": "Effect_BR_Echidna_N_12_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.010000"
@@ -2003,31 +2259,9 @@
                     }
                   },
                   "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_3",
-                    "type": 1,
-                    "value": "-0.200000",
-                    "level": "-0.030000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-20%",
-                      "per": "-3%"
-                    }
-                  },
-                  "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -2051,28 +2285,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_2",
+                    "desc": "Effect_BR_Echidna_N_13_1",
                     "type": 1,
                     "value": "-0.050000",
                     "level": "-0.005000"
@@ -2090,11 +2305,126 @@
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_14",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_14_1",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_15",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_3",
+                    "desc": "Effect_BR_Echidna_N_15_1",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.030000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_16",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                1
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_16_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.015000"
@@ -2114,7 +2444,7 @@
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             }
           ]
         },
@@ -2186,7 +2516,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -2206,7 +2536,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -2229,7 +2559,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -2314,28 +2644,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_2",
+                    "desc": "Effect_BR_Echidna_N_12_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.010000"
@@ -2353,31 +2664,9 @@
                     }
                   },
                   "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_3",
-                    "type": 1,
-                    "value": "-0.200000",
-                    "level": "-0.030000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-20%",
-                      "per": "-3%"
-                    }
-                  },
-                  "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -2401,28 +2690,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_2",
+                    "desc": "Effect_BR_Echidna_N_13_1",
                     "type": 1,
                     "value": "-0.050000",
                     "level": "-0.005000"
@@ -2440,11 +2710,126 @@
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_14",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_14_1",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_15",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_3",
+                    "desc": "Effect_BR_Echidna_N_15_1",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.030000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_16",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                1
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_16_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.015000"
@@ -2464,7 +2849,7 @@
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             }
           ]
         },
@@ -2536,7 +2921,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -2556,7 +2941,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -2579,7 +2964,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -2664,28 +3049,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_2",
+                    "desc": "Effect_BR_Echidna_N_12_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.010000"
@@ -2703,31 +3069,9 @@
                     }
                   },
                   "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_3",
-                    "type": 1,
-                    "value": "-0.200000",
-                    "level": "-0.030000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-20%",
-                      "per": "-3%"
-                    }
-                  },
-                  "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -2751,28 +3095,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_2",
+                    "desc": "Effect_BR_Echidna_N_13_1",
                     "type": 1,
                     "value": "-0.050000",
                     "level": "-0.005000"
@@ -2790,11 +3115,126 @@
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_14",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_14_1",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_15",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_3",
+                    "desc": "Effect_BR_Echidna_N_15_1",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.030000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_16",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                1
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_16_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.015000"
@@ -2814,7 +3254,7 @@
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             }
           ]
         },
@@ -2886,7 +3326,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -2906,7 +3346,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -2929,7 +3369,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -3014,28 +3454,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_2",
+                    "desc": "Effect_BR_Echidna_N_12_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.010000"
@@ -3053,31 +3474,9 @@
                     }
                   },
                   "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_3",
-                    "type": 1,
-                    "value": "-0.200000",
-                    "level": "-0.030000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-20%",
-                      "per": "-3%"
-                    }
-                  },
-                  "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -3101,28 +3500,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_2",
+                    "desc": "Effect_BR_Echidna_N_13_1",
                     "type": 1,
                     "value": "-0.050000",
                     "level": "-0.005000"
@@ -3140,11 +3520,126 @@
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_14",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_14_1",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_15",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_3",
+                    "desc": "Effect_BR_Echidna_N_15_1",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.030000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_16",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                1
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_16_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.015000"
@@ -3164,7 +3659,7 @@
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             }
           ]
         },
@@ -3236,7 +3731,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -3256,7 +3751,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -3279,7 +3774,7 @@
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
@@ -3364,28 +3859,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_2",
+                    "desc": "Effect_BR_Echidna_N_12_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.010000"
@@ -3403,31 +3879,9 @@
                     }
                   },
                   "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_DOWN",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_12_3",
-                    "type": 1,
-                    "value": "-0.200000",
-                    "level": "-0.030000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "-20%",
-                      "per": "-3%"
-                    }
-                  },
-                  "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             },
             {
               "key": "Effect_BR_Echidna_N_13",
@@ -3451,28 +3905,9 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_2",
+                    "desc": "Effect_BR_Echidna_N_13_1",
                     "type": 1,
                     "value": "-0.050000",
                     "level": "-0.005000"
@@ -3490,11 +3925,126 @@
                     }
                   },
                   "overlap": 4
-                },
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_14",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SNARE",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_14_1",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 78,
+                    "immovable": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_Echidna_N_15",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
                 {
                   "icon": "BuffIcon_DEF_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_Echidna_N_13_3",
+                    "desc": "Effect_BR_Echidna_N_15_1",
+                    "type": 1,
+                    "value": "-0.200000",
+                    "level": "-0.030000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "-20%",
+                      "per": "-3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 2
+            },
+            {
+              "key": "Effect_BR_Echidna_N_16",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                1
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_DOWN",
+                  "desc": {
+                    "desc": "Effect_BR_Echidna_N_16_1",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.015000"
@@ -3514,7 +4064,7 @@
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 2
             }
           ]
         }
@@ -3596,21 +4146,9 @@
             "chance": 1
           },
           {
-            "icon": "BuffIcon_SNARE",
-            "desc": {
-              "desc": "Effect_BR_Echidna_N_12_1",
-              "type": 0,
-              "value": "0",
-              "level": "0"
-            },
-            "base": 0,
-            "per": 0,
-            "chance": 1
-          },
-          {
             "icon": "BuffIcon_DAMAGE_REDUCE",
             "desc": {
-              "desc": "Effect_BR_Echidna_N_12_2",
+              "desc": "Effect_BR_Echidna_N_12_1",
               "type": 1,
               "value": "-0.100000",
               "level": "-0.010000"
@@ -3620,33 +4158,9 @@
             "chance": 1
           },
           {
-            "icon": "BuffIcon_DEF_DOWN",
-            "desc": {
-              "desc": "Effect_BR_Echidna_N_12_3",
-              "type": 1,
-              "value": "-0.200000",
-              "level": "-0.030000"
-            },
-            "base": -0.2,
-            "per": -0.03,
-            "chance": 1
-          },
-          {
-            "icon": "BuffIcon_SNARE",
-            "desc": {
-              "desc": "Effect_BR_Echidna_N_13_1",
-              "type": 0,
-              "value": "0",
-              "level": "0"
-            },
-            "base": 0,
-            "per": 0,
-            "chance": 1
-          },
-          {
             "icon": "BuffIcon_DAMAGE_REDUCE",
             "desc": {
-              "desc": "Effect_BR_Echidna_N_13_2",
+              "desc": "Effect_BR_Echidna_N_13_1",
               "type": 1,
               "value": "-0.050000",
               "level": "-0.005000"
@@ -3656,9 +4170,33 @@
             "chance": 1
           },
           {
+            "icon": "BuffIcon_SNARE",
+            "desc": {
+              "desc": "Effect_BR_Echidna_N_14_1",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
             "icon": "BuffIcon_DEF_DOWN",
             "desc": {
-              "desc": "Effect_BR_Echidna_N_13_3",
+              "desc": "Effect_BR_Echidna_N_15_1",
+              "type": 1,
+              "value": "-0.200000",
+              "level": "-0.030000"
+            },
+            "base": -0.2,
+            "per": -0.03,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_DOWN",
+            "desc": {
+              "desc": "Effect_BR_Echidna_N_16_1",
               "type": 1,
               "value": "-0.100000",
               "level": "-0.015000"
@@ -4962,53 +5500,6 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_Echidna_N_14",
-              "on": "attack",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_DEF_UP",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_14_1",
-                    "type": 1,
-                    "value": "0.100000",
-                    "level": "0.005000"
-                  },
-                  "attr": 0,
-                  "erase": {},
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 3,
-                    "defense": {
-                      "base": "10%",
-                      "per": "0.5%"
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 3
-            },
-            {
               "key": "Effect_BR_Echidna_N_31",
               "on": {
                 "damaged": "lightning"
@@ -5124,18 +5615,6 @@
             "base": 0.25,
             "per": 0.02,
             "chance": 1
-          },
-          {
-            "icon": "BuffIcon_DEF_UP",
-            "desc": {
-              "desc": "Effect_BR_Echidna_N_14_1",
-              "type": 1,
-              "value": "0.100000",
-              "level": "0.005000"
-            },
-            "base": 0.1,
-            "per": 0.005,
-            "chance": 0
           },
           {
             "icon": "BuffIcon_AP_UP",
@@ -6196,7 +6675,7 @@
             },
             {
               "key": "Effect_BR_Echidna_N_55",
-              "on": "wave",
+              "on": "enemy_killed",
               "if": [
                 false,
                 false
@@ -6219,94 +6698,6 @@
                   "icon": "BuffIcon_SNARE",
                   "desc": {
                     "desc": "Effect_BR_Echidna_N_55_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "9999%",
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_Echidna_N_56",
-              "on": "enemy_killed",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 4,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_56_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "9999%",
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_Echidna_N_57",
-              "on": "enemy_killed",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                1
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 4,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_57_1",
                     "type": 0,
                     "value": "0",
                     "level": "0"
@@ -6904,7 +7295,7 @@
             },
             {
               "key": "Effect_BR_Echidna_N_55",
-              "on": "wave",
+              "on": "enemy_killed",
               "if": [
                 false,
                 false
@@ -6927,94 +7318,6 @@
                   "icon": "BuffIcon_SNARE",
                   "desc": {
                     "desc": "Effect_BR_Echidna_N_55_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "9999%",
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_Echidna_N_56",
-              "on": "enemy_killed",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 4,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_56_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "9999%",
-                    "type": 78,
-                    "immovable": true
-                  },
-                  "overlap": 1
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_Echidna_N_57",
-              "on": "enemy_killed",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                1
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 4,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_SNARE",
-                  "desc": {
-                    "desc": "Effect_BR_Echidna_N_57_1",
                     "type": 0,
                     "value": "0",
                     "level": "0"
@@ -7309,30 +7612,6 @@
             "icon": "BuffIcon_SNARE",
             "desc": {
               "desc": "Effect_BR_Echidna_N_55_1",
-              "type": 0,
-              "value": "0",
-              "level": "0"
-            },
-            "base": 0,
-            "per": 0,
-            "chance": 99.99
-          },
-          {
-            "icon": "BuffIcon_SNARE",
-            "desc": {
-              "desc": "Effect_BR_Echidna_N_56_1",
-              "type": 0,
-              "value": "0",
-              "level": "0"
-            },
-            "base": 0,
-            "per": 0,
-            "chance": 99.99
-          },
-          {
-            "icon": "BuffIcon_SNARE",
-            "desc": {
-              "desc": "Effect_BR_Echidna_N_57_1",
               "type": 0,
               "value": "0",
               "level": "0"

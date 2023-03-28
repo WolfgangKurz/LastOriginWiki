@@ -9,6 +9,32 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12105" date="2023-03-29"
+		new={ <>
+			<li>신규 전투원 <BY>윤회의 우로보로스</BY>의 정보가 추가되었습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>일부 스킨의 일러스트레이터 정보가 표시되지 않는 문제를 수정했습니다.</li>
+			<li>일부 스킨의 출시일이 표시되지 않는 문제를 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li>전투원 <BY>에키드나</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>AS-12 스틸 드라코</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>T-60 불가사리</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>P-24 핀토</BY>의 스킬 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>무적의 용</BY>의 스킨 <BY>CAFE Horizon : 신입 바리스타 용</BY>의 중파 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>아쿠아</BY>의 스킨 <BY>꿀벌 돌보미 아쿠아</BY>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>시저스 리제</BY>의 스킨 <BY>노트에 전부 담을 수 없는 마음</BY>의 정보가 추가되었습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12103" date="2023-03-27"
 		new={ <>
 			<li>전투원 <BY>AS-12 스틸 드라코</BY>의 승급 정보가 추가되었습니다.</li>
