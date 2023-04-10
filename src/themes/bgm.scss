@@ -1,0 +1,16 @@
+// from Primer prism default palette idx.3
+$bgm-colors: (
+	blue: #54aeff,
+	green: #4ac26b,
+	yellow: #d4a72c,
+	orange: #fb8f44,
+	red: #ff8182,
+	purple: #c297ff,
+	pink: #ff80c8,
+);
+
+:root {
+	@each $key, $color in $bgm-colors {
+		#{"--bgm-color-" + $key}: $color;
+	}
+}

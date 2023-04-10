@@ -660,11 +660,11 @@ const BGM: FunctionalComponent = () => {
 												Array.isArray(l.color) && style.ColoredCustom,
 												currentLyrics.value === i && style.Current,
 											) }
-											style={ { "--color": Array.isArray(l.color) ? undefined : l.color } }
+											style={ { "--color": Array.isArray(l.color) ? undefined : `var(--bgm-color-${l.color})` } }
 											ref={ el => lyricsItemRef.current[i] = el }
 										>
 											{ Array.isArray(l.color) && l.color.map(c =>
-												<i class={ style.Colors } style={ { "--color": c } } />
+												<i class={ style.Colors } style={ { "--color": `var(--bgm-color-${c})` } } />
 											) }
 											{ l.raw
 												? parseVNode(l.text, [], {})

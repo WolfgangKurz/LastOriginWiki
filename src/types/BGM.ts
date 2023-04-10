@@ -1,7 +1,8 @@
+export type BGMColor = "blue" | "green" | "yellow" | "orange" | "red" | "purple" | "pink";
 export interface LyricsData {
 	time: number;
 	text: string;
-	color?: string | string[];
+	color?: BGMColor | BGMColor[];
 	raw?: boolean;
 }
 

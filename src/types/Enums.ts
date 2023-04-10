@@ -943,6 +943,8 @@ export enum FACETYPE {
 	SADGL = 71,
 	SADGL2 = 72,
 	EXPRESSIONLESSGL = 73,
+	SAD2 = 74,
+	IDLE2 = 75,
 }
 
 /** 가챠(유산) 타입 */

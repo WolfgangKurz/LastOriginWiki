@@ -153,6 +153,12 @@ const Header: FunctionalComponent = (): preact.VNode => {
 
 							<li><hr class="dropdown-divider" /></li>
 
+							<DropdownExternal href="https://loeq.swaytwig.com/">
+								<Locale k="MENU_ETC_LOEQ" />
+							</DropdownExternal>
+
+							<li><hr class="dropdown-divider" /></li>
+
 							<DropdownExternal href="https://arca.live/b/lastorigin/4474753">
 								<Locale k="MENU_ETC_EX01" />
 							</DropdownExternal>
