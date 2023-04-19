@@ -7,6 +7,12 @@ export type EnemySkill = Omit<SkillEntity & {
 	buff: SkillEntryData;
 }, "buffs" | "values">;
 
+export enum EnemyCategory {
+	Normal = 0,
+	Boss = 1,
+	IW = 2,
+}
+
 export interface Enemy {
 	id: string;
 	icon: string;
@@ -15,7 +21,7 @@ export interface Enemy {
 	rarity: ACTOR_GRADE;
 	type: ACTOR_CLASS;
 	role: ROLE_TYPE;
-	isBoss: boolean;
+	category: EnemyCategory;
 
 	stat: {
 		hp: [number, number];

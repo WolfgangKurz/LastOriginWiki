@@ -1,3 +1,4 @@
+.enemy-inline,
 .enemy-modal {
 	.unknown-status {
 		user-select: none;
@@ -93,7 +94,16 @@
 			padding-left: 2.25em;
 		}
 	}
-	
+
+	.level-fixed {
+		font-size: 110%;
+
+		> span {
+			padding-left: 0.25em;
+			font-size: 120%;
+		}
+	}
+
 	.status-col {
 		> table {
 			margin: auto;
@@ -139,4 +149,10 @@
 			}
 		}
 	}
+}
+
+.enemy-inline {
+	padding: $spacer;
+	border: 1px solid $border-color-translucent;
+	border-radius: 0.25rem;
 }

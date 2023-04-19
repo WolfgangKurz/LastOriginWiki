@@ -187,6 +187,7 @@ const OldStore = new StoreClass(
 				Limited: true,
 				EternalWar: true,
 				NewEternalWar: true,
+				InfiniteWar: true,
 				SubStory: true,
 
 				Exchange: true,
@@ -236,8 +237,9 @@ const OldStore = new StoreClass(
 				[ROLE_TYPE.SUPPORTER]: true,
 			},
 
-			Boss: true,
 			Normal: true,
+			Boss: true,
+			IW: true,
 			Unused: true,
 			NEW: true,
 
@@ -350,6 +352,7 @@ const OldStore = new StoreClass(
 		toggleEquipSourceLimited: (state) => merge(state, { Equips: { Source: { Limited: !state.Equips.Source.Limited } } }),
 		toggleEquipSourceEternalWar: (state) => merge(state, { Equips: { Source: { EternalWar: !state.Equips.Source.EternalWar } } }),
 		toggleEquipSourceNewEternalWar: (state) => merge(state, { Equips: { Source: { NewEternalWar: !state.Equips.Source.NewEternalWar } } }),
+		toggleEquipSourceInfiniteWar: (state) => merge(state, { Equips: { Source: { InfiniteWar: !state.Equips.Source.InfiniteWar } } }),
 		toggleEquipSourceSubStory: (state) => merge(state, { Equips: { Source: { SubStory: !state.Equips.Source.SubStory } } }),
 		toggleEquipSourceExchange: (state) => merge(state, { Equips: { Source: { Exchange: !state.Equips.Source.Exchange } } }),
 		toggleEquipSourceOldExchange: (state) => merge(state, { Equips: { Source: { OldExchange: !state.Equips.Source.OldExchange } } }),
@@ -382,6 +385,7 @@ const OldStore = new StoreClass(
 		toggleEnemiesFilterRoleSupporter: (state) => merge(state, { Enemies: { Role: { [ROLE_TYPE.SUPPORTER]: !state.Enemies.Role[ROLE_TYPE.SUPPORTER] } } }),
 
 		toggleEnemiesFilterBoss: (state) => merge(state, { Enemies: { Boss: !state.Enemies.Boss } }),
+		toggleEnemiesFilterIW: (state) => merge(state, { Enemies: { IW: !state.Enemies.IW } }),
 		toggleEnemiesFilterNormal: (state) => merge(state, { Enemies: { Normal: !state.Enemies.Normal } }),
 		toggleEnemiesFilterUnused: (state) => merge(state, { Enemies: { Unused: !state.Enemies.Unused } }),
 		toggleEnemiesFilterNEW: (state) => merge(state, { Enemies: { NEW: !state.Enemies.NEW } }),

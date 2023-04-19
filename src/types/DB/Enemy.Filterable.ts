@@ -1,3 +1,4 @@
+import { EnemyCategory } from "@/types/DB/Enemy";
 import { ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE } from "@/types/Enums";
 
 export interface FilterableEnemy {
@@ -9,7 +10,7 @@ export interface FilterableEnemy {
 	rarity: ACTOR_GRADE;
 	type: ACTOR_CLASS;
 	role: ROLE_TYPE;
-	isBoss: boolean;
+	category: EnemyCategory;
 
 	used: Record<string, string[]>;
 }

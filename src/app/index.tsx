@@ -83,6 +83,9 @@ const App: FunctionalComponent = () => {
 						<AsyncRoute path="/eternalwar" { ...pRoute(() => import("@/routes/eternalwar")) } />
 						<AsyncRoute path="/eternalwar/:mid" { ...pRoute(() => import("@/routes/eternalwar")) } />
 
+						<AsyncRoute path="/infinitewar" { ...pRoute(() => import("@/routes/infinitewar")) } />
+						<AsyncRoute path="/infinitewar/:season/:stage?" { ...pRoute(() => import("@/routes/infinitewar/season")) } />
+
 						<AsyncRoute path="/simulator" { ...pRoute(() => import("@/routes/simulator")) } />
 
 						<AsyncRoute path="/changelog" { ...pRoute(() => import("@/routes/changelog")) } />

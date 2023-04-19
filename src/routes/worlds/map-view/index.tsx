@@ -120,7 +120,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				if (
 					!selectedValue ||
 					selectedValue.type === STAGE_SUB_TYPE.STORY ||
-					!Waves[selectedWave.value][selectedWaveIndex.value].e
+					!(Waves[selectedWave.value] && Waves[selectedWave.value][selectedWaveIndex.value].e)
 				) return new Array(9).fill(null);
 
 				return Waves[selectedWave.value][selectedWaveIndex.value].e.enemy
@@ -272,6 +272,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 			const [CurrentWaveExp, CurrentSkillExp, PlayerExp] = (
 				selectedValue &&
 				selectedValue.type !== STAGE_SUB_TYPE.STORY &&
+				Waves[selectedWave.value] &&
 				Waves[selectedWave.value][selectedWaveIndex.value].e
 			)
 				? (() => {
@@ -524,19 +525,22 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 													<Locale k="WORLD_VIEW_DROPS" />
 												</a>
 											</li>
-											<li class="nav-item">
-												<a
-													href="#"
-													class={ `nav-link ${isActive(CurrentTab.value === "enemy")} text-dark` }
-													onClick={ (e: Event): void => {
-														e.preventDefault();
-														CurrentTab.set("enemy");
-													} }
-												>
-													<Icon icon="bug-fill" class="me-1" />
-													<Locale k="WORLD_VIEW_ENEMY" />
-												</a>
-											</li>
+											{ Waves[selectedWave.value]
+												? <li class="nav-item">
+													<a
+														href="#"
+														class={ `nav-link ${isActive(CurrentTab.value === "enemy")} text-dark` }
+														onClick={ (e: Event): void => {
+															e.preventDefault();
+															CurrentTab.set("enemy");
+														} }
+													>
+														<Icon icon="bug-fill" class="me-1" />
+														<Locale k="WORLD_VIEW_ENEMY" />
+													</a>
+												</li>
+												: <></>
+											}
 											<li class="nav-item">
 												<a
 													href="#"
@@ -982,7 +986,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																	<Locale k={ `ENEMY_${enemy.enemy.id}` } />
 																</div>
 																<span
-																	class={ `badge bg-${enemy.enemy.isBoss ? "danger" : "substory"}` }
+																	class={ `badge bg-${(enemy.enemy.category & 1) ? "danger" : "substory"}` }
 																>Lv.{ enemy.lv }</span>
 
 																<Link href="#" class="stretched-link" onClick={ (e: Event): void => {

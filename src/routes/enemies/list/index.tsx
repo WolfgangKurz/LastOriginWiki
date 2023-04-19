@@ -33,8 +33,9 @@ interface EnemiesListState {
 			[ROLE_TYPE.SUPPORTER]: boolean;
 		},
 
-		Boss: boolean;
 		Normal: boolean;
+		Boss: boolean;
+		IW: boolean;
 		Unused: boolean;
 		NEW: boolean;
 
@@ -54,6 +55,7 @@ class EnemiesList extends Component<EnemiesListProps, EnemiesListState> {
 	private toggleEnemiesFilterRoleSupporter: CB;
 
 	private toggleEnemiesFilterBoss: CB;
+	private toggleEnemiesFilterIW: CB;
 	private toggleEnemiesFilterNormal: CB;
 	private toggleEnemiesFilterUnused: CB;
 	private toggleEnemiesFilterNEW: CB;
@@ -83,8 +85,9 @@ class EnemiesList extends Component<EnemiesListProps, EnemiesListState> {
 					[ROLE_TYPE.SUPPORTER]: true,
 				},
 
-				Boss: true,
 				Normal: true,
+				Boss: true,
+				IW: true,
 				Unused: true,
 				NEW: true,
 
@@ -108,6 +111,7 @@ class EnemiesList extends Component<EnemiesListProps, EnemiesListState> {
 			toggleEnemiesFilterRoleDefender,
 			toggleEnemiesFilterRoleSupporter,
 			toggleEnemiesFilterBoss,
+			toggleEnemiesFilterIW,
 			toggleEnemiesFilterNormal,
 			toggleEnemiesFilterUnused,
 			toggleEnemiesFilterNEW,
@@ -120,6 +124,7 @@ class EnemiesList extends Component<EnemiesListProps, EnemiesListState> {
 		this.toggleEnemiesFilterRoleDefender = toggleEnemiesFilterRoleDefender;
 		this.toggleEnemiesFilterRoleSupporter = toggleEnemiesFilterRoleSupporter;
 		this.toggleEnemiesFilterBoss = toggleEnemiesFilterBoss;
+		this.toggleEnemiesFilterIW = toggleEnemiesFilterIW;
 		this.toggleEnemiesFilterNormal = toggleEnemiesFilterNormal;
 		this.toggleEnemiesFilterUnused = toggleEnemiesFilterUnused;
 		this.toggleEnemiesFilterNEW = toggleEnemiesFilterNEW;
@@ -150,13 +155,15 @@ class EnemiesList extends Component<EnemiesListProps, EnemiesListState> {
 					if (!state.Filters.Role[ROLE_TYPE.SUPPORTER] && x.role === ROLE_TYPE.SUPPORTER) return false;
 
 					const filters: Record<string, boolean> = {
-						Boss: x.isBoss,
-						Normal: !x.isBoss,
-						Unused: Object.keys(x.used).length === 0,
+						Normal: (x.category & 3) === 0,
+						Boss: (x.category & 1) === 1,
+						IW: (x.category & 2) === 2,
+						Unused: (x.category & 2) === 0 && Object.keys(x.used).length === 0,
 						NEW: "NEW" in x.used,
 					};
-					if (!state.Filters.Boss) delete filters.Boss;
 					if (!state.Filters.Normal) delete filters.Normal;
+					if (!state.Filters.Boss) delete filters.Boss;
+					if (!state.Filters.IW) delete filters.IW;
 					if (!state.Filters.Unused) delete filters.Unused;
 					if (!state.Filters.NEW) delete filters.NEW;
 					if (Object.values(filters).every(x => !x)) return false;
@@ -183,11 +190,23 @@ class EnemiesList extends Component<EnemiesListProps, EnemiesListState> {
 					return [...p, c];
 				}, [] as Array<FilterableEnemy & { localeName: string; }>)
 				.sort((a, b) => {
-					return a.isBoss === b.isBoss
-						? a.localeName.localeCompare(b.localeName)
-						: a.isBoss && !b.isBoss
-							? -1
-							: 1;
+					const bossA = a.category & 1;
+					const bossB = b.category & 1;
+
+					if (bossA && !bossB)
+						return -1;
+					else if (!bossA && bossB)
+						return 1;
+					else {
+						const IWA = a.category & 2;
+						const IWB = b.category & 2;
+
+						if (IWA && !IWB)
+							return -1;
+						else if (!IWA && IWB)
+							return 1;
+					}
+					return a.localeName.localeCompare(b.localeName);
 				});
 
 			if (props.uid) {
@@ -251,6 +270,12 @@ class EnemiesList extends Component<EnemiesListProps, EnemiesListState> {
 							onClick={ (): void => this.toggleEnemiesFilterBoss() }
 						>
 							<Locale k="ENEMY_DISPLAY_BOSS" />
+						</button>
+						<button
+							class={ `btn btn-outline-danger ${isActive(state.Filters.IW)}` }
+							onClick={ (): void => this.toggleEnemiesFilterIW() }
+						>
+							<Locale k="ENEMY_DISPLAY_IW" />
 						</button>
 						<button
 							class={ `btn btn-outline-danger ${isActive(state.Filters.Normal)}` }

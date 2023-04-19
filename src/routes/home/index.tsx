@@ -151,6 +151,7 @@ const Home: FunctionalComponent = () => {
 					<NavItem href="/worlds" text="MENU_WORLDS" />
 
 					<NavItem href="/eternalwar" text="MENU_ETERNALWAR" />
+					<NavItem href="/infinitewar" text="MENU_INFINITEWAR" />
 
 					<NavItem href="/simulator" text="MENU_SIMULATOR" />
 				</div>
