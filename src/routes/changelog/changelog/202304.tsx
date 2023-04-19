@@ -9,7 +9,7 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12114" date="2023-04-20"
+	<ChangelogItem title="Build 12115" date="2023-04-20"
 		new={ <>
 			<li><BY>총력전</BY> 페이지가 추가되었습니다.</li>
 			<li>신규 장비 <BY>M.E.D.U.S.A</BY>의 정보가 추가되었습니다.</li>

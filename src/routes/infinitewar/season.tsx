@@ -318,6 +318,7 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 									{ selectedStage.phase.map((p, i) => {
 										return <button
 											class={ BuildClass("btn", "btn-danger", isActive(selectedPhase === i)) }
+											style={ { wordBreak: "keep-all" } }
 											onClick={ e => {
 												e.preventDefault();
 												setSelectedPhase(i);
