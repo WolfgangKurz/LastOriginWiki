@@ -9,7 +9,7 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12113" date="2023-04-20"
+	<ChangelogItem title="Build 12114" date="2023-04-20"
 		new={ <>
 			<li><BY>총력전</BY> 페이지가 추가되었습니다.</li>
 			<li>신규 장비 <BY>M.E.D.U.S.A</BY>의 정보가 추가되었습니다.</li>
@@ -34,7 +34,7 @@ const Changelog: FunctionalComponent = () => <>
 			</li>
 		</> }
 		dialogue={ <>
-			<li><span class="badge bg-light text-dark">KST 2023-04-20 02:53:44</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2023-04-20 02:58:12</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
 		</> }
 	/>
 	<ChangelogItem title="Build 12109" date="2023-04-10"

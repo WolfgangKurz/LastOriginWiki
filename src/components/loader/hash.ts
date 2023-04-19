@@ -3095,7 +3095,7 @@ export default {
 			"BR_Undine": "27f88d92",
 			"BR_Uroborus": "7a2f6e68",
 			"BR_Valkyrie": "4ba85807",
-			"BR_Vargr": "35df2872",
+			"BR_Vargr": "d02e2a28",
 			"BR_WarWolf": "b1cad446",
 			"BR_Wraithy": "a8e22243",
 			"DS_Angel": "8ab7c806",
