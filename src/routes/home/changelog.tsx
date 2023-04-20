@@ -4,6 +4,12 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12122" date="2023-04-20"
+		bugfix={ <>
+			<li>일부 적의 버프 목록이 누락된 점을 수정했습니다.</li>
+			<li>일부 적의 버프 목록에서 텍스트가 존재하지 않는 버프명에 대한 표시를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12120" date="2023-04-20"
 		update={ <>
 			<li><BY>AT72 라인리터</BY>의 외전 전투가 갱신되었습니다.</li>
