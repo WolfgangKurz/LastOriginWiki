@@ -4,7 +4,7 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12118" date="2023-04-20"
+	<ChangelogItem title="Build 12119" date="2023-04-20"
 		bugfix={ <>
 			<li>일부 전투원의 스킬의 버프 목록에서 일부 항목이 누락된 점을 수정했습니다.</li>
 			<li>일부 장비의 버프 목록에서 일부 항목이 누락된 점을 수정했습니다.</li>
