@@ -64,8 +64,6 @@ interface EnemyPopupProps {
 	 */
 	noStages?: boolean;
 
-	__hp?: [number, number]; // override
-
 	onHidden?: () => void;
 }
 
@@ -100,30 +98,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 		const isNEWEnemy = target && "NEW" in target.used;
 		const isIW = targetEnemy.value && targetEnemy.value.category & 2;
 
-		const targetStat: Enemy["stat"] | undefined = targetEnemy.value && targetEnemy.value.stat.hp[0] !== 0
-			? targetEnemy.value.stat
-			: isIW
-				? {
-					hp: [0, 0], // unknown, not linear
-					atk: [20, 20],
-					def: [20, 20],
-					acc: 300,
-					eva: 10,
-					cri: 50,
-					spd: 5,
-					res: {
-						fire: 50,
-						chill: 50,
-						thunder: 50,
-					},
-				}
-				: undefined;
-
-		if (targetStat) {
-			if (props.__hp !== undefined) {
-				targetStat.hp = props.__hp;
-			}
-		}
+		const targetStat: Enemy["stat"] | undefined = targetEnemy.value?.stat ?? undefined;
 
 		const FamilyList = ((): SelectOption<string>[] => {
 			if (!props.enemy) return [];

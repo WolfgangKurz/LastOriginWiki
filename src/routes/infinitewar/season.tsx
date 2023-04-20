@@ -381,8 +381,6 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 										noStages // 등장 스테이지 숨기기
 										asSub
 
-										__hp={ [selectedStage.monster.maxHP, 0] }
-
 										enemy={ inlineEnemy }
 										level={ selectedStage.monster.lv }
 									/>

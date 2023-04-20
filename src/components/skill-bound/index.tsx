@@ -170,7 +170,7 @@ const SkillBound: FunctionalComponent<SkillBoundProps> = ({ target, buffs, level
 			</div>
 			: <></>
 		}
-		{ target === "team"
+		{ !passive && target === "team"
 			? <div class="team-text">
 				{ Skill.grid === "self"
 					? <Locale k="UNIT_SKILL_BOUND_SELF" />

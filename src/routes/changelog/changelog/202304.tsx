@@ -9,6 +9,17 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12118" date="2023-04-20"
+		bugfix={ <>
+			<li>일부 전투원의 스킬의 버프 목록에서 일부 항목이 누락된 점을 수정했습니다.</li>
+			<li>일부 장비의 버프 목록에서 일부 항목이 누락된 점을 수정했습니다.</li>
+			<li>일부 적의 스테이터스가 올바르게 표시되지 않던 점을 수정했습니다.</li>
+			<li>홈에서 이벤트 배너 이미지가 표시되지 않던 점을 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li>스킬 범위에서 <BG>본인 대상</BG> 및 <BG>아군 대상</BG> 표기가 액티브 스킬에서만 표시되도록 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12116" date="2023-04-20"
 		new={ <>
 			<li><BY>총력전</BY> 페이지가 추가되었습니다.</li>
