@@ -9,6 +9,11 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12120" date="2023-04-20"
+		update={ <>
+			<li><BY>AT72 라인리터</BY>의 외전 전투가 갱신되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12119" date="2023-04-20"
 		bugfix={ <>
 			<li>일부 전투원의 스킬의 버프 목록에서 일부 항목이 누락된 점을 수정했습니다.</li>

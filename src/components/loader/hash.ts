@@ -2921,7 +2921,7 @@ export default {
 			"Ev10": "889cf2cd",
 			"Ev11": "314ab468",
 			"Ev12": "7fc5824f",
-			"Ev13": "96035cdf",
+			"Ev13": "0d9392e6",
 			"Ev14": "3001d39a",
 			"Ev15": "4685b8de",
 			"Ev16": "94a89710",
@@ -2937,7 +2937,7 @@ export default {
 			"Ev8": "3d9310d8",
 			"Ev9": "f543d242",
 			"Story": "3014e9f1",
-			"Sub": "7a3b5446"
+			"Sub": "bbf8114f"
 		},
 		"maps": "4d799012",
 		"mission": "1111dc62",
