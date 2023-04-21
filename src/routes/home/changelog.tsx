@@ -4,6 +4,13 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12123" date="2023-04-22"
+		bugfix={ <>
+			<li>일부 버프 목록에 빈 버프가 표시되는 문제가 수정되었습니다.</li>
+			<li>위 문제로 일부 전투원 스킬 설명의 각종 수치가 올바르지 않게 표시되던 문제가 수정되었습니다.</li>
+			<li>일부 스킨의 중파 이미지가 U2DModelRenderer에서 표시되지 않던 문제가 수정되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12122" date="2023-04-20"
 		bugfix={ <>
 			<li>일부 적의 버프 목록이 누락된 점을 수정했습니다.</li>
