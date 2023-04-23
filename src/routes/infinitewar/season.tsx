@@ -47,10 +47,6 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 	}
 
 	useEffect(() => {
-		route(`/infinitewar/${props.season}/${selectedStageIdx}`, true);
-	}, [selectedStageIdx]);
-
-	useEffect(() => {
 		if (props.stage)
 			setSelectedStageIdx(parseInt(props.stage, 10));
 	}, [props.stage]);
