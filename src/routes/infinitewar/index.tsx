@@ -22,7 +22,8 @@ const InfiniteWar: FunctionalComponent = () => {
 		<Loader
 			json={ StaticDB.IWSeason }
 			content={ () => {
-				const db = GetJson<IWSeason[]>(StaticDB.IWSeason);
+				const db = GetJson<IWSeason[]>(StaticDB.IWSeason)
+					.sort((a, b) => Date.parse(b.date[0]) - Date.parse(a.date[0]));
 
 				const now = new Date();
 				const current = (() => {

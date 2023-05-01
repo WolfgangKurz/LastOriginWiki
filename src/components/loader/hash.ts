@@ -1400,7 +1400,7 @@ export default {
 	},
 	"korea": {
 		"bg": "62446a28",
-		"consumable": "7eb2884a",
+		"consumable": "93515466",
 		"enemy": {
 			"AMG11_TU2": "f05d028d",
 			"AMG11_TU3": "843fe431",
@@ -2907,12 +2907,12 @@ export default {
 		"filterable.enemy": "b014ac4a",
 		"filterable.equip": "9ffd675e",
 		"filterable.facility": "16568438",
-		"filterable.unit": "315e46f6",
+		"filterable.unit": "1626a44c",
 		"gacha": "41458cde",
 		"iw": {
 			"Colossus_01": "b536d9a1",
 			"Colossus_02": "6df66a45",
-			"seasons": "ac6d058d"
+			"seasons": "77b587e9"
 		},
 		"map": {
 			"Cha": "4bc9f11c",
@@ -2951,7 +2951,7 @@ export default {
 			"quest": "372e37a9"
 		},
 		"skill-from": "250dfd8d",
-		"sticker": "f229e1f2",
+		"sticker": "7a3f2c20",
 		"story": "a6628263",
 		"summon": {
 			"SUMMON_SU_AMG11_N": "a613e391",
@@ -3021,7 +3021,7 @@ export default {
 			"AGS_SpartanC": "1c8c4f98",
 			"AGS_Stronghold": "015a3095",
 			"AGS_Tyrant": "ac9cfa21",
-			"AGS_Watcher": "7f1d2b2b",
+			"AGS_Watcher": "d39a810b",
 			"BR_Alvis": "f2226814",
 			"BR_ALWraith": "974fd63e",
 			"BR_Amy": "f910d67e",
@@ -3034,7 +3034,7 @@ export default {
 			"BR_BloodyPanther": "bf542ff2",
 			"BR_Brownie": "b6657bff",
 			"BR_Brunhild": "06348e00",
-			"BR_Bulgasari": "927ca5e2",
+			"BR_Bulgasari": "1cc73966",
 			"BR_Calista": "91fd9d2b",
 			"BR_Cheona": "e65c320c",
 			"BR_Daika": "c40e14c8",
@@ -3049,13 +3049,13 @@ export default {
 			"BR_Habetrot": "d5606537",
 			"BR_Harpy": "838066de",
 			"BR_Hela": "75fc6c8f",
-			"BR_HongRyun": "b6af98cd",
-			"BR_Hraesvelgr": "dc8d78e4",
+			"BR_HongRyun": "74d2ac5b",
+			"BR_Hraesvelgr": "e1a77fc1",
 			"BR_Hyena": "6bad5d44",
 			"BR_Impet": "d04fd011",
 			"BR_InvDragon": "3213f4ad",
 			"BR_Io": "6a0cbab2",
-			"BR_JangHwa": "bb390451",
+			"BR_JangHwa": "4372ff4e",
 			"BR_Khan": "c80f5b05",
 			"BR_Kheshig": "5e18fbcd",
 			"BR_Leona": "e7d9276c",
@@ -3085,7 +3085,7 @@ export default {
 			"BR_Scathy": "786d9cb7",
 			"BR_Shirayuri": "76e1c4a1",
 			"BR_Sirene": "8eaf5f46",
-			"BR_Sleipnir": "3a1ee354",
+			"BR_Sleipnir": "92720010",
 			"BR_Spriggan": "5c46297d",
 			"BR_StratoAngel": "c2cb1e23",
 			"BR_Sylphid": "dcf960b3",
@@ -3113,7 +3113,7 @@ export default {
 			"DS_KunoichiZero": "98683a5e",
 			"DS_MoMo": "1607fdc8",
 			"DS_Ramiel": "dff48174",
-			"DS_Saraqael": "a03e1c41",
+			"DS_Saraqael": "7a5141cf",
 			"PECS_Audrey": "b29acc3b",
 			"PECS_Azaz": "11204e93",
 			"PECS_Babariana": "bdbf83d3",
@@ -3125,7 +3125,7 @@ export default {
 			"PECS_Circe": "77b2c189",
 			"PECS_CoCoWhiteShell": "39929b1e",
 			"PECS_CyclopsePrincess": "6f203456",
-			"PECS_DarkElf": "96dceaa1",
+			"PECS_DarkElf": "d00fb1ec",
 			"PECS_Draculina": "af89f693",
 			"PECS_Drone": "d305e54e",
 			"PECS_DutchGirl": "d75df95e",
@@ -3136,7 +3136,8 @@ export default {
 			"PECS_Express76": "3c706c0b",
 			"PECS_Fortune": "76a41154",
 			"PECS_Glacias": "5e48960c",
-			"PECS_HighElven": "2c31a15a",
+			"PECS_Hathor": "fb8613fd",
+			"PECS_HighElven": "6e32193b",
 			"PECS_Hussar": "bf010ab1",
 			"PECS_Ignis": "c8851e67",
 			"PECS_Leanne": "a52a0202",
@@ -3158,7 +3159,7 @@ export default {
 			"PECS_Rena": "d5181fd1",
 			"PECS_Sadius": "435e31e5",
 			"PECS_Saetti": "c43cf155",
-			"PECS_Sekhmet": "44697c5e",
+			"PECS_Sekhmet": "a15a011c",
 			"PECS_Serpent": "ed097831",
 			"PECS_Sonia": "1eff4e60",
 			"PECS_Spartoia": "6d28eb91",
@@ -3179,9 +3180,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "c330388d",
-		"JP": "4488fd8d",
-		"KR": "974ed254",
-		"TC": "f31965e7"
+		"EN": "d8616c19",
+		"JP": "6726e752",
+		"KR": "3f875abf",
+		"TC": "477c2015"
 	}
 } as DBHashType;

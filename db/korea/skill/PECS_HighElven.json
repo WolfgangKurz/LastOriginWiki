@@ -2061,6 +2061,190 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_HighElven_N_24",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Hathor_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_HighElven_N_24_1",
+                    "type": 0,
+                    "value": "0.200000",
+                    "level": "0.200000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 0.2,
+                      "per": 0.2
+                    }
+                  },
+                  "overlap": 0
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_HighElven_N_24_2",
+                    "type": 1,
+                    "value": "0.170000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "17%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_HighElven_N_24_3",
+                    "type": 1,
+                    "value": "0.170000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "17%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_HighElven_N_24_4",
+                    "type": 1,
+                    "value": "0.060000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "6%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_HighElven_N_25",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Hathor_N_31"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_HighElven_N_25_1",
+                    "type": 1,
+                    "value": "0.020000",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 70,
+                    "fixed_damage": {
+                      "base": "2%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -2217,6 +2401,66 @@
             "icon": "BuffIcon_PhyATK_UP",
             "desc": {
               "desc": "Effect_PECS_HighElven_N_23_1",
+              "type": 1,
+              "value": "0.020000",
+              "level": "0"
+            },
+            "base": 0.02,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_HighElven_N_24_1",
+              "type": 0,
+              "value": "0.200000",
+              "level": "0.200000"
+            },
+            "base": 0.2,
+            "per": 0.2,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Effect_PECS_HighElven_N_24_2",
+              "type": 1,
+              "value": "0.170000",
+              "level": "0.020000"
+            },
+            "base": 0.17,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "Effect_PECS_HighElven_N_24_3",
+              "type": 1,
+              "value": "0.170000",
+              "level": "0.020000"
+            },
+            "base": 0.17,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_PIERCE_UP",
+            "desc": {
+              "desc": "Effect_PECS_HighElven_N_24_4",
+              "type": 1,
+              "value": "0.060000",
+              "level": "0.010000"
+            },
+            "base": 0.06,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_PhyATK_UP",
+            "desc": {
+              "desc": "Effect_PECS_HighElven_N_25_1",
               "type": 1,
               "value": "0.020000",
               "level": "0"
@@ -2485,6 +2729,110 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_HighElven_N_34",
+              "on": "round",
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_PECS_Sekhmet_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_HighElven_N_34_1",
+                    "type": 1,
+                    "value": "0.005000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "0.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_HighElven_N_35",
+              "on": "round",
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_PECS_Hathor_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_HighElven_N_35_1",
+                    "type": 1,
+                    "value": "0.005000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "0.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -2557,6 +2905,30 @@
             "icon": "BuffIcon_AP_UP",
             "desc": {
               "desc": "Effect_PECS_HighElven_N_33_1",
+              "type": 1,
+              "value": "0.005000",
+              "level": "0.005000"
+            },
+            "base": 0.005,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_HighElven_N_34_1",
+              "type": 1,
+              "value": "0.005000",
+              "level": "0.005000"
+            },
+            "base": 0.005,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_HighElven_N_35_1",
               "type": 1,
               "value": "0.005000",
               "level": "0.005000"
@@ -3071,6 +3443,194 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_HighElven_N_45",
+              "on": "round",
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_PECS_Sekhmet_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_HighElven_N_45_1",
+                    "type": 1,
+                    "value": "0.010000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_HighElven_N_45_2",
+                    "type": 1,
+                    "value": "0.005000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "0.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_HighElven_N_45_3",
+                    "type": 1,
+                    "value": "0.010000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_HighElven_N_46",
+              "on": "round",
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_PECS_Hathor_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_HighElven_N_46_1",
+                    "type": 1,
+                    "value": "0.010000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_HighElven_N_46_2",
+                    "type": 1,
+                    "value": "0.005000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "0.5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_PIERCE_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_HighElven_N_46_3",
+                    "type": 1,
+                    "value": "0.010000",
+                    "level": "0.010000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 58,
+                    "penetration": {
+                      "base": "1%",
+                      "per": "1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -3263,6 +3823,78 @@
             "icon": "BuffIcon_DEF_PIERCE_UP",
             "desc": {
               "desc": "Effect_PECS_HighElven_N_44_3",
+              "type": 1,
+              "value": "0.010000",
+              "level": "0.010000"
+            },
+            "base": 0.01,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Effect_PECS_HighElven_N_45_1",
+              "type": 1,
+              "value": "0.010000",
+              "level": "0.010000"
+            },
+            "base": 0.01,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_HighElven_N_45_2",
+              "type": 1,
+              "value": "0.005000",
+              "level": "0.005000"
+            },
+            "base": 0.005,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_PIERCE_UP",
+            "desc": {
+              "desc": "Effect_PECS_HighElven_N_45_3",
+              "type": 1,
+              "value": "0.010000",
+              "level": "0.010000"
+            },
+            "base": 0.01,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Effect_PECS_HighElven_N_46_1",
+              "type": 1,
+              "value": "0.010000",
+              "level": "0.010000"
+            },
+            "base": 0.01,
+            "per": 0.01,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_HighElven_N_46_2",
+              "type": 1,
+              "value": "0.005000",
+              "level": "0.005000"
+            },
+            "base": 0.005,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_PIERCE_UP",
+            "desc": {
+              "desc": "Effect_PECS_HighElven_N_46_3",
               "type": 1,
               "value": "0.010000",
               "level": "0.010000"

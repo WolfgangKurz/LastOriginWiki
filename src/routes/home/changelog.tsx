@@ -4,22 +4,24 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12124" date="2023-04-23"
-		bugfix={ <>
-			<li>총력전 페이지에서 적의 레벨이 계속 변하여 사이트를 이용할 수 없는 문제를 수정했습니다.</li>
+	<ChangelogItem title="Build 12126" date="2023-05-02"
+		new={ <>
+			<li>신규 전투원 <BY>천우의 하토르</BY>의 정보가 추가되었습니다.</li>
 		</> }
-	/>
-	<ChangelogItem title="Build 12123" date="2023-04-22"
 		bugfix={ <>
-			<li>일부 버프 목록에 빈 버프가 표시되는 문제가 수정되었습니다.</li>
-			<li>위 문제로 일부 전투원 스킬 설명의 각종 수치가 올바르지 않게 표시되던 문제가 수정되었습니다.</li>
-			<li>일부 스킨의 중파 이미지가 U2DModelRenderer에서 표시되지 않던 문제가 수정되었습니다.</li>
+			<li>시뮬레이터에서 모든 위치가 항상 선택된 상태로 표시되는 문제를 수정했습니다.</li>
 		</> }
-	/>
-	<ChangelogItem title="Build 12122" date="2023-04-20"
-		bugfix={ <>
-			<li>일부 적의 버프 목록이 누락된 점을 수정했습니다.</li>
-			<li>일부 적의 버프 목록에서 텍스트가 존재하지 않는 버프명에 대한 표시를 수정했습니다.</li>
+		update={ <>
+			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
+			<li>총력전 목록이 내림차순으로 보이도록 수정하였습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>장화</BY>의 스킨 <BY>뒤바뀐 운명 : 장화</BY>의 이미지가 갱신되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2023-05-02 04:17:26</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
 		</> }
 	/>
 </>;
