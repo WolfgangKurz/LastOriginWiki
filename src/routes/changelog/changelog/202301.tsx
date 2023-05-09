@@ -9,6 +9,50 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12073" date="2023-01-31"
+		knownissue={ <>
+			<li>
+				스킨 보기의 U2DModelRenderer에서 일부 전투원의 스킨이 올바르지 않게 표시되는 문제가 있습니다.
+				(예: 에라토의 기본 스킨 중파 소품 가리기, 손이 올바르게 표시되지 않음)
+			</li>
+		</> }
+		bugfix={ <>
+			<li>
+				<BY>전투원정보</BY>의 <BY>스킨 보기</BY>의 <BG>작가</BG> 표시 방식에서
+				<BR>D-loG</BR> 작가가 <BR>D-log</BR>로 분리되어 표시되던 문제를 수정했습니다.
+			</li>
+			<li>
+				<BY>전투원정보</BY>의 <BY>스킨 보기</BY>의 <BG>작가</BG> 및 <BG>출시일</BG> 표시 방식에서
+				일부 스킨의 이미지가 잘못 표시되던 점을 수정했습니다.
+			</li>
+		</> }
+		delete={ <>
+			<li>
+				<BY>전투원정보</BY>의 <BG>대사</BG> 탭에 <BY>소개</BY>가 삭제되었습니다.<br />
+				<BG>기본 정보</BG> 탭의 자기소개로 통합되었습니다.
+			</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>콘스탄챠 S2</BY>의 스킨 <BR>당신만을 기다리는 근위총병</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>P-2000 지니야</BY>의 스킨 <BR>대지의 은혜 지니야</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>천향의 히루메</BY>의 스킨 <BR>불꽃을 품은 눈꽃 히루메</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>브륀힐드</BY>의 스킨 <BR>화염의 지배자 브륀힐드</BR>의 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li>전투원 <BY>천향의 히루메</BY>의 소개 보이스가 추가되었습니다.</li>
+			<li>전투원 <BY>SD3M 펍 헤드</BY>의 소개 보이스가 추가되었습니다.</li>
+			<li>전투원 <BY>P-2000 지니야</BY>의 소개 보이스가 추가되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2023-01-31 15:25:09</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12071" date="2023-01-29"
 		new={ <>
 			<li>이벤트 <BY>눈먼공주와 안개의 나라</BY>의 3부 정보가 추가되었습니다.</li>

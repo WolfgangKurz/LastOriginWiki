@@ -137,7 +137,7 @@ const ReleaseDate: FunctionalComponent<UnitsListProps> = (props) => {
 											<div class={ style.SkinTooltipName }>
 												{ !skin.sid
 													? <Locale k="SKIN_CATEGORY_" />
-													: <Locale k={ `UNIT_SKIN_${skin.uid}_${skin.sid}` } />
+													: <Locale k={ `UNIT_SKIN_${skin.uid}_${skin.sid}` } plain />
 												}
 											</div>
 											<div class="mb-1">
@@ -149,7 +149,7 @@ const ReleaseDate: FunctionalComponent<UnitsListProps> = (props) => {
 											<UnitFace
 												class={ skin.sid ? style.SkinFace : style.DefaultFace }
 												uid={ skin.uid }
-												skin={ skin.sid || undefined }
+												skin={ skin.metadata.imageId }
 												size={ 56 }
 											/>
 										</Link>
@@ -164,7 +164,7 @@ const ReleaseDate: FunctionalComponent<UnitsListProps> = (props) => {
 											<div class={ style.SkinTooltipName }>
 												{ !skin.sid
 													? <Locale k="SKIN_CATEGORY_" />
-													: <Locale k={ `UNIT_SKIN_${skin.uid}_${skin.sid}` } />
+													: <Locale k={ `UNIT_SKIN_${skin.uid}_${skin.sid}` } plain />
 												}
 											</div>
 											<div class="mb-1">
@@ -176,7 +176,7 @@ const ReleaseDate: FunctionalComponent<UnitsListProps> = (props) => {
 											<UnitFace
 												class={ skin.sid ? style.SkinFace : style.DefaultFace }
 												uid={ skin.uid }
-												skin={ skin.sid || undefined }
+												skin={ skin.metadata.imageId }
 												size={ 56 }
 											/>
 										</Link>

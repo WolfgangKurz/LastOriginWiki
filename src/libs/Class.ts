@@ -1,9 +1,11 @@
-type Classable = string | undefined | boolean | number | JSX.SignalLike<Classable>;
+type Classable = string | undefined | null | boolean | number | JSX.SignalLike<Classable>;
 
 export function BuildClass (...classNames: Array<Classable | Record<string, boolean>>): string {
 	return classNames
 		.map(x => {
 			if (typeof x === "object") {
+				if (x === null) return false;
+
 				if ("peek" in x && typeof x.peek === "function")
 					return x.peek();
 

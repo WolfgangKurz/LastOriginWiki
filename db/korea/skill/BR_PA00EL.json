@@ -70,8 +70,8 @@
                   "desc": {
                     "desc": "Effect_BR_PA00EL_N_1_1",
                     "type": 1,
-                    "value": "0.270000",
-                    "level": "0.020000"
+                    "value": "0.250000",
+                    "level": "0.025000"
                   },
                   "attr": 3,
                   "erase": {
@@ -81,8 +81,8 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "27%",
-                      "per": "2%"
+                      "base": "25%",
+                      "per": "2.5%"
                     }
                   },
                   "overlap": 4
@@ -114,12 +114,12 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_PA00EL_N_101",
+              "key": "Effect_BR_PA00EL_N_11",
               "on": "attack_success",
               "if": [
                 {
                   "in_squad": [
-                    "Char_BR_Sleipnir_N"
+                    "Char_BR_Lindwurm_N"
                   ]
                 },
                 false
@@ -143,9 +143,9 @@
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_PA00EL_N_101_1",
+                    "desc": "Effect_BR_PA00EL_N_11_1",
                     "type": 0,
-                    "value": "Char_BR_Sleipnir_N",
+                    "value": "Char_BR_Lindwurm_N",
                     "level": "0"
                   },
                   "attr": 0,
@@ -157,7 +157,64 @@
                     "type": 103,
                     "collaborate": {
                       "skill": 2,
-                      "with": "Char_BR_Sleipnir_N"
+                      "with": "Char_BR_Lindwurm_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_53",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_PA00EL_N_5",
+                      "Effect_BR_PA00EL_N_51"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_53_1",
+                    "type": 0,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -168,7 +225,7 @@
           ]
         },
         {
-          "rate": 1.485,
+          "rate": 1.545,
           "type": 0,
           "range": 3,
           "ap": 6,
@@ -219,8 +276,8 @@
                   "desc": {
                     "desc": "Effect_BR_PA00EL_N_1_1",
                     "type": 1,
-                    "value": "0.270000",
-                    "level": "0.020000"
+                    "value": "0.250000",
+                    "level": "0.025000"
                   },
                   "attr": 3,
                   "erase": {
@@ -230,8 +287,8 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "27%",
-                      "per": "2%"
+                      "base": "25%",
+                      "per": "2.5%"
                     }
                   },
                   "overlap": 4
@@ -263,12 +320,12 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_PA00EL_N_101",
+              "key": "Effect_BR_PA00EL_N_11",
               "on": "attack_success",
               "if": [
                 {
                   "in_squad": [
-                    "Char_BR_Sleipnir_N"
+                    "Char_BR_Lindwurm_N"
                   ]
                 },
                 false
@@ -292,9 +349,9 @@
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_PA00EL_N_101_1",
+                    "desc": "Effect_BR_PA00EL_N_11_1",
                     "type": 0,
-                    "value": "Char_BR_Sleipnir_N",
+                    "value": "Char_BR_Lindwurm_N",
                     "level": "0"
                   },
                   "attr": 0,
@@ -306,43 +363,26 @@
                     "type": 103,
                     "collaborate": {
                       "skill": 2,
-                      "with": "Char_BR_Sleipnir_N"
+                      "with": "Char_BR_Lindwurm_N"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 1.605,
-          "type": 0,
-          "range": 3,
-          "ap": 6,
-          "grid": "0,0,0,0,1,0,0,0,0",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": false,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
+              "maxStack": 1
+            },
             {
-              "key": "Effect_BR_PA00EL_N_1",
+              "key": "Effect_BR_PA00EL_N_53",
               "on": "attack_success",
               "if": [
                 {
                   "on": {
-                    "target": "target",
                     "func": "OR",
                     "select": [
-                      78,
-                      87
+                      "Effect_BR_PA00EL_N_5",
+                      "Effect_BR_PA00EL_N_51"
                     ],
-                    "attr": 1
+                    "attr": 6
                   }
                 },
                 false
@@ -364,33 +404,11 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "Effect_BR_PA00EL_N_1_1",
-                    "type": 1,
-                    "value": "0.270000",
-                    "level": "0.020000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "27%",
-                      "per": "2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_TOGETHER_ATTACK",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_1_2",
+                    "desc": "Effect_BR_PA00EL_N_53_1",
                     "type": 0,
-                    "value": "0",
+                    "value": "36",
                     "level": "0"
                   },
                   "attr": 3,
@@ -399,63 +417,10 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "chance": "0%",
-                    "type": 103,
-                    "collaborate": {
-                      "skill": 2,
-                      "with": "0"
-                    }
-                  },
-                  "overlap": 0
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_PA00EL_N_101",
-              "on": "attack_success",
-              "if": [
-                {
-                  "in_squad": [
-                    "Char_BR_Sleipnir_N"
-                  ]
-                },
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_TOGETHER_ATTACK",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_101_1",
-                    "type": 0,
-                    "value": "Char_BR_Sleipnir_N",
-                    "level": "0"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 103,
-                    "collaborate": {
-                      "skill": 2,
-                      "with": "Char_BR_Sleipnir_N"
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -517,8 +482,8 @@
                   "desc": {
                     "desc": "Effect_BR_PA00EL_N_1_1",
                     "type": 1,
-                    "value": "0.270000",
-                    "level": "0.020000"
+                    "value": "0.250000",
+                    "level": "0.025000"
                   },
                   "attr": 3,
                   "erase": {
@@ -528,8 +493,8 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "27%",
-                      "per": "2%"
+                      "base": "25%",
+                      "per": "2.5%"
                     }
                   },
                   "overlap": 4
@@ -561,12 +526,12 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_PA00EL_N_101",
+              "key": "Effect_BR_PA00EL_N_11",
               "on": "attack_success",
               "if": [
                 {
                   "in_squad": [
-                    "Char_BR_Sleipnir_N"
+                    "Char_BR_Lindwurm_N"
                   ]
                 },
                 false
@@ -590,9 +555,9 @@
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_PA00EL_N_101_1",
+                    "desc": "Effect_BR_PA00EL_N_11_1",
                     "type": 0,
-                    "value": "Char_BR_Sleipnir_N",
+                    "value": "Char_BR_Lindwurm_N",
                     "level": "0"
                   },
                   "attr": 0,
@@ -604,7 +569,64 @@
                     "type": 103,
                     "collaborate": {
                       "skill": 2,
-                      "with": "Char_BR_Sleipnir_N"
+                      "with": "Char_BR_Lindwurm_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_53",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_PA00EL_N_5",
+                      "Effect_BR_PA00EL_N_51"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_53_1",
+                    "type": 0,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -615,7 +637,7 @@
           ]
         },
         {
-          "rate": 1.845,
+          "rate": 1.905,
           "type": 0,
           "range": 3,
           "ap": 6,
@@ -666,8 +688,8 @@
                   "desc": {
                     "desc": "Effect_BR_PA00EL_N_1_1",
                     "type": 1,
-                    "value": "0.270000",
-                    "level": "0.020000"
+                    "value": "0.250000",
+                    "level": "0.025000"
                   },
                   "attr": 3,
                   "erase": {
@@ -677,8 +699,8 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "27%",
-                      "per": "2%"
+                      "base": "25%",
+                      "per": "2.5%"
                     }
                   },
                   "overlap": 4
@@ -710,12 +732,12 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_PA00EL_N_101",
+              "key": "Effect_BR_PA00EL_N_11",
               "on": "attack_success",
               "if": [
                 {
                   "in_squad": [
-                    "Char_BR_Sleipnir_N"
+                    "Char_BR_Lindwurm_N"
                   ]
                 },
                 false
@@ -739,9 +761,9 @@
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_PA00EL_N_101_1",
+                    "desc": "Effect_BR_PA00EL_N_11_1",
                     "type": 0,
-                    "value": "Char_BR_Sleipnir_N",
+                    "value": "Char_BR_Lindwurm_N",
                     "level": "0"
                   },
                   "attr": 0,
@@ -753,43 +775,26 @@
                     "type": 103,
                     "collaborate": {
                       "skill": 2,
-                      "with": "Char_BR_Sleipnir_N"
+                      "with": "Char_BR_Lindwurm_N"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 1.965,
-          "type": 0,
-          "range": 3,
-          "ap": 6,
-          "grid": "0,0,0,0,1,0,0,0,0",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": false,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
+              "maxStack": 1
+            },
             {
-              "key": "Effect_BR_PA00EL_N_1",
+              "key": "Effect_BR_PA00EL_N_53",
               "on": "attack_success",
               "if": [
                 {
                   "on": {
-                    "target": "target",
                     "func": "OR",
                     "select": [
-                      78,
-                      87
+                      "Effect_BR_PA00EL_N_5",
+                      "Effect_BR_PA00EL_N_51"
                     ],
-                    "attr": 1
+                    "attr": 6
                   }
                 },
                 false
@@ -811,33 +816,11 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "Effect_BR_PA00EL_N_1_1",
-                    "type": 1,
-                    "value": "0.270000",
-                    "level": "0.020000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "27%",
-                      "per": "2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_TOGETHER_ATTACK",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_1_2",
+                    "desc": "Effect_BR_PA00EL_N_53_1",
                     "type": 0,
-                    "value": "0",
+                    "value": "36",
                     "level": "0"
                   },
                   "attr": 3,
@@ -846,63 +829,10 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "chance": "0%",
-                    "type": 103,
-                    "collaborate": {
-                      "skill": 2,
-                      "with": "0"
-                    }
-                  },
-                  "overlap": 0
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_PA00EL_N_101",
-              "on": "attack_success",
-              "if": [
-                {
-                  "in_squad": [
-                    "Char_BR_Sleipnir_N"
-                  ]
-                },
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_TOGETHER_ATTACK",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_101_1",
-                    "type": 0,
-                    "value": "Char_BR_Sleipnir_N",
-                    "level": "0"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 103,
-                    "collaborate": {
-                      "skill": 2,
-                      "with": "Char_BR_Sleipnir_N"
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -964,8 +894,8 @@
                   "desc": {
                     "desc": "Effect_BR_PA00EL_N_1_1",
                     "type": 1,
-                    "value": "0.270000",
-                    "level": "0.020000"
+                    "value": "0.250000",
+                    "level": "0.025000"
                   },
                   "attr": 3,
                   "erase": {
@@ -975,8 +905,8 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "27%",
-                      "per": "2%"
+                      "base": "25%",
+                      "per": "2.5%"
                     }
                   },
                   "overlap": 4
@@ -1008,12 +938,12 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_PA00EL_N_101",
+              "key": "Effect_BR_PA00EL_N_11",
               "on": "attack_success",
               "if": [
                 {
                   "in_squad": [
-                    "Char_BR_Sleipnir_N"
+                    "Char_BR_Lindwurm_N"
                   ]
                 },
                 false
@@ -1037,9 +967,9 @@
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_PA00EL_N_101_1",
+                    "desc": "Effect_BR_PA00EL_N_11_1",
                     "type": 0,
-                    "value": "Char_BR_Sleipnir_N",
+                    "value": "Char_BR_Lindwurm_N",
                     "level": "0"
                   },
                   "attr": 0,
@@ -1051,7 +981,64 @@
                     "type": 103,
                     "collaborate": {
                       "skill": 2,
-                      "with": "Char_BR_Sleipnir_N"
+                      "with": "Char_BR_Lindwurm_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_53",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_PA00EL_N_5",
+                      "Effect_BR_PA00EL_N_51"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_53_1",
+                    "type": 0,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -1062,7 +1049,7 @@
           ]
         },
         {
-          "rate": 2.205,
+          "rate": 2.265,
           "type": 0,
           "range": 3,
           "ap": 6,
@@ -1113,8 +1100,8 @@
                   "desc": {
                     "desc": "Effect_BR_PA00EL_N_1_1",
                     "type": 1,
-                    "value": "0.270000",
-                    "level": "0.020000"
+                    "value": "0.250000",
+                    "level": "0.025000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1124,8 +1111,8 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "27%",
-                      "per": "2%"
+                      "base": "25%",
+                      "per": "2.5%"
                     }
                   },
                   "overlap": 4
@@ -1157,12 +1144,12 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_PA00EL_N_101",
+              "key": "Effect_BR_PA00EL_N_11",
               "on": "attack_success",
               "if": [
                 {
                   "in_squad": [
-                    "Char_BR_Sleipnir_N"
+                    "Char_BR_Lindwurm_N"
                   ]
                 },
                 false
@@ -1186,9 +1173,9 @@
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_PA00EL_N_101_1",
+                    "desc": "Effect_BR_PA00EL_N_11_1",
                     "type": 0,
-                    "value": "Char_BR_Sleipnir_N",
+                    "value": "Char_BR_Lindwurm_N",
                     "level": "0"
                   },
                   "attr": 0,
@@ -1200,43 +1187,26 @@
                     "type": 103,
                     "collaborate": {
                       "skill": 2,
-                      "with": "Char_BR_Sleipnir_N"
+                      "with": "Char_BR_Lindwurm_N"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 2.325,
-          "type": 0,
-          "range": 3,
-          "ap": 6,
-          "grid": "0,0,0,0,1,0,0,0,0",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": false,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
+              "maxStack": 1
+            },
             {
-              "key": "Effect_BR_PA00EL_N_1",
+              "key": "Effect_BR_PA00EL_N_53",
               "on": "attack_success",
               "if": [
                 {
                   "on": {
-                    "target": "target",
                     "func": "OR",
                     "select": [
-                      78,
-                      87
+                      "Effect_BR_PA00EL_N_5",
+                      "Effect_BR_PA00EL_N_51"
                     ],
-                    "attr": 1
+                    "attr": 6
                   }
                 },
                 false
@@ -1258,33 +1228,11 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "Effect_BR_PA00EL_N_1_1",
-                    "type": 1,
-                    "value": "0.270000",
-                    "level": "0.020000"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "27%",
-                      "per": "2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_TOGETHER_ATTACK",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_1_2",
+                    "desc": "Effect_BR_PA00EL_N_53_1",
                     "type": 0,
-                    "value": "0",
+                    "value": "36",
                     "level": "0"
                   },
                   "attr": 3,
@@ -1293,63 +1241,10 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "chance": "0%",
-                    "type": 103,
-                    "collaborate": {
-                      "skill": 2,
-                      "with": "0"
-                    }
-                  },
-                  "overlap": 0
-                }
-              ],
-              "maxStack": 0
-            },
-            {
-              "key": "Effect_BR_PA00EL_N_101",
-              "on": "attack_success",
-              "if": [
-                {
-                  "in_squad": [
-                    "Char_BR_Sleipnir_N"
-                  ]
-                },
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 0,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_TOGETHER_ATTACK",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_101_1",
-                    "type": 0,
-                    "value": "Char_BR_Sleipnir_N",
-                    "level": "0"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 103,
-                    "collaborate": {
-                      "skill": 2,
-                      "with": "Char_BR_Sleipnir_N"
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -1411,8 +1306,8 @@
                   "desc": {
                     "desc": "Effect_BR_PA00EL_N_1_1",
                     "type": 1,
-                    "value": "0.270000",
-                    "level": "0.020000"
+                    "value": "0.250000",
+                    "level": "0.025000"
                   },
                   "attr": 3,
                   "erase": {
@@ -1422,8 +1317,8 @@
                     "isBuff": true,
                     "type": 83,
                     "damage_add": {
-                      "base": "27%",
-                      "per": "2%"
+                      "base": "25%",
+                      "per": "2.5%"
                     }
                   },
                   "overlap": 4
@@ -1455,12 +1350,12 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_PA00EL_N_101",
+              "key": "Effect_BR_PA00EL_N_11",
               "on": "attack_success",
               "if": [
                 {
                   "in_squad": [
-                    "Char_BR_Sleipnir_N"
+                    "Char_BR_Lindwurm_N"
                   ]
                 },
                 false
@@ -1484,9 +1379,9 @@
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_PA00EL_N_101_1",
+                    "desc": "Effect_BR_PA00EL_N_11_1",
                     "type": 0,
-                    "value": "Char_BR_Sleipnir_N",
+                    "value": "Char_BR_Lindwurm_N",
                     "level": "0"
                   },
                   "attr": 0,
@@ -1498,7 +1393,682 @@
                     "type": 103,
                     "collaborate": {
                       "skill": 2,
-                      "with": "Char_BR_Sleipnir_N"
+                      "with": "Char_BR_Lindwurm_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_53",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_PA00EL_N_5",
+                      "Effect_BR_PA00EL_N_51"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_53_1",
+                    "type": 0,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.625,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "enabled": true,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_PA00EL_N_1",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      78,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_1_1",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.025000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "25%",
+                      "per": "2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_1_2",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "0"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_11",
+              "on": "attack_success",
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Lindwurm_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_11_1",
+                    "type": 0,
+                    "value": "Char_BR_Lindwurm_N",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Lindwurm_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_53",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_PA00EL_N_5",
+                      "Effect_BR_PA00EL_N_51"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_53_1",
+                    "type": 0,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.805,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "enabled": true,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_PA00EL_N_1",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      78,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_1_1",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.025000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "25%",
+                      "per": "2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_1_2",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "0"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_11",
+              "on": "attack_success",
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Lindwurm_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_11_1",
+                    "type": 0,
+                    "value": "Char_BR_Lindwurm_N",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Lindwurm_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_53",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_PA00EL_N_5",
+                      "Effect_BR_PA00EL_N_51"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_53_1",
+                    "type": 0,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.985,
+          "type": 0,
+          "range": 3,
+          "ap": 6,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "enabled": true,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_PA00EL_N_1",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      78,
+                      87
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_1_1",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.025000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "25%",
+                      "per": "2.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_1_2",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "0"
+                    }
+                  },
+                  "overlap": 0
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_11",
+              "on": "attack_success",
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Lindwurm_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_TOGETHER_ATTACK",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_11_1",
+                    "type": 0,
+                    "value": "Char_BR_Lindwurm_N",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 103,
+                    "collaborate": {
+                      "skill": 2,
+                      "with": "Char_BR_Lindwurm_N"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_53",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_PA00EL_N_5",
+                      "Effect_BR_PA00EL_N_51"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_53_1",
+                    "type": 0,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
                     }
                   },
                   "overlap": 4
@@ -1530,11 +2100,11 @@
             "desc": {
               "desc": "Effect_BR_PA00EL_N_1_1",
               "type": 1,
-              "value": "0.270000",
-              "level": "0.020000"
+              "value": "0.250000",
+              "level": "0.025000"
             },
-            "base": 0.27,
-            "per": 0.02,
+            "base": 0.25,
+            "per": 0.025,
             "chance": 1
           },
           {
@@ -1552,12 +2122,24 @@
           {
             "icon": "BuffIcon_TOGETHER_ATTACK",
             "desc": {
-              "desc": "Effect_BR_PA00EL_N_101_1",
+              "desc": "Effect_BR_PA00EL_N_11_1",
               "type": 0,
-              "value": "Char_BR_Sleipnir_N",
+              "value": "Char_BR_Lindwurm_N",
               "level": "0"
             },
-            "value": "Char_BR_Sleipnir_N",
+            "value": "Char_BR_Lindwurm_N",
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_53_1",
+              "type": 0,
+              "value": "36",
+              "level": "0"
+            },
+            "base": 36,
+            "per": 0,
             "chance": 1
           }
         ]
@@ -1588,7 +2170,7 @@
           "type": 0,
           "range": 4,
           "ap": 8,
-          "grid": "0,0.75,0,0,1,0,0,0.75,0",
+          "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
           "target_ground": true,
           "summon": null,
           "use": null,
@@ -1599,6 +2181,100 @@
           "buffs": [
             {
               "key": "Effect_BR_PA00EL_N_2",
+              "on": "criticaled",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_1",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_2",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_3",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 300,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_21",
               "on": "attack_success",
               "if": [
                 false,
@@ -1621,92 +2297,44 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_FireATK_UP",
+                  "icon": "BuffIcon_MARKING",
                   "desc": {
-                    "desc": "Effect_BR_PA00EL_N_2_1",
+                    "desc": "Effect_BR_PA00EL_N_21_1",
                     "type": 1,
-                    "value": "0.250000",
-                    "level": "0.012500"
+                    "value": "0",
+                    "level": "0"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 84,
-                    "damage_add": {
-                      "elem": "fire",
-                      "damage": {
-                        "base": "25%",
-                        "per": "1.25%"
-                      }
-                    }
+                    "type": 87,
+                    "attack_target": true
                   },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 1.33,
-          "type": 0,
-          "range": 4,
-          "ap": 8,
-          "grid": "0,0.75,0,0,1,0,0,0.75,0",
-          "target_ground": true,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": true,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_BR_PA00EL_N_2",
-              "on": "attack_success",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
+                  "overlap": 1
+                },
                 {
-                  "icon": "BuffIcon_FireATK_UP",
+                  "icon": "BuffIcon_FireDMG_DOT",
                   "desc": {
-                    "desc": "Effect_BR_PA00EL_N_2_1",
-                    "type": 1,
-                    "value": "0.250000",
-                    "level": "0.012500"
+                    "desc": "Effect_BR_PA00EL_N_21_2",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 84,
-                    "damage_add": {
+                    "type": 66,
+                    "fixed_damage": {
                       "elem": "fire",
                       "damage": {
-                        "base": "25%",
-                        "per": "1.25%"
+                        "base": 300,
+                        "per": 30
                       }
                     }
                   },
@@ -1718,476 +2346,7 @@
           ]
         },
         {
-          "rate": 1.435,
-          "type": 0,
-          "range": 4,
-          "ap": 8,
-          "grid": "0,0.75,0,0,1,0,0,0.75,0",
-          "target_ground": true,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": true,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_BR_PA00EL_N_2",
-              "on": "attack_success",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_FireATK_UP",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_2_1",
-                    "type": 1,
-                    "value": "0.250000",
-                    "level": "0.012500"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 84,
-                    "damage_add": {
-                      "elem": "fire",
-                      "damage": {
-                        "base": "25%",
-                        "per": "1.25%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 1.54,
-          "type": 0,
-          "range": 4,
-          "ap": 8,
-          "grid": "0,0.75,0,0,1,0,0,0.75,0",
-          "target_ground": true,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": true,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_BR_PA00EL_N_2",
-              "on": "attack_success",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_FireATK_UP",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_2_1",
-                    "type": 1,
-                    "value": "0.250000",
-                    "level": "0.012500"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 84,
-                    "damage_add": {
-                      "elem": "fire",
-                      "damage": {
-                        "base": "25%",
-                        "per": "1.25%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 1.645,
-          "type": 0,
-          "range": 4,
-          "ap": 8,
-          "grid": "0,0.75,0,0,1,0,0,0.75,0",
-          "target_ground": true,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": true,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_BR_PA00EL_N_2",
-              "on": "attack_success",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_FireATK_UP",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_2_1",
-                    "type": 1,
-                    "value": "0.250000",
-                    "level": "0.012500"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 84,
-                    "damage_add": {
-                      "elem": "fire",
-                      "damage": {
-                        "base": "25%",
-                        "per": "1.25%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 1.75,
-          "type": 0,
-          "range": 4,
-          "ap": 8,
-          "grid": "0,0.75,0,0,1,0,0,0.75,0",
-          "target_ground": true,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": true,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_BR_PA00EL_N_2",
-              "on": "attack_success",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_FireATK_UP",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_2_1",
-                    "type": 1,
-                    "value": "0.250000",
-                    "level": "0.012500"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 84,
-                    "damage_add": {
-                      "elem": "fire",
-                      "damage": {
-                        "base": "25%",
-                        "per": "1.25%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 1.855,
-          "type": 0,
-          "range": 4,
-          "ap": 8,
-          "grid": "0,0.75,0,0,1,0,0,0.75,0",
-          "target_ground": true,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": true,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_BR_PA00EL_N_2",
-              "on": "attack_success",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_FireATK_UP",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_2_1",
-                    "type": 1,
-                    "value": "0.250000",
-                    "level": "0.012500"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 84,
-                    "damage_add": {
-                      "elem": "fire",
-                      "damage": {
-                        "base": "25%",
-                        "per": "1.25%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 1.96,
-          "type": 0,
-          "range": 4,
-          "ap": 8,
-          "grid": "0,0.75,0,0,1,0,0,0.75,0",
-          "target_ground": true,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": true,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_BR_PA00EL_N_2",
-              "on": "attack_success",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_FireATK_UP",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_2_1",
-                    "type": 1,
-                    "value": "0.250000",
-                    "level": "0.012500"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 84,
-                    "damage_add": {
-                      "elem": "fire",
-                      "damage": {
-                        "base": "25%",
-                        "per": "1.25%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 2.065,
-          "type": 0,
-          "range": 4,
-          "ap": 8,
-          "grid": "0,0.75,0,0,1,0,0,0.75,0",
-          "target_ground": true,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": true,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_BR_PA00EL_N_2",
-              "on": "attack_success",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 3,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_FireATK_UP",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_2_1",
-                    "type": 1,
-                    "value": "0.250000",
-                    "level": "0.012500"
-                  },
-                  "attr": 3,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 84,
-                    "damage_add": {
-                      "elem": "fire",
-                      "damage": {
-                        "base": "25%",
-                        "per": "1.25%"
-                      }
-                    }
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 2.17,
+          "rate": 1.38,
           "type": 0,
           "range": 4,
           "ap": 8,
@@ -2202,6 +2361,100 @@
           "buffs": [
             {
               "key": "Effect_BR_PA00EL_N_2",
+              "on": "criticaled",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_1",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_2",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_3",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 300,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_21",
               "on": "attack_success",
               "if": [
                 false,
@@ -2224,12 +2477,98 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_FireATK_UP",
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_21_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_21_2",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 300,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.535,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "enabled": true,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_PA00EL_N_2",
+              "on": "criticaled",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
                   "desc": {
                     "desc": "Effect_BR_PA00EL_N_2_1",
                     "type": 1,
-                    "value": "0.250000",
-                    "level": "0.012500"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
                   "attr": 3,
                   "erase": {
@@ -2237,12 +2576,1385 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 84,
+                    "type": 83,
                     "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_2",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_3",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
                       "elem": "fire",
                       "damage": {
-                        "base": "25%",
-                        "per": "1.25%"
+                        "base": 300,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_21",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_21_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_21_2",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 300,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.69,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "enabled": true,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_PA00EL_N_2",
+              "on": "criticaled",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_1",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_2",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_3",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 300,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_21",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_21_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_21_2",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 300,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 1.845,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "enabled": true,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_PA00EL_N_2",
+              "on": "criticaled",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_1",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_2",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_3",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 300,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_21",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_21_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_21_2",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 300,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "enabled": true,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_PA00EL_N_2",
+              "on": "criticaled",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_1",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_2",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_3",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 300,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_21",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_21_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_21_2",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 300,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.155,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "enabled": true,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_PA00EL_N_2",
+              "on": "criticaled",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_1",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_2",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_3",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 300,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_21",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_21_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_21_2",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 300,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.31,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "enabled": true,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_PA00EL_N_2",
+              "on": "criticaled",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_1",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_2",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_3",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 300,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_21",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_21_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_21_2",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 300,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.465,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "0,0.75,0,0.75,1,0.75,0,0.75,0",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "enabled": true,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_PA00EL_N_2",
+              "on": "criticaled",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_1",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_2",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_3",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 300,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_21",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_21_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_21_2",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 300,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 2.62,
+          "type": 0,
+          "range": 4,
+          "ap": 8,
+          "grid": "0,1,0,1,1,1,0,1,0",
+          "target_ground": true,
+          "summon": null,
+          "use": null,
+          "enabled": true,
+          "dismiss_guard": true,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_PA00EL_N_2",
+              "on": "criticaled",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PhyATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_1",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.020000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 83,
+                    "damage_add": {
+                      "base": "20%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_2",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_2_3",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 300,
+                        "per": 30
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_21",
+              "on": "attack_success",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_MARKING",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_21_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_FireDMG_DOT",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_21_2",
+                    "type": 0,
+                    "value": "300",
+                    "level": "30"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 66,
+                    "fixed_damage": {
+                      "elem": "fire",
+                      "damage": {
+                        "base": 300,
+                        "per": 30
                       }
                     }
                   },
@@ -2271,15 +3983,63 @@
       "data": [
         [
           {
-            "icon": "BuffIcon_FireATK_UP",
+            "icon": "BuffIcon_PhyATK_UP",
             "desc": {
               "desc": "Effect_BR_PA00EL_N_2_1",
               "type": 1,
-              "value": "0.250000",
-              "level": "0.012500"
+              "value": "0.200000",
+              "level": "0.020000"
             },
-            "base": 0.25,
-            "per": 0.0125,
+            "base": 0.2,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_MARKING",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_2_2",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_FireDMG_DOT",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_2_3",
+              "type": 0,
+              "value": "300",
+              "level": "30"
+            },
+            "base": 300,
+            "per": 30,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_MARKING",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_21_1",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_FireDMG_DOT",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_21_2",
+              "type": 0,
+              "value": "300",
+              "level": "30"
+            },
+            "base": 300,
+            "per": 30,
             "chance": 1
           }
         ]
@@ -2351,7 +4111,7 @@
                     "value": "0",
                     "level": "0"
                   },
-                  "attr": 0,
+                  "attr": 3,
                   "erase": {},
                   "value": {
                     "isBuff": true,
@@ -2368,7 +4128,7 @@
                     "value": "0.300000",
                     "level": "0.030000"
                   },
-                  "attr": 0,
+                  "attr": 3,
                   "erase": {},
                   "value": {
                     "isBuff": true,
@@ -2389,7 +4149,7 @@
                     "value": "0.300000",
                     "level": "0.050000"
                   },
-                  "attr": 0,
+                  "attr": 3,
                   "erase": {},
                   "value": {
                     "isBuff": true,
@@ -2410,7 +4170,7 @@
                     "value": "0.300000",
                     "level": "0.040000"
                   },
-                  "attr": 0,
+                  "attr": 3,
                   "erase": {},
                   "value": {
                     "isBuff": true,
@@ -2431,7 +4191,7 @@
                     "value": "0.100000",
                     "level": "0.100000"
                   },
-                  "attr": 0,
+                  "attr": 3,
                   "erase": {},
                   "value": {
                     "isBuff": true,
@@ -2445,10 +4205,10 @@
                   "overlap": 4
                 }
               ],
-              "maxStack": 0
+              "maxStack": 1
             },
             {
-              "key": "Effect_BR_PA00EL_N_11",
+              "key": "Effect_BR_PA00EL_N_31",
               "on": "round",
               "if": [
                 false,
@@ -2473,7 +4233,7 @@
                 {
                   "icon": "BuffIcon_ACCURACY_UP",
                   "desc": {
-                    "desc": "Effect_BR_PA00EL_N_11_1",
+                    "desc": "Effect_BR_PA00EL_N_31_1",
                     "type": 1,
                     "value": "0.300000",
                     "level": "0.030000"
@@ -2495,7 +4255,7 @@
                 {
                   "icon": "BuffIcon_EVADE_UP",
                   "desc": {
-                    "desc": "Effect_BR_PA00EL_N_11_2",
+                    "desc": "Effect_BR_PA00EL_N_31_2",
                     "type": 1,
                     "value": "0.300000",
                     "level": "0.050000"
@@ -2517,7 +4277,7 @@
                 {
                   "icon": "BuffIcon_DEF_PIERCE_UP",
                   "desc": {
-                    "desc": "Effect_BR_PA00EL_N_11_3",
+                    "desc": "Effect_BR_PA00EL_N_31_3",
                     "type": 1,
                     "value": "0.300000",
                     "level": "0.040000"
@@ -2540,7 +4300,7 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_PA00EL_N_12",
+              "key": "Effect_BR_PA00EL_N_32",
               "on": "wave",
               "if": [
                 {
@@ -2573,7 +4333,7 @@
                 {
                   "icon": "BuffIcon_AP_UP",
                   "desc": {
-                    "desc": "Effect_BR_PA00EL_N_12_1",
+                    "desc": "Effect_BR_PA00EL_N_32_1",
                     "type": 0,
                     "value": "0.100000",
                     "level": "0.100000"
@@ -2677,7 +4437,7 @@
           {
             "icon": "BuffIcon_ACCURACY_UP",
             "desc": {
-              "desc": "Effect_BR_PA00EL_N_11_1",
+              "desc": "Effect_BR_PA00EL_N_31_1",
               "type": 1,
               "value": "0.300000",
               "level": "0.030000"
@@ -2689,7 +4449,7 @@
           {
             "icon": "BuffIcon_EVADE_UP",
             "desc": {
-              "desc": "Effect_BR_PA00EL_N_11_2",
+              "desc": "Effect_BR_PA00EL_N_31_2",
               "type": 1,
               "value": "0.300000",
               "level": "0.050000"
@@ -2701,7 +4461,7 @@
           {
             "icon": "BuffIcon_DEF_PIERCE_UP",
             "desc": {
-              "desc": "Effect_BR_PA00EL_N_11_3",
+              "desc": "Effect_BR_PA00EL_N_31_3",
               "type": 1,
               "value": "0.300000",
               "level": "0.040000"
@@ -2713,7 +4473,7 @@
           {
             "icon": "BuffIcon_AP_UP",
             "desc": {
-              "desc": "Effect_BR_PA00EL_N_12_1",
+              "desc": "Effect_BR_PA00EL_N_32_1",
               "type": 0,
               "value": "0.100000",
               "level": "0.100000"
@@ -2751,7 +4511,7 @@
           "type": 0,
           "range": 0,
           "ap": 0,
-          "grid": "0,1,0,0,1,1,0,1,0",
+          "grid": "F>0,1,0,1,1,1,0,1,0",
           "target_ground": false,
           "summon": null,
           "use": null,
@@ -2779,26 +4539,25 @@
                 1,
                 2
               ],
-              "target": 0,
+              "target": 2,
               "buffs": [
                 {
                   "icon": "BuffIcon_SUPPORT_ATTACK",
                   "desc": {
                     "desc": "Effect_BR_PA00EL_N_4_1",
                     "type": 0,
-                    "value": "0",
+                    "value": "1",
                     "level": "0"
                   },
                   "attr": 0,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
-                    "chance": "0%",
                     "type": 77,
                     "attack_support": {
-                      "base": "0%",
+                      "base": "100%",
                       "per": "0%"
                     }
                   },
@@ -2809,8 +4568,8 @@
                   "desc": {
                     "desc": "Effect_BR_PA00EL_N_4_2",
                     "type": 1,
-                    "value": "0.182500",
-                    "level": "0.007500"
+                    "value": "0.150000",
+                    "level": "0.015000"
                   },
                   "attr": 0,
                   "erase": {
@@ -2818,10 +4577,11 @@
                   },
                   "value": {
                     "isBuff": true,
+                    "chance": "0%",
                     "type": 1,
                     "attack": {
-                      "base": "18.25%",
-                      "per": "0.75%"
+                      "base": "15%",
+                      "per": "1.5%"
                     }
                   },
                   "overlap": 4
@@ -2831,8 +4591,79 @@
                   "desc": {
                     "desc": "Effect_BR_PA00EL_N_4_3",
                     "type": 1,
-                    "value": "0.160000",
-                    "level": "0.010000"
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 9,
+                    "critical": {
+                      "base": "15%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_41",
+              "on": "round",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_41_1",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.030000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "30%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_41_2",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.030000"
                   },
                   "attr": 0,
                   "erase": {
@@ -2842,8 +4673,87 @@
                     "isBuff": true,
                     "type": 9,
                     "critical": {
-                      "base": "16%",
-                      "per": "1%"
+                      "base": "30%",
+                      "per": "3%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_42",
+              "on": "round",
+              "if": [
+                {
+                  "target": [
+                    "Char_BR_Blackhound_N",
+                    "Char_BR_Sleipnir_N",
+                    "Char_BR_Lindwurm_N",
+                    "Char_BR_Harpy_N",
+                    "Char_BR_Uroborus_N",
+                    "Char_BR_Hraesvelgr_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_42_1",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "15%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_42_2",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "15%",
+                      "per": "1.5%"
                     }
                   },
                   "overlap": 4
@@ -2875,35 +4785,83 @@
             "desc": {
               "desc": "Effect_BR_PA00EL_N_4_1",
               "type": 0,
-              "value": "0",
+              "value": "1",
               "level": "0"
             },
-            "base": 0,
+            "base": 1,
             "per": 0,
-            "chance": 0
+            "chance": 1
           },
           {
             "icon": "BuffIcon_ATK_UP",
             "desc": {
               "desc": "Effect_BR_PA00EL_N_4_2",
               "type": 1,
-              "value": "0.182500",
-              "level": "0.007500"
+              "value": "0.150000",
+              "level": "0.015000"
             },
-            "base": 0.1825,
-            "per": 0.0075,
-            "chance": 1
+            "base": 0.15,
+            "per": 0.015,
+            "chance": 0
           },
           {
             "icon": "BuffIcon_CRITICAL_UP",
             "desc": {
               "desc": "Effect_BR_PA00EL_N_4_3",
               "type": 1,
-              "value": "0.160000",
-              "level": "0.010000"
+              "value": "0.150000",
+              "level": "0.015000"
             },
-            "base": 0.16,
-            "per": 0.01,
+            "base": 0.15,
+            "per": 0.015,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_41_1",
+              "type": 1,
+              "value": "0.300000",
+              "level": "0.030000"
+            },
+            "base": 0.3,
+            "per": 0.03,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_41_2",
+              "type": 1,
+              "value": "0.300000",
+              "level": "0.030000"
+            },
+            "base": 0.3,
+            "per": 0.03,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_42_1",
+              "type": 1,
+              "value": "0.150000",
+              "level": "0.015000"
+            },
+            "base": 0.15,
+            "per": 0.015,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_42_2",
+              "type": 1,
+              "value": "0.150000",
+              "level": "0.015000"
+            },
+            "base": 0.15,
+            "per": 0.015,
             "chance": 1
           }
         ]
@@ -2912,22 +4870,22 @@
   },
   "5": {
     "key": "5",
-    "icon": "P.None",
-    "target": "enemy",
+    "icon": "P.SelfSpdBuff",
+    "target": "team",
     "delayed": false,
     "leastGrade": 5,
     "buffs": {
       "index": [
         0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
       ],
       "data": [
         {
@@ -2935,547 +4893,7 @@
           "type": 0,
           "range": 0,
           "ap": 0,
-          "grid": "1,1,1,1,1,1,1,1,1",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": false,
-          "acc_bonus": 0,
-          "buff_rate": 10,
-          "buffs": [
-            {
-              "key": "Effect_BR_PA00EL_N_5",
-              "on": "wave_end",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 7,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_SCOUTING",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_5_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 0,
-                  "erase": {},
-                  "value": {
-                    "isBuff": true,
-                    "chance": "30%",
-                    "type": 23,
-                    "scout": true
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 0,
-          "type": 0,
-          "range": 0,
-          "ap": 0,
-          "grid": "1,1,1,1,1,1,1,1,1",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": false,
-          "acc_bonus": 0,
-          "buff_rate": 20,
-          "buffs": [
-            {
-              "key": "Effect_BR_PA00EL_N_5",
-              "on": "wave_end",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 7,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_SCOUTING",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_5_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 0,
-                  "erase": {},
-                  "value": {
-                    "isBuff": true,
-                    "chance": "30%",
-                    "type": 23,
-                    "scout": true
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 0,
-          "type": 0,
-          "range": 0,
-          "ap": 0,
-          "grid": "1,1,1,1,1,1,1,1,1",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": false,
-          "acc_bonus": 0,
-          "buff_rate": 30,
-          "buffs": [
-            {
-              "key": "Effect_BR_PA00EL_N_5",
-              "on": "wave_end",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 7,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_SCOUTING",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_5_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 0,
-                  "erase": {},
-                  "value": {
-                    "isBuff": true,
-                    "chance": "30%",
-                    "type": 23,
-                    "scout": true
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 0,
-          "type": 0,
-          "range": 0,
-          "ap": 0,
-          "grid": "1,1,1,1,1,1,1,1,1",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": false,
-          "acc_bonus": 0,
-          "buff_rate": 40,
-          "buffs": [
-            {
-              "key": "Effect_BR_PA00EL_N_5",
-              "on": "wave_end",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 7,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_SCOUTING",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_5_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 0,
-                  "erase": {},
-                  "value": {
-                    "isBuff": true,
-                    "chance": "30%",
-                    "type": 23,
-                    "scout": true
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 0,
-          "type": 0,
-          "range": 0,
-          "ap": 0,
-          "grid": "1,1,1,1,1,1,1,1,1",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": false,
-          "acc_bonus": 0,
-          "buff_rate": 50,
-          "buffs": [
-            {
-              "key": "Effect_BR_PA00EL_N_5",
-              "on": "wave_end",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 7,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_SCOUTING",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_5_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 0,
-                  "erase": {},
-                  "value": {
-                    "isBuff": true,
-                    "chance": "30%",
-                    "type": 23,
-                    "scout": true
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 0,
-          "type": 0,
-          "range": 0,
-          "ap": 0,
-          "grid": "1,1,1,1,1,1,1,1,1",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": false,
-          "acc_bonus": 0,
-          "buff_rate": 60,
-          "buffs": [
-            {
-              "key": "Effect_BR_PA00EL_N_5",
-              "on": "wave_end",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 7,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_SCOUTING",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_5_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 0,
-                  "erase": {},
-                  "value": {
-                    "isBuff": true,
-                    "chance": "30%",
-                    "type": 23,
-                    "scout": true
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 0,
-          "type": 0,
-          "range": 0,
-          "ap": 0,
-          "grid": "1,1,1,1,1,1,1,1,1",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": false,
-          "acc_bonus": 0,
-          "buff_rate": 70,
-          "buffs": [
-            {
-              "key": "Effect_BR_PA00EL_N_5",
-              "on": "wave_end",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 7,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_SCOUTING",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_5_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 0,
-                  "erase": {},
-                  "value": {
-                    "isBuff": true,
-                    "chance": "30%",
-                    "type": 23,
-                    "scout": true
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 0,
-          "type": 0,
-          "range": 0,
-          "ap": 0,
-          "grid": "1,1,1,1,1,1,1,1,1",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": false,
-          "acc_bonus": 0,
-          "buff_rate": 80,
-          "buffs": [
-            {
-              "key": "Effect_BR_PA00EL_N_5",
-              "on": "wave_end",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 7,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_SCOUTING",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_5_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 0,
-                  "erase": {},
-                  "value": {
-                    "isBuff": true,
-                    "chance": "30%",
-                    "type": 23,
-                    "scout": true
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 0,
-          "type": 0,
-          "range": 0,
-          "ap": 0,
-          "grid": "1,1,1,1,1,1,1,1,1",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": false,
-          "acc_bonus": 0,
-          "buff_rate": 90,
-          "buffs": [
-            {
-              "key": "Effect_BR_PA00EL_N_5",
-              "on": "wave_end",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 7,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_SCOUTING",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_5_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 0,
-                  "erase": {},
-                  "value": {
-                    "isBuff": true,
-                    "chance": "30%",
-                    "type": 23,
-                    "scout": true
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        },
-        {
-          "rate": 0,
-          "type": 0,
-          "range": 0,
-          "ap": 0,
-          "grid": "1,1,1,1,1,1,1,1,1",
+          "grid": "0,0,0,0,1,0,0,0,0",
           "target_ground": false,
           "summon": null,
           "use": null,
@@ -3486,119 +4904,6 @@
           "buffs": [
             {
               "key": "Effect_BR_PA00EL_N_5",
-              "on": "wave_end",
-              "if": [
-                false,
-                false
-              ],
-              "body": [
-                0,
-                1
-              ],
-              "class": [
-                0,
-                1,
-                2
-              ],
-              "role": [
-                0,
-                1,
-                2
-              ],
-              "target": 7,
-              "buffs": [
-                {
-                  "icon": "BuffIcon_SCOUTING",
-                  "desc": {
-                    "desc": "Effect_BR_PA00EL_N_5_1",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 0,
-                  "erase": {},
-                  "value": {
-                    "isBuff": true,
-                    "chance": "30%",
-                    "type": 23,
-                    "scout": true
-                  },
-                  "overlap": 4
-                }
-              ],
-              "maxStack": 0
-            }
-          ]
-        }
-      ]
-    },
-    "values": {
-      "index": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "data": [
-        [
-          {
-            "icon": "BuffIcon_SCOUTING",
-            "desc": {
-              "desc": "Effect_BR_PA00EL_N_5_1",
-              "type": 0,
-              "value": "0",
-              "level": "0"
-            },
-            "base": 0,
-            "per": 0,
-            "chance": 0.3
-          }
-        ]
-      ]
-    }
-  },
-  "7": {
-    "key": "7",
-    "icon": "P.SelfAtkBuff",
-    "target": "team",
-    "delayed": false,
-    "leastGrade": 4,
-    "buffs": {
-      "index": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "data": [
-        {
-          "rate": 0,
-          "type": 0,
-          "range": 0,
-          "ap": 0,
-          "grid": "0,1,0,0,0,1,0,1,0",
-          "target_ground": false,
-          "summon": null,
-          "use": null,
-          "enabled": true,
-          "dismiss_guard": false,
-          "acc_bonus": 0,
-          "buff_rate": 100,
-          "buffs": [
-            {
-              "key": "Effect_BR_PA00EL_N_7",
               "on": "round",
               "if": [
                 false,
@@ -3609,6 +4914,8 @@
                 1
               ],
               "class": [
+                0,
+                1,
                 2
               ],
               "role": [
@@ -3616,12 +4923,12 @@
                 1,
                 2
               ],
-              "target": 2,
+              "target": 0,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SUPPORT_ATTACK",
+                  "icon": "BuffIcon_RANGE_UP",
                   "desc": {
-                    "desc": "Effect_BR_PA00EL_N_7_1",
+                    "desc": "Effect_BR_PA00EL_N_5_1",
                     "type": 0,
                     "value": "1",
                     "level": "0"
@@ -3632,10 +4939,79 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 77,
-                    "attack_support": {
-                      "base": "100%",
-                      "per": "0%"
+                    "type": 55,
+                    "range": {
+                      "base": 1,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_5_2",
+                    "type": 0,
+                    "value": "0.500000",
+                    "level": "0.050000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": 0.5,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_5_3",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 0,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_5_4",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.025000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 109,
+                    "less_target": {
+                      "base": "25%",
+                      "per": "2.5%"
                     }
                   },
                   "overlap": 4
@@ -3644,18 +5020,68 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_PA00EL_N_13",
-              "on": "round",
+              "key": "Effect_BR_PA00EL_N_52",
+              "on": {
+                "after": "support"
+              },
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_52_1",
+                    "type": 0,
+                    "value": "0.500000",
+                    "level": "0.050000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 0.5,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_53",
+              "on": "attack_success",
               "if": [
                 {
-                  "target": [
-                    "Char_3P_ConstantiaS2_N",
-                    "Char_DS_Johanna_N",
-                    "Char_PECS_LRL_N",
-                    "Char_3P_Labiata_N",
-                    "Char_BR_InvDragon_N",
-                    "Char_PECS_LemonadeAlpha_N"
-                  ]
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_PA00EL_N_5",
+                      "Effect_BR_PA00EL_N_51"
+                    ],
+                    "attr": 6
+                  }
                 },
                 false
               ],
@@ -3673,14 +5099,126 @@
                 1,
                 2
               ],
-              "target": 2,
+              "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_SUPPORT_ATTACK",
+                  "icon": "BuffIcon_REMOVE_BUFF",
                   "desc": {
-                    "desc": "Effect_BR_PA00EL_N_13_1",
+                    "desc": "Effect_BR_PA00EL_N_53_1",
                     "type": 0,
-                    "value": "1",
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_54",
+              "on": "round",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_54_1",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.025000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 109,
+                    "less_target": {
+                      "base": "25%",
+                      "per": "2.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        },
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "enabled": true,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_PA00EL_N_51",
+              "on": "round",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_RANGE_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_51_1",
+                    "type": 0,
+                    "value": "2",
                     "level": "0"
                   },
                   "attr": 0,
@@ -3689,10 +5227,234 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 77,
-                    "attack_support": {
-                      "base": "100%",
-                      "per": "0%"
+                    "type": 55,
+                    "range": {
+                      "base": 2,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_51_2",
+                    "type": 0,
+                    "value": "0.500000",
+                    "level": "0.050000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": 0.5,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_51_3",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 88,
+                    "off": {
+                      "type": 0,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_51_4",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.025000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 109,
+                    "less_target": {
+                      "base": "25%",
+                      "per": "2.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_52",
+              "on": {
+                "after": "support"
+              },
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_52_1",
+                    "type": 0,
+                    "value": "0.500000",
+                    "level": "0.050000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 0.5,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 3
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_53",
+              "on": "attack_success",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BR_PA00EL_N_5",
+                      "Effect_BR_PA00EL_N_51"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_REMOVE_BUFF",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_53_1",
+                    "type": 0,
+                    "value": "36",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 88,
+                    "off": {
+                      "type": 36,
+                      "target": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_PA00EL_N_54",
+              "on": "round",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_PA00EL_N_54_1",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.025000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 109,
+                    "less_target": {
+                      "base": "25%",
+                      "per": "2.5%"
                     }
                   },
                   "overlap": 4
@@ -3715,14 +5477,14 @@
         0,
         0,
         0,
-        0
+        1
       ],
       "data": [
         [
           {
-            "icon": "BuffIcon_SUPPORT_ATTACK",
+            "icon": "BuffIcon_RANGE_UP",
             "desc": {
-              "desc": "Effect_BR_PA00EL_N_7_1",
+              "desc": "Effect_BR_PA00EL_N_5_1",
               "type": 0,
               "value": "1",
               "level": "0"
@@ -3732,15 +5494,161 @@
             "chance": 1
           },
           {
-            "icon": "BuffIcon_SUPPORT_ATTACK",
+            "icon": "BuffIcon_AP_UP",
             "desc": {
-              "desc": "Effect_BR_PA00EL_N_13_1",
+              "desc": "Effect_BR_PA00EL_N_5_2",
               "type": 0,
-              "value": "1",
+              "value": "0.500000",
+              "level": "0.050000"
+            },
+            "base": 0.5,
+            "per": 0.05,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_5_3",
+              "type": 1,
+              "value": "0",
               "level": "0"
             },
-            "base": 1,
+            "base": 0,
             "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_5_4",
+              "type": 1,
+              "value": "0.250000",
+              "level": "0.025000"
+            },
+            "base": 0.25,
+            "per": 0.025,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_52_1",
+              "type": 0,
+              "value": "0.500000",
+              "level": "0.050000"
+            },
+            "base": 0.5,
+            "per": 0.05,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_53_1",
+              "type": 0,
+              "value": "36",
+              "level": "0"
+            },
+            "base": 36,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_54_1",
+              "type": 1,
+              "value": "0.250000",
+              "level": "0.025000"
+            },
+            "base": 0.25,
+            "per": 0.025,
+            "chance": 1
+          }
+        ],
+        [
+          {
+            "icon": "BuffIcon_RANGE_UP",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_51_1",
+              "type": 0,
+              "value": "2",
+              "level": "0"
+            },
+            "base": 2,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_51_2",
+              "type": 0,
+              "value": "0.500000",
+              "level": "0.050000"
+            },
+            "base": 0.5,
+            "per": 0.05,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_51_3",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_51_4",
+              "type": 1,
+              "value": "0.250000",
+              "level": "0.025000"
+            },
+            "base": 0.25,
+            "per": 0.025,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_52_1",
+              "type": 0,
+              "value": "0.500000",
+              "level": "0.050000"
+            },
+            "base": 0.5,
+            "per": 0.05,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_REMOVE_BUFF",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_53_1",
+              "type": 0,
+              "value": "36",
+              "level": "0"
+            },
+            "base": 36,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Effect_BR_PA00EL_N_54_1",
+              "type": 1,
+              "value": "0.250000",
+              "level": "0.025000"
+            },
+            "base": 0.25,
+            "per": 0.025,
             "chance": 1
           }
         ]

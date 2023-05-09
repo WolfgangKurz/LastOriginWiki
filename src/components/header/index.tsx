@@ -54,7 +54,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 					src={ `${AssetsRoot}/${IsAprilFool ? "icon2" : "icon"}.png` }
 				/>
 				<span>
-					<i class={ style["_official"] } data-locale={ CurrentLocale }>
+					<i class={ style.subtitle } data-locale={ CurrentLocale }>
 						<Locale
 							k="COMMON_TITLE_SUB"
 							preprocessor={ (x) => x
@@ -62,6 +62,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 								.replace(/!!icon!!/g, "30")
 								.replace(/!!iconm!!/g, "2.5em")
 							}
+							fallback=""
 						/>
 					</i>
 					<span class="font-ibm">
@@ -93,6 +94,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 					<NavItem href="/worlds" text="MENU_WORLDS" />
 
 					<NavItem href="/eternalwar" text="MENU_ETERNALWAR" />
+					<NavItem href="/infinitewar" text="MENU_INFINITEWAR" />
 
 					<NavItem href="/simulator" text="MENU_SIMULATOR" />
 
@@ -133,6 +135,9 @@ const Header: FunctionalComponent = (): preact.VNode => {
 							<DropdownItem href="/bgm">
 								<Locale k="MENU_ETC_BGM" />
 							</DropdownItem>
+							<DropdownItem href="/consumable">
+								<Locale k="MENU_ETC_CONSUMABLE" />
+							</DropdownItem>
 							<DropdownItem href="/sticker">
 								<Locale k="MENU_ETC_STICKER" />
 							</DropdownItem>
@@ -146,6 +151,12 @@ const Header: FunctionalComponent = (): preact.VNode => {
 							<DropdownItem href="/gacha">
 								<Locale k="MENU_ETC_GACHA" />
 							</DropdownItem>
+
+							<li><hr class="dropdown-divider" /></li>
+
+							<DropdownExternal href="https://loeq.swaytwig.com/">
+								<Locale k="MENU_ETC_LOEQ" />
+							</DropdownExternal>
 
 							<li><hr class="dropdown-divider" /></li>
 

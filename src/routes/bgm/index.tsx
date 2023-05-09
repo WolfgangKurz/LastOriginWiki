@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "preact";
-import { useCallback, useEffect, useLayoutEffect, useRef } from "preact/hooks";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "preact/hooks";
 import { createPortal } from "preact/compat";
 import throttle from "lodash.throttle";
 
@@ -9,6 +9,7 @@ import { AssetsRoot } from "@/libs/Const";
 import { objState } from "@/libs/State";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { BuildClass } from "@/libs/Class";
+import { parseVNode } from "@/libs/VNode";
 import BGMAlbums from "@/libs/BGM";
 
 import { LocaleGet } from "@/components/locale";
@@ -36,7 +37,8 @@ const DOMUpdateQueue: Array<() => void> = [];
 const BGM: FunctionalComponent = () => {
 	const appContainer = document.querySelector("#page > #app") || document.body;
 
-	const pageReady = objState(false);
+	const [albumsLoaded, setAlbumsLoaded] = useState(false);
+	const [pageReady, setPageReady] = useState(false);
 
 	const itemCount = objState(1);
 	const itemRows = objState(2);
@@ -53,8 +55,9 @@ const BGM: FunctionalComponent = () => {
 	const selectedItem = objState<BGMAlbum | null>(null);
 	const selectedDisplay = objState(false);
 	const selectedImagePrepare = objState("");
+	const [selectedImageAlt, setSelectedImageAlt] = useState<string | undefined>("");
 	const selectedImageAnimDone = objState(false);
-	const selectedImagePlaceholderRef = useRef<HTMLImageElement>(null);
+	const selectedImagePlaceholderRef = useRef<HTMLDivElement>(null);
 	const selectedImageRef = useRef<HTMLDivElement>(null);
 
 	const listOpen = objState(false);
@@ -79,6 +82,19 @@ const BGM: FunctionalComponent = () => {
 		SetMeta("keywords", ",BGM,OST", true);
 		SetMeta(["twitter:image", "og:image"], null);
 		UpdateTitle("BGM");
+
+		Promise.all( // preload albumarts
+			BGMAlbums
+				.map(r => [r.image, ...r.songs.map(s => s.image)])
+				.flat()
+				.filter(i => i)
+				.map(i => new Promise<void>((resolve) => {
+					const img = new Image();
+					img.addEventListener("load", () => resolve());
+					img.addEventListener("error", () => resolve());
+					img.src = `${AssetsRoot}/bgm/${i}.jpg`;
+				})),
+		).then(() => setAlbumsLoaded(true));
 	}, []);
 
 	const updateItemCount = useCallback(throttle(() => {
@@ -134,6 +150,8 @@ const BGM: FunctionalComponent = () => {
 		if (!playingMusic.value) {
 			playableMusic.set(false);
 			currentLyrics.set(-1);
+		} else {
+			setSelectedImageAlt(playingMusic.value.image);
 		}
 	}, [playingMusic.value]);
 
@@ -255,11 +273,17 @@ const BGM: FunctionalComponent = () => {
 
 	const isPlayingAlbum = playingAlbum.value && playingAlbum.value === selectedItem.value;
 
-	return createPortal(<div class={ style.BGM }>
+	return createPortal(<div
+		class={ style.BGM }
+		style={ { animationPlayState: albumsLoaded ? "running" : undefined } }
+	>
 		<div
 			class={ style.Content }
-			style={ { pointerEvents: pageReady.value ? undefined : "none" } }
-			onAnimationEnd={ () => pageReady.set(true) }
+			style={ {
+				pointerEvents: pageReady ? undefined : "none",
+				animationPlayState: albumsLoaded ? "running" : undefined,
+			} }
+			onAnimationEnd={ () => setPageReady(true) }
 		>
 			<div class={ BuildClass("p-4", style.SearchBox) }>
 				{/* <input class="form-control" /> */ }
@@ -337,6 +361,7 @@ const BGM: FunctionalComponent = () => {
 										await after(300);
 
 										selectedImageAnimDone.set(true);
+										listOpen.set(true);
 									}); // next update
 								}
 
@@ -441,11 +466,31 @@ const BGM: FunctionalComponent = () => {
 						<Icon icon="x" />
 					</button>
 
-					<img // 표시용 앨범아트 (absolute)
-						class={ BuildClass(selectedImageAnimDone.value && style.Done) }
-						src={ `${AssetsRoot}/bgm/${selectedImagePrepare.value}.jpg` }
+					<div
+						class={ BuildClass(style.SelectedImagePlaceholder, selectedImageAnimDone.value && style.Done) }
 						ref={ selectedImagePlaceholderRef }
-					/>
+					>
+						<img // 표시용 앨범아트 (absolute)
+							src={ `${AssetsRoot}/bgm/${selectedImagePrepare.value}.jpg` }
+						/>
+						<img // 대체 앨범아트
+							class={ BuildClass(style.Alt, playingMusic.value?.image && style.Display) }
+							src={ `${AssetsRoot}/bgm/${selectedImageAlt}.jpg` }
+						/>
+
+						<div class={ style.LyricHeader }>
+							{ isPlayingAlbum && playingMusic.value && playingMusic.value.headers
+								? playingMusic.value.headers.map(h => <div class={ style.Header }>
+									{ h.raw
+										? parseVNode(h.text, [], {})
+										: h.text
+									}
+								</div>)
+								: <></>
+							}
+						</div>
+					</div>
+
 					<div class={ style.PlayerInfo }>
 						<div class={ style.PlayTimeLine }>
 							{ playingMusic.value && playingMusic.value.type !== "placeholder"
@@ -593,14 +638,38 @@ const BGM: FunctionalComponent = () => {
 						</div>
 
 						<div class={ style.LyricsContainer }>
+							<div class={ style.LyricHeader }>
+								{ isPlayingAlbum && playingMusic.value && playingMusic.value.headers
+									? playingMusic.value.headers.map(h => <div class={ style.Header }>
+										{ h.raw
+											? parseVNode(h.text, [], {})
+											: h.text
+										}
+									</div>)
+									: <></>
+								}
+							</div>
+
 							<div class={ style.Lyrics } ref={ lyricsRef }>
 								{ isPlayingAlbum && playingMusic.value && playingMusic.value.lyrics
 									? playingMusic.value.lyrics.map((l, i) => {
 										return <div
-											class={ BuildClass(style.Lyric, currentLyrics.value === i && style.Current) }
+											class={ BuildClass(
+												style.Lyric,
+												l.color && style.Colored,
+												Array.isArray(l.color) && style.ColoredCustom,
+												currentLyrics.value === i && style.Current,
+											) }
+											style={ { "--color": Array.isArray(l.color) ? undefined : `var(--bgm-color-${l.color})` } }
 											ref={ el => lyricsItemRef.current[i] = el }
 										>
-											{ l.text }
+											{ Array.isArray(l.color) && l.color.map(c =>
+												<i class={ style.Colors } style={ { "--color": `var(--bgm-color-${c})` } } />
+											) }
+											{ l.raw
+												? parseVNode(l.text, [], {})
+												: l.text
+											}
 										</div>;
 									})
 									: <></>

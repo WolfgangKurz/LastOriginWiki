@@ -20,6 +20,8 @@ import { SubpageProps } from "..";
 import style from "../style.module.scss";
 
 const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList }) => {
+	if(!display) return <></>;
+
 	const skin = SkinList[skinIndex.value];
 
 	const ssid = skin && skin.sid

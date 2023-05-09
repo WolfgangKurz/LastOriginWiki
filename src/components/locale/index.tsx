@@ -91,7 +91,7 @@ function parseVNode<T> (template: string, p: LocaleProps<T>["p"], components: Lo
 export const GetLocaleTable = (locale: LocaleTypes) =>
 	GetJson<Record<string, string>>(StaticDB.Locale[locale]);
 
-interface LocaleProps<T> {
+export interface LocaleProps<T> {
 	k: string;
 	p?: Array<string | number | boolean | preact.VNode>;
 	preprocessor?: (source: string) => string;

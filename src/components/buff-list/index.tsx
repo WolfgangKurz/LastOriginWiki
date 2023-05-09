@@ -16,7 +16,7 @@ import { ImageExtension, AssetsRoot, TroopNameTable, IsDev } from "@/libs/Const"
 import { CurrentDB } from "@/libs/DB";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
-import Locale, { LocaleExists, LocaleGet } from "@/components/locale";
+import LocaleBase, { LocaleExists, LocaleGet, LocaleProps } from "@/components/locale";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import Icon from "@/components/bootstrap-icon";
 import StatIcon from "@/components/stat-icon";
@@ -24,6 +24,9 @@ import ElemIcon from "@/components/elem-icon";
 import UnitLink from "@/components/unit-link";
 
 import style from "./style.module.scss";
+
+// default fallback ??? string
+const Locale: FunctionalComponent<LocaleProps<any>> = (props) => <LocaleBase fallback="???" { ...props } />;
 
 type BuffColors = "primary" | "secondary" | "danger" | "warning" | "info" | "dark" | "light";
 

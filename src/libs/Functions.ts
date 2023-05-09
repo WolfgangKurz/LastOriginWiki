@@ -181,44 +181,70 @@ export function diff2<T extends object, K extends object> (A: T, B: K): boolean 
 }
 
 export interface Hangul {
-	initial: string;
-	medial: string;
-	final: string;
+	initial: "ㄱ" | "ㄲ" | "ㄴ" | "ㄷ" | "ㄸ" | "ㄹ" | "ㅁ" | "ㅂ" | "ㅃ" | "ㅅ" | "ㅆ" | "ㅇ" | "ㅈ" | "ㅉ" | "ㅊ" | "ㅋ" | "ㅌ" | "ㅍ" | "ㅎ" | null;
+	medial: "ㅏ" | "ㅐ" | "ㅑ" | "ㅒ" | "ㅓ" | "ㅔ" | "ㅕ" | "ㅖ" | "ㅗ" | "ㅘ" | "ㅙ" | "ㅚ" | "ㅛ" | "ㅜ" | "ㅝ" | "ㅞ" | "ㅟ" | "ㅠ" | "ㅡ" | "ㅢ" | "ㅣ" | null;
+	final: "ㄱ" | "ㄲ" | "ㄳ" | "ㄴ" | "ㄵ" | "ㄶ" | "ㄷ" | "ㄹ" | "ㄺ" | "ㄻ" | "ㄼ" | "ㄽ" | "ㄾ" | "ㄿ" | "ㅀ" | "ㅁ" | "ㅂ" | "ㅄ" | "ㅅ" | "ㅆ" | "ㅇ" | "ㅈ" | "ㅊ" | "ㅋ" | "ㅌ" | "ㅍ" | "ㅎ" | null;
 }
-export function DecomposeHangulSyllable (char: string): Hangul {
-	const initials = [
+export function DecomposeHangulSyllable (char: string): Hangul | null {
+	if (!char) return null;
+
+	const initials: NonNullable<Hangul["initial"]>[] = [
 		"ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ",
 		"ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ",
 	];
-	const medials = [
+	if (initials.includes(char as any)) {
+		return {
+			initial: char as Hangul["initial"],
+			medial: null,
+			final: null,
+		};
+	}
+
+	const medials: NonNullable<Hangul["medial"]>[] = [
 		"ㅏ", "ㅐ", "ㅑ", "ㅒ", "ㅓ", "ㅔ", "ㅕ", "ㅖ", "ㅗ", "ㅘ",
 		"ㅙ", "ㅚ", "ㅛ", "ㅜ", "ㅝ", "ㅞ", "ㅟ", "ㅠ", "ㅡ", "ㅢ", "ㅣ",
 	];
-	const finals = [
+	if (medials.includes(char as any)) {
+		return {
+			initial: null,
+			medial: char as Hangul["medial"],
+			final: null,
+		};
+	}
+
+	const finals: NonNullable<Hangul["final"] | "">[] = [
 		"", "ㄱ", "ㄲ", "ㄳ", "ㄴ", "ㄵ", "ㄶ", "ㄷ", "ㄹ", "ㄺ",
 		"ㄻ", "ㄼ", "ㄽ", "ㄾ", "ㄿ", "ㅀ", "ㅁ", "ㅂ", "ㅄ", "ㅅ",
 		"ㅆ", "ㅇ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ",
 	];
+	if (finals.includes(char as any)) {
+		return {
+			initial: char as Hangul["initial"],
+			medial: null,
+			final: null,
+		};
+	}
 
 	const begin = 0xAC00;
 	const end = begin + initials.length * medials.length * finals.length;
 	let code = char.charCodeAt(0);
 
-	let initial: string = "";
-	let medial: string = "";
-	let final: string = "";
+	let initial: Hangul["initial"] = null;
+	let medial: Hangul["medial"] = null;
+	let final: Hangul["final"] = null;
 
 	if (begin <= code && code < end) {
 		code -= begin;
 
-		final = finals[code % finals.length];
+		final = finals[code % finals.length] || null;
 		code = Math.floor(code / finals.length);
 
 		medial = medials[code % medials.length];
 		code = Math.floor(code / medials.length);
 
 		initial = initials[code];
-	}
+	} else
+		return null;
 
 	return {
 		initial,

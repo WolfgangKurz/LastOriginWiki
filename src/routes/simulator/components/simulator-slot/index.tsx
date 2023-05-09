@@ -28,7 +28,7 @@ const SimulatorSlot: FunctionalComponent<SimulatorSlotProps> = (props) => {
 	const rarity = RarityDisplay[(slot && slot.rarity) || ACTOR_GRADE.B];
 	const leader = (slot && slot.leader) || false;
 
-	return <div class="simulator-slot" data-empty={ slot ? undefined : true } data-selected={ props.selected }>
+	return <div class="simulator-slot" data-empty={ slot ? undefined : true } data-selected={ props.selected ? "1" : "0" }>
 		<div class="slot-indicator">{ props.idx }</div>
 
 		<div class="slot-face">

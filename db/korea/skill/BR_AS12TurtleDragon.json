@@ -78,29 +78,9 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_STUN",
-                  "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "10%",
-                    "type": 22,
-                    "stun": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.005000"
@@ -120,32 +100,29 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "type": 22,
+                    "stun": true
                   },
                   "overlap": 4
                 },
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_5",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
                     "type": 0,
                     "value": "0",
                     "level": "0"
@@ -169,10 +146,14 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_16",
-              "on": "criticaled",
+              "key": "Effect_BR_AS12TurtleDragon_N_11",
+              "on": "attack_success",
               "if": [
-                false,
+                {
+                  "notInBattle": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
                 false
               ],
               "body": [
@@ -192,32 +173,80 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_16_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_11_1",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "chance": "25%",
+                    "type": 22,
+                    "stun": true
                   },
-                  "overlap": 0
+                  "overlap": 1
                 }
               ],
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_101",
+              "key": "Effect_BR_AS12TurtleDragon_N_12",
+              "on": "attack_success",
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_12_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "75%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_AS12TurtleDragon_N_13",
               "on": "attack_success",
               "if": [
                 {
@@ -246,7 +275,7 @@
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_101_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_13_1",
                     "type": 0,
                     "value": "Char_BR_Bulgasari_N",
                     "level": "0"
@@ -330,29 +359,9 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_STUN",
-                  "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "10%",
-                    "type": 22,
-                    "stun": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.005000"
@@ -372,32 +381,29 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "type": 22,
+                    "stun": true
                   },
                   "overlap": 4
                 },
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_5",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
                     "type": 0,
                     "value": "0",
                     "level": "0"
@@ -421,10 +427,14 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_16",
-              "on": "criticaled",
+              "key": "Effect_BR_AS12TurtleDragon_N_11",
+              "on": "attack_success",
               "if": [
-                false,
+                {
+                  "notInBattle": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
                 false
               ],
               "body": [
@@ -444,32 +454,80 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_16_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_11_1",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "chance": "25%",
+                    "type": 22,
+                    "stun": true
                   },
-                  "overlap": 0
+                  "overlap": 1
                 }
               ],
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_101",
+              "key": "Effect_BR_AS12TurtleDragon_N_12",
+              "on": "attack_success",
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_12_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "75%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_AS12TurtleDragon_N_13",
               "on": "attack_success",
               "if": [
                 {
@@ -498,7 +556,7 @@
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_101_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_13_1",
                     "type": 0,
                     "value": "Char_BR_Bulgasari_N",
                     "level": "0"
@@ -582,29 +640,9 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_STUN",
-                  "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "10%",
-                    "type": 22,
-                    "stun": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.005000"
@@ -624,32 +662,29 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "type": 22,
+                    "stun": true
                   },
                   "overlap": 4
                 },
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_5",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
                     "type": 0,
                     "value": "0",
                     "level": "0"
@@ -673,10 +708,14 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_16",
-              "on": "criticaled",
+              "key": "Effect_BR_AS12TurtleDragon_N_11",
+              "on": "attack_success",
               "if": [
-                false,
+                {
+                  "notInBattle": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
                 false
               ],
               "body": [
@@ -696,32 +735,80 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_16_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_11_1",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "chance": "25%",
+                    "type": 22,
+                    "stun": true
                   },
-                  "overlap": 0
+                  "overlap": 1
                 }
               ],
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_101",
+              "key": "Effect_BR_AS12TurtleDragon_N_12",
+              "on": "attack_success",
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_12_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "75%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_AS12TurtleDragon_N_13",
               "on": "attack_success",
               "if": [
                 {
@@ -750,7 +837,7 @@
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_101_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_13_1",
                     "type": 0,
                     "value": "Char_BR_Bulgasari_N",
                     "level": "0"
@@ -834,29 +921,9 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_STUN",
-                  "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "10%",
-                    "type": 22,
-                    "stun": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.005000"
@@ -876,32 +943,29 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "type": 22,
+                    "stun": true
                   },
                   "overlap": 4
                 },
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_5",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
                     "type": 0,
                     "value": "0",
                     "level": "0"
@@ -925,10 +989,14 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_16",
-              "on": "criticaled",
+              "key": "Effect_BR_AS12TurtleDragon_N_11",
+              "on": "attack_success",
               "if": [
-                false,
+                {
+                  "notInBattle": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
                 false
               ],
               "body": [
@@ -948,32 +1016,80 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_16_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_11_1",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "chance": "25%",
+                    "type": 22,
+                    "stun": true
                   },
-                  "overlap": 0
+                  "overlap": 1
                 }
               ],
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_101",
+              "key": "Effect_BR_AS12TurtleDragon_N_12",
+              "on": "attack_success",
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_12_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "75%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_AS12TurtleDragon_N_13",
               "on": "attack_success",
               "if": [
                 {
@@ -1002,7 +1118,7 @@
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_101_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_13_1",
                     "type": 0,
                     "value": "Char_BR_Bulgasari_N",
                     "level": "0"
@@ -1086,29 +1202,9 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_STUN",
-                  "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "10%",
-                    "type": 22,
-                    "stun": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.005000"
@@ -1128,32 +1224,29 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "type": 22,
+                    "stun": true
                   },
                   "overlap": 4
                 },
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_5",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
                     "type": 0,
                     "value": "0",
                     "level": "0"
@@ -1177,10 +1270,14 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_16",
-              "on": "criticaled",
+              "key": "Effect_BR_AS12TurtleDragon_N_11",
+              "on": "attack_success",
               "if": [
-                false,
+                {
+                  "notInBattle": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
                 false
               ],
               "body": [
@@ -1200,32 +1297,80 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_16_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_11_1",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "chance": "25%",
+                    "type": 22,
+                    "stun": true
                   },
-                  "overlap": 0
+                  "overlap": 1
                 }
               ],
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_101",
+              "key": "Effect_BR_AS12TurtleDragon_N_12",
+              "on": "attack_success",
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_12_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "75%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_AS12TurtleDragon_N_13",
               "on": "attack_success",
               "if": [
                 {
@@ -1254,7 +1399,7 @@
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_101_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_13_1",
                     "type": 0,
                     "value": "Char_BR_Bulgasari_N",
                     "level": "0"
@@ -1338,29 +1483,9 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_STUN",
-                  "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "10%",
-                    "type": 22,
-                    "stun": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.005000"
@@ -1380,32 +1505,29 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "type": 22,
+                    "stun": true
                   },
                   "overlap": 4
                 },
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_5",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
                     "type": 0,
                     "value": "0",
                     "level": "0"
@@ -1429,10 +1551,14 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_16",
-              "on": "criticaled",
+              "key": "Effect_BR_AS12TurtleDragon_N_11",
+              "on": "attack_success",
               "if": [
-                false,
+                {
+                  "notInBattle": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
                 false
               ],
               "body": [
@@ -1452,32 +1578,80 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_16_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_11_1",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "chance": "25%",
+                    "type": 22,
+                    "stun": true
                   },
-                  "overlap": 0
+                  "overlap": 1
                 }
               ],
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_101",
+              "key": "Effect_BR_AS12TurtleDragon_N_12",
+              "on": "attack_success",
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_12_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "75%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_AS12TurtleDragon_N_13",
               "on": "attack_success",
               "if": [
                 {
@@ -1506,7 +1680,7 @@
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_101_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_13_1",
                     "type": 0,
                     "value": "Char_BR_Bulgasari_N",
                     "level": "0"
@@ -1590,29 +1764,9 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_STUN",
-                  "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "10%",
-                    "type": 22,
-                    "stun": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.005000"
@@ -1632,32 +1786,29 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "type": 22,
+                    "stun": true
                   },
                   "overlap": 4
                 },
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_5",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
                     "type": 0,
                     "value": "0",
                     "level": "0"
@@ -1681,10 +1832,14 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_16",
-              "on": "criticaled",
+              "key": "Effect_BR_AS12TurtleDragon_N_11",
+              "on": "attack_success",
               "if": [
-                false,
+                {
+                  "notInBattle": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
                 false
               ],
               "body": [
@@ -1704,32 +1859,80 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_16_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_11_1",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "chance": "25%",
+                    "type": 22,
+                    "stun": true
                   },
-                  "overlap": 0
+                  "overlap": 1
                 }
               ],
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_101",
+              "key": "Effect_BR_AS12TurtleDragon_N_12",
+              "on": "attack_success",
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_12_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "75%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_AS12TurtleDragon_N_13",
               "on": "attack_success",
               "if": [
                 {
@@ -1758,7 +1961,7 @@
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_101_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_13_1",
                     "type": 0,
                     "value": "Char_BR_Bulgasari_N",
                     "level": "0"
@@ -1842,29 +2045,9 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_STUN",
-                  "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "10%",
-                    "type": 22,
-                    "stun": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.005000"
@@ -1884,32 +2067,29 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "type": 22,
+                    "stun": true
                   },
                   "overlap": 4
                 },
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_5",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
                     "type": 0,
                     "value": "0",
                     "level": "0"
@@ -1933,10 +2113,14 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_16",
-              "on": "criticaled",
+              "key": "Effect_BR_AS12TurtleDragon_N_11",
+              "on": "attack_success",
               "if": [
-                false,
+                {
+                  "notInBattle": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
                 false
               ],
               "body": [
@@ -1956,32 +2140,80 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_16_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_11_1",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "chance": "25%",
+                    "type": 22,
+                    "stun": true
                   },
-                  "overlap": 0
+                  "overlap": 1
                 }
               ],
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_101",
+              "key": "Effect_BR_AS12TurtleDragon_N_12",
+              "on": "attack_success",
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_12_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "75%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_AS12TurtleDragon_N_13",
               "on": "attack_success",
               "if": [
                 {
@@ -2010,7 +2242,7 @@
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_101_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_13_1",
                     "type": 0,
                     "value": "Char_BR_Bulgasari_N",
                     "level": "0"
@@ -2094,29 +2326,9 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_STUN",
-                  "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "10%",
-                    "type": 22,
-                    "stun": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.005000"
@@ -2136,32 +2348,29 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "type": 22,
+                    "stun": true
                   },
                   "overlap": 4
                 },
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_5",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
                     "type": 0,
                     "value": "0",
                     "level": "0"
@@ -2185,10 +2394,14 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_16",
-              "on": "criticaled",
+              "key": "Effect_BR_AS12TurtleDragon_N_11",
+              "on": "attack_success",
               "if": [
-                false,
+                {
+                  "notInBattle": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
                 false
               ],
               "body": [
@@ -2208,32 +2421,80 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_16_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_11_1",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "chance": "25%",
+                    "type": 22,
+                    "stun": true
                   },
-                  "overlap": 0
+                  "overlap": 1
                 }
               ],
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_101",
+              "key": "Effect_BR_AS12TurtleDragon_N_12",
+              "on": "attack_success",
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_12_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "75%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_AS12TurtleDragon_N_13",
               "on": "attack_success",
               "if": [
                 {
@@ -2262,7 +2523,7 @@
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_101_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_13_1",
                     "type": 0,
                     "value": "Char_BR_Bulgasari_N",
                     "level": "0"
@@ -2346,29 +2607,9 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_STUN",
-                  "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 1
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "10%",
-                    "type": 22,
-                    "stun": true
-                  },
-                  "overlap": 1
-                },
-                {
                   "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
                     "type": 1,
                     "value": "-0.100000",
                     "level": "-0.005000"
@@ -2388,32 +2629,29 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
                   "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "type": 22,
+                    "stun": true
                   },
                   "overlap": 4
                 },
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_1_5",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
                     "type": 0,
                     "value": "0",
                     "level": "0"
@@ -2437,10 +2675,14 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_16",
-              "on": "criticaled",
+              "key": "Effect_BR_AS12TurtleDragon_N_11",
+              "on": "attack_success",
               "if": [
-                false,
+                {
+                  "notInBattle": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
                 false
               ],
               "body": [
@@ -2460,32 +2702,80 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_PhyATK_UP",
+                  "icon": "BuffIcon_STUN",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_16_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_11_1",
                     "type": 1,
-                    "value": "0.200000",
-                    "level": "0.010000"
+                    "value": "0",
+                    "level": "0"
                   },
-                  "attr": 3,
+                  "attr": 1,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 83,
-                    "damage_add": {
-                      "base": "20%",
-                      "per": "1%"
-                    }
+                    "chance": "25%",
+                    "type": 22,
+                    "stun": true
                   },
-                  "overlap": 0
+                  "overlap": 1
                 }
               ],
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_101",
+              "key": "Effect_BR_AS12TurtleDragon_N_12",
+              "on": "attack_success",
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_HongRyun_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 3,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_STUN",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_12_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "75%",
+                    "type": 22,
+                    "stun": true
+                  },
+                  "overlap": 1
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_AS12TurtleDragon_N_13",
               "on": "attack_success",
               "if": [
                 {
@@ -2514,7 +2804,7 @@
                 {
                   "icon": "BuffIcon_TOGETHER_ATTACK",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_101_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_13_1",
                     "type": 0,
                     "value": "Char_BR_Bulgasari_N",
                     "level": "0"
@@ -2568,21 +2858,9 @@
             "chance": 1
           },
           {
-            "icon": "BuffIcon_STUN",
-            "desc": {
-              "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
-              "type": 0,
-              "value": "0",
-              "level": "0"
-            },
-            "base": 0,
-            "per": 0,
-            "chance": 0.1
-          },
-          {
             "icon": "BuffIcon_ATK_DOWN",
             "desc": {
-              "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
+              "desc": "Effect_BR_AS12TurtleDragon_N_1_2",
               "type": 1,
               "value": "-0.100000",
               "level": "-0.005000"
@@ -2592,21 +2870,21 @@
             "chance": 1
           },
           {
-            "icon": "BuffIcon_PhyATK_UP",
+            "icon": "BuffIcon_STUN",
             "desc": {
-              "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
+              "desc": "Effect_BR_AS12TurtleDragon_N_1_3",
               "type": 1,
-              "value": "0.200000",
-              "level": "0.010000"
+              "value": "0",
+              "level": "0"
             },
-            "base": 0.2,
-            "per": 0.01,
+            "base": 0,
+            "per": 0,
             "chance": 0
           },
           {
             "icon": "BuffIcon_TOGETHER_ATTACK",
             "desc": {
-              "desc": "Effect_BR_AS12TurtleDragon_N_1_5",
+              "desc": "Effect_BR_AS12TurtleDragon_N_1_4",
               "type": 0,
               "value": "0",
               "level": "0"
@@ -2616,21 +2894,33 @@
             "chance": 0
           },
           {
-            "icon": "BuffIcon_PhyATK_UP",
+            "icon": "BuffIcon_STUN",
             "desc": {
-              "desc": "Effect_BR_AS12TurtleDragon_N_16_1",
+              "desc": "Effect_BR_AS12TurtleDragon_N_11_1",
               "type": 1,
-              "value": "0.200000",
-              "level": "0.010000"
+              "value": "0",
+              "level": "0"
             },
-            "base": 0.2,
-            "per": 0.01,
-            "chance": 1
+            "base": 0,
+            "per": 0,
+            "chance": 0.25
+          },
+          {
+            "icon": "BuffIcon_STUN",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_12_1",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 0.75
           },
           {
             "icon": "BuffIcon_TOGETHER_ATTACK",
             "desc": {
-              "desc": "Effect_BR_AS12TurtleDragon_N_101_1",
+              "desc": "Effect_BR_AS12TurtleDragon_N_13_1",
               "type": 0,
               "value": "Char_BR_Bulgasari_N",
               "level": "0"
@@ -2701,12 +2991,12 @@
               "target": 0,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "icon": "BuffIcon_DEBUFF_PERDOWN",
                   "desc": {
                     "desc": "Effect_BR_AS12TurtleDragon_N_2_1",
                     "type": 1,
-                    "value": "0.250000",
-                    "level": "0.020000"
+                    "value": "0.300000",
+                    "level": "0.030000"
                   },
                   "attr": 0,
                   "erase": {
@@ -2714,59 +3004,62 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 36,
-                    "damage_reduce": {
-                      "base": "25%",
-                      "per": "2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_COUNTER",
-                  "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_2_2",
-                    "type": 1,
-                    "value": "0.800000",
-                    "level": "0.050000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 29,
-                    "counter": {
-                      "base": "80%",
-                      "per": "5%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEBUFF_PERDOWN",
-                  "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_2_3",
-                    "type": 1,
-                    "value": "0.250000",
-                    "level": "0.030000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
                     "type": 91,
                     "resist": {
                       "type": "debuff_perdown",
                       "value": {
-                        "base": "25%",
+                        "base": "30%",
                         "per": "3%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_Remove_Buff_Resist",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_2_2",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 126,
+                    "resist": {
+                      "type": "off",
+                      "value": {
+                        "base": "15%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_2_3",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.025000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "2.5%"
                     }
                   },
                   "overlap": 4
@@ -2775,7 +3068,7 @@
               "maxStack": 1
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_11",
+              "key": "Effect_BR_AS12TurtleDragon_N_21",
               "on": {
                 "after": "use_skill"
               },
@@ -2800,37 +3093,48 @@
               "target": 0,
               "buffs": [
                 {
-                  "icon": "BuffIcon_COUNTER",
+                  "icon": "BuffIcon_Remove_Buff_Resist",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_11_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_21_1",
                     "type": 1,
-                    "value": "0.800000",
-                    "level": "0.050000"
+                    "value": "0.150000",
+                    "level": "0.015000"
                   },
-                  "attr": 0,
+                  "attr": 3,
                   "erase": {
                     "rounds": 3
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 29,
-                    "counter": {
-                      "base": "80%",
-                      "per": "5%"
+                    "type": 126,
+                    "resist": {
+                      "type": "off",
+                      "value": {
+                        "base": "15%",
+                        "per": "1.5%"
+                      }
                     }
                   },
-                  "overlap": 1
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_14",
+              "key": "Effect_BR_AS12TurtleDragon_N_22",
               "on": {
                 "after": "use_skill"
               },
               "if": [
-                false,
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      29
+                    ],
+                    "attr": 6
+                  }
+                },
                 false
               ],
               "body": [
@@ -2850,12 +3154,12 @@
               "target": 0,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEBUFF_PERDOWN",
+                  "icon": "BuffIcon_ACCURACY_UP",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_14_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_22_1",
                     "type": 1,
                     "value": "0.250000",
-                    "level": "0.030000"
+                    "level": "0.025000"
                   },
                   "attr": 0,
                   "erase": {
@@ -2863,13 +3167,10 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 91,
-                    "resist": {
-                      "type": "debuff_perdown",
-                      "value": {
-                        "base": "25%",
-                        "per": "3%"
-                      }
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "2.5%"
                     }
                   },
                   "overlap": 4
@@ -2897,63 +3198,63 @@
       "data": [
         [
           {
-            "icon": "BuffIcon_DAMAGE_REDUCE",
+            "icon": "BuffIcon_DEBUFF_PERDOWN",
             "desc": {
               "desc": "Effect_BR_AS12TurtleDragon_N_2_1",
               "type": 1,
-              "value": "0.250000",
-              "level": "0.020000"
+              "value": "0.300000",
+              "level": "0.030000"
             },
-            "base": 0.25,
-            "per": 0.02,
+            "base": 0.3,
+            "per": 0.03,
             "chance": 1
           },
           {
-            "icon": "BuffIcon_COUNTER",
+            "icon": "BuffIcon_Remove_Buff_Resist",
             "desc": {
               "desc": "Effect_BR_AS12TurtleDragon_N_2_2",
               "type": 1,
-              "value": "0.800000",
-              "level": "0.050000"
+              "value": "0.150000",
+              "level": "0.015000"
             },
-            "base": 0.8,
-            "per": 0.05,
+            "base": 0.15,
+            "per": 0.015,
             "chance": 0
           },
           {
-            "icon": "BuffIcon_DEBUFF_PERDOWN",
+            "icon": "BuffIcon_ACCURACY_UP",
             "desc": {
               "desc": "Effect_BR_AS12TurtleDragon_N_2_3",
               "type": 1,
               "value": "0.250000",
-              "level": "0.030000"
+              "level": "0.025000"
             },
             "base": 0.25,
-            "per": 0.03,
+            "per": 0.025,
             "chance": 0
           },
           {
-            "icon": "BuffIcon_COUNTER",
+            "icon": "BuffIcon_Remove_Buff_Resist",
             "desc": {
-              "desc": "Effect_BR_AS12TurtleDragon_N_11_1",
+              "desc": "Effect_BR_AS12TurtleDragon_N_21_1",
               "type": 1,
-              "value": "0.800000",
-              "level": "0.050000"
+              "value": "0.150000",
+              "level": "0.015000"
             },
-            "base": 0.8,
-            "per": 0.05,
+            "base": 0.15,
+            "per": 0.015,
             "chance": 1
           },
           {
-            "icon": "BuffIcon_DEBUFF_PERDOWN",
+            "icon": "BuffIcon_ACCURACY_UP",
             "desc": {
-              "desc": "Effect_BR_AS12TurtleDragon_N_14_1",
+              "desc": "Effect_BR_AS12TurtleDragon_N_22_1",
               "type": 1,
               "value": "0.250000",
-              "level": "0.030000"
+              "level": "0.025000"
             },
             "base": 0.25,
-            "per": 0.03,
+            "per": 0.025,
             "chance": 1
           }
         ]
@@ -3040,9 +3341,31 @@
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_DEF_Line",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
                     "desc": "Effect_BR_AS12TurtleDragon_N_3_2",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "25%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_Line",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_3_3",
                     "type": 0,
                     "value": "0",
                     "level": "0"
@@ -3061,7 +3384,7 @@
                 {
                   "icon": "BuffIcon_AP_UP",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_3_3",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_3_4",
                     "type": 0,
                     "value": "0.500000",
                     "level": "0.025000"
@@ -3079,13 +3402,86 @@
                       "per": 0.025
                     }
                   },
+                  "overlap": 3
+                },
+                {
+                  "icon": "BuffIcon_RANGE_UP",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_3_5",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 55,
+                    "range": {
+                      "base": 1,
+                      "per": 0
+                    }
+                  },
                   "overlap": 4
                 }
               ],
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_12",
+              "key": "Effect_BR_AS12TurtleDragon_N_31",
+              "on": "round",
+              "if": [
+                {
+                  "pos": 0
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_COUNTER",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_31_1",
+                    "type": 1,
+                    "value": "0.800000",
+                    "level": "0.050000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 29,
+                    "counter": {
+                      "base": "80%",
+                      "per": "5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_AS12TurtleDragon_N_32",
               "on": "damaged",
               "if": [
                 false,
@@ -3110,7 +3506,7 @@
                 {
                   "icon": "BuffIcon_AP_UP",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_12_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_32_1",
                     "type": 0,
                     "value": "0.500000",
                     "level": "0.025000"
@@ -3128,6 +3524,28 @@
                     }
                   },
                   "overlap": 3
+                },
+                {
+                  "icon": "BuffIcon_RANGE_UP",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_32_2",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 55,
+                    "range": {
+                      "base": 1,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -3164,9 +3582,21 @@
             "chance": 1
           },
           {
-            "icon": "BuffIcon_DEF_Line",
+            "icon": "BuffIcon_DAMAGE_REDUCE",
             "desc": {
               "desc": "Effect_BR_AS12TurtleDragon_N_3_2",
+              "type": 1,
+              "value": "0.250000",
+              "level": "0.020000"
+            },
+            "base": 0.25,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_Line",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_3_3",
               "type": 0,
               "value": "0",
               "level": "0"
@@ -3178,7 +3608,7 @@
           {
             "icon": "BuffIcon_AP_UP",
             "desc": {
-              "desc": "Effect_BR_AS12TurtleDragon_N_3_3",
+              "desc": "Effect_BR_AS12TurtleDragon_N_3_4",
               "type": 0,
               "value": "0.500000",
               "level": "0.025000"
@@ -3188,15 +3618,51 @@
             "chance": 0
           },
           {
+            "icon": "BuffIcon_RANGE_UP",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_3_5",
+              "type": 0,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_COUNTER",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_31_1",
+              "type": 1,
+              "value": "0.800000",
+              "level": "0.050000"
+            },
+            "base": 0.8,
+            "per": 0.05,
+            "chance": 1
+          },
+          {
             "icon": "BuffIcon_AP_UP",
             "desc": {
-              "desc": "Effect_BR_AS12TurtleDragon_N_12_1",
+              "desc": "Effect_BR_AS12TurtleDragon_N_32_1",
               "type": 0,
               "value": "0.500000",
               "level": "0.025000"
             },
             "base": 0.5,
             "per": 0.025,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_RANGE_UP",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_32_2",
+              "type": 0,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
             "chance": 1
           }
         ]
@@ -3228,7 +3694,7 @@
           "type": 0,
           "range": 0,
           "ap": 0,
-          "grid": "F>0,0,1,0,0,1,0,0,1",
+          "grid": "F>0,1,1,0,1,1,0,1,1",
           "target_ground": false,
           "summon": null,
           "use": null,
@@ -3241,7 +3707,12 @@
               "key": "Effect_BR_AS12TurtleDragon_N_4",
               "on": "round",
               "if": [
-                false,
+                {
+                  "pos": {
+                    "target": "target",
+                    "position": 0
+                  }
+                },
                 false
               ],
               "body": [
@@ -3250,7 +3721,8 @@
               ],
               "class": [
                 0,
-                1
+                1,
+                2
               ],
               "role": [
                 1,
@@ -3282,20 +3754,20 @@
                   "desc": {
                     "desc": "Effect_BR_AS12TurtleDragon_N_4_2",
                     "type": 1,
-                    "value": "0.150000",
-                    "level": "0.007500"
+                    "value": "0.100000",
+                    "level": "0.006000"
                   },
                   "attr": 0,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
                     "type": 1,
                     "attack": {
-                      "base": "15%",
-                      "per": "0.75%"
+                      "base": "10%",
+                      "per": "0.6%"
                     }
                   },
                   "overlap": 4
@@ -3305,20 +3777,20 @@
                   "desc": {
                     "desc": "Effect_BR_AS12TurtleDragon_N_4_3",
                     "type": 1,
-                    "value": "0.100000",
-                    "level": "0.005000"
+                    "value": "0.060000",
+                    "level": "0.004000"
                   },
                   "attr": 0,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
                     "type": 9,
                     "critical": {
-                      "base": "10%",
-                      "per": "0.5%"
+                      "base": "6%",
+                      "per": "0.4%"
                     }
                   },
                   "overlap": 4
@@ -3328,8 +3800,8 @@
                   "desc": {
                     "desc": "Effect_BR_AS12TurtleDragon_N_4_4",
                     "type": 1,
-                    "value": "0.050000",
-                    "level": "0.002500"
+                    "value": "0.030000",
+                    "level": "0.002000"
                   },
                   "attr": 0,
                   "erase": {
@@ -3340,31 +3812,8 @@
                     "chance": "0%",
                     "type": 13,
                     "turnSpeed": {
-                      "base": "5%",
-                      "per": "0.25%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_COUNTER",
-                  "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_4_5",
-                    "type": 1,
-                    "value": "0.800000",
-                    "level": "0.050000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 0
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 29,
-                    "counter": {
-                      "base": "80%",
-                      "per": "5%"
+                      "base": "3%",
+                      "per": "0.2%"
                     }
                   },
                   "overlap": 4
@@ -3373,7 +3822,7 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_13",
+              "key": "Effect_BR_AS12TurtleDragon_N_41",
               "on": "round",
               "if": [
                 false,
@@ -3398,10 +3847,10 @@
                 {
                   "icon": "BuffIcon_ATK_UP",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_13_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_41_1",
                     "type": 1,
-                    "value": "0.150000",
-                    "level": "0.007500"
+                    "value": "0.100000",
+                    "level": "0.006000"
                   },
                   "attr": 0,
                   "erase": {
@@ -3411,8 +3860,8 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "15%",
-                      "per": "0.75%"
+                      "base": "10%",
+                      "per": "0.6%"
                     }
                   },
                   "overlap": 4
@@ -3420,10 +3869,10 @@
                 {
                   "icon": "BuffIcon_CRITICAL_UP",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_13_2",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_41_2",
                     "type": 1,
-                    "value": "0.100000",
-                    "level": "0.005000"
+                    "value": "0.060000",
+                    "level": "0.004000"
                   },
                   "attr": 0,
                   "erase": {
@@ -3433,8 +3882,8 @@
                     "isBuff": true,
                     "type": 9,
                     "critical": {
-                      "base": "10%",
-                      "per": "0.5%"
+                      "base": "6%",
+                      "per": "0.4%"
                     }
                   },
                   "overlap": 4
@@ -3442,10 +3891,10 @@
                 {
                   "icon": "BuffIcon_AP_UP",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_13_3",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_41_3",
                     "type": 1,
-                    "value": "0.050000",
-                    "level": "0.002500"
+                    "value": "0.030000",
+                    "level": "0.002000"
                   },
                   "attr": 0,
                   "erase": {
@@ -3455,8 +3904,8 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "5%",
-                      "per": "0.25%"
+                      "base": "3%",
+                      "per": "0.2%"
                     }
                   },
                   "overlap": 4
@@ -3465,8 +3914,105 @@
               "maxStack": 0
             },
             {
-              "key": "Effect_BR_AS12TurtleDragon_N_15",
-              "on": "attacked",
+              "key": "Effect_BR_AS12TurtleDragon_N_42",
+              "on": "round",
+              "if": [
+                {
+                  "pos": {
+                    "target": "target",
+                    "position": 0
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_42_1",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.003000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "5%",
+                      "per": "0.3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_42_2",
+                    "type": 1,
+                    "value": "0.030000",
+                    "level": "0.002000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "3%",
+                      "per": "0.2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_42_3",
+                    "type": 1,
+                    "value": "0.015000",
+                    "level": "0.001000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "1.5%",
+                      "per": "0.1%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_AS12TurtleDragon_N_43",
+              "on": "round",
               "if": [
                 {
                   "pos": 0
@@ -3487,34 +4033,76 @@
                 1,
                 2
               ],
-              "target": 0,
+              "target": 2,
               "buffs": [
                 {
-                  "icon": "BuffIcon_COUNTER",
+                  "icon": "BuffIcon_ATK_UP",
                   "desc": {
-                    "desc": "Effect_BR_AS12TurtleDragon_N_15_1",
+                    "desc": "Effect_BR_AS12TurtleDragon_N_43_1",
                     "type": 1,
-                    "value": "0.800000",
-                    "level": "0.050000"
+                    "value": "0.050000",
+                    "level": "0.003000"
                   },
                   "attr": 0,
                   "erase": {
-                    "until": {
-                      "after": "counter"
-                    }
+                    "rounds": 1
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 29,
-                    "counter": {
-                      "base": "80%",
-                      "per": "5%"
+                    "type": 1,
+                    "attack": {
+                      "base": "5%",
+                      "per": "0.3%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_CRITICAL_UP",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_43_2",
+                    "type": 1,
+                    "value": "0.030000",
+                    "level": "0.002000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 9,
+                    "critical": {
+                      "base": "3%",
+                      "per": "0.2%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_43_3",
+                    "type": 1,
+                    "value": "0.015000",
+                    "level": "0.001000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "1.5%",
+                      "per": "0.1%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 1
+              "maxStack": 0
             }
           ]
         }
@@ -3552,11 +4140,11 @@
             "desc": {
               "desc": "Effect_BR_AS12TurtleDragon_N_4_2",
               "type": 1,
-              "value": "0.150000",
-              "level": "0.007500"
+              "value": "0.100000",
+              "level": "0.006000"
             },
-            "base": 0.15,
-            "per": 0.0075,
+            "base": 0.1,
+            "per": 0.006,
             "chance": 0
           },
           {
@@ -3564,11 +4152,11 @@
             "desc": {
               "desc": "Effect_BR_AS12TurtleDragon_N_4_3",
               "type": 1,
-              "value": "0.100000",
-              "level": "0.005000"
+              "value": "0.060000",
+              "level": "0.004000"
             },
-            "base": 0.1,
-            "per": 0.005,
+            "base": 0.06,
+            "per": 0.004,
             "chance": 0
           },
           {
@@ -3576,71 +4164,752 @@
             "desc": {
               "desc": "Effect_BR_AS12TurtleDragon_N_4_4",
               "type": 1,
-              "value": "0.050000",
-              "level": "0.002500"
+              "value": "0.030000",
+              "level": "0.002000"
             },
-            "base": 0.05,
-            "per": 0.0025,
-            "chance": 0
-          },
-          {
-            "icon": "BuffIcon_COUNTER",
-            "desc": {
-              "desc": "Effect_BR_AS12TurtleDragon_N_4_5",
-              "type": 1,
-              "value": "0.800000",
-              "level": "0.050000"
-            },
-            "base": 0.8,
-            "per": 0.05,
+            "base": 0.03,
+            "per": 0.002,
             "chance": 0
           },
           {
             "icon": "BuffIcon_ATK_UP",
             "desc": {
-              "desc": "Effect_BR_AS12TurtleDragon_N_13_1",
+              "desc": "Effect_BR_AS12TurtleDragon_N_41_1",
               "type": 1,
-              "value": "0.150000",
-              "level": "0.007500"
+              "value": "0.100000",
+              "level": "0.006000"
             },
-            "base": 0.15,
-            "per": 0.0075,
+            "base": 0.1,
+            "per": 0.006,
             "chance": 1
           },
           {
             "icon": "BuffIcon_CRITICAL_UP",
             "desc": {
-              "desc": "Effect_BR_AS12TurtleDragon_N_13_2",
+              "desc": "Effect_BR_AS12TurtleDragon_N_41_2",
               "type": 1,
-              "value": "0.100000",
-              "level": "0.005000"
+              "value": "0.060000",
+              "level": "0.004000"
             },
-            "base": 0.1,
-            "per": 0.005,
+            "base": 0.06,
+            "per": 0.004,
             "chance": 1
           },
           {
             "icon": "BuffIcon_AP_UP",
             "desc": {
-              "desc": "Effect_BR_AS12TurtleDragon_N_13_3",
+              "desc": "Effect_BR_AS12TurtleDragon_N_41_3",
               "type": 1,
-              "value": "0.050000",
-              "level": "0.002500"
+              "value": "0.030000",
+              "level": "0.002000"
             },
-            "base": 0.05,
-            "per": 0.0025,
+            "base": 0.03,
+            "per": 0.002,
             "chance": 1
           },
           {
-            "icon": "BuffIcon_COUNTER",
+            "icon": "BuffIcon_ATK_UP",
             "desc": {
-              "desc": "Effect_BR_AS12TurtleDragon_N_15_1",
+              "desc": "Effect_BR_AS12TurtleDragon_N_42_1",
               "type": 1,
-              "value": "0.800000",
-              "level": "0.050000"
+              "value": "0.050000",
+              "level": "0.003000"
             },
-            "base": 0.8,
-            "per": 0.05,
+            "base": 0.05,
+            "per": 0.003,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_42_2",
+              "type": 1,
+              "value": "0.030000",
+              "level": "0.002000"
+            },
+            "base": 0.03,
+            "per": 0.002,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_42_3",
+              "type": 1,
+              "value": "0.015000",
+              "level": "0.001000"
+            },
+            "base": 0.015,
+            "per": 0.001,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_43_1",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.003000"
+            },
+            "base": 0.05,
+            "per": 0.003,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_CRITICAL_UP",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_43_2",
+              "type": 1,
+              "value": "0.030000",
+              "level": "0.002000"
+            },
+            "base": 0.03,
+            "per": 0.002,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_43_3",
+              "type": 1,
+              "value": "0.015000",
+              "level": "0.001000"
+            },
+            "base": 0.015,
+            "per": 0.001,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "5": {
+    "key": "5",
+    "icon": "P.DefCounter",
+    "target": "enemy",
+    "delayed": false,
+    "leastGrade": 5,
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "F>1,1,1,1,1,1,1,1,1",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "enabled": true,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_BR_AS12TurtleDragon_N_5",
+              "on": "round",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_PROVOKE",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_5_1",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 74,
+                    "provoke": "self"
+                  },
+                  "overlap": 1
+                },
+                {
+                  "icon": "BuffIcon_Guardpierce_No_Apply",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_5_2",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 131,
+                    "guardpierce_apply": false
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_5_3",
+                    "type": 0,
+                    "value": "-0.600000",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": -0.6,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_5_4",
+                    "type": 1,
+                    "value": "0.120000",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "12%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_5_5",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 0,
+                    "attack": {
+                      "base": 0,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_AS12TurtleDragon_N_51",
+              "on": "damaged",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_51_1",
+                    "type": 0,
+                    "value": "-0.600000",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": -0.6,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_BR_AS12TurtleDragon_N_52",
+              "on": "damaged",
+              "if": [
+                {
+                  "on": {
+                    "target": "target",
+                    "func": "OR",
+                    "select": [
+                      74
+                    ],
+                    "attr": 1
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_VULNERABLE",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_52_1",
+                    "type": 1,
+                    "value": "0.120000",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 48,
+                    "damage_increase": {
+                      "base": "12%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 3
+            },
+            {
+              "key": "Effect_BR_AS12TurtleDragon_N_53",
+              "on": {
+                "use_skill": 2
+              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      77
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_BR_AS12TurtleDragon_N_3"
+                    ],
+                    "stack": 0,
+                    "func": "UNFILLED",
+                    "attr": 6
+                  }
+                }
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEBUFF_PERDOWN",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_53_1",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.030000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 91,
+                    "resist": {
+                      "type": "debuff_perdown",
+                      "value": {
+                        "base": "30%",
+                        "per": "3%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_AS12TurtleDragon_N_54",
+              "on": {
+                "use_skill": 2
+              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      77
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_BR_AS12TurtleDragon_N_3"
+                    ],
+                    "stack": 0,
+                    "func": "UNFILLED",
+                    "attr": 6
+                  }
+                }
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_Remove_Buff_Resist",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_54_1",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 3,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 126,
+                    "resist": {
+                      "type": "off",
+                      "value": {
+                        "base": "15%",
+                        "per": "1.5%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_AS12TurtleDragon_N_55",
+              "on": {
+                "use_skill": 2
+              },
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      77,
+                      29
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "target",
+                    "select": [
+                      "Effect_BR_AS12TurtleDragon_N_3"
+                    ],
+                    "stack": 0,
+                    "func": "UNFILLED",
+                    "attr": 6
+                  }
+                }
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ACCURACY_UP",
+                  "desc": {
+                    "desc": "Effect_BR_AS12TurtleDragon_N_55_1",
+                    "type": 1,
+                    "value": "0.250000",
+                    "level": "0.025000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 3
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 7,
+                    "accuracy": {
+                      "base": "25%",
+                      "per": "2.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_PROVOKE",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_5_1",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_Guardpierce_No_Apply",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_5_2",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_DOWN",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_5_3",
+              "type": 0,
+              "value": "-0.600000",
+              "level": "0"
+            },
+            "base": -0.6,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_5_4",
+              "type": 1,
+              "value": "0.120000",
+              "level": "0"
+            },
+            "base": 0.12,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_5_5",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_AP_DOWN",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_51_1",
+              "type": 0,
+              "value": "-0.600000",
+              "level": "0"
+            },
+            "base": -0.6,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_VULNERABLE",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_52_1",
+              "type": 1,
+              "value": "0.120000",
+              "level": "0"
+            },
+            "base": 0.12,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEBUFF_PERDOWN",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_53_1",
+              "type": 1,
+              "value": "0.300000",
+              "level": "0.030000"
+            },
+            "base": 0.3,
+            "per": 0.03,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_Remove_Buff_Resist",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_54_1",
+              "type": 1,
+              "value": "0.150000",
+              "level": "0.015000"
+            },
+            "base": 0.15,
+            "per": 0.015,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ACCURACY_UP",
+            "desc": {
+              "desc": "Effect_BR_AS12TurtleDragon_N_55_1",
+              "type": 1,
+              "value": "0.250000",
+              "level": "0.025000"
+            },
+            "base": 0.25,
+            "per": 0.025,
             "chance": 1
           }
         ]

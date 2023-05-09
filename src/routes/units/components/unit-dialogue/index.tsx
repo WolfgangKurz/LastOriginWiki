@@ -31,7 +31,7 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 
 	const VoiceKey = ((v): string => {
 		if (v.isMarriage) return `${v.id}M`;
-		if (v.isPro) return `${v.id}P`;
+		if (v.isPro) return `${v.sid}`; // `${v.id}P`;
 		if (v.isDef) return "";
 		return v.id;
 	})(voice);
@@ -97,7 +97,7 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 
 		/* eslint-disable camelcase */
 		return {
-			Intro: "???",
+			// Intro: "???",
 			Join: "???",
 			SquadJoin: "???",
 			Leader: "???",

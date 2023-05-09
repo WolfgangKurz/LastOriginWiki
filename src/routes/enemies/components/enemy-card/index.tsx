@@ -23,7 +23,7 @@ const EnemyCard: FunctionalComponent<EnemyCardProps> = (props) => {
 	return <div class="card enemy-card position-relative my-1 bg-dark text-light">
 		<img class="card-img-top" src={ `${AssetsRoot}/${imageExt}/tbar/${enemy.icon}.${imageExt}` } />
 		<div class="additional-info text-start">
-			{ enemy.isBoss
+			{ enemy.category & 1
 				? <span class="badge bg-danger info-badge">
 					<Locale k="ENEMY_BOSS" />
 				</span>
@@ -35,11 +35,15 @@ const EnemyCard: FunctionalComponent<EnemyCardProps> = (props) => {
 				</span>
 				: <></>
 			}
-			{ Object.keys(enemy.used).length === 0
-				? <span class="badge bg-secondary info-badge">
-					<Locale k="ENEMY_VIEW_STAGE_NONE" />
+			{ enemy.category & 2
+				? <span class="badge bg-event-exchange info-badge">
+					<Locale k="ENEMY_IW" />
 				</span>
-				: <></>
+				: Object.keys(enemy.used).length === 0
+					? <span class="badge bg-secondary info-badge">
+						<Locale k="ENEMY_VIEW_STAGE_NONE" />
+					</span>
+					: <></>
 			}
 		</div>
 
@@ -55,7 +59,7 @@ const EnemyCard: FunctionalComponent<EnemyCardProps> = (props) => {
 					</span>
 				</div>
 
-				<span class={ enemy.isBoss ? "fw-bold" : "" }>{ name }</span>
+				<span class={ (enemy.category & 3) ? "fw-bold" : "" }>{ name }</span>
 			</div>
 		</div>
 

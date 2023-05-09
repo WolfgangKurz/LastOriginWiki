@@ -46,14 +46,18 @@ interface MODEL_OBJECT {
 interface MODEL_DATA {
 	sprite: SPRITE_DATA[];
 	face: SPRITE_DATA[];
-	list: [
-		data: {
-			[renderOrder: number]: MODEL_OBJECT[];
-		},
-		parts: string[],
+	object: {
+		[renderOrder: number]: MODEL_OBJECT[];
+	};
+	list: {
 		bg: string[],
 		dialogDeactive: string[],
-	];
+	} & ({
+		parts: string[],
+	} | {
+		swapActive: string[],
+		swapInactive: string[],
+	} | {});
 }
 
 interface GameObjectFilter {
@@ -253,7 +257,7 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 
 		(async r => {
 			const _nodes: Record<number, MODEL_OBJECT> = {};
-			Object.values(r.list[0]) // Make node table (id -> object)
+			Object.values(r.object) // Make node table (id -> object)
 				.flat()
 				.forEach(node => (_nodes[node.id] = node));
 			nodes.value = _nodes;
@@ -294,13 +298,13 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 
 			// pre-apply filters on all sprites
 			const _spriteMap: SPRITE_MAP = {};
-			await new Promise<void>(resolve => {
+			await new Promise<void>(async resolve => {
 				const sl = [
 					...r.sprite,
 					...r.face.map(f => ({ ...f, name: `FACE__${f.name}` })), // face sprite name
 				];
 
-				Promise.all(sl.map(s => new Promise<void>(resolve2 => {
+				await Promise.all(sl.map(s => new Promise<void>(resolve2 => {
 					applyFilter(texMap[s.tex], s.vector, s.v, image => {
 						image.toBlob(blob => {
 							if (!blob) {
@@ -316,7 +320,8 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 							resolve2();
 						}, "image/png");
 					});
-				}))).then(() => resolve());
+				})));
+				resolve();
 			});
 			setSpriteMap(_spriteMap);
 
@@ -329,11 +334,11 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 			}
 
 			// minimum renderOrder
-			const zMin = Math.min(...Object.keys(r.list[0]).map(k => parseInt(k, 10)));
+			const zMin = Math.min(...Object.keys(r.object).map(k => parseInt(k, 10)));
 
 			// Make Id-Parent pair list
 			const idTree: GameNodeData[] = [];
-			Object.values(r.list[0])
+			Object.values(r.object)
 				.flat()
 				.forEach(r => {
 					idTree.push({
@@ -347,10 +352,10 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 			// Traverse GameObject tree (has SpriteRenderer only)
 			const _go: GameObjectData[] = [];
 			const _filters: GameObjectFilter[] = [];
-			Object.keys(r.list[0])
+			Object.keys(r.object)
 				.map(k => parseInt(k, 10))
 				.sort((a, b) => a - b) // sort by renderOrder
-				.forEach(renderOrder => r.list[0][renderOrder]
+				.forEach(renderOrder => r.object[renderOrder]
 					.filter(o => "color" in o) // has SpriteRenderer (even if sprite has not set)
 					.forEach(o => {
 						let filter = "";
@@ -392,9 +397,19 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 						}
 
 						let hidden = false;
-						hidden ||= !!props.hideParts && r.list[1].includes(o.name);
-						hidden ||= !!props.hideBG && r.list[2].includes(o.name);
-						hidden ||= !!props.hideDialog && r.list[3].includes(o.name);
+						if ("parts" in r.list) {
+							hidden ||= !!props.hideParts && r.list.parts.includes(o.name);
+						} else if ("swapActive" in r.list) {
+							if (!!props.hideParts) { // hide
+								hidden ||= r.list.swapActive.includes(o.name);
+								hidden ||= !r.list.swapInactive.includes(o.name);
+							} else { // show
+								hidden ||= !r.list.swapActive.includes(o.name);
+								hidden ||= r.list.swapInactive.includes(o.name);
+							}
+						}
+						hidden ||= !!props.hideBG && r.list.bg.includes(o.name);
+						hidden ||= !!props.hideDialog && r.list.dialogDeactive.includes(o.name);
 
 						const img: GameObjectData = {
 							id: o.id,
@@ -425,9 +440,16 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 		if (!jsonData) return;
 
 		const _hides = new Set<string>();
-		if (props.hideParts) jsonData.list[1].forEach(p => _hides.add(`$2dmodel$${p}`));
-		if (props.hideBG) jsonData.list[2].forEach(p => _hides.add(`$2dmodel$${p}`));
-		if (props.hideDialog) jsonData.list[3].forEach(p => _hides.add(`$2dmodel$${p}`));
+		if (props.hideParts) {
+			if ("parts" in jsonData.list)
+				jsonData.list.parts.forEach(p => _hides.add(`$2dmodel$${p}`));
+			else if ("swapActive" in jsonData.list)
+				jsonData.list.swapActive.forEach(p => _hides.add(`$2dmodel$${p}`));
+		} else if ("swapInactive" in jsonData.list)
+			jsonData.list.swapInactive.forEach(p => _hides.add(`$2dmodel$${p}`));
+
+		if (props.hideBG) jsonData.list.bg.forEach(p => _hides.add(`$2dmodel$${p}`));
+		if (props.hideDialog) jsonData.list.dialogDeactive.forEach(p => _hides.add(`$2dmodel$${p}`));
 
 		const go = [...gameObjectList];
 		go.forEach(e => (e.hidden = false)); // reset
@@ -447,7 +469,7 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 		});
 
 		setGameObjectList(go);
-	}, [props.hideParts, props.hideBG, props.hideDialog]);
+	}, [props.hideParts, props.hideBG, props.hideDialog, jsonData, idParentPairData]);
 
 	useEffect(() => {
 		const faceIndex = gameObjectList.findIndex(g => g.tag === "FACE");
@@ -506,7 +528,7 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 			name={ go.name }
 			src={ go.url }
 			style={ {
-				display: go.hidden ? "none" : "",
+				opacity: go.hidden ? "0" : "1",
 				zIndex: go.zIndex,
 				transform: go.transform,
 				filter: go.filter,

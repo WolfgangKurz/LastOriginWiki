@@ -35,7 +35,10 @@
 	// text-shadow: 0 0 2px transparentize($light, 0.75);
 	text-align: left;
 	word-break: keep-all;
-	white-space: pre-line;
+
+	> div:global(.card-body) {
+		white-space: pre-line;
+	}
 
 	background-color: $dark;
 	background-image: radial-gradient($dark, darken($dark, 6%));
@@ -74,8 +77,24 @@
 		@include media-breakpoint-down("sm") {
 			padding: 0;
 
-			> audio {
+			> div {
+				// btn-group
+				margin: 2px;
 				width: 100%;
+				width: calc(100% - 4px);
+				justify-content: center;
+
+				> :first-child {
+					padding: 0.2em;
+					max-width: 3em;
+					flex: 1;
+					justify-content: center;
+				}
+			}
+			> audio {
+				margin: 2px;
+				width: 100%;
+				width: calc(100% - 4px);
 				min-height: 2.5em;
 			}
 		}

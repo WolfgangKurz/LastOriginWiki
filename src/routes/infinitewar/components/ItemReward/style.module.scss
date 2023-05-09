@@ -1,0 +1,32 @@
+.ItemReward {
+	position: relative;
+	display: inline-block;
+	margin: 2px;
+
+	> img {
+		display: block;
+		margin: 0 !important;
+		width: 48px;
+		height: 48px;
+	}
+
+	> .ItemCount {
+		position: absolute;
+		padding: 1px 5px;
+		right: 0;
+		bottom: 0;
+		border: 1px solid $light;
+		border-radius: 0.25em;
+		// box-shadow: 0 0 2px transparentize($light, 0.15);
+		background-color: $dark;
+		line-height: 1.2;
+		font-size: 65%;
+		color: $light;
+
+		pointer-events: none !important;
+
+		&::before {
+			content: "x";
+		}
+	}
+}

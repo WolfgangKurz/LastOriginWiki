@@ -182,7 +182,7 @@ export interface Unit {
 
 	secretRoomType: CHARTYPE_GIFTITEM_DAMAGE_TYPE;
 	marriageVoice: boolean;
-	introVoice: UnitDialogueAudioType[];
+	introVoice: Array<UnitDialogueAudioType | [UnitDialogueAudioType, string]>;
 	favor: {
 		present: number;
 		clear: number;

@@ -4,7 +4,7 @@
 	"version": "0.2.0",
 	"scripts": {
 		"dev": "yarn node tools/debug.mjs",
-		"build": "vite build",
+		"build": "ts-node tools/sitemap && vite build",
 		"lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'"
 	},
 	"dependencies": {
@@ -17,6 +17,7 @@
 		"deepmerge": "^4.2.2",
 		"he": "^1.2.0",
 		"html2canvas": "^1.4.1",
+		"lodash.debounce": "^4.0.8",
 		"lodash.throttle": "^4.1.1",
 		"lzma": "^2.3.2",
 		"mermaid": "^9.2.2",
@@ -34,11 +35,13 @@
 		"@types/bootstrap": "^5.2.6",
 		"@types/glob": "^8.0.0",
 		"@types/he": "^1.1.2",
+		"@types/lodash.debounce": "^4.0.7",
 		"@types/lodash.throttle": "^4.1.7",
 		"@types/node": "^18.11.9",
 		"@types/react-vertical-timeline-component": "^3.3.3",
 		"@types/viz.js": "^2.1.2",
 		"chalk": "^5.0.0",
+		"compression": "^1.7.4",
 		"cors": "^2.8.5",
 		"express": "^4.17.1",
 		"glob": "^8.0.3",

@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "preact";
-import { Link } from "preact-router";
+import { Link, route } from "preact-router";
 
 import { AssetsRoot, CurrentEvent, EventFrom, EventTo, Host, ImageExtension, IsAprilFool } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
@@ -8,10 +8,46 @@ import { CurrentLocale } from "@/libs/Locale";
 import Locale from "@/components/locale";
 import HomeConfigSelector from "@/components/home-config-selector";
 import Icon from "@/components/bootstrap-icon";
+import Changelog from "./changelog";
 
 import BuildInfo from "@/buildtime";
 
 import style from "./style.module.scss";
+
+interface LinkData {
+	href: string;
+	text?: string;
+}
+
+const NavItem: FunctionalComponent<LinkData> = (props) => (
+	<button
+		class="btn btn-rarity-A"
+		onClick={ e => {
+			e.preventDefault();
+			route(props.href);
+		} }
+	>
+		{ props.children ? props.children : <Locale k={ props.text || "" } /> }
+	</button>
+);
+
+const NavItemExternal: FunctionalComponent<LinkData> = (props) => (
+	<button
+		class="btn btn-rarity-A"
+		onClick={ e => {
+			e.preventDefault();
+
+			const _a = document.createElement("a");
+			_a.target = "_blank";
+			_a.href = props.href;
+			_a.rel = "noreferrer";
+			_a.click();
+		} }
+	>
+		{ props.children ? props.children : <Locale k={ props.text || "" } /> }
+		<Icon icon="link-45deg" class="ms-1" />
+	</button>
+);
 
 const Home: FunctionalComponent = () => {
 	const ext = ImageExtension();
@@ -77,7 +113,7 @@ const Home: FunctionalComponent = () => {
 				src={ `${AssetsRoot}/${IsAprilFool ? "icon2" : "icon"}.png` }
 			/>
 			<span class={ style["home-title"] }>
-				<i class={ style["_official"] }>
+				<i class={ style.subtitle }>
 					<Locale
 						k="COMMON_TITLE_SUB"
 						preprocessor={ (x) => x
@@ -85,6 +121,7 @@ const Home: FunctionalComponent = () => {
 							.replace(/!!icon!!/g, "50")
 							.replace(/!!iconm!!/g, "1em")
 						}
+						fallback=""
 					/>
 				</i>
 				<span class="font-ibm">
@@ -102,37 +139,98 @@ const Home: FunctionalComponent = () => {
 		</div>
 
 		<HomeConfigSelector />
-		<p>
+
+		<div class={ style.MenuBox }>
+			<div class={ style["home-nav"] }>
+				<div class="btn-group">
+					<NavItem href="/units" text="MENU_UNITS" />
+					<NavItem href="/equips" text="MENU_EQUIPS" />
+					<NavItem href="/facilities" text="MENU_FACILITIES" />
+
+					<NavItem href="/enemies" text="MENU_ENEMIES" />
+					<NavItem href="/worlds" text="MENU_WORLDS" />
+
+					<NavItem href="/eternalwar" text="MENU_ETERNALWAR" />
+					<NavItem href="/infinitewar" text="MENU_INFINITEWAR" />
+
+					<NavItem href="/simulator" text="MENU_SIMULATOR" />
+				</div>
+			</div>
+
+			<div class={ style.GroupName }>
+				<Locale k="MENU_ETC" />
+			</div>
+
+			<div class={ style["home-nav"] }>
+				<NavItem href="/changelog">
+					<Locale k="MENU_CHANGELOG" />
+				</NavItem>
+
+				<span class={ style.divider } />
+
+				<NavItem href="/calc/exp">
+					<Locale k="MENU_ETC_EXPCALC" />
+				</NavItem>
+
+
+				<span class={ style.divider } />
+
+				<div class="btn-group">
+					<NavItem href="/bg">
+						<Locale k="MENU_ETC_BG" />
+					</NavItem>
+					<NavItem href="/bgm">
+						<Locale k="MENU_ETC_BGM" />
+					</NavItem>
+					<NavItem href="/consumable">
+						<Locale k="MENU_ETC_CONSUMABLE" />
+					</NavItem>
+					<NavItem href="/sticker">
+						<Locale k="MENU_ETC_STICKER" />
+					</NavItem>
+				</div>
+
+				<span class={ style.divider } />
+
+				<NavItem href="/gacha">
+					<Locale k="MENU_ETC_GACHA" />
+				</NavItem>
+
+				<span class={ style.divider } />
+
+				<div class="btn-group">
+					<NavItemExternal href="https://arca.live/b/lastorigin/4474753">
+						<Locale k="MENU_ETC_EX01" />
+					</NavItemExternal>
+					<NavItemExternal href="https://arca.live/b/lastorigin/10674899">
+						<Locale k="MENU_ETC_EX03" />
+					</NavItemExternal>
+				</div>
+			</div>
+		</div>
+
+		<div class="alert alert-primary">
+			총력전 이후의 신규 기능에 대한 정보 추가가 이루어지지 않을 예정입니다.<br />
+			이후에는 기존에 사이트에 추가된 정보들에 대한 컨텐츠 업데이트만 이루어질 예정입니다.<br />
+			업데이트는 비정기적으로 이루어집니다.
+		</div>
+
+		<Changelog />
+
+		<p class="mt-4">
 			<Locale k="HOME_DESCRIPTION" />
 		</p>
-		<p>
+		{/* <p>
 			<a href="https://docs.google.com/spreadsheets/d/1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4" target="_blank" rel="noreferrer">
 				<Icon icon="link-45deg" class="me-1" />
 				<span>Database SpreadSheet</span>
 			</a>
-		</p>
+		</p> */}
 		<hr />
 
 		{ ext === "png" ? <div class="alert alert-danger">
 			<Locale k="HOME_WEBP_UNAVAILABLE" />
 		</div> : <></> }
-
-		{/* <div class="alert alert-warning">
-			<p class="mb-1">Translation support needed!</p>
-			<p class="mb-1">翻訳サポートがひつようです！</p>
-			<p class="mb-0">
-				<a href="https://docs.google.com/spreadsheets/d/1Q2tpfQntZxmI0Xbx9HZo0vjBY7kQGZGmH1MBGTzrnvo" target="_blank" rel="noreferrer">
-					<Icon icon="link-45deg" class="me-1" />
-					<span>Locale SpreadSheet</span>
-				</a>
-				<span class="px-2">|</span>
-				<a href="https://docs.google.com/spreadsheets/d/1TrLn5czFe2Ww1xg4HiFsDzZDcnphxV3AqP_DgNqaU00" target="_blank" rel="noreferrer">
-					<Icon icon="link-45deg" class="me-1" />
-					<span>Quotes SpreadSheet</span>
-				</a>
-			</p>
-		</div>
-		<hr /> */}
 
 		<Locale k="HOME_DEVELOPER" />
 		<hr />
@@ -141,14 +239,14 @@ const Home: FunctionalComponent = () => {
 			<Locale k="HOME_COPYRIGHT" />
 		</p>
 
-		<div class="mt-4">
+		{/* <div class="mt-4">
 			<a href="https://toon.at/donate/wolfgangkurzdev" target="_blank">
 				<img
 					src={ `${AssetsRoot}/btn-toonation.png` }
 					style={ { height: "40px" } }
 				/>
 			</a>
-		</div>
+		</div> */}
 	</div>;
 };
 

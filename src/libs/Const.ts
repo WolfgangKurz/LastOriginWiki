@@ -723,13 +723,15 @@ export const SubStoryUnit: Record<string, string> = {
 	"S12-1": "3P_CSPerrault",
 	"S13-1": "3P_BlackLilith",
 	"S14-1": "BR_Brownie",
+	"S15-1": "AGS_RheinRitter",
+	"S15-2": "AGS_RheinRitter",
 };
 
-export const PermanentEvents: string[] = ["Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "Ev7"];
+export const PermanentEvents: string[] = ["Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "Ev7", "Ev8", "Ev9"];
 export const NewMapList: string[] = [];
-export const CurrentEvent = "Ev19";
-export const EventFrom = new Date(2022, 12 - 1, 26);
-export const EventTo = new Date(2023, 2 - 1, 6);
+export const CurrentEvent = "Ev13";
+export const EventFrom = new Date(2022, 4 - 1, 4);
+export const EventTo = new Date(2023, 5 - 1, 2);
 
 export const CurrentDate = ((): string => {
 	const d = new Date();

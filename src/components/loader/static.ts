@@ -21,6 +21,7 @@ export const StaticDB = {
 	RoguelikeItem: "roguelike/item",
 	Mission: "mission",
 	SkillFrom: "skill-from",
+	IWSeason: "iw/seasons",
 
 	Locale: {
 		KR: "!/locale/KR",

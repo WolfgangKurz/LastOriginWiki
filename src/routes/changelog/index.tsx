@@ -15,6 +15,9 @@ const Changelog: FunctionalComponent = () => {
 	const content = objState<preact.VNode | undefined>(undefined);
 
 	const Dates: DateData[] = [
+		{ value: 202304, text: "2023-04" },
+		{ value: 202303, text: "2023-03" },
+		{ value: 202302, text: "2023-02" },
 		{ value: 202301, text: "2023-01" },
 		{ value: 202212, text: "2022-12" },
 		{ value: 202211, text: "2022-11" },

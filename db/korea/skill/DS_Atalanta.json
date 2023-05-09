@@ -7735,6 +7735,72 @@
                 }
               ],
               "maxStack": 0
+            },
+            {
+              "key": "Effect_DS_Atalanta_N_46",
+              "on": "damaged",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_MEDUSA_N_1",
+                      "Effect_BUFF_MEDUSA_N_2",
+                      "Effect_BUFF_MEDUSA_N_3",
+                      "Effect_BUFF_MEDUSA_N_4",
+                      "Effect_BUFF_MEDUSA_N_5",
+                      "Effect_BUFF_MEDUSA_N_6",
+                      "Effect_BUFF_MEDUSA_N_7",
+                      "Effect_BUFF_MEDUSA_N_8",
+                      "Effect_BUFF_MEDUSA_N_9",
+                      "Effect_BUFF_MEDUSA_N_10",
+                      "Effect_BUFF_MEDUSA_N_11"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 4,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_DOWN",
+                  "desc": {
+                    "desc": "Effect_DS_Atalanta_N_46_1",
+                    "type": 1,
+                    "value": "-0.050000",
+                    "level": "0"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "-5%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 3
             }
           ]
         }
@@ -7873,6 +7939,18 @@
             },
             "base": 0.5,
             "per": 0.05,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_DOWN",
+            "desc": {
+              "desc": "Effect_DS_Atalanta_N_46_1",
+              "type": 1,
+              "value": "-0.050000",
+              "level": "0"
+            },
+            "base": -0.05,
+            "per": 0,
             "chance": 1
           }
         ]

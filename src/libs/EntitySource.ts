@@ -191,8 +191,8 @@ export default class EntitySource {
 	public get IsMap (): boolean {
 		return ![
 			this.IsEternalWarExchange, this.IsNewEternalWarExchange,
-			this.IsNewEternalWar,
-			this.IsSubStory, this.IsExchange,
+			this.IsNewEternalWar, this.IsInfiniteWar,
+			this.IsSubStory, this.IsExchange, this.IsAltiteExchange,
 			this.IsLimited, this.IsPrivateItem, this.IsChallenge,
 			this.IsUninstalled, this.IsRoguelike,
 		].some(x => x);
@@ -244,10 +244,20 @@ export default class EntitySource {
 	}
 	// -------------- 외전
 
-	// -------------- 영전 / 변화의성소
+	// -------------- 영전 / 변화의성소 / 총력전
 	/** 영전 교환 여부 */
 	public get IsEternalWarExchange (): boolean {
 		return this.Parts[0] === "Alterium";
+	}
+
+	/** 총력전 교환 여부 */
+	public get IsAltiteExchange (): boolean {
+		return this.Parts[0] === "Altite";
+	}
+
+	/** 총력전 획득 여부 */
+	public get IsInfiniteWar (): boolean {
+		return this.Parts[0] === "InfiniteWar";
 	}
 
 	/** 변화의성소 교환 여부 */
@@ -262,16 +272,25 @@ export default class EntitySource {
 
 	/** 광물 가격 */
 	public get EternalWarPrice (): number {
-		if (!this.IsEternalWarExchange && !this.IsNewEternalWarExchange) return 0;
+		if (!this.IsEternalWarExchange && !this.IsNewEternalWarExchange && !this.IsAltiteExchange) return 0;
 		return parseInt(this.Parts[1], 10);
 	}
 	public get NewEternalWarPrice (): number {
+		return this.EternalWarPrice;
+	}
+	public get AltitePrice (): number {
 		return this.EternalWarPrice;
 	}
 
 	/** 변화의성소 맵 */
 	public get NewEternalWar (): string {
 		if (!this.IsNewEternalWar) return "";
+		return this.Parts[1];
+	}
+
+	/** 총력전 맵 */
+	public get InfiniteWar (): string {
+		if (!this.IsInfiniteWar) return "";
 		return this.Parts[1];
 	}
 	// -------------- 영전
@@ -319,8 +338,12 @@ export default class EntitySource {
 			output.push("EWR");
 		else if (this.IsNewEternalWarExchange)
 			output.push("NEWR");
+		else if (this.IsAltiteExchange)
+			output.push("ALTR");
 		else if (this.IsNewEternalWar)
 			output.push("NEW");
+		else if (this.IsInfiniteWar)
+			output.push("IW");
 
 		else if (this.IsSubStory)
 			output.push("SubStory");
@@ -361,8 +384,12 @@ export default class EntitySource {
 			output.push("EWR");
 		else if (this.IsNewEternalWarExchange)
 			output.push("NEWR");
+		else if (this.IsAltiteExchange)
+			output.push("ALTR");
 		else if (this.IsNewEternalWar)
 			output.push(`NEW:${this.NewEternalWar}`);
+		else if (this.IsInfiniteWar)
+			output.push(`IW:${this.InfiniteWar}`);
 
 		else if (this.IsSubStory)
 			output.push(`SubStory:${this.SubStoryUnit}`);

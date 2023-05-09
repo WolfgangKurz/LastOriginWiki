@@ -13,7 +13,7 @@
 	.home-title {
 		position: relative;
 
-		._official {
+		.subtitle {
 			position: absolute;
 			margin-left: -0.3em;
 			padding: 0;
@@ -48,4 +48,78 @@
 .HomeVideo {
 	width: 100%;
 	max-width: 640px;
+}
+
+.MenuBox {
+	@include media-breakpoint-up("lg") {
+		display: none;
+	}
+
+	padding: 0.85rem;
+	border: 1px solid rgba($dark, 0.15);
+	border-radius: 0.2rem;
+
+	.GroupName {
+		display: flex;
+		margin: 1rem 0 0.15rem;
+		align-items: center;
+
+		&::before,
+		&::after {
+			content: "";
+			flex: 1;
+			height: 1px;
+			background-color: rgba($dark, 0.2);
+		}
+
+		&::before {
+			margin-right: 0.7rem;
+		}
+		&::after {
+			margin-left: 0.7rem;
+		}
+	}
+
+	.home-nav {
+		flex-direction: row;
+		justify-content: center;
+
+		> span,
+		> button {
+			display: inline-block;
+		}
+
+		> span.divider {
+			margin-left: 0.3rem;
+		}
+
+		button,
+		:global(.btn-group) {
+			margin-top: 0.3rem;
+		}
+
+		@include media-breakpoint-down("lg") {
+			button {
+				border-radius: 0;
+			}
+		}
+
+		> :global(.btn-group) {
+			flex-wrap: wrap;
+
+			> button {
+				margin-top: 0.1rem;
+				border-radius: 0;
+			}
+		}
+
+		:global(.btn-group) button {
+			margin-left: 2px;
+			margin-right: 2px;
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
 }
