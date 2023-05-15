@@ -20,7 +20,7 @@ import { SubpageProps } from "..";
 import style from "../style.module.scss";
 
 const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList }) => {
-	if(!display) return <></>;
+	if (!display) return <></>;
 
 	const skin = SkinList[skinIndex.value];
 
@@ -82,7 +82,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 							skinIndex.set(index);
 						} }
 					>
-						<UnitFace uid={ unit.uid } skin={ skin.metadata.imageId || 0 } size="64" />
+						<UnitFace uid={ unit.uid } skin={ skin.metadata.imageId ?? 0 } size="64" />
 						<br />
 
 						<span>
@@ -149,12 +149,16 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 				<div class="row gx-0">
 					<div class="col-auto me-2">
 						<div class="pb-2">
-							<UnitFace uid={ unit.uid } skin={ SkinList[skinIndex.value].metadata.imageId || 0 } size="88" />
+							<UnitFace
+								uid={ unit.uid }
+								skin={ SkinList[skinIndex.value].metadata.imageId ?? 0 }
+								size="88"
+							/>
 						</div>
 						<div class="pb-2">
 							<UnitFace
 								uid={ unit.uid }
-								skin={ SkinList[skinIndex.value].metadata.imageId || 0 }
+								skin={ SkinList[skinIndex.value].metadata.tbarId ?? SkinList[skinIndex.value].metadata.imageId ?? 0 }
 								sd
 								size="88"
 							/>
@@ -261,7 +265,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 					{ SkinList[skinIndex.value].facelist.map(fid => <UnitFace2
 						uid={ unit.uid }
 						type={ fid }
-						skin={ SkinList[skinIndex.value].metadata.imageId || 0 }
+						skin={ SkinList[skinIndex.value].metadata.imageId ?? 0 }
 						size="120"
 					/>) }
 				</div>

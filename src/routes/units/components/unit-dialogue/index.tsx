@@ -188,7 +188,7 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 				aria-controls={ collapseId }
 				role="button"
 			>
-				<UnitFace class="float-start me-3" uid={ unit.uid } skin={ voice.metadata.imageId || 0 } size="56" />
+				<UnitFace class="float-start me-3" uid={ unit.uid } skin={ voice.metadata.imageId ?? 0 } size="56" />
 
 				<div>
 					<strong>

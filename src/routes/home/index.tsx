@@ -77,6 +77,11 @@ const Home: FunctionalComponent = () => {
 	UpdateTitle();
 
 	return <div class={ `${style.home} home` }>
+		<div class="alert alert-primary">
+			사이트 개발자가 더 이상 게임을 하지 않기 때문에 정보에 오류가 있을 수 있습니다.<br />
+			업데이트는 비정기적으로 이루어집니다.
+		</div>
+
 		<div>
 			{ CurrentEvent && (new Date() < EventTo)
 				? <Link href={ `/worlds/${CurrentEvent}` } class="text-dark" style={ { textDecoration: "none" } }>
@@ -207,12 +212,6 @@ const Home: FunctionalComponent = () => {
 					</NavItemExternal>
 				</div>
 			</div>
-		</div>
-
-		<div class="alert alert-primary">
-			총력전 이후의 신규 기능에 대한 정보 추가가 이루어지지 않을 예정입니다.<br />
-			이후에는 기존에 사이트에 추가된 정보들에 대한 컨텐츠 업데이트만 이루어질 예정입니다.<br />
-			업데이트는 비정기적으로 이루어집니다.
 		</div>
 
 		<Changelog />

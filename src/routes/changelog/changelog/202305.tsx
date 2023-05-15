@@ -9,7 +9,28 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12128" date="2023-05-80"
+	<ChangelogItem title="Build 12130" date="2023-05-15"
+		bugfix={ <>
+			<li>일부 전투원 스킨의 다운로드 이미지 오류를 수정했습니다.</li>
+			<li>일부 전투원 스킨이 잘못 표시되던 점을 수정했습니다.</li>
+			<li>일부 전투원의 소개 오디오가 누락된 점을 수정했습니다.</li>
+			<li>진행중인 이벤트 정보가 올바르지 않은 점을 수정했습니다.</li>
+			<li>일부 지역의 정보가 갱신되지 않은 점을 수정했습니다.</li>
+			<li>일부 적의 정보가 갱신되지 않은 점을 수정했습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>천우의 하토르</BY>의 기본 스킨의 중파 이미지가 추가되었습니다.
+			</li>
+			<li>
+				<BY>천우의 하토르</BY>의 기본 스킨 이미지가 갱신되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2023-05-15 15:52:17</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
+	<ChangelogItem title="Build 12128" date="2023-05-08"
 		bugfix={ <>
 			<li>전투원 <BY>천우의 하토르</BY>가 스킨 보기의 출시일에서 스킨으로 분류되던 문제를 수정했습니다.</li>
 		</> }
