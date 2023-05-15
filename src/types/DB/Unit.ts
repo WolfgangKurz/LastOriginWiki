@@ -116,6 +116,7 @@ export interface UnitSkinEntity {
 
 	metadata: {
 		imageId: number;
+		tbarId?: number;
 		voiceId?: number;
 		consumableKey?: string;
 		"2dmodel"?: string;
