@@ -58,12 +58,15 @@ const PopupBase: FunctionalComponent<PopupBaseProps> = (props) => {
 		setInstance(_instance);
 
 		return () => {
-			if (modalRef.current)
-				(modalRef.current as any)._disposed = true;
-
 			if (!instance) return;
 			instance.hide();
-			setTimeout(() => instance.dispose(), 500);
+
+			setTimeout(() => {
+				if (modalRef.current)
+					(modalRef.current as any)._disposed = true;
+
+				instance.dispose();
+			}, 1000);
 		};
 	}, [modalRef.current]);
 

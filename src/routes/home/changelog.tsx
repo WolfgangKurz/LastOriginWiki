@@ -4,6 +4,11 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12141" date="2023-05-22"
+		bugfix={ <>
+			<li>일부 팝업들이 제대로 동작하지 않는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12134" date="2023-05-22"
 		site={ <>
 			<li>사이트를 불러오는 도중에 오류가 발생한 경우에 표시되는 안내문을 추가했습니다.</li>
