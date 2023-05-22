@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8">
 		<meta name="google" content="notranslate">
@@ -14,18 +15,39 @@
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-82091357-9"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
-			function gtag() { dataLayer.push(arguments); }
+			function gtag () { dataLayer.push(arguments); }
 			gtag('js', new Date());
 			gtag('config', 'UA-82091357-9');
 		</script>
 	</head>
+
 	<body>
-		<div id="pageonloading" style="text-align:center; padding:4em">
+		<div id="pageonloading" style="text-align:center; margin:2em;padding:4em">
 			페이지 리소스를 불러오고 있습니다.<br />
 			<br />
 			Loading page resources.
 		</div>
+		<div id="pageonerror" style="text-align:center; margin:2em;padding:2em; background:rgba(255,0,0,0.125); display:none">
+			페이지를 불러오지 못했습니다.<br />
+			새로고침을 시도하거나 아래를 통해 연락하세요.<br /><br />
+
+			Failed to load page.<br />
+			Try refresh the page, or contact via below methods.<br /><br />
+
+			<a href="mailto:wolfgangkurzdev@gmail.com">wolfgangkurzdev@gmail.com</a><br />
+			<a href="https://twitter.com/wolfgangkurzdev">@wolfgangkurzdev</a>
+		</div>
 		<div id="page"></div>
+		<script>
+			window.addEventListener("error", (e) => {
+				const el1 = document.querySelector("#pageonloading");
+				const el2 = document.querySelector("#pageonerror");
+				
+				el1.style.display = "none";
+				el2.style.display = "";
+			});
+		</script>
 		<script type="module" src="/src/index.ts"></script>
 	</body>
+
 </html>

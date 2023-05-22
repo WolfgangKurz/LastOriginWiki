@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "preact";
-import OldStore from "@/oldstore";
+import Store from "@/store";
 
 import { isActive } from "@/libs/Functions";
 
@@ -19,35 +19,21 @@ interface EnemiesProps {
 }
 
 const Enemies: FunctionalComponent<EnemiesProps> = (props) => {
-	const DisplayType = objState<"list" | "group">("list");
-
-	const storeUnsubscriber = OldStore.Subscribe(state => {
-		const d = state.Enemies.DisplayType;
-		if (d !== DisplayType.value)
-			DisplayType.set(d);
-	}, true);
-	const { setEnemiesDisplayType: setDisplayType } = OldStore.Actions();
-
-	useEffect(() => {
-		// Nothing to do
-		return () => storeUnsubscriber();
-	}, []);
-
 	return <div>
 		<div class="text-center mb-3">
 			<div class={ `btn-group ${style.TabButtons}` }>
 				<button
 					type="button"
-					class={ `btn btn-outline-primary ${isActive(DisplayType.value === "list")}` }
-					onClick={ (): void => setDisplayType("list") }
+					class={ `btn btn-outline-primary ${isActive(Store.Enemies.DisplayType.value === "list")}` }
+					onClick={ () => Store.Enemies.DisplayType.value = "list" }
 				>
 					<Icon icon="list-ul" class="me-1" />
 					<Locale k="ENEMIES_LIST" />
 				</button>
 				<button
 					type="button"
-					class={ `btn btn-outline-primary ${isActive(DisplayType.value === "group")}` }
-					onClick={ (): void => setDisplayType("group") }
+					class={ `btn btn-outline-primary ${isActive(Store.Enemies.DisplayType.value === "group")}` }
+					onClick={ () => Store.Enemies.DisplayType.value = "group" }
 				>
 					<Icon icon="archive-fill" class="me-1" />
 					<Locale k="ENEMIES_GROUP_LIST" />
@@ -55,10 +41,10 @@ const Enemies: FunctionalComponent<EnemiesProps> = (props) => {
 			</div>
 		</div>
 
-		<div style={ { display: DisplayType.value === "list" ? "" : "none" } }>
+		<div style={ { display: Store.Enemies.DisplayType.value === "list" ? "" : "none" } }>
 			<EnemiesList uid={ props.uid } level={ props.level } />
 		</div>
-		{ DisplayType.value === "group"
+		{ Store.Enemies.DisplayType.value === "group"
 			? <EnemiesGroup { ...props } />
 			: <></>
 		}

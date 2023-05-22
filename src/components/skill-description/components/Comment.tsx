@@ -1,10 +1,11 @@
-import { createRef, Component, RenderableProps } from "preact";
+import { createRef, Component, RenderableProps, FunctionalComponent } from "preact";
 
 import * as Popper from "@popperjs/core";
 
 import Locale from "@/components/locale";
 
 import style from "./style.module.scss";
+import { useEffect, useRef, useState } from "preact/hooks";
 
 interface CommentProps {
 	display?: string;
@@ -18,25 +19,19 @@ interface CommentState {
 	popperInstance: Popper.Instance | null;
 }
 
-export class Comment extends Component<CommentProps, CommentState> {
-	private rootReference = createRef<HTMLDivElement>();
-	private popupReference = createRef<HTMLDivElement>();
+export const Comment: FunctionalComponent<CommentProps> = (props) => {
+	const rootReference = useRef<HTMLDivElement>(null);
+	const popupReference = useRef<HTMLDivElement>(null);
 
-	constructor () {
-		super();
+	const [popperInstance, setPopperInstance] = useState<Popper.Instance | null>(null);
 
-		this.state = {
-			popperInstance: null,
-		};
-	}
-
-	componentDidMount (): void {
-		const root = this.rootReference.current;
-		const el = this.popupReference.current;
+	useEffect(() => {
+		const root = rootReference.current;
+		const el = popupReference.current;
 
 		if (root && el) {
-			if (this.state.popperInstance)
-				this.state.popperInstance.destroy();
+			if (popperInstance)
+				popperInstance.destroy();
 
 			const instance = Popper.createPopper(root, el, {
 				placement: "bottom",
@@ -53,39 +48,38 @@ export class Comment extends Component<CommentProps, CommentState> {
 			});
 			instance.update();
 
-			// eslint-disable-next-line react/no-did-mount-set-state
-			this.setState({ popperInstance: instance });
+			setPopperInstance(instance);
 		}
-	}
-	componentWillUnmount (): void {
-		this.state.popperInstance?.destroy();
-	}
 
-	componentDidUpdate (): void {
-		if (this.state.popperInstance)
-			this.state.popperInstance.update();
-	}
+		return () => {
+			if (popperInstance)
+				popperInstance.destroy();
+		};
+	}, []);
 
-	render (props: RenderableProps<CommentProps>, state: Readonly<CommentState>): preact.VNode {
-		const display = props.display || props.t;
-		const locale = props.locale || props.loc;
+	useEffect(() => { // update
+		if (popperInstance)
+			popperInstance.update();
+	});
 
-		const _display = display
-			? `UNIT_SKILL_SECTION_NAME_${display}`
-			: "UNIT_SKILL_SECTION_NAME";
+	const display = props.display || props.t;
+	const locale = props.locale || props.loc;
 
-		const disp = locale
-			? <Locale k={ _display } />
-			: display;
+	const _display = display
+		? `UNIT_SKILL_SECTION_NAME_${display}`
+		: "UNIT_SKILL_SECTION_NAME";
 
-		return <div class={ style.Comment } ref={ this.rootReference }>
-			{ disp }
+	const disp = locale
+		? <Locale k={ _display } />
+		: display;
 
-			<button type="button" onClick={ (e): void => e.preventDefault() } />
-			<div class={ style.CommentPopup } ref={ this.popupReference }>
-				<h2>{ disp }</h2>
-				{ props.children }
-			</div>
-		</div>;
-	}
-}
+	return <div class={ style.Comment } ref={ rootReference }>
+		{ disp }
+
+		<button type="button" onClick={ (e): void => e.preventDefault() } />
+		<div class={ style.CommentPopup } ref={ popupReference }>
+			<h2>{ disp }</h2>
+			{ props.children }
+		</div>
+	</div>;
+};

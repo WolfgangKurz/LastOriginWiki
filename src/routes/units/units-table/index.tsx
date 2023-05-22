@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 
-import OldStore from "@/oldstore";
+import Store from "@/store";
 
 import { ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/types/Enums";
 import { UnitsListProps } from "../";
@@ -52,9 +52,8 @@ const UnitsTable: FunctionalComponent<UnitsListProps> = (props) => {
 			});
 	}
 
-	return OldStore.ConnectDirect("Units", ({ Units: Filters }) => {
-		return <div class="unit-table">
-			{/* <div class="mb-2">
+	return <div class="unit-table">
+		{/* <div class="mb-2">
 				<div class="btn-group mx-2 mb-2">
 					<button
 						class={ `btn btn-outline-secondary ${isActive(PromotionFilter.value === 0)}` }
@@ -77,55 +76,54 @@ const UnitsTable: FunctionalComponent<UnitsListProps> = (props) => {
 				</div>
 			</div> */}
 
-			{ TypeList.map(type => Filters.Type[type]
-				? <table class="table table-sm unit-table mb-3">
-					<thead class="thead-dark">
-						<tr>
-							<th colSpan={ 4 }>
-								<UnitBadge type={ type } transparent size="large" />
-							</th>
-						</tr>
-						<tr>
-							<th>
-								<Locale k="COMMON_UNIT_GRADE" />
-							</th>
+		{ TypeList.map(type => Store.Units.Type[type].value
+			? <table class="table table-sm unit-table mb-3">
+				<thead class="thead-dark">
+					<tr>
+						<th colSpan={ 4 }>
+							<UnitBadge type={ type } transparent size="large" />
+						</th>
+					</tr>
+					<tr>
+						<th>
+							<Locale k="COMMON_UNIT_GRADE" />
+						</th>
+
+						{ RoleList
+							.filter(role => Store.Units.Role[role].value)
+							.map(role => <th>
+								<UnitBadge role={ role } transparent size="large" />
+							</th>) }
+					</tr>
+				</thead>
+				<tbody>
+					{ RarityList
+						.filter(rarity => Store.Units.Rarity[rarity].value)
+						.map(rarity => <tr>
+							<th class={ `rarity-${RarityDisplay[rarity]}-force` }>{ RarityDisplay[rarity] }</th>
 
 							{ RoleList
-								.filter(role => Filters.Role[role])
-								.map(role => <th>
-									<UnitBadge role={ role } transparent size="large" />
-								</th>) }
-						</tr>
-					</thead>
-					<tbody>
-						{ RarityList
-							.filter(rarity => Filters.Rarity[rarity])
-							.map(rarity => <tr>
-								<th class={ `rarity-${RarityDisplay[rarity]}-force` }>{ RarityDisplay[rarity] }</th>
-
-								{ RoleList
-									.filter(role => Filters.Role[role])
-									.map(role => <td>
-										{ ArrayElse(
-											UnitList(rarity, type, role),
-											x => <>{
-												x.map(unit => <UnitCard.Horizontal
-													class="unit-list-item"
-													unit={ unit }
-													rarity={ rarity }
-												// onClick={ (): void => void (route(`/units/${unit.uid}`)) }
-												/>)
-											}</>,
-											<span class="text-secondary">
-												<Locale k="UNIT_TABLE_EMPTY" />
-											</span>,
-										) }
-									</td>) }
-							</tr>) }
-					</tbody>
-				</table>
-				: <></>) }
-		</div>;
-	});
+								.filter(role => Store.Units.Role[role].value)
+								.map(role => <td>
+									{ ArrayElse(
+										UnitList(rarity, type, role),
+										x => <>{
+											x.map(unit => <UnitCard.Horizontal
+												class="unit-list-item"
+												unit={ unit }
+												rarity={ rarity }
+											// onClick={ (): void => void (route(`/units/${unit.uid}`)) }
+											/>)
+										}</>,
+										<span class="text-secondary">
+											<Locale k="UNIT_TABLE_EMPTY" />
+										</span>,
+									) }
+								</td>) }
+						</tr>) }
+				</tbody>
+			</table>
+			: <></>) }
+	</div>;
 };
 export default UnitsTable;

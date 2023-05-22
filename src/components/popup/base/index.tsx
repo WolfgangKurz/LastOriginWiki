@@ -1,5 +1,6 @@
+import { FunctionalComponent } from "preact";
+import { useEffect, useLayoutEffect, useRef, useState } from "preact/hooks";
 import { Modal } from "bootstrap";
-import { Component } from "preact";
 
 import { UniqueID } from "@/libs/Functions";
 
@@ -30,99 +31,102 @@ interface PopupBaseProps {
 	onHidden?: () => void;
 }
 
-export default class PopupBase extends Component<PopupBaseProps> {
-	private uid: string = UniqueID("popup-modal-");
+const PopupBase: FunctionalComponent<PopupBaseProps> = (props) => {
+	const [uid] = UniqueID("popup-modal-");
+	const [instance, setInstance] = useState<Modal | null>(null);
+	const modalRef = useRef<HTMLDivElement>(null);
 
-	private instance: Modal | null = null;
-	private disposing = false;
+	useEffect(() => { // show/hide
+		if (!instance) return;
+		// if (!modalRef.current || (modalRef.current as any)._disposed) return;
 
-	updateBootstrap (): void {
-		if (this.disposing) return;
+		if (props.display)
+			instance.show();
+		else
+			instance.hide();
+	}, [instance, modalRef.current, props.display]);
 
-		if (!this.instance) {
-			const el = document.querySelector(`#${this.uid}`);
-			if (!el) return;
-
-			const instance = Modal.getInstance(el) || new Modal(el);
-			if (!instance) return;
-			this.instance = instance;
+	useLayoutEffect(() => { // ref
+		if (!modalRef.current) {
+			if (instance) instance.dispose();
+			setInstance(null);
+			return;
 		}
 
-		if (this.props.display !== undefined && this.props.display)
-			this.instance.show();
-		else
-			this.instance.hide();
-	}
+		// try to reuse
+		const _instance = Modal.getOrCreateInstance(modalRef.current);
+		setInstance(_instance);
 
-	componentDidMount (): void {
-		this.updateBootstrap();
-	}
+		return () => {
+			if (modalRef.current)
+				(modalRef.current as any)._disposed = true;
 
-	componentDidUpdate (): void {
-		this.updateBootstrap();
-	}
+			if (!instance) return;
+			instance.hide();
+			setTimeout(() => instance.dispose(), 500);
+		};
+	}, [modalRef.current]);
 
-	componentWillUnmount (): void {
-		this.disposing = true;
-		if (!this.instance) return;
-		this.instance.hide();
-		this.instance = null;
-		// this.instance.dispose();
-	}
+	// prevent disposed event call
+	const ev = (ref: HTMLDivElement | null, props: PopupBaseProps, event: keyof PopupBaseProps) => {
+		const fn = props[event];
 
-	render (): preact.VNode {
-		// if (!this.props.display) return <></>;
+		if (!ref || typeof fn !== "function") return;
+		if ((ref as any)._disposed) return;
+		fn();
+	};
 
-		return <div
-			class={ `modal fade ${this.props.class || ""} text-dark` }
-			tabIndex={ -1 }
-			id={ this.uid }
-			{ ...{
-				"onshow.bs.modal": (): void => void (!this.disposing && this.props.onShow && this.props.onShow()),
-				"onshown.bs.modal": (): void => void (!this.disposing && this.props.onShown && this.props.onShown()),
-				"onhide.bs.modal": (): void => void (!this.disposing && this.props.onHide && this.props.onHide()),
-				"onhidden.bs.modal": (): void => void (!this.disposing && this.props.onHidden && this.props.onHidden()),
-			} }
-		>
-			<div class={ `modal-dialog modal-${this.props.size || "md"} modal-dialog-scrollable modal-dialog-centered` }>
-				<div class={ `modal-content ${this.props.contentClass || ""}` }>
-					<div class={ [
-						"modal-header",
-						this.props.headerVariant ? `bg-${this.props.headerVariant}` : "",
-						this.props.headerText ? `text-${this.props.headerText}` : "",
-						this.props.headerClass || "",
-					].filter(x => x).join(" ") }>
-						{ this.props.header
-							? <h5 class="modal-title">{ this.props.header }</h5>
-							: <></>
-						}
-						{ this.props.headerEnd
-							? <div class="modal-title-end" style={ { marginLeft: "auto" } }>
-								{ this.props.headerEnd }
-							</div>
-							: <></>
-						}
-						<button
-							type="button"
-							class={ `btn-close ${this.props.headerEnd ? "ms-1" : ""}` }
-							data-bs-dismiss="modal"
-							aria-label="Close"
-						/>
-					</div>
-					<div class={ `modal-body ${this.props.bodyClass || ""}` }>{ this.props.children }</div>
-					{ this.props.footer
-						? <div class={ [
-							"modal-footer",
-							this.props.footerVariant ? `bg-${this.props.footerVariant}` : "",
-							this.props.footerText ? `text-${this.props.footerText}` : "",
-							this.props.footerClass || "",
-						].filter(x => x).join(" ") }>
-							{ this.props.footer }
+	return <div
+		class={ `modal fade ${props.class || ""} text-dark` }
+		tabIndex={ -1 }
+		id={ uid }
+		{ ...{
+			"onshow.bs.modal": () => ev(modalRef.current, props, "onShow"),
+			"onshown.bs.modal": () => ev(modalRef.current, props, "onShown"),
+			"onhide.bs.modal": () => ev(modalRef.current, props, "onHide"),
+			"onhidden.bs.modal": () => ev(modalRef.current, props, "onHidden"),
+		} }
+		ref={ modalRef }
+	>
+		<div class={ `modal-dialog modal-${props.size || "md"} modal-dialog-scrollable modal-dialog-centered` }>
+			<div class={ `modal-content ${props.contentClass || ""}` }>
+				<div class={ [
+					"modal-header",
+					props.headerVariant ? `bg-${props.headerVariant}` : "",
+					props.headerText ? `text-${props.headerText}` : "",
+					props.headerClass || "",
+				].filter(x => x).join(" ") }>
+					{ props.header
+						? <h5 class="modal-title">{ props.header }</h5>
+						: <></>
+					}
+					{ props.headerEnd
+						? <div class="modal-title-end" style={ { marginLeft: "auto" } }>
+							{ props.headerEnd }
 						</div>
 						: <></>
 					}
+					<button
+						type="button"
+						class={ `btn-close ${props.headerEnd ? "ms-1" : ""}` }
+						data-bs-dismiss="modal"
+						aria-label="Close"
+					/>
 				</div>
+				<div class={ `modal-body ${props.bodyClass || ""}` }>{ props.children }</div>
+				{ props.footer
+					? <div class={ [
+						"modal-footer",
+						props.footerVariant ? `bg-${props.footerVariant}` : "",
+						props.footerText ? `text-${props.footerText}` : "",
+						props.footerClass || "",
+					].filter(x => x).join(" ") }>
+						{ props.footer }
+					</div>
+					: <></>
+				}
 			</div>
-		</div>;
-	}
-}
+		</div>
+	</div>;
+};
+export default PopupBase;

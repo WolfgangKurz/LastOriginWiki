@@ -210,6 +210,9 @@ const Home: FunctionalComponent = () => {
 					<NavItemExternal href="https://arca.live/b/lastorigin/10674899">
 						<Locale k="MENU_ETC_EX03" />
 					</NavItemExternal>
+					<NavItemExternal href="https://wolfgangkurz.github.io/lo-grid/">
+						<Locale k="MENU_ETC_EX04" />
+					</NavItemExternal>
 				</div>
 			</div>
 		</div>

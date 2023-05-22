@@ -1615,7 +1615,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 interface BuffListProps {
 	class?: string;
 
-	list?: BuffStat[];
+	list?: readonly BuffStat[];
 	level?: number;
 	invert?: boolean;
 	dummy?: boolean;

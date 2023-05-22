@@ -1,42 +1,36 @@
-import { Component, RenderableProps } from "preact";
+import { Component, FunctionalComponent, RenderableProps } from "preact";
 import { route } from "preact-router";
+import { useState } from "preact/hooks";
 
 interface RedirectProps {
 	which?: (props: Record<string, any>) => boolean;
 	to: string | ((props: Record<string, any>) => string);
 }
 
-export default class Redirect extends Component<RedirectProps> {
-	private Update (): void {
-		const props = (typeof this.props.to !== "string") || this.props.which
+const Redirect: FunctionalComponent<RedirectProps> = (props) => {
+	const Update = (): void => {
+		const _props = (typeof props.to !== "string") || props.which
 			? ((): Record<string, any> => {
 				const reserved = ["children", "ref", "key", "jsx", "to", "which"];
 				const ret: Record<string, any> = {};
-				for (const key in this.props) {
+				for (const key in props) {
 					if (reserved.includes(key)) continue;
-					ret[key] = this.props[key as keyof RenderableProps<RedirectProps>];
+					ret[key] = props[key as keyof RenderableProps<RedirectProps>];
 				}
 				return ret;
 			})()
 			: {};
 
-		if (this.props.which && !this.props.which(props)) return;
+		if (props.which && !props.which(_props)) return;
 
-		if (typeof this.props.to === "string")
-			route(this.props.to, true);
+		if (typeof props.to === "string")
+			route(props.to, true);
 		else
-			route(this.props.to(props), true);
-	}
+			route(props.to(_props), true);
+	};
 
-	componentWillMount (): void {
-		this.Update();
-	}
+	useState(() => Update()); // every update
 
-	componentWillReceiveProps (): void {
-		this.Update();
-	}
-
-	render (): preact.VNode | null {
-		return null;
-	}
-}
+	return null;
+};
+export default Redirect;
