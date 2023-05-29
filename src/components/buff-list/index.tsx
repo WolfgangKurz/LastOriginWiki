@@ -112,7 +112,17 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 
 	function convertBuff (name: string): preact.VNode;
 	function convertBuff (name: string, color: BuffColors): preact.VNode;
-	function convertBuff (name: string, color?: BuffColors): preact.VNode {
+	function convertBuff (name: string, attr: BUFF_ATTR_TYPE): preact.VNode;
+	function convertBuff (name: string, attr: BUFF_ATTR_TYPE, color: BuffColors): preact.VNode;
+	function convertBuff (name: string, p2?: BuffColors | BUFF_ATTR_TYPE, p3?: BuffColors): preact.VNode {
+		let attr: BUFF_ATTR_TYPE | undefined;
+		let color: BuffColors | undefined;
+
+		if (typeof p2 === "number") attr = p2;
+
+		if (typeof p3 !== "undefined") color = p3;
+		else if (typeof p2 === "string") color = p2;
+
 		if (![undefined, "primary", "secondary", "danger", "warning", "info", "dark", "light"].includes(color))
 			color = undefined;
 
@@ -144,6 +154,13 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			] } />;
 		}
 		return <span class={ `SubBadge ${style.SubBadge} ${color ? `text-${color}` : ""}` }>
+			{ attr !== undefined
+				? <>
+					<u><Locale plain k={ `BUFFEFFECT_ATTR_PREFIX_${attr}` } /></u>
+					<> </>
+				</>
+				: <></>
+			}
 			<Locale plain k={ name } />
 		</span>;
 	}
@@ -630,7 +647,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					const select: preact.VNode[] = typeof trigger.on.select[0] === "string"
 						// BuffTrigger_On_BuffKey
 						? (trigger.on.select as string[])
-							.map(convertBuff)
+							.map(x => convertBuff(x, trigger.on.attr))
 							.unique(VNodeUnique)
 						// BuffTrigger_On_BuffEffectType
 						: (trigger.on.select as BUFFEFFECT_TYPE[])
@@ -676,6 +693,10 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						// BuffTrigger_On_BuffExists
 						? (trigger.on.select as string[])
 							.map(convertBuff)
+							.map(x => <>
+								<u><Locale plain k={ `BUFFEFFECT_ATTR_PREFIX_${trigger.on.attr}` } /></u>
+								{ x }
+							</>)
 							.unique(VNodeUnique)
 						// BuffTrigger_On_BuffTypeExists
 						: (trigger.on.select as BUFFEFFECT_TYPE[])

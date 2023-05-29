@@ -9,6 +9,14 @@ import { BY, BR, BO, BB, BG } from "../components/badges";
 import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12143" date="2023-05-30"
+		update={ <>
+			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
+			<li>일부 적의 스킬 정보가 갱신되었습니다.</li>
+			<li>일부 장비의 버프 정보가 갱신되었습니다.</li>
+			<li>버프 목록에서 특정 버프를 조건으로 표시할 때 버프의 속성을 표시하도록 수정했습니다. (강화, 해로운, 일반, 모든)</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12141" date="2023-05-22"
 		bugfix={ <>
 			<li>일부 팝업들이 제대로 동작하지 않는 문제를 수정했습니다.</li>
