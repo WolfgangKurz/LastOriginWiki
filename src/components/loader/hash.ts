@@ -1400,7 +1400,7 @@ export default {
 	},
 	"korea": {
 		"bg": "289b7344",
-		"consumable": "f18222e4",
+		"consumable": "efd9cd75",
 		"enemy": {
 			"AMG11_TU2": "f05d028d",
 			"AMG11_TU3": "843fe431",
@@ -2870,7 +2870,7 @@ export default {
 			"System_Sniper_T4": "8d39cd53"
 		},
 		"ew": "09c24fc8",
-		"exchange": "b506d35e",
+		"exchange": "4facdf06",
 		"facility": {
 			"Cafeteria": "17d2e600",
 			"EquipDisassemble": "196d7d76",
@@ -2909,12 +2909,13 @@ export default {
 		"filterable.enemy": "b014ac4a",
 		"filterable.equip": "84f56761",
 		"filterable.facility": "16568438",
-		"filterable.unit": "aebee521",
-		"gacha": "a84c765f",
+		"filterable.unit": "677e1efa",
+		"gacha": "ac566c26",
 		"iw": {
 			"Colossus_01": "b536d9a1",
 			"Colossus_02": "6df66a45",
-			"seasons": "77b587e9"
+			"Colossus_03": "acb309c2",
+			"seasons": "f4301924"
 		},
 		"map": {
 			"Cha": "4bc9f11c",
@@ -2924,7 +2925,7 @@ export default {
 			"Ev11": "314ab468",
 			"Ev12": "7fc5824f",
 			"Ev13": "0d9392e6",
-			"Ev14": "00ce19ad",
+			"Ev14": "ee7f8e89",
 			"Ev15": "4685b8de",
 			"Ev16": "94a89710",
 			"Ev17": "16555862",
@@ -2995,11 +2996,12 @@ export default {
 			"3P_Hirume": "7c6a3c5f",
 			"3P_Labiata": "d71a0c58",
 			"3P_Maria": "beb0d13d",
-			"3P_Melite": "e4b39e4b",
+			"3P_Melite": "0f64ae70",
 			"3P_Poi": "63cfd201",
 			"3P_Ran": "8159fe8b",
 			"3P_Rhea": "092336d1",
 			"3P_Salacia": "9658b2b9",
+			"3P_Satgat": "329d1552",
 			"3P_ScissorsLise": "7a73081f",
 			"3P_SnowFeather": "a4d032be",
 			"3P_Sowan": "65ff6740",
@@ -3027,7 +3029,7 @@ export default {
 			"BR_Alvis": "0a8234f3",
 			"BR_ALWraith": "e52559c4",
 			"BR_Amy": "c462ec8a",
-			"BR_Andvari": "1ed3d979",
+			"BR_Andvari": "b2992d3a",
 			"BR_AS12TurtleDragon": "61389310",
 			"BR_Banshee": "5da1587e",
 			"BR_BeastHunter": "61c86a34",
@@ -3082,7 +3084,7 @@ export default {
 			"BR_RedHood": "b03f8b66",
 			"BR_RoyalArsenal": "73349c56",
 			"BR_Salamander": "f0bd17bb",
-			"BR_SandMan": "62212608",
+			"BR_SandMan": "5b994173",
 			"BR_Scarabya": "59769efc",
 			"BR_Scathy": "12ccb16e",
 			"BR_Shirayuri": "25eed266",
@@ -3096,7 +3098,7 @@ export default {
 			"BR_Tomoe": "a62cddd8",
 			"BR_Undine": "171f3a78",
 			"BR_Uroborus": "2551191a",
-			"BR_Valkyrie": "cf921ebb",
+			"BR_Valkyrie": "87980832",
 			"BR_Vargr": "7f4fe402",
 			"BR_WarWolf": "3c55a99d",
 			"BR_Wraithy": "e0ecabee",
@@ -3144,7 +3146,7 @@ export default {
 			"PECS_Ignis": "aeb53599",
 			"PECS_Leanne": "df225d16",
 			"PECS_LemonadeAlpha": "6905796a",
-			"PECS_LRL": "cc3828e0",
+			"PECS_LRL": "c9893212",
 			"PECS_Lumberjane": "108cd941",
 			"PECS_Machina": "9ea9fdf1",
 			"PECS_Merlin": "4390c50e",
@@ -3152,7 +3154,7 @@ export default {
 			"PECS_MightyR": "bf925ce1",
 			"PECS_MissSafety": "a06c9182",
 			"PECS_Mnemosyne": "384be616",
-			"PECS_Muse": "5632ae60",
+			"PECS_Muse": "3d381dab",
 			"PECS_Olivia": "392bac4d",
 			"PECS_Orangeade": "349ec82a",
 			"PECS_Peregrinus": "5d9c6859",
@@ -3168,7 +3170,7 @@ export default {
 			"PECS_Stinger": "ed8a8c90",
 			"PECS_Sunny": "4ccafddc",
 			"PECS_TaylorClothcut": "5501bb26",
-			"PECS_Tiequan": "3603dccd",
+			"PECS_Tiequan": "6d6c2662",
 			"PECS_TommyWalker": "448f0f61",
 			"PECS_Triaina": "a443a735",
 			"PECS_Triton": "27cc9232",
@@ -3182,9 +3184,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "0779e21f",
-		"JP": "2518f879",
-		"KR": "fe8b8c20",
-		"TC": "d70338cc"
+		"EN": "683c6fdc",
+		"JP": "059c71c4",
+		"KR": "568c6f06",
+		"TC": "bc2ce3b4"
 	}
 } as DBHashType;
