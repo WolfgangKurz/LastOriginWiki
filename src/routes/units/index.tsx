@@ -231,11 +231,11 @@ const Units: FunctionalComponent = () => {
 								>S</button>
 								<button
 									class={ `btn btn-outline-danger ${isActive(Store.Units.Rarity[ACTOR_GRADE.A])}` }
-									onClick={ () => toggle(Store.Units.Rarity[ACTOR_GRADE.S]) }
+									onClick={ () => toggle(Store.Units.Rarity[ACTOR_GRADE.A]) }
 								>A</button>
 								<button
 									class={ `btn btn-outline-danger ${isActive(Store.Units.Rarity[ACTOR_GRADE.B])}` }
-									onClick={ () => toggle(Store.Units.Rarity[ACTOR_GRADE.S]) }
+									onClick={ () => toggle(Store.Units.Rarity[ACTOR_GRADE.B]) }
 								>B</button>
 							</div>
 							<div class="btn-group mx-2 mb-2">

@@ -4,9 +4,14 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12147" date="2023-06-07"
+		bugfix={ <>
+			<li>전투원 목록에서 등급 A B 필터가 작동하지 않는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12146" date="2023-06-07"
 		bugfix={ <>
-			<li>적 팝업에서 시리즈를 전환하지 못하는 문제를 수정했습니다..</li>
+			<li>적 팝업에서 시리즈를 전환하지 못하는 문제를 수정했습니다.</li>
 		</> }
 		skin={ <>
 			<li>일부 스킨의 검열판 스킨이 표시되지 않는 문제를 수정했습니다.</li>
