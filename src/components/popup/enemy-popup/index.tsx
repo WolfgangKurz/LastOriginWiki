@@ -262,7 +262,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 							onClick={ (e): void => {
 								setTargetId(x.value);
 								if (!props.asSub)
-									route(`/enemies/${x}`);
+									route(`/enemies/${x.value}`);
 							} }
 						>{ x.text }
 						</button>) }
