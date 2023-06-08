@@ -1399,7 +1399,7 @@ export default {
 		}
 	},
 	"korea": {
-		"bg": "289b7344",
+		"bg": "5ef54969",
 		"consumable": "5ebf8554",
 		"enemy": {
 			"AMG11_TU2": "f05d028d",
