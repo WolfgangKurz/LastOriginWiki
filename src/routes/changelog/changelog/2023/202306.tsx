@@ -4,6 +4,11 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12159" date="2023-06-09"
+		site={ <>
+			<li><BB>mermaid</BB> 의존성을 제거했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12153" date="2023-06-08"
 		new={ <>
 			<li>신규 BG가 추가되었습니다.</li>

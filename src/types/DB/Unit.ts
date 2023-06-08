@@ -199,7 +199,7 @@ export interface Unit {
 
 	source: EntitySource[][];
 	cost: UnitCost | undefined;
-	research: ResearchTreeData[] | undefined;
+	research: boolean; // ResearchTreeData[] | undefined;
 
 	stat: UnitStats[];
 	chart: UnitSpecChart;

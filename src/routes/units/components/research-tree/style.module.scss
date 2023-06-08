@@ -1,21 +1,19 @@
-.ResearchTree {
-	overflow-x: auto;
-}
-.ResearchEntity {
-	display: inline-block;
-	width: 62px;
-	height: 62px;
-}
-.ResearchItem {
-	padding: 10px;
-	width: 40px;
-	height: 40px;
-}
-.ResearchIcon {
-	filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.73));
-	transform-box: fill-box;
-	transform-origin: center;
-	// transform: rotate(-90deg);
+:global {
+	.ResearchTree {
+		overflow-x: auto;
+
+		.node {
+			filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.73));
+			transform-box: fill-box;
+			transform-origin: center;
+			// transform: rotate(-90deg);
+
+			> image.ResearchItem {
+				max-height: 2rem;
+				cursor: pointer;
+			}
+		}
+	}
 }
 
 :global(.modal .modal-content).ResearchModal {
