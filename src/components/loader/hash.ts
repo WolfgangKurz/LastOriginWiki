@@ -3184,9 +3184,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "fb0b59e0",
-		"JP": "c35f9854",
-		"KR": "948c630f",
-		"TC": "c3a1aa44"
+		"EN": "224cf4f5",
+		"JP": "1290043f",
+		"KR": "75e524a0",
+		"TC": "505b5e49"
 	}
 } as DBHashType;
