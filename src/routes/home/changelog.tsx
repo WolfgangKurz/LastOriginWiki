@@ -4,12 +4,14 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12152" date="2023-06-08"
+	<ChangelogItem title="Build 12153" date="2023-06-08"
 		new={ <>
 			<li>신규 BG가 추가되었습니다.</li>
 		</> }
 		update={ <>
 			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
+			<li>이벤트 지역 <BY>~폭풍을 부르는~ 미니 컴패니언의 습격</BY>의 정보가 갱신되었습니다.</li>
+			<li>진행중인 이벤트 정보가 변경되었습니다.</li>
 		</> }
 		skin={ <>
 			<li>
