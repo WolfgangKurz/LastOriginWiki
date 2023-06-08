@@ -1400,7 +1400,7 @@ export default {
 	},
 	"korea": {
 		"bg": "289b7344",
-		"consumable": "efd9cd75",
+		"consumable": "5ebf8554",
 		"enemy": {
 			"AMG11_TU2": "f05d028d",
 			"AMG11_TU3": "843fe431",
@@ -2906,11 +2906,11 @@ export default {
 			"WoodMaking2": "389f24f0",
 			"WoodMaking3": "15217130"
 		},
-		"filterable.enemy": "b014ac4a",
+		"filterable.enemy": "ae8497e9",
 		"filterable.equip": "84f56761",
 		"filterable.facility": "16568438",
-		"filterable.unit": "938c1eb2",
-		"gacha": "ac566c26",
+		"filterable.unit": "63f52ce5",
+		"gacha": "f36a805b",
 		"iw": {
 			"Colossus_01": "b536d9a1",
 			"Colossus_02": "6df66a45",
@@ -2926,10 +2926,10 @@ export default {
 			"Ev12": "7fc5824f",
 			"Ev13": "0d9392e6",
 			"Ev14": "ee7f8e89",
-			"Ev15": "4685b8de",
+			"Ev15": "e952f665",
 			"Ev16": "94a89710",
-			"Ev17": "16555862",
-			"Ev18": "915df758",
+			"Ev17": "aad3bcf3",
+			"Ev18": "0da6bd50",
 			"Ev19": "1a055686",
 			"Ev2": "12fb0321",
 			"Ev3": "66cc958b",
@@ -2953,7 +2953,7 @@ export default {
 			"node": "831bd741",
 			"quest": "372e37a9"
 		},
-		"skill-from": "2c46cd76",
+		"skill-from": "6b62355e",
 		"sticker": "2fcea3e9",
 		"story": "a6628263",
 		"summon": {
@@ -2993,7 +2993,7 @@ export default {
 			"3P_Frigga": "27c91f60",
 			"3P_Galatea": "35ee6fbb",
 			"3P_Hachiko": "3c732549",
-			"3P_Hirume": "7c6a3c5f",
+			"3P_Hirume": "265676b2",
 			"3P_Labiata": "d71a0c58",
 			"3P_Maria": "beb0d13d",
 			"3P_Melite": "0f64ae70",
@@ -3001,10 +3001,10 @@ export default {
 			"3P_Ran": "8159fe8b",
 			"3P_Rhea": "092336d1",
 			"3P_Salacia": "9658b2b9",
-			"3P_Satgat": "d79a5e77",
+			"3P_Satgat": "ffe9456b",
 			"3P_ScissorsLise": "7a73081f",
 			"3P_SnowFeather": "a4d032be",
-			"3P_Sowan": "65ff6740",
+			"3P_Sowan": "9d98e7ec",
 			"3P_Titania": "5de25b7f",
 			"3P_Vanilla": "73a8198a",
 			"AGS_Aeda": "af3891f9",
@@ -3098,12 +3098,12 @@ export default {
 			"BR_Tomoe": "a62cddd8",
 			"BR_Undine": "171f3a78",
 			"BR_Uroborus": "2551191a",
-			"BR_Valkyrie": "74ea125c",
+			"BR_Valkyrie": "01298d61",
 			"BR_Vargr": "7f4fe402",
 			"BR_WarWolf": "3c55a99d",
 			"BR_Wraithy": "e0ecabee",
 			"DS_Angel": "b3aada1f",
-			"DS_Arman": "79c83ac3",
+			"DS_Arman": "642f99c3",
 			"DS_Atalanta": "eb14fd6e",
 			"DS_Azazel": "3ea67478",
 			"DS_Baekto": "dbc365d3",
@@ -3184,9 +3184,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "683c6fdc",
-		"JP": "059c71c4",
-		"KR": "568c6f06",
-		"TC": "bc2ce3b4"
+		"EN": "fb0b59e0",
+		"JP": "c35f9854",
+		"KR": "948c630f",
+		"TC": "c3a1aa44"
 	}
 } as DBHashType;
