@@ -133,7 +133,7 @@ class Spine {
 		this.state.addListener({
 			complete: (entry) => {
 				if (entry.trackIndex === 0 && entry.animation) {
-					if (entry.animation.duration > 0 && entry.animation.name !== "idle")
+					if (entry.animation.duration > 0 && !Spine.isIdleAnimationName(entry.animation.name))
 						this.idle();
 				}
 			},
@@ -211,7 +211,7 @@ class Spine {
 		const state = this.state;
 
 		const current = state.getCurrent(0)!;
-		if (current.animation && current.animation.name !== "idle") return false;
+		if (current.animation && !Spine.isIdleAnimationName(current.animation.name)) return false;
 
 		const entry = state.setAnimationWith(0, anim, false);
 		entry.mixDuration = 0.5;
@@ -219,12 +219,22 @@ class Spine {
 	}
 
 	idle () {
-		const entry = this.state.setAnimation(0, "idle", true);
+		const idleName = (() => {
+			const idle = this.animationList().find(r => Spine.isIdleAnimationName(r.name));
+			if (idle) return idle.name;
+			return "idle";
+		})();
+
+		const entry = this.state.setAnimation(0, idleName, true);
 		entry.mixDuration = 0.5;
 	}
 
 	animationList () {
 		return this.state.data.skeletonData.animations;
+	}
+
+	static isIdleAnimationName (name: string): boolean {
+		return name.toLowerCase().startsWith("idle");
 	}
 }
 export default Spine;
