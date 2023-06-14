@@ -2909,7 +2909,7 @@ export default {
 		"filterable.enemy": "ae8497e9",
 		"filterable.equip": "84f56761",
 		"filterable.facility": "16568438",
-		"filterable.unit": "476a1ec6",
+		"filterable.unit": "4dfe5803",
 		"gacha": "eaa3358f",
 		"iw": {
 			"Colossus_01": "b536d9a1",
@@ -3099,7 +3099,7 @@ export default {
 			"BR_Undine": "68868e29",
 			"BR_Uroborus": "30bc2182",
 			"BR_Valkyrie": "554ec993",
-			"BR_Vargr": "d8ed2633",
+			"BR_Vargr": "127df176",
 			"BR_WarWolf": "061cf7b9",
 			"BR_Wraithy": "b77d4ca3",
 			"DS_Angel": "cb9a559d",
@@ -3184,9 +3184,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "84139b0d",
-		"JP": "e28bb6fb",
-		"KR": "4997fcf4",
-		"TC": "61a0c1ea"
+		"EN": "92903df8",
+		"JP": "bba11a25",
+		"KR": "1e214273",
+		"TC": "9aa49db7"
 	}
 } as DBHashType;

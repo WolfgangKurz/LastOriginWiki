@@ -4,6 +4,18 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12163" date="2023-06-14"
+		bugfix={ <>
+			<li>
+				<BY>바르그</BY>의 스킨 <BY>늑! 대! 무녀 바르그</BY>가 표시되지 않던 점을 수정했습니다.
+			</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>멀린</BY>의 스킨 <BY>CAFE Poseidon : 홀서빙의 마술사</BY>의 다운로드 이미지가 추가되었습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12161" date="2023-06-14"
 		bugfix={ <>
 			<li>일부 페이지의 스크롤 등이 초기화되는 문제를 수정했습니다.</li>
