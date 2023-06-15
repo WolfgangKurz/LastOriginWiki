@@ -4,6 +4,13 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12164" date="2023-06-15"
+		bugfix={ <>
+			<li>
+				<BY>바르그</BY>의 대사가 잘못 표시되는 문제를 수정했습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12163" date="2023-06-14"
 		bugfix={ <>
 			<li>
