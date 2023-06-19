@@ -30,10 +30,9 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 	const voice = props.voice;
 
 	const VoiceKey = ((v): string => {
-		if (v.isMarriage) return `${v.id}M`;
-		if (v.isPro) return `${v.sid}`; // `${v.id}P`;
-		if (v.isDef) return "";
-		return v.id;
+		if (v.isMarriage) return `${v.sid}M`;
+		if (v.sid !== null) return v.sid.toString();
+		return "";
 	})(voice);
 
 	const TypeList = ((): Array<keyof RawUnitDialogueEntity> => {

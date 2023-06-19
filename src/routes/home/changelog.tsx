@@ -4,6 +4,16 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12166" date="2023-06-20"
+		update={ <>
+			<li>장비 팝업의 크기를 변경했습니다.</li>
+			<li>장비의 승급 정보 표시를 개선했습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>장비의 강화 비용이 잘못 표시되는 문제를 수정했습니다.</li>
+			<li><BY>바르그</BY>의 대사가 잘못 표시되는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12164" date="2023-06-15"
 		bugfix={ <>
 			<li>

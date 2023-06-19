@@ -102,7 +102,6 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 		setRarity(eq.rarity);
 		return eq;
 	})();
-
 	const targetT4 = ((): FilterableEquip | null => {
 		if (!target) return null;
 		if (target.rarity !== ACTOR_GRADE.SSS) return null;
@@ -123,6 +122,16 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 	const isRoguelike: boolean = target !== null && target.roguelike;
 	const isExclusive: boolean = target !== null && target.limit !== null && target.limit.every(y => typeof y === "number");
 
+	const family = (() => {
+		const equip = props.equip;
+		if (!equip) return [];
+
+		return FilterableEquipDB
+			? FilterableEquipDB
+				.filter(x => x.key === equip.key && x.type === equip.type)
+			: [];
+	})();
+
 	const EquipType = ((): preact.VNode => {
 		if (!props.equip) return <>???</>;
 
@@ -139,19 +148,10 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 		return <Locale k={ table[type] } fallback="???" />;
 	})();
 
-	const RarityList = ((): SelectOption<ITEM_GRADE>[] => {
-		const equip = props.equip;
-		if (!equip) return [];
-
-		return FilterableEquipDB
-			? FilterableEquipDB
-				.filter(x => x.key === equip.key && x.type === equip.type)
-				.map(x => ({
-					value: x.rarity,
-					text: RarityDisplay[x.rarity],
-				}))
-			: [];
-	})();
+	const RarityList: SelectOption<ITEM_GRADE>[] = family.map(x => ({
+		value: x.rarity,
+		text: RarityDisplay[x.rarity],
+	}));
 
 	const Limits = target
 		? target.limit
@@ -197,9 +197,13 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 	const UpgradeCostTable = ((): preact.VNode[][] => {
 		if (!target) return [];
 
-		const maxCols = Math.max(...target.upgrade.enchant.map(y => y.item.length));
-		const ret: preact.VNode[][] = [];
+		const cols = target.upgrade.enchant
+			.flatMap(y => y.item)
+			.map(r => r.item)
+			.unique();
+		const maxCols = cols.length;
 
+		const ret: preact.VNode[][] = [];
 		const sums = new Array(maxCols + 1)
 			.fill(0)
 			.map(_ => new Decimal(0));
@@ -208,42 +212,50 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 			if (costChecks[i])
 				sums[0] = sums[0].add(v.res);
 
-			ret[i] = [
-				<span class="font-exo2">{ FormatNumber(v.res) }</span>,
-				...v.item.map((y, j) => {
-					if (costChecks[i])
-						sums[j + 1] = sums[j + 1].add(y.count);
+			const row = new Array(maxCols).fill(<></>);
+			v.item.forEach((y, _j) => {
+				const j = cols.indexOf(y.item);
 
-					const item = ConsumableDB && ConsumableDB.find(z => z.key === y.item);
-					const icon = item ? <ItemIcon item={ item.icon } /> : <>???</>;
+				if (costChecks[i])
+					sums[j + 1] = sums[j + 1].add(y.count);
 
-					return <BootstrapTooltip
-						placement="top"
-						content={ <Locale k={ `CONSUMABLE_${y.item}` } /> }
-					>
-						<span class="badge bg-warning text-dark cost-badge">
-							{ icon } x{ FormatNumber(y.count) }
-						</span>
-					</BootstrapTooltip>;
-				}),
-				...new Array(maxCols - v.item.length).fill(<></>),
-			];
-		});
-		ret[10] = [
-			<span class="font-exo2">{ FormatNumber(sums[0].toNumber()) }</span>,
-			...target.upgrade.enchant[target.upgrade.enchant.length - 1].item.map((y, j) => {
 				const item = ConsumableDB && ConsumableDB.find(z => z.key === y.item);
 				const icon = item ? <ItemIcon item={ item.icon } /> : <>???</>;
 
-				return <BootstrapTooltip
+				row[j] = <BootstrapTooltip
 					placement="top"
 					content={ <Locale k={ `CONSUMABLE_${y.item}` } /> }
 				>
 					<span class="badge bg-warning text-dark cost-badge">
-						{ icon } x{ FormatNumber(sums[j + 1].toNumber()) }
+						{ icon } x{ FormatNumber(y.count) }
 					</span>
 				</BootstrapTooltip>;
-			}),
+			});
+
+			ret[i] = [
+				<span class="font-exo2">{ FormatNumber(v.res) }</span>,
+				...row,
+			];
+		});
+
+		const row = new Array(maxCols).fill(<></>);
+		for (let j = 0; j < maxCols; j++) {
+			const item = ConsumableDB && ConsumableDB.find(z => z.key === cols[j]);
+			const icon = item ? <ItemIcon item={ item.icon } /> : <>???</>;
+
+			row[j] = <BootstrapTooltip
+				placement="top"
+				content={ <Locale k={ `CONSUMABLE_${cols[j]}` } /> }
+			>
+				<span class="badge bg-warning text-dark cost-badge">
+					{ icon } x{ FormatNumber(sums[j + 1].toNumber()) }
+				</span>
+			</BootstrapTooltip>;
+		}
+
+		ret[10] = [
+			<span class="font-exo2">{ FormatNumber(sums[0].toNumber()) }</span>,
+			...row,
 		];
 		return ret;
 	})();
@@ -316,10 +328,51 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 			</>;
 	};
 
+	const upgrades: preact.VNode[] = [];
+	if (family.length > 0) {
+		family.forEach(f => {
+			if (!f.upgrade.upgrade) return;
+
+			const next = FilterableEquipDB && FilterableEquipDB.find(x => x.fullKey === f.upgrade.upgrade!.to);
+
+			if (upgrades.length > 0)
+				upgrades.splice(upgrades.length - 1, 1); // remove last
+
+			upgrades.push(
+				<div>
+					<div>
+						<EquipCard class="d-inline-block" equip={ f } />
+					</div>
+					<div>
+						{ f.upgrade.upgrade.cost.map(e => {
+							const item = ConsumableDB && ConsumableDB.find(c => c.key === e.item);
+							if (!item) return <>-</>;
+
+							return <span class="badge bg-dark me-1 mb-1">
+								<EquipIcon class="me-2 vertical-align-middle" image={ item.icon } size="24" />
+								<Locale k={ `CONSUMABLE_${item.key}` } />
+								<span class="ps-1"> x{ FormatNumber(e.count) }</span>
+							</span>;
+						}) }
+					</div>
+				</div>,
+				<div>
+					<Icon icon="arrow-right-circle-fill" />
+				</div>,
+				<div>
+					{ next
+						? <EquipCard class="d-inline-block" equip={ next } />
+						: <>???</>
+					}
+				</div>,
+			);
+		});
+	}
+
 	return <PopupBase
 		class="equip-modal"
 		bodyClass="pb-0"
-		size="lg"
+		size="xl"
 		display={ props.display && target !== null }
 		header={ target
 			? <>
@@ -526,76 +579,56 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 						</div>
 					}
 					{ displayTab === "enchant" &&
-						<table class="table table-bordered text-center">
-							<tbody>
-								<tr>
-									<th class="bg-dark text-light">
-										<Locale k="EQUIP_VIEW_COST_LEVEL" />
-									</th>
-									<th class="bg-dark text-light">
-										<img class="res-icon" src={ `${AssetsRoot}/res-component.png` } />
-										<img class="res-icon" src={ `${AssetsRoot}/res-nutrition.png` } />
-										<img class="res-icon" src={ `${AssetsRoot}/res-power.png` } />
-									</th>
-									<th class="bg-dark text-light" colSpan={ UpgradeCostTable[0].length - 1 }>
-										<Locale k="EQUIP_VIEW_COST_CONSUMABLE" />
-									</th>
-								</tr>
-								{ UpgradeCostTable.map((row, lv) => <tr>
-									<th class="bg-dark text-light">
-										{ lv < 10
-											? <span class="font-exo2">
-												<input
-													class="me-2"
-													type="checkbox"
-													checked={ costChecks[lv] }
-													onClick={ (): void => {
-														const arr = [...costChecks];
-														arr[lv] = !arr[lv];
-														setCostChecks(arr);
-													} }
-												/>
-												Lv.{ lv + 1 }
-											</span>
-											: <Locale k="EQUIP_VIEW_COST_TOTALCOST" />
-										}
-									</th>
-									{ row.map(col => <td>{ col }</td>) }
-								</tr>) }
-							</tbody>
-						</table>
+						<div class="overflow-auto">
+							<table class="table table-bordered text-center table-enchant">
+								<tbody>
+									<tr>
+										<th class="bg-dark text-light">
+											<Locale k="EQUIP_VIEW_COST_LEVEL" />
+										</th>
+										<th class="bg-dark text-light">
+											<img class="res-icon" src={ `${AssetsRoot}/res-component.png` } />
+											<img class="res-icon" src={ `${AssetsRoot}/res-nutrition.png` } />
+											<img class="res-icon" src={ `${AssetsRoot}/res-power.png` } />
+										</th>
+										<th class="bg-dark text-light" colSpan={ UpgradeCostTable[0].length - 1 }>
+											<Locale k="EQUIP_VIEW_COST_CONSUMABLE" />
+										</th>
+									</tr>
+									{ UpgradeCostTable.map((row, lv) => <tr>
+										<th class="bg-dark text-light">
+											{ lv < 10
+												? <span class="font-exo2">
+													<input
+														class="me-2"
+														type="checkbox"
+														checked={ costChecks[lv] }
+														onClick={ (): void => {
+															const arr = [...costChecks];
+															arr[lv] = !arr[lv];
+															setCostChecks(arr);
+														} }
+													/>
+													Lv.{ lv + 1 }
+												</span>
+												: <Locale k="EQUIP_VIEW_COST_TOTALCOST" />
+											}
+										</th>
+										{ row.map(col => <td>{ col }</td>) }
+									</tr>) }
+								</tbody>
+							</table>
+						</div>
 					}
 					{ displayTab === "upgrade" &&
 						<div class="p-4">
-							{ target.upgrade.upgrade === null
+							{ upgrades.length === 0
 								? <span class="text-secondary">
 									<Locale k="EQUIP_VIEW_PROMOTION_EMPTY" />
 								</span>
-								: <>
-									<div class="p-2">
-										{ target.upgrade.upgrade.cost.map(e => {
-											const item = ConsumableDB && ConsumableDB.find(c => c.key === e.item);
-											if (!item) return <>-</>;
-
-											return <span class="badge bg-dark me-1 mb-1">
-												<EquipIcon class="me-2 vertical-align-middle" image={ item.icon } size="24" />
-												<Locale k={ `CONSUMABLE_${item.key}` } />
-												&nbsp;x{ FormatNumber(e.count) }
-											</span>;
-										}) }
-									</div>
-									<div>
-										<Icon icon="arrow-down-circle-fill" />
-									</div>
-									<div class="p-2">
-										{ (() => {
-											const found = FilterableEquipDB && FilterableEquipDB.find(x => x.fullKey === target.upgrade.upgrade!.to);
-											return found
-												? <EquipCard class="d-inline-block" equip={ found } />
-												: <>???</>;
-										})() }
-									</div>
-								</>
+								: <div class="upgrade-flow">
+									{ upgrades }
+								</div>
 							}
 						</div>
 					}
