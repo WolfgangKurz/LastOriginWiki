@@ -1,3 +1,5 @@
+import { useState } from "preact/hooks";
+
 import Decimal from "decimal.js";
 
 import { Gacha, INNER_GACHA_CATEGORY } from "@/types/DB/Gacha";
@@ -9,11 +11,13 @@ import { CurrentDB } from "@/libs/DB";
 import { objState } from "@/libs/State";
 import { FormatNumber, isActive, ToOrdinal } from "@/libs/Functions";
 import { AssetsRoot } from "@/libs/Const";
+import { BuildClass } from "@/libs/Class";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale from "@/components/locale";
 import Icon from "@/components/bootstrap-icon";
 import EquipIcon from "@/components/equip-icon";
+import ItemIcon from "@/components/item-icon";
 
 import { GachaSubpageProps } from "./";
 
@@ -21,7 +25,7 @@ import style from "./style.module.scss";
 
 interface GachaResult {
 	key: string;
-	price: number;
+	price: number | Array<[item: Consumable | null, count: number]>;
 	result: Array<{
 		key: string;
 		count: number;
@@ -35,7 +39,7 @@ const BoxGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 
 	const BoxType = objState<string>("");
 
-	const AccumCash = objState(0);
+	const [AccumCash, setAccumCash] = useState<[number, Array<[Consumable | null, number]>]>([0, []]);
 	const GachaCount = objState(0);
 	const SkinCount = objState(0);
 
@@ -81,11 +85,34 @@ const BoxGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 			GachaCount.set(GachaCount.value + 1);
 		}
 
-		AccumCash.set(AccumCash.value + gacha.price);
+		const price = typeof gacha.price === "number"
+			? gacha.price
+			: gacha.price.map(([key, count]) => {
+				const req = ConsumableDB && ConsumableDB.find(e => e.key === key);
+				return [req || null, count] satisfies [Consumable | null, number];
+			});
+
+		if (typeof price === "number")
+			setAccumCash([AccumCash[0] + price, AccumCash[1]]);
+		else {
+			const lst = [...AccumCash[1]];
+
+			price.forEach(e => {
+				const [key, value] = e;
+				const idx = lst.findIndex(r => r[0]?.key === key?.key);
+				if (idx >= 0)
+					lst[idx][1] += value;
+				else
+					lst.push(e);
+			});
+
+			setAccumCash([AccumCash[0], lst]);
+		}
+
 		Result.set([
 			{
 				key: gacha.key,
-				price: gacha.price,
+				price,
 				result: ret,
 			},
 			...Result.value,
@@ -130,15 +157,35 @@ const BoxGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 						</div>
 
 						<span class="badge bg-warning text-dark">
-							<img class={ `float-start ${style.TunaIcon}` } src={ `${AssetsRoot}/tuna.png` } />
-							{ FormatNumber(g.price) }
+							{ typeof g.price === "number"
+								? <>
+									<img class={ `float-start ${style.TunaIcon}` } src={ `${AssetsRoot}/tuna.png` } />
+									{ FormatNumber(g.price) }
+								</>
+								: g.price.map(([key, count]) => {
+									const req = ConsumableDB && ConsumableDB.find(e => e.key === key);
+
+									return <>
+										{ req && <ItemIcon class={ `float-start ${style.RequireItemIcon}` } item={ req.icon } /> }
+										{ FormatNumber(count) }
+									</>;
+								})
+							}
 						</span>
 
 						{ g.type === GACHA_CATEGORY.GACHA_11ST
 							? <span class={ `ms-1 badge bg-danger ${style.BoxPrice}` }>
 								x11
 							</span>
-							: <></>
+							: g.type === GACHA_CATEGORY.GACHA_10ST
+								? <span class={ `ms-1 badge bg-danger ${style.BoxPrice}` }>
+									x10
+								</span>
+								: g.type === GACHA_CATEGORY.DUMMY
+									? <span class={ `ms-1 badge bg-succeeded ${style.BoxPrice}` }>
+										<Locale plain k="UNIT_SKILL_DUMMY" />
+									</span>
+									: <></>
 						}
 					</a>
 				</li>) }
@@ -156,10 +203,20 @@ const BoxGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 								</span>] } />
 							</div>
 							<div class="col-6 col-lg-auto mb-1 mb-lg-0">
-								<Locale k="GACHA_ACCUM_TUNA" p={ [<span class="badge bg-warning text-dark">
-									<img class={ `float-start ${style.TunaIcon}` } src={ `${AssetsRoot}/tuna.png` } />
-									{ FormatNumber(AccumCash.value) }
-								</span>] } />
+								<Locale k="GACHA_ACCUM_CURRENCY" p={ [<>
+									{ AccumCash[1].length === 0 || AccumCash[0] > 0
+										? <span class="badge bg-warning text-dark">
+											<img class={ `float-start ${style.TunaIcon}` } src={ `${AssetsRoot}/tuna.png` } />
+											{ FormatNumber(AccumCash[0]) }
+										</span>
+										: <></>
+									}
+
+									{ AccumCash[1].map(([req, count]) => <span class={ BuildClass("badge bg-warning text-dark", AccumCash[0] > 0 && "ms-1") }>
+										{ req && <ItemIcon class={ `float-start ${style.RequireItemIcon}` } item={ req.icon } /> }
+										{ FormatNumber(count) }
+									</span>) }
+								</>] } />
 							</div>
 							<div class="col-6 col-lg-auto mt-1 mt-lg-0">
 								<Locale k="GACHA_SKIN_COUNT" p={ [<span class="badge bg-success">
@@ -191,7 +248,7 @@ const BoxGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 							<button
 								class="btn btn-rarity-A"
 								onClick={ () => {
-									AccumCash.set(0);
+									setAccumCash([0, []]);
 									GachaCount.set(0);
 									SkinCount.set(0);
 									Result.set([]);
@@ -229,8 +286,18 @@ const BoxGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 									</span>
 
 									<span class="badge bg-warning text-dark">
-										<img class={ `float-start ${style.TunaIcon}` } src={ `${AssetsRoot}/tuna.png` } />
-										{ FormatNumber(r.price) }
+										{ typeof r.price === "number"
+											? <>
+												<img class={ `float-start ${style.TunaIcon}` } src={ `${AssetsRoot}/tuna.png` } />
+												{ FormatNumber(r.price) }
+											</>
+											: r.price.map(([req, count]) => {
+												return <>
+													{ req && <ItemIcon class={ `float-start ${style.RequireItemIcon}` } item={ req.icon } /> }
+													{ FormatNumber(count) }
+												</>;
+											})
+										}
 									</span>
 
 									<span class={ `ms-1 badge bg-danger ${style.BoxPrice}` }>

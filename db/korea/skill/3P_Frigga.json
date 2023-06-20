@@ -3377,7 +3377,27 @@
                 {
                   "near": 4
                 },
-                false
+                {
+                  "on": {
+                    "target": "self",
+                    "select": [
+                      "Effect_BUFF_ShieldBlade_N_1",
+                      "Effect_BUFF_ShieldBlade_N_2",
+                      "Effect_BUFF_ShieldBlade_N_3",
+                      "Effect_BUFF_ShieldBlade_N_4",
+                      "Effect_BUFF_ShieldBlade_N_5",
+                      "Effect_BUFF_ShieldBlade_N_6",
+                      "Effect_BUFF_ShieldBlade_N_7",
+                      "Effect_BUFF_ShieldBlade_N_8",
+                      "Effect_BUFF_ShieldBlade_N_9",
+                      "Effect_BUFF_ShieldBlade_N_10",
+                      "Effect_BUFF_ShieldBlade_N_11"
+                    ],
+                    "stack": 0,
+                    "func": "UNFILLED",
+                    "attr": 6
+                  }
+                }
               ],
               "body": [
                 0,
@@ -3438,6 +3458,145 @@
                         "base": "100%",
                         "per": "0%"
                       }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Frigga_N_45",
+              "on": "round",
+              "if": [
+                {
+                  "near": 3
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_ShieldBlade_N_1",
+                      "Effect_BUFF_ShieldBlade_N_2",
+                      "Effect_BUFF_ShieldBlade_N_3",
+                      "Effect_BUFF_ShieldBlade_N_4",
+                      "Effect_BUFF_ShieldBlade_N_5",
+                      "Effect_BUFF_ShieldBlade_N_6",
+                      "Effect_BUFF_ShieldBlade_N_7",
+                      "Effect_BUFF_ShieldBlade_N_8",
+                      "Effect_BUFF_ShieldBlade_N_9",
+                      "Effect_BUFF_ShieldBlade_N_10",
+                      "Effect_BUFF_ShieldBlade_N_11"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEBUFF_PERDOWN",
+                  "desc": {
+                    "desc": "Effect_3P_Frigga_N_45_1",
+                    "type": 1,
+                    "value": "1",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 91,
+                    "resist": {
+                      "type": "debuff_perdown",
+                      "value": {
+                        "base": "100%",
+                        "per": "0%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_3P_Frigga_N_46",
+              "on": "round",
+              "if": [
+                {
+                  "near": 4
+                },
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_BUFF_ShieldBlade_N_1",
+                      "Effect_BUFF_ShieldBlade_N_2",
+                      "Effect_BUFF_ShieldBlade_N_3",
+                      "Effect_BUFF_ShieldBlade_N_4",
+                      "Effect_BUFF_ShieldBlade_N_5",
+                      "Effect_BUFF_ShieldBlade_N_6",
+                      "Effect_BUFF_ShieldBlade_N_7",
+                      "Effect_BUFF_ShieldBlade_N_8",
+                      "Effect_BUFF_ShieldBlade_N_9",
+                      "Effect_BUFF_ShieldBlade_N_10",
+                      "Effect_BUFF_ShieldBlade_N_11"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "Effect_3P_Frigga_N_46_1",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 3,
+                    "defense": {
+                      "base": "15%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -3558,6 +3717,30 @@
             },
             "base": 1,
             "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEBUFF_PERDOWN",
+            "desc": {
+              "desc": "Effect_3P_Frigga_N_45_1",
+              "type": 1,
+              "value": "1",
+              "level": "0"
+            },
+            "base": 1,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DEF_UP",
+            "desc": {
+              "desc": "Effect_3P_Frigga_N_46_1",
+              "type": 1,
+              "value": "0.150000",
+              "level": "0.020000"
+            },
+            "base": 0.15,
+            "per": 0.02,
             "chance": 1
           }
         ]

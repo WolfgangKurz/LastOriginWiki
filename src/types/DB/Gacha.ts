@@ -18,7 +18,7 @@ export interface GachaData {
 export interface Gacha {
 	key: string;
 	category: INNER_GACHA_CATEGORY;
-	price: number;
+	price: number | Array<[key: string, count: number]>;
 	type: GACHA_CATEGORY;
 	icon: string;
 	data: Array<GachaData>;

@@ -1,8 +1,10 @@
 import { FunctionalComponent } from "preact";
 
 import { ImageExtension, AssetsRoot } from "@/libs/Const";
+import { BuildClass } from "@/libs/Class";
 
 interface ItemIconProps {
+	class?: string;
 	item: string;
 	size?: number;
 }
@@ -13,6 +15,6 @@ const ItemIcon: FunctionalComponent<ItemIconProps> = (props) => {
 
 	const size = props.size || 24;
 
-	return <img class="item-icon me-1" src={ ItemImage } width={ size } height={ size } />;
+	return <img class={ BuildClass("item-icon", "me-1", props.class) } src={ ItemImage } width={ size } height={ size } />;
 };
 export default ItemIcon;

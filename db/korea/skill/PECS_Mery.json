@@ -56,55 +56,11 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Mery_N_1_1",
                     "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 7,
-                    "accuracy": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_EVADE_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_2",
-                    "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 11,
-                    "evade": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_ATK_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_3",
-                    "type": 1,
-                    "value": "-0.055000",
+                    "value": "-0.100000",
                     "level": "-0.005000"
                   },
                   "attr": 1,
@@ -115,14 +71,109 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "-5.5%",
+                      "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_2",
+                    "type": 1,
+                    "value": "-0.300000",
+                    "level": "-0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_3",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Mery_N_11",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_11_1",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -164,55 +215,11 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Mery_N_1_1",
                     "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 7,
-                    "accuracy": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_EVADE_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_2",
-                    "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 11,
-                    "evade": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_ATK_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_3",
-                    "type": 1,
-                    "value": "-0.055000",
+                    "value": "-0.100000",
                     "level": "-0.005000"
                   },
                   "attr": 1,
@@ -223,14 +230,109 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "-5.5%",
+                      "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_2",
+                    "type": 1,
+                    "value": "-0.300000",
+                    "level": "-0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_3",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Mery_N_11",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_11_1",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -272,55 +374,11 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Mery_N_1_1",
                     "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 7,
-                    "accuracy": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_EVADE_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_2",
-                    "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 11,
-                    "evade": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_ATK_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_3",
-                    "type": 1,
-                    "value": "-0.055000",
+                    "value": "-0.100000",
                     "level": "-0.005000"
                   },
                   "attr": 1,
@@ -331,14 +389,109 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "-5.5%",
+                      "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_2",
+                    "type": 1,
+                    "value": "-0.300000",
+                    "level": "-0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_3",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Mery_N_11",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_11_1",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -380,55 +533,11 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Mery_N_1_1",
                     "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 7,
-                    "accuracy": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_EVADE_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_2",
-                    "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 11,
-                    "evade": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_ATK_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_3",
-                    "type": 1,
-                    "value": "-0.055000",
+                    "value": "-0.100000",
                     "level": "-0.005000"
                   },
                   "attr": 1,
@@ -439,14 +548,109 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "-5.5%",
+                      "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_2",
+                    "type": 1,
+                    "value": "-0.300000",
+                    "level": "-0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_3",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Mery_N_11",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_11_1",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -488,55 +692,11 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Mery_N_1_1",
                     "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 7,
-                    "accuracy": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_EVADE_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_2",
-                    "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 11,
-                    "evade": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_ATK_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_3",
-                    "type": 1,
-                    "value": "-0.055000",
+                    "value": "-0.100000",
                     "level": "-0.005000"
                   },
                   "attr": 1,
@@ -547,14 +707,109 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "-5.5%",
+                      "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_2",
+                    "type": 1,
+                    "value": "-0.300000",
+                    "level": "-0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_3",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Mery_N_11",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_11_1",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -596,55 +851,11 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Mery_N_1_1",
                     "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 7,
-                    "accuracy": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_EVADE_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_2",
-                    "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 11,
-                    "evade": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_ATK_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_3",
-                    "type": 1,
-                    "value": "-0.055000",
+                    "value": "-0.100000",
                     "level": "-0.005000"
                   },
                   "attr": 1,
@@ -655,14 +866,109 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "-5.5%",
+                      "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_2",
+                    "type": 1,
+                    "value": "-0.300000",
+                    "level": "-0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_3",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Mery_N_11",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_11_1",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -704,55 +1010,11 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Mery_N_1_1",
                     "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 7,
-                    "accuracy": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_EVADE_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_2",
-                    "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 11,
-                    "evade": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_ATK_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_3",
-                    "type": 1,
-                    "value": "-0.055000",
+                    "value": "-0.100000",
                     "level": "-0.005000"
                   },
                   "attr": 1,
@@ -763,14 +1025,109 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "-5.5%",
+                      "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_2",
+                    "type": 1,
+                    "value": "-0.300000",
+                    "level": "-0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_3",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Mery_N_11",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_11_1",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -812,55 +1169,11 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Mery_N_1_1",
                     "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 7,
-                    "accuracy": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_EVADE_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_2",
-                    "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 11,
-                    "evade": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_ATK_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_3",
-                    "type": 1,
-                    "value": "-0.055000",
+                    "value": "-0.100000",
                     "level": "-0.005000"
                   },
                   "attr": 1,
@@ -871,14 +1184,109 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "-5.5%",
+                      "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_2",
+                    "type": 1,
+                    "value": "-0.300000",
+                    "level": "-0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_3",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Mery_N_11",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_11_1",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -920,55 +1328,11 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Mery_N_1_1",
                     "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 7,
-                    "accuracy": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_EVADE_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_2",
-                    "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 11,
-                    "evade": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_ATK_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_3",
-                    "type": 1,
-                    "value": "-0.055000",
+                    "value": "-0.100000",
                     "level": "-0.005000"
                   },
                   "attr": 1,
@@ -979,14 +1343,109 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "-5.5%",
+                      "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_2",
+                    "type": 1,
+                    "value": "-0.300000",
+                    "level": "-0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_3",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Mery_N_11",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_11_1",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         },
@@ -1028,55 +1487,11 @@
               "target": 3,
               "buffs": [
                 {
-                  "icon": "BuffIcon_ACCURACY_DOWN",
+                  "icon": "BuffIcon_ATK_DOWN",
                   "desc": {
                     "desc": "Effect_PECS_Mery_N_1_1",
                     "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 7,
-                    "accuracy": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_EVADE_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_2",
-                    "type": 1,
-                    "value": "-0.170000",
-                    "level": "-0.020000"
-                  },
-                  "attr": 1,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 11,
-                    "evade": {
-                      "base": "-17%",
-                      "per": "-2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_ATK_DOWN",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_1_3",
-                    "type": 1,
-                    "value": "-0.055000",
+                    "value": "-0.100000",
                     "level": "-0.005000"
                   },
                   "attr": 1,
@@ -1087,14 +1502,109 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "-5.5%",
+                      "base": "-10%",
                       "per": "-0.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_EVADE_DOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_2",
+                    "type": 1,
+                    "value": "-0.300000",
+                    "level": "-0.010000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 11,
+                    "evade": {
+                      "base": "-30%",
+                      "per": "-1%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_1_3",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 1,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
                     }
                   },
                   "overlap": 4
                 }
               ],
-              "maxStack": 3
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Mery_N_11",
+              "on": {
+                "after": "use_skill"
+              },
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_11_1",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 2
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "15%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -1116,15 +1626,15 @@
       "data": [
         [
           {
-            "icon": "BuffIcon_ACCURACY_DOWN",
+            "icon": "BuffIcon_ATK_DOWN",
             "desc": {
               "desc": "Effect_PECS_Mery_N_1_1",
               "type": 1,
-              "value": "-0.170000",
-              "level": "-0.020000"
+              "value": "-0.100000",
+              "level": "-0.005000"
             },
-            "base": -0.17,
-            "per": -0.02,
+            "base": -0.1,
+            "per": -0.005,
             "chance": 1
           },
           {
@@ -1132,23 +1642,35 @@
             "desc": {
               "desc": "Effect_PECS_Mery_N_1_2",
               "type": 1,
-              "value": "-0.170000",
-              "level": "-0.020000"
+              "value": "-0.300000",
+              "level": "-0.010000"
             },
-            "base": -0.17,
-            "per": -0.02,
+            "base": -0.3,
+            "per": -0.01,
             "chance": 1
           },
           {
-            "icon": "BuffIcon_ATK_DOWN",
+            "icon": "BuffIcon_AP_UP",
             "desc": {
               "desc": "Effect_PECS_Mery_N_1_3",
               "type": 1,
-              "value": "-0.055000",
-              "level": "-0.005000"
+              "value": "0.150000",
+              "level": "0.015000"
             },
-            "base": -0.055,
-            "per": -0.005,
+            "base": 0.15,
+            "per": 0.015,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_Mery_N_11_1",
+              "type": 1,
+              "value": "0.150000",
+              "level": "0.015000"
+            },
+            "base": 0.15,
+            "per": 0.015,
             "chance": 1
           }
         ]
@@ -1180,7 +1702,7 @@
           "range": 6,
           "ap": 8,
           "grid": "0,0,0,0,1,0,0,0,0",
-          "target_ground": true,
+          "target_ground": false,
           "summon": null,
           "use": null,
           "enabled": true,
@@ -1216,8 +1738,8 @@
                   "desc": {
                     "desc": "Effect_PECS_Mery_N_2_1",
                     "type": 1,
-                    "value": "0.320000",
-                    "level": "0.020000"
+                    "value": "0.250000",
+                    "level": "0.025000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1227,19 +1749,19 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "32%",
-                      "per": "2%"
+                      "base": "25%",
+                      "per": "2.5%"
                     }
                   },
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_EVADE_UP",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
                     "desc": "Effect_PECS_Mery_N_2_2",
                     "type": 1,
-                    "value": "0.320000",
-                    "level": "0.020000"
+                    "value": "0.100000",
+                    "level": "0.010000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1248,79 +1770,36 @@
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 11,
-                    "evade": {
-                      "base": "32%",
-                      "per": "2%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "10%",
+                      "per": "1%"
                     }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_DEF_UP",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_2_3",
-                    "type": 1,
-                    "value": "0.320000",
-                    "level": "0.020000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 3,
-                    "defense": {
-                      "base": "32%",
-                      "per": "2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_MARKING",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_2_4",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "chance": "0%",
-                    "type": 87,
-                    "attack_target": true
                   },
                   "overlap": 4
                 },
                 {
                   "icon": "BuffIcon_AP_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Mery_N_2_5",
-                    "type": 0,
-                    "value": "2.100000",
-                    "level": "0.100000"
+                    "desc": "Effect_PECS_Mery_N_2_3",
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
                   },
                   "attr": 0,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
                     "chance": "0%",
-                    "type": 20,
-                    "ap": {
-                      "base": 2.1,
-                      "per": 0.1
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "20%",
+                      "per": "1%"
                     }
                   },
-                  "overlap": 0
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -1349,12 +1828,12 @@
               "target": 1,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_UP",
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
                   "desc": {
                     "desc": "Effect_PECS_Mery_N_21_1",
                     "type": 1,
-                    "value": "0.320000",
-                    "level": "0.020000"
+                    "value": "0.100000",
+                    "level": "0.010000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1362,54 +1841,13 @@
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 3,
-                    "defense": {
-                      "base": "32%",
-                      "per": "2%"
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "10%",
+                      "per": "1%"
                     }
                   },
                   "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_EVADE_UP",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_21_2",
-                    "type": 1,
-                    "value": "0.320000",
-                    "level": "0.020000"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 11,
-                    "evade": {
-                      "base": "32%",
-                      "per": "2%"
-                    }
-                  },
-                  "overlap": 4
-                },
-                {
-                  "icon": "BuffIcon_MARKING",
-                  "desc": {
-                    "desc": "Effect_PECS_Mery_N_21_3",
-                    "type": 0,
-                    "value": "0",
-                    "level": "0"
-                  },
-                  "attr": 0,
-                  "erase": {
-                    "rounds": 2
-                  },
-                  "value": {
-                    "isBuff": true,
-                    "type": 87,
-                    "attack_target": true
-                  },
-                  "overlap": 1
                 }
               ],
               "maxStack": 0
@@ -1441,23 +1879,23 @@
                   "icon": "BuffIcon_AP_UP",
                   "desc": {
                     "desc": "Effect_PECS_Mery_N_22_1",
-                    "type": 0,
-                    "value": "2.100000",
-                    "level": "0.100000"
+                    "type": 1,
+                    "value": "0.200000",
+                    "level": "0.010000"
                   },
                   "attr": 0,
                   "erase": {
-                    "rounds": 0
+                    "rounds": 2
                   },
                   "value": {
                     "isBuff": true,
-                    "type": 20,
-                    "ap": {
-                      "base": 2.1,
-                      "per": 0.1
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "20%",
+                      "per": "1%"
                     }
                   },
-                  "overlap": 0
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -1486,107 +1924,59 @@
             "desc": {
               "desc": "Effect_PECS_Mery_N_2_1",
               "type": 1,
-              "value": "0.320000",
-              "level": "0.020000"
+              "value": "0.250000",
+              "level": "0.025000"
             },
-            "base": 0.32,
-            "per": 0.02,
+            "base": 0.25,
+            "per": 0.025,
             "chance": 1
           },
           {
-            "icon": "BuffIcon_EVADE_UP",
+            "icon": "BuffIcon_DAMAGE_REDUCE",
             "desc": {
               "desc": "Effect_PECS_Mery_N_2_2",
               "type": 1,
-              "value": "0.320000",
-              "level": "0.020000"
+              "value": "0.100000",
+              "level": "0.010000"
             },
-            "base": 0.32,
-            "per": 0.02,
-            "chance": 0
-          },
-          {
-            "icon": "BuffIcon_DEF_UP",
-            "desc": {
-              "desc": "Effect_PECS_Mery_N_2_3",
-              "type": 1,
-              "value": "0.320000",
-              "level": "0.020000"
-            },
-            "base": 0.32,
-            "per": 0.02,
-            "chance": 0
-          },
-          {
-            "icon": "BuffIcon_MARKING",
-            "desc": {
-              "desc": "Effect_PECS_Mery_N_2_4",
-              "type": 0,
-              "value": "0",
-              "level": "0"
-            },
-            "base": 0,
-            "per": 0,
+            "base": 0.1,
+            "per": 0.01,
             "chance": 0
           },
           {
             "icon": "BuffIcon_AP_UP",
             "desc": {
-              "desc": "Effect_PECS_Mery_N_2_5",
-              "type": 0,
-              "value": "2.100000",
-              "level": "0.100000"
+              "desc": "Effect_PECS_Mery_N_2_3",
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.010000"
             },
-            "base": 2.1,
-            "per": 0.1,
+            "base": 0.2,
+            "per": 0.01,
             "chance": 0
           },
           {
-            "icon": "BuffIcon_DEF_UP",
+            "icon": "BuffIcon_DAMAGE_REDUCE",
             "desc": {
               "desc": "Effect_PECS_Mery_N_21_1",
               "type": 1,
-              "value": "0.320000",
-              "level": "0.020000"
+              "value": "0.100000",
+              "level": "0.010000"
             },
-            "base": 0.32,
-            "per": 0.02,
-            "chance": 1
-          },
-          {
-            "icon": "BuffIcon_EVADE_UP",
-            "desc": {
-              "desc": "Effect_PECS_Mery_N_21_2",
-              "type": 1,
-              "value": "0.320000",
-              "level": "0.020000"
-            },
-            "base": 0.32,
-            "per": 0.02,
-            "chance": 1
-          },
-          {
-            "icon": "BuffIcon_MARKING",
-            "desc": {
-              "desc": "Effect_PECS_Mery_N_21_3",
-              "type": 0,
-              "value": "0",
-              "level": "0"
-            },
-            "base": 0,
-            "per": 0,
+            "base": 0.1,
+            "per": 0.01,
             "chance": 1
           },
           {
             "icon": "BuffIcon_AP_UP",
             "desc": {
               "desc": "Effect_PECS_Mery_N_22_1",
-              "type": 0,
-              "value": "2.100000",
-              "level": "0.100000"
+              "type": 1,
+              "value": "0.200000",
+              "level": "0.010000"
             },
-            "base": 2.1,
-            "per": 0.1,
+            "base": 0.2,
+            "per": 0.01,
             "chance": 1
           }
         ]
@@ -1653,8 +2043,8 @@
                   "desc": {
                     "desc": "Effect_PECS_Mery_N_3_1",
                     "type": 1,
-                    "value": "0.260000",
-                    "level": "0.010000"
+                    "value": "0.200000",
+                    "level": "0.020000"
                   },
                   "attr": 0,
                   "erase": {
@@ -1664,8 +2054,8 @@
                     "isBuff": true,
                     "type": 1,
                     "attack": {
-                      "base": "26%",
-                      "per": "1%"
+                      "base": "20%",
+                      "per": "2%"
                     }
                   },
                   "overlap": 4
@@ -1675,7 +2065,7 @@
                   "desc": {
                     "desc": "Effect_PECS_Mery_N_3_2",
                     "type": 1,
-                    "value": "0.210000",
+                    "value": "0.200000",
                     "level": "0.010000"
                   },
                   "attr": 0,
@@ -1686,7 +2076,7 @@
                     "isBuff": true,
                     "type": 13,
                     "turnSpeed": {
-                      "base": "21%",
+                      "base": "20%",
                       "per": "1%"
                     }
                   },
@@ -1710,7 +2100,7 @@
                     "type": 94,
                     "penetration_force": true
                   },
-                  "overlap": 1
+                  "overlap": 4
                 }
               ],
               "maxStack": 0
@@ -1720,14 +2110,23 @@
               "on": "round",
               "if": [
                 {
+                  "on": {
+                    "target": "self",
+                    "func": "UNFILLED",
+                    "select": [
+                      "Effect_PECS_Mery_N_57"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
                   "hp>=": {
                     "target": "target",
                     "value": [
                       "95%"
                     ]
                   }
-                },
-                false
+                }
               ],
               "body": [
                 0,
@@ -1763,6 +2162,301 @@
                 }
               ],
               "maxStack": 1
+            },
+            {
+              "key": "Effect_PECS_Mery_N_32",
+              "on": "round",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Mery_N_57"
+                    ],
+                    "attr": 6
+                  }
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                2
+              ],
+              "role": [
+                1
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_BARRIER_PIERCE",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_32_1",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 94,
+                    "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_PECS_Mery_N_33",
+              "on": "round",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Mery_N_57"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "hp>=": {
+                    "target": "target",
+                    "value": [
+                      "95%"
+                    ]
+                  }
+                }
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                1
+              ],
+              "role": [
+                1
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_BARRIER_PIERCE",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_33_1",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 94,
+                    "penetration_force": true
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_PECS_Mery_N_51",
+              "on": "round",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Mery_N_57"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "squad",
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Mery_N_2"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                1
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_51_1",
+                    "type": 1,
+                    "value": "0.125000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "12.5%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Mery_N_52",
+              "on": "round",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Mery_N_57"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "squad",
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Mery_N_21"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                1
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_52_1",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Mery_N_53",
+              "on": "round",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Mery_N_57"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "squad",
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Mery_N_22"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                1
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_53_1",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "10%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
             }
           ]
         }
@@ -1788,11 +2482,11 @@
             "desc": {
               "desc": "Effect_PECS_Mery_N_3_1",
               "type": 1,
-              "value": "0.260000",
-              "level": "0.010000"
+              "value": "0.200000",
+              "level": "0.020000"
             },
-            "base": 0.26,
-            "per": 0.01,
+            "base": 0.2,
+            "per": 0.02,
             "chance": 1
           },
           {
@@ -1800,10 +2494,10 @@
             "desc": {
               "desc": "Effect_PECS_Mery_N_3_2",
               "type": 1,
-              "value": "0.210000",
+              "value": "0.200000",
               "level": "0.010000"
             },
-            "base": 0.21,
+            "base": 0.2,
             "per": 0.01,
             "chance": 1
           },
@@ -1829,6 +2523,66 @@
             },
             "base": 0,
             "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_BARRIER_PIERCE",
+            "desc": {
+              "desc": "Effect_PECS_Mery_N_32_1",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_BARRIER_PIERCE",
+            "desc": {
+              "desc": "Effect_PECS_Mery_N_33_1",
+              "type": 0,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Effect_PECS_Mery_N_51_1",
+              "type": 1,
+              "value": "0.125000",
+              "level": "0.012500"
+            },
+            "base": 0.125,
+            "per": 0.0125,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DAMAGE_REDUCE",
+            "desc": {
+              "desc": "Effect_PECS_Mery_N_52_1",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.005000"
+            },
+            "base": 0.05,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_Mery_N_53_1",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.005000"
+            },
+            "base": 0.1,
+            "per": 0.005,
             "chance": 1
           }
         ]
@@ -1860,7 +2614,7 @@
           "type": 0,
           "range": 0,
           "ap": 0,
-          "grid": "0,0,0,0,0,1,0,0,0",
+          "grid": "0,0,0,0,1,1,0,0,0",
           "target_ground": false,
           "summon": null,
           "use": null,
@@ -1871,7 +2625,7 @@
           "buffs": [
             {
               "key": "Effect_PECS_Mery_N_4",
-              "on": "wave",
+              "on": "round",
               "if": [
                 false,
                 false
@@ -1891,41 +2645,302 @@
               "target": 2,
               "buffs": [
                 {
-                  "icon": "BuffIcon_DEF_UP",
+                  "icon": "BuffIcon_MARKING",
                   "desc": {
                     "desc": "Effect_PECS_Mery_N_4_1",
                     "type": 1,
-                    "value": "0.320000",
-                    "level": "0.020000"
+                    "value": "0",
+                    "level": "0"
                   },
                   "attr": 0,
-                  "erase": {},
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 87,
+                    "attack_target": true
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_4_2",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.030000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
                   "value": {
                     "isBuff": true,
                     "type": 3,
                     "defense": {
-                      "base": "32%",
-                      "per": "2%"
+                      "base": "30%",
+                      "per": "3%"
                     }
                   },
                   "overlap": 4
                 },
                 {
-                  "icon": "BuffIcon_EVADE_UP",
+                  "icon": "BuffIcon_AP_UP",
                   "desc": {
-                    "desc": "Effect_PECS_Mery_N_4_2",
-                    "type": 1,
-                    "value": "0.320000",
-                    "level": "0.020000"
+                    "desc": "Effect_PECS_Mery_N_4_3",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.050000"
                   },
                   "attr": 0,
-                  "erase": {},
+                  "erase": {
+                    "rounds": 0
+                  },
                   "value": {
                     "isBuff": true,
-                    "type": 11,
-                    "evade": {
-                      "base": "32%",
-                      "per": "2%"
+                    "chance": "0%",
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Mery_N_41",
+              "on": "damaged",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_41_1",
+                    "type": 0,
+                    "value": "1",
+                    "level": "0.050000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 20,
+                    "ap": {
+                      "base": 1,
+                      "per": 0.05
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Mery_N_54",
+              "on": "round",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Mery_N_57"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "squad",
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Mery_N_2"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_54_1",
+                    "type": 1,
+                    "value": "0.125000",
+                    "level": "0.012500"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 1,
+                    "attack": {
+                      "base": "12.5%",
+                      "per": "1.25%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Mery_N_55",
+              "on": "round",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Mery_N_57"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "squad",
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Mery_N_21"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_55_1",
+                    "type": 1,
+                    "value": "0.050000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "5%",
+                      "per": "0.5%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Mery_N_56",
+              "on": "round",
+              "if": [
+                {
+                  "on": {
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Mery_N_57"
+                    ],
+                    "attr": 6
+                  }
+                },
+                {
+                  "on": {
+                    "target": "squad",
+                    "func": "OR",
+                    "select": [
+                      "Effect_PECS_Mery_N_22"
+                    ],
+                    "attr": 6
+                  }
+                }
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0
+              ],
+              "target": 2,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_AP_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_56_1",
+                    "type": 1,
+                    "value": "0.100000",
+                    "level": "0.005000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 13,
+                    "turnSpeed": {
+                      "base": "10%",
+                      "per": "0.5%"
                     }
                   },
                   "overlap": 4
@@ -1953,27 +2968,334 @@
       "data": [
         [
           {
-            "icon": "BuffIcon_DEF_UP",
+            "icon": "BuffIcon_MARKING",
             "desc": {
               "desc": "Effect_PECS_Mery_N_4_1",
               "type": 1,
-              "value": "0.320000",
-              "level": "0.020000"
+              "value": "0",
+              "level": "0"
             },
-            "base": 0.32,
-            "per": 0.02,
+            "base": 0,
+            "per": 0,
             "chance": 1
           },
           {
-            "icon": "BuffIcon_EVADE_UP",
+            "icon": "BuffIcon_DEF_UP",
             "desc": {
               "desc": "Effect_PECS_Mery_N_4_2",
               "type": 1,
-              "value": "0.320000",
-              "level": "0.020000"
+              "value": "0.300000",
+              "level": "0.030000"
             },
-            "base": 0.32,
-            "per": 0.02,
+            "base": 0.3,
+            "per": 0.03,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_Mery_N_4_3",
+              "type": 0,
+              "value": "1",
+              "level": "0.050000"
+            },
+            "base": 1,
+            "per": 0.05,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_Mery_N_41_1",
+              "type": 0,
+              "value": "1",
+              "level": "0.050000"
+            },
+            "base": 1,
+            "per": 0.05,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Effect_PECS_Mery_N_54_1",
+              "type": 1,
+              "value": "0.125000",
+              "level": "0.012500"
+            },
+            "base": 0.125,
+            "per": 0.0125,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DAMAGE_REDUCE",
+            "desc": {
+              "desc": "Effect_PECS_Mery_N_55_1",
+              "type": 1,
+              "value": "0.050000",
+              "level": "0.005000"
+            },
+            "base": 0.05,
+            "per": 0.005,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_AP_UP",
+            "desc": {
+              "desc": "Effect_PECS_Mery_N_56_1",
+              "type": 1,
+              "value": "0.100000",
+              "level": "0.005000"
+            },
+            "base": 0.1,
+            "per": 0.005,
+            "chance": 1
+          }
+        ]
+      ]
+    }
+  },
+  "5": {
+    "key": "5",
+    "icon": "P.TeamSpdBuff",
+    "target": "team",
+    "delayed": false,
+    "leastGrade": 5,
+    "buffs": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        {
+          "rate": 0,
+          "type": 0,
+          "range": 0,
+          "ap": 0,
+          "grid": "0,0,0,0,1,0,0,0,0",
+          "target_ground": false,
+          "summon": null,
+          "use": null,
+          "enabled": true,
+          "dismiss_guard": false,
+          "acc_bonus": 0,
+          "buff_rate": 100,
+          "buffs": [
+            {
+              "key": "Effect_PECS_Mery_N_5",
+              "on": "round",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEBUFF_PERDOWN",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_5_1",
+                    "type": 1,
+                    "value": "0.300000",
+                    "level": "0.030000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 91,
+                    "resist": {
+                      "type": "debuff_perdown",
+                      "value": {
+                        "base": "30%",
+                        "per": "3%"
+                      }
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_DAMAGE_REDUCE",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_5_2",
+                    "type": 1,
+                    "value": "0.150000",
+                    "level": "0.015000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 36,
+                    "damage_reduce": {
+                      "base": "15%",
+                      "per": "1.5%"
+                    }
+                  },
+                  "overlap": 4
+                },
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_5_3",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 0,
+                    "attack": {
+                      "base": 0,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            },
+            {
+              "key": "Effect_PECS_Mery_N_57",
+              "on": "wave",
+              "if": [
+                false,
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_PECS_Mery_N_57_1",
+                    "type": 1,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 3,
+                  "erase": {},
+                  "value": {
+                    "isBuff": true,
+                    "type": 0,
+                    "attack": {
+                      "base": 0,
+                      "per": 0
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 0
+            }
+          ]
+        }
+      ]
+    },
+    "values": {
+      "index": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "data": [
+        [
+          {
+            "icon": "BuffIcon_DEBUFF_PERDOWN",
+            "desc": {
+              "desc": "Effect_PECS_Mery_N_5_1",
+              "type": 1,
+              "value": "0.300000",
+              "level": "0.030000"
+            },
+            "base": 0.3,
+            "per": 0.03,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_DAMAGE_REDUCE",
+            "desc": {
+              "desc": "Effect_PECS_Mery_N_5_2",
+              "type": 1,
+              "value": "0.150000",
+              "level": "0.015000"
+            },
+            "base": 0.15,
+            "per": 0.015,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Effect_PECS_Mery_N_5_3",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
+            "chance": 0
+          },
+          {
+            "icon": "BuffIcon_ATK_UP",
+            "desc": {
+              "desc": "Effect_PECS_Mery_N_57_1",
+              "type": 1,
+              "value": "0",
+              "level": "0"
+            },
+            "base": 0,
+            "per": 0,
             "chance": 1
           }
         ]

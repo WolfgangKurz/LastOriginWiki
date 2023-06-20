@@ -949,11 +949,17 @@ export enum FACETYPE {
 
 /** 가챠(유산) 타입 */
 export enum GACHA_CATEGORY {
+	/** 더미? */
+	DUMMY = -1,
+
 	/** 1회 */
 	NORMAL = 0,
 
 	/** 11회 */
 	GACHA_11ST = 1,
+
+	/** 10회 */
+	GACHA_10ST = 2,
 }
 
 /** 내부 함수 유형 */

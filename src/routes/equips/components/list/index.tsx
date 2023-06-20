@@ -258,7 +258,7 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 				// 전용장비
 				const last = x.last;
 				if (last.limit && last.limit.every(y => FilterableUnitDB.some(z => z.uid === y))) { // 전용 장비임
-					if (!Filters.Type.Exclusive)
+					if (!Filters.Type.Exclusive.value)
 						return false; // 전용 장비 필터가 꺼짐
 				} else { // 그 외 유형
 					const types: ITEM_TYPE[] = [];
