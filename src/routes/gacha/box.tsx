@@ -50,7 +50,11 @@ const BoxGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 		.mul(100);
 
 	function Run (gacha: Gacha): void {
-		const count = gacha.type === GACHA_CATEGORY.GACHA_11ST ? 11 : 1;
+		const count = gacha.type === GACHA_CATEGORY.GACHA_11ST
+			? 11
+			: gacha.type === GACHA_CATEGORY.GACHA_10ST
+				? 10
+				: 1;
 		const ret: GachaResult["result"] = [];
 
 		for (let i = 0; i < count; i++) {
