@@ -51,11 +51,6 @@ ChartJS.register(
 );
 
 const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList }) => {
-	function getLangFromIntroVoice (voice: Unit["introVoice"][0]): UnitDialogueAudioType {
-		if (!voice) return voice;
-		if (Array.isArray(voice)) return voice[0];
-		return voice;
-	}
 	function getIntroVoice (voices: Unit["introVoice"], target: UnitDialogueAudioType): Unit["introVoice"][0] | undefined {
 		return voices.find(r => Array.isArray(r) ? r[0] === target : r === target);
 	}
@@ -592,7 +587,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 																onHidden={ (): void => researchTreeDisplay.set(false) }
 															>
 																<div class="bg-dark">
-																	<ResearchTree unit={ unit } research={ unit.research } />
+																	<ResearchTree unit={ unit } />
 																</div>
 															</PopupBase>
 															<button

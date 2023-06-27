@@ -39,7 +39,7 @@ export interface RendererProps {
 }
 
 const touchNameList = ["touch", "touth"];
-const specialNameList = ["special"];
+const specialNameList = ["special", "stouch"];
 
 const SpineRenderer: FunctionalComponent<RendererProps> = (props) => {
 	const WrapperRef = useRef<HTMLDivElement>(null);
@@ -133,6 +133,7 @@ const SpineRenderer: FunctionalComponent<RendererProps> = (props) => {
 		if (!_app) return;
 
 		const anims = _app.animationList();
+		console.log(anims)
 		const anim = anims.filter(x => {
 			const lowerName = x.name.toLowerCase();
 			return touchNameList.some(r => lowerName.includes(r)) &&
@@ -141,6 +142,7 @@ const SpineRenderer: FunctionalComponent<RendererProps> = (props) => {
 					: !specialNameList.some(r => lowerName.includes(r))
 				);
 		})[0];
+		console.log(anim)
 		if (anim) {
 			if (_app.play(anim))
 				applyAnimCircle(anim.duration);

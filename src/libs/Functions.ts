@@ -1,3 +1,4 @@
+import { Signal } from "@preact/signals";
 import { ObjectState } from "./State";
 
 export function getCookie (name: string, def?: string): string | undefined {
@@ -99,9 +100,9 @@ export function map<T, K extends string, U> (object: object, callbackfn: (value:
 		.map(k => callbackfn((object as any)[k], k as K, object));
 }
 
-export function isActive<T> (value: boolean | ObjectState<T>): "active" | "";
-export function isActive<T> (value: boolean | ObjectState<T>, active: string, inactive: string): "active" | "" | string;
-export function isActive<T> (value: boolean | ObjectState<T>, active?: string, inactive?: string): "active" | "" | string {
+export function isActive<T> (value: boolean | ObjectState<T> | Signal<T>): "active" | "";
+export function isActive<T> (value: boolean | ObjectState<T> | Signal<T>, active: string, inactive: string): "active" | "" | string;
+export function isActive<T> (value: boolean | ObjectState<T> | Signal<T>, active?: string, inactive?: string): "active" | "" | string {
 	if (typeof value === "boolean") {
 		return value
 			? (typeof active === "undefined" ? "active" : active)

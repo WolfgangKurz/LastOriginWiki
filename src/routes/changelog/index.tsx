@@ -14,51 +14,39 @@ const Changelog: FunctionalComponent = () => {
 	const loading = objState<number>(0);
 	const content = objState<preact.VNode | undefined>(undefined);
 
-	const Dates: DateData[] = [
-		{ value: 202304, text: "2023-04" },
-		{ value: 202303, text: "2023-03" },
-		{ value: 202302, text: "2023-02" },
-		{ value: 202301, text: "2023-01" },
-		{ value: 202212, text: "2022-12" },
-		{ value: 202211, text: "2022-11" },
-		{ value: 202210, text: "2022-10" },
-		{ value: 202209, text: "2022-09" },
-		{ value: 202208, text: "2022-08" },
-		{ value: 202207, text: "2022-07" },
-		{ value: 202206, text: "2022-06" },
-		{ value: 202205, text: "2022-05" },
-		{ value: 202204, text: "2022-04" },
-		{ value: 202203, text: "2022-03" },
-		{ value: 202202, text: "2022-02" },
-		{ value: 202201, text: "2022-01" },
-		{ value: 202112, text: "2021-12" },
-		{ value: 202111, text: "2021-11" },
-		{ value: 202110, text: "2021-10" },
-		{ value: 202109, text: "2021-09" },
-		{ value: 202108, text: "2021-08" },
-		{ value: 202107, text: "2021-07" },
-		{ value: 202106, text: "2021-06" },
-		{ value: 202105, text: "2021-05" },
-		{ value: 202104, text: "2021-04" },
-		{ value: 202103, text: "2021-03" },
-		{ value: 202102, text: "2021-02" },
-		{ value: 202101, text: "2021-01" },
-		{ value: 202012, text: "2020-12" },
-		{ value: 202011, text: "2020-11" },
-		{ value: 202010, text: "2020-10" },
-		{ value: 202009, text: "2020-09" },
-		{ value: 202008, text: "2020-08" },
-		{ value: 202007, text: "2020-07" },
-		{ value: 202006, text: "2020-06" },
-		{ value: 202005, text: "2020-05" },
-	];
+	const Dates: DateData[] = (() => {
+		const now = new Date();
+		const nYear = now.getFullYear();
+		const nMonth = now.getMonth() + 1;
+
+		let year = 2020;
+		let month = 5;
+		const output: DateData[] = [];
+
+		while (year < nYear || (year === nYear && month <= nMonth)) {
+			output.push({
+				value: year * 100 + month,
+				text: `${year}-${month.toString().padStart(2, "0")}`,
+			});
+
+			month++;
+			if (month > 12) {
+				month = 1;
+				year++;
+			}
+		}
+
+		return output.reverse();
+	})();
 	const currentDate = objState<number>(Dates[0].value);
 
 	if (loading.value !== currentDate.value) {
 		loading.set(currentDate.value);
 
+		const _year = Math.floor(currentDate.value / 100);
+
 		content.set(undefined);
-		import(`./changelog/${currentDate.value}.tsx`)
+		import(`./changelog/${_year}/${currentDate.value}.tsx`)
 			.then(x => content.set(x.default))
 			.catch(() => content.set(<h5 class="text-secondary text-center m-4">Failed to load</h5>));
 	}

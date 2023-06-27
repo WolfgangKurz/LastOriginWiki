@@ -4,62 +4,34 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12130" date="2023-05-15"
+	<ChangelogItem title="Build 12173" date="2023-06-28"
 		bugfix={ <>
-			<li>일부 전투원 스킨의 다운로드 이미지 오류를 수정했습니다.</li>
-			<li>일부 전투원 스킨이 잘못 표시되던 점을 수정했습니다.</li>
-			<li>일부 전투원의 소개 오디오가 누락된 점을 수정했습니다.</li>
-			<li>진행중인 이벤트 정보가 올바르지 않은 점을 수정했습니다.</li>
-			<li>일부 지역의 정보가 갱신되지 않은 점을 수정했습니다.</li>
-			<li>일부 적의 정보가 갱신되지 않은 점을 수정했습니다.</li>
+			<li>전투원 뱃지에서 전투원 카드가 표시될 때 정렬이 잘못된 문제를 수정했습니다.</li>
+			<li>세계정보의 메인스토리의 레이아웃 문제를 수정했습니다.</li>
+		</> }
+		new={ <>
+			<li>신규 지역 <BY>11지역</BY>의 정보가 추가되었습니다.</li>
+			<li>신규 전투원 <BY>나스호른</BY>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <BY>와전류 제어장치</BY>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <BY>사냥꾼 사냥 보조 OS</BY>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <BY>오지 개척 보조 회로</BY>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <BY>'Heartless Heart' 우회 회로</BY>의 정보가 추가되었습니다.</li>
+			<li>신규 적의 정보가 추가되었습니다.</li>
+			<li>전투원 정보에 승급 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>진행중인 이벤트가 종료됩니다.</li>
+			<li>일부 전투원의 스킬 정보가 추가되었습니다.</li>
+			<li>일부 스테이지의 클리어 조건의 영문 번역이 수정되었습니다.</li>
 		</> }
 		skin={ <>
 			<li>
-				<BY>천우의 하토르</BY>의 기본 스킨의 중파 이미지가 추가되었습니다.
-			</li>
-			<li>
-				<BY>천우의 하토르</BY>의 기본 스킨 이미지가 갱신되었습니다.
-			</li>
-		</> }
-		dialogue={ <>
-			<li><span class="badge bg-light text-dark">KST 2023-05-15 15:52:17</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
-		</> }
-	/>
-	<ChangelogItem title="Build 12128" date="2023-05-08"
-		bugfix={ <>
-			<li>전투원 <BY>천우의 하토르</BY>가 스킨 보기의 출시일에서 스킨으로 분류되던 문제를 수정했습니다.</li>
-		</> }
-		skin={ <>
-			<li>
-				<BY>철혈의 레오나</BY>의 스킨 <BY>드림위버 모던 컬렉션 : 라 마드리나</BY>의 정보가 추가되었습니다.
-			</li>
-			<li>
-				<BY>T-12 칼리아흐 베라</BY>의 스킨 <BY>드림위버 모던 컬렉션 : 보디가드</BY>의 정보가 추가되었습니다.
+				<BY>데카르트 보이저 삿갓</BY>의 기본 스킨의 중파 정보가 추가되었습니다.
 			</li>
 		</> }
 		dialogue={ <>
 			<li>일부 일본어 보이스가 추가되었습니다.</li>
-			<li><span class="badge bg-light text-dark">KST 2023-05-08 17:46:30</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
-		</> }
-	/>
-	<ChangelogItem title="Build 12126" date="2023-05-02"
-		new={ <>
-			<li>신규 전투원 <BY>천우의 하토르</BY>의 정보가 추가되었습니다.</li>
-		</> }
-		bugfix={ <>
-			<li>시뮬레이터에서 모든 위치가 항상 선택된 상태로 표시되는 문제를 수정했습니다.</li>
-		</> }
-		update={ <>
-			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
-			<li>총력전 목록이 내림차순으로 보이도록 수정하였습니다.</li>
-		</> }
-		skin={ <>
-			<li>
-				<BY>장화</BY>의 스킨 <BY>뒤바뀐 운명 : 장화</BY>의 이미지가 갱신되었습니다.
-			</li>
-		</> }
-		dialogue={ <>
-			<li><span class="badge bg-light text-dark">KST 2023-05-02 04:17:26</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2023-06-28 01:40:11</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
 		</> }
 	/>
 </>;

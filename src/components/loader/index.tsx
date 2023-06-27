@@ -1,6 +1,6 @@
-import { FunctionalComponent } from "preact";
+import { FunctionalComponent, createElement } from "preact";
+import { useEffect, useState } from "preact/hooks";
 
-import { objState } from "@/libs/State";
 import { DataRoot } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 import EntitySource from "@/libs/EntitySource";
@@ -18,7 +18,7 @@ interface LoaderProps {
 	db?: string;
 	json?: string | string[];
 
-	content?: () => preact.VNode;
+	content?: preact.VNode | FunctionalComponent<{}>;
 	loading?: preact.VNode;
 	error?: preact.VNode;
 }
@@ -82,14 +82,14 @@ function Load<T = any> (db: string, json: string): Promise<void> {
 	});
 }
 
-function flatten (list: string | string[] | undefined): string[] {
+function normalize (list: string | string[] | undefined): string[] {
 	if (!list) return [];
 	if (typeof list === "string") return [list];
 	return list;
 }
 
 export type JsonDataConverter<T> = (data: T) => T;
-export function DBSourceConverter<T> (data: T): T {
+export function DBSourceConverter<T extends {}> (data: T): T {
 	if (Array.isArray(data)) {
 		return data.map(data => {
 			if (!("source" in data)) return data;
@@ -117,63 +117,73 @@ export function GetJson<T> (json: string, converter?: JsonDataConverter<T>): T {
 	return CachedJson[json] as T;
 }
 export function JsonLoaderCore (db: string, json: string | string[] | undefined): Promise<void[]> {
-	const list = flatten(json);
+	const list = normalize(json);
 
-	if (list.length === 0)
-		return new Promise<void[]>((resolve) => resolve([]));
-
-	if (list.every(x => x in CachedJson))
-		return new Promise<void[]>((resolve) => resolve([]));
+	if (list.length === 0 || list.every(x => x in CachedJson))
+		return Promise.resolve([]);
 
 	return Promise.all(list.map(x => Load(db, x)));
 }
 
+function comp (a: string[] | readonly string[], b: string[] | readonly string[]): boolean {
+	if (a.length !== b.length) return false;
+	return a.every((v, i) => v === b[i]);
+}
+
+interface DefaultFailedBadgeProps {
+	db: string;
+	list: string[];
+}
+
+const DefaultFailedBadge: FunctionalComponent<DefaultFailedBadgeProps> = ({ db, list }) =>
+	<span class="d-inline-block badge bg-danger">
+		Failed to load data { list.map(x => <strong>"{ db }/{ x }"</strong>).gap(", ") }.<br />
+		Please retry or report to developer.
+	</span>;
+const DefaultLoadingBadge: FunctionalComponent = () => <span class="text-secondary">Data loading</span>;
+
 const Loader: FunctionalComponent<LoaderProps> = (props) => {
-	function comp (a: string[], b: string[]): boolean {
-		if (a.length !== b.length) return false;
-		return a.every((v, i) => v === b[i]);
-	}
-
-	function FailedToLoadBadge (db: string, list: string[]): preact.VNode {
-		return <span class="badge bg-danger">
-			Failed to load data { list.map(x => <strong>"{ db }/{ x }"</strong>).gap(", ") }.<br />
-			Please retry or report to developer.
-		</span>;
-	}
-	function LoadingBadge (): preact.VNode {
-		return <span class="text-secondary">Data loading</span>;
-	}
-
 	const db = props.db || CurrentDB;
-	const target = flatten(props.json);
+	const target = normalize(props.json);
 
-	const list = objState<string[]>([]);
-	const state = objState<LoaderState>(0);
+	const [list, setList] = useState<string[]>(target);
+	const [state, setState] = useState<LoaderState>(LoaderState.EMPTY);
 
-	if (!comp(list.value, target)) {
-		list.set(target);
-		state.set(LoaderState.EMPTY);
-	}
+	const response = () => {
+		if (props.content)
+			return typeof props.content === "function"
+				? createElement(props.content, {})
+				: props.content;
+		else
+			return <>{ props.children }</>;
+	};
 
-	if (state.value === LoaderState.EMPTY) {
-		if (target.every(x => x in CachedJson)) {
-			state.set(LoaderState.DONE);
-			return <>{ props.content ? props.content() : props.children }</>;
+	useEffect(() => {
+		if (!comp(list, target)) {
+			setList(target);
+			setState(LoaderState.EMPTY);
+		}
+	}, [list, target]);
+
+	if (state === LoaderState.EMPTY) {
+		if (target.length === 0 || target.every(x => x in CachedJson)) {
+			setState(LoaderState.DONE);
+			return response();
 		}
 
-		state.set(LoaderState.REQUEST);
+		setState(LoaderState.REQUEST);
 		JsonLoaderCore(db, target)
-			.then(() => state.set(LoaderState.DONE))
-			.catch(() => state.set(LoaderState.ERROR));
+			.then(() => setState(LoaderState.DONE))
+			.catch(() => setState(LoaderState.ERROR));
 	}
 
-	switch (state.value) {
+	switch (state) {
 		case LoaderState.DONE:
-			return <>{ props.content ? props.content() : props.children }</>;
+			return response();
 		case LoaderState.REQUEST:
-			return props.loading || LoadingBadge();
+			return props.loading || <DefaultLoadingBadge />;
 		case LoaderState.ERROR:
-			return props.error || FailedToLoadBadge(db, target);
+			return props.error || <DefaultFailedBadge db={ db } list={ target } />;
 		default:
 			return <></>;
 	}

@@ -170,9 +170,6 @@ export default ({ mode }) => {
 						if (id.includes("/node_modules/@popperjs/")) return "vendor.popperjs";
 						if (id.includes("/node_modules/graphlib/")) return "vendor.graphlib";
 						if (id.includes("/node_modules/lodash/")) return "vendor.lodash";
-						if (id.includes("/node_modules/mermaid/")) return "vendor.mermaid";
-						if (id.includes("/node_modules/dagre")) return "vendor.mermaid.dagre";
-						if (id.includes("/node_modules/d3")) return "vendor.mermaid.d3";
 						if (id.includes("/node_modules/")) return "vendor";
 
 						// components/bootstrap-icon/es/*

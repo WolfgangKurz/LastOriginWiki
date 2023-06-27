@@ -3,95 +3,110 @@ import { FunctionalComponent } from "preact";
 import { Consumable } from "@/types/DB/Consumable";
 import { MapWaveDrop } from "@/types/DB/Map";
 
+import { useUpdate } from "@/libs/hooks";
+import { CurrentDB } from "@/libs/DB";
 import { FormatNumber } from "@/libs/Functions";
 
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale from "@/components/locale";
 import EquipIcon from "@/components/equip-icon";
+import BootstrapTooltip from "@/components/bootstrap-tooltip";
 
 import { SubpageProps } from "..";
 
 import style from "../style.module.scss";
 
 const LvLimitTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
-	return <Loader json={ StaticDB.Consumable } content={ () => {
-		if (!display) return <></>;
+	const update = useUpdate();
 
-		const ConsumableDB = GetJson<Consumable[]>(StaticDB.Consumable);
+	const ConsumableDB = GetJson<Consumable[] | null>(StaticDB.Consumable);
+	if (!ConsumableDB) {
+		JsonLoaderCore(CurrentDB, StaticDB.Consumable)
+			.then(() => update());
+	}
 
-		const cols: Consumable[] = [];
-		const table: Record<number, Array<{
-			v: Required<MapWaveDrop>;
-			c: Consumable;
-		}>> = {};
+	if (!display || !ConsumableDB) return <></>;
 
-		unit.lvLimits.forEach(e => {
-			table[e.level] = [];
+	const cols: Consumable[] = [];
+	const table: Record<number, Array<{
+		v: Required<MapWaveDrop>;
+		c: Consumable;
+	}>> = {};
 
-			e.items.forEach(v => {
-				const item = ConsumableDB.find(c => c.key === v.id);
-				if (!item) return;
+	unit.lvLimits.forEach(e => {
+		table[e.level] = [];
 
-				let cidx = cols.indexOf(item);
-				if (cidx === -1) {
-					cols.push(item);
-					cidx = cols.length - 1;
-				}
+		e.items.forEach(v => {
+			const item = ConsumableDB.find(c => c.key === v.id);
+			if (!item) return;
 
-				table[e.level][cidx] = {
-					v,
-					c: item || {
-						key: "",
-						icon: "",
-						name: "",
-						desc: "",
-						func: "",
-					},
-				};
-			});
+			let cidx = cols.indexOf(item);
+			if (cidx === -1) {
+				cols.push(item);
+				cidx = cols.length - 1;
+			}
+
+			table[e.level][cidx] = {
+				v,
+				c: item || {
+					key: "",
+					icon: "",
+					name: "",
+					desc: "",
+					func: "",
+				},
+			};
 		});
+	});
 
-		return <div class={ `table-responsive ${style.LvLimitTableWrapper}` }>
-			<table class="table table-bordered text-center">
-				<thead>
-					<tr>
-						<th class="bg-dark text-light" rowSpan={ 2 }>
-							<Locale k="UNIT_VIEW_LVLIMIT_LEVEL" />
-						</th>
-						<th class="bg-dark text-light" colSpan={ cols.length }>
-							<Locale k="UNIT_VIEW_LVLIMIT_ITEMS" />
-						</th>
-					</tr>
-					<tr>
-						{ cols.map(c => <th class={ `bg-dark text-light ${style.LvLimitHeaderItem}` }>
-							<div>
-								<EquipIcon class="vertical-align-middle" image={ c.icon } size="24" />
-							</div>
+	return <div class={ `table-responsive ${style.LvLimitTableWrapper}` }>
+		<table class="table table-bordered text-center">
+			<thead>
+				<tr>
+					<th class="bg-dark text-light" rowSpan={ 2 }>
+						<Locale k="UNIT_VIEW_LVLIMIT_LEVEL" />
+					</th>
+					<th class="bg-dark text-light" colSpan={ cols.length }>
+						<Locale k="UNIT_VIEW_LVLIMIT_ITEMS" />
+					</th>
+				</tr>
+				<tr>
+					{ cols.map(c => <th class={ `bg-dark text-light ${style.LvLimitHeaderItem}` }>
+						<BootstrapTooltip content={ <>
 							<Locale k={ `CONSUMABLE_${c.key}` } />
-						</th>) }
-					</tr>
-				</thead>
-				<tbody>
-					{ unit.lvLimits.map(e => <tr>
-						<td class="p-3 table-medidark font-exo2">
-							<small>Lv.</small>
-							{ e.level }
-						</td>
-						{ table[e.level].map(({ v, c }) => <td class="text-end">
-							<EquipIcon
-								class={ `vertical-align-middle ${style.LvLimitItemIcon}` }
-								image={ c.icon }
-								size="24"
-							/>
-							<span class={ style.LvLimitCount }>
-								{ FormatNumber(v.count!) }
-							</span>
-						</td>) }
-						{ new Array(cols.length - table[e.level].length).fill(<td />) }
-					</tr>) }
-				</tbody>
-			</table>
-		</div>;
-	} } />;
+						</> }>
+							<EquipIcon class="vertical-align-middle" image={ c.icon } size="24" />
+						</BootstrapTooltip>
+					</th>) }
+				</tr>
+			</thead>
+			<tbody>
+				{ unit.lvLimits.map(e => <tr>
+					<td class="p-3 table-medidark font-exo2">
+						<small>Lv.</small>
+						{ e.level }
+					</td>
+					{ table[e.level].map(({ v, c }) => <td class="text-end">
+						<span class={ style.LvLimitItemIcon }>
+							<BootstrapTooltip content={ <>
+								<Locale k={ `CONSUMABLE_${c.key}` } />
+							</> }>
+								<EquipIcon
+									class="vertical-align-middle"
+									image={ c.icon }
+									size="24"
+								/>
+							</BootstrapTooltip>
+						</span>
+
+						<span class={ style.LvLimitCount }>
+							{ FormatNumber(v.count!) }
+						</span>
+					</td>) }
+					{ new Array(cols.length - table[e.level].length).fill(<td />) }
+				</tr>) }
+			</tbody>
+		</table>
+	</div>;
 };
 export default LvLimitTab;

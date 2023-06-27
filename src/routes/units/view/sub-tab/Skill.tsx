@@ -37,8 +37,8 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 
 		if (unit.promotions) {
 			list.push(...unit.promotions.map(x => ({
-				text: <Locale k="UNIT_CARD_PROMOTION_BADGE" p={ [RarityDisplay[x]] } />,
-				value: x,
+				text: <Locale k="UNIT_CARD_PROMOTION_BADGE" p={ [RarityDisplay[x.to]] } />,
+				value: x.to,
 			})));
 		}
 

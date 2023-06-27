@@ -80,7 +80,7 @@
 			> div {
 				// btn-group
 				margin: 2px;
-				width: 100%;
+				width: 100%; // fallback
 				width: calc(100% - 4px);
 				justify-content: center;
 
@@ -93,7 +93,7 @@
 			}
 			> audio {
 				margin: 2px;
-				width: 100%;
+				width: 100%; // fallback
 				width: calc(100% - 4px);
 				min-height: 2.5em;
 			}
@@ -172,8 +172,108 @@
 		@include font-exo2;
 
 		&::before {
-			content: "x ";
-			opacity: 0.5;
+			content: "x";
+			margin-right: 0.125em;
+			font-size: 90%;
+			opacity: 0.65;
+		}
+	}
+}
+
+.PromoTable {
+	display: flex;
+	flex-direction: row;
+
+	justify-content: center;
+	column-gap: 1rem;
+
+	@include media-breakpoint-down(md) {
+		flex-direction: column;
+	}
+
+	> .PromoInfo {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto auto;
+
+		text-align: center;
+
+		> img {
+			margin-right: -1.75rem;
+			margin-bottom: 1rem;
+			max-width: 6rem;
+
+			justify-self: center;
+		}
+
+		> .PromoEnd {
+			> svg {
+				margin-top: 1rem;
+				width: 4rem;
+				height: auto;
+				max-width: 100%;
+				opacity: 0.55;
+			}
+		}
+
+		& + .Arrow {
+			margin-top: 2rem;
+			font-size: 1.75rem;
+		}
+
+		.PromoLevel {
+			font-size: 105%;
+
+			> strong {
+				font-size: 120%;
+			}
+		}
+
+		> table.PromoItems {
+			margin: 1rem;
+
+			td {
+				padding: 0.5rem 0.75rem;
+			}
+
+			.ItemIcon {
+				float: left;
+				margin-right: 0.25rem;
+			}
+			.ItemCount {
+				&::before {
+					content: "x";
+					margin-right: 0.25rem;
+					font-size: 90%;
+					opacity: 0.65;
+				}
+			}
+		}
+
+		&:last-child {
+			display: block;
+		}
+
+		@include media-breakpoint-down(md) {
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: auto auto;
+
+			& + .Arrow {
+				margin: 0.5rem 0;
+				font-size: 1.75rem;
+			}
+
+			.PromoLevel {
+				grid-column: 1;
+				grid-row: 2;
+			}
+
+			> table.PromoItems {
+				margin: 0.25rem;
+				margin-left: 0;
+				grid-column: 2;
+				grid-row: 1 / 3;
+			}
 		}
 	}
 }

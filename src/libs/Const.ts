@@ -729,9 +729,9 @@ export const SubStoryUnit: Record<string, string> = {
 
 export const PermanentEvents: string[] = ["Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "Ev7", "Ev8", "Ev9"];
 export const NewMapList: string[] = [];
-export const CurrentEvent = "Ev14";
-export const EventFrom = new Date(2023, 5 - 1, 2);
-export const EventTo = new Date(2023, 6 - 1, 7);
+export const CurrentEvent = "";
+export const EventFrom = new Date(2023, 6 - 1, 7);
+export const EventTo = new Date(2023, 6 - 1, 20);
 
 export const CurrentDate = ((): string => {
 	const d = new Date();
