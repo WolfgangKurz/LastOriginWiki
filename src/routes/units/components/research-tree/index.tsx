@@ -24,7 +24,6 @@ import style from "./style.module.scss";
 
 interface ResearchTreeProps {
 	unit: Unit;
-	research: ResearchTreeData[];
 }
 
 const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {

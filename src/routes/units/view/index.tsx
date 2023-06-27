@@ -15,11 +15,12 @@ import Icon from "@/components/bootstrap-icon";
 import BasicTab from "./sub-tab/Basic";
 import DialogueTab from "./sub-tab/Dialogue";
 import LvLimitTab from "./sub-tab/LvLimit";
+import PromoTab from "./sub-tab/Promo";
 import SkillTab from "./sub-tab/Skill";
 import SkinTab from "./sub-tab/Skin";
 import { route } from "preact-router";
 
-type TabTypes = "basic" | "skin" | "lvlimit" | "skills" | "dialogue";
+type TabTypes = "basic" | "skin" | "lvlimit" | "promo" | "skills" | "dialogue";
 
 interface SkinItem extends UnitSkin {
 	isDef: boolean;
@@ -129,6 +130,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 			basic: BasicTab,
 			skin: SkinTab,
 			lvlimit: LvLimitTab,
+			promo: PromoTab,
 			skills: SkillTab,
 			dialogue: DialogueTab,
 		};
@@ -192,6 +194,19 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 							>
 								<Icon icon="capslock-fill" class="me-1" />
 								<Locale k="UNIT_VIEW_TAB_LVLIMIT" />
+							</a>
+						</li>
+						<li class="nav-item">
+							<a
+								href="#"
+								class={ `nav-link text-dark ${isActive(DisplayTab.value === "promo")}` }
+								onClick={ (e): void => {
+									e.preventDefault();
+									DisplayTab.set("promo");
+								} }
+							>
+								<Icon icon="hand-thumbs-up-fill" class="me-1" />
+								<Locale k="UNIT_VIEW_TAB_PROMOTION" />
 							</a>
 						</li>
 						{/* <li class="nav-item">

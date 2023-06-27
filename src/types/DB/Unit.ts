@@ -153,6 +153,14 @@ export type UnitSpecChart = [number, number, number, number, number, number];
 
 export type UnitCV = Partial<Record<number | "M", Record<UnitDialogueAudioType, string>>>;
 
+export interface UnitPromotion {
+	to: ACTOR_GRADE;
+	level: number;
+	favor: number;
+	req: Array<Required<MapWaveDrop>>;
+	unlock?: string; // unlock skin
+}
+
 export interface Unit {
 	id: number;
 	uid: string;
@@ -161,7 +169,7 @@ export interface Unit {
 	type: ACTOR_CLASS;
 	role: ROLE_TYPE;
 	body: ACTOR_BODY_TYPE;
-	promotions?: ACTOR_GRADE[];
+	promotions?: UnitPromotion[];
 	slots: [ITEM_TYPE, ITEM_TYPE, ITEM_TYPE, ITEM_TYPE];
 
 	lvLimits: LvLimitData[];
@@ -266,7 +274,7 @@ export namespace Unit {
 
 		source: [],
 		cost: undefined,
-		research: undefined,
+		research: false,
 
 		skills: {},
 		dialogue: {

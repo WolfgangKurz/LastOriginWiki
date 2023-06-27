@@ -599,7 +599,15 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 								<div class="col border border-top-0 text-start p-3">
 									{ targetEnemy.ai
 										? <AIList aiKey={ targetEnemy.ai } enemy />
-										: <>Not ready yet</>
+										: <div>
+											Data not exists.<br />
+											Request here: <a
+												href="https://github.com/WolfgangKurz/LastOriginWiki/issues"
+												target="_blank"
+											>
+												https://github.com/WolfgangKurz/LastOriginWiki/issues
+											</a>
+										</div>
 									}
 								</div>
 							</div>

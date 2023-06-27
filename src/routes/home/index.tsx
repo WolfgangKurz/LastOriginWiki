@@ -203,6 +203,12 @@ const Home: FunctionalComponent = () => {
 
 				<span class={ style.divider } />
 
+				<NavItemExternal href="https://loeq.swaytwig.com/">
+					<Locale k="MENU_ETC_LOEQ" />
+				</NavItemExternal>
+
+				<span class={ style.divider } />
+
 				<div class="btn-group">
 					<NavItemExternal href="https://arca.live/b/lastorigin/4474753">
 						<Locale k="MENU_ETC_EX01" />
@@ -234,6 +240,12 @@ const Home: FunctionalComponent = () => {
 			<Locale k="HOME_WEBP_UNAVAILABLE" />
 		</div> : <></> }
 
+		<div>
+			<Icon class="me-2" icon="github" />
+			<a href="https://github.com/WolfgangKurz/LastOriginWiki" target="_blank">
+				Github
+			</a>
+		</div>
 		<Locale k="HOME_DEVELOPER" />
 		<hr />
 

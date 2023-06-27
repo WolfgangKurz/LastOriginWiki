@@ -112,7 +112,6 @@ const App: FunctionalComponent = () => {
 					</div>
 					<div style={ { whiteSpace: "pre-wrap" } }>
 						<Locale plain k="COMMON_REQUIRE_RELOAD" />
-						{ Store.requireReload.value ? "Y" : "N" }
 					</div>
 				</PopupBase>
 				: <></>

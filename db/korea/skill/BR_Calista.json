@@ -4553,7 +4553,8 @@
                     "Char_BR_BloodyPanther_N",
                     "Char_BR_Io_N",
                     "Char_BR_Calista_N",
-                    "Char_BR_Spriggan_N"
+                    "Char_BR_Spriggan_N",
+                    "Char_BR_Nashorn_N"
                   ]
                 },
                 false
@@ -4698,7 +4699,11 @@
                 {
                   "pos": 2
                 },
-                false
+                {
+                  "notInBattle": [
+                    "Char_BR_Nashorn_N"
+                  ]
+                }
               ],
               "body": [
                 0,
@@ -4748,7 +4753,11 @@
                 {
                   "pos": 1
                 },
-                false
+                {
+                  "notInBattle": [
+                    "Char_BR_Nashorn_N"
+                  ]
+                }
               ],
               "body": [
                 0,
@@ -4798,7 +4807,11 @@
                 {
                   "pos": 0
                 },
-                false
+                {
+                  "notInBattle": [
+                    "Char_BR_Nashorn_N"
+                  ]
+                }
               ],
               "body": [
                 0,
@@ -4820,6 +4833,58 @@
                   "icon": "BuffIcon_SKILL_UP",
                   "desc": {
                     "desc": "Effect_BR_Calista_N_54_1",
+                    "type": 1,
+                    "value": "0.400000",
+                    "level": "0.020000"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 1
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "type": 106,
+                    "skill_ratio": {
+                      "base": "40%",
+                      "per": "2%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
+              "maxStack": 1
+            },
+            {
+              "key": "Effect_BR_Calista_N_55",
+              "on": "round",
+              "if": [
+                {
+                  "in_squad": [
+                    "Char_BR_Nashorn_N"
+                  ]
+                },
+                false
+              ],
+              "body": [
+                0,
+                1
+              ],
+              "class": [
+                0,
+                1,
+                2
+              ],
+              "role": [
+                0,
+                1,
+                2
+              ],
+              "target": 0,
+              "buffs": [
+                {
+                  "icon": "BuffIcon_SKILL_UP",
+                  "desc": {
+                    "desc": "Effect_BR_Calista_N_55_1",
                     "type": 1,
                     "value": "0.400000",
                     "level": "0.020000"
@@ -4936,6 +5001,18 @@
             "icon": "BuffIcon_SKILL_UP",
             "desc": {
               "desc": "Effect_BR_Calista_N_54_1",
+              "type": 1,
+              "value": "0.400000",
+              "level": "0.020000"
+            },
+            "base": 0.4,
+            "per": 0.02,
+            "chance": 1
+          },
+          {
+            "icon": "BuffIcon_SKILL_UP",
+            "desc": {
+              "desc": "Effect_BR_Calista_N_55_1",
               "type": 1,
               "value": "0.400000",
               "level": "0.020000"
