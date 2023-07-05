@@ -78,7 +78,9 @@ const DialogueRow: FunctionComponent<DialogueRowProps> = (props) => {
 		<div class={ `col col-12 col-sm-2 ${rowClass}` }>
 			<Locale k={ `UNIT_DIALOGUE_TYPE_${type}` } />
 		</div>
-		<div class="col col-12 col-sm border dialogue">{ dialogue }</div>
+		<div class="col col-12 col-sm border dialogue">
+			{ dialogue || <span class="text-secondary">Not set</span> }
+		</div>
 		<div class="col col-12 col-sm-auto border">
 			<audio src={ voiceUrl } type="audio/mp3" controls preload="none" volume="0.5" />
 		</div>

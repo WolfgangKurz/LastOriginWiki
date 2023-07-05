@@ -1,7 +1,7 @@
 import { FunctionalComponent } from "preact";
 
-import ChangelogItem from "@/routes/changelog/components/changelog-item";
-import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
+import ChangelogItem from "../../components/changelog-item";
+import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 12183" date="2023-07-05"

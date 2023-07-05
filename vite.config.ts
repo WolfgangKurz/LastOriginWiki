@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import util from "util";
 
-import glob from "glob";
+import { globSync } from "glob";
 import hash from "hash.js";
 import deepmerge from "deepmerge";
 
@@ -59,7 +59,7 @@ export default ({ mode }) => {
 				const baseDir = path.resolve(__dirname, "external", "json");
 				const globPath = path.join(baseDir, "**", "*.json");
 
-				return glob.sync(globPath.replace(/\\/g, "/"))
+				return globSync(globPath.replace(/\\/g, "/"))
 					.filter(f => !f.endsWith("/buildtime.json"))
 					.map(f => {
 						const rel = path.relative(baseDir, f).replace(/\\/g, "/");
@@ -132,6 +132,9 @@ export default ({ mode }) => {
 				"this-is-undefined-in-esm": "silent",
 			},
 		},
+		optimizeDeps: {
+			include: ["swiper", "swiper/react"],
+		},
 		build: {
 			assetsDir: "build",
 			reportCompressedSize: false,
@@ -160,6 +163,7 @@ export default ({ mode }) => {
 						// if (id.includes("/node_modules/three/src/renderers/")) return "vendor.three.ren";
 						// if (id.includes("/node_modules/three/examples/")) return "vendor.three.ext";
 						if (id.includes("/node_modules/three/")) return "vendor.three";
+						if (id.includes("/node_modules/@egjs/")) return "vendor.egjs";
 
 						// vendor
 						if (id.includes("/node_modules/preact-transition")) return "vendor.transition";

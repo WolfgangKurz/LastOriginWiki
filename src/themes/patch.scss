@@ -34,7 +34,15 @@ table.table:not(.table-borderless) > thead {
 	outline: none;
 }
 .nav-tabs .nav-link {
-	margin-bottom: -($nav-tabs-border-width * 2);
+	$n: $nav-tabs-border-width;
+	$v: unset;
+
+	@if str-index($n, "var(") {
+		$v: calc((#{$n}) * -2);
+	} @else {
+		$v: ($n) * -2;
+	}
+	margin-bottom: $v;
 }
 
 table.table-fixed {

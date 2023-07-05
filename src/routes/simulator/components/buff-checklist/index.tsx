@@ -929,7 +929,8 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			}
 
 			switch (stat.resist.type) {
-				case "debuff":
+				case "debuff_perdown":
+				case "debuff_rateup":
 					return <Locale plain k="BUFFEFFECT_RES_DEBUFF" p={ [signedValue(stat.resist.value, level)] } />;
 				case "off":
 					return <Locale plain k="BUFFEFFECT_RES_OFF" p={ [signedValue(stat.resist.value, level)] } />;

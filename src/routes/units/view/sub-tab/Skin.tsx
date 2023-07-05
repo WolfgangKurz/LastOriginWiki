@@ -2,7 +2,7 @@ import { FunctionComponent } from "preact";
 import { Link } from "preact-router";
 
 import { objState } from "@/libs/State";
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot, SkinBanners } from "@/libs/Const";
 import { FormatDate, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 
@@ -65,6 +65,8 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 				.replace(/&([lg]t);/g, (p0, p1) => p1 === "lt" ? "<" : ">")
 		);
 	}
+
+	const SkinKey = `${unit.uid}_${SkinList[skinIndex.value].sid || 0}`;
 
 	return <div style={ { display: display ? "" : "none" } }>
 		<div class={ `flex-nowrap ${style.SkinTabs}` }>
@@ -269,6 +271,11 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 						size="120"
 					/>) }
 				</div>
+
+				{ SkinBanners.includes(SkinKey)
+					? <img class={ style.SkinBanner } src={ `${AssetsRoot}/skin/banners/${SkinKey}.jpg` } />
+					: <></>
+				}
 			</div>
 		</div >
 	</div >;

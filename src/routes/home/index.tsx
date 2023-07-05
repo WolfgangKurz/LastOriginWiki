@@ -1,5 +1,12 @@
 import { FunctionalComponent } from "preact";
+import { useLayoutEffect } from "preact/hooks";
 import { Link, route } from "preact-router";
+
+import SwiperCore from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/scss";
+import "swiper/scss/pagination";
 
 import { AssetsRoot, CurrentEvent, EventFrom, EventTo, Host, ImageExtension, IsAprilFool } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
@@ -40,7 +47,7 @@ const NavItemExternal: FunctionalComponent<LinkData> = (props) => (
 			const _a = document.createElement("a");
 			_a.target = "_blank";
 			_a.href = props.href;
-			_a.rel = "noreferrer";
+			_a.rel = "noopener noreferrer";
 			_a.click();
 		} }
 	>
@@ -76,10 +83,13 @@ const Home: FunctionalComponent = () => {
 	SetMeta(["twitter:image", "og:image"], null);
 	UpdateTitle();
 
+	useLayoutEffect(() => {
+		SwiperCore.use([Autoplay, Pagination]);
+	}, []);
+
 	return <div class={ `${style.home} home` }>
 		<div class="alert alert-primary">
-			사이트 개발자가 더 이상 게임을 하지 않기 때문에 정보에 오류가 있을 수 있습니다.<br />
-			업데이트는 비정기적으로 이루어집니다.
+			사이트 개발자가 더 이상 게임을 하지 않기 때문에 정보에 오류가 있을 수 있습니다.
 		</div>
 
 		<div>
@@ -223,6 +233,25 @@ const Home: FunctionalComponent = () => {
 			</div>
 		</div>
 
+		<Swiper
+			className={ style.SkinBannerSwiper }
+			modules={ [Autoplay, Pagination] }
+			loop
+			autoplay
+			pagination
+		>
+			<SwiperSlide>
+				<Link href="/units/3P_Titania/s3">
+					<img class={ style.SkinBanner } src={ `${AssetsRoot}/skin/banners/3P_Titania_3.jpg` } />
+				</Link>
+			</SwiperSlide>
+			<SwiperSlide>
+				<Link href="/units/BR_Marie/s3">
+					<img class={ style.SkinBanner } src={ `${AssetsRoot}/skin/banners/BR_Marie_3.jpg` } />
+				</Link>
+			</SwiperSlide>
+		</Swiper>
+
 		<Changelog />
 
 		<p class="mt-4">
@@ -242,7 +271,7 @@ const Home: FunctionalComponent = () => {
 
 		<div>
 			<Icon class="me-2" icon="github" />
-			<a href="https://github.com/WolfgangKurz/LastOriginWiki" target="_blank">
+			<a href="https://github.com/WolfgangKurz/LastOriginWiki" target="_blank" rel="noopener noreferrer">
 				Github
 			</a>
 		</div>

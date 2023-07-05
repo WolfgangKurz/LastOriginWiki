@@ -30,7 +30,7 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 	const voice = props.voice;
 
 	const VoiceKey = ((v): string => {
-		if (v.isMarriage) return `${v.sid}M`;
+		if (v.isMarriage) return `${v.sid || ""}M`;
 		if (v.sid !== null) return v.sid.toString();
 		return "";
 	})(voice);
@@ -96,40 +96,40 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 
 		/* eslint-disable camelcase */
 		return {
-			// Intro: "???",
-			Join: "???",
-			SquadJoin: "???",
-			Leader: "???",
-			SortiePick: "???",
-			StageStart: "???",
-			Retreat: "???",
-			SearchStart: "???",
-			SearchEnd: "???",
-			BattleFocus: "???",
-			ActionApprove: "???",
-			SpSkill: "???",
-			SpSkill_2: "???",
-			SpSkill_3: "???",
-			SpSkill_4: "???",
-			SpSkill_5: "???",
-			Retire: "???",
-			Repair: "???",
-			Reinforce: "???",
-			ItemEquip: "???",
-			CoreLink: "???",
-			PresentGet: "???",
-			Login: "???",
-			Idle_01_01: "???",
-			Idle_01_02: "???",
-			Idle_01_03: "???",
-			SPIdle_01_01: "???",
-			Idle_02_01: "???",
-			Idle_03_01: "???",
-			Idle_04_01: "???",
-			SPIdle_02_01: "???",
-			Oath: "???",
-			OathIdle_01: "???",
-			MVP: "???",
+			// Intro: "",
+			Join: "",
+			SquadJoin: "",
+			Leader: "",
+			SortiePick: "",
+			StageStart: "",
+			Retreat: "",
+			SearchStart: "",
+			SearchEnd: "",
+			BattleFocus: "",
+			ActionApprove: "",
+			SpSkill: "",
+			SpSkill_2: "",
+			SpSkill_3: "",
+			SpSkill_4: "",
+			SpSkill_5: "",
+			Retire: "",
+			Repair: "",
+			Reinforce: "",
+			ItemEquip: "",
+			CoreLink: "",
+			PresentGet: "",
+			Login: "",
+			Idle_01_01: "",
+			Idle_01_02: "",
+			Idle_01_03: "",
+			SPIdle_01_01: "",
+			Idle_02_01: "",
+			Idle_03_01: "",
+			Idle_04_01: "",
+			SPIdle_02_01: "",
+			Oath: "",
+			OathIdle_01: "",
+			MVP: "",
 		};
 		/* eslint-enable camelcase */
 	})();

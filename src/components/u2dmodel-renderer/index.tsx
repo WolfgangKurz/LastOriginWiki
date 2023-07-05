@@ -105,6 +105,8 @@ interface _2DModelRendererProps {
 	onFaceList?: (faceNames: string[]) => void;
 }
 
+let cachedCanvas: HTMLCanvasElement;
+
 /**
  * Unity 2DModel Renderer
  */
@@ -143,9 +145,12 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 		const w = Math.ceil(vector.rc.w);
 		const h = Math.ceil(vector.rc.h);
 
-		const cv = document.createElement("canvas");
+		const cv = cachedCanvas || document.createElement("canvas");
 		cv.width = w;
 		cv.height = h;
+
+		if (!cachedCanvas)
+			cachedCanvas = cv;
 
 		const ctx = cv.getContext("2d");
 		if (!ctx) return;
