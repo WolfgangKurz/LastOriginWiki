@@ -4,6 +4,15 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12184" date="2023-07-06"
+		update={ <>
+			<li>11지역 BGM 정보가 추가되었습니다.</li>
+			<li>
+				<BY>CAFE amor × Cafe Horizon</BY> 앨범의 곡이 재생 가능하도록 변경되었습니다.<br />
+				<BO>어서오세요 라스트 파라다이스 (CAFE Horizon)</BO> 곡은 음원이 공개되지 않아 재생 기능이 제공되지 않습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12183" date="2023-07-05"
 		bugfix={ <>
 			<li>전투원 대사의 서약 대사가 표시되지 않는 문제를 수정했습니다.</li>
