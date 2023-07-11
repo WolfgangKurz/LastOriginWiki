@@ -3,7 +3,7 @@ import { createElement, FunctionalComponent, RenderableProps } from "preact";
 import { Unit, UnitSkin } from "@/types/DB/Unit";
 
 import { ObjectState, objState } from "@/libs/State";
-import { AssetsRoot, ImageExtension, RarityDisplay, UnitClassDisplay, UnitRoleDisplay } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, IsDev, RarityDisplay, UnitClassDisplay, UnitRoleDisplay } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import EntitySource from "@/libs/EntitySource";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
@@ -56,8 +56,10 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 			: 0
 	);
 
-	if (props.sub)
-		route(`/units/${props.uid}`, true);
+	if (!IsDev) {
+		if (props.sub)
+			route(`/units/${props.uid}`, true);
+	}
 
 	return <Loader json={ [StaticDB.FilterableEquip, StaticDB.Consumable, `unit/${props.uid}`] } content={ ((): preact.VNode => {
 		const unit = ((): Unit => {

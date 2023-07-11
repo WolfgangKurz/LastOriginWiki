@@ -1,12 +1,12 @@
 // Content automatically generated
 export interface DBHashType { [K: string]: string | DBHashType; }
 export default {
-	"buildtime": "d30206ee",
+	"buildtime": "6387772f",
 	"locale": {
-		"TC": "e99821b2",
-		"KR": "7448d177",
-		"JP": "fe0df9cc",
-		"EN": "121710ea"
+		"TC": "062d017a",
+		"KR": "f920da97",
+		"JP": "864ab36f",
+		"EN": "18a5c8f0"
 	},
 	"korea": {
 		"story": "a6628263",
@@ -16,14 +16,14 @@ export default {
 		"mission": "1111dc62",
 		"maps": "893af18a",
 		"gacha": "0035c305",
-		"filterable.unit": "c5e6600a",
+		"filterable.unit": "bb27680a",
 		"filterable.facility": "16568438",
 		"filterable.equip": "919279b5",
 		"filterable.enemy": "526da40b",
 		"exchange": "b506d35e",
 		"ew": "09c24fc8",
 		"enemygroup": "d9748452",
-		"consumable": "9d819ac0",
+		"consumable": "b7ecf9e5",
 		"bg": "a6914385",
 		"unit": {
 			"ST_Ullr": "b1eeb50b",
@@ -37,7 +37,7 @@ export default {
 			"PECS_Triaina": "2a217184",
 			"PECS_TommyWalker": "34dec2c9",
 			"PECS_Tiequan": "eeb5cedd",
-			"PECS_TaylorClothcut": "fb234d93",
+			"PECS_TaylorClothcut": "98e94cb3",
 			"PECS_Sunny": "df264b15",
 			"PECS_Stinger": "c763a591",
 			"PECS_Spartoia": "26493d1d",
@@ -51,7 +51,7 @@ export default {
 			"PECS_PuppHead": "3fe47744",
 			"PECS_Peregrinus": "1cebbcc0",
 			"PECS_Orangeade": "5b00904d",
-			"PECS_Olivia": "6f189a98",
+			"PECS_Olivia": "9332759d",
 			"PECS_Muse": "eb3c30cf",
 			"PECS_Mnemosyne": "4c76a5bf",
 			"PECS_MissSafety": "1c7fefb6",
@@ -122,7 +122,7 @@ export default {
 			"BR_Shirayuri": "6d12c823",
 			"BR_Scathy": "0c460691",
 			"BR_Scarabya": "09e3bf1f",
-			"BR_SandMan": "600f350e",
+			"BR_SandMan": "410f65e0",
 			"BR_Salamander": "198d9cce",
 			"BR_RoyalArsenal": "7a7236fe",
 			"BR_RedHood": "408b2e92",

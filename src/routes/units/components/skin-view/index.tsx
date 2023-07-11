@@ -56,7 +56,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const IsGoogle = objState<boolean>(false);
 	const IsSpecialTouch = objState<boolean>(false);
 
-	const IsAnimating = objState<boolean>(true);
+	const IsAnimating = objState<boolean>(false);
 	const IsBlackBG = objState<boolean>(false);
 	const HideGroup = objState<boolean>(false);
 

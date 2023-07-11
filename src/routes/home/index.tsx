@@ -241,13 +241,13 @@ const Home: FunctionalComponent = () => {
 			pagination
 		>
 			<SwiperSlide>
-				<Link href="/units/3P_Titania/s3">
-					<img class={ style.SkinBanner } src={ `${AssetsRoot}/skin/banners/3P_Titania_3.jpg` } />
+				<Link href="/units/PECS_Olivia/s1">
+					<img class={ style.SkinBanner } src={ `${AssetsRoot}/skin/banners/PECS_Olivia_1.jpg` } />
 				</Link>
 			</SwiperSlide>
 			<SwiperSlide>
-				<Link href="/units/BR_Marie/s3">
-					<img class={ style.SkinBanner } src={ `${AssetsRoot}/skin/banners/BR_Marie_3.jpg` } />
+				<Link href="/units/PECS_TaylorClothcut/s1">
+					<img class={ style.SkinBanner } src={ `${AssetsRoot}/skin/banners/PECS_TaylorClothcut_1.jpg` } />
 				</Link>
 			</SwiperSlide>
 		</Swiper>

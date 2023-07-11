@@ -4,6 +4,24 @@ import LZMADecompression from "@/external/lzma";
 
 import { CameraController } from "./CameraController";
 
+interface SpineAnimTransitions {
+	cond: string;
+	to: string;
+}
+interface SpineAnimState {
+	clip: string;
+	transitions: SpineAnimTransitions[];
+}
+interface SpineAnimLayer {
+	start: string;
+	states: {
+		[state: string]: SpineAnimState;
+	};
+}
+interface SpineAnim {
+	[layer: string]: SpineAnimLayer;
+}
+
 class Spine {
 	private canvas!: spine.SpineCanvas;
 	private atlas!: spine.TextureAtlas;
@@ -19,6 +37,10 @@ class Spine {
 	private assetName: string;
 	private InitializedCallback: (app: Spine, skinNames: string[]) => void;
 
+	private animData: SpineAnim | undefined;
+	private animLayers: string[] = [];
+	private animState: Record<string, string> = {};
+
 	constructor (assetName: string, cb: (app: Spine, skinNames: string[]) => void) {
 		this.assetName = assetName;
 		this.InitializedCallback = cb;
@@ -33,7 +55,7 @@ class Spine {
 	loadAssets (canvas: spine.SpineCanvas) {
 		const assetManager = canvas.assetManager;
 
-		{
+		{ // load skeleton data
 			let path = `${this.assetName}.json`;
 			path = assetManager["start"](path);
 
@@ -50,7 +72,19 @@ class Spine {
 			);
 		}
 
-		{ // load alpha-separated image
+		// load animation data
+		assetManager.loadJson(
+			`${this.assetName}_anim.json`,
+			(path, object) => {
+				this.animData = object as SpineAnim;
+				this.animLayers = Object.keys(this.animData);
+			},
+			(path, msg) => {
+				throw new Error(msg);
+			},
+		);
+
+		{ // load atlas & alpha-separated image
 			const changeExt = (path: string, ext: string): string => `${path.substring(0, path.lastIndexOf("."))}.${ext}`;
 
 			let path = `${this.assetName}.atlas`;
@@ -132,15 +166,30 @@ class Spine {
 
 		this.state.addListener({
 			complete: (entry) => {
-				if (entry.trackIndex === 0 && entry.animation) {
-					if (entry.animation.duration > 0 && !Spine.isIdleAnimationName(entry.animation.name))
-						this.idle();
-				}
+				if (this.animData) {
+					const layer = this.animLayers[entry.trackIndex];
+					const state = this.animData[layer].states[this.animState[layer]];
+					const next = state.transitions.find(x => x.cond === "");
+					// console.debug(`[Spine] Animation done, layer: "${layer}", state: "${this.animState[layer]}"`);
+
+					if (next) {
+						// console.debug(`[Spine] Next state is "${next.to}", do force`);
+						this.playState(layer, next.to, true);
+					} else
+						// console.debug(`[Spine] Next not found`);
+						;
+				} else
+					// console.debug(`[Spine] animData not found`);
+					;
 			},
 		});
 
-		// animation init
-		this.idle();
+		// play default animation
+		if (this.animData) {
+			this.animLayers.forEach(layer => {
+				this.playState(layer, this.animData![layer].start);
+			});
+		}
 
 		new CameraController(this.canvas.htmlCanvas, this.canvas.renderer.camera);
 
@@ -207,34 +256,84 @@ class Spine {
 		renderer.end();
 	}
 
-	play (anim: spine.Animation) {
-		const state = this.state;
+	isLoopAnimation (layer: string, state: string): boolean {
+		if (!this.animData) return false; // no anim data
 
-		const current = state.getCurrent(0)!;
-		if (current.animation && !Spine.isIdleAnimationName(current.animation.name)) return false;
+		const _l = this.animData[layer];
+		if (!_l) return false; // ???
 
-		const entry = state.setAnimationWith(0, anim, false);
-		entry.mixDuration = 0.5;
-		return true;
+		const _s = _l.states[state];
+		if (!_s) return false; // ??????
+
+		// no exit transition
+		return !_s.transitions.some(x => x.cond === "");
 	}
 
-	idle () {
-		const idleName = (() => {
-			const idle = this.animationList().find(r => Spine.isIdleAnimationName(r.name));
-			if (idle) return idle.name;
-			return "idle";
-		})();
+	currentState (layer: string): SpineAnimState | undefined {
+		if (!this.animData || !(layer in this.animData)) return;
+		if (!(layer in this.animState)) return;
 
-		const entry = this.state.setAnimation(0, idleName, true);
+		return this.animData[layer].states[this.animState[layer]];
+	}
+
+	playState (layer: string, _state: string, force: boolean = false): spine.Animation | false {
+		if (!this.animData) {
+			// console.debug(`[Spine.playState] animData not found`);
+			return false;
+		}
+
+		const layerIdx = this.animLayers.indexOf(layer);
+		if (layerIdx < 0) {
+			// console.debug(`[Spine.playState] layer "${layer}" not found`);
+			return false;
+		}
+
+		const animState = this.animData[layer].states[_state];
+		if (!animState) {
+			// console.debug(`[Spine.playState] state "${_state}" in layer "${layer}" not found`);
+			return false;
+		}
+
+		if (!!this.animState[layer] && !force && !this.isLoopAnimation(layer, this.animState[layer])) {
+			// console.debug(`[Spine.playState] cannot interrupt non-looping animation`);
+			return false;
+		}
+
+		const state = this.state;
+		const anims = state.data.skeletonData.animations;
+		const anim = anims.find(x => x.name === animState.clip);
+		if (!anim) {
+			// console.debug(`[Spine.playState] clip "${animState.clip}" not found`);
+			return false;
+		}
+
+		this.animState[layer] = _state;
+
+		const entry = state.setAnimationWith(layerIdx, anim, this.isLoopAnimation(layer, _state));
 		entry.mixDuration = 0.5;
+		return anim;
+	}
+
+	play (event: string): spine.Animation | false {
+		if (!this.animData) return false;
+
+		let entry: spine.Animation | false = false;
+		this.animLayers.forEach(layer => {
+			const state = this.currentState(layer);
+			if (!state) return;
+
+			const next = state.transitions.find(x => x.cond === event);
+			if (next) {
+				const e = this.playState(layer, next.to);
+				if (!entry) entry = e;
+			}
+		});
+
+		return entry || false;
 	}
 
 	animationList () {
 		return this.state.data.skeletonData.animations;
-	}
-
-	static isIdleAnimationName (name: string): boolean {
-		return name.toLowerCase().startsWith("idle");
 	}
 }
 export default Spine;
