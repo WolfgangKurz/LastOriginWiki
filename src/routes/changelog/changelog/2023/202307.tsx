@@ -4,6 +4,11 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12188" date="2023-07-13"
+		update={ <>
+			<li>Spine 패키지 업데이트</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12187" date="2023-07-12"
 		new={ <>
 			<li>SpineRenderer의 스페셜 애니메이션 스킨 지원이 추가되었습니다.</li>
