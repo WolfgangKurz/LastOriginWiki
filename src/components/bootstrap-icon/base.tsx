@@ -1,7 +1,8 @@
 import { FunctionalComponent } from "preact";
 
-import "./style.scss";
 import { BuildClass } from "@/libs/Class";
+
+import "./style.scss";
 
 export interface IconProps {
 	class?: string;
@@ -21,7 +22,7 @@ const IconBase: FunctionalComponent<IconProps> = (props) => {
 		height={ size }
 		fill={ color }
 	>
-		{ /* icon here */ }
+		{ props.children }
 	</svg>;
 };
 export default IconBase;

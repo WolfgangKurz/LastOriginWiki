@@ -1,5 +1,4 @@
 import { FunctionalComponent } from "preact";
-import { useLayoutEffect } from "preact/hooks";
 import { Router } from "preact-router";
 import AsyncRoute from "preact-async-route";
 import Store from "@/store";

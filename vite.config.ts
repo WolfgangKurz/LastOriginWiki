@@ -149,21 +149,12 @@ export default ({ mode }) => {
 					manualChunks (id) {
 						// entry
 						if (
-							id.includes("/src/app/") ||
-							id.includes("/src/components/dynamic-route/")
+							id.includes("/src/index.") ||
+							id.includes("/src/app/")
 						) return undefined;
 
 						// three.js vendor
-						// if (id.includes("/node_modules/three/src/core/")) return "vendor.three.core";
-						// if (id.includes("/node_modules/three/src/math/")) return "vendor.three.math";
-						// if (id.includes("/node_modules/three/src/materials/")) return "vendor.three.mat";
-						// if (id.includes("/node_modules/three/src/geometries/")) return "vendor.three.geo";
-						// if (id.includes("/node_modules/three/src/objects/")) return "vendor.three.obj";
-						// if (id.includes("/node_modules/three/src/textures/")) return "vendor.three.tex";
-						// if (id.includes("/node_modules/three/src/renderers/")) return "vendor.three.ren";
-						// if (id.includes("/node_modules/three/examples/")) return "vendor.three.ext";
 						if (id.includes("/node_modules/three/")) return "vendor.three";
-						if (id.includes("/node_modules/@egjs/")) return "vendor.egjs";
 
 						// vendor
 						if (id.includes("/node_modules/preact-transition")) return "vendor.transition";
@@ -174,7 +165,11 @@ export default ({ mode }) => {
 						if (id.includes("/node_modules/@popperjs/")) return "vendor.popperjs";
 						if (id.includes("/node_modules/graphlib/")) return "vendor.graphlib";
 						if (id.includes("/node_modules/lodash/")) return "vendor.lodash";
+						if (id.includes("/node_modules/swiper/")) return "vendor.swiper";
 						if (id.includes("/node_modules/")) return "vendor";
+
+						// components/bootstrap-icon/
+						if (id.includes("/src/components/bootstrap-icon/")) return "components.icon";
 
 						// types & libs & loader hash -> base
 						if (id.includes("/src/types/")) return "base";
@@ -219,6 +214,8 @@ export default ({ mode }) => {
 							const y = id.replace(/.*\/src\/routes\/([^/]+)\/?.*/g, "$1");
 							return `routes.${y}`;
 						}
+
+						return "chunk";
 					},
 				},
 			},
