@@ -4,7 +4,7 @@ import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
 import Locale, { LocaleGet } from "@/components/locale";
 import Loader, { GetJson, StaticDB } from "@/components/loader";
-import Icon from "@/components/bootstrap-icon";
+import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import RarityBadge from "@/components/rarity-badge";
 import EquipCard from "@/components/equip-card";
@@ -46,7 +46,7 @@ export const Equip: FunctionalComponent<EquipProps> = (props) =>
 					content={ <EquipCard class="text-center" equip={ equip } no-link /> }
 				>
 					<RarityBadge rarity="A">
-						{ name || k } <Icon icon="link-45deg" />
+						{ name || k } <IconLink45deg />
 					</RarityBadge>
 				</BootstrapTooltip>
 			</a>

@@ -12,9 +12,10 @@ import { RarityDisplay } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import { GetLinkBonus } from "@/libs/LinkBonus";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconChevronDoubleDown from "@/components/bootstrap-icon/icons/ChevronDoubleDown";
+import IconChevronDoubleUp from "@/components/bootstrap-icon/icons/ChevronDoubleUp";
 import StatIcon from "@/components/stat-icon";
 import UnitSelectorPopup from "@/components/popup/unit-selector-popup";
 
@@ -164,7 +165,7 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 					if (props.onUpdateLevel)
 						props.onUpdateLevel(1);
 				} }>
-					<Icon icon="chevron-double-down" />
+					<IconChevronDoubleDown />
 				</button>
 				<div class="input-group-text">Lv.</div>
 				<input
@@ -195,7 +196,7 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 					if (props.onUpdateLevel)
 						props.onUpdateLevel(100);
 				} }>
-					<Icon icon="chevron-double-up" />
+					<IconChevronDoubleUp />
 				</button>
 			</div>
 

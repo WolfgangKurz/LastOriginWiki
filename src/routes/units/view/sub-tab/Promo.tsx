@@ -11,13 +11,15 @@ import { FormatNumber } from "@/libs/Functions";
 
 import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale from "@/components/locale";
+import BootstrapTooltip from "@/components/bootstrap-tooltip";
+import IconHeartFill from "@/components/bootstrap-icon/icons/HeartFill";
+import IconCaretRightFill from "@/components/bootstrap-icon/icons/CaretRightFill";
+import IconCaretDownFill from "@/components/bootstrap-icon/icons/CaretDownFill";
 import EquipIcon from "@/components/equip-icon";
-import Icon from "@/components/bootstrap-icon";
 
 import { SubpageProps } from "..";
 
 import style from "../style.module.scss";
-import BootstrapTooltip from "@/components/bootstrap-tooltip";
 
 const PromoTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 	const update = useUpdate();
@@ -55,7 +57,7 @@ const PromoTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 					</span>
 					<span class="d-none d-md-inline">|</span>
 					<span class="d-block d-md-inline ms-0 ms-md-3">
-						<Icon class="text-danger" icon="heart-fill" />
+						<IconHeartFill class="text-danger" />
 						<strong class="ms-2">{ p.favor }</strong>
 					</span>
 				</div>
@@ -95,8 +97,8 @@ const PromoTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 				}
 			</div >
 			<div class={ style.Arrow }>
-				<Icon class="d-none d-md-inline" icon="caret-right-fill" />
-				<Icon class="d-inline d-md-none" icon="caret-down-fill" />
+				<IconCaretRightFill class="d-none d-md-inline" />
+				<IconCaretDownFill class="d-inline d-md-none" />
 			</div>
 		</>) }
 

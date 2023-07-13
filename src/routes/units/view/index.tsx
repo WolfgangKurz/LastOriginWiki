@@ -10,7 +10,12 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconPersonSquare from "@/components/bootstrap-icon/icons/PersonSquare";
+import IconPersonHearts from "@/components/bootstrap-icon/icons/PersonHearts";
+import IconLightningFill from "@/components/bootstrap-icon/icons/LightningFill";
+import IconCapslockFill from "@/components/bootstrap-icon/icons/CapslockFill";
+import IconHandThumbsUpFill from "@/components/bootstrap-icon/icons/HandThumbsUpFill";
+import IconChatTextFill from "@/components/bootstrap-icon/icons/ChatTextFill";
 
 import BasicTab from "./sub-tab/Basic";
 import DialogueTab from "./sub-tab/Dialogue";
@@ -155,7 +160,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 									DisplayTab.set("basic");
 								} }
 							>
-								<Icon icon="person-square" class="me-1" />
+								<IconPersonSquare class="me-1" />
 								<Locale k="UNIT_VIEW_TAB_BASICINFO" />
 							</a>
 						</li>
@@ -168,7 +173,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 									DisplayTab.set("skin");
 								} }
 							>
-								<Icon icon="person-hearts" class="me-1" />
+								<IconPersonHearts class="me-1" />
 								<Locale k="UNIT_VIEW_TAB_SKININFO" />
 							</a>
 						</li>
@@ -181,7 +186,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 									DisplayTab.set("skills");
 								} }
 							>
-								<Icon icon="lightning-fill" class="me-1" />
+								<IconLightningFill class="me-1" />
 								<Locale k="UNIT_VIEW_TAB_SKILLS" />
 							</a>
 						</li>
@@ -194,7 +199,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 									DisplayTab.set("lvlimit");
 								} }
 							>
-								<Icon icon="capslock-fill" class="me-1" />
+								<IconCapslockFill class="me-1" />
 								<Locale k="UNIT_VIEW_TAB_LVLIMIT" />
 							</a>
 						</li>
@@ -207,7 +212,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 									DisplayTab.set("promo");
 								} }
 							>
-								<Icon icon="hand-thumbs-up-fill" class="me-1" />
+								<IconHandThumbsUpFill class="me-1" />
 								<Locale k="UNIT_VIEW_TAB_PROMOTION" />
 							</a>
 						</li>
@@ -220,7 +225,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 									DisplayTab.set("roguelike");
 								} }
 							>
-								<Icon icon="controller" class="me-1" />
+								<IconController class="me-1" />
 								<Locale k="UNIT_VIEW_TAB_ROGUELIKE" />
 							</a>
 						</li> */}
@@ -233,7 +238,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 									DisplayTab.set("dialogue");
 								} }
 							>
-								<Icon icon="chat-text-fill" class="me-1" />
+								<IconChatTextFill class="me-1" />
 								<Locale k="UNIT_VIEW_TAB_DIALOGUE" />
 							</a>
 						</li>

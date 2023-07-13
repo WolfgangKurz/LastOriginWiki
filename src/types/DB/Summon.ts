@@ -1,4 +1,3 @@
-import { AI } from "@/types/DB/AI";
 import { SkillEntryData } from "@/types/DB/Skill";
 import { SKILL_ATTR, ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, SUMMON_TYPE, INSTALL_POS_TYPE } from "@/types/Enums";
 
@@ -30,7 +29,7 @@ export interface Summon {
 	deflv: number;
 	lifecycle: number;
 	shelter: boolean;
-	ai: AI[];
+	ai: string;
 
 	stat: {
 		hp: [number, number];

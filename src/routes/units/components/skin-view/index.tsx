@@ -11,6 +11,7 @@ import Locale from "@/components/locale";
 import { objState } from "@/libs/State";
 
 import PopupBase from "@/components/popup/base";
+import IconEmojiSmileFill from "@/components/bootstrap-icon/icons/EmojiSmileFill";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import MergedVideo from "@/components/merged-video";
 import Pinch from "@/components/pinch";
@@ -18,7 +19,6 @@ import SpineRenderer from "@/components/spine-renderer";
 import U2DModelRenderer from "@/components/u2dmodel-renderer";
 
 import style from "./style.module.scss";
-import Icon from "@/components/bootstrap-icon";
 
 interface SkinItem extends UnitSkin {
 	isDef: boolean;
@@ -521,7 +521,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								</option>;
 							}) }
 						</select>
-						<Icon icon="emoji-smile-fill" />
+						<IconEmojiSmileFill />
 					</div>
 					: <></>
 				}

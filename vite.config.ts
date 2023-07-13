@@ -176,15 +176,6 @@ export default ({ mode }) => {
 						if (id.includes("/node_modules/lodash/")) return "vendor.lodash";
 						if (id.includes("/node_modules/")) return "vendor";
 
-						// components/bootstrap-icon/es/*
-						if (id.includes("/components/bootstrap-icon/es/")) {
-							const _ = "/components/bootstrap-icon/es/";
-							const idx = id.indexOf(_) + _.length;
-							const name = id.substring(idx)[0];
-							// return `components.bootstrap.icon.${name}`;
-							return `cbi.${name}`;
-						}
-
 						// types & libs & loader hash -> base
 						if (id.includes("/src/types/")) return "base";
 						if (id.includes("/src/libs/")) return "base";

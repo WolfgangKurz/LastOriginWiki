@@ -16,7 +16,7 @@ import { objState } from "@/libs/State";
 
 import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
 import UnitFace from "@/components/unit-face";
 import EquipIcon from "@/components/equip-icon";
 import EquipPopup from "@/components/popup/equip-popup";
@@ -150,7 +150,7 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 					else
 						route(`/worlds/${props.wid}`);
 				} }>
-					<Icon icon="arrow-left" class="me-1" />
+					<IconArrowLeft class="me-1" />
 					{ props.wid === "Sub"
 						? <Locale k="WORLDS_BACK_TO_WORLDS" />
 						: <Locale k="WORLDS_BACK_TO_AREAS" />

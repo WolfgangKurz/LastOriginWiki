@@ -19,7 +19,12 @@ import { ParseDescriptionText } from "@/libs/FunctionsX";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconHammer from "@/components/bootstrap-icon/icons/Hammer";
+import IconArrowRightCircleFill from "@/components/bootstrap-icon/icons/ArrowRightCircleFill";
+import IconReceipt from "@/components/bootstrap-icon/icons/Receipt";
+import IconBasketFill from "@/components/bootstrap-icon/icons/BasketFill";
+import IconCpuFill from "@/components/bootstrap-icon/icons/CpuFill";
+import IconCapslockFill from "@/components/bootstrap-icon/icons/CapslockFill";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import PopupBase from "@/components/popup/base";
 import EquipIcon from "@/components/equip-icon";
@@ -293,7 +298,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 				{ target.craft
 					? <span class="badge bg-dark my-1">
 						<h6 class="m-0 p-0">
-							<Icon icon="hammer" class="me-1" />
+							<IconHammer class="me-1" />
 
 							<strong>
 								<span class="ps-1 pe-3">
@@ -357,7 +362,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 					</div>
 				</div>,
 				<div>
-					<Icon icon="arrow-right-circle-fill" />
+					<IconArrowRightCircleFill />
 				</div>,
 				<div>
 					{ next
@@ -476,7 +481,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 								setDisplayTab("info");
 							} }
 						>
-							<Icon icon="receipt" class="me-1" />
+							<IconReceipt class="me-1" />
 							<Locale k="EQUIP_VIEW_EFFECT" />
 						</a>
 					</li>
@@ -489,7 +494,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 								setDisplayTab("drop");
 							} }
 						>
-							<Icon icon="basket-fill" class="me-1" />
+							<IconBasketFill class="me-1" />
 							<Locale k="EQUIP_VIEW_SOURCE" />
 						</a>
 					</li>
@@ -502,7 +507,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 								setDisplayTab("enchant");
 							} }
 						>
-							<Icon icon="cpu-fill" class="me-1" />
+							<IconCpuFill class="me-1" />
 							<Locale k="EQUIP_VIEW_COST" />
 						</a>
 					</li>
@@ -515,7 +520,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 								setDisplayTab("upgrade");
 							} }
 						>
-							<Icon icon="capslock-fill" class="me-1" />
+							<IconCapslockFill class="me-1" />
 							<Locale k="EQUIP_VIEW_PROMOTION" />
 						</a>
 					</li>

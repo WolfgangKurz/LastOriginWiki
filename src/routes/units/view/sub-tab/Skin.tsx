@@ -7,7 +7,7 @@ import { FormatDate, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 
 import Locale, { LocaleGet } from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconQuestionCircleFill from "@/components/bootstrap-icon/icons/QuestionCircleFill";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import RarityBadge from "@/components/rarity-badge";
 import UnitFace from "@/components/unit-face";
@@ -196,7 +196,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 											<span class={ `badge ${style.IllustratorHidden}` }>
 												<Locale k="UNIT_VIEW_ILLUSTRATOR_HIDDEN" />
 
-												<Icon class="ms-1" icon="question-circle-fill" />
+												<IconQuestionCircleFill class="ms-1" />
 											</span>
 										</BootstrapTooltip>
 										: compileArtist(skin.artist)

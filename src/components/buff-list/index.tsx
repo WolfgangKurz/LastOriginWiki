@@ -17,8 +17,8 @@ import { CurrentDB } from "@/libs/DB";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import LocaleBase, { LocaleExists, LocaleGet, LocaleProps } from "@/components/locale";
+import IconQuestionCircleFill from "@/components/bootstrap-icon/icons/QuestionCircleFill";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
-import Icon from "@/components/bootstrap-icon";
 import StatIcon from "@/components/stat-icon";
 import ElemIcon from "@/components/elem-icon";
 import UnitLink from "@/components/unit-link";
@@ -1499,7 +1499,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 								</span> }>
 									<span class={ `badge bg-orange ms-2 ${style.OverlapBadge}` }>
 										<Locale plain k={ `BUFFOVERLAP_${StackTable[overlap]}` } />
-										<Icon class={ `ms-1 ${style.QuestionIcon}` } icon="question-circle-fill" />
+										<IconQuestionCircleFill class={ `ms-1 ${style.QuestionIcon}` } />
 									</span>
 								</BootstrapTooltip>
 								: <></>

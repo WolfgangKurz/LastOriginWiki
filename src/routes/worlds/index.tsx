@@ -6,7 +6,6 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Locale, { LocaleGet } from "@/components/locale";
 import WorldItem from "@/routes/worlds/components/world-item";
-import Icon from "@/components/bootstrap-icon";
 
 import style from "./style.module.scss";
 

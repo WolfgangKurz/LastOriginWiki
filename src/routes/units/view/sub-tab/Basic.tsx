@@ -26,7 +26,10 @@ import { DecomposeHangulSyllable, FormatDate, FormatNumber, isActive } from "@/l
 
 import { DBSourceConverter, GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconHourglassSplit from "@/components/bootstrap-icon/icons/HourglassSplit";
+import IconHammer from "@/components/bootstrap-icon/icons/Hammer";
+import IconVolumeUpFill from "@/components/bootstrap-icon/icons/VolumeUpFill";
+import IconMicFill from "@/components/bootstrap-icon/icons/MicFill";
 import RarityBadge from "@/components/rarity-badge";
 import UnitBadge from "@/components/unit-badge";
 import EquipIcon from "@/components/equip-icon";
@@ -197,7 +200,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 						? <div class={ style.IntroduceVoice }>
 							<div class="input-group">
 								<div class="input-group-text text-sm">
-									<Icon icon="mic-fill" />
+									<IconMicFill />
 								</div>
 
 								{ introVoiceTableKeys.map(vk => <button
@@ -215,7 +218,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 									disabled={ !hasIntroVoice(unit.introVoice, vk) }
 									onClick={ (): void => introAudioLocale.set(getIntroVoice(unit.introVoice, vk)!) }
 								>
-									{ introAudioLocale.value === vk && <Icon class="me-1" icon="volume-up-fill" /> }
+									{ introAudioLocale.value === vk && <IconVolumeUpFill class="me-1" /> }
 									{ introVoiceTable[vk] }
 								</button>) }
 							</div>
@@ -433,11 +436,11 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_PROMOTION" /></th>
 								<td class="text-break">
 									{ promotion
-										? <RarityBadge rarity={ promotion } size="medium">
+										? <RarityBadge rarity={ promotion.to } size="medium">
 											<Locale
 												k="UNIT_VIEW_PROMOTION_BADGE"
 												p={ [<span class="font-exo2">
-													{ RarityDisplay[promotion] }
+													{ RarityDisplay[promotion.to] }
 												</span>] }
 											/>
 										</RarityBadge>
@@ -570,7 +573,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 															</span>
 														</div>
 														<span>
-															<Icon class="me-1" icon="hourglass-split" />
+															<IconHourglassSplit class="me-1" />
 															<span class="font-exo2">{ CraftTime }</span>
 														</span>
 
@@ -627,7 +630,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 														</div>
 													</div>
 													: <h6 class="m-0 p-0">
-														<Icon icon="hammer" />
+														<IconHammer />
 														<strong>
 															<span class="ps-1 pe-3">
 																<Locale k="UNIT_VIEW_DROPS_CREATIONTIME" />

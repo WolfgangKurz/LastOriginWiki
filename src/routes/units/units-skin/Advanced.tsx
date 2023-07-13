@@ -10,7 +10,9 @@ import { ObjectState, objState } from "@/libs/State";
 import { groupBy, isActive } from "@/libs/Functions";
 
 import Locale, { LocaleGet } from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconThreeDots from "@/components/bootstrap-icon/icons/ThreeDots";
+import IconCheck from "@/components/bootstrap-icon/icons/Check";
+import IconX from "@/components/bootstrap-icon/icons/X";
 import UnitFace from "@/components/unit-face";
 
 import style from "./style.module.scss";
@@ -126,7 +128,7 @@ const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 					state.set(undefined);
 				} }
 			>
-				<Icon icon="three-dots" />
+				<IconThreeDots />
 			</button>
 			<button
 				class={ `btn btn-sm btn-outline-dark ${isActive(state.value === true)}` }
@@ -135,7 +137,7 @@ const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 					state.set(true);
 				} }
 			>
-				<Icon icon="check" />
+				<IconCheck />
 			</button>
 			<button
 				class={ `btn btn-sm btn-outline-dark ${isActive(state.value === false)}` }
@@ -144,7 +146,7 @@ const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 					state.set(false);
 				} }
 			>
-				<Icon icon="x" />
+				<IconX />
 			</button>
 		</div>;
 	};

@@ -14,7 +14,7 @@ import { isActive } from "@/libs/Functions";
 
 import Loader, { StaticDB, GetJson } from "@/components/loader";
 import Locale from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconArrowRight from "@/components/bootstrap-icon/icons/ArrowRight";
 import TextBadge from "@/components/text-badge";
 import RoguelikeEffectBadge from "@/components/roguelike-effect-badge";
 import RoguelikeItemBadge from "@/components/roguelike-item-badge";
@@ -295,7 +295,7 @@ const RoguelikeNodeContent: FunctionalComponent = () => {
 									}
 								</div>
 								<div class="col-auto d-flex align-items-center border-start-0 border-end-0 bg-light">
-									<Icon icon="arrow-right" />
+									<IconArrowRight />
 								</div>
 								<div class="col bg-light">
 									{ rewards.length === 0 && buffs.length === 0

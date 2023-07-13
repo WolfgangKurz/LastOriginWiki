@@ -5,7 +5,8 @@ import { SimulatorSlotType } from "../../types/Slot";
 
 import { RarityDisplay } from "@/libs/Const";
 
-import Icon from "@/components/bootstrap-icon";
+import IconFlagFill from "@/components/bootstrap-icon/icons/FlagFill";
+import IconPlus from "@/components/bootstrap-icon/icons/Plus";
 import UnitFace from "@/components/unit-face";
 
 import "./style.scss";
@@ -34,7 +35,7 @@ const SimulatorSlot: FunctionalComponent<SimulatorSlotProps> = (props) => {
 		<div class="slot-face">
 			{ leader
 				? <span class="badge bg-dark flag-leader">
-					<Icon icon="flag-fill" />
+					<IconFlagFill />
 				</span>
 				: <></>
 			}
@@ -49,7 +50,7 @@ const SimulatorSlot: FunctionalComponent<SimulatorSlotProps> = (props) => {
 			? <>
 				{ !slot
 					? <div class="slot-adder" >
-						<Icon icon="plus" />
+						<IconPlus />
 					</div>
 					: <></>
 				}

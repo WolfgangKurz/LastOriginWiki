@@ -17,8 +17,18 @@ import MapPosition from "@/libs/MapPosition";
 
 import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
-import BootstrapTooltip from "@/components/bootstrap-tooltip";
-import Icon from "@/components/bootstrap-icon";
+import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
+import IconChatSquareTextFill from "@/components/bootstrap-icon/icons/ChatSquareTextFill";
+import IconCompass from "@/components/bootstrap-icon/icons/Compass";
+import IconCaretRightFill from "@/components/bootstrap-icon/icons/CaretRightFill";
+import IconAwardFill from "@/components/bootstrap-icon/icons/AwardFill";
+import IconGiftFill from "@/components/bootstrap-icon/icons/GiftFill";
+import IconBugFill from "@/components/bootstrap-icon/icons/BugFill";
+import IconSearch from "@/components/bootstrap-icon/icons/Search";
+import IconStarFill from "@/components/bootstrap-icon/icons/StarFill";
+import  IconChevronLeft from "@/components/bootstrap-icon/icons/ChevronLeft";
+import IconChevronRight  from "@/components/bootstrap-icon/icons/ChevronRight";
+import  IconUnlockFill  from "@/components/bootstrap-icon/icons/UnlockFill";
 import DropItem from "@/components/drop-item";
 import DropRes from "@/components/drop-res";
 import DropUnit from "@/components/drop-unit";
@@ -28,11 +38,11 @@ import UnitFace from "@/components/unit-face";
 import EnemyPopup from "@/components/popup/enemy-popup";
 import EquipPopup from "@/components/popup/equip-popup";
 import PCIcon from "@/components/pc-icon";
+import MissionText from "@/components/mission-text";
 import MapSearchInfo from "../components/map-search-info";
 import MapGrid from "../components/map-grid";
 
 import style from "./style.module.scss";
-import MissionText from "@/components/mission-text";
 
 interface ModuleUnit {
 	type: "module";
@@ -328,7 +338,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 							else
 								route(`/worlds/${props.wid}`);
 						} }>
-							<Icon icon="arrow-left" class="me-1" />
+							<IconArrowLeft class="me-1" />
 							{ props.wid === "Sub"
 								? <Locale k="WORLDS_BACK_TO_WORLDS" />
 								: <Locale k="WORLDS_BACK_TO_AREAS" />
@@ -339,12 +349,12 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 						{ CurrentMode.value === "map"
 							? props.mid in MapDB && MapDB[props.mid].substory.length > 0
 								? <button class="btn btn-dark" onClick={ (): void => CurrentMode.set("substory") }>
-									<Icon icon="chat-square-text-fill" class="me-1" />
+									<IconChatSquareTextFill class="me-1" />
 									<Locale k="WORLDS_SUBSTORY" />
 								</button>
 								: <></>
 							: <button class="btn btn-dark" onClick={ (): void => CurrentMode.set("map") }>
-								<Icon icon="compass" class="me-1" />
+								<IconCompass class="me-1" />
 								<Locale k="WORLDS_WORLD_MAP" />
 							</button>
 						}
@@ -463,7 +473,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												: <span class="font-exo2">
 													{ selectedValue.text }
 													{ selectedValue.type === STAGE_SUB_TYPE.STORY && <>
-														<Icon class="mx-1" icon="caret-right-fill" />
+														<IconCaretRightFill class="mx-1" />
 														Story
 													</> }
 												</span>
@@ -506,7 +516,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												CurrentTab.set("reward");
 											} }
 										>
-											<Icon icon="award-fill" class="me-1" />
+											<IconAwardFill class="me-1" />
 											<Locale k="WORLD_VIEW_CLEAR_REWARDS" />
 										</a>
 									</li>
@@ -521,7 +531,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 														CurrentTab.set("drop");
 													} }
 												>
-													<Icon icon="gift-fill" class="me-1" />
+													<IconGiftFill class="me-1" />
 													<Locale k="WORLD_VIEW_DROPS" />
 												</a>
 											</li>
@@ -535,7 +545,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 															CurrentTab.set("enemy");
 														} }
 													>
-														<Icon icon="bug-fill" class="me-1" />
+														<IconBugFill class="me-1" />
 														<Locale k="WORLD_VIEW_ENEMY" />
 													</a>
 												</li>
@@ -550,7 +560,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 														CurrentTab.set("search");
 													} }
 												>
-													<Icon icon="search" class="me-1" />
+													<IconSearch class="me-1" />
 													<Locale k="WORLD_VIEW_EXPLORATION" />
 												</a>
 											</li>
@@ -698,7 +708,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																	{ selectedValue.missions.map(m => <li class="list-group-item">
 																		{/* ★ <Locale k={ m } components={ { ref: UnitReference } } /> */ }
 																		<div>
-																			<Icon class="me-2" icon="star-fill" />
+																			<IconStarFill class="me-2" />
 																			<MissionText mission={ m } />
 																		</div>
 																		<small class="text-secondary ps-4">
@@ -975,7 +985,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 															selectedWave.set(selectedWave.value - 1);
 													} }
 												>
-													<Icon icon="chevron-left" />
+													<IconChevronLeft />
 												</span>
 												<div class="enemy-grid">
 													{ CurrentWave.map((enemy, pos) => <div>
@@ -1010,7 +1020,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 															selectedWave.set(selectedWave.value + 1);
 													} }
 												>
-													<Icon icon="chevron-right" />
+													<IconChevronRight />
 												</span>
 											</div>
 										</> }
@@ -1082,10 +1092,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												</span>
 
 												<div class={ style.SubStoryUnlock }>
-													<Icon
-														class="me-2"
-														icon="unlock-fill"
-													/>
+													<IconUnlockFill class="me-2" />
 
 													{ y.unlock.params
 														.map(p => <span class={ style.SubStoryUnlockCond }>

@@ -4,14 +4,13 @@ import Store from "@/store";
 import { isActive } from "@/libs/Functions";
 
 import Locale from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconListUl from "@/components/bootstrap-icon/icons/ListUl";
+import IconArchiveFill from "@/components/bootstrap-icon/icons/ArchiveFill";
 
 import EnemiesList from "./list";
 import EnemiesGroup from "./group";
 
 import style from "./style.module.scss";
-import { useEffect } from "preact/hooks";
-import { objState } from "@/libs/State";
 
 interface EnemiesProps {
 	uid?: string;
@@ -27,7 +26,7 @@ const Enemies: FunctionalComponent<EnemiesProps> = (props) => {
 					class={ `btn btn-outline-primary ${isActive(Store.Enemies.DisplayType.value === "list")}` }
 					onClick={ () => Store.Enemies.DisplayType.value = "list" }
 				>
-					<Icon icon="list-ul" class="me-1" />
+					<IconListUl class="me-1" />
 					<Locale k="ENEMIES_LIST" />
 				</button>
 				<button
@@ -35,7 +34,7 @@ const Enemies: FunctionalComponent<EnemiesProps> = (props) => {
 					class={ `btn btn-outline-primary ${isActive(Store.Enemies.DisplayType.value === "group")}` }
 					onClick={ () => Store.Enemies.DisplayType.value = "group" }
 				>
-					<Icon icon="archive-fill" class="me-1" />
+					<IconArchiveFill class="me-1" />
 					<Locale k="ENEMIES_GROUP_LIST" />
 				</button>
 			</div>

@@ -4,7 +4,6 @@ import Locale from "@/components/locale";
 import RarityBadge from "@/components/rarity-badge";
 
 import ChangelogItem from "../../components/changelog-item";
-import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>

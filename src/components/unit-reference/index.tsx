@@ -5,7 +5,7 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import UnitCard from "@/components/unit-card";
 import UnitFace from "@/components/unit-face";
@@ -26,7 +26,7 @@ const UnitReference: FunctionalComponent<UnitReferenceProps> = (props) => {
 				return <Link href={ `/units/${unit}` }>
 					<span class="badge bg-substory">
 						<Locale plain k={ `UNIT_${unit}` } />
-						<Icon icon="link-45deg" class="ms-1" />
+						<IconLink45deg class="ms-1" />
 					</span>
 				</Link>;
 			}
@@ -43,7 +43,7 @@ const UnitReference: FunctionalComponent<UnitReferenceProps> = (props) => {
 				>
 					<span class="badge bg-substory mx-1">
 						<Locale plain k={ `UNIT_${unit}` } />
-						<Icon icon="link-45deg" class="ms-1" />
+						<IconLink45deg class="ms-1" />
 					</span>
 				</BootstrapTooltip>
 				<div class="preload-area">
@@ -54,7 +54,7 @@ const UnitReference: FunctionalComponent<UnitReferenceProps> = (props) => {
 		loading={ <Link href={ `/units/${unit}` }>
 			<span class="badge bg-substory">
 				<Locale plain k={ `UNIT_${unit}` } />
-				<Icon icon="link-45deg" class="ms-1" />
+				<IconLink45deg class="ms-1" />
 			</span>
 		</Link> }
 	/>;

@@ -8,7 +8,10 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
+import IconCompass from "@/components/bootstrap-icon/icons/Compass";
+import IconTable from "@/components/bootstrap-icon/icons/Table";
+import IconChatLeftQuote from "@/components/bootstrap-icon/icons/ChatLeftQuote";
 import WorldItem from "../components/world-item";
 
 import style from "./style.module.scss";
@@ -46,7 +49,7 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 			<div class="row">
 				<div class="col-auto">
 					<button class="btn btn-dark" onClick={ (): void => void (route("/worlds")) }>
-						<Icon icon="arrow-left" class="me-1" />
+						<IconArrowLeft class="me-1" />
 						<Locale k="WORLDS_BACK_TO_WORLDS" />
 					</button>
 				</div>
@@ -86,13 +89,13 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 
 										<div class="btn-group mt-2">
 											<button class="btn btn-warning" onClick={ (): void => void (route(`/worlds/${props.wid}/${world}`)) }>
-												<Icon icon="compass" class="me-1" />
+												<IconCompass class="me-1" />
 												<span class="d-inline-block">
 													<Locale k="WORLDS_WORLD_MAP" />
 												</span>
 											</button>
 											<button class="btn btn-primary" onClick={ (): void => void (route(`/worlds/${props.wid}/${world}/drop`)) }>
-												<Icon icon="table" class="me-2" />
+												<IconTable class="me-2" />
 												<span class="d-inline-block">
 													<Locale k="WORLDS_DROP_TABLE" />
 												</span>
@@ -101,7 +104,7 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 												? <></>
 												: <button class="btn btn-light" disabled>
 													{/* onClick={ (): void => void (route(`/story/${props.wid}/${world}`)) } */ }
-													<Icon icon="chat-left-quote" class="me-1" />
+													<IconChatLeftQuote class="me-1" />
 													<span class="d-inline-block">
 														<Locale k="WORLDS_WORLD_STORY" />
 													</span>

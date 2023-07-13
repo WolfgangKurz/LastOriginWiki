@@ -9,7 +9,8 @@ import { UnitsListProps } from "..";
 import { FormatNumber, isActive } from "@/libs/Functions";
 
 import Locale from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconPersonFill from "@/components/bootstrap-icon/icons/PersonFill";
+import IconTshirt from "@/components/bootstrap-icon/icons/Tshirt";
 import UnitFace from "@/components/unit-face";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 
@@ -93,7 +94,7 @@ const Artist: FunctionalComponent<UnitsListProps> = (props) => {
 					displayUnitRelease.value = !displayUnitRelease.value;
 				} }
 			>
-				<Icon class="me-1" icon="person-fill" />
+				<IconPersonFill class="me-1" />
 				<Locale k="UNIT_VIEW_SKIN_RELEASEDATE_DISPLAY_UNIT" />
 			</button>
 			<button
@@ -103,7 +104,7 @@ const Artist: FunctionalComponent<UnitsListProps> = (props) => {
 					displaySkinRelease.value = !displaySkinRelease.value;
 				} }
 			>
-				<Icon class="me-1" icon="tshirt" />
+				<IconTshirt class="me-1" />
 				<Locale k="UNIT_VIEW_SKIN_RELEASEDATE_DISPLAY_SKIN" />
 			</button>
 		</div>

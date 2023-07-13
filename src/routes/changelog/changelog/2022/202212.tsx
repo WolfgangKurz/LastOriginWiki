@@ -1,12 +1,13 @@
 import { FunctionalComponent } from "preact";
 
+import { AssetsRoot } from "@/libs/Const";
+
 import Locale from "@/components/locale";
 import RarityBadge from "@/components/rarity-badge";
+import IconArrowRight from "@/components/bootstrap-icon/icons/ArrowRight";
 
 import ChangelogItem from "../../components/changelog-item";
-import Icon from "@/components/bootstrap-icon";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
-import { AssetsRoot } from "@/libs/Const";
 
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 12011" date="2022-12-31"
@@ -19,7 +20,7 @@ const Changelog: FunctionalComponent = () => <>
 	/>
 	<ChangelogItem tag="Rhine" title="Build 12007" date="2022-12-31"
 		site={ <>
-			<li>Spine 로비 애니메이션의 파일 용량을 개선했습니다. (스킨당 약 2MBs <Icon icon="arrow-right" /> 약 800KBs)</li>
+			<li>Spine 로비 애니메이션의 파일 용량을 개선했습니다. (스킨당 약 2MBs <IconArrowRight /> 약 800KBs)</li>
 			<li>Changelog를 아마도 조금 더 보기 편하게 개선했습니다.</li>
 		</> }
 		bugfix={ <>

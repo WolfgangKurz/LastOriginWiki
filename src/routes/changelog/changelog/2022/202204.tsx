@@ -4,7 +4,6 @@ import Locale from "@/components/locale";
 import RarityBadge from "@/components/rarity-badge";
 
 import ChangelogItem from "../../components/changelog-item";
-import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 11692" date="2022-04-30"

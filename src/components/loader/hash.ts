@@ -1,7 +1,7 @@
 // Content automatically generated
 export interface DBHashType { [K: string]: string | DBHashType; }
 export default {
-	"buildtime": "6b1a29f7",
+	"buildtime": "50c757fe",
 	"locale": {
 		"TC": "062d017a",
 		"KR": "f920da97",
@@ -236,21 +236,21 @@ export default {
 			"3P_Ajax": "b5ebd681"
 		},
 		"summon": {
-			"SUMMON_SU_TrenchBomb_N": "f766e9c4",
-			"SUMMON_SU_TestSInstall_N": "8c3ad0de",
-			"SUMMON_SU_TestSEnv_N": "97c1f769",
-			"SUMMON_SU_TestSAutoP_N": "4623f4c7",
-			"SUMMON_SU_RaiderBomb_N": "b5549c92",
-			"SUMMON_SU_RabbitBarrier_N": "9aba14f6",
-			"SUMMON_SU_LMMine_N": "6704a13c",
-			"SUMMON_SU_HoloTiger_N2": "c8c881fe",
-			"SUMMON_SU_HoloTiger_N": "69011b11",
-			"SUMMON_SU_GoldenFactory_NS2": "c43d46e8",
-			"SUMMON_SU_GoldenFactory_NS1": "82c83da3",
-			"SUMMON_SU_GoldenFactory_N": "50c340f1",
-			"SUMMON_SU_C4Bomb_N": "eeb00244",
-			"SUMMON_SU_AMG11_N2": "475fb80c",
-			"SUMMON_SU_AMG11_N": "a613e391"
+			"SUMMON_SU_TrenchBomb_N": "641157ee",
+			"SUMMON_SU_TestSInstall_N": "d1f55f56",
+			"SUMMON_SU_TestSEnv_N": "5cedb955",
+			"SUMMON_SU_TestSAutoP_N": "fe88dc78",
+			"SUMMON_SU_RaiderBomb_N": "eb5a14b0",
+			"SUMMON_SU_RabbitBarrier_N": "2ab20cc8",
+			"SUMMON_SU_LMMine_N": "8e3d9fd3",
+			"SUMMON_SU_HoloTiger_N2": "533986e6",
+			"SUMMON_SU_HoloTiger_N": "02f882fb",
+			"SUMMON_SU_GoldenFactory_NS2": "e0b22386",
+			"SUMMON_SU_GoldenFactory_NS1": "8e31deb9",
+			"SUMMON_SU_GoldenFactory_N": "64168721",
+			"SUMMON_SU_C4Bomb_N": "35ec37ec",
+			"SUMMON_SU_AMG11_N2": "46b0ba46",
+			"SUMMON_SU_AMG11_N": "5908b7ef"
 		},
 		"roguelike": {
 			"quest": "372e37a9",

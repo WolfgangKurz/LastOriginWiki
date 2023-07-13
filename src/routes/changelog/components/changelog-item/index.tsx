@@ -1,9 +1,9 @@
 import { FunctionalComponent } from "preact";
 
 import Locale from "@/components/locale";
+import IconTagFill from "@/components/bootstrap-icon/icons/TagFill";
 
 import style from "./style.module.scss";
-import Icon from "@/components/bootstrap-icon";
 
 interface ChangelogItemProps {
 	tag?: string;
@@ -81,7 +81,7 @@ const ChangelogItem: FunctionalComponent<ChangelogItemProps> = (props) => {
 			<small class="ps-3 float-end float-md-none text-secondary">{ props.date }</small>
 			{ props.tag
 				? <span class={ style.ReleaseTag }>
-					<Icon class="me-1" icon="tag-fill" />
+					<IconTagFill class="me-1" />
 					{ props.tag }
 				</span>
 				: <></>

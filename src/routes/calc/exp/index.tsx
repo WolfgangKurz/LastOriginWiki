@@ -13,7 +13,8 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Loader, { GetJson } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconX from "@/components/bootstrap-icon/icons/X";
+import IconPlusSquareFill from "@/components/bootstrap-icon/icons/PlusSquareFill";
 import UnitFace from "@/components/unit-face";
 import SkillIcon from "@/components/skill-icon";
 import EquipIcon from "@/components/equip-icon";
@@ -519,7 +520,7 @@ const EXPCalc: FunctionalComponent = () => {
 											]);
 										} }
 									>
-										<Icon icon="x" />
+										<IconX />
 									</button>
 								</div>
 								<div class="clearfix" />
@@ -870,7 +871,7 @@ const EXPCalc: FunctionalComponent = () => {
 							});
 						} }>
 							<div class="mb-2" style="font-size:2em">
-								<Icon icon="plus-square-fill" />
+								<IconPlusSquareFill />
 							</div>
 							<Locale k="EXPCALC_NEW_CALC" />
 						</button>

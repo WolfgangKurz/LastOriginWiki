@@ -4,8 +4,13 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12189" date="2023-07-13"
+		site={ <>
+			<li>번들 용량 최적화</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12188" date="2023-07-13"
-		update={ <>
+		site={ <>
 			<li>Spine 패키지 업데이트</li>
 		</> }
 	/>
