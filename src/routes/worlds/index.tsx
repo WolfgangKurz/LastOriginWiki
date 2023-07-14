@@ -5,6 +5,7 @@ import { PermanentEvents, AssetsRoot, CurrentEvent, WorldIds } from "@/libs/Cons
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Locale, { LocaleGet } from "@/components/locale";
+import IconDot from "@/components/bootstrap-icon/icons/Dot";
 import WorldItem from "@/routes/worlds/components/world-item";
 
 import style from "./style.module.scss";
@@ -25,7 +26,7 @@ const Worlds: FunctionalComponent = () => {
 		<hr />
 
 		<h4>
-			<Locale k="WORLDS_MAINSTORY_EVENT" components={ { Icon } } />
+			<Locale k="WORLDS_MAINSTORY_EVENT" components={ { IconDot } } />
 		</h4>
 		<div class="row row-cols-1 row-cols-lg-2">
 			{ Tops.map(item => <div class="col">
@@ -35,7 +36,7 @@ const Worlds: FunctionalComponent = () => {
 		<hr />
 
 		<h4>
-			<Locale k="WORLDS_PERMANENT_EVENT" components={ { Icon } } />
+			<Locale k="WORLDS_PERMANENT_EVENT" components={ { IconDot } } />
 		</h4>
 		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 text-center">
 			{ PermanentEvents.map(item => <div class={ `col mb-2 font-ibm ${style.PermanentBanner}` }>
@@ -53,7 +54,7 @@ const Worlds: FunctionalComponent = () => {
 		<hr />
 
 		<h4>
-			<Locale k="WORLDS_SUBSTORY_CHALLENGE" components={ { Icon } } />
+			<Locale k="WORLDS_SUBSTORY_CHALLENGE" components={ { IconDot } } />
 		</h4>
 		<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
 			{ Subs.map(item => <div class="col">
@@ -63,7 +64,7 @@ const Worlds: FunctionalComponent = () => {
 		<hr />
 
 		<h4>
-			<Locale k="WORLDS_PAST_EVENT" components={ { Icon } } />
+			<Locale k="WORLDS_PAST_EVENT" components={ { IconDot } } />
 		</h4>
 		<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
 			{ List.map(item => <div class="col">
