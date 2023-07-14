@@ -2,10 +2,7 @@ import { render, h } from "preact";
 
 import App from "@/app";
 
-import "bootstrap/scss/bootstrap.scss";
-
 import "@/themes/index.scss";
-import "@/themes/patch.scss";
 
 import { Extend } from "@/libs/Functions";
 
