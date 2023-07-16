@@ -1,0 +1,15 @@
+start > skill1_usable
+	skill1_usable y cond1
+		cond1 y skill1_buff_Effect_MP_Predator_EW2_2
+		cond1 n chance_25
+			chance_25 y skill2
+			chance_25 n skill1
+	skill1_usable n skill2_usable
+		skill2_usable y skill2_near.flying_row_2
+			skill2_near.flying_row_2 f skill2_near.heavy_row_2
+				skill2_near.heavy_row_2 f skill2_near
+		skill2_usable n cell_skill2
+			cell_skill2 y move_slot2
+			cell_skill2 n wait
+
+cond1 = check_buff_target_Effect_MP_Predator_EW2_2

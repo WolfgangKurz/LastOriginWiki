@@ -35,7 +35,7 @@ import BuffList from "@/components/buff-list";
 import AIList from "@/components/ai-list";
 import SourceBadge from "@/components/source-badge";
 
-import "./style.scss";
+import style from "./style.module.scss";
 
 interface EnemyPopupProps {
 	display?: boolean;
@@ -365,7 +365,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 					<tr>
 						{ targetStat
 							? <td class="bg-dark status-col p-0 pb-2">
-								<table class="table table-borderless mb-0">
+								<table class="table table-borderless mb-0" style="--bs-table-bg: var(--bs-dark)">
 									<tbody>
 										<tr class="text-center text-white resist-parent font-exo2">
 											<td data-type="fire">
@@ -383,7 +383,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 										</tr>
 									</tbody>
 								</table>
-								<table class="table table-borderless mb-0">
+								<table class="table table-borderless mb-0" style="--bs-table-bg: var(--bs-dark)">
 									<tbody>
 										<tr>
 											<td class="text-start">
@@ -602,18 +602,11 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 						{ displayTab === "ai"
 							? <div class="row">
 								<div class="col border border-top-0 text-start p-3">
-									{ targetEnemy.ai
-										? <AIList aiKey={ targetEnemy.ai } enemy />
-										: <div>
-											Data not exists.<br />
-											Request here: <a
-												href="https://github.com/WolfgangKurz/LastOriginWiki/issues"
-												target="_blank"
-											>
-												https://github.com/WolfgangKurz/LastOriginWiki/issues
-											</a>
-										</div>
-									}
+									<AIList
+										name={ LocaleGet(`ENEMY_${target.id}`) }
+										aiKey={ targetEnemy.ai }
+										enemy
+									/>
 								</div>
 							</div>
 							: <></>
@@ -621,7 +614,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 						{ displayTab === "desc"
 							? <div class="row">
 								<div class="col break-keep white-pre-line border border-top-0 text-start p-1">
-									<div class="bg-dark text-light p-3">
+									<div class={ BuildClass("bg-dark text-light p-3", style.EnemyDescription) }>
 										<Locale plain k={ `ENEMY_INTRO_${target.id}` } />
 									</div>
 								</div>

@@ -1,0 +1,15 @@
+start > pos_front
+	pos_front y skill2_usable
+		skill2_usable y skill2_flying
+		skill2_usable n alive_team
+	pos_front n alive_team
+
+# SubProcess
+alive_team y skill1
+alive_team n skill2_usableb
+	skill2_usableb y skill2_flying
+	skill2_usableb n cell_skill2
+		cell_skill2 y move_slot2
+		cell_skill2 n wait
+
+skill2_usableb = skill2_usable

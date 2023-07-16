@@ -43,12 +43,12 @@ function traverseVNode<T> (nodes: ParseNode[], p: preact.ComponentChild[], compo
 
 			if (x.name in components) {
 				const comp = components[x.name];
-				ret.push(createElement<T>(
+				ret.push(createElement<any>( // :(
 					comp,
 					{ ...attrs } as any,
 					traverseVNode(x.childs, p, components),
 				));
-			} else if (/^[A-z_]([A-z0-9_-]+)?$/.test(x.name)) {
+			} else if (/^[A-Za-z_]([A-Za-z0-9_-]+)?$/.test(x.name)) {
 				ret.push(createElement(
 					x.name,
 					{ ...attrs },

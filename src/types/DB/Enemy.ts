@@ -16,7 +16,7 @@ export enum EnemyCategory {
 export interface Enemy {
 	id: string;
 	icon: string;
-	ai?: string;
+	ai: string;
 
 	rarity: ACTOR_GRADE;
 	type: ACTOR_CLASS;

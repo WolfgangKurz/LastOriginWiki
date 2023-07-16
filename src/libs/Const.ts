@@ -16,6 +16,7 @@ export const Host = IsDev
 	: "https://lo.swaytwig.com";
 
 export const AssetsRoot = `${Host}/assets`;
+export const FlowRoot = `${Host}/flow`;
 export const DOTRoot = `${Host}/dot`;
 export const DataRoot = `${Host}/json`;
 

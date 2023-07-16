@@ -1,0 +1,11 @@
+start > cond1
+	cond1 y skill2_usable
+	cond1 n skill1_usable
+		skill2_usable y skill2
+		skill2_usable n skill1_usable
+			skill1_usable y skill1_flying
+			skill1_usable y skill2_usable_1
+				skill2_usable_1 y skill2_backend
+				skill2_usable_1 n wait
+
+cond1 = check_buff_target_Effect_MP_LegionSPEX_N_1

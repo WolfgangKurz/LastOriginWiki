@@ -187,7 +187,7 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 						</tr>
 						<tr>
 							<td class="bg-dark status-col p-0">
-								<table class="table table-borderless mb-0">
+								<table class="table table-borderless mb-0" style="--bs-table-bg: var(--bs-dark)">
 									<tbody>
 										<tr class="text-center text-white resist-parent">
 											<td data-type="fire">
@@ -205,7 +205,7 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 										</tr>
 									</tbody>
 								</table>
-								<table class="table table-borderless mb-0">
+								<table class="table table-borderless mb-0" style="--bs-table-bg: var(--bs-dark)">
 									<tbody>
 										<tr>
 											<td class="text-start">

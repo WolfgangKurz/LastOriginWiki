@@ -8,16 +8,18 @@ export interface IconProps {
 	class?: string;
 	size?: string | number;
 	color?: string;
+	viewBox?: string;
 }
 
 const IconBase: FunctionalComponent<IconProps> = (props) => {
 	const size = props.size || "1em";
 	const color = props.color || "currentColor";
+	const viewBox = props.viewBox || "0 0 16 16";
 
 	return <svg
 		class={ BuildClass("bi", props.class) }
 		xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 0 16 16"
+		viewBox={ viewBox }
 		width={ size }
 		height={ size }
 		fill={ color }

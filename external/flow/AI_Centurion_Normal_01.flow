@@ -1,0 +1,10 @@
+start > cond1
+	cond1 y skill2_lastenemy
+		skill2_lastenemy f skill1_usable
+	cond1 n skill1_usable
+		skill1_usable y skill1
+		skill1_usable n cell_skill2
+			cell_skill2 y move_slot2
+			cell_skill2 n wait
+
+cond1 = check_acted check_attacked check_buff!_target_Effect_MP_Centurion_N_2

@@ -158,7 +158,6 @@ export default ({ mode }) => {
 
 						// vendor
 						if (id.includes("/node_modules/preact-transition")) return "vendor.transition";
-						if (id.includes("/node_modules/html2canvas/")) return "vendor.html2canvas";
 						if (id.includes("/node_modules/bootstrap")) return "vendor.bootstrap";
 						if (id.includes("/node_modules/react")) return "vendor.react";
 						if (id.includes("/node_modules/@esotericsoftware/")) return "vendor.spine";
@@ -166,7 +165,15 @@ export default ({ mode }) => {
 						if (id.includes("/node_modules/graphlib/")) return "vendor.graphlib";
 						if (id.includes("/node_modules/lodash/")) return "vendor.lodash";
 						if (id.includes("/node_modules/swiper/")) return "vendor.swiper";
+						if (
+							id.includes("/node_modules/@reactflow/") ||
+							id.includes("/node_modules/@tisoap/") ||
+							id.includes("/node_modules/@dagrejs/")
+						) return "vendor.flow";
+
 						if (id.includes("/node_modules/")) return "vendor";
+
+						if (id.includes("/html2canvas/")) return "vendor.html2canvas";
 
 						// components/bootstrap-icon/
 						if (id.includes("/src/components/bootstrap-icon/")) return "components.icon";

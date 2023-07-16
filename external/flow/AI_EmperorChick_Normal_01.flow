@@ -1,0 +1,17 @@
+start > hp_<_50
+	hp_<_50 y skill2_usable
+		skill2_usable y skill2_near_row_2
+			skill2_near_row_2 f skill2_near
+		skill2_usable n skill1_usable_>_1
+			skill1_usable_>_1 y skill1_near_row_2
+				skill1_near_row_2 f skill1_near
+			skill1_usable_>_1 n skill2_usable_1
+				skill2_usable_1 y skill2_near_row_2
+				skill2_usable_1 n cell_skill2
+					cell_skill2 y move_slot2
+					cell_skill2 n cell_skill1
+						cell_skill1 y move_slot1
+						cell_skill1 n wait
+	hp_<_50 n skill1_usable_>_1
+
+skill2_usable_1 = skill2_usable

@@ -1,0 +1,21 @@
+start > cond1
+	cond1 y skill2_usable
+		skill2_usable y skill2_near
+		skill2_usable n skill1_usable
+	cond1 n skill1_usable
+		skill1_usable y cond2
+			cond2 y skill1_buff
+			cond2 n skill1_near
+		skill1_usable n skill2_usable_1
+			skill2_usable_1 y skill2_near_1
+			skill2_usable_1 n cell_skill1
+				cell_skill1 y move_slot1
+				cell_skill1 n cell_skill2
+					cell_skill2 y move_slot2
+					cell_skill2 n wait
+
+cond1 = check_buff!_target_Effect_MP_CenturionEX_N_2
+cond2 = check_buff_target_Effect_MP_CenturionEX_N_2
+skill1_buff = skill1_buff_Effect_MP_CenturionEX_N_2
+skill2_near_1 = skill2_near
+skill2_usable_1 = skill2_usable

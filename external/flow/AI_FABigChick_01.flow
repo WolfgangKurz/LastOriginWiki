@@ -1,0 +1,9 @@
+start > skill2_usable
+	skill2_usable y skill2_near
+	skill2_usable n skill1_usable
+		skill1_usable y skill1_backend
+		skill1_usable n cell_skill2
+			cell_skill2 y move_slot2
+			cell_skill2 n cell_skill1
+				cell_skill1 y move_slot1
+				cell_skill1 n wait

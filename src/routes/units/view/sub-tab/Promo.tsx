@@ -11,6 +11,7 @@ import { FormatNumber } from "@/libs/Functions";
 
 import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale from "@/components/locale";
+import IconCoolFace from "@/components/bootstrap-icon/icons/CoolFace";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import IconHeartFill from "@/components/bootstrap-icon/icons/HeartFill";
 import IconCaretRightFill from "@/components/bootstrap-icon/icons/CaretRightFill";
@@ -106,10 +107,7 @@ const PromoTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 			<img src={ `${AssetsRoot}/icons/CHA_${RoleIconId}${RarityDisplay[last]}.png` } />
 
 			<div class={ style.PromoEnd }>
-				{/* Smile icon */ }
-				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512">
-					<path fill="currentColor" d="M256 16C123.452 16 16 123.452 16 256s107.452 240 240 240s240-107.452 240-240S388.548 16 256 16Zm147.078 387.078a207.253 207.253 0 1 1 44.589-66.125a207.332 207.332 0 0 1-44.589 66.125Z" /><path fill="currentColor" d="M256 384a104 104 0 0 0 104-104H152a104 104 0 0 0 104 104Zm-50.243-155.708l20.486-24.584L168 155.173l-58.243 48.535l20.486 24.584L168 196.827l37.757 31.465zm80-24.584l20.486 24.584L344 196.827l37.757 31.465l20.486-24.584L344 155.173l-58.243 48.535z" />
-				</svg>
+				<IconCoolFace />
 			</div>
 		</div>
 	</div>;
