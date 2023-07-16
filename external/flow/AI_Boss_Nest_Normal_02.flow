@@ -8,9 +8,9 @@ start > cond_pos
 				cond_buff3_45% n cond_buff4_30%
 					cond_buff4_30% y skill2_usable
 					cond_buff4_30% n skill1_usable
-	cond_pos n cond_70%
-		cond_70% y move_4
-		cond_70% n skill2_usable
+	cond_pos n chance_70
+		chance_70 y move_4
+		chance_70 n skill2_usable
 
 skill1_usable y skill1_highest-atk
 skill1_usable n cell_skill1
@@ -37,6 +37,3 @@ cond_buff3_45% = check_buff_self_Effect_MP_Nest_TU2_34 chance_55
 
 # has Effect_MP_Nest_TU2_35 buff in self and 30% chance
 cond_buff4_30% = check_buff_self_Effect_MP_Nest_TU2_35 chance_70
-
-# 70% chance
-cond_70% = chance_30
