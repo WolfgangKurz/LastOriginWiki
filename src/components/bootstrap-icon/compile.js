@@ -1,29 +1,41 @@
 const fs = require("fs");
 const path = require("path");
 
-const dir = __dirname;
+const source = path.join(__dirname, "source");
+const icons = path.join(__dirname, "icons");
+const template = fs.readFileSync(path.join(__dirname, "_template.tsx"), "utf-8");
 
-const source = path.join(dir, "source");
-// const icons = path.join(dir, "icons");
-const output = path.join(dir, "icons.tsx");
+const list = [];
+fs.readdirSync(source, { encoding: "utf-8" })
+	.filter(x => x.endsWith(".svg"))
+	.forEach(x => {
+		const input = path.join(source, x);
 
-let result = "/* eslint-disable */\n";
-result += "export default {\n";
+		const baseName = path.basename(x, ".svg");
+		const pascalName = baseName
+			.replace(/(\w)(\w*)/g, (p0, p1, p2) => p1.toUpperCase() + p2.toLowerCase())
+			.replace(/-/g, "");
 
-const dirs = fs.readdirSync(source, { encoding: "utf-8" })
-	.filter(x => x.endsWith(".svg"));
-for (const x of dirs) {
-	const base = path.basename(x, ".svg");
-	const input = path.join(source, x);
+		let content = fs.readFileSync(input, { encoding: "utf-8" });
+		content = content.replace(/<\/?svg[^>]*>/g, "");
 
-	let content = fs.readFileSync(input, { encoding: "utf-8" });
-	content = content.replace(/<\/?svg[^>]*>/g, "");
+		fs.writeFileSync(
+			path.join(icons, pascalName + ".tsx"),
+			template.replace(/%content%/g, content)
+				.replace(/%icon%/g, baseName)
+				.replace(/%icon-pascal%/g, pascalName),
+			"utf-8",
+		);
+		list.push(pascalName);
+	});
 
-	if (content.length - content.replaceAll("/>", "").length > 2)
-		result += `"${base}": <>${content}</>,\n`;
-	else
-		result += `"${base}": ${content.trim()},\n`;
-}
-result += "};\n";
+fs.writeFileSync(
+	path.join(__dirname, "index.tsx"),
+	`${list.map(x => `import Icon${x} from "./icons/${x}";`).join("\n")}
 
-fs.writeFileSync(output, result, { encoding: "utf-8" });
+export {
+${list.map(x => `\tIcon${x}`).join(",\n")}
+};
+`,
+	"utf-8",
+);

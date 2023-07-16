@@ -1,4 +1,4 @@
-import { ComponentType, FunctionalComponent, h } from "preact";
+import { ComponentType, FunctionalComponent, createElement } from "preact";
 
 import { CurrentLocale, LocaleTypes } from "@/libs/Locale";
 
@@ -52,13 +52,13 @@ function traverseVNode<T> (nodes: Node[] | NodeListOf<ChildNode>, p: LocaleProps
 
 					if (x.nodeName in components) {
 						const comp = components[x.nodeName];
-						ret.push(h<T>(
+						ret.push(createElement<any>(
 							comp,
 							{ ...attrs } as any,
 							traverseVNode(x.childNodes, p, components),
 						));
 					} else {
-						ret.push(h(
+						ret.push(createElement(
 							x.nodeName,
 							{ ...attrs, class: y.className },
 							traverseVNode(x.childNodes, p, components),

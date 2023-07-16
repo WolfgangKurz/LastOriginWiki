@@ -2,9 +2,9 @@ import { FunctionalComponent } from "preact";
 
 import Locale from "@/components/locale";
 import RarityBadge from "@/components/rarity-badge";
+import IconCapslockFill from "@/components/bootstrap-icon/icons/CapslockFill";
 
 import ChangelogItem from "../../components/changelog-item";
-import Icon from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 11582" date="2022-03-28"
@@ -31,7 +31,7 @@ const Changelog: FunctionalComponent = () => <>
 		new={ <>
 			<li>
 				<span class="badge bg-warning text-dark">장비정보</span>에
-				<span class="badge bg-warning text-dark"><Icon icon="capslock-fill" class="me-1" /> 승급</span> 비용 정보가 추가되었습니다.
+				<span class="badge bg-warning text-dark"><IconCapslockFill class="me-1" /> 승급</span> 비용 정보가 추가되었습니다.
 			</li>
 		</> }
 	/>

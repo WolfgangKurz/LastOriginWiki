@@ -1,7 +1,8 @@
 import { FunctionalComponent } from "preact";
 import { useRef } from "preact/hooks";
 import { Link, route } from "preact-router";
-import html2canvas from "html2canvas";
+
+import html2canvas from "@/external/html2canvas";
 
 import { AssetsRoot } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
@@ -16,7 +17,7 @@ import { objState } from "@/libs/State";
 
 import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
 import UnitFace from "@/components/unit-face";
 import EquipIcon from "@/components/equip-icon";
 import EquipPopup from "@/components/popup/equip-popup";
@@ -89,6 +90,8 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 		if (root instanceof Text) return root.nodeValue;
 
 		if (root instanceof Element) {
+			if (root.getAttribute("data-ignore-export")) return "";
+
 			const style = window.getComputedStyle(root);
 			const computedList: string[] = [];
 			allowStyles.forEach(k => {
@@ -150,7 +153,7 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 					else
 						route(`/worlds/${props.wid}`);
 				} }>
-					<Icon icon="arrow-left" class="me-1" />
+					<IconArrowLeft class="me-1" />
 					{ props.wid === "Sub"
 						? <Locale k="WORLDS_BACK_TO_WORLDS" />
 						: <Locale k="WORLDS_BACK_TO_AREAS" />
@@ -161,52 +164,6 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 		<hr />
 
 		<div class="row mb-2">
-			<div class="col">
-				<div class="mb-1">
-					<Locale k="WORLDS_DROP_UNIT_DISPLAY" />
-				</div>
-				<div class="btn-group mx-2 mb-2">
-					<button
-						class={ `btn btn-outline-danger ${isActive(unitRarities.value.includes(ACTOR_GRADE.SS))}` }
-						onClick={ () => unitRarities.set(toggleArray(unitRarities.value, ACTOR_GRADE.SS)) }
-					>SS</button>
-					<button
-						class={ `btn btn-outline-danger ${isActive(unitRarities.value.includes(ACTOR_GRADE.S))}` }
-						onClick={ () => unitRarities.set(toggleArray(unitRarities.value, ACTOR_GRADE.S)) }
-					>S</button>
-					<button
-						class={ `btn btn-outline-danger ${isActive(unitRarities.value.includes(ACTOR_GRADE.A))}` }
-						onClick={ () => unitRarities.set(toggleArray(unitRarities.value, ACTOR_GRADE.A)) }
-					>A</button>
-					<button
-						class={ `btn btn-outline-danger ${isActive(unitRarities.value.includes(ACTOR_GRADE.B))}` }
-						onClick={ () => unitRarities.set(toggleArray(unitRarities.value, ACTOR_GRADE.B)) }
-					>B</button>
-				</div>
-			</div>
-			<div class="col">
-				<div class="mb-1">
-					<Locale k="WORLDS_DROP_EQUIP_DISPLAY" />
-				</div>
-				<div class="btn-group mx-2 mb-2">
-					<button
-						class={ `btn btn-outline-success ${isActive(equipRarities.value.includes(ACTOR_GRADE.SS))}` }
-						onClick={ () => equipRarities.set(toggleArray(equipRarities.value, ACTOR_GRADE.SS)) }
-					>SS</button>
-					<button
-						class={ `btn btn-outline-success ${isActive(equipRarities.value.includes(ACTOR_GRADE.S))}` }
-						onClick={ () => equipRarities.set(toggleArray(equipRarities.value, ACTOR_GRADE.S)) }
-					>S</button>
-					<button
-						class={ `btn btn-outline-success ${isActive(equipRarities.value.includes(ACTOR_GRADE.A))}` }
-						onClick={ () => equipRarities.set(toggleArray(equipRarities.value, ACTOR_GRADE.A)) }
-					>A</button>
-					<button
-						class={ `btn btn-outline-success ${isActive(equipRarities.value.includes(ACTOR_GRADE.B))}` }
-						onClick={ () => equipRarities.set(toggleArray(equipRarities.value, ACTOR_GRADE.B)) }
-					>B</button>
-				</div>
-			</div>
 			<div class="col">
 				<div class="mb-1">
 					<Locale k="WORLDS_DROP_EXPORT" />
@@ -226,17 +183,21 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 						e.preventDefault();
 
 						if (tableRef.current) {
+							const el = tableRef.current;
+
 							const table = tableRef.current;
 							html2canvas(table, { useCORS: true })
 								.then(canvas => {
-									canvas.toBlob(blob => {
-										if (!blob) return;
-										window.open(URL.createObjectURL(blob));
-									}, "image/png");
+									const url = canvas.toDataURL("image/jpeg", 1.0);
+									const anchor = document.createElement("a");
+									anchor.download = `${props.wid}-${props.mid}.jpg`;
+									anchor.href = url;
+									anchor.click();
 								});
 						}
-					} }>
-						<Locale k="WORLDS_DROP_EXPORT_PNG" />
+					}
+					}>
+						<Locale k="WORLDS_DROP_EXPORT_JPG" />
 					</button>
 				</div>
 			</div>
@@ -250,6 +211,55 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 						<Locale k={ `WORLD_${props.wid}` } />
 						<br />
 						<Locale k="WORLDS_WORLD_TITLE" p={ [props.mid] } />
+
+						<div class={ style.Filter } data-ignore-export="1">
+							<div>
+								<div class="mb-1">
+									<Locale k="WORLDS_DROP_UNIT_DISPLAY" />
+								</div>
+								<div class="btn-group mx-2 mb-2">
+									<button
+										class={ `btn btn-sm btn-outline-danger ${isActive(unitRarities.value.includes(ACTOR_GRADE.SS))}` }
+										onClick={ () => unitRarities.set(toggleArray(unitRarities.value, ACTOR_GRADE.SS)) }
+									>SS</button>
+									<button
+										class={ `btn btn-sm btn-outline-danger ${isActive(unitRarities.value.includes(ACTOR_GRADE.S))}` }
+										onClick={ () => unitRarities.set(toggleArray(unitRarities.value, ACTOR_GRADE.S)) }
+									>S</button>
+									<button
+										class={ `btn btn-sm btn-outline-danger ${isActive(unitRarities.value.includes(ACTOR_GRADE.A))}` }
+										onClick={ () => unitRarities.set(toggleArray(unitRarities.value, ACTOR_GRADE.A)) }
+									>A</button>
+									<button
+										class={ `btn btn-sm btn-outline-danger ${isActive(unitRarities.value.includes(ACTOR_GRADE.B))}` }
+										onClick={ () => unitRarities.set(toggleArray(unitRarities.value, ACTOR_GRADE.B)) }
+									>B</button>
+								</div>
+							</div>
+							<div>
+								<div class="mb-1">
+									<Locale k="WORLDS_DROP_EQUIP_DISPLAY" />
+								</div>
+								<div class="btn-group mx-2 mb-2">
+									<button
+										class={ `btn btn-sm btn-outline-success ${isActive(equipRarities.value.includes(ACTOR_GRADE.SS))}` }
+										onClick={ () => equipRarities.set(toggleArray(equipRarities.value, ACTOR_GRADE.SS)) }
+									>SS</button>
+									<button
+										class={ `btn btn-sm btn-outline-success ${isActive(equipRarities.value.includes(ACTOR_GRADE.S))}` }
+										onClick={ () => equipRarities.set(toggleArray(equipRarities.value, ACTOR_GRADE.S)) }
+									>S</button>
+									<button
+										class={ `btn btn-sm btn-outline-success ${isActive(equipRarities.value.includes(ACTOR_GRADE.A))}` }
+										onClick={ () => equipRarities.set(toggleArray(equipRarities.value, ACTOR_GRADE.A)) }
+									>A</button>
+									<button
+										class={ `btn btn-sm btn-outline-success ${isActive(equipRarities.value.includes(ACTOR_GRADE.B))}` }
+										onClick={ () => equipRarities.set(toggleArray(equipRarities.value, ACTOR_GRADE.B)) }
+									>B</button>
+								</div>
+							</div>
+						</div>
 					</th>
 				</tr>
 				<tr>
@@ -336,21 +346,25 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 
 											<td>
 												{ units.length === 0
-													? <></>
+													? <span class="text-secondary">
+														<Locale k="WORLDS_DROP_NO_RESULT" />
+													</span>
 													: units.map(u => <Link href={ `/units/${u.uid}` }>
-														<UnitFace class="m-1" uid={ u.uid } size={ 60 } />
+														<UnitFace class="m-1" uid={ u.uid } size={ 64 } />
 													</Link>)
 												}
 											</td>
 											<td>
 												{ equips.length === 0
-													? <></>
+													? <span class="text-secondary">
+														<Locale k="WORLDS_DROP_NO_RESULT" />
+													</span>
 													: equips.map(e => <Link href={ `/equips/${e.fullKey}` } onClick={ (ev) => {
 														ev.preventDefault();
 														ev.stopPropagation();
 														selectedEquip.set(e);
 													} }>
-														<EquipIcon class="m-1" image={ e.icon } size={ 60 } />
+														<EquipIcon class="m-1" image={ e.icon } size={ 64 } />
 													</Link>)
 												}
 											</td>

@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import util from "util";
 
-import glob from "glob";
+import { globSync } from "glob";
 import hash from "hash.js";
 import deepmerge from "deepmerge";
 
@@ -59,7 +59,7 @@ export default ({ mode }) => {
 				const baseDir = path.resolve(__dirname, "external", "json");
 				const globPath = path.join(baseDir, "**", "*.json");
 
-				return glob.sync(globPath.replace(/\\/g, "/"))
+				return globSync(globPath.replace(/\\/g, "/"))
 					.filter(f => !f.endsWith("/buildtime.json"))
 					.map(f => {
 						const rel = path.relative(baseDir, f).replace(/\\/g, "/");
@@ -132,6 +132,9 @@ export default ({ mode }) => {
 				"this-is-undefined-in-esm": "silent",
 			},
 		},
+		optimizeDeps: {
+			include: ["swiper", "swiper/react"],
+		},
 		build: {
 			assetsDir: "build",
 			reportCompressedSize: false,
@@ -146,40 +149,34 @@ export default ({ mode }) => {
 					manualChunks (id) {
 						// entry
 						if (
-							id.includes("/src/app/") ||
-							id.includes("/src/components/dynamic-route/")
+							id.includes("/src/index.") ||
+							id.includes("/src/app/")
 						) return undefined;
 
 						// three.js vendor
-						// if (id.includes("/node_modules/three/src/core/")) return "vendor.three.core";
-						// if (id.includes("/node_modules/three/src/math/")) return "vendor.three.math";
-						// if (id.includes("/node_modules/three/src/materials/")) return "vendor.three.mat";
-						// if (id.includes("/node_modules/three/src/geometries/")) return "vendor.three.geo";
-						// if (id.includes("/node_modules/three/src/objects/")) return "vendor.three.obj";
-						// if (id.includes("/node_modules/three/src/textures/")) return "vendor.three.tex";
-						// if (id.includes("/node_modules/three/src/renderers/")) return "vendor.three.ren";
-						// if (id.includes("/node_modules/three/examples/")) return "vendor.three.ext";
 						if (id.includes("/node_modules/three/")) return "vendor.three";
 
 						// vendor
 						if (id.includes("/node_modules/preact-transition")) return "vendor.transition";
-						if (id.includes("/node_modules/html2canvas/")) return "vendor.html2canvas";
 						if (id.includes("/node_modules/bootstrap")) return "vendor.bootstrap";
 						if (id.includes("/node_modules/react")) return "vendor.react";
 						if (id.includes("/node_modules/@esotericsoftware/")) return "vendor.spine";
 						if (id.includes("/node_modules/@popperjs/")) return "vendor.popperjs";
 						if (id.includes("/node_modules/graphlib/")) return "vendor.graphlib";
 						if (id.includes("/node_modules/lodash/")) return "vendor.lodash";
+						if (id.includes("/node_modules/swiper/")) return "vendor.swiper";
+						if (
+							id.includes("/node_modules/@reactflow/") ||
+							id.includes("/node_modules/@tisoap/") ||
+							id.includes("/node_modules/@dagrejs/")
+						) return "vendor.flow";
+
 						if (id.includes("/node_modules/")) return "vendor";
 
-						// components/bootstrap-icon/es/*
-						if (id.includes("/components/bootstrap-icon/es/")) {
-							const _ = "/components/bootstrap-icon/es/";
-							const idx = id.indexOf(_) + _.length;
-							const name = id.substring(idx)[0];
-							// return `components.bootstrap.icon.${name}`;
-							return `cbi.${name}`;
-						}
+						if (id.includes("/html2canvas/")) return "vendor.html2canvas";
+
+						// components/bootstrap-icon/
+						if (id.includes("/src/components/bootstrap-icon/")) return "components.icon";
 
 						// types & libs & loader hash -> base
 						if (id.includes("/src/types/")) return "base";
@@ -224,6 +221,8 @@ export default ({ mode }) => {
 							const y = id.replace(/.*\/src\/routes\/([^/]+)\/?.*/g, "$1");
 							return `routes.${y}`;
 						}
+
+						return "chunk";
 					},
 				},
 			},

@@ -10,7 +10,7 @@ import { FormatNumber } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 
 import Locale, { LocaleGet } from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconInfoCircleFill from "@/components/bootstrap-icon/icons/InfoCircleFill";
 import EquipIcon from "@/components/equip-icon";
 import PopupBase from "@/components/popup/base";
 import PCIcon from "@/components/pc-icon";
@@ -152,7 +152,7 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 					<div>
 						{ props.chancePart || (chance < 100 ? <span class="badge bg-light text-dark">{ chance }%</span> : <></>) }
 
-						{ !props.noIcon ? <Icon icon="info-circle-fill" class="float-end mt-1" /> : <></> }
+						{ !props.noIcon ? <IconInfoCircleFill class="float-end mt-1" /> : <></> }
 					</div>
 				</div>
 			</div>

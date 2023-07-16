@@ -5,11 +5,11 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import { CurrentEvent, CurrentDate } from "@/libs/Const";
 import EntitySource from "@/libs/EntitySource";
+import { FormatNumber } from "@/libs/Functions";
 
 import Loader, { StaticDB, GetJson } from "@/components/loader";
 import Locale, { LocaleExists } from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
-import { FormatNumber } from "@/libs/Functions";
+import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
 
 interface SourceBadgeProps {
 	class?: string;
@@ -219,7 +219,7 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 					data-source={ Source.toString() }
 				>
 					{ content }
-					<Icon icon="link-45deg" class="ms-1" />
+					<IconLink45deg class="ms-1" />
 				</span>
 			</Link>;
 		} else if (Source.IsNewEternalWar) {
@@ -230,7 +230,7 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 					data-source={ Source.toString() }
 				>
 					{ content }
-					<Icon icon="link-45deg" class="ms-1" />
+					<IconLink45deg class="ms-1" />
 				</span>
 			</Link>;
 		} else if (Source.IsInfiniteWar) {
@@ -241,7 +241,7 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 					data-source={ Source.toString() }
 				>
 					{ content }
-					<Icon icon="link-45deg" class="ms-1" />
+					<IconLink45deg class="ms-1" />
 				</span>
 			</Link>;
 		}

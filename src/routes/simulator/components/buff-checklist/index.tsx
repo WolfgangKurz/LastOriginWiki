@@ -16,8 +16,10 @@ import { CurrentDB } from "@/libs/DB";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale, { LocaleExists, LocaleGet } from "@/components/locale";
+import IconDash from "@/components/bootstrap-icon/icons/Dash";
+import IconPlus from "@/components/bootstrap-icon/icons/Plus";
+import IconQuestionCircleFill from "@/components/bootstrap-icon/icons/QuestionCircleFill";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
-import Icon from "@/components/bootstrap-icon";
 import ElemIcon from "@/components/elem-icon";
 import UnitLink from "@/components/unit-link";
 import { BuffRenderer } from "@/components/buff-list";
@@ -929,7 +931,8 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			}
 
 			switch (stat.resist.type) {
-				case "debuff":
+				case "debuff_perdown":
+				case "debuff_rateup":
 					return <Locale plain k="BUFFEFFECT_RES_DEBUFF" p={ [signedValue(stat.resist.value, level)] } />;
 				case "off":
 					return <Locale plain k="BUFFEFFECT_RES_OFF" p={ [signedValue(stat.resist.value, level)] } />;
@@ -1384,7 +1387,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 										if (props.onStack)
 											props.onStack(key, v);
 									} }>
-										<Icon icon="dash" />
+										<IconDash />
 									</button>
 									<input
 										class="form-control buff-stack-input"
@@ -1404,7 +1407,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 										if (props.onStack)
 											props.onStack(key, v);
 									} }>
-										<Icon icon="plus" />
+										<IconPlus />
 									</button>
 								</div>,
 								<div class="input-group d-inline-flex w-auto me-2">
@@ -1441,7 +1444,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 								</span> }>
 									<span class={ `badge bg-orange ms-2 ${style.OverlapBadge}` }>
 										<Locale plain k={ `BUFFOVERLAP_${StackTable[overlap]}` } />
-										<Icon class={ `ms-1 ${style.QuestionIcon}` } icon="question-circle-fill" />
+										<IconQuestionCircleFill class={ `ms-1 ${style.QuestionIcon}` } />
 									</span>
 								</BootstrapTooltip>
 								: <></>

@@ -16,8 +16,8 @@ import Loader, { StaticDB, GetJson, JsonLoaderCore } from "@/components/loader";
 import { GetUnitFaceURL } from "@/components/unit-face";
 
 import Locale from "@/components/locale";
+import IconHourglassSplit from "@/components/bootstrap-icon/icons/HourglassSplit";
 import PopupBase from "@/components/popup/base";
-import Icon from "@/components/bootstrap-icon";
 import EquipIcon from "@/components/equip-icon";
 
 import style from "./style.module.scss";
@@ -138,7 +138,7 @@ const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {
 						{ FormatNumber(research.resources[2]) }
 					</span>
 					<span>
-						<Icon class="me-1" icon="hourglass-split" />
+						<IconHourglassSplit class="me-1" />
 						<span class="font-exo2">{ ResearchTime }</span>
 					</span>
 

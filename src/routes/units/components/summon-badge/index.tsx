@@ -11,8 +11,14 @@ import { UniqueID } from "@/libs/Functions";
 
 import Loader, { GetJson } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
+import IconDot from "@/components/bootstrap-icon/icons/Dot";
+import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
+import IconChevronDoubleDown from "@/components/bootstrap-icon/icons/ChevronDoubleDown";
+import IconChevronDown from "@/components/bootstrap-icon/icons/ChevronDown";
+import IconChevronUp from "@/components/bootstrap-icon/icons/ChevronUp";
+import IconChevronDoubleUp from "@/components/bootstrap-icon/icons/ChevronDoubleUp";
+import IconCpuFill from "@/components/bootstrap-icon/icons/CpuFill";
 import PopupBase from "@/components/popup/base";
-import Icon from "@/components/bootstrap-icon";
 import StatIcon from "@/components/stat-icon";
 import UnitBadge from "@/components/unit-badge";
 import RarityBadge from "@/components/rarity-badge";
@@ -87,11 +93,11 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 		return <div class={ `summon-badge ${props.class || ""}` }>
 			<span class="badge bg-dark summon-badge" role="button" onClick={ (): void => display.set(true) }>
 				<Locale k="UNIT_SKILL_SUMMON_BADGE" p={ [<Locale k={ Summon.uid } />] } />
-				<Icon icon="dot" />
+				<IconDot />
 				<Locale k="UNIT_SKILL_SUMMON_MAXIMUM" p={ [Summon.overlap] } />
-				<Icon icon="dot" />
+				<IconDot />
 				<Locale k="UNIT_SKILL_SUMMON_ROUNDS" p={ [Summon.lifecycle] } />
-				<Icon icon="link-45deg" class="ms-1" />
+				<IconLink45deg class="ms-1" />
 			</span>
 
 			<PopupBase
@@ -159,10 +165,10 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 							<td class="bg-dark text-light">
 								<div class="input-group">
 									<button class="btn btn-secondary" disabled>
-										<Icon icon="chevron-double-down" />
+										<IconChevronDoubleDown />
 									</button>
 									<button class="btn btn-secondary" disabled>
-										<Icon icon="chevron-down" />
+										<IconChevronDown />
 									</button>
 
 									<div class="flex-1">
@@ -171,17 +177,17 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 									</div>
 
 									<button class="btn btn-secondary" disabled>
-										<Icon icon="chevron-up" />
+										<IconChevronUp />
 									</button>
 									<button class="btn btn-secondary" disabled>
-										<Icon icon="chevron-double-up" />
+										<IconChevronDoubleUp />
 									</button>
 								</div>
 							</td>
 						</tr>
 						<tr>
 							<td class="bg-dark status-col p-0">
-								<table class="table table-borderless mb-0">
+								<table class="table table-borderless mb-0" style="--bs-table-bg: var(--bs-dark)">
 									<tbody>
 										<tr class="text-center text-white resist-parent">
 											<td data-type="fire">
@@ -199,7 +205,7 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 										</tr>
 									</tbody>
 								</table>
-								<table class="table table-borderless mb-0">
+								<table class="table table-borderless mb-0" style="--bs-table-bg: var(--bs-dark)">
 									<tbody>
 										<tr>
 											<td class="text-start">
@@ -305,7 +311,7 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 								displayTab.set("ai");
 							} }
 						>
-							<Icon icon="cpu-fill" class="my-2" />
+							<IconCpuFill class="my-2" />
 						</div>
 					</div>
 
@@ -379,8 +385,8 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 						? <div class="row">
 							<div class="col border border-top-0 text-start p-3">
 								<AIList
-									ai={ Summon.ai }
-									skills={ Skills.filter(x => x) as unknown as SkillEntity[] }
+									aiKey={ Summon.ai }
+									// skills={ Skills.filter(x => x) as unknown as SkillEntity[] }
 									enemy={ false }
 								/>
 							</div>

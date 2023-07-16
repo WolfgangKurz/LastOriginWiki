@@ -2,8 +2,10 @@ import Store from "@/store";
 
 import { isActive } from "@/libs/Functions";
 
-import Icon from "@/components/bootstrap-icon";
 import Locale from "@/components/locale";
+import IconSearch from "@/components/bootstrap-icon/icons/Search";
+import IconPersonFill from "@/components/bootstrap-icon/icons/PersonFill";
+import IconCalendarCheck from "@/components/bootstrap-icon/icons/CalendarCheck";
 
 import { UnitsListProps } from "..";
 import Advanced from "./Advanced";
@@ -21,7 +23,7 @@ const UnitsSkin: FunctionalComponent<UnitsListProps> = (props) => {
 					class={ `btn btn-outline-success ${isActive(Store.Units.Skins.Tab.value === "")}` }
 					onClick={ (): void => void (Store.Units.Skins.Tab.value = "") }
 				>
-					<Icon icon="search" class="me-1" />
+					<IconSearch class="me-1" />
 					<Locale k="UNIT_VIEW_SKIN_TAB_ADVANCED" />
 				</button>
 				<button
@@ -29,7 +31,7 @@ const UnitsSkin: FunctionalComponent<UnitsListProps> = (props) => {
 					class={ `btn btn-outline-success ${isActive(Store.Units.Skins.Tab.value === "artist")}` }
 					onClick={ (): void => void (Store.Units.Skins.Tab.value = "artist") }
 				>
-					<Icon icon="person-fill" class="me-1" />
+					<IconPersonFill class="me-1" />
 					<Locale k="UNIT_VIEW_SKIN_TAB_ARTIST" />
 				</button>
 				<button
@@ -37,7 +39,7 @@ const UnitsSkin: FunctionalComponent<UnitsListProps> = (props) => {
 					class={ `btn btn-outline-success ${isActive(Store.Units.Skins.Tab.value === "releaseDate")}` }
 					onClick={ (): void => void (Store.Units.Skins.Tab.value = "releaseDate") }
 				>
-					<Icon icon="calendar-check" class="me-1" />
+					<IconCalendarCheck class="me-1" />
 					<Locale k="UNIT_VIEW_SKIN_TAB_RELEASEDATE" />
 				</button>
 			</div>

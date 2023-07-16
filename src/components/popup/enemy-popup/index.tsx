@@ -18,7 +18,12 @@ import { FormatNumber, isActive } from "@/libs/Functions";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconChevronDoubleDown from "@/components/bootstrap-icon/icons/ChevronDoubleDown";
+import IconChevronDown from "@/components/bootstrap-icon/icons/ChevronDown";
+import IconChevronUp from "@/components/bootstrap-icon/icons/ChevronUp";
+import IconChevronDoubleUp from "@/components/bootstrap-icon/icons/ChevronDoubleUp";
+import IconInfoCircleFill from "@/components/bootstrap-icon/icons/InfoCircleFill";
+import IconCpuFill from "@/components/bootstrap-icon/icons/CpuFill";
 import PopupBase from "@/components/popup/base";
 import UnitBadge from "@/components/unit-badge";
 import RarityBadge from "@/components/rarity-badge";
@@ -30,7 +35,7 @@ import BuffList from "@/components/buff-list";
 import AIList from "@/components/ai-list";
 import SourceBadge from "@/components/source-badge";
 
-import "./style.scss";
+import style from "./style.module.scss";
 
 interface EnemyPopupProps {
 	display?: boolean;
@@ -329,10 +334,10 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 							{ !props.noLevelChangable
 								? <div class="input-group">
 									<button class="btn btn-secondary" onClick={ (): void => setLevel(1) }>
-										<Icon icon="chevron-double-down" />
+										<IconChevronDoubleDown />
 									</button>
 									<button class="btn btn-secondary" onClick={ (): void => setLevel(Math.max(1, level - 1)) }>
-										<Icon icon="chevron-down" />
+										<IconChevronDown />
 									</button>
 
 									<div class="flex-1 font-exo2">
@@ -343,10 +348,10 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 									</div>
 
 									<button class="btn btn-secondary" onClick={ (): void => setLevel(Math.min(300, level + 1)) }>
-										<Icon icon="chevron-up" />
+										<IconChevronUp />
 									</button>
 									<button class="btn btn-secondary" onClick={ (): void => setLevel(100) }>
-										<Icon icon="chevron-double-up" />
+										<IconChevronDoubleUp />
 									</button>
 								</div>
 								:
@@ -360,7 +365,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 					<tr>
 						{ targetStat
 							? <td class="bg-dark status-col p-0 pb-2">
-								<table class="table table-borderless mb-0">
+								<table class="table table-borderless mb-0" style="--bs-table-bg: var(--bs-dark)">
 									<tbody>
 										<tr class="text-center text-white resist-parent font-exo2">
 											<td data-type="fire">
@@ -378,7 +383,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 										</tr>
 									</tbody>
 								</table>
-								<table class="table table-borderless mb-0">
+								<table class="table table-borderless mb-0" style="--bs-table-bg: var(--bs-dark)">
 									<tbody>
 										<tr>
 											<td class="text-start">
@@ -484,7 +489,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 								role="button"
 								onClick={ (): void => setDisplayTab("ai") }
 							>
-								<Icon icon="cpu-fill" class="my-2" />
+								<IconCpuFill class="my-2" />
 							</div>
 							<div
 								class={ `col info-tab-button mt-1 ${displayTab === "desc"
@@ -493,7 +498,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 								role="button"
 								onClick={ (): void => setDisplayTab("desc") }
 							>
-								<Icon icon="info-circle-fill" class="my-2" />
+								<IconInfoCircleFill class="my-2" />
 							</div>
 						</div>
 
@@ -597,18 +602,11 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 						{ displayTab === "ai"
 							? <div class="row">
 								<div class="col border border-top-0 text-start p-3">
-									{ targetEnemy.ai
-										? <AIList aiKey={ targetEnemy.ai } enemy />
-										: <div>
-											Data not exists.<br />
-											Request here: <a
-												href="https://github.com/WolfgangKurz/LastOriginWiki/issues"
-												target="_blank"
-											>
-												https://github.com/WolfgangKurz/LastOriginWiki/issues
-											</a>
-										</div>
-									}
+									<AIList
+										name={ LocaleGet(`ENEMY_${target.id}`) }
+										aiKey={ targetEnemy.ai }
+										enemy
+									/>
 								</div>
 							</div>
 							: <></>
@@ -616,7 +614,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 						{ displayTab === "desc"
 							? <div class="row">
 								<div class="col break-keep white-pre-line border border-top-0 text-start p-1">
-									<div class="bg-dark text-light p-3">
+									<div class={ BuildClass("bg-dark text-light p-3", style.EnemyDescription) }>
 										<Locale plain k={ `ENEMY_INTRO_${target.id}` } />
 									</div>
 								</div>

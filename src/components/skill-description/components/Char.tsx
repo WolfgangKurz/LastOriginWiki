@@ -5,7 +5,7 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import Locale from "@/components/locale";
 import Loader, { GetJson, StaticDB } from "@/components/loader";
-import Icon from "@/components/bootstrap-icon";
+import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import RarityBadge from "@/components/rarity-badge";
 import UnitCard from "@/components/unit-card";
@@ -42,7 +42,7 @@ export const Char: FunctionalComponent<CharProps> = (props) =>
 					content={ <UnitCard class="text-center" unit={ unit } rarity={ unit.rarity } no-link /> }
 				>
 					<RarityBadge rarity="A">
-						<Locale plain k={ `UNIT_${unit.uid}` } fallback={ unit.uid } /> <Icon icon="link-45deg" />
+						<Locale plain k={ `UNIT_${unit.uid}` } fallback={ unit.uid } /> <IconLink45deg />
 					</RarityBadge>
 				</BootstrapTooltip>
 			</a>

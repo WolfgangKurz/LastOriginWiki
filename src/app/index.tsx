@@ -1,5 +1,4 @@
 import { FunctionalComponent } from "preact";
-import { useLayoutEffect } from "preact/hooks";
 import { Router } from "preact-router";
 import AsyncRoute from "preact-async-route";
 import Store from "@/store";
@@ -14,8 +13,8 @@ import Redirect from "@/components/redirect";
 import Header from "@/components/header";
 
 import NotFoundPage from "@/routes/notfound";
+import IconChatDots from "@/components/bootstrap-icon/icons/ChatDots";
 import PopupBase from "@/components/popup/base";
-import Icon from "@/components/bootstrap-icon";
 
 import "./style.scss";
 
@@ -108,7 +107,7 @@ const App: FunctionalComponent = () => {
 			{ Store.requireReload.value
 				? <PopupBase display>
 					<div class="text-center m-0" style={ { lineHeight: "1.3", fontSize: "5rem" } }>
-						<Icon class="align-top" icon="chat-dots" />
+						<IconChatDots class="align-top" />
 					</div>
 					<div style={ { whiteSpace: "pre-wrap" } }>
 						<Locale plain k="COMMON_REQUIRE_RELOAD" />

@@ -7,7 +7,9 @@ import { ChangeLanguage, CurrentLocale, LocaleList } from "@/libs/Locale";
 import { ChangeDB, CurrentDB, DBList, DBTypes } from "@/libs/DB";
 
 import Locale from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
+import IconServer from "@/components/bootstrap-icon/icons/Server";
+import IconGlobe2 from "@/components/bootstrap-icon/icons/Globe2";
 
 import style from "./style.module.scss";
 
@@ -36,7 +38,7 @@ const DropdownExternal: FunctionalComponent<LinkData> = (props) => (
 	<li>
 		<a href={ props.href } target="_blank" rel="noreferrer" class="dropdown-item">
 			{ props.children ? props.children : <Locale k={ props.text || "" } /> }
-			<Icon icon="link-45deg" class="ms-1" />
+			<IconLink45deg class="ms-1" />
 		</a>
 	</li>
 );
@@ -187,7 +189,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 									data-bs-toggle="dropdown"
 									aria-expanded="false"
 								>
-									<Icon icon="server" class="me-1" />
+									<IconServer class="me-1" />
 									<img class="mx-1" src={ `${AssetsRoot}/flags/${DBDisp[CurrentDB]}.png` } alt={ DBDisp[CurrentDB] } />
 									{ DBDisp[CurrentDB] }
 								</a>
@@ -215,7 +217,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 									data-bs-toggle="dropdown"
 									aria-expanded="false"
 								>
-									<Icon icon="globe2" class="me-1" />
+									<IconGlobe2 class="me-1" />
 									<img class="mx-1" src={ `${AssetsRoot}/flags/${CurrentLocale}.png` } alt={ CurrentLocale } />
 									{ CurrentLocale }
 								</a>

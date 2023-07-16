@@ -6,11 +6,12 @@ import { objState } from "@/libs/State";
 import { AssetsRoot } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 
-import Icon from "@/components/bootstrap-icon";
 
 import UnitDialogue, { VoiceItem } from "../../components/unit-dialogue";
 
 import { SubpageProps } from "..";
+import IconTranslate from "@/components/bootstrap-icon/icons/Translate";
+import IconMicFill from "@/components/bootstrap-icon/icons/MicFill";
 
 const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinList }) => {
 	const dialogueLang = objState<keyof UnitDialogueDataType>("KR");
@@ -60,7 +61,7 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 	return <div style={ { display: display ? "" : "none" } }>
 		<div class="input-group justify-content-center my-1">
 			<div class="input-group-text">
-				<Icon icon="translate" class="me-1" />
+				<IconTranslate class="me-1" />
 			</div>
 
 			{ LangList.map(lang => <button
@@ -72,7 +73,7 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 		</div>
 		<div class="input-group justify-content-center my-1">
 			<div class="input-group-text">
-				<Icon icon="mic-fill" class="me-1" />
+				<IconMicFill class="me-1" />
 			</div>
 
 			<button

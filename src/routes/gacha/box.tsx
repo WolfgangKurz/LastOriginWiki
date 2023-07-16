@@ -15,7 +15,8 @@ import { BuildClass } from "@/libs/Class";
 
 import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconBoxSeam from "@/components/bootstrap-icon/icons/BoxSeam";
+import IconArrowCounterclockwise from "@/components/bootstrap-icon/icons/ArrowCounterclockwise";
 import EquipIcon from "@/components/equip-icon";
 import ItemIcon from "@/components/item-icon";
 
@@ -246,7 +247,7 @@ const BoxGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 								class="btn btn-stat-hp"
 								onClick={ () => Run(current) }
 							>
-								<Icon class="me-2" icon="box-seam" />
+								<IconBoxSeam class="me-2" />
 								<Locale k="GACHA_RUN" />
 							</button>
 							<button
@@ -258,7 +259,7 @@ const BoxGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 									Result.set([]);
 								} }
 							>
-								<Icon class="me-2" icon="arrow-counterclockwise" />
+								<IconArrowCounterclockwise class="me-2" />
 								<Locale k="GACHA_RESET" />
 							</button>
 						</div>

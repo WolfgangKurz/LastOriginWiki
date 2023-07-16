@@ -1,8 +1,9 @@
 import { FunctionalComponent } from "preact";
 
-import Icon from "@/components/bootstrap-icon";
 import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../../components/changelog-item";
+import IconBugFill from "@/components/bootstrap-icon/icons/BugFill";
+import IconSearch from "@/components/bootstrap-icon/icons/Search";
 
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build r20201127" date="2020-11-27"
@@ -12,8 +13,8 @@ const Changelog: FunctionalComponent = () => <>
 			<li>8지역 이야기가 정상적으로 표시되지 않던 문제를 수정했습니다.</li>
 		</> }
 		new={ <>
-			<li><span class="badge bg-warning text-dark">세계 정보</span>의 <Icon icon="bug-fill" class="me-1" />적 정보에 총 경험치, 웨이브 경험치가 추가되었습니다.</li>
-			<li><span class="badge bg-warning text-dark">세계 정보</span>에 <Icon icon="search" class="me-1" />탐사 정보가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">세계 정보</span>의 <IconBugFill class="me-1" />적 정보에 총 경험치, 웨이브 경험치가 추가되었습니다.</li>
+			<li><span class="badge bg-warning text-dark">세계 정보</span>에 <IconSearch class="me-1" />탐사 정보가 추가되었습니다.</li>
 		</> }
 		update={ <>
 			<li>현재 진행중인 이벤트를 <span class="badge bg-warning text-dark">할로윈 파크 패닉</span>으로 변경했습니다.</li>

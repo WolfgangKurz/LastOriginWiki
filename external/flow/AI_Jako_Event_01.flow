@@ -1,0 +1,11 @@
+start > skill1_usable
+	skill1_usable y skill1_near.flying
+		skill1_near.flying f skill1_near.light
+			skill1_near.light f skill1_near
+	skill1_usable n alive_team
+		alive_team y wait
+		alive_team n skill2_usable
+			skill2_usable y skill2_near.flying
+				skill2_near.flying f skill2_near.light
+					skill2_near.light f skill2_near
+			skill2_usable n wait

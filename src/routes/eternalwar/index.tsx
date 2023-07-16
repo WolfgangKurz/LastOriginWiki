@@ -1,8 +1,10 @@
 import { Component, RenderableProps } from "preact";
 import { Link } from "preact-router";
 
+import { ACTOR_BODY_TYPE, ACTOR_CLASS, ROLE_TYPE } from "@/types/Enums";
 import { EWDB } from "@/types/DB/EW";
 import { Consumable } from "@/types/DB/Consumable";
+import { EnemyCategory } from "@/types/DB/Enemy";
 import { MapEnemyData } from "@/types/DB/Map";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
@@ -13,7 +15,12 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Locale, { LocaleGet } from "@/components/locale";
 import Loader, { GetJson, StaticDB } from "@/components/loader";
-import Icon from "@/components/bootstrap-icon";
+import IconDot from "@/components/bootstrap-icon/icons/Dot";
+import IconChevronLeft from "@/components/bootstrap-icon/icons/ChevronLeft";
+import IconChevronRight from "@/components/bootstrap-icon/icons/ChevronRight";
+import IconAwardFill from "@/components/bootstrap-icon/icons/AwardFill";
+import IconClipboardData from "@/components/bootstrap-icon/icons/ClipboardData";
+import IconBugFill from "@/components/bootstrap-icon/icons/BugFill";
 import DropItem from "@/components/drop-item";
 import TbarIcon from "@/components/tbar-icon";
 import EnemyPopup from "@/components/popup/enemy-popup";
@@ -22,7 +29,6 @@ import BuffList from "@/components/buff-list";
 import { Char } from "@/components/skill-description/components";
 
 import style from "./style.module.scss";
-import { ACTOR_BODY_TYPE, ACTOR_CLASS, ROLE_TYPE } from "@/types/Enums";
 
 interface EternalWarProps {
 	mid?: string;
@@ -217,7 +223,7 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 								{ x.squad
 									? <div>
 										<strong>
-											<Icon icon="dot" />
+											<IconDot />
 											<Locale plain k="EW_PROHIBITION_SQUAD" />
 										</strong>
 										<span class="mx-2 badge bg-warning text-dark">
@@ -230,7 +236,7 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 								{ x.char.body !== ACTOR_BODY_TYPE.__MAX__ || x.char.role !== ROLE_TYPE.__MAX__ || x.char.class !== ACTOR_CLASS.__MAX__
 									? <div>
 										<strong>
-											<Icon icon="dot" />
+											<IconDot />
 											<Locale plain k="EW_PROHIBITION_UNIT" />
 										</strong>
 										<span class="mx-2 badge bg-warning text-dark">
@@ -381,7 +387,7 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 												this.setState({ selectedWave: state.selectedWave - 1 });
 										} }
 									>
-										<Icon icon="chevron-left" />
+										<IconChevronLeft />
 									</span>
 									<div class="enemy-grid">
 										{ CurrentWave.map((enemy, pos) => <div>
@@ -392,7 +398,7 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 														<Locale k={ `ENEMY_${enemy.enemy.id}` } />
 													</div>
 													<span
-														class={ `badge bg-${enemy.enemy.isBoss ? "danger" : "substory"}` }
+														class={ `badge bg-${enemy.enemy.category === EnemyCategory.Boss ? "danger" : "substory"}` }
 													>Lv.{ enemy.lv }</span>
 
 													<Link href="#" class="stretched-link" onClick={ (e: Event): void => {
@@ -416,7 +422,7 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 												this.setState({ selectedWave: state.selectedWave + 1 });
 										} }
 									>
-										<Icon icon="chevron-right" />
+										<IconChevronRight />
 									</span>
 								</div>
 							</div>
@@ -561,7 +567,7 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 												this.setState({ curTab: "reward" });
 											} }
 										>
-											<Icon icon="award-fill" class="me-1" />
+											<IconAwardFill class="me-1" />
 											<Locale plain k="EW_STAGE_TAB_REWARD" />
 										</a>
 									</li>
@@ -574,7 +580,7 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 												this.setState({ curTab: "suitproh" });
 											} }
 										>
-											<Icon icon="clipboard-data" class="me-1" />
+											<IconClipboardData class="me-1" />
 											<Locale plain k="EW_STAGE_TAB_SUIT_PROH" />
 										</a>
 									</li>
@@ -587,7 +593,7 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 												this.setState({ curTab: "enemy" });
 											} }
 										>
-											<Icon icon="bug-fill" class="me-1" />
+											<IconBugFill class="me-1" />
 											<Locale plain k="EW_STAGE_TAB_ENEMY" />
 										</a>
 									</li>

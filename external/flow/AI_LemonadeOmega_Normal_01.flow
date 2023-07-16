@@ -1,0 +1,14 @@
+start > cond1
+	cond1 y skill1_usable
+		skill1_usable y skill1_near
+		skill1_usable n alive_team
+	cond1 n alive!_team
+		alive!_team y skill1_usable
+		alive!_team n alive_team
+			alive_team y skill2_self
+			alive_team n pos!_front
+				pos!_front y move_front
+				pos!_front n wait
+
+# has Effect_MP_LemonadeOmega_N_42 buff in self, active 1 usable count > 2
+cond1 = check_buff_self_Effect_MP_LemonadeOmega_N_42 skill1_usable_>_2

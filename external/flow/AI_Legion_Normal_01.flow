@@ -1,0 +1,40 @@
+start > cond_buff!_40%
+	cond_buff!_40% y skill2_usable
+		skill2_usable y cond_buff
+			cond_buff y skill2_buff_Effect_MP_Centurion_N_2
+			cond_buff n skill2_flying
+		skill2_usable n cond_usable1_90%
+	cond_buff!_40% n cond_usable1_90%
+		cond_usable1_90% y cond_buff_1
+			cond_buff_1 y skill1_buff_Effect_MP_Centurion_N_2
+			cond_buff_1 n skill1_flying
+		cond_usable1_90% n skill2_usable_1
+			skill2_usable_1 y cond_centurion_legion!
+				cond_centurion_legion! y skill2_buff_Effect_MP_Centurion_N_2
+				cond_centurion_legion! n cond_centurion!_legion!
+					cond_centurion!_legion! y skill2_flying
+					cond_centurion!_legion! n cond_legion!
+						cond_legion! y skill2
+						cond_legion! n cell_skill2
+			skill2_usable_1 n cell_skill2
+				cell_skill2 y move_slot2
+				cell_skill2 n cell_skill1
+					cell_skill1 y move_slot1
+					cell_skill1 n wait
+
+cond_buff!_40% = check_buff!_target_Effect_MP_Legion_N_2 chance_40
+cond_buff = check_buff_target_Effect_MP_Centurion_N_2
+cond_buff_1 = cond_buff
+
+cond_usable1_90% = skill1_usable chance_90
+
+# has centurion buff, has not legion buff
+cond_centurion_legion! = check_buff_target_Effect_MP_Centurion_N_2 check_buff!_target_Effect_MP_Legion_N_2
+
+# has not centurion buff, has not legion buff
+cond_centurion!_legion! = check_buff!_target_Effect_MP_Centurion_N_2 check_buff!_target_Effect_MP_Legion_N_2
+
+# has not legion buff
+cond_legion! = check_buff!_target_Effect_MP_Legion_N_2
+
+skill2_usable_1 = skill2_usable

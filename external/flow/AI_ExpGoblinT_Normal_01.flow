@@ -1,0 +1,19 @@
+start > cond1
+	cond1 y skill1_buff_Effect_MP_ExpGoblinA_N_1
+		skill1_buff_Effect_MP_ExpGoblinA_N_1 f skill2_usable
+	cond1 n skill2_usable
+		skill2_usable y skill2_near.flying_row_2
+			skill2_near.flying_row_2 f skill2_near.heavy_row_2
+				skill2_near.heavy_row_2 f skill2_near_row_2
+					skill2_near_row_2 f skill2_flying
+		skill2_usable n skill1_usable
+			skill1_usable y skill1_near.flying
+				skill1_near.flying f skill1_near.heavy
+				skill1_near.heavy f flying
+			skill1_usable n cell_skill1
+				cell_skill1 y move_slot1
+				cell_skill1 n cell_skill2
+					cell_skill2 y move_slot2
+					cell_skill2 n wait
+
+cond1 = check_buff_target_Effect_MP_ExpGoblinA_N_1

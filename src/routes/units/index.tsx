@@ -14,8 +14,12 @@ import { useUpdate } from "@/libs/hooks";
 import { CurrentDB } from "@/libs/DB";
 
 import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
-import Icon from "@/components/bootstrap-icon";
 import Locale, { LocaleGet } from "@/components/locale";
+import IconTable from "@/components/bootstrap-icon/icons/Table";
+import IconGrid3x3GapFill from "@/components/bootstrap-icon/icons/Grid3x3GapFill";
+import IconTagsFill from "@/components/bootstrap-icon/icons/TagsFill";
+import IconTshirt from "@/components/bootstrap-icon/icons/Tshirt";
+import IconHammer from "@/components/bootstrap-icon/icons/Hammer";
 import ElemIcon from "@/components/elem-icon";
 import EffectFilterPopup from "@/components/popup/effect-filter-popup";
 
@@ -177,7 +181,7 @@ const Units: FunctionalComponent = () => {
 					class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "table")}` }
 					onClick={ (): void => void (Store.Units.DisplayType.value = "table") }
 				>
-					<Icon icon="table" class="me-1" />
+					<IconTable class="me-1" />
 					<Locale k="UNITS_VIEW_TABLE" />
 				</button>
 				<button
@@ -185,7 +189,7 @@ const Units: FunctionalComponent = () => {
 					class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "list")}` }
 					onClick={ (): void => void (Store.Units.DisplayType.value = "list") }
 				>
-					<Icon icon="grid-3x3-gap-fill" class="me-1" />
+					<IconGrid3x3GapFill class="me-1" />
 					<Locale k="UNITS_VIEW_LIST" />
 				</button>
 				<button
@@ -193,7 +197,7 @@ const Units: FunctionalComponent = () => {
 					class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "group")}` }
 					onClick={ (): void => void (Store.Units.DisplayType.value = "group") }
 				>
-					<Icon icon="tags-fill" class="me-1" />
+					<IconTagsFill class="me-1" />
 					<Locale k="UNITS_VIEW_GROUP" />
 				</button>
 				<button
@@ -201,7 +205,7 @@ const Units: FunctionalComponent = () => {
 					class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "skin")}` }
 					onClick={ (): void => void (Store.Units.DisplayType.value = "skin") }
 				>
-					<Icon icon="tshirt" class="me-1" />
+					<IconTshirt class="me-1" />
 					<Locale k="UNITS_VIEW_SKIN" />
 				</button>
 				<button
@@ -209,7 +213,7 @@ const Units: FunctionalComponent = () => {
 					class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "time")}` }
 					onClick={ (): void => void (Store.Units.DisplayType.value = "time") }
 				>
-					<Icon icon="hammer" class="me-1" />
+					<IconHammer class="me-1" />
 					<Locale k="UNITS_VIEW_CREATIONTIME" />
 				</button>
 			</div>

@@ -6,7 +6,7 @@ import { Unit } from "@/types/DB/Unit";
 import { SimulatorSlotType, SimulatorSlotEntity } from "./types/Slot";
 
 import { ObjectState, objState } from "@/libs/State";
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot, IsDev } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { GetRequireResource } from "@/libs/Cost";
@@ -14,7 +14,7 @@ import { CurrentDB } from "@/libs/DB";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconBugFill from "@/components/bootstrap-icon/icons/BugFill";
 import SimulatorSlot from "./components/simulator-slot";
 import SimulatorSummary from "./components/simulator-summary";
 import SimulatorUpgrade from "./components/simulator-upgrade";
@@ -144,9 +144,9 @@ const Simulator: FunctionalComponent = () => {
 				<span>Simulator</span>
 				<sup>β</sup>
 			</h2>
-			{ process.env.NODE_ENV === "development"
+			{ IsDev
 				? <span class="badge bg-danger">
-					<Icon icon="bug-fill" class="me-1" />
+					<IconBugFill class="me-1" />
 					<span>DevMode</span>
 				</span>
 				: <></>

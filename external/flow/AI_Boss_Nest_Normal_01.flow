@@ -1,0 +1,42 @@
+start > cond_pos
+	cond_pos y cond_buff1
+		cond_buff1 y skill1_usable
+		cond_buff1 n cond_buff2_70%
+			cond_buff2_70% y skill2_usable
+			cond_buff2_70% n cond_buff3_45%
+				cond_buff3_45% y skill2_usable
+				cond_buff3_45% n cond_buff4_30%
+					cond_buff4_30% y skill2_usable
+					cond_buff4_30% n skill1_usable
+	cond_pos n cond_70%
+		cond_70% y move_4
+		cond_70% n skill2_usable
+
+skill1_usable y skill1_highest-atk
+skill1_usable n cell_skill1
+	cell_skill1 y move_slot1
+	cell_skill1 n wait
+
+skill2_usable y skill2_near
+skill2_usable n cell_skill2
+	cell_skill2 y move_slot2
+	cell_skill2 n wait
+
+
+# middle front or center
+cond_pos = pos_3|4
+
+# has Effect_MP_Nest_B07_5 buff in self
+cond_buff1 = check_buff_self_Effect_MP_Nest_B07_5
+
+# has Effect_MP_Nest_B07_33 buff in self and 70% chance
+cond_buff2_70% = check_buff_self_Effect_MP_Nest_B07_33 chance_30
+
+# has Effect_MP_Nest_B07_34 buff in self and 45% chance
+cond_buff3_45% = check_buff_self_Effect_MP_Nest_B07_34 chance_55
+
+# has Effect_MP_Nest_B07_35 buff in self and 30% chance
+cond_buff4_30% = check_buff_self_Effect_MP_Nest_B07_35 chance_70
+
+# 70% chance
+cond_70% = chance_30

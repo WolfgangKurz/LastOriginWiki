@@ -1,569 +1,706 @@
 import { FunctionalComponent } from "preact";
+import { useEffect, useRef, useState } from "preact/hooks";
+import renderToString from "preact-render-to-string";
 
-import UseGraphviz from "@/external/graphviz";
+import html2canvas from "@/external/html2canvas";
+
+import { ReactFlow, Edge, MarkerType, Node, useEdgesState, useNodesState, useReactFlow, useNodes } from "@reactflow/core";
+import { Background as FlowBackground, BackgroundVariant } from "@reactflow/background";
+import { Controls as FlowControls, ControlButton as FlowControlButton } from "@reactflow/controls";
+import "reactflow/dist/style.css";
+
+import dagre from "@dagrejs/dagre";
 
 import { SkillEntity } from "@/types/DB/Skill";
 
-import { objState } from "@/libs/State";
-import { DOTRoot } from "@/libs/Const";
-import ParseVDOM from "@/libs/VDomParser";
-import { LocaleGet } from "@/components/locale";
+import { FlowRoot } from "@/libs/Const";
+import { BuildClass } from "@/libs/Class";
+
+import Locale from "@/components/locale";
+import IconDownload from "@/components/bootstrap-icon/icons/Download";
+import IconConfusedFace from "@/components/bootstrap-icon/icons/ConfusedFace";
+
+import CustomEdge from "./CustomEdge";
 
 import style from "./style.module.scss";
-
-
-type AI_Target = "random" | "near" | "far" |
-	"self" | "team" | "enemy" |
-	"bioroid" | "ags" |
-	"attacker" | "defender" | "supporter" |
-	"light" | "heavy" | "flying" |
-	"front" | "midrow" | "backend" |
-	"upper" | "midcol" | "lower" |
-	"hphighest" | "atkhighest" | "aphighest" | "defhighest" |
-	"hplowest";
-
-type AI_Pos = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
-	"front" | "midrow" | "backend" |
-	"upper" | "midcol" | "lower" |
-	"slot1" | "slot2";
 
 type AI_OP_RAW = "bigger" | "ebigger" | "less" | "eless" | "eq" | "neq";
 type AI_OP = ">" | ">=" | "<" | "<=" | "==" | "!=";
 
-interface ParsedAI_Pos {
-	ai_type: "pos";
-	inv: boolean;
-	pos: AI_Pos | AI_Pos[];
+interface FlowPreset {
+	content: preact.ComponentChildren;
+	color: string;
 }
-
-interface ParsedAI_Check_Buff {
-	inv: boolean;
-	type: "buff";
-	target: "self" | "target";
-	buff: string;
-}
-interface ParsedAI_Check_Skill_Usable_Base {
-	kind: "usable";
-}
-interface ParsedAI_Check_Skill_Usable_Cond extends ParsedAI_Check_Skill_Usable_Base {
-	count: number;
-	op: AI_OP;
-}
-type ParsedAI_Check_Skill_Usable = ParsedAI_Check_Skill_Usable_Base | ParsedAI_Check_Skill_Usable_Cond;
-interface ParsedAI_Check_Skill_Movable {
-	kind: "movable";
-}
-type ParsedAI_Check_Skill = {
-	inv: boolean;
-	type: "skill";
-	slot: number;
-} & (ParsedAI_Check_Skill_Usable | ParsedAI_Check_Skill_Movable);
-interface ParsedAI_Check_Acted {
-	inv: boolean;
-	type: "acted";
-}
-interface ParsedAI_Check_Attacked {
-	inv: boolean;
-	type: "attacked";
-}
-interface ParsedAI_Check_NextCrit {
-	inv: boolean;
-	type: "nextcrit";
-}
-type ParsedAI_Check = {
-	ai_type: "check";
-} & (ParsedAI_Check_Buff | ParsedAI_Check_Skill | ParsedAI_Check_Acted | ParsedAI_Check_Attacked | ParsedAI_Check_NextCrit);
-
-interface ParsedAI_Random {
-	ai_type: "random";
-	eq: boolean;
-	chance: number; // (rand <= v) or (rand < v) only (13 -> 13% chance)
-}
-
-interface ParsedAI_Skill_Target {
-	ai_type: "skill";
-	slot: number;
-	target: AI_Target | AI_Target[];
-	col: number; // 열
-	row: number; // 행
-}
-interface ParsedAI_Skill_Buff {
-	ai_type: "skill";
-	slot: number;
-	target: "buff";
-	buff: string;
-	col: number; // 열
-	row: number; // 행
-}
-type ParsedAI_Skill = ParsedAI_Skill_Target | ParsedAI_Skill_Buff;
-
-interface ParsedAI_Alive {
-	ai_type: "alive";
-	inv: boolean;
-	target: "team";
-}
-
-interface ParsedAI_HP {
-	ai_type: "hp",
-	op: AI_OP,
-	value: number;
-}
-
-interface ParsedAI_Reserved {
-	ai_type: "reserved";
-	type: "skill";
-	op: AI_OP;
-	value: number;
-}
-
-interface ParsedAI_Move {
-	ai_type: "move";
-	move: AI_Pos;
-}
-
-type ParsedAI_Wait = "wait";
-
-type ParsedAI = ParsedAI_Pos | ParsedAI_Check | ParsedAI_Random | ParsedAI_Skill | ParsedAI_Alive | ParsedAI_HP | ParsedAI_Reserved | ParsedAI_Move | ParsedAI_Wait;
-
-function CompileOp (op: AI_OP_RAW): AI_OP {
-	switch (op) {
-		case "bigger": return ">";
-		case "ebigger": return ">=";
-		case "less": return "<";
-		case "eless": return "<=";
-		case "eq": return "==";
-		case "neq": return "!=";
-	}
-}
-function CompilePos (pos: string): AI_Pos {
-	if (/^[0-9]+$/.test(pos))
-		return (parseInt(pos, 10) + 1) as AI_Pos;
-
-	switch (pos) {
-		case "front":
-		case "midrow":
-		case "backend":
-		case "upper":
-		case "midcol":
-		case "lower":
-		case "slot1":
-		case "slot2":
-			return pos;
-		default:
-			throw new Error("invalid pos data");
-	}
-}
-function parseAI (ai: string): ParsedAI[] {
-	const ret: ParsedAI[] = [];
-
-	ai.split(",")
-		.forEach(cond => {
-			const parts = cond.split("?");
-			if (parts.length > 2) throw "invalid ai pattern";
-
-			const func = parts[0];
-			const params: Record<string, string> = {};
-			if (parts.length > 1) {
-				parts[1].split("&")
-					.forEach(r => {
-						const kv = r.split("=");
-						return params[kv[0]] = kv[1];
-					});
-			}
-
-			switch (func) {
-				case "pos": // check pos
-				case "!pos":
-					ret.push({
-						ai_type: "pos",
-						inv: func[0] === "!",
-						pos: params.pos.includes("|")
-							? params.pos.split("|").map(x => CompilePos(x))
-							: CompilePos(params.pos),
-					});
-					break;
-				case "check":
-				case "!check":
-					switch (params.type) {
-						case "buff":
-							if (!["self", "target"].includes(params.kind)) throw new Error("params.kind mismatch, " + params.kind + " passed");
-							ret.push({
-								ai_type: "check",
-								inv: func[0] === "!",
-								type: "buff",
-								target: params.kind as ("self" | "target"),
-								buff: params.buff,
-							});
-							break;
-						case "skill":
-							if (!["usable", "movable"].includes(params.kind)) throw new Error("params.kind mismatch, " + params.kind + " passed");
-							if (params.kind === "movable") {
-								ret.push({
-									ai_type: "check",
-									inv: func[0] === "!",
-									type: "skill",
-									kind: params.kind,
-									slot: parseInt(params.slot, 10),
-								});
-							} else if ("op" in params) {
-								ret.push({
-									ai_type: "check",
-									inv: func[0] === "!",
-									type: "skill",
-									kind: params.kind as "usable",
-									op: CompileOp(params.op as AI_OP_RAW),
-									count: parseInt(params.count, 10),
-									slot: parseInt(params.slot, 10),
-								});
-							} else {
-								ret.push({
-									ai_type: "check",
-									inv: func[0] === "!",
-									type: "skill",
-									kind: params.kind as "usable",
-									slot: parseInt(params.slot, 10),
-								});
-							}
-							break;
-						case "acted":
-						case "!acted":
-						case "attacked":
-						case "!attacked":
-						case "nextcrit":
-						case "!nextcrit":
-							ret.push({
-								ai_type: "check",
-								inv: func[0] === "!",
-								type: params.type.replace("!", "") as ("acted" | "attacked" | "nextcrit"),
-							});
-							break;
-					}
-					break;
-				case "random":
-					switch (params.op) {
-						case "bigger": // >
-							ret.push({
-								ai_type: "random",
-								eq: false,
-								chance: 100 - parseInt(params.value, 10),
-							});
-							break;
-						case "ebigger": // >=
-							ret.push({
-								ai_type: "random",
-								eq: true,
-								chance: 100 - parseInt(params.value, 10),
-							});
-							break;
-						case "less": // <
-							ret.push({
-								ai_type: "random",
-								eq: false,
-								chance: parseInt(params.value, 10),
-							});
-							break;
-						case "eless": // <=
-							ret.push({
-								ai_type: "random",
-								eq: true,
-								chance: parseInt(params.value, 10),
-							});
-							break;
-					}
-					break;
-				case "skill":
-					if ("buff" in params) {
-						ret.push({
-							ai_type: "skill",
-							slot: parseInt(params.slot, 10),
-							target: "buff",
-							buff: params.buff,
-							col: "col" in params
-								? parseInt(params.col, 10)
-								: -1,
-							row: "row" in params
-								? parseInt(params.row, 10)
-								: -1,
-						});
-					} else {
-						ret.push({
-							ai_type: "skill",
-							slot: parseInt(params.slot, 10),
-							target: params.target.includes(".")
-								? params.target.split(".") as AI_Target[]
-								: params.target as AI_Target,
-							col: "col" in params
-								? parseInt(params.col, 10)
-								: -1,
-							row: "row" in params
-								? parseInt(params.row, 10)
-								: -1,
-						});
-					}
-					break;
-				case "alive":
-				case "!alive":
-					ret.push({
-						ai_type: "alive",
-						inv: func[0] === "!",
-						target: params.who as ParsedAI_Alive["target"],
-					});
-					break;
-				case "hp":
-					ret.push({
-						ai_type: "hp",
-						op: CompileOp(params.op as AI_OP_RAW),
-						value: parseInt(params.value, 10),
-					});
-					break;
-				case "reserved":
-					ret.push({
-						ai_type: "reserved",
-						op: CompileOp(params.op as AI_OP_RAW),
-						type: params.type as ParsedAI_Reserved["type"],
-						value: parseInt(params.value, 10),
-					});
-					break;
-				case "move":
-					if ("slot" in params) {
-						ret.push({
-							ai_type: "move",
-							move: `slot${parseInt(params.slot, 10) as 1 | 2}`,
-						});
-					} else {
-						ret.push({
-							ai_type: "move",
-							move: CompilePos(params.pos),
-						});
-					}
-					break;
-				case "wait":
-					ret.push("wait");
-					break;
-				default:
-					console.log(func, JSON.stringify(params));
-			}
-		});
-
-	return ret;
-}
-
 
 interface AIListProps {
 	enemy: boolean;
 	aiKey: string;
+
+	name?: string;
 }
 
+const edgeType = { smart: CustomEdge };
+
 const AIList: FunctionalComponent<AIListProps> = (props) => {
-	const graph = objState<preact.VNode | boolean>(false);
+	const [graph, setGraph] = useState<boolean>(false);
 
-	if (graph.value === false) {
-		graph.set(true);
+	const [error, setError] = useState("");
+	const [flowNodes, setFlowNodes] = useNodesState([]);
+	const [flowEdges, setFlowEdges] = useEdgesState([]);
 
-		(async () => {
-			const graphviz = await UseGraphviz();
+	const wrapperRef = useRef<HTMLDivElement>(null);
+	const captureRef = useRef<HTMLDivElement>(null);
+	const canvasRef = useRef<HTMLDivElement>(null);
 
-			const p = (t: string): string => t.replace(/"/g, "\\\"");
+	useEffect(() => {
+		if (graph === false && canvasRef.current) {
+			const el = canvasRef.current!;
+			setGraph(true);
 
-			fetch(`${DOTRoot}/${props.aiKey}.dot`)
-				.then(x => x.text())
-				.then(_dot => {
-					let dot = _dot;
-					dot = dot.replace(
-						"start [shape=invhouse];",
-						`start [shape=invhouse label="${p(LocaleGet("AI_START"))}"];`,
-					);
-					dot = dot.replace(
-						/label="([ynf])"/g,
-						(_, p1) => p1 === "y"
-							? `label="${LocaleGet("AI_EDGE_YES")}" color=blue fontcolor=blue`
-							: p1 === "n"
-								? `label="${LocaleGet("AI_EDGE_NO")}" color=red fontcolor=red`
-								: `label="${LocaleGet("AI_EDGE_FAIL")}" color=red fontcolor=red`
-					);
+			fetch(`${FlowRoot}/${props.aiKey}.flow`)
+				.then(x => {
+					if (x.status !== 200)
+						throw new Error("AI not exists");
+					return x.text();
+				})
+				.then(flow => {
+					const ops: Array<AI_OP_RAW | AI_OP> = [
+						"bigger", "ebigger", "less", "eless", "eq", "neq",
+						">", ">=", "<", "<=", "==", "!=",
+					];
+					function CompileOp (op: AI_OP_RAW): AI_OP {
+						switch (op) {
+							case "bigger": return ">";
+							case "ebigger": return ">=";
+							case "less": return "<";
+							case "eless": return "<=";
+							case "eq": return "==";
+							case "neq": return "!=";
+						}
+					}
+					function isOp (inp: string): inp is AI_OP {
+						if (inp.length < 1) return false;
+						return ["<", ">", "=", "!"].includes(inp[0]);
+					}
+					function isOpKind (inp: string): inp is AI_OP | AI_OP_RAW {
+						return (ops as string[]).includes(inp);
+					}
+					function autoOp (inp: string): AI_OP {
+						return isOp(inp) ? inp : CompileOp(inp as AI_OP_RAW);
+					}
+
+					const colors = {
+						undefined: "#999",
+
+						start: "#fff",
+						condition: "#fff8c5",
+						skill: "#b6e3ff",
+						move: "#fff1e5",
+						wait: "#d0d7de",
+
+						edge_default: "#24292f",
+					};
+
+					const preset: Record<string, FlowPreset> = {
+						start: {
+							content: <Locale k="AI_START" />,
+							color: colors.start,
+						}, // is current position front?
+
+						wait: { // wait
+							content: <Locale k="AI_WAIT" />,
+							color: colors.wait,
+						},
+					};
+					const edge_preset: Record<string, FlowPreset> = {
+						y: {
+							content: <Locale k="AI_EDGE_YES" />,
+							color: "#218bff",
+						},
+						n: {
+							content: <Locale k="AI_EDGE_NO" />,
+							color: "#fa4549",
+						},
+						f: {
+							content: <Locale k="AI_EDGE_FAIL" />,
+							color: "#fa4549",
+						},
+					};
+
+					{ // Factories
+						// Skills preset factory
+						[1, 2].forEach(slot => {
+							preset[`skill${slot}`] = { // use active N to random
+								content: <Locale k="AI_SKILL" p={ [
+									slot,
+									<span class="badge bg-light text-dark">
+										<Locale k="AI_SKILL_TO" p={ [<Locale k="AI_SKILL_RANDOM" />] } />
+									</span>,
+								] } />,
+								color: colors.skill,
+							};
+
+							["", "_ROW", "_COL"].forEach(rowcol => {
+								[
+									"self", "lastenemy", "team",
+									"near", "far",
+									"front", "midrow", "backend",
+									"upper", "midcol", "lower",
+									"light", "flying", "heavy",
+									"near.light", "near.flying", "near.heavy",
+									"far.light", "far.flying", "far.heavy",
+									"attacker", "defender", "supporter",
+									"highest-hp", "highest-atk", "highest-ap", "highest-def",
+									"lowest-hp",
+								].forEach(type => {
+									(rowcol ? [1, 2, 3] : [0]).forEach(count => {
+										preset[`skill${slot}_${type}${rowcol.toLocaleLowerCase()}${rowcol ? `_${count}` : ""}`] = {
+											content: <Locale
+												k={ `AI_SKILL${rowcol}` }
+												p={ [
+													slot,
+													<span class="badge bg-light text-dark">
+														{ type === "self"
+															? <Locale k="AI_SKILL_SELF" />
+															: <Locale k="AI_SKILL_TO" p={ [<>
+																{ type.split(".")
+																	.map(t => <Locale k={ `AI_SKILL_${t.replace(/-/g, "_").toUpperCase()}` } />)
+																	.gap(" ")
+																}
+															</>] } />
+														}
+													</span>,
+													count,
+												] }
+											/>,
+											color: colors.skill,
+										};
+									});
+								});
+							});
+						});
+
+						// Condition preset factory
+						["", "!"].forEach(inv => {
+							[
+								"front", "midrow", "backend",
+								"upper", "midcol", "lower",
+								...new Array(9).fill(0).map((_, i) => (i + 1).toString()),
+								"slot1", "slot2",
+							].forEach(pos => {
+								preset[`movable${inv}_${pos}`] = {
+									content: <Locale
+										k={ `AI_CHECK_MOVABLE${inv}` }
+										p={ [
+											<span class="badge bg-danger">
+												<Locale k={ `AI_POS_${pos.toUpperCase()}` } />
+											</span>,
+										] }
+
+									/>,
+									color: colors.condition,
+								};
+
+								// single condition only
+								preset[`pos${inv}_${pos}`] = {
+									content: <Locale
+										k={ `AI_POS${inv}` }
+										p={ [
+											<span class="badge bg-danger">
+												<Locale k={ `AI_POS_${pos.toUpperCase()}` } />
+											</span>,
+										] }
+									/>,
+									color: colors.condition,
+								};
+							});
+
+							[1, 2].forEach(slot => {
+								preset[`skill${slot}_usable${inv}`] = { // is active N usable?
+									content: <Locale k={ `AI_CHECK_SKILL${inv}_USABLE` } p={ [slot] } />,
+									color: colors.condition,
+								};
+								preset[`cell_skill${slot}${inv}`] = { // is cell exists that can use active N?
+									content: <Locale k={ `AI_CHECK_SKILL${inv}_MOVABLE` } p={ [slot] } />,
+									color: colors.condition,
+								};
+
+								ops.forEach(op => {
+									for (let count = 1; count <= 9; count++) {
+										// skill1_usable!_>_3
+										preset[`skill${slot}_usable${inv}_${op}_${count}`] = {
+											content: <Locale
+												k={ `AI_CHECK_SKILL${inv}_USABLE_OP` }
+												p={ [
+													slot,
+													<span class="badge bg-danger">
+														<Locale
+															k={ `AI_CHECK_${autoOp(op)}` }
+															p={ [count] }
+														/>
+													</span>,
+												] }
+											/>,
+											color: colors.condition,
+										};
+									}
+								});
+							});
+
+							["acted", "attacked", "nextcrit"].forEach(type => {
+								preset[`check_${type}${inv}`] = {
+									content: <Locale k={ `AI_CHECK_${type.toUpperCase()}${inv}` } />,
+									color: colors.condition,
+								};
+							});
+
+							["team"].forEach(target => {
+								preset[`alive${inv}_${target}`] = {
+									content: <Locale
+										k={ `AI_ALIVE${inv}` }
+										p={ [
+											<span class="badge bg-dark">
+												<Locale k={ `AI_ALIVE_${target.toUpperCase()}` } />
+											</span>,
+										] }
+									/>,
+									color: colors.condition,
+								};
+							});
+
+							// 0, 5, 10, ..., 100 %
+							new Array(21).fill(0).map((_, i) => (i * 5).toString()).forEach(percent => {
+								ops.forEach(op => {
+									preset[`hp_${op}_${percent}`] = {
+										content: <Locale
+											k="AI_HP"
+											p={ [
+												<span class="badge bg-danger">{ percent }%</span>,
+												<span class="badge bg-exchange">
+													<Locale k={ `AI_HP_${autoOp(op)}` } />
+												</span>,
+											] }
+										/>,
+										color: colors.condition,
+									};
+								});
+
+								preset[`chance_${percent}`] = {
+									content: <Locale k="AI_RANDOM" p={ [
+										<span class="badge bg-success">{ percent }%</span>,
+									] } />,
+									color: colors.condition,
+								};
+							});
+
+							// 0 ~ 10
+							new Array(11).fill(0).map((_, i) => i.toString()).forEach(count => {
+								ops.forEach(op => {
+									["skill"].forEach(type => {
+										preset[`reserved_${type}_${op}_${count}`] = {
+											content: <Locale
+												k={ `AI_RESERVED_${type.toUpperCase()}` }
+												p={ [
+													<span class="badge bg-warning text-dark">
+														<Locale k={ `AI_RESERVED_${autoOp(op)}` } />
+													</span>,
+													<span class="badge bg-danger">{ count }</span>,
+												] }
+											/>,
+											color: colors.condition,
+										};
+									});
+								});
+							});
+						});
+
+						// Move preset factory
+						[
+							"front", "midrow", "backend",
+							"upper", "midcol", "lower",
+							...new Array(9).fill(0).map((_, i) => (i + 1).toString()),
+							"slot1", "slot2",
+						].forEach(pos => {
+							preset[`move_${pos}`] = {
+								content: <Locale
+									k="AI_MOVE"
+									p={ [
+										<span class="badge bg-danger">
+											<Locale k={ `AI_POS_${pos.toUpperCase()}` } />
+										</span>,
+									] }
+								/>,
+								color: colors.move,
+							};
+						});
+					}
 
 					// process nodes
-					dot = dot.replace(
-						/([^ \t\r\n]+) \[tooltip="([^"]+)"/gm,
-						(p, p1, p2) => {
-							const n = parseAI(p2);
+					const parse = (s: string) => s.split(" ");
+					function parseNode (key: string): FlowPreset {
+						const p = key.split("_");
 
-							const label: string[] = [];
-							n.forEach(ai => {
-								if (ai === "wait")
-									label.push(LocaleGet("AI_WAIT"));
+						switch (p[0]) {
+							case "hp": // hp_OP_PERCENT
+								return {
+									content: <Locale
+										k="AI_HP"
+										p={ [
+											<span class="badge bg-danger">{ p[2] }%</span>,
+											<span class="badge bg-exchange">
+												<Locale k={ `AI_HP_${autoOp(p[1])}` } />
+											</span>,
+										] }
+									/>,
+									color: colors.condition,
+								};
+							case "check":
+								if (p[1] === "buff" || p[1] === "buff!") { // check_buff!_TARGET_BUFF
+									const inv = p[1].endsWith("!") ? "!" : "";
+									const target = p[2];
 
-								else if (ai.ai_type === "move") {
-									let p = "";
+									if (isOpKind(p[3])) {
+										const op = autoOp(p[3]);
+										const count = p[4];
+										const buff = p.slice(5).join("_");
 
-									if (typeof ai.move === "string")
-										p = LocaleGet(`AI_POS_${ai.move.toUpperCase()}`);
-									else
-										p = LocaleGet(`AI_POS_${ai.move}`);
+										return {
+											content: <Locale
+												k={ `AI_CHECK_BUFF${inv}_COUNT` }
+												p={ [
+													<span class="badge bg-primary">
+														<Locale k={ buff } />
+													</span>,
+													<span class="badge bg-dark">
+														<Locale k={ `AI_CHECK_${target.toUpperCase()}` } />
+													</span>,
+													<span class="badge bg-danger">
+														<Locale
+															k={ `AI_CHECK_${op}` }
+															p={ [<Locale k="AI_CHECK_COUNT" p={ [count] } />] }
+														/>
+													</span>,
+												] }
+											/>,
+											color: colors.condition,
+										};
+									} else {
+										const buff = p.slice(3).join("_");
 
-									label.push(LocaleGet("AI_MOVE", p));
-								} else if (ai.ai_type === "skill") {
-									let target = "";
+										return {
+											content: <Locale
+												k={ `AI_CHECK_BUFF${inv}` }
+												p={ [
+													<span class="badge bg-primary">
+														<Locale k={ buff } />
+													</span>,
+													<span class="badge bg-dark">
+														<Locale k={ `AI_CHECK_${target.toUpperCase()}` } />
+													</span>,
+												] }
+											/>,
+											color: colors.condition,
+										};
+									}
+								}
+								break;
+							case "skill1":
+							case "skill2":
+								{
+									const slot = p[0].endsWith("1") ? 1 : 2;
 
-									const f = (x: AI_Target) => {
-										switch (x) {
-											case "hphighest":
-												return "HIGHEST_HP";
-											case "atkhighest":
-												return "HIGHEST_ATK";
-											case "aphighest":
-												return "HIGHEST_AP";
-											case "defhighest":
-												return "HIGHEST_DEF";
-											case "hplowest":
-												return "LOWEST_HP";
-											default:
-												return x.toUpperCase();
-										}
+									if (p[1] === "buff") { // skill$_buff_X   ($ = slot)
+										const buff = p.slice(2).join("_");
+
+										return {
+											content: <Locale k="AI_SKILL" p={ [
+												slot,
+												<span class="badge bg-light text-dark">
+													<Locale k="AI_SKILL_TO" p={ [
+														<Locale k="AI_SKILL_BUFF" p={ [
+															<span
+																class="badge bg-primary"
+																style={ { fontSize: "inherit" } }
+															>
+																<Locale k={ buff } />
+															</span>,
+														] } />,
+													] } />
+												</span>,
+											] } />,
+											color: colors.skill,
+										};
+									}
+								}
+								break;
+							case "pos":
+							case "pos!":
+								{
+									const inv = p[0].endsWith("!") ? "!" : "";
+									const pos = p[1].split("|");
+
+									return {
+										content: <Locale
+											k={ `AI_POS${inv}` }
+											p={ [
+												<>{
+													pos.map(x => typeof x === "string"
+														? <span class="badge bg-danger">
+															<Locale k={ `AI_POS_${x.toUpperCase()}` } />
+														</span>
+														: <span class="badge bg-danger">
+															<Locale k={ `AI_POS_${x}` } />
+														</span>
+													).gap(<Locale k="AI_OR" />)
+												}</>,
+											] }
+										/>,
+										color: colors.condition,
 									};
-									if ("buff" in ai) {
-										target = LocaleGet("AI_SKILL_BUFF", LocaleGet(ai.buff));
-									} else {
-										if (typeof ai.target === "string")
-											target = LocaleGet(`AI_SKILL_${f(ai.target)}`);
-										else {
-											target = ai.target
-												.map(x => LocaleGet(`AI_SKILL_${f(x)}`))
-												.join(" ");
-										}
-									}
+								}
+							case "chance":
+								return {
+									content: <Locale k="AI_RANDOM" p={ [
+										<span class="badge bg-success">{ p[1] }%</span>,
+									] } />,
+									color: colors.condition,
+								};
+						}
 
-									if (ai.row > 0) {
-										label.push(
-											LocaleGet(
-												"AI_SKILL_ROW",
-												ai.slot,
-												LocaleGet("AI_SKILL_TO", target),
-												ai.row,
-											),
-										);
-									} else if (ai.col > 0) {
-										label.push(
-											LocaleGet(
-												"AI_SKILL_COL",
-												ai.slot,
-												LocaleGet("AI_SKILL_TO", target),
-												ai.col,
-											),
-										);
-									} else {
-										label.push(
-											LocaleGet(
-												"AI_SKILL",
-												ai.slot,
-												LocaleGet("AI_SKILL_TO", target),
-											),
-										);
-									}
-								} else if (ai.ai_type === "check") {
-									if (ai.type === "buff") {
-										label.push(LocaleGet(
-											`AI_CHECK_BUFF${ai.inv ? "!" : ""}`,
-											LocaleGet(ai.buff),
-											LocaleGet(`AI_CHECK_${ai.target.toUpperCase()}`),
-										));
-									} else if (ai.type === "skill") {
-										if (ai.kind === "usable" && "op" in ai) {
-											label.push(LocaleGet(
-												`AI_CHECK_SKILL${ai.inv ? "!" : ""}_USABLE_OP`,
-												ai.slot,
-												LocaleGet(`AI_CHECK_${ai.op}`),
-												ai.count,
-											));
-										} else {
-											label.push(LocaleGet(
-												`AI_CHECK_SKILL${ai.inv ? "!" : ""}_${ai.kind.toUpperCase()}`,
-												ai.slot,
-											));
+						return {
+							content: key,
+							color: colors.undefined,
+						};
+					}
+
+					const flows = flow.split(/[\r\n]/)
+						.map(x => x.trim())
+						.filter(x => x.length > 0 && x[0] !== "#")
+						.map(x => parse(x));
+
+					const defines: Record<string, string[]> = {};
+					const nodes: Node[] = [];
+					const edges: Edge[] = [];
+
+					flows.filter(x => x[1] === "=") // defines
+						.forEach(line => {
+							defines[line[0]] = line.slice(2);
+						});
+
+					flows.filter(x => x[1] !== "=") // not label
+						.forEach((line, i) => {
+							const from = line[0];
+							const edge = line[1];
+							const to = line[2];
+
+							[from, to].forEach((target, j) => {
+								if (!nodes.some(r => r.id === target)) {
+									const keys = target in defines
+										? defines[target]
+										: [target];
+
+									const p = keys
+										.filter(r => r)
+										.map(key =>
+											key in preset
+												? preset[key]
+												: parseNode(key)
+										) as FlowPreset[];
+
+									const color = p.length > 0 ? p[0].color : undefined;
+									const content = <div class={ style.NodeContent }>
+										{ p.map(r => r.content)
+											.gap(<div>
+												<span>
+													<Locale k="AI_AND" />
+												</span>
+											</div>)
 										}
-									} else if (["acted", "attacked", "nextcrit"].includes(ai.type)) {
-										label.push(LocaleGet(
-											`AI_CHECK_${ai.type.toUpperCase()}${ai.inv ? "!" : ""}`,
-										));
-									}
-								} else if (ai.ai_type === "pos") {
-									if (Array.isArray(ai.pos)) {
-										label.push(LocaleGet(
-											`AI_POS${ai.inv ? "!" : ""}`,
-											ai.pos.map(x => typeof x === "string"
-												? LocaleGet(`AI_POS_${x.toUpperCase()}`)
-												: LocaleGet(`AI_POS_${x}`)
-											)
-												.join(LocaleGet("AI_OR")),
-										));
-									} else {
-										label.push(LocaleGet(
-											`AI_POS${ai.inv ? "!" : ""}`,
-											LocaleGet(typeof ai.pos === "string"
-												? `AI_POS_${ai.pos.toUpperCase()}`
-												: `AI_POS_${ai.pos}`
-											),
-										));
-									}
-								} else if (ai.ai_type === "random") {
-									label.push(LocaleGet(
-										"AI_RANDOM",
-										ai.chance,
-									));
-								} else if (ai.ai_type === "alive") {
-									label.push(LocaleGet(
-										`AI_ALIVE${ai.inv ? "!" : ""}`,
-										LocaleGet(`AI_ALIVE_${ai.target.toUpperCase()}`),
-									));
-								} else if (ai.ai_type === "hp") {
-									label.push(LocaleGet(
-										"AI_HP",
-										ai.value,
-										LocaleGet(`AI_HP_${ai.op}`),
-									));
-								} else if (ai.ai_type === "reserved") {
-									label.push(LocaleGet(
-										`AI_RESERVED_${ai.type.toUpperCase()}`,
-										LocaleGet(`AI_RESERVED_${ai.op}`),
-										ai.value,
-									));
-								} else {
-									label.push(JSON.stringify(n));
+									</div>;
+
+									el.innerHTML = renderToString(content);
+
+									nodes.push({
+										id: target,
+										position: { x: 0, y: 0 },
+										width: 150,
+										height: el.clientHeight + 20, // 10 padding
+										resizing: false,
+
+										style: {
+											backgroundColor: color,
+										},
+
+										data: {
+											label: content,
+										},
+									});
 								}
 							});
 
-							if (label.length === 0) label.push(p1);
+							const ep = edge in edge_preset
+								? edge_preset[edge]
+								: undefined;
+							edges.push({
+								id: `${from}->${to}`,
+								source: from,
+								target: to,
 
-							const labels = label
-								.join(`\\n${LocaleGet("AI_AND")}\\n`)
-								.replace(/\n/g, "\\n");
-							return `${p1} [label="${labels}"`;
-						},
-					);
+								type: "smart",
+								markerEnd: {
+									type: MarkerType.ArrowClosed,
+									color: ep?.color ?? colors.edge_default,
+									width: 16,
+									height: 16,
+								},
 
-					const raw = graphviz.dot(dot, "svg");
+								label: ep?.content ?? undefined,
+								labelShowBg: false,
+								labelStyle: {
+									"paintOrder": "stroke",
+									stroke: "#fff",
+									strokeWidth: 3,
+									fill: ep?.color ?? colors.edge_default,
+								},
+								style: {
+									stroke: ep?.color ?? colors.edge_default,
+								},
+							});
+						});
 
-					const wrapper = document.createElement("div");
-					wrapper.innerHTML = raw;
-					const svg = wrapper.firstElementChild as SVGSVGElement;
-					svg.querySelectorAll("text").forEach(te => {
-						te.removeAttribute("font-family");
+					const g = new dagre.graphlib.Graph();
+					g.setGraph({});
+					g.setDefaultEdgeLabel(() => ({}));
+
+					{
+						const grp = g.graph();
+						grp.ranksep = 30;
+						grp.nodesep = 30;
+					}
+
+					nodes.forEach(node => {
+						let type = 0;
+						for (const e of edges) {
+							if (e.source === node.id) type |= 1;
+							if (e.target === node.id) type |= 2;
+							if (type === 3) break;
+						}
+
+						node.type = ["group", "input", "output", "default"][type];
+
+						g.setNode(node.id, {
+							width: node.width!,
+							height: node.height!,
+						});
+					});
+					edges.forEach(edge => {
+						g.setEdge(edge.source, edge.target);
 					});
 
-					const node = ParseVDOM(svg) as preact.VNode;
-					graph.set(node);
+					dagre.layout(g);
+
+					nodes.forEach(node => {
+						const n = g.node(node.id);
+
+						// center offset, subtract half of size
+						node.position.x = n.x - n.width / 2;
+						node.position.y = n.y - n.height / 2;
+					});
+
+					setFlowNodes(nodes);
+					setFlowEdges(edges);
 				})
 				.catch(e => {
-					graph.set(<>
-						Failed to load AI<br />
-						{ e.toString() }
-					</>);
+					setError(e.toString());
 				});
-		})();
-	};
+		};
+	}, [graph, canvasRef.current]);
 
-	return <div class={ `text-center ${style.AIList}` }>
-		{ graph.value }
+	function downloadFlow (): void {
+		if (!wrapperRef.current) return;
+		if (!captureRef.current) return;
+
+		const srcEl = wrapperRef.current.querySelector<HTMLDivElement>(".react-flow__viewport");
+		if (!srcEl) return;
+
+		function safeName (name: string): string {
+			return name.replace(/[^a-zA-Z가-힣0-9]/gi, "_");
+		}
+
+		const el = captureRef.current;
+		el.innerHTML = srcEl.outerHTML;
+
+		el.querySelector<HTMLDivElement>(".react-flow__viewport")!.style.transform = "translate(5px, 5px)";
+
+		let b_right = 0;
+		let b_bottom = 0;
+		el.querySelectorAll<HTMLDivElement>(".react-flow__node").forEach(n => {
+			const xy = n.style.transform!
+				.replace(/^.*\((.+)\).*$/, "$1")
+				.split(",")
+				.map(p => parseFloat(p.trim())); // remove unit(px)
+
+			if (xy.length === 1) xy.push(0);
+
+			b_right = Math.max(b_right, xy[0] + n.clientWidth);
+			b_bottom = Math.max(b_bottom, xy[1] + n.clientHeight);
+		});
+
+		el.style.width = `${b_right + 10}px`;
+		el.style.height = `${b_bottom + 10}px`;
+
+		html2canvas(captureRef.current, {
+			useCORS: true,
+		}).then(canvas => {
+			const url = canvas.toDataURL("image/jpeg", 1.0);
+			const anchor = document.createElement("a");
+			anchor.download = `${safeName(props.name || "ai")}.jpg`;
+			anchor.href = url;
+			anchor.click();
+		});
+	}
+
+	return <div class={ BuildClass("text-center", style.AIList) } ref={ wrapperRef }>
+		<div class={ style.OffCanvas } ref={ canvasRef } />
+		<div class={ style.CaptureCanvas } ref={ captureRef } />
+
+		{ error
+			? <div>
+				<div class="mb-2">
+					<IconConfusedFace size="64" />
+				</div>
+
+				<Locale k="ENEMY_AI_INVALID" />
+				<br />
+				<Locale k="ENEMY_AI_REPORT" />
+			</div>
+			: flowNodes.length > 0
+				? <ReactFlow
+					edgeTypes={ edgeType }
+
+					nodes={ flowNodes }
+					edges={ flowEdges }
+					fitView
+
+					nodesConnectable={ false }
+					nodesDraggable={ false }
+					nodesFocusable={ false }
+					elementsSelectable={ false }
+				>
+					<FlowBackground
+						gap={ 10 }
+						variant={ BackgroundVariant.Dots }
+					/>
+					<FlowControls showInteractive={ false }>
+						<FlowControlButton onClick={ () => downloadFlow() } title="download">
+							<div>
+								<IconDownload />
+							</div>
+						</FlowControlButton>
+					</FlowControls>
+				</ReactFlow>
+				: <></>
+		}
 	</div>;
 };
 export default AIList;

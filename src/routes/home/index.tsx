@@ -1,13 +1,22 @@
 import { FunctionalComponent } from "preact";
+import { useLayoutEffect } from "preact/hooks";
 import { Link, route } from "preact-router";
+
+import SwiperCore from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/scss";
+import "swiper/scss/pagination";
 
 import { AssetsRoot, CurrentEvent, EventFrom, EventTo, Host, ImageExtension, IsAprilFool } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { CurrentLocale } from "@/libs/Locale";
 
 import Locale from "@/components/locale";
+import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
+import IconCalendar3 from "@/components/bootstrap-icon/icons/Calendar3";
+import IconGithub from "@/components/bootstrap-icon/icons/Github";
 import HomeConfigSelector from "@/components/home-config-selector";
-import Icon from "@/components/bootstrap-icon";
 import Changelog from "./changelog";
 
 import BuildInfo from "@/buildtime";
@@ -40,12 +49,12 @@ const NavItemExternal: FunctionalComponent<LinkData> = (props) => (
 			const _a = document.createElement("a");
 			_a.target = "_blank";
 			_a.href = props.href;
-			_a.rel = "noreferrer";
+			_a.rel = "noopener noreferrer";
 			_a.click();
 		} }
 	>
 		{ props.children ? props.children : <Locale k={ props.text || "" } /> }
-		<Icon icon="link-45deg" class="ms-1" />
+		<IconLink45deg class="ms-1" />
 	</button>
 );
 
@@ -76,10 +85,13 @@ const Home: FunctionalComponent = () => {
 	SetMeta(["twitter:image", "og:image"], null);
 	UpdateTitle();
 
+	useLayoutEffect(() => {
+		SwiperCore.use([Autoplay, Pagination]);
+	}, []);
+
 	return <div class={ `${style.home} home` }>
 		<div class="alert alert-primary">
-			사이트 개발자가 더 이상 게임을 하지 않기 때문에 정보에 오류가 있을 수 있습니다.<br />
-			업데이트는 비정기적으로 이루어집니다.
+			사이트 개발자가 더 이상 게임을 하지 않기 때문에 정보에 오류가 있을 수 있습니다.
 		</div>
 
 		<div>
@@ -102,7 +114,7 @@ const Home: FunctionalComponent = () => {
 						<div>
 							<span>
 								<img class="me-2" src={ `${AssetsRoot}/flags/KR.png` } alt="[KR]" />
-								<Icon icon="calendar3" class="me-1 mb-1" />
+								<IconCalendar3 class="me-1 mb-1" />
 								{ DateText(EventFrom) } ~ { DateText(EventTo) }
 							</span>
 						</div>
@@ -223,6 +235,25 @@ const Home: FunctionalComponent = () => {
 			</div>
 		</div>
 
+		<Swiper
+			className={ style.SkinBannerSwiper }
+			modules={ [Autoplay, Pagination] }
+			loop
+			autoplay
+			pagination
+		>
+			<SwiperSlide>
+				<Link href="/units/PECS_Olivia/s1">
+					<img class={ style.SkinBanner } src={ `${AssetsRoot}/skin/banners/PECS_Olivia_1.jpg` } />
+				</Link>
+			</SwiperSlide>
+			<SwiperSlide>
+				<Link href="/units/PECS_TaylorClothcut/s1">
+					<img class={ style.SkinBanner } src={ `${AssetsRoot}/skin/banners/PECS_TaylorClothcut_1.jpg` } />
+				</Link>
+			</SwiperSlide>
+		</Swiper>
+
 		<Changelog />
 
 		<p class="mt-4">
@@ -230,7 +261,7 @@ const Home: FunctionalComponent = () => {
 		</p>
 		{/* <p>
 			<a href="https://docs.google.com/spreadsheets/d/1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4" target="_blank" rel="noreferrer">
-				<Icon icon="link-45deg" class="me-1" />
+				<IconLink45deg class="me-1" />
 				<span>Database SpreadSheet</span>
 			</a>
 		</p> */}
@@ -241,8 +272,8 @@ const Home: FunctionalComponent = () => {
 		</div> : <></> }
 
 		<div>
-			<Icon class="me-2" icon="github" />
-			<a href="https://github.com/WolfgangKurz/LastOriginWiki" target="_blank">
+			<IconGithub class="me-2" />
+			<a href="https://github.com/WolfgangKurz/LastOriginWiki" target="_blank" rel="noopener noreferrer">
 				Github
 			</a>
 		</div>

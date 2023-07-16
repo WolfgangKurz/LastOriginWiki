@@ -38,8 +38,8 @@ export interface RendererProps {
 	// hideDialog?: boolean;
 }
 
-const touchNameList = ["touch", "touth"];
-const specialNameList = ["special", "stouch"];
+const touchNameList = ["tou/", "touch", "touth"];
+const specialNameList = ["s_touch", "special", "stouch"];
 
 const SpineRenderer: FunctionalComponent<RendererProps> = (props) => {
 	const WrapperRef = useRef<HTMLDivElement>(null);
@@ -132,21 +132,8 @@ const SpineRenderer: FunctionalComponent<RendererProps> = (props) => {
 		const _app = app.current;
 		if (!_app) return;
 
-		const anims = _app.animationList();
-		console.log(anims)
-		const anim = anims.filter(x => {
-			const lowerName = x.name.toLowerCase();
-			return touchNameList.some(r => lowerName.includes(r)) &&
-				(isSpecial
-					? specialNameList.some(r => lowerName.includes(r))
-					: !specialNameList.some(r => lowerName.includes(r))
-				);
-		})[0];
-		console.log(anim)
-		if (anim) {
-			if (_app.play(anim))
-				applyAnimCircle(anim.duration);
-		}
+		const anim = _app.play(isSpecial ? "breast" : "Tep_1");
+		if (anim) applyAnimCircle(anim.duration);
 	}
 
 	useEffect(() => {
@@ -240,8 +227,8 @@ const SpineRenderer: FunctionalComponent<RendererProps> = (props) => {
 
 	const overlayTexts: Record<RendererStateEnum, string> = {
 		[RendererStateEnum.OK]: "",
-		[RendererStateEnum.None]: "We still love you",
-		[RendererStateEnum.Loading]: "Finding fooling around Efreeti",
+		[RendererStateEnum.None]: "Initializing",
+		[RendererStateEnum.Loading]: "In loading",
 		[RendererStateEnum.Error]: `Error - ${error}`,
 	};
 

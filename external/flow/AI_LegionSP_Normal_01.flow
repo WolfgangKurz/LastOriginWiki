@@ -1,0 +1,21 @@
+start > cond1
+	cond1 y skill2_usable
+		skill2_usable y skill2
+			skill2 f skill2_heavy
+		skill2_usable n skill1_usable
+			skill1_usable y skill1_near_row_2
+				skill1_near_row_2 f skill1_heavy
+			skill1_usable n cell_skill1
+	cond1 n skill1_usable_1
+		skill1_usable_1 y skill1_near_row_2
+		skill1_usable_1 n skill2_usable_1
+			skill2_usable_1 y skill2_buff_Effect_MP_LegionSP_N_1
+			skill2_usable_1 n cell_skill1
+				cell_skill1 y move_slot1
+				cell_skill1 n cell_skill2
+					cell_skill2 y move_slot2
+					cell_skill2 n wait
+
+cond1 = check_buff_target_Effect_MP_LegionSP_N_1
+skill1_usable_1 = skill1_usable
+skill2_usable_1 = skill2_usable

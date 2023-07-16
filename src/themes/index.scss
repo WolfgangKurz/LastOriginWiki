@@ -1,3 +1,5 @@
+@import "bootstrap/scss/bootstrap.scss";
+
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap");
@@ -115,6 +117,10 @@ body .tooltip {
 
 @import "./component/btn-grid";
 
+.text-underline {
+	text-decoration: underline;
+}
+
 .font-ibm {
 	@include font-ibm;
 }
@@ -125,3 +131,5 @@ body .tooltip {
 .clear-both {
 	clear: both;
 }
+
+@import "./patch";

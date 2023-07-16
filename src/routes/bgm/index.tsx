@@ -13,7 +13,15 @@ import { parseVNode } from "@/libs/VNode";
 import BGMAlbums from "@/libs/BGM";
 
 import { LocaleGet } from "@/components/locale";
-import Icon from "@/components/bootstrap-icon";
+import IconChevronCompactLeft from "@/components/bootstrap-icon/icons/ChevronCompactLeft";
+import IconChevronCompactRight from "@/components/bootstrap-icon/icons/ChevronCompactRight";
+import IconX from "@/components/bootstrap-icon/icons/X";
+import IconBoxArrowUpRight from "@/components/bootstrap-icon/icons/BoxArrowUpRight";
+import IconPause from "@/components/bootstrap-icon/icons/Pause";
+import IconPlayFill from "@/components/bootstrap-icon/icons/PlayFill";
+import IconFastForwardFill from "@/components/bootstrap-icon/icons/FastForwardFill";
+import IconList from "@/components/bootstrap-icon/icons/List";
+import IconVolumeUp from "@/components/bootstrap-icon/icons/VolumeUp";
 import YoutubePlayer from "@/components/YoutubePlayer";
 import Marquee from "./components/Marquee";
 import ShuffleText from "./components/ShuffleText";
@@ -300,7 +308,7 @@ const BGM: FunctionalComponent = () => {
 						listCursor.set(page);
 					} }
 				>
-					<Icon icon="chevron-compact-left" />
+					<IconChevronCompactLeft />
 				</a>
 				<a
 					class={ BuildClass(style.PageRight, listCursor.value === maxPage && style.Disabled) }
@@ -312,7 +320,7 @@ const BGM: FunctionalComponent = () => {
 						listCursor.set(page);
 					} }
 				>
-					<Icon icon="chevron-compact-right" />
+					<IconChevronCompactRight />
 				</a>
 
 				{ items.slice(perPageItems * listCursor.value, perPageItems * (listCursor.value + 1))
@@ -463,7 +471,7 @@ const BGM: FunctionalComponent = () => {
 							selectedItem.set(null);
 						} }
 					>
-						<Icon icon="x" />
+						<IconX />
 					</button>
 
 					<div
@@ -517,7 +525,7 @@ const BGM: FunctionalComponent = () => {
 									} }
 								>
 									{ playingMusic.value.type === "youtube"
-										? <Icon icon="box-arrow-up-right" />
+										? <IconBoxArrowUpRight />
 										: <svg width="1.35em" height="1.35em" viewBox="0 0 24 24">
 											<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
 										</svg>
@@ -558,7 +566,7 @@ const BGM: FunctionalComponent = () => {
 									playPrev();
 								} }
 							>
-								<Icon icon="fast-forward-fill" />
+								<IconFastForwardFill />
 							</button>
 
 							<button
@@ -580,8 +588,8 @@ const BGM: FunctionalComponent = () => {
 								} }
 							>
 								{ isPlaying.value
-									? <Icon icon="pause" />
-									: <Icon icon="play-fill" />
+									? <IconPause />
+									: <IconPlayFill />
 								}
 							</button>
 
@@ -592,7 +600,7 @@ const BGM: FunctionalComponent = () => {
 									playNext();
 								} }
 							>
-								<Icon icon="fast-forward-fill" />
+								<IconFastForwardFill />
 							</button>
 
 							<button
@@ -602,12 +610,12 @@ const BGM: FunctionalComponent = () => {
 									listOpen.set(true);
 								} }
 							>
-								<Icon icon="list" />
+								<IconList />
 							</button>
 						</div>
 
 						<div class={ style.Volume }>
-							<Icon icon="volume-up" />
+							<IconVolumeUp />
 							<Slider
 								class={ style.VolumeSlider }
 								min={ 0 }
@@ -687,7 +695,7 @@ const BGM: FunctionalComponent = () => {
 									listOpen.set(false);
 								} }
 							>
-								<Icon icon="x" />
+								<IconX />
 							</button>
 
 							<div class={ style.MusicList }>
