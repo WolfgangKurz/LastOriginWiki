@@ -1,0 +1,9 @@
+start > alive_team
+	alive_team y check_buff_self_Effect_MP_HeavyScout_N_2
+		check_buff_self_Effect_MP_HeavyScout_N_2 y skill2_self
+		check_buff_self_Effect_MP_HeavyScout_N_2 n wait
+	alive_team n skill1_usable
+		skill1_usable y skill1_near.heavy
+			skill1_near.heavy f skill1_near.light
+				skill1_near.light f skill1_near
+		skill1_usable n wait

@@ -1,0 +1,9 @@
+start > hp_>=_50
+	hp_>=_50 y skill1_usable
+		skill1_usable y skill1
+		skill1_usable n wait
+	hp_>=_50 n chance_30
+		chance_30 y skill2_usable
+			skill2_usable y skill2
+			skill2_usable n wait
+		chance_30 n skill1_usable

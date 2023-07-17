@@ -1,0 +1,11 @@
+start > cond1
+	cond1 y skill2_near
+	cond1 n skill1_usable
+		skill1_usable y skill1_near
+		skill1_usable n cell_skill2
+			cell_skill2 y move_slot2
+			cell_skill2 n cell_skill1
+				cell_skill1 y move_slot1
+				cell_skill1 n wait
+
+cond1 = check_buff!_self_Effect_MP_NightChickSPW_N_13 skill2_usable

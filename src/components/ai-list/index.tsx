@@ -64,6 +64,9 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 					return x.text();
 				})
 				.then(flow => {
+					if (flow.startsWith("<")) // production environment 404
+						throw new Error("AI not exists");
+
 					const ops: Array<AI_OP_RAW | AI_OP> = [
 						"bigger", "ebigger", "less", "eless", "eq", "neq",
 						">", ">=", "<", "<=", "==", "!=",
@@ -87,6 +90,13 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 					}
 					function autoOp (inp: string): AI_OP {
 						return isOp(inp) ? inp : CompileOp(inp as AI_OP_RAW);
+					}
+
+					function getBuff (buff: string): preact.VNode {
+						return <Locale
+							k={ `${buff}_1` }
+							fallback={ <Locale k={ buff } /> }
+						/>;
 					}
 
 					const colors = {
@@ -150,7 +160,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 									"near.light", "near.flying", "near.heavy",
 									"far.light", "far.flying", "far.heavy",
 									"attacker", "defender", "supporter",
-									"highest-hp", "highest-atk", "highest-ap", "highest-def",
+									"highest-hp", "highest-atk", "highest-ap", "highest-def", "highest-eva",
 									"lowest-hp",
 								].forEach(type => {
 									(rowcol ? [1, 2, 3] : [0]).forEach(count => {
@@ -310,6 +320,21 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 											color: colors.condition,
 										};
 									});
+
+									preset[`round_${op}_${count}`] = {
+										content: <Locale
+											k="AI_ROUND"
+											p={ [
+												<span class="badge bg-danger">
+													<Locale
+														k={ `AI_ROUND_${op}` }
+														p={ [<Locale k="AI_ROUND_COUNT" p={ [count] } />] }
+													/>
+												</span>,
+											] }
+										/>,
+										color: colors.condition,
+									};
 								});
 							});
 						});
@@ -366,13 +391,10 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 
 										return {
 											content: <Locale
-												k={ `AI_CHECK_BUFF${inv}_COUNT` }
+												k={ `AI_CHECK_BUFF${inv}_${target.toUpperCase()}_COUNT` }
 												p={ [
 													<span class="badge bg-primary">
-														<Locale k={ buff } />
-													</span>,
-													<span class="badge bg-dark">
-														<Locale k={ `AI_CHECK_${target.toUpperCase()}` } />
+														{ getBuff(buff) }
 													</span>,
 													<span class="badge bg-danger">
 														<Locale
@@ -389,19 +411,27 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 
 										return {
 											content: <Locale
-												k={ `AI_CHECK_BUFF${inv}` }
+												k={ `AI_CHECK_BUFF${inv}_${target.toUpperCase()}` }
 												p={ [
 													<span class="badge bg-primary">
-														<Locale k={ buff } />
-													</span>,
-													<span class="badge bg-dark">
-														<Locale k={ `AI_CHECK_${target.toUpperCase()}` } />
+														{ getBuff(buff) }
 													</span>,
 												] }
 											/>,
 											color: colors.condition,
 										};
 									}
+								} else if (p[1] === "in" || p[1] === "in!") {
+									const inv = p[0].endsWith("!") ? "!" : "";
+									const id = p.slice(2).join("_");
+									return {
+										content: <Locale k={ `AI_IN${inv}` } p={ [
+											<span class="badge bg-rarity-SSS text-dark">
+												<Locale k={ `ENEMY_${id}` } />
+											</span>
+										] } />,
+										color: colors.condition,
+									};
 								}
 								break;
 							case "skill1":
@@ -422,7 +452,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 																class="badge bg-primary"
 																style={ { fontSize: "inherit" } }
 															>
-																<Locale k={ buff } />
+																{ getBuff(buff) }
 															</span>,
 														] } />,
 													] } />
@@ -478,26 +508,40 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 						.filter(x => x.length > 0 && x[0] !== "#")
 						.map(x => parse(x));
 
-					const defines: Record<string, string[]> = {};
+					const defines: {
+						and: Record<string, string[]>;
+						or: Record<string, string[]>;
+					} = {
+						and: {},
+						or: {},
+					};
 					const nodes: Node[] = [];
 					const edges: Edge[] = [];
 
-					flows.filter(x => x[1] === "=") // defines
+					flows.filter(x => ["=", "|="].includes(x[1])) // defines
 						.forEach(line => {
-							defines[line[0]] = line.slice(2);
+							if (line[1] === "=") // AND define
+								defines.and[line[0]] = line.slice(2);
+							else // OR define
+								defines.or[line[0]] = line.slice(2);
 						});
 
-					flows.filter(x => x[1] !== "=") // not label
-						.forEach((line, i) => {
+					flows.filter(x => !["=", "|="].includes(x[1])) // not label
+						.forEach((line) => {
 							const from = line[0];
 							const edge = line[1];
 							const to = line[2];
 
-							[from, to].forEach((target, j) => {
+							[from, to].forEach((target) => {
 								if (!nodes.some(r => r.id === target)) {
-									const keys = target in defines
-										? defines[target]
-										: [target];
+									const [keys, keyType] = ((): [string[], "and" | "or" | ""] => {
+										if (target in defines.and)
+											return [defines.and[target], "and"];
+										else if (target in defines.or)
+											return [defines.or[target], "or"];
+										else
+											return [[target], ""];
+									})();
 
 									const p = keys
 										.filter(r => r)
@@ -511,9 +555,9 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 									const content = <div class={ style.NodeContent }>
 										{ p.map(r => r.content)
 											.gap(<div>
-												<span>
-													<Locale k="AI_AND" />
-												</span>
+												<strong>
+													<Locale k={ `AI_${keyType.toUpperCase()}` } />
+												</strong>
 											</div>)
 										}
 									</div>;

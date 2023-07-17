@@ -1,0 +1,18 @@
+start > check_buff_self_Effect_MP_RobertCore_N_42
+	check_buff_self_Effect_MP_RobertCore_N_42 y chance_80
+		chance_80 y skill2_self
+		chance_80 n skill1_usable
+			skill1_usable y skill1
+			skill1_usable n wait
+	check_buff_self_Effect_MP_RobertCore_N_42 n chance_80_1
+		chance_80_1 y skill1_usable_1
+			skill1_usable_1 y skill1_1
+			skill1_usable_1 n wait_1
+		chance_80_1 n skill2_self_1
+
+# same chance, opposite action
+chance_80_1 = chance_80
+skill1_usable_1 = skill1_usable
+skill2_self_1 = skill2_self
+skill1_1 = skill1
+wait_1 = wait

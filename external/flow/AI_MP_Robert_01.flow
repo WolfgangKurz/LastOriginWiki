@@ -1,0 +1,13 @@
+start > hp_>=_70
+	hp_>=_70 y skill1_usable
+		skill1_usable y skill1_lowest-hp
+		skill1_usable n cell_skill1
+			cell_skill1 y move_slot1
+			cell_skill1 n wait
+	hp_>=_70 n chance_40
+		chance_40 y skill2_usable
+			skill2_usable y skill2_lowest-hp
+			skill2_usable n cell_skill2
+				cell_skill2 y move_slot2
+				cell_skill2 n wait
+		chance_40 n skill1_usable
