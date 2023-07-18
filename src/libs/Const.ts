@@ -779,7 +779,7 @@ export const SkinBanners: string[] = [
 	"BR_Kheshig_1",
 	"BR_Leona_4",
 	"BR_Marie_3",
-	"BR_Nashorn_2",
+	"BR_Nashorn_1",
 	"BR_Phantom_1",
 	"BR_Raven_1",
 	"BR_RoyalArsenal_2",
