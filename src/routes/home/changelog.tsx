@@ -6,6 +6,9 @@ import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 12222" date="2023-07-18"
+		new={ <>
+			<li>이벤트 <BY>꿈꾸는 인어의 섬</BY>의 2부 정보가 추가되었습니다.</li>
+		</> }
 		update={ <>
 			<li>적 정보가 갱신되었습니다.</li>
 		</> }
