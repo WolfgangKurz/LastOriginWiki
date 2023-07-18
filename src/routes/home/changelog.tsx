@@ -5,6 +5,19 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12222" date="2023-07-18"
+		update={ <>
+			<li>적 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>퀸오브메인</BY>의 스킨 <BR>물 만난 사자</BR>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>나스호른</BY>의 스킨 <BR>바다로의 행진</BR>의 정보가 추가되었습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12221" date="2023-07-18"
 		bugfix={ <>
 			<li>

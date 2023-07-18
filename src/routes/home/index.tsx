@@ -242,16 +242,16 @@ const Home: FunctionalComponent = () => {
 			autoplay
 			pagination
 		>
-			<SwiperSlide>
-				<Link href="/units/PECS_Olivia/s1">
-					<img class={ style.SkinBanner } src={ `${AssetsRoot}/skin/banners/PECS_Olivia_1.jpg` } />
-				</Link>
-			</SwiperSlide>
-			<SwiperSlide>
-				<Link href="/units/PECS_TaylorClothcut/s1">
-					<img class={ style.SkinBanner } src={ `${AssetsRoot}/skin/banners/PECS_TaylorClothcut_1.jpg` } />
-				</Link>
-			</SwiperSlide>
+			{ ["BR_Nashorn_1", "PECS_QueenMane_2"].map(skin => {
+				const r = /^(.+)_([0-9]+)$/.exec(skin)!;
+				const key = r[1];
+				const sid = parseInt(r[2], 10);
+				return <SwiperSlide>
+					<Link href={ `/units/${key}/s${sid}` }>
+						<img class={ style.SkinBanner } src={ `${AssetsRoot}/skin/banners_G/${skin}.jpg` } />
+					</Link>
+				</SwiperSlide>;
+			}) }
 		</Swiper>
 
 		<Changelog />
