@@ -1417,7 +1417,11 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 	const elems: preact.VNode[] = [];
 	let commonCond = <></>;
 
-	if ("buffs" in stat) { // 버프 형식의 수치
+	if ("unknown" in stat) { // Unknown
+		elems.push(<div class="clearfix text-secondary">
+			<small>{ stat.unknown }</small>
+		</div>);
+	} else if ("buffs" in stat) { // 버프 형식의 수치
 		const target = getTargetText(stat.body, stat.class, stat.role, stat.target);
 		const on = getTriggerText(stat.on);
 		const apply = (stat.if || [])
@@ -1648,8 +1652,8 @@ const BuffList: FunctionalComponent<BuffListProps> = (props) => {
 		const level = props.level || 0;
 		const dummy = props.dummy || false;
 
-		const staticList = list.filter(x => !("buffs" in x));
-		const dynamicList = list.filter(x => "buffs" in x).map(stat => <BuffRenderer
+		const staticList = list.filter(x => !("buffs" in x || "unknown" in x));
+		const dynamicList = list.filter(x => "buffs" in x || "unknown" in x).map(stat => <BuffRenderer
 			stat={ stat }
 			level={ level }
 			invert={ props.invert }

@@ -2869,9 +2869,7 @@
           "buffs": [
             {
               "key": "Effect_SU_TestSAutoP_N_1",
-              "on": {
-                "after": "use_skill"
-              },
+              "on": "attack_success",
               "if": [
                 false,
                 false
@@ -2891,7 +2889,31 @@
                 2
               ],
               "target": 0,
-              "buffs": [],
+              "buffs": [
+                {
+                  "icon": "BuffIcon_DEF_UP",
+                  "desc": {
+                    "desc": "Effect_SU_TestSAutoP_N_1_1",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 3,
+                    "defense": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 1
+                }
+              ],
               "maxStack": 0
             }
           ]
@@ -2943,7 +2965,31 @@
                 2
               ],
               "target": 0,
-              "buffs": [],
+              "buffs": [
+                {
+                  "icon": "BuffIcon_ATK_UP",
+                  "desc": {
+                    "desc": "Effect_SU_TestSAutoP_N_2_1",
+                    "type": 0,
+                    "value": "0",
+                    "level": "0"
+                  },
+                  "attr": 0,
+                  "erase": {
+                    "rounds": 0
+                  },
+                  "value": {
+                    "isBuff": true,
+                    "chance": "0%",
+                    "type": 1,
+                    "attack": {
+                      "base": "0%",
+                      "per": "0%"
+                    }
+                  },
+                  "overlap": 4
+                }
+              ],
               "maxStack": 0
             }
           ]

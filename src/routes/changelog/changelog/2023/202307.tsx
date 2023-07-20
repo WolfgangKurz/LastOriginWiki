@@ -5,6 +5,14 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12226" date="2023-07-20"
+		bugfix={ <>
+			<li>일부 적의 버프 목록이 표시되지 않던 문제가 수정되었습니다.</li>
+		</> }
+		update={ <>
+			<li>데이터에 존재하지 않는 버프가 입력되어있는 경우의 표시를 추가했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12222" date="2023-07-18"
 		new={ <>
 			<li>이벤트 <BY>꿈꾸는 인어의 섬</BY>의 2부 정보가 추가되었습니다.</li>
