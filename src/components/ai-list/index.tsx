@@ -16,7 +16,7 @@ import { SkillEntity } from "@/types/DB/Skill";
 import { FlowRoot } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
 
-import Locale from "@/components/locale";
+import Locale, { LocaleGet } from "@/components/locale";
 import IconDownload from "@/components/bootstrap-icon/icons/Download";
 import IconConfusedFace from "@/components/bootstrap-icon/icons/ConfusedFace";
 
@@ -51,6 +51,13 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const captureRef = useRef<HTMLDivElement>(null);
 	const canvasRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => { // resetter
+		setGraph(false);
+		setFlowNodes([]);
+		setFlowEdges([]);
+		setError("");
+	}, [props.aiKey]);
 
 	useEffect(() => {
 		if (graph === false && canvasRef.current) {
@@ -93,10 +100,14 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 					}
 
 					function getBuff (buff: string): preact.VNode {
-						return <Locale
-							k={ `${buff}_1` }
-							fallback={ <Locale k={ buff } /> }
-						/>;
+						const key = `${buff}_1`;
+						let r = LocaleGet(`${buff}_1`);
+						if (r === key) r = LocaleGet(buff);
+
+						if (r.includes(":"))
+							return <>{ r.replace(/^(.+):[^:]+$/, "$1") }</>;
+						else
+							return <>{ r }</>;
 					}
 
 					const colors = {
@@ -160,10 +171,40 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 									"near.light", "near.flying", "near.heavy",
 									"far.light", "far.flying", "far.heavy",
 									"attacker", "defender", "supporter",
-									"highest-hp", "highest-atk", "highest-ap", "highest-def", "highest-eva",
-									"lowest-hp",
+									...["highest", "lowest"].flatMap(r => [
+										"hp", "atk", "ap", "def", "eva",
+										"res-fire", "res-ice", "res-frost",
+										"res-elec", "res-electric", "res-lightning",
+									].map(t => `${r}-${t}`)),
 								].forEach(type => {
 									(rowcol ? [1, 2, 3] : [0]).forEach(count => {
+										function getType (t: string) {
+											const r = t.split("-");
+											if (["highest", "lowest"].includes(r[0])) {
+												function conv (a: string[]) {
+													if (a[1] === "res") {
+														switch (a[2]) {
+															case "fire": return "RESIST_FIRE";
+															case "ice":
+															case "frost": return "RESIST_FROST";
+															case "elec":
+															case "electric":
+															case "lightning": return "RESIST_LIGHTNING";
+														}
+													}
+													return a[1].toUpperCase();
+												}
+
+												return <Locale
+													k={ `AI_SKILL_${r[0].toUpperCase()}` }
+													p={ [<span class="text-danger">
+														<Locale k={ `AI_SKILL_${conv(r)}` } />
+													</span>] }
+												/>;
+											} else
+												return <Locale k={ `AI_SKILL_${t.toUpperCase()}` } />;
+										}
+
 										preset[`skill${slot}_${type}${rowcol.toLocaleLowerCase()}${rowcol ? `_${count}` : ""}`] = {
 											content: <Locale
 												k={ `AI_SKILL${rowcol}` }
@@ -174,7 +215,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 															? <Locale k="AI_SKILL_SELF" />
 															: <Locale k="AI_SKILL_TO" p={ [<>
 																{ type.split(".")
-																	.map(t => <Locale k={ `AI_SKILL_${t.replace(/-/g, "_").toUpperCase()}` } />)
+																	.map(t => getType(t))
 																	.gap(" ")
 																}
 															</>] } />
@@ -495,6 +536,21 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 									] } />,
 									color: colors.condition,
 								};
+							case "round":
+								if (autoOp(p[1]) === "==" && ["ODD", "EVEN"].includes(p[2].toUpperCase())) {
+									return {
+										content: <Locale
+											k="AI_ROUND"
+											p={ [
+												<span class="badge bg-danger">
+													<Locale k={ `AI_ROUND_${p[2].toUpperCase()}` } />
+												</span>,
+											] }
+										/>,
+										color: colors.condition,
+									};
+								}
+								break;
 						}
 
 						return {

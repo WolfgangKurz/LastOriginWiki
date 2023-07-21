@@ -1,0 +1,13 @@
+start > cond1
+	cond1 y skill2_usable
+		skill2_usable y skill2_buff_Effect_MP_UnderWatcherSensor_EW2_2
+			skill2_buff_Effect_MP_UnderWatcherSensor_EW2_2 f skill2_buff_Effect_MP_UnderWatcherSensor_EW2_1
+				skill2_buff_Effect_MP_UnderWatcherSensor_EW2_1 f skill2_near
+		skill2_usable n wait
+	cond1 n skill1_usable
+		skill1_usable y skill1_buff_Effect_MP_UnderWatcherSensor_EW2_2
+			skill1_buff_Effect_MP_UnderWatcherSensor_EW2_2 f skill1_buff_Effect_MP_UnderWatcherSensor_EW2_1
+				skill1_buff_Effect_MP_UnderWatcherSensor_EW2_1 f skill1_near
+		skill1_usable n skill2_usable
+
+cond1 = check_buff_self_Effect_MP_UnderWatcher_EW2_4

@@ -1,0 +1,7 @@
+start > cond1
+	cond1 y skill2_highest-atk
+	cond1 n skill1_usable
+		skill1_usable y skill1_highest-atk
+		skill1_usable n wait
+
+cond1 = check_buff_self_==_1_Effect_MP_Kidnapper_EV19_C_42 skill2_usable

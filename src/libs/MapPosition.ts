@@ -110,6 +110,7 @@ const MapPosition: MapPositionType = {
 			"EV1-5": [3.2, 1],
 			"EV1-6": [4, 1],
 			"EV1-7": [4.8, 1],
+			"EV1-8": [5.6, 1],
 		},
 	},
 	Ev16: {

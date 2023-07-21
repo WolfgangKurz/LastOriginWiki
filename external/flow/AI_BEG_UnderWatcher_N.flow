@@ -1,0 +1,10 @@
+start > cond1
+	cond1 y cond2
+		cond2 y skill2_highest-hp
+		cond2 n skill1_usable
+	cond1 n skill1_usable
+		skill1_usable y skill1_highest-def
+		skill1_usable n wait
+
+cond1 |= check_buff_self_Effect_BEG_N_2-0-38-P2000 check_buff_self_Effect_BEG_N_2-0-38-P3000
+cond2 = skill2_usable hp_<_75
