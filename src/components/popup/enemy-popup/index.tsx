@@ -572,6 +572,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 													buffBonus={ false }
 													favorBonus={ false }
 													skillBonus={ 0 }
+													experimentalBuffName
 												/>
 											</div>
 										</div>

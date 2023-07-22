@@ -338,7 +338,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 	};
 
 	const endRarity = unit.promotions
-		? Math.max(unit.rarity, ...unit.promotions)
+		? Math.max(unit.rarity, ...unit.promotions.map(p => p.to))
 		: unit.rarity;
 
 	return <table class="table table-bordered table-unit-modal">
