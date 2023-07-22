@@ -1,0 +1,26 @@
+start > cond1
+	cond1 y skill2_buff_Effect_MP_ProgramMobTT_N_1
+		skill2_buff_Effect_MP_ProgramMobTT_N_1 f skill2_buff_Effect_MP_ProgramMobMS_N_1
+			skill2_buff_Effect_MP_ProgramMobMS_N_1 f SubProcess
+	cond1 n cond2
+		cond2 y skill1_buff_Effect_MP_ProgramMobTS_N_2
+			skill1_buff_Effect_MP_ProgramMobTS_N_2 f SubProcess
+		cond2 n SubProcess
+
+SubProcess = skill2_usable
+	skill2_usable y skill2_near.heavy_row_2
+		skill2_near.heavy_row_2 f skill2_near.light_row_2
+			skill2_near.light_row_2 f skill2_near_row_2
+				skill2_near_row_2 f skill2_heavy
+	skill2_usable n skill1_usable
+		skill1_usable y skill1_near.light
+			skill1_near.light f skill1_near.heavy
+				skill1_near.heavy f skill1_light
+		skill1_usable n cell_skill2
+			cell_skill2 y move_slot2
+			cell_skill2 n cell_skill1
+				cell_skill1 y move_slot1
+				cell_skill1 n wait
+
+cond1 |= check_buff_target_Effect_MP_ProgramMobTT_N_1 check_buff_target_Effect_MP_ProgramMobMS_N_1
+cond2 = check_buff_target_Effect_MP_ProgramMobTS_N_2

@@ -402,7 +402,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 					}
 
 					// process nodes
-					const parse = (s: string) => s.split(" ");
+					const parse = (s: string) => s.split(" ").filter(r => r);
 					function parseNode (key: string): FlowPreset {
 						const p = key.split("_");
 
@@ -468,7 +468,12 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 									return {
 										content: <Locale k={ `AI_IN${inv}` } p={ [
 											<span class="badge bg-rarity-SSS text-dark">
-												<Locale k={ `ENEMY_${id}` } />
+												{ id.startsWith("MOB_MP_")
+													? <Locale k={ `ENEMY_${id.replace("MOB_MP_", "")}` } />
+													: id.startsWith("Char_")
+														? <Locale k={ `UNIT_${id.replace("Char_", "")}` } />
+														: id
+												}
 											</span>
 										] } />,
 										color: colors.condition,

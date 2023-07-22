@@ -1,0 +1,29 @@
+start > pos_5
+	pos_5 y cond1
+		cond1 y skill2_team
+		cond1 n skill1_usable
+			skill1_usable y skill1_backend
+			skill1_usable n alive_team
+				alive_team y skill2_team
+				alive_team n wait
+	pos_5 n alive_team$1
+		alive_team$1 y pos_2
+			pos_2 y move_6
+			pos_2 n pos_6
+				pos_6 y move_8
+				pos_6 n pos_8
+					pos_8 y move_4
+					pos_8 n pos_4
+						pos_4 y move_2
+						pos_4 n pos_1
+			pos_1 y move_3
+			pos_1 n pos_3
+				pos_3 y move_9
+				pos_3 n pos_9
+					pos_9 y move_7
+					pos_9 n pos_7
+						pos_7 y move_1
+		alive_team$1 n cond1
+
+cond1 = alive_team chance_33
+alive_team$1 = alive_team

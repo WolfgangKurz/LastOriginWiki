@@ -1,0 +1,12 @@
+start > cond1
+	cond1 y skill2_flying
+		skill2_flying f skill2_light
+			skill2_light f skill2
+	cond1 n skill1_usable
+		skill1_usable y skill1_flying
+			skill1_flying f skill1_light
+				skill1_light f skill1_heavy
+					skill1_heavy f skill1_near
+		skill1_usable n wait
+
+cond1 = hp_<=_100 check_buff_self_Effect_MP_UnderWatcherSensor_N_4

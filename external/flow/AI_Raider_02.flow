@@ -1,0 +1,16 @@
+start > cond1
+	cond1 y skill1_near.heavy
+		skill1_near.heavy f skill1_near.light
+			skill1_near.light f skill1
+	cond1 n skill2_usable
+		skill2_usable y skill2_near.heavy_row_2
+			skill2_near.heavy_row_2 f skill2_near.light_row_2
+				skill2_near.light_row_2 f skill2_near_row_2
+					skill2_near_row_2 f skill2_near
+		skill2_usable n cell_skill2
+			cell_skill2 y move_slot2
+			cell_skill2 n cell_skill1
+				cell_skill1 y move_slot1
+				cell_skill1 n wait
+
+cond1 = hp_>_5 check_buff_self_Effect_MP_Raider_N_5

@@ -1,0 +1,13 @@
+start > pos_front
+	pos_front y skill2_usable
+		skill2_usable y skill2_light
+		skill2_usable n cond1
+	pos_front n cond1
+		cond1 y wait
+		cond1 n skill1_usable
+			skill1_usable y skill1_light
+			skill1_usable n cell_skill1
+				cell_skill1 y move_slot1
+				cell_skill1 n wait
+
+cond1 = check_Buff_self_Effect_MP_Zapper_N_3

@@ -1,0 +1,13 @@
+start > alive_team
+	alive_team y check_attacked
+		check_attacked y skill2_usable
+			skill2_usable y skill2_near.light
+				skill2_near.light f skill2_near.heavy
+					skill2_near.heavy f skill2_near
+			skill2_usable n skill1_usable
+				skill1_usable y skill1_near.light
+					skill1_near.light f skill1_near.heavy
+						skill1_near.heavy f skill1_near
+				skill1_usable n wait
+		check_attacked n wait
+	alive_team n skill1_usable

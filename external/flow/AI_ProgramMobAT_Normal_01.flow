@@ -1,0 +1,13 @@
+start > cond1
+	cond1 y skill1_buff_Effect_MP_ProgramMobTT_N_1
+		skill1_buff_Effect_MP_ProgramMobTT_N_1 f skill1_buff_Effect_MP_ProgramMobMS_N_1
+			skill1_buff_Effect_MP_ProgramMobMS_N_1 f SubProcess
+	cond1 n SubProcess
+
+SubProcess = skill2_usable
+	SubProcess y skill2_flying
+	SubProcess n skill1_usable
+		skill1_usable y skill1_flying
+	skill1_usable n wait
+
+cond1 |= check_buff_target_Effect_MP_ProgramMobTT_N_1 check_buff_target_Effect_MP_ProgramMobMS_N_1
