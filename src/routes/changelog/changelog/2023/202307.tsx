@@ -5,6 +5,19 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12230" date="2023-07-23"
+		update={ <>
+			<li>모든 적의 심리가 추가되었습니다.</li>
+			<li>편의를 위해 <BO>영원의 전장</BO> 출처를 <BO>변화의 성소</BO>로 표기하도록 변경했습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>
+				<BY>퀸오브메인</BY>의 스킨 <BR>물 만난 사자</BR> 및
+				<BY>나스호른</BY>의 스킨 <BR>바다로의 행진</BR>의
+				작가 정보 및 출시 일자가 누락된 점이 수정되었습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12226" date="2023-07-20"
 		bugfix={ <>
 			<li>일부 적의 버프 목록이 표시되지 않던 문제가 수정되었습니다.</li>

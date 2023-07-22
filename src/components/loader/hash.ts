@@ -1,12 +1,12 @@
 // Content automatically generated
 export interface DBHashType { [K: string]: string | DBHashType; }
 export default {
-	"buildtime": "1154168e",
+	"buildtime": "a3ed7b94",
 	"locale": {
-		"TC": "99ee0e82",
-		"KR": "acb4c14e",
-		"JP": "4b632baf",
-		"EN": "99feefd1"
+		"TC": "eb3bf71e",
+		"KR": "dc39e886",
+		"JP": "56b1eae3",
+		"EN": "d84312e3"
 	},
 	"korea": {
 		"story": "a6628263",
@@ -16,7 +16,7 @@ export default {
 		"mission": "3ba2fcc1",
 		"maps": "168b2a63",
 		"gacha": "0035c305",
-		"filterable.unit": "00c4c1d2",
+		"filterable.unit": "b1de337a",
 		"filterable.facility": "16568438",
 		"filterable.equip": "78a5c48e",
 		"filterable.enemy": "9b4e2995",
@@ -47,7 +47,7 @@ export default {
 			"PECS_Saetti": "475c4aa9",
 			"PECS_Sadius": "bec49e6f",
 			"PECS_Rena": "a945ccb2",
-			"PECS_QueenMane": "16d798a4",
+			"PECS_QueenMane": "04fc1dc5",
 			"PECS_PuppHead": "3fe47744",
 			"PECS_Peregrinus": "1cebbcc0",
 			"PECS_Orangeade": "8775940d",
@@ -139,7 +139,7 @@ export default {
 			"BR_NickyTracy": "32637b42",
 			"BR_Nereid": "3abbdb6e",
 			"BR_Neodym": "1ca7d2f6",
-			"BR_Nashorn": "3bcfc3d4",
+			"BR_Nashorn": "e148dc52",
 			"BR_Miho": "67ffc481",
 			"BR_May": "1331dc32",
 			"BR_Marie": "4b77cc06",
