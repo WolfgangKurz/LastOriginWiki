@@ -138,7 +138,7 @@ function BuffName (text: string): BuffNameReturn {
 		[
 			/회심 ([1-5])/,
 			["PhyATK_UP", "FireATK_UP", "IceATK_UP", "LightningATK_UP"],
-			(_, p1) => `물리/속성 피해량 +${p1 * 20}`,
+			(_, p1) => `물리/속성 피해량 +${p1 * 20}%`,
 		],
 		[
 			"회심",
