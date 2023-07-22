@@ -4,7 +4,11 @@ import { BuffTrigger } from "@/types/BuffTrigger";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ROLE_TYPE, TARGET_TYPE, NUM_OUTPUTTYPE, BUFF_OVERLAP_TYPE, BUFF_ATTR_TYPE } from "@/types/Enums";
 
 /* eslint-disable camelcase */
-export type BuffStat = BuffStatStatic | BuffStatBuff;
+export type BuffStat = BuffStatStatic | BuffStatBuff | BuffUnknown;
+
+export interface BuffUnknown {
+	unknown: string;
+}
 
 export type BuffStatStatic = BuffEffect & {
 	isBuff: undefined;

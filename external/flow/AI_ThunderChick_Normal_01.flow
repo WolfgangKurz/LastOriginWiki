@@ -1,0 +1,15 @@
+start > cond1
+	cond1 y movable_front
+		movable_front y move_front
+		movable_front n skill2_usable
+	cond1 n skill2_usable
+		skill2_usable y skill2_near
+		skill2_usable n skill1_usable
+			skill1_usable y skill1_light
+			skill1_usable n cell_skill2
+				cell_skill2 y move_skill2
+				cell_skill2 n cell_skill1
+					cell_skill1 y move_skill1
+					cell_skill1 n wait
+
+cond1 = pos!_front hp_<=_33

@@ -1,0 +1,18 @@
+start > check_buff_self_Effect_MP_NightChickS_C_2
+	check_buff_self_Effect_MP_NightChickS_C_2 y skill2_usable
+		skill2_usable y skill2_near
+		skill2_usable n hp_>=_25
+	check_buff_self_Effect_MP_NightChickS_C_2 n hp_>=_25
+
+hp_>=_25 y skill1_usable
+	skill1_usable y skill1_near
+	skill1_usable n cell_skill1
+		cell_skill1 y move_skill1
+		cell_skill1 n wait
+hp_>=_25 n skill2_usable_1
+	skill2_usable_1 y skill2_near
+	skill2_usable_1 n cell_skill2
+		cell_skill2 y move_skill2
+		cell_skill2 n wait
+
+skill2_usable_1 = skill2_usable

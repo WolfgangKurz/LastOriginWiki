@@ -1,0 +1,14 @@
+start > cond1
+	cond1 y skill2_team
+	cond1 n skill1_usable
+		skill1_usable y skill1_near
+		skill1_usable n cond2
+			cond2 y skill2_team$1
+			cond2 n cell_skill1
+				cell_skill1 y move_skill1
+				cell_skill1 n wait
+
+cond1 = hp_>_50 alive_team
+cond2 = hp_>_25 alive_team
+
+skill2_team$1 = skill2_team

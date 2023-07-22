@@ -1,0 +1,14 @@
+start > hp_<=_50
+	hp_<=_50 y skill2
+	hp_<=_50 n skill1_usable
+		skill1_usable y cond1
+			cond1 y skill1_near
+			cond1 n skill1_flying
+		skill1_usable n cell_skill1
+			cell_skill1 y move_skill1
+			cell_skill1 n wait
+
+# MOB_MP_EmperorChickSpCH_Challenge1 exists in party
+# or
+# party count == 1 (team not alive)
+cond1 |= check_in_MOB_MP_EmperorChickSpCH_Challenge1 alive!_team

@@ -1,0 +1,18 @@
+start > cond1
+	cond1 y skill2_usable
+		skill2_usable y skill2_near.flying
+			skill2_near.flying f skill2_near.light
+				skill2_near.light f skill2_backend
+		skill2_usable n skill1_usable
+	cond1 n skill1_usable
+		skill1_usable y skill1_near.flying_row_2
+			skill1_near.flying_row_2 f skill1_near.light_row_2
+				skill1_near.light_row_2 f skill1_near_row_2
+					skill1_near_row_2 f skill1_near
+		skill1_usable n cell_skill2
+			cell_skill2 y move_skill2
+			cell_skill2 n cell_skill1
+				cell_skill1 y move_skill1
+				cell_skill1 n wait
+
+cond1 = hp_<_80 check_buff_self_Effect_MP_Kidnapper_EV19_TU_5

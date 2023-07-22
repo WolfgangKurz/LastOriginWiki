@@ -1,0 +1,18 @@
+start > pos_front
+	pos_front y skill1_usable
+		skill1_usable y skill1_near
+		skill1_usable n alive_team
+			alive_team y skill2_team
+			alive_team n wait
+	pos_front n alive_team$1
+		alive_team$1 y skill2_team$1
+		alive_team$1 n skill1_usable$1
+			skill1_usable$1 y skill1_near$1
+			skill1_usable$1 n cell_skill1
+				cell_skill1 y move_skill1
+				cell_skill1 n wait
+
+alive_team$1 = alive_team
+skill2_team$1 = skill2_team
+skill1_usable$1 = skill1_usable
+skill1_near$1 = skill1_near

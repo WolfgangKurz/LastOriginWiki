@@ -1,0 +1,8 @@
+start > check_buff_self_Effect_MP_Ship_Controller_B09_5
+	check_buff_self_Effect_MP_Ship_Controller_B09_5 y skill2_usable
+		skill2_usable y skill2_self
+		skill2_usable n wait
+	check_buff_self_Effect_MP_Ship_Controller_B09_5 n round_>=_1
+		round_>=_1 y skill1_usable
+			skill1_usable y skill1_self
+			skill1_usable n wait

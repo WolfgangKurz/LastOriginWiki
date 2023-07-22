@@ -1,0 +1,9 @@
+start > cond1
+	cond1 y skill1_usable
+		skill1_usable y skill1_light
+		skill1_usable n cell_skill1
+			cell_skill1 y move_skill1
+			cell_skill1 n wait
+	cond1 n skill2_self
+
+cond1 |= pos_front check_buff_self_Effect_MP_NightChickQMSK_N_4 alive!_team

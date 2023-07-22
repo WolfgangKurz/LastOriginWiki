@@ -1,0 +1,15 @@
+start > cond1
+	cond1 y skill2_light
+		skill2_light f skill2_heavy
+			skill2_heavy f skill2_near
+				skill2_near f skill1_usable
+	cond1 n skill1_usable
+
+skill1_usable y skill1_near.light
+	skill1_near.light f skill1_near.heavy
+		skill1_near.heavy f skill1_near.flying
+			skill1_near.flying f skill1_near
+				skill1_near f wait
+skill1_usable n wait
+
+cond1 = hp_<=_50 check_buff_self_Effect_MP_FallenC_N_12

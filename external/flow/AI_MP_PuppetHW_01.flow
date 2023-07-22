@@ -1,0 +1,9 @@
+start > cond1
+	cond1 y skill1_usable
+		skill1_usable y skill1_buff_Effect_MP_PuppetHW_N_2
+		skill1_usable n wait
+	cond1 n skill2_usable
+		skill2_usable y skill2_near
+		skill2_usable n wait
+
+cond1 = check_buff_target_Effect_MP_PuppetHW_N_2

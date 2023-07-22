@@ -1,0 +1,10 @@
+start > hp_>=_100
+	hp_>=_100 y skill2_usable
+	hp_>=_100 n skill1_usable
+		skill1_usable y skill1_highest-atk
+		skill1_usable n skill2_usable
+
+skill2_usable y skill2_self
+skill2_usable n movable_front
+	movable_front y move_front
+	movable_front n wait

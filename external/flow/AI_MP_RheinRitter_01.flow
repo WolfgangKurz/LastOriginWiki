@@ -1,0 +1,9 @@
+start > check_buff_self_Effect_MP_RheinRitter_N_32
+	check_buff_self_Effect_MP_RheinRitter_N_32 y skill2_usable
+		skill2_usable y skill2_flying
+		skill2_usable n skill1_usable
+	check_buff_self_Effect_MP_RheinRitter_N_32 n skill1_usable
+		skill1_usable y skill1_backend
+		skill1_usable n cell_skill1
+			cell_skill1 y move_skill1
+			cell_skill1 n wait

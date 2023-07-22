@@ -1,0 +1,11 @@
+start > cond1
+	cond1 y skill2_flying
+	cond1 n skill1_usable
+		skill1_usable y skill1_light
+		skill1_usable n cell_skill1
+			cell_skill1 y move_skill1
+			cell_skill1 n cell_skill2
+				cell_skill2 y move_skill2
+				cell_skill2 n wait
+
+cond1 = check_buff_self_Effect_MP_RocC_EV2_4 skill2_usable

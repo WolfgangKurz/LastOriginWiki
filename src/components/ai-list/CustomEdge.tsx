@@ -19,7 +19,7 @@ const CustomEdge: FunctionalComponent<BezierEdgeProps> = (props) => {
 	} = props;
 
 	const nodes = useNodes().map(r => ({ ...r, width: (r.width || 0) + 20 }));
-	const gridRatio = 5;
+	const gridRatio = 3;
 
 	let isStraight: boolean = false;
 	const getSmartEdgeResponse = getSmartEdge({
@@ -42,6 +42,11 @@ const CustomEdge: FunctionalComponent<BezierEdgeProps> = (props) => {
 					// straight
 					if (p.every(r => r[0] === p[0][0]) || p.every(r => r[1] === p[0][1]))
 						isStraight = true;
+					else
+						p.push([ // for straighted end?
+							p[p.length - 2][0],
+							p[p.length - 2][1],
+						]);
 
 					return { fullPath: p, smoothedPath: p };
 				} catch {

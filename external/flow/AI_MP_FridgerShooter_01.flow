@@ -1,0 +1,9 @@
+start > cond1
+	cond1 y skill2_near
+	cond1 n skill1_usable
+		skill1_usable y skill1_lowest-hp
+		skill1_usable n movable_front
+			movable_front y move_front
+			movable_front n wait
+
+cond1 = skill2_usable chance_70

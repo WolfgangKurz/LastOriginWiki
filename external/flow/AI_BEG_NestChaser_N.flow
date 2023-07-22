@@ -1,0 +1,9 @@
+start > round_==_odd
+	round_==_odd y cond1
+		cond1 y skill2_highest-hp
+		cond1 n skill1_usable
+	round_==_odd n skill1_usable
+		skill1_usable y skill1_highest-def
+		skill1_usable n wait
+
+cond1 = skill2_usable hp_<_75

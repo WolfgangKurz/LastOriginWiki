@@ -1,0 +1,8 @@
+start > check_buff_target_Effect_MP_MarionnetteHW_BOSS_TU_2
+	check_buff_target_Effect_MP_MarionnetteHW_BOSS_TU_2 y skill1_usable
+		skill1_usable y skill1_near.light
+			skill1_near.light f skill1_near
+		skill1_usable n wait
+	check_buff_target_Effect_MP_MarionnetteHW_BOSS_TU_2 n skill2_usable
+		skill2_usable y skill2_highest-def
+		skill2_usable n skill1_usable

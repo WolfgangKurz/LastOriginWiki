@@ -1,0 +1,66 @@
+start > cond1
+	cond1 y cond2
+		cond2 y skill2_usable
+			skill2_usable y skill2_heavy
+			skill2_usable n cell_skill2
+				cell_skill2 y move_skill2
+				cell_skill2 n wait
+		cond2 n skill1_usable
+			skill1_usable y skill1_heavy
+			skill1_usable n skill2_usable
+	cond1 n cond3
+		cond3 y cond2$1
+			cond2$1 y skill2_usable$1
+				skill2_usable$1 y skill2_light
+				skill2_usable$1 n cell_skill2$1
+					cell_skill2$1 y move_skill2$1
+					cell_skill2$1 n wait$1
+			cond2$1 n skill1_usable$1
+				skill1_usable$1 y skill1_light
+				skill1_usable$1 n skill2_usable$1
+		cond3 n cond4
+			cond4 y cond2$2
+				cond2$2 y skill2_usable$2
+					skill2_usable$2 y skill2_flying
+					skill2_usable$2 n cell_skill2$2
+						cell_skill2$2 y move_skill2$2
+						cell_skill2$2 n wait$2
+				cond2$2 n skill1_usable$2
+					skill1_usable$2 y skill1_flying
+					skill1_usable$2 n skill2_usable$2
+			cond4 n cond2$3
+				cond2$3 y skill2_usable$3
+					skill2_usable$3 y skill2_near
+					skill2_usable$3 n cell_skill2$3
+						cell_skill2$3 y move_skill2$3
+						cell_skill2$3 n wait$3
+				cond2$3 n skill1_usable$3
+					skill1_usable$3 y skill1_near
+					skill1_usable$3 n skill2_usable$3
+
+
+cond1 |= check_buff_self_Effect_MP_Tyrant_Challenge1_3 check_buff_self_Effect_MP_Tyrant_Challenge1_33
+cond2 = check_buff_self_Effect_MP_Tyrant_Challenge1_15
+
+cond3 |= check_buff_self_Effect_MP_Tyrant_Challenge1_31 check_buff_self_Effect_MP_Tyrant_Challenge1_34
+cond2$1 = check_buff_self_Effect_MP_Tyrant_Challenge1_15
+skill2_usable$1 = skill2_usable
+skill1_usable$1 = skill1_usable
+cell_skill2$1 = cell_skill2
+move_skill2$1 = move_skill2
+wait$1 = wait
+
+cond4 |= check_buff_self_Effect_MP_Tyrant_Challenge1_32 check_buff_self_Effect_MP_Tyrant_Challenge1_35
+cond2$2 = check_buff_self_Effect_MP_Tyrant_Challenge1_15
+skill2_usable$2 = skill2_usable
+skill1_usable$2 = skill1_usable
+cell_skill2$2 = cell_skill2
+move_skill2$2 = move_skill2
+wait$2 = wait
+
+cond2$3 = check_buff_self_Effect_MP_Tyrant_Challenge1_15
+skill2_usable$3 = skill2_usable
+skill1_usable$3 = skill1_usable
+cell_skill2$3 = cell_skill2
+move_skill2$3 = move_skill2
+wait$3 = wait

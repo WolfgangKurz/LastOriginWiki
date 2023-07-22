@@ -1,0 +1,13 @@
+start > check_buff_self_Effect_MP_Slasher_N_43
+	check_buff_self_Effect_MP_Slasher_N_43 y skill2_usable
+		skill2_usable y skill2_highest-def
+		skill2_usable n skill1_usable
+			skill1_usable y skill1_highest-hp
+			skill1_usable n wait
+	check_buff_self_Effect_MP_Slasher_N_43 n cond1
+		cond1 y chance_20
+			chance_20 y skill2_usable
+			chance_20 n skill1_usable
+		cond1 n skill1_usable
+
+cond1 |= check_buff_self_Effect_MP_Slasher_N_31 check_buff_self_Effect_MP_Slasher_N_32 check_buff_self_Effect_MP_Slasher_N_33

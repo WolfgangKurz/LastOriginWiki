@@ -1,0 +1,13 @@
+start > pos_front
+	pos_front y skill1_usable
+		skill1_usable y skill1_flying
+		skill1_usable n cond1
+	pos_front n cond1
+		cond1 y skill2
+		cond1 n skill1_usable
+			skill1_usable y skill1_flying
+			skill1_usable n cell_skill1
+				cell_skill1 y move_skill1
+				cell_skill1 n wait
+
+cond1 = alive_team check_buff!_self_Effect_MP_Sirene_EV1_2

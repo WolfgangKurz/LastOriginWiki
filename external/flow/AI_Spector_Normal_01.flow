@@ -1,0 +1,10 @@
+start > pos_front
+	pos_front y skill1_usable
+		skill1_usable y skill1_near_row_2
+			skill1_near_row_2 f skill1_flying
+		skill1_usable n alive_team
+	pos_front n alive_team
+		alive_team y skill2_self
+		alive_team n cell_skill1
+			cell_skill1 y move_skill1
+			cell_skill1 n wait

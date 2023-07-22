@@ -1,0 +1,12 @@
+start > pos_front
+	pos_front y cond2
+		cond2 y skill2_self
+		cond2 n cond1
+	pos_front n cond1
+		cond1 y skill1_buff_Effect_MP_IntercepterARS_N_3
+		cond1 n skill1_usable
+			skill1_usable y skill1
+			skill1_usable n wait
+
+cond2 = alive_team check_buff!_self_Effect_MP_IntercepterARS_N_2 chance_50
+cond1 = check_buff_target_Effect_MP_IntercepterARS_N_3

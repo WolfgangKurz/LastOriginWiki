@@ -1,0 +1,25 @@
+start > cond_1,2
+	cond_1,2 y chance_10
+		chance_10 y skill2_usable
+		chance_10 n skill1_usable
+	cond_1,2 n cond_2,3,4
+		cond_2,3,4 y chance_20
+			chance_20 y skill2_usable
+			chance_20 n skill1_usable
+		cond_2,3,4 n cond_x
+			cond_x y chance_30
+				chance_30 y skill2_usable
+				chance_30 n skill1_usable
+			cond_x n skill1_usable
+
+skill2_usable y skill2_lowest-hp
+skill2_usable n skill1_usable
+
+skill1_usable y skill1_lowest-hp
+skill1_usable n cell_skill1
+	cell_skill1 y move_skill1
+	cell_skill1 n wait
+
+cond_1,2 |= check_buff_self_==_1_Effect_MP_Tracker_N_5 check_buff_self_==_2_Effect_MP_Tracker_N_5
+cond_3,4,5 |= check_buff_self_==_3_Effect_MP_Tracker_N_5 check_buff_self_==_4_Effect_MP_Tracker_N_5 check_buff_self_==_5_Effect_MP_Tracker_N_5
+cond_x = check_buff_self_Effect_MP_Tracker_N_51

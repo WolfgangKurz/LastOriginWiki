@@ -1,0 +1,11 @@
+start > check_buff_self_Effect_MP_Goltarion_N_2
+	check_buff_self_Effect_MP_Goltarion_N_2 y skill2_usable
+		skill2_usable y skill2_self
+		skill2_usable n movable_front
+			movable_front y move_front
+			movable_front n wait
+	check_buff_self_Effect_MP_Goltarion_N_2 n skill1_usable
+		skill1_usable y skill1
+		skill1_usable n movable_front
+			movable_front y move_front
+			movable_front n wait
