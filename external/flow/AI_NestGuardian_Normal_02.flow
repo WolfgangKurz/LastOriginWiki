@@ -4,14 +4,14 @@ start > cond1
 			cond3 y skill2_team
 			cond3 n skill1_usable
 		skill2_usable n cell_skill2
-			cell_skill2 y move_slot2
+			cell_skill2 y move_skill2
 			cell_skill2 n wait
 	cond1 n cond2
 		cond2 y skill2_usable
 		cond2 n skill1_usable
 			skill1_usable y skill1_highest-atk
 			skill1_usable n cell_skill1
-				cell_skill1 y move_slot1
+				cell_skill1 y move_skill1
 				cell_skill1 n wait
 
 cond1 |= check_buff_self_Effect_MP_NestGuardian_TU2_4 check_buff_self_Effect_MP_NestGuardian_TU2_41

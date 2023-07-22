@@ -385,7 +385,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 							"front", "midrow", "backend",
 							"upper", "midcol", "lower",
 							...new Array(9).fill(0).map((_, i) => (i + 1).toString()),
-							"slot1", "slot2",
+							"skill1", "skill2",
 						].forEach(pos => {
 							preset[`move_${pos}`] = {
 								content: <Locale
