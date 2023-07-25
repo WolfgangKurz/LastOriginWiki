@@ -1,0 +1,366 @@
+uid: JangHwa_TU2
+rarity: 4
+type: 0
+role: 1
+category: 1
+stat:
+  hp:
+    - 400
+    - 400
+  atk:
+    - 10
+    - 10
+  def:
+    - 10
+    - 10
+  spd: 3.5
+  cri: 50
+  acc: 300
+  eva: 100
+  res:
+    fire: 25
+    chill: 25
+    thunder: 25
+skills:
+  - key: Skill_MP_JangHwa_TU2_1
+    icon: BombActive
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 2
+      range: 10
+      ap: 10
+      grid: 1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_JangHwa_TU2_1
+          on: attack_success
+          if:
+            - on:
+                func: OR
+                select:
+                  - 13
+                attr: 0
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_MP_JangHwa_TU2_1_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_JangHwa_TU2_2
+    icon: Hang
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.2
+      range: 10
+      ap: 10
+      grid: 1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_JangHwa_TU2_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_JangHwa_TU2_2_1
+                type: 1
+                value: "29"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 29
+                  target: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_JangHwa_TU2_21
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_JangHwa_TU2_21_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                until:
+                  use_skill: 1
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_JangHwa_TU2_3
+    icon: P.WideBeamShot
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_JangHwa_TU2_3
+          on: round
+          if:
+            - on:
+                target: self
+                func: UNFILLED
+                select:
+                  - Effect_MP_JangHwa_TU2_21
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_MP_JangHwa_TU2_3_1
+                type: 1
+                value: "5"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 500%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_JangHwa_TU2_31
+          on:
+            use_skill: 2
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_JangHwa_TU2_31_1
+                type: 1
+                value: "11"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 11
+                  target: 0
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_JangHwa_TU2_4
+    icon: P.SelfSpdBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_JangHwa_TU2_4
+          on: round
+          if:
+            - on:
+                target: self
+                func: UNFILLED
+                select:
+                  - Effect_MP_JangHwa_TU2_41
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_JangHwa_TU2_4_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                until:
+                  damaged: lightning
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_JangHwa_TU2_41
+          on:
+            damaged: lightning
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_JangHwa_TU2_41_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+ai: AI_MP_JangHwa_TU2

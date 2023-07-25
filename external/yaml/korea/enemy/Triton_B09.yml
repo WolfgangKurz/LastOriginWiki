@@ -1,0 +1,732 @@
+uid: Triton_B09
+rarity: 5
+type: 1
+role: 1
+category: 1
+stat:
+  hp:
+    - 150000
+    - 0
+  atk:
+    - 1500
+    - 0
+  def:
+    - 2000
+    - 0
+  spd: 3.8
+  cri: 0
+  acc: 500
+  eva: 0
+  res:
+    fire: 25
+    chill: 25
+    thunder: 25
+skills:
+  - key: Skill_MP_Triton_B09_1
+    icon: ARShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 6
+      ap: 3
+      grid: 0,0.5,0,0,1,0,0,0.5,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Triton_B09_1
+          on: attack_success
+          if:
+            - in_squad:
+                - MOB_MP_IntercepterAR_TU2
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_TOGETHER_ATTACK
+              desc:
+                desc: Effect_MP_Triton_B09_1_1
+                type: 0
+                value: MOB_MP_IntercepterAR_TU2
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 102
+                collaborate:
+                  skill: 1
+                  with: MOB_MP_IntercepterAR_TU2
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Triton_B09_11
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_TOGETHER_ATTACK
+              desc:
+                desc: Effect_MP_Triton_B09_11_1
+                type: 0
+                value: MOB_MP_IntercepterARS_TU2
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 102
+                collaborate:
+                  skill: 1
+                  with: MOB_MP_IntercepterARS_TU2
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Triton_B09_12
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_MP_Triton_B09_12_1
+                type: 1
+                value: "-0.100000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: -10%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_Triton_B09_12_2
+                type: 1
+                value: "-0.150000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -15%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Triton_B09_2
+    icon: MultiMissile
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.3
+      range: 6
+      ap: 1
+      grid: 0.25,0.25,0.25,0.25,1,0.25,0.25,0.25,0.25
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Triton_B09_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Triton_B09_2_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 99
+                off: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Triton_B09_21
+          on: attack_success
+          if:
+            - test: higher
+              target: target
+              operand: ATK
+              ratio: 0
+              than: ATK
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Triton_B09_21_1
+                type: 1
+                value: "0.200000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 20%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Triton_B09_3
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Triton_B09_3
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_IMMUNITY_DEBUFF
+              desc:
+                desc: Effect_MP_Triton_B09_3_1
+                type: 1
+                value: "20"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 99
+              value:
+                isBuff: true
+                type: 101
+                debuff_immune: 20
+              overlap: 4
+            - icon: BuffIcon_IMMUNITY_DEBUFF
+              desc:
+                desc: Effect_MP_Triton_B09_3_2
+                type: 1
+                value: "74"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 99
+              value:
+                isBuff: true
+                type: 101
+                debuff_immune: 74
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Triton_B09_31
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Triton_B09_31_1
+                type: 1
+                value: "0.150000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 15%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Triton_B09_32
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_Triton_B09_32_1
+                type: 1
+                value: "0.150000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: 15%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Triton_B09_4
+    icon: P.SelfSpdBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Triton_B09_4
+          on: damaged
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Triton_B09_41
+                stack: 0
+                func: UNFILLED
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Triton_B09_4_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 3
+        - key: Effect_MP_Triton_B09_41
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Triton_B09_4
+                stack: 3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Triton_B09_41_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Triton_B09_42
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Triton_B09_4
+                stack: 3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: ""
+              desc:
+                desc: Effect_MP_Triton_B09_42_1
+                type: 0
+                value: Effect_MP_Triton_B09_4
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 97
+                off: Effect_MP_Triton_B09_4
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_Triton_B09_5
+    icon: P.MultiMissile
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Triton_B09_5
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Triton_B09_41
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_Action_Number_Change_Up
+              desc:
+                desc: Effect_MP_Triton_B09_5_1
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 127
+                act_count: 1
+              overlap: 4
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Triton_B09_5_2
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 109
+                less_target:
+                  base: 30%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Triton_B09_5_3
+                type: 0
+                value: "13"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 21
+                ap_set:
+                  base: 13
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Triton_B09_51
+          on: damaged
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Triton_B09_41
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ACCURACY_DOWN
+              desc:
+                desc: Effect_MP_Triton_B09_51_1
+                type: 1
+                value: "-1.500000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: -150%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Triton_B09_6
+    icon: P.SuicideBomb
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Triton_B09_6
+          on: self_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: ""
+              desc:
+                desc: Effect_MP_Triton_B09_6_1
+                type: 1
+                value: Effect_MP_Ship_Controller_B09_3
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 97
+                off: Effect_MP_Ship_Controller_B09_3
+              overlap: 4
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Triton_B09_6_2
+                type: 1
+                value: "999.990000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 70
+                fixed_damage:
+                  base: 99999%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+ai: AI_MP_Triton_01

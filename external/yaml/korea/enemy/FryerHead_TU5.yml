@@ -1,0 +1,876 @@
+uid: FryerHead_TU5
+rarity: 5
+type: 0
+role: 2
+category: 0
+stat:
+  hp:
+    - 32269
+    - 360
+  atk:
+    - 644
+    - 9.52
+  def:
+    - 31998
+    - 680
+  spd: 4.15
+  cri: 10
+  acc: 450
+  eva: 10
+  res:
+    fire: 60
+    chill: 60
+    thunder: 0
+skills:
+  - key: Skill_MP_FryerHead_N_1
+    icon: Shock
+    passive: false
+    type: 3
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.2
+      range: 4
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_FryerHead_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_MARKING
+              desc:
+                desc: Effect_MP_FryerHead_N_1_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 87
+                attack_target: true
+              overlap: 1
+            - icon: BuffIcon_LIGHTNINGRES_DOWN
+              desc:
+                desc: Effect_MP_FryerHead_N_1_2
+                type: 1
+                value: "-0.500000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 19
+                resist:
+                  elem: lightning
+                  value:
+                    base: -50%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_FryerHead_N_2
+    icon: DefCounter
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_FryerHead_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_MARKING
+              desc:
+                desc: Effect_MP_FryerHead_N_2_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 5
+              value:
+                isBuff: true
+                type: 87
+                attack_target: true
+              overlap: 1
+            - icon: BuffIcon_ICERES_UP
+              desc:
+                desc: Effect_MP_FryerHead_N_2_2
+                type: 1
+                value: "0.500000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 5
+              value:
+                isBuff: true
+                type: 17
+                resist:
+                  elem: ice
+                  value:
+                    base: 50%
+                    per: 0%
+              overlap: 4
+            - icon: BuffIcon_FIRERES_UP
+              desc:
+                desc: Effect_MP_FryerHead_N_2_3
+                type: 1
+                value: "0.500000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 5
+              value:
+                isBuff: true
+                type: 15
+                resist:
+                  elem: fire
+                  value:
+                    base: 50%
+                    per: 0%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_FryerHead_N_2_4
+                type: 1
+                value: "0.250000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 5
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 25%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_FryerHead_N_3
+    icon: P.TeamDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_FryerHead_N_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_MP_FryerHead_N_3_1
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                until:
+                  after: support
+              value:
+                isBuff: true
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_FryerHead_N_31
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_ICERES_UP
+              desc:
+                desc: Effect_MP_FryerHead_N_31_1
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 17
+                resist:
+                  elem: ice
+                  value:
+                    base: 30%
+                    per: 0%
+              overlap: 4
+            - icon: BuffIcon_FIRERES_UP
+              desc:
+                desc: Effect_MP_FryerHead_N_31_2
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 15
+                resist:
+                  elem: fire
+                  value:
+                    base: 30%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_FryerHead_N_32
+          on:
+            after: support
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_FryerHead_N_32_1
+                type: 1
+                value: "-0.750000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -75%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_FryerHead_N_4
+    icon: P.WideLightning
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_FryerHead_N_4
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_FryerHead_N_4_1
+                type: 1
+                value: "-1"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: -100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_FryerHead_N_41
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 2
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_FryerHead_N_41_1
+                type: 1
+                value: "-0.800000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: -80%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_FryerHead_N_42
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 3
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_FryerHead_N_42_1
+                type: 1
+                value: "-0.600000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: -60%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_FryerHead_N_43
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_FryerHead_N_43_1
+                type: 1
+                value: "-0.400000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: -40%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_FryerHead_N_44
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 5
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_FryerHead_N_44_1
+                type: 1
+                value: "-0.200000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: -20%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_FryerHead_N_45
+          on: round
+          if:
+            - round:
+                operator: ">="
+                round:
+                  - 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_FryerHead_N_45_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 0%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_FryerHead_N_46
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_MP_FryerHead_N_46_1
+                type: 1
+                value: "-0.500000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: -50%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_FryerHead_N_47
+          on: self_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_MP_FryerHead_N_47_1
+                type: 1
+                value: "-0.500000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: -50%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_FryerHead_N_48
+          on: self_dead
+          if:
+            - target:
+                - MOB_MP_FryerHead_N
+                - MOB_MP_FryerHead_TU
+                - MOB_MP_FryerHead_TU2
+                - MOB_MP_FryerHead_TU3
+                - MOB_MP_FryerHead_TU4
+                - MOB_MP_FryerHead_TU5
+                - MOB_MP_FryerShooter_N
+                - MOB_MP_FryerShooter_TU
+                - MOB_MP_FryerShooter_TU2
+                - MOB_MP_FryerShooter_TU3
+                - MOB_MP_FryerShooter_TU4
+                - MOB_MP_FryerShooter_TU5
+                - MOB_MP_FryerShell_N
+                - MOB_MP_FryerShell_TU
+                - MOB_MP_FryerShell_TU2
+                - MOB_MP_FryerShell_TU3
+                - MOB_MP_FryerShell_TU4
+                - MOB_MP_FryerShell_TU5
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_MP_FryerHead_N_48_1
+                type: 1
+                value: "-0.750000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: -75%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_FryerHead_N_48_2
+                type: 1
+                value: "-0.750000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -75%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_FryerHead_N_5
+    icon: P.Command
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_FryerHead_N_5
+          on: wave
+          if:
+            - unitCount:
+                filter:
+                  - enemy
+                  - ags
+                type:
+                  - 0
+                  - 2
+                  - 1
+                count:
+                  - 3
+                  - 4
+                  - 5
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_FryerHead_N_5_1
+                type: 0
+                value: "2"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 2
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_FryerHead_N_51
+          on: wave
+          if:
+            - unitCount:
+                filter:
+                  - enemy
+                  - bioroid
+                type:
+                  - 0
+                  - 2
+                  - 1
+                count:
+                  - 3
+                  - 4
+                  - 5
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_FryerHead_N_51_1
+                type: 1
+                value: "-0.400000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 99
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: -40%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_FryerHead_N_52
+          on: self_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: ""
+              desc:
+                desc: Effect_MP_FryerHead_N_52_1
+                type: 0
+                value: Effect_MP_FryerHead_N_51
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 97
+                off: Effect_MP_FryerHead_N_51
+              overlap: 4
+          maxStack: 0
+ai: AI_MP_FridgerHead_01

@@ -1,0 +1,1135 @@
+uid: Demolisher_BOSS_Challenge4
+rarity: 5
+type: 1
+role: 0
+category: 2
+stat:
+  hp:
+    - 10
+    - 10
+  atk:
+    - 20
+    - 20
+  def:
+    - 20
+    - 20
+  spd: 5
+  cri: 50
+  acc: 300
+  eva: 10
+  res:
+    fire: 50
+    chill: 50
+    thunder: 50
+skills:
+  - key: Skill_MP_Demolisher_BOSS_Challenge4_1
+    icon: MeleeAttack
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.5
+      range: 15
+      ap: 5
+      grid: 1,1,0,1,1,0,1,1,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_1
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_COUNTER
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_1_1
+                type: 1
+                value: "0.100000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 999%
+                type: 29
+                counter:
+                  base: 10%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_11
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_RANGE_DOWN
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_11_1
+                type: 0
+                value: "-1"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 999%
+                type: 55
+                range:
+                  base: -1
+                  per: 0
+              overlap: 4
+            - icon: BuffIcon_Disallow
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_11_2
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 999%
+                type: 125
+                buff_disallow: true
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_12
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_12_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                until: attack
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_Demolisher_BOSS_Challenge4_2
+    icon: SatelliteBeam
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.5
+      range: 15
+      ap: 10
+      grid: 1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_BARRIER_PIERCE
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_2_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 94
+                penetration_force: true
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_12
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_12_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                until: attack
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_43
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+          target: 4
+          buffs:
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_43_1
+                type: 0
+                value: "1500"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 1500
+                  per: 0
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Demolisher_BOSS_Challenge4_3
+    icon: P.SelfSpdBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_IMMUNITY_DEBUFF
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_3_1
+                type: 1
+                value: "22"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 101
+                debuff_immune: 22
+              overlap: 4
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_3_2
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 100
+                off: 1
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_3_3
+                type: 0
+                value: "10"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 21
+                ap_set:
+                  base: 10
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_31
+          on: wait
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_31_1
+                type: 1
+                value: "2"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 200%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Demolisher_BOSS_Challenge4_4
+    icon: P.DefCounter
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_4
+          on: round
+          if:
+            - round:
+                operator: even
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DAMAGE_ABSORB
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_4_1
+                type: 0
+                value: "800000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 38
+                barrier:
+                  base: 800000
+                  per: 0
+              overlap: 4
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_4_2
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 36
+                damage_reduce:
+                  base: 30%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_41
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - 38
+                attr: 6
+            - round:
+                operator: odd
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_41_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_42
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Demolisher_BOSS_Challenge4_41
+                  - Effect_MP_Demolisher_BOSS_Challenge4_12
+                stack: 0
+                func: UNFILLED
+                attr: 6
+            - round:
+                operator: odd
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_VULNERABLE
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_42_1
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 48
+                damage_increase:
+                  base: 30%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_44
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_44_1
+                type: 1
+                value: "-1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: -100%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_44_2
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 0
+                  target: 0
+              overlap: 4
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_44_3
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 1
+                  target: 0
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Demolisher_BOSS_Challenge4_5
+    icon: P.SuicideBomb
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_5
+          on: enemy_dead
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 82
+                  - 98
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_5_1
+                type: 1
+                value: "82"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 82
+              overlap: 4
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_5_2
+                type: 1
+                value: "98"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 98
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_51
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Demolisher_BOSS_Challenge1_5
+                stack: 1
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_51_1
+                type: 0
+                value: "150"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 150
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_52
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Demolisher_BOSS_Challenge1_5
+                stack: 2
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_52_1
+                type: 0
+                value: "150"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 150
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_53
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Demolisher_BOSS_Challenge1_5
+                stack: 3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_53_1
+                type: 0
+                value: "150"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 150
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_54
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Demolisher_BOSS_Challenge1_5
+                stack: 4
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_54_1
+                type: 0
+                value: "150"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 150
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_55
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Demolisher_BOSS_Challenge1_5
+                stack: 5
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_55_1
+                type: 0
+                value: "150"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 150
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_56
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Demolisher_BOSS_Challenge1_5
+                stack: 6
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_56_1
+                type: 0
+                value: "150"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 150
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_57
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Demolisher_BOSS_Challenge1_5
+                stack: 7
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_57_1
+                type: 0
+                value: "150"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 150
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_58
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Demolisher_BOSS_Challenge1_5
+                stack: 8
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_58_1
+                type: 0
+                value: "150"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 150
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_59
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Demolisher_BOSS_Challenge1_5
+                stack: 9
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_59_1
+                type: 0
+                value: "150"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 150
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_510
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Demolisher_BOSS_Challenge1_5
+                stack: 10
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_510_1
+                type: 0
+                value: "150"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 150
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Demolisher_BOSS_Challenge4_511
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Demolisher_BOSS_Challenge4_511_1
+                type: 0
+                value: "1500"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 1500
+                  per: 0
+              overlap: 4
+          maxStack: 0
+ai: AI_MP_Demolisher_BOSS_IW_04

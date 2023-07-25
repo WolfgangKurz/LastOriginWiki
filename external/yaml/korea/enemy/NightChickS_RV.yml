@@ -1,0 +1,852 @@
+uid: NightChickS_RV
+rarity: 5
+type: 0
+role: 0
+category: 0
+stat:
+  hp:
+    - 70000
+    - 400
+  atk:
+    - 50
+    - 5
+  def:
+    - 1000
+    - 20
+  spd: 3.5
+  cri: 0
+  acc: 75
+  eva: 0
+  res:
+    fire: 50
+    chill: 50
+    thunder: 50
+skills:
+  - key: Skill_MP_NightChickS_RV_1
+    icon: Missile
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 4
+      ap: 3
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickS_RV_1
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 74
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_NightChickS_RV_1_1
+                type: 0
+                value: "200"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 200
+                  per: 0
+              overlap: 4
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_NightChickS_RV_1_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 99
+                off: 0
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_NightChickS_RV_2
+    icon: ShieldWall
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 9
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickS_RV_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DEF_Char
+              desc:
+                desc: Effect_MP_NightChickS_RV_2_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 76
+                guard: target
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_NightChickS_RV_2_2
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 1
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_NightChickS_RV_21
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_NightChickS_RV_21_1
+                type: 1
+                value: "0.200000"
+                level: "0"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: 20%
+                  per: 0%
+              overlap: 4
+          maxStack: 5
+  - key: Skill_MP_NightChickS_RV_3
+    icon: P.EnemyDetect
+    passive: true
+    type: 0
+    target: enemy
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 4
+      ap: 4
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickS_RV_3
+          on: round
+          if:
+            - test: lower
+              target: target
+              operand: ATK
+              ratio: 0
+              than: ATK
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_PROVOKE
+              desc:
+                desc: Effect_MP_NightChickS_RV_3_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 74
+                provoke: self
+              overlap: 4
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_NightChickS_RV_3_2
+                type: 1
+                value: "-0.100000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: -10%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_MP_NightChickS_RV_3_3
+                type: 1
+                value: "-0.200000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: -20%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_NightChickS_RV_3_4
+                type: 1
+                value: "-0.200000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: -20%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_NightChickS_RV_31
+          on: round
+          if:
+            - pos: 0
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_SKILL_DOWN
+              desc:
+                desc: Effect_MP_NightChickS_RV_31_1
+                type: 1
+                value: "-0.200000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 106
+                skill_ratio:
+                  base: -20%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_NightChickS_RV_32
+          on: round
+          if:
+            - pos: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_SKILL_DOWN
+              desc:
+                desc: Effect_MP_NightChickS_RV_32_1
+                type: 1
+                value: "-0.100000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 106
+                skill_ratio:
+                  base: -10%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_NightChickS_RV_33
+          on: round
+          if:
+            - pos:
+                target: target
+                position: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_SKILL_DOWN
+              desc:
+                desc: Effect_MP_NightChickS_RV_33_1
+                type: 1
+                value: "-0.100000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 106
+                skill_ratio:
+                  base: -10%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_NightChickS_RV_34
+          on: round
+          if:
+            - pos:
+                target: target
+                position: 2
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_SKILL_DOWN
+              desc:
+                desc: Effect_MP_NightChickS_RV_34_1
+                type: 1
+                value: "-0.200000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 106
+                skill_ratio:
+                  base: -20%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_NightChickS_RV_35
+          on: team_dead
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 74
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_SKILL_DOWN
+              desc:
+                desc: Effect_MP_NightChickS_RV_35_1
+                type: 1
+                value: "-0.300000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 99
+              value:
+                isBuff: true
+                type: 106
+                skill_ratio:
+                  base: -30%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_NightChickS_RV_4
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickS_RV_4
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_NightChickS_RV_4_1
+                type: 0
+                value: "500"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 500
+                  per: 0
+              overlap: 4
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_NightChickS_RV_4_2
+                type: 0
+                value: "500"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 2
+                defense:
+                  base: 500
+                  per: 0
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_NightChickS_RV_4_3
+                type: 1
+                value: "0.100000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 10%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_MP_NightChickS_RV_4_4
+                type: 1
+                value: "0.100000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 10%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_NightChickS_RV_41
+          on: wave
+          if:
+            - on:
+                func: OR
+                select:
+                  - 15
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_FireRes_Value_Reverse
+              desc:
+                desc: Effect_MP_NightChickS_RV_41_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 122
+                resist:
+                  elem: fire
+                  reverse: true
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_NightChickS_RV_42
+          on: wave
+          if:
+            - on:
+                func: OR
+                select:
+                  - 17
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_IceRes_Value_Reverse
+              desc:
+                desc: Effect_MP_NightChickS_RV_42_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 123
+                resist:
+                  elem: ice
+                  reverse: true
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_NightChickS_RV_43
+          on: wave
+          if:
+            - on:
+                func: OR
+                select:
+                  - 19
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_LightningRes_Value_Reverse
+              desc:
+                desc: Effect_MP_NightChickS_RV_43_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 124
+                resist:
+                  elem: lightning
+                  reverse: true
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_NightChickS_RV_5
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_Line
+              desc:
+                desc: Effect_MP_NightChickS_RV_5_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 50
+                guard: col
+              overlap: 4
+            - icon: BuffIcon_DEF_Side
+              desc:
+                desc: Effect_MP_NightChickS_RV_5_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 75
+                guard: row
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_NightChickS_RV_5
+    icon: P.ShieldWall
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickS_RV_51
+          on: round
+          if:
+            - hp<=:
+                target: target
+                value:
+                  - 50%
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_NightChickS_RV_51_1
+                type: 1
+                value: "0.250000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 110
+                disperse:
+                  base: 25%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_NightChickS_RV_52
+          on: team_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_NightChickS_RV_52_1
+                type: 1
+                value: "0.250000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 110
+                disperse:
+                  base: 25%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+ai: AI_MP_NightChickS_RV_01

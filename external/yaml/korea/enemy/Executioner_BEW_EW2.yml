@@ -1,0 +1,1089 @@
+uid: Executioner_BEW_EW2
+rarity: 5
+type: 2
+role: 1
+category: 1
+stat:
+  hp:
+    - 55000
+    - 500
+  atk:
+    - 320
+    - 23
+  def:
+    - 1200
+    - 22
+  spd: 4.6
+  cri: 15
+  acc: 350
+  eva: 120
+  res:
+    fire: 30
+    chill: 30
+    thunder: 30
+skills:
+  - key: Skill_MP_Executioner_BEW_EW2_1
+    icon: SwordAttk
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 5
+      ap: 3
+      grid: 0.5,0,0,0,1,0,0.5,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Executioner_BEW_EW2_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_1_1
+                type: 1
+                value: "-0.200000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -20%
+                  per: 0%
+              overlap: 4
+          maxStack: 10
+        - key: Effect_MP_Executioner_BEW_EW2_11
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_BARRIER_PIERCE
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_11_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 30%
+                type: 94
+                penetration_force: true
+              overlap: 0
+          maxStack: 1
+  - key: Skill_MP_Executioner_BEW_EW2_2
+    icon: WideSwordAttk
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 4
+      ap: 4
+      grid: 1,0,1,0,1,0,1,0,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Executioner_BEW_EW2_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_FireATK_UP
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_2_1
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 84
+                damage_add:
+                  elem: fire
+                  damage:
+                    base: 30%
+                    per: 0%
+              overlap: 0
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_2_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 99
+                off: 0
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_Executioner_BEW_EW2_3
+    icon: P.Barrier
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Executioner_BEW_EW2_3
+          on: wave
+          if:
+            - hp>=:
+                - 100%
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_3_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase: {}
+              value:
+                isBuff: true
+                type: 2
+                defense:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Executioner_BEW_EW2_31
+          on: revive
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Executioner_BEW_EW2_3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_31_1
+                type: 0
+                value: "70000"
+                level: "0"
+              attr: 1
+              erase: {}
+              value:
+                isBuff: true
+                type: 82
+                revive:
+                  base: 70000
+                  per: 0
+              overlap: 0
+          maxStack: 1
+        - key: Effect_MP_Executioner_BEW_EW2_32
+          on: revive
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Executioner_BEW_EW2_3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_32_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase: {}
+              value:
+                isBuff: true
+                type: 2
+                defense:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 3
+        - key: Effect_MP_Executioner_BEW_EW2_33
+          on: revive
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Executioner_BEW_EW2_32
+                stack: 3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_33_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Executioner_BEW_EW2_34
+          on: revive
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Executioner_BEW_EW2_32
+                stack: 3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_34_1
+                type: 0
+                value: "999999"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 34
+                damage_minimize:
+                  base: 999999
+                  per: 0
+              overlap: 0
+          maxStack: 1
+        - key: Effect_MP_Executioner_BEW_EW2_35
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Executioner_BEW_EW2_33
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_35_1
+                type: 1
+                value: "0.400000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 50%
+                type: 1
+                attack:
+                  base: 40%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Executioner_BEW_EW2_36
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Executioner_BEW_EW2_33
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_36_1
+                type: 1
+                value: "0.400000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 50%
+                type: 3
+                defense:
+                  base: 40%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Executioner_BEW_EW2_37
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Executioner_BEW_EW2_33
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_37_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 60%
+                type: 7
+                accuracy:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Executioner_BEW_EW2_38
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Executioner_BEW_EW2_33
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_38_1
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 55%
+                type: 58
+                penetration:
+                  base: 30%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Executioner_BEW_EW2_39
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Executioner_BEW_EW2_3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_39_1
+                type: 1
+                value: "-0.600000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: -60%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Executioner_BEW_EW2_40
+          on: revive
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Executioner_BEW_EW2_32
+                stack: 3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_40_1
+                type: 0
+                value: "2"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 89
+                off:
+                  type: 2
+                  target: 1
+              overlap: 4
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_40_2
+                type: 1
+                value: "82"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 89
+                off:
+                  type: 82
+                  target: 1
+              overlap: 4
+          maxStack: 2
+        - key: Effect_MP_Executioner_BEW_EW2_45
+          on: wave
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Executioner_BEW_EW2_33
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_45_1
+                type: 0
+                value: "2"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 89
+                off:
+                  type: 2
+                  target: 1
+              overlap: 4
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_45_2
+                type: 1
+                value: "82"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 89
+                off:
+                  type: 82
+                  target: 1
+              overlap: 4
+          maxStack: 2
+        - key: Effect_MP_Executioner_BEW_EW2_46
+          on: damaged
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Executioner_BEW_EW2_33
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_46_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 100
+                off: 1
+              overlap: 0
+          maxStack: 1
+        - key: Effect_MP_Executioner_BEW_EW2_47
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Executioner_BEW_EW2_33
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_FIRERES_UP
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_47_1
+                type: 1
+                value: "0.600000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 30%
+                type: 15
+                resist:
+                  elem: fire
+                  value:
+                    base: 60%
+                    per: 0%
+              overlap: 4
+            - icon: BuffIcon_ICERES_UP
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_47_2
+                type: 1
+                value: "0.600000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 40%
+                type: 17
+                resist:
+                  elem: ice
+                  value:
+                    base: 60%
+                    per: 0%
+              overlap: 4
+            - icon: BuffIcon_LIGHTNINGRES_UP
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_47_3
+                type: 1
+                value: "0.600000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 45%
+                type: 19
+                resist:
+                  elem: lightning
+                  value:
+                    base: 60%
+                    per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Executioner_BEW_EW2_48
+          on: wave
+          if:
+            - hp>=:
+                - 100%
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_48_1
+                type: 0
+                value: "70000"
+                level: "0"
+              attr: 1
+              erase: {}
+              value:
+                isBuff: true
+                type: 82
+                revive:
+                  base: 70000
+                  per: 0
+              overlap: 0
+          maxStack: 1
+  - key: Skill_MP_Executioner_BEW_EW2_4
+    icon: P.WideSwordAttk
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Executioner_BEW_EW2_4
+          on: self_dead
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Executioner_BEW_EW2_3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_4_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 0%
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_Executioner_BEW_EW2_5
+    icon: P.TeamAtkDeBuff
+    passive: true
+    type: 0
+    target: enemy
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Executioner_BEW_EW2_5
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Executioner_BEW_EW2_33
+                attr: 6
+            - false
+          body:
+            - 0
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_5_1
+                type: 1
+                value: "-0.500000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 50%
+                type: 1
+                attack:
+                  base: -50%
+                  per: 0%
+              overlap: 4
+          maxStack: 2
+        - key: Effect_MP_Executioner_BEW_EW2_51
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Executioner_BEW_EW2_33
+                attr: 6
+            - false
+          body:
+            - 0
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_51_1
+                type: 1
+                value: "-0.500000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 50%
+                type: 3
+                defense:
+                  base: -50%
+                  per: 0%
+              overlap: 4
+          maxStack: 2
+        - key: Effect_MP_Executioner_BEW_EW2_52
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Executioner_BEW_EW2_33
+                attr: 6
+            - false
+          body:
+            - 0
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_52_1
+                type: 1
+                value: "-1"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 50%
+                type: 11
+                evade:
+                  base: -100%
+                  per: 0%
+              overlap: 4
+          maxStack: 2
+        - key: Effect_MP_Executioner_BEW_EW2_53
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Executioner_BEW_EW2_33
+                attr: 6
+            - false
+          body:
+            - 0
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_STUN
+              desc:
+                desc: Effect_MP_Executioner_BEW_EW2_53_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 15%
+                type: 22
+                stun: true
+              overlap: 4
+          maxStack: 1
+ai: AI_Executioner_EW_02

@@ -1,0 +1,250 @@
+uid: NightChickCM_TU5
+rarity: 3
+type: 0
+role: 2
+category: 0
+stat:
+  hp:
+    - 600
+    - 107.5
+  atk:
+    - 110
+    - 9
+  def:
+    - 40
+    - 2
+  spd: 4.2
+  cri: 10
+  acc: 250
+  eva: 80
+  res:
+    fire: 25
+    chill: 25
+    thunder: 25
+skills:
+  - key: Skill_MP_NightChickCM_N_1
+    icon: Missile
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.8
+      range: 4
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickCM_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_NightChickCM_N_1_1
+                type: 1
+                value: "-0.200000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -20%
+                  per: -1%
+              overlap: 4
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_NightChickCM_N_1_2
+                type: 1
+                value: "-0.100000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: -10%
+                  per: -1%
+              overlap: 4
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_NightChickCM_N_1_3
+                type: 0
+                value: "120"
+                level: "10"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 120
+                  per: 10
+              overlap: 3
+          maxStack: 0
+  - key: Skill_MP_NightChickCM_N_2
+    icon: MultiMissile
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.5
+      range: 2
+      ap: 6
+      grid: 0,1,0,0,1,0,0,1,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickCM_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_NightChickCM_N_1_1
+                type: 1
+                value: "-0.200000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -20%
+                  per: -1%
+              overlap: 4
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_NightChickCM_N_1_2
+                type: 1
+                value: "-0.100000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: -10%
+                  per: -1%
+              overlap: 4
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_NightChickCM_N_1_3
+                type: 0
+                value: "120"
+                level: "10"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 120
+                  per: 10
+              overlap: 3
+          maxStack: 0
+  - key: Skill_MP_NightChickCM_N_3
+    icon: P.TeamDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,1,0,1,1,1,0,1,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickCM_N_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_NightChickCM_N_3_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 100
+                off: 1
+              overlap: 0
+          maxStack: 0
+ai: AI_Jako_Normal_01

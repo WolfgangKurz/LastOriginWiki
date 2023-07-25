@@ -1,0 +1,1143 @@
+uid: Tyrant_Challenge2
+rarity: 5
+type: 1
+role: 1
+category: 0
+stat:
+  hp:
+    - 139800
+    - 1800
+  atk:
+    - 165
+    - 15
+  def:
+    - 1665
+    - 15
+  spd: 3.25
+  cri: 10
+  acc: 250
+  eva: 0
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_MP_Tyrant_N_1
+    icon: AssaultAttack
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 2
+      range: 2
+      ap: 9
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Tyrant_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DamageAmp_Opp
+              desc:
+                desc: Effect_MP_Tyrant_N_1_1
+                type: 1
+                value: "0.400000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 81
+                damage_by_hp:
+                  target: target
+                  damage:
+                    base: 40%
+                    per: 2%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Tyrant_N_11
+          on: attack_success
+          if:
+            - hp>=:
+                - 50%
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Tyrant_N_11_1
+                type: 1
+                value: "36"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 36
+                  target: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Tyrant_N_12
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Tyrant_N_12_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 999
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 3
+        - unknown: Effect_MP_Tyrant_N_18
+        - key: Effect_MP_Tyrant_N_24
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_Tyrant_N_24_1
+                type: 1
+                value: "-0.500000"
+                level: "-0.025000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -50%
+                  per: -2.5%
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_Tyrant_N_2
+    icon: WideFireShot
+    passive: false
+    type: 1
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.7
+      range: 5
+      ap: 10
+      grid: 6>1,0,0,1,1,1,1,0,0
+      target_ground: true
+      summon: null
+      use:
+        key: Effect_MP_Tyrant_N_12
+        count: 3
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Tyrant_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_FIRERES_DOWN
+              desc:
+                desc: Effect_MP_Tyrant_N_2_1
+                type: 1
+                value: "-0.150000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 15
+                resist:
+                  elem: fire
+                  value:
+                    base: -15%
+                    per: -1%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Tyrant_N_13
+          on: attack_success
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Tyrant_N_12
+                stack: 1
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_FIRERES_DOWN
+              desc:
+                desc: Effect_MP_Tyrant_N_13_1
+                type: 1
+                value: "-0.200000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 15
+                resist:
+                  elem: fire
+                  value:
+                    base: -20%
+                    per: -1%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Tyrant_N_14
+          on: attack_success
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Tyrant_N_12
+                stack: 2
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_FIRERES_DOWN
+              desc:
+                desc: Effect_MP_Tyrant_N_14_1
+                type: 1
+                value: "-0.250000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 15
+                resist:
+                  elem: fire
+                  value:
+                    base: -25%
+                    per: -1%
+              overlap: 4
+          maxStack: 1
+        - unknown: Effect_MP_Tyrant_N_18
+        - key: Effect_MP_Tyrant_N_15
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Tyrant_N_12
+                stack: 3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Tyrant_N_15_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 999
+                until:
+                  after: use_skill
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_Tyrant_N_3
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Tyrant_N_3
+          on: round
+          if:
+            - hp>=:
+                - 60%
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Tyrant_N_3_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 6
+                accuracy:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Tyrant_N_31
+          on: round
+          if:
+            - hpRange:
+                - 30%
+                - 59.99%
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Tyrant_N_31_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 6
+                accuracy:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Tyrant_N_32
+          on: round
+          if:
+            - hp<=:
+                - 29.99%
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Tyrant_N_32_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 6
+                accuracy:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Tyrant_N_34
+          on:
+            damaged: ice
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Tyrant_N_34_1
+                type: 1
+                value: "6"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 6
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Tyrant_N_34_2
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 6
+                accuracy:
+                  base: 0
+                  per: 0
+              overlap: 0
+          maxStack: 0
+        - key: Effect_MP_Tyrant_N_33
+          on:
+            damaged: fire
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Tyrant_N_33_1
+                type: 1
+                value: "6"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 6
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Tyrant_N_33_2
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 6
+                accuracy:
+                  base: 0
+                  per: 0
+              overlap: 0
+          maxStack: 0
+        - key: Effect_MP_Tyrant_N_35
+          on:
+            damaged: lightning
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Tyrant_N_35_1
+                type: 1
+                value: "6"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 6
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Tyrant_N_35_2
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 6
+                accuracy:
+                  base: 0
+                  per: 0
+              overlap: 0
+          maxStack: 0
+        - key: Effect_MP_Tyrant_N_36
+          on: round
+          if:
+            - unitCount:
+                filter: squad
+                type:
+                  - 0
+                  - 2
+                  - 1
+                count:
+                  - 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Tyrant_N_36_1
+                type: 1
+                value: "0.500000"
+                level: "0"
+              attr: 0
+              erase:
+                count: 3
+                trigger: damaged
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 50%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Tyrant_N_36_2
+                type: 1
+                value: "3"
+                level: "0"
+              attr: 0
+              erase:
+                count: 3
+                trigger: damaged
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 300%
+                  per: 0%
+              overlap: 0
+          maxStack: 0
+        - key: Effect_MP_Tyrant_N_37
+          on: damaged
+          if:
+            - on:
+                func: OR
+                select:
+                  - 74
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Tyrant_N_37_1
+                type: 0
+                value: "74"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 74
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Tyrant_N_4
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Tyrant_N_4
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_Tyrant_N_4_1
+                type: 1
+                value: "0.300000"
+                level: "0.040000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: 30%
+                  per: 4%
+              overlap: 4
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_MP_Tyrant_N_4_2
+                type: 1
+                value: "0.500000"
+                level: "0.030000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 50%
+                    per: 3%
+              overlap: 4
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_Tyrant_N_4_3
+                type: 1
+                value: "0.300000"
+                level: "0.030000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 36
+                damage_reduce:
+                  base: 30%
+                  per: 3%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Tyrant_N_19
+          on: attack
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Tyrant_N_19_1
+                type: 0
+                value: "76"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 76
+                  target: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Tyrant_N_20
+          on: attack
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_MARKING
+              desc:
+                desc: Effect_MP_Tyrant_N_20_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 87
+                attack_target: true
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Tyrant_N_21
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_MP_Tyrant_N_21_1
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 98
+                revive:
+                  base: 30%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Tyrant_N_22
+          on: revive
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Tyrant_N_22_1
+                type: 1
+                value: "3"
+                level: "0.020000"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 300%
+                  per: 2%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Tyrant_N_23
+          on: revive
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Tyrant_N_23_1
+                type: 1
+                value: "82"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 82
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Tyrant_N_25
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Tyrant_N_25_1
+                type: 0
+                value: "76"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 88
+                off:
+                  type: 76
+                  target: 0
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Tyrant_N_5
+    icon: P.SuicideBomb
+    passive: true
+    type: 0
+    target: enemy
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Tyrant_N_5
+          on: self_dead
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Tyrant_N_22
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_FireATK_UP
+              desc:
+                desc: Effect_MP_Tyrant_N_5_1
+                type: 1
+                value: "2"
+                level: "0.200000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 71
+                fixed_damage:
+                  elem: fire
+                  damage:
+                    base: 200%
+                    per: 20%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Tyrant_N_51
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_SEAL_SKILL
+              desc:
+                desc: Effect_MP_Tyrant_N_51_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 50%
+                type: 79
+                skill_disable: true
+              overlap: 1
+          maxStack: 0
+ai: AI_Tyrant_Challenge_02

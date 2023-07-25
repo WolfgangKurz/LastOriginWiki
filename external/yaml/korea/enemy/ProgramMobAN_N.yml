@@ -1,0 +1,386 @@
+uid: ProgramMobAN_N
+rarity: 5
+type: 1
+role: 1
+category: 0
+stat:
+  hp:
+    - 590
+    - 90.7
+  atk:
+    - 97
+    - 9.7
+  def:
+    - 150
+    - 7.5
+  spd: 3.55
+  cri: 12.5
+  acc: 175
+  eva: 10
+  res:
+    fire: 30
+    chill: 0
+    thunder: -20
+skills:
+  - key: Skill_MP_ProgramMobAN_N_1
+    icon: CannonShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.8
+      range: 5
+      ap: 10
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ProgramMobAN_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 1
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_ProgramMobAN_N_1_1
+                type: 1
+                value: "0.200000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 20%
+                  per: 1%
+              overlap: 0
+          maxStack: 0
+        - key: Effect_MP_ProgramMobAN_N_11
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_ProgramMobAN_N_11_1
+                type: 1
+                value: "0.250000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 25%
+                  per: 2%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_ProgramMobAN_N_2
+    icon: CannonShotWide
+    passive: false
+    type: 1
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 4
+      ap: 9
+      grid: 1,0,0,1,1,0,1,0,0
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ProgramMobAN_N_2
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 87
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_ProgramMobAN_N_2_1
+                type: 1
+                value: "36"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 36
+                  target: 0
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_ProgramMobAN_N_3
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ProgramMobAN_N_3
+          on: enemy_killed
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_ProgramMobAN_N_3_1
+                type: 1
+                value: "0.250000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                count: 1
+                trigger: attack
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 25%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_ProgramMobAN_N_12
+          on: enemy_killed
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_ProgramMobAN_N_12_1
+                type: 0
+                value: "2"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 2
+                  per: 0
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_ProgramMobAN_N_4
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ProgramMobAN_N_4
+          on: round
+          if:
+            - pos: 0
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_BARRIER_PIERCE
+              desc:
+                desc: Effect_MP_ProgramMobAN_N_4_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 94
+                penetration_force: true
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_ProgramMobAN_N_5
+    icon: P.TeamAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,1,0,0,0,0,0,1,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ProgramMobAN_N_5
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_ProgramMobAN_N_5_1
+                type: 1
+                value: "0.250000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 25%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_MP_ProgramMobAN_N_5_2
+                type: 1
+                value: "0.100000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 10%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+ai: AI_ProgramMobAN_Normal_01

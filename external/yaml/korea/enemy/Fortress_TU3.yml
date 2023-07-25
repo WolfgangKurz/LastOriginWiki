@@ -1,0 +1,275 @@
+uid: Fortress_TU3
+rarity: 3
+type: 1
+role: 0
+category: 0
+stat:
+  hp:
+    - 800
+    - 80
+  atk:
+    - 100
+    - 10
+  def:
+    - 80
+    - 6
+  spd: 3.5
+  cri: 12.5
+  acc: 130
+  eva: 0
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_MP_Fortress_N_1
+    icon: MGShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 3
+      ap: 5
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Fortress_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_MARKING
+              desc:
+                desc: Effect_MP_Fortress_N_1_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 87
+                attack_target: true
+              overlap: 1
+            - icon: BuffIcon_VULNERABLE
+              desc:
+                desc: Effect_MP_Fortress_N_1_2
+                type: 1
+                value: "0.100000"
+                level: "0.005000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 48
+                damage_increase:
+                  base: 10%
+                  per: 0.5%
+              overlap: 4
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_MP_Fortress_N_1_3
+                type: 1
+                value: "-0.300000"
+                level: "-0.015000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: -30%
+                  per: -1.5%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Fortress_N_2
+    icon: MGShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.5
+      range: 3
+      ap: 8
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Fortress_N_2
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 10
+                  - 11
+                  - 87
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Fortress_N_2_1
+                type: 1
+                value: "0.250000"
+                level: "0.012500"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 25%
+                  per: 1.25%
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_Fortress_N_3
+    icon: P.TeamDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 6>0,0,0,1,1,1,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Fortress_N_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DEF_Char
+              desc:
+                desc: Effect_MP_Fortress_N_3_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 76
+                guard: target
+              overlap: 4
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_Fortress_N_3_2
+                type: 1
+                value: "0.700000"
+                level: "0.035000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 3
+                defense:
+                  base: 70%
+                  per: 3.5%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Fortress_N_11
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_Fortress_N_11_1
+                type: 1
+                value: "0.700000"
+                level: "0.035000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: 70%
+                  per: 3.5%
+              overlap: 4
+          maxStack: 1
+ai: AI_MP_Fortress_Normal_01

@@ -1,0 +1,290 @@
+uid: FABigChick_Challenge1
+rarity: 3
+type: 1
+role: 1
+category: 0
+stat:
+  hp:
+    - 165000
+    - 1650
+  atk:
+    - 1350
+    - 39.4
+  def:
+    - 1732.5
+    - 55.69
+  spd: 3.5
+  cri: 0
+  acc: 860
+  eva: 0
+  res:
+    fire: 25
+    chill: 25
+    thunder: 25
+skills:
+  - key: Skill_MP_FABigChick_Challenge1_1
+    icon: MGShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.5
+      range: 4
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_FABigChick_Challenge1_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_FABigChick_Challenge1_1_1
+                type: 0
+                value: "0.750000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 70
+                fixed_damage:
+                  base: 75%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_FABigChick_Challenge1_2
+    icon: CannonShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.25
+      range: 2
+      ap: 7
+      grid: 0,1,0,0,1,0,0,1,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_FABigChick_Challenge1_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_FABigChick_Challenge1_2_1
+                type: 0
+                value: "36"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 36
+                  target: 0
+              overlap: 0
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_FABigChick_Challenge1_2_2
+                type: 0
+                value: "0.630000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 70
+                fixed_damage:
+                  base: 63%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_FABigChick_Challenge1_3
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_FABigChick_Challenge1_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_FABigChick_Challenge1_3_1
+                type: 1
+                value: "0.350000"
+                level: "0.017500"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 36
+                damage_reduce:
+                  base: 35%
+                  per: 1.75%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_FABigChick_Challenge1_31
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_COUNTER
+              desc:
+                desc: Effect_MP_FABigChick_Challenge1_31_1
+                type: 1
+                value: "1.500000"
+                level: "0"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 29
+                counter:
+                  base: 150%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_FABigChick_Challenge1_4
+    icon: P.Move
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_FABigChick_Challenge1_4
+          on: team_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_MARKING
+              desc:
+                desc: Effect_MP_FABigChick_Challenge1_4_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 87
+                attack_target: true
+              overlap: 4
+          maxStack: 1
+ai: AI_FABigChick_Challenge_01

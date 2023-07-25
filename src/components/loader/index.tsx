@@ -1,6 +1,9 @@
 import { FunctionalComponent, createElement } from "preact";
 import { useEffect, useState } from "preact/hooks";
 
+// import YAML from "yaml";
+import * as YAML from "@/external/yaml";
+
 import { DataRoot } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 import EntitySource from "@/libs/EntitySource";
@@ -64,13 +67,13 @@ function Load<T = any> (db: string, json: string): Promise<void> {
 			return "";
 		})();
 
-		const _postfix = _rootJson.includes(".json") ? _hash : `.json${_hash}`;
+		const _postfix = _rootJson.includes(".yml") ? _hash : `.yml${_hash}`;
 
 		const xhr = new XMLHttpRequest();
 		xhr.open("GET", `${DataRoot}/${_rootJson.substring(2)}${_postfix}`);
 		xhr.addEventListener("load", (e) => {
 			if (Math.floor(xhr.status / 100) === 2) {
-				const data = JSON.parse(xhr.responseText) as T;
+				const data = YAML.load(xhr.responseText, undefined) as T;
 				CachedJson[json] = data;
 				LoadQueue[json].forEach(c => c());
 				delete LoadQueue[json];

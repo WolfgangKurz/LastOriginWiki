@@ -17,8 +17,7 @@ export const Host = IsDev
 
 export const AssetsRoot = `${Host}/assets`;
 export const FlowRoot = `${Host}/flow`;
-export const DOTRoot = `${Host}/dot`;
-export const DataRoot = `${Host}/json`;
+export const DataRoot = `${Host}/yaml`;
 
 export const SortieCost: SortieCostType = {
 	[ACTOR_GRADE.B]: {

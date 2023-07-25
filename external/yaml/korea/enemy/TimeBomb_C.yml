@@ -1,0 +1,475 @@
+uid: TimeBomb_C
+rarity: 5
+type: 1
+role: 1
+category: 0
+stat:
+  hp:
+    - 139800
+    - 1800
+  atk:
+    - 165
+    - 15
+  def:
+    - 30000
+    - 15
+  spd: 1
+  cri: 10
+  acc: 250
+  eva: 0
+  res:
+    fire: 0
+    chill: 0
+    thunder: 500
+skills:
+  - key: Skill_MP_TimeBomb_N_1
+    icon: BombActive
+    passive: false
+    type: 1
+    target: enemy
+    delayed: false
+    buff:
+      rate: 2
+      range: 6
+      ap: 9
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_TimeBomb_N_1
+          on:
+            after: counter
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_FireDMG_DOT
+              desc:
+                desc: Effect_MP_TimeBomb_N_1_1
+                type: 1
+                value: "1000"
+                level: "100"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 66
+                fixed_damage:
+                  elem: fire
+                  damage:
+                    base: 1000
+                    per: 100
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_TimeBomb_N_2
+    icon: BombActive
+    passive: false
+    type: 1
+    target: enemy
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 2
+      range: 6
+      ap: 9
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_TimeBomb_N_2
+          on:
+            after: counter
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_FireDMG_DOT
+              desc:
+                desc: Effect_MP_TimeBomb_N_2_1
+                type: 1
+                value: "1000"
+                level: "100"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 66
+                fixed_damage:
+                  elem: fire
+                  damage:
+                    base: 1000
+                    per: 100
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_TimeBomb_N_3
+    icon: P.SuicideBomb
+    passive: true
+    type: 1
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_TimeBomb_N_3
+          on: self_dead
+          if:
+            - on:
+                target: self
+                func: UNFILLED
+                select:
+                  - 87
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_FireATK_UP
+              desc:
+                desc: Effect_MP_TimeBomb_N_3_1
+                type: 1
+                value: "100"
+                level: "0.200000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 71
+                fixed_damage:
+                  elem: fire
+                  damage:
+                    base: 10000%
+                    per: 20%
+              overlap: 4
+            - icon: BuffIcon_FireDMG_DOT
+              desc:
+                desc: Effect_MP_TimeBomb_N_3_2
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 66
+                fixed_damage:
+                  elem: fire
+                  damage:
+                    base: 1
+                    per: 0
+              overlap: 1
+          maxStack: 0
+        - key: Effect_MP_TimeBomb_N_31
+          on: self_dead
+          if:
+            - on:
+                target: self
+                func: UNFILLED
+                select:
+                  - 87
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_FireATK_UP
+              desc:
+                desc: Effect_MP_TimeBomb_N_31_1
+                type: 1
+                value: "100"
+                level: "0.200000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 71
+                fixed_damage:
+                  elem: fire
+                  damage:
+                    base: 10000%
+                    per: 20%
+              overlap: 4
+            - icon: BuffIcon_FireDMG_DOT
+              desc:
+                desc: Effect_MP_TimeBomb_N_31_2
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 66
+                fixed_damage:
+                  elem: fire
+                  damage:
+                    base: 1
+                    per: 0
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_TimeBomb_N_4
+    icon: P.SuicideBomb
+    passive: true
+    type: 1
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_TimeBomb_N_4
+          on:
+            damaged: fire
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_FireDMG_DOT
+              desc:
+                desc: Effect_MP_TimeBomb_N_4_1
+                type: 0
+                value: "9999999"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 66
+                fixed_damage:
+                  elem: fire
+                  damage:
+                    base: 9999999
+                    per: 0
+              overlap: 3
+          maxStack: 0
+        - key: Effect_MP_TimeBomb_N_14
+          on: self_dead
+          if:
+            - on:
+                func: OR
+                select:
+                  - 66
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_FireATK_UP
+              desc:
+                desc: Effect_MP_TimeBomb_N_14_1
+                type: 1
+                value: "100"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 71
+                fixed_damage:
+                  elem: fire
+                  damage:
+                    base: 10000%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_TimeBomb_N_42
+          on: self_dead
+          if:
+            - on:
+                func: OR
+                select:
+                  - 66
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_FireATK_UP
+              desc:
+                desc: Effect_MP_TimeBomb_N_42_1
+                type: 1
+                value: "100"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 71
+                fixed_damage:
+                  elem: fire
+                  damage:
+                    base: 10000%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_TimeBomb_N_5
+    icon: P.SuicideBomb
+    passive: true
+    type: 1
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_TimeBomb_N_5
+          on: attacked
+          if:
+            - on:
+                target: self
+                func: UNFILLED
+                select:
+                  - 87
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_COUNTER
+              desc:
+                desc: Effect_MP_TimeBomb_N_5_1
+                type: 1
+                value: "0.010000"
+                level: "0.001000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 30
+                _comment: STAGE_REFLECTFIRE_RATIO_DEFENDER
+              overlap: 4
+          maxStack: 0
+ai: AI_Tyrant_Challenge_02

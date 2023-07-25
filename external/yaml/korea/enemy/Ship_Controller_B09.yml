@@ -1,0 +1,1044 @@
+uid: Ship_Controller_B09
+rarity: 5
+type: 0
+role: 2
+category: 0
+stat:
+  hp:
+    - 999999
+    - 0
+  atk:
+    - 9999999
+    - 0
+  def:
+    - 0
+    - 0
+  spd: 0
+  cri: 0
+  acc: 999
+  eva: 0
+  res:
+    fire: 100
+    chill: 100
+    thunder: 100
+skills:
+  - key: Skill_MP_Ship_Controller_B09_1
+    icon: SuicideBomb
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 10
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 0
+      buffs:
+        - key: Effect_MP_Fire_Controller_B09_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Fire_Controller_B09_1_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Ship_Controller_B09_2
+    icon: SuicideBomb
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 10
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 0
+      buffs:
+        - key: Effect_MP_Fire_Controller_B09_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Fire_Controller_B09_2_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Ship_Controller_B09_3
+    icon: P.SuicideBomb
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Ship_Controller_B09_3
+          on: round
+          if:
+            - on:
+                target: self
+                func: UNFILLED
+                select:
+                  - Effect_MP_Ship_Controller_B09_31
+                  - Effect_MP_Ship_Controller_B09_32
+                  - Effect_MP_Ship_Controller_B09_33
+                  - Effect_MP_Ship_Controller_B09_34
+                  - Effect_MP_Ship_Controller_B09_35
+                  - Effect_MP_Ship_Controller_B09_36
+                  - Effect_MP_Ship_Controller_B09_37
+                  - Effect_MP_Ship_Controller_B09_38
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_3_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 100%
+                    per: 0%
+              overlap: 4
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_3_2
+                type: 0
+                value: "99999999"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 34
+                damage_minimize:
+                  base: 99999999
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Ship_Controller_B09_31
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 0
+                  - 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_31_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Ship_Controller_B09_32
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 2
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_32_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Ship_Controller_B09_33
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 3
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_33_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Ship_Controller_B09_34
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_34_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Ship_Controller_B09_35
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 5
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_35_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Ship_Controller_B09_36
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_36_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Ship_Controller_B09_37
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 7
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_37_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Ship_Controller_B09_38
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 8
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_38_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Ship_Controller_B09_39
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_39_1
+                type: 1
+                value: "10"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 21
+                ap_set:
+                  base: 10
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Ship_Controller_B09_301
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 8
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_301_1
+                type: 1
+                value: "10"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 21
+                ap_set:
+                  base: 10
+                  per: 0
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Ship_Controller_B09_4
+    icon: P.SuicideBomb
+    passive: true
+    type: 0
+    target: enemy
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Ship_Controller_B09_4
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 8
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_4_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 99
+                off: 0
+              overlap: 4
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_4_2
+                type: 1
+                value: "99999999"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 99999999
+                  per: 0
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_4_3
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 21
+                ap_set:
+                  base: 0
+                  per: 0
+              overlap: 4
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_4_4
+                type: 0
+                value: "82"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 82
+              overlap: 4
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_4_5
+                type: 0
+                value: "98"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 98
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Ship_Controller_B09_41
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 0
+                  - 1
+                  - 2
+                  - 3
+                  - 4
+                  - 5
+                  - 6
+                  - 7
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_41_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 99
+                off: 0
+              overlap: 4
+            - icon: ""
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_41_2
+                type: 0
+                value: Effect_MP_Ship_Controller_B09_4
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 97
+                off: Effect_MP_Ship_Controller_B09_4
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Ship_Controller_B09_5
+    icon: P.SuicideBomb
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Ship_Controller_B09_5
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 8
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_5_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 99
+                off: 0
+              overlap: 4
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_5_2
+                type: 1
+                value: "99999999"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 99999999
+                  per: 0
+              overlap: 4
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_5_3
+                type: 0
+                value: "82"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 82
+              overlap: 4
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_5_4
+                type: 0
+                value: "98"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 98
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Ship_Controller_B09_51
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 0
+                  - 1
+                  - 2
+                  - 3
+                  - 4
+                  - 5
+                  - 6
+                  - 7
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_51_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 99
+                off: 0
+              overlap: 4
+            - icon: ""
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_51_2
+                type: 0
+                value: Effect_MP_Ship_Controller_B09_5
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 97
+                off: Effect_MP_Ship_Controller_B09_5
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Ship_Controller_B09_52
+          on: team_dead
+          if:
+            - unitCount:
+                filter: squad
+                type:
+                  - 0
+                  - 2
+                  - 1
+                count:
+                  - 3
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_52_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 99
+                off: 0
+              overlap: 4
+            - icon: ""
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_52_2
+                type: 1
+                value: Effect_MP_Ship_Controller_B09_3
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 97
+                off: Effect_MP_Ship_Controller_B09_3
+              overlap: 4
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_52_3
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 70
+                fixed_damage:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Ship_Controller_B09_53
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 8
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Ship_Controller_B09_53_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 21
+                ap_set:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 0
+ai: AI_MP_Ship_Controller_01

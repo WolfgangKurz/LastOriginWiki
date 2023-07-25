@@ -1,0 +1,399 @@
+uid: ScoutEX_EW
+rarity: 4
+type: 2
+role: 2
+category: 0
+stat:
+  hp:
+    - 300
+    - 60
+  atk:
+    - 100
+    - 9
+  def:
+    - 0
+    - 0
+  spd: 4.6
+  cri: 10
+  acc: 180
+  eva: 120
+  res:
+    fire: 15
+    chill: 15
+    thunder: 15
+skills:
+  - key: Skill_MP_ScoutEX_EW_1
+    icon: Missile
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.2
+      range: 2
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ScoutEX_EW_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_ScoutEX_EW_1_1
+                type: 0
+                value: "-1"
+                level: "-0.100000"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: -1
+                  per: -0.1
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_ScoutEX_EW_2
+    icon: Scan
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ScoutEX_EW_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 1
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_ScoutEX_EW_2_1
+                type: 0
+                value: "5"
+                level: "0.250000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 5
+                  per: 0.25
+              overlap: 0
+            - icon: BuffIcon_RANGE_UP
+              desc:
+                desc: Effect_MP_ScoutEX_EW_2_2
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 55
+                range:
+                  base: 1
+                  per: 0
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_ScoutEX_EW_3
+    icon: P.TeamAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,1,0,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ScoutEX_EW_3
+          on: false
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_MP_ScoutEX_EW_3_1
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_ScoutEX_EW_3_2
+                type: 0
+                value: "-0.100000"
+                level: "0"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: -0.1
+                  per: 0
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_ScoutEX_EW_4
+    icon: P.TeamAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ScoutEX_EW_4
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_ScoutEX_EW_4_1
+                type: 1
+                value: "0.030000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 3%
+                  per: 0%
+              overlap: 3
+          maxStack: 0
+        - key: Effect_MP_ScoutEX_EW_11
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_ScoutEX_EW_4
+                stack: 5
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_ScoutEX_EW_11_1
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 3
+              erase:
+                count: 0
+                trigger:
+                  after: use_skill
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 30%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_ScoutEX_EW_12
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_ScoutEX_EW_4
+                stack: 10
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_MP_ScoutEX_EW_12_1
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 3
+              erase:
+                count: 0
+                trigger:
+                  after: use_skill
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 30%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_ScoutEX_EW_13
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_ScoutEX_EW_4
+                stack: 15
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_MP_ScoutEX_EW_13_1
+                type: 0
+                value: "0.300000"
+                level: "0"
+              attr: 3
+              erase:
+                count: 0
+                trigger:
+                  after: use_skill
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 30%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+ai: AI_Scout_Normal_01

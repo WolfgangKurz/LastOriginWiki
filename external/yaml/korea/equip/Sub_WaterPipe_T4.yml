@@ -1,0 +1,1153 @@
+uid: Sub_WaterPipe_T4
+type: 2
+key: WaterPipe
+rarity: 5
+craft: false
+upgrade:
+  enchant:
+    - res: 1250
+      item: []
+    - res: 1938
+      item: []
+    - res: 2625
+      item: []
+    - res: 3313
+      item: []
+    - res: 4000
+      item: []
+    - res: 4688
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 30
+        - item: RobotParts_CalculationControl
+          count: 40
+    - res: 5375
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 60
+        - item: RobotParts_CalculationControl
+          count: 80
+    - res: 6063
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 90
+        - item: RobotParts_CalculationControl
+          count: 120
+    - res: 6750
+      item:
+        - item: Consumable_EquipProPart_T2
+          count: 15
+        - item: RobotParts_HDCalculationControl
+          count: 20
+    - res: 7438
+      item:
+        - item: Consumable_EquipProPart_T2
+          count: 30
+        - item: RobotParts_HDCalculationControl
+          count: 40
+  upgrade: null
+limit:
+  - BR_Scarabya
+source:
+  - - 10-5B
+stats:
+  - - type: 15
+      resist:
+        elem: fire
+        value:
+          base: 20%
+          per: 0%
+    - type: 17
+      resist:
+        elem: ice
+        value:
+          base: 20%
+          per: 0%
+    - type: 19
+      resist:
+        elem: lightning
+        value:
+          base: 20%
+          per: 0%
+    - key: Effect_BUFF_WaterPipe_N_1
+      on: round
+      if:
+        - round:
+            operator: odd
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_1_1
+            type: 1
+            value: "0.050000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_CRITICAL_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_1_2
+            type: 1
+            value: "0.050000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 9
+            critical:
+              base: 5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_ACCURACY_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_1_3
+            type: 1
+            value: "0.050000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 7
+            accuracy:
+              base: 5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_Action_Number_Change_Up
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_1_4
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 127
+            act_count: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 15
+      resist:
+        elem: fire
+        value:
+          base: 22%
+          per: 0%
+    - type: 17
+      resist:
+        elem: ice
+        value:
+          base: 22%
+          per: 0%
+    - type: 19
+      resist:
+        elem: lightning
+        value:
+          base: 22%
+          per: 0%
+    - key: Effect_BUFF_WaterPipe_N_2
+      on: round
+      if:
+        - round:
+            operator: odd
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_2_1
+            type: 1
+            value: "0.055000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 5.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_CRITICAL_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_2_2
+            type: 1
+            value: "0.055000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 9
+            critical:
+              base: 5.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_ACCURACY_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_2_3
+            type: 1
+            value: "0.055000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 7
+            accuracy:
+              base: 5.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_Action_Number_Change_Up
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_2_4
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 127
+            act_count: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 15
+      resist:
+        elem: fire
+        value:
+          base: 24%
+          per: 0%
+    - type: 17
+      resist:
+        elem: ice
+        value:
+          base: 24%
+          per: 0%
+    - type: 19
+      resist:
+        elem: lightning
+        value:
+          base: 24%
+          per: 0%
+    - key: Effect_BUFF_WaterPipe_N_3
+      on: round
+      if:
+        - round:
+            operator: odd
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_3_1
+            type: 1
+            value: "0.060000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 6%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_CRITICAL_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_3_2
+            type: 1
+            value: "0.060000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 9
+            critical:
+              base: 6%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_ACCURACY_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_3_3
+            type: 1
+            value: "0.060000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 7
+            accuracy:
+              base: 6%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_Action_Number_Change_Up
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_3_4
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 127
+            act_count: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 15
+      resist:
+        elem: fire
+        value:
+          base: 26%
+          per: 0%
+    - type: 17
+      resist:
+        elem: ice
+        value:
+          base: 26%
+          per: 0%
+    - type: 19
+      resist:
+        elem: lightning
+        value:
+          base: 26%
+          per: 0%
+    - key: Effect_BUFF_WaterPipe_N_4
+      on: round
+      if:
+        - round:
+            operator: odd
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_4_1
+            type: 1
+            value: "0.065000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 6.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_CRITICAL_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_4_2
+            type: 1
+            value: "0.065000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 9
+            critical:
+              base: 6.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_ACCURACY_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_4_3
+            type: 1
+            value: "0.065000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 7
+            accuracy:
+              base: 6.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_Action_Number_Change_Up
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_4_4
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 127
+            act_count: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 15
+      resist:
+        elem: fire
+        value:
+          base: 28%
+          per: 0%
+    - type: 17
+      resist:
+        elem: ice
+        value:
+          base: 28%
+          per: 0%
+    - type: 19
+      resist:
+        elem: lightning
+        value:
+          base: 28%
+          per: 0%
+    - key: Effect_BUFF_WaterPipe_N_5
+      on: round
+      if:
+        - round:
+            operator: odd
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_5_1
+            type: 1
+            value: "0.070000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 7%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_CRITICAL_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_5_2
+            type: 1
+            value: "0.070000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 9
+            critical:
+              base: 7%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_ACCURACY_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_5_3
+            type: 1
+            value: "0.070000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 7
+            accuracy:
+              base: 7%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_Action_Number_Change_Up
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_5_4
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 127
+            act_count: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 15
+      resist:
+        elem: fire
+        value:
+          base: 30%
+          per: 0%
+    - type: 17
+      resist:
+        elem: ice
+        value:
+          base: 30%
+          per: 0%
+    - type: 19
+      resist:
+        elem: lightning
+        value:
+          base: 30%
+          per: 0%
+    - key: Effect_BUFF_WaterPipe_N_6
+      on: round
+      if:
+        - round:
+            operator: odd
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_6_1
+            type: 1
+            value: "0.075000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 7.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_CRITICAL_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_6_2
+            type: 1
+            value: "0.075000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 9
+            critical:
+              base: 7.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_ACCURACY_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_6_3
+            type: 1
+            value: "0.075000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 7
+            accuracy:
+              base: 7.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_Action_Number_Change_Up
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_6_4
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 127
+            act_count: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 15
+      resist:
+        elem: fire
+        value:
+          base: 32%
+          per: 0%
+    - type: 17
+      resist:
+        elem: ice
+        value:
+          base: 32%
+          per: 0%
+    - type: 19
+      resist:
+        elem: lightning
+        value:
+          base: 32%
+          per: 0%
+    - key: Effect_BUFF_WaterPipe_N_7
+      on: round
+      if:
+        - round:
+            operator: odd
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_7_1
+            type: 1
+            value: "0.080000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 8%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_CRITICAL_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_7_2
+            type: 1
+            value: "0.080000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 9
+            critical:
+              base: 8%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_ACCURACY_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_7_3
+            type: 1
+            value: "0.080000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 7
+            accuracy:
+              base: 8%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_Action_Number_Change_Up
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_7_4
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 127
+            act_count: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 15
+      resist:
+        elem: fire
+        value:
+          base: 34%
+          per: 0%
+    - type: 17
+      resist:
+        elem: ice
+        value:
+          base: 34%
+          per: 0%
+    - type: 19
+      resist:
+        elem: lightning
+        value:
+          base: 34%
+          per: 0%
+    - key: Effect_BUFF_WaterPipe_N_8
+      on: round
+      if:
+        - round:
+            operator: odd
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_8_1
+            type: 1
+            value: "0.085000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 8.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_CRITICAL_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_8_2
+            type: 1
+            value: "0.085000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 9
+            critical:
+              base: 8.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_ACCURACY_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_8_3
+            type: 1
+            value: "0.085000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 7
+            accuracy:
+              base: 8.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_Action_Number_Change_Up
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_8_4
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 127
+            act_count: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 15
+      resist:
+        elem: fire
+        value:
+          base: 36%
+          per: 0%
+    - type: 17
+      resist:
+        elem: ice
+        value:
+          base: 36%
+          per: 0%
+    - type: 19
+      resist:
+        elem: lightning
+        value:
+          base: 36%
+          per: 0%
+    - key: Effect_BUFF_WaterPipe_N_9
+      on: round
+      if:
+        - round:
+            operator: odd
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_9_1
+            type: 1
+            value: "0.090000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 9%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_CRITICAL_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_9_2
+            type: 1
+            value: "0.090000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 9
+            critical:
+              base: 9%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_ACCURACY_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_9_3
+            type: 1
+            value: "0.090000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 7
+            accuracy:
+              base: 9%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_Action_Number_Change_Up
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_9_4
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 127
+            act_count: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 15
+      resist:
+        elem: fire
+        value:
+          base: 38%
+          per: 0%
+    - type: 17
+      resist:
+        elem: ice
+        value:
+          base: 38%
+          per: 0%
+    - type: 19
+      resist:
+        elem: lightning
+        value:
+          base: 38%
+          per: 0%
+    - key: Effect_BUFF_WaterPipe_N_10
+      on: round
+      if:
+        - round:
+            operator: odd
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_10_1
+            type: 1
+            value: "0.095000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 9.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_CRITICAL_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_10_2
+            type: 1
+            value: "0.095000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 9
+            critical:
+              base: 9.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_ACCURACY_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_10_3
+            type: 1
+            value: "0.095000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 7
+            accuracy:
+              base: 9.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_Action_Number_Change_Up
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_10_4
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 127
+            act_count: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 15
+      resist:
+        elem: fire
+        value:
+          base: 40%
+          per: 0%
+    - type: 17
+      resist:
+        elem: ice
+        value:
+          base: 40%
+          per: 0%
+    - type: 19
+      resist:
+        elem: lightning
+        value:
+          base: 40%
+          per: 0%
+    - key: Effect_BUFF_WaterPipe_N_11
+      on: round
+      if:
+        - round:
+            operator: odd
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_11_1
+            type: 1
+            value: "0.100000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 10%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_CRITICAL_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_11_2
+            type: 1
+            value: "0.100000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 9
+            critical:
+              base: 10%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_ACCURACY_UP
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_11_3
+            type: 1
+            value: "0.100000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 2
+          value:
+            isBuff: true
+            type: 7
+            accuracy:
+              base: 10%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_Action_Number_Change_Up
+          desc:
+            desc: Effect_BUFF_WaterPipe_N_11_4
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 127
+            act_count: 1
+          overlap: 4
+      maxStack: 0

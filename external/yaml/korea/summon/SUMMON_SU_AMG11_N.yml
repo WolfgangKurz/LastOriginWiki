@@ -1,0 +1,141 @@
+uid: SUMMON_SU_AMG11_N
+icon: TbarIcon_SU_AMG11_N
+rarity: 2
+type: 0
+role: 1
+use: true
+summonType: 2
+pos: 0
+overlap: 1
+turn: 1
+deflv: 1
+lifecycle: 999
+shelter: false
+stat:
+  hp:
+    - 120
+    - 1308
+  atk:
+    - 50
+    - 842
+  def:
+    - 10
+    - 109
+  spd: 10
+  cri: 5
+  acc: 180
+  eva: -100
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_SU_AMG11_N_1
+    name: "1002700252"
+    icon: ARShot
+    desc: "1002703789"
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 4
+      ap: 7
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_SU_AMG11_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PROVOKE
+              desc:
+                desc: Effect_SU_AMG11_N_1_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 74
+                provoke: self
+              overlap: 1
+          maxStack: 0
+  - key: Skill_SU_AMG11_N_2
+    name: "1002700253"
+    icon: ARShot
+    desc: "1002703790"
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.4
+      range: 2
+      ap: 9
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_SU_AMG11_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PROVOKE
+              desc:
+                desc: Effect_SU_AMG11_N_2_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 74
+                provoke: self
+              overlap: 1
+          maxStack: 0
+ai: AI_AMG11_01

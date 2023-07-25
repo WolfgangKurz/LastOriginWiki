@@ -1,0 +1,800 @@
+uid: MarionnetteDM_BOSS_TU2
+rarity: 5
+type: 0
+role: 1
+category: 1
+stat:
+  hp:
+    - 288
+    - 68.75
+  atk:
+    - 26
+    - 2.6
+  def:
+    - 52
+    - 2.3375
+  spd: 3.65
+  cri: 5
+  acc: 250
+  eva: 5
+  res:
+    fire: 0
+    chill: 50
+    thunder: 25
+skills:
+  - key: Skill_MP_MarionnetteDM_BOSS_TU_1
+    icon: Shot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 5
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_MarionnetteDM_BOSS_TU_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DamageAmp_Opp
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_1_1
+                type: 1
+                value: "0.750000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 81
+                damage_by_hp:
+                  target: target
+                  damage:
+                    base: 75%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_MarionnetteDM_BOSS_TU_11
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 87
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_11_1
+                type: 1
+                value: "0.250000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 25%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_MarionnetteDM_BOSS_TU_12
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 87
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_12_1
+                type: 1
+                value: "-0.250000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: -25%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_MarionnetteDM_BOSS_TU_2
+    icon: Chargeshot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.1
+      range: 6
+      ap: 9
+      grid: 6>0,0,0,1,1,1,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_MarionnetteDM_BOSS_TU_2
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 87
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_2_1
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 30%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_MarionnetteDM_BOSS_TU_21
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 87
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_21_1
+                type: 0
+                value: "-3"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: -3
+                  per: 0
+              overlap: 3
+          maxStack: 0
+  - key: Skill_MP_MarionnetteDM_BOSS_TU_3
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_MarionnetteDM_BOSS_TU_3
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_3_1
+                type: 1
+                value: "0.200000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 36
+                damage_reduce:
+                  base: 20%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_3_2
+                type: 1
+                value: "0.200000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 20%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_MarionnetteDM_BOSS_TU_31
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_IMMUNITY_DEBUFF
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_31_1
+                type: 0
+                value: "22"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 101
+                debuff_immune: 22
+              overlap: 4
+            - icon: BuffIcon_IMMUNITY_DEBUFF
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_31_2
+                type: 0
+                value: "79"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 101
+                debuff_immune: 79
+              overlap: 4
+            - icon: BuffIcon_IMMUNITY_DEBUFF
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_31_3
+                type: 0
+                value: "55"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 101
+                debuff_immune: 55
+              overlap: 4
+            - icon: BuffIcon_IMMUNITY_DEBUFF
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_31_4
+                type: 0
+                value: "20"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 101
+                debuff_immune: 20
+              overlap: 4
+            - icon: BuffIcon_IMMUNITY_DEBUFF
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_31_5
+                type: 0
+                value: "21"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 101
+                debuff_immune: 21
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_MarionnetteDM_BOSS_TU_32
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_32_1
+                type: 1
+                value: "0.200000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 110
+                disperse:
+                  base: 20%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_MarionnetteAR_BOSS_TU_33
+          on: wave
+          if:
+            - in_squad:
+                - MOB_MP_MarionnetteHA_BOSS_TU
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_MP_MarionnetteAR_BOSS_TU_33_1
+                type: 1
+                value: "0.500000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 98
+                revive:
+                  base: 50%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_MarionnetteAR_BOSS_TU_34
+          on: round
+          if:
+            - in_squad:
+                - MOB_MP_MarionnetteHA_BOSS_TU
+            - round:
+                operator: <=
+                round:
+                  - 1
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_MP_MarionnetteAR_BOSS_TU_34_1
+                type: 1
+                value: "0.250000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 98
+                revive:
+                  base: 25%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_MarionnetteHW_BOSS_TU_33
+          on: wave
+          if:
+            - in_squad:
+                - MOB_MP_MarionnetteHA_BOSS_TU2
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_MP_MarionnetteHW_BOSS_TU_33_1
+                type: 1
+                value: "0.500000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 98
+                revive:
+                  base: 50%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_MarionnetteDM_BOSS_TU_4
+    icon: P.TeamAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>0,1,0,1,1,1,0,1,0
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_MarionnetteDM_BOSS_TU_4
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_4_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_MarionnetteDM_BOSS_TU_41
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_41_1
+                type: 1
+                value: "0.400000"
+                level: "0"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: 40%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_41_2
+                type: 1
+                value: "0.400000"
+                level: "0"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 40%
+                  per: 0%
+              overlap: 4
+          maxStack: 10
+  - key: Skill_MP_MarionnetteDM_BOSS_TU_5
+    icon: P.FormChange
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 6
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_MarionnetteDM_BOSS_TU_5
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_TROOPER_DMG_UP
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_5_1
+                type: 1
+                value: "0.450000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 60
+                damage_multiply:
+                  target: light
+                  value:
+                    base: 45%
+                    per: 0%
+              overlap: 4
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_5_2
+                type: 1
+                value: "0.500000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 50%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_MarionnetteDM_BOSS_TU_51
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ARMORED_DMG_UP
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_51_1
+                type: 1
+                value: "0.450000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 61
+                damage_multiply:
+                  target: heavy
+                  value:
+                    base: 45%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_MarionnetteDM_BOSS_TU_52
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_MOBILITY_DMG_UP
+              desc:
+                desc: Effect_MP_MarionnetteDM_BOSS_TU_52_1
+                type: 1
+                value: "0.450000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 62
+                damage_multiply:
+                  target: air
+                  value:
+                    base: 45%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+ai: AI_MP_MarionnetteHA_01

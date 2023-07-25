@@ -1,0 +1,254 @@
+uid: Seljuq_VT4
+rarity: 3
+type: 1
+role: 1
+category: 0
+stat:
+  hp:
+    - 950
+    - 108
+  atk:
+    - 125
+    - 12.5
+  def:
+    - 120
+    - 6
+  spd: 3.1
+  cri: 5
+  acc: 150
+  eva: 0
+  res:
+    fire: 0
+    chill: 0
+    thunder: -25
+skills:
+  - key: Skill_MP_Seljuq_N_1
+    icon: CannonShotWide
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 2
+      ap: 7
+      grid: 0,1,0,0,1,0,0,1,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Seljuq_N_1
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 78
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Seljuq_N_1_1
+                type: 1
+                value: "0.200000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 20%
+                  per: 1%
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_Seljuq_N_2
+    icon: CannonShotDelay
+    passive: false
+    type: 0
+    target: enemy
+    delayed: true
+    buff:
+      rate: 2
+      range: 6
+      ap: 10
+      grid: 0,0.5,0,0.5,1,0.5,0,0.5,0
+      target_ground: true
+      summon: null
+      use: null
+      enabled: false
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 0
+      buffs:
+        - key: Effect_MP_Seljuq_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Seljuq_N_2_1
+                type: 1
+                value: "0.200000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 20%
+                  per: 1%
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_Seljuq_N_3
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Seljuq_N_3
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_TROOPER_DMG_UP
+              desc:
+                desc: Effect_MP_Seljuq_N_3_1
+                type: 1
+                value: "0.150000"
+                level: "0.012500"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 60
+                damage_multiply:
+                  target: light
+                  value:
+                    base: 15%
+                    per: 1.25%
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_Seljuq_N_7
+    icon: CannonShotDelay
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    leastGrade: 2
+    buff:
+      rate: 2
+      range: 6
+      ap: 0
+      grid: 0,0.5,0,0.5,1,0.5,0,0.5,0
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Seljuq_N_7
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 87
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Seljuq_N_7_1
+                type: 1
+                value: "0.200000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 20%
+                  per: 1%
+              overlap: 0
+          maxStack: 0
+ai: AI_Mp_Mammoth_01

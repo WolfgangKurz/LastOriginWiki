@@ -1,0 +1,180 @@
+uid: AMG11_VT2
+rarity: 2
+type: 0
+role: 2
+category: 0
+stat:
+  hp:
+    - 175
+    - 30
+  atk:
+    - 55
+    - 5.75
+  def:
+    - 10
+    - 0.75
+  spd: 4
+  cri: 5
+  acc: 175
+  eva: 0
+  res:
+    fire: 0
+    chill: 0
+    thunder: -25
+skills:
+  - key: Skill_MP_AMG11_N_1
+    icon: ARShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 5
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_AMG11_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_MARKING
+              desc:
+                desc: Effect_MP_AMG11_N_1_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 87
+                attack_target: true
+              overlap: 1
+            - icon: BuffIcon_VULNERABLE
+              desc:
+                desc: Effect_MP_AMG11_N_1_2
+                type: 1
+                value: "0.200000"
+                level: "0.010000"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 48
+                damage_increase:
+                  base: 20%
+                  per: 1%
+              overlap: 1
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_MP_AMG11_N_1_3
+                type: 1
+                value: "-0.350000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: -35%
+                  per: -1%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_AMG11_N_2
+    icon: SelfAtkBuff
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 999
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_AMG11_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 1
+          buffs:
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_MP_AMG11_N_2_1
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_AMG11_N_2_2
+                type: 1
+                value: "0.150000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 15%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+ai: AI_MP_AntiAirBuffer_01

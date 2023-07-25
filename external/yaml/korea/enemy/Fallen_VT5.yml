@@ -1,0 +1,155 @@
+uid: Fallen_VT5
+rarity: 2
+type: 0
+role: 2
+category: 0
+stat:
+  hp:
+    - 950
+    - 100
+  atk:
+    - 90
+    - 7.5
+  def:
+    - 80
+    - 5.75
+  spd: 3.95
+  cri: 5
+  acc: 240
+  eva: 32.5
+  res:
+    fire: 0
+    chill: 0
+    thunder: -25
+skills:
+  - key: Skill_MP_Fallen_N_1
+    icon: MGShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 4
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Fallen_N_1
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 2
+                  - 3
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Fallen_N_1_1
+                type: 1
+                value: "0.300000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 30%
+                  per: 1%
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_Fallen_N_2
+    icon: SelfDefDeBuff
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.25
+      range: 4
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Fallen_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_Fallen_N_2_1
+                type: 1
+                value: "-0.200000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -20%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Fallen_N_2_2
+                type: 0
+                value: "36"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 36
+                  target: 0
+              overlap: 0
+          maxStack: 0
+ai: AI_Mp_Fallen_01

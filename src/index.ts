@@ -14,13 +14,13 @@ Extend();
 
 {
 	const verCheck = () => {
-		const buildtimeJson = `!/buildtime.json?_=${Date.now()}`;
-		JsonLoaderCore("!", buildtimeJson)
+		const buildtimeYaml = `!/buildtime.yml?_=${Date.now()}`;
+		JsonLoaderCore("!", buildtimeYaml)
 			.then(() => {
-				const latestBuildNo = GetJson<number>(buildtimeJson);
+				const latestBuildNo = GetJson<number>(buildtimeYaml);
 				const currentBuildNo = buildtime.build;
 
-				console.log(latestBuildNo, currentBuildNo);
+				console.log("server:" + latestBuildNo, "client:" + currentBuildNo);
 				if (latestBuildNo !== currentBuildNo)
 					Store.requireReload.value = true;
 			});

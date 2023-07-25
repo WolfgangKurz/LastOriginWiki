@@ -1,0 +1,340 @@
+uid: UnderWatcher_EW2
+rarity: 5
+type: 1
+role: 0
+category: 1
+stat:
+  hp:
+    - 70000
+    - 450
+  atk:
+    - 500
+    - 35
+  def:
+    - 5000
+    - 30
+  spd: 4
+  cri: 20
+  acc: 200
+  eva: 0
+  res:
+    fire: 90
+    chill: 90
+    thunder: 90
+skills:
+  - key: Skill_MP_UnderWatcher_EW2_1
+    icon: WideBeamShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.6
+      range: 5
+      ap: 3
+      grid: 1,0,0,1,1,0,1,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 150
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_UnderWatcher_EW2_1
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 87
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_UnderWatcher_EW2_1_1
+                type: 1
+                value: "0.300000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 30%
+                  per: 1%
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_UnderWatcher_EW2_2
+    icon: BeamShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 2
+      range: 8
+      ap: 10
+      grid: 6>0,0,0,1,1,1,0,0,0
+      target_ground: false
+      summon: null
+      use:
+        key: Effect_MP_UnderWatcherGenerator_EW2_1
+        count: 5
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_UnderWatcher_EW2_2
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 87
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_UnderWatcher_EW2_2_1
+                type: 1
+                value: "1"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 100%
+                  per: 1%
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_UnderWatcher_EW2_3
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_UnderWatcher_EW2_3
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_UnderWatcherGenerator_EW2_1
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_UnderWatcher_EW2_3_1
+                type: 1
+                value: "5"
+                level: "0"
+              attr: 3
+              erase:
+                until: attack
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: 500%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_MP_UnderWatcher_EW2_3_2
+                type: 1
+                value: "0.750000"
+                level: "0"
+              attr: 3
+              erase:
+                until: attack
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 75%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_UnderWatcher_EW2_4
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_UnderWatcher_EW2_4
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_UnderWatcherGenerator_EW2_1
+                stack: 4
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_BARRIER_PIERCE
+              desc:
+                desc: Effect_MP_UnderWatcher_EW2_4_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 94
+                penetration_force: true
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_UnderWatcher_EW2_5
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_UnderWatcher_EW2_5
+          on:
+            hp<=:
+              - 30%
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_UnderWatcherGenerator_EW2_1
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_MP_UnderWatcher_EW2_5_1
+                type: 0
+                value: "50000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 82
+                revive:
+                  base: 50000
+                  per: 0
+              overlap: 0
+          maxStack: 0
+ai: AI_MP_UnderWatcher_EW2_01

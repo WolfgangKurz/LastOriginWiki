@@ -1,0 +1,272 @@
+uid: UnderWatcherArm_B05
+rarity: 5
+type: 1
+role: 0
+category: 1
+stat:
+  hp:
+    - 25650
+    - 150
+  atk:
+    - 160
+    - 10
+  def:
+    - 793
+    - 3
+  spd: 4.15
+  cri: 15
+  acc: 180
+  eva: 0
+  res:
+    fire: 25
+    chill: 50
+    thunder: -25
+skills:
+  - key: Skill_MP_UnderWatcherArm_N_1
+    icon: MeleeAttack
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 8
+      ap: 3
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_UnderWatcherArm_N_1
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 87
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_UnderWatcherArm_N_1_1
+                type: 1
+                value: "0.200000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 20%
+                  per: 1%
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_UnderWatcherArm_N_2
+    icon: WideBeamShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 8
+      ap: 6
+      grid: 0,1,0,1,1,1,0,1,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 200
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_UnderWatcherArm_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_UnderWatcherArm_N_2_1
+                type: 1
+                value: "1"
+                level: "0.025000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 100%
+                  per: 2.5%
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_UnderWatcherArm_N_3
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_UnderWatcherArm_N_3
+          on: attack_success
+          if:
+            - on:
+                func: OR
+                select:
+                  - 6
+                  - 7
+                attr: 0
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_UnderWatcherArm_N_3_1
+                type: 1
+                value: "1"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 100%
+                  per: 1%
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_UnderWatcherArm_N_4
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_UnderWatcherArm_N_4
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_UnderWatcherGenerator_N_1
+                stack: 5
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_COUNTER
+              desc:
+                desc: Effect_MP_UnderWatcherArm_N_4_1
+                type: 1
+                value: "1"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 29
+                counter:
+                  base: 100%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_UnderWatcherArm_N_4_2
+                type: 1
+                value: "1.200000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 120%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+ai: AI_UnderWatcherArm_01

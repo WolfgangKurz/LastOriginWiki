@@ -1,0 +1,230 @@
+uid: IntercepterAR_TU4
+rarity: 4
+type: 2
+role: 1
+category: 0
+stat:
+  hp:
+    - 17300
+    - 180
+  atk:
+    - 327
+    - 16.5
+  def:
+    - 5.8
+    - 0.5
+  spd: 4.46
+  cri: 0
+  acc: 200
+  eva: 120
+  res:
+    fire: 25
+    chill: 25
+    thunder: 25
+skills:
+  - key: Skill_MP_IntercepterAR_N_1
+    icon: MGShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 2
+      range: 6
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_IntercepterAR_N_1
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs: []
+          maxStack: 0
+  - key: Skill_MP_IntercepterAR_N_2
+    icon: CruiseMissile
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 2
+      range: 6
+      ap: 5
+      grid: 0,1,0,0,1,0,0,1,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_IntercepterAR_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs: []
+          maxStack: 0
+  - key: Skill_MP_IntercepterAR_N_3
+    icon: P.Snipe
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_IntercepterAR_N_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_IntercepterAR_N_3_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 109
+                less_target:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_IntercepterAR_N_4
+    icon: P.Scan
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_IntercepterAR_N_4
+          on:
+            fail: passive
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_IntercepterAR_N_4_1
+                type: 0
+                value: "5"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 5
+                  per: 0
+              overlap: 0
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_IntercepterAR_N_4_2
+                type: 1
+                value: "2"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 200%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+ai: AI_MP_IntercepterAR_01

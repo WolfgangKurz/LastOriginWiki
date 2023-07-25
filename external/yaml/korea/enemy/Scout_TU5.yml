@@ -1,0 +1,151 @@
+uid: Scout_TU5
+rarity: 2
+type: 2
+role: 2
+category: 0
+stat:
+  hp:
+    - 250
+    - 42.5
+  atk:
+    - 70
+    - 6.5
+  def:
+    - 0
+    - 0
+  spd: 4.5
+  cri: 10
+  acc: 170
+  eva: 90
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_MP_Scout_N_1
+    icon: Missile
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.2
+      range: 2
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Scout_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_Scout_N_1_1
+                type: 0
+                value: "-1"
+                level: "-0.050000"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 40%
+                type: 20
+                ap:
+                  base: -1
+                  per: -0.05
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_Scout_N_2
+    icon: SelfSpdBuff
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 8
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 999
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Scout_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 1
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Scout_N_2_1
+                type: 0
+                value: "4"
+                level: "0.200000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 4
+                  per: 0.2
+              overlap: 0
+            - icon: BuffIcon_RANGE_UP
+              desc:
+                desc: Effect_MP_Scout_N_2_2
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 55
+                range:
+                  base: 1
+                  per: 0
+              overlap: 1
+          maxStack: 0
+ai: AI_Scout_Normal_01

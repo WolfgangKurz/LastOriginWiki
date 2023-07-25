@@ -1,0 +1,167 @@
+uid: PuppHead_TU4
+rarity: 2
+type: 0
+role: 2
+category: 0
+stat:
+  hp:
+    - 450
+    - 67.5
+  atk:
+    - 70
+    - 6
+  def:
+    - 45
+    - 2.25
+  spd: 4
+  cri: 5
+  acc: 200
+  eva: 60
+  res:
+    fire: 0
+    chill: 0
+    thunder: 50
+skills:
+  - key: Skill_MP_PuppHead_N_1
+    icon: Shock
+    passive: false
+    type: 3
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.75
+      range: 2
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_PuppHead_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_PuppHead_N_1_1
+                type: 0
+                value: "-1"
+                level: "-0.050000"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 50%
+                type: 20
+                ap:
+                  base: -1
+                  per: -0.05
+              overlap: 0
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_MP_PuppHead_N_1_2
+                type: 1
+                value: "-0.300000"
+                level: "-0.015000"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                chance: 75%
+                type: 11
+                evade:
+                  base: -30%
+                  per: -1.5%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_PuppHead_N_2
+    icon: Hang
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.01
+      range: 4
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_PuppHead_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_Pull
+              desc:
+                desc: Effect_MP_PuppHead_N_2_1
+                type: 0
+                value: "2"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 53
+                position:
+                  type: pull
+                  range:
+                    base: 2
+                    per: 0
+              overlap: 0
+            - icon: BuffIcon_SNARE
+              desc:
+                desc: Effect_MP_PuppHead_N_2_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 78
+                immovable: true
+              overlap: 1
+          maxStack: 0
+ai: AI_Hvst_Normal_02

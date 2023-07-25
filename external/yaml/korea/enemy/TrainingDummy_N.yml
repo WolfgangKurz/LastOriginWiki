@@ -1,0 +1,188 @@
+uid: TrainingDummy_N
+rarity: 3
+type: 0
+role: 2
+category: 0
+stat:
+  hp:
+    - 1000
+    - 200
+  atk:
+    - 0
+    - 0
+  def:
+    - 0
+    - 0
+  spd: 3
+  cri: 0
+  acc: 0
+  eva: 0
+  res:
+    fire: 25
+    chill: 25
+    thunder: 25
+skills:
+  - key: Skill_MP_TrainingDummy_N_1
+    icon: ShieldWall
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 2
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_TrainingDummy_N_1
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_TrainingDummy_N_1_1
+                type: 0
+                value: "500"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 2
+                defense:
+                  base: 500
+                  per: 0
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_TrainingDummy_N_2
+    icon: Move
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 2
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_TrainingDummy_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_MP_TrainingDummy_N_2_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 100%
+                  per: 0%
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_TrainingDummy_N_3
+    icon: P.Shock
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_TrainingDummy_N_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_TrainingDummy_N_3_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 100
+                off: 1
+              overlap: 4
+          maxStack: 0
+ai: AI_Jako_Special_01

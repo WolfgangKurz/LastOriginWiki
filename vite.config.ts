@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
-import util from "util";
+
+import YAML from "yaml";
 
 import { globSync } from "glob";
 import hash from "hash.js";
@@ -8,6 +9,7 @@ import deepmerge from "deepmerge";
 
 import { defineConfig, loadEnv } from "vite";
 import preact from "@preact/preset-vite";
+import pluginWasm from "vite-plugin-wasm";
 
 console.log("building...");
 export default ({ mode }) => {
@@ -20,7 +22,7 @@ export default ({ mode }) => {
 	(() => {
 		console.log("buildtime updating...");
 		const dest = path.resolve(__dirname, "src", "buildtime.ts");
-		const destJson = path.resolve(__dirname, "external", "json", "buildtime.json");
+		const destYaml = path.resolve(__dirname, "external", "yaml", "buildtime.yml");
 
 		const code = fs.readFileSync(dest, { encoding: "utf-8" })
 			.toString()
@@ -40,27 +42,27 @@ export default ({ mode }) => {
 			"utf-8",
 		);
 		fs.writeFileSync(
-			destJson,
-			JSON.stringify(buildNo),
+			destYaml,
+			YAML.stringify(buildNo),
 			"utf-8",
 		);
 	})();
 
-	// json hash
+	// yaml hash
 	if (isProd) {
 		(() => {
-			console.log("json hash updating...");
+			console.log("yaml hash updating...");
 			interface DBHashType {
 				[K: string]: string | DBHashType;
 			}
 
-			const jsonDir = path.resolve(__dirname, "external", "json");
+			const jsonDir = path.resolve(__dirname, "external", "yaml");
 			const list = (() => {
-				const baseDir = path.resolve(__dirname, "external", "json");
-				const globPath = path.join(baseDir, "**", "*.json");
+				const baseDir = path.resolve(__dirname, "external", "yaml");
+				const globPath = path.join(baseDir, "**", "*.yaml");
 
 				return globSync(globPath.replace(/\\/g, "/"))
-					.filter(f => !f.endsWith("/buildtime.json"))
+					.filter(f => !f.endsWith("/buildtime.yaml"))
 					.map(f => {
 						const rel = path.relative(baseDir, f).replace(/\\/g, "/");
 						return `!/${rel.substring(0, rel.length - 5)}`;
@@ -70,7 +72,7 @@ export default ({ mode }) => {
 			let outs: DBHashType = {};
 			list.forEach(item => {
 				const _item = item.substring(2);
-				const file = path.resolve(jsonDir, `${_item}.json`);
+				const file = path.resolve(jsonDir, `${_item}.yaml`);
 				if (!fs.existsSync(file)) return;
 
 				const tree = ((value: string) => {
@@ -247,7 +249,10 @@ export default ({ mode }) => {
 				},
 			},
 		},
-		plugins: [preact()],
+		plugins: [
+			preact(),
+			pluginWasm(),
+		],
 		resolve: {
 			alias: {
 				"@/": `${path.resolve(__dirname, "src")}/`,

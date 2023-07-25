@@ -1,0 +1,343 @@
+uid: Tarantula_EW2
+rarity: 4
+type: 0
+role: 1
+category: 0
+stat:
+  hp:
+    - 2000
+    - 80
+  atk:
+    - 200
+    - 14.5
+  def:
+    - 0
+    - 0
+  spd: 4.6
+  cri: 0
+  acc: 400
+  eva: 150
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_MP_Tarantula_EW2_1
+    icon: MeleeAttack
+    passive: false
+    type: 1
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.5
+      range: 4
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Tarantula_EW2_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_FIRERES_DOWN
+              desc:
+                desc: Effect_MP_Tarantula_EW2_1_1
+                type: 1
+                value: "-0.100000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 9
+              value:
+                isBuff: true
+                chance: 50%
+                type: 15
+                resist:
+                  elem: fire
+                  value:
+                    base: -10%
+                    per: 0%
+              overlap: 4
+          maxStack: 3
+  - key: Skill_MP_Tarantula_EW2_2
+    icon: SelfDefBuff
+    passive: false
+    type: 1
+    target: enemy
+    delayed: false
+    buff:
+      rate: 5
+      range: 3
+      ap: 10
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Tarantula_EW2_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_BARRIER_PIERCE
+              desc:
+                desc: Effect_MP_Tarantula_EW2_2_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 94
+                penetration_force: true
+              overlap: 1
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Tarantula_EW2_2_2
+                type: 1
+                value: "9999.990000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 70
+                fixed_damage:
+                  base: 999999%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Tarantula_EW2_3
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Tarantula_EW2_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_Tarantula_EW2_3_1
+                type: 1
+                value: "-1"
+                level: "0"
+              attr: 1
+              erase: {}
+              value:
+                isBuff: true
+                chance: 30%
+                type: 2
+                defense:
+                  base: -1
+                  per: 0
+              overlap: 4
+          maxStack: 3
+        - key: Effect_MP_Tarantula_EW2_31
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Tarantula_EW2_3
+                stack: 3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Tarantula_EW2_31_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 1
+                  per: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Tarantula_EW2_32
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Tarantula_EW2_31
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Tarantula_EW2_32_1
+                type: 1
+                value: "2"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 89
+                off:
+                  type: 2
+                  target: 1
+              overlap: 0
+          maxStack: 1
+  - key: Skill_MP_Tarantula_EW2_4
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Tarantula_EW2_4
+          on:
+            damaged: ice
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Tarantula_EW2_3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Tarantula_EW2_4_1
+                type: 1
+                value: "2"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 89
+                off:
+                  type: 2
+                  target: 1
+              overlap: 0
+          maxStack: 0
+ai: AI_Mp_Tarantula_EW_02

@@ -1,0 +1,446 @@
+uid: ExpGenerator2_TU2
+rarity: 5
+type: 1
+role: 0
+category: 0
+stat:
+  hp:
+    - 10800
+    - 145.7
+  atk:
+    - 56
+    - 5.6
+  def:
+    - 240
+    - 12
+  spd: 3.8
+  cri: 0
+  acc: 999
+  eva: 0
+  res:
+    fire: 25
+    chill: 25
+    thunder: 25
+skills:
+  - key: Skill_MP_ExpGenerator2_N_1
+    icon: TeamAtkBuff
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 6
+      grid: 6>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ExpGenerator2_N_1
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_ExpGenerator2_N_1_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 100
+                off: 1
+              overlap: 0
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_ExpGenerator2_N_1_2
+                type: 1
+                value: "0.500000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 50%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_DOWN
+              desc:
+                desc: Effect_MP_ExpGenerator2_N_1_3
+                type: 1
+                value: "-0.350000"
+                level: "-0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: -35%
+                  per: -1%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_ExpGenerator2_N_2
+    icon: TeamDefBuff
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 9
+      grid: 6>1,1,1,1,1,0,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ExpGenerator2_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_ExpGenerator2_N_2_1
+                type: 0
+                value: "2"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 2
+                  per: 0
+              overlap: 0
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_ExpGenerator2_N_2_2
+                type: 1
+                value: "0.330000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 36
+                damage_reduce:
+                  base: 33%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_MP_ExpGenerator2_N_2_3
+                type: 0
+                value: "2500"
+                level: "1"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 82
+                revive:
+                  base: 2500
+                  per: 1
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_ExpGenerator2_N_3
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ExpGenerator2_N_3
+          on: round
+          if:
+            - hp>=:
+                - 51%
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DAMAGE_ABSORB
+              desc:
+                desc: Effect_MP_ExpGenerator2_N_3_1
+                type: 0
+                value: "7500"
+                level: "1"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 38
+                barrier:
+                  base: 7500
+                  per: 1
+              overlap: 1
+          maxStack: 0
+        - key: Effect_MP_ExpGenerator2_N_11
+          on: round
+          if:
+            - hp<=:
+                - 50%
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DAMAGE_ABSORB
+              desc:
+                desc: Effect_MP_ExpGenerator2_N_11_1
+                type: 0
+                value: "15000"
+                level: "1"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 38
+                barrier:
+                  base: 15000
+                  per: 1
+              overlap: 1
+          maxStack: 0
+        - key: Effect_MP_ExpGenerator2_N_12
+          on: team_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_ExpGenerator2_N_12_1
+                type: 0
+                value: "6"
+                level: "0.250000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 70
+                fixed_damage:
+                  base: 600%
+                  per: 25%
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_ExpGenerator2_N_4
+    icon: P.TeamDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ExpGenerator2_N_4
+          on: attacked
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_ExpGenerator2_N_4_1
+                type: 1
+                value: "0.150000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 36
+                damage_reduce:
+                  base: 15%
+                  per: 1%
+              overlap: 4
+          maxStack: 2
+  - key: Skill_MP_ExpGenerator2_N_5
+    icon: P.TeamDefDeBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 6>1,1,1,1,1,0,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ExpGenerator2_N_5
+          on: self_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_STUN
+              desc:
+                desc: Effect_MP_ExpGenerator2_N_5_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 22
+                stun: true
+              overlap: 1
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_ExpGenerator2_N_5_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 99
+                off: 0
+              overlap: 4
+          maxStack: 0
+ai: AI_ExpGenerator_Normal_01

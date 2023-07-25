@@ -1,0 +1,173 @@
+uid: LegionMine_TU7
+rarity: 3
+type: 0
+role: 2
+category: 0
+stat:
+  hp:
+    - 224.64
+    - 48.384
+  atk:
+    - 98.8569
+    - 11.979
+  def:
+    - 22.8131
+    - 0.7604
+  spd: 4.15
+  cri: 5
+  acc: 230
+  eva: 27
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_MP_LegionMine_N_1
+    icon: Shot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 4
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LegionMine_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_LegionMine_N_1_1
+                type: 1
+                value: "-0.300000"
+                level: "-0.015000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -30%
+                  per: -1.5%
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_LegionMine_N_2
+    icon: Missile
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 15
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: true
+      summon:
+        char: SUMMON_SU_TestSAutoP_N
+        lv: 1
+      use: null
+      enabled: false
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 0
+      buffs:
+        - key: Effect_MP_LegionMine_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs: []
+          maxStack: 0
+  - key: Skill_MP_LegionMine_N_3
+    icon: P.Scan
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,1,0,1,0,1,0,1,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LegionMine_N_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_MP_LegionMine_N_3_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+ai: AI_TEST_Normal_01

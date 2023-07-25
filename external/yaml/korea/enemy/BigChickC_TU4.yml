@@ -1,0 +1,385 @@
+uid: BigChickC_TU4
+rarity: 4
+type: 1
+role: 1
+category: 0
+stat:
+  hp:
+    - 10000
+    - 175
+  atk:
+    - 250
+    - 17.5
+  def:
+    - 300
+    - 9
+  spd: 3.9
+  cri: 15
+  acc: 275
+  eva: 0
+  res:
+    fire: 100
+    chill: -25
+    thunder: 50
+skills:
+  - key: Skill_MP_BigChickC_N_1
+    icon: WideFireShot
+    passive: false
+    type: 1
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.5
+      range: 2
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_BigChickC_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_FireDMG_DOT
+              desc:
+                desc: Effect_MP_BigChickC_N_1_1
+                type: 0
+                value: "400"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 66
+                fixed_damage:
+                  elem: fire
+                  damage:
+                    base: 400
+                    per: 0
+              overlap: 3
+          maxStack: 0
+        - key: Effect_MP_BigChickC_N_11
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_TROOPER_DMG_UP
+              desc:
+                desc: Effect_MP_BigChickC_N_11_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 60
+                damage_multiply:
+                  target: light
+                  value:
+                    base: 100%
+                    per: 0%
+              overlap: 4
+            - icon: BuffIcon_ARMORED_DMG_UP
+              desc:
+                desc: Effect_MP_BigChickC_N_11_2
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 61
+                damage_multiply:
+                  target: heavy
+                  value:
+                    base: 100%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_BigChickC_N_2
+    icon: CannonShotDelay
+    passive: false
+    type: 1
+    target: enemy
+    delayed: true
+    buff:
+      rate: 1.5
+      range: 5
+      ap: 8
+      grid: 0,1,0,1,1,1,0,1,0
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 0
+      buffs:
+        - key: Effect_MP_BigChickC_N_2
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 78
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_FireATK_UP
+              desc:
+                desc: Effect_MP_BigChickC_N_2_1
+                type: 1
+                value: "2"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 84
+                damage_add:
+                  elem: fire
+                  damage:
+                    base: 200%
+                    per: 0%
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_BigChickC_N_3
+    icon: P.SuicideBomb
+    passive: true
+    type: 1
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,1,0,1,1,1,0,1,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_BigChickC_N_3
+          on: self_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_FireATK_UP
+              desc:
+                desc: Effect_MP_BigChickC_N_3_1
+                type: 1
+                value: "4"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 71
+                fixed_damage:
+                  elem: fire
+                  damage:
+                    base: 400%
+                    per: 0%
+              overlap: 3
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_BigChickC_N_3_2
+                type: 0
+                value: "36"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 36
+                  target: 0
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_BigChickC_N_4
+    icon: P.TeamAtkDeBuff
+    passive: true
+    type: 1
+    target: enemy
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_BigChickC_N_4
+          on: damaged
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_ARMORED_DMG_DOWN
+              desc:
+                desc: Effect_MP_BigChickC_N_4_1
+                type: 1
+                value: "-0.300000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 61
+                damage_multiply:
+                  target: heavy
+                  value:
+                    base: -30%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_BigChickC_N_7
+    icon: CannonShotDelay
+    passive: false
+    type: 1
+    target: enemy
+    delayed: false
+    leastGrade: 2
+    buff:
+      rate: 1.5
+      range: 5
+      ap: 0
+      grid: 0,1,0,1,1,1,0,1,0
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_BigChickC_N_7
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 78
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_FireATK_UP
+              desc:
+                desc: Effect_MP_BigChickC_N_7_1
+                type: 1
+                value: "2"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 84
+                damage_add:
+                  elem: fire
+                  damage:
+                    base: 200%
+                    per: 0%
+              overlap: 0
+          maxStack: 0
+ai: AI_MP_BigChickC_01

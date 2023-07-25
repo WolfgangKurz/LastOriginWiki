@@ -1,0 +1,756 @@
+uid: System_Circulation_T4
+type: 1
+key: Circulation
+rarity: 5
+craft: false
+upgrade:
+  enchant:
+    - res: 5000
+      item: []
+    - res: 7750
+      item: []
+    - res: 10500
+      item: []
+    - res: 13250
+      item: []
+    - res: 16000
+      item: []
+    - res: 18750
+      item:
+        - item: Special_Module
+          count: 100
+        - item: RobotParts_HDCalculationControl
+          count: 150
+        - item: Consumable_EWMPMetal
+          count: 400
+    - res: 21500
+      item:
+        - item: Special_Module
+          count: 200
+        - item: RobotParts_HDCalculationControl
+          count: 200
+        - item: Consumable_EWMPMetal
+          count: 475
+    - res: 24250
+      item:
+        - item: Special_Module
+          count: 300
+        - item: RobotParts_HDCalculationControl
+          count: 250
+        - item: Consumable_EWMPMetal
+          count: 550
+    - res: 27000
+      item:
+        - item: Special_Module
+          count: 400
+        - item: RobotParts_HDCalculationControl
+          count: 300
+        - item: Consumable_EWMPMetal
+          count: 625
+    - res: 29750
+      item:
+        - item: Special_Module
+          count: 500
+        - item: RobotParts_HDCalculationControl
+          count: 350
+        - item: Consumable_EWMPMetal
+          count: 700
+  upgrade: null
+limit:
+  - Defender
+source:
+  - - RefinedAlterium:1500
+stats:
+  - - type: 4
+      hp:
+        base: 150
+        per: 0
+    - type: 2
+      defense:
+        base: 100
+        per: 0
+    - key: Effect_BUFF_WRII_N_1
+      on: attacked
+      if:
+        - test: higher
+          target: target
+          operand: DEF
+          ratio: 0
+          than: DEF
+        - on:
+            target: target
+            select:
+              - Effect_BUFF_WRII_N_2
+              - Effect_BUFF_WRII_N_3
+              - Effect_BUFF_WRII_N_4
+              - Effect_BUFF_WRII_N_5
+              - Effect_BUFF_WRII_N_6
+              - Effect_BUFF_WRII_N_7
+              - Effect_BUFF_WRII_N_8
+              - Effect_BUFF_WRII_N_9
+              - Effect_BUFF_WRII_N_10
+              - Effect_BUFF_WRII_N_11
+            stack: 0
+            func: UNFILLED
+            attr: 6
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 4
+      buffs:
+        - icon: BuffIcon_ATK_DOWN
+          desc:
+            desc: Effect_BUFF_WRII_N_1_1
+            type: 1
+            value: "-0.100000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+            until: attack
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: -10%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 165
+        per: 0
+    - type: 2
+      defense:
+        base: 110
+        per: 0
+    - key: Effect_BUFF_WRII_N_2
+      on: attacked
+      if:
+        - test: higher
+          target: target
+          operand: DEF
+          ratio: 0
+          than: DEF
+        - on:
+            target: target
+            select:
+              - Effect_BUFF_WRII_N_1
+              - Effect_BUFF_WRII_N_3
+              - Effect_BUFF_WRII_N_4
+              - Effect_BUFF_WRII_N_5
+              - Effect_BUFF_WRII_N_6
+              - Effect_BUFF_WRII_N_7
+              - Effect_BUFF_WRII_N_8
+              - Effect_BUFF_WRII_N_9
+              - Effect_BUFF_WRII_N_10
+              - Effect_BUFF_WRII_N_11
+            stack: 0
+            func: UNFILLED
+            attr: 6
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 4
+      buffs:
+        - icon: BuffIcon_ATK_DOWN
+          desc:
+            desc: Effect_BUFF_WRII_N_2_1
+            type: 1
+            value: "-0.130000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+            until: attack
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: -13%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 180
+        per: 0
+    - type: 2
+      defense:
+        base: 120
+        per: 0
+    - key: Effect_BUFF_WRII_N_3
+      on: attacked
+      if:
+        - test: higher
+          target: target
+          operand: DEF
+          ratio: 0
+          than: DEF
+        - on:
+            target: target
+            select:
+              - Effect_BUFF_WRII_N_1
+              - Effect_BUFF_WRII_N_2
+              - Effect_BUFF_WRII_N_4
+              - Effect_BUFF_WRII_N_5
+              - Effect_BUFF_WRII_N_6
+              - Effect_BUFF_WRII_N_7
+              - Effect_BUFF_WRII_N_8
+              - Effect_BUFF_WRII_N_9
+              - Effect_BUFF_WRII_N_10
+              - Effect_BUFF_WRII_N_11
+            stack: 0
+            func: UNFILLED
+            attr: 6
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 4
+      buffs:
+        - icon: BuffIcon_ATK_DOWN
+          desc:
+            desc: Effect_BUFF_WRII_N_3_1
+            type: 1
+            value: "-0.160000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+            until: attack
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: -16%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 195
+        per: 0
+    - type: 2
+      defense:
+        base: 130
+        per: 0
+    - key: Effect_BUFF_WRII_N_4
+      on: attacked
+      if:
+        - test: higher
+          target: target
+          operand: DEF
+          ratio: 0
+          than: DEF
+        - on:
+            target: target
+            select:
+              - Effect_BUFF_WRII_N_1
+              - Effect_BUFF_WRII_N_2
+              - Effect_BUFF_WRII_N_3
+              - Effect_BUFF_WRII_N_5
+              - Effect_BUFF_WRII_N_6
+              - Effect_BUFF_WRII_N_7
+              - Effect_BUFF_WRII_N_8
+              - Effect_BUFF_WRII_N_9
+              - Effect_BUFF_WRII_N_10
+              - Effect_BUFF_WRII_N_11
+            stack: 0
+            func: UNFILLED
+            attr: 6
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 4
+      buffs:
+        - icon: BuffIcon_ATK_DOWN
+          desc:
+            desc: Effect_BUFF_WRII_N_4_1
+            type: 1
+            value: "-0.190000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+            until: attack
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: -19%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 210
+        per: 0
+    - type: 2
+      defense:
+        base: 140
+        per: 0
+    - key: Effect_BUFF_WRII_N_5
+      on: attacked
+      if:
+        - test: higher
+          target: target
+          operand: DEF
+          ratio: 0
+          than: DEF
+        - on:
+            target: target
+            select:
+              - Effect_BUFF_WRII_N_1
+              - Effect_BUFF_WRII_N_2
+              - Effect_BUFF_WRII_N_3
+              - Effect_BUFF_WRII_N_4
+              - Effect_BUFF_WRII_N_6
+              - Effect_BUFF_WRII_N_7
+              - Effect_BUFF_WRII_N_8
+              - Effect_BUFF_WRII_N_9
+              - Effect_BUFF_WRII_N_10
+              - Effect_BUFF_WRII_N_11
+            stack: 0
+            func: UNFILLED
+            attr: 6
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 4
+      buffs:
+        - icon: BuffIcon_ATK_DOWN
+          desc:
+            desc: Effect_BUFF_WRII_N_5_1
+            type: 1
+            value: "-0.220000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+            until: attack
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: -22%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 225
+        per: 0
+    - type: 2
+      defense:
+        base: 150
+        per: 0
+    - key: Effect_BUFF_WRII_N_6
+      on: attacked
+      if:
+        - test: higher
+          target: target
+          operand: DEF
+          ratio: 0
+          than: DEF
+        - on:
+            target: target
+            select:
+              - Effect_BUFF_WRII_N_1
+              - Effect_BUFF_WRII_N_2
+              - Effect_BUFF_WRII_N_3
+              - Effect_BUFF_WRII_N_4
+              - Effect_BUFF_WRII_N_5
+              - Effect_BUFF_WRII_N_7
+              - Effect_BUFF_WRII_N_8
+              - Effect_BUFF_WRII_N_9
+              - Effect_BUFF_WRII_N_10
+              - Effect_BUFF_WRII_N_11
+            stack: 0
+            func: UNFILLED
+            attr: 6
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 4
+      buffs:
+        - icon: BuffIcon_ATK_DOWN
+          desc:
+            desc: Effect_BUFF_WRII_N_6_1
+            type: 1
+            value: "-0.250000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+            until: attack
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: -25%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 240
+        per: 0
+    - type: 2
+      defense:
+        base: 160
+        per: 0
+    - key: Effect_BUFF_WRII_N_7
+      on: attacked
+      if:
+        - test: higher
+          target: target
+          operand: DEF
+          ratio: 0
+          than: DEF
+        - on:
+            target: target
+            select:
+              - Effect_BUFF_WRII_N_1
+              - Effect_BUFF_WRII_N_2
+              - Effect_BUFF_WRII_N_3
+              - Effect_BUFF_WRII_N_4
+              - Effect_BUFF_WRII_N_5
+              - Effect_BUFF_WRII_N_6
+              - Effect_BUFF_WRII_N_8
+              - Effect_BUFF_WRII_N_9
+              - Effect_BUFF_WRII_N_10
+              - Effect_BUFF_WRII_N_11
+            stack: 0
+            func: UNFILLED
+            attr: 6
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 4
+      buffs:
+        - icon: BuffIcon_ATK_DOWN
+          desc:
+            desc: Effect_BUFF_WRII_N_7_1
+            type: 1
+            value: "-0.280000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+            until: attack
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: -28%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 255
+        per: 0
+    - type: 2
+      defense:
+        base: 170
+        per: 0
+    - key: Effect_BUFF_WRII_N_8
+      on: attacked
+      if:
+        - test: higher
+          target: target
+          operand: DEF
+          ratio: 0
+          than: DEF
+        - on:
+            target: target
+            select:
+              - Effect_BUFF_WRII_N_1
+              - Effect_BUFF_WRII_N_2
+              - Effect_BUFF_WRII_N_3
+              - Effect_BUFF_WRII_N_4
+              - Effect_BUFF_WRII_N_5
+              - Effect_BUFF_WRII_N_6
+              - Effect_BUFF_WRII_N_7
+              - Effect_BUFF_WRII_N_9
+              - Effect_BUFF_WRII_N_10
+              - Effect_BUFF_WRII_N_11
+            stack: 0
+            func: UNFILLED
+            attr: 6
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 4
+      buffs:
+        - icon: BuffIcon_ATK_DOWN
+          desc:
+            desc: Effect_BUFF_WRII_N_8_1
+            type: 1
+            value: "-0.310000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+            until: attack
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: -31%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 270
+        per: 0
+    - type: 2
+      defense:
+        base: 180
+        per: 0
+    - key: Effect_BUFF_WRII_N_9
+      on: attacked
+      if:
+        - test: higher
+          target: target
+          operand: DEF
+          ratio: 0
+          than: DEF
+        - on:
+            target: target
+            select:
+              - Effect_BUFF_WRII_N_1
+              - Effect_BUFF_WRII_N_2
+              - Effect_BUFF_WRII_N_3
+              - Effect_BUFF_WRII_N_4
+              - Effect_BUFF_WRII_N_5
+              - Effect_BUFF_WRII_N_6
+              - Effect_BUFF_WRII_N_7
+              - Effect_BUFF_WRII_N_8
+              - Effect_BUFF_WRII_N_10
+              - Effect_BUFF_WRII_N_11
+            stack: 0
+            func: UNFILLED
+            attr: 6
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 4
+      buffs:
+        - icon: BuffIcon_ATK_DOWN
+          desc:
+            desc: Effect_BUFF_WRII_N_9_1
+            type: 1
+            value: "-0.340000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+            until: attack
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: -34%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 285
+        per: 0
+    - type: 2
+      defense:
+        base: 190
+        per: 0
+    - key: Effect_BUFF_WRII_N_10
+      on: attacked
+      if:
+        - test: higher
+          target: target
+          operand: DEF
+          ratio: 0
+          than: DEF
+        - on:
+            target: target
+            select:
+              - Effect_BUFF_WRII_N_1
+              - Effect_BUFF_WRII_N_2
+              - Effect_BUFF_WRII_N_3
+              - Effect_BUFF_WRII_N_4
+              - Effect_BUFF_WRII_N_5
+              - Effect_BUFF_WRII_N_6
+              - Effect_BUFF_WRII_N_7
+              - Effect_BUFF_WRII_N_8
+              - Effect_BUFF_WRII_N_9
+              - Effect_BUFF_WRII_N_11
+            stack: 0
+            func: UNFILLED
+            attr: 6
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 4
+      buffs:
+        - icon: BuffIcon_ATK_DOWN
+          desc:
+            desc: Effect_BUFF_WRII_N_10_1
+            type: 1
+            value: "-0.370000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+            until: attack
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: -37%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 300
+        per: 0
+    - type: 2
+      defense:
+        base: 200
+        per: 0
+    - key: Effect_BUFF_WRII_N_11
+      on: attacked
+      if:
+        - test: higher
+          target: target
+          operand: DEF
+          ratio: 0
+          than: DEF
+        - on:
+            target: target
+            select:
+              - Effect_BUFF_WRII_N_1
+              - Effect_BUFF_WRII_N_2
+              - Effect_BUFF_WRII_N_3
+              - Effect_BUFF_WRII_N_4
+              - Effect_BUFF_WRII_N_5
+              - Effect_BUFF_WRII_N_6
+              - Effect_BUFF_WRII_N_7
+              - Effect_BUFF_WRII_N_8
+              - Effect_BUFF_WRII_N_9
+              - Effect_BUFF_WRII_N_10
+            stack: 0
+            func: UNFILLED
+            attr: 6
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 4
+      buffs:
+        - icon: BuffIcon_ATK_DOWN
+          desc:
+            desc: Effect_BUFF_WRII_N_11_1
+            type: 1
+            value: "-0.400000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+            until: attack
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: -40%
+              per: 0%
+          overlap: 4
+      maxStack: 1

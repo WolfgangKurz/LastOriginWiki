@@ -1,0 +1,259 @@
+uid: BigChickM_TU
+rarity: 4
+type: 1
+role: 1
+category: 0
+stat:
+  hp:
+    - 1250
+    - 77.5
+  atk:
+    - 75
+    - 9
+  def:
+    - 45
+    - 2.5
+  spd: 3.25
+  cri: 10
+  acc: 110
+  eva: 0
+  res:
+    fire: 25
+    chill: 25
+    thunder: 25
+skills:
+  - key: Skill_MP_BigChickM_N_1
+    icon: CruiseMissile
+    passive: false
+    type: 0
+    target: enemy
+    delayed: true
+    buff:
+      rate: 3
+      range: 5
+      ap: 7
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 0
+      buffs:
+        - key: Effect_MP_BigChickM_N_1
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 78
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_BigChickM_N_1_1
+                type: 1
+                value: "0.300000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 30%
+                  per: 1%
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_BigChickM_N_2
+    icon: MultiMissile
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.5
+      range: 1
+      ap: 3
+      grid: 1,0,0,1,1,0,1,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 200
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_BigChickM_N_2
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 78
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_BigChickM_N_2_1
+                type: 1
+                value: "0.300000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 30%
+                  per: 1%
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_BigChickM_N_3
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_BigChickM_N_3
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_MOBILITY_DMG_UP
+              desc:
+                desc: Effect_MP_BigChickM_N_3_1
+                type: 1
+                value: "0.300000"
+                level: "0.015000"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 62
+                damage_multiply:
+                  target: air
+                  value:
+                    base: 30%
+                    per: 1.5%
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_BigChickM_N_7
+    icon: CruiseMissile
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    leastGrade: 2
+    buff:
+      rate: 3
+      range: 5
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_BigChickM_N_7
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 78
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_BigChickM_N_7_1
+                type: 1
+                value: "0.300000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 30%
+                  per: 1%
+              overlap: 0
+          maxStack: 0
+ai: AI_BigChickM_01

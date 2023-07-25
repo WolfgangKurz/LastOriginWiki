@@ -1,0 +1,177 @@
+uid: BigChickSP_TU3
+rarity: 3
+type: 1
+role: 1
+category: 0
+stat:
+  hp:
+    - 25000
+    - 130
+  atk:
+    - 200
+    - 18.5
+  def:
+    - 80
+    - 8
+  spd: 3.5
+  cri: 5
+  acc: 195
+  eva: 5
+  res:
+    fire: 25
+    chill: 25
+    thunder: 25
+skills:
+  - key: Skill_MP_BigChickSP_N_1
+    icon: Shot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.5
+      range: 3
+      ap: 6
+      grid: 0,1,0,0,1,0,0,1,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: false
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_BigChickSP_N_1
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_Pull
+              desc:
+                desc: Effect_MP_BigChickSP_N_1_1
+                type: 0
+                value: "2"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 53
+                position:
+                  type: pull
+                  range:
+                    base: 2
+                    per: 0
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_BigChickSP_N_2
+    icon: Shot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 1
+      ap: 8
+      grid: 1,0,0,1,1,0,1,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: false
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 0
+      buffs:
+        - key: Effect_MP_BigChickSP_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs: []
+          maxStack: 0
+  - key: Skill_MP_BigChickSP_N_3
+    icon: P.Shock
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_BigChickSP_N_3
+          on: round
+          if:
+            - hp>=:
+                - 50%
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_BigChickSP_N_3_1
+                type: 1
+                value: "0.350000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 35%
+                  per: 2%
+              overlap: 4
+          maxStack: 0
+ai: AI_Ncc_Normal_01

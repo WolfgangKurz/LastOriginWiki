@@ -1,0 +1,278 @@
+uid: Centurion_EV1
+rarity: 3
+type: 0
+role: 1
+category: 0
+stat:
+  hp:
+    - 17560
+    - 180
+  atk:
+    - 27
+    - 4.5
+  def:
+    - 485
+    - 5
+  spd: 4.25
+  cri: 3
+  acc: 375
+  eva: 60
+  res:
+    fire: 35
+    chill: 35
+    thunder: 35
+skills:
+  - key: Skill_MP_Centurion_N_1
+    icon: GrenadeAttack_2
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 4
+      ap: 6
+      grid: 0,0,0,1,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Centurion_N_1
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 78
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Centurion_N_1_1
+                type: 1
+                value: "0.300000"
+                level: "0.015000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 30%
+                  per: 1.5%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Centurion_N_2
+    icon: Snipe
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.1
+      range: 5
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Centurion_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_VULNERABLE
+              desc:
+                desc: Effect_MP_Centurion_N_2_1
+                type: 1
+                value: "0.250000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 48
+                damage_increase:
+                  base: 25%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_MARKING
+              desc:
+                desc: Effect_MP_Centurion_N_2_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 87
+                attack_target: true
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_Centurion_N_3
+    icon: P.DefCounter
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Centurion_N_3
+          on: team_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_COUNTER
+              desc:
+                desc: Effect_MP_Centurion_N_3_1
+                type: 1
+                value: "0.660000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 29
+                counter:
+                  base: 66%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Centurion_N_11
+          on: team_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Centurion_N_11_1
+                type: 1
+                value: "0.200000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 20%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Centurion_N_12
+          on: team_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_MP_Centurion_N_12_1
+                type: 1
+                value: "0.100000"
+                level: "0.005000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 10%
+                  per: 0.5%
+              overlap: 4
+          maxStack: 0
+ai: AI_Mp_CenturionEv_Normal_01

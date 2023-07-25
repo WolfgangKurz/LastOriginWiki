@@ -1,0 +1,839 @@
+uid: Sub_AntiBarrier_T4
+type: 2
+key: AntiBarrier
+rarity: 5
+craft: 10560
+upgrade:
+  enchant:
+    - res: 1000
+      item: []
+    - res: 1550
+      item: []
+    - res: 2100
+      item: []
+    - res: 2650
+      item: []
+    - res: 3200
+      item: []
+    - res: 3750
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 20
+        - item: RobotParts_CalculationControl
+          count: 30
+    - res: 4300
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 40
+        - item: RobotParts_CalculationControl
+          count: 60
+    - res: 4850
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 60
+        - item: RobotParts_CalculationControl
+          count: 90
+    - res: 5400
+      item:
+        - item: Consumable_EquipProPart_T2
+          count: 10
+        - item: RobotParts_HDCalculationControl
+          count: 15
+    - res: 5950
+      item:
+        - item: Consumable_EquipProPart_T2
+          count: 20
+        - item: RobotParts_HDCalculationControl
+          count: 30
+  upgrade: null
+limit: null
+source:
+  - - 8-2B
+  - - Ev:Ev3:Ev-4Ex
+  - - Ev:Ev5:Ev-7Ex
+  - - Ev:Ev8:Ev1-1Ex
+  - - Ev:Ev18:EV1-2Ex
+  - - Ev:Ev19:EV1-7B
+  - - Exc:20:3
+stats:
+  - - key: Effect_BUFF_EConvert_N_10
+      on: round
+      if:
+        - on:
+            func: OR
+            select:
+              - 38
+            attr: 0
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_10_1
+            type: 1
+            value: "0.075000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 7.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_10_2
+            type: 1
+            value: "0.075000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: 7.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_BUFF
+          desc:
+            desc: Effect_BUFF_EConvert_N_10_3
+            type: 0
+            value: "38"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 88
+            off:
+              type: 38
+              target: 0
+          overlap: 0
+      maxStack: 0
+  - - key: Effect_BUFF_EConvert_N_11
+      on: round
+      if:
+        - on:
+            func: OR
+            select:
+              - 38
+            attr: 0
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_11_1
+            type: 1
+            value: "0.080000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 8%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_11_2
+            type: 1
+            value: "0.080000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: 8%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_BUFF
+          desc:
+            desc: Effect_BUFF_EConvert_N_11_3
+            type: 0
+            value: "38"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 88
+            off:
+              type: 38
+              target: 0
+          overlap: 0
+      maxStack: 0
+  - - key: Effect_BUFF_EConvert_N_12
+      on: round
+      if:
+        - on:
+            func: OR
+            select:
+              - 38
+            attr: 0
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_12_1
+            type: 1
+            value: "0.085000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 8.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_12_2
+            type: 1
+            value: "0.085000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: 8.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_BUFF
+          desc:
+            desc: Effect_BUFF_EConvert_N_12_3
+            type: 0
+            value: "38"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 88
+            off:
+              type: 38
+              target: 0
+          overlap: 0
+      maxStack: 0
+  - - key: Effect_BUFF_EConvert_N_13
+      on: round
+      if:
+        - on:
+            func: OR
+            select:
+              - 38
+            attr: 0
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_13_1
+            type: 1
+            value: "0.090000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 9%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_13_2
+            type: 1
+            value: "0.090000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: 9%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_BUFF
+          desc:
+            desc: Effect_BUFF_EConvert_N_13_3
+            type: 0
+            value: "38"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 88
+            off:
+              type: 38
+              target: 0
+          overlap: 0
+      maxStack: 0
+  - - key: Effect_BUFF_EConvert_N_14
+      on: round
+      if:
+        - on:
+            func: OR
+            select:
+              - 38
+            attr: 0
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_14_1
+            type: 1
+            value: "0.095000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 9.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_14_2
+            type: 1
+            value: "0.095000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: 9.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_BUFF
+          desc:
+            desc: Effect_BUFF_EConvert_N_14_3
+            type: 0
+            value: "38"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 88
+            off:
+              type: 38
+              target: 0
+          overlap: 0
+      maxStack: 0
+  - - key: Effect_BUFF_EConvert_N_15
+      on: round
+      if:
+        - on:
+            func: OR
+            select:
+              - 38
+            attr: 0
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_15_1
+            type: 1
+            value: "0.100000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 10%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_15_2
+            type: 1
+            value: "0.100000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: 10%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_BUFF
+          desc:
+            desc: Effect_BUFF_EConvert_N_15_3
+            type: 0
+            value: "38"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 88
+            off:
+              type: 38
+              target: 0
+          overlap: 0
+      maxStack: 0
+  - - key: Effect_BUFF_EConvert_N_16
+      on: round
+      if:
+        - on:
+            func: OR
+            select:
+              - 38
+            attr: 0
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_16_1
+            type: 1
+            value: "0.120000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 12%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_16_2
+            type: 1
+            value: "0.120000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: 12%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_BUFF
+          desc:
+            desc: Effect_BUFF_EConvert_N_16_3
+            type: 0
+            value: "38"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 88
+            off:
+              type: 38
+              target: 0
+          overlap: 0
+      maxStack: 0
+  - - key: Effect_BUFF_EConvert_N_17
+      on: round
+      if:
+        - on:
+            func: OR
+            select:
+              - 38
+            attr: 0
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_17_1
+            type: 1
+            value: "0.140000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 14%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_17_2
+            type: 1
+            value: "0.140000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: 14%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_BUFF
+          desc:
+            desc: Effect_BUFF_EConvert_N_17_3
+            type: 0
+            value: "38"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 88
+            off:
+              type: 38
+              target: 0
+          overlap: 0
+      maxStack: 0
+  - - key: Effect_BUFF_EConvert_N_18
+      on: round
+      if:
+        - on:
+            func: OR
+            select:
+              - 38
+            attr: 0
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_18_1
+            type: 1
+            value: "0.160000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 16%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_18_2
+            type: 1
+            value: "0.160000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: 16%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_BUFF
+          desc:
+            desc: Effect_BUFF_EConvert_N_18_3
+            type: 0
+            value: "38"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 88
+            off:
+              type: 38
+              target: 0
+          overlap: 0
+      maxStack: 0
+  - - key: Effect_BUFF_EConvert_N_19
+      on: round
+      if:
+        - on:
+            func: OR
+            select:
+              - 38
+            attr: 0
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_19_1
+            type: 1
+            value: "0.180000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 18%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_19_2
+            type: 1
+            value: "0.180000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: 18%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_BUFF
+          desc:
+            desc: Effect_BUFF_EConvert_N_19_3
+            type: 0
+            value: "38"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 88
+            off:
+              type: 38
+              target: 0
+          overlap: 0
+      maxStack: 0
+  - - key: Effect_BUFF_EConvert_N_20
+      on: round
+      if:
+        - on:
+            func: OR
+            select:
+              - 38
+            attr: 0
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_20_1
+            type: 1
+            value: "0.200000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 20%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_BUFF_EConvert_N_20_2
+            type: 1
+            value: "0.200000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: 20%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_BUFF
+          desc:
+            desc: Effect_BUFF_EConvert_N_20_3
+            type: 0
+            value: "38"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 88
+            off:
+              type: 38
+              target: 0
+          overlap: 0
+      maxStack: 0

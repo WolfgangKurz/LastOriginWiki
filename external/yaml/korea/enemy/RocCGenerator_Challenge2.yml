@@ -1,0 +1,267 @@
+uid: RocCGenerator_Challenge2
+rarity: 3
+type: 0
+role: 0
+category: 0
+stat:
+  hp:
+    - 50
+    - 0
+  atk:
+    - 0
+    - 0
+  def:
+    - 1
+    - 0
+  spd: 0
+  cri: 0
+  acc: 999
+  eva: -999
+  res:
+    fire: 150
+    chill: 150
+    thunder: 150
+skills:
+  - key: Skill_MP_RocCGenerator_Challenge2_1
+    icon: SelfAtkBuff
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 4
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_RocCGenerator_N_1
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 1
+          class:
+            - 2
+          role:
+            - 1
+          target: 1
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_RocCGenerator_N_1_1
+                type: 1
+                value: "0.060000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 99
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 6%
+                  per: 0%
+              overlap: 4
+          maxStack: 5
+        - key: Effect_MP_RocCGenerator_N_11
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 1
+          class:
+            - 2
+          role:
+            - 1
+          target: 1
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_RocCGenerator_N_11_1
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 1
+                  per: 0
+              overlap: 3
+          maxStack: 0
+  - key: Skill_MP_RocCGenerator_N_2
+    icon: SelfDefBuff
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 7
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_RocCGenerator_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 1
+          buffs:
+            - icon: BuffIcon_DAMAGE_ABSORB
+              desc:
+                desc: Effect_MP_RocCGenerator_N_2_1
+                type: 0
+                value: "5000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 38
+                barrier:
+                  base: 5000
+                  per: 0
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_RocCGenerator_Challenge2_3
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_RocCGenerator_Challenge2_3
+          on: team_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_MP_RocCGenerator_Challenge2_3_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 98
+                revive:
+                  base: 100%
+                  per: 0%
+              overlap: 1
+          maxStack: 1
+  - key: Skill_MP_RocCGenerator_N_4
+    icon: P.SelfSpdDeBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_RocCGenerator_N_4
+          on: revive
+          if:
+            - false
+            - false
+          body:
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_STUN
+              desc:
+                desc: Effect_MP_RocCGenerator_N_4_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 4
+              value:
+                isBuff: true
+                type: 22
+                stun: true
+              overlap: 1
+          maxStack: 0
+ai: AI_MP_Drone_Challenge1

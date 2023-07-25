@@ -1,0 +1,250 @@
+uid: NightChickSI_EW
+rarity: 4
+type: 0
+role: 0
+category: 0
+stat:
+  hp:
+    - 30243
+    - 130.52
+  atk:
+    - 152
+    - 10.8
+  def:
+    - 540
+    - 12.11
+  spd: 3.85
+  cri: 10
+  acc: 175
+  eva: 15
+  res:
+    fire: 25
+    chill: 25
+    thunder: 25
+skills:
+  - key: Skill_MP_NightChickSI_EW_1
+    icon: MeleeAttack
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.1
+      range: 3
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickSI_EW_1
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 10
+                  - 11
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_STUN
+              desc:
+                desc: Effect_MP_NightChickSI_EW_1_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 50%
+                type: 22
+                stun: true
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_NightChickSI_EW_2
+    icon: ShieldWall
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 3
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickSI_EW_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_Line
+              desc:
+                desc: Effect_MP_NightChickSI_EW_2_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 50
+                guard: col
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_NightChickSI_EW_3
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickSI_EW_3
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_NightChickSI_EW_2
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_NightChickSI_EW_3_1
+                type: 1
+                value: "0.100000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 36
+                damage_reduce:
+                  base: 10%
+                  per: 1%
+              overlap: 1
+          maxStack: 1
+  - key: Skill_MP_NightChickSI_EW_4
+    icon: P.TeamAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickSI_EW_4
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_NightChickSI_EW_4_1
+                type: 1
+                value: "0.100000"
+                level: "0"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: 10%
+                  per: 0%
+              overlap: 3
+          maxStack: 0
+ai: AI_NCShield_Normal_01

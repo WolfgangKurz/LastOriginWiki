@@ -1,0 +1,709 @@
+uid: Destroyer_N
+rarity: 5
+type: 1
+role: 1
+category: 0
+stat:
+  hp:
+    - 6000
+    - 200
+  atk:
+    - 150
+    - 12.5
+  def:
+    - 500
+    - 20
+  spd: 3.2
+  cri: 10
+  acc: 90
+  eva: 0
+  res:
+    fire: 50
+    chill: 0
+    thunder: 95
+skills:
+  - key: Skill_MP_Destroyer_N_1
+    icon: BeamShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 4
+      range: 9
+      ap: 10
+      grid: 6>0,0,0,1,1,1,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Destroyer_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_Destroyer_N_1_1
+                type: 1
+                value: "1"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 100%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_BARRIER_PIERCE
+              desc:
+                desc: Effect_MP_Destroyer_N_1_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 94
+                penetration_force: true
+              overlap: 1
+          maxStack: 0
+        - key: Effect_MP_Destroyer_N_12
+          on:
+            damaged: ice
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_BUFF_Flood_N_1
+                  - Effect_BUFF_Flood_N_2
+                  - Effect_BUFF_Flood_N_3
+                  - Effect_BUFF_Flood_N_4
+                  - Effect_BUFF_Flood_N_5
+                  - Effect_BUFF_Flood_N_6
+                  - Effect_BUFF_Flood_N_7
+                  - Effect_BUFF_Flood_N_8
+                  - Effect_BUFF_Flood_N_9
+                  - Effect_BUFF_Flood_N_11
+                  - Effect_BUFF_Flood_N_12
+                  - Effect_BUFF_Flood_N_13
+                  - Effect_BUFF_Flood_N_14
+                  - Effect_BUFF_Flood_N_15
+                  - Effect_BUFF_Flood_N_16
+                  - Effect_BUFF_Flood_N_17
+                  - Effect_BUFF_Flood_N_18
+                  - Effect_BUFF_Flood_N_19
+                  - Effect_BUFF_Flood_N_20
+                  - Effect_BUFF_Flood_N_21
+                  - Effect_BUFF_Flood_N_22
+                  - Effect_BUFF_Flood_N_23
+                  - Effect_BUFF_Flood_N_24
+                  - Effect_BUFF_Flood_N_25
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Destroyer_N_12_1
+                type: 1
+                value: "7"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 7
+              overlap: 4
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Destroyer_N_12_2
+                type: 0
+                value: "13"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 13
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Destroyer_N_2
+    icon: SelfDefBuff
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 8
+      ap: 10
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Destroyer_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_Destroyer_N_2_1
+                type: 0
+                value: "999999"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 999
+              value:
+                isBuff: true
+                type: 34
+                damage_minimize:
+                  base: 999999
+                  per: 0
+              overlap: 1
+          maxStack: 1
+        - key: Effect_MP_Destroyer_N_11
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_MP_Destroyer_N_11_1
+                type: 1
+                value: "0.750000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 999
+              value:
+                isBuff: true
+                chance: 0%
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 75%
+                    per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Destroyer_N_12
+          on:
+            damaged: ice
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_BUFF_Flood_N_1
+                  - Effect_BUFF_Flood_N_2
+                  - Effect_BUFF_Flood_N_3
+                  - Effect_BUFF_Flood_N_4
+                  - Effect_BUFF_Flood_N_5
+                  - Effect_BUFF_Flood_N_6
+                  - Effect_BUFF_Flood_N_7
+                  - Effect_BUFF_Flood_N_8
+                  - Effect_BUFF_Flood_N_9
+                  - Effect_BUFF_Flood_N_11
+                  - Effect_BUFF_Flood_N_12
+                  - Effect_BUFF_Flood_N_13
+                  - Effect_BUFF_Flood_N_14
+                  - Effect_BUFF_Flood_N_15
+                  - Effect_BUFF_Flood_N_16
+                  - Effect_BUFF_Flood_N_17
+                  - Effect_BUFF_Flood_N_18
+                  - Effect_BUFF_Flood_N_19
+                  - Effect_BUFF_Flood_N_20
+                  - Effect_BUFF_Flood_N_21
+                  - Effect_BUFF_Flood_N_22
+                  - Effect_BUFF_Flood_N_23
+                  - Effect_BUFF_Flood_N_24
+                  - Effect_BUFF_Flood_N_25
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Destroyer_N_12_1
+                type: 1
+                value: "7"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 7
+              overlap: 4
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Destroyer_N_12_2
+                type: 0
+                value: "13"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 13
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Destroyer_N_3
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Destroyer_N_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Destroyer_N_3_1
+                type: 1
+                value: "0.450000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 45%
+                  per: 0%
+              overlap: 4
+          maxStack: 10
+        - key: Effect_MP_Destroyer_N_13
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Destroyer_N_13_1
+                type: 1
+                value: "0.100000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 10%
+                  per: 0%
+              overlap: 4
+          maxStack: 5
+        - key: Effect_MP_Destroyer_N_14
+          on: damaged
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Destroyer_N_2
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_MP_Destroyer_N_14_1
+                type: 0
+                value: "-1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: -1
+                  per: 0
+              overlap: 4
+          maxStack: 6
+        - key: Effect_MP_Destroyer_N_15
+          on: damaged
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Destroyer_N_14
+                stack: 6
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Destroyer_N_15_1
+                type: 0
+                value: "34"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 34
+              overlap: 4
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_Destroyer_N_15_2
+                type: 1
+                value: "-0.300000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -30%
+                  per: 0%
+              overlap: 4
+          maxStack: 2
+        - key: Effect_MP_Destroyer_N_16
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Destroyer_N_16_1
+                type: 0
+                value: "3"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 3
+                  per: 0
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_Destroyer_N_4
+    icon: P.SuicideBomb
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Destroyer_N_4
+          on: self_dead
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_BUFF_Flood_N_1
+                  - Effect_BUFF_Flood_N_2
+                  - Effect_BUFF_Flood_N_3
+                  - Effect_BUFF_Flood_N_4
+                  - Effect_BUFF_Flood_N_5
+                  - Effect_BUFF_Flood_N_6
+                  - Effect_BUFF_Flood_N_7
+                  - Effect_BUFF_Flood_N_8
+                  - Effect_BUFF_Flood_N_9
+                  - Effect_BUFF_Flood_N_11
+                  - Effect_BUFF_Flood_N_12
+                  - Effect_BUFF_Flood_N_13
+                  - Effect_BUFF_Flood_N_14
+                  - Effect_BUFF_Flood_N_15
+                  - Effect_BUFF_Flood_N_16
+                  - Effect_BUFF_Flood_N_17
+                  - Effect_BUFF_Flood_N_18
+                  - Effect_BUFF_Flood_N_19
+                  - Effect_BUFF_Flood_N_20
+                  - Effect_BUFF_Flood_N_21
+                  - Effect_BUFF_Flood_N_22
+                  - Effect_BUFF_Flood_N_23
+                  - Effect_BUFF_Flood_N_24
+                  - Effect_BUFF_Flood_N_25
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Destroyer_N_4_1
+                type: 1
+                value: "10"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 70
+                fixed_damage:
+                  base: 1000%
+                  per: 0%
+              overlap: 3
+          maxStack: 0
+  - key: Skill_MP_Destroyer_N_5
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Destroyer_N_5
+          on: attack
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Destroyer_N_5_1
+                type: 0
+                value: "34"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 34
+              overlap: 4
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Destroyer_N_5_2
+                type: 0
+                value: "91"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 91
+              overlap: 4
+          maxStack: 0
+ai: AI_Mp_Destroyer_Normal_01

@@ -1,0 +1,441 @@
+uid: Leprechaun_N
+rarity: 5
+type: 0
+role: 1
+category: 0
+stat:
+  hp:
+    - 7175.6698
+    - 0
+  atk:
+    - 701.8704
+    - 37.5694
+  def:
+    - 88
+    - 16
+  spd: 4.2
+  cri: 10
+  acc: 250
+  eva: 0
+  res:
+    fire: 90
+    chill: 90
+    thunder: 90
+skills:
+  - key: Skill_MP_Leprechaun_N_1
+    icon: MGShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.275
+      range: 4
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Leprechaun_N_1
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 2
+                  - 3
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Leprechaun_N_1_1
+                type: 1
+                value: "0.200000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 20%
+                  per: 2%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Leprechaun_N_2
+    icon: MGWideShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.25
+      range: 4
+      ap: 8
+      grid: 0,1,0,0,1,0,0,1,0
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Leprechaun_N_2
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 2
+                  - 3
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Leprechaun_N_2_1
+                type: 1
+                value: "0.250000"
+                level: "0.015000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 25%
+                  per: 1.5%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Leprechaun_N_3
+    icon: P.TeamAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Leprechaun_N_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Leprechaun_N_3_1
+                type: 1
+                value: "0.150000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 15%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Leprechaun_N_3_2
+                type: 1
+                value: "0.200000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 20%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Leprechaun_N_3_3
+                type: 1
+                value: "0.050000"
+                level: "0.005000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 5%
+                  per: 0.5%
+              overlap: 4
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_MP_Leprechaun_N_3_4
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Leprechaun_N_4
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Leprechaun_N_4
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Leprechaun_N_4_1
+                type: 1
+                value: "0.100000"
+                level: "0.015000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 10%
+                  per: 1.5%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Leprechaun_N_4_2
+                type: 1
+                value: "0.050000"
+                level: "0.005000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 13
+                turnSpeed:
+                  base: 5%
+                  per: 0.5%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Leprechaun_N_5
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Leprechaun_N_5
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_MP_Leprechaun_N_5_1
+                type: 1
+                value: "0.050000"
+                level: "0.005000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 5%
+                  per: 0.5%
+              overlap: 4
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Leprechaun_N_5_2
+                type: 1
+                value: "0.150000"
+                level: "0.015000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 1
+                attack:
+                  base: 15%
+                  per: 1.5%
+              overlap: 4
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_Leprechaun_N_5_3
+                type: 1
+                value: "0.080000"
+                level: "0.004000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 58
+                penetration:
+                  base: 8%
+                  per: 0.4%
+              overlap: 4
+            - icon: BuffIcon_SKILL_UP
+              desc:
+                desc: Effect_MP_Leprechaun_N_5_4
+                type: 1
+                value: "0.040000"
+                level: "0.004000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 106
+                skill_ratio:
+                  base: 4%
+                  per: 0.4%
+              overlap: 4
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_MP_Leprechaun_N_5_5
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 77
+                attack_support:
+                  base: 0%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+ai: AI_MP_CollaboEvent_Stage_3_5

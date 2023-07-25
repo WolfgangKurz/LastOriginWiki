@@ -1,0 +1,232 @@
+uid: SUMMON_SU_RabbitBarrier_N
+icon: TbarIcon_SU_RabbitBarrier_N
+rarity: 2
+type: 0
+role: 0
+use: true
+summonType: 2
+pos: 0
+overlap: 1
+turn: 1
+deflv: 1
+lifecycle: 10
+shelter: true
+stat:
+  hp:
+    - 200
+    - 2675
+  atk:
+    - 1
+    - 1
+  def:
+    - 10
+    - 307
+  spd: 10
+  cri: 0
+  acc: 999
+  eva: -100
+  res:
+    fire: 20
+    chill: 20
+    thunder: 20
+skills:
+  - key: Skill_SU_RabbitBarrier_N_1
+    name: "1002700592"
+    icon: Barrier
+    desc: "1002703260"
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 10
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_SU_RabbitBarrier_N_1
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+            - 2
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_SU_RabbitBarrier_N_1_1
+                type: 1
+                value: "0.100000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 36
+                damage_reduce:
+                  base: 10%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_DEF_Line
+              desc:
+                desc: Effect_SU_RabbitBarrier_N_1_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 50
+                guard: col
+              overlap: 1
+          maxStack: 0
+  - key: Skill_SU_RabbitBarrier_N_2
+    name: "1002700593"
+    icon: ShieldWall
+    desc: "1002703261"
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 10
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_SU_RabbitBarrier_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+            - 2
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_SU_RabbitBarrier_N_2_1
+                type: 1
+                value: "100"
+                level: "50"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 2
+                defense:
+                  base: 100
+                  per: 50
+              overlap: 4
+            - icon: BuffIcon_DEF_Line
+              desc:
+                desc: Effect_SU_RabbitBarrier_N_2_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 50
+                guard: col
+              overlap: 1
+          maxStack: 0
+  - key: Skill_SU_RabbitBarrier_N_3
+    name: "1002700594"
+    icon: TeamDefBuff
+    desc: "1002703262"
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 6
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_SU_RabbitBarrier_N_3
+          on: false
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+            - 2
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_Line
+              desc:
+                desc: Effect_SU_RabbitBarrier_N_3_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 50
+                guard: col
+              overlap: 0
+          maxStack: 0
+ai: AI_UnderWatcherGene_01

@@ -1,0 +1,351 @@
+uid: Nereid_EV5
+rarity: 4
+type: 1
+role: 1
+category: 0
+stat:
+  hp:
+    - 220
+    - 600
+  atk:
+    - 58
+    - 8.4
+  def:
+    - 17
+    - 2.7
+  spd: 3.75
+  cri: 10
+  acc: 121
+  eva: 0
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_MP_Nereid_EV5_1
+    icon: MGShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.5
+      range: 4
+      ap: 5
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Nereid_EV5_1
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 2
+                  - 3
+                  - 10
+                  - 11
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Nereid_EV5_1_1
+                type: 1
+                value: "0.200000"
+                level: "0.010000"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 20%
+                  per: 1%
+              overlap: 0
+            - icon: BuffIcon_MOBILITY_DMG_UP
+              desc:
+                desc: Effect_MP_Nereid_EV5_1_2
+                type: 1
+                value: "0.150000"
+                level: "0.007500"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 62
+                damage_multiply:
+                  target: air
+                  value:
+                    base: 15%
+                    per: 0.75%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Nereid_EV5_2
+    icon: MGWideShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.25
+      range: 3
+      ap: 8
+      grid: 1,0,0,1,1,0,1,0,0
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Nereid_EV5_2
+          on: enemy_killed
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Nereid_EV5_2_1
+                type: 1
+                value: "0.060000"
+                level: "0.003000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 6%
+                  per: 0.3%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Nereid_EV5_2_2
+                type: 0
+                value: "1.500000"
+                level: "0.050000"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 20
+                ap:
+                  base: 1.5
+                  per: 0.05
+              overlap: 3
+          maxStack: 0
+  - key: Skill_MP_Nereid_EV5_3
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Nereid_EV5_3
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DamageAmp_Me
+              desc:
+                desc: Effect_MP_Nereid_EV5_3_1
+                type: 1
+                value: "0.350000"
+                level: "0.020000"
+              attr: 1
+              erase: {}
+              value:
+                isBuff: true
+                type: 80
+                damage_by_hp:
+                  target: self
+                  damage:
+                    base: 35%
+                    per: 2%
+              overlap: 0
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_Nereid_EV5_3_2
+                type: 1
+                value: "0.240000"
+                level: "0.024000"
+              attr: 1
+              erase: {}
+              value:
+                isBuff: true
+                chance: 0%
+                type: 36
+                damage_reduce:
+                  base: 24%
+                  per: 2.4%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Nereid_EV5_4
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Nereid_EV5_4
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_MP_Nereid_EV5_4_1
+                type: 0
+                value: "10"
+                level: "60"
+              attr: 1
+              erase: {}
+              value:
+                isBuff: true
+                type: 82
+                revive:
+                  base: 10
+                  per: 60
+              overlap: 0
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Nereid_EV5_4_2
+                type: 1
+                value: "0.150000"
+                level: "0.007500"
+              attr: 1
+              erase: {}
+              value:
+                isBuff: true
+                chance: 0%
+                type: 1
+                attack:
+                  base: 15%
+                  per: 0.75%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_MP_Nereid_EV5_4_3
+                type: 1
+                value: "0.150000"
+                level: "0.007500"
+              attr: 1
+              erase: {}
+              value:
+                isBuff: true
+                chance: 0%
+                type: 9
+                critical:
+                  base: 15%
+                  per: 0.75%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Nereid_EV5_4_4
+                type: 1
+                value: "0.150000"
+                level: "0.007500"
+              attr: 1
+              erase: {}
+              value:
+                isBuff: true
+                chance: 0%
+                type: 13
+                turnSpeed:
+                  base: 15%
+                  per: 0.75%
+              overlap: 4
+          maxStack: 0
+ai: AI_PupHeadC_Normal_01

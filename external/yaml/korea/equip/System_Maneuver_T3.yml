@@ -1,0 +1,879 @@
+uid: System_Maneuver_T3
+type: 1
+key: Maneuver
+rarity: 4
+craft: 4800
+upgrade:
+  enchant:
+    - res: 375
+      item: []
+    - res: 638
+      item: []
+    - res: 900
+      item: []
+    - res: 1163
+      item: []
+    - res: 1425
+      item: []
+    - res: 1688
+      item:
+        - item: Normal_Module
+          count: 20
+    - res: 1950
+      item:
+        - item: Normal_Module
+          count: 40
+    - res: 2213
+      item:
+        - item: Normal_Module
+          count: 60
+    - res: 2475
+      item:
+        - item: Normal_Module
+          count: 80
+    - res: 2738
+      item:
+        - item: Normal_Module
+          count: 100
+  upgrade:
+    to: System_Maneuver_T4
+    cost:
+      - item: Consumable_EquipProPart_T3
+        count: 4
+limit: null
+source:
+  - - 6-5B
+    - 10-6
+    - 11-5B
+  - - Ev:Ev6:Ev-4Ex
+  - - Ev:Ev7:Ev2-2B
+  - - Ev:Ev9:Ev2-6
+  - - Ev:Ev14:EV2-1Ex
+  - - Ev:Ev17:EV2-3
+  - - Ev:Ev18:EV3-1Ex
+stats:
+  - - type: 6
+      accuracy:
+        base: 20%
+        per: 0%
+    - type: 8
+      critical:
+        base: 3%
+        per: 0%
+    - key: Effect_BUFF_DummyEmS_N_6
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_6_1
+            type: 1
+            value: "0.105000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 10.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_DOWN
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_6_2
+            type: 1
+            value: "-0.080000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: -8%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_6_3
+            type: 0
+            value: "7"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 89
+            off:
+              type: 7
+              target: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 22%
+        per: 0%
+    - type: 8
+      critical:
+        base: 3.6%
+        per: 0%
+    - key: Effect_BUFF_DummyEmS_N_7
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_7_1
+            type: 1
+            value: "0.110000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 11%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_DOWN
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_7_2
+            type: 1
+            value: "-0.080000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: -8%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_7_3
+            type: 0
+            value: "7"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 89
+            off:
+              type: 7
+              target: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 24%
+        per: 0%
+    - type: 8
+      critical:
+        base: 4.2%
+        per: 0%
+    - key: Effect_BUFF_DummyEmS_N_8
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_8_1
+            type: 1
+            value: "0.115000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 11.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_DOWN
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_8_2
+            type: 1
+            value: "-0.080000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: -8%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_8_3
+            type: 0
+            value: "7"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 89
+            off:
+              type: 7
+              target: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 26%
+        per: 0%
+    - type: 8
+      critical:
+        base: 4.8%
+        per: 0%
+    - key: Effect_BUFF_DummyEmS_N_9
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_9_1
+            type: 1
+            value: "0.120000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 12%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_DOWN
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_9_2
+            type: 1
+            value: "-0.080000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: -8%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_9_3
+            type: 0
+            value: "7"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 89
+            off:
+              type: 7
+              target: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 28%
+        per: 0%
+    - type: 8
+      critical:
+        base: 5.4%
+        per: 0%
+    - key: Effect_BUFF_DummyEmS_N_10
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_10_1
+            type: 1
+            value: "0.125000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 12.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_DOWN
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_10_2
+            type: 1
+            value: "-0.080000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: -8%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_10_3
+            type: 0
+            value: "7"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 89
+            off:
+              type: 7
+              target: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 30%
+        per: 0%
+    - type: 8
+      critical:
+        base: 6%
+        per: 0%
+    - key: Effect_BUFF_DummyEmS_N_11
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_11_1
+            type: 1
+            value: "0.130000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 13%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_DOWN
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_11_2
+            type: 1
+            value: "-0.080000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: -8%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_11_3
+            type: 0
+            value: "7"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 89
+            off:
+              type: 7
+              target: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 32%
+        per: 0%
+    - type: 8
+      critical:
+        base: 6.6%
+        per: 0%
+    - key: Effect_BUFF_DummyEmS_N_12
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_12_1
+            type: 1
+            value: "0.135000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 13.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_DOWN
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_12_2
+            type: 1
+            value: "-0.080000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: -8%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_12_3
+            type: 0
+            value: "7"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 89
+            off:
+              type: 7
+              target: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 34%
+        per: 0%
+    - type: 8
+      critical:
+        base: 7.2%
+        per: 0%
+    - key: Effect_BUFF_DummyEmS_N_13
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_13_1
+            type: 1
+            value: "0.140000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 14%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_DOWN
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_13_2
+            type: 1
+            value: "-0.080000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: -8%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_13_3
+            type: 0
+            value: "7"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 89
+            off:
+              type: 7
+              target: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 36%
+        per: 0%
+    - type: 8
+      critical:
+        base: 7.8%
+        per: 0%
+    - key: Effect_BUFF_DummyEmS_N_14
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_14_1
+            type: 1
+            value: "0.145000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 14.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_DOWN
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_14_2
+            type: 1
+            value: "-0.080000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: -8%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_14_3
+            type: 0
+            value: "7"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 89
+            off:
+              type: 7
+              target: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 38%
+        per: 0%
+    - type: 8
+      critical:
+        base: 8.4%
+        per: 0%
+    - key: Effect_BUFF_DummyEmS_N_15
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_15_1
+            type: 1
+            value: "0.150000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 15%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_DOWN
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_15_2
+            type: 1
+            value: "-0.080000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: -8%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_15_3
+            type: 0
+            value: "7"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 89
+            off:
+              type: 7
+              target: 1
+          overlap: 4
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 40%
+        per: 0%
+    - type: 8
+      critical:
+        base: 9%
+        per: 0%
+    - key: Effect_BUFF_DummyEmS_N_16
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_16_1
+            type: 1
+            value: "0.155000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 15.5%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_AP_DOWN
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_16_2
+            type: 1
+            value: "-0.080000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 13
+            turnSpeed:
+              base: -8%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyEmS_N_16_3
+            type: 0
+            value: "7"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 89
+            off:
+              type: 7
+              target: 1
+          overlap: 4
+      maxStack: 0

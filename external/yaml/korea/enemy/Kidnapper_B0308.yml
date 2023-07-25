@@ -1,0 +1,352 @@
+uid: Kidnapper_B0308
+rarity: 5
+type: 0
+role: 1
+category: 1
+stat:
+  hp:
+    - 2850
+    - 275
+  atk:
+    - 150
+    - 12.5
+  def:
+    - 26
+    - 1.5
+  spd: 4.25
+  cri: 20
+  acc: 300
+  eva: 60
+  res:
+    fire: 15
+    chill: 15
+    thunder: 15
+skills:
+  - key: Skill_MP_Kidnapper_N_1
+    icon: AssaultAttack
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 4
+      ap: 4
+      grid: 0,0,0,1,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Kidnapper_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_Kidnapper_N_1_1
+                type: 1
+                value: "-0.150000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 5
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -15%
+                  per: -1%
+              overlap: 4
+          maxStack: 5
+  - key: Skill_MP_Kidnapper_N_2
+    icon: MultiMissile
+    passive: false
+    type: 1
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.4
+      range: 1
+      ap: 6
+      grid: 0,1,0,0,1,0,0,1,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Kidnapper_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_Push
+              desc:
+                desc: Effect_MP_Kidnapper_N_2_1
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 52
+                position:
+                  type: push
+                  range:
+                    base: 1
+                    per: 0
+              overlap: 0
+            - icon: BuffIcon_ACCURACY_DOWN
+              desc:
+                desc: Effect_MP_Kidnapper_N_2_2
+                type: 1
+                value: "-0.500000"
+                level: "-0.025000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: -50%
+                  per: -2.5%
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_Kidnapper_N_3
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Kidnapper_N_3
+          on: attack_success
+          if:
+            - on:
+                func: OR
+                select:
+                  - 74
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Kidnapper_N_3_1
+                type: 1
+                value: "0.200000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 5
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 20%
+                  per: 0%
+              overlap: 4
+          maxStack: 5
+  - key: Skill_MP_Kidnapper_N_4
+    icon: P.SelfSpdBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Kidnapper_N_4
+          on: damaged
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_MP_Kidnapper_N_4_1
+                type: 1
+                value: "0.400000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 40%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_MP_Kidnapper_N_4_2
+                type: 1
+                value: "-0.150000"
+                level: "-0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: -15%
+                  per: -1%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Kidnapper_N_5
+    icon: P.SelfSpdBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Kidnapper_N_5
+          on: enemy_killed
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Kidnapper_N_5_1
+                type: 1
+                value: "0.250000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 25%
+                  per: 1%
+              overlap: 3
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_MP_Kidnapper_N_5_2
+                type: 1
+                value: "0.150000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 15%
+                  per: 0%
+              overlap: 3
+          maxStack: 0
+ai: AI_TrickSter_01

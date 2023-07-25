@@ -1,0 +1,331 @@
+uid: ExpGoblinT_TU2
+rarity: 4
+type: 1
+role: 1
+category: 0
+stat:
+  hp:
+    - 396
+    - 91.0938
+  atk:
+    - 94
+    - 9.4
+  def:
+    - 75
+    - 4.6875
+  spd: 3.95
+  cri: 12.5
+  acc: 225
+  eva: 50
+  res:
+    fire: 30
+    chill: 30
+    thunder: 30
+skills:
+  - key: Skill_MP_ExpGoblinT_N_1
+    icon: MGShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 3
+      ap: 5
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 50
+      buffs:
+        - key: Effect_MP_ExpGoblinT_N_1
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 87
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_ExpGoblinT_N_1_1
+                type: 0
+                value: "200"
+                level: "10"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 200
+                  per: 10
+              overlap: 4
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_ExpGoblinT_N_1_2
+                type: 1
+                value: "-0.200000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -20%
+                  per: -1%
+              overlap: 4
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_ExpGoblinT_N_1_3
+                type: 1
+                value: "-0.100000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: -10%
+                  per: -1%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_ExpGoblinT_N_2
+    icon: MGWideShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 3
+      ap: 8
+      grid: 0,0.5,0,0,1,0,0,0.5,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ExpGoblinT_N_2
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 87
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_ExpGoblinT_N_2_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 50%
+                type: 99
+                off: 0
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_ExpGoblinT_N_3
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ExpGoblinT_N_3
+          on: damaged
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_ExpGoblinT_N_3_1
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 1
+                  per: 0
+              overlap: 0
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_ExpGoblinT_N_3_2
+                type: 1
+                value: "0.150000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 15%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_MP_ExpGoblinT_N_3_3
+                type: 1
+                value: "0.050000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 5%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_ExpGoblinT_N_3_4
+                type: 1
+                value: "-0.200000"
+                level: "-0.010000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -20%
+                  per: -1%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_ExpGoblinT_N_4
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ExpGoblinT_N_4
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_MP_ExpGoblinT_N_4_1
+                type: 0
+                value: "2000"
+                level: "300"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 82
+                revive:
+                  base: 2000
+                  per: 300
+              overlap: 0
+          maxStack: 0
+ai: AI_ExpGoblinT_Normal_01

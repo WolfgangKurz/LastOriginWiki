@@ -1,0 +1,507 @@
+uid: Predator_EV1
+rarity: 5
+type: 1
+role: 0
+category: 1
+stat:
+  hp:
+    - 18150
+    - 150
+  atk:
+    - 315
+    - 15
+  def:
+    - 26
+    - 6
+  spd: 3.6
+  cri: 10
+  acc: 400
+  eva: 20
+  res:
+    fire: 25
+    chill: 25
+    thunder: 25
+skills:
+  - key: Skill_MP_Predator_B0208_1
+    icon: MeleeAttack
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.6
+      range: 1
+      ap: 3
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Predator_B0208_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_Push
+              desc:
+                desc: Effect_MP_Predator_B0208_1_1
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 52
+                position:
+                  type: push
+                  range:
+                    base: 1
+                    per: 0
+              overlap: 0
+            - icon: BuffIcon_STUN
+              desc:
+                desc: Effect_MP_Predator_B0208_1_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 30%
+                type: 22
+                stun: true
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_Predator_B0208_2
+    icon: TeamDefDeBuff
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.5
+      range: 3
+      ap: 3
+      grid: 4>0,0,0,1,1,1,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 50
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Predator_B0208_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_Predator_B0208_2_1
+                type: 1
+                value: "-0.330000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -33%
+                  per: -1%
+              overlap: 4
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_Predator_B0208_2_2
+                type: 1
+                value: "-0.200000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: -20%
+                  per: -1%
+              overlap: 4
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Predator_B0208_2_3
+                type: 0
+                value: "100"
+                level: "50"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 100
+                  per: 50
+              overlap: 3
+          maxStack: 0
+  - key: Skill_MP_Predator_EV1_3
+    icon: P.SelfSpdBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Predator_EV1_3
+          on:
+            hp<=:
+              - 25%
+          if:
+            - false
+            - false
+          body:
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Predator_EV1_3_1
+                type: 1
+                value: "1"
+                level: "0.010000"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 100%
+                  per: 1%
+              overlap: 3
+          maxStack: 1
+        - key: Effect_MP_Predator_EV1_11
+          on:
+            hp<=:
+              - 25%
+          if:
+            - false
+            - false
+          body:
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_Predator_EV1_11_1
+                type: 1
+                value: "0.900000"
+                level: "0.010000"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 36
+                damage_reduce:
+                  base: 90%
+                  per: 1%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Predator_EV1_12
+          on:
+            hp<=:
+              - 25%
+          if:
+            - false
+            - false
+          body:
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_MP_Predator_EV1_12_1
+                type: 1
+                value: "0.900000"
+                level: "0.010000"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 90%
+                    per: 1%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Predator_EV1_13
+          on:
+            hp<=:
+              - 25%
+          if:
+            - false
+            - false
+          body:
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Predator_EV1_13_1
+                type: 1
+                value: "2"
+                level: "0.040000"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 200%
+                  per: 4%
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_Predator_B0208_4
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Predator_B0208_4
+          on: attack
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Predator_B0208_3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_Predator_B0208_4_1
+                type: 1
+                value: "0.400000"
+                level: "0"
+              attr: 0
+              erase:
+                until:
+                  after: use_skill
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 40%
+                  per: 0%
+              overlap: 0
+            - icon: BuffIcon_BARRIER_PIERCE
+              desc:
+                desc: Effect_MP_Predator_B0208_4_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+                until:
+                  after: use_skill
+              value:
+                isBuff: true
+                type: 94
+                penetration_force: true
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_Predator_B0208_5
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 40
+      buffs:
+        - key: Effect_MP_Predator_B0208_5
+          on: damaged
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Predator_B0208_5_1
+                type: 0
+                value: "78"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 89
+                off:
+                  type: 78
+                  target: 1
+              overlap: 0
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Predator_B0208_5_2
+                type: 0
+                value: "22"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 89
+                off:
+                  type: 22
+                  target: 1
+              overlap: 0
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Predator_B0208_5_3
+                type: 0
+                value: "13"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 89
+                off:
+                  type: 13
+                  target: 1
+              overlap: 0
+          maxStack: 0
+ai: AI_Boss_PWLR_02

@@ -1,0 +1,719 @@
+uid: Executioner_TU2
+rarity: 5
+type: 2
+role: 1
+category: 1
+stat:
+  hp:
+    - 80000
+    - 0
+  atk:
+    - 2000
+    - 0
+  def:
+    - 0
+    - 0
+  spd: 4.5
+  cri: 15
+  acc: 350
+  eva: 120
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_MP_Executioner_TU2_1
+    icon: SwordAttk
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 5
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Executioner_TU2_1
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 22
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Executioner_TU2_1_1
+                type: 1
+                value: "0.800000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 80%
+                  per: 1%
+              overlap: 0
+            - icon: BuffIcon_STUN
+              desc:
+                desc: Effect_MP_Executioner_TU2_1_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 22
+                stun: true
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_Executioner_TU2_2
+    icon: WideSwordAttk
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.25
+      range: 4
+      ap: 8
+      grid: 1,0,1,0,1,0,1,0,1
+      target_ground: false
+      summon: null
+      use:
+        key: Effect_MP_Executioner_TU2_3
+        count: 10
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Executioner_TU2_2
+          on: attack_success
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Executioner_TU2_3
+                stack: 10
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_FireATK_UP
+              desc:
+                desc: Effect_MP_Executioner_TU2_2_1
+                type: 1
+                value: "0.800000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 84
+                damage_add:
+                  elem: fire
+                  damage:
+                    base: 80%
+                    per: 1%
+              overlap: 0
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Executioner_TU2_2_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 99
+                off: 0
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Executioner_TU2_3
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Executioner_TU2_3
+          on: damaged
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Executioner_TU2_3_1
+                type: 1
+                value: "0.100000"
+                level: "0.010000"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 10%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Executioner_TU2_3_2
+                type: 1
+                value: "0.250000"
+                level: "0"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 25%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Executioner_TU2_11
+          on: attack
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_ExecutionerLB_N_3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_BARRIER_PIERCE
+              desc:
+                desc: Effect_MP_Executioner_TU2_11_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                until:
+                  after: use_skill
+              value:
+                isBuff: true
+                type: 94
+                penetration_force: true
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Executioner_TU2_18
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_ExecutionerRB_N_3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Executioner_TU2_18_1
+                type: 1
+                value: "0.500000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 50%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_Executioner_TU2_4
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Executioner_TU2_4
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_Executioner_TU2_4_1
+                type: 1
+                value: "999999"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 34
+                damage_minimize:
+                  base: 999999
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Executioner_TU2_12
+          on: damaged
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Executioner_TU2_3
+                stack: 10
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Executioner_TU2_12_1
+                type: 1
+                value: "5"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 70
+                fixed_damage:
+                  base: 500%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Executioner_TU2_12_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 99
+                off: 0
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Executioner_TU2_5
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Executioner_TU2_5
+          on: team_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_STUN
+              desc:
+                desc: Effect_MP_Executioner_TU2_5_1
+                type: 0
+                value: "1"
+                level: "1"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 22
+                stun: true
+              overlap: 1
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_Executioner_TU2_5_2
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 30%
+                  per: 0%
+              overlap: 1
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Executioner_TU2_5_3
+                type: 1
+                value: "1.500000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 150%
+                  per: 0%
+              overlap: 1
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Executioner_TU2_5_4
+                type: 0
+                value: "91"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 91
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Executioner_TU2_15
+          on: round
+          if:
+            - on:
+                target: self
+                func: UNFILLED
+                select:
+                  - Effect_MP_Executioner_TU2_5
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_MP_Executioner_TU2_15_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 100%
+                    per: 0%
+              overlap: 4
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Executioner_TU2_15_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 100
+                off: 1
+              overlap: 4
+          maxStack: 2
+        - key: Effect_MP_Executioner_TU2_16
+          on:
+            damaged: ice
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Executioner_TU2_3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_STUN
+              desc:
+                desc: Effect_MP_Executioner_TU2_16_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 22
+                stun: true
+              overlap: 1
+          maxStack: 1
+        - key: Effect_MP_Executioner_TU2_17
+          on:
+            damaged: lightning
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_Executioner_TU2_3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_STUN
+              desc:
+                desc: Effect_MP_Executioner_TU2_17_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 22
+                stun: true
+              overlap: 1
+          maxStack: 1
+  - key: Skill_MP_Executioner_TU2_6
+    icon: P.SuicideBomb
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Executioner_TU2_6
+          on: self_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Executioner_TU2_6_1
+                type: 1
+                value: "999.990000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 70
+                fixed_damage:
+                  base: 99999%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+ai: AI_Executioner_02
