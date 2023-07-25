@@ -1,12 +1,12 @@
 // Content automatically generated
 export interface DBHashType { [K: string]: string | DBHashType; }
 export default {
-	"buildtime": "0ad5657a",
+	"buildtime": "ae1ce009",
 	"locale": {
-		"TC": "9d55e7a1",
-		"KR": "9b8e5eb0",
-		"JP": "ffd56e0b",
-		"EN": "60c79963"
+		"TC": "20364b56",
+		"KR": "958f51f7",
+		"JP": "c6bb8a3a",
+		"EN": "c9d7f59e"
 	},
 	"korea": {
 		"sticker": "868651f8",
@@ -15,7 +15,7 @@ export default {
 		"mission": "3b5026b3",
 		"maps": "b7d8194c",
 		"gacha": "fc9a050a",
-		"filterable.unit": "10c91425",
+		"filterable.unit": "37241b28",
 		"filterable.facility": "b3f0e54b",
 		"filterable.equip": "70cfe7ac",
 		"filterable.enemy": "5edc4c2b",
@@ -231,7 +231,7 @@ export default {
 			"3P_Amphitrite": "e0034fc1",
 			"3P_Alice": "d0f57764",
 			"3P_Alexandra": "10e6a9c3",
-			"3P_Alcyone": "8ea9b720",
+			"3P_Alcyone": "ecb37e72",
 			"3P_Ajax": "082251e8"
 		},
 		"summon": {

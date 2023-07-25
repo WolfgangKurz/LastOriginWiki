@@ -8054,7 +8054,10 @@
   body: 0
   craft: 31140
   buffs:
-    - - target: enemy
+    - - target: self
+        type: 81
+        positive: true
+      - target: enemy
         type: 15
         positive: true
       - target: enemy
@@ -8063,10 +8066,51 @@
       - target: enemy
         type: 19
         positive: false
-    - []
-    - []
-    - []
-    - []
+    - - target: self
+        type: 0
+        positive: true
+      - target: enemy
+        type: 22
+        positive: false
+      - target: enemy
+        type: 67
+        positive: false
+    - - target: team
+        type: 76
+        positive: false
+      - target: team
+        type: 15
+        positive: true
+      - target: team
+        type: 17
+        positive: true
+      - target: self
+        type: 75
+        positive: false
+      - target: self
+        type: 55
+        positive: true
+      - target: team
+        type: 100
+        positive: false
+      - target: self
+        type: 97
+        positive: false
+    - - target: self
+        type: 36
+        positive: false
+    - - target: self
+        type: 29
+        positive: false
+      - target: self
+        type: 20
+        positive: true
+      - target: team
+        type: 20
+        positive: true
+      - target: enemy
+        type: 48
+        positive: false
   skills:
     "1":
       elem: 2
