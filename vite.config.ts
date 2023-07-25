@@ -9,7 +9,9 @@ import deepmerge from "deepmerge";
 
 import { defineConfig, loadEnv } from "vite";
 import preact from "@preact/preset-vite";
+
 import pluginWasm from "vite-plugin-wasm";
+import pluginTopLevelAwait from "vite-plugin-top-level-await";
 
 console.log("building...");
 export default ({ mode }) => {
@@ -56,23 +58,23 @@ export default ({ mode }) => {
 				[K: string]: string | DBHashType;
 			}
 
-			const jsonDir = path.resolve(__dirname, "external", "yaml");
+			const yamlDir = path.resolve(__dirname, "external", "yaml");
 			const list = (() => {
 				const baseDir = path.resolve(__dirname, "external", "yaml");
-				const globPath = path.join(baseDir, "**", "*.yaml");
+				const globPath = path.join(baseDir, "**", "*.yml");
 
 				return globSync(globPath.replace(/\\/g, "/"))
-					.filter(f => !f.endsWith("/buildtime.yaml"))
+					.filter(f => !f.endsWith("/buildtime.yml"))
 					.map(f => {
 						const rel = path.relative(baseDir, f).replace(/\\/g, "/");
-						return `!/${rel.substring(0, rel.length - 5)}`;
+						return `!/${rel.substring(0, rel.length - 4)}`;
 					});
 			})();
 
 			let outs: DBHashType = {};
 			list.forEach(item => {
 				const _item = item.substring(2);
-				const file = path.resolve(jsonDir, `${_item}.yaml`);
+				const file = path.resolve(yamlDir, `${_item}.yml`);
 				if (!fs.existsSync(file)) return;
 
 				const tree = ((value: string) => {
@@ -167,15 +169,22 @@ export default ({ mode }) => {
 						if (id.includes("/node_modules/graphlib/")) return "vendor.graphlib";
 						if (id.includes("/node_modules/lodash/")) return "vendor.lodash";
 						if (id.includes("/node_modules/swiper/")) return "vendor.swiper";
+						if (id.includes("/node_modules/chart.js/")) return "vendor.chart";
 						if (
 							id.includes("/node_modules/@reactflow/") ||
 							id.includes("/node_modules/@tisoap/") ||
-							id.includes("/node_modules/@dagrejs/")
+							id.includes("/node_modules/@dagrejs/") ||
+							id.includes("/node_modules/d3-") ||
+							id.includes("/node_modules/pathfinding/")
 						) return "vendor.flow";
 
-						if (id.includes("/node_modules/")) return "vendor";
+						if (
+							id.includes("/html2canvas/") ||
+							id.includes("/node_modules/css-line-break/") ||
+							id.includes("/node_modules/text-segmentation/")
+						) return "vendor.html2canvas";
 
-						if (id.includes("/html2canvas/")) return "vendor.html2canvas";
+						if (id.includes("/node_modules/")) return "vendor";
 
 						// components/bootstrap-icon/
 						if (id.includes("/src/components/bootstrap-icon/")) return "components.icon";
@@ -252,6 +261,7 @@ export default ({ mode }) => {
 		plugins: [
 			preact(),
 			pluginWasm(),
+			pluginTopLevelAwait(),
 		],
 		resolve: {
 			alias: {

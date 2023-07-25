@@ -30,6 +30,7 @@
 }
 
 .IntroduceText {
+	position: relative;
 	line-height: 1.6;
 	font-weight: 400;
 	// text-shadow: 0 0 2px transparentize($light, 0.75);
@@ -80,7 +81,6 @@
 			> div {
 				// btn-group
 				margin: 2px;
-				width: 100%; // fallback
 				width: calc(100% - 4px);
 				justify-content: center;
 
@@ -93,11 +93,27 @@
 			}
 			> audio {
 				margin: 2px;
-				width: 100%; // fallback
 				width: calc(100% - 4px);
 				min-height: 2.5em;
 			}
 		}
+	}
+
+	.IntroduceTextBody {
+		position: relative;
+		z-index: 2;
+	}
+	.GroupIcon {
+		position: absolute;
+		margin: auto;
+		left: 1rem;
+		top: 1rem;
+		width: calc(100% - 2rem);
+		height: calc(100% - 2rem);
+		object-fit: scale-down;
+		opacity: 0.125;
+		z-index: 1;
+		pointer-events: none !important;
 	}
 }
 
@@ -282,13 +298,13 @@ table.InfoTable {
 	th {
 		vertical-align: middle;
 	}
-}
 
-.GroupIcon {
-	display: block;
-	margin: 0 auto;
-	width: 5em;
-	filter: invert(1);
+	.GroupIcon {
+		display: block;
+		margin: 0 auto;
+		width: 5em;
+		filter: invert(1);
+	}
 }
 
 .UnitCountry {

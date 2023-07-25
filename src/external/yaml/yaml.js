@@ -1,4 +1,5 @@
-import * as wasm from './dessert_yaml_core_bg.wasm';
+// dessert_yaml_core
+import * as wasm from './yaml.wasm';
 
 let WASM_VECTOR_LEN = 0;
 
