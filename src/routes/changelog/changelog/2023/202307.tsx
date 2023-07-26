@@ -27,7 +27,7 @@ const Changelog: FunctionalComponent = () => <>
 			<li><BY>엠피트리테</BY>의 소개 보이스가 추가되었습니다.</li>
 			<li><BY>살라시아</BY>의 소개 보이스가 추가되었습니다.</li>
 			<li><BY>P-24 핀토</BY>의 소개 보이스가 추가되었습니다.</li>
-			<li><span class="badge bg-light text-dark">KST 2023-07-05 03:50:37</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2023-07-26 03:40:37</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
 		</> }
 	/>
 	<ChangelogItem title="Build 12234" date="2023-07-23"
