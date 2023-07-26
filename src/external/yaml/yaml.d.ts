@@ -1,4 +1,6 @@
 /* tslint:disable */
+export function ensure(): Promise<void>;
+
 /**
 * @param {string} yml_str
 * @param {any} options

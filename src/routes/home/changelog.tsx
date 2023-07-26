@@ -5,6 +5,11 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12271" date="2023-07-26"
+		site={ <>
+			<li>사이트 접속 문제가 수정되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12249" date="2023-07-26"
 		site={ <>
 			<li>git에서의 데이터 변경점을 쉽게 보기 위해 데이터를 json에서 yaml로 변경했습니다.</li>

@@ -1,5 +1,7 @@
 import { render, h } from "preact";
 
+import * as YAML from "@/external/yaml";
+
 import App from "@/app";
 
 import "@/themes/index.scss";
@@ -12,7 +14,7 @@ import Store from "@/store";
 
 Extend();
 
-{
+YAML.ensure().then(() => {
 	const verCheck = () => {
 		const buildtimeYaml = `!/buildtime.yml?_=${Date.now()}`;
 		JsonLoaderCore("!", buildtimeYaml)
@@ -28,6 +30,6 @@ Extend();
 
 	setInterval(verCheck, 5 * 60 * 1000); // every 5min
 	verCheck();
-}
 
-render(h(App, {}), document.getElementById("page")!);
+	render(h(App, {}), document.getElementById("page")!);
+});

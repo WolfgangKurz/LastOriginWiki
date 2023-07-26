@@ -10,9 +10,6 @@ import deepmerge from "deepmerge";
 import { defineConfig, loadEnv } from "vite";
 import preact from "@preact/preset-vite";
 
-import pluginWasm from "vite-plugin-wasm";
-import pluginTopLevelAwait from "vite-plugin-top-level-await";
-
 console.log("building...");
 export default ({ mode }) => {
 	const viteEnv = loadEnv(mode, process.cwd());
@@ -260,8 +257,6 @@ export default ({ mode }) => {
 		},
 		plugins: [
 			preact(),
-			pluginWasm(),
-			pluginTopLevelAwait(),
 		],
 		resolve: {
 			alias: {
