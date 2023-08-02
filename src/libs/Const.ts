@@ -742,6 +742,7 @@ export const CurrentDate = ((): string => {
 
 export const SkinBanners: string[] = [
 	"3P_Ajax_1",
+	"3P_Amphitrite_1",
 	"3P_Aqua_1",
 	"3P_Aurora_2", "3P_Aurora_3",
 	"3P_BlackLilith_3",
@@ -755,6 +756,7 @@ export const SkinBanners: string[] = [
 	"3P_Maria_2",
 	"3P_Melite_1",
 	"3P_Ran_2",
+	"3P_Salacia_1",
 	"3P_ScissorsLise_3",
 	"3P_Titania_3",
 	"AGS_Arachne_1",

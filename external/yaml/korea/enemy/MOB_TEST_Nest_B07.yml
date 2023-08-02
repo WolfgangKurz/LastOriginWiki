@@ -44,12 +44,7 @@ skills:
         - key: Effect_TEST_Nest_N_1
           on: attack_success
           if:
-            - on:
-                target: target
-                func: OR
-                select:
-                  - Effect_TEST_Nest_N_2
-                attr: 6
+            - false
             - false
           body:
             - 0
@@ -64,21 +59,92 @@ skills:
             - 2
           target: 3
           buffs:
-            - icon: BuffIcon_PhyATK_UP
+            - icon: ""
               desc:
                 desc: Effect_TEST_Nest_N_1_1
                 type: 0
-                value: "0.500000"
+                value: "10000"
                 level: "0"
-              attr: 0
+              attr: 3
               erase:
-                rounds: 0
+                rounds: 1
               value:
                 isBuff: true
-                type: 83
-                damage_add:
-                  base: 50%
+                type: 138
+                _comment: unknown (138)
+                unknown:
+                  base: 1000000%
                   per: 0%
+              overlap: 4
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_TEST_Nest_N_1_2
+                type: 0
+                value: "10000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 10000
+                  per: 0
+              overlap: 4
+            - icon: BuffIcon_FireDMG_DOT
+              desc:
+                desc: Effect_TEST_Nest_N_1_3
+                type: 0
+                value: "10000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 66
+                fixed_damage:
+                  elem: fire
+                  damage:
+                    base: 10000
+                    per: 0
+              overlap: 4
+            - icon: BuffIcon_IceDMG_DOT
+              desc:
+                desc: Effect_TEST_Nest_N_1_4
+                type: 0
+                value: "10000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 67
+                fixed_damage:
+                  elem: ice
+                  damage:
+                    base: 10000
+                    per: 0
+              overlap: 4
+            - icon: BuffIcon_LightningDMG_DOT
+              desc:
+                desc: Effect_TEST_Nest_N_1_5
+                type: 0
+                value: "10000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 68
+                fixed_damage:
+                  elem: lightning
+                  damage:
+                    base: 10000
+                    per: 0
               overlap: 4
           maxStack: 0
   - key: Skill_TEST_Nest_N_2
