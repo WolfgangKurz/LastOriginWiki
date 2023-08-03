@@ -1,0 +1,448 @@
+uid: Tarantula_TU3
+rarity: 4
+type: 0
+role: 1
+category: 0
+stat:
+  hp:
+    - 2000
+    - 75
+  atk:
+    - 180
+    - 13
+  def:
+    - 0
+    - 0
+  spd: 4.55
+  cri: 12.5
+  acc: 375
+  eva: 250
+  res:
+    fire: 95
+    chill: -25
+    thunder: 70
+skills:
+  - key: Skill_MP_Tarantula_N_1
+    icon: MeleeAttack
+    passive: false
+    type: 1
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.8
+      range: 4
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Tarantula_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_FIRERES_DOWN
+              desc:
+                desc: Effect_MP_Tarantula_N_1_1
+                type: 1
+                value: "-0.100000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 9
+              value:
+                isBuff: true
+                chance: 50%
+                type: 15
+                resist:
+                  elem: fire
+                  value:
+                    base: -10%
+                    per: 0%
+              overlap: 4
+          maxStack: 3
+        - key: Effect_MP_Tarantula_N_11
+          on: criticaled
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Tarantula_N_11_1
+                type: 0
+                value: "36"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 36
+                  target: 0
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_Tarantula_N_2
+    icon: SelfDefBuff
+    passive: false
+    type: 1
+    target: enemy
+    delayed: false
+    buff:
+      rate: 4
+      range: 3
+      ap: 10
+      grid: 0,1,0,1,1,1,0,1,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Tarantula_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_BARRIER_PIERCE
+              desc:
+                desc: Effect_MP_Tarantula_N_2_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 94
+                penetration_force: true
+              overlap: 1
+          maxStack: 0
+        - key: Effect_MP_Tarantula_N_12
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Tarantula_N_12_1
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 1
+                  target: 0
+              overlap: 4
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Tarantula_N_12_2
+                type: 0
+                value: "999.990000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 70
+                fixed_damage:
+                  base: 99999%
+                  per: 0%
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_Tarantula_N_3
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Tarantula_N_3
+          on: attack
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Tarantula_N_3_1
+                type: 1
+                value: "0.100000"
+                level: "0"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 10%
+                  per: 0%
+              overlap: 4
+          maxStack: 5
+        - key: Effect_MP_Tarantula_N_13
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Tarantula_N_3
+                stack: 3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Tarantula_N_13_1
+                type: 0
+                value: "2000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 2000
+                  per: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Tarantula_N_14
+          on: evade
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Tarantula_N_14_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Tarantula_N_15
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Tarantula_N_3
+                stack: 3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_MP_Tarantula_N_15_1
+                type: 1
+                value: "0.750000"
+                level: "0"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 75%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_Tarantula_N_4
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Tarantula_N_4
+          on: self_dead
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Tarantula_N_3
+                stack: 3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Tarantula_N_4_1
+                type: 1
+                value: "10"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 70
+                fixed_damage:
+                  base: 1000%
+                  per: 0%
+              overlap: 3
+          maxStack: 0
+ai: AI_Mp_Tarantula_Normal_02

@@ -1,0 +1,431 @@
+uid: Drone_EV9
+rarity: 3
+type: 2
+role: 2
+category: 0
+stat:
+  hp:
+    - 275
+    - 37.5
+  atk:
+    - 60
+    - 5.5
+  def:
+    - 0
+    - 0
+  spd: 4.4
+  cri: 5
+  acc: 130
+  eva: 90
+  res:
+    fire: 0
+    chill: 0
+    thunder: -25
+skills:
+  - key: Skill_MP_Drone_EV9_1
+    icon: Missile
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.1
+      range: 3
+      ap: 5
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Drone_EV9_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_Push
+              desc:
+                desc: Effect_MP_Drone_EV9_1_1
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 52
+                position:
+                  type: push
+                  range:
+                    base: 1
+                    per: 0
+              overlap: 0
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_Drone_EV9_1_2
+                type: 0
+                value: "-1"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: -1
+                  per: 0
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_Drone_EV9_2
+    icon: Scan
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0
+      range: 3
+      ap: 7
+      grid: 0,1,0,0,1,0,0,1,0
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Drone_EV9_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_VULNERABLE
+              desc:
+                desc: Effect_MP_Drone_EV9_2_1
+                type: 1
+                value: "0.250000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 48
+                damage_increase:
+                  base: 25%
+                  per: 0%
+              overlap: 1
+            - icon: BuffIcon_DEBUFF_RATEUP
+              desc:
+                desc: Effect_MP_Drone_EV9_2_2
+                type: 1
+                value: "0.250000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 90
+                resist:
+                  type: debuff_rateup
+                  value:
+                    base: 25%
+                    per: 0%
+              overlap: 4
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_MP_Drone_EV9_2_3
+                type: 1
+                value: "-0.300000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: -30%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Drone_EV9_3
+    icon: P.TeamDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,1,0,0,1,0,0,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Drone_EV9_3
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_MP_Drone_EV9_3_1
+                type: 1
+                value: "5"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 500%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Drone_EV9_31
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 2
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_MP_Drone_EV9_31_1
+                type: 1
+                value: "4"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 400%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Drone_EV9_32
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 3
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_MP_Drone_EV9_32_1
+                type: 1
+                value: "3"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 300%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Drone_EV9_33
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_MP_Drone_EV9_33_1
+                type: 1
+                value: "2"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 200%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Drone_EV9_34
+          on: round
+          if:
+            - round:
+                operator: =
+                round:
+                  - 5
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_MP_Drone_EV9_34_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Drone_EV9_35
+          on: round
+          if:
+            - round:
+                operator: ">="
+                round:
+                  - 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_MP_Drone_EV9_35_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 0%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+ai: AI_MP_Drone_EV9

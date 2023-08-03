@@ -1,0 +1,673 @@
+uid: Sub_Observer_T4
+type: 2
+key: Observer
+rarity: 5
+craft: false
+upgrade:
+  enchant:
+    - res: 750
+      item: []
+    - res: 1163
+      item: []
+    - res: 1575
+      item: []
+    - res: 1988
+      item: []
+    - res: 2400
+      item: []
+    - res: 2813
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 15
+        - item: RobotParts_CalculationControl
+          count: 20
+    - res: 3225
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 30
+        - item: RobotParts_CalculationControl
+          count: 40
+    - res: 3638
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 45
+        - item: RobotParts_CalculationControl
+          count: 60
+    - res: 4050
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 60
+        - item: RobotParts_HDCalculationControl
+          count: 10
+    - res: 4463
+      item:
+        - item: Consumable_EquipProPart_T2
+          count: 15
+        - item: RobotParts_HDCalculationControl
+          count: 20
+  upgrade: null
+limit:
+  - Attacker
+source:
+  - - 5-2Ex
+    - 7-8Ex
+  - - Ev:Ev4:*Ev-3Ex
+  - - Ev:Ev5:*Ev2-3B
+  - - Ev:Ev6:*Ev2-3Ex
+  - - Exc:19:9
+stats:
+  - - type: 6
+      accuracy:
+        base: 30%
+        per: 0%
+    - key: Effect_BUFF_DummyObs_N_10
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_RANGE_UP
+          desc:
+            desc: Effect_BUFF_DummyObs_N_10_1
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 55
+            range:
+              base: 1
+              per: 0
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyObs_N_10_2
+            type: 0
+            value: "55"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            chance: 50%
+            type: 89
+            off:
+              type: 55
+              target: 1
+          overlap: 0
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 36%
+        per: 0%
+    - key: Effect_BUFF_DummyObs_N_11
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_RANGE_UP
+          desc:
+            desc: Effect_BUFF_DummyObs_N_11_1
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 55
+            range:
+              base: 1
+              per: 0
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyObs_N_11_2
+            type: 0
+            value: "55"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            chance: 55%
+            type: 89
+            off:
+              type: 55
+              target: 1
+          overlap: 0
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 42%
+        per: 0%
+    - key: Effect_BUFF_DummyObs_N_12
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_RANGE_UP
+          desc:
+            desc: Effect_BUFF_DummyObs_N_12_1
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 55
+            range:
+              base: 1
+              per: 0
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyObs_N_12_2
+            type: 0
+            value: "55"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            chance: 60%
+            type: 89
+            off:
+              type: 55
+              target: 1
+          overlap: 0
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 48%
+        per: 0%
+    - key: Effect_BUFF_DummyObs_N_13
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_RANGE_UP
+          desc:
+            desc: Effect_BUFF_DummyObs_N_13_1
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 55
+            range:
+              base: 1
+              per: 0
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyObs_N_13_2
+            type: 0
+            value: "55"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            chance: 65%
+            type: 89
+            off:
+              type: 55
+              target: 1
+          overlap: 0
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 54%
+        per: 0%
+    - key: Effect_BUFF_DummyObs_N_14
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_RANGE_UP
+          desc:
+            desc: Effect_BUFF_DummyObs_N_14_1
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 55
+            range:
+              base: 1
+              per: 0
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyObs_N_14_2
+            type: 0
+            value: "55"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            chance: 70%
+            type: 89
+            off:
+              type: 55
+              target: 1
+          overlap: 0
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 60%
+        per: 0%
+    - key: Effect_BUFF_DummyObs_N_15
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_RANGE_UP
+          desc:
+            desc: Effect_BUFF_DummyObs_N_15_1
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 55
+            range:
+              base: 1
+              per: 0
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyObs_N_15_2
+            type: 0
+            value: "55"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            chance: 75%
+            type: 89
+            off:
+              type: 55
+              target: 1
+          overlap: 0
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 66%
+        per: 0%
+    - key: Effect_BUFF_DummyObs_N_16
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_RANGE_UP
+          desc:
+            desc: Effect_BUFF_DummyObs_N_16_1
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 55
+            range:
+              base: 1
+              per: 0
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyObs_N_16_2
+            type: 0
+            value: "55"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            chance: 80%
+            type: 89
+            off:
+              type: 55
+              target: 1
+          overlap: 0
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 72%
+        per: 0%
+    - key: Effect_BUFF_DummyObs_N_17
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_RANGE_UP
+          desc:
+            desc: Effect_BUFF_DummyObs_N_17_1
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 55
+            range:
+              base: 1
+              per: 0
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyObs_N_17_2
+            type: 0
+            value: "55"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            chance: 85%
+            type: 89
+            off:
+              type: 55
+              target: 1
+          overlap: 0
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 78%
+        per: 0%
+    - key: Effect_BUFF_DummyObs_N_18
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_RANGE_UP
+          desc:
+            desc: Effect_BUFF_DummyObs_N_18_1
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 55
+            range:
+              base: 1
+              per: 0
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyObs_N_18_2
+            type: 0
+            value: "55"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            chance: 90%
+            type: 89
+            off:
+              type: 55
+              target: 1
+          overlap: 0
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 84%
+        per: 0%
+    - key: Effect_BUFF_DummyObs_N_19
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_RANGE_UP
+          desc:
+            desc: Effect_BUFF_DummyObs_N_19_1
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 55
+            range:
+              base: 1
+              per: 0
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyObs_N_19_2
+            type: 0
+            value: "55"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            chance: 95%
+            type: 89
+            off:
+              type: 55
+              target: 1
+          overlap: 0
+      maxStack: 0
+  - - type: 6
+      accuracy:
+        base: 90%
+        per: 0%
+    - key: Effect_BUFF_DummyObs_N_20
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_RANGE_UP
+          desc:
+            desc: Effect_BUFF_DummyObs_N_20_1
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 55
+            range:
+              base: 1
+              per: 0
+          overlap: 4
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_DummyObs_N_20_2
+            type: 0
+            value: "55"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 89
+            off:
+              type: 55
+              target: 1
+          overlap: 0
+      maxStack: 0

@@ -242,7 +242,7 @@ const Home: FunctionalComponent = () => {
 			autoplay
 			pagination
 		>
-			{ ["BR_Nashorn_1", "PECS_QueenMane_2"].map(skin => {
+			{ ["3P_Amphitrite_1", "3P_Salacia_1"].map(skin => {
 				const r = /^(.+)_([0-9]+)$/.exec(skin)!;
 				const key = r[1];
 				const sid = parseInt(r[2], 10);

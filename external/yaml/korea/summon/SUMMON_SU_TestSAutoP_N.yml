@@ -1,0 +1,308 @@
+uid: SUMMON_SU_TestSAutoP_N
+icon: TbarIcon_SU_GoldenFactory_N
+rarity: 4
+type: 0
+role: 2
+use: true
+summonType: 2
+pos: 1
+overlap: 2
+turn: 1
+deflv: 1
+lifecycle: 10
+shelter: true
+stat:
+  hp:
+    - 200
+    - 2675
+  atk:
+    - 1
+    - 1
+  def:
+    - 10
+    - 307
+  spd: 10
+  cri: 0
+  acc: 999
+  eva: -100
+  res:
+    fire: 20
+    chill: 20
+    thunder: 20
+skills:
+  - key: Skill_SU_TestSAutoP_N_1
+    name: "1002700215"
+    icon: Shot
+    desc: "1002703012"
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 4
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: false
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_SU_TestSAutoP_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_SU_TestSAutoP_N_1_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 3
+                defense:
+                  base: 0%
+                  per: 0%
+              overlap: 1
+          maxStack: 0
+  - key: Skill_SU_TestSAutoP_N_2
+    name: "1002700216"
+    icon: Shot
+    desc: "1002703012"
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: false
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_SU_TestSAutoP_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_SU_TestSAutoP_N_2_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 1
+                attack:
+                  base: 0%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_SU_TestSAutoP_N_3
+    name: SkillName_Skill_SU_TestSAutoP_N_3
+    icon: TeamAtkBuff
+    desc: SkillDesc_Skill_SU_TestSAutoP_N_3
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_SU_TestSAutoP_N_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_SU_TestSAutoP_N_3_1
+                type: 1
+                value: "0.250000"
+                level: "0.015000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 25%
+                  per: 1.5%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_SU_TestSAutoP_N_3_2
+                type: 1
+                value: "0.100000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 10%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_SU_TestSAutoP_N_4
+    name: SkillName_Skill_SU_TestSAutoP_N_4
+    icon: TeamDefDeBuff
+    desc: SkillDesc_Skill_SU_TestSAutoP_N_4
+    passive: true
+    type: 0
+    target: enemy
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_SU_TestSAutoP_N_4
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_SU_TestSAutoP_N_4_1
+                type: 1
+                value: "-0.050000"
+                level: "-0.002500"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: -5%
+                  per: -0.25%
+              overlap: 4
+            - icon: BuffIcon_SNARE
+              desc:
+                desc: Effect_SU_TestSAutoP_N_4_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 78
+                immovable: true
+              overlap: 1
+            - icon: BuffIcon_VULNERABLE
+              desc:
+                desc: Effect_SU_TestSAutoP_N_4_3
+                type: 1
+                value: "0.055000"
+                level: "0.005000"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 48
+                damage_increase:
+                  base: 5.5%
+                  per: 0.5%
+              overlap: 4
+          maxStack: 0
+ai: AI_TEST_Normal_02

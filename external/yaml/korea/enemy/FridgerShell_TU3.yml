@@ -1,0 +1,384 @@
+uid: FridgerShell_TU3
+rarity: 4
+type: 0
+role: 1
+category: 0
+stat:
+  hp:
+    - 6817
+    - 225
+  atk:
+    - 400
+    - 9.16
+  def:
+    - 16989
+    - 320.45
+  spd: 3.95
+  cri: 10
+  acc: 440
+  eva: 10
+  res:
+    fire: -25
+    chill: 100
+    thunder: 50
+skills:
+  - key: Skill_MP_FridgerShell_N_1
+    icon: IceShot
+    passive: false
+    type: 2
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 3
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_FridgerShell_N_1
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - Effect_BUFF_Flood_N_1
+                  - Effect_BUFF_Flood_N_2
+                  - Effect_BUFF_Flood_N_3
+                  - Effect_BUFF_Flood_N_4
+                  - Effect_BUFF_Flood_N_5
+                  - Effect_BUFF_Flood_N_6
+                  - Effect_BUFF_Flood_N_7
+                  - Effect_BUFF_Flood_N_8
+                  - Effect_BUFF_Flood_N_9
+                  - Effect_BUFF_Flood_N_11
+                  - Effect_BUFF_Flood_N_12
+                  - Effect_BUFF_Flood_N_13
+                  - Effect_BUFF_Flood_N_14
+                  - Effect_BUFF_Flood_N_15
+                  - Effect_BUFF_Flood_N_16
+                  - Effect_BUFF_Flood_N_17
+                  - Effect_BUFF_Flood_N_18
+                  - Effect_BUFF_Flood_N_19
+                  - Effect_BUFF_Flood_N_20
+                  - Effect_BUFF_Flood_N_21
+                  - Effect_BUFF_Flood_N_22
+                  - Effect_BUFF_Flood_N_23
+                  - Effect_BUFF_Flood_N_24
+                  - Effect_BUFF_Flood_N_25
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_IceATK_UP
+              desc:
+                desc: Effect_MP_FridgerShell_N_1_1
+                type: 1
+                value: "0.500000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 85
+                damage_add:
+                  elem: ice
+                  damage:
+                    base: 50%
+                    per: 0%
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_FridgerShell_N_2
+    icon: WideIceShot
+    passive: false
+    type: 2
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.5
+      range: 4
+      ap: 6
+      grid: 0,0,0,1,1,0,0,0,0
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_FridgerShell_N_2
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - Effect_BUFF_Flood_N_1
+                  - Effect_BUFF_Flood_N_2
+                  - Effect_BUFF_Flood_N_3
+                  - Effect_BUFF_Flood_N_4
+                  - Effect_BUFF_Flood_N_5
+                  - Effect_BUFF_Flood_N_6
+                  - Effect_BUFF_Flood_N_7
+                  - Effect_BUFF_Flood_N_8
+                  - Effect_BUFF_Flood_N_9
+                  - Effect_BUFF_Flood_N_11
+                  - Effect_BUFF_Flood_N_12
+                  - Effect_BUFF_Flood_N_13
+                  - Effect_BUFF_Flood_N_14
+                  - Effect_BUFF_Flood_N_15
+                  - Effect_BUFF_Flood_N_16
+                  - Effect_BUFF_Flood_N_17
+                  - Effect_BUFF_Flood_N_18
+                  - Effect_BUFF_Flood_N_19
+                  - Effect_BUFF_Flood_N_20
+                  - Effect_BUFF_Flood_N_21
+                  - Effect_BUFF_Flood_N_22
+                  - Effect_BUFF_Flood_N_23
+                  - Effect_BUFF_Flood_N_24
+                  - Effect_BUFF_Flood_N_25
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_FridgerShell_N_2_1
+                type: 0
+                value: "36"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 36
+                  target: 0
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_FridgerShell_N_3
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_FridgerShell_N_3
+          on: round
+          if:
+            - in_squad:
+                - MOB_MP_FridgerHead_N
+                - MOB_MP_FridgerHead_TU1
+                - MOB_MP_FridgerHead_TU2
+                - MOB_MP_FridgerHead_TU3
+                - MOB_MP_FridgerHead_TU4
+                - MOB_MP_FridgerHead_TU5
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_MP_FridgerShell_N_3_1
+                type: 1
+                value: "0.200000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 20%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_FridgerShell_N_3_2
+                type: 1
+                value: "0.200000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 20%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_FridgerShell_N_3_3
+                type: 1
+                value: "0.200000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 20%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_FridgerShell_N_4
+    icon: P.IceShot
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_FridgerShell_N_4
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_BUFF_Flood_N_1
+                  - Effect_BUFF_Flood_N_2
+                  - Effect_BUFF_Flood_N_3
+                  - Effect_BUFF_Flood_N_4
+                  - Effect_BUFF_Flood_N_5
+                  - Effect_BUFF_Flood_N_6
+                  - Effect_BUFF_Flood_N_7
+                  - Effect_BUFF_Flood_N_8
+                  - Effect_BUFF_Flood_N_9
+                  - Effect_BUFF_Flood_N_11
+                  - Effect_BUFF_Flood_N_12
+                  - Effect_BUFF_Flood_N_13
+                  - Effect_BUFF_Flood_N_14
+                  - Effect_BUFF_Flood_N_15
+                  - Effect_BUFF_Flood_N_16
+                  - Effect_BUFF_Flood_N_17
+                  - Effect_BUFF_Flood_N_18
+                  - Effect_BUFF_Flood_N_19
+                  - Effect_BUFF_Flood_N_20
+                  - Effect_BUFF_Flood_N_21
+                  - Effect_BUFF_Flood_N_22
+                  - Effect_BUFF_Flood_N_23
+                  - Effect_BUFF_Flood_N_24
+                  - Effect_BUFF_Flood_N_25
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_FridgerShell_N_4_1
+                type: 1
+                value: "0.600000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 60%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_MP_FridgerShell_N_4_2
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 100%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+ai: AI_MP_FridgerShooter_01

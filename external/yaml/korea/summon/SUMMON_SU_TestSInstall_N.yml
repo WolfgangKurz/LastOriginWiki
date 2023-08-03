@@ -1,0 +1,149 @@
+uid: SUMMON_SU_TestSInstall_N
+icon: TbarIcon_MP_Scout_N
+rarity: 2
+type: 0
+role: 2
+use: true
+summonType: 0
+pos: 0
+overlap: 2
+turn: 0
+deflv: 1
+lifecycle: 4
+shelter: true
+stat:
+  hp:
+    - 10
+    - 10
+  atk:
+    - 1
+    - 1
+  def:
+    - 1
+    - 1
+  spd: 0
+  cri: 0
+  acc: 100
+  eva: 0
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_SU_TestSInstall_N_1
+    name: "1002700211"
+    icon: ShieldWall
+    desc: "1002703008"
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 8
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_SU_TestSInstall_N_1
+          on:
+            hp<=:
+              - 100%
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DAMAGE_ABSORB
+              desc:
+                desc: Effect_SU_TestSInstall_N_1_1
+                type: 0
+                value: "50"
+                level: "30"
+              attr: 0
+              erase:
+                until: self_dead
+              value:
+                isBuff: true
+                type: 38
+                barrier:
+                  base: 50
+                  per: 30
+              overlap: 0
+          maxStack: 0
+  - key: Skill_SU_TestSInstall_N_2
+    name: "1002700212"
+    icon: ShieldWall
+    desc: "1002703009"
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 8
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_SU_TestSInstall_N_2
+          on:
+            hp<=:
+              - 100%
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_SU_TestSInstall_N_2_1
+                type: 1
+                value: "0.200000"
+                level: "0.030000"
+              attr: 0
+              erase:
+                until: self_dead
+              value:
+                isBuff: true
+                type: 36
+                damage_reduce:
+                  base: 20%
+                  per: 3%
+              overlap: 0
+          maxStack: 0
+ai: AI_Jako_Normal_01

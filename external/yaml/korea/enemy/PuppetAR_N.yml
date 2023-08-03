@@ -1,0 +1,433 @@
+uid: PuppetAR_N
+rarity: 5
+type: 0
+role: 2
+category: 0
+stat:
+  hp:
+    - 330
+    - 75
+  atk:
+    - 60
+    - 4
+  def:
+    - 100
+    - 6
+  spd: 3.75
+  cri: 0
+  acc: 200
+  eva: 0
+  res:
+    fire: 0
+    chill: 100
+    thunder: 40
+skills:
+  - key: Skill_MP_PuppetAR_N_1
+    icon: ARShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.25
+      range: 4
+      ap: 5
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_PuppetAR_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_MARKING
+              desc:
+                desc: Effect_MP_PuppetAR_N_1_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 87
+                attack_target: true
+              overlap: 1
+            - icon: BuffIcon_PROVOKE
+              desc:
+                desc: Effect_MP_PuppetAR_N_1_2
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 74
+                provoke: self
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_PuppetAR_N_2
+    icon: MGShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 5
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_PuppetAR_N_2
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 74
+                  - 87
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_PuppetAR_N_2_1
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 30%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_PuppetAR_N_3
+    icon: P.Hang
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_PuppetAR_N_3
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - 22
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_VULNERABLE
+              desc:
+                desc: Effect_MP_PuppetAR_N_3_1
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 48
+                damage_increase:
+                  base: 30%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_PuppetAR_N_31
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_PuppetAR_N_3
+                stack: 0
+                func: UNFILLED
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_PuppetAR_N_31_1
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 30%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_MP_PuppetAR_N_31_2
+                type: 1
+                value: "0.200000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 20%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_PuppetAR_N_31_3
+                type: 1
+                value: "0.100000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 10%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_PuppetAR_N_4
+    icon: P.SuicideBomb
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 4>0,0,0,1,1,1,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_PuppetAR_N_4
+          on: round
+          if:
+            - target:
+                - MOB_MP_PuppetAR_N
+                - MOB_MP_PuppetHW_N
+                - MOB_MP_PuppetHA_N
+                - MOB_MP_PuppetDM_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_PuppetAR_N_4_1
+                type: 1
+                value: "0.250000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: 25%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_PuppetAR_N_41
+          on: self_dead
+          if:
+            - target:
+                - MOB_MP_PuppetAR_N
+                - MOB_MP_PuppetHW_N
+                - MOB_MP_PuppetHA_N
+                - MOB_MP_PuppetDM_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_STUN
+              desc:
+                desc: Effect_MP_PuppetAR_N_41_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 22
+                stun: true
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_PuppetAR_N_5
+    icon: P.SetBarricade
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_PuppetAR_N_5
+          on: team_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_MP_PuppetAR_N_5_1
+                type: 1
+                value: "0.250000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 25%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+ai: AI_MP_PuppetAR_01

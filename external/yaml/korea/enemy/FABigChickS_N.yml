@@ -1,0 +1,503 @@
+uid: FABigChickS_N
+rarity: 4
+type: 1
+role: 0
+category: 0
+stat:
+  hp:
+    - 1500
+    - 84
+  atk:
+    - 50
+    - 6
+  def:
+    - 150
+    - 5.8
+  spd: 3.15
+  cri: 5
+  acc: 75
+  eva: 1
+  res:
+    fire: 25
+    chill: 25
+    thunder: -25
+skills:
+  - key: Skill_MP_FABigChickS_N_1
+    icon: ShieldWall
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.3
+      range: 3
+      ap: 5
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_FABigChickS_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_FABigChickS_N_1_1
+                type: 1
+                value: "-0.300000"
+                level: "0.020000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -30%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_STUN
+              desc:
+                desc: Effect_MP_FABigChickS_N_1_2
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 60%
+                type: 22
+                stun: true
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_FABigChickS_N_2
+    icon: ShieldWall
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_FABigChickS_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_FABigChickS_N_2_1
+                type: 1
+                value: "0.400000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 36
+                damage_reduce:
+                  base: 40%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_DEF_Line
+              desc:
+                desc: Effect_MP_FABigChickS_N_2_2
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 50
+                guard: col
+              overlap: 1
+            - icon: BuffIcon_DEF_Side
+              desc:
+                desc: Effect_MP_FABigChickS_N_2_3
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 75
+                guard: row
+              overlap: 1
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_MP_FABigChickS_N_2_4
+                type: 1
+                value: "0.500000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 50%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_FABigChickS_N_11
+          on:
+            after: use_skill
+          if:
+            - hp<=:
+                - 25%
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_COUNTER
+              desc:
+                desc: Effect_MP_FABigChickS_N_11_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 29
+                counter:
+                  base: 100%
+                  per: 0%
+              overlap: 1
+          maxStack: 1
+        - unknown: Effect_MP_FABigChickS_N_15
+  - key: Skill_MP_FABigChickS_N_3
+    icon: P.TeamDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,1,1,0,0,1,0,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_FABigChickS_N_3
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_FABigChickS_N_2
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_FABigChickS_N_3_1
+                type: 1
+                value: "0.750000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: 75%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_FABigChickS_N_3_2
+                type: 1
+                value: "0.250000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 36
+                damage_reduce:
+                  base: 25%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_FABigChickS_N_4
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_FABigChickS_N_4
+          on: damaged
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_FABigChickS_N_4_1
+                type: 1
+                value: "0.350000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: 35%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_FABigChickS_N_12
+          on: damaged
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_FABigChickS_N_12_1
+                type: 1
+                value: "0.100000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 10%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_FABigChickS_N_13
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_FABigChickS_N_4
+                stack: 5
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_MP_FABigChickS_N_13_1
+                type: 0
+                value: "3000"
+                level: "0"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 82
+                revive:
+                  base: 3000
+                  per: 0
+              overlap: 0
+          maxStack: 1
+        - key: Effect_MP_FABigChickS_N_14
+          on: revive
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_FABigChickS_N_14_1
+                type: 1
+                value: "999999"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 34
+                damage_minimize:
+                  base: 999999
+                  per: 0
+              overlap: 1
+            - icon: BuffIcon_BARRIER_PIERCE
+              desc:
+                desc: Effect_MP_FABigChickS_N_14_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 94
+                penetration_force: true
+              overlap: 1
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_FABigChickS_N_14_3
+                type: 0
+                value: "1500"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 1500
+                  per: 0
+              overlap: 4
+          maxStack: 0
+ai: AI_FABigChickShield_Normal_01

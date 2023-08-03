@@ -1,0 +1,1024 @@
+uid: MOB_BR_Vargr_Rage_TU2
+rarity: 5
+type: 1
+role: 1
+category: 1
+stat:
+  hp:
+    - 5666.6667
+    - 566.6667
+  atk:
+    - 200
+    - 20
+  def:
+    - 1000
+    - 100
+  spd: 4
+  cri: 0
+  acc: 1000
+  eva: 0
+  res:
+    fire: 50
+    chill: 50
+    thunder: 50
+skills:
+  - key: Skill_BR_Vargr_Rage_TU_1
+    icon: SwordAttk
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.9
+      range: 4
+      ap: 5
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_BR_Vargr_Rage_TU_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_1_1
+                type: 1
+                value: "11"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 11
+                  target: 0
+              overlap: 4
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_1_2
+                type: 1
+                value: "-1"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 999
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: -100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_BR_Vargr_Rage_TU_510
+          on: attack_success
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_BR_Vargr_Rage_TU_59
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_510_1
+                type: 1
+                value: "-0.500000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: -50%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_BR_Vargr_Rage_TU_42
+          on: attack_success
+          if:
+            - round:
+                operator: even
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_42_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 99
+                off: 0
+              overlap: 4
+          maxStack: 0
+  - key: Skill_BR_Vargr_Rage_TU_2
+    icon: WideSwordAttk
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 10
+      range: 10
+      ap: 10
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_BR_Vargr_Rage_TU_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_2_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 3
+        - key: Effect_BR_Vargr_Rage_TU_21
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_21_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 99
+                off: 0
+              overlap: 4
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_21_2
+                type: 0
+                value: "99999999"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 99999999
+                  per: 0
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_21_3
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 21
+                ap_set:
+                  base: 0
+                  per: 0
+              overlap: 4
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_21_4
+                type: 0
+                value: "82"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 82
+              overlap: 4
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_21_5
+                type: 0
+                value: "98"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 98
+              overlap: 4
+          maxStack: 0
+  - key: Skill_BR_Vargr_Rage_TU_3
+    icon: P.DefCounter
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_BR_Vargr_Rage_TU_3
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_All
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_3_1
+                type: 0
+                value: "4"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 33
+                damage_immune:
+                  base: 4
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_BR_Vargr_Rage_TU_31
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_COUNTER
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_31_1
+                type: 1
+                value: "1.200000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 29
+                counter:
+                  base: 120%
+                  per: 0%
+              overlap: 1
+          maxStack: 0
+        - key: Effect_BR_Vargr_Rage_TU_32
+          on: round
+          if:
+            - on:
+                target: self
+                func: UNFILLED
+                select:
+                  - Effect_BR_Vargr_Rage_TU_3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_32_1
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 30%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_32_2
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 30%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_BR_Vargr_Rage_TU_4
+    icon: P.FormChange
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_BR_Vargr_Rage_TU_4
+          on: round
+          if:
+            - round:
+                operator: odd
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_4_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_BARRIER_PIERCE
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_4_2
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 94
+                penetration_force: true
+              overlap: 4
+          maxStack: 0
+        - key: Effect_BR_Vargr_Rage_TU_41
+          on: round
+          if:
+            - round:
+                operator: even
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_SKILL_UP
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_41_1
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 106
+                skill_ratio:
+                  base: 30%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_BR_Vargr_Rage_TU_43
+          on: enemy_killed
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_TOGETHER_ATTACK
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_43_1
+                type: 1
+                value: MOB_BR_Vargr_Rage_TU
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 103
+                collaborate:
+                  skill: 2
+                  with: MOB_BR_Vargr_Rage_TU
+              overlap: 4
+          maxStack: 1
+        - key: Effect_BR_Vargr_Rage_TU_44
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_IMMUNITY_DEBUFF
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_44_1
+                type: 1
+                value: "52"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 101
+                debuff_immune: 52
+              overlap: 4
+            - icon: BuffIcon_IMMUNITY_DEBUFF
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_44_2
+                type: 0
+                value: "13"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 101
+                debuff_immune: 13
+              overlap: 4
+            - icon: BuffIcon_IMMUNITY_DEBUFF
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_44_3
+                type: 0
+                value: "53"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 101
+                debuff_immune: 53
+              overlap: 4
+            - icon: BuffIcon_IMMUNITY_DEBUFF
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_44_4
+                type: 0
+                value: "20"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 101
+                debuff_immune: 20
+              overlap: 4
+            - icon: BuffIcon_IMMUNITY_DEBUFF
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_44_5
+                type: 0
+                value: "21"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 101
+                debuff_immune: 21
+              overlap: 4
+          maxStack: 0
+        - key: Effect_BR_Vargr_Rage_TU_45
+          on: enemy_killed
+          if:
+            - on:
+                target: self
+                func: UNFILLED
+                select:
+                  - Effect_BR_Vargr_Rage_TU_46
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_45_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                count: 1
+                trigger:
+                  use_skill: 2
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 0%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_BR_Vargr_Rage_TU_46
+          on:
+            use_skill: 2
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_46_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 0%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_BR_Vargr_Rage_TU_47
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_IMMUNITY_DEBUFF
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_47_1
+                type: 1
+                value: "22"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 101
+                debuff_immune: 22
+              overlap: 4
+            - icon: BuffIcon_IMMUNITY_DEBUFF
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_47_2
+                type: 0
+                value: "79"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 101
+                debuff_immune: 79
+              overlap: 4
+          maxStack: 0
+  - key: Skill_BR_Vargr_Rage_TU_5
+    icon: P.EnemyDetect
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_BR_Vargr_Rage_TU_5
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_5_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 98
+                revive:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_BR_Vargr_Rage_TU_51
+          on: revive
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_51_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 99
+                off: 0
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_51_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 21
+                ap_set:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_BR_Vargr_Rage_TU_52
+          on: round
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 69
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_Push
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_52_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 52
+                position:
+                  type: push
+                  range:
+                    base: 1
+                    per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_BR_Vargr_Rage_TU_58
+          on: round
+          if:
+            - target:
+                - Char_BR_JangHwa_N
+                - Char_BR_Cheona_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_MARKING
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_58_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 87
+                attack_target: true
+              overlap: 1
+          maxStack: 0
+        - key: Effect_BR_Vargr_Rage_TU_59
+          on: round
+          if:
+            - in_squad:
+                - Char_BR_JangHwa_N
+                - Char_BR_Cheona_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_BR_Vargr_Rage_TU_59_1
+                type: 1
+                value: "-0.100000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: -10%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+ai: AI_MP_Vargr_Rage_01

@@ -1,0 +1,439 @@
+uid: LemonadeAvatar_EV8
+rarity: 5
+type: 0
+role: 2
+category: 0
+stat:
+  hp:
+    - 1500
+    - 0
+  atk:
+    - 200
+    - 0
+  def:
+    - 0
+    - 0
+  spd: 10
+  cri: 0
+  acc: 500
+  eva: 0
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_MP_LemonadeAvatar_N_1
+    icon: SuicideBomb
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 2
+      range: 9
+      ap: 10
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LemonadeAvatar_N_1
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs: []
+          maxStack: 0
+  - key: Skill_MP_LemonadeAvatar_N_2
+    icon: Command
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 9
+      ap: 10
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LemonadeAvatar_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 1
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_LemonadeAvatar_N_2_1
+                type: 0
+                value: "2"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 2
+                  per: 0
+              overlap: 4
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_MP_LemonadeAvatar_N_2_2
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 10
+              value:
+                isBuff: true
+                chance: 0%
+                type: 98
+                revive:
+                  base: 100%
+                  per: 0%
+              overlap: 1
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_LemonadeAvatar_N_2_3
+                type: 1
+                value: "2"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 5
+              value:
+                isBuff: true
+                chance: 0%
+                type: 1
+                attack:
+                  base: 200%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_LemonadeAvatar_N_2_4
+                type: 1
+                value: "2"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 5
+              value:
+                isBuff: true
+                chance: 0%
+                type: 3
+                defense:
+                  base: 200%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_LemonadeAvatar_N_21
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 1
+          buffs:
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_MP_LemonadeAvatar_N_21_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 10
+              value:
+                isBuff: true
+                type: 98
+                revive:
+                  base: 100%
+                  per: 0%
+              overlap: 1
+          maxStack: 0
+        - key: Effect_MP_LemonadeAvatar_N_22
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 1
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_LemonadeAvatar_N_22_1
+                type: 1
+                value: "2"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 5
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 200%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_LemonadeAvatar_N_23
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 1
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_LemonadeAvatar_N_23_1
+                type: 1
+                value: "2"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 5
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: 200%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_LemonadeAvatar_N_3
+    icon: P.Barrier
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LemonadeAvatar_N_3
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DAMAGE_ABSORB
+              desc:
+                desc: Effect_MP_LemonadeAvatar_N_3_1
+                type: 0
+                value: "1000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 99
+              value:
+                isBuff: true
+                type: 38
+                barrier:
+                  base: 1000
+                  per: 0
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_LemonadeAvatar_N_4
+    icon: P.Barrier
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LemonadeAvatar_N_4
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_All
+              desc:
+                desc: Effect_MP_LemonadeAvatar_N_4_1
+                type: 0
+                value: "99999"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 33
+                damage_immune:
+                  base: 99999
+                  per: 0
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_LemonadeAvatar_EV8_5
+    icon: P.WideLightning
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LemonadeAvatar_EV8_5
+          on: attack_success
+          if:
+            - unitCount:
+                filter: squad
+                type:
+                  - 0
+                  - 2
+                  - 1
+                count:
+                  - 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_LemonadeAvatar_EV8_5_1
+                type: 1
+                value: "10"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 70
+                fixed_damage:
+                  base: 1000%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+ai: AI_LemonadeAvatar_Normal_01

@@ -1,0 +1,338 @@
+uid: ProgramMobAS_N
+rarity: 4
+type: 1
+role: 2
+category: 0
+stat:
+  hp:
+    - 612
+    - 84.2
+  atk:
+    - 65
+    - 6.4
+  def:
+    - 135
+    - 5.7873
+  spd: 3.55
+  cri: 5
+  acc: 200
+  eva: 22.5
+  res:
+    fire: -20
+    chill: 0
+    thunder: 30
+skills:
+  - key: Skill_MP_ProgramMobAS_N_1
+    icon: MultiMissile
+    passive: false
+    type: 3
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.9
+      range: 3
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ProgramMobAS_N_1
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 17
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_LightningDMG_DOT
+              desc:
+                desc: Effect_MP_ProgramMobAS_N_1_1
+                type: 0
+                value: "300"
+                level: "1"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 33%
+                type: 68
+                fixed_damage:
+                  elem: lightning
+                  damage:
+                    base: 300
+                    per: 1
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_ProgramMobAS_N_2
+    icon: Scan
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.8
+      range: 2
+      ap: 9
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ProgramMobAS_N_2
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 87
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_ProgramMobAS_N_2_1
+                type: 1
+                value: "0.330000"
+                level: "0.010000"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 33%
+                  per: 1%
+              overlap: 0
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_ProgramMobAS_N_2_2
+                type: 0
+                value: "50"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 50
+                  target: 0
+              overlap: 0
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_ProgramMobAS_N_2_3
+                type: 0
+                value: "75"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 75
+                  target: 0
+              overlap: 0
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_ProgramMobAS_N_2_4
+                type: 0
+                value: "76"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 76
+                  target: 0
+              overlap: 0
+            - icon: BuffIcon_Push
+              desc:
+                desc: Effect_MP_ProgramMobAS_N_2_5
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 52
+                position:
+                  type: push
+                  range:
+                    base: 1
+                    per: 0
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_ProgramMobAS_N_3
+    icon: P.TeamAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ProgramMobAS_N_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_TROOPER_DMG_UP
+              desc:
+                desc: Effect_MP_ProgramMobAS_N_3_1
+                type: 1
+                value: "0.300000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 60
+                damage_multiply:
+                  target: light
+                  value:
+                    base: 30%
+                    per: 1%
+              overlap: 4
+            - icon: BuffIcon_BARRIER_PIERCE
+              desc:
+                desc: Effect_MP_ProgramMobAS_N_3_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 94
+                penetration_force: true
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_ProgramMobAS_N_4
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,1,0,0,0,0,0,1,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ProgramMobAS_N_4
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_MP_ProgramMobAS_N_4_1
+                type: 1
+                value: "0.670000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 77
+                attack_support:
+                  base: 67%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+ai: AI_ProgramMobAS_Normal_01

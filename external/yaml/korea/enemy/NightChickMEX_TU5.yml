@@ -1,0 +1,230 @@
+uid: NightChickMEX_TU5
+rarity: 3
+type: 0
+role: 1
+category: 0
+stat:
+  hp:
+    - 457.5
+    - 101.25
+  atk:
+    - 110
+    - 11.5
+  def:
+    - 65
+    - 2.75
+  spd: 4
+  cri: 16.25
+  acc: 305
+  eva: 80
+  res:
+    fire: 25
+    chill: 25
+    thunder: 25
+skills:
+  - key: Skill_MP_NightChickMEX_N_1
+    icon: Missile
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.2
+      range: 2
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickMEX_N_1
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 78
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_NightChickMEX_N_1_1
+                type: 1
+                value: "0.200000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 20%
+                  per: 1%
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_NightChickMEX_N_2
+    icon: Missile
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.6
+      range: 1
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickMEX_N_2
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 78
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_NightChickMEX_N_2_1
+                type: 1
+                value: "0.200000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 20%
+                  per: 1%
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_NightChickMEX_N_3
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickMEX_N_3
+          on: move
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_RANGE_UP
+              desc:
+                desc: Effect_MP_NightChickMEX_N_3_1
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 4
+              value:
+                isBuff: true
+                type: 55
+                range:
+                  base: 1
+                  per: 0
+              overlap: 1
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_NightChickMEX_N_3_2
+                type: 1
+                value: "0.200000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 4
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 20%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_NightChickMEX_N_3_3
+                type: 1
+                value: "0.150000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 4
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 15%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+ai: AI_Jako_Normal_01

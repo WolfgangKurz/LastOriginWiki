@@ -1,0 +1,369 @@
+uid: NightChickShSv_TU4
+rarity: 4
+type: 0
+role: 0
+category: 0
+stat:
+  hp:
+    - 25000
+    - 1235
+  atk:
+    - 68
+    - 6.2
+  def:
+    - 432
+    - 6
+  spd: 4.2
+  cri: 5
+  acc: 400
+  eva: 20
+  res:
+    fire: 30
+    chill: 30
+    thunder: 30
+skills:
+  - key: Skill_MP_NightChickShSv_N_1
+    icon: MeleeAttack
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.1
+      range: 3
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickShSv_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PROVOKE
+              desc:
+                desc: Effect_MP_NightChickShSv_N_1_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 74
+                provoke: self
+              overlap: 1
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_NightChickShSv_N_1_2
+                type: 1
+                value: "-0.200000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -20%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_DOWN
+              desc:
+                desc: Effect_MP_NightChickShSv_N_1_3
+                type: 1
+                value: "-0.050000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: -5%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_NightChickShSv_N_2
+    icon: SelfDefBuff
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickShSv_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 1
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_NightChickShSv_N_2_1
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 1
+                  per: 0
+              overlap: 0
+            - icon: BuffIcon_DEF_Char
+              desc:
+                desc: Effect_MP_NightChickShSv_N_2_2
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 76
+                guard: target
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_NightChickShSv_N_3
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickShSv_N_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_NightChickShSv_N_3_1
+                type: 1
+                value: "0.100000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 10%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_FIRERES_UP
+              desc:
+                desc: Effect_MP_NightChickShSv_N_3_2
+                type: 1
+                value: "0.150000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 15
+                resist:
+                  elem: fire
+                  value:
+                    base: 15%
+                    per: 0%
+              overlap: 4
+            - icon: BuffIcon_ICERES_UP
+              desc:
+                desc: Effect_MP_NightChickShSv_N_3_3
+                type: 1
+                value: "0.150000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 17
+                resist:
+                  elem: ice
+                  value:
+                    base: 15%
+                    per: 0%
+              overlap: 4
+            - icon: BuffIcon_LIGHTNINGRES_UP
+              desc:
+                desc: Effect_MP_NightChickShSv_N_3_4
+                type: 1
+                value: "0.150000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 19
+                resist:
+                  elem: lightning
+                  value:
+                    base: 15%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_NightChickShSv_N_4
+    icon: P.SelfDefDeBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickShSv_N_4
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_BUFF_Flood_N_1
+                  - Effect_BUFF_Flood_N_2
+                  - Effect_BUFF_Flood_N_3
+                  - Effect_BUFF_Flood_N_4
+                  - Effect_BUFF_Flood_N_5
+                  - Effect_BUFF_Flood_N_6
+                  - Effect_BUFF_Flood_N_7
+                  - Effect_BUFF_Flood_N_8
+                  - Effect_BUFF_Flood_N_9
+                  - Effect_BUFF_Flood_N_11
+                  - Effect_BUFF_Flood_N_12
+                  - Effect_BUFF_Flood_N_13
+                  - Effect_BUFF_Flood_N_14
+                  - Effect_BUFF_Flood_N_15
+                  - Effect_BUFF_Flood_N_16
+                  - Effect_BUFF_Flood_N_17
+                  - Effect_BUFF_Flood_N_18
+                  - Effect_BUFF_Flood_N_19
+                  - Effect_BUFF_Flood_N_20
+                  - Effect_BUFF_Flood_N_21
+                  - Effect_BUFF_Flood_N_22
+                  - Effect_BUFF_Flood_N_23
+                  - Effect_BUFF_Flood_N_24
+                  - Effect_BUFF_Flood_N_25
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_VULNERABLE
+              desc:
+                desc: Effect_MP_NightChickShSv_N_4_1
+                type: 1
+                value: "5"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 4
+              value:
+                isBuff: true
+                type: 48
+                damage_increase:
+                  base: 500%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+ai: AI_Mp_NCShieldEx_Normal_01

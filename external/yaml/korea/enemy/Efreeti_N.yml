@@ -1,0 +1,567 @@
+uid: Efreeti_N
+rarity: 5
+type: 1
+role: 2
+category: 0
+stat:
+  hp:
+    - 5979.7248
+    - 0
+  atk:
+    - 935.8272
+    - 50.0925
+  def:
+    - 88
+    - 11
+  spd: 4.2
+  cri: 10
+  acc: 250
+  eva: 0
+  res:
+    fire: 90
+    chill: 90
+    thunder: 90
+skills:
+  - key: Skill_MP_Efreeti_N_1
+    icon: CannonShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 2
+      range: 5
+      ap: 8
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Efreeti_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_Push
+              desc:
+                desc: Effect_MP_Efreeti_N_1_1
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 52
+                position:
+                  type: push
+                  range:
+                    base: 1
+                    per: 0
+              overlap: 4
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_Efreeti_N_1_2
+                type: 0
+                value: "-1.500000"
+                level: "-0.075000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 20
+                ap:
+                  base: -1.5
+                  per: -0.075
+              overlap: 4
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Efreeti_N_1_3
+                type: 1
+                value: "0.200000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 83
+                damage_add:
+                  base: 20%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Efreeti_N_2
+    icon: CannonShotDelay
+    passive: false
+    type: 0
+    target: enemy
+    delayed: true
+    buff:
+      rate: 2.25
+      range: 6
+      ap: 10
+      grid: 0,0.75,0,0.75,1,0.75,0,0.75,0
+      target_ground: true
+      summon: null
+      use: null
+      enabled: false
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 0
+      buffs:
+        - key: Effect_MP_Efreeti_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_Efreeti_N_2_1
+                type: 0
+                value: "-1"
+                level: "-0.050000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: -1
+                  per: -0.05
+              overlap: 4
+            - icon: BuffIcon_VULNERABLE
+              desc:
+                desc: Effect_MP_Efreeti_N_2_2
+                type: 1
+                value: "0.200000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 48
+                damage_increase:
+                  base: 20%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Efreeti_N_2_3
+                type: 0
+                value: "29"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 88
+                off:
+                  type: 29
+                  target: 0
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Efreeti_N_3
+    icon: P.TeamAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Efreeti_N_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Efreeti_N_3_1
+                type: 1
+                value: "0.250000"
+                level: "0.015000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 25%
+                  per: 1.5%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_MP_Efreeti_N_3_2
+                type: 1
+                value: "0.100000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 10%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Efreeti_N_3_3
+                type: 0
+                value: "7"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 89
+                off:
+                  type: 7
+                  target: 1
+              overlap: 4
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Efreeti_N_3_4
+                type: 0
+                value: "9"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 89
+                off:
+                  type: 9
+                  target: 1
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Efreeti_N_4
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Efreeti_N_4
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Efreeti_N_4_1
+                type: 1
+                value: "0.200000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 20%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Efreeti_N_4_2
+                type: 1
+                value: "0.200000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 20%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_Efreeti_N_4_3
+                type: 1
+                value: "0.300000"
+                level: "0.030000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 30%
+                  per: 3%
+              overlap: 4
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Efreeti_N_4_4
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 1
+                attack:
+                  base: 0%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Efreeti_N_5
+    icon: P.SelfSpdBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 4>0,1,1,1,0,1,0,1,1
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Efreeti_N_5
+          on: round
+          if:
+            - near: false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Efreeti_N_5_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 12
+                turnSpeed:
+                  base: 0
+                  per: 0
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Efreeti_N_5_2
+                type: 1
+                value: "0.100000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 13
+                turnSpeed:
+                  base: 10%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Efreeti_N_5_3
+                type: 1
+                value: "0.100000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 13
+                turnSpeed:
+                  base: 10%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Efreeti_N_5_4
+                type: 1
+                value: "0.100000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 13
+                turnSpeed:
+                  base: 10%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Efreeti_N_7
+    icon: Missile
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 2.25
+      range: 6
+      ap: 0
+      grid: 0,0.75,0,0.75,1,0.75,0,0.75,0
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Efreeti_N_7
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_Efreeti_N_7_1
+                type: 0
+                value: "-1"
+                level: "-0.050000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: -1
+                  per: -0.05
+              overlap: 4
+          maxStack: 0
+ai: AI_MP_CollaboEvent_Stage_3_5

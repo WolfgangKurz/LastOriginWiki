@@ -1,0 +1,129 @@
+uid: NightChickTT_N
+rarity: 2
+type: 0
+role: 1
+category: 0
+stat:
+  hp:
+    - 10000
+    - 0
+  atk:
+    - 20
+    - 0
+  def:
+    - 100
+    - 0
+  spd: 4
+  cri: 0
+  acc: 100
+  eva: 0
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_MP_NightChickTT_N_1
+    icon: Shot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 3
+      ap: 8
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickTT_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_SNARE
+              desc:
+                desc: Effect_MP_NightChickTT_N_1_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 78
+                immovable: true
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_NightChickTT_N_2
+    icon: Shot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 3
+      ap: 8
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickTT_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_SNARE
+              desc:
+                desc: Effect_MP_NightChickTT_N_2_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 78
+                immovable: true
+              overlap: 1
+          maxStack: 0
+ai: AI_Jako_Special_01

@@ -190,10 +190,17 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 			<div class="col-12 col-lg-7">
 				<div class={ `card text-light mx-3 mt-3 p-3 ${style.IntroduceText}` }>
 					<div class="card-body p-0">
-						{ unit.uid === "PECS_Olivia" && CurrentLocale === "KR"
-							? PreprocessUnitIntro(unit.uid)
-							: <Locale plain k={ `UNIT_INTRO_${unit.uid}` } />
-						}
+						<img
+							class={ style.GroupIcon }
+							src={ `${AssetsRoot}/${imageExt}/group/${unit.group.replace(/_[0-9]+$/, "")}.${imageExt}` }
+						/>
+
+						<div class={ style.IntroduceTextBody }>
+							{ unit.uid === "PECS_Olivia" && CurrentLocale === "KR"
+								? PreprocessUnitIntro(unit.uid)
+								: <Locale plain k={ `UNIT_INTRO_${unit.uid}` } />
+							}
+						</div>
 					</div>
 
 					{ unit.introVoice.length > 0

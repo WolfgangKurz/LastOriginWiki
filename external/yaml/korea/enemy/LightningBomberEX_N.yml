@@ -1,0 +1,406 @@
+uid: LightningBomberEX_N
+rarity: 5
+type: 2
+role: 1
+category: 0
+stat:
+  hp:
+    - 150
+    - 58.5
+  atk:
+    - 200
+    - 11.55
+  def:
+    - 25
+    - 1
+  spd: 4.4
+  cri: 5
+  acc: 100
+  eva: 50
+  res:
+    fire: 60
+    chill: 60
+    thunder: 0
+skills:
+  - key: Skill_MP_LightningBomberEX_N_1
+    icon: Missile
+    passive: false
+    type: 3
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 4
+      ap: 4
+      grid: 0,0,0,0.75,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LightningBomberEX_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_LightningBomberEX_N_1_1
+                type: 1
+                value: "-0.300000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: -30%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_LightningBomberEX_N_2
+    icon: MultiMissile
+    passive: false
+    type: 3
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.25
+      range: 3
+      ap: 9
+      grid: 0,1,0,1,1,1,0,1,0
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LightningBomberEX_N_2
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 12
+                  - 13
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_LightningBomberEX_N_2_1
+                type: 1
+                value: "0.250000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 25%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_LightningBomberEX_N_3
+    icon: P.SelfSpdDeBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LightningBomberEX_N_3
+          on: evade
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_MP_LightningBomberEX_N_3_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_LightningBomberEX_N_31
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_LightningBomberEX_N_31_1
+                type: 1
+                value: "-0.200000"
+                level: "0"
+              attr: 1
+              erase: {}
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: -20%
+                  per: 0%
+              overlap: 4
+          maxStack: 4
+  - key: Skill_MP_LightningBomberEX_N_4
+    icon: P.Shock
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LightningBomberEX_N_4
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_LightningBomberEX_N_4_1
+                type: 1
+                value: "0.800000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 80%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_LightningBomberEX_N_5
+    icon: P.DefCounter
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LightningBomberEX_N_5
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_MP_LightningBomberEX_N_5_1
+                type: 1
+                value: "5"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 500%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_LightningBomberEX_N_51
+          on: evade
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_COUNTER
+              desc:
+                desc: Effect_MP_LightningBomberEX_N_51_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 29
+                counter:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_LightningBomberEX_N_52
+          on: attack
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: ""
+              desc:
+                desc: Effect_MP_LightningBomberEX_N_52_1
+                type: 1
+                value: Effect_MP_LightningBomberEX_N_5
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 97
+                off: Effect_MP_LightningBomberEX_N_5
+              overlap: 4
+          maxStack: 0
+ai: AI_MP_LightningBomberEX_01

@@ -39,12 +39,7 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 		const db = unit.dialogue[props.lang];
 		if (!db) return [];
 
-		if (VoiceKey in db) {
-			const diag = db[VoiceKey];
-			return Object.keys(diag) as Array<keyof RawUnitDialogueEntity>;
-		}
-
-		return [
+		const defaultTypes = [
 			...(voice.isDef && !voice.isMarriage ? ["Join"] : []),
 			"SquadJoin",
 			"Leader",
@@ -88,6 +83,14 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 			"OathIdle_01",
 			"MVP",
 		] as Array<keyof RawUnitDialogueEntity>;
+
+		if (VoiceKey in db) {
+			const diag = db[VoiceKey];
+			return (Object.keys(diag) as Array<keyof RawUnitDialogueEntity>)
+				.sort((a, b) => defaultTypes.indexOf(a) - defaultTypes.indexOf(b));
+		}
+
+		return defaultTypes;
 	})();
 
 	const Dialogue = ((): Partial<RawUnitDialogueEntity> => {

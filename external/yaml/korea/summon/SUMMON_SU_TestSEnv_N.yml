@@ -1,0 +1,151 @@
+uid: SUMMON_SU_TestSEnv_N
+icon: TbarIcon_MP_Scout_N
+rarity: 2
+type: 2
+role: 2
+use: true
+summonType: 1
+pos: 1
+overlap: 2
+turn: 0
+deflv: 1
+lifecycle: 4
+shelter: false
+stat:
+  hp:
+    - 10
+    - 10
+  atk:
+    - 1
+    - 1
+  def:
+    - 1
+    - 1
+  spd: 0
+  cri: 0
+  acc: 100
+  eva: 0
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_SU_TestSEnv_N_1
+    name: "1002700213"
+    icon: MultiMissile
+    desc: "1002703010"
+    passive: true
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 8
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_SU_TestSEnv_N_1
+          on:
+            hp<=:
+              - 100%
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_FireDMG_DOT
+              desc:
+                desc: Effect_SU_TestSEnv_N_1_1
+                type: 0
+                value: "10"
+                level: "5"
+              attr: 0
+              erase:
+                rounds: 1
+                until: self_dead
+              value:
+                isBuff: true
+                type: 66
+                fixed_damage:
+                  elem: fire
+                  damage:
+                    base: 10
+                    per: 5
+              overlap: 1
+          maxStack: 0
+  - key: Skill_SU_TestSEnv_N_2
+    name: "1002700214"
+    icon: MultiMissile
+    desc: "1002703011"
+    passive: true
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 8
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 50
+      buffs:
+        - key: Effect_SU_TestSEnv_N_2
+          on:
+            hp<=:
+              - 100%
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_SNARE
+              desc:
+                desc: Effect_SU_TestSEnv_N_2_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+                until: self_dead
+              value:
+                isBuff: true
+                type: 78
+                immovable: true
+              overlap: 1
+          maxStack: 0
+ai: AI_Jako_Normal_01

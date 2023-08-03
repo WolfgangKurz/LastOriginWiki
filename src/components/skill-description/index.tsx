@@ -9,6 +9,8 @@ import { ParamWithSlot, parseParams } from "@/libs/SkillDescription";
 import EquipPopup from "@/components/popup/equip-popup";
 import * as Components from "./components";
 
+import experimental from "./experimental";
+
 import style from "./components/style.module.scss";
 
 export interface SectionProps {
@@ -35,30 +37,38 @@ interface SkillDescriptionProps {
 	buffBonus: boolean;
 	skillBonus: number;
 	favorBonus: boolean;
+
+	experimentalBuffName?: boolean;
 }
 
 const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => {
 	const rates = props.rates || [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
 	const displayEquip = objState(false);
 	const selectedEquip = objState<FilterableEquip | null>(null);
 
 	function compile (text: string): Array<preact.VNode[] | preact.VNode | string> {
 		if (!text) return [];
 
-		const tags: Record<string, preact.FunctionalComponent<unknown>> = {};
-		if (props.sections) {
-			text = text.replace(/\$\$([A-Za-z0-9\-_]+)((:?([?F0-9,@]+))\$|\$?)/g, (p0, p1, p2, p3, p4) => {
-				// eslint-disable-next-line react/display-name
-				tags[`SECTION_${p1}`] = (): preact.VNode => <>{
-					(props.sections![p1] || [])
-						.map((r, i) => <div
-							key={ `SKILL_DESCRIPTION_COMMENT_SECTION_${p1}_LINE_${i}` }
-							class={ style.CommentLine }
-						>{ createElement(r, { params: parseParams(p4) }) }</div>)
-				}</>;
-				return `<SECTION_${p1} />`;
-			});
+		const _sections = props.sections || {};
+		if (props.experimentalBuffName) {
+			const $ret = experimental.BuffName(text);
+			text = $ret.text;
+			Object.keys($ret.sections).forEach(sec => _sections[sec] = $ret.sections[sec]);
 		}
+
+		const tags: Record<string, preact.FunctionalComponent<unknown>> = {};
+		text = text.replace(/\$\$([A-Za-z0-9\-_]+)((:?([?F0-9,@]+))\$|\$?)/g, (p0, p1, p2, p3, p4) => {
+			// eslint-disable-next-line react/display-name
+			tags[`SECTION_${p1}`] = (): preact.VNode => <>{
+				(_sections[p1] || [])
+					.map((r, i) => <div
+						key={ `SKILL_DESCRIPTION_COMMENT_SECTION_${p1}_LINE_${i}` }
+						class={ style.CommentLine }
+					>{ createElement(r, { params: parseParams(p4) }) }</div>)
+			}</>;
+			return `<SECTION_${p1} />`;
+		});
 
 		const placeholder: FunctionalComponent<unknown> =
 			(p) => createElement("span", { class: "text-secondary" }, p.children);

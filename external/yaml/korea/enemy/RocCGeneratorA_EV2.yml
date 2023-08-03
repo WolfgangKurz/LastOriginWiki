@@ -1,0 +1,295 @@
+uid: RocCGeneratorA_EV2
+rarity: 4
+type: 1
+role: 0
+category: 0
+stat:
+  hp:
+    - 21600
+    - 600
+  atk:
+    - 0
+    - 0
+  def:
+    - 1555
+    - 5
+  spd: 6.5
+  cri: 0
+  acc: 999
+  eva: -999
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_MP_RocCGeneratorA_N_1
+    icon: SelfAtkBuff
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 10
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_RocCGeneratorA_N_1
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 1
+          class:
+            - 2
+          role:
+            - 1
+          target: 1
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_RocCGeneratorA_N_1_1
+                type: 1
+                value: "0.100000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 99
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 10%
+                  per: 0%
+              overlap: 4
+          maxStack: 5
+        - key: Effect_MP_RocCGeneratorA_N_11
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 1
+          class:
+            - 2
+          role:
+            - 1
+          target: 1
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_RocCGeneratorA_N_11_1
+                type: 0
+                value: "1.350000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 1.35
+                  per: 0
+              overlap: 3
+          maxStack: 0
+  - key: Skill_MP_RocCGeneratorA_N_2
+    icon: SelfDefBuff
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 10
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_RocCGeneratorA_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 1
+          buffs:
+            - icon: BuffIcon_DAMAGE_ABSORB
+              desc:
+                desc: Effect_MP_RocCGeneratorA_N_2_1
+                type: 0
+                value: "25000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 5
+              value:
+                isBuff: true
+                type: 38
+                barrier:
+                  base: 25000
+                  per: 0
+              overlap: 1
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_RocCGeneratorA_N_2_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 100
+                off: 1
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_RocCGeneratorA_N_3
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_RocCGeneratorA_N_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_MP_RocCGeneratorA_N_3_1
+                type: 0
+                value: "25000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 82
+                revive:
+                  base: 25000
+                  per: 0
+              overlap: 1
+          maxStack: 1
+  - key: Skill_MP_RocCGeneratorA_N_4
+    icon: P.SelfSpdDeBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_RocCGeneratorA_N_4
+          on: revive
+          if:
+            - false
+            - false
+          body:
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_STUN
+              desc:
+                desc: Effect_MP_RocCGeneratorA_N_4_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 4
+              value:
+                isBuff: true
+                type: 22
+                stun: true
+              overlap: 1
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_RocCGeneratorA_N_4_2
+                type: 0
+                value: "999999"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 4
+              value:
+                isBuff: true
+                type: 34
+                damage_minimize:
+                  base: 999999
+                  per: 0
+              overlap: 1
+          maxStack: 0
+ai: AI_RocGenerator_Normal_04

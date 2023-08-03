@@ -1,0 +1,184 @@
+uid: HarvesterS_N
+rarity: 3
+type: 1
+role: 0
+category: 0
+stat:
+  hp:
+    - 80
+    - 30
+  atk:
+    - 35
+    - 3.75
+  def:
+    - 15
+    - 1.5
+  spd: 3
+  cri: 3
+  acc: 70
+  eva: 0
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_MP_HarvesterS_N_1
+    icon: SwordAttk
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 1
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 50
+      buffs:
+        - key: Effect_MP_HarvesterS_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_STUN
+              desc:
+                desc: Effect_MP_HarvesterS_N_1_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 22
+                stun: true
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_HarvesterS_N_2
+    icon: ShieldWall
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 999
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_HarvesterS_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 1
+          buffs:
+            - icon: BuffIcon_DEF_Side
+              desc:
+                desc: Effect_MP_HarvesterS_N_2_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 75
+                guard: row
+              overlap: 1
+          maxStack: 0
+  - key: Skill_MP_HarvesterS_N_3
+    icon: P.ShieldWall
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 50
+      buffs:
+        - key: Effect_MP_HarvesterS_N_3
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_HarvesterS_N_3_1
+                type: 1
+                value: "100"
+                level: "10"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 34
+                damage_minimize:
+                  base: 100
+                  per: 10
+              overlap: 0
+          maxStack: 0
+ai: AI_Jako_Normal_01

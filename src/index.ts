@@ -1,5 +1,7 @@
 import { render, h } from "preact";
 
+import * as YAML from "@/external/yaml";
+
 import App from "@/app";
 
 import "@/themes/index.scss";
@@ -12,15 +14,15 @@ import Store from "@/store";
 
 Extend();
 
-{
+YAML.ensure().then(() => {
 	const verCheck = () => {
-		const buildtimeJson = `!/buildtime.json?_=${Date.now()}`;
-		JsonLoaderCore("!", buildtimeJson)
+		const buildtimeYaml = `!/buildtime.yml?_=${Date.now()}`;
+		JsonLoaderCore("!", buildtimeYaml)
 			.then(() => {
-				const latestBuildNo = GetJson<number>(buildtimeJson);
+				const latestBuildNo = GetJson<number>(buildtimeYaml);
 				const currentBuildNo = buildtime.build;
 
-				console.log(latestBuildNo, currentBuildNo);
+				console.log("server:" + latestBuildNo, "client:" + currentBuildNo);
 				if (latestBuildNo !== currentBuildNo)
 					Store.requireReload.value = true;
 			});
@@ -28,6 +30,6 @@ Extend();
 
 	setInterval(verCheck, 5 * 60 * 1000); // every 5min
 	verCheck();
-}
 
-render(h(App, {}), document.getElementById("page")!);
+	render(h(App, {}), document.getElementById("page")!);
+});

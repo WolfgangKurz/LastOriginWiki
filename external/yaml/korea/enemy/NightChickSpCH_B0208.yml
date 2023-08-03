@@ -1,0 +1,834 @@
+uid: NightChickSpCH_B0208
+rarity: 5
+type: 0
+role: 1
+category: 0
+stat:
+  hp:
+    - 37500
+    - 429.3
+  atk:
+    - 135
+    - 13.5
+  def:
+    - 100
+    - 0
+  spd: 20
+  cri: 15
+  acc: 135
+  eva: 1
+  res:
+    fire: -40
+    chill: -40
+    thunder: -40
+skills:
+  - key: Skill_MP_NightChickSpCH_B0208_1
+    icon: ARShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 6
+      ap: 1
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickSpCH_B0208_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_1_1
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 88
+                off:
+                  type: 1
+                  target: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_NightChickSpCH_B0208_11
+          on: attack_success
+          if:
+            - round:
+                operator: =
+                round:
+                  - 0
+                  - 1
+                  - 2
+                  - 3
+                  - 4
+                  - 5
+                  - 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_11_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 5
+              value:
+                isBuff: true
+                chance: 0%
+                type: 134
+                skill_disable: 1
+              overlap: 4
+          maxStack: 3
+        - key: Effect_MP_NightChickSpCH_B0208_12
+          on: attack_success
+          if:
+            - round:
+                operator: =
+                round:
+                  - 0
+                  - 1
+                  - 2
+                  - 3
+                  - 4
+                  - 5
+                  - 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_12_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 5
+              value:
+                isBuff: true
+                chance: 0%
+                type: 135
+                skill_disable: 2
+              overlap: 4
+          maxStack: 3
+        - key: Effect_MP_NightChickSpCH_B0208_13
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: UNFILLED
+                select:
+                  - 0
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_13_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 136
+                skill_disable: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_NightChickSpCH_B0208_14
+          on: attack_success
+          if:
+            - on:
+                target: target
+                select:
+                  - Effect_MP_NightChickSpCH_B0208_12
+                  - Effect_MP_NightChickSpCH_B0208_11
+                stack: 3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_14_1
+                type: 0
+                value: "-1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 12
+              value:
+                isBuff: true
+                chance: 0%
+                type: 2
+                defense:
+                  base: -1
+                  per: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_NightChickSpCH_B0208_15
+          on: attack_success
+          if:
+            - on:
+                target: target
+                select:
+                  - Effect_MP_NightChickSpCH_B0208_12
+                  - Effect_MP_NightChickSpCH_B0208_11
+                stack: 0
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_ACCURACY_DOWN
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_15_1
+                type: 0
+                value: "-0.010000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 5
+              value:
+                isBuff: true
+                chance: 0%
+                type: 7
+                accuracy:
+                  base: -1%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_NightChickSpCH_B0208_16
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_ACCURACY_DOWN
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_16_1
+                type: 0
+                value: "-0.010000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 0%
+                type: 7
+                accuracy:
+                  base: -1%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_NightChickSpCH_B0208_2
+    icon: ARShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.2
+      range: 6
+      ap: 1
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickSpCH_B0208_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_RANGE_DOWN
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_2_1
+                type: 0
+                value: "-10"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                chance: 0%
+                type: 108
+                skill: 2
+                range:
+                  base: -10
+                  per: 0
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_NightChickSpCH_B0208_3
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickSpCH_B0208_3
+          on: round
+          if:
+            - pos: 0
+            - on:
+                func: OR
+                select:
+                  - 19
+                  - 15
+                  - 17
+                attr: 1
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_3_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 1
+                attack:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_NightChickSpCH_B0208_31
+          on: round
+          if:
+            - pos: 1
+            - pos: 1
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_Remove_Buff_Resist
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_31_1
+                type: 1
+                value: "0.500000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 126
+                resist:
+                  type: off
+                  value:
+                    base: 50%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_NightChickSpCH_B0208_32
+          on: round
+          if:
+            - pos: 2
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_Remove_Buff_Resist
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_32_1
+                type: 1
+                value: "0.500000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 126
+                resist:
+                  type: off
+                  value:
+                    base: 50%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_NightChickSpCH_B0208_4
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickSpCH_B0208_4
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_4_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_Action_Number_Change_Up
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_4_2
+                type: 1
+                value: "2"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 127
+                act_count: 2
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_NightChickSpCH_B0208_41
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_Remove_Buff_Resist
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_41_1
+                type: 1
+                value: "0.500000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 126
+                resist:
+                  type: off
+                  value:
+                    base: 50%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_NightChickSpCH_B0208_42
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_Remove_Buff_Resist
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_42_1
+                type: 1
+                value: "0.500000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 126
+                resist:
+                  type: off
+                  value:
+                    base: 50%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_NightChickSpCH_B0208_5
+    icon: P.SelfDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 0
+      buffs:
+        - key: Effect_MP_NightChickSpCH_B0208_5
+          on: round
+          if:
+            - on:
+                target: self
+                func: UNFILLED
+                select:
+                  - 119
+                  - 120
+                  - 121
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_5_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 0
+                attack:
+                  base: 1
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_NightChickSpCH_B0208_51
+          on: round
+          if:
+            - near: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_51_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 0
+                attack:
+                  base: 1
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_NightChickSpCH_B0208_52
+          on: round
+          if:
+            - near: 2
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_52_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 0
+                attack:
+                  base: 1
+                  per: 0
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_NightChickSpCH_B0208_53
+          on: round
+          if:
+            - near: false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_NightChickSpCH_B0208_53_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 0
+                attack:
+                  base: 1
+                  per: 0
+              overlap: 4
+          maxStack: 0
+ai: AI_SoldierChick_Test_01

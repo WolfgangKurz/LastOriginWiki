@@ -1,0 +1,269 @@
+uid: ProgramMobTS_N
+rarity: 3
+type: 0
+role: 2
+category: 0
+stat:
+  hp:
+    - 331
+    - 77.7
+  atk:
+    - 63
+    - 6.3
+  def:
+    - 82
+    - 3.37
+  spd: 3.95
+  cri: 5
+  acc: 200
+  eva: 30
+  res:
+    fire: 20
+    chill: 20
+    thunder: 20
+skills:
+  - key: Skill_MP_ProgramMobTS_N_1
+    icon: ARShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.1
+      range: 4
+      ap: 5
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ProgramMobTS_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_MP_ProgramMobTS_N_1_1
+                type: 1
+                value: "-0.200000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: -20%
+                  per: -1%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_DOWN
+              desc:
+                desc: Effect_MP_ProgramMobTS_N_1_2
+                type: 1
+                value: "-0.400000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: -40%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_MP_ProgramMobTS_N_1_3
+                type: 1
+                value: "-0.400000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: -40%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_VULNERABLE
+              desc:
+                desc: Effect_MP_ProgramMobTS_N_1_4
+                type: 1
+                value: "0.150000"
+                level: "0.010000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 48
+                damage_increase:
+                  base: 15%
+                  per: 1%
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_ProgramMobTS_N_2
+    icon: ARShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.5
+      range: 3
+      ap: 7
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ProgramMobTS_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_FIRERES_DOWN
+              desc:
+                desc: Effect_MP_ProgramMobTS_N_2_1
+                type: 1
+                value: "-0.300000"
+                level: "-0.030000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 15
+                resist:
+                  elem: fire
+                  value:
+                    base: -30%
+                    per: -3%
+              overlap: 4
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_ProgramMobTS_N_2_2
+                type: 1
+                value: "-0.300000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: -30%
+                  per: -1%
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_ProgramMobTS_N_3
+    icon: P.TeamAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,1,0,1,0,1,0,1,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ProgramMobTS_N_3
+          on: team_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_ProgramMobTS_N_3_1
+                type: 1
+                value: "0.250000"
+                level: "0.060000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 25%
+                  per: 6%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_ProgramMobTS_N_3_2
+                type: 0
+                value: "1.200000"
+                level: "0.060000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 1.2
+                  per: 0.06
+              overlap: 0
+          maxStack: 2
+ai: AI_ProgramMobTS_Normal_01

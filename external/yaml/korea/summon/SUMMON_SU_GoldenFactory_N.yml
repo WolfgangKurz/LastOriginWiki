@@ -1,0 +1,250 @@
+uid: SUMMON_SU_GoldenFactory_N
+icon: TbarIcon_SU_GoldenFactory_N
+rarity: 3
+type: 0
+role: 0
+use: true
+summonType: 2
+pos: 0
+overlap: 1
+turn: 1
+deflv: 1
+lifecycle: 4
+shelter: false
+stat:
+  hp:
+    - 13
+    - 13
+  atk:
+    - 1
+    - 1
+  def:
+    - 99999999
+    - 99999999
+  spd: 10
+  cri: 0
+  acc: 999
+  eva: -999
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_SU_GoldenFactory_N_1
+    name: "1002707219"
+    icon: Barrier
+    desc: "1002707245"
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 8
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_SU_GoldenFactory_N_1
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_MARKING
+              desc:
+                desc: Effect_SU_GoldenFactory_N_1_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 87
+                attack_target: true
+              overlap: 1
+            - icon: BuffIcon_DAMAGE_ABSORB
+              desc:
+                desc: Effect_SU_GoldenFactory_N_1_2
+                type: 0
+                value: "300"
+                level: "50"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                chance: 0%
+                type: 38
+                barrier:
+                  base: 300
+                  per: 50
+              overlap: 4
+          maxStack: 0
+  - key: Skill_SU_GoldenFactory_N_2
+    name: "1002707220"
+    icon: TeamAtkBuff
+    desc: "1002707246"
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_SU_GoldenFactory_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_MARKING
+              desc:
+                desc: Effect_SU_GoldenFactory_N_2_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 87
+                attack_target: true
+              overlap: 1
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_SU_GoldenFactory_N_2_2
+                type: 1
+                value: "0.005000"
+                level: "0.005000"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                chance: 0%
+                type: 1
+                attack:
+                  base: 0.5%
+                  per: 0.5%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_SU_GoldenFactory_N_3
+    name: "1002707221"
+    icon: TeamSpdBuff
+    desc: "1002707247"
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 6
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_SU_GoldenFactory_N_3
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_MARKING
+              desc:
+                desc: Effect_SU_GoldenFactory_N_3_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 87
+                attack_target: true
+              overlap: 1
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_SU_GoldenFactory_N_3_2
+                type: 0
+                value: "0.007000"
+                level: "0.002000"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                chance: 0%
+                type: 13
+                turnSpeed:
+                  base: 0.7%
+                  per: 0.2%
+              overlap: 4
+          maxStack: 0
+ai: AI_UnderWatcherGene_01

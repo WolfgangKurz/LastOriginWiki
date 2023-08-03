@@ -1,0 +1,365 @@
+uid: Impet_N
+rarity: 5
+type: 2
+role: 1
+category: 0
+stat:
+  hp:
+    - 4671.66
+    - 0
+  atk:
+    - 708.96
+    - 37.9489
+  def:
+    - 88
+    - 16
+  spd: 4.2
+  cri: 10
+  acc: 250
+  eva: 0
+  res:
+    fire: 90
+    chill: 90
+    thunder: 90
+skills:
+  - key: Skill_MP_Impet_N_1
+    icon: AntiArmorShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.64
+      range: 3
+      ap: 7
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Impet_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_Impet_N_1_1
+                type: 1
+                value: "0.300000"
+                level: "0.040000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 30%
+                  per: 4%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Impet_N_2
+    icon: Missile
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1.27
+      range: 3
+      ap: 6
+      grid: 0,0,0,0,1,0.75,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Impet_N_2
+          on: criticaled
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_FireATK_UP
+              desc:
+                desc: Effect_MP_Impet_N_2_1
+                type: 1
+                value: "0.300000"
+                level: "0.015000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 84
+                damage_add:
+                  elem: fire
+                  damage:
+                    base: 30%
+                    per: 1.5%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Impet_N_3
+    icon: P.Missile
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Impet_N_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ARMORED_DMG_UP
+              desc:
+                desc: Effect_MP_Impet_N_3_1
+                type: 1
+                value: "0.150000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 61
+                damage_multiply:
+                  target: heavy
+                  value:
+                    base: 15%
+                    per: 2%
+              overlap: 4
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Impet_N_3_2
+                type: 1
+                value: "0.150000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 1
+                attack:
+                  base: 15%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_Impet_N_3_3
+                type: 1
+                value: "0.250000"
+                level: "0.012500"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 58
+                penetration:
+                  base: 25%
+                  per: 1.25%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Impet_N_11
+          on: round
+          if:
+            - pos: 0
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Impet_N_11_1
+                type: 1
+                value: "0.150000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 15%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_Impet_N_11_2
+                type: 1
+                value: "0.250000"
+                level: "0.012500"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 25%
+                  per: 1.25%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Impet_N_4
+    icon: P.TeamAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Impet_N_4
+          on: round
+          if:
+            - target:
+                - Char_BR_Impet_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Impet_N_4_1
+                type: 1
+                value: "0.120000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 12%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Impet_N_4_2
+                type: 1
+                value: "0.055000"
+                level: "0.005000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 1
+                attack:
+                  base: 5.5%
+                  per: 0.5%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_MP_Impet_N_4_3
+                type: 1
+                value: "0.055000"
+                level: "0.005000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 9
+                critical:
+                  base: 5.5%
+                  per: 0.5%
+              overlap: 4
+          maxStack: 0
+ai: AI_MP_CollaboEvent_Stage_3_5

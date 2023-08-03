@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
-import util from "util";
+
+import YAML from "yaml";
 
 import { globSync } from "glob";
 import hash from "hash.js";
@@ -20,7 +21,7 @@ export default ({ mode }) => {
 	(() => {
 		console.log("buildtime updating...");
 		const dest = path.resolve(__dirname, "src", "buildtime.ts");
-		const destJson = path.resolve(__dirname, "external", "json", "buildtime.json");
+		const destYaml = path.resolve(__dirname, "external", "yaml", "buildtime.yml");
 
 		const code = fs.readFileSync(dest, { encoding: "utf-8" })
 			.toString()
@@ -40,37 +41,37 @@ export default ({ mode }) => {
 			"utf-8",
 		);
 		fs.writeFileSync(
-			destJson,
-			JSON.stringify(buildNo),
+			destYaml,
+			YAML.stringify(buildNo),
 			"utf-8",
 		);
 	})();
 
-	// json hash
+	// yaml hash
 	if (isProd) {
 		(() => {
-			console.log("json hash updating...");
+			console.log("yaml hash updating...");
 			interface DBHashType {
 				[K: string]: string | DBHashType;
 			}
 
-			const jsonDir = path.resolve(__dirname, "external", "json");
+			const yamlDir = path.resolve(__dirname, "external", "yaml");
 			const list = (() => {
-				const baseDir = path.resolve(__dirname, "external", "json");
-				const globPath = path.join(baseDir, "**", "*.json");
+				const baseDir = path.resolve(__dirname, "external", "yaml");
+				const globPath = path.join(baseDir, "**", "*.yml");
 
 				return globSync(globPath.replace(/\\/g, "/"))
-					.filter(f => !f.endsWith("/buildtime.json"))
+					.filter(f => !f.endsWith("/buildtime.yml"))
 					.map(f => {
 						const rel = path.relative(baseDir, f).replace(/\\/g, "/");
-						return `!/${rel.substring(0, rel.length - 5)}`;
+						return `!/${rel.substring(0, rel.length - 4)}`;
 					});
 			})();
 
 			let outs: DBHashType = {};
 			list.forEach(item => {
 				const _item = item.substring(2);
-				const file = path.resolve(jsonDir, `${_item}.json`);
+				const file = path.resolve(yamlDir, `${_item}.yml`);
 				if (!fs.existsSync(file)) return;
 
 				const tree = ((value: string) => {
@@ -165,15 +166,22 @@ export default ({ mode }) => {
 						if (id.includes("/node_modules/graphlib/")) return "vendor.graphlib";
 						if (id.includes("/node_modules/lodash/")) return "vendor.lodash";
 						if (id.includes("/node_modules/swiper/")) return "vendor.swiper";
+						if (id.includes("/node_modules/chart.js/")) return "vendor.chart";
 						if (
 							id.includes("/node_modules/@reactflow/") ||
 							id.includes("/node_modules/@tisoap/") ||
-							id.includes("/node_modules/@dagrejs/")
+							id.includes("/node_modules/@dagrejs/") ||
+							id.includes("/node_modules/d3-") ||
+							id.includes("/node_modules/pathfinding/")
 						) return "vendor.flow";
 
-						if (id.includes("/node_modules/")) return "vendor";
+						if (
+							id.includes("/html2canvas/") ||
+							id.includes("/node_modules/css-line-break/") ||
+							id.includes("/node_modules/text-segmentation/")
+						) return "vendor.html2canvas";
 
-						if (id.includes("/html2canvas/")) return "vendor.html2canvas";
+						if (id.includes("/node_modules/")) return "vendor";
 
 						// components/bootstrap-icon/
 						if (id.includes("/src/components/bootstrap-icon/")) return "components.icon";
@@ -247,7 +255,9 @@ export default ({ mode }) => {
 				},
 			},
 		},
-		plugins: [preact()],
+		plugins: [
+			preact(),
+		],
 		resolve: {
 			alias: {
 				"@/": `${path.resolve(__dirname, "src")}/`,

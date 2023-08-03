@@ -1,0 +1,164 @@
+uid: SUMMON_SU_C4Bomb_N
+icon: TbarIcon_SU_AMG11_N
+rarity: 2
+type: 0
+role: 2
+use: true
+summonType: 0
+pos: 1
+overlap: 3
+turn: 0
+deflv: 1
+lifecycle: 9
+shelter: false
+stat:
+  hp:
+    - 10
+    - 10
+  atk:
+    - 50
+    - 1040
+  def:
+    - 1
+    - 1
+  spd: 0
+  cri: 0
+  acc: 100
+  eva: 0
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_SU_C4Bomb_N_1
+    name: "1000104297"
+    icon: Scan
+    desc: "1002703884"
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_SU_C4Bomb_N_1
+          on:
+            _comment: IF_CHAR_INGRID
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_SU_C4Bomb_N_1_1
+                type: 1
+                value: "1"
+                level: "0.050000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 70
+                fixed_damage:
+                  base: 100%
+                  per: 5%
+              overlap: 0
+            - icon: BuffIcon_SUMMON_INSTENV
+              desc:
+                desc: Effect_SU_C4Bomb_N_1_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 93
+                summon_remove: true
+              overlap: 0
+          maxStack: 0
+  - key: Skill_SU_C4Bomb_N_2
+    name: "1002700376"
+    icon: Scan
+    desc: "1002703885"
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,1,0,1,1,1,0,1,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_SU_C4Bomb_N_2
+          on: self_dead
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_BR_Phantom_N_2
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_SU_C4Bomb_N_2_1
+                type: 0
+                value: "2"
+                level: "0.100000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 70
+                fixed_damage:
+                  base: 200%
+                  per: 10%
+              overlap: 3
+          maxStack: 0
+ai: AI_Jako_Normal_01

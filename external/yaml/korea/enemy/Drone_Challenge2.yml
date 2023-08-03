@@ -1,0 +1,249 @@
+uid: Drone_Challenge2
+rarity: 4
+type: 2
+role: 1
+category: 0
+stat:
+  hp:
+    - 8000000
+    - 0
+  atk:
+    - 50000
+    - 0
+  def:
+    - 0
+    - 0
+  spd: 4.5
+  cri: 0
+  acc: 150
+  eva: 0
+  res:
+    fire: 100
+    chill: 100
+    thunder: 100
+skills:
+  - key: Skill_MP_Drone_Challenge2_1
+    icon: MeleeAttack
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 10
+      ap: 3
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use:
+        key: Effect_MP_DoomEater_N_EW_21
+        count: 10
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Drone_Challenge2_1
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 1
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Drone_Challenge2_1_1
+                type: 0
+                value: "9999.990000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 70
+                fixed_damage:
+                  base: 999999%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_Drone_Challenge2_2
+    icon: TeamDefDeBuff
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 1
+      range: 10
+      ap: 5
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Drone_Challenge2_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Drone_Challenge2_2_1
+                type: 0
+                value: "9999.990000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 70
+                fixed_damage:
+                  base: 999999%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_Drone_Challenge2_3
+    icon: P.TeamDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,1,0,0,1,0,0,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Drone_Challenge2_3
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_MP_Drone_Challenge2_3_1
+                type: 1
+                value: "5"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 500%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Drone_Challenge2_4
+    icon: P.SelfSpdBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Drone_Challenge2_4
+          on: round
+          if:
+            - round:
+                operator: ">="
+                round:
+                  - 11
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Drone_Challenge2_4_1
+                type: 0
+                value: "20"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 21
+                ap_set:
+                  base: 20
+                  per: 0
+              overlap: 4
+          maxStack: 0
+ai: AI_MP_Drone_Challenge2
