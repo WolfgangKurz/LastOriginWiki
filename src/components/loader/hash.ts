@@ -1,12 +1,12 @@
 // Content automatically generated
 export interface DBHashType { [K: string]: string | DBHashType; }
 export default {
-	"buildtime": "780e5a3f",
+	"buildtime": "a37f4bcd",
 	"locale": {
-		"TC": "e86929bd",
-		"KR": "5cf5c711",
-		"JP": "d09567a3",
-		"EN": "5b4ef36d"
+		"TC": "915e5118",
+		"KR": "9674e287",
+		"JP": "184ee035",
+		"EN": "3f395384"
 	},
 	"korea": {
 		"sticker": "868651f8",
@@ -18,10 +18,10 @@ export default {
 		"filterable.unit": "8975bc7e",
 		"filterable.facility": "b3f0e54b",
 		"filterable.equip": "70cfe7ac",
-		"filterable.enemy": "b9d0f179",
+		"filterable.enemy": "f609635d",
 		"ew": "1a5da5d6",
-		"enemygroup": "70e447a5",
-		"consumable": "f4994eaf",
+		"enemygroup": "21cc0458",
+		"consumable": "6d6c5f64",
 		"bg": "4d30fd00",
 		"unit": {
 			"ST_Ullr": "a7faa4ae",
@@ -67,8 +67,8 @@ export default {
 			"PECS_Hathor": "98443cfe",
 			"PECS_Glacias": "e51e0892",
 			"PECS_Fortune": "184b08fc",
-			"PECS_Express76": "6738169d",
-			"PECS_Erato": "48247e16",
+			"PECS_Express76": "771aa887",
+			"PECS_Erato": "1bdfb513",
 			"PECS_Empress": "1bdbed51",
 			"PECS_ElvenForestmaker": "c0da413b",
 			"PECS_Ella": "bef93340",
@@ -261,12 +261,12 @@ export default {
 			"Ev5": "2b5da54c",
 			"Ev4": "dfce2827",
 			"Ev3": "b8c2fc1b",
-			"Ev20": "934c5867",
+			"Ev20": "67d61b46",
 			"Ev2": "d69fdf73",
 			"Ev19": "57396f7b",
 			"Ev18": "e475a773",
 			"Ev17": "37344f10",
-			"Ev16": "e11733d9",
+			"Ev16": "0cf47a13",
 			"Ev15": "721c8b34",
 			"Ev14": "f06a7f0e",
 			"Ev13": "e7986c1e",

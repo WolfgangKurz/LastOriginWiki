@@ -3850,6 +3850,12 @@
 - key: PROPPack_Diyap08
   icon: UI_Icon_PROPPack_Diyap08
   func: PROPPack_Diyap08
+- key: Consumable_PC_Temp_Inven
+  icon: UI_Icon_Consumable_PCTempInvenExt
+  func: PC_Temp_Inven_01
+- key: Consumable_Equip_Temp_Inven
+  icon: UI_Icon_Consumable_EquipTempInvenExt
+  func: Equip_Temp_Inven_01
 - key: Ev_Consumable_OBSRecord
   icon: Ev_Consumable_OBSRecord
 - key: Ev_Consumable_DataCD
@@ -3910,12 +3916,6 @@
 - key: TunaCan_3_ResourcePack_300
   icon: UI_Icon_TunaCan_3_ResourcePack_300
   func: TunaCan_3_ResourcePack_300
-- key: Consumable_PC_Temp_Inven
-  icon: UI_Icon_Consumable_PCTempInvenExt
-  func: PC_Temp_Inven_01
-- key: Consumable_Equip_Temp_Inven
-  icon: UI_Icon_Consumable_EquipTempInvenExt
-  func: Equip_Temp_Inven_01
 - key: PROP_Diyap11_1_N
   icon: UI_Icon_PROP_Diyap11_1
   func: PROP_Diyap11_1_N
@@ -3970,6 +3970,9 @@
 - key: CharTicket_Char_BR_Ellie_N
   icon: InvenIcon_BR_Ellie_N
   func: CharTicket_Char_BR_Ellie_N
+- key: Premium_Attend_Activate
+  icon: UI_Icon_Premium_Attend
+  func: Premium_Attend_Activate
 - key: Skin_BR_Shirayuri_2
   icon: UI_Icon_Skin_BR_Shirayuri_2
   func: Skin_BR_Shirayuri_2
@@ -3982,6 +3985,15 @@
 - key: Shop_Package_Skin_BR_NickyTracy_1
   icon: UI_Icon_SkinPack_BR_NickyTracy_1
   func: Shop_Package_Skin_BR_NickyTracy_1
+- key: Consumable_Character_Deep_Learning_Algorithm
+  icon: UI_Icon_Character_Deep_Learning_Algorithm_7Day
+  func: Character_Deep_Learning_Algorithm
+- key: Consumable_Character_Deep_Learning_Algorithm_14
+  icon: UI_Icon_Character_Deep_Learning_Algorithm_14Day
+  func: Character_Deep_Learning_Algorithm_14
+- key: Consumable_Character_Deep_Learning_Algorithm_30
+  icon: UI_Icon_Character_Deep_Learning_Algorithm_30Day
+  func: Character_Deep_Learning_Algorithm_30
 - key: Ev_Consumable_OBSRecordBundle10
   icon: Ev_Consumable_OBSRecordBundle10
   func: Ev_Consumable_OBSRecordBundle10
@@ -4059,18 +4071,6 @@
 - key: TunaCan_70
   icon: UI_Icon_TunaCan_T3
   func: TunaCan_70
-- key: Premium_Attend_Activate
-  icon: UI_Icon_Premium_Attend
-  func: Premium_Attend_Activate
-- key: Consumable_Character_Deep_Learning_Algorithm
-  icon: UI_Icon_Character_Deep_Learning_Algorithm_7Day
-  func: Character_Deep_Learning_Algorithm
-- key: Consumable_Character_Deep_Learning_Algorithm_14
-  icon: UI_Icon_Character_Deep_Learning_Algorithm_14Day
-  func: Character_Deep_Learning_Algorithm_14
-- key: Consumable_Character_Deep_Learning_Algorithm_30
-  icon: UI_Icon_Character_Deep_Learning_Algorithm_30Day
-  func: Character_Deep_Learning_Algorithm_30
 - key: Renew_Metal_3000
   icon: UI_Icon_Currency_Metal_T1
   func: Renew_Metal_3000
@@ -4324,6 +4324,9 @@
   func: Shop_Package_Skin_BR_Undine_2
 - key: CharLetter_Char_BR_Undine_N_2
   icon: UI_Icon_CharLetter_Char_BR_Undine_N_2
+- key: CharTicket_Char_PECS_CyclopsePrincess_N
+  icon: InvenIcon_PECS_CyclopsePrincess_N
+  func: CharTicket_Char_PECS_CyclopsePrincess_N
 - key: Skin_PECS_Hussar_1
   icon: UI_Icon_Skin_PECS_Hussar_1
   func: Skin_PECS_Hussar_1
@@ -4354,15 +4357,75 @@
 - key: PROPPack_JinjoPrincess1
   icon: UI_Icon_PROPPack_JinjoPrincess1
   func: PROPPack_JinjoPrincess1
-- key: CharTicket_Char_PECS_CyclopsePrincess_N
-  icon: InvenIcon_PECS_CyclopsePrincess_N
-  func: CharTicket_Char_PECS_CyclopsePrincess_N
 - key: Skin_3P_Titania_2
   icon: UI_Icon_Skin_3P_Titania_2
   func: Skin_3P_Titania_2
 - key: Shop_Package_Skin_3P_Titania_2
   icon: UI_Icon_SkinPack_3P_Titania_2
   func: Shop_Package_Skin_3P_Titania_2
+- key: Consumable_TunaCanBonusTicket
+  icon: UI_Icon_TunaCanBonusTicket
+- key: PROP_AzazBunnySD3rd_1_N
+  icon: UI_Icon_PROP_AzazBunnySD3rd_1
+  func: PROP_AzazBunnySD3rd_1_N
+- key: PROP_AzazBunnySD3rd_2_N
+  icon: UI_Icon_PROP_AzazBunnySD3rd_2
+  func: PROP_AzazBunnySD3rd_2_N
+- key: PROP_AzazBunnySD3rd_3_N
+  icon: UI_Icon_PROP_AzazBunnySD3rd_3
+  func: PROP_AzazBunnySD3rd_3_N
+- key: PROP_AzazBunnySD3rd_4_N
+  icon: UI_Icon_PROP_AzazBunnySD3rd_4
+  func: PROP_AzazBunnySD3rd_4_N
+- key: PROP_AzazBunnySD3rd_5_N
+  icon: UI_Icon_PROP_AzazBunnySD3rd_5
+  func: PROP_AzazBunnySD3rd_5_N
+- key: PROPPack_AzazBunnySD3rd
+  icon: UI_Icon_PROPPack_AzazBunnySD3rd
+  func: PROPPack_AzazBunnySD3rd
+- key: PROP_RoyalArsenalBunnySD3rd_1_N
+  icon: UI_Icon_PROP_RoyalArsenalBunnySD3rd_1
+  func: PROP_RoyalArsenalBunnySD3rd_1_N
+- key: PROP_RoyalArsenalBunnySD3rd_2_N
+  icon: UI_Icon_PROP_RoyalArsenalBunnySD3rd_2
+  func: PROP_RoyalArsenalBunnySD3rd_2_N
+- key: PROP_RoyalArsenalBunnySD3rd_3_N
+  icon: UI_Icon_PROP_RoyalArsenalBunnySD3rd_3
+  func: PROP_RoyalArsenalBunnySD3rd_3_N
+- key: PROP_RoyalArsenalBunnySD3rd_4_N
+  icon: UI_Icon_PROP_RoyalArsenalBunnySD3rd_4
+  func: PROP_RoyalArsenalBunnySD3rd_4_N
+- key: PROP_RoyalArsenalBunnySD3rd_5_N
+  icon: UI_Icon_PROP_RoyalArsenalBunnySD3rd_5
+  func: PROP_RoyalArsenalBunnySD3rd_5_N
+- key: PROPPack_RoyalArsenalBunnySD3rd
+  icon: UI_Icon_PROPPack_RoyalArsenalBunnySD3rd
+  func: PROPPack_RoyalArsenalBunnySD3rd
+- key: PROP_CSPerraultBunnySD3rd_1_N
+  icon: UI_Icon_PROP_CSPerraultBunnySD3rd_1
+  func: PROP_CSPerraultBunnySD3rd_1_N
+- key: PROP_CSPerraultBunnySD3rd_2_N
+  icon: UI_Icon_PROP_CSPerraultBunnySD3rd_2
+  func: PROP_CSPerraultBunnySD3rd_2_N
+- key: PROP_CSPerraultBunnySD3rd_3_N
+  icon: UI_Icon_PROP_CSPerraultBunnySD3rd_3
+  func: PROP_CSPerraultBunnySD3rd_3_N
+- key: PROP_CSPerraultBunnySD3rd_4_N
+  icon: UI_Icon_PROP_CSPerraultBunnySD3rd_4
+  func: PROP_CSPerraultBunnySD3rd_4_N
+- key: PROP_CSPerraultBunnySD3rd_5_N
+  icon: UI_Icon_PROP_CSPerraultBunnySD3rd_5
+  func: PROP_CSPerraultBunnySD3rd_5_N
+- key: PROPPack_CSPerraultBunnySD3rd
+  icon: UI_Icon_PROPPack_CSPerraultBunnySD3rd
+  func: PROPPack_CSPerraultBunnySD3rd
+- key: CharTicket_Char_DS_BunnySlayer_N
+  icon: InvenIcon_DS_BunnySlayer_N
+  func: CharTicket_Char_DS_BunnySlayer_N
+- key: Ev_Consumable_BlueprintBunnySlayer
+  icon: Ev_Consumable_BlueprintBunnySlayer
+- key: Ev_Consumable_3rdAnniversaryTicket
+  icon: UI_Icon_Consumable_3rdAnniversaryTicket
 - key: Consumable_LV_Limit_Unlock
   icon: UI_Icon_Consumable_LV_Limit_Unlock
   func: "0"
@@ -4438,15 +4501,6 @@
 - key: TunaCan_TunaCanBonusTicket_Aos6_30p
   icon: UI_Icon_TunaCanBonusTicket_T6
   func: Function_TunaCanBonusTicket_Aos6_30p
-- key: Consumable_TunaCanBonusTicket
-  icon: UI_Icon_TunaCanBonusTicket
-- key: CharTicket_Char_DS_BunnySlayer_N
-  icon: InvenIcon_DS_BunnySlayer_N
-  func: CharTicket_Char_DS_BunnySlayer_N
-- key: Ev_Consumable_BlueprintBunnySlayer
-  icon: Ev_Consumable_BlueprintBunnySlayer
-- key: Ev_Consumable_3rdAnniversaryTicket
-  icon: UI_Icon_Consumable_3rdAnniversaryTicket
 - key: Skin_PECS_Azaz_2
   icon: UI_Icon_Skin_PECS_Azaz_2
   func: Skin_PECS_Azaz_2
@@ -4477,60 +4531,6 @@
 - key: Consumable_BG_27
   icon: UI_ICON_BG_27
   func: BG_27
-- key: PROP_AzazBunnySD3rd_1_N
-  icon: UI_Icon_PROP_AzazBunnySD3rd_1
-  func: PROP_AzazBunnySD3rd_1_N
-- key: PROP_AzazBunnySD3rd_2_N
-  icon: UI_Icon_PROP_AzazBunnySD3rd_2
-  func: PROP_AzazBunnySD3rd_2_N
-- key: PROP_AzazBunnySD3rd_3_N
-  icon: UI_Icon_PROP_AzazBunnySD3rd_3
-  func: PROP_AzazBunnySD3rd_3_N
-- key: PROP_AzazBunnySD3rd_4_N
-  icon: UI_Icon_PROP_AzazBunnySD3rd_4
-  func: PROP_AzazBunnySD3rd_4_N
-- key: PROP_AzazBunnySD3rd_5_N
-  icon: UI_Icon_PROP_AzazBunnySD3rd_5
-  func: PROP_AzazBunnySD3rd_5_N
-- key: PROPPack_AzazBunnySD3rd
-  icon: UI_Icon_PROPPack_AzazBunnySD3rd
-  func: PROPPack_AzazBunnySD3rd
-- key: PROP_RoyalArsenalBunnySD3rd_1_N
-  icon: UI_Icon_PROP_RoyalArsenalBunnySD3rd_1
-  func: PROP_RoyalArsenalBunnySD3rd_1_N
-- key: PROP_RoyalArsenalBunnySD3rd_2_N
-  icon: UI_Icon_PROP_RoyalArsenalBunnySD3rd_2
-  func: PROP_RoyalArsenalBunnySD3rd_2_N
-- key: PROP_RoyalArsenalBunnySD3rd_3_N
-  icon: UI_Icon_PROP_RoyalArsenalBunnySD3rd_3
-  func: PROP_RoyalArsenalBunnySD3rd_3_N
-- key: PROP_RoyalArsenalBunnySD3rd_4_N
-  icon: UI_Icon_PROP_RoyalArsenalBunnySD3rd_4
-  func: PROP_RoyalArsenalBunnySD3rd_4_N
-- key: PROP_RoyalArsenalBunnySD3rd_5_N
-  icon: UI_Icon_PROP_RoyalArsenalBunnySD3rd_5
-  func: PROP_RoyalArsenalBunnySD3rd_5_N
-- key: PROPPack_RoyalArsenalBunnySD3rd
-  icon: UI_Icon_PROPPack_RoyalArsenalBunnySD3rd
-  func: PROPPack_RoyalArsenalBunnySD3rd
-- key: PROP_CSPerraultBunnySD3rd_1_N
-  icon: UI_Icon_PROP_CSPerraultBunnySD3rd_1
-  func: PROP_CSPerraultBunnySD3rd_1_N
-- key: PROP_CSPerraultBunnySD3rd_2_N
-  icon: UI_Icon_PROP_CSPerraultBunnySD3rd_2
-  func: PROP_CSPerraultBunnySD3rd_2_N
-- key: PROP_CSPerraultBunnySD3rd_3_N
-  icon: UI_Icon_PROP_CSPerraultBunnySD3rd_3
-  func: PROP_CSPerraultBunnySD3rd_3_N
-- key: PROP_CSPerraultBunnySD3rd_4_N
-  icon: UI_Icon_PROP_CSPerraultBunnySD3rd_4
-  func: PROP_CSPerraultBunnySD3rd_4_N
-- key: PROP_CSPerraultBunnySD3rd_5_N
-  icon: UI_Icon_PROP_CSPerraultBunnySD3rd_5
-  func: PROP_CSPerraultBunnySD3rd_5_N
-- key: PROPPack_CSPerraultBunnySD3rd
-  icon: UI_Icon_PROPPack_CSPerraultBunnySD3rd
-  func: PROPPack_CSPerraultBunnySD3rd
 - key: Skin_BR_JangHwa_1
   icon: UI_Icon_Skin_BR_JangHwa_1
   func: Skin_BR_JangHwa_1
@@ -4624,9 +4624,6 @@
 - key: CharTicket_Char_ST_Mercury_N
   icon: InvenIcon_ST_Mercury_N
   func: CharTicket_Char_ST_Mercury_N
-- key: CharTicket_Char_BR_Scarabya_N
-  icon: InvenIcon_BR_Scarabya_N
-  func: CharTicket_Char_BR_Scarabya_N
 - key: Skin_PECS_Machina_1
   icon: UI_Icon_Skin_PECS_Machina_1
   func: Skin_PECS_Machina_1
@@ -4639,6 +4636,9 @@
 - key: Shop_Package_Skin_BR_TalonFeather_2
   icon: UI_Icon_SkinPack_BR_TalonFeather_2
   func: Shop_Package_Skin_BR_TalonFeather_2
+- key: CharTicket_Char_BR_Scarabya_N
+  icon: InvenIcon_BR_Scarabya_N
+  func: CharTicket_Char_BR_Scarabya_N
 - key: CharTicket_Char_3P_Melite_N
   icon: InvenIcon_3P_Melite_N
   func: CharTicket_Char_3P_Melite_N
@@ -4713,15 +4713,6 @@
 - key: PROPPack_CompanionshamanSD
   icon: UI_Icon_PROPPack_CompanionshamanSD
   func: PROPPack_CompanionshamanSD
-- key: OriginDust_3
-  icon: UI_Icon_Consumable_OriginDust
-  func: OriginDust_3
-- key: Consumable_EWMPMetalbundle_30
-  icon: UI_ICON_Consumable_EWMPMetalbundle
-  func: Consumable_EWMPMetalbundle_30
-- key: Consumable_EWMPMetalbundle_300
-  icon: UI_ICON_Consumable_EWMPMetalbundle
-  func: Consumable_EWMPMetalbundle_300
 - key: Metal_1
   icon: UI_Icon_Currency_Metal
   func: Metal_1
@@ -4731,15 +4722,18 @@
 - key: Power_1
   icon: UI_Icon_Currency_Power
   func: Power_1
+- key: OriginDust_3
+  icon: UI_Icon_Consumable_OriginDust
+  func: OriginDust_3
+- key: Consumable_EWMPMetalbundle_30
+  icon: UI_ICON_Consumable_EWMPMetalbundle
+  func: Consumable_EWMPMetalbundle_30
+- key: Consumable_EWMPMetalbundle_300
+  icon: UI_ICON_Consumable_EWMPMetalbundle
+  func: Consumable_EWMPMetalbundle_300
 - key: OriginDust_30
   icon: UI_Icon_Consumable_OriginDust
   func: OriginDust_30
-- key: CharTicket_Char_3P_Ajax_N
-  icon: InvenIcon_3P_Ajax_N
-  func: CharTicket_Char_3P_Ajax_N
-- key: Ev_Consumable_FestivalStamp
-  icon: Ev_Consumable_FestivalStamp
-  func: "0"
 - key: Skin_PECS_Spartoia_1
   icon: UI_Icon_Skin_PECS_Spartoia_1
   func: Skin_PECS_Spartoia_1
@@ -4752,6 +4746,12 @@
 - key: Shop_Package_Skin_PECS_Orangeade_1
   icon: UI_Icon_SkinPack_PECS_Orangeade_1
   func: Shop_Package_Skin_PECS_Orangeade_1
+- key: CharTicket_Char_3P_Ajax_N
+  icon: InvenIcon_3P_Ajax_N
+  func: CharTicket_Char_3P_Ajax_N
+- key: Ev_Consumable_FestivalStamp
+  icon: Ev_Consumable_FestivalStamp
+  func: "0"
 - key: Ticket_Training_6eaPack
   icon: UI_Icon_Ticket_Training
   func: Give_TrainingTicket_6eaPack
@@ -4983,6 +4983,18 @@
 - key: Shop_Fix30_TunaCan_5_ja
   icon: UI_Icon_TunaCan_T1
   func: TunaCan_1
+- key: PROPPack_PC_Promotion_B
+  icon: UI_Icon_PROPPack_PC_Promotion_B
+  func: PROPPack_PC_Promotion_B
+- key: PROPPack_PC_Promotion_A
+  icon: UI_Icon_PROPPack_PC_Promotion_A
+  func: PROPPack_PC_Promotion_A
+- key: PROPPack_PC_Promotion_S
+  icon: UI_Icon_PROPPack_PC_Promotion_S
+  func: PROPPack_PC_Promotion_S
+- key: PROPPack_PC_Promotion_Special
+  icon: UI_Icon_PROPPack_PC_Promotion_Special
+  func: PROPPack_PC_Promotion_Special
 - key: Skin_3P_Ajax_1
   icon: UI_Icon_Skin_3P_Ajax_1
   func: Skin_3P_Ajax_1
@@ -5004,18 +5016,6 @@
 - key: CharTicket_Char_DS_Cloverace_N
   icon: InvenIcon_DS_Cloverace_N
   func: CharTicket_Char_DS_Cloverace_N
-- key: Skin_BR_Kheshig_1
-  icon: UI_Icon_Skin_BR_Kheshig_1
-  func: Skin_BR_Kheshig_1
-- key: Shop_Package_Skin_BR_Kheshig_1
-  icon: UI_Icon_SkinPack_BR_Kheshig_1
-  func: Shop_Package_Skin_BR_Kheshig_1
-- key: Skin_BR_Ellie_1
-  icon: UI_Icon_Skin_BR_Ellie_1
-  func: Skin_BR_Ellie_1
-- key: Shop_Package_Skin_BR_Ellie_1
-  icon: UI_Icon_SkinPack_BR_Ellie_1
-  func: Shop_Package_Skin_BR_Ellie_1
 - key: CoreResourcePack_2022HM
   icon: UI_Icon_CoreResourcePack_30000_EV
   func: CoreResourcePack_2022HM
@@ -5031,18 +5031,18 @@
 - key: OriginDustPack_2022HM
   icon: UI_Icon_OriginDust_BFSale
   func: OriginDustPack_2022HM
-- key: PROPPack_PC_Promotion_B
-  icon: UI_Icon_PROPPack_PC_Promotion_B
-  func: PROPPack_PC_Promotion_B
-- key: PROPPack_PC_Promotion_A
-  icon: UI_Icon_PROPPack_PC_Promotion_A
-  func: PROPPack_PC_Promotion_A
-- key: PROPPack_PC_Promotion_S
-  icon: UI_Icon_PROPPack_PC_Promotion_S
-  func: PROPPack_PC_Promotion_S
-- key: PROPPack_PC_Promotion_Special
-  icon: UI_Icon_PROPPack_PC_Promotion_Special
-  func: PROPPack_PC_Promotion_Special
+- key: Skin_BR_Kheshig_1
+  icon: UI_Icon_Skin_BR_Kheshig_1
+  func: Skin_BR_Kheshig_1
+- key: Shop_Package_Skin_BR_Kheshig_1
+  icon: UI_Icon_SkinPack_BR_Kheshig_1
+  func: Shop_Package_Skin_BR_Kheshig_1
+- key: Skin_BR_Ellie_1
+  icon: UI_Icon_Skin_BR_Ellie_1
+  func: Skin_BR_Ellie_1
+- key: Shop_Package_Skin_BR_Ellie_1
+  icon: UI_Icon_SkinPack_BR_Ellie_1
+  func: Shop_Package_Skin_BR_Ellie_1
 - key: Skin_PECS_Erato_1
   icon: UI_Icon_Skin_PECS_Erato_1
   func: Skin_PECS_Erato_1
@@ -5157,9 +5157,6 @@
 - key: Shop_Package_Skin_3P_Maria_2
   icon: UI_Icon_SkinPack_3P_Maria_2
   func: Shop_Package_Skin_3P_Maria_2
-- key: Ev_Consumable_BpCan
-  icon: Ev_Consumable_BpCan
-  func: "0"
 - key: CharTicket_Char_PECS_BlindPrincess_N
   icon: InvenIcon_PECS_BlindPrincess_N
   func: CharTicket_Char_PECS_BlindPrincess_N
@@ -5202,6 +5199,9 @@
 - key: Skin_BR_Vargr_0
   icon: UI_Icon_Skin_BR_Vargr_0
   func: Skin_BR_Vargr_0
+- key: Ev_Consumable_BpCan
+  icon: Ev_Consumable_BpCan
+  func: "0"
 - key: Skin_DS_Baekto_2
   icon: UI_Icon_Skin_DS_Baekto_2
   func: Skin_DS_Baekto_2
@@ -5324,12 +5324,12 @@
   func: Consumable_OriginDustSp_NewYear
 - key: Ev_Consumable_4stAnniversaryTicket
   icon: UI_Icon_Ev_Consumable_4stAnniversaryTicket
-- key: Consumable_Core_Special_Pack_4
-  icon: UI_Icon_Consumable_Core_Special_Pack
-  func: Consumable_Core_Special_Pack_4
 - key: CharTicket_Char_PECS_Merlin_N
   icon: InvenIcon_PECS_Merlin_N
   func: CharTicket_Char_PECS_Merlin_N
+- key: Consumable_Core_Special_Pack_4
+  icon: UI_Icon_Consumable_Core_Special_Pack
+  func: Consumable_Core_Special_Pack_4
 - key: Squad_Preset_Slot_01
   icon: UI_Icon_Consumable_Squad_Preset_Slot_Plus
   func: Squad_Preset_Slot_01
@@ -5441,9 +5441,6 @@
 - key: Shop_Package_Skin_PECS_MightyR_1
   icon: UI_Icon_SkinPack_PECS_MightyR_1
   func: Shop_Package_Skin_PECS_MightyR_1
-- key: CharTicket_Char_PECS_Olivia_N
-  icon: InvenIcon_PECS_Olivia_N
-  func: CharTicket_Char_PECS_Olivia_N
 - key: Skin_3P_Ran_2
   icon: UI_Icon_Skin_3P_Ran_2
   func: Skin_3P_Ran_2
@@ -5456,6 +5453,15 @@
 - key: Shop_Package_Skin_BR_Phantom_1
   icon: UI_Icon_SkinPack_BR_Phantom_1
   func: Shop_Package_Skin_BR_Phantom_1
+- key: CharTicket_Char_PECS_Olivia_N
+  icon: InvenIcon_PECS_Olivia_N
+  func: CharTicket_Char_PECS_Olivia_N
+- key: Consumable_INFINITEWAR_TICKET_1
+  icon: UI_Icon_Consumable_INFINITEWAR_TICKET_1
+  func: Consumable_INFINITEWAR_TICKET_1
+- key: Consumable_BUYINFINITEWAR_TICKET_1
+  icon: UI_Icon_Consumable_BUYINFINITEWAR_TICKET_1
+  func: Consumable_BUYINFINITEWAR_TICKET_1
 - key: Consumable_BG_31
   icon: UI_ICON_BG_31
   func: BG_31
@@ -5474,6 +5480,20 @@
 - key: Shop_Package_Skin_BR_InvDragon_3
   icon: UI_Icon_SkinPack_BR_InvDragon_3
   func: Shop_Package_Skin_BR_InvDragon_3
+- key: IW_Consumable_Altite
+  icon: UI_Icon_IW_Consumable_Altite
+- key: PROP_IW_Black_Tape_1_N
+  icon: UI_Icon_PROP_IW_Black_Tape_1
+  func: PROP_IW_Black_Tape_1_N
+- key: PROP_IW_Black_Tape_2_N
+  icon: UI_Icon_PROP_IW_Black_Tape_2
+  func: PROP_IW_Black_Tape_2_N
+- key: PROP_IW_Black_Tape_3_N
+  icon: UI_Icon_PROP_IW_Black_Tape_3
+  func: PROP_IW_Black_Tape_3_N
+- key: PROP_IW_Black_Tape_4_N
+  icon: UI_Icon_PROP_IW_Black_Tape_4
+  func: PROP_IW_Black_Tape_4_N
 - key: Skin_3P_ScissorsLise_3
   icon: UI_Icon_Skin_3P_ScissorsLise_3
   func: Skin_3P_ScissorsLise_3
@@ -5489,24 +5509,6 @@
 - key: CharTicket_Char_BR_Uroborus_N
   icon: InvenIcon_BR_Uroborus_N
   func: CharTicket_Char_BR_Uroborus_N
-- key: Skin_BR_Sleipnir_4
-  icon: UI_Icon_Skin_BR_Sleipnir_4
-  func: Skin_BR_Sleipnir_4
-- key: Shop_Package_Skin_BR_Sleipnir_4
-  icon: UI_Icon_SkinPack_BR_Sleipnir_4
-  func: Shop_Package_Skin_BR_Sleipnir_4
-- key: Skin_BR_HongRyun_3
-  icon: UI_Icon_Skin_BR_HongRyun_3
-  func: Skin_BR_HongRyun_3
-- key: Shop_Package_Skin_BR_HongRyun_3
-  icon: UI_Icon_SkinPack_BR_HongRyun_3
-  func: Shop_Package_Skin_BR_HongRyun_3
-- key: Skin_BR_JangHwa_2
-  icon: UI_Icon_Skin_BR_JangHwa_2
-  func: Skin_BR_JangHwa_2
-- key: Shop_Package_Skin_BR_JangHwa_2
-  icon: UI_Icon_SkinPack_BR_JangHwa_2
-  func: Shop_Package_Skin_BR_JangHwa_2
 - key: Consumable_IW_Season_1_Total_Score_Reward_1
   icon: UI_Icon_Consumable_IW_Season_1_Total_Score_Reward_1
   func: Consumable_IW_Season_1_Total_Score_Reward_1
@@ -5627,12 +5629,42 @@
 - key: Consumable_IW_Season_1_Battle_Score_Reward_20
   icon: UI_Icon_Consumable_IW_Season_1_Battle_Score_Reward_20
   func: Consumable_IW_Season_1_Battle_Score_Reward_20
+- key: PROP_HeartElection2023_1_N
+  icon: UI_Icon_PROP_HeartElection2023_1
+  func: PROP_HeartElection2023_1_N
+- key: PROP_HeartElection2023_2_N
+  icon: UI_Icon_PROP_HeartElection2023_2
+  func: PROP_HeartElection2023_2_N
+- key: PROP_HeartElection2023_3_N
+  icon: UI_Icon_PROP_HeartElection2023_3
+  func: PROP_HeartElection2023_3_N
 - key: Consumable_BUYINFINITEWAR_TICKET_1_10_Set
   icon: UI_Icon_Consumable_BUYINFINITEWAR_TICKET_1_10_S
   func: Consumable_BUYINFINITEWAR_TICKET_1_10_Set
 - key: Consumable_BUYINFINITEWAR_TICKET_1_100_Set
   icon: UI_Icon_Consumable_BUYINFINITEWAR_TICKET_1_100_S
   func: Consumable_BUYINFINITEWAR_TICKET_1_100_Set
+- key: Skin_BR_Sleipnir_4
+  icon: UI_Icon_Skin_BR_Sleipnir_4
+  func: Skin_BR_Sleipnir_4
+- key: Shop_Package_Skin_BR_Sleipnir_4
+  icon: UI_Icon_SkinPack_BR_Sleipnir_4
+  func: Shop_Package_Skin_BR_Sleipnir_4
+- key: Skin_BR_HongRyun_3
+  icon: UI_Icon_Skin_BR_HongRyun_3
+  func: Skin_BR_HongRyun_3
+- key: Shop_Package_Skin_BR_HongRyun_3
+  icon: UI_Icon_SkinPack_BR_HongRyun_3
+  func: Shop_Package_Skin_BR_HongRyun_3
+- key: Skin_BR_JangHwa_2
+  icon: UI_Icon_Skin_BR_JangHwa_2
+  func: Skin_BR_JangHwa_2
+- key: Shop_Package_Skin_BR_JangHwa_2
+  icon: UI_Icon_SkinPack_BR_JangHwa_2
+  func: Shop_Package_Skin_BR_JangHwa_2
+- key: PROP_Season_1_Colossus_Head_N
+  icon: UI_Icon_PROP_Season_1_Colossus_Head
+  func: PROP_Season_1_Colossus_Head_N
 - key: PROPPack_IW_Black_Tape_1
   icon: UI_Icon_PROPPack_IW_Black_Tape_Seal_1
   func: PROPPack_IW_Black_Tape_1
@@ -5642,17 +5674,6 @@
 - key: PROPPack_IW_Black_Tape_4
   icon: UI_Icon_PROPPack_IW_Black_Tape_Seal_4
   func: PROPPack_IW_Black_Tape_4
-- key: Consumable_INFINITEWAR_TICKET_1
-  icon: UI_Icon_Consumable_INFINITEWAR_TICKET_1
-  func: Consumable_INFINITEWAR_TICKET_1
-- key: Consumable_BUYINFINITEWAR_TICKET_1
-  icon: UI_Icon_Consumable_BUYINFINITEWAR_TICKET_1
-  func: Consumable_BUYINFINITEWAR_TICKET_1
-- key: IW_Consumable_Altite
-  icon: UI_Icon_IW_Consumable_Altite
-- key: PROP_Season_1_Colossus_Head_N
-  icon: UI_Icon_PROP_Season_1_Colossus_Head
-  func: PROP_Season_1_Colossus_Head_N
 - key: PROP_SkyKnights_Set_1_A_1_N
   icon: UI_Icon_PROP_SkyKnights_Set_1_A_1
   func: PROP_SkyKnights_Set_1_A_1_N
@@ -5737,15 +5758,6 @@
 - key: Shop_Package_Skin_BR_Bulgasari_2
   icon: UI_Icon_SkinPack_BR_Bulgasari_2
   func: Shop_Package_Skin_BR_Bulgasari_2
-- key: PROP_IW_Black_Tape_1_N
-  icon: UI_Icon_PROP_IW_Black_Tape_1
-  func: PROP_IW_Black_Tape_1_N
-- key: PROP_IW_Black_Tape_2_N
-  icon: UI_Icon_PROP_IW_Black_Tape_2
-  func: PROP_IW_Black_Tape_2_N
-- key: PROP_IW_Black_Tape_4_N
-  icon: UI_Icon_PROP_IW_Black_Tape_4
-  func: PROP_IW_Black_Tape_4_N
 - key: PROP_HongRyun_N_SD_A_1_N
   icon: UI_Icon_PROP_HongRyun_N_SD_A_1
   func: PROP_HongRyun_N_SD_A_1_N
@@ -5836,15 +5848,6 @@
 - key: Consumable_BG_33
   icon: UI_ICON_BG_33
   func: BG_33
-- key: PROP_HeartElection2023_1_N
-  icon: UI_Icon_PROP_HeartElection2023_1
-  func: PROP_HeartElection2023_1_N
-- key: PROP_HeartElection2023_2_N
-  icon: UI_Icon_PROP_HeartElection2023_2
-  func: PROP_HeartElection2023_2_N
-- key: PROP_HeartElection2023_3_N
-  icon: UI_Icon_PROP_HeartElection2023_3
-  func: PROP_HeartElection2023_3_N
 - key: Consumable_BG_34
   icon: UI_ICON_BG_34
   func: BG_34
@@ -5863,27 +5866,39 @@
 - key: OriginDustPack_2023FM
   icon: UI_Icon_OriginDust_BFSale
   func: OriginDustPack_2023FM
-- key: PROP_IW_Black_Tape_3_N
-  icon: UI_Icon_PROP_IW_Black_Tape_3
-  func: PROP_IW_Black_Tape_3_N
-- key: PROPPack_IW_Black_Tape_3
-  icon: UI_Icon_PROPPack_IW_Black_Tape_Seal_3
-  func: PROPPack_IW_Black_Tape_3
+- key: Consumable_BG_35
+  icon: UI_ICON_BG_35
+  func: BG_35
 - key: PROP_IW_Black_Tape_5_N
   icon: UI_Icon_PROP_IW_Black_Tape_5
   func: PROP_IW_Black_Tape_5_N
-- key: PROPPack_IW_Black_Tape_5
-  icon: UI_Icon_PROPPack_IW_Black_Tape_Seal_5
-  func: PROPPack_IW_Black_Tape_5
 - key: PROP_IW_Black_8bit_SunGlasses_1_N
   icon: UI_Icon_PROP_IW_Black_8bit_SunGlasses_1
   func: PROP_IW_Black_8bit_SunGlasses_1_N
+- key: PROPPack_IW_Black_Tape_5
+  icon: UI_Icon_PROPPack_IW_Black_Tape_Seal_5
+  func: PROPPack_IW_Black_Tape_5
 - key: PROPPack_IW_Black_8bit_SunGlasses_1
   icon: UI_Icon_PROPPack_IW_Black_Tape_Seal_6
   func: PROPPack_IW_Black_8bit_SunGlasses_1
+- key: PROPPack_IW_Black_Tape_3
+  icon: UI_Icon_PROPPack_IW_Black_Tape_Seal_3
+  func: PROPPack_IW_Black_Tape_3
 - key: PROP_Season_1_Colossus_Body_N
   icon: UI_Icon_PROP_Season_1_Colossus_Body
   func: PROP_Season_1_Colossus_Body_N
+- key: Pack_Test
+  icon: UI_Icon_OriginDust_BFSale
+  func: Pack_Test
+- key: Offline_Battle_Package_1
+  icon: UI_Icon_Consumable_Core_Special_Pack
+  func: Offline_Battle_Package_1
+- key: Offline_Battle_Package_2
+  icon: UI_Icon_Offline_Battle_Package_2
+  func: Offline_Battle_Package_2
+- key: Offline_Battle_Package_3
+  icon: UI_Icon_PROPPack_PC_Promotion_B
+  func: Offline_Battle_Package_3
 - key: Skin_BR_Valkyrie_4
   icon: UI_Icon_Skin_BR_Valkyrie_4
   func: Skin_BR_Valkyrie_4
@@ -5911,18 +5926,12 @@
 - key: Shop_Package_Skin_3P_Hirume_3
   icon: UI_Icon_SkinPack_3P_Hirume_3
   func: Shop_Package_Skin_3P_Hirume_3
-- key: Offline_Battle_Package_1
-  icon: UI_Icon_Consumable_Core_Special_Pack
-  func: Offline_Battle_Package_1
-- key: Offline_Battle_Package_2
-  icon: UI_Icon_Offline_Battle_Package_2
-  func: Offline_Battle_Package_2
-- key: Offline_Battle_Package_3
-  icon: UI_Icon_PROPPack_PC_Promotion_B
-  func: Offline_Battle_Package_3
-- key: Consumable_BG_35
-  icon: UI_ICON_BG_35
-  func: BG_35
+- key: Gacha_QuestBox_Ticket
+  icon: UI_Icon_Gacha_QuestBox_Ticket
+- key: Gacha_QuestBox_N_T1
+  icon: UI_Icon_Gacha_QuestBox_N_T1
+- key: Gacha_QuestBox_N_T2
+  icon: UI_Icon_Gacha_QuestBox_N_T2
 - key: Skin_PECS_Merlin_1
   icon: UI_Icon_Skin_PECS_Merlin_1
   func: Skin_PECS_Merlin_1
@@ -5944,12 +5953,6 @@
 - key: Consumable_BG_38
   icon: UI_ICON_BG_38
   func: BG_38
-- key: Gacha_QuestBox_Ticket
-  icon: UI_Icon_Gacha_QuestBox_Ticket
-- key: Gacha_QuestBox_N_T1
-  icon: UI_Icon_Gacha_QuestBox_N_T1
-- key: Gacha_QuestBox_N_T2
-  icon: UI_Icon_Gacha_QuestBox_N_T2
 - key: Consumable_BG_39
   icon: UI_ICON_BG_39
   func: BG_39
@@ -6070,6 +6073,7 @@
 - key: Ev_Consumable_3P_Token
   icon: Ev_Consumable_3P_Token
   func: "0"
+  use_event: Event_Chapter_42
 - key: Skin_BR_Marie_3
   icon: UI_Icon_Skin_BR_Marie_3
   func: Skin_BR_Marie_3
@@ -6118,21 +6122,6 @@
 - key: PROPPack_Season_2_Colossus_Leg
   icon: UI_Icon_PROP_Season_2_Colossus_Leg
   func: PROPPack_Season_2_Colossus_Leg
-- key: Skin_BR_Nashorn_1
-  icon: UI_Icon_Skin_BR_Nashorn_1
-  func: Skin_BR_Nashorn_1
-- key: Shop_Package_Skin_BR_Nashorn_1
-  icon: UI_Icon_SkinPack_BR_Nashorn_1
-  func: Shop_Package_Skin_BR_Nashorn_1
-- key: Skin_PECS_QueenMane_2
-  icon: UI_Icon_Skin_PECS_QueenMane_2
-  func: Skin_PECS_QueenMane_2
-- key: Shop_Package_Skin_PECS_QueenMane_2
-  icon: UI_Icon_SkinPack_PECS_QueenMane_2
-  func: Shop_Package_Skin_PECS_QueenMane_2
-- key: CharTicket_Char_3P_Alcyone_N
-  icon: InvenIcon_3P_Alcyone_N
-  func: CharTicket_Char_3P_Alcyone_N
 - key: PROP_CollaboCafe_FIRSTRY_1_N
   icon: UI_Icon_PROP_CollaboCafe_FIRSTRY_1
   func: PROP_CollaboCafe_FIRSTRY_1_N
@@ -6172,8 +6161,6 @@
 - key: PROPPack_CollaboCafe_FIRSTRY_2
   icon: UI_Icon_PROPPack_CollaboCafe_FIRSTRY_2
   func: PROPPack_CollaboCafe_FIRSTRY_2
-- key: Ev_Consumable_BlueprintAlcyone
-  icon: Ev_Consumable_BlueprintAlcyone
 - key: PROP_CollaboCafe_BULGA_1_N
   icon: UI_Icon_PROP_CollaboCafe_BULGA_1
   func: PROP_CollaboCafe_BULGA_1_N
@@ -6201,6 +6188,25 @@
 - key: PROPPack_CollaboCafe_BULGA
   icon: UI_Icon_PROPPack_CollaboCafe_BULGA
   func: PROPPack_CollaboCafe_BULGA
+- key: Skin_BR_Nashorn_1
+  icon: UI_Icon_Skin_BR_Nashorn_1
+  func: Skin_BR_Nashorn_1
+- key: Shop_Package_Skin_BR_Nashorn_1
+  icon: UI_Icon_SkinPack_BR_Nashorn_1
+  func: Shop_Package_Skin_BR_Nashorn_1
+- key: Skin_PECS_QueenMane_2
+  icon: UI_Icon_Skin_PECS_QueenMane_2
+  func: Skin_PECS_QueenMane_2
+- key: Shop_Package_Skin_PECS_QueenMane_2
+  icon: UI_Icon_SkinPack_PECS_QueenMane_2
+  func: Shop_Package_Skin_PECS_QueenMane_2
+- key: AncientBox_N_T2_Event
+  icon: UI_Icon_Gacha_AncientBox_N_T2
+- key: CharTicket_Char_3P_Alcyone_N
+  icon: InvenIcon_3P_Alcyone_N
+  func: CharTicket_Char_3P_Alcyone_N
+- key: Ev_Consumable_BlueprintAlcyone
+  icon: Ev_Consumable_BlueprintAlcyone
 - key: Skin_3P_Amphitrite_1
   icon: UI_Icon_Skin_3P_Amphitrite_1
   func: Skin_3P_Amphitrite_1
@@ -6231,3 +6237,9 @@
 - key: Shop_Package_Skin_BR_Hela_1
   icon: UI_Icon_SkinPack_BR_Hela_1
   func: Shop_Package_Skin_BR_Hela_1
+- key: PROP_FestivalStamp_N
+  icon: UI_Icon_PROP_FestivalStamp
+  func: PROP_FestivalStamp_N
+- key: PROPPack_FestivalStamp_N
+  icon: Ev_Consumable_FestivalStamp
+  func: PROPPack_FestivalStamp_N

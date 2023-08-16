@@ -1,4 +1,5 @@
 import { FunctionalComponent } from "preact";
+import { useEffect } from "preact/hooks";
 import { Link } from "preact-router";
 import Store, { toggle } from "@/store";
 
@@ -91,6 +92,11 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 
 		UpdateTitle(LocaleGet("MENU_EQUIPS"), selectedEquip ? LocaleGet(`EQUIP_${selectedEquip.fullKey}`) : "???");
 	}
+
+	useEffect(() => {
+		const unsub = Store.Equips.EffectFilters.subscribe(v => update());
+		return () => unsub();
+	}, []);
 
 	const EquipEffects = ((): Record<string, EffectFilterListType> => {
 		if (!FilterableEquipDB) return {};

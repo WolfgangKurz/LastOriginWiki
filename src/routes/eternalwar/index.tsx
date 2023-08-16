@@ -436,14 +436,16 @@ class EternalWar extends Component<EternalWarProps, EternalWarState> {
 							.map(cid => <div class="col mb-3">
 								<div class={ `card bg-dark text-light ${style.ChapterCard}` }>
 									<div class="card-header">
-										<Locale k={ `EW_${cid}` } />
+										<Locale plain k={ `EW_${cid}` } />
 									</div>
 
 									<div class={ style.ChapterContent }>
 										<img src={ `${AssetsRoot}/eternalwar/EW_Chapter_${cid.replace(/^EW/, "")}.png` } />
 
 										<div class={ style.ChapterDesc }>
-											<div><Locale k={ `EW_DESC_${cid}` } /></div>
+											<div>
+												<Locale plain k={ `EW_DESC_${cid}` } />
+											</div>
 										</div>
 									</div>
 

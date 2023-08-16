@@ -1,4 +1,5 @@
 import { FunctionalComponent } from "preact";
+import { useEffect } from "preact/hooks";
 
 import Store, { toggle, toggleList } from "@/store";
 
@@ -44,6 +45,11 @@ const Units: FunctionalComponent = () => {
 
 	const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 	if (!FilterableUnitDB) JsonLoaderCore(CurrentDB, StaticDB.FilterableUnit).then(() => update());
+
+	useEffect(() => {
+		const unsub = Store.Units.EffectFilters.subscribe(v => update());
+		return () => unsub();
+	}, []);
 
 	const UnitEffects = ((): Record<string, EffectFilterListType> => {
 		if (!FilterableUnitDB) return {};

@@ -89,6 +89,8 @@ const Home: FunctionalComponent = () => {
 		SwiperCore.use([Autoplay, Pagination]);
 	}, []);
 
+	const previewSkins = [];
+
 	return <div class={ `${style.home} home` }>
 		<div class="alert alert-primary">
 			사이트 개발자가 더 이상 게임을 하지 않기 때문에 정보에 오류가 있을 수 있습니다.
@@ -156,6 +158,15 @@ const Home: FunctionalComponent = () => {
 		</div>
 
 		<HomeConfigSelector />
+
+		<div>
+			<IconGithub class="me-2" />
+			<a href="https://github.com/WolfgangKurz/LastOriginWiki" target="_blank" rel="noopener noreferrer">
+				Github
+			</a>
+		</div>
+		<Locale k="HOME_DEVELOPER" />
+		<hr />
 
 		<div class={ style.MenuBox }>
 			<div class={ style["home-nav"] }>
@@ -235,14 +246,14 @@ const Home: FunctionalComponent = () => {
 			</div>
 		</div>
 
-		<Swiper
+		{ previewSkins.length > 0 && <Swiper
 			className={ style.SkinBannerSwiper }
 			modules={ [Autoplay, Pagination] }
 			loop
 			autoplay
 			pagination
 		>
-			{ ["PECS_Leanne_3", "BR_Hela_1"].map(skin => {
+			{ previewSkins.map(skin => {
 				const r = /^(.+)_([0-9]+)$/.exec(skin)!;
 				const key = r[1];
 				const sid = parseInt(r[2], 10);
@@ -252,7 +263,7 @@ const Home: FunctionalComponent = () => {
 					</Link>
 				</SwiperSlide>;
 			}) }
-		</Swiper>
+		</Swiper> }
 
 		<Changelog />
 
@@ -270,15 +281,6 @@ const Home: FunctionalComponent = () => {
 		{ ext === "png" ? <div class="alert alert-danger">
 			<Locale k="HOME_WEBP_UNAVAILABLE" />
 		</div> : <></> }
-
-		<div>
-			<IconGithub class="me-2" />
-			<a href="https://github.com/WolfgangKurz/LastOriginWiki" target="_blank" rel="noopener noreferrer">
-				Github
-			</a>
-		</div>
-		<Locale k="HOME_DEVELOPER" />
-		<hr />
 
 		<p>
 			<Locale k="HOME_COPYRIGHT" />
