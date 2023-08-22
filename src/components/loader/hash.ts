@@ -1,7 +1,7 @@
 // Content automatically generated
 export interface DBHashType { [K: string]: string | DBHashType; }
 export default {
-	"buildtime": "8e22ed27",
+	"buildtime": "0a038ac6",
 	"locale": {
 		"TC": "99c2cf79",
 		"KR": "8a7b8c30",
@@ -15,7 +15,7 @@ export default {
 		"mission": "7d73a790",
 		"maps": "6d5b718e",
 		"gacha": "fc9a050a",
-		"filterable.unit": "ee19d5d6",
+		"filterable.unit": "9686d084",
 		"filterable.facility": "b3f0e54b",
 		"filterable.equip": "4097b47b",
 		"filterable.enemy": "f609635d",
@@ -196,7 +196,7 @@ export default {
 			"AGS_Gigantes": "7bf19fad",
 			"AGS_Fortress": "8d13e36e",
 			"AGS_Fallen": "07c5b5c5",
-			"AGS_Deathstalker": "556be848",
+			"AGS_Deathstalker": "f54d6c81",
 			"AGS_Arachne": "532c2c34",
 			"AGS_Albatross": "4b157d18",
 			"AGS_Aeda": "1e6a70de",
