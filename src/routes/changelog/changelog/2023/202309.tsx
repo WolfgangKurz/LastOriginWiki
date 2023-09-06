@@ -5,7 +5,7 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12288" date="2023-09-07"
+	<ChangelogItem title="Build 12289" date="2023-09-07"
 		new={ <>
 			<li>신규 이벤트 <BY>오르카 필름 페스티벌</BY>의 정보가 추가되었습니다.</li>
 			<li>전투원 스킨 보기의 상점 팝업 이미지의 검열/미검열 보기가 추가되었습니다.</li>
@@ -29,6 +29,7 @@ const Changelog: FunctionalComponent = () => <>
 		</> }
 		dialogue={ <>
 			<li><BY>T-3 레프리콘</BY>의 <BR>하계 전투복 레프리콘</BR> 스킨의 보이스가 추가되었습니다.</li>
+			<li>일부 일본어 보이스가 추가되었습니다.</li>
 			<li><span class="badge bg-light text-dark">KST 2023-09-07 01:01:11</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
 		</> }
 	/>
