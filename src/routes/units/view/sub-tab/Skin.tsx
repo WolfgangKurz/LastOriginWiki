@@ -1,7 +1,7 @@
 import { FunctionComponent } from "preact";
+import { useState } from "preact/hooks";
 import { Link } from "preact-router";
 
-import { objState } from "@/libs/State";
 import { AssetsRoot, SkinBanners } from "@/libs/Const";
 import { FormatDate, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
@@ -18,6 +18,7 @@ import UnitFace2 from "../../components/unit-face2";
 import { SubpageProps } from "..";
 
 import style from "../style.module.scss";
+import { BuildClass } from "@/libs/Class";
 
 const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList }) => {
 	if (!display) return <></>;
@@ -32,8 +33,10 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 
 	const categories = skin.category.filter(x => x && x !== "ALL");
 
-	const IsBlackBG = objState<boolean>(false);
-	const HideGroup = objState<boolean>(false);
+	const [shopPopupType, setShopPopupType] = useState<"O" | "G">("O");
+
+	const [IsBlackBG, setIsBlackBG] = useState<boolean>(false);
+	const [HideGroup, setHideGroup] = useState<boolean>(false);
 
 	const SkinLink = ((): string => {
 		const loc = window.location;
@@ -228,8 +231,8 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 								<input
 									class="form-check-input"
 									type="checkbox"
-									checked={ IsBlackBG.value }
-									onClick={ (): void => IsBlackBG.set(!IsBlackBG.value) }
+									checked={ IsBlackBG }
+									onClick={ (): void => setIsBlackBG(!IsBlackBG) }
 								/>
 								<Locale k="UNIT_VIEW_SKIN_BLACKBG_SWITCH" />
 							</label>
@@ -241,8 +244,8 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 								<input
 									class="form-check-input"
 									type="checkbox"
-									checked={ HideGroup.value }
-									onClick={ (): void => HideGroup.set(!HideGroup.value) }
+									checked={ HideGroup }
+									onClick={ (): void => setHideGroup(!HideGroup) }
 								/>
 								<Locale k="UNIT_VIEW_SKIN_HIDEGROUP_SWITCH" />
 							</label>
@@ -255,8 +258,8 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 					? <SkinView
 						unit={ unit }
 						skin={ SkinList[skinIndex.value] }
-						black={ IsBlackBG.value }
-						hideGroup={ HideGroup.value }
+						black={ IsBlackBG }
+						hideGroup={ HideGroup }
 						animate
 						collapsed
 						detailable
@@ -272,10 +275,36 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 					/>) }
 				</div>
 
-				{ SkinBanners.includes(SkinKey)
-					? <img class={ style.SkinBanner } src={ `${AssetsRoot}/skin/banners/${SkinKey}.jpg` } />
-					: <></>
-				}
+				{ SkinBanners.includes(SkinKey) && <>
+					<div class="d-flex align-items-start">
+						<div class={ BuildClass("nav", "flex-column", "nav-tabs", style.VerticalTabs) }>
+							<button
+								class={ BuildClass("nav-link", isActive(shopPopupType === "O")) }
+								onClick={ e => {
+									e.preventDefault();
+									setShopPopupType("O");
+								} }
+							>
+								<span class={ style.OneStoreIcon } />
+							</button>
+							<button
+								class={ BuildClass("nav-link", isActive(shopPopupType === "G")) }
+								onClick={ e => {
+									e.preventDefault();
+									setShopPopupType("G");
+								} }
+							>
+								<span class={ style.PlayStoreIcon } />
+							</button>
+						</div>
+						<div class="tab-content">
+							<img
+								class={ style.SkinBanner }
+								src={ `${AssetsRoot}/skin/${shopPopupType === "O" ? "banners" : "banners_G"}/${SkinKey}.jpg` }
+							/>
+						</div>
+					</div>
+				</> }
 			</div>
 		</div >
 	</div >;
