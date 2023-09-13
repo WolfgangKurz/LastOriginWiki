@@ -880,6 +880,7 @@ export enum FACETYPE {
 	SMILE = 8,
 	WHAT = 9,
 	BLUNT = 10,
+	ANGRY = 11,
 	ANGER = 11,
 	DISAPPOINT = 12,
 	PROUD = 13,

@@ -70,9 +70,6 @@ export interface UnitSkinEntity {
 	/** Skin ID */
 	sid: null | number;
 
-	/** Offset */
-	offsets: Partial<Record<SKIN_SUBSET_ENUM, number>>;
-
 	/** has Google CG */
 	G: boolean;
 
@@ -299,7 +296,6 @@ export namespace Unit {
 				6: false,
 				7: false,
 			},
-			offsets: {},
 
 			anim: {
 				0: false,

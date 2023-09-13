@@ -16,7 +16,9 @@ import Locale from "@/components/locale";
 import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
 import IconCalendar3 from "@/components/bootstrap-icon/icons/Calendar3";
 import IconGithub from "@/components/bootstrap-icon/icons/Github";
+import IconHourglassSplit from "@/components/bootstrap-icon/icons/HourglassSplit";
 import HomeConfigSelector from "@/components/home-config-selector";
+import Countdown from "@/routes/home/Countdown";
 import Changelog from "./changelog";
 
 import BuildInfo from "@/buildtime";
@@ -89,7 +91,7 @@ const Home: FunctionalComponent = () => {
 		SwiperCore.use([Autoplay, Pagination]);
 	}, []);
 
-	const previewSkins = ["BR_Leprechaun_2", "PECS_Hathor_1"];
+	const previewSkins = ["PECS_LRL_4", "ST_Lancer_2"];
 
 	return <div class={ `${style.home} home` }>
 		<div class="alert alert-primary">
@@ -116,8 +118,15 @@ const Home: FunctionalComponent = () => {
 						<div>
 							<span>
 								<img class="me-2" src={ `${AssetsRoot}/flags/KR.png` } alt="[KR]" />
-								<IconCalendar3 class="me-1 mb-1" />
-								{ DateText(EventFrom) } ~ { DateText(EventTo) }
+
+								<IconHourglassSplit class="me-1 mb-1" />
+								<strong>
+									<Countdown to={ EventTo } />
+								</strong>
+								{ /*
+									<IconCalendar3 class="me-1 mb-1" />
+									{ DateText(EventFrom) } ~ { DateText(EventTo) }
+								*/ }
 							</span>
 						</div>
 					</div>

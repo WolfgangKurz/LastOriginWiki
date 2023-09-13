@@ -88,34 +88,6 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const Aspect = "ratio-2x4 ratio-lg-5x3";
 	// const Aspect = "ratio-2x4";
 
-	const ImageStyle = ((): Record<string, string> => {
-		if (!props.collapsed) return {};
-
-		const base = skin.offsets;
-		// const platform = IsGoogle.value ? "google" : "normal";
-		const d = IsDamaged.value;
-		const b = IsBG.value;
-		const s = IsSimplified.value;
-
-		const target = (() => {
-			if (!d && !b && !s) return 0;
-			if (d && !b && !s) return 1;
-			if (!d && b && !s) return 2;
-			if (!d && !b && s) return 3;
-			if (d && b && !s) return 4;
-			if (d && !b && s) return 5;
-			if (!d && b && s) return 6;
-			if (d && b && s) return 7;
-			return 0;
-		})();
-
-		if (base[target] === null) return {};
-
-		return {
-			"margin-left": `${base[target]}%`,
-			"margin-right": "0",
-		};
-	})();
 	const SkinImageURL = ((): string => {
 		const skinId = skin.isDef ? 0 : skin.metadata.imageId;
 		const ext = imageExt;
@@ -266,12 +238,10 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 						: SkinVideoURL.length > 0
 							? CanPlayWebM()
 								? <video
-									style={ ImageStyle }
 									autoPlay muted loop
 									src={ `${AssetsRoot}/webm/HD/${SkinVideoURL}.webm` }
 								/>
 								: <MergedVideo
-									style={ ImageStyle }
 									src={ `${AssetsRoot}/webm/HD.Legacy/${SkinVideoURL}.mp4` }
 									type="video/mp4"
 								/>
@@ -309,15 +279,9 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 										minScale={ 0.5 }
 										maxScale={ 3 }
 									>
-										<img
-											style={ ImageStyle }
-											src={ SkinImageURL }
-										/>
+										<img src={ SkinImageURL } />
 									</Pinch>
-									: <img
-										style={ ImageStyle }
-										src={ SkinImageURL }
-									/>
+									: <img src={ SkinImageURL } />
 					}
 				</div>
 
