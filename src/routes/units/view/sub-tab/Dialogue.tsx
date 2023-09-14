@@ -21,13 +21,11 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 
 	const VoiceList: VoiceItem[] = [
 		{
-			id: "",
 			...SkinList[0],
 			isMarriage: false,
 		},
 		...(unit.marriageVoice
 			? [{
-				id: "",
 				...SkinList[0],
 				isMarriage: true,
 			}]
@@ -38,17 +36,15 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 			// .filter(x => !x.isPro)
 			.flatMap((x, i) => {
 				const r: VoiceItem[] = [{
-					id: `${i + 1}`,
 					...x,
 					isMarriage: false,
 				}];
 
 				if (LangList.some(l => {
 					const d = unit.dialogue[l];
-					return d && `${i + 1}M` in d;
+					return d && `${x.sid}M` in d;
 				})) {
 					r.push({
-						id: `${i + 1}`,
 						...x,
 						isMarriage: true,
 					});
@@ -93,7 +89,6 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 		{ VoiceList.map(voice => <UnitDialogue
 			unit={ unit }
 			voice={ voice }
-			id={ voice.id }
 			lang={ dialogueLang.value }
 			audio={ dialogueAudio.value }
 		/>) }

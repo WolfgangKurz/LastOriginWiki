@@ -5,6 +5,13 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12293" date="2023-09-15"
+		bugfix={ <>
+			<li>
+				일부 스킨의 대사가 표시되지 않는 문제를 수정했습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12291" date="2023-09-14"
 		skin={ <>
 			<li>
