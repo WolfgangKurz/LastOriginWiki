@@ -1,0 +1,662 @@
+uid: Ravager_Challenge4
+rarity: 5
+type: 2
+role: 1
+category: 2
+stat:
+  hp:
+    - 10
+    - 10
+  atk:
+    - 20740
+    - -60
+  def:
+    - 10
+    - 10
+  spd: 8
+  cri: 50
+  acc: 300
+  eva: 400
+  res:
+    fire: 50
+    chill: 50
+    thunder: 50
+skills:
+  - key: Skill_MP_Ravager_Challenge4_1
+    icon: Vortex
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.05
+      range: 20
+      ap: 10
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 900
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Ravager_Challenge4_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_COLLAPSE
+              desc:
+                desc: Effect_MP_Ravager_Challenge4_1_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Ravager_Challenge4_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_COLLAPSE
+              desc:
+                desc: Effect_MP_Ravager_Challenge4_2_1
+                type: 1
+                value: Effect_MP_Ravager_Challenge4_31
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 97
+                off: Effect_MP_Ravager_Challenge4_31
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Ravager_Challenge4_2
+    icon: Vortex
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0.05
+      range: 20
+      ap: 10
+      grid: 1,1,1,1,1,1,1,1,1
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 900
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Ravager_Challenge4_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_COLLAPSE
+              desc:
+                desc: Effect_MP_Ravager_Challenge4_1_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 0
+                  per: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Ravager_Challenge4_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_COLLAPSE
+              desc:
+                desc: Effect_MP_Ravager_Challenge4_2_1
+                type: 1
+                value: Effect_MP_Ravager_Challenge4_31
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 97
+                off: Effect_MP_Ravager_Challenge4_31
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Ravager_Challenge4_3
+    icon: P.SelfSpdBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Ravager_Challenge4_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Ravager_Challenge4_3_1
+                type: 0
+                value: "5"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 5
+                  per: 0
+              overlap: 4
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_MP_Ravager_Challenge4_3_2
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_Ravager_Challenge4_3_3
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 100%
+                  per: 0%
+              overlap: 1
+          maxStack: 0
+        - key: Effect_MP_Ravager_Challenge4_31
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Ravager_Challenge4_31_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 99
+                until: wave
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 0%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Ravager_Challenge4_32
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Ravager_Challenge4_31
+                stack: 2
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Ravager_Challenge4_32_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 100
+                off: 1
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Ravager_Challenge4_32_2
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Ravager_Challenge4_4
+    icon: P.SelfAtkDeBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      target_ground: false
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Ravager_Challenge4_4
+          on: enemy_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_SKILL_UP
+              desc:
+                desc: Effect_MP_Ravager_Challenge4_4_1
+                type: 1
+                value: "0.100000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 106
+                skill_ratio:
+                  base: 10%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Ravager_Challenge4_41
+          on: round
+          if:
+            - on:
+                target: self
+                func: UNFILLED
+                select:
+                  - 67
+                attr: 6
+            - round:
+                operator: ">="
+                round:
+                  - 2
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_MP_Ravager_Challenge4_41_1
+                type: 1
+                value: "-0.100000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 99
+                until: wave
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: -10%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Ravager_Challenge1_5
+    icon: P.TeamAtkDeBuff
+    passive: true
+    type: 0
+    target: enemy
+    delayed: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      target_ground: true
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Ravager_Challenge1_5
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_IMMUNITY_DEBUFF
+              desc:
+                desc: Effect_MP_Ravager_Challenge1_5_1
+                type: 1
+                value: "48"
+                level: "0"
+              attr: 3
+              erase:
+                count: 4
+                trigger: damaged
+              value:
+                isBuff: true
+                type: 101
+                debuff_immune: 48
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Ravager_Challenge1_51
+          on: attacked
+          if:
+            - test: lower
+              target: target
+              operand: ATK
+              ratio: 0
+              than: ATK
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_SKILL_DOWN
+              desc:
+                desc: Effect_MP_Ravager_Challenge1_51_1
+                type: 1
+                value: "-5"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 999%
+                type: 106
+                skill_ratio:
+                  base: -500%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_MP_Ravager_Challenge4_5
+          on: round
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - Effect_MP_Ravager_Challenge4_1
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Ravager_Challenge4_5_1
+                type: 1
+                value: "82"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 82
+              overlap: 4
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_MP_Ravager_Challenge4_5_2
+                type: 1
+                value: "98"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 69
+                off:
+                  type: 98
+              overlap: 4
+          maxStack: 0
+        - key: Effect_MP_Ravager_Challenge4_51
+          on: round
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - Effect_MP_Ravager_Challenge4_1
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Ravager_Challenge4_51_1
+                type: 0
+                value: "9999999"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 9999999
+                  per: 0
+              overlap: 4
+          maxStack: 0
+ai: AI_MP_Ravager_04

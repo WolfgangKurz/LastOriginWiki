@@ -66,7 +66,7 @@ const DialogueRow: FunctionComponent<DialogueRowProps> = (props) => {
 
 		Oath: "danger",
 		OathIdle_01: "danger",
-		MVP: "secondary",
+		MVP: "primary",
 	} as Record<string, string>)[type] || "secondary";
 	/* eslint-enable camelcase */
 
@@ -79,7 +79,7 @@ const DialogueRow: FunctionComponent<DialogueRowProps> = (props) => {
 			<Locale k={ `UNIT_DIALOGUE_TYPE_${type}` } />
 		</div>
 		<div class="col col-12 col-sm border dialogue">
-			{ dialogue || <span class="text-secondary">Not set</span> }
+			{ dialogue || <span class="text-secondary">-</span> }
 		</div>
 		<div class="col col-12 col-sm-auto border">
 			<audio src={ voiceUrl } type="audio/mp3" controls preload="none" volume="0.5" />

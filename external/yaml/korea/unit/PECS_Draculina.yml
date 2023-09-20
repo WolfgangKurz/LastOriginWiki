@@ -530,9 +530,9 @@ skills:
       data:
         - rate: 1.32
           type: 0
-          range: 1
+          range: 3
           ap: 8
-          grid: 4>0,0.75,0.5,1,0.75,0.5,0,0.75,0.5
+          grid: 4>0,1,1,1,1,1,0,1,1
           target_ground: true
           summon: null
           use: null
@@ -544,8 +544,16 @@ skills:
             - key: Effect_PECS_Draculina_N_1
               on: attack_success
               if:
-                - false
-                - false
+                - on:
+                    target: target
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+                - pos:
+                    target: target
+                    position: 0
               body:
                 - 0
                 - 1
@@ -559,38 +567,35 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_EVADE_DOWN
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_1_1
                     type: 1
-                    value: "-0.210000"
-                    level: "-0.010000"
-                  attr: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 11
-                    evade:
-                      base: -21%
-                      per: -1%
+                    type: 99
+                    off: 0
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_Draculina_N_1_2
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
-                  attr: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
             - key: Effect_PECS_Draculina_N_11
@@ -600,7 +605,7 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - Effect_PECS_Draculina_N_24
+                      - Effect_PECS_Draculina_N_4
                     attr: 6
                 - false
               body:
@@ -616,12 +621,26 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_11_1
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_11_2
+                    type: 1
+                    value: "0.500000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -629,15 +648,67 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 50%
+                      per: 5%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
                   overlap: 4
               maxStack: 0
         - rate: 1.44
           type: 0
-          range: 1
+          range: 3
           ap: 8
-          grid: 4>0,0.75,0.5,1,0.75,0.5,0,0.75,0.5
+          grid: 4>0,1,1,1,1,1,0,1,1
           target_ground: true
           summon: null
           use: null
@@ -649,8 +720,16 @@ skills:
             - key: Effect_PECS_Draculina_N_1
               on: attack_success
               if:
-                - false
-                - false
+                - on:
+                    target: target
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+                - pos:
+                    target: target
+                    position: 0
               body:
                 - 0
                 - 1
@@ -664,38 +743,35 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_EVADE_DOWN
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_1_1
                     type: 1
-                    value: "-0.210000"
-                    level: "-0.010000"
-                  attr: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 11
-                    evade:
-                      base: -21%
-                      per: -1%
+                    type: 99
+                    off: 0
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_Draculina_N_1_2
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
-                  attr: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
             - key: Effect_PECS_Draculina_N_11
@@ -705,7 +781,7 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - Effect_PECS_Draculina_N_24
+                      - Effect_PECS_Draculina_N_4
                     attr: 6
                 - false
               body:
@@ -721,12 +797,26 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_11_1
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_11_2
+                    type: 1
+                    value: "0.500000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -734,15 +824,67 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 50%
+                      per: 5%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
                   overlap: 4
               maxStack: 0
         - rate: 1.56
           type: 0
-          range: 1
+          range: 3
           ap: 8
-          grid: 4>0,0.75,0.5,1,0.75,0.5,0,0.75,0.5
+          grid: 4>0,1,1,1,1,1,0,1,1
           target_ground: true
           summon: null
           use: null
@@ -754,8 +896,16 @@ skills:
             - key: Effect_PECS_Draculina_N_1
               on: attack_success
               if:
-                - false
-                - false
+                - on:
+                    target: target
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+                - pos:
+                    target: target
+                    position: 0
               body:
                 - 0
                 - 1
@@ -769,38 +919,35 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_EVADE_DOWN
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_1_1
                     type: 1
-                    value: "-0.210000"
-                    level: "-0.010000"
-                  attr: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 11
-                    evade:
-                      base: -21%
-                      per: -1%
+                    type: 99
+                    off: 0
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_Draculina_N_1_2
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
-                  attr: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
             - key: Effect_PECS_Draculina_N_11
@@ -810,7 +957,7 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - Effect_PECS_Draculina_N_24
+                      - Effect_PECS_Draculina_N_4
                     attr: 6
                 - false
               body:
@@ -826,12 +973,26 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_11_1
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_11_2
+                    type: 1
+                    value: "0.500000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -839,15 +1000,67 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 50%
+                      per: 5%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
                   overlap: 4
               maxStack: 0
         - rate: 1.68
           type: 0
-          range: 1
+          range: 3
           ap: 8
-          grid: 4>0,0.75,0.5,1,0.75,0.5,0,0.75,0.5
+          grid: 4>0,1,1,1,1,1,0,1,1
           target_ground: true
           summon: null
           use: null
@@ -859,8 +1072,16 @@ skills:
             - key: Effect_PECS_Draculina_N_1
               on: attack_success
               if:
-                - false
-                - false
+                - on:
+                    target: target
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+                - pos:
+                    target: target
+                    position: 0
               body:
                 - 0
                 - 1
@@ -874,38 +1095,35 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_EVADE_DOWN
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_1_1
                     type: 1
-                    value: "-0.210000"
-                    level: "-0.010000"
-                  attr: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 11
-                    evade:
-                      base: -21%
-                      per: -1%
+                    type: 99
+                    off: 0
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_Draculina_N_1_2
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
-                  attr: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
             - key: Effect_PECS_Draculina_N_11
@@ -915,7 +1133,7 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - Effect_PECS_Draculina_N_24
+                      - Effect_PECS_Draculina_N_4
                     attr: 6
                 - false
               body:
@@ -931,12 +1149,26 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_11_1
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_11_2
+                    type: 1
+                    value: "0.500000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -944,15 +1176,67 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 50%
+                      per: 5%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
                   overlap: 4
               maxStack: 0
         - rate: 1.8
           type: 0
-          range: 1
+          range: 3
           ap: 8
-          grid: 4>0,0.75,0.5,1,0.75,0.5,0,0.75,0.5
+          grid: 4>0,1,1,1,1,1,0,1,1
           target_ground: true
           summon: null
           use: null
@@ -964,8 +1248,16 @@ skills:
             - key: Effect_PECS_Draculina_N_1
               on: attack_success
               if:
-                - false
-                - false
+                - on:
+                    target: target
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+                - pos:
+                    target: target
+                    position: 0
               body:
                 - 0
                 - 1
@@ -979,38 +1271,35 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_EVADE_DOWN
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_1_1
                     type: 1
-                    value: "-0.210000"
-                    level: "-0.010000"
-                  attr: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 11
-                    evade:
-                      base: -21%
-                      per: -1%
+                    type: 99
+                    off: 0
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_Draculina_N_1_2
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
-                  attr: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
             - key: Effect_PECS_Draculina_N_11
@@ -1020,7 +1309,7 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - Effect_PECS_Draculina_N_24
+                      - Effect_PECS_Draculina_N_4
                     attr: 6
                 - false
               body:
@@ -1036,12 +1325,26 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_11_1
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_11_2
+                    type: 1
+                    value: "0.500000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1049,15 +1352,67 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 50%
+                      per: 5%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
                   overlap: 4
               maxStack: 0
         - rate: 1.92
           type: 0
-          range: 1
+          range: 3
           ap: 8
-          grid: 4>0,0.75,0.5,1,0.75,0.5,0,0.75,0.5
+          grid: 4>0,1,1,1,1,1,0,1,1
           target_ground: true
           summon: null
           use: null
@@ -1069,8 +1424,16 @@ skills:
             - key: Effect_PECS_Draculina_N_1
               on: attack_success
               if:
-                - false
-                - false
+                - on:
+                    target: target
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+                - pos:
+                    target: target
+                    position: 0
               body:
                 - 0
                 - 1
@@ -1084,38 +1447,35 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_EVADE_DOWN
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_1_1
                     type: 1
-                    value: "-0.210000"
-                    level: "-0.010000"
-                  attr: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 11
-                    evade:
-                      base: -21%
-                      per: -1%
+                    type: 99
+                    off: 0
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_Draculina_N_1_2
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
-                  attr: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
             - key: Effect_PECS_Draculina_N_11
@@ -1125,7 +1485,7 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - Effect_PECS_Draculina_N_24
+                      - Effect_PECS_Draculina_N_4
                     attr: 6
                 - false
               body:
@@ -1141,12 +1501,26 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_11_1
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_11_2
+                    type: 1
+                    value: "0.500000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1154,15 +1528,67 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 50%
+                      per: 5%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
                   overlap: 4
               maxStack: 0
         - rate: 2.04
           type: 0
-          range: 1
+          range: 3
           ap: 8
-          grid: 4>0,0.75,0.5,1,0.75,0.5,0,0.75,0.5
+          grid: 4>0,1,1,1,1,1,0,1,1
           target_ground: true
           summon: null
           use: null
@@ -1174,8 +1600,16 @@ skills:
             - key: Effect_PECS_Draculina_N_1
               on: attack_success
               if:
-                - false
-                - false
+                - on:
+                    target: target
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+                - pos:
+                    target: target
+                    position: 0
               body:
                 - 0
                 - 1
@@ -1189,38 +1623,35 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_EVADE_DOWN
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_1_1
                     type: 1
-                    value: "-0.210000"
-                    level: "-0.010000"
-                  attr: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 11
-                    evade:
-                      base: -21%
-                      per: -1%
+                    type: 99
+                    off: 0
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_Draculina_N_1_2
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
-                  attr: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
             - key: Effect_PECS_Draculina_N_11
@@ -1230,7 +1661,7 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - Effect_PECS_Draculina_N_24
+                      - Effect_PECS_Draculina_N_4
                     attr: 6
                 - false
               body:
@@ -1246,12 +1677,26 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_11_1
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_11_2
+                    type: 1
+                    value: "0.500000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1259,15 +1704,67 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 50%
+                      per: 5%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
                   overlap: 4
               maxStack: 0
         - rate: 2.16
           type: 0
-          range: 1
+          range: 3
           ap: 8
-          grid: 4>0,0.75,0.5,1,0.75,0.5,0,0.75,0.5
+          grid: 4>0,1,1,1,1,1,0,1,1
           target_ground: true
           summon: null
           use: null
@@ -1279,8 +1776,16 @@ skills:
             - key: Effect_PECS_Draculina_N_1
               on: attack_success
               if:
-                - false
-                - false
+                - on:
+                    target: target
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+                - pos:
+                    target: target
+                    position: 0
               body:
                 - 0
                 - 1
@@ -1294,38 +1799,35 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_EVADE_DOWN
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_1_1
                     type: 1
-                    value: "-0.210000"
-                    level: "-0.010000"
-                  attr: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 11
-                    evade:
-                      base: -21%
-                      per: -1%
+                    type: 99
+                    off: 0
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_Draculina_N_1_2
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
-                  attr: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
             - key: Effect_PECS_Draculina_N_11
@@ -1335,7 +1837,7 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - Effect_PECS_Draculina_N_24
+                      - Effect_PECS_Draculina_N_4
                     attr: 6
                 - false
               body:
@@ -1351,12 +1853,26 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_11_1
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_11_2
+                    type: 1
+                    value: "0.500000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1364,15 +1880,67 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 50%
+                      per: 5%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
                   overlap: 4
               maxStack: 0
         - rate: 2.28
           type: 0
-          range: 1
+          range: 3
           ap: 8
-          grid: 4>0,0.75,0.5,1,0.75,0.5,0,0.75,0.5
+          grid: 4>0,1,1,1,1,1,0,1,1
           target_ground: true
           summon: null
           use: null
@@ -1384,8 +1952,16 @@ skills:
             - key: Effect_PECS_Draculina_N_1
               on: attack_success
               if:
-                - false
-                - false
+                - on:
+                    target: target
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+                - pos:
+                    target: target
+                    position: 0
               body:
                 - 0
                 - 1
@@ -1399,38 +1975,35 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_EVADE_DOWN
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_1_1
                     type: 1
-                    value: "-0.210000"
-                    level: "-0.010000"
-                  attr: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 11
-                    evade:
-                      base: -21%
-                      per: -1%
+                    type: 99
+                    off: 0
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_Draculina_N_1_2
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
-                  attr: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
             - key: Effect_PECS_Draculina_N_11
@@ -1440,7 +2013,7 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - Effect_PECS_Draculina_N_24
+                      - Effect_PECS_Draculina_N_4
                     attr: 6
                 - false
               body:
@@ -1456,12 +2029,26 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_11_1
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_11_2
+                    type: 1
+                    value: "0.500000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1469,15 +2056,67 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 50%
+                      per: 5%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
                   overlap: 4
               maxStack: 0
         - rate: 2.4
           type: 0
-          range: 1
+          range: 3
           ap: 8
-          grid: 4>0,0.75,0.5,1,0.75,0.5,0,0.75,0.5
+          grid: 4>0,1,1,1,1,1,0,1,1
           target_ground: true
           summon: null
           use: null
@@ -1489,8 +2128,16 @@ skills:
             - key: Effect_PECS_Draculina_N_1
               on: attack_success
               if:
-                - false
-                - false
+                - on:
+                    target: target
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+                - pos:
+                    target: target
+                    position: 0
               body:
                 - 0
                 - 1
@@ -1504,38 +2151,35 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_EVADE_DOWN
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_1_1
                     type: 1
-                    value: "-0.210000"
-                    level: "-0.010000"
-                  attr: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
                   erase:
-                    rounds: 3
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 11
-                    evade:
-                      base: -21%
-                      per: -1%
+                    type: 99
+                    off: 0
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
                     desc: Effect_PECS_Draculina_N_1_2
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
-                  attr: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
             - key: Effect_PECS_Draculina_N_11
@@ -1545,7 +2189,7 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - Effect_PECS_Draculina_N_24
+                      - Effect_PECS_Draculina_N_4
                     attr: 6
                 - false
               body:
@@ -1561,12 +2205,26 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_PECS_Draculina_N_11_1
                     type: 1
-                    value: "0.260000"
-                    level: "0.060000"
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_11_2
+                    type: 1
+                    value: "0.500000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1574,8 +2232,60 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 26%
-                      per: 6%
+                      base: 50%
+                      per: 5%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
                   overlap: 4
               maxStack: 0
     values:
@@ -1591,36 +2301,61 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_EVADE_DOWN
+        - - icon: BuffIcon_REMOVE_BUFF
             desc:
               desc: Effect_PECS_Draculina_N_1_1
               type: 1
-              value: "-0.210000"
-              level: "-0.010000"
-            base: -0.21
-            per: -0.01
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
             chance: 1
           - icon: BuffIcon_PhyATK_UP
             desc:
               desc: Effect_PECS_Draculina_N_1_2
               type: 1
-              value: "0.260000"
-              level: "0.060000"
-            base: 0.26
-            per: 0.06
-            chance: 0
-          - icon: BuffIcon_PhyATK_UP
+              value: "0.250000"
+              level: "0.025000"
+            base: 0.25
+            per: 0.025
+            chance: 1
+          - icon: BuffIcon_REMOVE_BUFF
             desc:
               desc: Effect_PECS_Draculina_N_11_1
               type: 1
-              value: "0.260000"
-              level: "0.060000"
-            base: 0.26
-            per: 0.06
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_PhyATK_UP
+            desc:
+              desc: Effect_PECS_Draculina_N_11_2
+              type: 1
+              value: "0.500000"
+              level: "0.050000"
+            base: 0.5
+            per: 0.05
+            chance: 1
+          - icon: ""
+            desc:
+              desc: Effect_PECS_Draculina_N_22_1
+              type: 1
+              value: Effect_PECS_Draculina_N_2
+              level: "0"
+            value: Effect_PECS_Draculina_N_2
+            chance: 1
+          - icon: ""
+            desc:
+              desc: Effect_PECS_Draculina_N_22_2
+              type: 1
+              value: Effect_PECS_Draculina_N_4
+              level: "0"
+            value: Effect_PECS_Draculina_N_4
             chance: 1
   "2":
     key: "2"
-    icon: SelfAtkBuff
+    icon: Wave
     target: enemy
     delayed: false
     buffs:
@@ -1638,7 +2373,7 @@ skills:
       data:
         - rate: 0.32
           type: 0
-          range: 3
+          range: 5
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           target_ground: false
@@ -1646,209 +2381,16 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 10
           buff_rate: 100
           buffs:
             - key: Effect_PECS_Draculina_N_2
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_phyDMG_DOT
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_1
-                    type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 65
-                    fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_2
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_3
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_4
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_PECS_Draculina_N_21
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_21_1
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_22
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_22_1
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_23
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_23_1
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_24
               on: attack_success
               if:
-                - false
+                - hp>=:
+                    target: target
+                    value:
+                      - 100%
                 - false
               body:
                 - 0
@@ -1865,24 +2407,148 @@ skills:
               buffs:
                 - icon: BuffIcon_phyDMG_DOT
                   desc:
-                    desc: Effect_PECS_Draculina_N_24_1
+                    desc: Effect_PECS_Draculina_N_2_1
                     type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 1
+                    value: "1"
+                    level: "0"
+                  attr: 3
                   erase:
                     rounds: 4
                   value:
                     isBuff: true
                     type: 65
                     fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
+                      base: 1
+                      per: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_2
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 97
+                    off: "0"
+                  overlap: 4
               maxStack: 1
+            - key: Effect_PECS_Draculina_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_21_1
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
+                  overlap: 4
+              maxStack: 0
         - rate: 0.34
           type: 0
-          range: 3
+          range: 5
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           target_ground: false
@@ -1890,209 +2556,16 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 20
           buff_rate: 100
           buffs:
             - key: Effect_PECS_Draculina_N_2
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_phyDMG_DOT
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_1
-                    type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 65
-                    fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_2
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_3
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_4
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_PECS_Draculina_N_21
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_21_1
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_22
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_22_1
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_23
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_23_1
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_24
               on: attack_success
               if:
-                - false
+                - hp>=:
+                    target: target
+                    value:
+                      - 100%
                 - false
               body:
                 - 0
@@ -2109,24 +2582,148 @@ skills:
               buffs:
                 - icon: BuffIcon_phyDMG_DOT
                   desc:
-                    desc: Effect_PECS_Draculina_N_24_1
+                    desc: Effect_PECS_Draculina_N_2_1
                     type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 1
+                    value: "1"
+                    level: "0"
+                  attr: 3
                   erase:
                     rounds: 4
                   value:
                     isBuff: true
                     type: 65
                     fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
+                      base: 1
+                      per: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_2
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 97
+                    off: "0"
+                  overlap: 4
               maxStack: 1
+            - key: Effect_PECS_Draculina_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_21_1
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
+                  overlap: 4
+              maxStack: 0
         - rate: 0.36
           type: 0
-          range: 3
+          range: 5
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           target_ground: false
@@ -2134,209 +2731,16 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 30
           buff_rate: 100
           buffs:
             - key: Effect_PECS_Draculina_N_2
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_phyDMG_DOT
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_1
-                    type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 65
-                    fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_2
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_3
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_4
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_PECS_Draculina_N_21
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_21_1
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_22
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_22_1
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_23
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_23_1
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_24
               on: attack_success
               if:
-                - false
+                - hp>=:
+                    target: target
+                    value:
+                      - 100%
                 - false
               body:
                 - 0
@@ -2353,24 +2757,148 @@ skills:
               buffs:
                 - icon: BuffIcon_phyDMG_DOT
                   desc:
-                    desc: Effect_PECS_Draculina_N_24_1
+                    desc: Effect_PECS_Draculina_N_2_1
                     type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 1
+                    value: "1"
+                    level: "0"
+                  attr: 3
                   erase:
                     rounds: 4
                   value:
                     isBuff: true
                     type: 65
                     fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
+                      base: 1
+                      per: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_2
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 97
+                    off: "0"
+                  overlap: 4
               maxStack: 1
+            - key: Effect_PECS_Draculina_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_21_1
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
+                  overlap: 4
+              maxStack: 0
         - rate: 0.38
           type: 0
-          range: 3
+          range: 5
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           target_ground: false
@@ -2378,209 +2906,16 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 40
           buff_rate: 100
           buffs:
             - key: Effect_PECS_Draculina_N_2
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_phyDMG_DOT
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_1
-                    type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 65
-                    fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_2
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_3
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_4
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_PECS_Draculina_N_21
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_21_1
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_22
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_22_1
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_23
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_23_1
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_24
               on: attack_success
               if:
-                - false
+                - hp>=:
+                    target: target
+                    value:
+                      - 100%
                 - false
               body:
                 - 0
@@ -2597,24 +2932,148 @@ skills:
               buffs:
                 - icon: BuffIcon_phyDMG_DOT
                   desc:
-                    desc: Effect_PECS_Draculina_N_24_1
+                    desc: Effect_PECS_Draculina_N_2_1
                     type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 1
+                    value: "1"
+                    level: "0"
+                  attr: 3
                   erase:
                     rounds: 4
                   value:
                     isBuff: true
                     type: 65
                     fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
+                      base: 1
+                      per: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_2
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 97
+                    off: "0"
+                  overlap: 4
               maxStack: 1
+            - key: Effect_PECS_Draculina_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_21_1
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
+                  overlap: 4
+              maxStack: 0
         - rate: 0.4
           type: 0
-          range: 3
+          range: 5
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           target_ground: false
@@ -2622,209 +3081,16 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 50
           buff_rate: 100
           buffs:
             - key: Effect_PECS_Draculina_N_2
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_phyDMG_DOT
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_1
-                    type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 65
-                    fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_2
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_3
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_4
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_PECS_Draculina_N_21
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_21_1
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_22
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_22_1
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_23
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_23_1
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_24
               on: attack_success
               if:
-                - false
+                - hp>=:
+                    target: target
+                    value:
+                      - 100%
                 - false
               body:
                 - 0
@@ -2841,24 +3107,148 @@ skills:
               buffs:
                 - icon: BuffIcon_phyDMG_DOT
                   desc:
-                    desc: Effect_PECS_Draculina_N_24_1
+                    desc: Effect_PECS_Draculina_N_2_1
                     type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 1
+                    value: "1"
+                    level: "0"
+                  attr: 3
                   erase:
                     rounds: 4
                   value:
                     isBuff: true
                     type: 65
                     fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
+                      base: 1
+                      per: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_2
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 97
+                    off: "0"
+                  overlap: 4
               maxStack: 1
+            - key: Effect_PECS_Draculina_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_21_1
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
+                  overlap: 4
+              maxStack: 0
         - rate: 0.42
           type: 0
-          range: 3
+          range: 5
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           target_ground: false
@@ -2866,209 +3256,16 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 60
           buff_rate: 100
           buffs:
             - key: Effect_PECS_Draculina_N_2
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_phyDMG_DOT
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_1
-                    type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 65
-                    fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_2
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_3
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_4
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_PECS_Draculina_N_21
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_21_1
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_22
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_22_1
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_23
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_23_1
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_24
               on: attack_success
               if:
-                - false
+                - hp>=:
+                    target: target
+                    value:
+                      - 100%
                 - false
               body:
                 - 0
@@ -3085,24 +3282,148 @@ skills:
               buffs:
                 - icon: BuffIcon_phyDMG_DOT
                   desc:
-                    desc: Effect_PECS_Draculina_N_24_1
+                    desc: Effect_PECS_Draculina_N_2_1
                     type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 1
+                    value: "1"
+                    level: "0"
+                  attr: 3
                   erase:
                     rounds: 4
                   value:
                     isBuff: true
                     type: 65
                     fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
+                      base: 1
+                      per: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_2
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 97
+                    off: "0"
+                  overlap: 4
               maxStack: 1
+            - key: Effect_PECS_Draculina_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_21_1
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
+                  overlap: 4
+              maxStack: 0
         - rate: 0.44
           type: 0
-          range: 3
+          range: 5
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           target_ground: false
@@ -3110,209 +3431,16 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 70
           buff_rate: 100
           buffs:
             - key: Effect_PECS_Draculina_N_2
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_phyDMG_DOT
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_1
-                    type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 65
-                    fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_2
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_3
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_4
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_PECS_Draculina_N_21
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_21_1
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_22
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_22_1
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_23
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_23_1
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_24
               on: attack_success
               if:
-                - false
+                - hp>=:
+                    target: target
+                    value:
+                      - 100%
                 - false
               body:
                 - 0
@@ -3329,24 +3457,148 @@ skills:
               buffs:
                 - icon: BuffIcon_phyDMG_DOT
                   desc:
-                    desc: Effect_PECS_Draculina_N_24_1
+                    desc: Effect_PECS_Draculina_N_2_1
                     type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 1
+                    value: "1"
+                    level: "0"
+                  attr: 3
                   erase:
                     rounds: 4
                   value:
                     isBuff: true
                     type: 65
                     fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
+                      base: 1
+                      per: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_2
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 97
+                    off: "0"
+                  overlap: 4
               maxStack: 1
+            - key: Effect_PECS_Draculina_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_21_1
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
+                  overlap: 4
+              maxStack: 0
         - rate: 0.46
           type: 0
-          range: 3
+          range: 5
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           target_ground: false
@@ -3354,209 +3606,16 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 80
           buff_rate: 100
           buffs:
             - key: Effect_PECS_Draculina_N_2
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_phyDMG_DOT
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_1
-                    type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 65
-                    fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_2
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_3
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_4
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_PECS_Draculina_N_21
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_21_1
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_22
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_22_1
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_23
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_23_1
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_24
               on: attack_success
               if:
-                - false
+                - hp>=:
+                    target: target
+                    value:
+                      - 100%
                 - false
               body:
                 - 0
@@ -3573,24 +3632,148 @@ skills:
               buffs:
                 - icon: BuffIcon_phyDMG_DOT
                   desc:
-                    desc: Effect_PECS_Draculina_N_24_1
+                    desc: Effect_PECS_Draculina_N_2_1
                     type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 1
+                    value: "1"
+                    level: "0"
+                  attr: 3
                   erase:
                     rounds: 4
                   value:
                     isBuff: true
                     type: 65
                     fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
+                      base: 1
+                      per: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_2
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 97
+                    off: "0"
+                  overlap: 4
               maxStack: 1
+            - key: Effect_PECS_Draculina_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_21_1
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
+                  overlap: 4
+              maxStack: 0
         - rate: 0.48
           type: 0
-          range: 3
+          range: 5
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           target_ground: false
@@ -3598,209 +3781,16 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 90
           buff_rate: 100
           buffs:
             - key: Effect_PECS_Draculina_N_2
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_phyDMG_DOT
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_1
-                    type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 65
-                    fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_2
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_3
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_4
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_PECS_Draculina_N_21
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_21_1
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_22
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_22_1
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_23
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_23_1
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_24
               on: attack_success
               if:
-                - false
+                - hp>=:
+                    target: target
+                    value:
+                      - 100%
                 - false
               body:
                 - 0
@@ -3817,24 +3807,148 @@ skills:
               buffs:
                 - icon: BuffIcon_phyDMG_DOT
                   desc:
-                    desc: Effect_PECS_Draculina_N_24_1
+                    desc: Effect_PECS_Draculina_N_2_1
                     type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 1
+                    value: "1"
+                    level: "0"
+                  attr: 3
                   erase:
                     rounds: 4
                   value:
                     isBuff: true
                     type: 65
                     fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
+                      base: 1
+                      per: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_2
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 97
+                    off: "0"
+                  overlap: 4
               maxStack: 1
+            - key: Effect_PECS_Draculina_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_21_1
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
+                  overlap: 4
+              maxStack: 0
         - rate: 0.5
           type: 0
-          range: 3
+          range: 5
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
           target_ground: false
@@ -3842,209 +3956,16 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 100
           buff_rate: 100
           buffs:
             - key: Effect_PECS_Draculina_N_2
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_phyDMG_DOT
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_1
-                    type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 65
-                    fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_2
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_3
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_2_4
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_PECS_Draculina_N_21
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_21_1
-                    type: 1
-                    value: "0.530000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 53%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_22
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_22_1
-                    type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_23
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_RANGE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_23_1
-                    type: 0
-                    value: "3"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 4
-                  value:
-                    isBuff: true
-                    type: 55
-                    range:
-                      base: 3
-                      per: 0
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_PECS_Draculina_N_24
               on: attack_success
               if:
-                - false
+                - hp>=:
+                    target: target
+                    value:
+                      - 100%
                 - false
               body:
                 - 0
@@ -4061,21 +3982,145 @@ skills:
               buffs:
                 - icon: BuffIcon_phyDMG_DOT
                   desc:
-                    desc: Effect_PECS_Draculina_N_24_1
+                    desc: Effect_PECS_Draculina_N_2_1
                     type: 0
-                    value: "280"
-                    level: "80"
-                  attr: 1
+                    value: "1"
+                    level: "0"
+                  attr: 3
                   erase:
                     rounds: 4
                   value:
                     isBuff: true
                     type: 65
                     fixed_damage:
-                      base: 280
-                      per: 80
-                  overlap: 3
+                      base: 1
+                      per: 0
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_2
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_2_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 97
+                    off: "0"
+                  overlap: 4
               maxStack: 1
+            - key: Effect_PECS_Draculina_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_21_1
+                    type: 1
+                    value: "50"
+                    level: "5"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 5000%
+                      per: 500%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_22
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_4
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_1
+                    type: 1
+                    value: Effect_PECS_Draculina_N_2
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_2
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Draculina_N_22_2
+                    type: 1
+                    value: Effect_PECS_Draculina_N_4
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Draculina_N_4
+                  overlap: 4
+              maxStack: 0
     values:
       index:
         - 0
@@ -4093,73 +4138,53 @@ skills:
             desc:
               desc: Effect_PECS_Draculina_N_2_1
               type: 0
-              value: "280"
-              level: "80"
-            base: 280
-            per: 80
-            chance: 0
-          - icon: BuffIcon_ATK_UP
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_PhyATK_UP
             desc:
               desc: Effect_PECS_Draculina_N_2_2
               type: 1
-              value: "0.530000"
-              level: "0.030000"
-            base: 0.53
-            per: 0.03
+              value: "50"
+              level: "5"
+            base: 50
+            per: 5
             chance: 0
-          - icon: BuffIcon_DEF_PIERCE_UP
+          - icon: ""
             desc:
               desc: Effect_PECS_Draculina_N_2_3
               type: 1
-              value: "0.210000"
-              level: "0.010000"
-            base: 0.21
-            per: 0.01
-            chance: 0
-          - icon: BuffIcon_RANGE_UP
-            desc:
-              desc: Effect_PECS_Draculina_N_2_4
-              type: 0
-              value: "3"
+              value: "0"
               level: "0"
-            base: 3
+            base: 0
             per: 0
             chance: 0
-          - icon: BuffIcon_ATK_UP
+          - icon: BuffIcon_PhyATK_UP
             desc:
               desc: Effect_PECS_Draculina_N_21_1
               type: 1
-              value: "0.530000"
-              level: "0.030000"
-            base: 0.53
-            per: 0.03
+              value: "50"
+              level: "5"
+            base: 50
+            per: 5
             chance: 1
-          - icon: BuffIcon_DEF_PIERCE_UP
+          - icon: ""
             desc:
               desc: Effect_PECS_Draculina_N_22_1
               type: 1
-              value: "0.210000"
-              level: "0.010000"
-            base: 0.21
-            per: 0.01
-            chance: 1
-          - icon: BuffIcon_RANGE_UP
-            desc:
-              desc: Effect_PECS_Draculina_N_23_1
-              type: 0
-              value: "3"
+              value: Effect_PECS_Draculina_N_2
               level: "0"
-            base: 3
-            per: 0
+            value: Effect_PECS_Draculina_N_2
             chance: 1
-          - icon: BuffIcon_phyDMG_DOT
+          - icon: ""
             desc:
-              desc: Effect_PECS_Draculina_N_24_1
-              type: 0
-              value: "280"
-              level: "80"
-            base: 280
-            per: 80
+              desc: Effect_PECS_Draculina_N_22_2
+              type: 1
+              value: Effect_PECS_Draculina_N_4
+              level: "0"
+            value: Effect_PECS_Draculina_N_4
             chance: 1
   "3":
     key: "3"
@@ -4215,8 +4240,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Draculina_N_3_1
                     type: 1
-                    value: "0.210000"
-                    level: "0.010000"
+                    value: "0.350000"
+                    level: "0.035000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -4224,31 +4249,105 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 21%
-                      per: 1%
+                      base: 35%
+                      per: 3.5%
                   overlap: 4
-                - icon: BuffIcon_DamageAmp_Opp
+                - icon: BuffIcon_ATK_UP
                   desc:
                     desc: Effect_PECS_Draculina_N_3_2
                     type: 1
-                    value: "0.530000"
-                    level: "0.030000"
+                    value: "0.400000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 4
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 1
+                    attack:
+                      base: 40%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_3_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 4
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 9
+                    critical:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_3_4
+                    type: 0
+                    value: "1"
+                    level: "0.100000"
                   attr: 0
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 81
-                    damage_by_hp:
-                      target: target
-                      damage:
-                        base: 53%
-                        per: 3%
-                  overlap: 0
+                    type: 20
+                    ap:
+                      base: 1
+                      per: 0.1
+                  overlap: 4
               maxStack: 0
             - key: Effect_PECS_Draculina_N_31
-              on: attack_success
+              on: round
+              if:
+                - on:
+                    target: self
+                    func: UNFILLED
+                    select:
+                      - Effect_PECS_Draculina_N_32
+                      - Effect_PECS_Draculina_N_33
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_31_1
+                    type: 0
+                    value: "1"
+                    level: "0.100000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 1
+                      per: 0.1
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_PECS_Draculina_N_32
+              on:
+                use_skill: 2
               if:
                 - false
                 - false
@@ -4265,25 +4364,59 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_DamageAmp_Opp
+                - icon: BuffIcon_ATK_UP
                   desc:
-                    desc: Effect_PECS_Draculina_N_31_1
+                    desc: Effect_PECS_Draculina_N_32_1
                     type: 1
-                    value: "0.530000"
-                    level: "0.030000"
+                    value: "0.400000"
+                    level: "0.050000"
                   attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 4
                   value:
                     isBuff: true
-                    type: 81
-                    damage_by_hp:
-                      target: target
-                      damage:
-                        base: 53%
-                        per: 3%
-                  overlap: 0
-              maxStack: 0
+                    type: 1
+                    attack:
+                      base: 40%
+                      per: 5%
+                  overlap: 4
+              maxStack: 1
+            - key: Effect_PECS_Draculina_N_33
+              on:
+                use_skill: 2
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_PECS_Draculina_N_33_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 4
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+              maxStack: 1
     values:
       index:
         - 0
@@ -4301,32 +4434,68 @@ skills:
             desc:
               desc: Effect_PECS_Draculina_N_3_1
               type: 1
-              value: "0.210000"
-              level: "0.010000"
-            base: 0.21
-            per: 0.01
+              value: "0.350000"
+              level: "0.035000"
+            base: 0.35
+            per: 0.035
             chance: 1
-          - icon: BuffIcon_DamageAmp_Opp
+          - icon: BuffIcon_ATK_UP
             desc:
               desc: Effect_PECS_Draculina_N_3_2
               type: 1
-              value: "0.530000"
-              level: "0.030000"
-            base: 0.53
-            per: 0.03
+              value: "0.400000"
+              level: "0.050000"
+            base: 0.4
+            per: 0.05
             chance: 0
-          - icon: BuffIcon_DamageAmp_Opp
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_PECS_Draculina_N_3_3
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_PECS_Draculina_N_3_4
+              type: 0
+              value: "1"
+              level: "0.100000"
+            base: 1
+            per: 0.1
+            chance: 0
+          - icon: BuffIcon_AP_UP
             desc:
               desc: Effect_PECS_Draculina_N_31_1
+              type: 0
+              value: "1"
+              level: "0.100000"
+            base: 1
+            per: 0.1
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_PECS_Draculina_N_32_1
               type: 1
-              value: "0.530000"
-              level: "0.030000"
-            base: 0.53
-            per: 0.03
+              value: "0.400000"
+              level: "0.050000"
+            base: 0.4
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_PECS_Draculina_N_33_1
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
             chance: 1
   "4":
     key: "4"
-    icon: P.SelfAtkBuff
+    icon: P.Hang
     target: team
     delayed: false
     leastGrade: 4
@@ -4347,7 +4516,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
+          grid: F>1,1,1,1,1,1,1,1,1
           target_ground: false
           summon: null
           use: null
@@ -4359,7 +4528,12 @@ skills:
             - key: Effect_PECS_Draculina_N_4
               on: round
               if:
-                - pos: 2
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Draculina_N_2
+                    attr: 6
                 - false
               body:
                 - 0
@@ -4372,122 +4546,39 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 4
               buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_SEAL_SKILL
                   desc:
                     desc: Effect_PECS_Draculina_N_4_1
                     type: 1
-                    value: "0.210000"
-                    level: "0.010000"
-                  attr: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
-                      base: 21%
-                      per: 1%
+                    chance: 999%
+                    type: 79
+                    skill_disable: true
                   overlap: 4
-                - icon: BuffIcon_CRITICAL_UP
+                - icon: BuffIcon_VULNERABLE
                   desc:
                     desc: Effect_PECS_Draculina_N_4_2
                     type: 1
-                    value: "0.110000"
-                    level: "0.010000"
-                  attr: 0
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 1
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 9
-                    critical:
-                      base: 11%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_4_3
-                    type: 1
-                    value: "0.220000"
-                    level: "0.020000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 7
-                    accuracy:
-                      base: 22%
-                      per: 2%
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_PECS_Draculina_N_41
-              on: round
-              if:
-                - pos: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_41_1
-                    type: 1
-                    value: "0.105000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 10.5%
-                      per: 0.5%
-                  overlap: 4
-                - icon: BuffIcon_CRITICAL_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_41_2
-                    type: 1
-                    value: "0.055000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: 5.5%
-                      per: 0.5%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_41_3
-                    type: 1
-                    value: "0.110000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 7
-                    accuracy:
-                      base: 11%
-                      per: 1%
+                    chance: 999%
+                    type: 48
+                    damage_increase:
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
     values:
@@ -4503,60 +4594,24 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_DEF_PIERCE_UP
+        - - icon: BuffIcon_SEAL_SKILL
             desc:
               desc: Effect_PECS_Draculina_N_4_1
               type: 1
-              value: "0.210000"
-              level: "0.010000"
-            base: 0.21
-            per: 0.01
-            chance: 1
-          - icon: BuffIcon_CRITICAL_UP
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 9.99
+          - icon: BuffIcon_VULNERABLE
             desc:
               desc: Effect_PECS_Draculina_N_4_2
               type: 1
-              value: "0.110000"
-              level: "0.010000"
-            base: 0.11
-            per: 0.01
-            chance: 1
-          - icon: BuffIcon_ACCURACY_UP
-            desc:
-              desc: Effect_PECS_Draculina_N_4_3
-              type: 1
-              value: "0.220000"
-              level: "0.020000"
-            base: 0.22
-            per: 0.02
-            chance: 1
-          - icon: BuffIcon_DEF_PIERCE_UP
-            desc:
-              desc: Effect_PECS_Draculina_N_41_1
-              type: 1
-              value: "0.105000"
-              level: "0.005000"
-            base: 0.105
-            per: 0.005
-            chance: 1
-          - icon: BuffIcon_CRITICAL_UP
-            desc:
-              desc: Effect_PECS_Draculina_N_41_2
-              type: 1
-              value: "0.055000"
-              level: "0.005000"
-            base: 0.055
-            per: 0.005
-            chance: 1
-          - icon: BuffIcon_ACCURACY_UP
-            desc:
-              desc: Effect_PECS_Draculina_N_41_3
-              type: 1
-              value: "0.110000"
-              level: "0.010000"
-            base: 0.11
-            per: 0.01
-            chance: 1
+              value: "0.250000"
+              level: "0.025000"
+            base: 0.25
+            per: 0.025
+            chance: 9.99
   "5":
     key: "5"
     icon: P.Scan
@@ -4620,63 +4675,29 @@ skills:
                     type: 23
                     scout: true
                   overlap: 4
-                - icon: BuffIcon_CRITICAL_UP
+                - icon: BuffIcon_DamageAmp_Opp
                   desc:
                     desc: Effect_PECS_Draculina_N_5_2
                     type: 1
-                    value: "0.055000"
-                    level: "0.005000"
+                    value: "0.400000"
+                    level: "0.050000"
                   attr: 0
                   erase: {}
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 9
-                    critical:
-                      base: 5.5%
-                      per: 0.5%
+                    type: 81
+                    damage_by_hp:
+                      target: target
+                      damage:
+                        base: 40%
+                        per: 5%
                   overlap: 4
-                - icon: BuffIcon_ACCURACY_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_5_3
-                    type: 1
-                    value: "0.110000"
-                    level: "0.010000"
-                  attr: 0
-                  erase: {}
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 7
-                    accuracy:
-                      base: 11%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_5_4
-                    type: 1
-                    value: "0.110000"
-                    level: "0.010000"
-                  attr: 0
-                  erase: {}
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 11
-                    evade:
-                      base: 11%
-                      per: 1%
-                  overlap: 4
-              maxStack: 0
+              maxStack: 1
             - key: Effect_PECS_Draculina_N_51
               on: round
               if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_PECS_Draculina_N_23
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -4689,55 +4710,25 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 2
+              target: 0
               buffs:
-                - icon: BuffIcon_CRITICAL_UP
+                - icon: BuffIcon_DamageAmp_Opp
                   desc:
                     desc: Effect_PECS_Draculina_N_51_1
                     type: 1
-                    value: "0.055000"
-                    level: "0.005000"
+                    value: "0.400000"
+                    level: "0.050000"
                   attr: 0
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 9
-                    critical:
-                      base: 5.5%
-                      per: 0.5%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_51_2
-                    type: 1
-                    value: "0.110000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 7
-                    accuracy:
-                      base: 11%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_PECS_Draculina_N_51_3
-                    type: 1
-                    value: "0.110000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 11%
-                      per: 1%
+                    type: 81
+                    damage_by_hp:
+                      target: target
+                      damage:
+                        base: 40%
+                        per: 5%
                   overlap: 4
               maxStack: 0
     values:
@@ -4762,59 +4753,23 @@ skills:
             base: 0
             per: 0
             chance: 1
-          - icon: BuffIcon_CRITICAL_UP
+          - icon: BuffIcon_DamageAmp_Opp
             desc:
               desc: Effect_PECS_Draculina_N_5_2
               type: 1
-              value: "0.055000"
-              level: "0.005000"
-            base: 0.055
-            per: 0.005
+              value: "0.400000"
+              level: "0.050000"
+            base: 0.4
+            per: 0.05
             chance: 0
-          - icon: BuffIcon_ACCURACY_UP
-            desc:
-              desc: Effect_PECS_Draculina_N_5_3
-              type: 1
-              value: "0.110000"
-              level: "0.010000"
-            base: 0.11
-            per: 0.01
-            chance: 0
-          - icon: BuffIcon_EVADE_UP
-            desc:
-              desc: Effect_PECS_Draculina_N_5_4
-              type: 1
-              value: "0.110000"
-              level: "0.010000"
-            base: 0.11
-            per: 0.01
-            chance: 0
-          - icon: BuffIcon_CRITICAL_UP
+          - icon: BuffIcon_DamageAmp_Opp
             desc:
               desc: Effect_PECS_Draculina_N_51_1
               type: 1
-              value: "0.055000"
-              level: "0.005000"
-            base: 0.055
-            per: 0.005
-            chance: 1
-          - icon: BuffIcon_ACCURACY_UP
-            desc:
-              desc: Effect_PECS_Draculina_N_51_2
-              type: 1
-              value: "0.110000"
-              level: "0.010000"
-            base: 0.11
-            per: 0.01
-            chance: 1
-          - icon: BuffIcon_EVADE_UP
-            desc:
-              desc: Effect_PECS_Draculina_N_51_3
-              type: 1
-              value: "0.110000"
-              level: "0.010000"
-            base: 0.11
-            per: 0.01
+              value: "0.400000"
+              level: "0.050000"
+            base: 0.4
+            per: 0.05
             chance: 1
 dialogue:
   KR:

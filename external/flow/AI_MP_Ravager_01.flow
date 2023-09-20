@@ -1,0 +1,11 @@
+start > cond
+	cond y skill1_usable
+		skill1_usable y skill1_highest-atk
+		skill1_usable n skill2_usable
+	cond n skill2_usable
+		skill2_usable y check_attacked
+			check_attacked y skill2_lastenemy
+			check_attacked n skill2_highest-atk
+		skill2_usable n wait
+
+cond = check_buff_target_Effect_MP_Ravager_Challenge1_2
