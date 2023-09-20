@@ -25,7 +25,7 @@ const Changelog: FunctionalComponent = () => <>
 			</li>
 		</> }
 		dialogue={ <>
-			<li><span class="badge bg-light text-dark">KST 2023-09-14 02:52:13</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2023-09-20 20:40:11</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
 		</> }
 	/>
 </>;
