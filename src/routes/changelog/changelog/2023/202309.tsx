@@ -5,6 +5,26 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build -" date="--"
+		bugfix={ <>
+			<li>
+				버프 보기에서 일부 버프의 설명이 잘못되어있던 점을 수정했습니다.
+				<ul>
+					<li>
+						공격자의 회피 수치만큼 스킬 위력이 감소
+						<IconArrowRight class="mx-2" />
+						대상의 회피 수치만큼 공격자의 스킬 위력이 감소
+					</li>
+					<li>
+						공격자의 방어력 수치만큼 치명타가 감소
+						<IconArrowRight class="mx-2" />
+						자신의 방어력 수치만큼 공격자의 치명타가 감소
+					</li>
+				</ul>
+			</li>
+			<li>버프 보기의 일부 중국어 번체(대만) 번역을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12295" date="2023-09-20"
 		new={ <>
 			<li>신규 적 <BY>래비저</BY>의 정보가 추가되었습니다.</li>

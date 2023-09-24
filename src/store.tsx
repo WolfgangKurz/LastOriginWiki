@@ -28,6 +28,7 @@ export function toggleList<T> (list: Signal<T[]>, v: T): void {
 
 const Store = {
 	requireReload: signal(false),
+	localeInvalidated: signal(false),
 
 	Units: {
 		DisplayType: signal<"table" | "list" | "group" | "skin" | "time">("table"),

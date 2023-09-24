@@ -1,8 +1,9 @@
 import { ComponentType, FunctionalComponent, createElement } from "preact";
 
 import { CurrentLocale, LocaleTypes } from "@/libs/Locale";
+import { CurrentDB } from "@/libs/DB";
 
-import { GetJson, StaticDB } from "@/components/loader";
+import { GetJson, JsonInvalidate, JsonLoaderCore, StaticDB } from "@/components/loader";
 
 type LocaleComponentProp<T> = Record<string, ComponentType<T>>;
 
@@ -154,4 +155,9 @@ export function LocaleGet (k: string, ...p: any[]): string {
 export function LocaleExists (k: string): boolean {
 	const locale = GetLocaleTable(CurrentLocale);
 	return locale && k in locale;
+}
+
+export function ReloadLocale (locale: string): void {
+	JsonInvalidate(StaticDB.Locale[locale]);
+	JsonLoaderCore(CurrentDB, StaticDB.Locale[locale]);
 }

@@ -116,7 +116,7 @@ const UnitsTable: FunctionalComponent<UnitsListProps> = (props) => {
 											// onClick={ (): void => void (route(`/units/${unit.uid}`)) }
 											/>)
 										}</>,
-										<span class="text-secondary">
+										<span class="small text-secondary">
 											<Locale k="UNIT_TABLE_EMPTY" />
 										</span>,
 									) }

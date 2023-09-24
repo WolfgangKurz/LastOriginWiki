@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "preact";
-import { useEffect, useState } from "preact/hooks";
+import { useEffect, useMemo, useState } from "preact/hooks";
 
 import Store from "@/store";
 
@@ -21,9 +21,11 @@ import IconGrid3x3GapFill from "@/components/bootstrap-icon/icons/Grid3x3GapFill
 import IconTagsFill from "@/components/bootstrap-icon/icons/TagsFill";
 import IconTshirt from "@/components/bootstrap-icon/icons/Tshirt";
 import IconHammer from "@/components/bootstrap-icon/icons/Hammer";
+import IconSearch from "@/components/bootstrap-icon/icons/Search";
+import IconListCheck from "@/components/bootstrap-icon/icons/ListCheck";
 
 import SimpleSearch from "./search/SimpleSearch";
-import AdvancedSearch from "./search/AdvancedSearch";
+import AdvancedSearch, { Condition, ConditionBuffSlot, ConditionCategory, ConditionCompare, ConditionCompareYN } from "./search/AdvancedSearch";
 
 import UnitsTable from "./units-table";
 import UnitsList from "./units-list";
@@ -43,101 +45,183 @@ const Units: FunctionalComponent = () => {
 	UpdateTitle(LocaleGet("MENU_UNITS"));
 
 	const [searchType, setSearchType] = useState<"simple" | "advanced">("simple");
+	const [conds, setConds] = useState<readonly Condition[]>([]);
+
 	const update = useUpdate();
 
 	const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 	if (!FilterableUnitDB) JsonLoaderCore(CurrentDB, StaticDB.FilterableUnit).then(() => update());
 
 	useEffect(() => {
-		const unsub = Store.Units.EffectFilters.subscribe(v => update());
+		const unsub = Store.Units.EffectFilters.subscribe(_ => update());
 		return () => unsub();
 	}, []);
 
-	function HasFilteredEffect (unit: FilterableUnit): boolean {
-		if (!FilterableUnitDB) return false;
-
-		const target = FilterableUnitDB.find(x => x.uid === unit.uid);
-		if (!target) return false;
-
-		return Store.Units.EffectFilters.value
-			.reduce((p, c) => Array.isArray(c) ? [...p, ...c] : [...p, c], [] as Array<EffectFilterListItemSingle | EffectFilterListItemPM>)
-			.filter(x => x.selected)
-			.every(selectedBuff => {
-				return target.buffs.flat()
-					.filter(targetBuff => Store.Units.EffectTarget.value.includes(targetBuff.target))
-					.filter(targetBuff => selectedBuff.type.includes(targetBuff.type))
-					.some(targetBuff => {
-						if ("pmType" in selectedBuff)
-							return (selectedBuff.pmType > 0 && targetBuff.positive) || (selectedBuff.pmType < 0 && !targetBuff.positive);
-						return true;
-					});
-			});
-	}
-
-	function UnitList (): FilterableUnit[] {
+	const UnitList = useMemo((): FilterableUnit[] => {
 		const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 		if (!FilterableUnitDB) return [];
 
 		if (Store.Units.DisplayType.value === "skin") return FilterableUnitDB;
 
-		const elem = new Array(2)
-			.fill(0)
-			.map((_, i) => [
-				Store.Units.Skill[i].Elem.value[SKILL_ATTR.PHYSICS] ? SKILL_ATTR.PHYSICS : -1,
-				Store.Units.Skill[i].Elem.value[SKILL_ATTR.FIRE] ? SKILL_ATTR.FIRE : -1,
-				Store.Units.Skill[i].Elem.value[SKILL_ATTR.ICE] ? SKILL_ATTR.ICE : -1,
-				Store.Units.Skill[i].Elem.value[SKILL_ATTR.LIGHTNING] ? SKILL_ATTR.LIGHTNING : -1,
-			].filter(y => y > -1));
+		if (searchType === "simple") {
+			return FilterableUnitDB
+				.filter(x => {
+					try {
+						const name = LocaleGet(`UNIT_${x.uid}`);
+						const firstName = name
+							.split("")
+							.map(x => DecomposeHangulSyllable(x) || x)
+							.map(x => typeof x === "object" ? x.initial || "" : x)
+							.join("");
 
-		return FilterableUnitDB
-			.filter(x => {
-				try {
-					const name = LocaleGet(`UNIT_${x.uid}`);
-					const firstName = name
-						.split("")
-						.map(x => DecomposeHangulSyllable(x) || x)
-						.map(x => typeof x === "object" ? x.initial || "" : x)
-						.join("");
+						return new RegExp(Store.Units.SearchText.value, "i").test(name) ||
+							new RegExp(Store.Units.SearchText.value, "i").test(firstName);
+					} catch {
+						return false;
+					}
+				})
+				.filter(x => {
+					if (!Store.Units.Rarity[x.rarity].value) return false;
+					if (!Store.Units.Type[x.type].value) return false;
+					if (!Store.Units.Role[x.role].value) return false;
+					if (!Store.Units.Body[x.body].value) return false;
+					return true;
+				});
+		}
 
-					return new RegExp(Store.Units.SearchText.value, "i").test(name) ||
-						new RegExp(Store.Units.SearchText.value, "i").test(firstName);
-				} catch {
-					return false;
+		if (conds.length === 0) return FilterableUnitDB;
+
+		const condList: Condition[][] = [];
+		const _conds: Condition[] = [conds[0]];
+		for (let i = 1; i < conds.length; i++) {
+			const c = conds[i];
+			const p = conds[i - 1];
+
+			if (p.logicType === "OR") {
+				if (_conds.length > 0) {
+					condList.push([..._conds]);
+					_conds.splice(0, _conds.length);
 				}
-			})
-			// .filter(x => {
-			// 	if (Filters.RoguelikeSkill.length > 0)
-			// 		return Filters.RoguelikeSkill.some(y => x.roguelike.includes(y));
-			// 	return true;
-			// })
-			.filter(x => {
-				if (!Store.Units.Rarity[x.rarity].value) return false;
-				if (!Store.Units.Type[x.type].value) return false;
-				if (!Store.Units.Role[x.role].value) return false;
-				if (!Store.Units.Body[x.body].value) return false;
+			}
+			_conds.push(c);
+		}
+		if (_conds.length > 0)
+			condList.push([..._conds]);
 
-				if (![0, 1].some(i => {
-					const j = (i + 1) as 1 | 2;
-					const Fj: "F1" | "F2" = `F${j}`;
+		const ElemTable: Record<string, SKILL_ATTR> = {
+			physics: SKILL_ATTR.PHYSICS,
+			fire: SKILL_ATTR.FIRE,
+			ice: SKILL_ATTR.ICE,
+			lightning: SKILL_ATTR.LIGHTNING,
+		};
 
-					const XF = x.skills[Fj];
-
-					const elem_ = elem[i].some(y => y === x.skills[j].elem || (XF && y === XF.elem));
-					const grid = Store.Units.Skill[i].GridType.value === 0 ||
-						(Store.Units.Skill[i].GridType.value === 1 && (x.skills[j].grid || (XF && XF.grid))) ||
-						(Store.Units.Skill[i].GridType.value === 2 && !(x.skills[j].grid || (XF && XF.grid)));
-
-					const guard = Store.Units.Skill[i].DismissGuardType.value === 0 ||
-						(Store.Units.Skill[i].DismissGuardType.value === 1 && (x.skills[j].guard || (XF && XF.guard))) ||
-						(Store.Units.Skill[i].DismissGuardType.value === 2 && !(x.skills[j].guard || (XF && XF.guard)));
-
-					return elem_ && grid && guard;
-				}))
+		return FilterableUnitDB.filter(x => condList.some(cs => cs.every(c => {
+			switch (c.category) {
+				case ConditionCategory.Rarity:
+					switch (c.compare) {
+						case ConditionCompare.Equal: return x.rarity === c.rarity;
+						case ConditionCompare.NotEqual: return x.rarity !== c.rarity;
+						case ConditionCompare.Less: return x.rarity < c.rarity;
+						case ConditionCompare.LessEqual: return x.rarity <= c.rarity;
+						case ConditionCompare.Bigger: return x.rarity > c.rarity;
+						case ConditionCompare.BiggerEqual: return x.rarity >= c.rarity;
+					}
 					return false;
-
-				return HasFilteredEffect(x);
-			});
-	}
+				case ConditionCategory.Class:
+					switch (c.compare) {
+						case ConditionCompareYN.Equal: return x.type === c.class;
+						case ConditionCompareYN.NotEqual: return x.type !== c.class;
+					}
+					return false;
+				case ConditionCategory.Role:
+					switch (c.compare) {
+						case ConditionCompareYN.Equal: return x.role === c.role;
+						case ConditionCompareYN.NotEqual: return x.role !== c.role;
+					}
+					return false;
+				case ConditionCategory.Body:
+					switch (c.compare) {
+						case ConditionCompareYN.Equal: return x.body === c.body;
+						case ConditionCompareYN.NotEqual: return x.body !== c.body;
+					}
+					return false;
+				case ConditionCategory.Active_NoGuard:
+					switch (c.compare) {
+						case ConditionCompareYN.Equal:
+							switch (c.slot) {
+								case ConditionBuffSlot.AnyActive:
+									return Object.values(x.skills).some(r => r.guard);
+								case ConditionBuffSlot.Active1:
+									return x.skills[1].guard || x.skills.F1?.guard;
+								case ConditionBuffSlot.Active2:
+									return x.skills[2].guard || x.skills.F2?.guard;
+							}
+							break;
+						case ConditionCompareYN.NotEqual:
+							switch (c.slot) {
+								case ConditionBuffSlot.AnyActive:
+									return !Object.values(x.skills).some(r => r.guard);
+								case ConditionBuffSlot.Active1:
+									return !(x.skills[1].guard || x.skills.F1?.guard);
+								case ConditionBuffSlot.Active2:
+									return !(x.skills[2].guard || x.skills.F2?.guard);
+							}
+							break;
+					}
+					return false;
+				case ConditionCategory.Active_Grid:
+					switch (c.compare) {
+						case ConditionCompareYN.Equal:
+							switch (c.slot) {
+								case ConditionBuffSlot.AnyActive:
+									return Object.values(x.skills).some(r => r.grid);
+								case ConditionBuffSlot.Active1:
+									return x.skills[1].grid || x.skills.F1?.grid;
+								case ConditionBuffSlot.Active2:
+									return x.skills[2].grid || x.skills.F2?.grid;
+							}
+							break;
+						case ConditionCompareYN.NotEqual:
+							switch (c.slot) {
+								case ConditionBuffSlot.AnyActive:
+									return !Object.values(x.skills).some(r => r.grid);
+								case ConditionBuffSlot.Active1:
+									return !(x.skills[1].grid || x.skills.F1?.grid);
+								case ConditionBuffSlot.Active2:
+									return !(x.skills[2].grid || x.skills.F2?.grid);
+							}
+							break;
+					}
+					return false;
+				case ConditionCategory.Elem:
+					switch (c.compare) {
+						case ConditionCompareYN.Equal:
+							if (c.elem === "") return true;
+							switch (c.slot) {
+								case ConditionBuffSlot.AnyActive:
+									return Object.values(x.skills).some(r => r.elem === ElemTable[c.elem]);
+								case ConditionBuffSlot.Active1:
+									return x.skills[1].elem === ElemTable[c.elem] || x.skills.F1?.elem === ElemTable[c.elem];
+								case ConditionBuffSlot.Active2:
+									return x.skills[2].elem === ElemTable[c.elem] || x.skills.F2?.elem === ElemTable[c.elem];
+							}
+							break;
+						case ConditionCompareYN.NotEqual:
+							if (c.elem === "") return false;
+							switch (c.slot) {
+								case ConditionBuffSlot.AnyActive:
+									return !Object.values(x.skills).some(r => r.elem === ElemTable[c.elem]);
+								case ConditionBuffSlot.Active1:
+									return !(x.skills[1].elem === ElemTable[c.elem] || x.skills.F1?.elem === ElemTable[c.elem]);
+								case ConditionBuffSlot.Active2:
+									return !(x.skills[2].elem === ElemTable[c.elem] || x.skills.F2?.elem === ElemTable[c.elem]);
+							}
+							break;
+					}
+					return false;
+			}
+		})));
+	}, [FilterableUnitDB, searchType, conds]);
 
 	return <div class="chars">
 		<div class="text-center mb-3">
@@ -199,7 +283,8 @@ const Units: FunctionalComponent = () => {
 										setSearchType("simple");
 									} }
 								>
-									<Locale k="SEARCH_SIMPLE" fallback="기본 검색" />
+									<IconSearch class="me-1" />
+									<Locale k="SEARCH_SIMPLE" />
 								</a>
 							</li>
 							<li class="nav-item">
@@ -211,7 +296,8 @@ const Units: FunctionalComponent = () => {
 										setSearchType("advanced");
 									} }
 								>
-									<Locale k="SEARCH_ADVANCED" fallback="상세 검색" />
+									<IconListCheck class="me-1" />
+									<Locale k="SEARCH_ADVANCED" />
 								</a>
 							</li>
 						</ul>
@@ -221,7 +307,7 @@ const Units: FunctionalComponent = () => {
 							<SimpleSearch />
 						</div>
 						<div class={ BuildClass(searchType !== "advanced" && "d-none") }>
-							<AdvancedSearch />
+							<AdvancedSearch onUpdate={ (conds) => setConds(conds) } />
 						</div>
 					</div>
 				</div>
@@ -229,11 +315,11 @@ const Units: FunctionalComponent = () => {
 			: <></>
 		}
 
-		{ Store.Units.DisplayType.value === "table" && <UnitsTable list={ UnitList() } /> }
-		{ Store.Units.DisplayType.value === "list" && <UnitsList list={ UnitList() } /> }
-		{ Store.Units.DisplayType.value === "group" && <UnitsGroup list={ UnitList() } /> }
-		{ Store.Units.DisplayType.value === "skin" && <UnitsSkin list={ UnitList() } /> }
-		{ Store.Units.DisplayType.value === "time" && <UnitsTimetable list={ UnitList() } /> }
+		{ Store.Units.DisplayType.value === "table" && <UnitsTable list={ UnitList } /> }
+		{ Store.Units.DisplayType.value === "list" && <UnitsList list={ UnitList } /> }
+		{ Store.Units.DisplayType.value === "group" && <UnitsGroup list={ UnitList } /> }
+		{ Store.Units.DisplayType.value === "skin" && <UnitsSkin list={ UnitList } /> }
+		{ Store.Units.DisplayType.value === "time" && <UnitsTimetable list={ UnitList } /> }
 	</div >;
 };
 export default Units;

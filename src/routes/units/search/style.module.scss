@@ -1,24 +1,70 @@
-.ConditionRow {
-	+ hr {
-		margin-left: 7em;
+.ConditionsTable {
+	display: grid;
+	grid-template-columns: 7em 1fr auto;
+
+	margin: 0 0 0.5em;
+
+	> * {
+		padding: 0.25em 0;
 	}
 
-	.LogicalColumn {
-		position: relative;
-		margin-top: -1.25em;
-		width: 7em;
+	> .LogicalColumn {
+		display: flex;
+		align-items: center;
+
+		grid-column: 1;
 
 		> button {
 			width: 4em;
+			z-index: 1;
+		}
+	}
+	> .ConditionColumn {
+		grid-column: 2;
+
+		> div {
+			display: inline-block;
+			margin: 0.25em;
+
+			&:first-child {
+				margin-right: 1em;
+			}
 		}
 
-		.ConditionAndLine {
-			position: absolute;
-			top: -0.25em;
-			right: 0;
-			width: 0.8em;
+		+ div {
+			padding-left: 0.25em;
+			padding-right: 0.25em;
+			text-align: center;
+
+			grid-column: 3;
+		}
+
+		&,
+		& + div {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			border-bottom: 1px solid transparentize($secondary, 0.5);
+		}
+	}
+	> .ConditionANDLine {
+		grid-column: 1;
+
+		padding: 1.25em 0.25em;
+		pointer-events: none;
+
+		> div {
+			margin-left: auto;
+			width: 1.25em;
+			height: 100%;
+
 			border: 2px solid $dark;
 			border-right: 0 transparent;
 		}
 	}
+}
+
+.GuideImage {
+	display: block;
+	margin: 0.25em 0;
+	max-width: 100%;
 }
