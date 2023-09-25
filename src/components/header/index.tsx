@@ -2,11 +2,11 @@ import { FunctionalComponent } from "preact";
 import { Link } from "preact-router/match";
 // import { Dropdown } from "bootstrap";
 
-import { AssetsRoot, Host, IsAprilFool } from "@/libs/Const";
+import { AssetsRoot, Host, IsAprilFool, IsDev } from "@/libs/Const";
 import { ChangeLanguage, CurrentLocale, LocaleList } from "@/libs/Locale";
 import { ChangeDB, CurrentDB, DBList, DBTypes } from "@/libs/DB";
 
-import Locale from "@/components/locale";
+import Locale, { ReloadLocale } from "@/components/locale";
 import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
 import IconServer from "@/components/bootstrap-icon/icons/Server";
 import IconGlobe2 from "@/components/bootstrap-icon/icons/Globe2";
@@ -111,7 +111,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 						>
 							<Locale k="MENU_ETC" />
 						</a>
-						<ul class="dropdown-menu" aria-labelledby="topNavbarDropdown">
+						<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="topNavbarDropdown">
 							<DropdownItem href="/changelog">
 								<Locale k="MENU_CHANGELOG" />
 							</DropdownItem>
@@ -193,7 +193,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 									<img class="mx-1" src={ `${AssetsRoot}/flags/${DBDisp[CurrentDB]}.png` } alt={ DBDisp[CurrentDB] } />
 									{ DBDisp[CurrentDB] }
 								</a>
-								<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="topNavbarDropdown2">
+								<ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="topNavbarDropdown2">
 									{ DBList.map(db => <li>
 										<a href="#" class="dropdown-item" onClick={ (e): void => {
 											e.preventDefault();
@@ -207,6 +207,24 @@ const Header: FunctionalComponent = (): preact.VNode => {
 							</li>
 							: <></>
 						}
+
+						{ IsDev
+							?
+							<li class={ `${style["nav-item"]} nav-item` }>
+								<a
+									href="#"
+									class="nav-link"
+									onClick={ e => {
+										e.preventDefault();
+										ReloadLocale(CurrentLocale);
+									} }
+								>
+									Re-locale
+								</a>
+							</li>
+							: <></>
+						}
+
 						{ LocaleList.length > 1
 							? <li class="nav-item dropdown">
 								<a
@@ -221,7 +239,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 									<img class="mx-1" src={ `${AssetsRoot}/flags/${CurrentLocale}.png` } alt={ CurrentLocale } />
 									{ CurrentLocale }
 								</a>
-								<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="topNavbarDropdown2">
+								<ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="topNavbarDropdown2">
 									{ LocaleList.map(lang => <li>
 										<a href="#" class="dropdown-item" onClick={ (e): void => {
 											e.preventDefault();

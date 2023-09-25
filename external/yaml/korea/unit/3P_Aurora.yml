@@ -545,6 +545,7 @@ skills:
     icon: SwordAttk
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -563,7 +564,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -643,7 +643,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -723,7 +722,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -803,7 +801,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -883,7 +880,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -963,7 +959,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1043,7 +1038,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1123,7 +1117,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1203,7 +1196,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1283,7 +1275,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1403,6 +1394,7 @@ skills:
     icon: SelfAtkBuff
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -1421,7 +1413,6 @@ skills:
           range: 6
           ap: 8
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1771,6 +1762,7 @@ skills:
     icon: P.TeamDefBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -1790,7 +1782,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,1,0,1,1,1,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2000,6 +1991,7 @@ skills:
     icon: P.TeamSpdBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -2019,7 +2011,6 @@ skills:
           range: 0
           ap: 0
           grid: 1,1,1,1,0,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2259,6 +2250,7 @@ skills:
     icon: P.TeamSpdBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 5
     buffs:
       index:
@@ -2278,7 +2270,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3000,23 +2991,25 @@ dialogue:
         마음이 편안해져. 사령관도... 그래?​
       MVP: 우아아... 끝났다...
     "3":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 저기… 치마만이라도 입고 가면 안 될까?
+      Leader: 너, 너무 시선이 많이 몰리는 거 아니야?
+      SortiePick: 이, 이 옷은 사령관한테만 보여주고 싶었는데… 으…
+      StageStart: 으… 부끄럽긴 하지만… 으…해피 할로윈.
+      Retreat: 다, 다행이다. 빨리 탈의실로.
+      SearchStart: 할로윈 디저트 재료도 찾고 겸사겸사 아래에 걸칠 것도 좀…
+      SearchEnd: 응. 레시피에 필요한 재료는 다 찾았어. 치마는 없더라.
+      BattleFocus: 어, 어떻게 해야 할까? 어?!
+      ActionApprove: 응. 그렇게 할게.
+      SpSkill: 자, 할로윈 특제 디저트야.
+      Retire: 너무… 옷차림에 신경 썼나봐…
+      Repair: |-
+        사령관. 손 잡아줘.
+        응? 손가락에 있는 반창고? 어, 아, 아무 것도 아니야.
+      Reinforce: 좋아. 그럼 향기 모듈을 좀 더 강하게.
+      ItemEquip: 내가 부끄러워 하니까 주는 거야? 이힛. 고마워.
+      CoreLink: 어, 어지러워. 아, 그래도 사령관을 위해 힘내자. 응.
+      PresentGet: Trick or treat! 사탕 대신에 주는 거야? 고마워.
+      Login: 잠깐만. 지금 들어오면! 으잇… 잠깐만이라니까.
       Idle_01_01: |-
         조, 좀 부끄러운 차림새지만... 사령관을 위해,
         맛있고 건강한 디저트를 만들어줄게?
@@ -3061,7 +3054,7 @@ dialogue:
         저번에 내가 옆에 딱 붙어 있을 거라고 했던 거
         기억나? 그, 그러니까,
         안 떨어지게 꼭 잡고 있을 거야...​
-      MVP: ""
+      MVP: 여기 보지마! 사령관, 사령관만 봐야 해! 으잇.
     "":
       Join: 반가워요, 여러분! 달콤한 꿈을 꾸게 해드릴게요! 아하하, 이건 행사용 멘트. 잘 부탁해…
       SquadJoin: 저, 전투는... 별로 자신 없는데...

@@ -128,6 +128,11 @@ export function JsonLoaderCore (db: string, json: string | string[] | undefined)
 	return Promise.all(list.map(x => Load(db, x)));
 }
 
+export function JsonInvalidate (json: string): void {
+	if (json in CachedJson)
+		delete CachedJson[json];
+}
+
 function comp (a: string[] | readonly string[], b: string[] | readonly string[]): boolean {
 	if (a.length !== b.length) return false;
 	return a.every((v, i) => v === b[i]);

@@ -421,9 +421,9 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						] } />;
 					case BUFFEFFECT_TYPE.EVADE_SKILLDMGDOWN: // 112
 						return <Locale plain k="BUFFTYPE_BY" p={ [
-							<Locale plain k="BUFFTARGET_BY_ATTACKER" />,
+							<Locale plain k="BUFFTARGET_BY_TARGET" />,
 							<Locale plain k="BUFFEFFECT_BY_EVADE" />,
-							<Locale plain k="BUFFEFFECT_BY_SKILL_RATIO" />,
+							<Locale plain k="BUFFEFFECT_BY_RECEIVE_SKILL_RATIO" />,
 						] } />;
 					case BUFFEFFECT_TYPE.DEF_SKILLDMGUP_ME: // 113
 						return <Locale plain k="BUFFTYPE_BY" p={ [
@@ -433,9 +433,9 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						] } />;
 					case BUFFEFFECT_TYPE.DEF_CRTDOWN: // 114
 						return <Locale plain k="BUFFTYPE_BY" p={ [
-							<Locale plain k="BUFFTARGET_BY_ATTACKER" />,
+							<Locale plain k="BUFFTARGET_BY_SELF" />,
 							<Locale plain k="BUFFEFFECT_BY_DEF" />,
-							<Locale plain k="BUFFEFFECT_BY_CRIT" />,
+							<Locale plain k="BUFFEFFECT_BY_ATTACKER_CRIT" />,
 						] } />;
 					case BUFFEFFECT_TYPE.BUFFER_ATK_ATKUP: // 115
 						return <Locale plain k="BUFFTYPE_BY" p={ [

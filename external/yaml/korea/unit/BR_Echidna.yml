@@ -515,6 +515,7 @@ skills:
     icon: WideSwordAttk
     target: enemy
     delayed: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -533,7 +534,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,1,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -828,7 +828,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,1,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1123,7 +1122,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,1,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1418,7 +1416,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,1,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1713,7 +1710,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,1,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2008,7 +2004,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,1,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2303,7 +2298,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,1,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2598,7 +2592,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,1,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2893,7 +2886,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,1,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -3188,7 +3180,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,1,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -3586,6 +3577,7 @@ skills:
     icon: TeamDefBuff
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -3604,7 +3596,6 @@ skills:
           range: 0
           ap: 9
           grid: 0,1,0,1,1,1,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3953,7 +3944,6 @@ skills:
           range: 0
           ap: 9
           grid: 1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4414,6 +4404,7 @@ skills:
     icon: P.SelfDefBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -4433,7 +4424,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4627,6 +4617,7 @@ skills:
     icon: P.TeamAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -4646,7 +4637,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4951,6 +4941,7 @@ skills:
     icon: P.TeamSpdDeBuff
     target: enemy
     delayed: false
+    target_ground: false
     leastGrade: 5
     buffs:
       index:
@@ -4970,7 +4961,6 @@ skills:
           range: 0
           ap: 0
           grid: F>0,1,0,1,1,1,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -5423,7 +5413,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -6188,23 +6177,23 @@ dialogue:
         당신은 정말 완벽해…
       MVP: 내가 뭘 요구할지는, 후후... 당신도 잘 알고 있지?
     "3":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 쉬는 날이지만 당신이 그렇게까지 나를 필요로 한다면야.
+      Leader: 흠… 대장 자리까지? 휴가 중인데 너무하네.
+      SortiePick: 새로운 데이트라고 생각하지 뭐.
+      StageStart: 그럼 몸 좀 풀어볼까? 물론 누운 채로.
+      Retreat: 지쳤으니까 쉬러 갈까?
+      SearchStart: 어떤 물건을 원해? 내게 한번 말해봐.
+      SearchEnd: 이게 당신의 욕망을 채워줬을까?
+      BattleFocus: 쉬면서 들을게.
+      ActionApprove: 다 듣고 있었어.
+      SpSkill: 나태함에 물들어라.
+      Retire: 내 휴일이 이렇게…
+      Repair: 쉬다 보니 몸이 둔해지기라도 한 걸까? 분하네.
+      Reinforce: 흠? 이전의 나로는 좀 부족했던 모양이지?
+      ItemEquip: 어차피 벗을 건데 뭘 자꾸 입히려는 건지.
+      CoreLink: 이 경험, 이런 나태함이라니. 생각도 못해봤는데!
+      PresentGet: 당신이 주는 선물이라면 일어날 가치가 있지. 자, 어서 이리 줘.
+      Login: 어서 와. 오늘은 나 쉬는 날이니까 같이 게으름 피우는 거 어때?
       Idle_01_01: |-
         이렇게 풀어진 모습은 처음 본다고?
         무슨 소리야? 이건 침대라는 전장에서
@@ -6247,7 +6236,7 @@ dialogue:
         휴일인데 뭐 계획 있어?
         나? 난 계획 있지. 당신이랑 같이 침대에서
         하루종일 뒹굴대는 거.
-      MVP: ""
+      MVP: 난 언제나 치명적이지. 휴일이라도 그건 변함없어.
     "":
       Join: 내 이름은 에키드나. 당신 눈빛이... 마음에 드는데?
       SquadJoin: 그래, 원한다면…

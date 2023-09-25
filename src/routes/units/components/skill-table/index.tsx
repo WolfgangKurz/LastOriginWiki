@@ -257,7 +257,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 					: <></>
 				}
 
-				{ skill.buffs.data[skill.buffs.index[skillLevel.value]].target_ground && !skill.isPassive
+				{ skill.target_ground && !skill.isPassive
 					? <span class="badge bg-danger me-1"
 						title={ LocaleGet("UNIT_SKILL_GRID_TARGET_TIP") }
 					>

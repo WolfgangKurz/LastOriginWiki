@@ -17,7 +17,7 @@ export enum BUFFEFFECT_ERASE_TYPE {
 	/** 영구 */
 	PERMANENT = 3,
 
-	__MAX__ = 4,
+	// __MAX__ = 4,
 }
 
 /** 계산된 버프 삭제 조건 */

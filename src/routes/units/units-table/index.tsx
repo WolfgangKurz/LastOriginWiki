@@ -109,13 +109,14 @@ const UnitsTable: FunctionalComponent<UnitsListProps> = (props) => {
 										UnitList(rarity, type, role),
 										x => <>{
 											x.map(unit => <UnitCard.Horizontal
+												key={ unit.uid }
 												class="unit-list-item"
 												unit={ unit }
 												rarity={ rarity }
 											// onClick={ (): void => void (route(`/units/${unit.uid}`)) }
 											/>)
 										}</>,
-										<span class="text-secondary">
+										<span class="small text-secondary">
 											<Locale k="UNIT_TABLE_EMPTY" />
 										</span>,
 									) }
