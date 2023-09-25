@@ -567,6 +567,7 @@ skills:
     icon: AssaultAttack
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -585,7 +586,6 @@ skills:
           range: 2
           ap: 7
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -743,7 +743,6 @@ skills:
           range: 2
           ap: 7
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -901,7 +900,6 @@ skills:
           range: 2
           ap: 7
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1059,7 +1057,6 @@ skills:
           range: 2
           ap: 7
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1217,7 +1214,6 @@ skills:
           range: 2
           ap: 7
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1375,7 +1371,6 @@ skills:
           range: 2
           ap: 7
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1533,7 +1528,6 @@ skills:
           range: 2
           ap: 7
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1691,7 +1685,6 @@ skills:
           range: 2
           ap: 7
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1849,7 +1842,6 @@ skills:
           range: 2
           ap: 7
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2007,7 +1999,6 @@ skills:
           range: 2
           ap: 7
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2223,6 +2214,7 @@ skills:
     icon: ShieldWall
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -2241,7 +2233,6 @@ skills:
           range: 6
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2612,6 +2603,7 @@ skills:
     icon: P.FormChange
     target: team
     delayed: false
+    target_ground: true
     leastGrade: 3
     buffs:
       index:
@@ -2631,7 +2623,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -3130,6 +3121,7 @@ skills:
     icon: P.DefCounter
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -3149,7 +3141,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3469,6 +3460,7 @@ skills:
     icon: P.TeamDefBuff
     target: team
     delayed: false
+    target_ground: true
     leastGrade: 5
     buffs:
       index:
@@ -3488,7 +3480,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -4024,23 +4015,26 @@ skills:
 dialogue:
   KR:
     "1":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 아직 가게 정리가 끝나지 않았는데.
+      Leader: 잠재적 구매자가 많군요. 제가 열심히 할 이유가 늘었습니다.
+      SortiePick: 전투복이 아니군요? 이건 계획에 없었는데.
+      StageStart: 손님들이 기다리시니 조금 무리해 보겠습니다.
+      Retreat: 일정이 변경되었습니까?
+      SearchStart: 부족한 재료를 가지고 오면 되는 겁니까? 그렇지 않아도 우유가 필요했습니다.
+      SearchEnd: 오르카 호에 필요한 물자는 확보했지만 우유는 발견하지 못했습니다.
+      BattleFocus: 그곳이 약점이군요.
+      ActionApprove: 적의 약점을 노리겠습니다.
+      SpSkill: 제게 맡겨주세요. 기회를 만들겠습니다.
+      Retire: 아이스크림 가게… 아직… 정식 오픈도… 못했는데…
+      Repair: 아이스크림 판매에 차질이 생겼군요. 이런 일정은 예상하지 못했는데.
+      Reinforce: 강해지면 저도… 나올까요?
+      ItemEquip: 주인님. 장비는 다른 곳에 장착하는데 왜…
+      CoreLink: 링크 완료. 계획표를 수정하겠습니다.
+      PresentGet: |-
+        전 항상 받기만 하는 군요, 주인님.
+        아이스크림이 드시고 싶으시면 언제든 오세요.
+        그게 아니라면 직접 짠 우유라도…
+      Login: 이제 오셨습니까, 주인님? 아이스크림과 우유 중에 무엇을 드시겠습니까?
       Idle_01_01: |-
         아직 가오픈 중이지만, 가게를 운영하는 것은
         무척 힘이 듭니다. 특히 재료가 너무 많이
@@ -4098,7 +4092,7 @@ dialogue:
         있지만, 계획대로 되는 건 하나밖에 없네요.
         그게 뭐냐고요? 이렇게 집에 돌아와
          주인님에게 안기는 거요.
-      MVP: ""
+      MVP: 아이아스 아이스크림 가게 많이들 찾아주세요.
     "":
       Join: 처음 뵙겠습니다, 주인님. 가디언 시리즈의 아이아스, 합류하게 된 오늘을 기록하고 잊지 않겠습니다.
       SquadJoin: 주인님의 계획에 따르겠습니다.

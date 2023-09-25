@@ -26,6 +26,7 @@ export enum ConditionCategory {
 	Class,
 	Role,
 	Body,
+	Active_Target,
 	Active_NoGuard,
 	Active_Grid,
 	Elem,
@@ -60,6 +61,11 @@ export enum ConditionBuffSlot {
 	Active2,
 	Passive,
 }
+export enum ConditionActiveTarget {
+	AnyTarget,
+	Team,
+	Enemy,
+}
 
 interface Condition_Base {
 	logicType: ConditionLogical;
@@ -90,6 +96,13 @@ interface Condition_Body extends Condition_Base {
 
 	body: ACTOR_BODY_TYPE;
 }
+interface Condition_ActiveTarget extends Condition_Base {
+	category: ConditionCategory.Active_Target;
+
+	slot: ConditionBuffSlot;
+	compare: ConditionCompareYN;
+	target: ConditionActiveTarget;
+}
 interface Condition_ActiveNoGuard extends Condition_Base {
 	category: ConditionCategory.Active_NoGuard;
 
@@ -114,8 +127,11 @@ interface Condition_Buff extends Condition_Base {
 
 	slot: ConditionBuffSlot;
 	buff: undefined | BUFFEFFECT_TYPE; // `undefined` is "Any"
+	class: undefined | ACTOR_CLASS;
+	role: undefined | ROLE_TYPE;
+	body: undefined | ACTOR_BODY_TYPE;
 	target: undefined | TARGET_TYPE;
-	type: undefined | BUFF_ATTR_TYPE;
+	attr: undefined | BUFF_ATTR_TYPE;
 	trigger: undefined | BUFFEFFECT_TRIGGER_TYPE;
 	erase: undefined | BUFFEFFECT_ERASE_TYPE;
 	overlap: undefined | BUFF_OVERLAP_TYPE;
@@ -124,7 +140,8 @@ interface Condition_Buff extends Condition_Base {
 	targetBuffType: undefined | BUFF_ATTR_TYPE;
 }
 export type Condition = Condition_Rarity | Condition_Class | Condition_Role | Condition_Body |
-	Condition_ActiveNoGuard | Condition_ActiveGrid | Condition_Elem | Condition_Buff;
+	Condition_ActiveTarget | Condition_ActiveNoGuard | Condition_ActiveGrid | Condition_Elem |
+	Condition_Buff;
 
 const CompareTable: Record<ConditionCompare, string> = {
 	[ConditionCompare.Equal]: "=",
@@ -158,6 +175,12 @@ const SlotTable: Record<ConditionBuffSlot, string> = {
 	[ConditionBuffSlot.Active1]: "ACTIVE1",
 	[ConditionBuffSlot.Active2]: "ACTIVE2",
 	[ConditionBuffSlot.Passive]: "PASSIVE",
+};
+const EraseTable: Record<BUFFEFFECT_ERASE_TYPE, string> = {
+	[BUFFEFFECT_ERASE_TYPE.ROUND]: "ROUND",
+	[BUFFEFFECT_ERASE_TYPE.COUNT]: "COUNT",
+	[BUFFEFFECT_ERASE_TYPE.TRIGGER]: "TRIGGER",
+	[BUFFEFFECT_ERASE_TYPE.PERMANENT]: "PERMANENT",
 };
 
 const ExcludedBuffEffectTriggers: BUFFEFFECT_TRIGGER_TYPE[] = [ // 사용처가 없어? 제외
@@ -198,6 +221,17 @@ const ExcludedBuffEffectTypes: BUFFEFFECT_TYPE[] = [ // 사용처가 없어 제�
 const CombinedBuffEffectTypes: Partial<Record<BUFFEFFECT_TYPE, BUFFEFFECT_TYPE[]>> = {
 	[BUFFEFFECT_TYPE.STAGE_CHARCHANGE_LIMITED]: [BUFFEFFECT_TYPE.STAGE_CHARCHANGE_PERMANENT],
 };
+
+/**
+ * @param cond 설정한 조건
+ * @param value 검사하려는 버프의 값
+ */
+export function IsInvalidBuffType (cond: BUFFEFFECT_TYPE, value: BUFFEFFECT_TYPE) {
+	if (cond in CombinedBuffEffectTypes)
+		return !CombinedBuffEffectTypes[cond]!.includes(value);
+
+	return cond !== value;
+}
 
 interface AdvancedSearchProps {
 	onUpdate: (conditions: Readonly<Condition[]>) => void;
@@ -241,6 +275,12 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 			case ConditionCategory.Body:
 				if (!("body" in cond))
 					(cond as Condition_Body).body = ACTOR_BODY_TYPE.BIOROID;
+				break;
+			case ConditionCategory.Active_Target:
+				if (!("slot" in cond))
+					(cond as Condition_ActiveTarget).slot = ConditionBuffSlot.AnyActive;
+				if (!("target" in cond))
+					(cond as Condition_ActiveTarget).target = ConditionActiveTarget.AnyTarget;
 				break;
 			case ConditionCategory.Active_NoGuard:
 				if (!("slot" in cond))
@@ -287,6 +327,7 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 			case ConditionCategory.Class:
 			case ConditionCategory.Role:
 			case ConditionCategory.Body:
+			case ConditionCategory.Active_Target:
 			case ConditionCategory.Active_NoGuard:
 			case ConditionCategory.Active_Grid:
 			case ConditionCategory.Elem:
@@ -304,6 +345,7 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 			case ConditionCategory.Class:
 			case ConditionCategory.Role:
 			case ConditionCategory.Body:
+			case ConditionCategory.Active_Target:
 			case ConditionCategory.Active_NoGuard:
 			case ConditionCategory.Active_Grid:
 			case ConditionCategory.Elem:
@@ -510,66 +552,32 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 							</select>
 						</div>
 
-						{ c.category === ConditionCategory.Active_NoGuard && <div>
-							<select
-								class="form-select form-select-sm"
-								value={ c.slot }
-								onChange={ e => {
-									e.preventDefault();
-									updateCond(idx, { ...c, slot: parseInt(e.currentTarget.value, 10) });
-								} }
-							>
-								<option value="1" selected={ c.slot === 1 }>
-									<Locale k="SEARCH_COND_ELEM_SLOT_ANYACTIVE" />
-								</option>
-								<option value="2" selected={ c.slot === 2 }>
-									<Locale k="SEARCH_COND_ELEM_SLOT_ACTIVE1" />
-								</option>
-								<option value="3" selected={ c.slot === 3 }>
-									<Locale k="SEARCH_COND_ELEM_SLOT_ACTIVE2" />
-								</option>
-							</select>
-						</div> }
-						{ c.category === ConditionCategory.Active_Grid && <div>
-							<select
-								class="form-select form-select-sm"
-								value={ c.slot }
-								onChange={ e => {
-									e.preventDefault();
-									updateCond(idx, { ...c, slot: parseInt(e.currentTarget.value, 10) });
-								} }
-							>
-								<option value="1" selected={ c.slot === 1 }>
-									<Locale k="SEARCH_COND_ELEM_SLOT_ANYACTIVE" />
-								</option>
-								<option value="2" selected={ c.slot === 2 }>
-									<Locale k="SEARCH_COND_ELEM_SLOT_ACTIVE1" />
-								</option>
-								<option value="3" selected={ c.slot === 3 }>
-									<Locale k="SEARCH_COND_ELEM_SLOT_ACTIVE2" />
-								</option>
-							</select>
-						</div> }
-						{ c.category === ConditionCategory.Elem && <div>
-							<select
-								class="form-select form-select-sm"
-								value={ c.slot }
-								onChange={ e => {
-									e.preventDefault();
-									updateCond(idx, { ...c, slot: parseInt(e.currentTarget.value, 10) });
-								} }
-							>
-								<option value="1" selected={ c.slot === 1 }>
-									<Locale k="SEARCH_COND_ELEM_SLOT_ANYACTIVE" />
-								</option>
-								<option value="2" selected={ c.slot === 2 }>
-									<Locale k="SEARCH_COND_ELEM_SLOT_ACTIVE1" />
-								</option>
-								<option value="3" selected={ c.slot === 3 }>
-									<Locale k="SEARCH_COND_ELEM_SLOT_ACTIVE2" />
-								</option>
-							</select>
-						</div> }
+						{ (
+							c.category === ConditionCategory.Active_Target ||
+							c.category === ConditionCategory.Active_NoGuard ||
+							c.category === ConditionCategory.Active_Grid ||
+							c.category === ConditionCategory.Elem
+						) && <div>
+								<select
+									class="form-select form-select-sm"
+									value={ c.slot }
+									onChange={ e => {
+										e.preventDefault();
+										updateCond(idx, { ...c, slot: parseInt(e.currentTarget.value, 10) });
+									} }
+								>
+									<option value="1" selected={ c.slot === 1 }>
+										<Locale k="SEARCH_COND_ELEM_SLOT_ANYACTIVE" />
+									</option>
+									<option value="2" selected={ c.slot === 2 }>
+										<Locale k="SEARCH_COND_ELEM_SLOT_ACTIVE1" />
+									</option>
+									<option value="3" selected={ c.slot === 3 }>
+										<Locale k="SEARCH_COND_ELEM_SLOT_ACTIVE2" />
+									</option>
+								</select>
+							</div>
+						}
 
 						{ IsComparableCondition(c)
 							? <div>
@@ -651,6 +659,28 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 								) }
 							</select>
 						</div> }
+						{ c.category === ConditionCategory.Active_Target && <>
+							<div>
+								<select
+									class="form-select form-select-sm"
+									value={ c.target }
+									onChange={ e => {
+										e.preventDefault();
+										updateCond(idx, { ...c, target: parseInt(e.currentTarget.value, 10) });
+									} }
+								>
+									<option value="0" selected={ c.target === 0 }>
+										<Locale k="SERACH_COND_BUFF_TARGET_ANY" />
+									</option>
+									<option value="1" selected={ c.target === 1 }>
+										<Locale k="SEARCH_COND_BUFF_TARGET_TEAM" />
+									</option>
+									<option value="2" selected={ c.target === 2 }>
+										<Locale k="SEARCH_COND_BUFF_TARGET_ENEMY" />
+									</option>
+								</select>
+							</div>
+						</> }
 						{ c.category === ConditionCategory.Active_NoGuard && <div>
 							<small>
 								<Locale k="SEARCH_COND_CAT_ACTIVE_NOGUARD" />
@@ -730,6 +760,80 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 									) }
 								</select>
 							</div>
+
+							<div>
+								<select
+									class="form-select form-select-sm"
+									value={ c.class ?? "" }
+									onChange={ e => {
+										e.preventDefault();
+										updateCond(idx, {
+											...c,
+											class: e.currentTarget.value === ""
+												? undefined
+												: parseInt(e.currentTarget.value, 10),
+										});
+									} }
+								>
+									<option value="" selected={ c.class === undefined }>
+										<Locale k="SERACH_COND_BUFF_CLASS_ANY" />
+									</option>
+									{ new Array(3).fill(0).map((_, k) =>
+										<option value={ k } selected={ c.class === k }>
+											<Locale k={ `COMMON_UNIT_TYPE_${ClassTable[k]}` } />
+										</option>
+									) }
+								</select>
+							</div>
+							<div>
+								<select
+									class="form-select form-select-sm"
+									value={ c.role ?? "" }
+									onChange={ e => {
+										e.preventDefault();
+										updateCond(idx, {
+											...c,
+											role: e.currentTarget.value === ""
+												? undefined
+												: parseInt(e.currentTarget.value, 10),
+										});
+									} }
+								>
+									<option value="" selected={ c.role === undefined }>
+										<Locale k="SERACH_COND_BUFF_ROLE_ANY" />
+									</option>
+									{ new Array(3).fill(0).map((_, k) =>
+										<option value={ k } selected={ c.role === k }>
+											<Locale k={ `COMMON_UNIT_ROLE_${RoleTable[k]}` } />
+										</option>
+									) }
+								</select>
+							</div>
+							<div>
+								<select
+									class="form-select form-select-sm"
+									value={ c.body ?? "" }
+									onChange={ e => {
+										e.preventDefault();
+										updateCond(idx, {
+											...c,
+											body: e.currentTarget.value === ""
+												? undefined
+												: parseInt(e.currentTarget.value, 10),
+										});
+									} }
+								>
+									<option value="" selected={ c.body === undefined }>
+										<Locale k="SERACH_COND_BUFF_BODY_ANY" />
+									</option>
+									{ new Array(2).fill(0).map((_, k) =>
+										<option value={ k } selected={ c.body === k }>
+											<Locale k={ `COMMON_UNIT_BODY_${BodyTable[k]}` } />
+										</option>
+									) }
+								</select>
+							</div>
+
 							<div>
 								<select
 									class="form-select form-select-sm"
@@ -789,35 +893,94 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 											return <option value={ r } selected={ c.trigger === r }>
 												<Locale plain k={ loc } p={ p } />
 											</option>;
-										}) }
+										})
+									}
 								</select>
 							</div>
 							<div>
 								<select
 									class="form-select form-select-sm"
-									value={ c.type ?? "" }
+									value={ c.attr ?? "" }
 									onChange={ e => {
 										e.preventDefault();
 										updateCond(idx, {
 											...c,
-											type: e.currentTarget.value === ""
+											attr: e.currentTarget.value === ""
 												? undefined
 												: parseInt(e.currentTarget.value, 10),
 										});
 									} }
 								>
-									<option value="" selected={ c.type === undefined }>
+									<option value="" selected={ c.attr === undefined }>
 										<Locale k="SEARCH_COND_BUFF_TYPE_ANY" />
 									</option>
-									<option value="0" selected={ c.type === 0 }>
+									<option value="0" selected={ c.attr === 0 }>
 										<Locale k="SEARCH_COND_BUFF_TYPE_BUFF" />
 									</option>
-									<option value="1" selected={ c.type === 1 }>
+									<option value="1" selected={ c.attr === 1 }>
 										<Locale k="SEARCH_COND_BUFF_TYPE_DEBUFF" />
 									</option>
-									<option value="3" selected={ c.type === 3 }>
+									<option value="3" selected={ c.attr === 3 }>
 										<Locale k="SEARCH_COND_BUFF_TYPE_ETC" />
 									</option>
+								</select>
+							</div>
+							<div>
+								<select
+									class="form-select form-select-sm"
+									value={ c.overlap ?? "" }
+									onChange={ e => {
+										e.preventDefault();
+										updateCond(idx, {
+											...c,
+											overlap: e.currentTarget.value === ""
+												? undefined
+												: parseInt(e.currentTarget.value, 10),
+										});
+									} }
+								>
+									<option value="" selected={ c.overlap === undefined }>
+										<Locale k="SEARCH_COND_BUFF_OVERLAP_ANY" />
+									</option>
+									<option value="0" selected={ c.overlap === 0 }>
+										<Locale k="BUFFOVERLAP_INSTANCE" />
+									</option>
+									<option value="1" selected={ c.overlap === 1 }>
+										<Locale k="BUFFOVERLAP_RENEW" />
+									</option>
+									<option value="2" selected={ c.overlap === 2 }>
+										<Locale k="BUFFOVERLAP_EXTEND" />
+									</option>
+									<option value="3" selected={ c.overlap === 3 }>
+										<Locale k="BUFFOVERLAP_SINGLE" />
+									</option>
+									<option value="4" selected={ c.overlap === 4 }>
+										<Locale k="BUFFOVERLAP_UPDATE" />
+									</option>
+								</select>
+							</div>
+							<div>
+								<select
+									class="form-select form-select-sm"
+									value={ c.erase ?? "" }
+									onChange={ e => {
+										e.preventDefault();
+										updateCond(idx, {
+											...c,
+											erase: e.currentTarget.value === ""
+												? undefined
+												: parseInt(e.currentTarget.value, 10),
+										});
+									} }
+								>
+									<option value="" selected={ c.erase === undefined }>
+										<Locale k="SEARCH_COND_BUFF_ERASE_ANY" />
+									</option>
+									{ GetEnumKeys(BUFFEFFECT_ERASE_TYPE)
+										.map(r => <option value={ r } selected={ c.erase === r }>
+											<Locale plain k={ `SEARCH_COND_BUFF_ERASE_${EraseTable[r]}` } />
+										</option>)
+									}
 								</select>
 							</div>
 							<div>

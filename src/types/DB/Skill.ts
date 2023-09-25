@@ -18,7 +18,6 @@ export interface SkillEntryData {
 	range: number;
 	ap: number;
 	grid: "self" | "single" | "around" | "fill" | "global" | string;
-	target_ground: boolean;
 	summon: SkillSummonInfo | null;
 	use: SkillUseInfo | null;
 	enabled: boolean;
@@ -51,6 +50,7 @@ export interface SkillEntity {
 	target: "enemy" | "team";
 
 	delayed: boolean;
+	target_ground: boolean;
 
 	// levels: SkillEntryData[];
 	buffs: {

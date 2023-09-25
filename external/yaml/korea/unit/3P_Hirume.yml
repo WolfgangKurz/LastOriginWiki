@@ -511,6 +511,7 @@ skills:
     icon: Particle
     target: enemy
     delayed: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -529,7 +530,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -649,7 +649,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -769,7 +768,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -889,7 +887,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1009,7 +1006,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1129,7 +1125,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1249,7 +1244,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1369,7 +1363,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1489,7 +1482,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1609,7 +1601,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1778,6 +1769,7 @@ skills:
     icon: Barrier
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -1796,7 +1788,6 @@ skills:
           range: 6
           ap: 7
           grid: F>1,0,1,0,1,0,1,0,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2039,6 +2030,7 @@ skills:
     icon: P.SelfDefBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -2058,7 +2050,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2225,6 +2216,7 @@ skills:
     icon: P.ShieldWall
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -2244,7 +2236,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,0,1,0,1,0,1,0,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2475,6 +2466,7 @@ skills:
     icon: P.Scan
     target: enemy
     delayed: false
+    target_ground: true
     leastGrade: 5
     buffs:
       index:
@@ -2494,7 +2486,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2847,23 +2838,25 @@ dialogue:
         가서 서로의 온기를 나누자꾸나.
       MVP: 억겁의 시간 동안 첩이 그대를 지탱해 왔지 않느냐, 이 정도는 당연지사니라!
     "2":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 무엇을 불태, 앗, 아니, 얼리면 되느냐?
+      Leader: 내가 수령이니 내 말을 듣거라 후후훗.
+      SortiePick: 처, 첩은 두렵지 않다!
+      StageStart: 적이 아무리 무서워도 앨리스 언니보다 무섭겠느냐?
+      Retreat: 이번만큼은 살려주겠다!
+      SearchStart: |-
+        이 옷을 입고 험한 일을 해야 하다니.
+        하지만 어쩔 수 없구나. 그대의 부탁이니.
+      SearchEnd: 돌아왔느니라. 말로만 수고했다고 하지 말고 첩을 안아주거라.
+      BattleFocus: 듣겠노라.
+      ActionApprove: 알겠느니라.
+      SpSkill: 아무도 우리를 해하지 못할지니.
+      Retire: 힘들게 만든 옷인데…
+      Repair: 첩은 괜찮다. 그런데 찢어졌던 옷도 어느새 멀쩡해졌으니 귀신이 곡할 노릇이구나.
+      Reinforce: 으흣. 첩의 냉기가 더욱 혹독해지는구나.
+      ItemEquip: 첩을 걱정하는 그대의 마음이 느껴지는구나.
+      CoreLink: 사, 살살하거라. 아프지 않게.
+      PresentGet: 흐흥. 선물 덕분이 아니라 그대의 마음 덕에 첩의 얼어붙은 마음이 녹는구나.
+      Login: 첩을 보았구나. 첩을 본 자는 살려둘 수 없다! 노, 농담이다.
       Idle_01_01: |-
         만년설보다 차가운 아홉꼬리 설무녀이니라.
         트, 특색을 너무 많이 넣었다고 하지 말거라!
@@ -2913,25 +2906,25 @@ dialogue:
         지옥불조차 태워버릴 정도로 뜨거우니.
         이 불꽃에 이름을 붙이자면...
         사랑이라 하겠다. 그대를 향한 사랑 말이다.
-      MVP: ""
+      MVP: 첩이 분골쇄신하였으니 당연한 일 아니겠느냐.
     "3":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 뭐, 사령관이 나를 필요로 한다면야.
+      Leader: 나만 믿어, 사령관.
+      SortiePick: 다들 준비됐지?
+      StageStart: 소꿉친구의 힘을 보여줄게.
+      Retreat: 하교 시간이네.
+      SearchStart: 사령관. 소꿉친구한테 이런 일을 시키는 거야?
+      SearchEnd: 흥. 절대 안 놔줘. 떨어져 있던 만큼 꼭 달라붙어 있을 거야.
+      BattleFocus: 명령 부탁해, 사령관.
+      ActionApprove: 내게 맡겨, 사령관.
+      SpSkill: 퇴마의 술 소꿉친구 식!
+      Retire: 소꿉친구는 무적일 텐데…
+      Repair: 읏. 옷이 찢어지진 않았겠지?
+      Reinforce: 공부를 좀 더 잘하게 되려나?
+      ItemEquip: 어때? 이거 나랑 잘 어울려?
+      CoreLink: 꼬리가 2배가 되면 매력도 2배가 되겠지?
+      PresentGet: 이힛. 역시 내게 반하지 않고서는 못 배기겠지?
+      Login: 빨리 와, 사령관. 곧 수업 시작이야.
       Idle_01_01: |-
         아침이야, 사령관!
         갑자기 뭐냐고?
@@ -2967,7 +2960,7 @@ dialogue:
         게임 속의 히루메와, 현실의 히루메...
         많은 차이가 있지만, 이것 하나는 변함없다.
         바로 그대를 사랑한다는 것이지.
-      MVP: ""
+      MVP: 역시 소꿉친구 히로인이 최고지?
     "":
       Intro: >-
         소개 말이더냐. 첩은 고귀한 존재를 모시는 무녀, 히루메다. 잠시 그대에게 신세를- ……! 가, 가까이 오지 말고 거기서 듣거라!

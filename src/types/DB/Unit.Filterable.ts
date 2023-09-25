@@ -1,14 +1,42 @@
-import { UnitSkin } from "@/types/DB/Unit";
+import { UnitSkin } from "./Unit";
+import { SKILL_ATTR, ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, ROGUE_SKILL_TYPE, CHARTYPE_GIFTITEM_DAMAGE_TYPE, TARGET_TYPE, BUFF_OVERLAP_TYPE, BUFF_ATTR_TYPE } from "../Enums";
+import { BUFFEFFECT_TRIGGER_TYPE } from "../BuffTrigger";
 import { BUFFEFFECT_TYPE } from "../BuffEffect";
-import { SKILL_ATTR, ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, ROGUE_SKILL_TYPE, CHARTYPE_GIFTITEM_DAMAGE_TYPE } from "../Enums";
+import { BUFFEFFECT_ERASE_TYPE } from "@/types/BuffErase";
 
-export interface FilterableUnitBuff {
-	target: "self" | "team" | "enemy";
-	type: BUFFEFFECT_TYPE;
-	positive: boolean;
+interface SkillBuffItemBase<T extends BUFFEFFECT_TYPE> {
+	type: T;
+	attr: BUFF_ATTR_TYPE;
+	overlap: BUFF_OVERLAP_TYPE;
+	erase: BUFFEFFECT_ERASE_TYPE;
 }
-export interface FilterableUnitBuffGroup {
-	effects: FilterableUnitBuff[];
+interface SkillBuffItemEnum extends SkillBuffItemBase<BUFFEFFECT_TYPE.STAGE_REMOVE_BUFF_ENUM> {
+	value: {
+		type: BUFFEFFECT_TYPE;
+	};
+}
+interface SkillBuffItemBuff extends SkillBuffItemBase<BUFFEFFECT_TYPE.STAGE_REMOVE_BUFF | BUFFEFFECT_TYPE.STAGE_REMOVE_DEBUFF> {
+	value: {
+		type: BUFFEFFECT_TYPE;
+		target: BUFF_ATTR_TYPE;
+	};
+}
+export type FilterableUnitSkillBuffItem =
+	SkillBuffItemBase<Exclude<BUFFEFFECT_TYPE, BUFFEFFECT_TYPE.STAGE_REMOVE_BUFF_ENUM | BUFFEFFECT_TYPE.STAGE_REMOVE_BUFF | BUFFEFFECT_TYPE.STAGE_REMOVE_DEBUFF>> |
+	SkillBuffItemEnum | SkillBuffItemBuff;
+
+export interface FilterableUnitSkillBuffTrigger {
+	type: BUFFEFFECT_TRIGGER_TYPE;
+	value: string;
+}
+
+export interface FilterableUnitSkillBuff {
+	on: FilterableUnitSkillBuffTrigger;
+	body: ACTOR_BODY_TYPE[];
+	class: ACTOR_CLASS[];
+	role: ROLE_TYPE[];
+	target: TARGET_TYPE;
+	buffs: FilterableUnitSkillBuffItem[];
 }
 
 export interface FilterableUnitSkill {
@@ -17,6 +45,9 @@ export interface FilterableUnitSkill {
 	/** dismiss_guard */
 	guard: boolean;
 	elem: SKILL_ATTR;
+	target: "team" | "enemy";
+
+	buffs: FilterableUnitSkillBuff[];
 }
 
 export interface FilterableUnit {
@@ -44,83 +75,19 @@ export interface FilterableUnit {
 
 	craft: false | number;
 
-	buffs: FilterableUnitBuff[][]; // FilterableUnitBuffGroup[];
 	skills: {
 		1: FilterableUnitSkill;
 		2: FilterableUnitSkill;
+		3?: FilterableUnitSkill;
+		4?: FilterableUnitSkill;
+		5?: FilterableUnitSkill;
 		F1?: FilterableUnitSkill;
 		F2?: FilterableUnitSkill;
+		F3?: FilterableUnitSkill;
+		F4?: FilterableUnitSkill;
+		F5?: FilterableUnitSkill;
 	};
 	skins: UnitSkin;
 
 	roguelike: ROGUE_SKILL_TYPE[];
-}
-
-/* eslint-disable-next-line @typescript-eslint/no-namespace */
-export namespace FilterableUnit {
-	export const Empty: FilterableUnit = {
-		id: 0,
-		uid: "",
-
-		rarity: ACTOR_GRADE.B,
-		type: ACTOR_CLASS.LIGHT,
-		role: ROLE_TYPE.ATTACKER,
-		body: ACTOR_BODY_TYPE.BIOROID,
-
-		group: "",
-		// shortgroup: "",
-
-		releaseDate: 0,
-		craft: false,
-
-		buffs: [],
-		skills: {
-			1: {
-				grid: false,
-				guard: false,
-				elem: SKILL_ATTR.PHYSICS,
-			},
-			2: {
-				grid: false,
-				guard: false,
-				elem: SKILL_ATTR.PHYSICS,
-			},
-		},
-		skins: {
-			G: false,
-			// SD: false,
-			Spine: false,
-			parts: 0,
-			stage: false,
-
-			subset: {
-				0: false,
-				1: false,
-				2: false,
-				3: false,
-				4: false,
-				5: false,
-				6: false,
-				7: false,
-			},
-			offsets: {},
-
-			anim: {
-				0: false,
-				1: false,
-				2: false,
-				3: false,
-			},
-			facelist: [],
-
-			category: [],
-			releaseDate: 0,
-			artist: "",
-			sid: 0,
-
-			metadata: { imageId: 0 },
-		},
-
-		roguelike: [],
-	};
 }

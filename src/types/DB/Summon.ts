@@ -9,6 +9,7 @@ export interface SummonSkill {
 	passive: boolean;
 	type: SKILL_ATTR;
 	target: "enemy" | "team";
+	target_ground: boolean;
 	buff: SkillEntryData;
 }
 

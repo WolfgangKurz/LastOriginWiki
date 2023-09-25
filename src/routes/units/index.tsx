@@ -6,9 +6,9 @@ import Store from "@/store";
 import { DecomposeHangulSyllable, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
-import { SKILL_ATTR } from "@/types/Enums";
-import { EffectFilterListItemPM, EffectFilterListItemSingle } from "@/types/Buff";
-import { FilterableUnit } from "@/types/DB/Unit.Filterable";
+import { SKILL_ATTR, TARGET_TYPE } from "@/types/Enums";
+import { FilterableUnit, FilterableUnitSkill } from "@/types/DB/Unit.Filterable";
+import { BUFFEFFECT_TYPE } from "@/types/BuffEffect";
 
 import { useUpdate } from "@/libs/hooks";
 import { CurrentDB } from "@/libs/DB";
@@ -25,7 +25,7 @@ import IconSearch from "@/components/bootstrap-icon/icons/Search";
 import IconListCheck from "@/components/bootstrap-icon/icons/ListCheck";
 
 import SimpleSearch from "./search/SimpleSearch";
-import AdvancedSearch, { Condition, ConditionBuffSlot, ConditionCategory, ConditionCompare, ConditionCompareYN } from "./search/AdvancedSearch";
+import AdvancedSearch, { Condition, ConditionActiveTarget, ConditionBuffSlot, ConditionCategory, ConditionCompare, ConditionCompareYN, IsInvalidBuffType } from "./search/AdvancedSearch";
 
 import UnitsTable from "./units-table";
 import UnitsList from "./units-list";
@@ -51,11 +51,6 @@ const Units: FunctionalComponent = () => {
 
 	const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 	if (!FilterableUnitDB) JsonLoaderCore(CurrentDB, StaticDB.FilterableUnit).then(() => update());
-
-	useEffect(() => {
-		const unsub = Store.Units.EffectFilters.subscribe(_ => update());
-		return () => unsub();
-	}, []);
 
 	const UnitList = useMemo((): FilterableUnit[] => {
 		const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
@@ -114,6 +109,43 @@ const Units: FunctionalComponent = () => {
 			ice: SKILL_ATTR.ICE,
 			lightning: SKILL_ATTR.LIGHTNING,
 		};
+		const TargetTable: Record<Exclude<ConditionActiveTarget, ConditionActiveTarget.AnyTarget>, string> = {
+			[ConditionActiveTarget.Team]: "team",
+			[ConditionActiveTarget.Enemy]: "enemy",
+		};
+
+		enum SkillsFlag {
+			None = 0,
+			Active1 = 1 << 0,
+			Active2 = 1 << 1,
+			Active = Active1 | Active2,
+			Passive1 = 1 << 2,
+			Passive2 = 1 << 3,
+			Passive3 = 1 << 4,
+			Passive = Passive1 | Passive2 | Passive3,
+			All = (Passive3 << 1) - 1,
+		}
+		function GetSkills (skills: FilterableUnit["skills"], flags: SkillsFlag): FilterableUnitSkill[] {
+			const arr: Array<FilterableUnitSkill | undefined> = [];
+
+			if ((flags & SkillsFlag.Active1) !== 0) arr.push(skills[1], skills.F1);
+			if ((flags & SkillsFlag.Active2) !== 0) arr.push(skills[2], skills.F2);
+			if ((flags & SkillsFlag.Passive1) !== 0) arr.push(skills[3], skills.F3);
+			if ((flags & SkillsFlag.Passive2) !== 0) arr.push(skills[4], skills.F4);
+			if ((flags & SkillsFlag.Passive3) !== 0) arr.push(skills[5], skills.F5);
+
+			return arr.filter(r => r) as FilterableUnitSkill[];
+		}
+		function GetFlags (slot: ConditionBuffSlot): SkillsFlag {
+			switch (slot) {
+				case ConditionBuffSlot.AnySlot: return SkillsFlag.All;
+				case ConditionBuffSlot.AnyActive: return SkillsFlag.Active;
+				case ConditionBuffSlot.Active1: return SkillsFlag.Active1;
+				case ConditionBuffSlot.Active2: return SkillsFlag.Active2;
+				case ConditionBuffSlot.Passive: return SkillsFlag.Passive;
+			}
+			return SkillsFlag.None;
+		}
 
 		return FilterableUnitDB.filter(x => condList.some(cs => cs.every(c => {
 			switch (c.category) {
@@ -145,80 +177,77 @@ const Units: FunctionalComponent = () => {
 						case ConditionCompareYN.NotEqual: return x.body !== c.body;
 					}
 					return false;
+				case ConditionCategory.Active_Target:
+					switch (c.compare) {
+						case ConditionCompareYN.Equal:
+							console.log(c.target, x.skills);
+							if (c.target === ConditionActiveTarget.AnyTarget) return true;
+							return GetSkills(x.skills, GetFlags(c.slot)).some(r => r.target === TargetTable[c.target]);
+						case ConditionCompareYN.NotEqual:
+							if (c.target === ConditionActiveTarget.AnyTarget) return false;
+							return GetSkills(x.skills, GetFlags(c.slot)).some(r => r.target !== TargetTable[c.target]);
+					}
+					return false;
 				case ConditionCategory.Active_NoGuard:
 					switch (c.compare) {
 						case ConditionCompareYN.Equal:
-							switch (c.slot) {
-								case ConditionBuffSlot.AnyActive:
-									return Object.values(x.skills).some(r => r.guard);
-								case ConditionBuffSlot.Active1:
-									return x.skills[1].guard || x.skills.F1?.guard;
-								case ConditionBuffSlot.Active2:
-									return x.skills[2].guard || x.skills.F2?.guard;
-							}
-							break;
+							return GetSkills(x.skills, GetFlags(c.slot)).some(r => r.guard);
 						case ConditionCompareYN.NotEqual:
-							switch (c.slot) {
-								case ConditionBuffSlot.AnyActive:
-									return !Object.values(x.skills).some(r => r.guard);
-								case ConditionBuffSlot.Active1:
-									return !(x.skills[1].guard || x.skills.F1?.guard);
-								case ConditionBuffSlot.Active2:
-									return !(x.skills[2].guard || x.skills.F2?.guard);
-							}
-							break;
+							return GetSkills(x.skills, GetFlags(c.slot)).some(r => !r.guard);
 					}
 					return false;
 				case ConditionCategory.Active_Grid:
 					switch (c.compare) {
 						case ConditionCompareYN.Equal:
-							switch (c.slot) {
-								case ConditionBuffSlot.AnyActive:
-									return Object.values(x.skills).some(r => r.grid);
-								case ConditionBuffSlot.Active1:
-									return x.skills[1].grid || x.skills.F1?.grid;
-								case ConditionBuffSlot.Active2:
-									return x.skills[2].grid || x.skills.F2?.grid;
-							}
-							break;
+							return GetSkills(x.skills, GetFlags(c.slot)).some(r => r.grid);
 						case ConditionCompareYN.NotEqual:
-							switch (c.slot) {
-								case ConditionBuffSlot.AnyActive:
-									return !Object.values(x.skills).some(r => r.grid);
-								case ConditionBuffSlot.Active1:
-									return !(x.skills[1].grid || x.skills.F1?.grid);
-								case ConditionBuffSlot.Active2:
-									return !(x.skills[2].grid || x.skills.F2?.grid);
-							}
-							break;
+							return GetSkills(x.skills, GetFlags(c.slot)).some(r => !r.grid);
 					}
 					return false;
 				case ConditionCategory.Elem:
 					switch (c.compare) {
 						case ConditionCompareYN.Equal:
 							if (c.elem === "") return true;
-							switch (c.slot) {
-								case ConditionBuffSlot.AnyActive:
-									return Object.values(x.skills).some(r => r.elem === ElemTable[c.elem]);
-								case ConditionBuffSlot.Active1:
-									return x.skills[1].elem === ElemTable[c.elem] || x.skills.F1?.elem === ElemTable[c.elem];
-								case ConditionBuffSlot.Active2:
-									return x.skills[2].elem === ElemTable[c.elem] || x.skills.F2?.elem === ElemTable[c.elem];
-							}
-							break;
+							return GetSkills(x.skills, GetFlags(c.slot)).some(r => r.elem === ElemTable[c.elem]);
 						case ConditionCompareYN.NotEqual:
 							if (c.elem === "") return false;
-							switch (c.slot) {
-								case ConditionBuffSlot.AnyActive:
-									return !Object.values(x.skills).some(r => r.elem === ElemTable[c.elem]);
-								case ConditionBuffSlot.Active1:
-									return !(x.skills[1].elem === ElemTable[c.elem] || x.skills.F1?.elem === ElemTable[c.elem]);
-								case ConditionBuffSlot.Active2:
-									return !(x.skills[2].elem === ElemTable[c.elem] || x.skills.F2?.elem === ElemTable[c.elem]);
-							}
-							break;
+							return GetSkills(x.skills, GetFlags(c.slot)).some(r => r.elem !== ElemTable[c.elem]);
 					}
 					return false;
+				case ConditionCategory.Buff:
+					return GetSkills(x.skills, GetFlags(c.slot))
+						.some(s => s.buffs.some(r => {
+							if (c.class !== undefined && !r.class.includes(c.class)) return false;
+							if (c.role !== undefined && !r.role.includes(c.role)) return false;
+							if (c.body !== undefined && !r.body.includes(c.body)) return false;
+
+							if (c.target !== undefined) {
+								if (c.target === TARGET_TYPE.SELF && r.target !== TARGET_TYPE.SELF)
+									return false;
+								else if (c.target === TARGET_TYPE.OUR && (r.target !== TARGET_TYPE.OUR && r.target !== TARGET_TYPE.OUR_GRID))
+									return false;
+								else if (c.target === TARGET_TYPE.ENEMY && (r.target !== TARGET_TYPE.ENEMY && r.target !== TARGET_TYPE.ENEMY_GRID))
+									return false;
+							}
+
+							if (c.trigger !== undefined && c.trigger !== r.on.type) return false;
+
+							return r.buffs.some(v => {
+								if (c.attr !== undefined && c.attr !== v.attr) return false;
+								if (c.buff !== undefined && IsInvalidBuffType(c.buff, v.type)) return false;
+								if (c.overlap !== undefined && c.overlap !== v.overlap) return false;
+								if (c.erase !== undefined && c.erase !== v.erase) return false;
+
+								if (v.type === BUFFEFFECT_TYPE.STAGE_REMOVE_BUFF_ENUM) {
+									if (c.targetBuffEnum !== undefined && c.targetBuffEnum !== v.value.type) return false;
+								} else if (v.type === BUFFEFFECT_TYPE.STAGE_REMOVE_BUFF || v.type === BUFFEFFECT_TYPE.STAGE_REMOVE_DEBUFF) {
+									if (c.targetBuffEnum !== undefined && IsInvalidBuffType(c.targetBuffEnum, v.value.type)) return false;
+									if (c.targetBuffType !== undefined && c.targetBuffType !== v.value.target) return false;
+								}
+
+								return true;
+							});
+						}));
 			}
 		})));
 	}, [FilterableUnitDB, searchType, conds]);

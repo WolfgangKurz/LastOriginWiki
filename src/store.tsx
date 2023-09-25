@@ -70,36 +70,6 @@ const Store = {
 			[ACTOR_BODY_TYPE.TOTEM]: signal(false),
 		},
 
-		Skill: [
-			{
-				Elem: signal<Tuple<boolean, 4>>([true, true, true, true]),
-				GridType: signal<number>(0),
-				DismissGuardType: signal<number>(0),
-			},
-			{
-				Elem: signal<Tuple<boolean, 4>>([true, true, true, true]),
-				GridType: signal<number>(0),
-				DismissGuardType: signal<number>(0),
-			},
-		],
-
-		EffectTarget: signal<Array<"self" | "team" | "enemy">>(["self", "team", "enemy"]),
-
-		EffectFilters: signal(
-			Object.keys(BuffEffectList)
-				.map(x => BuffEffectList[x as BuffEffectListGroupKeys])
-				.reduce((p, c) => [...p, ...c], [])
-				.map(x => {
-					if (x.pm) {
-						return [
-							{ ...x, pmType: 1, selected: false },
-							{ ...x, pmType: -1, selected: false },
-						];
-					}
-					return { ...x, selected: false };
-				}) as EffectFilterListType
-		),
-
 		SearchText: signal(""),
 	},
 

@@ -513,6 +513,7 @@ skills:
     icon: SwordAttk
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -531,7 +532,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -661,7 +661,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -791,7 +790,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -921,7 +919,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1051,7 +1048,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1181,7 +1177,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1311,7 +1306,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1441,7 +1435,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1571,7 +1564,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1701,7 +1693,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1889,6 +1880,7 @@ skills:
     icon: DefCounter
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -1907,7 +1899,6 @@ skills:
           range: 0
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2115,7 +2106,6 @@ skills:
           range: 0
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2540,6 +2530,7 @@ skills:
     icon: P.TeamDefBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -2559,7 +2550,6 @@ skills:
           range: 0
           ap: 0
           grid: F>0,0,1,0,0,1,0,0,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2676,6 +2666,7 @@ skills:
     icon: P.SelfAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -2695,7 +2686,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2998,23 +2988,25 @@ dialogue:
         괜찮으시다면 다음에도… 부탁드립니다.
       MVP: 사필ㄱ... 아... 서, 서둘러 돌아가겠습니다...
     "2":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 익숙하지 않은 옷이라 하여도 다른 분들을 지키는 것에는 문제없습니다.
+      Leader: 허, 예. 익숙치는 않지만 소첩이 선도하겠습니다.
+      SortiePick: 주인님의 명을 받들어 적을 섬멸하도록 하겠습니다.
+      StageStart: 적의 기척이 느껴집니다. 전투를 준비하십시오.
+      Retreat: 후방을 사수하겠습니다.
+      SearchStart: 네. 주인님의 말씀대로 물자를 수집하도록 하겠습니다.
+      SearchEnd: 주인님께서 말씀하신 물자를 가져왔습니다.
+      BattleFocus: 명하십시오. 주인님.
+      ActionApprove: 명 따르겠습니다.
+      SpSkill: 호수처럼 잔잔하게.
+      Retire: 으읏. 죄송합니다. 소첩이 지켜드려야 했는데…
+      Repair: 손을 조금만 더 꼭 잡아주실 수 있겠습니까?
+      Reinforce: 이걸로 감각을 더욱 날카롭게 벼리도록 하겠습니다.
+      ItemEquip: 양산 때문에 두 손이 꽉 찼는데… 주인님께서 끼워주시겠습니까?
+      CoreLink: |-
+        이 검술의 기억은… 감사합니다.
+        이걸로 주인님을 더욱 잘 지킬 수 있겠습니다.
+      PresentGet: 주인님께서 주신 선물… 금은패물보다 소중히 보관하도록 하겠습니다.
+      Login: 어서 오십시오 주인님. 오늘은 조금…모던한 차림새를 갖추어 보았습니다.
       Idle_01_01: |-
         경적필패라 하였으니, 설령
         나들이 도중이라 하여도
@@ -3082,7 +3074,7 @@ dialogue:
         괜찮습니다. 한 걸음 더…
         거기서 한 걸음 더...
         몸이 밀착할 정도로 가까이...
-      MVP: ""
+      MVP: 주인님께서 함께하시는 이상 저희의 승리는 명약관화한 일이었습니다.
     "":
       Join: 불초 금란, 주인님께 인사올립니다.
       SquadJoin: 명을 따르겠습니다.

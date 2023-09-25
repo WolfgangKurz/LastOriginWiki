@@ -85,7 +85,7 @@ const SimpleSearch: FunctionalComponent = (props) => {
 			</div>
 		</div>
 
-		<div class="row mb-4">
+		<div class="row">
 			<div class="col">
 				<div class="input-group">
 					<input
@@ -100,10 +100,6 @@ const SimpleSearch: FunctionalComponent = (props) => {
 				</div>
 			</div>
 		</div>
-
-		<hr class="my-2" />
-
-		moved to advanced search
 	</>;
 };
 export default SimpleSearch;
