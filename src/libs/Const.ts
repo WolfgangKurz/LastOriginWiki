@@ -118,4 +118,9 @@ export const SkinBanners: string[] = [
 	"BR_Leprechaun_2", "PECS_Hathor_1",
 	"PECS_LRL_4", "ST_Lancer_2",
 	"BR_Neodym_3", "PECS_Hussar_2",
+	"BR_BeastHunter_2",
 ];
+
+export const SkillVideo: Record<string, number[]> = {
+	DS_Koyori: [2],
+};

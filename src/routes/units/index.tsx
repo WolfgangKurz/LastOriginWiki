@@ -250,7 +250,16 @@ const Units: FunctionalComponent = () => {
 						}));
 			}
 		})));
-	}, [FilterableUnitDB, searchType, conds, Store.Units.SearchText.value]);
+	}, [
+		FilterableUnitDB,
+		searchType,
+		conds,
+		...Object.values(Store.Units.Rarity).map(r => r.value),
+		...Object.values(Store.Units.Type).map(r => r.value),
+		...Object.values(Store.Units.Role).map(r => r.value),
+		...Object.values(Store.Units.Body).map(r => r.value),
+		Store.Units.SearchText.value,
+	]);
 
 	return <div class="chars">
 		<div class="text-center mb-3">

@@ -440,7 +440,7 @@ company: Saman
 maker: BlackRiver
 country: MN
 age: "27"
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice: []
 favor:
@@ -4541,16 +4541,23 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
-      Idle_02_01: ""
-      Idle_03_01: ""
-      Idle_04_01: ""
-      SPIdle_02_01: ""
-      Oath: ""
-      OathIdle_01: ""
+      Idle_01_01: |-
+        奇数ラウンド開始時、スコールの力が満ち足り自分は再攻撃効果を獲得します。
+        偶数ラウンド開始時、ハティの力が満ち足り自分は保護無視効果を獲得します。
+        敵撃破時、2ラウンドの間、スコールとハティの力が同時に発動します。
+        スコールとハティの力が同時に発動する時、アクティブスキルのダメージ量が増加します。
+      Idle_01_02: 反撃/バリア獲得。条件付き標的獲得/除去。
+      Idle_01_03: ラグナロク：攻撃力/スキル威力減少
+      SPIdle_01_01: 美味しい…：攻撃力{0}%
+      Idle_02_01: 効率的な変数遮断：クリティカル/効果耐性増加
+      Idle_03_01: フローズビトニル：ダメージ量{0}%
+      Idle_04_01: 忠実な番犬：{0}%の威力で反撃
+      SPIdle_02_01: マナガルム：保護無視有効化
+      Oath: |-
+        スコールとハティを交差させ指定範囲の対象に{0}の保護無視ダメージを与えます。
+        命中時、自分の<盈虧>効果によって3ラウンドの間、対象に追加効果を付与します。
+        スコール：攻撃力減少/ハティ：スキル威力減少(それぞれ最大3スタック)
+      OathIdle_01: 効率的な変数遮断：防御力{0}%
       MVP: ""
     "":
       Join: 私の名前はカーン。ホードの隊長だ。よろしく頼む。
@@ -5132,6 +5139,7 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
   skins:
     - sid: 1
@@ -5162,6 +5170,7 @@ skins:
       releaseDate: 1558569600000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
         2dmodel_dam: 2DModel_BR_Khan_NS1_Dam
@@ -5193,6 +5202,7 @@ skins:
       releaseDate: 1593993600000
       metadata:
         imageId: 2
+        iconId: 2
         tbarId: 2
         voiceId: 2
     - sid: 3
@@ -5223,6 +5233,7 @@ skins:
       releaseDate: 1656288000000
       metadata:
         imageId: 3
+        iconId: 3
         tbarId: 3
         voiceId: 3
         2dmodel: 2DModel_BR_Khan_NS3

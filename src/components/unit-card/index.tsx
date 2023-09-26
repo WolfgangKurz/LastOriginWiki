@@ -81,7 +81,7 @@ const UnitCard: FunctionalComponent<UnitCardProps> & {
 		[ROLE_TYPE.SUPPORTER]: "Gear",
 	})[unit.role];
 
-	const IdDisplay = `00${unit.id}`.substr(-3);
+	const IdDisplay = `00${unit.id}`.slice(-3);
 	const UnitFaceUrl = GetUnitFaceURL(unit.uid);
 	const unitName = ((): preact.VNode | preact.VNode[] => {
 		if (props.shortName) {

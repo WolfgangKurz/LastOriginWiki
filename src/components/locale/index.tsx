@@ -25,7 +25,7 @@ function traverseVNode<T> (nodes: Node[] | NodeListOf<ChildNode>, p: LocaleProps
 							const r = paramRegex.exec(x);
 							return r
 								? ((): preact.VNode => {
-									const idx = parseInt(r[1].substr(1, r[1].length - 2), 10);
+									const idx = parseInt(r[1].slice(1, r[1].length - 1), 10);
 									if (p) {
 										const v = p[idx];
 										if (typeof v === "string" || typeof v === "number" || typeof v === "boolean")
@@ -115,7 +115,7 @@ const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
 					const r = paramRegex.exec(x);
 					return r
 						? ((): preact.VNode => {
-							const idx = parseInt(r[1].substr(1, r[1].length - 2), 10);
+							const idx = parseInt(r[1].slice(1, r[1].length - 1), 10);
 							if (props.p) {
 								const v = props.p[idx];
 								if (typeof v === "string" || typeof v === "number" || typeof v === "boolean")

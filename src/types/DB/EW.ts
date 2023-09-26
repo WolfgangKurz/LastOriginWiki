@@ -1,4 +1,5 @@
 import { MapEnemyData } from "@/types/DB/Map";
+import { EW_STAGE_DIFFICULTY } from "@/types/Enums";
 import { RawRewardItem } from "@/types/Reward";
 import { Suitability, Prohibition } from "@/types/Suitability";
 
@@ -24,8 +25,12 @@ export interface EWStage {
 	waves: EWMapWaveGroup[][];
 }
 
+export type EWDifficulty = {
+	[key in EW_STAGE_DIFFICULTY]: EWStage;
+};
+
 export interface EWChapter {
-	[key: string]: EWStage;
+	[key: string]: EWDifficulty;
 }
 
 export interface EWDB {

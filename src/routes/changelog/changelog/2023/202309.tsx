@@ -5,6 +5,29 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12301" date="2023-09-26"
+		new={ <>
+			<li>
+				신규 전투원 <BY>코요리</BY>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>변화의 성소</BY>에 난이도 정보가 추가되었습니다.
+			</li>
+		</> }
+		bugfix={ <>
+			<li>
+				<BY>전투원정보</BY>에서 일부 필터가 작동하지 않는 문제를 수정했습니다.
+			</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>AT-100 비스트헌터</BY>의 스킨 <BR>Vinum animi speculum</BR>의 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2023-09-26 19:15:10</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12299" date="2023-09-26"
 		bugfix={ <>
 			<li>

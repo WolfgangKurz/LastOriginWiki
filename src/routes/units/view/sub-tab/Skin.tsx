@@ -1,8 +1,8 @@
 import { FunctionComponent } from "preact";
-import { useState } from "preact/hooks";
+import { useLayoutEffect, useState } from "preact/hooks";
 import { Link } from "preact-router";
 
-import { AssetsRoot, SkinBanners } from "@/libs/Const";
+import { AssetsRoot, SkillVideo, SkinBanners } from "@/libs/Const";
 import { FormatDate, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 
@@ -34,9 +34,15 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 	const categories = skin.category.filter(x => x && x !== "ALL");
 
 	const [shopPopupType, setShopPopupType] = useState<"O" | "G">("O");
+	const [currentSkillVideo, setCurrentSkillVideo] = useState(1);
 
 	const [IsBlackBG, setIsBlackBG] = useState<boolean>(false);
 	const [HideGroup, setHideGroup] = useState<boolean>(false);
+
+	useLayoutEffect(() => {
+		if ((unit.uid in SkillVideo) && !SkillVideo[unit.uid].includes(currentSkillVideo))
+			setCurrentSkillVideo(SkillVideo[unit.uid][0]);
+	}, [unit.uid]);
 
 	const SkinLink = ((): string => {
 		const loc = window.location;
@@ -156,7 +162,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 						<div class="pb-2">
 							<UnitFace
 								uid={ unit.uid }
-								skin={ SkinList[skinIndex.value].metadata.imageId ?? 0 }
+								skin={ SkinList[skinIndex.value].metadata.iconId ?? SkinList[skinIndex.value].metadata.imageId ?? 0 }
 								size="88"
 							/>
 						</div>
@@ -301,6 +307,29 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 							<img
 								class={ style.SkinBanner }
 								src={ `${AssetsRoot}/skin/${shopPopupType === "O" ? "banners" : "banners_G"}/${SkinKey}.jpg` }
+							/>
+						</div>
+					</div>
+				</> }
+
+				{ (unit.uid in SkillVideo) && <>
+					<div class="d-flex align-items-start">
+						<div class={ BuildClass("nav", "flex-column", "nav-tabs", style.VerticalTabs) }>
+							{ SkillVideo[unit.uid].map(sid => <button
+								class={ BuildClass("nav-link", isActive(currentSkillVideo === sid)) }
+								onClick={ e => {
+									e.preventDefault();
+									setCurrentSkillVideo(sid);
+								} }
+							>
+								Active { sid }
+							</button>) }
+						</div>
+						<div class="tab-content">
+							<video
+								class="w-100"
+								controls
+								src={ `${AssetsRoot}/videos/${unit.uid}.Skill${currentSkillVideo}.mp4` }
 							/>
 						</div>
 					</div>
