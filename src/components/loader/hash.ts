@@ -1,12 +1,12 @@
 // Content automatically generated
 export interface DBHashType { [K: string]: string | DBHashType; }
 export default {
-	"buildtime": "40c8bba6",
+	"buildtime": "92de1912",
 	"locale": {
-		"TC": "913b72dc",
-		"KR": "84ced5c4",
-		"JP": "5ed27605",
-		"EN": "9d4874ca"
+		"TC": "7b3a5349",
+		"KR": "ad574b63",
+		"JP": "0b02bb03",
+		"EN": "3ff97d92"
 	},
 	"korea": {
 		"sticker": "d077aa82",
