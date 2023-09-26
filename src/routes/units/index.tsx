@@ -250,7 +250,7 @@ const Units: FunctionalComponent = () => {
 						}));
 			}
 		})));
-	}, [FilterableUnitDB, searchType, conds]);
+	}, [FilterableUnitDB, searchType, conds, Store.Units.SearchText.value]);
 
 	return <div class="chars">
 		<div class="text-center mb-3">

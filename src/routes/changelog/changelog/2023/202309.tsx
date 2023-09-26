@@ -5,6 +5,13 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12299" date="2023-09-26"
+		bugfix={ <>
+			<li>
+				<BY>전투원정보</BY>에서 이름 검색이 작동하지 않던 문제를 수정했습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12298" date="2023-09-25"
 		update={ <>
 			<li>
