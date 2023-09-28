@@ -45,7 +45,6 @@ const Units: FunctionalComponent = () => {
 	UpdateTitle(LocaleGet("MENU_UNITS"));
 
 	const [searchType, setSearchType] = useState<"simple" | "advanced">("simple");
-	const [conds, setConds] = useState<readonly Condition[]>([]);
 
 	const update = useUpdate();
 
@@ -53,6 +52,8 @@ const Units: FunctionalComponent = () => {
 	if (!FilterableUnitDB) JsonLoaderCore(CurrentDB, StaticDB.FilterableUnit).then(() => update());
 
 	const UnitList = useMemo((): FilterableUnit[] => {
+		const conds = Store.Units.advSearchConds.value;
+
 		const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 		if (!FilterableUnitDB) return [];
 
@@ -253,7 +254,7 @@ const Units: FunctionalComponent = () => {
 	}, [
 		FilterableUnitDB,
 		searchType,
-		conds,
+		Store.Units.advSearchConds.value,
 		...Object.values(Store.Units.Rarity).map(r => r.value),
 		...Object.values(Store.Units.Type).map(r => r.value),
 		...Object.values(Store.Units.Role).map(r => r.value),
@@ -345,7 +346,10 @@ const Units: FunctionalComponent = () => {
 							<SimpleSearch />
 						</div>
 						<div class={ BuildClass(searchType !== "advanced" && "d-none") }>
-							<AdvancedSearch onUpdate={ (conds) => setConds(conds) } />
+							<AdvancedSearch
+								conds={ Store.Units.advSearchConds.value }
+								onUpdate={ (conds) => Store.Units.advSearchConds.value = conds }
+							/>
 						</div>
 					</div>
 				</div>

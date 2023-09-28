@@ -5,6 +5,13 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12304" date="2023-09-28"
+		update={ <>
+			<li>
+				<BY>전투원정보</BY>의 상세 검색 필터가 페이지 이동 후에도 유지되도록 변경하였습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12303" date="2023-09-28"
 		bugfix={ <>
 			<li>

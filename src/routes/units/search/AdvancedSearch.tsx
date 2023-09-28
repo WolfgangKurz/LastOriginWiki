@@ -234,17 +234,13 @@ export function IsInvalidBuffType (cond: BUFFEFFECT_TYPE, value: BUFFEFFECT_TYPE
 }
 
 interface AdvancedSearchProps {
+	conds: readonly Condition[];
 	onUpdate: (conditions: Readonly<Condition[]>) => void;
 }
 
 const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 	const update = useUpdate();
-
-	const [conds, setConds] = useState<Condition[]>([]);
-
-	useEffect(() => {
-		props.onUpdate(conds);
-	}, [props.onUpdate, conds]);
+	const conds = props.conds;
 
 	const BuffCategoryDB = GetJson<BuffCategory[] | null>(StaticDB.BuffCategory);
 	if (!BuffCategoryDB) JsonLoaderCore(CurrentDB, StaticDB.BuffCategory).then(() => update());
@@ -304,12 +300,12 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 
 		const c = [...conds];
 		c[idx] = cond;
-		setConds(c);
+		props.onUpdate(c);
 	}
 	function removeCond (idx: number): void {
 		const c = [...conds];
 		c.splice(idx, 1);
-		setConds(c);
+		props.onUpdate(c);
 	}
 	function DefaultCond (): Condition {
 		return {
@@ -1147,8 +1143,7 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 				class="btn btn-sm btn-success"
 				onClick={ e => {
 					e.preventDefault();
-					setConds([...conds, DefaultCond()]);
-					update();
+					props.onUpdate([...conds, DefaultCond()]);
 				} }
 			>
 				<IconPlusCircleFill class="me-2" />

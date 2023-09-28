@@ -5,6 +5,8 @@ import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/types/En
 import { BuffEffectList, BuffEffectListGroupKeys } from "@/types/BuffEffect";
 import { EffectFilterListType } from "@/types/Buff";
 
+import { Condition as UnitsCondition } from "@/routes/units/search/AdvancedSearch";
+
 export function toggle (signal: Signal<boolean>): void;
 export function toggle (signal: Signal<boolean[]>, index: number): void;
 export function toggle (signal: Signal<boolean> | Signal<boolean[]>, index?: number): void {
@@ -71,6 +73,8 @@ const Store = {
 		},
 
 		SearchText: signal(""),
+
+		advSearchConds: signal<readonly UnitsCondition[]>([]),
 	},
 
 	Equips: {
