@@ -93,7 +93,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 							skinIndex.set(index);
 						} }
 					>
-						<UnitFace uid={ unit.uid } skin={ skin.metadata.imageId ?? 0 } size="64" />
+						<UnitFace uid={ unit.uid } skin={ skin.metadata.iconId ?? skin.metadata.imageId ?? 0 } size="64" />
 						<br />
 
 						<span>

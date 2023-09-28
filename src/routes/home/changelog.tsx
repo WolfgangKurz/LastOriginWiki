@@ -5,6 +5,14 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12303" date="2023-09-28"
+		bugfix={ <>
+			<li>
+				<BY>전투원정보</BY>의 전투원 페이지의 스킨 탭에서 일부 스킨의 아이콘이 표시되지 않는 문제를 수정했습니다.
+			</li>
+			<li>일부 스킨의 아티스트 정보가 잘못된 점을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12301" date="2023-09-26"
 		new={ <>
 			<li>

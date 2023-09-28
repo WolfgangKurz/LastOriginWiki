@@ -1,7 +1,7 @@
 // Content automatically generated
 export interface DBHashType { [K: string]: string | DBHashType; }
 export default {
-	"buildtime": "92de1912",
+	"buildtime": "2ed092f3",
 	"locale": {
 		"TC": "7b3a5349",
 		"KR": "ad574b63",
@@ -15,7 +15,7 @@ export default {
 		"mission": "7d73a790",
 		"maps": "5f7d99b0",
 		"gacha": "fc9a050a",
-		"filterable.unit": "5e4e2a48",
+		"filterable.unit": "339bf6b4",
 		"filterable.facility": "b3f0e54b",
 		"filterable.equip": "97caff3a",
 		"filterable.enemy": "239d6e5e",
@@ -174,7 +174,7 @@ export default {
 			"BR_Brownie": "ebdfe72a",
 			"BR_BloodyPanther": "baf93770",
 			"BR_Blackhound": "a7fbcb96",
-			"BR_Bheur": "8bc071f1",
+			"BR_Bheur": "85e00d84",
 			"BR_BeastHunter": "0a3ffaf5",
 			"BR_Banshee": "99df9beb",
 			"BR_AS12TurtleDragon": "1482357a",
