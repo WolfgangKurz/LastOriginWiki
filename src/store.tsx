@@ -74,7 +74,8 @@ const Store = {
 
 		SearchText: signal(""),
 
-		advSearchConds: signal<readonly UnitsCondition[]>([]),
+		SearchType: signal<"simple" | "advanced">("simple"),
+		AdvSearchConds: signal<readonly UnitsCondition[]>([]),
 	},
 
 	Equips: {

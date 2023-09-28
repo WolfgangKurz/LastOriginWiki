@@ -44,22 +44,20 @@ const Units: FunctionalComponent = () => {
 	SetMeta(["twitter:image", "og:image"], null);
 	UpdateTitle(LocaleGet("MENU_UNITS"));
 
-	const [searchType, setSearchType] = useState<"simple" | "advanced">("simple");
-
 	const update = useUpdate();
 
 	const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 	if (!FilterableUnitDB) JsonLoaderCore(CurrentDB, StaticDB.FilterableUnit).then(() => update());
 
 	const UnitList = useMemo((): FilterableUnit[] => {
-		const conds = Store.Units.advSearchConds.value;
+		const conds = Store.Units.AdvSearchConds.value;
 
 		const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 		if (!FilterableUnitDB) return [];
 
 		if (Store.Units.DisplayType.value === "skin") return FilterableUnitDB;
 
-		if (searchType === "simple") {
+		if (Store.Units.SearchType.value === "simple") {
 			return FilterableUnitDB
 				.filter(x => {
 					try {
@@ -253,8 +251,8 @@ const Units: FunctionalComponent = () => {
 		})));
 	}, [
 		FilterableUnitDB,
-		searchType,
-		Store.Units.advSearchConds.value,
+		Store.Units.SearchType.value,
+		Store.Units.AdvSearchConds.value,
 		...Object.values(Store.Units.Rarity).map(r => r.value),
 		...Object.values(Store.Units.Type).map(r => r.value),
 		...Object.values(Store.Units.Role).map(r => r.value),
@@ -315,11 +313,11 @@ const Units: FunctionalComponent = () => {
 						<ul class="nav nav-tabs card-header-tabs">
 							<li class="nav-item">
 								<a
-									class={ BuildClass("nav-link", isActive(searchType === "simple")) }
+									class={ BuildClass("nav-link", isActive(Store.Units.SearchType.value === "simple")) }
 									href="#"
 									onClick={ (e): void => {
 										e.preventDefault();
-										setSearchType("simple");
+										Store.Units.SearchType.value = "simple";
 									} }
 								>
 									<IconSearch class="me-1" />
@@ -328,11 +326,11 @@ const Units: FunctionalComponent = () => {
 							</li>
 							<li class="nav-item">
 								<a
-									class={ BuildClass("nav-link", isActive(searchType === "advanced")) }
+									class={ BuildClass("nav-link", isActive(Store.Units.SearchType.value === "advanced")) }
 									href="#"
 									onClick={ (e): void => {
 										e.preventDefault();
-										setSearchType("advanced");
+										Store.Units.SearchType.value = "advanced";
 									} }
 								>
 									<IconListCheck class="me-1" />
@@ -342,13 +340,13 @@ const Units: FunctionalComponent = () => {
 						</ul>
 					</div>
 					<div class="card-body">
-						<div class={ BuildClass(searchType !== "simple" && "d-none") }>
+						<div class={ BuildClass(Store.Units.SearchType.value !== "simple" && "d-none") }>
 							<SimpleSearch />
 						</div>
-						<div class={ BuildClass(searchType !== "advanced" && "d-none") }>
+						<div class={ BuildClass(Store.Units.SearchType.value !== "advanced" && "d-none") }>
 							<AdvancedSearch
-								conds={ Store.Units.advSearchConds.value }
-								onUpdate={ (conds) => Store.Units.advSearchConds.value = conds }
+								conds={ Store.Units.AdvSearchConds.value }
+								onUpdate={ (conds) => Store.Units.AdvSearchConds.value = conds }
 							/>
 						</div>
 					</div>
