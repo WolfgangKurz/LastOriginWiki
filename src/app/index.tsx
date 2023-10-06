@@ -20,7 +20,7 @@ import "./style.scss";
 
 const App: FunctionalComponent = () => {
 	if (typeof window !== "undefined") {
-		["pageonloading", "pageonerror"].forEach(e => {
+		["pageonloading", "pageonerror", "pagemayexpired"].forEach(e => {
 			const el = document.querySelector(`#${e}`);
 			if (el) {
 				const parent = el.parentNode;

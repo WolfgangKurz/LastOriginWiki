@@ -22,12 +22,21 @@
 	</head>
 
 	<body>
-		<div id="pageonloading" style="text-align:center; margin:2em;padding:4em">
+		<div id="pageonloading" style="text-align:center; margin:1em;padding:4em">
 			페이지 리소스를 불러오고 있습니다.<br />
 			<br />
 			Loading page resources.
 		</div>
-		<div id="pageonerror" style="text-align:center; margin:2em;padding:2em; background:rgba(255,0,0,0.125); display:none">
+		<div id="pagemayexpired" style="text-align:center; margin:1em;padding:2em; background:rgba(88,173,224,0.2); display:none">
+			긴 시간동안 사이트가 로드되지 않고 있습니다.<br />
+			사이트가 업데이트되었을 수 있습니다.<br />
+			새로고침을 시도하고, 문제가 동일하다면 브라우저 캐시를 비우고 다시 접속해보세요.<br />
+			<br />
+			The site isn't loading for a long time.<br />
+			The site might have been updated.<br />
+			Try refresh the page, and if the problem is the same, clear your browser cache and try again.
+		</div>
+		<div id="pageonerror" style="text-align:center; margin:1em;padding:2em; background:rgba(255,0,0,0.125); display:none">
 			페이지를 불러오지 못했습니다.<br />
 			새로고침을 시도하거나 아래를 통해 연락하세요.<br /><br />
 
@@ -41,11 +50,17 @@
 		<script>
 			window.addEventListener("error", (e) => {
 				const el1 = document.querySelector("#pageonloading");
-				const el2 = document.querySelector("#pageonerror");
-				
-				el1.style.display = "none";
-				el2.style.display = "";
+				if (el1) {
+					const el2 = document.querySelector("#pageonerror");
+					el1.style.display = "none";
+					el2.style.display = "";
+				}
 			});
+			setTimeout(() => {
+				const el = document.querySelector("#pagemayexpired");
+				if (!el) return;
+				el.style.display = "";
+			}, 10000);
 		</script>
 		<script type="module" src="/src/index.ts"></script>
 	</body>
