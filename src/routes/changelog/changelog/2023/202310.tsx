@@ -5,7 +5,7 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12308" date="2023-10-08"
+	<ChangelogItem title="Build 12308" date="2023-10-07"
 		bugfix={ <>
 			<li>
 				<BY>전투원정보</BY>의 <BG>스킨 보기</BG>에서 일부 스킨의 아이콘이 표시되지 않는 문제가 수정되었습니다.
