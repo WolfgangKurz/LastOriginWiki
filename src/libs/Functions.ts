@@ -1,17 +1,6 @@
 import { Signal } from "@preact/signals";
 import { ObjectState } from "./State";
 
-export function getCookie (name: string, def?: string): string | undefined {
-	const value = `; ${document.cookie}`;
-	const parts = value.split(`; ${name}=`);
-	if (parts.length === 2) {
-		return (parts.pop() as string)
-			.split(";")
-			.shift();
-	}
-	return def;
-}
-
 export function FormatNumber (num: number): string {
 	if (num === 0) return num.toString();
 

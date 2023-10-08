@@ -15,4 +15,15 @@
 	> .container:empty {
 		display: none;
 	}
+
+	.toast-container {
+		left: 50%;
+		bottom: 1rem;
+		transform: translateX(-50%);
+
+		> .toast {
+			--bs-toast-max-width: auto;
+			max-width: calc(100vw - 2rem);
+		}
+	}
 }

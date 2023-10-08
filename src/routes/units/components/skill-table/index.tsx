@@ -1,4 +1,5 @@
 import { FunctionalComponent } from "preact";
+import Decimal from "decimal.js";
 
 import { Unit } from "@/types/DB/Unit";
 import { SkillEntity, SkillGroup, SkillValueData } from "@/types/DB/Skill";
@@ -9,6 +10,7 @@ import Session from "@/libs/Session";
 import { isActive } from "@/libs/Functions";
 import { objState } from "@/libs/State";
 import { ImageExtension, RarityDisplay } from "@/libs/Const";
+import { BuildClass } from "@/libs/Class";
 import { GetSkillDescription } from "@/libs/SkillDescription";
 
 import Locale, { LocaleExists, LocaleGet } from "@/components/locale";
@@ -121,9 +123,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 		return output;
 	})();
 
-	function GetSkillDescriptions(skill: SkillItem, values: Record<string, SkillDescriptionValueData[]>) {
-		const rates = GetRates(skill);
-
+	function GetSkillDescriptions (skill: SkillItem, values: Record<string, SkillDescriptionValueData[]>) {
 		const key = `UNIT_SKILL_DESC_${unit.uid}_${skill.key}`;
 		const orig = LocaleExists(key) ? LocaleGet(key) : "";
 
@@ -248,17 +248,18 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 			</div>;
 
 		const descList = GetSkillDescriptions(skill, Values);
+
 		return <>
-			<div class="unit-modal-skill">
+			<div class="unit-modal-skill mb-2">
 				{ skill.buffs.data[skill.buffs.index[skillLevel.value]].dismiss_guard
-					? <span class="badge bg-warning text-dark me-1">
+					? <span class="badge bg-warning text-bg-warning me-1">
 						<Locale k="UNIT_SKILL_DISMISS_GUARD" />
 					</span>
 					: <></>
 				}
 
 				{ skill.target_ground && !skill.isPassive
-					? <span class="badge bg-danger me-1"
+					? <span class="badge bg-danger text-bg-danger me-1"
 						title={ LocaleGet("UNIT_SKILL_GRID_TARGET_TIP") }
 					>
 						<Locale k="UNIT_SKILL_GRID_TARGET" />
@@ -267,7 +268,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				}
 
 				{ skill.buffs.data[skill.buffs.index[skillLevel.value]].acc_bonus
-					? <span class="badge bg-success me-1">
+					? <span class="badge bg-success text-bg-success me-1">
 						<Locale k="UNIT_SKILL_ACC_BONUS" />
 						{
 							(skill.buffs.data[skill.buffs.index[skillLevel.value]].acc_bonus > 0 ? "+" : "") +
@@ -278,13 +279,13 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				}
 
 				{ skill.delayed
-					? <span class="badge bg-substory me-1">
+					? <span class="badge bg-substory text-bg-substory me-1">
 						<Locale k="UNIT_SKILL_DELAYED" />
 					</span>
 					: <></>
 				}
 				{ !skill.buffs.data[skill.buffs.index[skillLevel.value]].enabled
-					? <span class="badge bg-secondary me-1">
+					? <span class="badge bg-secondary text-bg-secondary me-1">
 						<Locale k="UNIT_SKILL_DISABLED" />
 					</span>
 					: <></>
@@ -320,7 +321,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 
 			{ BuffRates[skill.key].some((x) => x !== 100)
 				? <div>
-					<span class="badge bg-danger">
+					<span class="badge bg-danger text-bg-danger">
 						<Locale k="UNIT_SKILL_BUFF_RATE" p={ [BuffRates[skill.key][skillLevel.value]] } />
 					</span>
 					<small class="text-secondary ms-1">
@@ -340,6 +341,20 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 	const endRarity = unit.promotions
 		? Math.max(unit.rarity, ...unit.promotions.map(p => p.to))
 		: unit.rarity;
+
+	const bonus = Decimal.div(props.skillBonus || 0, 100);
+	const valueHelp = !bonus.isZero()
+		? <span class="badge bg-success ms-1">
+			▲ { bonus.toNumber() }
+		</span>
+		: undefined;
+
+	const elDisp = {
+		physics: <Locale k="COMMON_ELEM_PHYSICS" />,
+		fire: <Locale k="COMMON_ELEM_FIRE" />,
+		ice: <Locale k="COMMON_ELEM_ICE" />,
+		lightning: <Locale k="COMMON_ELEM_ELECTRIC" />,
+	};
 
 	return <table class="table table-bordered table-unit-modal">
 		<thead class="thead-dark">
@@ -371,41 +386,63 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 			</tr>
 		</thead>
 		<tbody>
-			{ Skills.map(skill => <>
-				<tr class={ skill.key.startsWith("F") ? style.SkillTableFChange : "" }>
-					<td>
-						<SkillIcon icon={ skill.icon } passive={ skill.isPassive } />
-						<div class="text-bold">
-							<Locale plain k={ `UNIT_SKILL_${unit.uid}_${skill.key}` } />
-						</div>
+			{ Skills.map(skill => {
+				const rates = GetRates(skill);
+				const el = skill.buffs.data[skill.buffs.index[skillLevel.value]].type;
+				const v = Decimal.add(rates[skillLevel.value], bonus)
+					.toFixed(10)
+					.replace(/\.?0+$/, "");
 
-						<ElemIcon elem={ skill.buffs.data[skill.buffs.index[skillLevel.value]].type } class="mx-0" />
-						{ skill.index > endRarity
-							? <span class="ms-2 badge bg-substory"><Locale k="UNIT_SKILL_DUMMY" /></span>
-							: skill.isPassive && skill.index > unit.rarity
-								? <RarityBadge class="ms-2" rarity={ skill.index }>
-									{ RarityDisplay[skill.index as ACTOR_GRADE] }
-									&nbsp;
-									<Locale k="UNIT_SKILL_PROMOTION_SKILL" />
-								</RarityBadge>
-								: <></>
-						}
-					</td>
-					<td class="text-start d-none d-md-table-cell">{ tableContent(skill) }</td>
-					<th class="bg-dark text-light text-center">
-						<SkillBound
-							passive={ skill.isPassive }
-							buffs={ skill.buffs }
-							target={ skill.target }
-							level={ skillLevel.value + 1 }
-							rangeBonus={ props.rangeBonus }
-						/>
-					</th>
-				</tr>
-				<tr class="d-table-row d-md-none">
-					<td class="text-start" colSpan={ 2 }>{ tableContent(skill) }</td>
-				</tr>
-			</>) }
+				return <>
+					<tr class={ skill.key.startsWith("F") ? style.SkillTableFChange : "" }>
+						<td>
+							<SkillIcon icon={ skill.icon } passive={ skill.isPassive } />
+							<div class="text-bold">
+								<Locale plain k={ `UNIT_SKILL_${unit.uid}_${skill.key}` } />
+							</div>
+
+							<span class="skill-info-badge badge bg-light text-bg-light border border-secondary">
+								<ElemIcon elem={ el } class={ BuildClass("mb-0", skill.isPassive && "mx-0") } />
+
+								{ !skill.isPassive && <Locale
+									k="skill_description_damage"
+									p={ [
+										<span class={ style.Damage }>
+											<span data-bonus={ bonus.toNumber() }>{ v }</span>
+											{ valueHelp }
+										</span>,
+										elDisp[el],
+									] }
+								/> }
+							</span>
+
+							{ skill.index > endRarity
+								? <span class="ms-2 badge bg-substory text-bg-substory"><Locale k="UNIT_SKILL_DUMMY" /></span>
+								: skill.isPassive && skill.index > unit.rarity
+									? <RarityBadge class="ms-2" rarity={ skill.index }>
+										{ RarityDisplay[skill.index as ACTOR_GRADE] }
+										&nbsp;
+										<Locale k="UNIT_SKILL_PROMOTION_SKILL" />
+									</RarityBadge>
+									: <></>
+							}
+						</td>
+						<td class="text-start d-none d-md-table-cell">{ tableContent(skill) }</td>
+						<th class="bg-dark text-bg-dark text-center">
+							<SkillBound
+								passive={ skill.isPassive }
+								buffs={ skill.buffs }
+								target={ skill.target }
+								level={ skillLevel.value + 1 }
+								rangeBonus={ props.rangeBonus }
+							/>
+						</th>
+					</tr>
+					<tr class="d-table-row d-md-none">
+						<td class="text-start" colSpan={ 2 }>{ tableContent(skill) }</td>
+					</tr>
+				</>;
+			}) }
 		</tbody>
 	</table>;
 };

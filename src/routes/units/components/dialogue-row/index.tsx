@@ -3,16 +3,17 @@ import { FunctionComponent } from "preact";
 import { UnitDialogueAudioType } from "@/types/DB/Dialogue";
 
 import { AssetsRoot } from "@/libs/Const";
+import { BuildClass } from "@/libs/Class";
 
 import Locale from "@/components/locale";
 
-import "./style.scss";
+import style from "./style.module.scss";
 
 interface DialogueRowProps {
 	type?: string;
 	unitId?: string;
 	isSkin?: boolean;
-	dialogue?: string;
+	dialogue?: string | string[];
 	audio?: UnitDialogueAudioType;
 }
 
@@ -70,20 +71,50 @@ const DialogueRow: FunctionComponent<DialogueRowProps> = (props) => {
 	} as Record<string, string>)[type] || "secondary";
 	/* eslint-enable camelcase */
 
-	const rowClass = `border-top bg-${TypeColor} text-light`;
+	const rowClass = ``;
 
 	const voiceUrl = `${AssetsRoot}/audio/voice-${audio}/${unitId}_${type}.mp3`;
 
-	return <div class="row dialogue-row my-2 my-sm-0">
-		<div class={ `col col-12 col-sm-2 ${rowClass}` }>
+	return <div class={ BuildClass(style.DialogueRow, "row my-2 my-sm-0") }>
+		<div class={ BuildClass(style.TypeColumn, `bg-${TypeColor} text-bg-${TypeColor}`, "col col-12 col-sm-2 border-top") }>
 			<Locale k={ `UNIT_DIALOGUE_TYPE_${type}` } />
 		</div>
-		<div class="col col-12 col-sm border dialogue">
-			{ dialogue || <span class="text-secondary">-</span> }
-		</div>
-		<div class="col col-12 col-sm-auto border">
-			<audio src={ voiceUrl } type="audio/mp3" controls preload="none" volume="0.5" />
-		</div>
+		{ Array.isArray(dialogue)
+			? <div class="col col-12 col-sm px-0 flex-column">
+				{ dialogue.map((d, i) => {
+					const voice = `${AssetsRoot}/audio/voice-${audio}/${unitId}_${type}_${i + 1}.mp3`;
+
+					return <div class="row mx-0">
+						<div class={ BuildClass(style.Dialogue, "col col-12 col-sm border-end border-bottom") }>
+							{ d || <span class="text-secondary">-</span> }
+						</div>
+						<div class={ BuildClass(style.AudioColumn, "col col-12 col-sm-auto border") }>
+							<audio
+								src={ voice }
+								type="audio/mp3"
+								controls
+								preload="none"
+								volume="0.5"
+							/>
+						</div>
+					</div>;
+				}) }
+			</div>
+			: <>
+				<div class={ BuildClass(style.Dialogue, "col col-12 col-sm border") }>
+					{ dialogue || <span class="text-secondary">-</span> }
+				</div>
+				<div class={ BuildClass(style.AudioColumn, "col col-12 col-sm-auto border") }>
+					<audio
+						src={ voiceUrl }
+						type="audio/mp3"
+						controls
+						preload="none"
+						volume="0.5"
+					/>
+				</div>
+			</>
+		}
 	</div>;
 };
 export default DialogueRow;

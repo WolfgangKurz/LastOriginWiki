@@ -1,11 +1,11 @@
 // Content automatically generated
 export interface DBHashType { [K: string]: string | DBHashType; }
 export default {
-	"buildtime": "dc2427a6",
+	"buildtime": "6bebff62",
 	"locale": {
-		"TC": "16b1fe65",
+		"TC": "73d942b5",
 		"KR": "8e25d97d",
-		"JP": "1d88d876",
+		"JP": "41b66e68",
 		"EN": "ed4f087d"
 	},
 	"korea": {
@@ -77,13 +77,13 @@ export default {
 			"PECS_Drone": "b6a30718",
 			"PECS_Draculina": "64338d9e",
 			"PECS_DarkElf": "20963943",
-			"PECS_CyclopsePrincess": "9f22cc9b",
+			"PECS_CyclopsePrincess": "642e29e2",
 			"PECS_CoCoWhiteShell": "dbbc2507",
 			"PECS_Circe": "b11cffda",
 			"PECS_Cerberus": "28c327ff",
 			"PECS_Carolina": "13852ab1",
 			"PECS_BS": "6e1abdc2",
-			"PECS_Boryeon": "7da4a153",
+			"PECS_Boryeon": "e5774f3d",
 			"PECS_BlindPrincess": "ec954ea9",
 			"PECS_Babariana": "23ac99e6",
 			"PECS_Azaz": "eaf9713e",
@@ -134,7 +134,7 @@ export default {
 			"BR_Phantom": "e5931c88",
 			"BR_Pani": "6986d6d2",
 			"BR_PA00EL": "1b03cc60",
-			"BR_Nymph": "beba9bf1",
+			"BR_Nymph": "304eae41",
 			"BR_NightAngel": "e2277825",
 			"BR_NickyTracy": "dca1ebe8",
 			"BR_Nereid": "62f27522",
@@ -216,7 +216,7 @@ export default {
 			"3P_Maria": "9ac94688",
 			"3P_Labiata": "cf12a0a3",
 			"3P_Hirume": "437271f9",
-			"3P_Hachiko": "d1454d68",
+			"3P_Hachiko": "17ee6ce3",
 			"3P_Galatea": "37c048e8",
 			"3P_Frigga": "496868fd",
 			"3P_Fotia": "2ab6b369",

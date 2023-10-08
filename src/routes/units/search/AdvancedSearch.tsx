@@ -507,7 +507,7 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 						>
 							{ c.logicType === "OR"
 								? <button
-									class="btn btn-sm btn-dark me-4"
+									class={ BuildClass(style.ButtonOR, "btn btn-sm btn-dark") }
 									onClick={ e => {
 										e.preventDefault();
 										updateCond(idx, { ...c, logicType: "AND" });
@@ -517,7 +517,7 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 								</button>
 								: <>
 									<button
-										class="btn btn-sm btn-dark ms-4"
+										class={ BuildClass(style.ButtonAND, "btn btn-sm btn-dark") }
 										onClick={ e => {
 											e.preventDefault();
 											updateCond(idx, { ...c, logicType: "OR" });

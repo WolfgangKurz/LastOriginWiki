@@ -19,10 +19,24 @@
 			gtag('js', new Date());
 			gtag('config', 'UA-82091357-9');
 		</script>
+
+		<link rel="preload" href="/external/assets/ui/data_loading.avif" as="image" />
+		<link rel="preload" href="/external/assets/ui/data_loading.webp" as="image" />
+		<link rel="preload" href="/external/assets/ui/data_loading.gif" as="image" />
+
+		<link rel="preload" href="/external/assets/ui/page_loading.avif" as="image" />
+		<link rel="preload" href="/external/assets/ui/page_loading.webp" as="image" />
+		<link rel="preload" href="/external/assets/ui/page_loading.gif" as="image" />
 	</head>
 
 	<body>
 		<div id="pageonloading" style="text-align:center; margin:1em;padding:4em">
+			<picture>
+				<source srcset="/external/assets/ui/page_loading.avif" type="image/avif" />
+				<source srcset="/external/assets/ui/page_loading.webp" type="image/webp" />
+				<img src="/external/assets/ui/page_loading.gif" style="margin:5px" />
+			</picture>
+			<br />
 			페이지 리소스를 불러오고 있습니다.<br />
 			<br />
 			Loading page resources.

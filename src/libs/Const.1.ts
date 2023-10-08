@@ -1,7 +1,7 @@
 import { SortieCostType } from "@/types/Cost";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, CURRENCY_TYPE, ITEM_TYPE, ROLE_TYPE } from "@/types/Enums";
 
-import { getCookie } from "@/libs/Functions";
+import { getCookie } from "@/libs/Cookie";
 
 import { LocaleGet } from "@/components/locale";
 

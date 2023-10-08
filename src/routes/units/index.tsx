@@ -16,6 +16,7 @@ import { BuildClass } from "@/libs/Class";
 
 import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
+import Loading from "@/components/loading";
 import IconTable from "@/components/bootstrap-icon/icons/Table";
 import IconGrid3x3GapFill from "@/components/bootstrap-icon/icons/Grid3x3GapFill";
 import IconTagsFill from "@/components/bootstrap-icon/icons/TagsFill";
@@ -355,11 +356,16 @@ const Units: FunctionalComponent = () => {
 			: <></>
 		}
 
-		{ Store.Units.DisplayType.value === "table" && <UnitsTable list={ UnitList } /> }
-		{ Store.Units.DisplayType.value === "list" && <UnitsList list={ UnitList } /> }
-		{ Store.Units.DisplayType.value === "group" && <UnitsGroup list={ UnitList } /> }
-		{ Store.Units.DisplayType.value === "skin" && <UnitsSkin list={ UnitList } /> }
-		{ Store.Units.DisplayType.value === "time" && <UnitsTimetable list={ UnitList } /> }
+		{ !FilterableUnitDB
+			? <Loading.Data />
+			: [
+				Store.Units.DisplayType.value === "table" && <UnitsTable list={ UnitList } />,
+				Store.Units.DisplayType.value === "list" && <UnitsList list={ UnitList } />,
+				Store.Units.DisplayType.value === "group" && <UnitsGroup list={ UnitList } />,
+				Store.Units.DisplayType.value === "skin" && <UnitsSkin list={ UnitList } />,
+				Store.Units.DisplayType.value === "time" && <UnitsTimetable list={ UnitList } />,
+			]
+		}
 	</div >;
 };
 export default Units;
