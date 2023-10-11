@@ -2,7 +2,8 @@ import { FunctionComponent } from "preact";
 import { useLayoutEffect, useState } from "preact/hooks";
 import { Link } from "preact-router";
 
-import { AssetsRoot, SkillVideo, SkinBanners } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const";
+import { SkillVideo, SkinBanners } from "@/libs/Const.2";
 import { FormatDate, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 

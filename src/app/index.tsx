@@ -132,7 +132,7 @@ const App: FunctionalComponent = () => {
 		}
 
 		<div class="toast-container">
-			{ !hasCookie("swaytwig:toast:jp-locale-message-20231008") && CurrentLocale === "JP"
+			{ !hasCookie("swaytwig:toast:jp-locale-message-20231008") && CurrentLocale === "JP" && false /* temporary */
 				? <div class="toast show align-items-center text-bg-danger border-1 shadow" role="alert">
 					<div class="d-flex">
 						<div class="toast-body">

@@ -8,13 +8,12 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/scss";
 import "swiper/scss/pagination";
 
-import { AssetsRoot, CurrentEvent, EventFrom, EventTo, Host, ImageExtension, IsAprilFool } from "@/libs/Const";
+import { AssetsRoot, CurrentEvent, EventTo, Host, ImageExtension, IsAprilFool } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { CurrentLocale } from "@/libs/Locale";
 
 import Locale from "@/components/locale";
 import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
-import IconCalendar3 from "@/components/bootstrap-icon/icons/Calendar3";
 import IconGithub from "@/components/bootstrap-icon/icons/Github";
 import IconHourglassSplit from "@/components/bootstrap-icon/icons/HourglassSplit";
 import HomeConfigSelector from "@/components/home-config-selector";
@@ -91,7 +90,7 @@ const Home: FunctionalComponent = () => {
 		SwiperCore.use([Autoplay, Pagination]);
 	}, []);
 
-	const previewSkins = ["PECS_Boryeon_2", "BR_Nymph_2"];
+	const previewSkins = ["3P_Galatea_2"];
 
 	return <div class={ `${style.home} home` }>
 		<div class="alert alert-primary">
