@@ -11,7 +11,7 @@ import { Host, IsAprilFool } from "@/libs/Const";
 import { hasCookie, setCookie } from "@/libs/Cookie";
 
 // import DynamicRoute from "@/components/dynamic-route";
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import Loading from "@/components/loading";
 import Redirect from "@/components/redirect";
@@ -109,6 +109,8 @@ const App: FunctionalComponent = () => {
 						<AsyncRoute path="/sticker" { ...pRoute(() => import("@/routes/sticker")) } />
 
 						<AsyncRoute path="/gacha" { ...pRoute(() => import("@/routes/gacha")) } />
+
+						<AsyncRoute path="/story/:id/:type" { ...pRoute(() => import("@/routes/story")) } />
 
 						{/* <AsyncRoute path="/test/:uid?" { ...pRoute(() => import("@/routes/test")) } /> */ }
 

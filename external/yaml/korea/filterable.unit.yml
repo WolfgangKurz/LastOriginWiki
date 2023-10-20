@@ -13233,7 +13233,7 @@
       guard: false
       buffs:
         - on:
-            type: 2
+            type: 0
             value: "0"
           body:
             - 0
@@ -13248,18 +13248,21 @@
             - 2
           target: 3
           buffs:
-            - attr: 1
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 11
+                target: 0
+            - attr: 3
+              erase: 0
+              overlap: 1
+              type: 87
+            - attr: 3
               erase: 0
               overlap: 4
               type: 48
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 87
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 11
         - on:
             type: 2
             value: "0"
@@ -13280,10 +13283,26 @@
               erase: 0
               overlap: 1
               type: 87
+        - on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
             - attr: 1
               erase: 0
               overlap: 4
-              type: 11
+              type: 48
     "2":
       target: team
       delayed: false
@@ -13313,7 +13332,7 @@
               type: 21
             - attr: 0
               erase: 0
-              overlap: 0
+              overlap: 4
               type: 100
             - attr: 0
               erase: 0
@@ -13343,38 +13362,6 @@
               erase: 0
               overlap: 4
               type: 7
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 13
-        - on:
-            type: 0
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 1
-          buffs:
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 36
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 3
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 13
     "3":
       target: team
       delayed: false
@@ -13409,7 +13396,45 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 13
+              type: 106
+        - on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 1
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 106
+        - on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 106
     "4":
       target: team
       delayed: false
@@ -13436,88 +13461,15 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 36
-            - attr: 0
-              erase: 0
-              overlap: 4
               type: 3
             - attr: 0
               erase: 0
               overlap: 4
-              type: 13
-    "5":
-      target: team
-      delayed: false
-      grid: false
-      elem: 0
-      guard: false
-      buffs:
-        - on:
-            type: 30
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
+              type: 36
             - attr: 0
               erase: 0
               overlap: 4
-              type: 13
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 23
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 20
-        - on:
-            type: 20
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - attr: 0
-              erase: 3
-              overlap: 4
-              type: 23
-        - on:
-            type: 13
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 1
-          target: 2
-          buffs:
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 20
+              type: 63
         - on:
             type: 17
             value: "0"
@@ -13538,6 +13490,178 @@
               erase: 3
               overlap: 0
               type: 63
+        - on:
+            type: 17
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 100
+    "5":
+      target: team
+      delayed: false
+      grid: false
+      elem: 0
+      guard: false
+      buffs:
+        - on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 1
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 20
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 23
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 13
+        - on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 20
+        - on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 3
+              overlap: 4
+              type: 23
+        - on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 13
+    F2:
+      target: team
+      delayed: false
+      grid: false
+      elem: 0
+      guard: false
+      buffs:
+        - on:
+            type: 0
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 1
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 21
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 100
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 3
+        - on:
+            type: 0
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 1
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 3
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 36
     F3:
       target: team
       delayed: false
@@ -13564,15 +13688,53 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 36
-            - attr: 0
-              erase: 0
-              overlap: 4
               type: 3
             - attr: 0
               erase: 0
               overlap: 4
-              type: 13
+              type: 36
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 36
+        - on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 1
+              overlap: 4
+              type: 36
+        - on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 1
+              overlap: 4
+              type: 36
     F4:
       target: team
       delayed: false
@@ -13607,80 +13769,7 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 13
-    F5:
-      target: team
-      delayed: false
-      grid: false
-      elem: 0
-      guard: false
-      buffs:
-        - on:
-            type: 30
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 13
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 23
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 20
-        - on:
-            type: 20
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - attr: 0
-              erase: 3
-              overlap: 4
-              type: 23
-        - on:
-            type: 13
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 1
-          target: 2
-          buffs:
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 20
+              type: 63
         - on:
             type: 17
             value: "0"
@@ -13699,10 +13788,30 @@
           buffs:
             - attr: 3
               erase: 0
-              overlap: 0
+              overlap: 4
               type: 69
               value:
                 type: 63
+        - on:
+            type: 17
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 100
   skins:
     sid: null
     artist: Rorobomb
@@ -13901,8 +14010,32 @@
               erase: 0
               overlap: 4
               type: 83
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 83
         - on:
-            type: 0
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 83
+        - on:
+            type: 2
             value: "0"
           body:
             - 0
@@ -13920,47 +14053,7 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 11
-        - on:
-            type: 0
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 1
-        - on:
-            type: 0
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 58
+              type: 103
     "2":
       target: enemy
       delayed: false
@@ -13991,49 +14084,19 @@
             - attr: 3
               erase: 0
               overlap: 4
-              type: 94
+              type: 88
+              value:
+                type: 34
+                target: 0
+    "3":
+      target: team
+      delayed: false
+      grid: false
+      elem: 0
+      guard: false
+      buffs:
         - on:
-            type: 0
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 11
-        - on:
-            type: 2
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 94
-        - on:
-            type: 0
+            type: 30
             value: "0"
           body:
             - 0
@@ -14052,33 +14115,18 @@
               erase: 0
               overlap: 4
               type: 1
-        - on:
-            type: 0
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
             - attr: 0
               erase: 0
               overlap: 4
-              type: 58
-    "3":
-      target: team
-      delayed: false
-      grid: false
-      elem: 0
-      guard: false
-      buffs:
+              type: 7
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 9
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 94
         - on:
             type: 30
             value: "0"
@@ -14115,6 +14163,42 @@
       guard: false
       buffs:
         - on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 11
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 101
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 36
+            - attr: 0
+              erase: 0
+              overlap: 1
+              type: 29
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 7
+        - on:
             type: 44
             value: "0"
           body:
@@ -14131,26 +14215,71 @@
           target: 0
           buffs:
             - attr: 0
-              erase: 2
-              overlap: 4
-              type: 29
-            - attr: 0
-              erase: 2
+              erase: 0
               overlap: 4
               type: 36
-            - attr: 0
-              erase: 2
-              overlap: 4
-              type: 11
-            - attr: 0
-              erase: 2
-              overlap: 4
-              type: 89
-              value:
-                type: 11
-                target: 1
         - on:
-            type: 24
+            type: 44
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 1
+              type: 29
+        - on:
+            type: 17
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 1
+              type: 74
+        - on:
+            type: 17
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 7
+        - on:
+            type: 17
             value: "0"
           body:
             - 0
@@ -14167,11 +14296,28 @@
           buffs:
             - attr: 3
               erase: 0
-              overlap: 0
-              type: 89
-              value:
-                type: 11
-                target: 1
+              overlap: 4
+              type: 6
+        - on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 101
     "5":
       target: team
       delayed: false
@@ -14180,7 +14326,55 @@
       guard: false
       buffs:
         - on:
-            type: 0
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+          role:
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 77
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 1
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 58
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 103
+        - on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 77
+        - on:
+            type: 30
             value: "0"
           body:
             - 0
@@ -14203,70 +14397,6 @@
               erase: 0
               overlap: 4
               type: 58
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 77
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 6
-        - on:
-            type: 30
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 6
-        - on:
-            type: 30
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-          role:
-            - 2
-          target: 2
-          buffs:
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 77
-        - on:
-            type: 30
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 2
-          buffs:
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 77
   skins:
     sid: null
     artist: Rorobomb
@@ -14947,6 +15077,8 @@
   rarity: 2
   promo:
     - 3
+    - 4
+    - 5
   group: Walhalla_1
   releaseDate: 1548288000000
   type: 2
@@ -14977,6 +15109,68 @@
             - 2
           target: 3
           buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 0
+                target: 0
+            - attr: 3
+              erase: 0
+              overlap: 1
+              type: 74
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 1
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 9
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 83
+        - on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 1
+                target: 0
+        - on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
             - attr: 1
               erase: 0
               overlap: 1
@@ -14989,6 +15183,26 @@
               erase: 0
               overlap: 4
               type: 9
+        - on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 83
     "2":
       target: enemy
       delayed: false
@@ -15014,16 +15228,23 @@
           buffs:
             - attr: 3
               erase: 0
-              overlap: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 2
+                target: 0
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 58
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 61
+            - attr: 3
+              erase: 0
+              overlap: 4
               type: 83
-            - attr: 3
-              erase: 0
-              overlap: 4
-              type: 61
-            - attr: 3
-              erase: 0
-              overlap: 4
-              type: 58
         - on:
             type: 2
             value: "0"
@@ -15038,12 +15259,15 @@
             - 0
             - 1
             - 2
-          target: 0
+          target: 3
           buffs:
-            - attr: 0
+            - attr: 3
               erase: 0
               overlap: 4
-              type: 61
+              type: 88
+              value:
+                type: 3
+                target: 0
         - on:
             type: 2
             value: "0"
@@ -15064,6 +15288,30 @@
               erase: 0
               overlap: 4
               type: 58
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 61
+        - on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 83
     "3":
       target: team
       delayed: false
@@ -15080,37 +15328,6 @@
           class:
             - 0
             - 1
-          role:
-            - 0
-            - 1
-            - 2
-          target: 2
-          buffs:
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 76
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 3
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 36
-            - attr: 0
-              erase: 0
-              overlap: 0
-              type: 20
-        - on:
-            type: 30
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
             - 2
           role:
             - 0
@@ -15121,7 +15338,23 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 3
+              type: 38
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 36
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 36
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 76
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 20
         - on:
             type: 15
             value: "0"
@@ -15152,15 +15385,176 @@
             - 0
             - 1
           role:
-            - 0
             - 1
             - 2
           target: 2
           buffs:
             - attr: 0
               erase: 0
-              overlap: 0
+              overlap: 4
+              type: 76
+            - attr: 0
+              erase: 0
+              overlap: 4
               type: 20
+    "4":
+      target: team
+      delayed: false
+      grid: false
+      elem: 0
+      guard: false
+      buffs:
+        - on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 98
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 9
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 29
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 1
+        - on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 9
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 29
+        - on:
+            type: 1
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 1
+    "5":
+      target: team
+      delayed: false
+      grid: false
+      elem: 0
+      guard: false
+      buffs:
+        - on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 126
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 83
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 82
+        - on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 6
+        - on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 82
   skins:
     sid: null
     artist: Kakiman
@@ -73101,6 +73495,9 @@
 - uid: BR_Andvari
   id: 177
   rarity: 3
+  promo:
+    - 4
+    - 5
   group: Walhalla_2
   releaseDate: 1598832000000
   type: 0
@@ -73133,8 +73530,68 @@
           buffs:
             - attr: 1
               erase: 0
-              overlap: 4
+              overlap: 1
               type: 87
+        - on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 70
+        - on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 99
+        - on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 125
     "2":
       target: team
       delayed: false
@@ -73170,14 +73627,6 @@
               erase: 0
               overlap: 4
               type: 13
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 17
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 58
         - on:
             type: 0
             value: "0"
@@ -73244,26 +73693,6 @@
               erase: 0
               overlap: 4
               type: 7
-        - on:
-            type: 0
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 2
-          buffs:
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 17
     "3":
       target: team
       delayed: false
@@ -73290,15 +73719,14 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 1
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 7
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 7
+              type: 17
+    "4":
+      target: team
+      delayed: false
+      grid: true
+      elem: 0
+      guard: false
+      buffs:
         - on:
             type: 30
             value: "0"
@@ -73318,17 +73746,17 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 1
+              type: 38
             - attr: 0
               erase: 0
               overlap: 4
-              type: 7
+              type: 2
             - attr: 0
               erase: 0
               overlap: 4
-              type: 13
+              type: 100
         - on:
-            type: 30
+            type: 17
             value: "0"
           body:
             - 0
@@ -73346,15 +73774,90 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 36
+              type: 100
+    "5":
+      target: team
+      delayed: false
+      grid: false
+      elem: 0
+      guard: false
+      buffs:
+        - on:
+            type: 50
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 1
+              overlap: 4
+              type: 91
+            - attr: 0
+              erase: 1
+              overlap: 4
+              type: 54
+            - attr: 0
+              erase: 1
+              overlap: 4
+              type: 70
+            - attr: 0
+              erase: 1
+              overlap: 4
+              type: 99
+            - attr: 0
+              erase: 1
+              overlap: 4
+              type: 125
+        - on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
             - attr: 0
               erase: 0
               overlap: 4
-              type: 3
-            - attr: 0
-              erase: 0
+              type: 54
+        - on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 3
               overlap: 4
-              type: 13
+              type: 6
   skins:
     sid: null
     artist: BUMCHa

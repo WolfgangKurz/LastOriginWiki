@@ -1,0 +1,61 @@
+.TranscriptionLine {
+	position: relative;
+	cursor: pointer;
+
+	.TranscriptionText {
+		white-space: pre-line;
+
+		*[data-color] {
+			display: inline-block;
+			margin: 0.1rem 0;
+			padding: 0 0.25rem;
+			border-radius: 0.25rem;
+			background-color: $dark;
+		}
+	}
+}
+.TranscriptionSelection {
+	margin-top: 1rem;
+}
+
+.Viewer {
+	position: relative;
+
+	> canvas {
+		max-width: 100%;
+	}
+
+	// background-color: black;
+
+	&.Hidden {
+		display: none;
+	}
+
+	.BGM {
+		display: none;
+	}
+
+	.DoneScreen {
+		$c1: rgba(0, 0, 0, 0.87);
+		$c2: rgba(0, 0, 0, 0.77);
+
+		position: absolute;
+		display: flex;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: $c1;
+		background: radial-gradient($c2 0%, $c1 100%);
+		@include font-ibm;
+		font-weight: 500;
+		font-size: 44px;
+		color: #fff;
+
+		justify-content: center;
+		align-items: center;
+		user-select: none;
+		cursor: default;
+		z-index: 1000;
+	}
+}

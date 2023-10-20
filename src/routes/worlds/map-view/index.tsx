@@ -1,4 +1,5 @@
 import { FunctionalComponent } from "preact";
+import { useEffect, useLayoutEffect, useRef, useState } from "preact/hooks";
 import { Link, route } from "preact-router";
 
 import { ACTOR_GRADE, STAGE_SUB_TYPE, UNLOCK_COND } from "@/types/Enums";
@@ -8,14 +9,17 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 import { Consumable } from "@/types/DB/Consumable";
+import { StoryMetadata, StorySpec } from "@/types/Story/Story";
 
 import { objState } from "@/libs/State";
 import { AssetsRoot, ImageExtension, NewMapList, SubStoryUnit } from "@/libs/Const";
+import { useUpdate } from "@/libs/hooks";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import MapPosition from "@/libs/MapPosition";
+import { CurrentDB } from "@/libs/DB";
 
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
 import IconChatSquareTextFill from "@/components/bootstrap-icon/icons/ChatSquareTextFill";
@@ -26,9 +30,11 @@ import IconGiftFill from "@/components/bootstrap-icon/icons/GiftFill";
 import IconBugFill from "@/components/bootstrap-icon/icons/BugFill";
 import IconSearch from "@/components/bootstrap-icon/icons/Search";
 import IconStarFill from "@/components/bootstrap-icon/icons/StarFill";
-import  IconChevronLeft from "@/components/bootstrap-icon/icons/ChevronLeft";
-import IconChevronRight  from "@/components/bootstrap-icon/icons/ChevronRight";
-import  IconUnlockFill  from "@/components/bootstrap-icon/icons/UnlockFill";
+import IconChevronLeft from "@/components/bootstrap-icon/icons/ChevronLeft";
+import IconChevronRight from "@/components/bootstrap-icon/icons/ChevronRight";
+import IconUnlockFill from "@/components/bootstrap-icon/icons/UnlockFill";
+import IconPersonBoundingBox from "@/components/bootstrap-icon/icons/PersonBoundingBox";
+import IconBook from "@/components/bootstrap-icon/icons/Book";
 import DropItem from "@/components/drop-item";
 import DropRes from "@/components/drop-res";
 import DropUnit from "@/components/drop-unit";
@@ -67,9 +73,11 @@ interface MapViewProps {
 const MapView: FunctionalComponent<MapViewProps> = (props) => {
 	const ImageExt = ImageExtension();
 
+	const update = useUpdate();
+
 	const CurrentMode = objState<"map" | "substory">("map");
 
-	const CurrentTab = objState<"reward" | "drop" | "enemy" | "search">("reward");
+	const CurrentTab = objState<"reward" | "drop" | "squad" | "enemy" | "search">("reward");
 	const selected = objState<MapNodeEntity | null>(null);
 
 	const selectedWave = objState<number>(0);
@@ -81,6 +89,35 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 
 	const selectedEquip = objState<FilterableEquip | null>(null);
 	const equipModalDisplay = objState<boolean>(false);
+
+	const storyMetaTableRef = useRef<Record<string, StoryMetadata>>({});
+
+	const selectedValue = selected.value;
+
+	const Waves = selectedValue
+		? selectedValue.wave || []
+		: [];
+
+	useEffect(() => {
+		if (selectedValue) {
+			const metaTable = storyMetaTableRef.current;
+
+			if (!(selectedValue.key in metaTable)) {
+				const cached = GetJson<StoryMetadata>(`story/${selectedValue.key}`);
+				if (!cached) {
+					JsonLoaderCore(CurrentDB, `story/${selectedValue.key}`).then(() => {
+						metaTable[selectedValue.key] = GetJson<StoryMetadata>(`story/${selectedValue.key}`);
+						storyMetaTableRef.current = metaTable;
+						update();
+					});
+				} else {
+					metaTable[selectedValue.key] = cached;
+					storyMetaTableRef.current = metaTable;
+					update();
+				}
+			}
+		}
+	}, [selectedValue]);
 
 	SetMeta(
 		["description", "twitter:description"],
@@ -121,11 +158,6 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				/>
 				: <>???</>;
 
-			const selectedValue = selected.value;
-
-			const Waves = selectedValue
-				? selectedValue.wave || []
-				: [];
 			const CurrentWave = ((): Array<WaveEnemyInfo | null> => {
 				if (
 					!selectedValue ||
@@ -329,6 +361,10 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				enemyModalDisplay.set(true);
 			}
 
+			const storyMeta = selectedValue && (selectedValue.key in storyMetaTableRef.current)
+				? storyMetaTableRef.current[selectedValue.key]
+				: undefined;
+
 			return <div class="worlds-map text-start">
 				<div class="row">
 					<div class="col-auto">
@@ -483,8 +519,60 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 										<span class="font-ibm">
 											<Locale plain k={ `WORLD_MAP_${props.wid}_${selectedValue.text}` } />
 										</span>
+
+										{ selectedValue && storyMeta
+											? <div class="float-end">
+												{ (storyMeta.spec & StorySpec.OP) !== 0
+													? <button
+														type="button"
+														class="me-1 btn btn-sm btn-stat-hp"
+														onClick={ e => {
+															e.preventDefault();
+															route(`/story/${selectedValue.key}/OP`);
+														} }
+													>
+														<IconBook class="me-1" />
+														OP
+													</button>
+													: <></>
+												}
+												{ (storyMeta.spec & StorySpec.Mid) !== 0
+													? Object.keys(storyMeta.index)
+														.filter(k => k.startsWith("mid."))
+														.map(k => <button
+															type="button"
+															class="me-1 btn btn-sm btn-stat-hp"
+															onClick={ e => {
+																e.preventDefault();
+																route(`/story/${selectedValue.key}/${k}`);
+															} }
+														>
+															<IconBook class="me-1" />
+															Mid { k.substring(4) }
+														</button>)
+													: <></>
+												}
+												{ (storyMeta.spec & StorySpec.ED) !== 0
+													? <button
+														type="button"
+														class="me-1 btn btn-sm btn-stat-hp"
+														onClick={ e => {
+															e.preventDefault();
+															route(`/story/${selectedValue.key}/ED`);
+														} }
+													>
+														<IconBook class="me-1" />
+														ED
+													</button>
+													: <></>
+												}
+											</div>
+											: <></>
+										}
 									</h5>
-									<div><Locale plain k={ `WORLD_MAP_DESC_${props.wid}_${selectedValue.text}` } /></div>
+									<div>
+										<Locale plain k={ `WORLD_MAP_DESC_${props.wid}_${selectedValue.text}` } />
+									</div>
 								</div>
 							</div>
 							: <></>
@@ -535,20 +623,35 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 													<Locale k="WORLD_VIEW_DROPS" />
 												</a>
 											</li>
+											<li class="nav-item">
+												<a
+													href="#"
+													class={ `nav-link ${isActive(CurrentTab.value === "squad")} text-dark` }
+													onClick={ (e: Event): void => {
+														e.preventDefault();
+														CurrentTab.set("squad");
+													} }
+												>
+													<IconPersonBoundingBox class="me-1" />
+													<Locale k="WORLD_VIEW_SQUAD" />
+												</a>
+											</li>
 											{ Waves[selectedWave.value]
-												? <li class="nav-item">
-													<a
-														href="#"
-														class={ `nav-link ${isActive(CurrentTab.value === "enemy")} text-dark` }
-														onClick={ (e: Event): void => {
-															e.preventDefault();
-															CurrentTab.set("enemy");
-														} }
-													>
-														<IconBugFill class="me-1" />
-														<Locale k="WORLD_VIEW_ENEMY" />
-													</a>
-												</li>
+												? <>
+													<li class="nav-item">
+														<a
+															href="#"
+															class={ `nav-link ${isActive(CurrentTab.value === "enemy")} text-dark` }
+															onClick={ (e: Event): void => {
+																e.preventDefault();
+																CurrentTab.set("enemy");
+															} }
+														>
+															<IconBugFill class="me-1" />
+															<Locale k="WORLD_VIEW_ENEMY" />
+														</a>
+													</li>
+												</>
 												: <></>
 											}
 											<li class="nav-item">
@@ -891,6 +994,57 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												</div>
 											</div>
 										</div> }
+								</div>
+								: <></>
+							}
+							{ CurrentTab.value === "squad"
+								? <div id="world-map-squad" class="card-body">
+									<table class="table w-auto">
+										<tbody>
+											<tr>
+												<th class="bg-dark text-bg-dark">
+													<Locale k="WORLD_VIEW_SQUAD_MAXIMUM" />
+												</th>
+												<td>
+													<Locale
+														k="WORLD_VIEW_SQUAD_MAXIMUM_FORMAT"
+														p={ [selectedValue?.squads.count ?? 0] }
+													/>
+												</td>
+											</tr>
+											<tr>
+												<th class="bg-dark text-bg-dark">
+													<Locale k="WORLD_VIEW_SQUAD_SHIFTS" />
+												</th>
+												<td>
+													{ selectedValue?.squads.shift ?? 0 === 0
+														? <Locale
+															k="WORLD_VIEW_SQUAD_SHIFTS_FORMAT"
+															p={ [selectedValue?.squads.count ?? 0] }
+														/>
+														: <strong class="text-danger">
+															<Locale k="WORLD_VIEW_SQUAD_SHIFTS_CANNOT" />
+														</strong>
+													}
+												</td>
+											</tr>
+											<tr>
+												<th class="bg-dark text-bg-dark">
+													<Locale k="WORLD_VIEW_SQUAD_FRIEND" />
+												</th>
+												<td>
+													{ selectedValue?.squads.friend
+														? <span class="text-success">
+															<Locale k="WORLD_VIEW_SQUAD_FRIEND_YES" />
+														</span>
+														: <strong class="text-danger">
+															<Locale k="WORLD_VIEW_SQUAD_FRIEND_NO" />
+														</strong>
+													}
+												</td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
 								: <></>
 							}

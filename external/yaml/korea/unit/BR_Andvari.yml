@@ -10,6 +10,31 @@ slots:
   - 0
   - 1
   - 2
+promotions:
+  - to: 4
+    level: 80
+    favor: "80"
+    req:
+      - id: Consumable_OriginDust
+        count: 800
+      - id: Consumable_OriginDustAdv
+        count: 150
+      - id: Advanced_Module
+        count: 250
+      - id: RobotParts_SuperAlloyArmor
+        count: 50
+  - to: 5
+    level: 90
+    favor: "100"
+    req:
+      - id: Consumable_OriginDustAdv
+        count: 450
+      - id: Consumable_OriginDustSp
+        count: 150
+      - id: Special_Module
+        count: 100
+      - id: RobotParts_HDCalculationControl
+        count: 150
 lvLimits:
   - level: 101
     items:
@@ -480,6 +505,40 @@ stat:
       fire: 0
       ice: 0
       lightning: 0
+  - HP:
+      - 350
+      - 2627
+    ATK:
+      - 63
+      - 699.57
+    DEF:
+      - 35
+      - 134
+    SPD: 4.13
+    CRI: 5
+    ACC: 165
+    EVA: 5
+    Resist:
+      fire: 0
+      ice: 0
+      lightning: 0
+  - HP:
+      - 500
+      - 2777
+    ATK:
+      - 78
+      - 714.57
+    DEF:
+      - 60
+      - 159
+    SPD: 4.15
+    CRI: 5
+    ACC: 170
+    EVA: 5
+    Resist:
+      fire: 0
+      ice: 0
+      lightning: 0
 chart:
   - 6
   - 5
@@ -586,8 +645,139 @@ skills:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_53
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 4
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Andvari_N_53_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 100%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+            - key: Effect_BR_Andvari_N_54
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 8
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Andvari_N_54_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_55
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 12
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Disallow
+                  desc:
+                    desc: Effect_BR_Andvari_N_55_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 125
+                    buff_disallow: true
+                  overlap: 4
+              maxStack: 1
         - rate: 1.08
           type: 0
           range: 3
@@ -631,8 +821,139 @@ skills:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_53
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 4
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Andvari_N_53_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 100%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+            - key: Effect_BR_Andvari_N_54
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 8
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Andvari_N_54_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_55
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 12
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Disallow
+                  desc:
+                    desc: Effect_BR_Andvari_N_55_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 125
+                    buff_disallow: true
+                  overlap: 4
+              maxStack: 1
         - rate: 1.16
           type: 0
           range: 3
@@ -676,8 +997,139 @@ skills:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_53
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 4
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Andvari_N_53_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 100%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+            - key: Effect_BR_Andvari_N_54
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 8
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Andvari_N_54_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_55
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 12
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Disallow
+                  desc:
+                    desc: Effect_BR_Andvari_N_55_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 125
+                    buff_disallow: true
+                  overlap: 4
+              maxStack: 1
         - rate: 1.24
           type: 0
           range: 3
@@ -721,8 +1173,139 @@ skills:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_53
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 4
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Andvari_N_53_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 100%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+            - key: Effect_BR_Andvari_N_54
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 8
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Andvari_N_54_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_55
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 12
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Disallow
+                  desc:
+                    desc: Effect_BR_Andvari_N_55_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 125
+                    buff_disallow: true
+                  overlap: 4
+              maxStack: 1
         - rate: 1.32
           type: 0
           range: 3
@@ -766,8 +1349,139 @@ skills:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_53
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 4
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Andvari_N_53_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 100%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+            - key: Effect_BR_Andvari_N_54
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 8
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Andvari_N_54_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_55
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 12
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Disallow
+                  desc:
+                    desc: Effect_BR_Andvari_N_55_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 125
+                    buff_disallow: true
+                  overlap: 4
+              maxStack: 1
         - rate: 1.4
           type: 0
           range: 3
@@ -811,8 +1525,139 @@ skills:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_53
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 4
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Andvari_N_53_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 100%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+            - key: Effect_BR_Andvari_N_54
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 8
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Andvari_N_54_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_55
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 12
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Disallow
+                  desc:
+                    desc: Effect_BR_Andvari_N_55_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 125
+                    buff_disallow: true
+                  overlap: 4
+              maxStack: 1
         - rate: 1.48
           type: 0
           range: 3
@@ -856,8 +1701,139 @@ skills:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_53
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 4
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Andvari_N_53_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 100%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+            - key: Effect_BR_Andvari_N_54
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 8
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Andvari_N_54_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_55
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 12
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Disallow
+                  desc:
+                    desc: Effect_BR_Andvari_N_55_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 125
+                    buff_disallow: true
+                  overlap: 4
+              maxStack: 1
         - rate: 1.56
           type: 0
           range: 3
@@ -901,8 +1877,139 @@ skills:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_53
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 4
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Andvari_N_53_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 100%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+            - key: Effect_BR_Andvari_N_54
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 8
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Andvari_N_54_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_55
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 12
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Disallow
+                  desc:
+                    desc: Effect_BR_Andvari_N_55_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 125
+                    buff_disallow: true
+                  overlap: 4
+              maxStack: 1
         - rate: 1.64
           type: 0
           range: 3
@@ -946,8 +2053,139 @@ skills:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_53
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 4
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Andvari_N_53_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 100%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+            - key: Effect_BR_Andvari_N_54
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 8
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Andvari_N_54_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_55
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 12
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Disallow
+                  desc:
+                    desc: Effect_BR_Andvari_N_55_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 125
+                    buff_disallow: true
+                  overlap: 4
+              maxStack: 1
         - rate: 1.72
           type: 0
           range: 3
@@ -991,8 +2229,139 @@ skills:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_53
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 4
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Andvari_N_53_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 70
+                    fixed_damage:
+                      base: 100%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+            - key: Effect_BR_Andvari_N_54
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 8
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Andvari_N_54_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 99
+                    off: 0
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_55
+              on: criticaled
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Andvari_N_52
+                    attr: 6
+                - on:
+                    target: self
+                    select:
+                      - Effect_BR_Andvari_N_23
+                      - Effect_BR_Andvari_N_26
+                    stack: 12
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_Disallow
+                  desc:
+                    desc: Effect_BR_Andvari_N_55_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 125
+                    buff_disallow: true
+                  overlap: 4
+              maxStack: 1
     values:
       index:
         - 0
@@ -1015,9 +2384,36 @@ skills:
             base: 0
             per: 0
             chance: 1
+          - icon: BuffIcon_PhyATK_UP
+            desc:
+              desc: Effect_BR_Andvari_N_53_1
+              type: 1
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_REMOVE_BUFF
+            desc:
+              desc: Effect_BR_Andvari_N_54_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_Disallow
+            desc:
+              desc: Effect_BR_Andvari_N_55_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
   "2":
     key: "2"
-    icon: SelfAtkBuff
+    icon: TeamAtkBuff
     target: team
     delayed: false
     target_ground: false
@@ -1114,42 +2510,6 @@ skills:
                     type: 13
                     turnSpeed:
                       base: 11%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_ICERES_UP
-                  desc:
-                    desc: Effect_BR_Andvari_N_2_4
-                    type: 1
-                    value: "0.010000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 3
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 17
-                    resist:
-                      elem: ice
-                      value:
-                        base: 1%
-                        per: 1%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_Andvari_N_2_5
-                    type: 0
-                    value: "0.060000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 3
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 6%
                       per: 1%
                   overlap: 4
               maxStack: 0
@@ -1477,52 +2837,6 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Andvari_N_27
-              on:
-                after: use_skill
-              if:
-                - target:
-                    - Char_BR_Leona_N
-                    - Char_BR_Valkyrie_N
-                    - Char_BR_Nymph_N
-                    - Char_BR_Gremlin_N
-                    - Char_BR_SandMan_N
-                    - Char_BR_Bheur_N
-                    - Char_BR_Alvis_N
-                    - Char_BR_Andvari_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 2
-              buffs:
-                - icon: BuffIcon_ICERES_UP
-                  desc:
-                    desc: Effect_BR_Andvari_N_27_1
-                    type: 1
-                    value: "0.010000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 3
-                  value:
-                    isBuff: true
-                    type: 17
-                    resist:
-                      elem: ice
-                      value:
-                        base: 1%
-                        per: 1%
-                  overlap: 4
-              maxStack: 0
     values:
       index:
         - 0
@@ -1561,24 +2875,6 @@ skills:
               value: "0.110000"
               level: "0.010000"
             base: 0.11
-            per: 0.01
-            chance: 0
-          - icon: BuffIcon_ICERES_UP
-            desc:
-              desc: Effect_BR_Andvari_N_2_4
-              type: 1
-              value: "0.010000"
-              level: "0.010000"
-            base: 0.01
-            per: 0.01
-            chance: 0
-          - icon: BuffIcon_DEF_PIERCE_UP
-            desc:
-              desc: Effect_BR_Andvari_N_2_5
-              type: 0
-              value: "0.060000"
-              level: "0.010000"
-            base: 0.06
             per: 0.01
             chance: 0
           - icon: BuffIcon_ATK_UP
@@ -1689,18 +2985,9 @@ skills:
             base: 0.11
             per: 0.01
             chance: 1
-          - icon: BuffIcon_ICERES_UP
-            desc:
-              desc: Effect_BR_Andvari_N_27_1
-              type: 1
-              value: "0.010000"
-              level: "0.010000"
-            base: 0.01
-            per: 0.01
-            chance: 1
   "3":
     key: "3"
-    icon: P.SelfAtkBuff
+    icon: P.TeamDefBuff
     target: team
     delayed: false
     target_ground: true
@@ -1733,7 +3020,15 @@ skills:
             - key: Effect_BR_Andvari_N_3
               on: round
               if:
-                - false
+                - target:
+                    - Char_BR_Leona_N
+                    - Char_BR_Valkyrie_N
+                    - Char_BR_Nymph_N
+                    - Char_BR_Gremlin_N
+                    - Char_BR_SandMan_N
+                    - Char_BR_Bheur_N
+                    - Char_BR_Alvis_N
+                    - Char_BR_Andvari_N
                 - false
               body:
                 - 0
@@ -1748,344 +3043,23 @@ skills:
                 - 2
               target: 2
               buffs:
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_ICERES_UP
                   desc:
                     desc: Effect_BR_Andvari_N_3_1
-                    type: 0
-                    value: "0.120000"
-                    level: "0.020000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 1
-                    attack:
-                      base: 12%
-                      per: 2%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_UP
-                  desc:
-                    desc: Effect_BR_Andvari_N_3_2
-                    type: 0
-                    value: "0.120000"
-                    level: "0.020000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 7
-                    accuracy:
-                      base: 12%
-                      per: 2%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_UP
-                  desc:
-                    desc: Effect_BR_Andvari_N_3_3
-                    type: 0
-                    value: "0.120000"
-                    level: "0.020000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 7
-                    accuracy:
-                      base: 12%
-                      per: 2%
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_Andvari_N_31
-              on: round
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Leona_CH_4
-                    attr: 0
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 2
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_Andvari_N_31_1
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_UP
-                  desc:
-                    desc: Effect_BR_Andvari_N_31_2
-                    type: 1
-                    value: "0.240000"
-                    level: "0.012000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 7
-                    accuracy:
-                      base: 24%
-                      per: 1.2%
-                  overlap: 4
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_Andvari_N_31_3
-                    type: 1
-                    value: "0.050000"
-                    level: "0.002500"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 5%
-                      per: 0.25%
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_Andvari_N_32
-              on: round
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Leona_CH_3
-                    attr: 0
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 2
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_BR_Andvari_N_32_1
-                    type: 1
-                    value: "0.050000"
-                    level: "0.002500"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 5%
-                      per: 0.25%
-                  overlap: 4
-                - icon: BuffIcon_DEF_UP
-                  desc:
-                    desc: Effect_BR_Andvari_N_32_2
-                    type: 1
-                    value: "0.075000"
-                    level: "0.003800"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 3
-                    defense:
-                      base: 7.5%
-                      per: 0.38%
-                  overlap: 4
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_Andvari_N_32_3
-                    type: 1
-                    value: "0.025000"
-                    level: "0.001300"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 2.5%
-                      per: 0.13%
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_Andvari_N_33
-              on: round
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Leona_N_4
-                    attr: 0
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 2
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_BR_Andvari_N_33_1
                     type: 1
                     value: "0.100000"
-                    level: "0.005000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-                - icon: BuffIcon_DEF_UP
-                  desc:
-                    desc: Effect_BR_Andvari_N_33_2
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 3
-                    defense:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 4
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_Andvari_N_33_3
-                    type: 1
-                    value: "0.050000"
-                    level: "0.002500"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 5%
-                      per: 0.25%
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_Andvari_N_34
-              on: round
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Leona_N_3
-                    attr: 0
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 2
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_Andvari_N_34_1
-                    type: 1
-                    value: "0.075000"
-                    level: "0.003800"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 7.5%
-                      per: 0.38%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_UP
-                  desc:
-                    desc: Effect_BR_Andvari_N_34_2
-                    type: 1
-                    value: "0.120000"
-                    level: "0.006000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 7
-                    accuracy:
-                      base: 12%
-                      per: 0.6%
-                  overlap: 4
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_Andvari_N_34_3
-                    type: 1
-                    value: "0.025000"
-                    level: "0.001300"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 2.5%
-                      per: 0.13%
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: 10%
+                        per: 1%
                   overlap: 4
               maxStack: 0
     values:
@@ -2101,140 +3075,486 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_ATK_UP
+        - - icon: BuffIcon_ICERES_UP
             desc:
               desc: Effect_BR_Andvari_N_3_1
-              type: 0
-              value: "0.120000"
-              level: "0.020000"
-            base: 0.12
-            per: 0.02
-            chance: 0
-          - icon: BuffIcon_ACCURACY_UP
-            desc:
-              desc: Effect_BR_Andvari_N_3_2
-              type: 0
-              value: "0.120000"
-              level: "0.020000"
-            base: 0.12
-            per: 0.02
-            chance: 0
-          - icon: BuffIcon_ACCURACY_UP
-            desc:
-              desc: Effect_BR_Andvari_N_3_3
-              type: 0
-              value: "0.120000"
-              level: "0.020000"
-            base: 0.12
-            per: 0.02
-            chance: 0
-          - icon: BuffIcon_ATK_UP
-            desc:
-              desc: Effect_BR_Andvari_N_31_1
-              type: 1
-              value: "0.150000"
-              level: "0.007500"
-            base: 0.15
-            per: 0.0075
-            chance: 1
-          - icon: BuffIcon_ACCURACY_UP
-            desc:
-              desc: Effect_BR_Andvari_N_31_2
-              type: 1
-              value: "0.240000"
-              level: "0.012000"
-            base: 0.24
-            per: 0.012
-            chance: 1
-          - icon: BuffIcon_AP_UP
-            desc:
-              desc: Effect_BR_Andvari_N_31_3
-              type: 1
-              value: "0.050000"
-              level: "0.002500"
-            base: 0.05
-            per: 0.0025
-            chance: 1
-          - icon: BuffIcon_DAMAGE_REDUCE
-            desc:
-              desc: Effect_BR_Andvari_N_32_1
-              type: 1
-              value: "0.050000"
-              level: "0.002500"
-            base: 0.05
-            per: 0.0025
-            chance: 1
-          - icon: BuffIcon_DEF_UP
-            desc:
-              desc: Effect_BR_Andvari_N_32_2
-              type: 1
-              value: "0.075000"
-              level: "0.003800"
-            base: 0.075
-            per: 0.0038
-            chance: 1
-          - icon: BuffIcon_AP_UP
-            desc:
-              desc: Effect_BR_Andvari_N_32_3
-              type: 1
-              value: "0.025000"
-              level: "0.001300"
-            base: 0.025
-            per: 0.0013
-            chance: 1
-          - icon: BuffIcon_DAMAGE_REDUCE
-            desc:
-              desc: Effect_BR_Andvari_N_33_1
               type: 1
               value: "0.100000"
-              level: "0.005000"
+              level: "0.010000"
             base: 0.1
-            per: 0.005
+            per: 0.01
+            chance: 1
+  "4":
+    key: "4"
+    icon: P.Barrier
+    target: team
+    delayed: false
+    target_ground: true
+    leastGrade: 4
+    buffs:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - rate: 0
+          type: 0
+          range: 0
+          ap: 0
+          grid: 1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Andvari_N_4
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_DAMAGE_ABSORB
+                  desc:
+                    desc: Effect_BR_Andvari_N_4_1
+                    type: 0
+                    value: "200"
+                    level: "20"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 38
+                    barrier:
+                      base: 200
+                      per: 20
+                  overlap: 4
+                - icon: BuffIcon_DEF_UP
+                  desc:
+                    desc: Effect_BR_Andvari_N_4_2
+                    type: 0
+                    value: "150"
+                    level: "15"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 2
+                    defense:
+                      base: 150
+                      per: 15
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_DEBUFF
+                  desc:
+                    desc: Effect_BR_Andvari_N_4_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 100
+                    off: 1
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_BR_Andvari_N_41
+              on: wait
+              if:
+                - target:
+                    - Char_BR_Leona_N
+                    - Char_BR_Valkyrie_N
+                    - Char_BR_Nymph_N
+                    - Char_BR_Gremlin_N
+                    - Char_BR_SandMan_N
+                    - Char_BR_Bheur_N
+                    - Char_BR_Alvis_N
+                    - Char_BR_Andvari_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_REMOVE_DEBUFF
+                  desc:
+                    desc: Effect_BR_Andvari_N_41_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 100
+                    off: 1
+                  overlap: 4
+              maxStack: 0
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_DAMAGE_ABSORB
+            desc:
+              desc: Effect_BR_Andvari_N_4_1
+              type: 0
+              value: "200"
+              level: "20"
+            base: 200
+            per: 20
             chance: 1
           - icon: BuffIcon_DEF_UP
             desc:
-              desc: Effect_BR_Andvari_N_33_2
-              type: 1
-              value: "0.150000"
-              level: "0.007500"
-            base: 0.15
-            per: 0.0075
+              desc: Effect_BR_Andvari_N_4_2
+              type: 0
+              value: "150"
+              level: "15"
+            base: 150
+            per: 15
             chance: 1
-          - icon: BuffIcon_AP_UP
+          - icon: BuffIcon_REMOVE_DEBUFF
             desc:
-              desc: Effect_BR_Andvari_N_33_3
+              desc: Effect_BR_Andvari_N_4_3
               type: 1
-              value: "0.050000"
-              level: "0.002500"
-            base: 0.05
-            per: 0.0025
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 0
+          - icon: BuffIcon_REMOVE_DEBUFF
+            desc:
+              desc: Effect_BR_Andvari_N_41_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
             chance: 1
-          - icon: BuffIcon_ATK_UP
+  "5":
+    key: "5"
+    icon: P.Chargeshot
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 5
+    buffs:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - rate: 0
+          type: 0
+          range: 0
+          ap: 0
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Andvari_N_5
+              on:
+                use_skill: 1
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DEBUFF_PERDOWN
+                  desc:
+                    desc: Effect_BR_Andvari_N_5_1
+                    type: 1
+                    value: "0.300000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 91
+                    resist:
+                      type: debuff_perdown
+                      value:
+                        base: 30%
+                        per: 5%
+                  overlap: 4
+                - icon: BuffIcon_charge
+                  desc:
+                    desc: Effect_BR_Andvari_N_5_2
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 54
+                    next_crit:
+                      base: 0%
+                      per: 0%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Andvari_N_5_3
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 0
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 70
+                    fixed_damage:
+                      base: 100%
+                      per: 0%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Andvari_N_5_4
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 0
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 99
+                    off: 0
+                  overlap: 4
+                - icon: BuffIcon_Disallow
+                  desc:
+                    desc: Effect_BR_Andvari_N_5_5
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    count: 2
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 125
+                    buff_disallow: true
+                  overlap: 4
+              maxStack: 1
+            - key: Effect_BR_Andvari_N_51
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_charge
+                  desc:
+                    desc: Effect_BR_Andvari_N_51_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 54
+                    next_crit:
+                      base: 0%
+                      per: 0%
+                  overlap: 4
+              maxStack: 1
+            - key: Effect_BR_Andvari_N_52
+              on: wave
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_BR_Andvari_N_52_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 6
+                    accuracy:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_DEBUFF_PERDOWN
             desc:
-              desc: Effect_BR_Andvari_N_34_1
+              desc: Effect_BR_Andvari_N_5_1
               type: 1
-              value: "0.075000"
-              level: "0.003800"
-            base: 0.075
-            per: 0.0038
+              value: "0.300000"
+              level: "0.050000"
+            base: 0.3
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_charge
+            desc:
+              desc: Effect_BR_Andvari_N_5_2
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 0
+          - icon: BuffIcon_PhyATK_UP
+            desc:
+              desc: Effect_BR_Andvari_N_5_3
+              type: 1
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 0
+          - icon: BuffIcon_REMOVE_BUFF
+            desc:
+              desc: Effect_BR_Andvari_N_5_4
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 0
+          - icon: BuffIcon_Disallow
+            desc:
+              desc: Effect_BR_Andvari_N_5_5
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 0
+          - icon: BuffIcon_charge
+            desc:
+              desc: Effect_BR_Andvari_N_51_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
             chance: 1
           - icon: BuffIcon_ACCURACY_UP
             desc:
-              desc: Effect_BR_Andvari_N_34_2
+              desc: Effect_BR_Andvari_N_52_1
               type: 1
-              value: "0.120000"
-              level: "0.006000"
-            base: 0.12
-            per: 0.006
-            chance: 1
-          - icon: BuffIcon_AP_UP
-            desc:
-              desc: Effect_BR_Andvari_N_34_3
-              type: 1
-              value: "0.025000"
-              level: "0.001300"
-            base: 0.025
-            per: 0.0013
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
             chance: 1
 dialogue:
   KR:

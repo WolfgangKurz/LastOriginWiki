@@ -10,17 +10,19 @@ export function ParseDescriptionText (text: string): preact.VNode[] {
 
 		const c = parseColor[parseColor.length - 1];
 		if (c.length === 8) {
-			const b = m(c.substr(0, 2));
-			const g = m(c.substr(2, 2));
-			const r = m(c.substr(4, 2));
-			const a = m(c.substr(6, 2), true);
+			const b = m(c.substring(0, 2));
+			const g = m(c.substring(2, 4));
+			const r = m(c.substring(4, 6));
+			const a = m(c.substring(6, 8), true);
 			return `rgba(${r},${g},${b},${a})`;
 		}
 		return `#${c}`;
 	}
+	function isColorValid (): boolean {
+		return parseColor.length > 0 && !parseColor[parseColor.length - 1].startsWith("/");
+	}
 
 	const ret: Array<preact.VNode> = [];
-
 	for (let i = 0; i < text.length; i++) {
 		const c = text[i];
 
@@ -33,11 +35,12 @@ export function ParseDescriptionText (text: string): preact.VNode[] {
 							.filter(x => typeof x === "string");
 						parseBuffer.splice(0, parseBuffer.length);
 
-						if (parseColor.length > 0) {
+						if (isColorValid()) {
+							const c = color();
 							if (parseItalic)
-								ret.push(<i style={ { color: color() } }>{ text }</i>);
+								ret.push(<i data-color={ c } style={ { color: c } }>{ text }</i>);
 							else
-								ret.push(<span style={ { color: color() } }>{ text }</span>);
+								ret.push(<span data-color={ c } style={ { color: c } }>{ text }</span>);
 						} else if (parseItalic)
 							ret.push(<i>{ text }</i>);
 						else
@@ -85,11 +88,12 @@ export function ParseDescriptionText (text: string): preact.VNode[] {
 			.filter(x => typeof x === "string");
 		parseBuffer.splice(0, parseBuffer.length);
 
-		if (parseColor.length > 0) {
+		if (isColorValid()) {
+			const c = color();
 			if (parseItalic)
-				ret.push(<i style={ { color: color() } }>{ text }</i>);
+				ret.push(<i data-color={ c } style={ { color: c } }>{ text }</i>);
 			else
-				ret.push(<span style={ { color: color() } }>{ text }</span>);
+				ret.push(<span data-color={ c } style={ { color: c } }>{ text }</span>);
 		} else if (parseItalic)
 			ret.push(<i>{ text }</i>);
 		else

@@ -24,6 +24,7 @@ export interface MapWaveGroup {
 }
 
 export interface MapSearch {
+	enabled: boolean;
 	time: number;
 	metal: number;
 	nutrient: number;
@@ -53,6 +54,12 @@ export interface MapNodeEntity {
 
 	search: MapSearch | null;
 
+	squads: {
+		count: number; // maximum squads
+		shift: number; // squad change count
+		friend: boolean; // can borrow friend squad?
+	};
+
 	missions: string[];
 	/* eslint-disable camelcase */
 	reward_f: RawReward[];
@@ -62,25 +69,6 @@ export interface MapNodeEntity {
 	wave?: Array<MapWaveGroup[]>;
 }
 /* eslint-disable-next-line @typescript-eslint/no-namespace */
-export namespace MapNodeEntity {
-	export const Empty: MapNodeEntity = {
-		key: "",
-		// name: "",
-		// desc: "",
-		playerExp: 0,
-		type: STAGE_SUB_TYPE.NONE,
-		prev: [],
-		prevIds: [],
-		offset: 0,
-		text: "",
-		search: null,
-		missions: [],
-		/* eslint-disable camelcase */
-		reward_f: [],
-		reward_am: [],
-		/* eslint-enable camelcase */
-	};
-}
 
 export interface MapSubStory {
 	key: string;

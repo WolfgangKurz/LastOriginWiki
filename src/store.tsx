@@ -5,6 +5,8 @@ import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/types/En
 import { BuffEffectList, BuffEffectListGroupKeys } from "@/types/BuffEffect";
 import { EffectFilterListType } from "@/types/Buff";
 
+import { CurrentLocale, LocaleTypes } from "@/libs/Locale";
+
 import { Condition as UnitsCondition } from "@/routes/units/search/AdvancedSearch";
 
 export function toggle (signal: Signal<boolean>): void;
@@ -153,5 +155,8 @@ const Store = {
 		SearchText: signal(""),
 	},
 
+	Story: {
+		lang: signal<LocaleTypes>(CurrentLocale),
+	},
 };
 export default Store;

@@ -7,3 +7,7 @@ declare module "preact/hooks" {
 		StateUpdater<S | undefined>
 	];
 }
+
+declare module "react" { // react type-guard
+	export type CanvasHTMLAttributes<T extends HTMLCanvasElement> = HTMLAttributes<T>;
+}
