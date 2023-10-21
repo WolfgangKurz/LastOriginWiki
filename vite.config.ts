@@ -10,6 +10,8 @@ import deepmerge from "deepmerge";
 import { defineConfig, loadEnv } from "vite";
 import preact from "@preact/preset-vite";
 
+import pixiUrlPatch from "./plugins/pixi-url-patch";
+
 console.log("building...");
 export default ({ mode }) => {
 	const viteEnv = loadEnv(mode, process.cwd());
@@ -18,7 +20,7 @@ export default ({ mode }) => {
 	const isDev = !isProd;
 
 	// buildtime
-	(() => {
+	if (mode !== "optimize") {
 		console.log("buildtime updating...");
 		const dest = path.resolve(__dirname, "src", "buildtime.ts");
 		const destYaml = path.resolve(__dirname, "external", "yaml", "buildtime.yml");
@@ -45,7 +47,8 @@ export default ({ mode }) => {
 			YAML.stringify(buildNo),
 			"utf-8",
 		);
-	})();
+	} else
+		console.log("skip buildtime update - on optimize");
 
 	// yaml hash
 	if (isProd) {
@@ -261,13 +264,23 @@ export default ({ mode }) => {
 		},
 		plugins: [
 			preact(),
+			pixiUrlPatch(),
 		],
 		resolve: {
-			alias: {
-				"@/": `${path.resolve(__dirname, "src")}/`,
-				react: "preact/compat",
-				"react-dom": "preact/compat",
-			},
+			alias: [
+				{
+					find: "@/",
+					replacement: `${path.resolve(__dirname, "src")}/`,
+				},
+				{
+					find: "react",
+					replacement: "preact/compat",
+				},
+				{
+					find: "react-dom",
+					replacement: "preact/compat",
+				},
+			],
 		},
 	});
 };
