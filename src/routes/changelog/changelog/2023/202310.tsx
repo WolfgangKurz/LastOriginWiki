@@ -5,6 +5,23 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12349" date="2023-10-24"
+		new={ <>
+			<li>이벤트 <BY>멸망 이후의 커튼콜</BY>의 2부 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
+			<li>일부 스토리의 번역 정보가 수정되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>프리가</BY>의 스킨 <BR>100일간의 기다림</BR>의 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2023-10-24 21:59:34</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12346" date="2023-10-21"
 		site={ <>
 			<li>사이트가 로드되지 않는 문제를 수정했습니다.</li>
@@ -26,9 +43,6 @@ const Changelog: FunctionalComponent = () => <>
 		</> }
 		bugfix={ <>
 			<li>신규 이벤트 지역의 드랍처가 전투원정보에 반영되지 않은 문제를 수정했습니다.</li>
-		</> }
-		site={ <>
-			<li>오류가 있던 일본어가 아마도 정상화되었습니다.</li>
 		</> }
 		dialogue={ <>
 			<li><span class="badge bg-light text-dark">KST 2023-10-21 05:40:11</span>까지 추가/수정된 대사들이 반영되었습니다.</li>

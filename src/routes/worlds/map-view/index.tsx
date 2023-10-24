@@ -35,6 +35,7 @@ import IconChevronRight from "@/components/bootstrap-icon/icons/ChevronRight";
 import IconUnlockFill from "@/components/bootstrap-icon/icons/UnlockFill";
 import IconPersonBoundingBox from "@/components/bootstrap-icon/icons/PersonBoundingBox";
 import IconBook from "@/components/bootstrap-icon/icons/Book";
+import IconThreeDots from "@/components/bootstrap-icon/icons/ThreeDots";
 import DropItem from "@/components/drop-item";
 import DropRes from "@/components/drop-res";
 import DropUnit from "@/components/drop-unit";
@@ -90,7 +91,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 	const selectedEquip = objState<FilterableEquip | null>(null);
 	const equipModalDisplay = objState<boolean>(false);
 
-	const storyMetaTableRef = useRef<Record<string, StoryMetadata>>({});
+	const storyMetaTableRef = useRef<Record<string, StoryMetadata | false>>({});
 
 	const selectedValue = selected.value;
 
@@ -105,11 +106,17 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 			if (!(selectedValue.key in metaTable)) {
 				const cached = GetJson<StoryMetadata>(`story/${selectedValue.key}`);
 				if (!cached) {
-					JsonLoaderCore(CurrentDB, `story/${selectedValue.key}`).then(() => {
-						metaTable[selectedValue.key] = GetJson<StoryMetadata>(`story/${selectedValue.key}`);
-						storyMetaTableRef.current = metaTable;
-						update();
-					});
+					JsonLoaderCore(CurrentDB, `story/${selectedValue.key}`)
+						.then(() => {
+							metaTable[selectedValue.key] = GetJson<StoryMetadata>(`story/${selectedValue.key}`);
+						})
+						.catch(() => {
+							metaTable[selectedValue.key] = false;
+						})
+						.finally(() => {
+							storyMetaTableRef.current = metaTable;
+							update();
+						});
 				} else {
 					metaTable[selectedValue.key] = cached;
 					storyMetaTableRef.current = metaTable;
@@ -520,53 +527,59 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 											<Locale plain k={ `WORLD_MAP_${props.wid}_${selectedValue.text}` } />
 										</span>
 
-										{ selectedValue && storyMeta
-											? <div class="float-end">
-												{ (storyMeta.spec & StorySpec.OP) !== 0
-													? <button
-														type="button"
-														class="me-1 btn btn-sm btn-stat-hp"
-														onClick={ e => {
-															e.preventDefault();
-															route(`/story/${selectedValue.key}/OP`);
-														} }
-													>
-														<IconBook class="me-1" />
-														OP
-													</button>
+										{ selectedValue
+											? storyMeta === undefined
+												? <div class="float-end">
+													<IconThreeDots class="mx-4" />
+												</div>
+												: storyMeta !== false
+													? <div class="float-end">
+														{ (storyMeta.spec & StorySpec.OP) !== 0
+															? <button
+																type="button"
+																class="me-1 btn btn-sm btn-stat-hp"
+																onClick={ e => {
+																	e.preventDefault();
+																	route(`/story/${selectedValue.key}/OP`);
+																} }
+															>
+																<IconBook class="me-1" />
+																OP
+															</button>
+															: <></>
+														}
+														{ (storyMeta.spec & StorySpec.Mid) !== 0
+															? Object.keys(storyMeta.index)
+																.filter(k => k.startsWith("mid."))
+																.map(k => <button
+																	type="button"
+																	class="me-1 btn btn-sm btn-stat-hp"
+																	onClick={ e => {
+																		e.preventDefault();
+																		route(`/story/${selectedValue.key}/${k}`);
+																	} }
+																>
+																	<IconBook class="me-1" />
+																	Mid { k.substring(4) }
+																</button>)
+															: <></>
+														}
+														{ (storyMeta.spec & StorySpec.ED) !== 0
+															? <button
+																type="button"
+																class="me-1 btn btn-sm btn-stat-hp"
+																onClick={ e => {
+																	e.preventDefault();
+																	route(`/story/${selectedValue.key}/ED`);
+																} }
+															>
+																<IconBook class="me-1" />
+																ED
+															</button>
+															: <></>
+														}
+													</div>
 													: <></>
-												}
-												{ (storyMeta.spec & StorySpec.Mid) !== 0
-													? Object.keys(storyMeta.index)
-														.filter(k => k.startsWith("mid."))
-														.map(k => <button
-															type="button"
-															class="me-1 btn btn-sm btn-stat-hp"
-															onClick={ e => {
-																e.preventDefault();
-																route(`/story/${selectedValue.key}/${k}`);
-															} }
-														>
-															<IconBook class="me-1" />
-															Mid { k.substring(4) }
-														</button>)
-													: <></>
-												}
-												{ (storyMeta.spec & StorySpec.ED) !== 0
-													? <button
-														type="button"
-														class="me-1 btn btn-sm btn-stat-hp"
-														onClick={ e => {
-															e.preventDefault();
-															route(`/story/${selectedValue.key}/ED`);
-														} }
-													>
-														<IconBook class="me-1" />
-														ED
-													</button>
-													: <></>
-												}
-											</div>
 											: <></>
 										}
 									</h5>

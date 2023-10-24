@@ -119,11 +119,12 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 	}, [lang]);
 
 	const { wid, mid, nid, storyType } = useMemo(() => {
-		const reg = /^Ch([0-9]+)(Ev[0-9]+)?Stage([0-9]+)(B|Ex)?$/;
+		const reg = /^Ch([0-9]+)(Ev[0-9]+)?Stage([0-9]+)(B|Ex|EX|C)?$/;
 		const r = reg.exec(props.id);
 		if (r) {
 			const mid = parseInt(r[1], 10);
-			const t = parseInt(r[4], 10);
+			// const t = parseInt(r[4], 10);
+			const postfix = r[4] === "EX" ? "Ex" : (r[4] || "");
 			const type = props.type === "OP" || props.type === "ED"
 				? props.type
 				: `Mid ${parseInt(props.type.substring(4), 10) - 2}`;
@@ -132,14 +133,14 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 				return {
 					wid: r[2],
 					mid,
-					nid: `Ev${mid}-${parseInt(r[3], 10)}`,
+					nid: `Ev${mid}-${parseInt(r[3], 10)}${postfix}`,
 					storyType: type,
 				};
 			} else { // Story
 				return {
 					wid: "Story",
 					mid,
-					nid: `${mid}-${parseInt(r[3], 10)}`,
+					nid: `${mid}-${parseInt(r[3], 10)}${postfix}`,
 					storyType: type,
 				};
 			}

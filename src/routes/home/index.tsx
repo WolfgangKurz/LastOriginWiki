@@ -74,12 +74,6 @@ const Home: FunctionalComponent = () => {
 		return `${pad(y, 4)}-${pad(m, 2)}-${pad(d, 2)} ${pad(h, 2)}:${pad(i, 2)}:${pad(s, 2)}`;
 	})();
 
-	function DateText (date: Date): string {
-		if (CurrentLocale === "EN")
-			return `${date.getDate()}. ${date.getMonth() + 1}. ${date.getFullYear()}`;
-		return `${date.getFullYear()}-${pad(date.getMonth() + 1, 2)}-${pad(date.getDate(), 2)}`;
-	}
-
 	const BuildVersion = BuildInfo.build;
 
 	SetMeta(["description", "twitter:description"], null);
@@ -90,7 +84,7 @@ const Home: FunctionalComponent = () => {
 		SwiperCore.use([Autoplay, Pagination]);
 	}, []);
 
-	const previewSkins = ["3P_Galatea_2"];
+	const previewSkins = ["3P_Frigga_2"];
 
 	return <div class={ `${style.home} home` }>
 		<div class="alert alert-primary">
