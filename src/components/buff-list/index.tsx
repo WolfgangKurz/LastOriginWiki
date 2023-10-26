@@ -18,6 +18,7 @@ import { CurrentDB } from "@/libs/DB";
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import LocaleBase, { LocaleExists, LocaleGet, LocaleProps } from "@/components/locale";
 import IconQuestionCircleFill from "@/components/bootstrap-icon/icons/QuestionCircleFill";
+import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import StatIcon from "@/components/stat-icon";
 import ElemIcon from "@/components/elem-icon";
@@ -132,12 +133,24 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			if (!unit) return <>{ key }</>;
 
 			return <span class={ `SubBadge ${style.SubBadge} ${color ? `text-${color}` : ""}` }>
+				<span class={ style.SubBadgeBadge }>
+					<Locale plain k="BUFF_UNIT_SIDE_TEAM" />
+				</span>
 				<Locale plain k={ `UNIT_${unit.uid}` } />
 			</span>;
 		} else if (name.startsWith("MOB_")) {
 			const key = name.replace(/MOB_MP_(.+)/, "$1");
-			return <span class={ `SubBadge ${style.SubBadge} ${color ? `text-${color}` : ""}` }>
-				<Locale plain k={ `ENEMY_${key}` } />
+			return <span
+				class={ `SubBadge ${style.SubBadge} ${color ? `text-${color}` : ""}` }
+				data-key={ key }
+			>
+				<span class={ style.SubBadgeBadge }>
+					<Locale plain k="BUFF_UNIT_SIDE_ENEMY" />
+				</span>
+				<a class={ style.SubBadgeLink } href={ `/enemies/${key}` } target="_blank">
+					<IconLink45deg />
+					<Locale plain k={ `ENEMY_${key}` } />
+				</a>
 			</span>;
 		} else if (name.startsWith("Skill_")) {
 			const char = name.replace(/^Skill_(.+)_(N|CH)_[a-zA-Z0-9]+$/, "$1");
@@ -603,6 +616,16 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				return <Locale plain k="BUFFTRIGGER_HP_<_TARGET" p={ [target, trigger["hp<"].value.join("/")] } />;
 			} else if ("hpRange" in trigger) {
 				return <Locale plain k="BUFFTRIGGER_HP_RANGE" p={ [...trigger.hpRange] } />;
+			} else if ("in_battle" in trigger) {
+				if (typeof trigger.in_battle === "string")
+					return <Locale plain k="BUFFTRIGGER_IN_BATTLE" p={ [convertBuff(trigger.in_battle)] } />;
+
+				const src = trigger.in_battle
+					.map(convertBuff)
+					.unique(VNodeUnique);
+				return <Locale plain k="BUFFTRIGGER_IN_BATTLE" p={ [
+					<>{ src.gap(<Locale plain k="BUFFTRIGGER_OR" />) }</>,
+				] } />;
 			} else if ("in_squad" in trigger) {
 				if (typeof trigger.in_squad === "string")
 					return <Locale plain k="BUFFTRIGGER_IN_SQUAD" p={ [convertBuff(trigger.in_squad)] } />;
