@@ -88,7 +88,7 @@ export default class DialogObject extends PIXI.Container {
 					this.charDisp.fadeIn(this.FadeDuration);
 			}
 		} else {
-			if (this.charDisp)
+			if (this.charDisp && this.charDisp.alpha > 0)
 				this.charDisp.fadeOut(this.FadeDuration);
 		}
 	}

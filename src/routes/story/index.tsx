@@ -5,7 +5,7 @@ import Store from "@/store";
 import { DIALOG_SPEAKER, SCG_ACTIVATION } from "@/types/Enums";
 import { DialogCharacter, StoryData, StoryMetadata } from "@/types/Story/Story";
 
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, SubStoryUnit } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import { CurrentDB } from "@/libs/DB";
 import { LocaleList, LocaleTypes } from "@/libs/Locale";
@@ -32,6 +32,8 @@ interface StoryProps {
 }
 
 const FaceAlias: Record<string, string> = {
+	AGS_MrAlfred_0: "AGS_MrAlfred_0",
+	BR_NightAngelFake_0: "BR_NightAngel_0",
 	MP_Robert_0: "AGS_MrAlfred2_1",
 	PECS_LemonadeOmega_0: "MP_LemonadeOmega_0",
 };
@@ -119,29 +121,47 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 	}, [lang]);
 
 	const { wid, mid, nid, storyType } = useMemo(() => {
-		const reg = /^Ch([0-9]+)(Ev[0-9]+)?Stage([0-9]+)(B|Ex|EX|C)?$/;
+		const reg = /^Ch([0-9]+)(Ev([0-9]+)?)?Stage([0-9]+)(B|Ex|EX|C|S)?$/;
 		const r = reg.exec(props.id);
 		if (r) {
 			const mid = parseInt(r[1], 10);
-			// const t = parseInt(r[4], 10);
-			const postfix = r[4] === "EX" ? "Ex" : (r[4] || "");
+			// const t = parseInt(r[5], 10);
+			const postfix = r[5] === "EX"
+				? "Ex"
+				: r[5] === "S"
+					? (r[2] === "Ev5" || r[2] === "Ev6")
+						? "ep"
+						: "s"
+					: (r[5] || "");
+
 			const type = props.type === "OP" || props.type === "ED"
 				? props.type
 				: `Mid ${parseInt(props.type.substring(4), 10) - 2}`;
 
 			if (r[2]) { // EvXX
 				return {
-					wid: r[2],
+					wid: r[2] === "Ev" ? "Ev1" : r[2],
 					mid,
-					nid: `Ev${mid}-${parseInt(r[3], 10)}${postfix}`,
+					nid: `Ev${mid}-${parseInt(r[4], 10)}${postfix}`,
 					storyType: type,
 				};
 			} else { // Story
 				return {
 					wid: "Story",
 					mid,
-					nid: `${mid}-${parseInt(r[3], 10)}${postfix}`,
+					nid: `${mid}-${parseInt(r[4], 10)}${postfix}`,
 					storyType: type,
+				};
+			}
+		} else {
+			const reg = /^ChCS-([0-9]+)Stage([0-9]+)$/;
+			const r = reg.exec(props.id);
+			if (r) { // substory
+				const key = `S${parseInt(r[1], 10)}-${parseInt(r[2], 10)}`;
+				return {
+					wid: "Sub",
+					mid: 1,
+					nid: key,
 				};
 			}
 		}
@@ -241,8 +261,17 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 
 		<h5 class="font-ibm mt-3">
 			{ world }
-			<span class="ms-4">{ nid }</span>
-			<span class="ms-2">{ storyType }</span>
+			<span class="ms-4">
+				{ wid === "Sub"
+					? <span class="badge bg-warning text-bg-warning">
+						<Locale k={ `UNIT_${SubStoryUnit[nid]}` } />
+					</span>
+					: <>
+						{ nid }
+						<span class="ms-2">{ storyType }</span>
+					</>
+				}
+			</span>
 		</h5>
 		<h1 class="font-ibm mb-4">{ storyMetadata ? LText(storyMetadata.title) : "..." }</h1>
 

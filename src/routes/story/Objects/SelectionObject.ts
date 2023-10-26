@@ -94,8 +94,8 @@ export default class SelectionObject extends PIXI.Container {
 			text.anchor.set(0.5, 0.5);
 			text.position.set(btn.width / 2, btn.height / 2);
 
-			if (text.width > btn.width - 20) {
-				const r = (btn.width - 20) / text.width;
+			if (text.width > btn.width - 40) {
+				const r = (btn.width - 40) / text.width;
 				text.scale.set(r);
 			}
 			btn.addChild(text);

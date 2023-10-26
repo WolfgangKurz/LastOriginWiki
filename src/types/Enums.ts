@@ -1073,6 +1073,7 @@ export enum APPEAR_EFFECT {
 	POPINFROMBOTTOM,
 	POPUP,
 	FADEIN,
+	__MAX__,
 }
 export enum OFF_EFFECT {
 	NONE = 0,
@@ -1082,6 +1083,7 @@ export enum OFF_EFFECT {
 	POPOUTFROMBOTTOM,
 	DISAPPEAR,
 	FADEOUT,
+	__MAX__,
 }
 export enum SCREEN_EFFECT {
 	NONE = 0,
