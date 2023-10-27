@@ -73,11 +73,11 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 							}
 
 							<div class="card-body">
-								<div class="row">
-									<div class="col">
+								<div class="row gx-0">
+									<div class="col-auto me-3">
 										<img src={ `${AssetsRoot}/world/icons/${props.wid}_${world}.png` } />
 									</div>
-									<div class="col-auto">
+									<div class="col">
 										<div>
 											<div class="worlds-world-number text-warning">
 												<Locale k="WORLDS_WORLD_TITLE" p={ [i + 1] } />

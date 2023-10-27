@@ -17,6 +17,7 @@ import Locale from "@/components/locale";
 
 import { fontFamily, Nn } from "./common";
 import EffectBase from "./Effects/EffectBase";
+import VideoEffect from "./Effects/VideoEffect";
 import ShakeAndSoundEffect from "./Effects/ShakeAndSoundEffect";
 import Animation_OpenEyes from "./Animations/Animation_OpenEyes";
 
@@ -66,7 +67,9 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 	const [dialog, setDialog] = useState<DialogObject | null>(null);
 	const [selection, setSelection] = useState<SelectionObject | null>(null);
 
+	const [voice, setVoice] = useState<string>("");
 	const [bgm, setBGM] = useState<string>("");
+
 	const [bgName, setBGName] = useState<Record<LocaleTypes, string | undefined> | null>(null);
 	const [bgDesc, setBGDesc] = useState<Record<LocaleTypes, string | undefined> | null>(null);
 	const [bgImage, setBGImage] = useState<string>("");
@@ -125,6 +128,10 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			"2DModel_Priest02_N", "2DModel_PriestAngel_N", "2DModel_PriestGirl01_N",
 			"2DModel_PROP_Diyap11_1_N", "2DModel_Sherlock_N",
 			"2DModel_AGS_MrAlfred_N", "2DModel_PECS_HighElven_N_DL_N", "2DModel_BR_NightAngelFake_N",
+			"2DModel_DS_Ramiel_N_DL_N", "2DModel_DS_BunnySlayer_N_DL_N",
+			"2DModel_PECS_Azaz_NS2", "2DModel_BR_RoyalArsenal_NS2",
+			"2DModel_PECS_Azaz_NS2_DL_N", "2DModel_BR_RoyalArsenal_NS2_DL_N",
+			"2DModel_MiniPerrault_N",
 		];
 		if (list.includes(model)) return true;
 		return false;
@@ -138,10 +145,12 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			"3P_Alice_NS1_DL_0_O": "3P_Alice_1_O_BS",
 			"3P_Daphne_NS2_DL_0_O": "3P_Daphne_2_O_S",
 			"3P_Salacia_N_DL_0_O": "3P_Salacia_0_O_S",
+			"3P_Titania_NS2_DL_0_O": "3P_Titania_2_O_S",
 			AGS_RheinRitter_NS1_DL_0_O: "AGS_RheinRitter_1_O_S",
 			BR_Alvis_NS1_DL_0_O: "BR_Alvis_1_O_S",
 			BR_DrM_N_DL_0_O: "BR_DrM_0_O_S",
 			BR_Emily_NS1_DL_0_O: "BR_Emily_1_O",
+			BR_Gnome_NS2_DL_0_O: "BR_Gnome_2_O_S",
 			BR_Hela_N_DL_0_O: "BR_Hela_0_O_S",
 			BR_May_NS2_DL_0_O: "BR_May_2_O_S",
 			BR_Nereid_N_DL_0_O: "BR_Nereid_0_O",
@@ -149,12 +158,15 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			BR_Phantom_N_DL_0_O: "BR_Phantom_0_O",
 			BR_RoyalArsenal_N_DL_0_O: "BR_RoyalArsenal_0_O_S",
 			BR_Sirene_N_DL_0_O: "BR_Sirene_0_O_S",
+			BR_StratoAngel_NS1_DL_0_O: "BR_StratoAngel_1_O_S",
 			PECS_DarkElf_NS1_DL_0_O: "PECS_DarkElf_1_O_S",
 			PECS_ElvenForestmaker_NS1_DL_0_O: "PECS_ElvenForestmaker_1_O",
 			PECS_HighElven_N_DL_0_O: "PECS_HighElven_0_O",
+			PECS_Hussar_NS1_DL_0_O: "PECS_Hussar_1_O_S",
 			PECS_Triaina_N_DL_0_O: "PECS_Triaina_0_O_S",
 
 			"3P_BlackLilith_0_O": "3P_BlackLilith_0_O_S",
+			"3P_Eternity_2_O": "3P_Eternity_2_O_S",
 			"3P_Frigga_1_O": "3P_Frigga_1_O_S",
 			"3P_Melite_0_O": "3P_Melite_0_O_S",
 			"3P_Sowan_2_O": "3P_Sowan_2_O_S",
@@ -165,17 +177,27 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			BR_Leona_0_O: "BR_Leona_0_O_S",
 			BR_Nashorn_0_O: "BR_Nashorn_0_O_S",
 			BR_Neodym_0_O: "BR_Neodym_0_O_S",
+			BR_Miho_3_O: "BR_Miho_3_O_S",
 			BR_RoyalArsenal_0_O: "BR_RoyalArsenal_0_O_S",
 			BR_Salamander_0_O: "BR_Salamander_0_O_S",
 			BR_Scarabya_0_O: "BR_Scarabya_0_O_S",
 			BR_Scarabya_1_O: "BR_Scarabya_1_O_S",
+			BR_Sirene_1_O: "BR_Sirene_1_O_B",
+			BR_Sirene_2_O: "BR_Sirene_2_O_S",
 			BR_Sleipnir_2_O: "BR_Sleipnir_2_O_S",
 			BR_StratoAngel_0_O: "BR_StratoAngel_0_O_S",
 			BR_Vargr_0_O: "BR_Vargr_0_O_S",
+			DS_Ramiel_0_O: "DS_Ramiel_0_O_S",
+			PECS_Boryeon_1_O: "PECS_Boryeon_1_O_S",
 			PECS_BS_1_O: "PECS_BS_1_O_S",
 			PECS_CoCoWhiteShell_0_O: "PECS_CoCoWhiteShell_0_O_S",
+			PECS_Glacias_1_O: "PECS_Glacias_1_O_S",
 			PECS_LemonadeAlpha_0_O: "PECS_LemonadeAlpha_0_O_S",
+			PECS_Mnemosyne_0_O: "PECS_Mnemosyne_0_O_S",
+			PECS_Muse_0_O: "PECS_Muse_0_O_S",
 			PECS_Orangeade_0_O: "PECS_Orangeade_0_O_S",
+			PECS_Peregrinus_0_O: "PECS_Peregrinus_0_O_S",
+			SJ_Tachi_0_O: "SJ_Tachi_0_O_S",
 			ST_Ullr_0_O: "ST_Ullr_0_O_S",
 			ST_Mercury_0_O: "ST_Mercury_0_O_S",
 		};
@@ -192,7 +214,6 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 
 				return `${p1}_0_O`;
 			});
-			console.log(char);
 
 			if (char in charTable)
 				return charTable[char];
@@ -202,11 +223,20 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 		return false;
 	}
 
+	function getVoice (voice: string): string {
+		if (!voice) return "";
+		return `${AssetsRoot}/audio/voice-ko/${voice}.mp3`;
+	}
 	function getBGM (bgm: string): string {
 		if (!bgm) return "";
 		if (bgm === "15 BGM_Empty") return "";
 
-		const normalized = bgm.replace(/^([0-9]+[_ ])?(BGM_)?(.+)$/, "$3");
+		const bgmTable: Record<string, string> = {
+			Valentine_01: "Valentine",
+		};
+
+		let normalized = bgm.replace(/^([0-9]+[_ ])?(BGM_)?(.+)$/, "$3");
+		if (normalized in bgmTable) normalized = bgmTable[normalized];
 		for (const album of BGMAlbums) {
 			for (const song of album.songs) {
 				if (song.type !== "audio") continue;
@@ -225,8 +255,6 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 		let app: PIXI.Application | null = null;
 
 		if (viewerRef.current) {
-			setBGM(props.bgm);
-
 			app = new PIXI.Application({
 				antialias: true,
 				backgroundColor: 0x000000,
@@ -329,6 +357,14 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 					const effect = new Animation_OpenEyes(screen);
 					effect.onDone = autoNext;
 					return effect;
+				} else if (curData.addEffect === "Prefab_IdolEnding") {
+					const effect = new VideoEffect(screen, "Idol_Ending");
+					effect.onDone = autoNext;
+					return effect;
+				} else if (curData.addEffect === "Prefab_3rdAnniversary") {
+					const effect = new VideoEffect(screen, "3rdAnniversary");
+					effect.onDone = autoNext;
+					return effect;
 				}
 
 				console.warn("[STORY] Unknown Effect '" + curData.addEffect + "'");
@@ -369,7 +405,7 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			if (isValidLText(curData.bg.desc)) setBGDesc(curData.bg.desc);
 			if (curData.bg.image) setBGImage(curData.bg.image);
 
-			if (curData.bgm) setBGM(curData.bgm);
+			if (curData.voice) setVoice(curData.voice);
 
 			if (curData.char.L) setCharL(curData.char.L);
 			else if (charL) setCharL(null);
@@ -397,6 +433,14 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			}
 		}
 	}, [screen, curData]);
+	useEffect(() => { // BGM processing
+		let _bgm = props.bgm; // find bgm to play
+		for (let i = 0; i <= props.cursor; i++) {
+			const v = props.data[i].bgm;
+			if (v) _bgm = v;
+		}
+		if (bgm !== _bgm) setBGM(_bgm);
+	}, [props.bgm, props.data, props.cursor, bgm]);
 
 	useEffect(() => { // BG Name (left top)
 		let text: FadeText | null = null;
@@ -468,6 +512,8 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 		if (screen && bgImage) {
 			const bgZ: [test: string | RegExp, z: number][] = [
 				["Cut_SubmarineMaintenance", 0], // except
+				["Cut_ArkofMemory_01", 0],
+				["Cut_ArkofMemory_02", 0],
 
 				[/^Cut_/, 500], // over Char
 				["Eva_Cut", 500],
@@ -804,11 +850,11 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 				dialog.setText(Nn(LText(curData.text)) || "~");
 				if (speaker) {
 					dialog.setSpeaker(LText(speaker.name), curData.speaker);
-
-					if (!dialog.display)
-						dialog.setDisplay(true);
 				} else
 					dialog.setSpeaker("", DIALOG_SPEAKER.NONE);
+
+				if (!dialog.display)
+					dialog.setDisplay(true);
 			} else {
 				if (dialog.display)
 					dialog.setDisplay(false);
@@ -853,10 +899,16 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 
 	return <>
 		{ bgm && <audio
-			class={ style.BGM }
+			class={ style.BackgroundAudio }
 			src={ getBGM(bgm) }
 			autoplay
 			loop
+			volume={ 0.25 }
+		/> }
+		{ voice && <audio
+			class={ style.BackgroundAudio }
+			src={ getVoice(voice) }
+			autoplay
 			volume={ 0.25 }
 		/> }
 		<div

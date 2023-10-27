@@ -19,7 +19,7 @@ const Countdown: FunctionalComponent<CountdownProps> = (props) => {
 		return () => clearInterval(interval);
 	}, [props.to]);
 
-	if (isNaN(left))
+	if (isNaN(left) || props.to.getFullYear() === 9999)
 		return <Locale k="TIME_EMPTY" />;
 	else if (left < 0)
 		return <Locale k="TIME_END" />;
