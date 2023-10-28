@@ -1,0 +1,101 @@
+.ConditionsTable {
+	display: grid;
+	grid-template-columns: 7rem 1fr auto;
+
+	margin: 0 0 0.5rem;
+
+	@include media-breakpoint-down(md) {
+		grid-template-columns: 5rem 1fr auto;
+	}
+
+	> * {
+		padding: 0.25rem 0;
+	}
+
+	> .LogicalColumn {
+		display: flex;
+		align-items: center;
+
+		grid-column: 1;
+
+		> button {
+			width: 4rem;
+			z-index: 1;
+
+			@include media-breakpoint-down(md) {
+				width: 3rem;
+			}
+
+			&.ButtonOR {
+				margin-right: 1.5rem;
+
+				@include media-breakpoint-down(md) {
+					margin-right: 0.75rem;
+				}
+			}
+			&.ButtonAND {
+				margin-left: 1.5rem;
+
+				@include media-breakpoint-down(md) {
+					margin-left: 0.75rem;
+				}
+			}
+		}
+	}
+	> .ConditionColumn {
+		grid-column: 2;
+
+		> div {
+			display: inline-block;
+			margin: 0.25rem;
+
+			&:first-child {
+				margin-right: 1rem;
+
+				@include media-breakpoint-down(md) {
+					margin-right: 0.5rem;
+				}
+			}
+		}
+
+		+ div {
+			padding-left: 0.25rem;
+			padding-right: 0.25rem;
+			text-align: center;
+
+			grid-column: 3;
+		}
+
+		&,
+		& + div {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			border-bottom: 1px solid transparentize($secondary, 0.5);
+		}
+	}
+	> .ConditionANDLine {
+		grid-column: 1;
+
+		padding: 1.25rem 0.25rem;
+		pointer-events: none;
+
+		> div {
+			margin-left: auto;
+			width: 0.75rem;
+			height: 100%;
+
+			border: 2px solid $dark;
+			border-right: 0 transparent;
+
+			@include media-breakpoint-down(md) {
+				width: 0.75rem;
+			}
+		}
+	}
+}
+
+.GuideImage {
+	display: block;
+	margin: 0.25rem 0;
+	max-width: 100%;
+}

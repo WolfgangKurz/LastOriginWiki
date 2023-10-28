@@ -53,6 +53,21 @@ const MapSearchInfo: FunctionalComponent<MapSearchInfoProps> = (props) => {
 											<tbody>
 												<tr>
 													<td class="border-bottom">
+														<Locale k="WORLD_VIEW_EXPLORATION_AVAILABLE" />
+													</td>
+													<td class="border-bottom">
+														{ SearchInfo.enabled
+															? <span class="text-success">
+																<Locale k="WORLD_VIEW_EXPLORATION_AVAILABLE_YES" />
+															</span>
+															: <strong class="text-danger">
+																<Locale k="WORLD_VIEW_EXPLORATION_AVAILABLE_NO" />
+															</strong>
+														}
+													</td>
+												</tr>
+												<tr>
+													<td class="border-bottom">
 														<Locale k="WORLD_VIEW_EXPLORATION_AVG_LV" />
 													</td>
 													<td class="border-bottom">

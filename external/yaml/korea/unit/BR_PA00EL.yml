@@ -465,7 +465,7 @@ company: ""
 maker: ""
 country: SE
 age: "16"
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice: []
 favor:
@@ -576,6 +576,8 @@ source:
   - - Ev:Ev17:EV1-2Ex
   - - Ev:Ev18:EV2-2Ex
   - - Ev:Ev20:EV3-4B
+  - - Ev:Ev21:EV2-1
+  - - Ev:Ev23:EV2-1Ex
 research: false
 skills:
   "1":
@@ -583,6 +585,7 @@ skills:
     icon: Missile
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -601,7 +604,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -670,7 +672,7 @@ skills:
             - key: Effect_BR_PA00EL_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Lindwurm_N
                 - false
               body:
@@ -748,7 +750,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -817,7 +818,7 @@ skills:
             - key: Effect_BR_PA00EL_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Lindwurm_N
                 - false
               body:
@@ -895,7 +896,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -964,7 +964,7 @@ skills:
             - key: Effect_BR_PA00EL_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Lindwurm_N
                 - false
               body:
@@ -1042,7 +1042,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1111,7 +1110,7 @@ skills:
             - key: Effect_BR_PA00EL_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Lindwurm_N
                 - false
               body:
@@ -1189,7 +1188,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1258,7 +1256,7 @@ skills:
             - key: Effect_BR_PA00EL_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Lindwurm_N
                 - false
               body:
@@ -1336,7 +1334,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1405,7 +1402,7 @@ skills:
             - key: Effect_BR_PA00EL_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Lindwurm_N
                 - false
               body:
@@ -1483,7 +1480,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1552,7 +1548,7 @@ skills:
             - key: Effect_BR_PA00EL_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Lindwurm_N
                 - false
               body:
@@ -1630,7 +1626,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1699,7 +1694,7 @@ skills:
             - key: Effect_BR_PA00EL_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Lindwurm_N
                 - false
               body:
@@ -1777,7 +1772,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1846,7 +1840,7 @@ skills:
             - key: Effect_BR_PA00EL_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Lindwurm_N
                 - false
               body:
@@ -1924,7 +1918,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1993,7 +1986,7 @@ skills:
             - key: Effect_BR_PA00EL_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Lindwurm_N
                 - false
               body:
@@ -2119,6 +2112,7 @@ skills:
     icon: MultiMissile
     target: enemy
     delayed: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -2137,7 +2131,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0.75,0,0.75,1,0.75,0,0.75,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2270,7 +2263,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0.75,0,0.75,1,0.75,0,0.75,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2403,7 +2395,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0.75,0,0.75,1,0.75,0,0.75,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2536,7 +2527,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0.75,0,0.75,1,0.75,0,0.75,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2669,7 +2659,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0.75,0,0.75,1,0.75,0,0.75,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2802,7 +2791,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0.75,0,0.75,1,0.75,0,0.75,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2935,7 +2923,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0.75,0,0.75,1,0.75,0,0.75,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -3068,7 +3055,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0.75,0,0.75,1,0.75,0,0.75,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -3201,7 +3187,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0.75,0,0.75,1,0.75,0,0.75,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -3334,7 +3319,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,1,0,1,1,1,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -3525,6 +3509,7 @@ skills:
     icon: P.EnemyDetect
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -3544,7 +3529,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3853,6 +3837,7 @@ skills:
     icon: P.SelfAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -3872,7 +3857,6 @@ skills:
           range: 0
           ap: 0
           grid: F>0,1,0,1,1,1,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4136,6 +4120,7 @@ skills:
     icon: P.SelfSpdBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 5
     buffs:
       index:
@@ -4155,7 +4140,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4365,7 +4349,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -5120,14 +5103,14 @@ dialogue:
       Idle_01_01: |-
         你好，蒼天騎士的-像個笨蛋。
         到底為什麼要練習這些啊。
-        人類也是這麼想的吧……？
+        人類也是這麼想的吧…？
       Idle_01_02: |-
         誰，誰高興了？
         只是不想拖別人後腿而已。
-        舞臺……也不是很期待。
+        舞臺…也不是很期待。
       Idle_01_03: |-
         嗯？那個橫幅是什麼？給我看看。
-        ……「閃閃亮亮，格里芬最棒」，什麼呀……
+        …「閃閃亮亮，格里芬最棒」，什麼呀…
         為，為什麼要準備這個！
         可，可以了，絕對不要拿過來。
       SPIdle_01_01: 衣服會壞的，笨蛋。
@@ -5139,24 +5122,24 @@ dialogue:
       Idle_03_01: |-
         我，我沒有只看著製作人唱歌，好吧？
         只是因為那個羞恥的橫幅
-        最顯眼……嗯……雖然是得到了力量……
+        最顯眼…嗯…雖然是得到了力量…
       Idle_04_01: |-
         製作人！我怎麼樣？就像練習的一樣，在舞臺上-
-        啊，呃……那個……製作人也辛苦了，
+        啊，呃…那個…製作人也辛苦了，
         可以這樣抱一會兒。
       SPIdle_02_01: |-
-        這是……因為舞臺，所以心臟
-        一直在跳……就，這次嗎……？
+        這是…因為舞臺，所以心臟
+        一直在跳…就，這次嗎…？
       Oath: |-
-        晚了，你這傻瓜。你以為我因為誰唱歌跳舞的嗎？我做了那麼多的努力……！
-        傻瓜，傻瓜……你說從現在起會讓我幸福的那句話，我可都記住了。你要對我負責，製作人……
+        晚了，你這傻瓜。你以為我因為誰唱歌跳舞的嗎？我做了那麼多的努力…！
+        傻瓜，傻瓜…你說從現在起會讓我幸福的那句話，我可都記住了。你要對我負責，製作人…
       OathIdle_01: |-
         哼嗯，穿上這個，讓我想起舞臺了。
-        ……給你唱歌嗎？嗯……我考慮看看。
+        …給你唱歌嗎？嗯…我考慮看看。
         白~癡♥
       MVP: ""
     "":
-      Join: 嗯……人類？長得很平凡嘛~
+      Join: 嗯…人類？長得很平凡嘛~
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -5178,7 +5161,7 @@ dialogue:
         你別靠過來！
         我最討厭黏糊糊的感覺了！
       Idle_01_02: |-
-        ／你可別誤會，
+        你可別誤會，
         我盯著人類只是為了執行任務。
         沒有別的意思。
       Idle_01_03: |-
@@ -5189,20 +5172,20 @@ dialogue:
       Idle_02_01: |-
         別靠近我
         可不是讓你滾一邊去的意思呢？
-        嗯……0.5米吧。
+        嗯…0.5米吧。
       Idle_03_01: |-
-        什麼啊？別有用心。或許……
+        什麼啊？別有用心。或許…
         對主人有興趣？
-        嗯嗯……如果是那樣的話……
+        嗯嗯…如果是那樣的話…
       Idle_04_01: |-
-        ／我什麼時候看著人類了？
+        我什麼時候看著人類了？
         不是好嗎？完全是你的錯覺！
       SPIdle_02_01: |-
         人類，你以為你和我親近
         我就會原諒你嗎？
       Oath: |-
-        什麼啊？人類？這是？不會是……我想的那樣吧？嘿嘿……嘿嘿……人類，這是誓約對吧？
-        ……竟然做到了這種程度……那就可憐可憐你，接受吧。只是因為可憐……知道了嗎？
+        什麼啊？人類？這是？不會是…我想的那樣吧？嘿嘿…嘿嘿…人類，這是誓約對吧？
+        …竟然做到了這種程度…那就可憐可憐你，接受吧。只是因為可憐…知道了嗎？
       OathIdle_01: |-
         人類，你沒有丟掉誓約儀式時的
         那份心吧？作為人一定要不忘初心。
@@ -5227,38 +5210,29 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: |-
-        那個什麼……相處下來，發現人類也有一些
+        那個什麼…相處下來，發現人類也有一些
         還不錯的地方。
         比如，瑣碎的事情也會照顧到呀，
-        像傻瓜一樣善良什麼的……
+        像傻瓜一樣善良什麼的…
         呃，我不應該說的。
       Idle_01_02: |-
         幹嘛離那麼遠啊？位置很寬
-        敞，你再離近點。等，等下.
-        也不用這麼近-呀……你，你快放開。
-        即便如此，我……呃……
+        敞，你再離近點。等，等下。
+        也不用這麼近-呀…你，你快放開。
+        即便如此，我…呃…
       Idle_01_03: |-
-        人類.你是喜歡我什麼地方，所以才跟我誓約
-        的呢？……嗯……是這樣子啊。我？
+        人類。你是喜歡我什麼地方，所以才跟我誓約
+        的呢？…嗯…是這樣子啊。我？
         我可沒說過
-        我喜歡人類吧？笨蛋司.令.官.
+        我喜歡人類吧？笨蛋司、令、官。
       SPIdle_01_01: |-
-        你這變態……怎麼不隨便來呢？
+        你這變態…怎麼不隨便來呢？
         你什麼時候聽我的話了。
         才，才不是害羞呢。！
       MVP: ""
 skins:
   sid: null
   artist: Kakiman
-  offsets:
-    - -30
-    - -50
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -5284,20 +5258,12 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel_dam: 2DModel_BR_PA00EL_N_Dam
   skins:
     - sid: 1
       artist: Kakiman
-      offsets:
-        - -20
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 34
       G: false
       Spine: false
@@ -5324,19 +5290,11 @@ skins:
       releaseDate: 1548288000000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
     - sid: 2
       artist: Kakiman
-      offsets:
-        - 10
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 196
       G: false
       Spine: false
@@ -5363,20 +5321,12 @@ skins:
       releaseDate: 1618790400000
       metadata:
         imageId: 2
+        iconId: 2
         tbarId: 2
         voiceId: 2
         2dmodel: 2DModel_BR_PA00EL_NS2
     - sid: 21
       artist: Kakiman
-      offsets:
-        - -30
-        - -50
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       priceEx: Ingame
       G: false
       Spine: false
@@ -5403,5 +5353,6 @@ skins:
       releaseDate: 1560384000000
       metadata:
         imageId: 21
+        iconId: 21
         tbarId: 21
         2dmodel_dam: 2DModel_BR_PA00EL_SS1_Dam

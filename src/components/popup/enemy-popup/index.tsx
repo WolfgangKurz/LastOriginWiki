@@ -532,7 +532,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 													</span>
 													: <></>
 												}
-												{ skill.buff.target_ground
+												{ skill.target_ground
 													? <span
 														class="badge bg-danger me-1"
 														title={ LocaleGet("ENEMY_SKILL_GRID_TARGET_TIP") }

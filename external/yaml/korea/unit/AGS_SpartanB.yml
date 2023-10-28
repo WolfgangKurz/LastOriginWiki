@@ -423,7 +423,7 @@ company: BlackRiver
 maker: BlackRiver_HeavyIndustry
 country: US
 age: ""
-secretRoomType: 3
+secretRoomType: AGS
 marriageVoice: false
 introVoice: []
 favor:
@@ -516,6 +516,7 @@ skills:
     icon: ARShot
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -534,7 +535,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -667,7 +667,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -800,7 +799,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -933,7 +931,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -1066,7 +1063,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -1199,7 +1195,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -1332,7 +1327,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -1465,7 +1459,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -1598,7 +1591,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -1731,7 +1723,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -1904,6 +1895,7 @@ skills:
     icon: MultiMissile
     target: enemy
     delayed: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -1922,7 +1914,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,0,0,0,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2054,7 +2045,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,0,0,0,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2186,7 +2176,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,0,0,0,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2318,7 +2307,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,0,0,0,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2450,7 +2438,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,0,0,0,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2582,7 +2569,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,0,0,0,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2714,7 +2700,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,0,0,0,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2846,7 +2831,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,0,0,0,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2978,7 +2962,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,0,0,0,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -3110,7 +3093,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,0,0,0,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -3281,6 +3263,7 @@ skills:
     icon: P.CruiseMissile
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -3300,7 +3283,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3311,7 +3293,7 @@ skills:
             - key: Effect_AGS_SpartanB_N_3
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_AGS_SpartanC_N
                 - false
               body:
@@ -3467,7 +3449,7 @@ skills:
             - key: Effect_AGS_SpartanB_N_32
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_AGS_SpartanA_N
                 - false
               body:
@@ -3590,6 +3572,7 @@ skills:
     icon: P.SelfAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 2
     buffs:
       index:
@@ -3609,7 +3592,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3766,15 +3748,6 @@ dialogue:
 skins:
   sid: null
   artist: 메카셔군
-  offsets:
-    - -20
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -3800,5 +3773,6 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_AGS_SpartanB_N

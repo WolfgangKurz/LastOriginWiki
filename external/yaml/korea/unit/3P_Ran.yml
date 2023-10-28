@@ -440,7 +440,7 @@ company: Saman
 maker: Saman
 country: KR
 age: "22"
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice:
   - jpdmm
@@ -506,6 +506,7 @@ source:
   - - Ev:Ev15:EV1-5
   - - Ev:Ev17:EV1-1
   - - Ev:Ev19:EV1-3Ex
+  - - Ev:Ev23:EV1-1Ex
 research: false
 skills:
   "1":
@@ -513,6 +514,7 @@ skills:
     icon: SwordAttk
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -531,7 +533,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -661,7 +662,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -791,7 +791,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -921,7 +920,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1051,7 +1049,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1181,7 +1178,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1311,7 +1307,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1441,7 +1436,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1571,7 +1565,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1701,7 +1694,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1889,6 +1881,7 @@ skills:
     icon: DefCounter
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -1907,7 +1900,6 @@ skills:
           range: 0
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2115,7 +2107,6 @@ skills:
           range: 0
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2540,6 +2531,7 @@ skills:
     icon: P.TeamDefBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -2559,7 +2551,6 @@ skills:
           range: 0
           ap: 0
           grid: F>0,0,1,0,0,1,0,0,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2676,6 +2667,7 @@ skills:
     icon: P.SelfAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -2695,7 +2687,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2998,23 +2989,25 @@ dialogue:
         괜찮으시다면 다음에도… 부탁드립니다.
       MVP: 사필ㄱ... 아... 서, 서둘러 돌아가겠습니다...
     "2":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 익숙하지 않은 옷이라 하여도 다른 분들을 지키는 것에는 문제없습니다.
+      Leader: 허, 예. 익숙치는 않지만 소첩이 선도하겠습니다.
+      SortiePick: 주인님의 명을 받들어 적을 섬멸하도록 하겠습니다.
+      StageStart: 적의 기척이 느껴집니다. 전투를 준비하십시오.
+      Retreat: 후방을 사수하겠습니다.
+      SearchStart: 네. 주인님의 말씀대로 물자를 수집하도록 하겠습니다.
+      SearchEnd: 주인님께서 말씀하신 물자를 가져왔습니다.
+      BattleFocus: 명하십시오. 주인님.
+      ActionApprove: 명 따르겠습니다.
+      SpSkill: 호수처럼 잔잔하게.
+      Retire: 으읏. 죄송합니다. 소첩이 지켜드려야 했는데…
+      Repair: 손을 조금만 더 꼭 잡아주실 수 있겠습니까?
+      Reinforce: 이걸로 감각을 더욱 날카롭게 벼리도록 하겠습니다.
+      ItemEquip: 양산 때문에 두 손이 꽉 찼는데… 주인님께서 끼워주시겠습니까?
+      CoreLink: |-
+        이 검술의 기억은… 감사합니다.
+        이걸로 주인님을 더욱 잘 지킬 수 있겠습니다.
+      PresentGet: 주인님께서 주신 선물… 금은패물보다 소중히 보관하도록 하겠습니다.
+      Login: 어서 오십시오 주인님. 오늘은 조금…모던한 차림새를 갖추어 보았습니다.
       Idle_01_01: |-
         경적필패라 하였으니, 설령
         나들이 도중이라 하여도
@@ -3082,7 +3075,7 @@ dialogue:
         괜찮습니다. 한 걸음 더…
         거기서 한 걸음 더...
         몸이 밀착할 정도로 가까이...
-      MVP: ""
+      MVP: 주인님께서 함께하시는 이상 저희의 승리는 명약관화한 일이었습니다.
     "":
       Join: 불초 금란, 주인님께 인사올립니다.
       SquadJoin: 명을 따르겠습니다.
@@ -3387,7 +3380,6 @@ dialogue:
       Idle_01_01: >-
         They say you should never underestimate your enemy,
 
-
         so even if it’s just a simple stroll, I shouldn’t take protecting you so lightly.
 
         I, Ran, will always protect you.
@@ -3408,13 +3400,11 @@ dialogue:
         The wind is cool and the sunlight is warm… I think we could have a great time.
       Idle_03_01: |-
         If I block the sunlight like this,
-
         I can open my eyes no matter how bright the sun is.
         I can also look at your face longer.
         I’m afraid I was a bit too straightforward.
       Idle_04_01: >-
         According to Hirume… foreigners have a custom
-
 
         where they write their names together under an umbrella.
 
@@ -3429,7 +3419,6 @@ dialogue:
         I see… I see you wanted to be with me as well, master. I also feel the
         same way. So from now on… let’s share an umbrella when it rains, and if
         the sunlight gets too hot,
-
 
         we can hide from it in the shade together… Let’s live for each other as two people who love one another.
       OathIdle_01: >-
@@ -3550,47 +3539,47 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         作為護衛武士的小妾竟然出現這種
-        醜態，無顏見主人……
+        醜態，無顏見主人…
         你，你這麼盯著我
-        我會害羞……
+        我會害羞…
       Idle_01_02: |-
         在主人建議的郊遊上，
-        我竟然犯了這種錯誤……對不起。因為有點
-        緊張…………所以腳
+        我竟然犯了這種錯誤…對不起。因為有點
+        緊張…所以腳
         踩空了。
       Idle_01_03: |-
         主人，能幫小妾換
-        衣服嗎……？
-        我一個人，實在是……
+        衣服嗎…？
+        我一個人，實在是…
       SPIdle_01_01: |-
-        啊呃……不，不是啦。就是比平時更
-        敏感了……
+        啊呃…不，不是啦。就是比平時更
+        敏感了…
       Idle_02_01: |-
         好的。就像你說的，睜著眼睛
         有點痛苦。但是，
         還是想將主人的樣子裝進眼睛裡，
-        哪怕是一點……
+        哪怕是一點…
       Idle_03_01: |-
-        哈，哈啊……你這麼慢的話，
+        哈，哈啊…你這麼慢的話，
         會等到天亮的。小妾，會做好
-        心理準備，一次性的……
+        心理準備，一次性的…
       Idle_04_01: |-
-        氣味、聲音、色彩、還有……
+        氣味、聲音、色彩、還有…
         觸感。全都
-        被主人填滿了。最後一個……能不能
-        也一起填滿呢……？
+        被主人填滿了。最後一個…能不能
+        也一起填滿呢…？
       SPIdle_02_01: |-
-        呃，咳……小，小妾沒關係。
+        呃，咳…小，小妾沒關係。
         只是怕
-        主人也濕了……
+        主人也濕了…
       Oath: |-
-        啊……是為了這個，勸小妾一起郊遊的啊。連這樣的日子，小妾愚蠢地……反而更好，怎麼能
-        說那麼調皮的話呢。你就那麼想看到小妾害羞的樣子嗎……？可是主人也……
-        心跳跳得很激烈啊。主人，水聲和樹木會隱藏小妾的聲音……請就這樣……
+        啊…是為了這個，勸小妾一起郊遊的啊。連這樣的日子，小妾愚蠢地…反而更好，怎麼能
+        說那麼調皮的話呢。你就那麼想看到小妾害羞的樣子嗎…？可是主人也…
+        心跳跳得很激烈啊。主人，水聲和樹木會隱藏小妾的聲音…請就這樣…
       OathIdle_01: |-
         小妾，中途雖然腦袋一片空白
         但真的就像是做夢一樣，很開心。
-        如果可以的話，下次也……拜託了。
+        如果可以的話，下次也…拜託了。
       MVP: ""
     "2":
       SquadJoin: ""
@@ -3691,33 +3680,33 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ……並不孤單。
-      Idle_01_02: 如果能讓我一個人靜一靜的話……就很感謝了。
+      Idle_01_01: …並不孤單。
+      Idle_01_02: 如果能讓我一個人靜一靜的話…就很感謝了。
       Idle_01_03: |-
         不是看不清前面。
-        只是……視覺比較敏感，所以很難
-        長時間睜著眼睛……
-      SPIdle_01_01: 呃……再，輕一點……
-      Idle_02_01: 呃……這樣在我耳邊呢喃的話……
+        只是…視覺比較敏感，所以很難
+        長時間睜著眼睛…
+      SPIdle_01_01: 呃…再，輕一點…
+      Idle_02_01: 呃…這樣在我耳邊呢喃的話…
       Idle_03_01: |-
-        竟然想小妾的眼睛……
-        那麼……讓，讓你不愉快了。
-        那麼先告退了……
-        ……是，是這個意思嗎？
+        竟然想小妾的眼睛…
+        那麼…讓，讓你不愉快了。
+        那麼先告退了…
+        …是，是這個意思嗎？
       Idle_04_01: |-
         我好像習慣了
-        主人的手。那也是，能不能當做試驗……
-        抱我一下呢……？
-        啊……
+        主人的手。那也是，能不能當做試驗…
+        抱我一下呢…？
+        啊…
       SPIdle_02_01: |-
-        呼…………沒，沒有。不是
-        痛苦，就照樣……
+        呼…沒，沒有。不是
+        痛苦，就照樣…
       Oath: |-
-        ……其實，有好幾次，小妾都想先跟你說。只是覺得作為主人的護衛不該有這樣的想法……所以壓制了下去。
-        主人。小妾，不對是臣妾，能讓臣妾安心的地方只有主人的身邊。直到我這微不足道的生命走到盡頭為止……請務必讓我陪在你身邊。
+        …其實，有好幾次，小妾都想先跟你說。只是覺得作為主人的護衛不該有這樣的想法…所以壓制了下去。
+        主人。小妾，不對是臣妾，能讓臣妾安心的地方只有主人的身邊。直到我這微不足道的生命走到盡頭為止…請務必讓我陪在你身邊。
       OathIdle_01: |-
         現在我終於可以說了。
-        臣妾……喜歡主人。
+        臣妾…喜歡主人。
       MVP: ""
     M:
       SquadJoin: ""
@@ -3738,38 +3727,29 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: |-
-        主人跟我說話的時候……似乎感覺
+        主人跟我說話的時候…似乎感覺
         會變得更加靈敏。這是
         為什麼呢？
       Idle_01_02: |-
         主人的懷抱可以讓我忘掉
         一切。有時，會有點埋怨
-        我靈敏的感覺……
+        我靈敏的感覺…
         為什麼感覺沒有變，但內心
         會這麼平安呢？
       Idle_01_03: |-
         說想看我目光
-        的人……主人是
+        的人…主人是
         第一個。大部分只會講
-        我的感覺……
+        我的感覺…
       SPIdle_01_01: |-
-        如，如果……我……發出
-        奇怪的聲音……這也不是
-        因為痛苦……沒關係。所以……
-        拜託……
+        如，如果…我…發出
+        奇怪的聲音…這也不是
+        因為痛苦…沒關係。所以…
+        拜託…
       MVP: ""
 skins:
   sid: null
   artist: Rorobomb
-  offsets:
-    - -60
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -3795,20 +3775,12 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_3P_Ran_N
   skins:
     - sid: 1
       artist: Rorobomb
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 136
       G: true
       Spine: false
@@ -3835,19 +3807,11 @@ skins:
       releaseDate: 1584057600000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
     - sid: 2
       artist: Pinkmill
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 136
       G: true
       Spine: false
@@ -3874,6 +3838,7 @@ skins:
       releaseDate: 1677542400000
       metadata:
         imageId: 2
+        iconId: 2
         tbarId: 2
         voiceId: 2
         2dmodel: 2DModel_3P_Ran_NS2

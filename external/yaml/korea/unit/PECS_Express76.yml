@@ -440,7 +440,7 @@ company: PECS
 maker: Vladimir
 country: ""
 age: "20"
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice: []
 favor:
@@ -497,7 +497,6 @@ source:
   - - Ev:Ev4:Ev-4Ex
   - - Ev:Ev9:Ev2-3Ex
   - - Ev:Ev11:Ev1-5B
-  - - Ev:Ev16:EV1-5Ex
   - - Ev:Ev18:EV1-3B
   - - Ev:Ev19:EV3-2Ex
   - - Ev:Ev20:EV1-2B
@@ -508,6 +507,7 @@ skills:
     icon: AssaultAttack
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -526,7 +526,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -775,7 +774,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1024,7 +1022,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1273,7 +1270,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1522,7 +1518,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1771,7 +1766,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2020,7 +2014,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2269,7 +2262,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2518,7 +2510,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2767,7 +2758,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3101,6 +3091,7 @@ skills:
     icon: SelfSpdBuff
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -3119,7 +3110,6 @@ skills:
           range: 6
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3609,6 +3599,7 @@ skills:
     icon: P.SelfSpdBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -3628,7 +3619,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3765,6 +3755,7 @@ skills:
     icon: P.TeamSpdBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -3784,7 +3775,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,1,0,1,0,1,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3835,7 +3825,6 @@ skills:
           range: 0
           ap: 0
           grid: 1,1,1,1,0,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4123,10 +4112,10 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
+      Idle_01_01: スキャルドメール：持続物理ダメージ解除
+      Idle_01_02: 彷徨う炎：冷気耐性{0}%
+      Idle_01_03: 彷徨う炎：{0}の持続火炎ダメージ
+      SPIdle_01_01: 部品36000+10800個
       MVP: ""
   EN:
     "1":
@@ -4221,7 +4210,7 @@ dialogue:
       Idle_04_01: |-
         I will always be there when you need me…
         I promise. Commander?
-      SPIdle_02_01: Commander!? Ah~ you are… bad…
+      SPIdle_02_01: Commander!? Ah-! you are… bad…
       Oath: >-
         Since I… was always busy… I couldn't even be with you. Did you hate me
         for that? 
@@ -4302,21 +4291,21 @@ dialogue:
         所以連找房子都很難。
       SPIdle_01_01: 這是犯罪！知道吧？
       Idle_02_01: |-
-        以後……誕生出&很多人類的話……司令官和我
+        以後…誕生出&很多人類的話…司令官和我
         要不要在這裡開個店鋪？
       Idle_03_01: |-
         別擔心。不管在哪里
         絕對不會找不到司令官。
       Idle_04_01: |-
-        司令官需要的任何東西……
-        我都可以給你……就算那是我的心。
+        司令官需要的任何東西…
+        我都可以給你…就算那是我的心。
       SPIdle_02_01: |-
         雖，雖然是犯罪。只要不報警。
         就沒有人會知道。
-        不……不用太擔心……
+        不…不用太擔心…
       Oath: |-
-        司令官，這是真的嗎……？不是因為大海而癡迷於氛圍，所以才這樣做的吧？
-        ……很好啊，司令官！我會一直……在你身邊的。
+        司令官，這是真的嗎…？不是因為大海而癡迷於氛圍，所以才這樣做的吧？
+        …很好啊，司令官！我會一直…在你身邊的。
       OathIdle_01: |-
         我們乾脆生活在海裡吧？這樣的話，
         司令官一定又會對我說甜言蜜語吧？
@@ -4344,31 +4333,31 @@ dialogue:
         抱歉！抱歉！我要送的貨物堆積如山！
         有事以後再說吧！
       Idle_01_02: |-
-        收件人是……司令官？
+        收件人是…司令官？
         我今天能送完嗎？
       Idle_01_03: |-
-        呃？你在找我嗎？嗯……
+        呃？你在找我嗎？嗯…
         我沒資格當你的副官。
         下次你一定要好好說我一頓，好嗎？
       SPIdle_01_01: 想要被拖著走嗎？！
       Idle_02_01: |-
         去去就來，司令官。
-        可不能走神呢？啊，不行……
+        可不能走神呢？啊，不行…
         總是那樣的話我就不去了。
       Idle_03_01: |-
         開心？當然很開心。
         司令官在等著我呢。
       Idle_04_01: |-
-        有需要的地方肯定有我……
-        向你承諾。司令官……
-      SPIdle_02_01: 司，司令官！？啊~！真是……太過分了。
+        有需要的地方肯定有我…
+        向你承諾。司令官…
+      SPIdle_02_01: 司，司令官！？啊~！真是…太過分了。
       Oath: |-
-        我……每天都很忙……都沒時間經常和你在一起。沒有討厭我嗎？
-        傻…… 傻瓜！快……抱我呀……
-        只要現在抱我，我保證永遠在司令官身邊……謝謝你……司令官。
+        我…每天都很忙…都沒時間經常和你在一起。沒有討厭我嗎？
+        傻… 傻瓜！快…抱我呀…
+        只要現在抱我，我保證永遠在司令官身邊…謝謝你…司令官。
       OathIdle_01: |-
-        我想跟司令官一起出去玩……
-        司令官如果願意的話……能帶我一起去嗎？
+        我想跟司令官一起出去玩…
+        司令官如果願意的話…能帶我一起去嗎？
       MVP: ""
     M:
       SquadJoin: ""
@@ -4390,8 +4379,8 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         我在路上發現了不得了的東西？離這裡很近。
-        你現在...很忙？好可惜...我特地想給你看的。
-        都怪我們很少在同一天休息...
+        你現在…很忙？好可惜…我特地想給你看的。
+        都怪我們很少在同一天休息…
         你說週末有空？太好了！​
       Idle_01_02: |-
         我之前並不知道，有人歡迎我回來
@@ -4399,27 +4388,18 @@ dialogue:
         有時因為司令官太忙而沒能見面時，在第二天我會覺得渾身無力。
         謝謝你今天也以笑臉相迎。​
       Idle_01_03: |-
-        ...嗯？我在盯著你，免得你到處東張西望。
+        …嗯？我在盯著你，免得你到處東張西望。
         這樣你就只能看著我了呀？
-        ...幹嘛，你笑什麼。連我也跟著笑了。​
+        …幹嘛，你笑什麼。連我也跟著笑了。​
       SPIdle_01_01: |-
-        ...又來？上次你也說過就做一次...
+        …又來？上次你也說過就做一次…
         知道了。感謝預約今天的快遞。
         為了VIP顧客——
-        啊？！等、等一下！我還沒說完呢...​
+        啊？！等、等一下！我還沒說完呢…​
       MVP: ""
 skins:
   sid: null
   artist: PaintAle
-  offsets:
-    - -100
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -4445,20 +4425,12 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_PECS_Express76_N
   skins:
     - sid: 1
       artist: PaintAle
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 159
       G: true
       Spine: false
@@ -4485,5 +4457,6 @@ skins:
       releaseDate: 1566518400000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1

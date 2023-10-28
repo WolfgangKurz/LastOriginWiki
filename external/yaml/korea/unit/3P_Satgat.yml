@@ -423,7 +423,7 @@ company: ""
 maker: ""
 country: ""
 age: ""
-secretRoomType: 3
+secretRoomType: AGS
 marriageVoice: false
 introVoice:
   - ko
@@ -511,6 +511,7 @@ skills:
     icon: SwordAttk
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -529,7 +530,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -593,7 +593,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -657,7 +656,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -721,7 +719,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -785,7 +782,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -849,7 +845,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -913,7 +908,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -977,7 +971,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1041,7 +1034,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1105,7 +1097,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1200,6 +1191,7 @@ skills:
     icon: WideBeamShot
     target: enemy
     delayed: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -1218,7 +1210,6 @@ skills:
           range: 1
           ap: 10
           grid: 6>1,1,1,1,1,1,1,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1439,6 +1430,7 @@ skills:
     icon: P.SelfAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -1458,7 +1450,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1846,6 +1837,7 @@ skills:
     icon: P.Charm
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -1865,7 +1857,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,1,0,0,0,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2693,6 +2684,7 @@ skills:
     icon: P.TeamAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 5
     buffs:
       index:
@@ -2712,7 +2704,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3021,22 +3012,22 @@ dialogue:
   KR:
     "":
       Join: 짝을 찾아 방랑하는 시인, 데카르트 보이저 삿갓일세. 잘 부탁하네.
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      Login: ""
+      SquadJoin: 목적을 달성하기 위해 무력을 사용하려는 건가? 훌륭하군.
+      Leader: 다행히도 내 데이터베이스에 병법서가 몇 권 있다네.
+      SortiePick: 오랜만에 검을 쓸 시간이군.
+      StageStart: 배필을 찾는다. 방해하는 건 벤다. 아주 쉽군.
+      Retreat: 왔던 것처럼 또 훌쩍 떠날 시간이군.
+      SearchStart: 이번에는 배필이 아니라 자원을 찾아 떠나는 여행인가?
+      SearchEnd: 어떤가? 만족스러운 결과물인가?
+      BattleFocus: 무엇을 베면 되겠나?
+      ActionApprove: 처리하겠네.
+      SpSkill: 만 번 죽어 마땅하리라.
+      Retire: 아직 짝을 찾지 못했건만…….
+      Repair: 하……. 아무래도 소생의 배필 찾기는 계속될 모양이군.
+      Reinforce: 혀만큼이나 검도 날카로워지겠군. 혀는 없지만.
+      ItemEquip: 새 장비로 교체하는 것은 좋지만 이 삿갓은 남겨주게나.
+      CoreLink: 시상이 막 떠오르는군.
+      Login: 왔는가 사령관. 소생과 함께할 멋진 처자의 소식도 가져왔겠지?
       Idle_01_01: |-
         데카르트 보이저가 성이고, 삿갓이 이름일세.
         헷갈리지 않도록 주의하시게, 사령관.
@@ -3050,7 +3041,7 @@ dialogue:
         날씨가 아주 좋군.
         시구가 저절로 떠오르는 날씨야.
         1001001… 아차, 자네는 인간이었지.
-      MVP: ""
+      MVP: 이렇게 큰 성과를 거뒀는데 맞선 한 번 정도는 괜찮지 않겠나?
   JP:
     "":
       Join: ""
@@ -3076,7 +3067,9 @@ dialogue:
       MVP: ""
   EN:
     "":
-      Join: ""
+      Join: |-
+        I am Descartes Voyager Satgat, a wandering poet in search of a partner.
+        Pleased to meet you.
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -3093,13 +3086,23 @@ dialogue:
       ItemEquip: ""
       CoreLink: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
+      Idle_01_01: |-
+        Descartes Voyager is my last name, Satgat is my first.
+        Don't get that wrong, Commander.
+      Idle_01_02: |-
+        My type?
+        Someone with good communication skills
+        and sexy logical circuitry...
+        Why are you looking at me like that?
+      Idle_01_03: |-
+        The air is filled with the scent of ozone because of the storm.
+        The weather is lovely.
+        It’s inspiring me to write a poem.
+        1001001... Oh, sorry, you're human.
       MVP: ""
   TC:
     "":
-      Join: ""
+      Join: 在下是尋找另一半的流浪詩人，名叫笛卡兒・航海家・箬笠。請多多指教。
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -3116,24 +3119,25 @@ dialogue:
       ItemEquip: ""
       CoreLink: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
+      Idle_01_01: |-
+        笛卡兒・航海家是我的姓，箬笠是我的名字。
+        請注意不要搞混了，司令官。
+      Idle_01_02: |-
+        我的理想型嗎？
+        嗯，首先溝通能力要很好，
+        邏輯迴路要性感…
+        為什麼用那種眼神看我？
+      Idle_01_03: |-
+        暴風使空氣充滿了臭氧的味道。
+        這種天氣真棒，
+        是會讓我想到詩句的天氣。
+        1001001…啊，差點忘了你是人類。
       MVP: ""
 skins:
   sid: null
   artist: |-
     Superphotrone
     CONTEST:skynet
-  offsets:
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -3159,6 +3163,7 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_3P_Satgat_N
     2dmodel_dam: 2DModel_3P_Satgat_N_Dam

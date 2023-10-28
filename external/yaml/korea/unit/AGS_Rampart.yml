@@ -447,7 +447,7 @@ company: PECS
 maker: Omega
 country: KR
 age: ""
-secretRoomType: 3
+secretRoomType: AGS
 marriageVoice: false
 introVoice:
   - jpdmm
@@ -590,6 +590,7 @@ skills:
     icon: ARShot
     target: enemy
     delayed: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -608,7 +609,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -828,7 +828,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1048,7 +1047,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1268,7 +1266,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1488,7 +1485,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1708,7 +1704,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1928,7 +1923,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2148,7 +2142,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2368,7 +2361,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2588,7 +2580,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2874,6 +2865,7 @@ skills:
     icon: ShieldWall
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -2892,7 +2884,6 @@ skills:
           range: 6
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3103,6 +3094,7 @@ skills:
     icon: P.SelfDefBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -3122,7 +3114,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,0,0,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3240,6 +3231,7 @@ skills:
     icon: P.SelfAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -3259,7 +3251,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3481,6 +3472,7 @@ skills:
     icon: P.FormChange
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 5
     buffs:
       index:
@@ -3500,7 +3492,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3762,7 +3753,7 @@ skills:
             - key: Effect_AGS_Rampart_N_53
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Serpent_N
                 - false
               body:
@@ -3814,7 +3805,7 @@ skills:
             - key: Effect_AGS_Rampart_N_54
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_MissSafety_N
                 - false
               body:
@@ -3866,7 +3857,7 @@ skills:
             - key: Effect_AGS_Rampart_N_55
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Cerberus_N
                 - false
               body:
@@ -3918,7 +3909,7 @@ skills:
             - key: Effect_AGS_Rampart_N_56
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_AGS_Rampart_N
                 - false
               body:
@@ -3970,7 +3961,7 @@ skills:
             - key: Effect_AGS_Rampart_N_57
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_PuppHead_N
                 - false
               body:
@@ -4022,7 +4013,7 @@ skills:
             - key: Effect_AGS_Rampart_N_58
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sadius_N
                 - false
               body:
@@ -4074,7 +4065,7 @@ skills:
             - key: Effect_AGS_Rampart_N_59
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Leanne_N
                 - false
               body:
@@ -4126,7 +4117,7 @@ skills:
             - key: Effect_AGS_Rampart_N_510
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sonia_N
                 - false
               body:
@@ -4409,6 +4400,7 @@ skills:
     icon: ARShot
     target: enemy
     delayed: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -4427,7 +4419,6 @@ skills:
           range: 4
           ap: 6
           grid: 4>0,0,0,1,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -4647,7 +4638,6 @@ skills:
           range: 4
           ap: 6
           grid: 4>0,0,0,1,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -4867,7 +4857,6 @@ skills:
           range: 4
           ap: 6
           grid: 4>0,0,0,1,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -5087,7 +5076,6 @@ skills:
           range: 4
           ap: 6
           grid: 4>0,0,0,1,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -5307,7 +5295,6 @@ skills:
           range: 4
           ap: 6
           grid: 4>0,0,0,1,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -5527,7 +5514,6 @@ skills:
           range: 4
           ap: 6
           grid: 4>0,0,0,1,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -5747,7 +5733,6 @@ skills:
           range: 4
           ap: 6
           grid: 4>0,0,0,1,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -5967,7 +5952,6 @@ skills:
           range: 4
           ap: 6
           grid: 4>0,0,0,1,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -6187,7 +6171,6 @@ skills:
           range: 4
           ap: 6
           grid: 4>0,0,0,1,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -6407,7 +6390,6 @@ skills:
           range: 4
           ap: 6
           grid: 4>0,0,0,1,1,1,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -6915,7 +6897,7 @@ dialogue:
         主題曲給你聽嗎？
       Idle_01_02: |-
         如果你需要，我可以啟動
-        便民功能……
+        便民功能…
       Idle_01_03: |-
         如果你需要購買
         擴展性堡壘，
@@ -6925,15 +6907,6 @@ dialogue:
 skins:
   sid: null
   artist: 메카셔군
-  offsets:
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -6959,20 +6932,12 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_AGS_Rampart_N
   skins:
     - sid: 1
       artist: 메카셔군
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 136
       G: false
       Spine: false
@@ -6999,19 +6964,11 @@ skins:
       releaseDate: 1557360000000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
     - sid: 21
       artist: 메카셔군
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       priceEx: Ingame
       G: false
       Spine: false
@@ -7038,5 +6995,6 @@ skins:
       releaseDate: 1558569600000
       metadata:
         imageId: 21
+        iconId: 21
         tbarId: 21
         2dmodel: 2DModel_AGS_Rampart_SS1

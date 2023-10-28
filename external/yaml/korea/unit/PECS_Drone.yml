@@ -447,7 +447,7 @@ company: PECS
 maker: GoldenHarborIndustry
 country: US
 age: ""
-secretRoomType: 3
+secretRoomType: AGS
 marriageVoice: false
 introVoice: []
 favor:
@@ -582,6 +582,7 @@ skills:
     icon: Missile
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -600,7 +601,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -706,7 +706,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -812,7 +811,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -918,7 +916,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1024,7 +1021,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1130,7 +1126,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1236,7 +1231,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1342,7 +1336,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1448,7 +1441,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1554,7 +1546,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1700,6 +1691,7 @@ skills:
     icon: Scan
     target: enemy
     delayed: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -1718,7 +1710,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1880,7 +1871,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,1,0,1,1,1,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2100,6 +2090,7 @@ skills:
     icon: P.WideFireShot
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -2119,7 +2110,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2531,6 +2521,7 @@ skills:
     icon: P.AWACS
     target: enemy
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -2550,7 +2541,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2756,6 +2746,7 @@ skills:
     icon: P.SelfSpdBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 5
     buffs:
       index:
@@ -2775,7 +2766,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2907,7 +2897,7 @@ skills:
             - key: Effect_PECS_Drone_N_52
               on: revive
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_TommyWalker_N
                 - false
               body:
@@ -3107,7 +3097,7 @@ dialogue:
       Login: ""
       Idle_01_01: 有什麼需要幫忙的嗎？
       Idle_01_02: |-
-        ／我的任務大都是
+        我的任務大都是
         與空運有關。
       Idle_01_03: |-
         費克斯公司是市民的
@@ -3117,15 +3107,6 @@ dialogue:
 skins:
   sid: null
   artist: 메카셔군
-  offsets:
-    - -50
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -3151,5 +3132,6 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_PECS_Drone_N

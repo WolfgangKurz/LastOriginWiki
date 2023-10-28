@@ -1,0 +1,9 @@
+start > cond
+	cond y skill1_usable
+		skill1_usable y skill1_highest-hp
+		skill1_usable n skill2_usable
+	cond n skill2_usable
+		skill2_usable y skill2_highest-def
+		skill2_usable n wait
+
+cond = check_buff_target_Effect_MP_Ravager_Challenge3_2

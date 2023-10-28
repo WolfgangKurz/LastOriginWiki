@@ -11,7 +11,6 @@ import UnitFace from "@/components/unit-face";
 import DialogueRow from "../dialogue-row";
 
 export interface VoiceItem extends UnitSkin {
-	id: string;
 	isDef: boolean;
 	isPro: boolean;
 	isMarriage: boolean;
@@ -20,7 +19,6 @@ export interface VoiceItem extends UnitSkin {
 interface UnitDialogueProps {
 	unit: Unit;
 	voice: VoiceItem;
-	id: string;
 	lang: keyof UnitDialogueDataType;
 	audio: UnitDialogueAudioType;
 }
@@ -30,7 +28,7 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 	const voice = props.voice;
 
 	const VoiceKey = ((v): string => {
-		if (v.isMarriage) return `${v.sid || ""}M`;
+		if (v.isMarriage) return `${v.sid ?? ""}M`;
 		if (v.sid !== null) return v.sid.toString();
 		return "";
 	})(voice);

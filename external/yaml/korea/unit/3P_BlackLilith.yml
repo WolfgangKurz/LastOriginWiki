@@ -440,7 +440,7 @@ company: Saman
 maker: Saman
 country: KR
 age: "20"
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice: []
 favor:
@@ -512,6 +512,7 @@ skills:
     icon: Shot
     target: enemy
     delayed: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -530,7 +531,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -721,7 +721,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -912,7 +911,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1103,7 +1101,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1294,7 +1291,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1485,7 +1481,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1676,7 +1671,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1867,7 +1861,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2058,7 +2051,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2249,7 +2241,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2516,6 +2507,7 @@ skills:
     icon: SelfDefBuff
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -2534,7 +2526,6 @@ skills:
           range: 6
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2905,6 +2896,7 @@ skills:
     icon: P.SelfDefBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -2924,7 +2916,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3265,6 +3256,7 @@ skills:
     icon: P.SelfAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -3284,7 +3276,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3618,6 +3609,7 @@ skills:
     icon: P.SelfDefBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 5
     buffs:
       index:
@@ -3637,7 +3629,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,1,1,0,0,1,0,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4232,16 +4223,16 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
-      Idle_02_01: ""
-      Idle_03_01: ""
-      Idle_04_01: ""
-      SPIdle_02_01: ""
-      Oath: ""
-      OathIdle_01: ""
+      Idle_01_01: "MMORPG : 射程距離{0}"
+      Idle_01_02: "タバコ : クリティカル{0}%"
+      Idle_01_03: "ラプラス : 対重装型ダメージ量{0}%"
+      SPIdle_01_01: "タバコ : 命中{0}%"
+      Idle_02_01: "参精 : 行動力{0}%"
+      Idle_03_01: <暗殺目標指定>射程距離{0}
+      Idle_04_01: MMORPG :{0}のHPで戦闘続行
+      SPIdle_02_01: "ラプラス : 対機動型ダメージ量{0}%"
+      Oath: "偉大なる跳躍 : 行動力/AP減少免疫"
+      OathIdle_01: "参精 : 偵察有効化"
       MVP: ""
     "":
       Join: やっと守る価値のあるお方にお会いできましたね。
@@ -4539,19 +4530,19 @@ dialogue:
       Idle_01_01: |-
         只有我能守護主人。
         別的孩子只會妨礙到我們。
-      Idle_01_02: 嘿嘿……被迷住了嗎？可以理解。
+      Idle_01_02: 嘿嘿…被迷住了嗎？可以理解。
       Idle_01_03: |-
         這裡太吵了。有沒有更安靜的
         地方？
       SPIdle_01_01: |-
-        時間還早……就算是我
+        時間還早…就算是我
         也是會害羞的。
       Idle_02_01: |-
         儘管說吧。妨礙護衛的
         孩子們我多會一一
         去除掉的。
       Idle_03_01: |-
-        呼呼。東張西望……或許
+        呼呼。東張西望…或許
         在找和我呆在一起的地方嗎？我已經
         找到了。
       Idle_04_01: |-
@@ -4560,10 +4551,10 @@ dialogue:
         玩點什麼好呢？
       SPIdle_02_01: |-
         我也在等。趕緊
-        走吧。安靜的地方……還是
+        走吧。安靜的地方…還是
         喜歡開放的地方？
       Oath: |-
-        真的想殺死全部後……和主人一起在這樣的海灘度過的話……主人也想要那個吧？
+        真的想殺死全部後…和主人一起在這樣的海灘度過的話…主人也想要那個吧？
         如果主人這樣特別地想我的話，主人想要的遊戲我全部都會做的，這是真的啊。
       OathIdle_01: |-
         槍已經準備好了。
@@ -4659,10 +4650,10 @@ dialogue:
         最好的護衛是事前預防。
         這把手槍是為此而存在的。
       Idle_01_02: |-
-        ／嗯嗯……你這是不是以護衛為藉口
+        嗯嗯…你這是不是以護衛為藉口
         故意靠得很近的啊？啊，我能
-        理解……
-      Idle_01_03: 這裡只有我們兩個人……真好。
+        理解…
+      Idle_01_03: 這裡只有我們兩個人…真好。
       SPIdle_01_01: |-
         天哪，這種行動還是
         更親近了再做吧。
@@ -4674,19 +4665,19 @@ dialogue:
         主人？沒有話要說嗎？我到底
         要等到什麼時候？
       Idle_04_01: |-
-        呼呼……來在靠近一些。
+        呼呼…來在靠近一些。
         直接抱住我的話
         護衛你更容易啊。
       SPIdle_02_01: |-
-        因為沒有任何人……所以變得更加
-        果敢了？雖然不是討厭……
+        因為沒有任何人…所以變得更加
+        果敢了？雖然不是討厭…
       Oath: |-
-        主人……！莉莉絲早就知道了。我一直在等你。我就知道主人最後會選擇莉莉絲……！
-        哈哈，哈哈哈……這是主人與我的愛之信物……主人？因為主人是要幹大事的人，
-        所以我可以同意你偶爾找其他人玩。不過……要更加愛莉莉絲。知道了嗎？
+        主人…！莉莉絲早就知道了。我一直在等你。我就知道主人最後會選擇莉莉絲…！
+        哈哈，哈哈哈…這是主人與我的愛之信物…主人？因為主人是要幹大事的人，
+        所以我可以同意你偶爾找其他人玩。不過…要更加愛莉莉絲。知道了嗎？
       OathIdle_01: |-
         主人，我偶爾在撫摸
-        那天的禮物的時候……會想，這個世界上只有
+        那天的禮物的時候…會想，這個世界上只有
         我們兩個人就好了。
       MVP: ""
     M:
@@ -4711,7 +4702,7 @@ dialogue:
         如果可以的話，我真想除掉除了妹妹們以外的其他
         傢伙，呃，
         其他人。但是，如果這樣，應該會被
-        主人討厭吧……呼呼，你說我是善良的
+        主人討厭吧…呼呼，你說我是善良的
         莉莉絲嗎？
       Idle_01_02: |-
         主人。你要不要給我的妹妹們
@@ -4721,24 +4712,15 @@ dialogue:
       Idle_01_03: |-
         抱歉，主人。我沒想到
         我會無法承受。對於低估了主人器皿
-        的壞莉莉絲……
+        的壞莉莉絲…
         請給予懲罰吧。
       SPIdle_01_01: |-
-        哈啊，主人……更加的欺負莉莉絲吧。
-        只要是主人，就連痛苦也……
+        哈啊，主人…更加的欺負莉莉絲吧。
+        只要是主人，就連痛苦也…
       MVP: ""
 skins:
   sid: null
   artist: Kakiman
-  offsets:
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -4764,19 +4746,11 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
   skins:
     - sid: 1
       artist: Kakiman
-      offsets:
-        - -20
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 136
       G: true
       Spine: false
@@ -4803,19 +4777,11 @@ skins:
       releaseDate: 1556755200000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
     - sid: 2
       artist: Kakiman
-      offsets:
-        - -10
-        - 80
-        - null
-        - null
-        - null
-        - 80
-        - null
-        - null
       price: 159
       G: true
       Spine: false
@@ -4842,20 +4808,12 @@ skins:
       releaseDate: 1565222400000
       metadata:
         imageId: 2
+        iconId: 2
         tbarId: 2
         voiceId: 2
         2dmodel_dam: 2DModel_3P_BlackLilith_NS2_Dam
     - sid: 3
       artist: Pinkmill
-      offsets:
-        - 130
-        - null
-        - 10
-        - null
-        - null
-        - null
-        - 30
-        - null
       price: 196
       G: true
       Spine: false
@@ -4888,6 +4846,7 @@ skins:
       releaseDate: 1667779200000
       metadata:
         imageId: 3
+        iconId: 3
         tbarId: 3
         voiceId: 3
         2dmodel: 2DModel_3P_BlackLilith_NS3

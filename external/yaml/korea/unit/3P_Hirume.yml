@@ -440,7 +440,7 @@ company: Saman
 maker: Saman
 country: KR
 age: ""
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice:
   - ko
@@ -504,6 +504,7 @@ source:
   - - Ev:Ev12:EV2-1Ex
   - - Ev:Ev15:EV1-5
   - - Ev:Ev19:EV1-3Ex
+  - - Ev:Ev23:EV2-3Ex
 research: false
 skills:
   "1":
@@ -511,6 +512,7 @@ skills:
     icon: Particle
     target: enemy
     delayed: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -529,7 +531,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -649,7 +650,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -769,7 +769,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -889,7 +888,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1009,7 +1007,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1129,7 +1126,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1249,7 +1245,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1369,7 +1364,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1489,7 +1483,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1609,7 +1602,6 @@ skills:
           range: 3
           ap: 4
           grid: 4>0,0,0,1,0.75,0.5,0,0,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1778,6 +1770,7 @@ skills:
     icon: Barrier
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -1796,7 +1789,6 @@ skills:
           range: 6
           ap: 7
           grid: F>1,0,1,0,1,0,1,0,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2039,6 +2031,7 @@ skills:
     icon: P.SelfDefBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -2058,7 +2051,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2225,6 +2217,7 @@ skills:
     icon: P.ShieldWall
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -2244,7 +2237,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,0,1,0,1,0,1,0,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2475,6 +2467,7 @@ skills:
     icon: P.Scan
     target: enemy
     delayed: false
+    target_ground: true
     leastGrade: 5
     buffs:
       index:
@@ -2494,7 +2487,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2847,23 +2839,25 @@ dialogue:
         가서 서로의 온기를 나누자꾸나.
       MVP: 억겁의 시간 동안 첩이 그대를 지탱해 왔지 않느냐, 이 정도는 당연지사니라!
     "2":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 무엇을 불태, 앗, 아니, 얼리면 되느냐?
+      Leader: 내가 수령이니 내 말을 듣거라 후후훗.
+      SortiePick: 처, 첩은 두렵지 않다!
+      StageStart: 적이 아무리 무서워도 앨리스 언니보다 무섭겠느냐?
+      Retreat: 이번만큼은 살려주겠다!
+      SearchStart: |-
+        이 옷을 입고 험한 일을 해야 하다니.
+        하지만 어쩔 수 없구나. 그대의 부탁이니.
+      SearchEnd: 돌아왔느니라. 말로만 수고했다고 하지 말고 첩을 안아주거라.
+      BattleFocus: 듣겠노라.
+      ActionApprove: 알겠느니라.
+      SpSkill: 아무도 우리를 해하지 못할지니.
+      Retire: 힘들게 만든 옷인데…
+      Repair: 첩은 괜찮다. 그런데 찢어졌던 옷도 어느새 멀쩡해졌으니 귀신이 곡할 노릇이구나.
+      Reinforce: 으흣. 첩의 냉기가 더욱 혹독해지는구나.
+      ItemEquip: 첩을 걱정하는 그대의 마음이 느껴지는구나.
+      CoreLink: 사, 살살하거라. 아프지 않게.
+      PresentGet: 흐흥. 선물 덕분이 아니라 그대의 마음 덕에 첩의 얼어붙은 마음이 녹는구나.
+      Login: 첩을 보았구나. 첩을 본 자는 살려둘 수 없다! 노, 농담이다.
       Idle_01_01: |-
         만년설보다 차가운 아홉꼬리 설무녀이니라.
         트, 특색을 너무 많이 넣었다고 하지 말거라!
@@ -2913,25 +2907,25 @@ dialogue:
         지옥불조차 태워버릴 정도로 뜨거우니.
         이 불꽃에 이름을 붙이자면...
         사랑이라 하겠다. 그대를 향한 사랑 말이다.
-      MVP: ""
+      MVP: 첩이 분골쇄신하였으니 당연한 일 아니겠느냐.
     "3":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 뭐, 사령관이 나를 필요로 한다면야.
+      Leader: 나만 믿어, 사령관.
+      SortiePick: 다들 준비됐지?
+      StageStart: 소꿉친구의 힘을 보여줄게.
+      Retreat: 하교 시간이네.
+      SearchStart: 사령관. 소꿉친구한테 이런 일을 시키는 거야?
+      SearchEnd: 흥. 절대 안 놔줘. 떨어져 있던 만큼 꼭 달라붙어 있을 거야.
+      BattleFocus: 명령 부탁해, 사령관.
+      ActionApprove: 내게 맡겨, 사령관.
+      SpSkill: 퇴마의 술 소꿉친구 식!
+      Retire: 소꿉친구는 무적일 텐데…
+      Repair: 읏. 옷이 찢어지진 않았겠지?
+      Reinforce: 공부를 좀 더 잘하게 되려나?
+      ItemEquip: 어때? 이거 나랑 잘 어울려?
+      CoreLink: 꼬리가 2배가 되면 매력도 2배가 되겠지?
+      PresentGet: 이힛. 역시 내게 반하지 않고서는 못 배기겠지?
+      Login: 빨리 와, 사령관. 곧 수업 시작이야.
       Idle_01_01: |-
         아침이야, 사령관!
         갑자기 뭐냐고?
@@ -2967,7 +2961,7 @@ dialogue:
         게임 속의 히루메와, 현실의 히루메...
         많은 차이가 있지만, 이것 하나는 변함없다.
         바로 그대를 사랑한다는 것이지.
-      MVP: ""
+      MVP: 역시 소꿉친구 히로인이 최고지?
     "":
       Intro: >-
         소개 말이더냐. 첩은 고귀한 존재를 모시는 무녀, 히루메다. 잠시 그대에게 신세를- ……! 가, 가까이 오지 말고 거기서 듣거라!
@@ -3334,7 +3328,6 @@ dialogue:
         I made these clothes in secret while the others were asleep. 
         Do you like them? You should.
         I've been scolded so many times for dozing off during the day.
-
         It would not be worth it.
       Idle_01_03: >-
         You can’t look past the snowstorm I've created.
@@ -3346,7 +3339,6 @@ dialogue:
         I spent all my tuna cans making my clothes. I had to borrow a holo device…
       SPIdle_01_01: |-
         If you get charmed by my beauty and touch me,
-
         your hand is sure to freeze.
       Idle_02_01: >-
         My dear, hold my hand.
@@ -3370,7 +3362,6 @@ dialogue:
         All the way… deep inside…
       Oath: >-
         Whether it'd be a nine-tailed fox or an ice witch,
-
 
         I don't like love stories that involve fear. Because most of them end in tragedy. But I have nothing to fear, because our love has spanned through multiple lives. So my dear, put aside your worries and let’s make love.
       OathIdle_01: |-
@@ -3396,16 +3387,42 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
-      Idle_02_01: ""
-      Idle_03_01: ""
-      Idle_04_01: ""
-      SPIdle_02_01: ""
-      Oath: ""
-      OathIdle_01: ""
+      Idle_01_01: |-
+        It’s morning, Commander!
+        You wanna know what am I doing?
+        Everyone in the comic greets people like this.
+      Idle_01_02: |-
+        Now, I’ll let you touch my tail since you worked hard.
+        ...Sometimes, it feels like you like my tail more
+        than you like me.
+      Idle_01_03: |-
+        Between your childhood friend Hirume from the game and the real Hirume,
+        which do you like better?
+      SPIdle_01_01: I-I can’t do this because I don’t like you enough!
+      Idle_02_01: |-
+        Childhood friends always stay close
+        and know everything about each other.
+        Doesn't that sound like our relationship?
+      Idle_03_01: |-
+        I joined the band because I wanted to participate in a club.
+        ...Why the band?
+        To confess to someone that I like at the festival.
+      Idle_04_01: |-
+        I studied cartoons and games when I was a student.
+        So, you can count on me!
+        I will make your school days perfect, Commander!
+      SPIdle_02_01: |-
+        C-Commander, we can do all the things
+        we couldn’t before
+        since I like you enough now.
+      Oath: That's right. I planned this because I wanted to give you the best school
+        experience. How was school life with me? Was it fun? Did you feel the
+        love that I have for you? Never mind, there is no need to ask. Seeing as
+        you how you're handing me a ring... Hehe.
+      OathIdle_01: |-
+        The Hirume in the game and the real Hirume...
+        They are different, but one thing doesn't change...
+        the fact that I love you.
       MVP: ""
     "":
       Intro: >-
@@ -3532,11 +3549,11 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         你第一次看到本妾穿禮服嗎？
-        本妾今天叫你來是因為……嗯……？！
+        本妾今天叫你來是因為…嗯…？！
         本，本妾正在說正經事！
         從現在開始，不准你摸我的尾巴，不准！​
       Idle_01_02: |-
-        本妾現在才領悟。你還沒……
+        本妾現在才領悟。你還沒…
         領悟到嗎？那麼本妾
         就等你自己領悟。
         因為那就是本妾和你的
@@ -3544,36 +3561,36 @@ dialogue:
       Idle_01_03: |-
         好熟悉啊。過去，你和本妾之間
         也有這麼一段距離。那個時候，我們經過
-        幾十萬劫才親近……
+        幾十萬劫才親近…
         但是本世應該不需要那麼長的時間。​
       SPIdle_01_01: |-
         不能錯過時機。
         你啊，得耐心點。​
       Idle_02_01: |-
-        咿呀？！我，我不准你摸尾巴，你就摸耳朵……！
+        咿呀？！我，我不准你摸尾巴，你就摸耳朵…！
         在聽完重要的事情之前，
-        不准你摸啊……嗯……那裡，後面……
-        啊啊……對，就是那兒……​
+        不准你摸啊…嗯…那裡，後面…
+        啊啊…對，就是那兒…​
       Idle_03_01: |-
         你終於明白了嗎？對，你和本妾的緣分
         從前世延續至今。我們經過漫長的歲月
         在本世再一次相遇。
-        ……你啊，本妾就像前世一樣，
+        …你啊，本妾就像前世一樣，
         在本世也仍然深愛著你。​
       Idle_04_01: |-
         第一次遇見你的時候，跟你一起逃跑的
         那段時間真是令人惋惜。如果我早一點意識到，
-        就絕不會白白浪費那段時間……
+        就絕不會白白浪費那段時間…
         不過現在後悔已經晚了。為了彌補你和本妾之間消失的時間，
         我會忠於當下。​
       SPIdle_02_01: |-
         天都快亮了，
-        你還不不夠嗎……沒辦法。
-        我已經發誓和你白頭偕老，不離不棄……
+        你還不不夠嗎…沒辦法。
+        我已經發誓和你白頭偕老，不離不棄…
         本妾就陪到你滿意為止。​
       Oath: |-
-        呼呼……在前世你和本妾結下了夫妻之緣。當時的經歷和現在應該沒什麼不同，
-        但是我的心卻怦怦跳個不停，而且我的臉就像鳳仙花一樣一碰就要炸開了。……你需要我的回答嗎？正如本妾之前所說的一樣，
+        呼呼…在前世你和本妾結下了夫妻之緣。當時的經歷和現在應該沒什麼不同，
+        但是我的心卻怦怦跳個不停，而且我的臉就像鳳仙花一樣一碰就要炸開了。…你需要我的回答嗎？正如本妾之前所說的一樣，
         發誓我對你的愛情永恆不變。從今以後，你是本妾的，本妾也是你的。
       OathIdle_01: |-
         在無盡的輪回中，
@@ -3666,16 +3683,39 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
-      Idle_02_01: ""
-      Idle_03_01: ""
-      Idle_04_01: ""
-      SPIdle_02_01: ""
-      Oath: ""
-      OathIdle_01: ""
+      Idle_01_01: |-
+        司令官，早上了！
+        你問我幹嘛突然這樣？
+        漫畫裡，大家都是這樣打招呼的。
+      Idle_01_02: |-
+        好，你很努力了，
+        所以我就讓你摸摸我的尾巴…
+        你有時好像喜歡我的尾巴，勝過於喜歡我。
+      Idle_01_03: |-
+        遊戲的青梅竹馬希魯梅跟現實中的希魯梅，
+        你更喜歡哪一個？
+      SPIdle_01_01: 好、好感度不足，不能做這種行為！
+      Idle_02_01: |-
+        所謂的青梅竹馬就是總是在你身邊，
+        知道彼此所有事情的關係，
+        這不正好就是在說我們之間的關係嗎？
+      Idle_03_01: |-
+        我想著要不要玩社團呢，就進了熱音社
+        …你問我為什麼偏偏選熱音社？
+        為了可以在慶典跟人告白。
+      Idle_04_01: |-
+        我透過漫畫跟遊戲學到了關於學生時期的事，
+        所以，司令官就相信我、跟著我吧！
+        我會打造一個完美的學生時期給你！
+      SPIdle_02_01: |-
+        司、司令官，現在好感度已經夠了，
+        所以你可以嘗試，對我做這段時間沒能對我做的
+        這種事或那種事…
+      Oath: 對，小妾想為你打造最棒的學生時期，所以才會計劃這次的事。和小妾一起度過的學生時期怎麼樣？開心嗎？小妾對你的心意，有好好傳達給你嗎？不對，從你給我戒指的這點來看，我應該問都不用問…呵呵。
+      OathIdle_01: |-
+        遊戲裡的希魯梅跟現實中的希魯梅…
+        雖然有很大的差異，但有一點沒變，
+        那就是我愛你。
       MVP: ""
     "":
       Intro: >-
@@ -3690,7 +3730,7 @@ dialogue:
         ……話說回來，你的眼神從剛才開始就很可疑。莫非……原，原來如此！你這傢伙，企圖對本妾做過分的事……！咳，是本妾大意了。當你豁然分給我食物的時候，就應該察覺……
 
         你別想抵賴！你不是一直用陰險的眼神盯著本妾的耳朵和尾巴嗎？嗚嗚……本妾才吃了幾罐金槍魚罐頭而已，就要被你淩辱了……本妾正是怕會這樣才不想見任何人的啊……
-      Join: 本妾是侍奉尊貴者的巫女，希魯梅。……你，你該不會是在想奇怪的事情吧？
+      Join: 本妾是侍奉尊貴者的巫女，希魯梅。…你，你該不會是在想奇怪的事情吧？
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -3713,36 +3753,36 @@ dialogue:
         你太無理了。妾只是，被挪到了能更好地利用
         這強大力量的地方而已。
       Idle_01_02: |-
-        你那眼神……你這傢伙，你打算拿小妾怎麼辦！
-        明，明明弄得到處都亂糟糟的……
-        呃呃……就這個不行……
+        你那眼神…你這傢伙，你打算拿小妾怎麼辦！
+        明，明明弄得到處都亂糟糟的…
+        呃呃…就這個不行…
       Idle_01_03: |-
         妾是供奉神聖的光輝的巫女。要守護你-
         等，等等！不要走這麼近！
-      SPIdle_01_01: 嗚嗚……這，這之後，明明……
+      SPIdle_01_01: 嗚嗚…這，這之後，明明…
       Idle_02_01: |-
         妾不需要你的關心什麼的。反正-
-        啊……是要走嗎？不，不是。因為你忙……
+        啊…是要走嗎？不，不是。因為你忙…
         不用管妾，你忙你的吧。
       Idle_03_01: |-
-        請約定要一直善待妾。那，那麼……
-        可以離近一點，就一點…………
+        請約定要一直善待妾。那，那麼…
+        可以離近一點，就一點…
       Idle_04_01: |-
-        真的是……親愛的，你是不是已經摸了
+        真的是…親愛的，你是不是已經摸了
         幾個小時了。那個，只摸尾巴的話，可能會膩，其他地方
-        也默默吧。比如耳朵呀，頭呀什麼的……
+        也默默吧。比如耳朵呀，頭呀什麼的…
       SPIdle_02_01: |-
         我就知道會這樣。果然本妾註定會被
-        你烏黑的欲望蹂躪吧……
-        ……你，你在做什麼呢。直到你滿意為止，
+        你烏黑的欲望蹂躪吧…
+        …你，你在做什麼呢。直到你滿意為止，
         就有妾來懷抱你吧。
       Oath: |-
-        ……我一直孤單。小妾數十年來，從未能和某人見過面。不……是不求見。
-        汝啊，當你向我伸手時，小妾有多麼高興……你不會知道的。
-        當你緊緊擁抱笨拙又耍賴的小妾時……呼呼，一一地說就沒完沒了啊。
+        …我一直孤單。小妾數十年來，從未能和某人見過面。不…是不求見。
+        汝啊，當你向我伸手時，小妾有多麼高興…你不會知道的。
+        當你緊緊擁抱笨拙又耍賴的小妾時…呼呼，一一地說就沒完沒了啊。
         以後會慢慢說的。你和我，直到回神的懷之前為止。
       OathIdle_01: |-
-        就一會兒，不要動。被你抱著時……
+        就一會兒，不要動。被你抱著時…
         很涼爽，所以開心。
       MVP: ""
     M:
@@ -3764,12 +3804,12 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: |-
-        不知不覺你的氣味、聲音……包括體溫等，
+        不知不覺你的氣味、聲音…包括體溫等，
         都變得熟悉了起來。呃，你，你要一直說
-        以前的那些事情到什麼時候……！
+        以前的那些事情到什麼時候…！
       Idle_01_02: |-
-        咿呀？！……你是真~的很喜歡尾巴呀。
-        這樣看來，從第一次見面開始就這樣了……
+        咿呀？！…你是真~的很喜歡尾巴呀。
+        這樣看來，從第一次見面開始就這樣了…
         我，我不是說過，要摸的話就溫柔地摸嗎。
       Idle_01_03: |-
         難得展現出了軟弱的樣子。妾是
@@ -3777,22 +3817,13 @@ dialogue:
         像你這樣的小不點，
         無論多久都能接受。來，到這邊。
       SPIdle_01_01: |-
-        你比妾想像的要更加……
-        那個……厲害呀。今天也將妾
+        你比妾想像的要更加…
+        那個…厲害呀。今天也將妾
         弄得亂七八糟吧。
       MVP: ""
 skins:
   sid: null
   artist: SNOWBALL
-  offsets:
-    - 10
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: true
   Spine: false
@@ -3818,20 +3849,12 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_3P_Hirume_N
   skins:
     - sid: 1
       artist: SNOWBALL
-      offsets:
-        - 160
-        - null
-        - 100
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 265
       G: false
       Spine: false
@@ -3858,20 +3881,12 @@ skins:
       releaseDate: 1637539200000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
         2dmodel: 2DModel_3P_Hirume_NS1
     - sid: 2
       artist: Taesi
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 114
       G: true
       Spine: false
@@ -3898,21 +3913,13 @@ skins:
       releaseDate: 1675123200000
       metadata:
         imageId: 2
+        iconId: 2
         tbarId: 2
         voiceId: 2
         2dmodel: 2DModel_3P_Hirume_NS2
         2dmodel_dam: 2DModel_3P_Hirume_NS2_Dam
     - sid: 3
       artist: 2V
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 196
       G: false
       Spine: false
@@ -3939,6 +3946,7 @@ skins:
       releaseDate: 1686096000000
       metadata:
         imageId: 3
+        iconId: 3
         tbarId: 3
         voiceId: 3
         2dmodel: 2DModel_3P_Hirume_NS3

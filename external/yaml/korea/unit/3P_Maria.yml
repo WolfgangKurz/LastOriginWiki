@@ -465,7 +465,7 @@ company: Saman
 maker: Saman
 country: US
 age: "29"
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice:
   - jpdmm
@@ -570,6 +570,7 @@ source:
   - - Ev:Ev19:EV1-7
     - Ev:Ev19:EV2-1
   - - Ev:Ev20:EV3-3B
+  - - Ev:Ev21:EV2-6
 research: false
 skills:
   "1":
@@ -577,6 +578,7 @@ skills:
     icon: ShotGun
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -595,7 +597,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -673,7 +674,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -751,7 +751,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -829,7 +828,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -907,7 +905,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -985,7 +982,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1063,7 +1059,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1141,7 +1136,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1219,7 +1213,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1297,7 +1290,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1415,6 +1407,7 @@ skills:
     icon: SelfDefBuff
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -1433,7 +1426,6 @@ skills:
           range: 6
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1884,6 +1876,7 @@ skills:
     icon: P.TeamAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -1903,7 +1896,6 @@ skills:
           range: 0
           ap: 0
           grid: 1,1,0,1,1,0,1,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2183,6 +2175,7 @@ skills:
     icon: P.TeamSpdBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -2202,7 +2195,6 @@ skills:
           range: 0
           ap: 0
           grid: 1,1,0,1,1,0,1,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2672,6 +2664,7 @@ skills:
     icon: P.Charm
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 5
     buffs:
       index:
@@ -2691,7 +2684,6 @@ skills:
           range: 0
           ap: 0
           grid: 1,1,0,1,1,0,1,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2955,23 +2947,23 @@ dialogue:
         가까이 다가와 주세요 주인님.
       MVP: 어머? 악당의 승리라니 어린아이들이 싫어할 건데? 뭐 괜찮겠죠?
     "2":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 누구를 지켜드리면 되나요?
+      Leader: 아홉 번째 순록처럼 모두를 이끌게요.
+      SortiePick: 음… 멋대로 하면 선물 작은 걸로 드릴 거예요.
+      StageStart: 나쁜 아이들에게는 벌을 주죠.
+      Retreat: 벌써 날이 밝았나요?
+      SearchStart: 이힛. 아이들이 좋아할 선물을 찾아볼게요.
+      SearchEnd: 선물이랑 트리에 장식할 것들도 많이 찾아왔어요.
+      BattleFocus: ♩~ ♬~ 네? 아, 네.
+      ActionApprove: 알겠습니다.
+      SpSkill: 자, 바깥은 위험해요.
+      Retire: 아이들에게… 선물을 전해야 하는데…
+      Repair: 아이들에게… 이런 모습을… 보여줄 수 없겠네요.
+      Reinforce: 더 무거운 선물도 준비할 수 있겠네요.
+      ItemEquip: 새로운 트리 장식인가요?
+      CoreLink: 이제 선물을 더 많이 줄 수 있겠네요.
+      PresentGet: 선물을 전해주는 제가 선물을 받았네요. 주인님도 메리 크리스마스.
+      Login: 어서 오세요 주인님. 자, 빨리 준비하죠. 아이들이 기다리고 있어요.
       Idle_01_01: |-
         후후, 제 머리가 신경 쓰이시나요?
         이런 식으로 머리를 길러서 아이들의
@@ -3014,7 +3006,7 @@ dialogue:
         야구? 아니면 축구? 그것도 아니면 럭비?
         아, 리그를 구성하는 것도 좋겠네요.
         무슨 말이냐고요? 후후, 무슨 의미일까요?
-      MVP: ""
+      MVP: 허, 이런 선물은 기대하지 않았는데. 감사해요.
     "":
       Join: 네 주인님. 앞으로는 제가 모실게요.
       SquadJoin: 제가 필요한 곳이군요?
@@ -3442,39 +3434,39 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: |-
-        那邊…………LRL？如果在
+        那邊…LRL？如果在
         那邊的話，可以幫我
         一下嗎？
       Idle_01_02: |-
-        胸口好悶啊…………好希望有人
-        能過來幫我解開這個……
+        胸口好悶啊…好希望有人
+        能過來幫我解開這個…
       Idle_01_03: |-
         呃，天啊！你是司令官？
-        那為什麼……只是一直在
-        看著呢……？
+        那為什麼…只是一直在
+        看著呢…？
       SPIdle_01_01: |-
-        呃……呃……這是在幫我……
+        呃…呃…這是在幫我…
         吧？
       Idle_02_01: |-
-        這樣就很好了…………呃……嗯，
-        知道了……主人喜歡的話……
+        這樣就很好了…呃…嗯，
+        知道了…主人喜歡的話…
         那我也喜歡。
       Idle_03_01: |-
         變得熟悉，感覺有點害怕，
-        我……怕對什麼
+        我…怕對什麼
         覺醒了。
       Idle_04_01: |-
         我也非常喜歡無論我什麼樣子
         都會喜歡的
         主人。
       SPIdle_02_01: |-
-        嗯…………更粗魯一些，我
+        嗯…更粗魯一些，我
         也沒關係。
       Oath: |-
-        我……其實指望著這一天的到來。
-        而……這個真的成為了現實，讓我胸懷澎湃呢。主人？請一直……留在我身邊吧……
+        我…其實指望著這一天的到來。
+        而…這個真的成為了現實，讓我胸懷澎湃呢。主人？請一直…留在我身邊吧…
       OathIdle_01: |-
-        今天也是一起呀……再
+        今天也是一起呀…再
         離我近點吧，主人。
       MVP: ""
     "2":
@@ -3561,30 +3553,30 @@ dialogue:
         事情嗎？
       Idle_01_02: |-
         能這樣幫到
-        主人……真的很開心。
+        主人…真的很開心。
       Idle_01_03: |-
         是，主人。有什麼需要的話
         就請說吧。
-      SPIdle_01_01: 這，這樣…………不行的……
+      SPIdle_01_01: 這，這樣…不行的…
       Idle_02_01: |-
         不要擔心，我會
         守護主人的。
       Idle_03_01: |-
         主，主人？這樣直勾勾的
-        看著我……很為難呢……
+        看著我…很為難呢…
       Idle_04_01: |-
         主人不必一個人
         承擔所有。我會
         幫助你的。
       SPIdle_02_01: |-
-        主……主人？這裡危險……
-        還是去其他的地方……
+        主…主人？這裡危險…
+        還是去其他的地方…
       Oath: |-
-        我……沒想到主人會這樣想我……啊，不是！不是拒絕的意思，是……
-        好的……主人。我會一如既往地待在主人身邊。以後也會永遠……
+        我…沒想到主人會這樣想我…啊，不是！不是拒絕的意思，是…
+        好的…主人。我會一如既往地待在主人身邊。以後也會永遠…
       OathIdle_01: |-
-        是的，主人……如果有什麼需要
-        請都告訴我……
+        是的，主人…如果有什麼需要
+        請都告訴我…
       MVP: ""
     M:
       SquadJoin: ""
@@ -3606,36 +3598,27 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         主人，你再過來
-        一點……好讓我能更好地
-        保護你。很好……
+        一點…好讓我能更好地
+        保護你。很好…
         就是這樣。
       Idle_01_02: |-
         我想一直分擔主人的
         擔子。
-        主人和我……現在……也可以說是
+        主人和我…現在…也可以說是
         成為一體了。
       Idle_01_03: |-
         你總是釋放這種信號
-        的話……我會害羞的……
-        還沒到睡覺的時間……
+        的話…我會害羞的…
+        還沒到睡覺的時間…
       SPIdle_01_01: |-
         開啟保，保護模式！
-        轉換不可視狀態！……呃……
-        不是這樣嗎？呃……
-        好害羞，怎麼辦……
+        轉換不可視狀態！…呃…
+        不是這樣嗎？呃…
+        好害羞，怎麼辦…
       MVP: ""
 skins:
   sid: null
   artist: SIMA
-  offsets:
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: true
   Spine: false
@@ -3661,20 +3644,12 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_3P_Maria_N
   skins:
     - sid: 1
       artist: SIMA
-      offsets:
-        - 50
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 114
       G: true
       Spine: false
@@ -3701,20 +3676,12 @@ skins:
       releaseDate: 1604880000000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
         2dmodel: 2DModel_3P_Maria_NS1
     - sid: 2
       artist: Corgi
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 114
       G: true
       Spine: false
@@ -3741,6 +3708,7 @@ skins:
       releaseDate: 1671408000000
       metadata:
         imageId: 2
+        iconId: 2
         tbarId: 2
         voiceId: 2
         2dmodel: 2DModel_3P_Maria_NS2

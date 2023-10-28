@@ -440,7 +440,7 @@ company: ""
 maker: ""
 country: ""
 age: ""
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice: []
 favor:
@@ -491,6 +491,7 @@ cv:
   "": {}
   M: {}
 source:
+  - - Ev:Ev16:EV1-5Ex
   - - Ev:Ev20:*EV2-3Ex
 research: false
 skills:
@@ -499,6 +500,7 @@ skills:
     icon: Charm
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -517,7 +519,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -803,6 +804,7 @@ skills:
     icon: Music
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -821,7 +823,6 @@ skills:
           range: 6
           ap: 10
           grid: 1,1,1,1,0,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1147,6 +1148,7 @@ skills:
     icon: P.TeamSpdBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -1166,7 +1168,6 @@ skills:
           range: 0
           ap: 0
           grid: 1,1,1,1,0,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1432,6 +1433,7 @@ skills:
     icon: P.SelfAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -1451,7 +1453,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1606,7 +1607,7 @@ skills:
             - key: Effect_PECS_Erato_N_43
               on: wave
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Muse_N
                 - false
               body:
@@ -1935,6 +1936,7 @@ skills:
     icon: P.TeamSpdDeBuff
     target: enemy
     delayed: false
+    target_ground: true
     leastGrade: 5
     buffs:
       index:
@@ -1954,7 +1956,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2528,23 +2529,23 @@ skills:
 dialogue:
   KR:
     "1":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 으응? 이번 의상은 공연용이 아닌 것 같은데?
+      Leader: 달링을 위해 멋진 공연을 보여줄게.
+      SortiePick: 오늘은 앙코르 없이 금방 돌아올게.
+      StageStart: 중요한 옷이니까 조심조심. 공연 시작.
+      Retreat: 금방 돌아갈게, 달링.
+      SearchStart: 이번에는 앙코르 안 할 거야. 조금이라도 더 빨리 돌아오고 싶으니까.
+      SearchEnd: 있지, 나 노래가 안 떠오르더라. 달링 생각으로 머리가 꽉 차버려서.
+      BattleFocus: 응. 잘 들려.
+      ActionApprove: 알았어 달링.
+      SpSkill: 다들 나랑 달링을 위해 환호해 줘.
+      Retire: 달링… 미안해… 나…
+      Repair: 달링… 손…잡고 있어 줄래?
+      Reinforce: 나 다칠까 봐 신경 써주는 거야 달링?
+      ItemEquip: 다음에는 손가락에 끼워줘.
+      CoreLink: 자, 너도 따라 해봐. 프로듀서가 아니라 달! 링!
+      PresentGet: 달링. 이건 비밀인데… 난 달링이 주는 선물이 가장 소중해.
+      Login: 어서 와, 프로듀서. 아, 참. 이제는 달링이지.
       Idle_01_01: |-
         달링은 얌전한 사람이 좋아, 아니면 활발한
         사람이 좋아? 있지, 나느은, 달링이 활발한
@@ -2589,7 +2590,7 @@ dialogue:
         괜찮아. 왜냐면, 달링의 목소리만 들어도
         이렇게 행복하니까… 분명, 어떤 노래를
         부르더라도 내 마음에 쏙 들 거야.
-      MVP: ""
+      MVP: 오늘 가장 빛나는 건 나였지? 달링?
     "":
       Join: 당신이 프로듀서구나? 나는 에라토. 같이 팬분들에게 최고의 무대를 선보이자!
       SquadJoin: 팬분들에게 노래해 줄 수 있다면, 어디든지 좋아!
@@ -3041,25 +3042,25 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         聽說我的聲音可以動搖觀眾們的心。
-        這不是超能力或者魔法，而是因為基因工程...
+        這不是超能力或者魔法，而是因為基因工程…
         總之！只要能獻給粉絲們
         一場完美的表演就夠了。
         下一個訓練是什麼呢，製作人？
       Idle_01_02: |-
         休息的時候，也喜歡在外面和粉絲見面。
-        在那裡又唱歌，又舉行粉絲見面會...
+        在那裡又唱歌，又舉行粉絲見面會…
         想一想就覺得充滿力量。
         粉絲們的關心和愛，是推動我的原動力！
       Idle_01_03: |-
         製作人，你看這個！粉絲們給了我好多禮物。
-        睡前要讀手寫信，吃的...
+        睡前要讀手寫信，吃的…
         要不停地吃才行呢。嗯？沒關係，
         我要自己吃，這都是粉絲為我準備的嘛。
       SPIdle_01_01: |-
         製作人，
         你知道緋聞對於一個歌手而言有多麼致命吧？
       Idle_02_01: |-
-        叫做繆斯的作曲家...這個人寫的歌曲很特別。
+        叫做繆斯的作曲家…這個人寫的歌曲很特別。
         看來是像我一樣真心喜歡音樂的人。
         真的很想見一面…她在這裡嗎？！
         真的？快介紹給我認識一下，製作人！
@@ -3067,7 +3068,7 @@ dialogue:
         這裡！雖然微薄，但精心準備的禮物。
         我有粉絲們照顧，製作人呢，
         如果我不照顧，誰會照顧你？
-        ...怎麼樣？喜歡嗎？
+        …怎麼樣？喜歡嗎？
       Idle_04_01: |-
         這次的舞台是為一個人準備的。
         製作人！謝謝你一直支持我
@@ -3075,13 +3076,13 @@ dialogue:
         就算這樣，我相信你也不會失望的！看好吧！
       SPIdle_02_01: |-
         啊！不行，製作人。
-        就算不是我，其他人...一定要是我嗎...？
+        就算不是我，其他人…一定要是我嗎…？
         我不討厭製作人。
-        因為你在我的內心深處...
-        粉絲們也會理解吧...？
+        因為你在我的內心深處…
+        粉絲們也會理解吧…？
       Oath: |-
-        我也不討厭製作人。不對，我喜歡你。但是為了我能繼續歌手活動...你願意等我嗎？
-        ...我如果當一輩子歌手怎麼辦？那也要等我？那麼喜歡我嗎？什麼嘛！...不過多虧了你，我也下定決心了。我們結婚吧，製作人。
+        我也不討厭製作人。不對，我喜歡你。但是為了我能繼續歌手活動…你願意等我嗎？
+        …我如果當一輩子歌手怎麼辦？那也要等我？那麼喜歡我嗎？什麼嘛！…不過多虧了你，我也下定決心了。我們結婚吧，製作人。
         雖然可能要放棄夢想，但是如果說我們是真心相愛的，粉絲們應該也會理解的吧。我們永遠在一起吧，製作人！
       OathIdle_01: |-
         如果有想聽的歌曲就告訴我吧。
@@ -3109,12 +3110,12 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         就算你再怎麼喜歡我的聲音
-        這也太頻繁了吧？我也會害羞啊...
+        這也太頻繁了吧？我也會害羞啊…
         知道了，一天對你說一次吧。
         我愛你，製作人。
       Idle_01_02: |-
-        啊~真幸福...和粉絲們一起交流雖然很開心，
-        但是被製作人抱在懷裡的感覺真好...
+        啊~真幸福…和粉絲們一起交流雖然很開心，
+        但是被製作人抱在懷裡的感覺真好…
         哼~可以一整天都這樣嗎？
         偶爾也要休息呀。
       Idle_01_03: |-
@@ -3123,22 +3124,13 @@ dialogue:
         實現夢想後，我會開心地跑向你的~
         到時候要接住我哦！
       SPIdle_01_01: |-
-        ...這麼突然？雖然不是沒有準備...
-        不過有可能像上次那樣叫出聲音...
+        …這麼突然？雖然不是沒有準備…
+        不過有可能像上次那樣叫出聲音…
         繼續，不停地吻我吧。
       MVP: ""
 skins:
   sid: null
   artist: きろめ(Kirome)
-  offsets:
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: true
   Spine: false
@@ -3164,21 +3156,13 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_PECS_Erato_N
     2dmodel_dam: 2DModel_PECS_Erato_N_Dam
   skins:
     - sid: 1
       artist: きろめ(Kirome)
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 114
       G: true
       Spine: false
@@ -3205,6 +3189,7 @@ skins:
       releaseDate: 1663545600000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
         2dmodel: 2DModel_PECS_Erato_NS1

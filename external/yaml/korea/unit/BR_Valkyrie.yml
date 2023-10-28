@@ -453,7 +453,7 @@ company: BlackRiver
 maker: BlackRiver
 country: FI
 age: "23"
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice:
   - ko
@@ -549,6 +549,7 @@ source:
   - - Ev:Ev17:EV1-5
   - - Ev:Ev18:EV1-2B
   - - Ev:Ev19:EV1-8
+  - - Ev:Ev23:EV2-2
 research: false
 skills:
   "1":
@@ -556,6 +557,7 @@ skills:
     icon: Shot
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -569,12 +571,11 @@ skills:
         - 8
         - 9
       data:
-        - rate: 1.015
+        - rate: 1.46
           type: 0
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -589,10 +590,8 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - 10
-                      - 11
                       - 87
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -611,7 +610,7 @@ skills:
                   desc:
                     desc: Effect_BR_Valkyrie_N_1_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -620,54 +619,35 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_1_2
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 10%
                       per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
+            - key: Effect_BR_Valkyrie_N_11
+              on: attack_success
               if:
                 - on:
+                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Valkyrie_N_51
+                      - 74
                     attr: 6
                 - false
               body:
@@ -681,35 +661,36 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 3
               buffs:
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
+                    desc: Effect_BR_Valkyrie_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
                   erase:
-                    rounds: 2
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
+              maxStack: 0
+            - key: Effect_BR_Valkyrie_N_53
+              on: attack_success
               if:
+                - in_battle:
+                    - Char_BR_Leona_N
                 - on:
                     func: OR
                     select:
                       - Effect_BR_Valkyrie_N_51
+                      - Effect_BR_Valkyrie_N_52
                     attr: 6
-                - false
               body:
                 - 0
                 - 1
@@ -723,29 +704,28 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
+                    desc: Effect_BR_Valkyrie_N_53_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: Char_BR_Valkyrie_N
+                    level: "0"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Valkyrie_N
                   overlap: 4
               maxStack: 1
-        - rate: 1.105
+        - rate: 1.61
           type: 0
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -760,10 +740,8 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - 10
-                      - 11
                       - 87
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -782,7 +760,7 @@ skills:
                   desc:
                     desc: Effect_BR_Valkyrie_N_1_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -791,54 +769,35 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_1_2
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 10%
                       per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
+            - key: Effect_BR_Valkyrie_N_11
+              on: attack_success
               if:
                 - on:
+                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Valkyrie_N_51
+                      - 74
                     attr: 6
                 - false
               body:
@@ -852,35 +811,36 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 3
               buffs:
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
+                    desc: Effect_BR_Valkyrie_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
                   erase:
-                    rounds: 2
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
+              maxStack: 0
+            - key: Effect_BR_Valkyrie_N_53
+              on: attack_success
               if:
+                - in_battle:
+                    - Char_BR_Leona_N
                 - on:
                     func: OR
                     select:
                       - Effect_BR_Valkyrie_N_51
+                      - Effect_BR_Valkyrie_N_52
                     attr: 6
-                - false
               body:
                 - 0
                 - 1
@@ -894,29 +854,28 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
+                    desc: Effect_BR_Valkyrie_N_53_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: Char_BR_Valkyrie_N
+                    level: "0"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Valkyrie_N
                   overlap: 4
               maxStack: 1
-        - rate: 1.195
+        - rate: 1.76
           type: 0
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -931,10 +890,8 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - 10
-                      - 11
                       - 87
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -953,7 +910,7 @@ skills:
                   desc:
                     desc: Effect_BR_Valkyrie_N_1_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -962,54 +919,35 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_1_2
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 10%
                       per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
+            - key: Effect_BR_Valkyrie_N_11
+              on: attack_success
               if:
                 - on:
+                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Valkyrie_N_51
+                      - 74
                     attr: 6
                 - false
               body:
@@ -1023,35 +961,36 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 3
               buffs:
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
+                    desc: Effect_BR_Valkyrie_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
                   erase:
-                    rounds: 2
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
+              maxStack: 0
+            - key: Effect_BR_Valkyrie_N_53
+              on: attack_success
               if:
+                - in_battle:
+                    - Char_BR_Leona_N
                 - on:
                     func: OR
                     select:
                       - Effect_BR_Valkyrie_N_51
+                      - Effect_BR_Valkyrie_N_52
                     attr: 6
-                - false
               body:
                 - 0
                 - 1
@@ -1065,29 +1004,28 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
+                    desc: Effect_BR_Valkyrie_N_53_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: Char_BR_Valkyrie_N
+                    level: "0"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Valkyrie_N
                   overlap: 4
               maxStack: 1
-        - rate: 1.285
+        - rate: 1.91
           type: 0
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1102,10 +1040,8 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - 10
-                      - 11
                       - 87
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1124,7 +1060,7 @@ skills:
                   desc:
                     desc: Effect_BR_Valkyrie_N_1_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -1133,54 +1069,35 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_1_2
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 10%
                       per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
+            - key: Effect_BR_Valkyrie_N_11
+              on: attack_success
               if:
                 - on:
+                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Valkyrie_N_51
+                      - 74
                     attr: 6
                 - false
               body:
@@ -1194,35 +1111,36 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 3
               buffs:
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
+                    desc: Effect_BR_Valkyrie_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
                   erase:
-                    rounds: 2
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
+              maxStack: 0
+            - key: Effect_BR_Valkyrie_N_53
+              on: attack_success
               if:
+                - in_battle:
+                    - Char_BR_Leona_N
                 - on:
                     func: OR
                     select:
                       - Effect_BR_Valkyrie_N_51
+                      - Effect_BR_Valkyrie_N_52
                     attr: 6
-                - false
               body:
                 - 0
                 - 1
@@ -1236,29 +1154,28 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
+                    desc: Effect_BR_Valkyrie_N_53_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: Char_BR_Valkyrie_N
+                    level: "0"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Valkyrie_N
                   overlap: 4
               maxStack: 1
-        - rate: 1.375
+        - rate: 2.06
           type: 0
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1273,10 +1190,8 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - 10
-                      - 11
                       - 87
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1295,7 +1210,7 @@ skills:
                   desc:
                     desc: Effect_BR_Valkyrie_N_1_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -1304,54 +1219,35 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_1_2
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 10%
                       per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
+            - key: Effect_BR_Valkyrie_N_11
+              on: attack_success
               if:
                 - on:
+                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Valkyrie_N_51
+                      - 74
                     attr: 6
                 - false
               body:
@@ -1365,35 +1261,36 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 3
               buffs:
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
+                    desc: Effect_BR_Valkyrie_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
                   erase:
-                    rounds: 2
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
+              maxStack: 0
+            - key: Effect_BR_Valkyrie_N_53
+              on: attack_success
               if:
+                - in_battle:
+                    - Char_BR_Leona_N
                 - on:
                     func: OR
                     select:
                       - Effect_BR_Valkyrie_N_51
+                      - Effect_BR_Valkyrie_N_52
                     attr: 6
-                - false
               body:
                 - 0
                 - 1
@@ -1407,29 +1304,28 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
+                    desc: Effect_BR_Valkyrie_N_53_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: Char_BR_Valkyrie_N
+                    level: "0"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Valkyrie_N
                   overlap: 4
               maxStack: 1
-        - rate: 1.465
+        - rate: 2.21
           type: 0
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1444,10 +1340,8 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - 10
-                      - 11
                       - 87
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1466,7 +1360,7 @@ skills:
                   desc:
                     desc: Effect_BR_Valkyrie_N_1_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -1475,54 +1369,35 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_1_2
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 10%
                       per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
+            - key: Effect_BR_Valkyrie_N_11
+              on: attack_success
               if:
                 - on:
+                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Valkyrie_N_51
+                      - 74
                     attr: 6
                 - false
               body:
@@ -1536,35 +1411,36 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 3
               buffs:
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
+                    desc: Effect_BR_Valkyrie_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
                   erase:
-                    rounds: 2
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
+              maxStack: 0
+            - key: Effect_BR_Valkyrie_N_53
+              on: attack_success
               if:
+                - in_battle:
+                    - Char_BR_Leona_N
                 - on:
                     func: OR
                     select:
                       - Effect_BR_Valkyrie_N_51
+                      - Effect_BR_Valkyrie_N_52
                     attr: 6
-                - false
               body:
                 - 0
                 - 1
@@ -1578,29 +1454,28 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
+                    desc: Effect_BR_Valkyrie_N_53_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: Char_BR_Valkyrie_N
+                    level: "0"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Valkyrie_N
                   overlap: 4
               maxStack: 1
-        - rate: 1.555
+        - rate: 2.36
           type: 0
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1615,10 +1490,8 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - 10
-                      - 11
                       - 87
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1637,7 +1510,7 @@ skills:
                   desc:
                     desc: Effect_BR_Valkyrie_N_1_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -1646,54 +1519,35 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_1_2
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 10%
                       per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
+            - key: Effect_BR_Valkyrie_N_11
+              on: attack_success
               if:
                 - on:
+                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Valkyrie_N_51
+                      - 74
                     attr: 6
                 - false
               body:
@@ -1707,35 +1561,36 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 3
               buffs:
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
+                    desc: Effect_BR_Valkyrie_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
                   erase:
-                    rounds: 2
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
+              maxStack: 0
+            - key: Effect_BR_Valkyrie_N_53
+              on: attack_success
               if:
+                - in_battle:
+                    - Char_BR_Leona_N
                 - on:
                     func: OR
                     select:
                       - Effect_BR_Valkyrie_N_51
+                      - Effect_BR_Valkyrie_N_52
                     attr: 6
-                - false
               body:
                 - 0
                 - 1
@@ -1749,29 +1604,28 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
+                    desc: Effect_BR_Valkyrie_N_53_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: Char_BR_Valkyrie_N
+                    level: "0"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Valkyrie_N
                   overlap: 4
               maxStack: 1
-        - rate: 1.645
+        - rate: 2.51
           type: 0
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1786,10 +1640,8 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - 10
-                      - 11
                       - 87
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1808,7 +1660,7 @@ skills:
                   desc:
                     desc: Effect_BR_Valkyrie_N_1_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -1817,54 +1669,35 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_1_2
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 10%
                       per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
+            - key: Effect_BR_Valkyrie_N_11
+              on: attack_success
               if:
                 - on:
+                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Valkyrie_N_51
+                      - 74
                     attr: 6
                 - false
               body:
@@ -1878,35 +1711,36 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 3
               buffs:
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
+                    desc: Effect_BR_Valkyrie_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
                   erase:
-                    rounds: 2
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
+              maxStack: 0
+            - key: Effect_BR_Valkyrie_N_53
+              on: attack_success
               if:
+                - in_battle:
+                    - Char_BR_Leona_N
                 - on:
                     func: OR
                     select:
                       - Effect_BR_Valkyrie_N_51
+                      - Effect_BR_Valkyrie_N_52
                     attr: 6
-                - false
               body:
                 - 0
                 - 1
@@ -1920,29 +1754,28 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
+                    desc: Effect_BR_Valkyrie_N_53_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: Char_BR_Valkyrie_N
+                    level: "0"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Valkyrie_N
                   overlap: 4
               maxStack: 1
-        - rate: 1.735
+        - rate: 2.66
           type: 0
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1957,10 +1790,8 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - 10
-                      - 11
                       - 87
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1979,7 +1810,7 @@ skills:
                   desc:
                     desc: Effect_BR_Valkyrie_N_1_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -1988,54 +1819,35 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_1_2
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 10%
                       per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
+            - key: Effect_BR_Valkyrie_N_11
+              on: attack_success
               if:
                 - on:
+                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Valkyrie_N_51
+                      - 74
                     attr: 6
                 - false
               body:
@@ -2049,35 +1861,36 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 3
               buffs:
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
+                    desc: Effect_BR_Valkyrie_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
                   erase:
-                    rounds: 2
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
+              maxStack: 0
+            - key: Effect_BR_Valkyrie_N_53
+              on: attack_success
               if:
+                - in_battle:
+                    - Char_BR_Leona_N
                 - on:
                     func: OR
                     select:
                       - Effect_BR_Valkyrie_N_51
+                      - Effect_BR_Valkyrie_N_52
                     attr: 6
-                - false
               body:
                 - 0
                 - 1
@@ -2091,29 +1904,28 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
+                    desc: Effect_BR_Valkyrie_N_53_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: Char_BR_Valkyrie_N
+                    level: "0"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Valkyrie_N
                   overlap: 4
               maxStack: 1
-        - rate: 1.825
+        - rate: 2.81
           type: 0
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2128,10 +1940,8 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - 10
-                      - 11
                       - 87
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2150,7 +1960,7 @@ skills:
                   desc:
                     desc: Effect_BR_Valkyrie_N_1_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -2159,54 +1969,35 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_1_2
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 10%
                       per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
+            - key: Effect_BR_Valkyrie_N_11
+              on: attack_success
               if:
                 - on:
+                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Valkyrie_N_51
+                      - 74
                     attr: 6
                 - false
               body:
@@ -2220,35 +2011,36 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 3
               buffs:
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
+                    desc: Effect_BR_Valkyrie_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
                   erase:
-                    rounds: 2
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
+              maxStack: 0
+            - key: Effect_BR_Valkyrie_N_53
+              on: attack_success
               if:
+                - in_battle:
+                    - Char_BR_Leona_N
                 - on:
                     func: OR
                     select:
                       - Effect_BR_Valkyrie_N_51
+                      - Effect_BR_Valkyrie_N_52
                     attr: 6
-                - false
               body:
                 - 0
                 - 1
@@ -2262,21 +2054,21 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
+                    desc: Effect_BR_Valkyrie_N_53_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: Char_BR_Valkyrie_N
+                    level: "0"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Valkyrie_N
                   overlap: 4
               maxStack: 1
     values:
@@ -2296,43 +2088,43 @@ skills:
             desc:
               desc: Effect_BR_Valkyrie_N_1_1
               type: 1
-              value: "0.200000"
+              value: "0.100000"
               level: "0.010000"
-            base: 0.2
+            base: 0.1
             per: 0.01
             chance: 1
-          - icon: BuffIcon_EVADE_UP
+          - icon: BuffIcon_PhyATK_UP
             desc:
-              desc: Effect_BR_Valkyrie_N_12_1
+              desc: Effect_BR_Valkyrie_N_1_2
               type: 1
-              value: "0.350000"
-              level: "0.050000"
-            base: 0.35
-            per: 0.05
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_PhyATK_UP
+            desc:
+              desc: Effect_BR_Valkyrie_N_11_1
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
             chance: 1
-          - icon: BuffIcon_ATK_UP
+          - icon: BuffIcon_TOGETHER_ATTACK
             desc:
-              desc: Effect_BR_Valkyrie_N_54_1
+              desc: Effect_BR_Valkyrie_N_53_1
               type: 1
-              value: "0.230000"
-              level: "0.030000"
-            base: 0.23
-            per: 0.03
-            chance: 1
-          - icon: BuffIcon_DEF_PIERCE_UP
-            desc:
-              desc: Effect_BR_Valkyrie_N_55_1
-              type: 1
-              value: "0.350000"
-              level: "0.050000"
-            base: 0.35
-            per: 0.05
+              value: Char_BR_Valkyrie_N
+              level: "0"
+            value: Char_BR_Valkyrie_N
             chance: 1
   "2":
     key: "2"
     icon: Snipe
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -2346,224 +2138,11 @@ skills:
         - 8
         - 9
       data:
-        - rate: 1.65
-          type: 0
-          range: 4
-          ap: 7
-          grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: true
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_BR_Valkyrie_N_2
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_2_1
-                    type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 4
-                - icon: BuffIcon_BARRIER_PIERCE
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_2_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 94
-                    penetration_force: true
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_13
-              on: attack_success
-              if:
-                - pos: 0
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_BARRIER_PIERCE
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_13_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 94
-                    penetration_force: true
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
         - rate: 1.8
           type: 0
           range: 4
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2594,7 +2173,7 @@ skills:
                     desc: Effect_BR_Valkyrie_N_2_1
                     type: 1
                     value: "0.300000"
-                    level: "0.015000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2603,179 +2182,30 @@ skills:
                     type: 83
                     damage_add:
                       base: 30%
-                      per: 1.5%
+                      per: 2%
                   overlap: 4
-                - icon: BuffIcon_BARRIER_PIERCE
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_Valkyrie_N_2_2
-                    type: 0
-                    value: "0"
+                    type: 1
+                    value: "34"
                     level: "0"
                   attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 94
-                    penetration_force: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_13
-              on: attack_success
-              if:
-                - pos: 0
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_BARRIER_PIERCE
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_13_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 94
-                    penetration_force: true
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-        - rate: 1.95
+        - rate: 2
           type: 0
           range: 4
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2806,7 +2236,7 @@ skills:
                     desc: Effect_BR_Valkyrie_N_2_1
                     type: 1
                     value: "0.300000"
-                    level: "0.015000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2815,179 +2245,30 @@ skills:
                     type: 83
                     damage_add:
                       base: 30%
-                      per: 1.5%
+                      per: 2%
                   overlap: 4
-                - icon: BuffIcon_BARRIER_PIERCE
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_Valkyrie_N_2_2
-                    type: 0
-                    value: "0"
+                    type: 1
+                    value: "34"
                     level: "0"
                   attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 94
-                    penetration_force: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_13
-              on: attack_success
-              if:
-                - pos: 0
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_BARRIER_PIERCE
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_13_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 94
-                    penetration_force: true
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-        - rate: 2.1
+        - rate: 2.2
           type: 0
           range: 4
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3018,7 +2299,7 @@ skills:
                     desc: Effect_BR_Valkyrie_N_2_1
                     type: 1
                     value: "0.300000"
-                    level: "0.015000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3027,391 +2308,30 @@ skills:
                     type: 83
                     damage_add:
                       base: 30%
-                      per: 1.5%
+                      per: 2%
                   overlap: 4
-                - icon: BuffIcon_BARRIER_PIERCE
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_Valkyrie_N_2_2
-                    type: 0
-                    value: "0"
+                    type: 1
+                    value: "34"
                     level: "0"
                   attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 94
-                    penetration_force: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_13
-              on: attack_success
-              if:
-                - pos: 0
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_BARRIER_PIERCE
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_13_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 94
-                    penetration_force: true
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-        - rate: 2.25
-          type: 0
-          range: 4
-          ap: 7
-          grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: true
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_BR_Valkyrie_N_2
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_2_1
-                    type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 4
-                - icon: BuffIcon_BARRIER_PIERCE
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_2_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 94
-                    penetration_force: true
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_13
-              on: attack_success
-              if:
-                - pos: 0
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_BARRIER_PIERCE
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_13_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 94
-                    penetration_force: true
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
         - rate: 2.4
           type: 0
           range: 4
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3442,7 +2362,7 @@ skills:
                     desc: Effect_BR_Valkyrie_N_2_1
                     type: 1
                     value: "0.300000"
-                    level: "0.015000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3451,179 +2371,30 @@ skills:
                     type: 83
                     damage_add:
                       base: 30%
-                      per: 1.5%
+                      per: 2%
                   overlap: 4
-                - icon: BuffIcon_BARRIER_PIERCE
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_Valkyrie_N_2_2
-                    type: 0
-                    value: "0"
+                    type: 1
+                    value: "34"
                     level: "0"
                   attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 94
-                    penetration_force: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_13
-              on: attack_success
-              if:
-                - pos: 0
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_BARRIER_PIERCE
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_13_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 94
-                    penetration_force: true
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-        - rate: 2.55
+        - rate: 2.6
           type: 0
           range: 4
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3654,7 +2425,7 @@ skills:
                     desc: Effect_BR_Valkyrie_N_2_1
                     type: 1
                     value: "0.300000"
-                    level: "0.015000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3663,179 +2434,30 @@ skills:
                     type: 83
                     damage_add:
                       base: 30%
-                      per: 1.5%
+                      per: 2%
                   overlap: 4
-                - icon: BuffIcon_BARRIER_PIERCE
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_Valkyrie_N_2_2
-                    type: 0
-                    value: "0"
+                    type: 1
+                    value: "34"
                     level: "0"
                   attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 94
-                    penetration_force: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_13
-              on: attack_success
-              if:
-                - pos: 0
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_BARRIER_PIERCE
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_13_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 94
-                    penetration_force: true
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-        - rate: 2.7
+        - rate: 2.8
           type: 0
           range: 4
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3866,7 +2488,7 @@ skills:
                     desc: Effect_BR_Valkyrie_N_2_1
                     type: 1
                     value: "0.300000"
-                    level: "0.015000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3875,391 +2497,30 @@ skills:
                     type: 83
                     damage_add:
                       base: 30%
-                      per: 1.5%
+                      per: 2%
                   overlap: 4
-                - icon: BuffIcon_BARRIER_PIERCE
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_Valkyrie_N_2_2
-                    type: 0
-                    value: "0"
+                    type: 1
+                    value: "34"
                     level: "0"
                   attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 94
-                    penetration_force: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_13
-              on: attack_success
-              if:
-                - pos: 0
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_BARRIER_PIERCE
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_13_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 94
-                    penetration_force: true
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-        - rate: 2.85
-          type: 0
-          range: 4
-          ap: 7
-          grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: true
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_BR_Valkyrie_N_2
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_2_1
-                    type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 4
-                - icon: BuffIcon_BARRIER_PIERCE
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_2_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 94
-                    penetration_force: true
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_13
-              on: attack_success
-              if:
-                - pos: 0
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_BARRIER_PIERCE
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_13_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 94
-                    penetration_force: true
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
         - rate: 3
           type: 0
           range: 4
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4290,7 +2551,7 @@ skills:
                     desc: Effect_BR_Valkyrie_N_2_1
                     type: 1
                     value: "0.300000"
-                    level: "0.015000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -4299,27 +2560,39 @@ skills:
                     type: 83
                     damage_add:
                       base: 30%
-                      per: 1.5%
+                      per: 2%
                   overlap: 4
-                - icon: BuffIcon_BARRIER_PIERCE
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_Valkyrie_N_2_2
-                    type: 0
-                    value: "0"
+                    type: 1
+                    value: "34"
                     level: "0"
                   attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 94
-                    penetration_force: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_12
-              on:
-                after: use_skill
+        - rate: 3.2
+          type: 0
+          range: 4
+          ap: 7
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Valkyrie_N_2
+              on: criticaled
               if:
                 - false
                 - false
@@ -4334,67 +2607,57 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 3
               buffs:
-                - icon: BuffIcon_EVADE_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_12_1
+                    desc: Effect_BR_Valkyrie_N_2_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_13
-              on: attack_success
-              if:
-                - pos: 0
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_BARRIER_PIERCE
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_13_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 0
+                    value: "0.300000"
+                    level: "0.020000"
+                  attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 94
-                    penetration_force: true
+                    type: 83
+                    damage_add:
+                      base: 30%
+                      per: 2%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_2_2
+                    type: 1
+                    value: "34"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_54
-              on:
-                after: use_skill
+        - rate: 3.4
+          type: 0
+          range: 4
+          ap: 7
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Valkyrie_N_2
+              on: criticaled
               if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -4407,34 +2670,57 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 3
               buffs:
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_54_1
+                    desc: Effect_BR_Valkyrie_N_2_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
+                    value: "0.300000"
+                    level: "0.020000"
+                  attr: 3
                   erase:
-                    rounds: 2
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
+                    type: 83
+                    damage_add:
+                      base: 30%
+                      per: 2%
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_55
-              on:
-                after: use_skill
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_2_2
+                    type: 1
+                    value: "34"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+        - rate: 3.6
+          type: 0
+          range: 4
+          ap: 7
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Valkyrie_N_2
+              on: criticaled
               if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Valkyrie_N_51
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -4447,25 +2733,41 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 3
               buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_55_1
+                    desc: Effect_BR_Valkyrie_N_2_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
+                    value: "0.300000"
+                    level: "0.020000"
+                  attr: 3
                   erase:
-                    rounds: 2
+                    rounds: 0
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
+                    type: 83
+                    damage_add:
+                      base: 30%
+                      per: 2%
                   overlap: 4
-              maxStack: 1
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_2_2
+                    type: 1
+                    value: "34"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 34
+                      target: 0
+                  overlap: 4
+              maxStack: 0
     values:
       index:
         - 0
@@ -4484,60 +2786,25 @@ skills:
               desc: Effect_BR_Valkyrie_N_2_1
               type: 1
               value: "0.300000"
-              level: "0.015000"
+              level: "0.020000"
             base: 0.3
-            per: 0.015
+            per: 0.02
             chance: 1
-          - icon: BuffIcon_BARRIER_PIERCE
+          - icon: BuffIcon_REMOVE_BUFF
             desc:
               desc: Effect_BR_Valkyrie_N_2_2
-              type: 0
-              value: "0"
+              type: 1
+              value: "34"
               level: "0"
-            base: 0
+            base: 34
             per: 0
-            chance: 0
-          - icon: BuffIcon_EVADE_UP
-            desc:
-              desc: Effect_BR_Valkyrie_N_12_1
-              type: 1
-              value: "0.350000"
-              level: "0.050000"
-            base: 0.35
-            per: 0.05
-            chance: 1
-          - icon: BuffIcon_BARRIER_PIERCE
-            desc:
-              desc: Effect_BR_Valkyrie_N_13_1
-              type: 1
-              value: "0"
-              level: "0"
-            base: 0
-            per: 0
-            chance: 1
-          - icon: BuffIcon_ATK_UP
-            desc:
-              desc: Effect_BR_Valkyrie_N_54_1
-              type: 1
-              value: "0.230000"
-              level: "0.030000"
-            base: 0.23
-            per: 0.03
-            chance: 1
-          - icon: BuffIcon_DEF_PIERCE_UP
-            desc:
-              desc: Effect_BR_Valkyrie_N_55_1
-              type: 1
-              value: "0.350000"
-              level: "0.050000"
-            base: 0.35
-            per: 0.05
             chance: 1
   "3":
     key: "3"
-    icon: P.SelfAtkBuff
+    icon: P.Scan
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -4557,7 +2824,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4588,7 +2854,7 @@ skills:
                     desc: Effect_BR_Valkyrie_N_3_1
                     type: 1
                     value: "0.200000"
-                    level: "0.010000"
+                    level: "0.020000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -4597,14 +2863,14 @@ skills:
                     type: 1
                     attack:
                       base: 20%
-                      per: 1%
+                      per: 2%
                   overlap: 4
                 - icon: BuffIcon_ACCURACY_UP
                   desc:
                     desc: Effect_BR_Valkyrie_N_3_2
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
+                    value: "0.200000"
+                    level: "0.020000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -4612,15 +2878,15 @@ skills:
                     isBuff: true
                     type: 7
                     accuracy:
-                      base: 25%
-                      per: 1.25%
+                      base: 20%
+                      per: 2%
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_UP
                   desc:
                     desc: Effect_BR_Valkyrie_N_3_3
                     type: 1
-                    value: "0.150000"
-                    level: "0.007500"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -4628,11 +2894,25 @@ skills:
                     isBuff: true
                     type: 9
                     critical:
-                      base: 15%
-                      per: 0.75%
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_BARRIER_PIERCE
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_3_4
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 94
+                    penetration_force: true
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_11
+            - key: Effect_BR_Valkyrie_N_31
               on: round
               if:
                 - pos: 1
@@ -4652,10 +2932,10 @@ skills:
               buffs:
                 - icon: BuffIcon_ATK_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_11_1
+                    desc: Effect_BR_Valkyrie_N_31_1
                     type: 1
                     value: "0.150000"
-                    level: "0.007500"
+                    level: "0.015000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -4664,14 +2944,14 @@ skills:
                     type: 1
                     attack:
                       base: 15%
-                      per: 0.75%
+                      per: 1.5%
                   overlap: 4
                 - icon: BuffIcon_ACCURACY_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_11_2
+                    desc: Effect_BR_Valkyrie_N_31_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.150000"
+                    level: "0.015000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -4679,15 +2959,15 @@ skills:
                     isBuff: true
                     type: 7
                     accuracy:
-                      base: 20%
-                      per: 1%
+                      base: 15%
+                      per: 1.5%
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_11_3
+                    desc: Effect_BR_Valkyrie_N_31_3
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
+                    value: "0.150000"
+                    level: "0.007500"
                   attr: 0
                   erase:
                     rounds: 1
@@ -4695,11 +2975,11 @@ skills:
                     isBuff: true
                     type: 9
                     critical:
-                      base: 10%
-                      per: 0.5%
+                      base: 15%
+                      per: 0.75%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_14
+            - key: Effect_BR_Valkyrie_N_32
               on: round
               if:
                 - pos: 2
@@ -4719,10 +2999,10 @@ skills:
               buffs:
                 - icon: BuffIcon_ATK_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_14_1
+                    desc: Effect_BR_Valkyrie_N_32_1
                     type: 1
                     value: "0.100000"
-                    level: "0.005000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -4731,14 +3011,14 @@ skills:
                     type: 1
                     attack:
                       base: 10%
-                      per: 0.5%
+                      per: 1%
                   overlap: 4
                 - icon: BuffIcon_ACCURACY_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_14_2
+                    desc: Effect_BR_Valkyrie_N_32_2
                     type: 1
-                    value: "0.125000"
-                    level: "0.006300"
+                    value: "0.100000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -4746,15 +3026,15 @@ skills:
                     isBuff: true
                     type: 7
                     accuracy:
-                      base: 12.5%
-                      per: 0.63%
+                      base: 10%
+                      per: 1%
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_14_3
+                    desc: Effect_BR_Valkyrie_N_32_3
                     type: 1
-                    value: "0.075000"
-                    level: "0.003800"
+                    value: "0.100000"
+                    level: "0.005000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -4762,8 +3042,8 @@ skills:
                     isBuff: true
                     type: 9
                     critical:
-                      base: 7.5%
-                      per: 0.38%
+                      base: 10%
+                      per: 0.5%
                   overlap: 4
               maxStack: 0
     values:
@@ -4784,87 +3064,97 @@ skills:
               desc: Effect_BR_Valkyrie_N_3_1
               type: 1
               value: "0.200000"
-              level: "0.010000"
+              level: "0.020000"
             base: 0.2
-            per: 0.01
+            per: 0.02
             chance: 1
           - icon: BuffIcon_ACCURACY_UP
             desc:
               desc: Effect_BR_Valkyrie_N_3_2
               type: 1
-              value: "0.250000"
-              level: "0.012500"
-            base: 0.25
-            per: 0.0125
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
             chance: 1
           - icon: BuffIcon_CRITICAL_UP
             desc:
               desc: Effect_BR_Valkyrie_N_3_3
-              type: 1
-              value: "0.150000"
-              level: "0.007500"
-            base: 0.15
-            per: 0.0075
-            chance: 1
-          - icon: BuffIcon_ATK_UP
-            desc:
-              desc: Effect_BR_Valkyrie_N_11_1
-              type: 1
-              value: "0.150000"
-              level: "0.007500"
-            base: 0.15
-            per: 0.0075
-            chance: 1
-          - icon: BuffIcon_ACCURACY_UP
-            desc:
-              desc: Effect_BR_Valkyrie_N_11_2
               type: 1
               value: "0.200000"
               level: "0.010000"
             base: 0.2
             per: 0.01
             chance: 1
-          - icon: BuffIcon_CRITICAL_UP
+          - icon: BuffIcon_BARRIER_PIERCE
             desc:
-              desc: Effect_BR_Valkyrie_N_11_3
+              desc: Effect_BR_Valkyrie_N_3_4
               type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
             chance: 1
           - icon: BuffIcon_ATK_UP
             desc:
-              desc: Effect_BR_Valkyrie_N_14_1
+              desc: Effect_BR_Valkyrie_N_31_1
+              type: 1
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_Valkyrie_N_31_2
+              type: 1
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_Valkyrie_N_31_3
+              type: 1
+              value: "0.150000"
+              level: "0.007500"
+            base: 0.15
+            per: 0.0075
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_Valkyrie_N_32_1
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_Valkyrie_N_32_2
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_Valkyrie_N_32_3
               type: 1
               value: "0.100000"
               level: "0.005000"
             base: 0.1
             per: 0.005
-            chance: 1
-          - icon: BuffIcon_ACCURACY_UP
-            desc:
-              desc: Effect_BR_Valkyrie_N_14_2
-              type: 1
-              value: "0.125000"
-              level: "0.006300"
-            base: 0.125
-            per: 0.0063
-            chance: 1
-          - icon: BuffIcon_CRITICAL_UP
-            desc:
-              desc: Effect_BR_Valkyrie_N_14_3
-              type: 1
-              value: "0.075000"
-              level: "0.003800"
-            base: 0.075
-            per: 0.0038
             chance: 1
   "4":
     key: "4"
     icon: P.DefCounter
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -4883,8 +3173,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
+          grid: F>1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -4893,12 +3182,149 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_BR_Valkyrie_N_4
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_4_1
+                    type: 1
+                    value: "0.400000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: 40%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_IMMUNITY_DEBUFF
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_4_2
+                    type: 1
+                    value: "11"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 101
+                    debuff_immune: 11
+                  overlap: 4
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_4_3
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 36
+                    damage_reduce:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_COUNTER
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_4_4
+                    type: 1
+                    value: "0.800000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 29
+                    counter:
+                      base: 80%
+                      per: 5%
+                  overlap: 1
+                - icon: BuffIcon_ACCURACY_DOWN
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_4_5
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 7
+                    accuracy:
+                      base: -50%
+                      per: -5%
+                  overlap: 4
+              maxStack: 0
+            - key: Effect_BR_Valkyrie_N_41
+              on: attacked
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_41_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 36
+                    damage_reduce:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+              maxStack: 1
+            - key: Effect_BR_Valkyrie_N_42
               on: attacked
               if:
                 - on:
-                    func: OR
+                    target: self
+                    func: UNFILLED
                     select:
-                      - Effect_BR_Valkyrie_N_12
+                      - Effect_BR_Valkyrie_N_45
                     attr: 6
                 - false
               body:
@@ -4916,77 +3342,101 @@ skills:
               buffs:
                 - icon: BuffIcon_COUNTER
                   desc:
-                    desc: Effect_BR_Valkyrie_N_4_1
+                    desc: Effect_BR_Valkyrie_N_42_1
                     type: 1
                     value: "0.800000"
                     level: "0.050000"
                   attr: 0
                   erase:
-                    until:
-                      after: counter
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 29
                     counter:
                       base: 80%
                       per: 5%
-                  overlap: 4
-                - icon: BuffIcon_DAMAGE_REDUCE
+                  overlap: 1
+              maxStack: 1
+            - key: Effect_BR_Valkyrie_N_43
+              on: wait
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_PROVOKE
                   desc:
-                    desc: Effect_BR_Valkyrie_N_4_2
+                    desc: Effect_BR_Valkyrie_N_43_1
                     type: 1
-                    value: "0.150000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    until:
-                      after: counter
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 15%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_4_3
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    until:
-                      after: counter
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-                - icon: BuffIcon_REMOVE_DEBUFF
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_4_4
-                    type: 0
-                    value: "11"
+                    value: "0"
                     level: "0"
-                  attr: 0
+                  attr: 1
                   erase:
-                    until:
-                      after: counter
+                    rounds: 1
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 89
-                    off:
-                      type: 11
-                      target: 1
-                  overlap: 4
+                    type: 74
+                    provoke: self
+                  overlap: 1
               maxStack: 0
-            - key: Effect_BR_Valkyrie_N_15
-              on: enemy_killed
+            - key: Effect_BR_Valkyrie_N_44
+              on: wait
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_ACCURACY_DOWN
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_44_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.050000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: -50%
+                      per: -5%
+                  overlap: 4
+              maxStack: 1
+            - key: Effect_BR_Valkyrie_N_45
+              on: wait
               if:
                 - false
                 - false
@@ -5003,22 +3453,94 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_REMOVE_DEBUFF
+                - icon: BuffIcon_ACCURACY_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_15_1
-                    type: 0
-                    value: "11"
+                    desc: Effect_BR_Valkyrie_N_45_1
+                    type: 1
+                    value: "0"
                     level: "0"
                   attr: 3
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 89
-                    off:
-                      type: 11
-                      target: 1
-                  overlap: 0
+                    type: 6
+                    accuracy:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 1
+            - key: Effect_BR_Valkyrie_N_46
+              on: attacked
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Valkyrie_N_45
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_COUNTER
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_46_1
+                    type: 1
+                    value: "1.600000"
+                    level: "0.100000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 29
+                    counter:
+                      base: 160%
+                      per: 10%
+                  overlap: 1
+              maxStack: 1
+            - key: Effect_BR_Valkyrie_N_47
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_IMMUNITY_DEBUFF
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_47_1
+                    type: 1
+                    value: "11"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 101
+                    debuff_immune: 11
+                  overlap: 4
               maxStack: 0
     values:
       index:
@@ -5033,46 +3555,109 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_COUNTER
+        - - icon: BuffIcon_EVADE_UP
             desc:
               desc: Effect_BR_Valkyrie_N_4_1
+              type: 1
+              value: "0.400000"
+              level: "0.050000"
+            base: 0.4
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_IMMUNITY_DEBUFF
+            desc:
+              desc: Effect_BR_Valkyrie_N_4_2
+              type: 1
+              value: "11"
+              level: "0"
+            base: 11
+            per: 0
+            chance: 0
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_BR_Valkyrie_N_4_3
+              type: 1
+              value: "0.150000"
+              level: "0.010000"
+            base: 0.15
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_COUNTER
+            desc:
+              desc: Effect_BR_Valkyrie_N_4_4
               type: 1
               value: "0.800000"
               level: "0.050000"
             base: 0.8
             per: 0.05
-            chance: 1
+            chance: 0
+          - icon: BuffIcon_ACCURACY_DOWN
+            desc:
+              desc: Effect_BR_Valkyrie_N_4_5
+              type: 1
+              value: "-0.500000"
+              level: "-0.050000"
+            base: -0.5
+            per: -0.05
+            chance: 0
           - icon: BuffIcon_DAMAGE_REDUCE
             desc:
-              desc: Effect_BR_Valkyrie_N_4_2
+              desc: Effect_BR_Valkyrie_N_41_1
               type: 1
               value: "0.150000"
               level: "0.010000"
             base: 0.15
             per: 0.01
             chance: 1
-          - icon: BuffIcon_EVADE_UP
+          - icon: BuffIcon_COUNTER
             desc:
-              desc: Effect_BR_Valkyrie_N_4_3
+              desc: Effect_BR_Valkyrie_N_42_1
               type: 1
-              value: "0.350000"
+              value: "0.800000"
               level: "0.050000"
-            base: 0.35
+            base: 0.8
             per: 0.05
-            chance: 0
-          - icon: BuffIcon_REMOVE_DEBUFF
+            chance: 1
+          - icon: BuffIcon_PROVOKE
             desc:
-              desc: Effect_BR_Valkyrie_N_4_4
-              type: 0
-              value: "11"
+              desc: Effect_BR_Valkyrie_N_43_1
+              type: 1
+              value: "0"
               level: "0"
-            base: 11
+            base: 0
             per: 0
-            chance: 0
-          - icon: BuffIcon_REMOVE_DEBUFF
+            chance: 1
+          - icon: BuffIcon_ACCURACY_DOWN
             desc:
-              desc: Effect_BR_Valkyrie_N_15_1
-              type: 0
+              desc: Effect_BR_Valkyrie_N_44_1
+              type: 1
+              value: "-0.500000"
+              level: "-0.050000"
+            base: -0.5
+            per: -0.05
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_Valkyrie_N_45_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_COUNTER
+            desc:
+              desc: Effect_BR_Valkyrie_N_46_1
+              type: 1
+              value: "1.600000"
+              level: "0.100000"
+            base: 1.6
+            per: 0.1
+            chance: 1
+          - icon: BuffIcon_IMMUNITY_DEBUFF
+            desc:
+              desc: Effect_BR_Valkyrie_N_47_1
+              type: 1
               value: "11"
               level: "0"
             base: 11
@@ -5083,6 +3668,7 @@ skills:
     icon: P.SelfAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 5
     buffs:
       index:
@@ -5095,14 +3681,13 @@ skills:
         - 0
         - 0
         - 0
-        - 1
+        - 0
       data:
         - rate: 0
           type: 0
           range: 0
           ap: 0
-          grid: 6>0,0,1,1,1,1,0,0,1
-          target_ground: false
+          grid: F>1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -5111,129 +3696,6 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_BR_Valkyrie_N_5
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_5_1
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 1
-                    attack:
-                      base: 23%
-                      per: 3%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_5_2
-                    type: 1
-                    value: "0.350000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 35%
-                      per: 5%
-                  overlap: 4
-                - icon: BuffIcon_SUPPORT_ATTACK
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_5_3
-                    type: 1
-                    value: "1"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 77
-                    attack_support:
-                      base: 100%
-                      per: 0%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_5_4
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 6
-                    accuracy:
-                      base: 0
-                      per: 0
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_51
-              on: round
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ACCURACY_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_51_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 6
-                    accuracy:
-                      base: 0
-                      per: 0
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_53
               on: round
               if:
                 - false
@@ -5249,7 +3711,7 @@ skills:
               buffs:
                 - icon: BuffIcon_SUPPORT_ATTACK
                   desc:
-                    desc: Effect_BR_Valkyrie_N_53_1
+                    desc: Effect_BR_Valkyrie_N_5_1
                     type: 1
                     value: "1"
                     level: "0"
@@ -5263,91 +3725,41 @@ skills:
                       base: 100%
                       per: 0%
                   overlap: 4
-              maxStack: 1
-        - rate: 0
-          type: 0
-          range: 0
-          ap: 0
-          grid: 6>0,0,1,1,1,1,0,0,1
-          target_ground: false
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_BR_Valkyrie_N_5
-              on:
-                after: use_skill
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
                 - icon: BuffIcon_ATK_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_5_1
+                    desc: Effect_BR_Valkyrie_N_5_2
                     type: 1
-                    value: "0.230000"
+                    value: "0.200000"
                     level: "0.030000"
                   attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     chance: 0%
                     type: 1
                     attack:
-                      base: 23%
+                      base: 20%
                       per: 3%
                   overlap: 4
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_5_2
+                    desc: Effect_BR_Valkyrie_N_5_3
                     type: 1
-                    value: "0.350000"
+                    value: "0.400000"
                     level: "0.050000"
                   attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
                     chance: 0%
                     type: 58
                     penetration:
-                      base: 35%
+                      base: 40%
                       per: 5%
                   overlap: 4
-                - icon: BuffIcon_SUPPORT_ATTACK
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_5_3
-                    type: 1
-                    value: "1"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 77
-                    attack_support:
-                      base: 100%
-                      per: 0%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
                     desc: Effect_BR_Valkyrie_N_5_4
                     type: 1
@@ -5359,59 +3771,20 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 6
-                    accuracy:
-                      base: 0
-                      per: 0
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: "0"
                   overlap: 4
-              maxStack: 1
+              maxStack: 0
             - key: Effect_BR_Valkyrie_N_51
-              on: round
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ACCURACY_UP
-                  desc:
-                    desc: Effect_BR_Valkyrie_N_51_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 6
-                    accuracy:
-                      base: 0
-                      per: 0
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_52
               on: round
               if:
                 - target:
-                    - Char_BR_Leona_N
                     - Char_BR_Valkyrie_N
                     - Char_BR_Nymph_N
-                    - Char_BR_Gremlin_N
                     - Char_BR_SandMan_N
-                    - Char_BR_Bheur_N
                     - Char_BR_Alvis_N
-                    - Char_BR_Andvari_N
                 - false
               body:
                 - 0
@@ -5428,7 +3801,7 @@ skills:
               buffs:
                 - icon: BuffIcon_SUPPORT_ATTACK
                   desc:
-                    desc: Effect_BR_Valkyrie_N_52_1
+                    desc: Effect_BR_Valkyrie_N_51_1
                     type: 1
                     value: "1"
                     level: "0"
@@ -5442,8 +3815,8 @@ skills:
                       base: 100%
                       per: 0%
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Valkyrie_N_53
+              maxStack: 0
+            - key: Effect_BR_Valkyrie_N_52
               on: round
               if:
                 - false
@@ -5453,27 +3826,47 @@ skills:
                 - 1
               class:
                 - 0
-              role:
+                - 1
                 - 2
-              target: 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
               buffs:
-                - icon: BuffIcon_SUPPORT_ATTACK
+                - icon: BuffIcon_ATK_UP
                   desc:
-                    desc: Effect_BR_Valkyrie_N_53_1
+                    desc: Effect_BR_Valkyrie_N_52_1
                     type: 1
-                    value: "1"
-                    level: "0"
+                    value: "0.200000"
+                    level: "0.030000"
                   attr: 0
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 77
-                    attack_support:
-                      base: 100%
-                      per: 0%
+                    type: 1
+                    attack:
+                      base: 20%
+                      per: 3%
                   overlap: 4
-              maxStack: 1
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_BR_Valkyrie_N_52_2
+                    type: 1
+                    value: "0.400000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: 40%
+                      per: 5%
+                  overlap: 4
+              maxStack: 0
     values:
       index:
         - 0
@@ -5485,36 +3878,36 @@ skills:
         - 0
         - 0
         - 0
-        - 1
+        - 0
       data:
-        - - icon: BuffIcon_ATK_UP
+        - - icon: BuffIcon_SUPPORT_ATTACK
             desc:
               desc: Effect_BR_Valkyrie_N_5_1
-              type: 1
-              value: "0.230000"
-              level: "0.030000"
-            base: 0.23
-            per: 0.03
-            chance: 0
-          - icon: BuffIcon_DEF_PIERCE_UP
-            desc:
-              desc: Effect_BR_Valkyrie_N_5_2
-              type: 1
-              value: "0.350000"
-              level: "0.050000"
-            base: 0.35
-            per: 0.05
-            chance: 0
-          - icon: BuffIcon_SUPPORT_ATTACK
-            desc:
-              desc: Effect_BR_Valkyrie_N_5_3
               type: 1
               value: "1"
               level: "0"
             base: 1
             per: 0
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_Valkyrie_N_5_2
+              type: 1
+              value: "0.200000"
+              level: "0.030000"
+            base: 0.2
+            per: 0.03
             chance: 0
-          - icon: BuffIcon_ACCURACY_UP
+          - icon: BuffIcon_DEF_PIERCE_UP
+            desc:
+              desc: Effect_BR_Valkyrie_N_5_3
+              type: 1
+              value: "0.400000"
+              level: "0.050000"
+            base: 0.4
+            per: 0.05
+            chance: 0
+          - icon: BuffIcon_TOGETHER_ATTACK
             desc:
               desc: Effect_BR_Valkyrie_N_5_4
               type: 1
@@ -5523,86 +3916,32 @@ skills:
             base: 0
             per: 0
             chance: 0
-          - icon: BuffIcon_ACCURACY_UP
-            desc:
-              desc: Effect_BR_Valkyrie_N_51_1
-              type: 1
-              value: "0"
-              level: "0"
-            base: 0
-            per: 0
-            chance: 1
           - icon: BuffIcon_SUPPORT_ATTACK
             desc:
-              desc: Effect_BR_Valkyrie_N_53_1
+              desc: Effect_BR_Valkyrie_N_51_1
               type: 1
               value: "1"
               level: "0"
             base: 1
             per: 0
             chance: 1
-        - - icon: BuffIcon_ATK_UP
-            desc:
-              desc: Effect_BR_Valkyrie_N_5_1
-              type: 1
-              value: "0.230000"
-              level: "0.030000"
-            base: 0.23
-            per: 0.03
-            chance: 0
-          - icon: BuffIcon_DEF_PIERCE_UP
-            desc:
-              desc: Effect_BR_Valkyrie_N_5_2
-              type: 1
-              value: "0.350000"
-              level: "0.050000"
-            base: 0.35
-            per: 0.05
-            chance: 0
-          - icon: BuffIcon_SUPPORT_ATTACK
-            desc:
-              desc: Effect_BR_Valkyrie_N_5_3
-              type: 1
-              value: "1"
-              level: "0"
-            base: 1
-            per: 0
-            chance: 0
-          - icon: BuffIcon_ACCURACY_UP
-            desc:
-              desc: Effect_BR_Valkyrie_N_5_4
-              type: 1
-              value: "0"
-              level: "0"
-            base: 0
-            per: 0
-            chance: 0
-          - icon: BuffIcon_ACCURACY_UP
-            desc:
-              desc: Effect_BR_Valkyrie_N_51_1
-              type: 1
-              value: "0"
-              level: "0"
-            base: 0
-            per: 0
-            chance: 1
-          - icon: BuffIcon_SUPPORT_ATTACK
+          - icon: BuffIcon_ATK_UP
             desc:
               desc: Effect_BR_Valkyrie_N_52_1
               type: 1
-              value: "1"
-              level: "0"
-            base: 1
-            per: 0
+              value: "0.200000"
+              level: "0.030000"
+            base: 0.2
+            per: 0.03
             chance: 1
-          - icon: BuffIcon_SUPPORT_ATTACK
+          - icon: BuffIcon_DEF_PIERCE_UP
             desc:
-              desc: Effect_BR_Valkyrie_N_53_1
+              desc: Effect_BR_Valkyrie_N_52_2
               type: 1
-              value: "1"
-              level: "0"
-            base: 1
-            per: 0
+              value: "0.400000"
+              level: "0.050000"
+            base: 0.4
+            per: 0.05
             chance: 1
 dialogue:
   KR:
@@ -5718,23 +4057,23 @@ dialogue:
         않습니다. 다만… 행복할 뿐입니다.
       MVP: 전부 사령관 각하 덕분입니다.
     "4":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 옷은 달라도 제 사격 솜씨는 변함없습니다.
+      Leader: 저의 본분은 잊지 않았습니다.
+      SortiePick: 빠르게 처리하고 각하께 돌아오겠습니다.
+      StageStart: 각하께 승리를 바치겠습니다.
+      Retreat: 각하의 곁으로.
+      SearchStart: 잠시 옷만 갈아입고 다녀오겠습니다.
+      SearchEnd: 다녀왔습니다, 각하. 꽃이 만발했더군요.
+      BattleFocus: 예, 각하.
+      ActionApprove: 각하께서 바라신다면.
+      SpSkill: 각하의 적.
+      Retire: 각하와 함께… 걸어가고… 싶었는데…
+      Repair: 아쉽게도 결혼식은 연기해야겠군요.
+      Reinforce: 언제나 저를 바라보고 계시는군요.
+      ItemEquip: 공동 작업을 위한 장비입니까?
+      CoreLink: 행복은 나누면 배가 되는군요.
+      PresentGet: 각하의 선물은 언제나 저에게 크나큰 행복을 주었습니다.
+      Login: 저격수 실격이군요. 너무 기대되서 기다리지 못한 것을 보면…
       Idle_01_01: |-
         결혼은 인생의 무덤이라고 하죠.
         그건 저에게도 예외가 아닌가 봅니다.
@@ -5775,7 +4114,7 @@ dialogue:
         그 소원을 들어주시겠습니까?
         각하를 이렇게 부르고 싶었습니다.
         ……내 사랑…
-      MVP: ""
+      MVP: 꽃다발은 나중을 위해 아껴두겠습니다.
     "":
       Join: 발키리, 합류.
       SquadJoin: 전입 명령 수행.
@@ -6128,16 +4467,51 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
-      Idle_02_01: ""
-      Idle_03_01: ""
-      Idle_04_01: ""
-      SPIdle_02_01: ""
-      Oath: ""
-      OathIdle_01: ""
+      Idle_01_01: |-
+        They say that marriage is life's tomb.
+
+        It’s the same for me too.
+
+        The White Death is long gone...
+
+        I stand before you as the White Bride.
+      Idle_01_02: |-
+        My sisters have cheered me on.
+        Especially General Leona.
+        Thanks to all of their support,
+        I was able to take the last step.
+      Idle_01_03: |-
+        I asked the designers for the dress,
+        and they were excited, saying it’s been so long
+        since they had an order that required so much material.
+      SPIdle_01_01: Your Excellency... please wait... just a little.
+      Idle_02_01: |-
+        I was worried if I would look good in this dress or not.
+        But, that doesn’t matter.
+        All that matters is that you like it.
+      Idle_03_01: |-
+        Your Excellency, can you give me your hands?
+        No, I'm not uncomfortable.
+        I just wanted to feel your warmth.
+      Idle_04_01: |-
+        I began dreaming after I started being with you...
+        And my dreams became reality.
+        Thank you, Your Excellency, for making my dreams come true.
+      SPIdle_02_01: |-
+        The number of times doesn’t matter.
+        As long as we love each other.
+        Love... is unlimited.
+      Oath: Something I wanted for so long is finally coming true. Standing in front
+        of you wearing this, I will share the promise I’ve kept all this time.
+        Through happiness and sadness, pain and joy, until death do us part...
+        I, Valkyrie, solemnly swear that I will love Your Excellency and no one
+        else.
+      OathIdle_01: |-
+        Your Excellency,
+        There is a wish that I've had for a very long time...
+        Can you make my wish come true?
+        I wanted to use this endearing term, Your Excellency...
+        My... love...
       MVP: ""
     "":
       Join: Valkyrie is here!
@@ -6243,16 +4617,16 @@ dialogue:
         告訴我。地點果然
         是大海？
       Idle_01_02: |-
-        我們要準備的……雖然不需要瞄準鏡
+        我們要準備的…雖然不需要瞄準鏡
         但需要潛水鏡。還有
-        泳圈，防曬霜……
+        泳圈，防曬霜…
       Idle_01_03: |-
         果然準備好服裝
         心情也會變好。
       SPIdle_01_01: 還是早晨。
       Idle_02_01: |-
-        ……偶爾這麼交談
-        也不錯……
+        …偶爾這麼交談
+        也不錯…
       Idle_03_01: |-
         閣下準備好適合的
         服裝了嗎？別擔心了。
@@ -6263,13 +4637,13 @@ dialogue:
         有一定要
         帶著的東西。或許你知道嗎？
       SPIdle_02_01: |-
-        ……你帶了嗎？所以……
+        …你帶了嗎？所以…
         在給我信號嗎？
       Oath: |-
-        休息，然後是閣下的告白……這是夢嗎？為什麼只有這麼好事連連發生呢？
-        真奇怪。為什麼只會有這樣高興的事情……
+        休息，然後是閣下的告白…這是夢嗎？為什麼只有這麼好事連連發生呢？
+        真奇怪。為什麼只會有這樣高興的事情…
       OathIdle_01: |-
-        如果說，對滅亡有一樣不滿的話……
+        如果說，對滅亡有一樣不滿的話…
         那就是，我們的最後一個要地，
         宿舍沒有了。
       MVP: ""
@@ -6291,14 +4665,14 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: |-
-        回想一下……是有很多的
+        回想一下…是有很多的
         回憶。和姐妹一起
-        打架，有了朋友……
+        打架，有了朋友…
         這些全部都是因為閣下。
       Idle_01_02: |-
         艱難的任務，也因為陛下在身邊，
         所以才能挺過去。
-        希望我有幫助到你……哪怕
+        希望我有幫助到你…哪怕
         是一點。
       Idle_01_03: |-
         想簡單地紀念一下
@@ -6308,28 +4682,28 @@ dialogue:
         在無數的回憶中，最珍貴的
         是與閣下之間的回憶。以後
         也可以為我製造那樣的
-        回憶嗎……？
+        回憶嗎…？
       Idle_03_01: |-
         這裡，為閣下準備了
         禮物。那個，閣下。絲帶
         在其他的地方，不知道
-        你看出來了沒……
-        ……別，別看那裡，看看我吧……
+        你看出來了沒…
+        …別，別看那裡，看看我吧…
       Idle_04_01: |-
         我只要有閣下就行了。即使
-        閣下離開……
+        閣下離開…
         我也會在這裡等你，
         直到你回來。
       SPIdle_02_01: |-
-        ……只要是閣下，10次以上也……
+        …只要是閣下，10次以上也…
         沒關係。
       Oath: |-
-        最近，我認為不能比這更幸福。可是……閣下
-        總是給我那以上呢。……閣下，請問能到我房間嗎？
-        雖然沒什麼可看的，但是既安靜有溫馨的。在那裡我們倆單獨地……祝賀第二個紀念日吧。
+        最近，我認為不能比這更幸福。可是…閣下
+        總是給我那以上呢。…閣下，請問能到我房間嗎？
+        雖然沒什麼可看的，但是既安靜有溫馨的。在那裡我們倆單獨地…祝賀第二個紀念日吧。
       OathIdle_01: |-
         呼呼，現在對我這樣，
-        我也不會害羞了。只會……感到幸福。
+        我也不會害羞了。只會…感到幸福。
       MVP: ""
     "4":
       SquadJoin: ""
@@ -6349,16 +4723,46 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
-      Idle_02_01: ""
-      Idle_03_01: ""
-      Idle_04_01: ""
-      SPIdle_02_01: ""
-      Oath: ""
-      OathIdle_01: ""
+      Idle_01_01: |-
+        都說結婚是人生的墳墓。
+        看來我也不例外。
+        白色死神消失…
+        換成白色新娘站在閣下面前了。
+      Idle_01_02: |-
+        姐妹們…尤其是利昂娜隊長
+        一直為我加油。
+        有姐妹們相挺，我才能跨出
+        最後那一步。
+      Idle_01_03: |-
+        我委託設計師們製作禮服，
+        她們說難得接到要用很多材料的訂單，
+        所以充滿了幹勁。
+      SPIdle_01_01: 閣下…請再稍等一下，一下下就好。
+      Idle_02_01: |-
+        我很苦惱這件禮服到底適不適合我。
+        但那個煩惱已經不重要了。
+        因為閣下喜歡最重要。
+      Idle_03_01: |-
+        閣下，能伸出你的手來嗎？
+        不，我不是因為感到不自在。
+        我只是想感受你的體溫。
+      Idle_04_01: |-
+        和閣下一起生活以後，我有了夢想…
+        如今夢想終於變成現實了。
+        閣下，謝謝你讓我美夢成真。
+      SPIdle_02_01: |-
+        次數…有什麼關係呢？
+        如果有彼此…相愛的那顆心。
+        …愛情…是無限的。
+      Oath: |-
+        期盼已久的事情終於實現了。穿著這套衣服站在閣下的面前，我要許下深藏許久的誓言。無論是快樂或悲傷、幸福或痛苦，就算死亡將兩人拆散…
+        我都是屬於閣下的女武神，至死不渝只愛閣下一人。
+      OathIdle_01: |-
+        閣下，
+        我從很久以前就有個心願…
+        你能幫我實現那個願望嗎？
+        我想要這樣稱呼你。
+        …親愛的…
       MVP: ""
     "":
       Join: 女武神，成功加入。
@@ -6382,25 +4786,25 @@ dialogue:
       Idle_01_02: |-
         瞄準鏡只會減少生存率。
         還不如消無聲息地靠近。
-      Idle_01_03: 我沒什麼……特別喜歡的東西。
+      Idle_01_03: 我沒什麼…特別喜歡的東西。
       SPIdle_01_01: 要報警嗎？
       Idle_02_01: |-
-        ……偶爾這麼交談
-        也不錯……
+        …偶爾這麼交談
+        也不錯…
       Idle_03_01: |-
-        最近……有了喜歡的 ……
-        嗯……下次……再跟你說吧。
+        最近…有了喜歡的 …
+        嗯…下次…再跟你說吧。
       Idle_04_01: |-
         有時會很感激
-        我被改造的眼睛……可以仔細的
+        我被改造的眼睛…可以仔細的
         看指揮官閣下。
       SPIdle_02_01: |-
-        ……請不要覺得我
-        可以容忍任何事……十遍
-        以上……不可以的。
-      Oath: ……誓約呀。我發誓……司令官……希望這瞬間和這誓約能夠永久。
+        …請不要覺得我
+        可以容忍任何事…十遍
+        以上…不可以的。
+      Oath: …誓約呀。我發誓…司令官…希望這瞬間和這誓約能夠永久。
       OathIdle_01: |-
-        ……閣下為什麼會喜歡
+        …閣下為什麼會喜歡
         看我害羞呢？
       MVP: ""
     M:
@@ -6422,34 +4826,25 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         那個，閣下。我的房裡有阿爾維斯留下的
-        零食……那個，實在太多了……
-        你要不要過來嘗嘗……？
+        零食…那個，實在太多了…
+        你要不要過來嘗嘗…？
       Idle_01_02: |-
         我喜歡的東西嗎？明白了，
         我上回說過，要下次告訴你吧？
-        我……喜歡，司……！呃……
-        喜歡，司，司令官閣下……
+        我…喜歡，司…！呃…
+        喜歡，司，司令官閣下…
       Idle_01_03: |-
         我對於戰鬥以外的其他事情，都不是很清楚。
-        ……是說休假嗎？只和閣下
-        兩個人……嗯。我會期待的。
+        …是說休假嗎？只和閣下
+        兩個人…嗯。我會期待的。
       SPIdle_01_01: |-
-        經，經常這樣的話……不，不要說
+        經，經常這樣的話…不，不要說
         這件事情。那時，我也
-        不自覺地放大了聲音……
+        不自覺地放大了聲音…
       MVP: ""
 skins:
   sid: null
   artist: Rorobomb
-  offsets:
-    - -20
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -6475,20 +4870,12 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_BR_Valkyrie_N
   skins:
     - sid: 1
       artist: Rorobomb
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 57
       G: true
       Spine: false
@@ -6515,19 +4902,11 @@ skins:
       releaseDate: 1548288000000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
     - sid: 2
       artist: Rorobomb
-      offsets:
-        - -70
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 159
       G: false
       Spine: false
@@ -6554,20 +4933,12 @@ skins:
       releaseDate: 1562803200000
       metadata:
         imageId: 2
+        iconId: 2
         tbarId: 2
         voiceId: 2
         consumableKey: Skin_BR_Valkyrie_2
     - sid: 3
       artist: Rorobomb
-      offsets:
-        - 100
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 159
       G: true
       Spine: false
@@ -6594,20 +4965,12 @@ skins:
       releaseDate: 1581638400000
       metadata:
         imageId: 3
+        iconId: 3
         tbarId: 3
         voiceId: 3
         consumableKey: Skin_BR_Valkyrie_3
     - sid: 4
       artist: MEL
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 114
       G: true
       Spine: false
@@ -6634,6 +4997,7 @@ skins:
       releaseDate: 1685404800000
       metadata:
         imageId: 4
+        iconId: 4
         tbarId: 4
         voiceId: 4
         2dmodel: 2DModel_BR_Valkyrie_NS4

@@ -12,6 +12,7 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
+import Loading from "@/components/loading";
 import EnemyCard from "@/routes/enemies/components/enemy-card";
 import EnemyPopup from "@/components/popup/enemy-popup";
 
@@ -33,83 +34,80 @@ const EnemiesList: FunctionalComponent<EnemiesListProps> = (props) => {
 	}
 
 	const FilterableEnemyDB = GetJson<FilterableEnemy[] | null>(StaticDB.FilterableEnemy);
-	if (!FilterableEnemyDB) {
-		JsonLoaderCore(CurrentDB, StaticDB.FilterableEnemy)
-			.then(r => update());
+	if (!FilterableEnemyDB) JsonLoaderCore(CurrentDB, StaticDB.FilterableEnemy).then(_ => update());
 
-		return <></>;
-	}
-
-	const selectedEnemy = props.uid && FilterableEnemyDB.find(x => x.id === props.uid) || null;
+	const selectedEnemy = props.uid && FilterableEnemyDB && FilterableEnemyDB.find(x => x.id === props.uid) || null;
 
 	const EnemyList = FilterableEnemyDB
-		.map(x => ({
-			...x,
-			localeName: LocaleGet(`ENEMY_${x.id}`),
-		}))
-		.filter(x => {
-			if (!Store.Enemies.Type[ACTOR_CLASS.LIGHT].value && x.type === ACTOR_CLASS.LIGHT) return false;
-			if (!Store.Enemies.Type[ACTOR_CLASS.AIR].value && x.type === ACTOR_CLASS.AIR) return false;
-			if (!Store.Enemies.Type[ACTOR_CLASS.HEAVY].value && x.type === ACTOR_CLASS.HEAVY) return false;
+		? FilterableEnemyDB
+			.map(x => ({
+				...x,
+				localeName: LocaleGet(`ENEMY_${x.id}`),
+			}))
+			.filter(x => {
+				if (!Store.Enemies.Type[ACTOR_CLASS.LIGHT].value && x.type === ACTOR_CLASS.LIGHT) return false;
+				if (!Store.Enemies.Type[ACTOR_CLASS.AIR].value && x.type === ACTOR_CLASS.AIR) return false;
+				if (!Store.Enemies.Type[ACTOR_CLASS.HEAVY].value && x.type === ACTOR_CLASS.HEAVY) return false;
 
-			if (!Store.Enemies.Role[ROLE_TYPE.ATTACKER].value && x.role === ROLE_TYPE.ATTACKER) return false;
-			if (!Store.Enemies.Role[ROLE_TYPE.DEFENDER].value && x.role === ROLE_TYPE.DEFENDER) return false;
-			if (!Store.Enemies.Role[ROLE_TYPE.SUPPORTER].value && x.role === ROLE_TYPE.SUPPORTER) return false;
+				if (!Store.Enemies.Role[ROLE_TYPE.ATTACKER].value && x.role === ROLE_TYPE.ATTACKER) return false;
+				if (!Store.Enemies.Role[ROLE_TYPE.DEFENDER].value && x.role === ROLE_TYPE.DEFENDER) return false;
+				if (!Store.Enemies.Role[ROLE_TYPE.SUPPORTER].value && x.role === ROLE_TYPE.SUPPORTER) return false;
 
-			const filters: Record<string, boolean> = {
-				Normal: (x.category & 3) === 0,
-				Boss: (x.category & 1) === 1,
-				IW: (x.category & 2) === 2,
-				Unused: (x.category & 2) === 0 && Object.keys(x.used).length === 0,
-				NEW: "NEW" in x.used,
-			};
-			if (!Store.Enemies.Normal.value) delete filters.Normal;
-			if (!Store.Enemies.Boss.value) delete filters.Boss;
-			if (!Store.Enemies.IW.value) delete filters.IW;
-			if (!Store.Enemies.Unused.value) delete filters.Unused;
-			if (!Store.Enemies.NEW.value) delete filters.NEW;
-			if (Object.values(filters).every(x => !x)) return false;
+				const filters: Record<string, boolean> = {
+					Normal: (x.category & 3) === 0,
+					Boss: (x.category & 1) === 1,
+					IW: (x.category & 2) === 2,
+					Unused: (x.category & 2) === 0 && Object.keys(x.used).length === 0,
+					NEW: "NEW" in x.used,
+				};
+				if (!Store.Enemies.Normal.value) delete filters.Normal;
+				if (!Store.Enemies.Boss.value) delete filters.Boss;
+				if (!Store.Enemies.IW.value) delete filters.IW;
+				if (!Store.Enemies.Unused.value) delete filters.Unused;
+				if (!Store.Enemies.NEW.value) delete filters.NEW;
+				if (Object.values(filters).every(x => !x)) return false;
 
-			if (Store.Enemies.SearchText.value) {
-				const name = x.localeName;
-				const firstName = name
-					.split("")
-					.map(x => DecomposeHangulSyllable(x) || x)
-					.map(x => typeof x === "object" ? x.initial || "" : x)
-					.join("");
+				if (Store.Enemies.SearchText.value) {
+					const name = x.localeName;
+					const firstName = name
+						.split("")
+						.map(x => DecomposeHangulSyllable(x) || x)
+						.map(x => typeof x === "object" ? x.initial || "" : x)
+						.join("");
 
-				if (!(new RegExp(Store.Enemies.SearchText.value, "i").test(name) ||
-					new RegExp(Store.Enemies.SearchText.value, "i").test(firstName))) return false;
-			}
-			return true;
-		})
-		.reduce((p, c) => {
-			const idx = p.findIndex(x => x.localeName === c.localeName);
-			if (idx >= 0) {
-				p[idx].used = deepmerge(p[idx].used, c.used);
-				return p;
-			}
-			return [...p, c];
-		}, [] as Array<FilterableEnemy & { localeName: string; }>)
-		.sort((a, b) => {
-			const bossA = a.category & 1;
-			const bossB = b.category & 1;
+					if (!(new RegExp(Store.Enemies.SearchText.value, "i").test(name) ||
+						new RegExp(Store.Enemies.SearchText.value, "i").test(firstName))) return false;
+				}
+				return true;
+			})
+			.reduce((p, c) => {
+				const idx = p.findIndex(x => x.localeName === c.localeName);
+				if (idx >= 0) {
+					p[idx].used = deepmerge(p[idx].used, c.used);
+					return p;
+				}
+				return [...p, c];
+			}, [] as Array<FilterableEnemy & { localeName: string; }>)
+			.sort((a, b) => {
+				const bossA = a.category & 1;
+				const bossB = b.category & 1;
 
-			if (bossA && !bossB)
-				return -1;
-			else if (!bossA && bossB)
-				return 1;
-			else {
-				const IWA = a.category & 2;
-				const IWB = b.category & 2;
-
-				if (IWA && !IWB)
+				if (bossA && !bossB)
 					return -1;
-				else if (!IWA && IWB)
+				else if (!bossA && bossB)
 					return 1;
-			}
-			return a.localeName.localeCompare(b.localeName);
-		});
+				else {
+					const IWA = a.category & 2;
+					const IWB = b.category & 2;
+
+					if (IWA && !IWB)
+						return -1;
+					else if (!IWA && IWB)
+						return 1;
+				}
+				return a.localeName.localeCompare(b.localeName);
+			})
+		: undefined;
 
 	if (props.uid) {
 		if (selectedEnemy) {
@@ -221,11 +219,14 @@ const EnemiesList: FunctionalComponent<EnemiesListProps> = (props) => {
 			display
 		/>
 
-		<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 row-cols-xl-7">
-			{ EnemyList.map(enemy => <div key={ `enemy_list_${enemy.id}` } class="col mt-3">
-				<EnemyCard enemy={ enemy } />
-			</div>) }
-		</div>
+		{ EnemyList
+			? <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 row-cols-xl-7">
+				{ EnemyList.map(enemy => <div key={ `enemy_list_${enemy.id}` } class="col mt-3">
+					<EnemyCard enemy={ enemy } />
+				</div>) }
+			</div>
+			: <Loading.Data />
+		}
 	</div>;
 };
 export default EnemiesList;

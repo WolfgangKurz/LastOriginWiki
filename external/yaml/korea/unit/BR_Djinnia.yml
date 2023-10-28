@@ -453,7 +453,7 @@ company: BlackRiver
 maker: BlackRiver
 country: FR
 age: "16"
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice:
   - ko
@@ -711,6 +711,13 @@ source:
     - Ev:Ev20:EV2-2
     - Ev:Ev20:EV2-5
     - Ev:Ev20:EV2-2B
+  - - Ev:Ev21:EV1-1
+    - Ev:Ev21:EV2-3
+  - - Ev:Ev23:EV1-1
+    - Ev:Ev23:EV1-6
+    - Ev:Ev23:EV1-3Ex
+    - Ev:Ev23:EV2-2
+    - Ev:Ev23:EV2-3Ex
 research: false
 skills:
   "1":
@@ -718,6 +725,7 @@ skills:
     icon: MGShot
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -736,7 +744,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -798,7 +805,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -860,7 +866,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -922,7 +927,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -984,7 +988,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1046,7 +1049,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1108,7 +1110,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1170,7 +1171,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1232,7 +1232,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1294,7 +1293,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1387,6 +1385,7 @@ skills:
     icon: MultiMissile
     target: team
     delayed: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -1405,7 +1404,6 @@ skills:
           range: 6
           ap: 6
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1547,6 +1545,7 @@ skills:
     icon: P.SelfSpdBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -1566,7 +1565,6 @@ skills:
           range: 0
           ap: 0
           grid: 1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1704,23 +1702,23 @@ skills:
 dialogue:
   KR:
     "1":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 잠시만요. 전투 장비 가져올게요.
+      Leader: 일손이 많네… 어, 아. 다, 다른 생각 안 했어요.
+      SortiePick: 다른 할 일이 많으니 빨리 끝내죠.
+      StageStart: 아참. 토마토 물 줘야 했는데.
+      Retreat: 잡초만 뽑고 올게요.
+      SearchStart: 마침 텃밭에 새로 심을 씨앗을 찾고 있었는데 잘 됐네요.
+      SearchEnd: 이힛. 사령관님. 이것 보세요. 다양한 씨앗을 찾아왔어요.
+      BattleFocus: 네. 명령 기다리고 있습니다.
+      ActionApprove: 명령 확인.
+      SpSkill: 채프 살포합니다.
+      Retire: 아직 해야 할 일들이 많은데…
+      Repair: 으… 너무 무리했나 봐요. 근육통이…
+      Reinforce: 이히하. 더 열심히 일할 수 있겠네요.
+      ItemEquip: 어, 이 장비 농사에 사용하면 규정에 어긋나나요?
+      CoreLink: 농번기 때도 문제가 없겠네요.
+      PresentGet: 어, 선물? 잠시만요. 보답으로 방금 수확한 농작물 가져올게요.
+      Login: 지금 막 수확한 작물이에요. 사령관님께 제일 먼저 맛보여 드리고 싶었어요.
       Idle_01_01: |-
         제가 농사를 짓고 싶다고 하니까
         페어리랑 엘븐 분들이 눈에 불을 
@@ -1768,7 +1766,7 @@ dialogue:
         낙농도 시작하고 싶고, 가공품도 만들어보고
         싶고… 그리고… 사령관님의 아이도 기르고
         싶고. 헤헤. 많이 도와주실거죠?
-      MVP: ""
+      MVP: 에헤헤헤. 기념으로 바베큐 파티를 열까요?
     "":
       Join: 안녕하세요! 드디어 합류했어요!
       SquadJoin: 제가요? 잠깐만요...! 이것만 다 먹고...
@@ -1830,7 +1828,7 @@ dialogue:
       Retire: 곧... 식사 시간인데...
       Repair: 환자식은... 밍밍해서 싫은데...
       Reinforce: 신진대사가 올라가서 그런 걸까요? 평소보다 더 허기져요...
-      ItemEquip: ""
+      ItemEquip: 어… 어제까지만 해도 입을 수 있었는데. 어째서?
       CoreLink: 앞으로 일 인분 이상 먹어야겠네요!
       PresentGet: 사령관님이... 직접 제게 주신다니... 먹을 수 있는 건가요?!
       Login: 사령관님도 하나 드실래요? 이럴 줄 알고 미리 설탕을 듬뿍 쳐놨어요, 저 잘했죠?!
@@ -1877,16 +1875,16 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
-      Idle_02_01: ""
-      Idle_03_01: ""
-      Idle_04_01: ""
-      SPIdle_02_01: ""
-      Oath: ""
-      OathIdle_01: ""
+      Idle_01_01: 農業を始めたいって言ったらエルブンとフェアリーのみんなが駆けつけてくれて……色々と勉強にはなりましたけど……目が…怖かったです。
+      Idle_01_02: 働かざる者！食うべからず！これ、逆に考えると……働く者！食え！になりますよね。一生懸命働いて一生懸命食べます！
+      Idle_01_03: バター焼き、コーンサラダ、チーズコーン、コーンスープ、ポップコーン…あっ、司令官！今育てているトウモロコシに名前をつけていました。司令官も何か付けたい名前はありますか？
+      SPIdle_01_01: あ！今はダメです！畑から戻ってきたばかりだから、汗臭いです…
+      Idle_02_01: 農業で大変なことですか？そうですね～、色々ありますけど、私は有害鳥獣の駆除が一番大変だと思います。一生懸命育ててもうすぐ収穫っていうときに……めちゃくちゃになった畑を見た時は……食べ物の恨みは…絶対に…忘れません。
+      Idle_03_01: 最初は自分が食べる分だけを作ればいいと思っていました。でも、次第に私の努力の結晶をみんなにも食べさせたいって思うようになりました。えへへ、流石に私でも一人では食べきれない量ですし。
+      Idle_04_01: 司令官、一番出来のいい野菜は司令官のためにとっておきました！司令官が偉いからとかじゃなくて……司令官のことが……へへ、これ以上は秘密です！
+      SPIdle_02_01: 酪農はまだやってませんけど……知識はありますので…手取り足取り教えてあげますね。(思い切り誘惑)私の体で……
+      Oath: 司令官、私が農業を始めて驚きましたか？へへ、みんなも同じような反応でした。実は何かを育てるのはこれが初めてじゃないんですよ。初めて育てたのは……司令官との愛です。……へへ、やっと収穫できますね。大好きです！司令官！
+      OathIdle_01: やってみたいことはい～っぱいあります！育てる野菜の種類を増やしたり、酪農も始めたいです！それで加工品も作ってみたいし……それから…司令官との子供も育ててみたいです。えへへ。協力…してくれますよね？
       MVP: ""
     "":
       Join: こんにちは！やっと合流しました！
@@ -1964,9 +1962,7 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         When I said that I wanted to farm,
-
         the fairies and elves came to my aid in such a hurry.
-
         I learned a lot, but it was scary.
       Idle_01_02: |-
         Those who aren’t working! You have no right to eat!
@@ -1980,17 +1976,13 @@ dialogue:
       Idle_02_01: >-
         So, how's farming? Is it hard? Well, there are many factors.
 
-
         But I find that birds and animals are the biggest problem. Especially when all that remains is the harvesting…
 
-
         then when I see the garden ruined…
-
 
         My grudge when it comes to food… I never forget…
       Idle_03_01: >-
         When I first started farming,
-
 
         I thought it was enough to just grow crops for myself.
 
@@ -1998,11 +1990,9 @@ dialogue:
       Idle_04_01: |-
         Commander, I’ve always saved the best ones for you.
         Not because you’re our commander or anything…
-
         It's because… I… Hehe, it's a secret.
       SPIdle_02_01: |-
         I haven't started dairy farming yet…
-
         but I know a few things I can teach you…
         with my body…
       Oath: Commander, were you surprised that I started farming? Hehe, my friends had
@@ -2012,9 +2002,7 @@ dialogue:
       OathIdle_01: |-
         There are many things I wish to do in the future.
         I want to grow more types of crops,
-
         start a dairy farm, create processed goods…
-
         and… I want to raise your child… Hehe. You're going to help me, right?
       MVP: ""
     "":
@@ -2199,7 +2187,7 @@ dialogue:
         保護別人而製造的。
       Idle_01_03: |-
         煙幕彈的其他使用方法？
-        嗯……偷偷進入食物倉庫的時候
+        嗯…偷偷進入食物倉庫的時候
         可能會用得上吧？
       SPIdle_01_01: 啊？司令官，在做什麼？
       Idle_02_01: 司令官，要嘗嘗嗎？
@@ -2210,7 +2198,7 @@ dialogue:
       Idle_04_01: |-
         只要我能做到的話我會永遠
         守護司令官。
-      SPIdle_02_01: 嗯嗯……有點奇怪的感覺？
+      SPIdle_02_01: 嗯嗯…有點奇怪的感覺？
       Oath: |-
         呃？呃？誓約嗎？和我？嘿嘿。我太喜歡司令官了。
         竟然我和司令官已經不是普通的關係了，那你以後會給我很多好吃的吧？對吧？
@@ -2239,12 +2227,12 @@ dialogue:
       Idle_01_01: |-
         司令官，司令官！
         你是喜歡瘦的體型嗎？
-        如果真是這樣，那我就算是少吃一點，也要……！
-        我只要是我就夠了……？嘻嘻……！
+        如果真是這樣，那我就算是少吃一點，也要…！
+        我只要是我就夠了…？嘻嘻…！
         我也非常喜歡原原本本的司令官！​
       Idle_01_02: |-
         最近不管在哪里做什麼，都會擔心司令官。
-        如果摔倒了……啊！我在艦內的時候
+        如果摔倒了…啊！我在艦內的時候
         兩個人就擁抱在一起吧？
         那麼不管發生什麼危險
         我都能守護你了！
@@ -2255,23 +2243,14 @@ dialogue:
         這句話，我好像懂了。
         司令官也是一樣吧？好吃吧？​
       SPIdle_01_01: |-
-        很癢，司令官……！
+        很癢，司令官…！
         如果想吃玉米的話，旁邊有很多-
-        原來是別的啊……？
+        原來是別的啊…？
         幸好補充了營養。​
       MVP: ""
 skins:
   sid: null
   artist: SIMA
-  offsets:
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: true
@@ -2297,20 +2276,12 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_BR_Djinnia_N
   skins:
     - sid: 1
       artist: Serin199
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 114
       G: true
       Spine: false
@@ -2337,6 +2308,7 @@ skins:
       releaseDate: 1675123200000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
         2dmodel: 2DModel_BR_Djinnia_NS1

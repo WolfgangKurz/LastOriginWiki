@@ -465,7 +465,7 @@ company: BlackRiver
 maker: BlackRiver
 country: DK
 age: "14"
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice:
   - ko
@@ -582,6 +582,8 @@ source:
   - - Ev:Ev19:EV1-8
     - Ev:Ev19:EV2-2
   - - Ev:Ev20:EV1-7
+  - - Ev:Ev21:EV2-5
+  - - Ev:Ev23:EV1-2
 research: false
 skills:
   "1":
@@ -589,6 +591,7 @@ skills:
     icon: ARShot
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -607,7 +610,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -701,7 +703,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -795,7 +796,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -889,7 +889,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -983,7 +982,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1077,7 +1075,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1171,7 +1168,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1265,7 +1261,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1359,7 +1354,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1453,7 +1447,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1596,6 +1589,7 @@ skills:
     icon: TeamDefBuff
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -1614,7 +1608,6 @@ skills:
           range: 0
           ap: 8
           grid: 0,1,0,1,1,1,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1716,7 +1709,6 @@ skills:
           range: 0
           ap: 8
           grid: 1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1858,6 +1850,7 @@ skills:
     icon: P.TeamDefBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -1877,7 +1870,6 @@ skills:
           range: 0
           ap: 0
           grid: 1,1,0,1,1,0,1,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2185,6 +2177,7 @@ skills:
     icon: P.TeamDefDeBuff
     target: enemy
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -2204,7 +2197,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2447,6 +2439,7 @@ skills:
     icon: P.TeamAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 5
     buffs:
       index:
@@ -2466,7 +2459,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,0,0,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2577,7 +2569,7 @@ skills:
             - key: Effect_BR_Alvis_N_51
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_CoCoWhiteShell_N
                 - false
               body:
@@ -2661,7 +2653,7 @@ skills:
             - key: Effect_BR_Alvis_N_52
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_LRL_N
                 - false
               body:
@@ -2745,7 +2737,7 @@ skills:
             - key: Effect_BR_Alvis_N_53
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_DutchGirl_N
                 - false
               body:
@@ -2829,7 +2821,7 @@ skills:
             - key: Effect_BR_Alvis_N_54
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Andvari_N
                 - false
               body:
@@ -2913,7 +2905,7 @@ skills:
             - key: Effect_BR_Alvis_N_55
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_SJ_Tachi_N
                 - false
               body:
@@ -2997,7 +2989,7 @@ skills:
             - key: Effect_BR_Alvis_N_56
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Efreeti_N
                 - false
               body:
@@ -3081,7 +3073,7 @@ skills:
             - key: Effect_BR_Alvis_N_57
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_3P_Aqua_N
                 - false
               body:
@@ -3165,7 +3157,7 @@ skills:
             - key: Effect_BR_Alvis_N_58
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Ella_N
                 - false
               body:
@@ -3249,7 +3241,7 @@ skills:
             - key: Effect_BR_Alvis_N_59
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_May_N
                 - false
               body:
@@ -3333,7 +3325,7 @@ skills:
             - key: Effect_BR_Alvis_N_510
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_DrM_N
                 - false
               body:
@@ -3417,7 +3409,7 @@ skills:
             - key: Effect_BR_Alvis_N_511
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_PXSilky_N
                 - false
               body:
@@ -3501,7 +3493,7 @@ skills:
             - key: Effect_BR_Alvis_N_512
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Draculina_N
                 - false
               body:
@@ -3585,7 +3577,7 @@ skills:
             - key: Effect_BR_Alvis_N_513
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_DS_MoMo_N
                 - false
               body:
@@ -3669,7 +3661,7 @@ skills:
             - key: Effect_BR_Alvis_N_514
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Bulgasari_N
                 - false
               body:
@@ -3753,7 +3745,7 @@ skills:
             - key: Effect_BR_Alvis_N_515
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Sylphid_N
                 - false
               body:
@@ -3837,7 +3829,7 @@ skills:
             - key: Effect_BR_Alvis_N_516
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Empress_N
                 - false
               body:
@@ -3921,7 +3913,7 @@ skills:
             - key: Effect_BR_Alvis_N_517
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Alvis_N
                 - false
               body:
@@ -4005,7 +3997,7 @@ skills:
             - key: Effect_BR_Alvis_N_518
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Thetis_N
                 - false
               body:
@@ -4089,7 +4081,7 @@ skills:
             - key: Effect_BR_Alvis_N_519
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Bheur_N
                 - false
               body:
@@ -4173,7 +4165,7 @@ skills:
             - key: Effect_BR_Alvis_N_520
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Leona_N
                 - false
               body:
@@ -4257,7 +4249,7 @@ skills:
             - key: Effect_BR_Alvis_N_521
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Valkyrie_N
                 - false
               body:
@@ -4341,7 +4333,7 @@ skills:
             - key: Effect_BR_Alvis_N_522
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Nymph_N
                 - false
               body:
@@ -4425,7 +4417,7 @@ skills:
             - key: Effect_BR_Alvis_N_523
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Gremlin_N
                 - false
               body:
@@ -4509,7 +4501,7 @@ skills:
             - key: Effect_BR_Alvis_N_524
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_SandMan_N
                 - false
               body:
@@ -4593,7 +4585,7 @@ skills:
             - key: Effect_BR_Alvis_N_525
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Ellie_N
                 - false
               body:
@@ -6191,7 +6183,7 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         阿爾維斯伯爵需要
-        僕人！……兩名左右？！不，
+        僕人！…兩名左右？！不，
         三名最好！
       Idle_01_02: |-
         不給番茄汁的話，
@@ -6199,7 +6191,7 @@ dialogue:
       Idle_01_03: |-
         嘿嘿嘿！今天的零食
         是兔子啊！
-        ……嗯……吃幾個呢？
+        …嗯…吃幾個呢？
       SPIdle_01_01: 呼啊？！
       Idle_02_01: |-
         司令官大人？要當阿爾維斯伯爵的
@@ -6211,7 +6203,7 @@ dialogue:
         裡面還有零食。
       Idle_04_01: |-
         司令官。阿爾維斯竟然咬你
-        對不起……很痛嗎？
+        對不起…很痛嗎？
         我會給你抹藥的，稍等一下。
       SPIdle_02_01: 我，我要全部告訴姐姐們。
       Oath: |-
@@ -6244,7 +6236,7 @@ dialogue:
         阿爾維斯喜歡兔子，所以親手裝飾了一下。
         嘻嘻，怎麼樣？很可愛吧？​
       Idle_01_02: |-
-        我看看……
+        我看看…
         「絕對不要讓司令官一個人獨處」，
         「絕對不要解除護衛」
         「絕對不要陷入愛河」
@@ -6262,7 +6254,7 @@ dialogue:
         嘻嘻，司令官也吃一個吧。
       Idle_03_01: |-
         呃呃~好奇怪。我記得奧黛麗姐姐說過
-        這是為阿爾維斯定身製作的……
+        這是為阿爾維斯定身製作的…
         啊，司令官！這個紐扣阿爾維斯扣不上，
         司令官能幫幫我嗎？​
       Idle_04_01: |-
@@ -6272,11 +6264,11 @@ dialogue:
         嘻嘻嘻，不過你不用擔心，
         這次也一定會保護你的！
       SPIdle_02_01: |-
-        別，別這樣……
-        你在這樣我就不保護你咯？​
+        別，別這樣…
+        你在這樣我就不保護你囉？​
       Oath: |-
         你迷上阿爾維斯帥氣的樣子了嗎？嗯~我該怎麼辦？保鏢絕對不能
-        墜入愛河……嘻嘻嘻，司令官的話就沒關係了！阿爾維斯以後也要一直呆在司令官身邊。
+        墜入愛河…嘻嘻嘻，司令官的話就沒關係了！阿爾維斯以後也要一直呆在司令官身邊。
         不管你遇到什麼危險，阿爾維斯都會保護你的！
       OathIdle_01: |-
         我今天也要呆在司令官身邊！
@@ -6310,7 +6302,7 @@ dialogue:
         害怕的話，就在那裡
         蜷縮著吧。那阿爾維斯我就去守護你了！
       Idle_01_03: |-
-        這是維拉姐姐的！這是……
+        這是維拉姐姐的！這是…
         女武神姐姐的！
         寧芙姐姐說
         會變胖所以不吃零食！
@@ -6321,7 +6313,7 @@ dialogue:
         你知道嗎？一個巧克力棒裡
         含有將近一個巧克力棒的
         卡路里！
-        所以以前的軍人……嗯？
+        所以以前的軍人…嗯？
         不知道在說什麼？
       Idle_03_01: |-
         寧芙姐姐剛剛拿走三個巧克力棒
@@ -6337,7 +6329,7 @@ dialogue:
         下次就不給你巧克力棒了！
       Oath: |-
         這是給阿爾維斯的嗎？謝謝你，司令官！阿爾維斯會更努力的！嘻嘻~！
-        給~！今天我開心，這個就我們倆分著吃吧。嗯……雖然是阿爾維斯剛吃過的……
+        給~！今天我開心，這個就我們倆分著吃吧。嗯…雖然是阿爾維斯剛吃過的…
         但現在應該沒關係了吧？是吧？
       OathIdle_01: 司令官刷牙了嗎？要不要一起？
       MVP: ""
@@ -6361,11 +6353,11 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         你問我是喜歡巧克力棒，還是喜歡司令官？
-        嗯……嘻嘻，阿爾維斯更喜歡司令官！
+        嗯…嘻嘻，阿爾維斯更喜歡司令官！
         因為和司令官在一起
         比吃巧克力更幸福！
       Idle_01_02: |-
-        嗚嗚……巧克力棒都吃沒了。
+        嗚嗚…巧克力棒都吃沒了。
         你需要的東西也都用完了嗎？
         嘻嘻，司令官，那個啊~
         咱瞞著安德瓦里偷偷去一趟倉庫吧。
@@ -6375,21 +6367,12 @@ dialogue:
         哇~司令官最棒了！
         嘻嘻，寵我寵我~
       SPIdle_01_01: |-
-        嘻嘻嘻……這樣好幸福哦。
-        司令官也幸福嗎……？
+        嘻嘻嘻…這樣好幸福哦。
+        司令官也幸福嗎…？
       MVP: ""
 skins:
   sid: null
   artist: Sol
-  offsets:
-    - -20
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -6415,20 +6398,12 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_BR_Alvis_N
   skins:
     - sid: 1
       artist: Sol
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 136
       G: true
       Spine: false
@@ -6455,19 +6430,11 @@ skins:
       releaseDate: 1571356800000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
     - sid: 2
       artist: Sol
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 114
       G: false
       Spine: false
@@ -6502,6 +6469,7 @@ skins:
       releaseDate: 1638748800000
       metadata:
         imageId: 2
+        iconId: 2
         tbarId: 2
         voiceId: 2
         2dmodel: 2DModel_BR_Alvis_NS2

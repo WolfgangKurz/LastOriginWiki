@@ -28,12 +28,12 @@ skills:
     type: 0
     target: enemy
     delayed: false
+    target_ground: false
     buff:
       rate: 0.8
       range: 15
       ap: 5
       grid: 1,0,0,1,1,0,1,0,0
-      target_ground: false
       summon: null
       use: null
       enabled: true
@@ -191,12 +191,12 @@ skills:
     type: 0
     target: enemy
     delayed: false
+    target_ground: false
     buff:
       rate: 0.2
       range: 15
       ap: 9
       grid: 6>1,1,1,1,1,1,1,1,1
-      target_ground: false
       summon: null
       use: null
       enabled: true
@@ -338,12 +338,12 @@ skills:
     type: 0
     target: team
     delayed: false
+    target_ground: false
     buff:
       rate: 0
       range: 0
       ap: 0
       grid: 0,0,0,0,1,0,0,0,0
-      target_ground: false
       summon: null
       use: null
       enabled: true
@@ -406,12 +406,12 @@ skills:
     type: 0
     target: enemy
     delayed: false
+    target_ground: false
     buff:
       rate: 0
       range: 0
       ap: 0
       grid: F>1,1,1,1,1,1,1,1,1
-      target_ground: false
       summon: null
       use: null
       enabled: true
@@ -518,12 +518,12 @@ skills:
     type: 0
     target: enemy
     delayed: false
+    target_ground: false
     buff:
       rate: 0
       range: 0
       ap: 0
       grid: F>1,1,1,1,1,1,1,1,1
-      target_ground: false
       summon: null
       use: null
       enabled: true
@@ -639,7 +639,8 @@ skills:
               overlap: 4
           maxStack: 0
         - key: Effect_MP_Demolisher_BOSS_Challenge3_51
-          on: attacked
+          on:
+            damaged: physics
           if:
             - on:
                 func: OR

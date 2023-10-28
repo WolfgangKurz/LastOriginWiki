@@ -453,7 +453,7 @@ company: Kouhei
 maker: Densetsu_Science
 country: ""
 age: "24"
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice:
   - jpdmm
@@ -541,6 +541,7 @@ source:
   - - Ev:Ev18:EV2-6B
   - - Ev:Ev19:EV2-4B
     - Ev:Ev19:EV3-6B
+  - - Ev:Ev23:EV2-3
 research: false
 skills:
   "1":
@@ -548,6 +549,7 @@ skills:
     icon: ARShot
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -566,7 +568,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -680,7 +681,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -794,7 +794,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -908,7 +907,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1022,7 +1020,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1136,7 +1133,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1250,7 +1246,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1364,7 +1359,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1478,7 +1472,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1592,7 +1585,6 @@ skills:
           range: 4
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1755,6 +1747,7 @@ skills:
     icon: WideSwordAttk
     target: enemy
     delayed: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -1773,7 +1766,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1843,7 +1835,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1913,7 +1904,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1983,7 +1973,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2053,7 +2042,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2123,7 +2111,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2193,7 +2180,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2263,7 +2249,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2333,7 +2318,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2403,7 +2387,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2504,6 +2487,7 @@ skills:
     icon: P.TeamAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -2523,7 +2507,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2819,7 +2802,7 @@ skills:
             - key: Effect_PECS_Veronica_N_22
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_DS_Azazel_N
                 - false
               body:
@@ -2855,7 +2838,7 @@ skills:
             - key: Effect_PECS_Veronica_N_23
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_DS_Saraqael_N
                 - false
               body:
@@ -2891,7 +2874,7 @@ skills:
             - key: Effect_PECS_Veronica_N_24
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_DS_Ramiel_N
                 - false
               body:
@@ -2927,7 +2910,7 @@ skills:
             - key: Effect_PECS_Veronica_N_25
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_DS_Angel_N
                 - false
               body:
@@ -3095,6 +3078,7 @@ skills:
     icon: P.SelfAtkBuff
     target: enemy
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -3114,7 +3098,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4223,6 +4206,7 @@ skills:
     icon: P.SelfAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 5
     buffs:
       index:
@@ -4242,7 +4226,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4435,7 +4418,7 @@ skills:
             - key: Effect_PECS_Veronica_N_53
               on: wave
               if:
-                - in_squad:
+                - in_battle:
                     - Char_DS_Ramiel_N
                     - Char_DS_Angel_N
                     - Char_DS_Saraqael_N
@@ -4783,23 +4766,23 @@ dialogue:
         지켜드리겠습니다.
       MVP: 이교도들이 구원받았군요. 모두, 기도드립시다.
     M:
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 구원자님께서 바라신다면.
+      Leader: 목자가 되어 이끌겠습니다.
+      SortiePick: 성전에 임할 준비가 끝났습니다.
+      StageStart: 이교도들에게 구원을.
+      Retreat: 기억해 두겠습니다.
+      SearchStart: 이교도들의 본거지를 찾으면 되나요? 농담이에요.
+      SearchEnd: 말씀하신 것들을 찾았습니다. 어디에 숨겼을까요?
+      BattleFocus: 구원자님의 명을 기다리고 있습니다.
+      ActionApprove: 구원자님의 명에 따라.
+      SpSkill: 응징하리라.
+      Retire: 저의 신앙은… 꺾이지… 않습니다…
+      Repair: 저의 믿음은 한 번의 실패로는 흔들리지 않아요.
+      Reinforce: 믿음이 공고해지네요.
+      ItemEquip: 그 어떠한 것보다 값진 선물이네요.
+      CoreLink: 한 마음이 되어 구원자님을 섬기겠습니다.
+      PresentGet: 구원자님의 은총에 감사드리나이다. 고마워요 구원자님.
+      Login: 구원자께서 당도하시니 제가 지복을 누리게 됐나이다.
       Idle_01_01: |-
         저는 구원자님을 섬기는 것에 지고의 기쁨을
         느낍니다. 교단의 심문관이라서뿐만 아니라…
@@ -4820,7 +4803,7 @@ dialogue:
         믿음을 제대로 보여드리지 못했나 싶어 절로
         한탄이 나옵니다. 그러니… 다시 제대로 저의
         믿음을 보여드리겠어요.​
-      MVP: ""
+      MVP: 응당히 해야 할 일을 했을 뿐입니다.
   JP:
     "1":
       SquadJoin: ""
@@ -4932,10 +4915,10 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
+      Idle_01_01: なんだか楽しそうですね。
+      Idle_01_02: よく出来た訓練場だ。
+      Idle_01_03: 技術部が使えるものをすべて総動員し、心血を注いで作った訓練場ですからね。
+      SPIdle_01_01: ……はい。
       MVP: ""
   EN:
     "1":
@@ -5172,36 +5155,36 @@ dialogue:
         擴張。
       Idle_01_02: |-
         不，不是啦。作為神意的
-        代行者…………我怎麼能好好
+        代行者…我怎麼能好好
         休息呢。
       Idle_01_03: |-
         是的，救贖者。正準備為了救贖者
         獻上
         禱告呢。
-      SPIdle_01_01: 這個……是不對的行為吧……
+      SPIdle_01_01: 這個…是不對的行為吧…
       Idle_02_01: |-
         我再也無法隱藏對於救贖者的
-        感情了……
-        救贖者？我真的……
+        感情了…
+        救贖者？我真的…
         是墮落了嗎？
       Idle_03_01: |-
         我現在才明白。我可以休
-        息的地方……就是這兒，救贖者的
-        懷抱……
+        息的地方…就是這兒，救贖者的
+        懷抱…
       Idle_04_01: |-
-        只要是救贖者的意願…………我
+        只要是救贖者的意願…我
         什麼樣的
         任務都能執行。無論是什麼，請給我
         下達命令吧。
       SPIdle_02_01: |-
-        好……如果這是
-        救贖者的意願……我就會
-        順從……
+        好…如果這是
+        救贖者的意願…我就會
+        順從…
       Oath: |-
-        如果我接收那個戒指的話……作為代理者的我以後該如何呢？
-        我將不能繼續在教團啊……是……如果那是救贖者的意願的話……
+        如果我接收那個戒指的話…作為代理者的我以後該如何呢？
+        我將不能繼續在教團啊…是…如果那是救贖者的意願的話…
         我將斬切阻擋我們前路的所有的東西，我會保護救贖者的。
-      OathIdle_01: 我是救贖者你的。以後…………也會永遠……
+      OathIdle_01: 我是救贖者你的。以後…也會永遠…
       MVP: ""
     "2":
       SquadJoin: ""
@@ -5227,42 +5210,42 @@ dialogue:
         正如你所說，也許開關是正確的。
       Idle_01_02: |-
         救贖者，既然你答應了約會，我可以
-        再強求一件事嗎？這次休假……
+        再強求一件事嗎？這次休假…
         只要按照我想要的配合就行了。
       Idle_01_03: |-
         即使穿著這種衣服，我的信仰也不會改變。
-        救贖者，可以……直接確認。
+        救贖者，可以…直接確認。
       SPIdle_01_01: |-
         今天就按我的想法來吧。
         你不要動。
       Idle_02_01: |-
         我不記得我是怎麼有了這種
-        興趣愛好……但首先，好像是為了向救贖者展示作為女人的我，
-        而不是異端審問官……
+        興趣愛好…但首先，好像是為了向救贖者展示作為女人的我，
+        而不是異端審問官…
         所以才這樣的。
       Idle_03_01: |-
         因為和平時不同，變得很積極，所以有點彆扭嗎？
         與深愛的男人，穿著輕便的
         單獨度假，應該沒有女人會不激動
-        的吧。像這樣……獨佔救贖者的機會
+        的吧。像這樣…獨佔救贖者的機會
         可不多。
       Idle_04_01: |-
         救贖者並沒有禁止男女之間的
-        愛欲和情欲。但是……這個世界上還有很多因救贖者
+        愛欲和情欲。但是…這個世界上還有很多因救贖者
         沒有想到，所以沒有批准的，
-        以及行為。無論是什麼，我……
+        以及行為。無論是什麼，我…
         都會開心的接受。
       SPIdle_02_01: |-
         我的節奏這樣好像就足夠了。
-        現在……好。一切都按照救贖者的意願吧。
+        現在…好。一切都按照救贖者的意願吧。
       Oath: |-
         和我所愛的男人過著夢一般的休假，而那最後竟然是告白，
-        真的是……不會有比這更好的休假結尾了。雖然很快要回到日常……
-        但偶爾地，請請抽出時間在一起吧。……伴侶。​
+        真的是…不會有比這更好的休假結尾了。雖然很快要回到日常…
+        但偶爾地，請請抽出時間在一起吧。…伴侶。​
       OathIdle_01: |-
-        是指稱呼你為伴侶……嗎？雖然並不難，
+        是指稱呼你為伴侶…嗎？雖然並不難，
         但感覺在試探我的愛，
-        所以有點不開心。我用其他方式……證明吧。
+        所以有點不開心。我用其他方式…證明吧。
       MVP: ""
     "":
       Join: 我叫貝羅尼卡。祝你平安。
@@ -5295,10 +5278,10 @@ dialogue:
       Idle_01_03: |-
         有煩惱請告訴我。
         任何時候我都一起祈禱。
-      SPIdle_01_01: 是光在考驗我……
+      SPIdle_01_01: 是光在考驗我…
       Idle_02_01: |-
         等到所有人被救贖的時候
-        的話，這個聖物也就不必要了……
+        的話，這個聖物也就不必要了…
       Idle_03_01: |-
         因為欲望而墮落
         是不行的，要注意。要是累的話
@@ -5309,14 +5292,14 @@ dialogue:
         東西的話，請隨時跟我說。我會將他們送入
         煉獄的。
       SPIdle_02_01: |-
-        如果你想要的話……
-        隨時……
+        如果你想要的話…
+        隨時…
       Oath: |-
-        是告白呀……如果這樣的話……你知道我只能拋下一切逃跑嗎？
-        如果真的這麼想要我的話……就請證明吧。拿出將阻擋我們的一切
-        全部消滅的意志吧。還有……最後請擁抱我。
+        是告白呀…如果這樣的話…你知道我只能拋下一切逃跑嗎？
+        如果真的這麼想要我的話…就請證明吧。拿出將阻擋我們的一切
+        全部消滅的意志吧。還有…最後請擁抱我。
       OathIdle_01: |-
-        萬一你墮落了……
+        萬一你墮落了…
         我也會隨時在你身邊
         守護你的。
       MVP: ""
@@ -5346,15 +5329,6 @@ dialogue:
 skins:
   sid: null
   artist: One
-  offsets:
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -5380,20 +5354,12 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_PECS_Veronica_N
   skins:
     - sid: 1
       artist: Sol
-      offsets:
-        - -20
-        - 30
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 182
       G: true
       Spine: false
@@ -5420,20 +5386,12 @@ skins:
       releaseDate: 1593993600000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
         2dmodel_dam: 2DModel_PECS_Veronica_NS1_Dam
     - sid: 2
       artist: Sol
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 114
       G: true
       Spine: false
@@ -5460,6 +5418,7 @@ skins:
       releaseDate: 1629676800000
       metadata:
         imageId: 2
+        iconId: 2
         tbarId: 2
         voiceId: 2
         2dmodel: 2DModel_PECS_Veronica_NS2

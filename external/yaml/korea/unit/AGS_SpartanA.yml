@@ -423,7 +423,7 @@ company: BlackRiver
 maker: BlackRiver_HeavyIndustry
 country: US
 age: ""
-secretRoomType: 3
+secretRoomType: AGS
 marriageVoice: false
 introVoice: []
 favor:
@@ -516,6 +516,7 @@ skills:
     icon: ARShot
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -534,7 +535,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -693,7 +693,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -852,7 +851,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -1011,7 +1009,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -1170,7 +1167,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -1329,7 +1325,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -1488,7 +1483,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -1647,7 +1641,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -1806,7 +1799,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -1965,7 +1957,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use:
             key: Effect_AGS_SpartanC_N_4
@@ -2182,6 +2173,7 @@ skills:
     icon: TeamAtkDeBuff
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -2200,7 +2192,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,1,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2412,6 +2403,7 @@ skills:
     icon: P.AWACS
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -2431,7 +2423,6 @@ skills:
           range: 0
           ap: 0
           grid: 1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2510,7 +2501,7 @@ skills:
             - key: Effect_AGS_SpartanA_N_31
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_AGS_SpartanB_N
                 - false
               body:
@@ -2811,6 +2802,7 @@ skills:
     icon: P.SelfAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 2
     buffs:
       index:
@@ -2830,7 +2822,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2993,21 +2984,12 @@ dialogue:
         斯巴達突襲者。殲滅行動
         特化。
       Idle_01_02: |-
-        記錄戰鬥數據中……已刪除虛擬
+        記錄戰鬥數據中…已刪除虛擬
         數據。
       Idle_01_03: 要求迅速的命令。
 skins:
   sid: null
   artist: 메카셔군
-  offsets:
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -3033,5 +3015,6 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_AGS_SpartanA_N

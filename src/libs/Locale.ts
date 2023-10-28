@@ -1,7 +1,7 @@
-import { getCookie } from "@/libs/Functions";
+import { getCookie, setCookie } from "@/libs/Cookie";
 
 export function ChangeLanguage (lang: LocaleTypes): void {
-	document.cookie = `LO_LANG=${lang}; path=/`;
+	setCookie("LO_LANG", lang);
 	window.location.reload();
 }
 

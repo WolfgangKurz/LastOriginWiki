@@ -440,7 +440,7 @@ company: ""
 maker: ""
 country: ""
 age: ""
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice:
   - ko
@@ -488,6 +488,7 @@ chart:
   - 2
   - 5
 cv:
+  "1": {}
   "": {}
   M: {}
 source: []
@@ -498,6 +499,7 @@ skills:
     icon: AxeAttk
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -516,7 +518,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -737,7 +738,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -958,7 +958,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1179,7 +1178,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1400,7 +1398,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1621,7 +1618,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1842,7 +1838,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2063,7 +2058,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2284,7 +2278,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2505,7 +2498,6 @@ skills:
           range: 3
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2793,6 +2785,7 @@ skills:
     icon: Beam
     target: enemy
     delayed: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -2811,7 +2804,6 @@ skills:
           range: 3
           ap: 9
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2941,7 +2933,7 @@ skills:
             - key: Effect_PECS_Hathor_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -2977,7 +2969,7 @@ skills:
             - key: Effect_PECS_Hathor_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -3132,7 +3124,6 @@ skills:
           range: 3
           ap: 9
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -3262,7 +3253,7 @@ skills:
             - key: Effect_PECS_Hathor_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -3298,7 +3289,7 @@ skills:
             - key: Effect_PECS_Hathor_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -3453,7 +3444,6 @@ skills:
           range: 3
           ap: 9
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -3583,7 +3573,7 @@ skills:
             - key: Effect_PECS_Hathor_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -3619,7 +3609,7 @@ skills:
             - key: Effect_PECS_Hathor_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -3774,7 +3764,6 @@ skills:
           range: 3
           ap: 9
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -3904,7 +3893,7 @@ skills:
             - key: Effect_PECS_Hathor_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -3940,7 +3929,7 @@ skills:
             - key: Effect_PECS_Hathor_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -4095,7 +4084,6 @@ skills:
           range: 3
           ap: 9
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -4225,7 +4213,7 @@ skills:
             - key: Effect_PECS_Hathor_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -4261,7 +4249,7 @@ skills:
             - key: Effect_PECS_Hathor_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -4416,7 +4404,6 @@ skills:
           range: 3
           ap: 9
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -4546,7 +4533,7 @@ skills:
             - key: Effect_PECS_Hathor_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -4582,7 +4569,7 @@ skills:
             - key: Effect_PECS_Hathor_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -4737,7 +4724,6 @@ skills:
           range: 3
           ap: 9
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -4867,7 +4853,7 @@ skills:
             - key: Effect_PECS_Hathor_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -4903,7 +4889,7 @@ skills:
             - key: Effect_PECS_Hathor_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -5058,7 +5044,6 @@ skills:
           range: 3
           ap: 9
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -5188,7 +5173,7 @@ skills:
             - key: Effect_PECS_Hathor_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -5224,7 +5209,7 @@ skills:
             - key: Effect_PECS_Hathor_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -5379,7 +5364,6 @@ skills:
           range: 3
           ap: 9
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -5509,7 +5493,7 @@ skills:
             - key: Effect_PECS_Hathor_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -5545,7 +5529,7 @@ skills:
             - key: Effect_PECS_Hathor_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -5700,7 +5684,6 @@ skills:
           range: 3
           ap: 9
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -5830,7 +5813,7 @@ skills:
             - key: Effect_PECS_Hathor_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -5866,7 +5849,7 @@ skills:
             - key: Effect_PECS_Hathor_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -6123,6 +6106,7 @@ skills:
     icon: P.SelfAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -6142,7 +6126,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -6361,6 +6344,7 @@ skills:
     icon: P.SelfDefBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -6380,7 +6364,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -6561,6 +6544,7 @@ skills:
     icon: P.SelfSpdBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 5
     buffs:
       index:
@@ -6580,7 +6564,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -6716,7 +6699,7 @@ skills:
             - key: Effect_PECS_Hathor_N_52
               on: wave
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_ElvenForestmaker_N
                 - false
               body:
@@ -6752,7 +6735,7 @@ skills:
             - key: Effect_PECS_Hathor_N_53
               on: wave
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_DarkElf_N
                 - false
               body:
@@ -6788,7 +6771,7 @@ skills:
             - key: Effect_PECS_Hathor_N_54
               on: wave
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_HighElven_N
                 - false
               body:
@@ -6824,7 +6807,7 @@ skills:
             - key: Effect_PECS_Hathor_N_55
               on: wave
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -6997,25 +6980,84 @@ skills:
             chance: 1
 dialogue:
   KR:
+    "1":
+      SquadJoin: 엘븐 밀크를 잔뜩 홍보하고 올게.
+      Leader: 엘븐 밀크 최고. 하토르 누나도 최고. 그런 뜻이지?
+      SortiePick: 무공해 청정 유기농 우유, 엘븐 밀크 사세요.
+      StageStart: 밀크 걸 영업 개시. 판촉 모드 활성화!
+      Retreat: 뭐? 목마르다고? 이잇. 잠시만 기다려.
+      SearchStart: 출장 판매라고? 누나는 사령관 옆에 있고 싶은데…
+      SearchEnd: 사령관 보려고 빨리 다녀왔어. 사령관도 누나가 그리웠지?
+      BattleFocus: 뭘 하면 될까, 사령관?
+      ActionApprove: 알았어.
+      SpSkill: 엘븐 밀크 많이 많이 사랑해주세요.
+      Retire: 아직 다 못 팔았는데…
+      Repair: 미안, 사령관. 누나가 실수했어.
+      Reinforce: 이달의 밀크 걸이 될 때까지 강해지는 거야.
+      ItemEquip: 우리 사령관이 준 장비로 활약 좀 해볼까?
+      CoreLink: 광고 멘트는 뭐가 좋을지 같이 고민해 보자.
+      PresentGet: 누나가 너무 좋아서 주는 거지? 그렇지?
+      Login: 어서 와, 사령관. 시원한 엘븐 밀크 한 잔 마실래?
+      Idle_01_01: |-
+        짜잔! 누나 새 옷 어때, 사령관?
+        마음에 들어? 사령관이 목마를까봐
+        누나가 준비한 옷이야! 이제 어디서든
+        엘븐 밀크를 마실 수 있어!
+      Idle_01_02: |-
+        누나가 왜 딸기우유를 파냐면…
+        누나는 딸기처럼 달콤하고 상큼하니까!
+        ...뭐야, 동의하지 않는 표정인데? 사령관~?
+      Idle_01_03: |-
+        엘븐 밀크 많이 사 주세요… 아니야…
+        이것보다 좀 더 좋은 대사가 뭐가 있을까…
+        사령관한테 도움이 되어야 하는데…
+      SPIdle_01_01: 조, 조심해! 우유 넘칠라…
+      Idle_02_01: |-
+        세크메트가 파는 우유는 무슨 맛이냐고?
+        그건… 비밀이야! 누나랑 같이 있을 때는
+        누나한테 집중해야지, 사령관!
+      Idle_03_01: |-
+        사실 누나는 요로이를 입는 게 싫어.
+        옷이 꽉 껴서 불편하기도 하고,
+        입고 있으면 우울해지거든…
+        반면에 밀크걸 옷은 편해서 참 좋아!
+      Idle_04_01: |-
+        자, 엘븐 밀크는 많으니까 줄 서서…
+        응? 사령관도 목마르다고?
+        걱정마, 사령관 건 따로 준비해 놨거든.
+        제일 신선한 상태로 말이야.
+      SPIdle_02_01: |-
+        나 참, 그렇게 엘븐 밀크가 먹고 싶었으면
+        말을 하지. 어쩔 수 없네.
+        누나가 잔뜩 먹여줄 테니까... 잠깐 따라와?
+      Oath: 헉, 반지까지 줄 정도로 엘븐 밀크가 좋아, 사령관? 농담이야. 누나한테 주는 반지라는 거 알고 있어. 그야, 지금 누나를 보는
+        사령관의 눈이 사랑으로 반짝이고 있거든. 누나가 매일 아침 세상에서 제일 사랑하는 사령관을 생각하면서 거울을 볼 때처럼 말이야.
+        에헤헷…
+      OathIdle_01: |-
+        자, 우리 사령관 누나랑 꼬옥 하자~
+        응? 너무 아기처럼 대하는 거 아니냐고?
+        사령관은 누나한테는 항상 아기야.
+        그야, 우유를 이렇게 좋아하는걸?
+      MVP: 최고의 우유 판매원은 바로 하토르 누나!
     "":
       Join: 사랑과 풍요의 여신, 하토르 누나! 지금 여기 등장!
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 걱정 마! 누나가 멋지게 처리하고 올 테니까.
+      Leader: 역시 귀엽고 깜찍한 하토르 누나가 최고지?
+      SortiePick: 실패하면 안 돼… 실패하면 안 돼.
+      StageStart: 요로이 가동. 섬멸 모드 활성화.
+      Retreat: 누나가 바로 갈게.
+      SearchStart: 누나만 믿어. 누나가 물자란 물자는 다 쓸어 올게.
+      SearchEnd: 누나, 귀환! 어때? 물건은 마음에 들어? 다시 갔다 올까?
+      BattleFocus: 명령해 줘. 사령관.
+      ActionApprove: 알겠어.
+      SpSkill: 목도하라, 태양을.
+      Retire: 사령관이 실망할텐데…
+      Repair: 미안. 쓸모없다고 생각하지 말아줘.
+      Reinforce: 누나 파워 대폭 상승!
+      ItemEquip: 누나가 다칠까 봐 주는 거야? 히힝. 고마워.
+      CoreLink: 함께 있자. 버리지 않을게.
+      PresentGet: 역시 사령관도 누나를 좋아하는구나?
+      Login: 어! 왔구나 사령관? 안 올까봐 걱정했지 뭐야? 이히하핫.
       Idle_01_01: |-
         천우가 무슨 뜻이냐고? 그건 바로,
         천재 누우나를 줄여서... 아하하. 농담이야.
@@ -7052,6 +7094,116 @@ dialogue:
         사령관, 잠깐 누나 옷 좀 갈아입고 올게.
         사령관이랑... 아니, 그게...
         갑옷을 입고 오래 있었더니 좀 축축해져서...
+      MVP: 어때 사령관? 누나를 막 칭찬하고 싶어지지?
+    M:
+      SquadJoin: 적과 싸워야 하는 거지? 누나만 믿어.
+      Leader: 역시 대장 자리는 천재 누우나한테 어울리지?
+      SortiePick: 누나, 우울해지지 않게 힘낼게.
+      StageStart: 요로이 가동. 누나가 전부 쓸어버릴게.
+      Retreat: 누나 불렀어?
+      SearchStart: 누나 출동! 자원 수집 모드 활성화!
+      SearchEnd: 어… 누나 완전 방전이야. 사령관. 에너지가 필요해. 안아줘.
+      BattleFocus: 누나 듣고 있어.
+      ActionApprove: 누나가 처리할게.
+      SpSkill: 천상의 빛을 보라.
+      Retire: 사령관이 슬퍼할텐데…
+      Repair: 미안. 다쳐버렸네.
+      Reinforce: 사령관의 사랑으로 충천 완료!
+      ItemEquip: 장비 영구 보존하는 법 검색. 어? 그러지 말고 내가 쓰라고?
+      CoreLink: 자, 그럼 좋은 누나 되기 특강을 시작하겠습니다.
+      PresentGet: 뭐야 사령관? 누나를 너무 좋아하는 거 아니야? 이히힛.
+      Login: 어서 와, 사령관. 우유 한 잔 마시고 오늘 하루도 힘차게 가자.
+      Idle_01_01: |-
+        한 번 누나는 영원한 누나!
+        신성한 서약의 맹세조차
+        그 법칙을 뛰어넘을 수는 없도다!
+        ...그래서 아직도 누나인거야. 알겠지?
+      Idle_01_02: |-
+        요즘은 왜 우울한 누나 모드가 안 나오냐면,
+        요로이 때문에 우울해지는 것보다
+        사령관의 사랑 덕분에 행복해지는 마음이
+        더 크기 때문이야.
+      Idle_01_03: |-
+        누나, 일 열심히 했어. 그러니까 오늘은
+        누나를 마음껏 칭찬해도 좋아!
+        ...응? 왠지 누나가 아니라 동생 같다고?
+      SPIdle_01_01: |-
+        누나는 아이들 돌보는 것도 좋아해.
+        그러니까... 노력해 줄 거지?
+      MVP: 지금 누나, 분명 최고로 귀여워. 그치?
+  JP:
+    "1":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
+    "":
+      Join: 愛と豊穣の女神、ハトホル！ここにおな～り～！
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: 天乳の意味？あ～それね。それはもう天にも昇るような触り心地のおっぱい……あはは！ごめんごめん！冗談よ！ハトホルって女神様はね、天の牝牛とも言われてるの。だから、その私が…その…出して戦うから「天乳」よ……。え？わかるようでわからない？もう～！わかってよ～！
+      Idle_01_02: |-
+        お姉さんはね、たまにふと…気持ちが落ちちゃう時があるんだ……
+        でも驚かなくていいからね。その時は……ああ、またかって思ってて。 弟くんはイイ子だもんね……お姉さんの言うこと聞けるよね？"
+      Idle_01_03: |-
+        セクメトとセレスティアには負けられないわ。
+        私が本当のお姉さんだってことをしっかりと思い知らせなきゃ……！
+        え？あの二人はお姉さんじゃなくて、お母さんポジションなの！？
+      SPIdle_01_01: どうした？お姉さんがお乳あげようか～？あははっ！
+      Idle_02_01: |-
+        私はね……何かを捨てるって行為が好きじゃないの……昔、捨てられたことがあったから。
+        研究所の入口が崩壊して閉じ込められたのに、誰も助けにきてくれなかったんだ……
+      Idle_03_01: |-
+        愛されたい。嫌われたくない。
+        もっと役に立てば、もっと強くなれば……私を愛してくれるはず……
+      Idle_04_01: |-
+        弟くん、そのエルブンミルクどう？美味しい？最高？
+        ふ～ん…そっか～。美味しいんだ～。ひひひ！嬉しい！え？どうして笑ってるのかって？……なんでだろうね～
+      SPIdle_02_01: 天の牝牛、ハトホルは愛と美と豊さの象徴。どうしてそう言われるのか……一緒にお勉強しよっか？
+      Oath: 捨てられるって思ってた。陰気な女の子なんてみんな嫌でしょ？でも……私がこんな風に暗いところを見せても、弟くんは私のことを好きになってくれるんだね？頑張って元気なフリをしてたお姉さんも、暗くてうじうじしてる私も……どっちも同じように愛してくれるんだね？
+        ありがとう。そして……私も愛してる。
+      OathIdle_01: |-
+        弟くん、ちょっと着替えてくるね。
+        そうそう、弟くんとずっと……違うよぉ！ほ、ほら……YOROIをずっと着てたから汗かいちゃっただけ……！
       MVP: ""
     M:
       SquadJoin: ""
@@ -7072,80 +7224,18 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: |-
-        한 번 누나는 영원한 누나!
-        신성한 서약의 맹세조차
-        그 법칙을 뛰어넘을 수는 없도다!
-        ...그래서 아직도 누나인거야. 알겠지?
-      Idle_01_02: |-
-        요즘은 왜 우울한 누나 모드가 안 나오냐면,
-        요로이 때문에 우울해지는 것보다
-        사령관의 사랑 덕분에 행복해지는 마음이
-        더 크기 때문이야.
+        一度お姉さんになったら永遠にお姉さんなの！これは絶対の法則よ！神聖な誓約ですら、その法則を超えることはできないの！
+        …だから、今もお姉さんなの。いいかな？弟くん。
+      Idle_01_02: 最近はどうして暗いお姉さんにならないのか教えてあげる。YOROIを使って暗くなっても、弟くんがすぐに幸せな気持ちにしてくれるからよ。
       Idle_01_03: |-
-        누나, 일 열심히 했어. 그러니까 오늘은
-        누나를 마음껏 칭찬해도 좋아!
-        ...응? 왠지 누나가 아니라 동생 같다고?
+        私、今日は一生懸命頑張ったよ！だからいっぱい褒めて！弟くん！
+        ……え？お姉さんというより妹だって？
       SPIdle_01_01: |-
-        누나는 아이들 돌보는 것도 좋아해.
-        그러니까... 노력해 줄 거지?
-      MVP: ""
-  JP:
-    "":
-      Join: ""
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
-      Idle_02_01: ""
-      Idle_03_01: ""
-      Idle_04_01: ""
-      SPIdle_02_01: ""
-      Oath: ""
-      OathIdle_01: ""
-      MVP: ""
-    M:
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
+        私、子どもの面倒を見るのも好きなの。
+        だから……頑張ってくれるよね？
       MVP: ""
   EN:
-    "":
-      Join: ""
+    "1":
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -7174,6 +7264,66 @@ dialogue:
       Oath: ""
       OathIdle_01: ""
       MVP: ""
+    "":
+      Join: Hator, the goddess of love and prosperity! Appearing here and now!
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: |-
+        What does Divine Cow mean?
+        That’s a reference to your one and only... Haha, I’m kidding.
+        They said they got the name from the cow in the sky.
+      Idle_01_02: |-
+        There are times when I get a bit... depressed...
+        Don’t tease me too much and just... let me be.
+        Commander is a nice guy... So please.
+      Idle_01_03: |-
+        I can't lose to Sekhmet and Cerestia.
+        Show them who your real older sister is...
+        Huh? They aren’t like your sisters...
+        but like your mothers?
+      SPIdle_01_01: What’s wrong? Do you want me to feed you? Ahaha.
+      Idle_02_01: |-
+        I don't like throwing things away...
+        because I've been thrown away before.
+        I was trapped because the research facility entrance caved in,
+        but no one came to rescue me...
+      Idle_03_01: |-
+        I want to be loved. I don’t want to be hated.
+        If I am a bit more useful, a bit more powerful...
+        Commander will love me more...
+      Idle_04_01: |-
+        Commander, how is the elven milk? Is it tasty? The best?
+        Hmm... I see. It's tasty, right? Hehe. I’m glad.
+        Huh? Why am I laughing? ...No reason.
+      SPIdle_02_01: |-
+        The cow symbolizes fertility and abundance.
+        Do you want to find out why that is... together?
+      Oath: |-
+        I thought I was going to be abandoned. Because no one likes
+        a depressed, sullen girl. But... even after seeing me depressed,
+        you still like me, right, Commander? The very excited me,
+        and the very depressed me... You love me just the same, don't you?
+        Thank you and... I love you.
+      OathIdle_01: |-
+        Commander, I’ll be right back after I change.
+        With you... No, wait...
+        I’m a bit sweaty from wearing my armor for too long...
+      MVP: ""
     M:
       SquadJoin: ""
       Leader: ""
@@ -7192,14 +7342,25 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
+      Idle_01_01: |-
+        Once a sister, always a sister!
+        Not even the oath of the sacred vow
+        can exceed that law!
+        ...So I’m still your sister, okay?
+      Idle_01_02: |-
+        The reason the depressed sister mode isn't coming out
+        is because the joy from your love is greater than
+        being depressed because of Yoroi.
+      Idle_01_03: |-
+        I worked hard.
+        So, feel free to compliment me all you want today!
+        ...Huh? It feels like I’m your younger sister for some reason?
+      SPIdle_01_01: |-
+        I also like taking care of children.
+        So... You’ll make an effort, right?
       MVP: ""
   TC:
-    "":
-      Join: ""
+    "1":
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -7228,6 +7389,63 @@ dialogue:
       Oath: ""
       OathIdle_01: ""
       MVP: ""
+    "":
+      Join: 愛與富足的女神，哈索爾姐姐！在此登場！
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: |-
+        你問我天優是什麼意思？
+        那就是天才優秀姐姐的簡稱…哇哈哈，開玩笑的，
+        聽說這是取自天上的牛的名字。
+      Idle_01_02: |-
+        姐姐我偶爾…會有憂鬱的時候…
+        但你不要太驚訝，只要…習慣就好了，
+        因為司令官是善良的弟弟…拜託你了。
+      Idle_01_03: |-
+        我不能輸給塞赫美特和塞雷斯蒂亞，
+        一定會讓她們看清楚，我才是真的姐姐…
+        哦？她們兩個的角色不是姐姐…
+        而是媽媽？
+      SPIdle_01_01: 怎麼？要給你零食嗎？哇哈哈。
+      Idle_02_01: |-
+        姐姐我不太喜歡丟東西…
+        因為我之前被拋棄過。
+        由於研究設施入口倒塌，導致我被困在裡面，
+        但卻沒有任何人來救我…
+      Idle_03_01: |-
+        我想被愛，不想被人討厭，
+        只要我變得更有用、更強大…
+        司令官就會更愛我的…
+      Idle_04_01: |-
+        司令官，這個精靈牛奶怎麼樣？好喝嗎？超好喝嗎？
+        嗯…原來是這樣，很好喝啊？嘻嘻，真開心，
+        咦？你問我為什麼笑？…我自有理由。
+      SPIdle_02_01: |-
+        乳牛是高產量及富足的象徵，
+        要不要跟我一起來看看…是為什麼呢？
+      Oath: |-
+        我本來覺得我會被拋棄，因為沒有人會喜歡憂鬱又陰沉的女生，但是…司令官即使看到我憂鬱的樣子，卻還是喜歡著我啊？
+        無論是一臉開心的我，還是極度憂鬱的我…司令官都是一樣喜歡著我啊？謝謝你，還有…我愛你。
+      OathIdle_01: |-
+        司令官，我先去換了衣服再過來，
+        我跟你…就是，那個…
+        因為盔甲穿太久，有點濕掉了…
+      MVP: ""
     M:
       SquadJoin: ""
       Leader: ""
@@ -7246,23 +7464,27 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
+      Idle_01_01: |-
+        一日姐姐，終身姐姐！
+        如同宣誓神聖的誓約一樣，
+        懲罰勢必也很驚人！
+        …所以我還是姐姐，知道了嗎？
+      Idle_01_02: |-
+        如果問我為什麼最近沒出現憂鬱姐姐模式的話，
+        那是因為比起為了大鎧而憂鬱，
+        更多的是多虧有司令官的愛，
+        讓我的心情變得更加幸福。
+      Idle_01_03: |-
+        姐姐今天努力工作了，
+        所以今天盡情稱讚我也不錯！
+        …嗯？你說總覺得我不像姐姐，而是妹妹？
+      SPIdle_01_01: |-
+        姐姐也很喜歡照顧小孩，
+        所以…你會努力吧？
       MVP: ""
 skins:
   sid: null
   artist: Taesi
-  offsets:
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: true
   Spine: false
@@ -7288,6 +7510,41 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_PECS_Hathor_N
     2dmodel_dam: 2DModel_PECS_Hathor_N_Dam
+  skins:
+    - sid: 1
+      artist: Taesi
+      price: 147
+      G: true
+      Spine: false
+      parts: 68
+      stage: false
+      subset:
+        - true
+        - true
+        - false
+        - true
+        - false
+        - true
+        - false
+        - false
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - Costume
+      facelist: []
+      releaseDate: 1693872000000
+      metadata:
+        imageId: 1
+        iconId: 1
+        tbarId: 1
+        voiceId: 1
+        2dmodel: 2DModel_PECS_Hathor_NS1
+        2dmodel_dam: 2DModel_PECS_Hathor_NS1_Dam

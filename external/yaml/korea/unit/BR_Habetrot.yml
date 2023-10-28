@@ -465,7 +465,7 @@ company: ""
 maker: ""
 country: ""
 age: ""
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice: []
 favor:
@@ -568,6 +568,8 @@ source:
     - Ev:Ev19:EV2-1B
     - Ev:Ev19:EV3-4
   - - Ev:Ev20:EV1-1B
+  - - Ev:Ev21:EV2-2
+  - - Ev:Ev23:EV1-6
 research: false
 skills:
   "1":
@@ -575,6 +577,7 @@ skills:
     icon: ARShot
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -593,7 +596,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -820,7 +822,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1047,7 +1048,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1274,7 +1274,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1501,7 +1500,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1728,7 +1726,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1955,7 +1952,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2182,7 +2178,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2409,7 +2404,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2636,7 +2630,6 @@ skills:
           range: 4
           ap: 6
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2939,6 +2932,7 @@ skills:
     icon: SelfDefBuff
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -2957,7 +2951,6 @@ skills:
           range: 0
           ap: 9
           grid: 0,1,0,1,1,1,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3245,7 +3238,6 @@ skills:
           range: 0
           ap: 9
           grid: 1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3627,6 +3619,7 @@ skills:
     icon: P.SelfDefBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -3646,7 +3639,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,1,0,1,1,1,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3781,7 +3773,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3974,6 +3965,7 @@ skills:
     icon: P.TeamAtkBuff
     target: team
     delayed: false
+    target_ground: true
     leastGrade: 4
     buffs:
       index:
@@ -3993,7 +3985,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -4563,6 +4554,7 @@ skills:
     icon: P.TeamSpdBuff
     target: team
     delayed: false
+    target_ground: true
     leastGrade: 5
     buffs:
       index:
@@ -4582,7 +4574,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -4795,7 +4786,7 @@ skills:
             - key: Effect_BR_Habetrot_N_53
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Marie_N
                 - false
               body:
@@ -4831,7 +4822,7 @@ skills:
             - key: Effect_BR_Habetrot_N_54
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_RedHood_N
                 - false
               body:
@@ -4867,7 +4858,7 @@ skills:
             - key: Effect_BR_Habetrot_N_55
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Phoenix_N
                 - false
               body:
@@ -4903,7 +4894,7 @@ skills:
             - key: Effect_BR_Habetrot_N_56
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Impet_N
                 - false
               body:
@@ -4939,7 +4930,7 @@ skills:
             - key: Effect_BR_Habetrot_N_57
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Efreeti_N
                 - false
               body:
@@ -4975,7 +4966,7 @@ skills:
             - key: Effect_BR_Habetrot_N_58
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_PXSilky_N
                 - false
               body:
@@ -5011,7 +5002,7 @@ skills:
             - key: Effect_BR_Habetrot_N_59
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Gnome_N
                 - false
               body:
@@ -5047,7 +5038,7 @@ skills:
             - key: Effect_BR_Habetrot_N_510
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Leprechaun_N
                 - false
               body:
@@ -5083,7 +5074,7 @@ skills:
             - key: Effect_BR_Habetrot_N_511
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Brownie_N
                 - false
               body:
@@ -5632,7 +5623,7 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         V-victory to Orca! I am Habetrot,
-        warrant officer of Steel-Line. I will appreciate every guidance
+        warrant officer of Steel Line. I will appreciate every guidance
         And encouragement- No, that’s not it!
         I will show you my responsibility as an executive!​
       Idle_01_02: |-
@@ -5656,7 +5647,7 @@ dialogue:
 
         V-victory to Orca! Commander, you’re here.
 
-        Oh, this is Steel-Line’s organization chart. I should learn about peers’ faces
+        Oh, this is Steel Line’s organization chart. I should learn about peers’ faces
 
         if I want to fit in quickly.​
       Idle_03_01: >-
@@ -5759,47 +5750,47 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: |-
-        勝、勝利！你回來了，司令官閣下！...是！
+        勝、勝利！你回來了，司令官閣下！…是！
         這次收到的補給是夏季戰鬥服！
-        我把不合身的部位稍微改良了一下...
+        我把不合身的部位稍微改良了一下…
         感覺自己終於成為了真正的鋼線少尉！​
       Idle_01_02: |-
         司令官閣下吩咐的各部隊補給品，
         我已經全部掌握了！
-        對照目前為止的收付款帳本，在大車上把材料...
+        對照目前為止的收付款帳本，在大車上把材料…
         沒，沒必要這麼做嗎？​
       Idle_01_03: |-
-        啊，真涼快...果然還是夏季戰鬥服比戰鬥服...？
+        啊，真涼快…果然還是夏季戰鬥服比戰鬥服…？
         勝、勝利！鋼線部隊的
         哈貝特羅少尉，拜見司令官閣下！
-        來這裡有什麼事嗎...？​
+        來這裡有什麼事嗎…？​
       SPIdle_01_01: |-
-        啊...！司、司令官大人！
-        不要拉那個地方...！​
+        啊…！司、司令官大人！
+        不要拉那個地方…！​
       Idle_02_01: |-
         穿上夏季戰鬥服之後，作為鋼線少尉的自豪感
-        從心中湧現出來了。感覺渾身充滿自信...！
-        不過尺寸還是小了點...
-        補給品為什麼沒有更大尺碼的衣服呢...​
+        從心中湧現出來了。感覺渾身充滿自信…！
+        不過尺寸還是小了點…
+        補給品為什麼沒有更大尺碼的衣服呢…​
       Idle_03_01: |-
-        來看我...？啊~是因為訓練計畫表嘛。
+        來看我…？啊~是因為訓練計畫表嘛。
         我想整理好之後才交給你的，
-        如果你現在就想要... 
-        只是來看我的？唔...真的嗎...？​
+        如果你現在就想要… 
+        只是來看我的？唔…真的嗎…？​
       Idle_04_01: |-
-        ...睡著了嗎？幫他蓋上被子吧，免得感冒。
+        …睡著了嗎？幫他蓋上被子吧，免得感冒。
         你知道上次多嚇人嗎？
-        這是懲罰...啊？！你、你醒了？
-        難道...根本就沒睡著？！啊呃呃...​
+        這是懲罰…啊？！你、你醒了？
+        難道…根本就沒睡著？！啊呃呃…​
       SPIdle_02_01: |-
-        超出預期嗎...早知道你會這麼喜歡，
-        我就早點穿上了...我...
+        超出預期嗎…早知道你會這麼喜歡，
+        我就早點穿上了…我…
         明天是休息天，
-        如果哥哥願意，今天...​
+        如果哥哥願意，今天…​
       Oath: |-
-        一開始只是為了盡到作為軍官的責任...為了成為閣下出色的部下...但不知從何時起，不再是作為軍人，
-        而是真心想給司令官大人提供更多幫助。剛來的時候我還是個失誤百出的呆頭鵝...我是不是變了很多？
-        我可是做了不少努力。為了哥哥，我還會繼續成長下去，所以...請你以後也繼續看著我！
+        一開始只是為了盡到作為軍官的責任…為了成為閣下出色的部下…但不知從何時起，不再是作為軍人，
+        而是真心想給司令官大人提供更多幫助。剛來的時候我還是個失誤百出的呆頭鵝…我是不是變了很多？
+        我可是做了不少努力。為了哥哥，我還會繼續成長下去，所以…請你以後也繼續看著我！
       OathIdle_01: |-
         咦！你這麼著急去哪兒，哥哥？
         我明明在這裡呀。如果有急事，
@@ -5827,51 +5818,51 @@ dialogue:
       Idle_01_01: |-
         勝，勝利！我是鋼線部隊的少尉，
         哈貝特羅。請你多多指教
-        ……不，不是請求！
+        …不，不是請求！
         我會作為幹部抱著責任感努力工作的！​
       Idle_01_02: |-
-        這個是既重要又急的業務，那個……
+        這個是既重要又急的業務，那個…
         啊，司令官！你來了嗎。我打算直到業務
         熟練為止要進行追加工作。
         這樣的話實力會很快增加的吧。​
       Idle_01_03: |-
-        軍服嗎……？請，請問有什麼錯誤的部分嗎？
+        軍服嗎…？請，請問有什麼錯誤的部分嗎？
         都成了軍官還被指責到服裝，少尉
-        失格啊……！啊，什麼？是因為休息日也穿著軍服
-        所以問問而已？呼……太好了。​
+        失格啊…！啊，什麼？是因為休息日也穿著軍服
+        所以問問而已？呼…太好了。​
       SPIdle_01_01: |-
-        啊……！不，不是啊。像我這樣樸素的人，司令官的，那個……寵愛……
+        啊…！不，不是啊。像我這樣樸素的人，司令官的，那個…寵愛…
         ​
       Idle_02_01: |-
-        這位是元士，而這位是兵長……
+        這位是元士，而這位是兵長…
         勝，勝利！司令官什麼時候來的？
         啊，這是鋼線的組織圖。想要儘快適應的話要熟知其他人的臉啊。
         ​
       Idle_03_01: |-
         我因為對衣服不那麼關心，所以一般穿著軍服，
         這也便於行動啊。
-        只是……啊，不是啦。那個……最近，上部內衣
-        有點悶……我打算下次再提高一個尺碼申請。​
+        只是…啊，不是啦。那個…最近，上部內衣
+        有點悶…我打算下次再提高一個尺碼申請。​
       Idle_04_01: |-
-        呵呃……？！是司令官啊……又是在做夢啊……
+        呵呃…？！是司令官啊…又是在做夢啊…
         各個~快點和平時一樣誇我做得好
-        並輕拍我啊……嗯？呃呃？！難道，
-        這不是夢……！啊啊啊啊啊！
+        並輕拍我啊…嗯？呃呃？！難道，
+        這不是夢…！啊啊啊啊啊！
         對不起，對不起！​
       SPIdle_02_01: |-
-        拜託那時的事情就……！是我失言了，
-        如果繼續向我請求的話……呃呃……這，這次
-        可是最後一次了……？今天也請把司令官的寵愛……給，給我吧……啊呃呃……
+        拜託那時的事情就…！是我失言了，
+        如果繼續向我請求的話…呃呃…這，這次
+        可是最後一次了…？今天也請把司令官的寵愛…給，給我吧…啊呃呃…
         ​
       Oath: |-
-        呃……？給，給我這個……是真的嗎……？嚶嚶……因什麼都不知道而老是惹事，過於緊張而失誤連連的
-        我……被司令官……這次不是夢吧？是真的，真的吧？是！我從第一次見到司令官的時候開始
-        一直期待著這瞬間的到來。……雖然還有很多不足之處，但以後也請多多關照。哥哥……
+        呃…？給，給我這個…是真的嗎…？嚶嚶…因什麼都不知道而老是惹事，過於緊張而失誤連連的
+        我…被司令官…這次不是夢吧？是真的，真的吧？是！我從第一次見到司令官的時候開始
+        一直期待著這瞬間的到來。…雖然還有很多不足之處，但以後也請多多關照。哥哥…
       OathIdle_01: |-
         我剛來的時候，因為什麼都不知道而徘徊了不少，
         多虧有人在旁邊一個一個地教
         使我能做一人份的工作，真是太好了。一想到那個時候的話，
-        哎咻……我總是謝謝你啊，哥哥。​
+        哎咻…我總是謝謝你啊，哥哥。​
       MVP: ""
     M:
       SquadJoin: ""
@@ -5893,39 +5884,30 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         那時候是我剛任官，而且司令官是
-        哥哥，當然是緊張的啊。不過現在……
+        哥哥，當然是緊張的啊。不過現在…
         呃咦！從現在起沒有日程吧？我也做完了
         該做的事情，我們到外面走走吧。​
       Idle_01_02: |-
         怎麼樣，現在我一個人也能做得好好的吧，
         這多虧教我的人出色啊。
-        其他業務嗎？當然啊，哪種……咿呀啊？！
-        ……如果這個是業務的話我一整天也能做。​
+        其他業務嗎？當然啊，哪種…咿呀啊？！
+        …如果這個是業務的話我一整天也能做。​
       Idle_01_03: |-
-        我不太喜歡打扮啊……
-        不過最近以來有點感興趣了。……心境的變化嗎？
+        我不太喜歡打扮啊…
+        不過最近以來有點感興趣了。…心境的變化嗎？
         當然了！就算是軍人，想要在喜歡的男人前顯得漂亮是沒辦法的啊。
 
         知道了嗎，哥哥？​
       SPIdle_01_01: |-
         你那麼喜歡那個嗎？一直熱衷於
-        那裡……因為哥哥而變大了，
+        那裡…因為哥哥而變大了，
         知不知道現在補給內衣不符合尺寸了？
-        以後給我自製點啊。……是開玩笑啦。
-        如果哥哥喜歡的話……我也喜歡……​
+        以後給我自製點啊。…是開玩笑啦。
+        如果哥哥喜歡的話…我也喜歡…​
       MVP: ""
 skins:
   sid: null
   artist: BUMCHa
-  offsets:
-    - -110
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -5951,20 +5933,12 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_BR_Habetrot_N
   skins:
     - sid: 1
       artist: BUMCHa
-      offsets:
-        - null
-        - -30
-        - null
-        - null
-        - null
-        - 20
-        - null
-        - null
       price: 114
       G: true
       Spine: false
@@ -6000,6 +5974,7 @@ skins:
       releaseDate: 1652659200000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
         2dmodel: 2DModel_BR_Habetrot_NS1

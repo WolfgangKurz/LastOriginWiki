@@ -149,7 +149,10 @@ interface BuffTrigger_HPRange {
 	hpRange: [string, string];
 }
 
-type BuffTrigger_UnitIn = BuffTrigger_UnitInSquad | BuffTrigger_UnitInEnemy;
+type BuffTrigger_UnitIn = BuffTrigger_UnitInBattle | BuffTrigger_UnitInSquad | BuffTrigger_UnitInEnemy;
+interface BuffTrigger_UnitInBattle {
+	in_battle: string | string[];
+}
 interface BuffTrigger_UnitInSquad {
 	in_squad: string | string[];
 }

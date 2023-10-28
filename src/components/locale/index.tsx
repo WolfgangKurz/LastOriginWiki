@@ -1,8 +1,9 @@
 import { ComponentType, FunctionalComponent, createElement } from "preact";
 
 import { CurrentLocale, LocaleTypes } from "@/libs/Locale";
+import { CurrentDB } from "@/libs/DB";
 
-import { GetJson, StaticDB } from "@/components/loader";
+import { GetJson, JsonInvalidate, JsonLoaderCore, StaticDB } from "@/components/loader";
 
 type LocaleComponentProp<T> = Record<string, ComponentType<T>>;
 
@@ -24,7 +25,7 @@ function traverseVNode<T> (nodes: Node[] | NodeListOf<ChildNode>, p: LocaleProps
 							const r = paramRegex.exec(x);
 							return r
 								? ((): preact.VNode => {
-									const idx = parseInt(r[1].substr(1, r[1].length - 2), 10);
+									const idx = parseInt(r[1].slice(1, r[1].length - 1), 10);
 									if (p) {
 										const v = p[idx];
 										if (typeof v === "string" || typeof v === "number" || typeof v === "boolean")
@@ -114,7 +115,7 @@ const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
 					const r = paramRegex.exec(x);
 					return r
 						? ((): preact.VNode => {
-							const idx = parseInt(r[1].substr(1, r[1].length - 2), 10);
+							const idx = parseInt(r[1].slice(1, r[1].length - 1), 10);
 							if (props.p) {
 								const v = props.p[idx];
 								if (typeof v === "string" || typeof v === "number" || typeof v === "boolean")
@@ -154,4 +155,9 @@ export function LocaleGet (k: string, ...p: any[]): string {
 export function LocaleExists (k: string): boolean {
 	const locale = GetLocaleTable(CurrentLocale);
 	return locale && k in locale;
+}
+
+export function ReloadLocale (locale: string): void {
+	JsonInvalidate(StaticDB.Locale[locale]);
+	JsonLoaderCore(CurrentDB, StaticDB.Locale[locale]);
 }

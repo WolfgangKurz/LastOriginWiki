@@ -8,15 +8,16 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/scss";
 import "swiper/scss/pagination";
 
-import { AssetsRoot, CurrentEvent, EventFrom, EventTo, Host, ImageExtension, IsAprilFool } from "@/libs/Const";
+import { AssetsRoot, CurrentEvent, EventTo, Host, ImageExtension, IsAprilFool } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { CurrentLocale } from "@/libs/Locale";
 
 import Locale from "@/components/locale";
 import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
-import IconCalendar3 from "@/components/bootstrap-icon/icons/Calendar3";
 import IconGithub from "@/components/bootstrap-icon/icons/Github";
+import IconHourglassSplit from "@/components/bootstrap-icon/icons/HourglassSplit";
 import HomeConfigSelector from "@/components/home-config-selector";
+import Countdown from "@/routes/home/Countdown";
 import Changelog from "./changelog";
 
 import BuildInfo from "@/buildtime";
@@ -73,12 +74,6 @@ const Home: FunctionalComponent = () => {
 		return `${pad(y, 4)}-${pad(m, 2)}-${pad(d, 2)} ${pad(h, 2)}:${pad(i, 2)}:${pad(s, 2)}`;
 	})();
 
-	function DateText (date: Date): string {
-		if (CurrentLocale === "EN")
-			return `${date.getDate()}. ${date.getMonth() + 1}. ${date.getFullYear()}`;
-		return `${date.getFullYear()}-${pad(date.getMonth() + 1, 2)}-${pad(date.getDate(), 2)}`;
-	}
-
 	const BuildVersion = BuildInfo.build;
 
 	SetMeta(["description", "twitter:description"], null);
@@ -88,6 +83,8 @@ const Home: FunctionalComponent = () => {
 	useLayoutEffect(() => {
 		SwiperCore.use([Autoplay, Pagination]);
 	}, []);
+
+	const previewSkins = ["3P_Frigga_2"];
 
 	return <div class={ `${style.home} home` }>
 		<div class="alert alert-primary">
@@ -114,8 +111,15 @@ const Home: FunctionalComponent = () => {
 						<div>
 							<span>
 								<img class="me-2" src={ `${AssetsRoot}/flags/KR.png` } alt="[KR]" />
-								<IconCalendar3 class="me-1 mb-1" />
-								{ DateText(EventFrom) } ~ { DateText(EventTo) }
+
+								<IconHourglassSplit class="me-1 mb-1" />
+								<strong>
+									<Countdown to={ EventTo } />
+								</strong>
+								{ /*
+									<IconCalendar3 class="me-1 mb-1" />
+									{ DateText(EventFrom) } ~ { DateText(EventTo) }
+								*/ }
 							</span>
 						</div>
 					</div>
@@ -156,6 +160,15 @@ const Home: FunctionalComponent = () => {
 		</div>
 
 		<HomeConfigSelector />
+
+		<div>
+			<IconGithub class="me-2" />
+			<a href="https://github.com/WolfgangKurz/LastOriginWiki" target="_blank" rel="noopener noreferrer">
+				Github
+			</a>
+		</div>
+		<Locale k="HOME_DEVELOPER" />
+		<hr />
 
 		<div class={ style.MenuBox }>
 			<div class={ style["home-nav"] }>
@@ -235,14 +248,14 @@ const Home: FunctionalComponent = () => {
 			</div>
 		</div>
 
-		<Swiper
+		{ previewSkins.length > 0 && <Swiper
 			className={ style.SkinBannerSwiper }
 			modules={ [Autoplay, Pagination] }
 			loop
 			autoplay
 			pagination
 		>
-			{ ["3P_Amphitrite_1", "3P_Salacia_1"].map(skin => {
+			{ previewSkins.map(skin => {
 				const r = /^(.+)_([0-9]+)$/.exec(skin)!;
 				const key = r[1];
 				const sid = parseInt(r[2], 10);
@@ -252,7 +265,7 @@ const Home: FunctionalComponent = () => {
 					</Link>
 				</SwiperSlide>;
 			}) }
-		</Swiper>
+		</Swiper> }
 
 		<Changelog />
 
@@ -270,15 +283,6 @@ const Home: FunctionalComponent = () => {
 		{ ext === "png" ? <div class="alert alert-danger">
 			<Locale k="HOME_WEBP_UNAVAILABLE" />
 		</div> : <></> }
-
-		<div>
-			<IconGithub class="me-2" />
-			<a href="https://github.com/WolfgangKurz/LastOriginWiki" target="_blank" rel="noopener noreferrer">
-				Github
-			</a>
-		</div>
-		<Locale k="HOME_DEVELOPER" />
-		<hr />
 
 		<p>
 			<Locale k="HOME_COPYRIGHT" />

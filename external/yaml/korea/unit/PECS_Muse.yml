@@ -440,7 +440,7 @@ company: ""
 maker: ""
 country: ""
 age: "23"
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice: []
 favor:
@@ -506,6 +506,7 @@ source:
   - - Ev:Ev14:EV1-6Ex
   - - Ev:Ev18:EV3-2B
   - - Ev:Ev19:EV3-6
+  - - Ev:Ev21:EV1-4
 research: false
 skills:
   "1":
@@ -513,6 +514,7 @@ skills:
     icon: TeamAtkDeBuff
     target: enemy
     delayed: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -531,7 +533,6 @@ skills:
           range: 4
           ap: 7
           grid: 4>1,0.5,0.25,1,0.5,0.25,1,0.5,0.25
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -673,6 +674,7 @@ skills:
     icon: SelfSpdBuff
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -691,7 +693,6 @@ skills:
           range: 6
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1046,6 +1047,7 @@ skills:
     icon: P.TeamSpdBuff
     target: team
     delayed: false
+    target_ground: true
     leastGrade: 3
     buffs:
       index:
@@ -1065,7 +1067,6 @@ skills:
           range: 0
           ap: 0
           grid: 4>0,1,1,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1248,6 +1249,7 @@ skills:
     icon: P.Barrier
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -1267,7 +1269,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1460,23 +1461,23 @@ dialogue:
         밤하늘 별들보다도 더 많이.
       MVP: 하아... 아직도 다리가 후들거려...
     "2":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 오늘은… 아… 평소보다 더 떨려요.
+      Leader: 달링이… 날 보고 계셔.
+      SortiePick: 아… 정말… 이대로 출격 할까요?
+      StageStart: 이 옷만큼은… 절대 찢어지지 않게…
+      Retreat: 도, 돌아가면 되는 걸까요?
+      SearchStart: 다녀오겠습니다. 저기, 작업 빨리 끝마칠게요.
+      SearchEnd: 다녀왔습니다. 헤힛. 달링의 얼굴을 다시 보니까 좋네요.
+      BattleFocus: 지켜봐 주세요. 달링.
+      ActionApprove: 달링과 함께라면.
+      SpSkill: 다들 제 음악을 들어주세요.
+      Retire: 이 마음을… 전하고 싶었는데…
+      Repair: 손을… 잡아주실래요…? 달링?
+      Reinforce: 달링의 도움이 될 수 있게 좀 더…
+      ItemEquip: 저기…달링… 다음에는 반지를 기대해도 될까요?
+      CoreLink: 좋아하는 마음이… 자꾸만 커져가요.
+      PresentGet: 서, 선물이요? 정말로? 와. 어쩌지? 너무 기뻐서 어쩔 줄 모르겠어요.
+      Login: 어서 오세요, 프로듀서. 그러니까… 어… 달링.
       Idle_01_01: |-
         다, 달링은 화, 활발한 사람이 좋으세요?
         아니면 얌전한 사람? 저, 저는… 
@@ -1528,7 +1529,7 @@ dialogue:
         그게, 달링을 보면… 머리 속에 로맨틱한
         가사밖에 떠오르지 않아서…
         사랑 노래밖에 쓸 수 없게 되어버렸어요…
-      MVP: ""
+      MVP: 제, 제가 최고라고요? 와. 우와. 감사합니다. 하하하.
     "":
       Join: 뮤즈, 입니다… 잘, 잘 부탁… 부탁드립… 으...
       SquadJoin: 그, 그냥... 방에 있으면 안될까요...?
@@ -1981,45 +1982,45 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: |-
-        這麼用心的給我打扮了……但，果然
-        不適合我呀……好，好看嗎……製作人
-        說的這句話，真的……很特別。
+        這麼用心的給我打扮了…但，果然
+        不適合我呀…好，好看嗎…製作人
+        說的這句話，真的…很特別。
       Idle_01_02: |-
-        真……真的是站在舞臺上嗎？
-        ……沒，沒有。沒，沒關係。
-        ……會沒關係的。
+        真…真的是站在舞臺上嗎？
+        …沒，沒有。沒，沒關係。
+        …會沒關係的。
       Idle_01_03: |-
-        如果……其他人，不喜歡我的歌怎麼辦……
-        發出噓聲，然後離開觀眾席……
-        果然我，還是只創作歌曲比較好……
-      SPIdle_01_01: 這樣的話……能暫時忘記現實嗎……？
+        如果…其他人，不喜歡我的歌怎麼辦…
+        發出噓聲，然後離開觀眾席…
+        果然我，還是只創作歌曲比較好…
+      SPIdle_01_01: 這樣的話…能暫時忘記現實嗎…？
       Idle_02_01: |-
-        啊，製作人……是的。
+        啊，製作人…是的。
         為了向給予幫助的人們道謝-
-        ……是。製作人如果陪我一起的話……
+        …是。製作人如果陪我一起的話…
         我會很開心。
       Idle_03_01: |-
-        明明直到剛才，還一直不安、害怕……
-        感覺會變得很糟糕……
-        但，這樣被製作人抱在懷裡後……
+        明明直到剛才，還一直不安、害怕…
+        感覺會變得很糟糕…
+        但，這樣被製作人抱在懷裡後…
         好的。我會加油的。我要只看著製作人唱歌。
       Idle_04_01: |-
-        問我第一個舞臺怎麼樣嗎……？舞臺，很漂亮……
+        問我第一個舞臺怎麼樣嗎…？舞臺，很漂亮…
         為我的歌聲歡呼的觀眾們，還有配合我的
-        蒼天騎士隊友們……但，我只記住了
+        蒼天騎士隊友們…但，我只記住了
         為我加油的製作人的樣子。
-        因為我也……只看著製作人……唱了歌。
+        因為我也…只看著製作人…唱了歌。
       SPIdle_02_01: |-
-        製作人……
-        在我還因為舞臺而緊張的這段時間……
+        製作人…
+        在我還因為舞臺而緊張的這段時間…
         請讓今天成為我難忘的一天吧。
       Oath: |-
-        ……我，對製作人一見鍾情過。當時我認為只是單純地很帥，所以那麼想的……
+        …我，對製作人一見鍾情過。當時我認為只是單純地很帥，所以那麼想的…
         但我現在知道理由了。因為製作人，像是星星一樣閃亮的人。而我則看著那星光才能從房間出來，
-        到舞臺上來的。……製作人，我真的愛你。想要給你我的全部的程度。能……接下嗎……？
+        到舞臺上來的。…製作人，我真的愛你。想要給你我的全部的程度。能…接下嗎…？
       OathIdle_01: |-
-        穿上這件衣服……就會想起那天，
-        完全沒辦法平靜下來……
+        穿上這件衣服…就會想起那天，
+        完全沒辦法平靜下來…
         製作人，我愛你。
         比夜空中的星星還要多。
       MVP: ""
@@ -2093,7 +2094,7 @@ dialogue:
         害人家只能寫情歌了啦…
       MVP: ""
     "":
-      Join: 我是，繆斯……請，請多多……關照……呃……
+      Join: 我是，繆斯…請，請多多…關照…呃…
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -2112,40 +2113,40 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: |-
-        ♩~ ♬~ ……！你，你聽到了嗎……？
+        ♩~ ♬~ …！你，你聽到了嗎…？
         沒什麼特別的，就是練習曲。
-        請，請忘記吧，製作人……
+        請，請忘記吧，製作人…
       Idle_01_02: |-
         因為有舞臺恐懼症，所以一直待在房間裡，
-        現在都不敢見人了……
+        現在都不敢見人了…
         我最適合的就是呆在房間裡。
       Idle_01_03: |-
         在房間裡的時候會作曲、
-        寫詩，或者……讀……讀那本書。
-        ……！不可以……！不，不能借給你。
-      SPIdle_01_01: 呃……如，如果我也可以的話……
+        寫詩，或者…讀…讀那本書。
+        …！不可以…！不，不能借給你。
+      SPIdle_01_01: 呃…如，如果我也可以的話…
       Idle_02_01: |-
-        其實這個曲子是……我最珍惜的曲子。
-        因為還沒完成，所以有些生疏……但，但我做的很用心。
+        其實這個曲子是…我最珍惜的曲子。
+        因為還沒完成，所以有些生疏…但，但我做的很用心。
       Idle_03_01: |-
-        啊……？讀，讀了嗎……？那個……？啊，啊啊……！
-        因為描寫得很好，所以開始看的……對，對不起。
-        你一定覺得我是放蕩的女人，失望了吧……？
+        啊…？讀，讀了嗎…？那個…？啊，啊啊…！
+        因為描寫得很好，所以開始看的…對，對不起。
+        你一定覺得我是放蕩的女人，失望了吧…？
       Idle_04_01: |-
         上，上舞臺，果然-
-        真的……可以用歌聲傳遞我的心意嗎……？
-        如果製作人跟我說的話……
+        真的…可以用歌聲傳遞我的心意嗎…？
+        如果製作人跟我說的話…
         我應該能鼓起勇氣。
       SPIdle_02_01: |-
-        呵……制，製作人……
-        我，我不知道……
-        我，我該怎麼做……
+        呵…制，製作人…
+        我，我不知道…
+        我，我該怎麼做…
       Oath: |-
-        要把這個給我……？為什麼……？你說喜歡……我嗎……？……！等，等一下……！我可沒有想像過這樣的-
-        咿呀啊……？別，別看臉啊……！我現在肯定做著很醜的臉……竟然說漂亮……
-        如果聽到那樣的話，我……說不定會真的相信啊……？你是真心的啊……？還好不是只有我喜歡……太好了。
+        要把這個給我…？為什麼…？你說喜歡…我嗎…？…！等，等一下…！我可沒有想像過這樣的-
+        咿呀啊…？別，別看臉啊…！我現在肯定做著很醜的臉…竟然說漂亮…
+        如果聽到那樣的話，我…說不定會真的相信啊…？你是真心的啊…？還好不是只有我喜歡…太好了。
       OathIdle_01: |-
-        雖然和別人接觸還是有點困難……
+        雖然和別人接觸還是有點困難…
         只要製作人牽我的手，我就能安心。
       MVP: ""
     M:
@@ -2168,38 +2169,29 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         現在回想起來，好像是在做夢一樣。
-        閃耀的舞臺和歡呼的觀眾們，還有……
-        在點點繁星閃爍的夜空下…………製作人，
+        閃耀的舞臺和歡呼的觀眾們，還有…
+        在點點繁星閃爍的夜空下…製作人，
         只看著製作人唱歌的情景。
-        製作人，可以讓我再次……
+        製作人，可以讓我再次…
         做一下夢嗎？
       Idle_01_02: |-
-        就像製作人為我做的那樣，我以後也要……
+        就像製作人為我做的那樣，我以後也要…
         用我的歌曲給其他人力量。
-        ……是。用真心唱的歌曲，就像那時一樣。
+        …是。用真心唱的歌曲，就像那時一樣。
       Idle_01_03: |-
-        我……那個晚上……是不是控制一些比較好……？
+        我…那個晚上…是不是控制一些比較好…？
         雖，雖然覺得應該不會，但萬一
         製作人不看好我的話，
-        我……是的……我愛你，製作人。
+        我…是的…我愛你，製作人。
       SPIdle_01_01: |-
-        我也沒想到我會變得這麼積極……
-        不喜歡嗎……？是這樣嗎……那麼……
-        可以再拜託你嗎……？
+        我也沒想到我會變得這麼積極…
+        不喜歡嗎…？是這樣嗎…那麼…
+        可以再拜託你嗎…？
         我想更加要製作人。
       MVP: ""
 skins:
   sid: null
   artist: BUMCHa
-  offsets:
-    - 10
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -2225,20 +2217,12 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_PECS_Muse_N
   skins:
     - sid: 1
       artist: BUMCHa
-      offsets:
-        - 10
-        - null
-        - null
-        - 10
-        - null
-        - null
-        - null
-        - null
       price: 174
       G: false
       Spine: false
@@ -2272,20 +2256,12 @@ skins:
       releaseDate: 1621209600000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
         2dmodel: 2DModel_PECS_Muse_NS1
     - sid: 2
       artist: Uyu DDongkko
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 114
       G: true
       Spine: false
@@ -2312,6 +2288,7 @@ skins:
       releaseDate: 1663545600000
       metadata:
         imageId: 2
+        iconId: 2
         tbarId: 2
         voiceId: 2
         2dmodel: 2DModel_PECS_Muse_NS2

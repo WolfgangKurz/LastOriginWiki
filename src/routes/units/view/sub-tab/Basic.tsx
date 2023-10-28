@@ -132,6 +132,10 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 		});
 	}
 
+	function IsDefaultSecretRoomType (type: CHARTYPE_GIFTITEM_DAMAGE_TYPE): boolean {
+		return ["Adult", "Loli", "AGS"].includes(type);
+	}
+
 	function PreprocessUnitIntro (uid: string): preact.VNode {
 		const src = LocaleGet(`UNIT_INTRO_${uid}`);
 		const ret: Array<string | preact.VNode> = [];
@@ -336,8 +340,11 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 									/>
 									<Locale k="UNIT_VIEW_SECRETROOM_TYPE" />
 								</th>
-								<td class="font-exo2 align-middle">
-									<Locale k={ `UNIT_VIEW_SECRETROOM_TYPE_${CHARTYPE_GIFTITEM_DAMAGE_TYPE[unit.secretRoomType]}` } />
+								<td class={ BuildClass(
+									"font-exo2 align-middle",
+									!IsDefaultSecretRoomType(unit.secretRoomType) && "text-danger fw-bold",
+								) }>
+									<Locale k={ `UNIT_VIEW_SECRETROOM_TYPE_${unit.secretRoomType.toUpperCase()}` } />
 								</td>
 							</tr>
 							<tr>

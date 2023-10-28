@@ -440,7 +440,7 @@ company: ""
 maker: ""
 country: ""
 age: ""
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice:
   - ko
@@ -502,6 +502,7 @@ source:
   - - Ev:Ev12:Ev1-1Ex
   - - Ev:Ev14:EV1-5Ex
   - - Ev:Ev19:EV1-1Ex
+  - - Ev:Ev23:EV2-3
 research: false
 skills:
   "1":
@@ -509,6 +510,7 @@ skills:
     icon: MeleeAttack
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -527,7 +529,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -626,7 +627,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -725,7 +725,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -824,7 +823,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -923,7 +921,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1022,7 +1019,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1121,7 +1117,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1220,7 +1215,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1319,7 +1313,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1418,7 +1411,6 @@ skills:
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1557,6 +1549,7 @@ skills:
     icon: AssaultAttack
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -1575,7 +1568,6 @@ skills:
           range: 4
           ap: 9
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1621,7 +1613,7 @@ skills:
             - key: Effect_PECS_Rena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Babariana_N
                 - false
               body:
@@ -1657,7 +1649,7 @@ skills:
             - key: Effect_PECS_Rena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_MightyR_N
                 - false
               body:
@@ -1693,7 +1685,7 @@ skills:
             - key: Effect_PECS_Rena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scathy_N
                 - false
               body:
@@ -1729,7 +1721,7 @@ skills:
             - key: Effect_PECS_Rena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Tiequan_N
                 - false
               body:
@@ -1765,7 +1757,7 @@ skills:
             - key: Effect_PECS_Rena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_ElvenForestmaker_N
                 - false
               body:
@@ -1801,7 +1793,7 @@ skills:
             - key: Effect_PECS_Rena_N_26
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Bulgasari_N
                 - false
               body:
@@ -1837,7 +1829,7 @@ skills:
             - key: Effect_PECS_Rena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_DS_BunnySlayer_N
                 - false
               body:
@@ -1875,7 +1867,6 @@ skills:
           range: 4
           ap: 9
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1921,7 +1912,7 @@ skills:
             - key: Effect_PECS_Rena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Babariana_N
                 - false
               body:
@@ -1957,7 +1948,7 @@ skills:
             - key: Effect_PECS_Rena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_MightyR_N
                 - false
               body:
@@ -1993,7 +1984,7 @@ skills:
             - key: Effect_PECS_Rena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scathy_N
                 - false
               body:
@@ -2029,7 +2020,7 @@ skills:
             - key: Effect_PECS_Rena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Tiequan_N
                 - false
               body:
@@ -2065,7 +2056,7 @@ skills:
             - key: Effect_PECS_Rena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_ElvenForestmaker_N
                 - false
               body:
@@ -2101,7 +2092,7 @@ skills:
             - key: Effect_PECS_Rena_N_26
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Bulgasari_N
                 - false
               body:
@@ -2137,7 +2128,7 @@ skills:
             - key: Effect_PECS_Rena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_DS_BunnySlayer_N
                 - false
               body:
@@ -2175,7 +2166,6 @@ skills:
           range: 4
           ap: 9
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2221,7 +2211,7 @@ skills:
             - key: Effect_PECS_Rena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Babariana_N
                 - false
               body:
@@ -2257,7 +2247,7 @@ skills:
             - key: Effect_PECS_Rena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_MightyR_N
                 - false
               body:
@@ -2293,7 +2283,7 @@ skills:
             - key: Effect_PECS_Rena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scathy_N
                 - false
               body:
@@ -2329,7 +2319,7 @@ skills:
             - key: Effect_PECS_Rena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Tiequan_N
                 - false
               body:
@@ -2365,7 +2355,7 @@ skills:
             - key: Effect_PECS_Rena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_ElvenForestmaker_N
                 - false
               body:
@@ -2401,7 +2391,7 @@ skills:
             - key: Effect_PECS_Rena_N_26
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Bulgasari_N
                 - false
               body:
@@ -2437,7 +2427,7 @@ skills:
             - key: Effect_PECS_Rena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_DS_BunnySlayer_N
                 - false
               body:
@@ -2475,7 +2465,6 @@ skills:
           range: 4
           ap: 9
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2521,7 +2510,7 @@ skills:
             - key: Effect_PECS_Rena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Babariana_N
                 - false
               body:
@@ -2557,7 +2546,7 @@ skills:
             - key: Effect_PECS_Rena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_MightyR_N
                 - false
               body:
@@ -2593,7 +2582,7 @@ skills:
             - key: Effect_PECS_Rena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scathy_N
                 - false
               body:
@@ -2629,7 +2618,7 @@ skills:
             - key: Effect_PECS_Rena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Tiequan_N
                 - false
               body:
@@ -2665,7 +2654,7 @@ skills:
             - key: Effect_PECS_Rena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_ElvenForestmaker_N
                 - false
               body:
@@ -2701,7 +2690,7 @@ skills:
             - key: Effect_PECS_Rena_N_26
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Bulgasari_N
                 - false
               body:
@@ -2737,7 +2726,7 @@ skills:
             - key: Effect_PECS_Rena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_DS_BunnySlayer_N
                 - false
               body:
@@ -2775,7 +2764,6 @@ skills:
           range: 4
           ap: 9
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2821,7 +2809,7 @@ skills:
             - key: Effect_PECS_Rena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Babariana_N
                 - false
               body:
@@ -2857,7 +2845,7 @@ skills:
             - key: Effect_PECS_Rena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_MightyR_N
                 - false
               body:
@@ -2893,7 +2881,7 @@ skills:
             - key: Effect_PECS_Rena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scathy_N
                 - false
               body:
@@ -2929,7 +2917,7 @@ skills:
             - key: Effect_PECS_Rena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Tiequan_N
                 - false
               body:
@@ -2965,7 +2953,7 @@ skills:
             - key: Effect_PECS_Rena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_ElvenForestmaker_N
                 - false
               body:
@@ -3001,7 +2989,7 @@ skills:
             - key: Effect_PECS_Rena_N_26
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Bulgasari_N
                 - false
               body:
@@ -3037,7 +3025,7 @@ skills:
             - key: Effect_PECS_Rena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_DS_BunnySlayer_N
                 - false
               body:
@@ -3075,7 +3063,6 @@ skills:
           range: 4
           ap: 9
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3121,7 +3108,7 @@ skills:
             - key: Effect_PECS_Rena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Babariana_N
                 - false
               body:
@@ -3157,7 +3144,7 @@ skills:
             - key: Effect_PECS_Rena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_MightyR_N
                 - false
               body:
@@ -3193,7 +3180,7 @@ skills:
             - key: Effect_PECS_Rena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scathy_N
                 - false
               body:
@@ -3229,7 +3216,7 @@ skills:
             - key: Effect_PECS_Rena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Tiequan_N
                 - false
               body:
@@ -3265,7 +3252,7 @@ skills:
             - key: Effect_PECS_Rena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_ElvenForestmaker_N
                 - false
               body:
@@ -3301,7 +3288,7 @@ skills:
             - key: Effect_PECS_Rena_N_26
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Bulgasari_N
                 - false
               body:
@@ -3337,7 +3324,7 @@ skills:
             - key: Effect_PECS_Rena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_DS_BunnySlayer_N
                 - false
               body:
@@ -3375,7 +3362,6 @@ skills:
           range: 4
           ap: 9
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3421,7 +3407,7 @@ skills:
             - key: Effect_PECS_Rena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Babariana_N
                 - false
               body:
@@ -3457,7 +3443,7 @@ skills:
             - key: Effect_PECS_Rena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_MightyR_N
                 - false
               body:
@@ -3493,7 +3479,7 @@ skills:
             - key: Effect_PECS_Rena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scathy_N
                 - false
               body:
@@ -3529,7 +3515,7 @@ skills:
             - key: Effect_PECS_Rena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Tiequan_N
                 - false
               body:
@@ -3565,7 +3551,7 @@ skills:
             - key: Effect_PECS_Rena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_ElvenForestmaker_N
                 - false
               body:
@@ -3601,7 +3587,7 @@ skills:
             - key: Effect_PECS_Rena_N_26
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Bulgasari_N
                 - false
               body:
@@ -3637,7 +3623,7 @@ skills:
             - key: Effect_PECS_Rena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_DS_BunnySlayer_N
                 - false
               body:
@@ -3675,7 +3661,6 @@ skills:
           range: 4
           ap: 9
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3721,7 +3706,7 @@ skills:
             - key: Effect_PECS_Rena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Babariana_N
                 - false
               body:
@@ -3757,7 +3742,7 @@ skills:
             - key: Effect_PECS_Rena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_MightyR_N
                 - false
               body:
@@ -3793,7 +3778,7 @@ skills:
             - key: Effect_PECS_Rena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scathy_N
                 - false
               body:
@@ -3829,7 +3814,7 @@ skills:
             - key: Effect_PECS_Rena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Tiequan_N
                 - false
               body:
@@ -3865,7 +3850,7 @@ skills:
             - key: Effect_PECS_Rena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_ElvenForestmaker_N
                 - false
               body:
@@ -3901,7 +3886,7 @@ skills:
             - key: Effect_PECS_Rena_N_26
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Bulgasari_N
                 - false
               body:
@@ -3937,7 +3922,7 @@ skills:
             - key: Effect_PECS_Rena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_DS_BunnySlayer_N
                 - false
               body:
@@ -3975,7 +3960,6 @@ skills:
           range: 4
           ap: 9
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4021,7 +4005,7 @@ skills:
             - key: Effect_PECS_Rena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Babariana_N
                 - false
               body:
@@ -4057,7 +4041,7 @@ skills:
             - key: Effect_PECS_Rena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_MightyR_N
                 - false
               body:
@@ -4093,7 +4077,7 @@ skills:
             - key: Effect_PECS_Rena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scathy_N
                 - false
               body:
@@ -4129,7 +4113,7 @@ skills:
             - key: Effect_PECS_Rena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Tiequan_N
                 - false
               body:
@@ -4165,7 +4149,7 @@ skills:
             - key: Effect_PECS_Rena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_ElvenForestmaker_N
                 - false
               body:
@@ -4201,7 +4185,7 @@ skills:
             - key: Effect_PECS_Rena_N_26
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Bulgasari_N
                 - false
               body:
@@ -4237,7 +4221,7 @@ skills:
             - key: Effect_PECS_Rena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_DS_BunnySlayer_N
                 - false
               body:
@@ -4275,7 +4259,6 @@ skills:
           range: 4
           ap: 9
           grid: 0,0,0,0,1,0.5,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4321,7 +4304,7 @@ skills:
             - key: Effect_PECS_Rena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Babariana_N
                 - false
               body:
@@ -4357,7 +4340,7 @@ skills:
             - key: Effect_PECS_Rena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_MightyR_N
                 - false
               body:
@@ -4393,7 +4376,7 @@ skills:
             - key: Effect_PECS_Rena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scathy_N
                 - false
               body:
@@ -4429,7 +4412,7 @@ skills:
             - key: Effect_PECS_Rena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Tiequan_N
                 - false
               body:
@@ -4465,7 +4448,7 @@ skills:
             - key: Effect_PECS_Rena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_ElvenForestmaker_N
                 - false
               body:
@@ -4501,7 +4484,7 @@ skills:
             - key: Effect_PECS_Rena_N_26
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Bulgasari_N
                 - false
               body:
@@ -4537,7 +4520,7 @@ skills:
             - key: Effect_PECS_Rena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_DS_BunnySlayer_N
                 - false
               body:
@@ -4653,6 +4636,7 @@ skills:
     icon: P.SelfAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -4672,7 +4656,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -5078,6 +5061,7 @@ skills:
     icon: P.TeamAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -5097,7 +5081,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,1,1,0,1,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -5364,6 +5347,7 @@ skills:
     icon: P.TeamAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 5
     buffs:
       index:
@@ -5383,7 +5367,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,1,1,0,1,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -5664,23 +5647,23 @@ skills:
 dialogue:
   KR:
     "1":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 얘네들 다 쓰러뜨리면 돼? 아~ 동료라고?
+      Leader: 내가 어떻게 싸우는지 잘 보라고.
+      SortiePick: 내가 날뛸 링은 준비됐지?
+      StageStart: 레나 더 챔피언, 링에 오릅니다.
+      Retreat: 왜? 내가 무슨 반칙이라도 저질렀어?
+      SearchStart: 어? 내가 무슨 사고쳤어? 갑자기 경기 외 활동이라니?
+      SearchEnd: 이런 건 경기 출장 정지당해서 자숙할 때 많이 해봤지.
+      BattleFocus: 스포트라이트가 나에게.
+      ActionApprove: 내 이름을 불러 봐.
+      SpSkill: 레나 더 챔피언!
+      Retire: 이거… 비공식 경기인 거… 알지?
+      Repair: 알고 있어. 알고 있다고. 다쳤을 때는 절대 안정.
+      Reinforce: 기술은 강인한 신체 위에 성립하지.
+      ItemEquip: 이거 써도 된다고 규정 확인했지?
+      CoreLink: 어~ 이 기술 좋은데?
+      PresentGet: 아이, 매니저. 사심이 들어간 선물은 곤란한데. 싫다고는 안 했어.
+      Login: 내 첫 상대인가? 아, 매니저였네? 뭐 매니저라도 상관 없지만.
       Idle_01_01: |-
         이 피켓의 의미?
         하하, 무슨 뻔한 걸 묻고 있어?
@@ -5727,7 +5710,7 @@ dialogue:
         하하, 매니저에게도 챔피언 벨트가 필요할 
         거 같은데... 적당한 게 안 보이네...
         뭐, 내가 안아주면 되겠지! 이리와!
-      MVP: ""
+      MVP: 으하하하. 별점 5개 만점에 7개짜리 경기였어.
     "":
       Intro: >-
         반가워. 난 레나라고 해. 아, 이런 건 익숙하니까 걱정하지 마. 인터뷰는 수도 없이 해봤거든.
@@ -5855,16 +5838,32 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
-      Idle_02_01: ""
-      Idle_03_01: ""
-      Idle_04_01: ""
-      SPIdle_02_01: ""
-      Oath: ""
-      OathIdle_01: ""
+      Idle_01_01: |-
+        このボードの意味？なに当たり前なことを聞いてるの？ 
+        次戦う相手の番号よ！ほらほら！どんどんリングに上がって来なさい！！
+      Idle_01_02: いつだか出場停止になった時、BWE以外の試合でラウンドガールをやったことがあったのよ。それでその試合に乱入しちゃってね……優勝したわ。だって、出場停止になったのはBWEの試合だけでしょ？だから何も悪いことはしてないわ。
+      Idle_01_03: |-
+        う～ん、この服は動きづらいわ……
+        まっ…、私だからこれくらいのハンデがないと試合にならないものね。
+      SPIdle_01_01: こんなことしていいんだぁ？へぇ、ルール無用でやろうってこと？
+      Idle_02_01: >-
+        この服を着てたらドゥームブリンガーの…えっと……誰だっけ？おっきくてちっさい姉妹のおっきい方が、私に痩せる運動法を教えてくれって言うもんだから、一緒に実践しながら教えてあげたわ。
+
+        でも、それ以来私のところに来ないのよね……毎日やろうって言ったのに……
+      Idle_03_01: |-
+        カフェアモールで一緒に働かないかって誘われたんだけど……
+        そういう場所で働くのは私の性分には合わなくって……
+        え？マネージャーがよく行くの！？そういうことは最初に言いなさいよ！
+      Idle_04_01: |-
+        マネージャーはウサギとか……好き？
+        だったらレスリングが強くて、クロスステッチと買い物が好きで、あなたのことを一途に思うウサギがいるんだけど……
+        どう？興味ないかしら？
+      SPIdle_02_01: リングがベッドの上になっても……ふふ。手加減しないわよ？
+      Oath: この格好にチャンピオンベルトが似合うかどうか分からないけど……。この指輪は私がマネージャーにピッタリな女って意味よね？あはははは！！今までもらったどんなベルトよりもこの指輪が嬉しいわ！人生ってリングの上で最高の試合を見せてあげるわ！だから、これからもずっとよろしくね、マネージャー！
+      OathIdle_01: |-
+        マネージャーが私を見守っているように、私もあなたのことを見守ってるわ。
+        はは、いつも大活躍のマネージャーにもチャンピオンベルトが必要だと思うんだけど……ちょうどいいのがないわね…
+        そうだ！私が抱きついてあげる！ベルトの代わりよ！ほらこっち来て！あははははは！
       MVP: ""
     "":
       Intro: >-
@@ -5965,29 +5964,24 @@ dialogue:
         Prepare a bunch of pickets and opponents!
       Idle_01_02: |-
         There was a time when I was a round girl
-
         for other categories than BWE,
-
         back when I was banned from matches.
         I barged into the matches and won.
         I just have to keep from participating in BWE matches, right?
       Idle_01_03: |-
         Hnngh, it's difficult to move in this outfit…
         Well, I suppose the match will be fair
-
         when I have such a handicap.
       SPIdle_01_01: This is cheating. You want to have a no-holds barred match?
       Idle_02_01: >-
         When I wear this, the Doombringer's… Who was it again? I taught the
         bigger one of the big and small sisters
 
-
         when she asked me about exercising to lose weight.
 
         We exercised together for a day, then she said that was the last time…
       Idle_03_01: |-
         I got an offer to work at Café Amor with her…
-
         but working at a place like that wasn't really for me…
         What? You go there often?
         You should've told me that sooner!
@@ -5996,11 +5990,9 @@ dialogue:
 
         Then I wanted to introduce a single-minded rabbit
 
-
         who is good at wrestling and enjoys cross stitching and shopping… What do you think? Interested?
       SPIdle_02_01: |-
         In the past I was banned from matches
-
         when I jumped naked into the ring…
         Hehe. I guess I’ll get banned again.
       Oath: I don’t know if this champion belt will go well with this outfit… but the
@@ -6231,31 +6223,31 @@ dialogue:
       Idle_01_03: |-
         對冠軍的私生活感到好奇並不是
         什麼好的行為。偶像就是偶像的時候才最美麗，
-        不是嗎？就是說……嗯，沒什麼。
+        不是嗎？就是說…嗯，沒什麼。
       SPIdle_01_01: 這個，你知道是屬於桃色新聞吧？
       Idle_02_01: |-
-        嗯……沒什麼。因為比賽前喝了一杯……
+        嗯…沒什麼。因為比賽前喝了一杯…
         然後脫光衣服擾亂了賽場，
         所以受到了禁賽10場的處分。
       Idle_03_01: |-
         那麼好奇我一個人的時候會做什麼嗎？
         就聽著偶像的歌做十字繡呀，
-        或者進行網上購物呀什麼的，雖然現在不行了……
+        或者進行網上購物呀什麼的，雖然現在不行了…
         看，沒什麼特別的吧？
       Idle_04_01: |-
         啊，什麼啊。經理也很優秀啊。即使癢，
-        也忍一忍。讓我看看……哦吼……
-        ……一會兒稍微……不對，時間多嗎？
+        也忍一忍。讓我看看…哦吼…
+        …一會兒稍微…不對，時間多嗎？
       SPIdle_02_01: |-
         像上次一樣拍了拍，還是不打算放開嗎？
         這個，對接收的夥伴怎麼一點照顧都沒有啊？
-        嗯……晚上就無所謂了嗎？
+        嗯…晚上就無所謂了嗎？
       Oath: |-
-        ……過去的那喊聲和狂熱，我可是一次也沒有忘記過。所以……全部小時候我一直執著在那點上。
+        …過去的那喊聲和狂熱，我可是一次也沒有忘記過。所以…全部小時候我一直執著在那點上。
         不過，現在和經紀人這樣和和睦睦地相處也不錯啊。真沒想到和經紀人一起隱退呢。
-        那麼鐵段就到此為止……開始兩人的拳擊場上面的隱退戰吧？
+        那麼鐵段就到此為止…開始兩人的拳擊場上面的隱退戰吧？
       OathIdle_01: |-
-        原來這裡也有很多我的粉絲啊？真開心~所以說……
+        原來這裡也有很多我的粉絲啊？真開心~所以說…
         不要這樣不分場合的到處揉好嗎？
         我沒臉見粉絲們了。
       MVP: ""
@@ -6280,34 +6272,25 @@ dialogue:
       Idle_01_01: |-
         啊，是要給我按摩嗎？謝謝-
         訓練結束後接受按摩真的是再好不過了。
-        ……但是，最近你的手總是往奇怪的地方去呀。
+        …但是，最近你的手總是往奇怪的地方去呀。
       Idle_01_02: |-
-        冠軍腰帶，很合適哎~嗯……雖然不是正式比賽，
+        冠軍腰帶，很合適哎~嗯…雖然不是正式比賽，
         但既然戰勝了我，那經理也可以說是
         新的冠軍了。
         那麼新生冠軍，衛冕戰，開始吧。
       Idle_01_03: |-
         來到這裡後，認為做得最好的事情，就是和經理
-        進行了誓約，認為最不好的事情就是……
+        進行了誓約，認為最不好的事情就是…
         看到了斯雷普尼爾的真面目。你還記得我說過，
         偶像就是偶像的時候才最美麗嗎？
       SPIdle_01_01: |-
-        粗魯也好，甜也好……無論是什麼方式，我都
-        很好。嗯……也可能是很合得來，
+        粗魯也好，甜也好…無論是什麼方式，我都
+        很好。嗯…也可能是很合得來，
         但還是因為有愛吧？
       MVP: ""
 skins:
   sid: null
   artist: MAR10
-  offsets:
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -6333,20 +6316,12 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_PECS_Rena_N
   skins:
     - sid: 1
       artist: MEL
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 114
       G: true
       Spine: false
@@ -6373,6 +6348,7 @@ skins:
       releaseDate: 1673827200000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
         2dmodel: 2DModel_PECS_Rena_NS1

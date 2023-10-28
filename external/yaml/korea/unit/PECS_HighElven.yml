@@ -440,7 +440,7 @@ company: PECS
 maker: ""
 country: US
 age: ""
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice:
   - jp
@@ -503,6 +503,7 @@ source:
   - - Ev:Ev7:Ev2-3Ex
   - - Ev:Ev10:Ev2-1Ex
   - - Ev:Ev20:EV2-1B
+  - - Ev:Ev21:EV2-1Ex
 research: false
 skills:
   "1":
@@ -510,6 +511,7 @@ skills:
     icon: WideFireShot
     target: enemy
     delayed: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -528,7 +530,6 @@ skills:
           range: 3
           ap: 8
           grid: 1,0,1,0,1,0,1,0,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -650,7 +651,6 @@ skills:
           range: 3
           ap: 8
           grid: 1,0,1,0,1,0,1,0,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -772,7 +772,6 @@ skills:
           range: 3
           ap: 8
           grid: 1,0,1,0,1,0,1,0,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -894,7 +893,6 @@ skills:
           range: 3
           ap: 8
           grid: 1,0,1,0,1,0,1,0,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1016,7 +1014,6 @@ skills:
           range: 3
           ap: 8
           grid: 1,0,1,0,1,0,1,0,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1138,7 +1135,6 @@ skills:
           range: 3
           ap: 8
           grid: 1,0,1,0,1,0,1,0,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1260,7 +1256,6 @@ skills:
           range: 3
           ap: 8
           grid: 1,0,1,0,1,0,1,0,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1382,7 +1377,6 @@ skills:
           range: 3
           ap: 8
           grid: 1,0,1,0,1,0,1,0,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1504,7 +1498,6 @@ skills:
           range: 3
           ap: 8
           grid: 1,0,1,0,1,0,1,0,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1626,7 +1619,6 @@ skills:
           range: 3
           ap: 8
           grid: 1,0,1,0,1,0,1,0,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1788,6 +1780,7 @@ skills:
     icon: TeamSpdBuff
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -1806,7 +1799,6 @@ skills:
           range: 0
           ap: 9
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2381,6 +2373,7 @@ skills:
     icon: P.Barrier
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -2400,7 +2393,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2498,7 +2490,7 @@ skills:
             - key: Effect_PECS_HighElven_N_32
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_ElvenForestmaker_N
                 - false
               body:
@@ -2534,7 +2526,7 @@ skills:
             - key: Effect_PECS_HighElven_N_33
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_DarkElf_N
                 - false
               body:
@@ -2570,7 +2562,7 @@ skills:
             - key: Effect_PECS_HighElven_N_34
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -2606,7 +2598,7 @@ skills:
             - key: Effect_PECS_HighElven_N_35
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Hathor_N
                 - false
               body:
@@ -2720,6 +2712,7 @@ skills:
     icon: P.SelfDefBuff
     target: team
     delayed: false
+    target_ground: true
     leastGrade: 4
     buffs:
       index:
@@ -2739,7 +2732,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2953,7 +2945,7 @@ skills:
             - key: Effect_PECS_HighElven_N_43
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_ElvenForestmaker_N
                 - false
               body:
@@ -3019,7 +3011,7 @@ skills:
             - key: Effect_PECS_HighElven_N_44
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_DarkElf_N
                 - false
               body:
@@ -3085,7 +3077,7 @@ skills:
             - key: Effect_PECS_HighElven_N_45
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Sekhmet_N
                 - false
               body:
@@ -3151,7 +3143,7 @@ skills:
             - key: Effect_PECS_HighElven_N_46
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_PECS_Hathor_N
                 - false
               body:
@@ -3421,6 +3413,7 @@ skills:
     icon: P.SelfSpdBuff
     target: team
     delayed: false
+    target_ground: true
     leastGrade: 5
     buffs:
       index:
@@ -3440,7 +3433,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,1,0,0,1,0,0,1,0
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -3966,24 +3958,24 @@ dialogue:
       Idle_03_01: |-
         看到奶牛就會想起悠閒的鄉村生活和田園生活，
         不是嗎？跟司令官員一起過鄉下
-        生活的話，我……可以幫司令官舔舐內心的
-        傷痛……
+        生活的話，我…可以幫司令官舔舐內心的
+        傷痛…
       Idle_04_01: |-
         據說，費克斯公司這次售賣的香蕉牛奶
         中有秘密。呼呼，你好奇吧？
         來，你枕我的腿，我慢慢
         跟你講。
       SPIdle_02_01: |-
-        啊……司，司令官……大人？如何製作美味的
-        香蕉牛奶……我好像……
-        知道了……
+        啊…司，司令官…大人？如何製作美味的
+        香蕉牛奶…我好像…
+        知道了…
       Oath: |-
         我讀過了司令官的訊息。「有充滿果汁的香蕉的話在我這有」是這麼說的吧。
         你是怎麼知道我因為香蕉牛奶CF拍攝而苦思中啊？呼呼，果然是我們司令官啊。
-        ……哎呀，話說這是什麼呢？這可以看做是要和我兩人一起擠很多牛奶的意思吧？
+        …哎呀，話說這是什麼呢？這可以看做是要和我兩人一起擠很多牛奶的意思吧？
       OathIdle_01: |-
         如果是現在的我，可以把牛奶
-        全都分給司令官。來吧…………首先，
+        全都分給司令官。來吧…首先，
         離我的懷抱近一點。
       MVP: ""
     "":
@@ -4015,32 +4007,32 @@ dialogue:
         如果有累或苦惱的事情，
         可以隨時跟我說。
       Idle_01_03: |-
-        嗯……這個嗎~我覺得無論是誰，
-        都是需要照顧的孩子……
+        嗯…這個嗎~我覺得無論是誰，
+        都是需要照顧的孩子…
         當然，司令官也是。
       SPIdle_01_01: |-
         哎呀，是又想被抱嗎~？
         來吧，隨時都可以~
       Idle_02_01: |-
         這裡的精靈和我記憶中的樣子
-        有些不一樣呢……？下次我們四個人
+        有些不一樣呢…？下次我們四個人
         一起聊吧。
       Idle_03_01: |-
-        哎呀，時間這麼快就……來這邊吧~
+        哎呀，時間這麼快就…來這邊吧~
         今天我也會抱
         緊你，直到你入睡為止~
       Idle_04_01: |-
         我來保證。司令官做的是
         對的事情。即便不是這樣，
-        我也會讓它變成現實。所以……
+        我也會讓它變成現實。所以…
         司令官只要保持原樣就好了。
       SPIdle_02_01: |-
-        哈呃……！該，該照顧的
-        是我……不可以，這樣……
+        哈呃…！該，該照顧的
+        是我…不可以，這樣…
       Oath: |-
         我就像我命名我名字的女神一樣，被製作成將所有人懷抱在懷裡照顧。
-        所以……一直認為不會有將某人意識為異性的事情……
-        以後我會還是繼續照顧司令官……但是在司令官旁邊要偶爾地成為陷入愛情的普通的女人。
+        所以…一直認為不會有將某人意識為異性的事情…
+        以後我會還是繼續照顧司令官…但是在司令官旁邊要偶爾地成為陷入愛情的普通的女人。
       OathIdle_01: 如果累的話，隨時來找我。知道了嗎？
       MVP: ""
     M:
@@ -4067,33 +4059,24 @@ dialogue:
         幫助到司令官。我來成為司令官的
         支柱吧。
       Idle_01_02: |-
-        啊……真是的。就因為知道我耳朵敏感
-        就每次都要這樣嗎~對待調皮的孩子……
+        啊…真是的。就因為知道我耳朵敏感
+        就每次都要這樣嗎~對待調皮的孩子…
         我會以同樣的方式回報的。啊嗚。
       Idle_01_03: |-
-        司令官感受到的責任和重壓感……不足的
-        我應該無法全部理解。但是……
+        司令官感受到的責任和重壓感…不足的
+        我應該無法全部理解。但是…
         請記住，我一直相信你。
         還有，無論發生什麼事，我都會愛著
         司令官。
       SPIdle_01_01: |-
-        哈啊……這次輪到我撒嬌
-        了嗎……？無論是抱著司令官，
-        還是被司令官抱著……
+        哈啊…這次輪到我撒嬌
+        了嗎…？無論是抱著司令官，
+        還是被司令官抱著…
         我都喜歡。
       MVP: ""
 skins:
   sid: null
   artist: SNOWBALL
-  offsets:
-    - 10
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: true
   Spine: false
@@ -4119,20 +4102,12 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_PECS_HighElven_N
   skins:
     - sid: 1
       artist: SNOWBALL
-      offsets:
-        - 50
-        - -20
-        - 20
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 182
       G: true
       Spine: false
@@ -4159,6 +4134,7 @@ skins:
       releaseDate: 1600041600000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
         2dmodel: 2DModel_PECS_HighElven_NS1

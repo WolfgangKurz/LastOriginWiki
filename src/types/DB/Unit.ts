@@ -70,9 +70,6 @@ export interface UnitSkinEntity {
 	/** Skin ID */
 	sid: null | number;
 
-	/** Offset */
-	offsets: Partial<Record<SKIN_SUBSET_ENUM, number>>;
-
 	/** has Google CG */
 	G: boolean;
 
@@ -116,6 +113,7 @@ export interface UnitSkinEntity {
 
 	metadata: {
 		imageId: number;
+		iconId?: number;
 		tbarId?: number;
 		voiceId?: number;
 		consumableKey?: string;
@@ -217,113 +215,7 @@ export interface Unit {
 	dialogue: UnitDialogueDataType;
 	skins: UnitSkin;
 
-	roguelike: RoguelikeSkill[];
-}
-/* eslint-disable-next-line @typescript-eslint/no-namespace */
-export namespace Unit {
-	export const Empty: Unit = {
-		id: 0,
-		uid: "",
-
-		group: "",
-		shortgroup: "",
-
-		rarity: ACTOR_GRADE.B,
-		type: ACTOR_CLASS.LIGHT,
-		role: ROLE_TYPE.ATTACKER,
-		body: ACTOR_BODY_TYPE.BIOROID,
-		slots: [
-			ITEM_TYPE.CHIP,
-			ITEM_TYPE.CHIP,
-			ITEM_TYPE.SPCHIP,
-			ITEM_TYPE.SUBEQ,
-		],
-
-		lvLimits: [],
-
-		releaseDate: 0,
-		height: "",
-		weight: "",
-		weapon1: "",
-		weapon2: "",
-
-		company: "",
-		maker: "",
-		country: "",
-		age: "",
-
-		secretRoomType: CHARTYPE_GIFTITEM_DAMAGE_TYPE.NONE,
-		marriageVoice: false,
-		introVoice: [],
-		favor: {
-			present: 0,
-			clear: 0,
-			death: 0,
-			assistant: 0,
-		},
-
-		linkBonus: ["HP_20", "ATK_20", "ACC_5", "Exp_5"],
-		fullLinkBonus: ["Cost_20", "Skill_15", "ACC_75", "Cri_20", "SPD_10"],
-
-		craft: false,
-		equips: [],
-
-		stat: [],
-		chart: [0, 0, 0, 0, 0, 0],
-		cv: {},
-
-		source: [],
-		cost: undefined,
-		research: false,
-
-		skills: {},
-		dialogue: {
-			KR: null,
-			JP: null,
-			EN: null,
-			TC: null,
-		},
-		skins: {
-			G: false,
-			Spine: false,
-			parts: 0,
-			stage: false,
-
-			subset: {
-				0: false,
-				1: false,
-				2: false,
-				3: false,
-				4: false,
-				5: false,
-				6: false,
-				7: false,
-			},
-			offsets: {},
-
-			anim: {
-				0: false,
-				1: false,
-				2: false,
-				3: false,
-			},
-
-			facelist: [
-				FACETYPE.NONE,
-			],
-
-			releaseDate: 0,
-			category: [],
-			artist: "",
-			sid: 0,
-
-			metadata: {
-				imageId: 0,
-			},
-		},
-
-		roguelike: [],
-	};
+	// roguelike: RoguelikeSkill[];
 }
 
 export interface LinkBonusData {

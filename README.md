@@ -41,7 +41,7 @@ Provides the following information:
 
 ## 사용 허가 / Permission of using
 본 사이트 및 리포지터리에서 사용중인 정보는 `라스트오리진`의 개발/운영사인 `Studio Valkyrie`의 허가를 받아 제공되고 있습니다.\
-The informations that using in this website and repository has permissioned by `Studio Valkyrie`, Development/Operating company of 'LastOrigin'.
+The informations that using in this website and repository has permissioned by `Studio Valkyrie`, Development/Operating company of `LastOrigin`.
 
 데이터의 사용은 직접 `Studio Valkyrie`에게 허가를 받아야합니다.\
 Need to get permission from `Studio Valkyrie` yourself to use data.
@@ -68,8 +68,5 @@ Using google spreadsheet for Database.
 리포지터리의 이슈 페이지에 작성해주세요.\
 Please write to repository's issue page.
 
-또는 개발자 [wolfgangkurzdev@gmail.com](wolfgangkurzdev@gmail.com)에게 이메일을 보낼 수도 있습니다.\
-Or, you can email to Developer [wolfgangkurzdev@gmail.com](wolfgangkurzdev@gmail.com).
-
-한국어, 영어, 일본어로 연락 가능합니다.\
-You can contact with Korean, English, Japanese.
+한국어, 영어, 일본어를 사용 가능합니다.\
+You can use Korean, English, Japanese.

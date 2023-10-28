@@ -440,7 +440,7 @@ company: BlackRiver
 maker: BlackRiver
 country: BE
 age: "19"
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice:
   - ko
@@ -519,6 +519,7 @@ source:
     - Ev:Ev19:EV2-2
   - - Ev:Ev20:EV2-2
     - Ev:Ev20:EV3-1B
+  - - Ev:Ev23:EV2-3
 research: false
 skills:
   "1":
@@ -526,6 +527,7 @@ skills:
     icon: Shot
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -544,7 +546,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -622,7 +623,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -700,7 +700,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -778,7 +777,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -856,7 +854,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -934,7 +931,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1012,7 +1008,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1090,7 +1085,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1168,7 +1162,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1246,7 +1239,6 @@ skills:
           range: 4
           ap: 5
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1364,6 +1356,7 @@ skills:
     icon: Scan
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -1382,7 +1375,6 @@ skills:
           range: 6
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1794,6 +1786,7 @@ skills:
     icon: P.TeamAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -1813,7 +1806,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,1,0,0,0,0,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1912,7 +1904,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,1,0,0,0,1,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2119,23 +2110,23 @@ dialogue:
         알고 계시죠?
       MVP: 아하하하하... 사령관? 이제 그만... 가봐도 될까요?
     "2":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 다들 전투 전에 장비는 점검하셨죠?
+      Leader: 경호 책임자요? 저, 제가요?
+      SortiePick: 적진에 돌입하니 주의하세요.
+      StageStart: 적 관측. 교전 시작할게요.
+      Retreat: 안전을 최우선으로 하세요.
+      SearchStart: 보디가드가 호위 대상 옆에서 떨어지면 안 되는데…
+      SearchEnd: 최대한 빨리 다녀왔어요. 사령관 걱정을 잔뜩 했다니까요.
+      BattleFocus: 지시 부탁드려요.
+      ActionApprove: 확인했어요.
+      SpSkill: 색적 완료.
+      Retire: 여러분 조심…하세요…
+      Repair: 제가 쓰러진 것 때문에 다치진 분은 없으시죠?
+      Reinforce: 좀 더 잘 지켜드릴 수 있겠네요.
+      ItemEquip: 에헤헷. 호위에 필요한 장비인가요? 감사합니다.
+      CoreLink: 사령관의 호위 루트를 하나 더 만들어 둘게요.
+      PresentGet: 경호원이 선물을? 네? 알비스도 같은 말을 했다고요?
+      Login: 어서 오세요, 사령관. 일일 보디가드 역할을 맡은 베라에요.
       Idle_01_01: |-
         보디가드 일이 제 주 업무는 아니지만,
         그렇다고 대충 할 수는 없죠.
@@ -2178,7 +2169,7 @@ dialogue:
         그렇다면, 업무 평가서에
         추천을 눌러주세요.
         추천 버튼은... 제 입술이에요.
-      MVP: ""
+      MVP: 아, 전부 지켜드릴 수 있어서 다행이에요.
     "":
       Join: 제 이름은 베라. 뭔가 도와드릴 일이 있을까요?
       SquadJoin: 자, 모두 장비 확인부터 할게요.
@@ -2390,10 +2381,10 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
+      Idle_01_01: 戦術配置：攻撃力{0}%
+      Idle_01_02: 応急処置：{0}HPで戦闘続行
+      Idle_01_03: 感化：行動力{0}%
+      SPIdle_01_01: ショットガン連射：防御力{0}%(ケシク)
       MVP: ""
   EN:
     "1":
@@ -2477,16 +2468,49 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
-      Idle_02_01: ""
-      Idle_03_01: ""
-      Idle_04_01: ""
-      SPIdle_02_01: ""
-      Oath: ""
-      OathIdle_01: ""
+      Idle_01_01: |-
+        Being a bodyguard isn’t my main task,
+        but that doesn't mean I can slack off.
+        Because I always have to do my tasks sincerely.
+      Idle_01_02: |-
+        Security isn't just about defending against
+        attacks. Eliminating risks in advance
+        is also important.
+      Idle_01_03: |-
+        I tried on a suit like Alvis...
+        Then before I knew it,
+        I was receiving training from the Companions.
+      SPIdle_01_01: I-I’ll focus on the security.
+      Idle_02_01: |-
+        The reason I picked the pink jacket is...
+        because I wanted to look cute
+        in front of you, Commander.
+        ...Am I disqualified as a bodyguard?
+      Idle_03_01: |-
+        Please let me accompany you
+        when you go on your patrol outside.
+        Am I asking you out on a date?
+        N-no! It's for security reasons!
+      Idle_04_01: |-
+        I have to check everything thoroughly
+        from a speck of dust to a single strand of thread.
+        Because I have to protect you, Commander...
+        I mean, those important to me.
+      SPIdle_02_01: |-
+        I’m beginning to think you want me
+        to guard you up close...
+        We're going to have to stay glued
+        to each other, so that nothing
+        can get between us.
+      Oath: Alvis told me that a bodyguard should never fall in love, because it will
+        be difficult to guard someone you’ve fallen in love with. But how can I
+        not? I fall in love all over again every time I see you, Commander. So,
+        please stay right by my side... so that I can guard you properly.
+      OathIdle_01: |-
+        Were you satisfied with my protection?
+        Then, please press recommend
+        on the duty evaluation report.
+        The recommend button... is my lips.
       MVP: ""
     "":
       Join: My name is Bheur. Is there anything I can help you with?
@@ -2568,18 +2592,19 @@ dialogue:
         The breakfast is ready too.
         Ah come on, don’t just smile and wake up.
       Idle_01_02: |-
-        Commander. Commander.
-        A-Allow me to K-Kiss you…as a reward.
-        …Yes! This is what I want to do!
-        Is that so wrong? Kiss me… Please.
+        Commander. You worked hard today.
+        A-allow me to k-kiss you... as your reward.
+        Yes! This is what I want to do!
+        Is that so wrong? Kiss me... Please.
       Idle_01_03: |-
         To be honest, I don’t mind you being lazy.
-        Because I can be close to you and tend to you
-        even more… I also like you when you are quick.
-        Actually… I like everything about you, Commander.
+        Because I can be close to you and tend to you even more...
+        I also like you when you are quick.
+        Actually... I like everything about you, Commander.
       SPIdle_01_01: |-
-        Commander… A naughty kid must be punished, right?
-        Please do it just a little more… as a punishment.
+        Commander...
+        Naughty children must be punished, right?
+        Please do it just a little more... as a punishment.
       MVP: ""
   TC:
     "1":
@@ -2603,41 +2628,41 @@ dialogue:
       Idle_01_01: |-
         這個只是，裝扮
         而已。這樣過度投入
-        的話…………我也會為難的，
+        的話…我也會為難的，
         司令官。
       Idle_01_02: |-
-        阿爾維斯也真是……就給姐姐
-        穿這種……司令官
+        阿爾維斯也真是…就給姐姐
+        穿這種…司令官
         如果也總是這樣開玩笑的話，我真的
         再也不給你準備什麼了！
       Idle_01_03: |-
         啊？！在這裡嗎？！那，那樣不
         行。會變成壞蛋司令官。
-        知道了嗎？嗚呃……
+        知道了嗎？嗚呃…
       SPIdle_01_01: |-
         咿呀啊？！你，你鬧得太過分了
-        司令官……
+        司令官…
       Idle_02_01: |-
         司令官？你為什麼
         這麼喜歡這個衣服呀？
-        不，不是！只是……好奇……而已……
+        不，不是！只是…好奇…而已…
       Idle_03_01: |-
         在這裡嗎？！啊，不可以
-        司令官~……如果被其他人
-        看到了……該怎麼辦呀……
+        司令官~…如果被其他人
+        看到了…該怎麼辦呀…
       Idle_04_01: |-
         是-是，是我輸了。我家
         司令官，我怎麼可能
         攔住呢？但你要記住一件事！
-        場所嗎……要蓋住之後
+        場所嗎…要蓋住之後
         過來。知道了吧，司令官？
       SPIdle_02_01: |-
-        ……需要的物品我都
-        準備好了……慢慢的……過來吧……
+        …需要的物品我都
+        準備好了…慢慢的…過來吧…
       Oath: |-
-        啊哈哈……看你把我叫到這邊來的話，果然……只有那個……吧？我也大致
+        啊哈哈…看你把我叫到這邊來的話，果然…只有那個…吧？我也大致
         察覺到了啊。嗯~我到目前為止所作的一樣，因為照顧司令官各種各樣的東西，會把司令官
-        弄得很麻煩啊。如果這樣的我也喜歡的話……我會珍惜你到最後吧，我們司令官。
+        弄得很麻煩啊。如果這樣的我也喜歡的話…我會珍惜你到最後吧，我們司令官。
       OathIdle_01: |-
         司令官？我都盯著呢，
         可不能看別人哦，
@@ -2661,16 +2686,44 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
-      Idle_02_01: ""
-      Idle_03_01: ""
-      Idle_04_01: ""
-      SPIdle_02_01: ""
-      Oath: ""
-      OathIdle_01: ""
+      Idle_01_01: |-
+        雖然保鑣的工作不是我的主要業務，
+        但我也不能隨便做做，
+        因為我必須踏實地完成交代給我的工作。
+      Idle_01_02: |-
+        抵禦攻擊並不是保鑣工作的全部，
+        事先排除危險因子也很重要。
+      Idle_01_03: |-
+        我學阿爾維斯穿了西裝…
+        結果不知怎麼的，
+        就接受了伴侶們的保鑣培訓。
+      SPIdle_01_01: 我、我會專心戒備！
+      Idle_02_01: |-
+        我會挑粉色外套是因為…
+        我想讓司令官覺得我看起來很可愛…
+        這樣會太沒保鑣的樣子嗎？
+      Idle_03_01: |-
+        請你外出視察時，
+        一定要跟我一起去。
+        你問我這是約會的邀約嗎？
+        不、不是！是為了保護你！
+      Idle_04_01: |-
+        連一粒灰塵、一根線都要徹底檢查，
+        因為這是守護司令官…
+        守護我珍貴的人的工作。
+      SPIdle_02_01: |-
+        無論怎麼看，
+        你好像都很想要貼身保護…
+        我一定會緊貼著你，
+        讓任何人都無法插入我們之間。
+      Oath: |-
+        阿爾維斯曾說過，保鑣絕對不能墜入愛河，因為一旦墜入愛河，就會很難好好護衛，但我怎麼有辦法那麼做？
+
+        每當我看到司令官時，每次都會重新墜入愛河，所以，為了讓我能好好護衛你…請你一定要緊緊跟在我身邊。
+      OathIdle_01: |-
+        你滿意我護衛的表現嗎？
+        那就請在工作評價中替我按推薦吧，
+        推薦鈕…就是我的唇。
       MVP: ""
     "":
       Join: 我叫維拉。有什麼需要幫忙的嗎？
@@ -2693,7 +2746,7 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         真的！我讓LRL邊整理
-        邊玩……
+        邊玩…
       Idle_01_02: |-
         司令官？這個，不拿走這個的話，不知道
         會發生什麼事。
@@ -2708,18 +2761,18 @@ dialogue:
         鮪魚罐頭了嗎？
         我可以訓斥她吧？！
       Idle_03_01: |-
-        司令官……？你現在在心裡一定……在想我很煩吧？是吧？
+        司令官…？你現在在心裡一定…在想我很煩吧？是吧？
         這可不行。
         我會訓斥一下！
       Idle_04_01: |-
         就知道會這樣~
         沒插入金屬板吧？
         趕緊過來。啊，快點~
-      SPIdle_02_01: 被人看到怎麼辦……
+      SPIdle_02_01: 被人看到怎麼辦…
       Oath: |-
         是，是告白嗎？！竟然如此，那從現在起，我要管理一切與司令官有關的事物！
-        你吃早飯了嗎？內衣呢？沒，沒關係。現在換也可以——嗯？！……呃嗯……
-        我，司令官？……可以……再來一次嗎？就，接吻……
+        你吃早飯了嗎？內衣呢？沒，沒關係。現在換也可以——嗯？！…呃嗯…
+        我，司令官？…可以…再來一次嗎？就，接吻…
       OathIdle_01: |-
         你知道我一直在盯著你吧？
         如果你做壞事的話，我不會放過你的。
@@ -2748,31 +2801,24 @@ dialogue:
         早餐也早就準備好了。
         哎呀，你別光笑，快起來呀。
       Idle_01_02: |-
-        司令官大人，今天也辛苦了。
-        作為獎勵，我...我給你親一下吧。
-        ...對！其實是我想親而已！
-        不可以嗎？請...請親我一下吧。
+        司令官，今天也辛苦了。
+        作為獎勵，我…我親你一下。
+        …對！其實是我想親而已！
+        不可以嗎？請…請親我一下吧。
       Idle_01_03: |-
-        我並不討厭司令官大人懶散的一面。
-        這樣就能在司令官大人身邊，更親近地照顧你...
-        我也喜歡司令官精明幹練的一面。
-        其實...不管是什麼面貌，只要是司令官大人我都喜歡。
+        我並不討厭司令官懶散的一面。
+        這樣我就能在你身邊，
+        更親近地照顧你…
+        我也喜歡你精明幹練的一面。其實…
+        不管你是什麼面貌，我都喜歡。
       SPIdle_01_01: |-
-        司令官大人...壞孩子是不是應該受到懲罰？
-        作為懲罰...請你...請你繼續。
+        司令官…
+        壞孩子是不是應該受到懲罰？
+        作為懲罰…請你…請你繼續。
       MVP: ""
 skins:
   sid: null
   artist: PaintAle
-  offsets:
-    - -10
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -2798,20 +2844,12 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_BR_Bheur_N
   skins:
     - sid: 1
-      artist: PaintAle
-      offsets:
-        - -10
-        - null
-        - null
-        - -10
-        - null
-        - null
-        - null
-        - null
+      artist: MAR10
       price: 114
       G: true
       Spine: false
@@ -2838,19 +2876,11 @@ skins:
       releaseDate: 1603670400000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
     - sid: 2
       artist: Choyeon
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 114
       G: true
       Spine: false
@@ -2877,6 +2907,7 @@ skins:
       releaseDate: 1682985600000
       metadata:
         imageId: 2
+        iconId: 2
         tbarId: 2
         voiceId: 2
         2dmodel: 2DModel_BR_Bheur_NS2

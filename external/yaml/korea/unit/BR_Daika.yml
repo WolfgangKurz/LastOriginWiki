@@ -453,7 +453,7 @@ company: BlackRiver
 maker: BlackRiver
 country: JP
 age: "21"
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice: []
 favor:
@@ -558,6 +558,8 @@ source:
   - - Ev:Ev18:EV2-2B
   - - Ev:Ev19:EV1-4B
   - - Ev:Ev20:EV2-6
+  - - Ev:Ev21:EV1-6
+  - - Ev:Ev23:EV1-2
 research: false
 skills:
   "1":
@@ -565,6 +567,7 @@ skills:
     icon: MultiMissile
     target: enemy
     delayed: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -583,7 +586,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -787,7 +789,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -991,7 +992,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1195,7 +1195,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1399,7 +1398,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1603,7 +1601,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1807,7 +1804,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2011,7 +2007,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2215,7 +2210,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2419,7 +2413,6 @@ skills:
           range: 3
           ap: 8
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2699,6 +2692,7 @@ skills:
     icon: AWACS
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -2717,7 +2711,6 @@ skills:
           range: 0
           ap: 9
           grid: 0,1,0,1,0,1,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2851,7 +2844,6 @@ skills:
           range: 0
           ap: 8
           grid: 0,1,0,1,0,1,0,1,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3043,6 +3035,7 @@ skills:
     icon: P.AWACS
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -3062,7 +3055,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3286,6 +3278,7 @@ skills:
     icon: P.AWACS
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -3305,7 +3298,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3668,23 +3660,23 @@ dialogue:
         저는... 그런 사령관님을 닮고싶어요.
       MVP: 오늘은... 운이 좋네요...
     M:
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 맡은 바를 다하겠습니다.
+      Leader: 정찰이 주 임무이지만 지휘도 부족함이 없답니다.
+      SortiePick: 모든 준비는 다 되었답니다. 남은 건 하늘에 맡길 뿐.
+      StageStart: 전방에 적 출현. 예측한 대로네요.
+      Retreat: 후퇴 또한 전략의 하나일 뿐이죠.
+      SearchStart: 보급은 전쟁의 기본이죠.
+      SearchEnd: 탐사 다녀왔습니다. 그리고 약소하지만 사령관님을 위한 것도 있답니다.
+      BattleFocus: 명하세요.
+      ActionApprove: 명 받들겠어요.
+      SpSkill: 목표 탐지 완료.
+      Retire: 하… 아직… 저도… 많이… 부족하네요…
+      Repair: 조금만 옆에서 저를 위로해 주세요.
+      Reinforce: 사령관님께 더욱 도움이 될 수 있게 되어 기쁘답니다.
+      ItemEquip: 이곳에 직접 달아주시겠어요?
+      CoreLink: 더 잘 보고 더 잘 듣고. 그리고 사령관님을 더 잘 느낄 수 있게 되었네요.
+      PresentGet: 선물을 주셨으니 저도 답례를 해야겠네요. 밤을 기다려주세요.
+      Login: 다녀오셨나요, 사령관님. 본격적인 시작 전에 차 한잔 어떠신가요?
       Idle_01_01: |-
         제 소원 말인가요? 음… 긴 의자에 앉아,
         따뜻한 햇살을 받으며, 느긋하게 주위 소리를
@@ -3703,7 +3695,7 @@ dialogue:
         오랫동안 응어리진 마음이 어찌
         하룻밤 만에 사라질 수 있을까요.
         부디 바라건대… 저를 마음껏 즐겨주시길…​
-      MVP: ""
+      MVP: 싸우는 방법을 알면 승리란 쉬운 법이죠.
   JP:
     "":
       Join: ご機嫌よう、司令官。ダイカ、参りました。
@@ -3878,38 +3870,38 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         是的，司令官大人。你想知道
-        今天的天氣？嗯……會怎麼樣呢？
+        今天的天氣？嗯…會怎麼樣呢？
       Idle_01_02: |-
         你要喝一杯茶嗎？我這裡有冷茶和
         熱茶，你想喝
         哪一個呢？
       Idle_01_03: |-
         你是說機密檔啊。
-        嗯……你的訪問許可權不夠……
-        呵呵……請你奮發圖強吧！
-      SPIdle_01_01: 真是羞愧……司令官。
+        嗯…你的訪問許可權不夠…
+        呵呵…請你奮發圖強吧！
+      SPIdle_01_01: 真是羞愧…司令官。
       Idle_02_01: |-
         雖然天氣不太好，但只是下點小雨
         我可以為你遮住的，要和我
         一起去嗎？
       Idle_03_01: |-
         確認連接許可權。末日使者隊。
-        「B」大小，閱覽……
+        「B」大小，閱覽…
         嗯~不可以哦，司令官。
         請專注於其他事情~
       Idle_04_01: |-
-        喜歡什麼茶呢……
+        喜歡什麼茶呢…
         望著司令官喝的
         茶？哈哈！真是害羞呢~
       SPIdle_02_01: |-
-        稍微……擋住的……
-        請……隨意……
+        稍微…擋住的…
+        請…隨意…
       Oath: |-
-        終於……向我告白了呀……好開心……明明很開心……不知道為什麼，卻總是
-        想要躲起來……謝謝你，司令官……日後，我也會……一直只看著司令官的。
+        終於…向我告白了呀…好開心…明明很開心…不知道為什麼，卻總是
+        想要躲起來…謝謝你，司令官…日後，我也會…一直只看著司令官的。
       OathIdle_01: |-
         司令官總是這麼有氣派。
-        我…………想學習這樣的司令官。
+        我…想學習這樣的司令官。
       MVP: ""
     M:
       SquadJoin: ""
@@ -3930,36 +3922,27 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: |-
-        我的願望嗎？嗯...坐在長椅上，
+        我的願望嗎？嗯…坐在長椅上，
         享受溫暖的太陽，聆聽周圍的聲音。
-        還有...希望司令官大人也在身邊。
+        還有…希望司令官大人也在身邊。
         呼呼，就像現在這樣。​
       Idle_01_02: |-
         把塵封已久的內心打開給你看，不知道有多開心呢。
         嗯？你問我累不累？
-        當然也會累。但是...
+        當然也會累。但是…
         如果愛慕之情足夠深，苦苦等待的時間也會成為一種快樂。​
       Idle_01_03: |-
         末日使者的秘密文件？
-        你要閱覽誰的資料？我...？
+        你要閱覽誰的資料？我…？
         呼呼，那我可以直接告訴你。​
       SPIdle_01_01: |-
         內心存在許久的芥蒂
         怎麼可能在一夜間消失呢。
-        我懇求你...盡情寵愛我吧...​
+        我懇求你…盡情寵愛我吧…​
       MVP: ""
 skins:
   sid: null
   artist: PaintAle
-  offsets:
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -3985,20 +3968,12 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_BR_Daika_N
   skins:
     - sid: 1
       artist: PaintAle
-      offsets:
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 91
       G: true
       Spine: false
@@ -4025,6 +4000,7 @@ skins:
       releaseDate: 1557360000000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
         2dmodel_dam: 2DModel_BR_Daika_NS1_Dam

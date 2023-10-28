@@ -1,51 +1,8 @@
-export interface RawUnitDialogueEntity {
-	Intro: string;
-	Join: string;
-	SquadJoin: string;
-	Leader: string;
-	SortiePick: string;
-	StageStart: string;
-	Retreat: string;
-	SearchStart: string;
-	SearchEnd: string;
-	BattleFocus: string;
-	ActionApprove: string;
 
-	/* eslint-disable camelcase */
-	SpSkill: string;
-	SpSkill_1: string;
-	SpSkill_2: string;
-	SpSkill_3: string;
-	SpSkill_4: string;
-	SpSkill_5: string;
-	SpSkill_6: string;
-	SpSkill_7: string;
-	SpSkill_8: string;
-	SpSkill_9: string;
-	/* eslint-enable camelcase */
-
-	Retire: string;
-	Repair: string;
-	Reinforce: string;
-	ItemEquip: string;
-	CoreLink: string;
-	PresentGet: string;
-	Login: string;
-
-	/* eslint-disable camelcase */
-	Idle_01_01: string;
-	Idle_01_02: string;
-	Idle_01_03: string;
-	SPIdle_01_01: string;
-	Idle_02_01: string;
-	Idle_03_01: string;
-	Idle_04_01: string;
-	SPIdle_02_01: string;
-	Oath: string;
-	OathIdle_01: string;
-	MVP: string;
-	/* eslint-enable camelcase */
-}
+export type DialogueEntityType = "Intro" | "Join" | "SquadJoin" | "Leader" | "SortiePick" | "StageStart" | "Retreat" | "SearchStart" | "SearchEnd" | "BattleFocus" | "ActionApprove" | "SpSkill" | "SpSkill_1" | "SpSkill_2" | "SpSkill_3" | "SpSkill_4" | "SpSkill_5" | "SpSkill_6" | "SpSkill_7" | "SpSkill_8" | "SpSkill_9" | "Retire" | "Repair" | "Reinforce" | "ItemEquip" | "CoreLink" | "PresentGet" | "Login" | "Idle_01_01" | "Idle_01_02" | "Idle_01_03" | "SPIdle_01_01" | "Idle_02_01" | "Idle_03_01" | "Idle_04_01" | "SPIdle_02_01" | "Oath" | "OathIdle_01" | "MVP";
+export type RawUnitDialogueEntity = {
+	[key in DialogueEntityType]: string | string[];
+};
 export interface RawUnitDialogue {
 	[key: string]: Partial<RawUnitDialogueEntity>; // Skin
 }

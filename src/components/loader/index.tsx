@@ -1,5 +1,5 @@
 import { FunctionalComponent, createElement } from "preact";
-import { useEffect, useState } from "preact/hooks";
+import { useCallback, useEffect, useState } from "preact/hooks";
 
 // import YAML from "yaml";
 import * as YAML from "@/external/yaml";
@@ -9,6 +9,7 @@ import { CurrentDB } from "@/libs/DB";
 import EntitySource from "@/libs/EntitySource";
 
 import DBHash, { DBHashType } from "@/components/loader/hash";
+import Loading from "@/components/loading";
 
 export * from "./static";
 
@@ -128,6 +129,11 @@ export function JsonLoaderCore (db: string, json: string | string[] | undefined)
 	return Promise.all(list.map(x => Load(db, x)));
 }
 
+export function JsonInvalidate (json: string): void {
+	if (json in CachedJson)
+		delete CachedJson[json];
+}
+
 function comp (a: string[] | readonly string[], b: string[] | readonly string[]): boolean {
 	if (a.length !== b.length) return false;
 	return a.every((v, i) => v === b[i]);
@@ -143,7 +149,7 @@ const DefaultFailedBadge: FunctionalComponent<DefaultFailedBadgeProps> = ({ db, 
 		Failed to load data { list.map(x => <strong>"{ db }/{ x }"</strong>).gap(", ") }.<br />
 		Please retry or report to developer.
 	</span>;
-const DefaultLoadingBadge: FunctionalComponent = () => <span class="text-secondary">Data loading</span>;
+const DefaultLoadingBadge: FunctionalComponent = () => <Loading.Data />;
 
 const Loader: FunctionalComponent<LoaderProps> = (props) => {
 	const db = props.db || CurrentDB;
@@ -152,14 +158,14 @@ const Loader: FunctionalComponent<LoaderProps> = (props) => {
 	const [list, setList] = useState<string[]>(target);
 	const [state, setState] = useState<LoaderState>(LoaderState.EMPTY);
 
-	const response = () => {
+	const response = useCallback(() => {
 		if (props.content)
 			return typeof props.content === "function"
 				? createElement(props.content, {})
 				: props.content;
 		else
 			return <>{ props.children }</>;
-	};
+	}, [props.content, props.children]);
 
 	useEffect(() => {
 		if (!comp(list, target)) {

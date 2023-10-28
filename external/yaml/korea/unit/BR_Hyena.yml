@@ -440,7 +440,7 @@ company: BlackRiver
 maker: BlackRiver
 country: ""
 age: ""
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice: []
 favor:
@@ -510,6 +510,8 @@ source:
   - - Ev:Ev18:EV2-2B
   - - Ev:Ev19:EV1-5B
   - - Ev:Ev20:EV2-2B
+  - - Ev:Ev21:EV1-1
+  - - Ev:Ev23:EV2-2Ex
 research: false
 skills:
   "1":
@@ -517,6 +519,7 @@ skills:
     icon: GrenadeAttack_1
     target: enemy
     delayed: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -535,7 +538,6 @@ skills:
           range: 2
           ap: 5
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -616,7 +618,7 @@ skills:
             - key: Effect_BR_Hyena_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -668,7 +670,7 @@ skills:
             - key: Effect_BR_Hyena_N_12
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -720,7 +722,7 @@ skills:
             - key: Effect_BR_Hyena_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -772,7 +774,7 @@ skills:
             - key: Effect_BR_Hyena_N_14
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -824,7 +826,7 @@ skills:
             - key: Effect_BR_Hyena_N_15
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -876,7 +878,7 @@ skills:
             - key: Effect_BR_Hyena_N_16
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -963,7 +965,7 @@ skills:
             - key: Effect_BR_Hyena_N_18
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -1015,7 +1017,7 @@ skills:
             - key: Effect_BR_Hyena_N_19
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -1109,7 +1111,6 @@ skills:
           range: 2
           ap: 5
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1190,7 +1191,7 @@ skills:
             - key: Effect_BR_Hyena_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -1242,7 +1243,7 @@ skills:
             - key: Effect_BR_Hyena_N_12
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -1294,7 +1295,7 @@ skills:
             - key: Effect_BR_Hyena_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -1346,7 +1347,7 @@ skills:
             - key: Effect_BR_Hyena_N_14
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -1398,7 +1399,7 @@ skills:
             - key: Effect_BR_Hyena_N_15
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -1450,7 +1451,7 @@ skills:
             - key: Effect_BR_Hyena_N_16
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -1537,7 +1538,7 @@ skills:
             - key: Effect_BR_Hyena_N_18
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -1589,7 +1590,7 @@ skills:
             - key: Effect_BR_Hyena_N_19
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -1683,7 +1684,6 @@ skills:
           range: 2
           ap: 5
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -1764,7 +1764,7 @@ skills:
             - key: Effect_BR_Hyena_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -1816,7 +1816,7 @@ skills:
             - key: Effect_BR_Hyena_N_12
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -1868,7 +1868,7 @@ skills:
             - key: Effect_BR_Hyena_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -1920,7 +1920,7 @@ skills:
             - key: Effect_BR_Hyena_N_14
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -1972,7 +1972,7 @@ skills:
             - key: Effect_BR_Hyena_N_15
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -2024,7 +2024,7 @@ skills:
             - key: Effect_BR_Hyena_N_16
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -2111,7 +2111,7 @@ skills:
             - key: Effect_BR_Hyena_N_18
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -2163,7 +2163,7 @@ skills:
             - key: Effect_BR_Hyena_N_19
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -2257,7 +2257,6 @@ skills:
           range: 2
           ap: 5
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2338,7 +2337,7 @@ skills:
             - key: Effect_BR_Hyena_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -2390,7 +2389,7 @@ skills:
             - key: Effect_BR_Hyena_N_12
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -2442,7 +2441,7 @@ skills:
             - key: Effect_BR_Hyena_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -2494,7 +2493,7 @@ skills:
             - key: Effect_BR_Hyena_N_14
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -2546,7 +2545,7 @@ skills:
             - key: Effect_BR_Hyena_N_15
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -2598,7 +2597,7 @@ skills:
             - key: Effect_BR_Hyena_N_16
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -2685,7 +2684,7 @@ skills:
             - key: Effect_BR_Hyena_N_18
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -2737,7 +2736,7 @@ skills:
             - key: Effect_BR_Hyena_N_19
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -2831,7 +2830,6 @@ skills:
           range: 2
           ap: 5
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -2912,7 +2910,7 @@ skills:
             - key: Effect_BR_Hyena_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -2964,7 +2962,7 @@ skills:
             - key: Effect_BR_Hyena_N_12
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -3016,7 +3014,7 @@ skills:
             - key: Effect_BR_Hyena_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -3068,7 +3066,7 @@ skills:
             - key: Effect_BR_Hyena_N_14
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -3120,7 +3118,7 @@ skills:
             - key: Effect_BR_Hyena_N_15
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -3172,7 +3170,7 @@ skills:
             - key: Effect_BR_Hyena_N_16
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -3259,7 +3257,7 @@ skills:
             - key: Effect_BR_Hyena_N_18
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -3311,7 +3309,7 @@ skills:
             - key: Effect_BR_Hyena_N_19
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -3405,7 +3403,6 @@ skills:
           range: 2
           ap: 5
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -3486,7 +3483,7 @@ skills:
             - key: Effect_BR_Hyena_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -3538,7 +3535,7 @@ skills:
             - key: Effect_BR_Hyena_N_12
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -3590,7 +3587,7 @@ skills:
             - key: Effect_BR_Hyena_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -3642,7 +3639,7 @@ skills:
             - key: Effect_BR_Hyena_N_14
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -3694,7 +3691,7 @@ skills:
             - key: Effect_BR_Hyena_N_15
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -3746,7 +3743,7 @@ skills:
             - key: Effect_BR_Hyena_N_16
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -3833,7 +3830,7 @@ skills:
             - key: Effect_BR_Hyena_N_18
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -3885,7 +3882,7 @@ skills:
             - key: Effect_BR_Hyena_N_19
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -3979,7 +3976,6 @@ skills:
           range: 2
           ap: 5
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -4060,7 +4056,7 @@ skills:
             - key: Effect_BR_Hyena_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -4112,7 +4108,7 @@ skills:
             - key: Effect_BR_Hyena_N_12
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -4164,7 +4160,7 @@ skills:
             - key: Effect_BR_Hyena_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -4216,7 +4212,7 @@ skills:
             - key: Effect_BR_Hyena_N_14
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -4268,7 +4264,7 @@ skills:
             - key: Effect_BR_Hyena_N_15
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -4320,7 +4316,7 @@ skills:
             - key: Effect_BR_Hyena_N_16
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -4407,7 +4403,7 @@ skills:
             - key: Effect_BR_Hyena_N_18
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -4459,7 +4455,7 @@ skills:
             - key: Effect_BR_Hyena_N_19
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -4553,7 +4549,6 @@ skills:
           range: 2
           ap: 5
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -4634,7 +4629,7 @@ skills:
             - key: Effect_BR_Hyena_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -4686,7 +4681,7 @@ skills:
             - key: Effect_BR_Hyena_N_12
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -4738,7 +4733,7 @@ skills:
             - key: Effect_BR_Hyena_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -4790,7 +4785,7 @@ skills:
             - key: Effect_BR_Hyena_N_14
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -4842,7 +4837,7 @@ skills:
             - key: Effect_BR_Hyena_N_15
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -4894,7 +4889,7 @@ skills:
             - key: Effect_BR_Hyena_N_16
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -4981,7 +4976,7 @@ skills:
             - key: Effect_BR_Hyena_N_18
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -5033,7 +5028,7 @@ skills:
             - key: Effect_BR_Hyena_N_19
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -5127,7 +5122,6 @@ skills:
           range: 2
           ap: 5
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -5208,7 +5202,7 @@ skills:
             - key: Effect_BR_Hyena_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -5260,7 +5254,7 @@ skills:
             - key: Effect_BR_Hyena_N_12
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -5312,7 +5306,7 @@ skills:
             - key: Effect_BR_Hyena_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -5364,7 +5358,7 @@ skills:
             - key: Effect_BR_Hyena_N_14
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -5416,7 +5410,7 @@ skills:
             - key: Effect_BR_Hyena_N_15
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -5468,7 +5462,7 @@ skills:
             - key: Effect_BR_Hyena_N_16
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -5555,7 +5549,7 @@ skills:
             - key: Effect_BR_Hyena_N_18
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -5607,7 +5601,7 @@ skills:
             - key: Effect_BR_Hyena_N_19
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -5701,7 +5695,6 @@ skills:
           range: 2
           ap: 5
           grid: 0,0,0,0,1,1,0,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -5782,7 +5775,7 @@ skills:
             - key: Effect_BR_Hyena_N_11
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -5834,7 +5827,7 @@ skills:
             - key: Effect_BR_Hyena_N_12
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -5886,7 +5879,7 @@ skills:
             - key: Effect_BR_Hyena_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -5938,7 +5931,7 @@ skills:
             - key: Effect_BR_Hyena_N_14
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -5990,7 +5983,7 @@ skills:
             - key: Effect_BR_Hyena_N_15
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -6042,7 +6035,7 @@ skills:
             - key: Effect_BR_Hyena_N_16
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -6129,7 +6122,7 @@ skills:
             - key: Effect_BR_Hyena_N_18
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -6181,7 +6174,7 @@ skills:
             - key: Effect_BR_Hyena_N_19
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -6476,6 +6469,7 @@ skills:
     icon: ShotGun
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -6494,7 +6488,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -6557,7 +6550,7 @@ skills:
             - key: Effect_BR_Hyena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -6593,7 +6586,7 @@ skills:
             - key: Effect_BR_Hyena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -6629,7 +6622,7 @@ skills:
             - key: Effect_BR_Hyena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -6665,7 +6658,7 @@ skills:
             - key: Effect_BR_Hyena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -6701,7 +6694,7 @@ skills:
             - key: Effect_BR_Hyena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -6772,7 +6765,7 @@ skills:
             - key: Effect_BR_Hyena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -6808,7 +6801,7 @@ skills:
             - key: Effect_BR_Hyena_N_28
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -6886,7 +6879,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -6949,7 +6941,7 @@ skills:
             - key: Effect_BR_Hyena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -6985,7 +6977,7 @@ skills:
             - key: Effect_BR_Hyena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -7021,7 +7013,7 @@ skills:
             - key: Effect_BR_Hyena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -7057,7 +7049,7 @@ skills:
             - key: Effect_BR_Hyena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -7093,7 +7085,7 @@ skills:
             - key: Effect_BR_Hyena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -7164,7 +7156,7 @@ skills:
             - key: Effect_BR_Hyena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -7200,7 +7192,7 @@ skills:
             - key: Effect_BR_Hyena_N_28
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -7278,7 +7270,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -7341,7 +7332,7 @@ skills:
             - key: Effect_BR_Hyena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -7377,7 +7368,7 @@ skills:
             - key: Effect_BR_Hyena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -7413,7 +7404,7 @@ skills:
             - key: Effect_BR_Hyena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -7449,7 +7440,7 @@ skills:
             - key: Effect_BR_Hyena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -7485,7 +7476,7 @@ skills:
             - key: Effect_BR_Hyena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -7556,7 +7547,7 @@ skills:
             - key: Effect_BR_Hyena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -7592,7 +7583,7 @@ skills:
             - key: Effect_BR_Hyena_N_28
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -7670,7 +7661,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -7733,7 +7723,7 @@ skills:
             - key: Effect_BR_Hyena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -7769,7 +7759,7 @@ skills:
             - key: Effect_BR_Hyena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -7805,7 +7795,7 @@ skills:
             - key: Effect_BR_Hyena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -7841,7 +7831,7 @@ skills:
             - key: Effect_BR_Hyena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -7877,7 +7867,7 @@ skills:
             - key: Effect_BR_Hyena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -7948,7 +7938,7 @@ skills:
             - key: Effect_BR_Hyena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -7984,7 +7974,7 @@ skills:
             - key: Effect_BR_Hyena_N_28
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -8062,7 +8052,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -8125,7 +8114,7 @@ skills:
             - key: Effect_BR_Hyena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -8161,7 +8150,7 @@ skills:
             - key: Effect_BR_Hyena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -8197,7 +8186,7 @@ skills:
             - key: Effect_BR_Hyena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -8233,7 +8222,7 @@ skills:
             - key: Effect_BR_Hyena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -8269,7 +8258,7 @@ skills:
             - key: Effect_BR_Hyena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -8340,7 +8329,7 @@ skills:
             - key: Effect_BR_Hyena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -8376,7 +8365,7 @@ skills:
             - key: Effect_BR_Hyena_N_28
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -8454,7 +8443,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -8517,7 +8505,7 @@ skills:
             - key: Effect_BR_Hyena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -8553,7 +8541,7 @@ skills:
             - key: Effect_BR_Hyena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -8589,7 +8577,7 @@ skills:
             - key: Effect_BR_Hyena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -8625,7 +8613,7 @@ skills:
             - key: Effect_BR_Hyena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -8661,7 +8649,7 @@ skills:
             - key: Effect_BR_Hyena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -8732,7 +8720,7 @@ skills:
             - key: Effect_BR_Hyena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -8768,7 +8756,7 @@ skills:
             - key: Effect_BR_Hyena_N_28
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -8846,7 +8834,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -8909,7 +8896,7 @@ skills:
             - key: Effect_BR_Hyena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -8945,7 +8932,7 @@ skills:
             - key: Effect_BR_Hyena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -8981,7 +8968,7 @@ skills:
             - key: Effect_BR_Hyena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -9017,7 +9004,7 @@ skills:
             - key: Effect_BR_Hyena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -9053,7 +9040,7 @@ skills:
             - key: Effect_BR_Hyena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -9124,7 +9111,7 @@ skills:
             - key: Effect_BR_Hyena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -9160,7 +9147,7 @@ skills:
             - key: Effect_BR_Hyena_N_28
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -9238,7 +9225,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -9301,7 +9287,7 @@ skills:
             - key: Effect_BR_Hyena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -9337,7 +9323,7 @@ skills:
             - key: Effect_BR_Hyena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -9373,7 +9359,7 @@ skills:
             - key: Effect_BR_Hyena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -9409,7 +9395,7 @@ skills:
             - key: Effect_BR_Hyena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -9445,7 +9431,7 @@ skills:
             - key: Effect_BR_Hyena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -9516,7 +9502,7 @@ skills:
             - key: Effect_BR_Hyena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -9552,7 +9538,7 @@ skills:
             - key: Effect_BR_Hyena_N_28
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -9630,7 +9616,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -9693,7 +9678,7 @@ skills:
             - key: Effect_BR_Hyena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -9729,7 +9714,7 @@ skills:
             - key: Effect_BR_Hyena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -9765,7 +9750,7 @@ skills:
             - key: Effect_BR_Hyena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -9801,7 +9786,7 @@ skills:
             - key: Effect_BR_Hyena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -9837,7 +9822,7 @@ skills:
             - key: Effect_BR_Hyena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -9908,7 +9893,7 @@ skills:
             - key: Effect_BR_Hyena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -9944,7 +9929,7 @@ skills:
             - key: Effect_BR_Hyena_N_28
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -10022,7 +10007,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -10085,7 +10069,7 @@ skills:
             - key: Effect_BR_Hyena_N_21
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -10121,7 +10105,7 @@ skills:
             - key: Effect_BR_Hyena_N_22
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -10157,7 +10141,7 @@ skills:
             - key: Effect_BR_Hyena_N_23
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -10193,7 +10177,7 @@ skills:
             - key: Effect_BR_Hyena_N_24
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -10229,7 +10213,7 @@ skills:
             - key: Effect_BR_Hyena_N_25
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -10300,7 +10284,7 @@ skills:
             - key: Effect_BR_Hyena_N_27
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -10336,7 +10320,7 @@ skills:
             - key: Effect_BR_Hyena_N_28
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -10526,6 +10510,7 @@ skills:
     icon: P.TeamAtkBuff
     target: team
     delayed: false
+    target_ground: true
     leastGrade: 3
     buffs:
       index:
@@ -10545,7 +10530,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -10609,7 +10593,7 @@ skills:
             - key: Effect_BR_Hyena_N_31
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -10661,7 +10645,7 @@ skills:
             - key: Effect_BR_Hyena_N_32
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Khan_N
                 - false
               body:
@@ -10713,7 +10697,7 @@ skills:
             - key: Effect_BR_Hyena_N_33
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Salamander_N
                 - false
               body:
@@ -10765,7 +10749,7 @@ skills:
             - key: Effect_BR_Hyena_N_34
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_TalonFeather_N
                 - false
               body:
@@ -10817,7 +10801,7 @@ skills:
             - key: Effect_BR_Hyena_N_35
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_WarWolf_N
                 - false
               body:
@@ -10920,7 +10904,7 @@ skills:
             - key: Effect_BR_Hyena_N_37
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Scarabya_N
                 - false
               body:
@@ -10972,7 +10956,7 @@ skills:
             - key: Effect_BR_Hyena_N_38
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Kheshig_N
                 - false
               body:
@@ -11371,16 +11355,16 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
-      Idle_02_01: ""
-      Idle_03_01: ""
-      Idle_04_01: ""
-      SPIdle_02_01: ""
-      Oath: ""
-      OathIdle_01: ""
+      Idle_01_01: こんな日は盛大にドカンと一発爆発させんのもアリだと思わない？
+      Idle_01_02: んだよ~……アクアランドは爆弾の持ち込みが禁止なんだってさ。ウチと爆弾は一心同体なのに。でもちょっとだけ持ってきちゃった。これくらい見逃してよ？
+      Idle_01_03: ねえ、司令官。サラマンダー見かけなかった？あいつ……ニヤニヤしながらウチのツナ缶全部持って逃げやがったんだ。それでケシクに借りてたツナ缶返すんだってさ。
+      SPIdle_01_01: あんまり火遊びしてっと……、み～んな一緒に…バーンッ！って吹っ飛ぶんだぞ～！
+      Idle_02_01: 司令官。いいもの見せてあげよっか？え？爆弾じゃないって！ほら、アイスクリーム。あれ？もしかしてホットなものが欲しかった？ならちょうどよかった！それ、棒の部分が安全ピンになってるよ！あとはお好きにどうぞ！
+      Idle_03_01: みんな夜の花火は綺麗だって喜ぶじゃんか。だったら夜の爆弾も綺麗ってことじゃない？早速……。ダメ？危ない？どこが？綺麗かもしんないよ？まっ、あんたがそこまで言うんだったらやめとくよ。
+      Idle_04_01: この水着が何？おかしいって言われてもウチは脱がないかんね！気に入ってるんだから！お～流石～！そう言うと思ったよ。だって、司令官もウチと同じで変だもんね～！だから好き～！
+      SPIdle_02_01: お～！ついに覚悟が決まった？んじゃあ～ウチとホットなことしよっか～！
+      Oath: 司令官。今日はなんかいつもと違わない？爆弾よりホットな水着のせいでどうしようもなくなった？んじゃあ今夜はいつも以上に派手にいこうよ！さっすが司令官！ウチと同じで変人なんだからぁ！！今夜はいつもより痛いかもしんないよ～？ダーリン。
+      OathIdle_01: ダーリンのためにプレゼントを準備したんだけど～……どこに隠してあると思う？きゃはは！ダーリンもウチと同じで変人だから、すぐに見つけられると思うよ？
       MVP: ""
     "":
       Join: きゃはは、あんたが司令官？細かいことはいいから、とにかく早く爆発させて！
@@ -11676,36 +11660,36 @@ dialogue:
         你要一起嗎？這次我一定要贏，
         然後把那笑眯眯的臉蛋弄扁！
       Idle_01_02: |-
-        突擊和炸彈吧，嗯……該怎麼說呢。
+        突擊和炸彈吧，嗯…該怎麼說呢。
         是的，就跟爆炸差不多。
         因為我只為它而活！
       Idle_01_03: |-
         嗯？啊啊，這個霰彈槍可以說是因為手空著覺得空虛
-        所以才拿著的吧……這個砲彈才是真傢伙！
+        所以才拿著的吧…這個砲彈才是真傢伙！
         你要看一下嗎？看，是不是超~漂亮？
       SPIdle_01_01: |-
         手是真不老實啊~
         我要不把這個弄炸吧。
       Idle_02_01: |-
-        哎呀，又輸光了……喂，司令官。可以借給我鮪魚嗎？
+        哎呀，又輸光了…喂，司令官。可以借給我鮪魚嗎？
         下次我一定贏了還給你。嗯？嗯嗯？
       Idle_03_01: |-
         哎哎，你看看。這是我改造的炸彈，殺傷半徑
         足足達到5倍！啊哈哈，不覺得很厲害嗎？
-        ……負面影響？為什麼擔心這個？
+        …負面影響？為什麼擔心這個？
       Idle_04_01: |-
         打架的時候小心一點？保持距離？哎呀，不要。
-        這樣的話，還打什麼架呀。……嗯，你要這麼
-        說的話……那我會在後退一兩步的距離仍的。可以了吧？
+        這樣的話，還打什麼架呀。…嗯，你要這麼
+        說的話…那我會在後退一兩步的距離仍的。可以了吧？
       SPIdle_02_01: |-
         總是這樣的話，說不定會爆炸哦。
-        ……噗，說笑的啦，是玩笑。這個不會爆炸
+        …噗，說笑的啦，是玩笑。這個不會爆炸
         什麼的，所以你可以隨便。
       Oath: |-
-        呵嗯……喂，司令官。你的偏好是不是奇怪的孩子啊？……如果是的話就早說啊！
+        呵嗯…喂，司令官。你的偏好是不是奇怪的孩子啊？…如果是的話就早說啊！
         我也喜歡像你一樣奇怪的男人啊！咿呀哈哈，我們，要天長地久地活著~把全都給炸掉了吧~
       OathIdle_01: |-
-        丈夫，丈夫。就是說吧，我有了一個想要的……
+        丈夫，丈夫。就是說吧，我有了一個想要的…
         不，不是炸彈。
       MVP: ""
     M:
@@ -11727,7 +11711,7 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: |-
-        喂，丈夫。我們聊聊吧。看……看看這個人。
+        喂，丈夫。我們聊聊吧。看…看看這個人。
         你製造的炸彈總共有五層
         安全裝置，這，這你覺得像話嗎？！
       Idle_01_02: |-
@@ -11736,25 +11720,16 @@ dialogue:
         啊，對啊！不如就製作成一摘下這個就爆炸吧？
       Idle_01_03: |-
         肩膀沒事嗎？我也不知怎麼就咬了~
-        過來吧。我給你擦藥。……不是我的錯哦。
+        過來吧。我給你擦藥。…不是我的錯哦。
         就是說，誰讓你把我弄得那麼沉醉的。
       SPIdle_01_01: |-
-        喂，丈夫。我們漸漸……感覺還不錯呢，是吧？
-        現在這個狀態下，就……
-        只要停止忍耐……就行了~
+        喂，丈夫。我們漸漸…感覺還不錯呢，是吧？
+        現在這個狀態下，就…
+        只要停止忍耐…就行了~
       MVP: ""
 skins:
   sid: null
   artist: MAR10
-  offsets:
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -11780,20 +11755,12 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_BR_Hyena_N
   skins:
     - sid: 1
       artist: Rabon
-      offsets:
-        - null
-        - 30
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 114
       G: false
       Spine: false
@@ -11820,6 +11787,7 @@ skins:
       releaseDate: 1659916800000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
         2dmodel: 2DModel_BR_Hyena_NS1

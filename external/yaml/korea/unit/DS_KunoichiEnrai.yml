@@ -440,7 +440,7 @@ company: ""
 maker: ""
 country: ""
 age: ""
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice: []
 favor:
@@ -498,6 +498,7 @@ skills:
     icon: WideSwordAttk
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -516,7 +517,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -735,7 +735,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -954,7 +953,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1173,7 +1171,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1392,7 +1389,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1611,7 +1607,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1830,7 +1825,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2049,7 +2043,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2268,7 +2261,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2487,7 +2479,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2773,6 +2764,7 @@ skills:
     icon: WideLightning
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -2791,7 +2783,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3010,7 +3001,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3229,7 +3219,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3448,7 +3437,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3667,7 +3655,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3886,7 +3873,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4105,7 +4091,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4324,7 +4309,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4543,7 +4527,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4762,7 +4745,6 @@ skills:
           range: 1
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -5048,6 +5030,7 @@ skills:
     icon: P.TeamAtkBuff
     target: team
     delayed: false
+    target_ground: true
     leastGrade: 3
     buffs:
       index:
@@ -5067,7 +5050,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -5078,7 +5060,7 @@ skills:
             - key: Effect_DS_KunoichiEnrai_N_3
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_DS_KunoichiZero_N
                     - Char_DS_KunoichiKaen_N
                 - false
@@ -5235,6 +5217,7 @@ skills:
     icon: P.SelfSpdBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -5254,7 +5237,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -5507,6 +5489,7 @@ skills:
     icon: P.Beam
     target: team
     delayed: false
+    target_ground: true
     leastGrade: 5
     buffs:
       index:
@@ -5526,7 +5509,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: true
           summon: null
           use: null
           enabled: true
@@ -5722,23 +5704,23 @@ dialogue:
   KR:
     "":
       Join: 쿠노이치 엔라이라고 하옵니다. 불민한 두 딸이 주공께 폐를 끼치지는 않았는지요?
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 소첩의 힘이 필요하시다면.
+      Leader: 어머머. 소첩이 대장이옵니까? 하하하.
+      SortiePick: 주공을 섬기는 것이 이 엔라이의 의무이옵니다.
+      StageStart: 주공의 적을 베겠사옵니다.
+      Retreat: 엔라이, 퇴각하겠사옵니다.
+      SearchStart: 주공을 위해 최고의 물건만을 찾아오도록 하겠사옵니다.
+      SearchEnd: 엔라이, 돌아왔습니다. 주공께 진상할 물품을 가져왔사옵니다.
+      BattleFocus: 명을 내리시지요, 주공.
+      ActionApprove: 그리하겠사옵니다.
+      SpSkill: 오의 이카즈치!
+      Retire: 흐읏! 이런 수모를!
+      Repair: 추태를 보였군요… 면목 없사옵니다.
+      Reinforce: 더욱 날카롭고 더욱 강력하게.
+      ItemEquip: 무기는 이미 가지고 있지만 주공이 주시는 걸 마다할 수는 없지요.
+      CoreLink: 주공의 검이 한 자루 더 늘었군요.
+      PresentGet: 이런 은혜를 베푸시다니… 소첩, 실로 감복했사옵니다.
+      Login: 어서 오십시오, 주공. 기다리고 있었사옵니다.
       Idle_01_01: |-
         이 부러진 검 말씀이십니까? 
         저희 가문에서 대대로 내려오는 검이옵니다. 
@@ -5791,25 +5773,25 @@ dialogue:
         열렬히 답하는 것이 아내의 도리겠지요.
         제 품에 안기시지요, 낭군님… 
         혹, 셋째 아이에 대해서 어떻게 생각하시옵니까?​
-      MVP: ""
+      MVP: 주공이 명하신다면 이따위 것쯤이야.
     M:
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 낭군님의 칼이 되겠사옵니다.
+      Leader: 좀 더 의지하셔도 괜찮사옵니다. 후훗.
+      SortiePick: 낭군님께 헌신하는 것이 소첩의 기쁨이옵니다.
+      StageStart: 낭군님께 승리를 바치겠사옵니다.
+      Retreat: 오우카, 낭군님께 돌아가겠사옵니다.
+      SearchStart: 다음에는 함께 꽃구경이라도 나가시는 건 어떠신지요, 낭군님?
+      SearchEnd: 낭군님의 오우카, 탐색을 마치고 돌아왔사옵니다.
+      BattleFocus: 말씀하시옵소서, 낭군님.
+      ActionApprove: 명을 받들겠사옵니다.
+      SpSkill: 이만 쓰러지도록 하세요.
+      Retire: 마음이 너무 해이해졌던 걸까요?
+      Repair: 소첩, 잠시 낭군님의 곁에서 몸을 추스르겠사옵니다.
+      Reinforce: 낭군님을 위해 더욱 날카롭고 더욱 강력하게!
+      ItemEquip: 이런 자상한 모습에 소첩은 다시 한번 반했사옵니다.
+      CoreLink: 소첩 하나로는 부족하시옵니까?
+      PresentGet: 어머. 이런 선물을 주시다니 가보로 삼아 소중히 보관하겠사옵니다.
+      Login: 기침하셨사옵니까, 낭군님? 기다리고 있었사옵니다.
       Idle_01_01: |-
         무라사키 가문에는 항상 제로와 카엔,
         두 딸이 태어납니다. 하지만 세 번째 아이가
@@ -5833,7 +5815,7 @@ dialogue:
         소첩? 셋 다 같은 선택지 아니냐고요? 약간의
         차이점이 있사옵니다. 궁금하시다면,
         셋 다 안아보시는 것은… 어떠신지요?​
-      MVP: ""
+      MVP: 낭군님의 앞을 막은 죄, 만 번 죽어 마땅하옵니다.
   JP:
     "":
       Join: クノイチ・エンライと申します。ふつつかな娘たちがご迷惑をおかけしてはいないでしょうか？
@@ -6064,7 +6046,7 @@ dialogue:
         往後的人生，全都是主公的。
         請依您的需要，儘管使喚小妾炎雷吧。
       Idle_03_01: |-
-        無論是零或火炎…都還有許多不成熟的部分。
+        無論是零或凱恩…都還有許多不成熟的部分。
         吩咐她們代主公執行重要任務
         還太勉強了。所以，暫時由小妾
         代替她們侍奉在您的身邊。
@@ -6109,7 +6091,7 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         紫龍家總是誕生兩個女兒，
-        像是零和火炎。不過有第三個孩子，
+        像是零和凱恩。不過有第三個孩子，
         感覺也不錯。
         第三個孩子的名字…
         就由郎君來取，怎麼樣？
@@ -6134,15 +6116,6 @@ dialogue:
 skins:
   sid: null
   artist: ねろましん(Neromashin)
-  offsets:
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: true
   Spine: false
@@ -6168,6 +6141,7 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_DS_KunoichiEnrai_N
     2dmodel_dam: 2DModel_DS_KunoichiEnrai_N_Dam

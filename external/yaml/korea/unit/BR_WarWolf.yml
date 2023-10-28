@@ -465,7 +465,7 @@ company: BlackRiver
 maker: BlackRiver
 country: US
 age: "25"
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice: []
 favor:
@@ -691,6 +691,14 @@ source:
     - Ev:Ev20:EV2-5
     - Ev:Ev20:EV2-6
     - Ev:Ev20:EV3-3B
+  - - Ev:Ev21:EV1-1
+    - Ev:Ev21:EV1-3
+    - Ev:Ev21:EV2-1
+    - Ev:Ev21:EV2-5
+  - - Ev:Ev23:EV1-1
+    - Ev:Ev23:EV1-5
+    - Ev:Ev23:EV1-2Ex
+    - Ev:Ev23:EV2-6
 research: false
 skills:
   "1":
@@ -698,6 +706,7 @@ skills:
     icon: ARShot
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -716,7 +725,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -866,7 +874,7 @@ skills:
             - key: Effect_BR_WarWolf_N_111
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -904,7 +912,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1054,7 +1061,7 @@ skills:
             - key: Effect_BR_WarWolf_N_111
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -1092,7 +1099,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1242,7 +1248,7 @@ skills:
             - key: Effect_BR_WarWolf_N_111
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -1280,7 +1286,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1430,7 +1435,7 @@ skills:
             - key: Effect_BR_WarWolf_N_111
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -1468,7 +1473,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1618,7 +1622,7 @@ skills:
             - key: Effect_BR_WarWolf_N_111
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -1656,7 +1660,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1806,7 +1809,7 @@ skills:
             - key: Effect_BR_WarWolf_N_111
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -1844,7 +1847,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1994,7 +1996,7 @@ skills:
             - key: Effect_BR_WarWolf_N_111
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -2032,7 +2034,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2182,7 +2183,7 @@ skills:
             - key: Effect_BR_WarWolf_N_111
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -2220,7 +2221,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2370,7 +2370,7 @@ skills:
             - key: Effect_BR_WarWolf_N_111
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -2408,7 +2408,6 @@ skills:
           range: 3
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2558,7 +2557,7 @@ skills:
             - key: Effect_BR_WarWolf_N_111
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -2653,6 +2652,7 @@ skills:
     icon: AssaultAttack
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -2671,7 +2671,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2813,7 +2812,7 @@ skills:
             - key: Effect_BR_WarWolf_N_222
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -2851,7 +2850,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2993,7 +2991,7 @@ skills:
             - key: Effect_BR_WarWolf_N_222
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -3031,7 +3029,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3173,7 +3170,7 @@ skills:
             - key: Effect_BR_WarWolf_N_222
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -3211,7 +3208,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3353,7 +3349,7 @@ skills:
             - key: Effect_BR_WarWolf_N_222
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -3391,7 +3387,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3533,7 +3528,7 @@ skills:
             - key: Effect_BR_WarWolf_N_222
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -3571,7 +3566,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3713,7 +3707,7 @@ skills:
             - key: Effect_BR_WarWolf_N_222
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -3751,7 +3745,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3893,7 +3886,7 @@ skills:
             - key: Effect_BR_WarWolf_N_222
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -3931,7 +3924,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4073,7 +4065,7 @@ skills:
             - key: Effect_BR_WarWolf_N_222
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -4111,7 +4103,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4253,7 +4244,7 @@ skills:
             - key: Effect_BR_WarWolf_N_222
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -4291,7 +4282,6 @@ skills:
           range: 3
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4433,7 +4423,7 @@ skills:
             - key: Effect_BR_WarWolf_N_222
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_QuickCamel_N
                 - false
               body:
@@ -4528,6 +4518,7 @@ skills:
     icon: P.TeamAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -4547,7 +4538,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4714,6 +4704,7 @@ skills:
     icon: P.SelfSpdBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -4733,7 +4724,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -5065,23 +5055,25 @@ skills:
 dialogue:
   KR:
     "2":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 오늘 내 무대는 여긴가?
+      Leader: 원장 역은 대체로 고지식하던데.
+      SortiePick: 자. 자매님들. 신나게 놀아보자고.
+      StageStart: 총든 시스터가 나가신다!
+      Retreat: 빛께서 이르시되 해치워!
+      SearchStart: 뭘 찾을까? 성인의 유해? 축성 받은 무기? 뭐? 물자? 아. 재미없게.
+      SearchEnd: 다녀왔어. 성유물은 못 찾았지만 좋은 술은 찾았다구.
+      BattleFocus: 내 총 끝을 인도해 줘.
+      ActionApprove: 방아쇠 당기는 건 나에게 맡겨.
+      SpSkill: 심판이다!
+      Retire: 천벌 받은 건가…
+      Repair: 아유. 성경이 없었으면 큰일 날 뻔했어.
+      Reinforce: 이게 축복이라는 거지?
+      ItemEquip: 축복받은 장비지? 언데드에게 효과 있나?
+      CoreLink: 어오… 세례식이라도 받은 것 같네.
+      PresentGet: 기부 고마워. 어. 원래 이러면 안 되지만… 조금만 보답해 줄게.
+      Login: |-
+        길잃은 어린 양이 빛의 가르침을 청하러 오셨군요.
+        히힛. 어때. 그럴싸했어?
       Idle_01_01: |-
         이왕 이렇게 입은 거 노래나 불러볼까?
         하하, 신나는 노래니까 너무 걱정하지는 말라고.​
@@ -5122,7 +5114,7 @@ dialogue:
         옆자리가 공허하니 이를 어찌하오리까. 이는
         워울프가 사령관을 그리워하기 때문이외다.
         신도가 부르는데 답해줘야지? 응?​
-      MVP: ""
+      MVP: 어? 천국에 내 자리 마련된 건가?
     "":
       Join: 여기 괜찮네, 나랑 한탕 해볼 생각 있어?
       SquadJoin: 내 자리가, 어디려나?
@@ -5180,23 +5172,23 @@ dialogue:
         그런 거 안했지~ 헤~ 농담이야 바보야.
       MVP: 음! 오늘은 언니가 낼게. 그, 근데, 몇 명이야?
     M:
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 오케이. 가볼까?
+      Leader: 흠. 내가 당황할 줄 알고?
+      SortiePick: 오. 마중 나온거야? 진짜 상냥하셔.
+      StageStart: 후딱 마무리 해야 끝나고 한잔 하겠지?
+      Retreat: 재미 없어서 못 놀아주겠네.
+      SearchStart: 잇자~. 내 남자가 부탁하면 들어줘야지.
+      SearchEnd: 오다 주웠어. 사령관 가져.
+      BattleFocus: 천천히 골라봐.
+      ActionApprove: 간다!
+      SpSkill: 날 즐겁게 해봐.
+      Retire: 으… 재수… 옴 붙었네…
+      Repair: 뭐야? 걱정하는 거야? 이 정도는 침만 발라도 금방 나아.
+      Reinforce: 째지는데? 이젠 호락호락 당하진 않을 거라고.
+      ItemEquip: 팔 거냐고? 하하하. 그럴 것 같아?
+      CoreLink: 아이고 머리야. 하. 너네는 이런 거 하지 마라.
+      PresentGet: 아… 음. 뭐… 음… 고마워. 진짜 기쁘네.
+      Login: 왔어? 으흐흐. 누구 남잔지 모르겠는데 진짜 멋있단 말이야.
       Idle_01_01: |-
         어디 오늘도 사령관 무릎에 누워서
         영화 한 편- ...또 잔소리야? 알았어,
@@ -5216,7 +5208,7 @@ dialogue:
         시간과 장소를 가리라고 했던 건
         어디사는 누구셨더라~?
         못 참겠는거지? 자...
-      MVP: ""
+      MVP: 휘유~. 축배를 들어야겠는걸?
   JP:
     "2":
       SquadJoin: ""
@@ -5236,16 +5228,16 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
-      Idle_02_01: ""
-      Idle_03_01: ""
-      Idle_04_01: ""
-      SPIdle_02_01: ""
-      Oath: ""
-      OathIdle_01: ""
+      Idle_01_01: せっかくこんな格好したんだし歌でも歌おっか？はは、普通の歌だからそんなに畏まらないでよ～。
+      Idle_01_02: 昔はこの服を着てると誰も疑わなかったらしいわ。だから、この服で銀行強盗をした事件があったんだって。
+      Idle_01_03: え？この格好でお酒とかタバコはダメなんじゃないかって？大丈夫だって～光はそんなに堅苦しくないから～。
+      SPIdle_01_01: 聖職者に手を出すなんて、天罰が下っちゃうよ～？
+      Idle_02_01: この服を着た理由が知りたいって？あ～…映画の主人公がね、この服を着てたのよ。お？気になる？んじゃあ、一緒に観よっか～？長編シリーズものだから…たっぷり楽しめるよ。
+      Idle_03_01: シャーロットに服借りようと思ったらさ……サイズが合わなかったのよ……。しかも1着しかないからサイズ直しもできなくて。そんでコウヘイ教団から借りてきたんだ～。嘘じゃないよ～！ホントだって！光に誓ってもいい！
+      Idle_04_01: この服を着れば何にでもなれるのよ……。悪魔、復讐に燃える殺人鬼、敬虔な修道女、偉大な聖人。それから……男を惑わす魔性の女にも……今は…何になってると思う？ふふ。
+      SPIdle_02_01: この格好だから？それとも私だから？私は……後者の方が、嬉しいわね……
+      Oath: こんな格好してるけど別に光とか神とか信じてないよ。映画で見たから外見を真似してるだけ……。でも、私が一生を捧げる相手はもうずっと前から見つけちゃってるんだ～。私、ウェアウルフは体と心、そしてバイオロイドにも魂があるのなら、魂までも司令官に捧げることを誓わん。よろしくね、私の神様。ふふふ。
+      OathIdle_01: 夜、隣に誰もいないので寂しさを感じているようです。つまり、ウェアウルフが司令官を恋しがっているということ……。ねぇねぇ可愛い信徒が寂しがってるんだから、それに応えてあげるべきじゃない？ねぇねぇ？
       MVP: ""
     "":
       Join: いいじゃな～い、ここ。私と一攫千金を狙ってみない?
@@ -5298,10 +5290,10 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: ""
-      Idle_01_03: ""
-      SPIdle_01_01: ""
+      Idle_01_01: 戦術配置：攻撃力{0}%
+      Idle_01_02: 応急処置：{0}HPで戦闘続行
+      Idle_01_03: 疲れない脚
+      SPIdle_01_01: イケてる手榴弾：受けるダメージ{0}%(ケシク)
       MVP: ""
   EN:
     "2":
@@ -5360,15 +5352,15 @@ dialogue:
         Yeah, I’m dressed like a nun, but I don’t believe in God. I’m just
         imitating what I saw in a movie…
 
-        But now, I’ve found someone to whom I can devote myself forever. I, Werewolf, in good health and in good faith,
+        But now, I’ve found someone to whom I can devote myself forever. I, War Wolf, in good health and in good faith,
 
         swear to offer my body, mind, and soul to Commander. Just you watch, “My Lord.” Fufu.
       OathIdle_01: >-
-        So sayeth Werewolf, O’ Commander, the light is long,
+        So sayeth War Wolf, O’ Commander, the light is long,
 
         lonely, and is void of physical warmth, how must I proceed? O’ Commander,
 
-        Werewolf longs for thy comfort amid her cries.
+        War Wolf longs for thy comfort amid her cries.
 
         Your follower is calling. Answer it.​
       MVP: ""
@@ -5500,13 +5492,13 @@ dialogue:
         你說穿著這身衣服
         怎麼可以抽煙喝酒？
         光可不會那麼小氣哦。​
-      SPIdle_01_01: 隨便觸碰聖職者，是要受到天罰的...​
+      SPIdle_01_01: 隨便觸碰聖職者，是要受到天罰的…​
       Idle_02_01: |-
-        你問我為什麼穿這件衣服？嗯...
+        你問我為什麼穿這件衣服？嗯…
         因為我看到電影的主角穿了這件衣服。要不要一起看？
         別擔心，這樣的電影有數百部呢。​
       Idle_03_01: |-
-        我找夏洛特借過衣服...
+        我找夏洛特借過衣服…
         可惜尺碼不適合我。
         而且因為只有這一件，也沒辦法修改。
         所以我就去公平教團借來了。
@@ -5514,20 +5506,20 @@ dialogue:
       Idle_04_01: |-
         只要穿著這件衣服，我就可以變成任何人。
         惡魔、瘋狂復仇的殺人魔、神聖的奉獻者、
-        偉大的聖人，還有...誘惑男人的性感女子...
-        現在...你覺得怎樣？呼呼。​
+        偉大的聖人，還有…誘惑男人的性感女子…
+        現在…你覺得怎樣？呼呼。​
       SPIdle_02_01: |-
         是因為穿著這身衣服？
         還是因為我本人？
-        我更希望...是後者...​
+        我更希望…是後者…​
       Oath: |-
-        雖然穿著這身衣服，但我並不信仰神。只是看完電影後做做樣子而已...
-        但我現在找到了想要托付一生的人。我狼人發誓，願意為司令官獻出我的身體和內心。
+        雖然穿著這身衣服，但我並不信仰神。只是看完電影後做做樣子而已…
+        但我現在找到了想要托付一生的人。我戰狼發誓，願意為司令官獻出我的身體和內心。
         如果我有靈魂，我願意把靈魂也獻給你。我的神，請你好好守護我，呼呼。
       OathIdle_01: |-
-        狼人說道：司令官啊，夜如此漫長，
+        戰狼說道：司令官啊，夜如此漫長，
         身邊卻空無一人，該如何是好。
-        這是因為狼人在苦苦思念司令官。
+        這是因為戰狼在苦苦思念司令官。
         信徒在叫你，你怎麼不回答？嗯？​
       MVP: ""
     "":
@@ -5563,26 +5555,26 @@ dialogue:
       SPIdle_01_01: 喔~！有自信嗎？
       Idle_02_01: |-
         天啊~？是在撒嬌嗎？
-        好可愛……要和姐姐
+        好可愛…要和姐姐
         去好玩的地方嗎？
       Idle_03_01: |-
         你知道嗎？司令官打哈欠
         樣子很可愛。
-        所以……不要給別的人
+        所以…不要給別的人
         看。
       Idle_04_01: |-
-        怎麼……要是那時
+        怎麼…要是那時
         跟司令官
-        沒有喝酒的話……誰會知道……會變成這樣？
+        沒有喝酒的話…誰會知道…會變成這樣？
       SPIdle_02_01: |-
-        哈啊……忍不住了？我們
-        去……安靜的地方吧。
+        哈啊…忍不住了？我們
+        去…安靜的地方吧。
       Oath: |-
-        呃……？那個，司令官……？原來……不是玩笑啊……不過，要現在回答嗎？
-        這當然是……喜歡……司令官。謝謝你一直在我身邊。日後我們就更
-        坦誠一些吧。因為現在……我們是特別的關係了。
+        呃…？那個，司令官…？原來…不是玩笑啊…不過，要現在回答嗎？
+        這當然是…喜歡…司令官。謝謝你一直在我身邊。日後我們就更
+        坦誠一些吧。因為現在…我們是特別的關係了。
       OathIdle_01: |-
-        早知道要這麼被管的話……
+        早知道要這麼被管的話…
         就不做那個了~嘻~開玩笑的，笨蛋。
       MVP: ""
     M:
@@ -5605,36 +5597,27 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         今天也枕著司令官的大腿
-        看一場電影吧...又開始嘮叨了？知道了。
+        看一場電影吧…又開始嘮叨了？知道了。
         看電影時不會抽的。
-        怪不得都說感情更深的人會吃虧...
+        怪不得都說感情更深的人會吃虧…
       Idle_01_02: |-
         你怎麼了，氣氛正要上來了呀？
-        ...別管費德。乾脆直接給她看
-        怎麼樣？這樣才能讓大家知道...
+        …別管費德。乾脆直接給她看
+        怎麼樣？這樣才能讓大家知道…
         司令官是我的人。
       Idle_01_03: |-
-        酒...有點...你是明知故問嗎？那次都怪司令官，
+        酒…有點…你是明知故問嗎？那次都怪司令官，
         我身上留下了那麼多痕跡，
-        你難道忘了？唉...知道了，知道了。
+        你難道忘了？唉…知道了，知道了。
         你像孩子一樣可愛的樣子，真讓我受不了呢。
       SPIdle_01_01: |-
         上次是誰跟我說
         要注意時間場合的呢~？
-        是不是忍不住了？來...
+        是不是忍不住了？來…
       MVP: ""
 skins:
   sid: null
   artist: Rorobomb
-  offsets:
-    - 40
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -5660,21 +5643,13 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_BR_WarWolf_N
   skins:
     - sid: 1
       artist: Rorobomb
-      offsets:
-        - -80
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-      price: 91
+      price: 46
       G: true
       Spine: false
       parts: 10
@@ -5700,19 +5675,11 @@ skins:
       releaseDate: 1553644800000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
     - sid: 2
       artist: Rorobomb
-      offsets:
-        - -20
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
       price: 114
       G: true
       Spine: false
@@ -5739,6 +5706,7 @@ skins:
       releaseDate: 1656288000000
       metadata:
         imageId: 2
+        iconId: 2
         tbarId: 2
         voiceId: 2
         2dmodel: 2DModel_BR_WarWolf_NS2

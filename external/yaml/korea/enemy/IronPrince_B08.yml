@@ -28,12 +28,12 @@ skills:
     type: 0
     target: enemy
     delayed: false
+    target_ground: false
     buff:
-      rate: 1.1
+      rate: 1
       range: 10
       ap: 4
       grid: 0,0,0,0,1,0,0,0,0
-      target_ground: false
       summon: null
       use: null
       enabled: true
@@ -41,11 +41,18 @@ skills:
       acc_bonus: 0
       buff_rate: 100
       buffs:
-        - key: Effect_MP_IronPrince_N_1
+        - key: Effect_BEG_N_3-2-90-P100
           on: attack_success
           if:
             - false
-            - false
+            - on:
+                target: target
+                select:
+                  - Effect_BEG_N_4-30-90-P100
+                  - Effect_BEG_N_3-2-90-P100
+                stack: 0
+                func: UNFILLED
+                attr: 6
           body:
             - 0
             - 1
@@ -59,62 +66,37 @@ skills:
             - 2
           target: 3
           buffs:
-            - icon: BuffIcon_MARKING
+            - icon: BuffIcon_DEBUFF_RATEUP
               desc:
-                desc: Effect_MP_IronPrince_N_1_1
-                type: 0
-                value: "0"
+                desc: Effect_BEG_N_3-2-90-P100_1
+                type: 1
+                value: "1"
                 level: "0"
               attr: 1
               erase:
                 rounds: 2
               value:
                 isBuff: true
-                type: 87
-                attack_target: true
+                type: 90
+                resist:
+                  type: debuff_rateup
+                  value:
+                    base: 100%
+                    per: 0%
               overlap: 4
           maxStack: 1
-        - key: Effect_MP_IronPrince_N_41
-          on:
-            after: use_skill
-          if:
-            - false
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - icon: BuffIcon_ATK_UP
-              desc:
-                desc: Effect_MP_IronPrince_N_41_1
-                type: 1
-                value: "0"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 99
-              value:
-                isBuff: true
-                type: 0
-                attack:
-                  base: 0
-                  per: 0
-              overlap: 4
-          maxStack: 0
-        - key: Effect_MP_IronPrince_N_11
+        - key: Effect_BEG_N_3-2-1-N50
           on: attack_success
           if:
             - false
-            - false
+            - on:
+                target: target
+                select:
+                  - Effect_BEG_N_3-2-1-N50
+                  - Effect_BEG_N_4-30-1-N50
+                stack: 0
+                func: UNFILLED
+                attr: 6
           body:
             - 0
             - 1
@@ -128,71 +110,88 @@ skills:
             - 2
           target: 3
           buffs:
-            - icon: BuffIcon_REMOVE_BUFF
+            - icon: BuffIcon_ATK_DOWN
               desc:
-                desc: Effect_MP_IronPrince_N_11_1
-                type: 0
-                value: "36"
-                level: "0"
-              attr: 1
-              erase:
-                rounds: 0
-              value:
-                isBuff: true
-                type: 88
-                off:
-                  type: 36
-                  target: 0
-              overlap: 4
-            - icon: BuffIcon_VULNERABLE
-              desc:
-                desc: Effect_MP_IronPrince_N_11_2
+                desc: Effect_BEG_N_3-2-1-N50_1
                 type: 1
-                value: "0.050000"
+                value: "-0.500000"
                 level: "0"
               attr: 1
               erase:
-                rounds: 99
+                rounds: 2
               value:
                 isBuff: true
-                type: 48
-                damage_increase:
-                  base: 5%
+                type: 1
+                attack:
+                  base: -50%
                   per: 0%
               overlap: 4
-          maxStack: 0
+          maxStack: 1
   - key: Skill_MP_IronPrince_N_2
     icon: Particle
     passive: false
     type: 0
     target: enemy
     delayed: false
+    target_ground: false
     buff:
-      rate: 1.5
+      rate: 3
       range: 10
       ap: 10
-      grid: 0,0.5,0,0.5,1,0.5,0,0.5,0
-      target_ground: false
+      grid: 0.1,0.1,0.1,0.1,1,0.1,0.1,0.1,0.1
       summon: null
-      use:
-        key: Effect_MP_IronPrince_N_4
-        count: 1
+      use: null
       enabled: true
       dismiss_guard: true
       acc_bonus: 0
       buff_rate: 100
       buffs:
-        - key: Effect_MP_IronPrince_N_2
+        - key: Effect_BEG_N_3-2-48-P50
           on: attack_success
           if:
+            - false
             - on:
                 target: target
-                func: OR
                 select:
-                  - Effect_MP_IronPrince_N_3
-                  - Effect_MP_IronPrince_N_31
-                  - Effect_MP_IronPrince_N_32
+                  - Effect_BEG_N_4-30-48-P50
+                  - Effect_BEG_N_3-2-48-P50
+                stack: 0
+                func: UNFILLED
                 attr: 6
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_VULNERABLE
+              desc:
+                desc: Effect_BEG_N_3-2-48-P50_1
+                type: 1
+                value: "0.500000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 48
+                damage_increase:
+                  base: 50%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_BEG_N_3-2-65-P1000
+          on: attack_success
+          if:
+            - false
             - false
           body:
             - 0
@@ -207,25 +206,207 @@ skills:
             - 2
           target: 3
           buffs:
-            - icon: BuffIcon_PhyATK_UP
+            - icon: BuffIcon_phyDMG_DOT
               desc:
-                desc: Effect_MP_IronPrince_N_2_1
-                type: 1
-                value: "5"
+                desc: Effect_BEG_N_3-2-65-P1000_1
+                type: 0
+                value: "1000"
                 level: "0"
-              attr: 3
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 1000
+                  per: 0
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_IronPrince_N_3
+    icon: P.TeamAtkDeBuff
+    passive: true
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: true
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_BEG_N_4-30-20-IronPrince
+          on: round
+          if:
+            - near: false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_BEG_N_4-30-20-IronPrince_1
+                type: 0
+                value: "-5"
+                level: "0"
+              attr: 1
               erase:
                 rounds: 0
               value:
                 isBuff: true
-                type: 83
-                damage_add:
-                  base: 500%
+                type: 20
+                ap:
+                  base: -5
+                  per: 0
+              overlap: 4
+          maxStack: 1
+        - key: Effect_BEG_N_4-30-99-IronPrince
+          on: round
+          if:
+            - near: false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_BEG_N_4-30-99-IronPrince_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 99
+                off: 0
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_IronPrince_N_4
+    icon: P.TeamAtkBuff
+    passive: true
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: true
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_BEG_N_0-13-98-P100
+          on: wave
+          if:
+            - false
+            - on:
+                target: target
+                select:
+                  - Effect_BEG_N_0-0-98-P100
+                  - Effect_BEG_N_0-13-98-P100
+                stack: 0
+                func: UNFILLED
+                attr: 6
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_BEG_N_0-13-98-P100_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 98
+                revive:
+                  base: 100%
                   per: 0%
               overlap: 4
-          maxStack: 0
-        - key: Effect_MP_IronPrince_N_21
-          on: attack_success
+          maxStack: 1
+        - key: Effect_BEG_N_4-37-22-IronPrince
+          on: revive
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_STUN
+              desc:
+                desc: Effect_BEG_N_4-37-22-IronPrince_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 22
+                stun: true
+              overlap: 1
+          maxStack: 1
+        - key: Effect_BEG_N_0-37-20-P5
+          on: revive
           if:
             - false
             - false
@@ -242,245 +423,27 @@ skills:
             - 2
           target: 0
           buffs:
-            - icon: ""
+            - icon: BuffIcon_AP_UP
               desc:
-                desc: Effect_MP_IronPrince_N_21_1
+                desc: Effect_BEG_N_0-37-20-P5_1
                 type: 0
-                value: Effect_MP_IronPrince_N_55
+                value: "5"
                 level: "0"
-              attr: 3
+              attr: 0
               erase:
                 rounds: 0
               value:
                 isBuff: true
-                type: 97
-                off: Effect_MP_IronPrince_N_55
-              overlap: 4
-            - icon: BuffIcon_DEF_DOWN
-              desc:
-                desc: Effect_MP_IronPrince_N_21_2
-                type: 0
-                value: "-5000"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 2
-              value:
-                isBuff: true
-                type: 2
-                defense:
-                  base: -5000
+                type: 20
+                ap:
+                  base: 5
                   per: 0
               overlap: 4
-          maxStack: 0
-  - key: Skill_MP_IronPrince_N_3
-    icon: P.TeamAtkDeBuff
-    passive: true
-    type: 0
-    target: enemy
-    delayed: false
-    leastGrade: 3
-    buff:
-      rate: 0
-      range: 0
-      ap: 0
-      grid: F>0,1,0,1,1,1,0,1,0
-      target_ground: true
-      summon: null
-      use: null
-      enabled: true
-      dismiss_guard: false
-      acc_bonus: 0
-      buff_rate: 100
-      buffs:
-        - key: Effect_MP_IronPrince_N_3
-          on: round
+          maxStack: 1
+        - key: Effect_BEG_N_0-37-0-IronPrince
+          on: revive
           if:
-            - pos:
-                target: target
-                position: 0
             - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 4
-          buffs:
-            - icon: BuffIcon_DEF_DOWN
-              desc:
-                desc: Effect_MP_IronPrince_N_3_1
-                type: 1
-                value: "-0.500000"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 1
-              value:
-                isBuff: true
-                type: 3
-                defense:
-                  base: -50%
-                  per: 0%
-              overlap: 4
-            - icon: BuffIcon_REMOVE_BUFF
-              desc:
-                desc: Effect_MP_IronPrince_N_3_2
-                type: 0
-                value: "3"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 0
-              value:
-                isBuff: true
-                type: 88
-                off:
-                  type: 3
-                  target: 0
-              overlap: 4
-          maxStack: 0
-        - key: Effect_MP_IronPrince_N_31
-          on: round
-          if:
-            - pos:
-                target: target
-                position: 1
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 4
-          buffs:
-            - icon: BuffIcon_ACCURACY_DOWN
-              desc:
-                desc: Effect_MP_IronPrince_N_31_1
-                type: 1
-                value: "-1"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 1
-              value:
-                isBuff: true
-                type: 7
-                accuracy:
-                  base: -100%
-                  per: 0%
-              overlap: 4
-            - icon: BuffIcon_REMOVE_BUFF
-              desc:
-                desc: Effect_MP_IronPrince_N_31_2
-                type: 0
-                value: "7"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 0
-              value:
-                isBuff: true
-                type: 88
-                off:
-                  type: 7
-                  target: 0
-              overlap: 4
-          maxStack: 0
-        - key: Effect_MP_IronPrince_N_32
-          on: round
-          if:
-            - pos:
-                target: target
-                position: 2
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 4
-          buffs:
-            - icon: BuffIcon_ATK_DOWN
-              desc:
-                desc: Effect_MP_IronPrince_N_32_1
-                type: 1
-                value: "-0.500000"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 1
-              value:
-                isBuff: true
-                type: 1
-                attack:
-                  base: -50%
-                  per: 0%
-              overlap: 4
-            - icon: BuffIcon_REMOVE_BUFF
-              desc:
-                desc: Effect_MP_IronPrince_N_32_2
-                type: 0
-                value: "1"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 0
-              value:
-                isBuff: true
-                type: 88
-                off:
-                  type: 1
-                  target: 0
-              overlap: 4
-          maxStack: 0
-  - key: Skill_MP_IronPrince_N_4
-    icon: P.TeamAtkBuff
-    passive: true
-    type: 0
-    target: team
-    delayed: false
-    leastGrade: 4
-    buff:
-      rate: 0
-      range: 0
-      ap: 0
-      grid: 0,0,0,0,1,0,0,0,0
-      target_ground: false
-      summon: null
-      use: null
-      enabled: true
-      dismiss_guard: false
-      acc_bonus: 0
-      buff_rate: 100
-      buffs:
-        - key: Effect_MP_IronPrince_N_4
-          on: round
-          if:
-            - on:
-                target: self
-                select:
-                  - Effect_MP_IronPrince_N_41
-                stack: 3
-                attr: 6
             - false
           body:
             - 0
@@ -497,112 +460,21 @@ skills:
           buffs:
             - icon: BuffIcon_ATK_UP
               desc:
-                desc: Effect_MP_IronPrince_N_4_1
-                type: 0
+                desc: Effect_BEG_N_0-37-0-IronPrince_1
+                type: 1
                 value: "0"
                 level: "0"
               attr: 3
               erase:
-                rounds: 99
+                rounds: 1
+                until:
+                  use_skill: 2
               value:
                 isBuff: true
                 type: 0
                 attack:
                   base: 0
                   per: 0
-              overlap: 4
-          maxStack: 0
-        - key: Effect_MP_IronPrince_N_42
-          on: round
-          if:
-            - on:
-                target: self
-                select:
-                  - Effect_MP_IronPrince_N_41
-                stack: 3
-                attr: 6
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - icon: ""
-              desc:
-                desc: Effect_MP_IronPrince_N_42_1
-                type: 1
-                value: Effect_MP_IronPrince_N_41
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 0
-              value:
-                isBuff: true
-                type: 97
-                off: Effect_MP_IronPrince_N_41
-              overlap: 4
-            - icon: BuffIcon_AP_UP
-              desc:
-                desc: Effect_MP_IronPrince_N_42_2
-                type: 0
-                value: "5"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 0
-              value:
-                isBuff: true
-                type: 21
-                ap_set:
-                  base: 5
-                  per: 0
-              overlap: 4
-          maxStack: 0
-        - key: Effect_MP_IronPrince_N_43
-          on: damaged
-          if:
-            - on:
-                target: self
-                select:
-                  - Effect_MP_IronPrince_N_42
-                stack: 3
-                attr: 6
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - icon: ""
-              desc:
-                desc: Effect_MP_IronPrince_N_43_1
-                type: 1
-                value: Effect_MP_IronPrince_N_4
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 0
-              value:
-                isBuff: true
-                chance: 0%
-                type: 97
-                off: Effect_MP_IronPrince_N_4
               overlap: 4
           maxStack: 0
   - key: Skill_MP_IronPrince_N_5
@@ -611,13 +483,13 @@ skills:
     type: 0
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 5
     buff:
       rate: 0
       range: 0
       ap: 0
       grid: 0,0,0,0,1,0,0,0,0
-      target_ground: false
       summon: null
       use: null
       enabled: true
@@ -625,261 +497,10 @@ skills:
       acc_bonus: 0
       buff_rate: 100
       buffs:
-        - key: Effect_MP_IronPrince_N_5
-          on: wave
-          if:
-            - false
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - icon: BuffIcon_IMMUNITY_DEBUFF
-              desc:
-                desc: Effect_MP_IronPrince_N_5_1
-                type: 0
-                value: "20"
-                level: "0"
-              attr: 3
-              erase: {}
-              value:
-                isBuff: true
-                type: 101
-                debuff_immune: 20
-              overlap: 4
-            - icon: BuffIcon_IMMUNITY_DEBUFF
-              desc:
-                desc: Effect_MP_IronPrince_N_5_2
-                type: 0
-                value: "74"
-                level: "0"
-              attr: 3
-              erase: {}
-              value:
-                isBuff: true
-                type: 101
-                debuff_immune: 74
-              overlap: 4
-          maxStack: 0
-        - key: Effect_MP_IronPrince_N_51
-          on: attacked
-          if:
-            - false
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - icon: BuffIcon_ATK_UP
-              desc:
-                desc: Effect_MP_IronPrince_N_51_1
-                type: 1
-                value: "0.500000"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 1
-              value:
-                isBuff: true
-                chance: 30%
-                type: 1
-                attack:
-                  base: 50%
-                  per: 0%
-              overlap: 4
-            - icon: BuffIcon_ACCURACY_UP
-              desc:
-                desc: Effect_MP_IronPrince_N_51_2
-                type: 1
-                value: "3"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 1
-              value:
-                isBuff: true
-                chance: 40%
-                type: 7
-                accuracy:
-                  base: 300%
-                  per: 0%
-              overlap: 4
-            - icon: BuffIcon_DEF_UP
-              desc:
-                desc: Effect_MP_IronPrince_N_51_3
-                type: 1
-                value: "0.500000"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 1
-              value:
-                isBuff: true
-                chance: 30%
-                type: 3
-                defense:
-                  base: 50%
-                  per: 0%
-              overlap: 4
-            - icon: BuffIcon_DEF_PIERCE_UP
-              desc:
-                desc: Effect_MP_IronPrince_N_51_4
-                type: 1
-                value: "0.500000"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 1
-              value:
-                isBuff: true
-                chance: 30%
-                type: 58
-                penetration:
-                  base: 50%
-                  per: 0%
-              overlap: 4
-          maxStack: 3
-        - key: Effect_MP_IronPrince_N_52
-          on:
-            damaged: fire
-          if:
-            - on:
-                func: OR
-                select:
-                  - Effect_MP_IronPrince_N_51
-                attr: 6
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - icon: ""
-              desc:
-                desc: Effect_MP_IronPrince_N_52_1
-                type: 0
-                value: Effect_MP_IronPrince_N_51
-                level: "0"
-              attr: 1
-              erase:
-                rounds: 0
-              value:
-                isBuff: true
-                type: 97
-                off: Effect_MP_IronPrince_N_51
-              overlap: 4
-          maxStack: 1
-        - key: Effect_MP_IronPrince_N_53
-          on:
-            damaged: ice
-          if:
-            - on:
-                func: OR
-                select:
-                  - Effect_MP_IronPrince_N_51
-                attr: 6
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - icon: ""
-              desc:
-                desc: Effect_MP_IronPrince_N_53_1
-                type: 0
-                value: Effect_MP_IronPrince_N_51
-                level: "0"
-              attr: 1
-              erase:
-                rounds: 0
-              value:
-                isBuff: true
-                type: 97
-                off: Effect_MP_IronPrince_N_51
-              overlap: 4
-          maxStack: 1
-        - key: Effect_MP_IronPrince_N_54
-          on:
-            damaged: lightning
-          if:
-            - on:
-                func: OR
-                select:
-                  - Effect_MP_IronPrince_N_51
-                attr: 6
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - icon: ""
-              desc:
-                desc: Effect_MP_IronPrince_N_54_1
-                type: 0
-                value: Effect_MP_IronPrince_N_51
-                level: "0"
-              attr: 1
-              erase:
-                rounds: 0
-              value:
-                isBuff: true
-                type: 97
-                off: Effect_MP_IronPrince_N_51
-              overlap: 4
-          maxStack: 1
-        - key: Effect_MP_IronPrince_N_55
+        - key: Effect_BEG_N_2-30-91-P100
           on: round
           if:
-            - on:
-                target: self
-                func: UNFILLED
-                select:
-                  - Effect_MP_IronPrince_N_21
-                attr: 6
+            - false
             - false
           body:
             - 0
@@ -892,11 +513,55 @@ skills:
             - 0
             - 1
             - 2
-          target: 0
+          target: 2
           buffs:
-            - icon: BuffIcon_DEF_RESSURRECT
+            - icon: BuffIcon_DEBUFF_PERDOWN
               desc:
-                desc: Effect_MP_IronPrince_N_55_1
+                desc: Effect_BEG_N_2-30-91-P100_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 100%
+                    per: 0%
+              overlap: 4
+          maxStack: 1
+        - key: Effect_BEG_N_2-30-126-P100
+          on: round
+          if:
+            - false
+            - on:
+                target: target
+                select:
+                  - Effect_BEG_N_2-30-126-P100
+                  - Effect_BEG_N_0-0-126-P100
+                stack: 0
+                func: UNFILLED
+                attr: 6
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_Remove_Buff_Resist
+              desc:
+                desc: Effect_BEG_N_2-30-126-P100_1
                 type: 1
                 value: "1"
                 level: "0"
@@ -905,21 +570,18 @@ skills:
                 rounds: 1
               value:
                 isBuff: true
-                type: 98
-                revive:
-                  base: 100%
-                  per: 0%
+                type: 126
+                resist:
+                  type: off
+                  value:
+                    base: 100%
+                    per: 0%
               overlap: 4
           maxStack: 1
-        - key: Effect_MP_IronPrince_N_56
-          on: revive
+        - key: Effect_BEG_N_0-1-100-X
+          on: damaged
           if:
-            - on:
-                target: self
-                func: UNFILLED
-                select:
-                  - Effect_MP_IronPrince_N_21
-                attr: 6
+            - false
             - false
           body:
             - 0
@@ -934,95 +596,19 @@ skills:
             - 2
           target: 0
           buffs:
-            - icon: BuffIcon_DEF_RESSURRECT
+            - icon: BuffIcon_REMOVE_DEBUFF
               desc:
-                desc: Effect_MP_IronPrince_N_56_1
+                desc: Effect_BEG_N_0-1-100-X_1
                 type: 1
-                value: "1"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 1
-              value:
-                isBuff: true
-                type: 98
-                revive:
-                  base: 100%
-                  per: 0%
-              overlap: 4
-          maxStack: 1
-        - key: Effect_MP_IronPrince_N_57
-          on: round
-          if:
-            - round:
-                operator: ">="
-                round:
-                  - 8
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - icon: BuffIcon_BARRIER_PIERCE
-              desc:
-                desc: Effect_MP_IronPrince_N_57_1
-                type: 0
                 value: "0"
                 level: "0"
-              attr: 0
+              attr: 3
               erase:
-                rounds: 1
+                rounds: 0
               value:
                 isBuff: true
-                type: 94
-                penetration_force: true
+                type: 100
+                off: 1
               overlap: 4
           maxStack: 1
-        - key: Effect_MP_IronPrince_N_58
-          on: round
-          if:
-            - round:
-                operator: ">="
-                round:
-                  - 3
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - icon: BuffIcon_DAMAGE_REDUCE
-              desc:
-                desc: Effect_MP_IronPrince_N_58_1
-                type: 1
-                value: "0.100000"
-                level: "0"
-              attr: 0
-              erase:
-                rounds: 99
-              value:
-                isBuff: true
-                type: 36
-                damage_reduce:
-                  base: 10%
-                  per: 0%
-              overlap: 4
-          maxStack: 5
-ai: AI_Boss_IronPrince_01
+ai: AI_BEG_IronPrince_N

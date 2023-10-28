@@ -368,6 +368,13 @@ table.InfoTable {
 	.skill-icon {
 		height: 64px;
 	}
+	.badge.skill-info-badge {
+		margin-top: 0.35rem;
+
+		> .elem-icon {
+			vertical-align: text-bottom;
+		}
+	}
 
 	.unit-modal-skill {
 		padding: 3px 0;
@@ -447,4 +454,32 @@ table.InfoTable {
 .SkinBanner {
 	width: 100%;
 	max-width: 800px;
+}
+
+.VerticalTabs:global(.nav-tabs) {
+	--bs-nav-tabs-link-hover-border-color: var(--bs-secondary-bg) var(--bs-border-color) var(--bs-secondary-bg)
+		var(--bs-secondary-bg);
+	--bs-nav-tabs-link-active-border-color: var(--bs-border-color) var(--bs-body-bg) var(--bs-border-color)
+		var(--bs-border-color);
+
+	border-bottom: 0;
+	border-right: var(--bs-nav-tabs-border-width) solid var(--bs-nav-tabs-border-color);
+
+	> button:global(.nav-link) {
+		border-top-left-radius: var(--bs-nav-tabs-border-radius);
+		border-bottom-left-radius: var(--bs-nav-tabs-border-radius);
+		border-top-right-radius: 0;
+	}
+}
+
+.OneStoreIcon,
+.PlayStoreIcon {
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	background-image: url($assetsRoot + "/ui/icon-skin-platform.png");
+	background-size: 56px 28px;
+}
+.OneStoreIcon {
+	background-position-x: -28px;
 }

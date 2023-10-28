@@ -1,4 +1,5 @@
 import { FunctionalComponent } from "preact";
+import { useEffect } from "preact/hooks";
 import { Link } from "preact-router";
 import Store, { toggle } from "@/store";
 
@@ -17,6 +18,7 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import { DBSourceConverter, GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
+import Loading from "@/components/loading";
 import EquipCard from "@/components/equip-card";
 import EffectFilterPopup from "@/components/popup/effect-filter-popup";
 import EquipPopup from "@/components/popup/equip-popup";
@@ -92,6 +94,11 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 		UpdateTitle(LocaleGet("MENU_EQUIPS"), selectedEquip ? LocaleGet(`EQUIP_${selectedEquip.fullKey}`) : "???");
 	}
 
+	useEffect(() => {
+		const unsub = Store.Equips.EffectFilters.subscribe(v => update());
+		return () => unsub();
+	}, []);
+
 	const EquipEffects = ((): Record<string, EffectFilterListType> => {
 		if (!FilterableEquipDB) return {};
 
@@ -153,8 +160,8 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 			});
 	}
 
-	const EquipGroups = ((): EquipGroupEntity[] => {
-		if (!FilterableUnitDB || !FilterableEquipDB) return [];
+	const EquipGroups = ((): EquipGroupEntity[] | undefined => {
+		if (!FilterableUnitDB || !FilterableEquipDB) return undefined;
 
 		const group = groupBy(FilterableEquipDB, (x) => `${x.type}_${x.key}` as string);
 		return Object.keys(group)
@@ -542,17 +549,22 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 			</div>
 		</div>
 
-		<div class="mb-2 text-start clearfix">
-			<Locale k="EQUIP_RESULT_COUNT" p={ [EquipGroups.length] } />
-		</div>
+		{ !EquipGroups
+			? <Loading.Data />
+			: <>
+				<div class="mb-2 text-start clearfix">
+					<Locale k="EQUIP_RESULT_COUNT" p={ [EquipGroups.length] } />
+				</div>
 
-		<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6 mt-4">
-			{ EquipGroups.map(group => <div class="col">
-				<Link href={ `/equips/${group.equip.fullKey}` } class={ style["equip-card-link"] }>
-					<EquipCard class="w-100" equip={ group.equip } source={ group.source } noLink />
-				</Link>
-			</div>) }
-		</div>
+				<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6 mt-4">
+					{ EquipGroups.map(group => <div class="col">
+						<Link href={ `/equips/${group.equip.fullKey}` } class={ style["equip-card-link"] }>
+							<EquipCard class="w-100" equip={ group.equip } source={ group.source } noLink />
+						</Link>
+					</div>) }
+				</div>
+			</>
+		}
 
 		<EquipPopup key="equip-popup" equip={ selectedEquip } display />
 	</div>;

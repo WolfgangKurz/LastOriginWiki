@@ -5,6 +5,10 @@ import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/types/En
 import { BuffEffectList, BuffEffectListGroupKeys } from "@/types/BuffEffect";
 import { EffectFilterListType } from "@/types/Buff";
 
+import { CurrentLocale, LocaleTypes } from "@/libs/Locale";
+
+import { Condition as UnitsCondition } from "@/routes/units/search/AdvancedSearch";
+
 export function toggle (signal: Signal<boolean>): void;
 export function toggle (signal: Signal<boolean[]>, index: number): void;
 export function toggle (signal: Signal<boolean> | Signal<boolean[]>, index?: number): void {
@@ -28,6 +32,7 @@ export function toggleList<T> (list: Signal<T[]>, v: T): void {
 
 const Store = {
 	requireReload: signal(false),
+	localeInvalidated: signal(false),
 
 	Units: {
 		DisplayType: signal<"table" | "list" | "group" | "skin" | "time">("table"),
@@ -69,37 +74,10 @@ const Store = {
 			[ACTOR_BODY_TYPE.TOTEM]: signal(false),
 		},
 
-		Skill: [
-			{
-				Elem: signal<Tuple<boolean, 4>>([true, true, true, true]),
-				GridType: signal<number>(0),
-				DismissGuardType: signal<number>(0),
-			},
-			{
-				Elem: signal<Tuple<boolean, 4>>([true, true, true, true]),
-				GridType: signal<number>(0),
-				DismissGuardType: signal<number>(0),
-			},
-		],
-
-		EffectTarget: signal<Array<"self" | "team" | "enemy">>(["self", "team", "enemy"]),
-
-		EffectFilters: signal(
-			Object.keys(BuffEffectList)
-				.map(x => BuffEffectList[x as BuffEffectListGroupKeys])
-				.reduce((p, c) => [...p, ...c], [])
-				.map(x => {
-					if (x.pm) {
-						return [
-							{ ...x, pmType: 1, selected: false },
-							{ ...x, pmType: -1, selected: false },
-						];
-					}
-					return { ...x, selected: false };
-				}) as EffectFilterListType
-		),
-
 		SearchText: signal(""),
+
+		SearchType: signal<"simple" | "advanced">("simple"),
+		AdvSearchConds: signal<readonly UnitsCondition[]>([]),
 	},
 
 	Equips: {
@@ -177,5 +155,15 @@ const Store = {
 		SearchText: signal(""),
 	},
 
+	Worlds: {
+		Sub: {
+			Troop: signal<string | null>(null),
+			Group: signal<string | null>(null),
+		},
+	},
+
+	Story: {
+		lang: signal<LocaleTypes>(CurrentLocale),
+	},
 };
 export default Store;

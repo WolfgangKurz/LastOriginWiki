@@ -477,7 +477,7 @@ company: Densetsu_Science
 maker: Densetsu_Science
 country: ET
 age: "26"
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
 introVoice: []
 favor:
@@ -629,6 +629,14 @@ source:
     - Ev:Ev20:EV2-3
     - Ev:Ev20:EV2-4B
     - Ev:Ev20:EV3-4B
+  - - Ev:Ev21:EV1-4
+    - Ev:Ev21:EV2-3
+    - Ev:Ev21:EV2-5
+  - - Ev:Ev23:EV1-1
+    - Ev:Ev23:EV1-6
+    - Ev:Ev23:EV1-3Ex
+    - Ev:Ev23:EV2-2
+    - Ev:Ev23:EV2-3Ex
 research: false
 skills:
   "1":
@@ -636,6 +644,7 @@ skills:
     icon: SwordAttk
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -654,7 +663,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -776,7 +784,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -898,7 +905,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1020,7 +1026,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1142,7 +1147,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1264,7 +1268,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1386,7 +1389,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1508,7 +1510,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1630,7 +1631,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1752,7 +1752,6 @@ skills:
           range: 2
           ap: 4
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1923,6 +1922,7 @@ skills:
     icon: ShieldWall
     target: team
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -1941,7 +1941,6 @@ skills:
           range: 0
           ap: 10
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2065,7 +2064,6 @@ skills:
           range: 0
           ap: 9
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2189,7 +2187,6 @@ skills:
           range: 0
           ap: 8
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2362,6 +2359,7 @@ skills:
     icon: P.Command
     target: enemy
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -2381,7 +2379,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3207,6 +3204,7 @@ skills:
     icon: P.Beam
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -3226,7 +3224,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3650,6 +3647,7 @@ skills:
     icon: P.Barrier
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 5
     buffs:
       index:
@@ -3669,7 +3667,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4431,23 +4428,27 @@ skills:
 dialogue:
   KR:
     "1":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 주군의 믿음을 결코 배신하지 않을 걸세. 맡겨주게나.
+      Leader: 내가 있는 한 그 누구도 자매들을 해치지 못할 걸세.
+      SortiePick: 유비무환이라고 했다네. 모두 준비는 마쳤는가?
+      StageStart: 적들을 두려워 말게. 내가 앞장설 터이니.
+      Retreat: 목숨보다 중한 것은 없다네. 후퇴하게!
+      SearchStart: 보급을 게을리하면 이길 전쟁도 패배하게 되는 법이지. 다녀오겠네.
+      SearchEnd: 탐사 완료했네. 비전투대원들의 노고를 알 수 있었다네.
+      BattleFocus: 주군의 명이라면 무엇이든지.
+      ActionApprove: 실망시키지 않겠네.
+      SpSkill: 나의 맹세는 결코 흔들리지 않을 걸세!
+      Retire: 아직 속죄하지 못했는데… 미안하네… 미안하네.
+      Repair: |-
+        옛날에는 다치는 것이 곧 죽음으로 이어졌다네.
+        하지만 지금은 아니지. 고맙네 주군.
+      Reinforce: 내가 강해지는 만큼 다른 이들을 더욱 지킬 수 있다네.
+      ItemEquip: 과업을 이루는 것으로 보답하겠네, 주군.
+      CoreLink: 이제는 그 누구도 흔들리지 않을 걸세.
+      PresentGet: |-
+        아하핫. 고맙네 주군.
+        주군이 주는 것이라면 사소한 것도 나에게는 큰 의미를 띠게 된다네.
+      Login: 왔는가, 주군. 나는 언제나 주군의 명을 받을 준비가 되어있다네.
       Idle_01_01: |-
         말투가 바뀐 거 같다고?
         크게 바뀐 건 아닌데 알아차려줘서 기쁘군.
@@ -4503,7 +4504,7 @@ dialogue:
         육체 또한 나의 의지대로 움직이게
         되었다네. 물론 벗어던진 건 미혹만이
         아니지만 말일세. 어떤가? 보고 싶지 않나?​
-      MVP: ""
+      MVP: 나의 의무를 다하였을 뿐. 그러나 주군의 치하가 있으니 기쁘군.
     "":
       Join: 기다리고 있었다네. 주군. 이 만남을 위해 시를 짓고 싶군.
       SquadJoin: 출정인가? 맡겨주게나!
@@ -4892,43 +4893,43 @@ dialogue:
         並朝未來前進。雖然這是老派
         又很理所當然的話…
         但一直以來我都無法做到。不過現在不是了。
-        這都是多虧遇見了主公。謝謝你，主公。
+        這都是多虧遇見了主君。謝謝你，主君。
       SPIdle_01_01: |-
-        主公意志這麼堅定，
+        主君意志這麼堅定，
         我怎麼能拒絕呢？
       Idle_02_01: |-
         雖然對別人也是如此，
-        但尤其是對主公，我想要展現我真實的模樣，
+        但尤其是對主君，我想要展現我真實的模樣，
         而非虛假的模樣。
         不是演員祭司王喬安娜，
         而是我自己，祭司王喬安娜。
       Idle_03_01: |-
-        主公。不一起訓練嗎？
+        主君。不一起訓練嗎？
         既可以運動，又可以
         為未知的危險做準備。還可以觀察
         我跟其他人的訓練。而且…不，其實
-        我只是想要和主公共度時光。
+        我只是想要和主君共度時光。
       Idle_04_01: |-
-        想要對主公說的話還真不少。
+        想要對主君說的話還真不少。
         有發自內心的建言、
         有友情間的玩笑，
         也有充滿尊敬的讚美。還有…深藏愛意的…
         甜言蜜語。
       SPIdle_02_01: |-
-        主公這麼想要我，
+        主君這麼想要我，
         我真的太開心了。 
-        我也想要主公…
+        我也想要主君…
         既然我們都想要對方，還需要說什麼嗎？
-      Oath: 因為我是演員，所以在這種情況下可以引用的台詞很多呢。這些都可以稱為經典台詞。但是現在需要的不是別人寫的名言，而是飽含我真心的話。我怎麼能拒絕主公的表白呢？不是因為我是主公忠誠的騎士，而是作為一名愛著主公、愛著你的女人。我發誓，以後我不但要當主公的盾和劍，還要作為你的伴侶，一輩子守護在你身邊。
+      Oath: 因為我是演員，所以在這種情況下可以引用的台詞很多呢。這些都可以稱為經典台詞。但是現在需要的不是別人寫的名言，而是飽含我真心的話。我怎麼能拒絕主君的表白呢？不是因為我是主君忠誠的騎士，而是作為一名愛著主君、愛著你的女人。我發誓，以後我不但要當主君的盾和劍，還要作為你的伴侶，一輩子守護在你身邊。
       OathIdle_01: |-
-        自從認識了主公之後，
-        我就不再懷疑主公了。拋開了迷惑，
+        自從認識了主君之後，
+        我就不再懷疑主君了。拋開了迷惑，
         肉體也跟著我的意志
         行動了。當然拋開的
         不只是迷惑而已。如何？不想看嗎？
       MVP: ""
     "":
-      Join: 朕終於等到這一天了！主公，朕想寫一首詩來紀念我們鄉會的這一天。
+      Join: 朕終於等到這一天了！主君，朕想寫一首詩來紀念我們鄉會的這一天。
       SquadJoin: ""
       Leader: ""
       SortiePick: ""
@@ -4947,11 +4948,11 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: |-
-        如果主公想聽，
+        如果主君想聽，
         朕可以把關於騎士的故事
-        說給主公聽。
+        說給主君聽。
       Idle_01_02: |-
-        我已經把劍交給了主公。
+        我已經把劍交給了主君。
         別忘了它的含義。
       Idle_01_03: |-
         最近除了訓練和戰鬥之外
@@ -4959,27 +4960,27 @@ dialogue:
         很多時間來談論
         過去的光榮。
       SPIdle_01_01: |-
-        主公，你在做什麼？
-        竟然這麼輕舉妄動……
+        主君，你在做什麼？
+        竟然這麼輕舉妄動…
       Idle_02_01: |-
-        有很多想要對主公說的話。
+        有很多想要對主君說的話。
         不知道該怎麼說
         這麼多的故事。
       Idle_03_01: |-
         偶爾也想除了訓練和戰鬥外
-        和主公交談。
-        主公，能陪我說說話嗎？
+        和主君交談。
+        主君，能陪我說說話嗎？
       Idle_04_01: |-
         我的劍只為
-        主公而存在。永遠。
-      SPIdle_02_01: 呃呃……主公想要的話……
+        主君而存在。永遠。
+      SPIdle_02_01: 呃呃…主君想要的話…
       Oath: |-
-        這個……主公……雖然已經有些預感……但我畢竟是騎士，所以原本已經放棄了。
-        但……竟然是這種情況……那我應該可以接受吧？
+        這個…主君…雖然已經有些預感…但我畢竟是騎士，所以原本已經放棄了。
+        但…竟然是這種情況…那我應該可以接受吧？
       OathIdle_01: |-
-        主公，自從那天以後，
+        主君，自從那天以後，
         你是不是太不管我了？
-        不會……是覺得已經拿下我了吧……
+        不會…是覺得已經拿下我了吧…
       MVP: ""
     M:
       SquadJoin: ""
@@ -5003,36 +5004,27 @@ dialogue:
         我還是第一次受到這樣的待遇。
         不是把我當成了王或者是騎士，只是把我當成了
         普通的女人。
-        ……感覺還不錯。
+        …感覺還不錯。
       Idle_01_02: |-
         那時候沒心思，所以就忘了。
         嗯？是騎士的誓言。我，十字軍之王
         祭司王喬安娜虔誠發誓，直到生命結束的
-        那一天為止，要成為主公的
+        那一天為止，要成為主君的
         忠實盾牌。
       Idle_01_03: |-
-        和主公說話時的這種
-        興高采烈，還是很難習慣啊…………和上戰場的時候
-        完全是不同的感覺。呃……
-        主，主公怎麼能這麼自然地說出如此
+        和主君說話時的這種
+        興高采烈，還是很難習慣啊…和上戰場的時候
+        完全是不同的感覺。呃…
+        主，主君怎麼能這麼自然地說出如此
         令人害羞的話呢？！
       SPIdle_01_01: |-
         作為女性，我覺得是很沒有看頭的
-        身體，這樣，主公也喜歡嗎？
+        身體，這樣，主君也喜歡嗎？
         這樣的話，就沒有辦法了。
       MVP: ""
 skins:
   sid: null
   artist: Kakiman
-  offsets:
-    - -60
-    - -20
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: true
   Spine: false
@@ -5058,20 +5050,12 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel_dam: 2DModel_DS_Johanna_N_Dam
   skins:
     - sid: 1
       artist: Taesi
-      offsets:
-        - -50
-        - null
-        - null
-        - -50
-        - null
-        - null
-        - null
-        - null
       price: 114
       G: true
       Spine: false
@@ -5098,6 +5082,7 @@ skins:
       releaseDate: 1665964800000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
         2dmodel: 2DModel_DS_Johanna_NS1

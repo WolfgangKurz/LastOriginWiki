@@ -453,9 +453,10 @@ company: BlackRiver
 maker: BlackRiver
 country: US
 age: "24"
-secretRoomType: 1
+secretRoomType: Adult
 marriageVoice: true
-introVoice: []
+introVoice:
+  - ko
 favor:
   present: 1
   clear: 1
@@ -518,6 +519,7 @@ chart:
   - 3
 cv:
   "1": {}
+  "2": {}
   "": {}
   M: {}
 source:
@@ -540,6 +542,7 @@ skills:
     icon: CannonShot
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -558,7 +561,6 @@ skills:
           range: 5
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -704,7 +706,7 @@ skills:
             - key: Effect_BR_BeastHunter_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Pani_N
                 - false
               body:
@@ -779,7 +781,6 @@ skills:
           range: 5
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -925,7 +926,7 @@ skills:
             - key: Effect_BR_BeastHunter_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Pani_N
                 - false
               body:
@@ -1000,7 +1001,6 @@ skills:
           range: 5
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1146,7 +1146,7 @@ skills:
             - key: Effect_BR_BeastHunter_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Pani_N
                 - false
               body:
@@ -1221,7 +1221,6 @@ skills:
           range: 5
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1367,7 +1366,7 @@ skills:
             - key: Effect_BR_BeastHunter_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Pani_N
                 - false
               body:
@@ -1442,7 +1441,6 @@ skills:
           range: 5
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1588,7 +1586,7 @@ skills:
             - key: Effect_BR_BeastHunter_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Pani_N
                 - false
               body:
@@ -1663,7 +1661,6 @@ skills:
           range: 5
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -1809,7 +1806,7 @@ skills:
             - key: Effect_BR_BeastHunter_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Pani_N
                 - false
               body:
@@ -1884,7 +1881,6 @@ skills:
           range: 5
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2030,7 +2026,7 @@ skills:
             - key: Effect_BR_BeastHunter_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Pani_N
                 - false
               body:
@@ -2105,7 +2101,6 @@ skills:
           range: 5
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2251,7 +2246,7 @@ skills:
             - key: Effect_BR_BeastHunter_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Pani_N
                 - false
               body:
@@ -2326,7 +2321,6 @@ skills:
           range: 5
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2472,7 +2466,7 @@ skills:
             - key: Effect_BR_BeastHunter_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Pani_N
                 - false
               body:
@@ -2547,7 +2541,6 @@ skills:
           range: 5
           ap: 7
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -2693,7 +2686,7 @@ skills:
             - key: Effect_BR_BeastHunter_N_13
               on: attack_success
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Pani_N
                 - false
               body:
@@ -2843,6 +2836,7 @@ skills:
     icon: CannonShotWide
     target: enemy
     delayed: false
+    target_ground: false
     buffs:
       index:
         - 0
@@ -2861,7 +2855,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0,1,0,1,1,0,0,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3036,7 +3029,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0,1,0,1,1,0,0,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3211,7 +3203,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0,1,0,1,1,0,0,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3386,7 +3377,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0,1,0,1,1,0,0,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3561,7 +3551,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0,1,0,1,1,0,0,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3736,7 +3725,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0,1,0,1,1,0,0,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -3911,7 +3899,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0,1,0,1,1,0,0,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4086,7 +4073,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0,1,0,1,1,0,0,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4261,7 +4247,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0,1,0,1,1,0,0,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4436,7 +4421,6 @@ skills:
           range: 4
           ap: 8
           grid: 0,0,1,0,1,1,0,0,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4669,6 +4653,7 @@ skills:
     icon: P.SelfAtkBuff
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 3
     buffs:
       index:
@@ -4688,7 +4673,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -4861,6 +4845,7 @@ skills:
     icon: P.CannonShot
     target: team
     delayed: false
+    target_ground: false
     leastGrade: 4
     buffs:
       index:
@@ -4880,7 +4865,6 @@ skills:
           range: 0
           ap: 0
           grid: 0,0,0,0,1,0,0,0,0
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -5011,7 +4995,7 @@ skills:
             - key: Effect_BR_BeastHunter_N_42
               on: round
               if:
-                - in_squad:
+                - in_battle:
                     - Char_BR_Raven_N
                     - Char_BR_RoyalArsenal_N
                 - false
@@ -5142,6 +5126,7 @@ skills:
     icon: P.AWACS
     target: enemy
     delayed: false
+    target_ground: false
     leastGrade: 5
     buffs:
       index:
@@ -5161,7 +5146,6 @@ skills:
           range: 0
           ap: 0
           grid: F>1,1,1,1,1,1,1,1,1
-          target_ground: false
           summon: null
           use: null
           enabled: true
@@ -5472,7 +5456,7 @@ skills:
                       - 1
                     count:
                       - 1
-                - in_squad:
+                - in_battle:
                     - Char_BR_Raven_N
                     - Char_BR_RoyalArsenal_N
               body:
@@ -5516,7 +5500,7 @@ skills:
                       - 1
                     count:
                       - 2
-                - in_squad:
+                - in_battle:
                     - Char_BR_Raven_N
                     - Char_BR_RoyalArsenal_N
               body:
@@ -5560,7 +5544,7 @@ skills:
                       - 1
                     count:
                       - 3
-                - in_squad:
+                - in_battle:
                     - Char_BR_Raven_N
                     - Char_BR_RoyalArsenal_N
               body:
@@ -5604,7 +5588,7 @@ skills:
                       - 1
                     count:
                       - 4
-                - in_squad:
+                - in_battle:
                     - Char_BR_Raven_N
                     - Char_BR_RoyalArsenal_N
               body:
@@ -5648,7 +5632,7 @@ skills:
                       - 1
                     count:
                       - 5
-                - in_squad:
+                - in_battle:
                     - Char_BR_Raven_N
                     - Char_BR_RoyalArsenal_N
               body:
@@ -5912,7 +5896,7 @@ skills:
                       - 1
                     count:
                       - 1
-                - in_squad:
+                - in_battle:
                     - Char_BR_Raven_N
                     - Char_BR_RoyalArsenal_N
               body:
@@ -5956,7 +5940,7 @@ skills:
                       - 1
                     count:
                       - 2
-                - in_squad:
+                - in_battle:
                     - Char_BR_Raven_N
                     - Char_BR_RoyalArsenal_N
               body:
@@ -6000,7 +5984,7 @@ skills:
                       - 1
                     count:
                       - 3
-                - in_squad:
+                - in_battle:
                     - Char_BR_Raven_N
                     - Char_BR_RoyalArsenal_N
               body:
@@ -6044,7 +6028,7 @@ skills:
                       - 1
                     count:
                       - 4
-                - in_squad:
+                - in_battle:
                     - Char_BR_Raven_N
                     - Char_BR_RoyalArsenal_N
               body:
@@ -6088,7 +6072,7 @@ skills:
                       - 1
                     count:
                       - 5
-                - in_squad:
+                - in_battle:
                     - Char_BR_Raven_N
                     - Char_BR_RoyalArsenal_N
               body:
@@ -6390,6 +6374,70 @@ dialogue:
         흠... 사령관님을 단련시켜 드리겠다는
         말은 농담이 아녜요. 잠깐 시간 될까요?
       MVP: 저를 위한 자리인가요? 감사합니다, 사령관님.
+    "2":
+      SquadJoin: 아무리 취했어도 할 일은 해야겠죠?
+      Leader: 저만 믿으세요. 이 정도는 별거 아니니까.
+      SortiePick: 몸은 이미 충분히 달아올랐어요.
+      StageStart: 돌아가면 다시 취하게 해주실 거죠?
+      Retreat: 빨리 돌아가고 싶네요. 사령관님도 기다리고 계시니.
+      SearchStart: 마침 술기운도 올라오니 잠시 다녀올게요, 사령관님.
+      SearchEnd: 술이 다 깨버렸으니 사령관님이 책임져 주실 거죠?
+      BattleFocus: 듣고 있어요.
+      ActionApprove: 사령관님이 원하신다면.
+      SpSkill: 원샷!
+      Retire: 사령관님께 돌아가야 하는데…
+      Repair: 취기 때문에 방심하고 말았군요…
+      Reinforce: 강해진만큼 취하기 어려워진 건 조금 아쉽네요.
+      ItemEquip: 잘 다룰 수 있으니, 으. 걱정 마세요.
+      CoreLink: 아, 조금 어지럽네요.
+      PresentGet: 저도 사령관님께 한 잔 따라드려도 될까요?
+      Login: 오셨나요, 사령관님? 먼저 마시고 있었어요. 어서 와서 앉으세요.
+      Idle_01_01: |-
+        이렇게 마주 앉아 사령관님을 바라보고 
+        있으니 기분이 이상하네요.
+        술 때문일까요, 사령관님 때문일까요?
+        …분위기에 취해버린 걸지도 모르겠군요.
+      Idle_01_02: |-
+        술이라고 하면 쓰기만 할 줄 알았는데… 
+        생각보다 괜찮은 경험이네요.
+        취하면 어떡하나 조금 걱정되기는 하지만… 
+        사령관님이 책임져 주실 거니까 괜찮겠죠?
+      Idle_01_03: |-
+        술잔끼리 부딪히면
+        이렇게 맑은 소리가 나는군요.
+        당신의 눈동자에 건배…
+        이렇게 말하는 거 맞나요?
+      SPIdle_01_01: |-
+        취해서 그러셨다는 변명은 안 통합니다,
+        사령관님.
+      Idle_02_01: |-
+        깔루아에 베일리스를 섞이지 않게 따르고, 
+        그 위에 휘핑크림을 잔뜩 올리면…
+        이 칵테일의 이름 말인가요? 음…
+        제 입으로 말씀 드리기는 조금 부끄럽네요
+      Idle_03_01: |-
+        술기운을 빌려서 
+        사령관님께 드리고 싶은 말이 있었지만
+        아직 충분히 취하지 못했나봐요
+        하고 싶은 말이 자꾸 입 안에서 맴도는걸요…
+      Idle_04_01: |-
+        잠시 사령관님께 기대고 있어도 괜찮을까요? 
+        익숙치 않은 술을 너무 많이 마셔버린거
+        같네요. 어지러운게 가실 때 까지… 잠시만…
+        저를 안아주세요…
+      SPIdle_02_01: |-
+        술기운에 그러셨다는 변명은 저한테 
+        통하지 않는 거 아시죠?
+        저를 달아오르게 만든 책임… 지셔야 해요?
+      Oath: 익숙지 않은 술 때문에 취해버린 걸까요, 아니면 이미 술에 취해 잠들어버린 걸까요? 매일 밤 꿈꾸던 사령관님의 모습이 지금 눈앞에
+        보이네요… 후후, 농담이에요 사령관님. 사령관님이 제 손을 잡으셨을 때 벌써 취기가 사라져버렸는걸요. 건배하시겠어요? 우리 둘의
+        영원한 사랑을 맹세하면서.
+      OathIdle_01: |-
+        술자리에는 빠질 수 없는 게 여러 가지 있죠.
+        좋은 술과 어울리는 안주, 멋진 분위기
+        그리고… 내 맞은편에서 나를 바라보는… 
+        사랑하는 사람…
+      MVP: 마음에 드셨다면 상으로 한 잔 사주시겠어요?
     "":
       Join: 대장갑 포병, 비스트 헌터. 임무 대기 중.
       SquadJoin: 강한 적이 있나 보군요?
@@ -6513,6 +6561,35 @@ dialogue:
       Oath: ""
       OathIdle_01: エミリーって呼んでね…よろしく…お願い…申し上げる…。
       MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: 対裝甲砲兵ビーストハンター、任務待機中。
       SquadJoin: ""
@@ -6615,6 +6692,35 @@ dialogue:
       OathIdle_01: |-
         Hmm… I wasn’t joking when I said
         I’ll train you. Do you have a minute?
+      MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: Anti-Armor Gunner, Beast Hunter! On standby.
@@ -6728,30 +6834,59 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: |-
-        抱歉讓你們看到了我這個樣子……
+        抱歉讓你們看到了我這個樣子…
         我馬上去換下來。
       Idle_01_02: |-
         司令官會怎麼想
-        力氣大的女生…… 啊……沒什麼。
+        力氣大的女生… 啊…沒什麼。
       Idle_01_03: |-
         呼呼。越是強大的敵人，越有對戰的
         樂趣。
-      SPIdle_01_01: 呃……果然還是如此。
+      SPIdle_01_01: 呃…果然還是如此。
       Idle_02_01: |-
-        哈啊……司令官大人？能幫我
+        哈啊…司令官大人？能幫我
         解開這個嗎？
       Idle_03_01: |-
-        呼嗚……偶爾……也想被……
-        撂倒……嘿嘿。是玩笑啦。
+        呼嗚…偶爾…也想被…
+        撂倒…嘿嘿。是玩笑啦。
       Idle_04_01: |-
         我的力量只想為司令官
-        使用。所以……嗯……我
+        使用。所以…嗯…我
         的意思你明白嗎？
-      SPIdle_02_01: 或許……要繼續嗎？
+      SPIdle_02_01: 或許…要繼續嗎？
       Oath: |-
         司令官，我一直等待著這天到來。現在起我會鍛煉你的身心的。
         你期待著吧，我會讓司令官成為更加帥氣的男人的。
-      OathIdle_01: 嗯…………我說要鍛煉司令官的話，並不是玩笑。你現在有時間嗎？
+      OathIdle_01: 嗯…我說要鍛煉司令官的話，並不是玩笑。你現在有時間嗎？
+      MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: 反裝甲砲兵，野獸獵人，正在待命。
@@ -6783,22 +6918,22 @@ dialogue:
         不用擔心。不打架的時候，
         我很溫柔。
       SPIdle_01_01: |-
-        呃……是攻略弱點嗎？
-        啊，不是的…… 請忘記吧。
+        呃…是攻略弱點嗎？
+        啊，不是的… 請忘記吧。
       Idle_02_01: |-
-        這麼看的話，司令官也……
-        啊……對不起。早知道就不開
+        這麼看的話，司令官也…
+        啊…對不起。早知道就不開
         這個玩笑了。
       Idle_03_01: |-
         如果可以的話，我可以隨時證明
         我是多柔軟的人。
       Idle_04_01: |-
-        呼呼……司令官，我可能今天
+        呼呼…司令官，我可能今天
         會去
         陷落司令官呢？
       SPIdle_02_01: |-
-        或許……是想
-        陷害我嗎？這可不能被原諒……
+        或許…是想
+        陷害我嗎？這可不能被原諒…
       Oath: |-
         看來你已經決定了。司令官。我也一直在等待著這個瞬間。
         今天就鍛煉一下司令官吧。一定是非常特別的體驗。
@@ -6825,36 +6960,27 @@ dialogue:
       Idle_01_01: |-
         打敗強敵時，獲得的成就感
         超強。我和對方拼進全力
-        交戰是……打敗司、司令官時
-        有什麼感受呢……？那是故意讓步才倒下的，
-        後來反倒是我……呃……​
+        交戰是…打敗司、司令官時
+        有什麼感受呢…？那是故意讓步才倒下的，
+        後來反倒是我…呃…​
       Idle_01_02: |-
         沒錯。訓練強度比之前高了。
         為了，以後我和司令官的
         孩子也要比現在更強才行。
-        說到這份上了，不如現在……怎麼樣呢？​
+        說到這份上了，不如現在…怎麼樣呢？​
       Idle_01_03: |-
-        讓我表達自己有多愛司令官……
-        太會捉弄人了。既然如此，那我的回答就是……
+        讓我表達自己有多愛司令官…
+        太會捉弄人了。既然如此，那我的回答就是…
         這是我現在頓悟的事實，也許司令官
         就是我活下去的理由。
       SPIdle_01_01: |-
         不，不可以！繼續做下去的話，會影響
         計畫好的訓練-你是說讓我用力甩掉離開，是嗎？
-        ……聽你這麼說，我今天也……
+        …聽你這麼說，我今天也…
       MVP: ""
 skins:
   sid: null
   artist: Kakiman
-  offsets:
-    - 60
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
-    - null
   priceEx: ""
   G: false
   Spine: false
@@ -6880,21 +7006,13 @@ skins:
   releaseDate: null
   metadata:
     imageId: 0
+    iconId: 0
     tbarId: 0
     2dmodel: 2DModel_BR_BeastHunter_N
   skins:
     - sid: 1
       artist: Kakiman
-      offsets:
-        - 40
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-        - null
-      price: 159
+      price: 80
       G: true
       Spine: false
       parts: 22
@@ -6920,5 +7038,38 @@ skins:
       releaseDate: 1548288000000
       metadata:
         imageId: 1
+        iconId: 1
         tbarId: 1
         voiceId: 1
+    - sid: 2
+      artist: TunaMaYo
+      price: 167
+      G: false
+      Spine: false
+      parts: 36
+      stage: false
+      subset:
+        - true
+        - false
+        - true
+        - true
+        - false
+        - false
+        - true
+        - false
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - Everday_Dress
+      facelist: []
+      releaseDate: 1695686400000
+      metadata:
+        imageId: 2
+        iconId: 2
+        tbarId: 2
+        voiceId: 2
+        2dmodel: 2DModel_BR_BeastHunter_NS2

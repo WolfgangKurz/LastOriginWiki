@@ -1,7 +1,7 @@
-import { getCookie } from "@/libs/Functions";
+import { getCookie, setCookie } from "@/libs/Cookie";
 
 export function ChangeDB (db: DBTypes): void {
-	document.cookie = `LO_DB=${db}; path=/`;
+	setCookie("LO_DB", db);
 	window.location.reload();
 }
 

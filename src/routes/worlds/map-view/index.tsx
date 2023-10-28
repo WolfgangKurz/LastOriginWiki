@@ -1,4 +1,5 @@
 import { FunctionalComponent } from "preact";
+import { useEffect, useLayoutEffect, useRef, useState } from "preact/hooks";
 import { Link, route } from "preact-router";
 
 import { ACTOR_GRADE, STAGE_SUB_TYPE, UNLOCK_COND } from "@/types/Enums";
@@ -8,15 +9,19 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 import { Consumable } from "@/types/DB/Consumable";
+import { StoryMetadata, StorySpec } from "@/types/Story/Story";
 
 import { objState } from "@/libs/State";
 import { AssetsRoot, ImageExtension, NewMapList, SubStoryUnit } from "@/libs/Const";
+import { useUpdate } from "@/libs/hooks";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import MapPosition from "@/libs/MapPosition";
+import { CurrentDB } from "@/libs/DB";
 
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
+import Loading from "@/components/loading";
 import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
 import IconChatSquareTextFill from "@/components/bootstrap-icon/icons/ChatSquareTextFill";
 import IconCompass from "@/components/bootstrap-icon/icons/Compass";
@@ -26,9 +31,12 @@ import IconGiftFill from "@/components/bootstrap-icon/icons/GiftFill";
 import IconBugFill from "@/components/bootstrap-icon/icons/BugFill";
 import IconSearch from "@/components/bootstrap-icon/icons/Search";
 import IconStarFill from "@/components/bootstrap-icon/icons/StarFill";
-import  IconChevronLeft from "@/components/bootstrap-icon/icons/ChevronLeft";
-import IconChevronRight  from "@/components/bootstrap-icon/icons/ChevronRight";
-import  IconUnlockFill  from "@/components/bootstrap-icon/icons/UnlockFill";
+import IconChevronLeft from "@/components/bootstrap-icon/icons/ChevronLeft";
+import IconChevronRight from "@/components/bootstrap-icon/icons/ChevronRight";
+import IconUnlockFill from "@/components/bootstrap-icon/icons/UnlockFill";
+import IconPersonBoundingBox from "@/components/bootstrap-icon/icons/PersonBoundingBox";
+import IconBook from "@/components/bootstrap-icon/icons/Book";
+import IconThreeDots from "@/components/bootstrap-icon/icons/ThreeDots";
 import DropItem from "@/components/drop-item";
 import DropRes from "@/components/drop-res";
 import DropUnit from "@/components/drop-unit";
@@ -67,9 +75,11 @@ interface MapViewProps {
 const MapView: FunctionalComponent<MapViewProps> = (props) => {
 	const ImageExt = ImageExtension();
 
-	const CurrentMode = objState<"map" | "substory">("map");
+	const update = useUpdate();
 
-	const CurrentTab = objState<"reward" | "drop" | "enemy" | "search">("reward");
+	const [currentMode, setCurrentMode] = useState<"map" | "substory">("map");
+
+	const CurrentTab = objState<"reward" | "drop" | "squad" | "enemy" | "search">("reward");
 	const selected = objState<MapNodeEntity | null>(null);
 
 	const selectedWave = objState<number>(0);
@@ -81,6 +91,58 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 
 	const selectedEquip = objState<FilterableEquip | null>(null);
 	const equipModalDisplay = objState<boolean>(false);
+
+	const storyMetaTableRef = useRef<Record<string, StoryMetadata | false>>({});
+	const mapBGRef = useRef<HTMLDivElement>(null);
+
+	const selectedValue = selected.value;
+
+	const Waves = selectedValue
+		? selectedValue.wave || []
+		: [];
+
+	useEffect(() => {
+		const MapDB = GetJson<World>(`map/${props.wid}`);
+		const MapsDB = GetJson<Maps>(StaticDB.Maps);
+		const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
+		const FilterableEquipDB = GetJson<FilterableEquip[]>(StaticDB.FilterableEquip);
+		const FilterableEnemyDB = GetJson<FilterableEnemy[]>(StaticDB.FilterableEnemy);
+		const ConsumableDB = GetJson<Consumable[]>(StaticDB.Consumable);
+
+		if (!MapDB) JsonLoaderCore(CurrentDB, `map/${props.wid}`).then(() => update());
+		if (!MapsDB) JsonLoaderCore(CurrentDB, StaticDB.Maps).then(() => update());
+		if (!FilterableUnitDB) JsonLoaderCore(CurrentDB, StaticDB.FilterableUnit).then(() => update());
+		if (!FilterableEquipDB) JsonLoaderCore(CurrentDB, StaticDB.FilterableEquip).then(() => update());
+		if (!FilterableEnemyDB) JsonLoaderCore(CurrentDB, StaticDB.FilterableEnemy).then(() => update());
+		if (!ConsumableDB) JsonLoaderCore(CurrentDB, StaticDB.Consumable).then(() => update());
+	}, []);
+
+	useEffect(() => {
+		if (selectedValue) {
+			const metaTable = storyMetaTableRef.current;
+
+			if (!(selectedValue.key in metaTable)) {
+				const cached = GetJson<StoryMetadata>(`story/${selectedValue.key}`);
+				if (!cached) {
+					JsonLoaderCore(CurrentDB, `story/${selectedValue.key}`)
+						.then(() => {
+							metaTable[selectedValue.key] = GetJson<StoryMetadata>(`story/${selectedValue.key}`);
+						})
+						.catch(() => {
+							metaTable[selectedValue.key] = false;
+						})
+						.finally(() => {
+							storyMetaTableRef.current = metaTable;
+							update();
+						});
+				} else {
+					metaTable[selectedValue.key] = cached;
+					storyMetaTableRef.current = metaTable;
+					update();
+				}
+			}
+		}
+	}, [selectedValue]);
 
 	SetMeta(
 		["description", "twitter:description"],
@@ -94,300 +156,343 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 	else
 		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${props.wid}`), LocaleGet("WORLDS_WORLD_TITLE", props.mid));
 
-	return <Loader
-		json={ [
-			`map/${props.wid}`,
-			StaticDB.Maps,
-			StaticDB.FilterableUnit,
-			StaticDB.FilterableEquip,
-			StaticDB.FilterableEnemy,
-			StaticDB.Consumable,
-		] }
-		content={ ((): preact.VNode => {
-			const MapDB = GetJson<World>(`map/${props.wid}`);
-			const MapsDB = GetJson<Maps>(StaticDB.Maps);
-			const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
-			const FilterableEquipDB = GetJson<FilterableEquip[]>(StaticDB.FilterableEquip);
-			const FilterableEnemyDB = GetJson<FilterableEnemy[]>(StaticDB.FilterableEnemy);
-			const ConsumableDB = GetJson<Consumable[]>(StaticDB.Consumable);
+	useEffect(() => {
+		if (currentMode === "substory" && props.node !== "substory")
+			setCurrentMode("map");
+		else if (currentMode !== "substory" && props.node === "substory")
+			setCurrentMode("substory");
+	}, [currentMode, props.node]);
 
-			const WorldName = <span class={ `font-ibm ${style.WorldName}` }>
-				<Locale k={ `WORLD_${props.wid}` } fallback={ props.wid } />
-			</span>;
-			const AreaName = (props.mid in MapDB)
-				? <Locale
-					k={ `WORLD_WORLD_${props.wid}_${props.mid}` }
-					fallback={ <Locale k={ "WORLDS_WORLD_TITLE" } p={ [props.mid] } /> }
-				/>
-				: <>???</>;
+	const MapDB = GetJson<World>(`map/${props.wid}`);
+	const MapsDB = GetJson<Maps>(StaticDB.Maps);
+	const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
+	const FilterableEquipDB = GetJson<FilterableEquip[]>(StaticDB.FilterableEquip);
+	const FilterableEnemyDB = GetJson<FilterableEnemy[]>(StaticDB.FilterableEnemy);
+	const ConsumableDB = GetJson<Consumable[]>(StaticDB.Consumable);
+	if (!MapDB || !MapsDB || !FilterableUnitDB || !FilterableEquipDB || !FilterableEnemyDB || !ConsumableDB)
+		return <Loading.Data />;
 
-			const selectedValue = selected.value;
+	const WorldName = <span class={ `font-ibm ${style.WorldName}` }>
+		<Locale k={ `WORLD_${props.wid}` } fallback={ props.wid } />
+	</span>;
+	const AreaName = (props.mid in MapDB)
+		? <Locale
+			k={ `WORLD_WORLD_${props.wid}_${props.mid}` }
+			fallback={ <Locale k={ "WORLDS_WORLD_TITLE" } p={ [props.mid] } /> }
+		/>
+		: <>???</>;
 
-			const Waves = selectedValue
-				? selectedValue.wave || []
-				: [];
-			const CurrentWave = ((): Array<WaveEnemyInfo | null> => {
-				if (
-					!selectedValue ||
-					selectedValue.type === STAGE_SUB_TYPE.STORY ||
-					!(Waves[selectedWave.value] && Waves[selectedWave.value][selectedWaveIndex.value].e)
-				) return new Array(9).fill(null);
+	const CurrentWave = ((): Array<WaveEnemyInfo | null> => {
+		if (
+			!selectedValue ||
+			selectedValue.type === STAGE_SUB_TYPE.STORY ||
+			!(Waves[selectedWave.value] && Waves[selectedWave.value][selectedWaveIndex.value].e)
+		) return new Array(9).fill(null);
 
-				return Waves[selectedWave.value][selectedWaveIndex.value].e.enemy
-					.map(x => {
-						if (!x) return null;
+		return Waves[selectedWave.value][selectedWaveIndex.value].e.enemy
+			.map(x => {
+				if (!x) return null;
 
-						const enemy = FilterableEnemyDB.find(y => y.id === x.id);
-						if (!enemy) return null;
+				const enemy = FilterableEnemyDB.find(y => y.id === x.id);
+				if (!enemy) return null;
 
-						return {
-							enemy,
-							...x,
-						};
-					});
-			})();
-
-			const UnitDrops = ((): Array<FilterableUnit | ModuleUnit> => {
-				if (!selectedValue) return [];
-
-				const rarityTable = ["D", "C", "B", "A", "S", "SS"];
-				const ids: string[] = [];
-				const ret: Array<FilterableUnit | ModuleUnit> = [];
-				Waves.forEach(_ => {
-					_.forEach(__ => {
-						if (__.e) {
-							__.e.drops
-								.filter(x => x.id.startsWith("Char_"))
-								.map(x => {
-									if (ids.includes(x.id)) return null;
-									ids.push(x.id);
-
-									const k = x.id.replace(/Char_(.+)_N/, "$1");
-									if (k.startsWith("Module")) {
-										const rk = x.id.replace(/^Char_Module_.+_([BAS]+)_N$/, "$1");
-										const r = rarityTable.indexOf(rk);
-										return {
-											type: "module",
-											uid: x.id.replace(/^Char_(.+)_N$/, "$1"),
-											rarity: r as ACTOR_GRADE,
-										};
-									}
-									return FilterableUnitDB.find(y => y.uid === k);
-								})
-								.filter(x => x)
-								.forEach(x => ret.push(x as (FilterableUnit | ModuleUnit)));
-						}
-					});
-				});
-				return ret.sort((a, b) => b.rarity - a.rarity);
-			})();
-			const ItemDrops = ((): Array<FilterableEquip | Consumable> => {
-				if (!selectedValue) return [];
-
-				const ids: string[] = [];
-				const ret: Array<FilterableEquip | Consumable> = [];
-				Waves.forEach(_ => {
-					_.forEach(__ => {
-						if (__.e) {
-							__.e.drops
-								.filter(x => !x.id.startsWith("Char_"))
-								.map(x => {
-									if (ids.includes(x.id)) return null;
-									ids.push(x.id);
-
-									if (x.id.startsWith("Equip_")) {
-										const k = x.id.substr(6);
-										const eq = FilterableEquipDB.find(y => y.fullKey === k);
-										if (eq) return eq;
-									} else {
-										const cs = ConsumableDB.find(y => y.key === x.id);
-										if (cs) return cs;
-									}
-									return null;
-								})
-								.filter(x => x)
-								.forEach(x => ret.push(x as (FilterableEquip | Consumable)));
-						}
-					});
-				});
-				// (); .sort((a, b) => b.rarity - a.rarity);
-				return ret.sort((a, b) => {
-					if (("rarity" in a) && !("rarity" in b))
-						return -1;
-					else if (!("rarity" in a) && ("rarity" in b))
-						return 1;
-					else if (("rarity" in a) && ("rarity" in b))
-						return b.rarity - a.rarity;
-					return 0;
-				});
-			})();
-			const RewardDrops = ((): RewardDropType[] => {
-				if (!selectedValue) return [];
-
-				const f = (x: RawReward): RewardDropType | null => {
-					if (typeof x === "string") {
-						const k = x.replace(/Char_(.+)_N/, "$1");
-						const u = FilterableUnitDB.find(y => y.uid === k);
-						if (u) return { unit: u };
-						return null;
-					}
-
-					if (("cash" in x) || ("metal" in x) || ("nutrient" in x) || ("power" in x))
-						return x;
-
-					if ("count" in x) {
-						const i = x.item;
-						if (i.startsWith("Equip_")) {
-							const k = i.substr(6);
-							const eq = FilterableEquipDB.find(y => y.fullKey === k);
-							if (eq) return { equip: eq, count: x.count };
-						} else {
-							const cs = ConsumableDB.find(y => y.key === i);
-							if (cs) return { consumable: cs, count: x.count };
-						}
-						return null;
-					}
-
-					return null;
+				return {
+					enemy,
+					...x,
 				};
+			});
+	})();
 
-				return [
-					...selectedValue.reward_f.map(x => f(x)),
-					...selectedValue.reward_am
-						.map(x => f(x))
-						.filter(x => x)
-						.map(x => ({ ...x, am: true })),
-				].filter(x => x) as RewardDropType[];
-			})();
+	const UnitDrops = ((): Array<FilterableUnit | ModuleUnit> => {
+		if (!selectedValue) return [];
 
-			const MapHardcoded = ((): boolean => {
-				if (!(props.wid in MapsDB)) return false;
-				if (!(props.mid in MapsDB[props.wid])) return false;
-				return MapsDB[props.wid][props.mid];
-			})();
-			const NodeList = ((): MapNodeEntity[] => {
-				const ret: MapNodeEntity[] = [];
+		const rarityTable = ["D", "C", "B", "A", "S", "SS"];
+		const ids: string[] = [];
+		const ret: Array<FilterableUnit | ModuleUnit> = [];
+		Waves.forEach(_ => {
+			_.forEach(__ => {
+				if (__.e) {
+					__.e.drops
+						.filter(x => x.id.startsWith("Char_"))
+						.map(x => {
+							if (ids.includes(x.id)) return null;
+							ids.push(x.id);
 
-				const area = MapDB[props.mid];
-				if (!area) return ret;
-
-				if (props.wid === "Sub")
-					ret.push(...area.list.filter(n => n.text in SubStoryUnit));
-				else
-					ret.push(...area.list);
-
-				return ret;
-			})();
-
-			const [CurrentWaveExp, CurrentSkillExp, PlayerExp] = (
-				selectedValue &&
-				selectedValue.type !== STAGE_SUB_TYPE.STORY &&
-				Waves[selectedWave.value] &&
-				Waves[selectedWave.value][selectedWaveIndex.value].e
-			)
-				? (() => {
-					const wave = Waves[selectedWave.value][selectedWaveIndex.value].e;
-					return [FormatNumber(wave.exp), FormatNumber(wave.sexp), selectedValue.playerExp];
-				})()
-				: [0, 0, 0];
-
-			const [TotalExp, TotalSkillExp] = selectedValue
-				? (() => {
-					return [
-						FormatNumber(Waves.reduce((p, c) => (p + c.reduce((p1, c1) => Math.max(p1, (c1.e && c1.e.exp) || 0), 0) || 0), 0)),
-						FormatNumber(Waves.reduce((p, c) => (p + c.reduce((p1, c1) => Math.max(p1, (c1.e && c1.e.sexp) || 0), 0) || 0), 0)),
-					];
-				})()
-				: [0, 0];
-
-			const SearchInfo = selectedValue
-				? selectedValue.search || false
-				: null;
-
-			function SubstoryName (text: string): preact.VNode {
-				const unit = FilterableUnitDB.find(x => x.uid === SubStoryUnit[text]);
-				if (!unit) return <>???</>;
-				return <Locale plain k={ `UNIT_${unit.uid}` } />;
-			}
-
-			if (props.node) {
-				const found = NodeList.find(y => y.text === props.node);
-				if (found)
-					selected.set(found);
-			}
-
-			function NodeChange (node: MapNodeEntity): void {
-				if (node.type === STAGE_SUB_TYPE.STORY)
-					CurrentTab.set("reward");
-				selectedWave.set(0);
-				route(`/worlds/${props.wid}/${props.mid}/${node ? node.text : ""}`);
-			}
-
-			function OpenEnemyInfo (enemy: FilterableEnemy, level: number): void {
-				selectedEnemy.set(enemy);
-				selectedEnemyLevel.set(level);
-				enemyModalDisplay.set(true);
-			}
-
-			return <div class="worlds-map text-start">
-				<div class="row">
-					<div class="col-auto">
-						<button class="btn btn-dark" onClick={ (): void => {
-							if (props.wid === "Sub")
-								route("/worlds/");
-							else
-								route(`/worlds/${props.wid}`);
-						} }>
-							<IconArrowLeft class="me-1" />
-							{ props.wid === "Sub"
-								? <Locale k="WORLDS_BACK_TO_WORLDS" />
-								: <Locale k="WORLDS_BACK_TO_AREAS" />
+							const k = x.id.replace(/Char_(.+)_N/, "$1");
+							if (k.startsWith("Module")) {
+								const rk = x.id.replace(/^Char_Module_.+_([BAS]+)_N$/, "$1");
+								const r = rarityTable.indexOf(rk);
+								return {
+									type: "module",
+									uid: x.id.replace(/^Char_(.+)_N$/, "$1"),
+									rarity: r as ACTOR_GRADE,
+								};
 							}
+							return FilterableUnitDB.find(y => y.uid === k);
+						})
+						.filter(x => x)
+						.forEach(x => ret.push(x as (FilterableUnit | ModuleUnit)));
+				}
+			});
+		});
+		return ret.sort((a, b) => b.rarity - a.rarity);
+	})();
+	const ItemDrops = ((): Array<FilterableEquip | Consumable> => {
+		if (!selectedValue) return [];
+
+		const ids: string[] = [];
+		const ret: Array<FilterableEquip | Consumable> = [];
+		Waves.forEach(_ => {
+			_.forEach(__ => {
+				if (__.e) {
+					__.e.drops
+						.filter(x => !x.id.startsWith("Char_"))
+						.map(x => {
+							if (ids.includes(x.id)) return null;
+							ids.push(x.id);
+
+							if (x.id.startsWith("Equip_")) {
+								const k = x.id.substr(6);
+								const eq = FilterableEquipDB.find(y => y.fullKey === k);
+								if (eq) return eq;
+							} else {
+								const cs = ConsumableDB.find(y => y.key === x.id);
+								if (cs) return cs;
+							}
+							return null;
+						})
+						.filter(x => x)
+						.forEach(x => ret.push(x as (FilterableEquip | Consumable)));
+				}
+			});
+		});
+		// (); .sort((a, b) => b.rarity - a.rarity);
+		return ret.sort((a, b) => {
+			if (("rarity" in a) && !("rarity" in b))
+				return -1;
+			else if (!("rarity" in a) && ("rarity" in b))
+				return 1;
+			else if (("rarity" in a) && ("rarity" in b))
+				return b.rarity - a.rarity;
+			return 0;
+		});
+	})();
+	const RewardDrops = ((): RewardDropType[] => {
+		if (!selectedValue) return [];
+
+		const f = (x: RawReward): RewardDropType | null => {
+			if (typeof x === "string") {
+				const k = x.replace(/Char_(.+)_N/, "$1");
+				const u = FilterableUnitDB.find(y => y.uid === k);
+				if (u) return { unit: u };
+				return null;
+			}
+
+			if (("cash" in x) || ("metal" in x) || ("nutrient" in x) || ("power" in x))
+				return x;
+
+			if ("count" in x) {
+				const i = x.item;
+				if (i.startsWith("Equip_")) {
+					const k = i.substr(6);
+					const eq = FilterableEquipDB.find(y => y.fullKey === k);
+					if (eq) return { equip: eq, count: x.count };
+				} else {
+					const cs = ConsumableDB.find(y => y.key === i);
+					if (cs) return { consumable: cs, count: x.count };
+				}
+				return null;
+			}
+
+			return null;
+		};
+
+		return [
+			...selectedValue.reward_f.map(x => f(x)),
+			...selectedValue.reward_am
+				.map(x => f(x))
+				.filter(x => x)
+				.map(x => ({ ...x, am: true })),
+		].filter(x => x) as RewardDropType[];
+	})();
+
+	const MapHardcoded = ((): boolean => {
+		if (!(props.wid in MapsDB)) return false;
+		if (!(props.mid in MapsDB[props.wid])) return false;
+		return MapsDB[props.wid][props.mid];
+	})();
+	const NodeList = ((): MapNodeEntity[] => {
+		const ret: MapNodeEntity[] = [];
+
+		const area = MapDB[props.mid];
+		if (!area) return ret;
+
+		if (props.wid === "Sub")
+			ret.push(...area.list.filter(n => n.text in SubStoryUnit));
+		else
+			ret.push(...area.list);
+
+		return ret;
+	})();
+
+	const [CurrentWaveExp, CurrentSkillExp, PlayerExp] = (
+		selectedValue &&
+		selectedValue.type !== STAGE_SUB_TYPE.STORY &&
+		Waves[selectedWave.value] &&
+		Waves[selectedWave.value][selectedWaveIndex.value].e
+	)
+		? (() => {
+			const wave = Waves[selectedWave.value][selectedWaveIndex.value].e;
+			return [FormatNumber(wave.exp), FormatNumber(wave.sexp), selectedValue.playerExp];
+		})()
+		: [0, 0, 0];
+
+	const [TotalExp, TotalSkillExp] = selectedValue
+		? (() => {
+			return [
+				FormatNumber(Waves.reduce((p, c) => (p + c.reduce((p1, c1) => Math.max(p1, (c1.e && c1.e.exp) || 0), 0) || 0), 0)),
+				FormatNumber(Waves.reduce((p, c) => (p + c.reduce((p1, c1) => Math.max(p1, (c1.e && c1.e.sexp) || 0), 0) || 0), 0)),
+			];
+		})()
+		: [0, 0];
+
+	const SearchInfo = selectedValue
+		? selectedValue.search || false
+		: null;
+
+	function SubstoryName (text: string): preact.VNode {
+		const unit = FilterableUnitDB.find(x => x.uid === SubStoryUnit[text]);
+		if (!unit) return <>???</>;
+		return <Locale plain k={ `UNIT_${unit.uid}` } />;
+	}
+
+	if (props.node) {
+		const found = NodeList.find(y => y.text === props.node);
+		if (found)
+			selected.set(found);
+	}
+
+	function NodeChange (node: MapNodeEntity): void {
+		if (node.type === STAGE_SUB_TYPE.STORY)
+			CurrentTab.set("reward");
+		selectedWave.set(0);
+		route(`/worlds/${props.wid}/${props.mid}/${node ? node.text : ""}`);
+	}
+
+	function OpenEnemyInfo (enemy: FilterableEnemy, level: number): void {
+		selectedEnemy.set(enemy);
+		selectedEnemyLevel.set(level);
+		enemyModalDisplay.set(true);
+	}
+
+	const storyMeta = selectedValue && (selectedValue.key in storyMetaTableRef.current)
+		? storyMetaTableRef.current[selectedValue.key]
+		: undefined;
+
+	return <div class="worlds-map text-start">
+		<div class="row">
+			<div class="col-auto">
+				<button class="btn btn-dark" onClick={ (): void => {
+					if (props.wid === "Sub")
+						route("/worlds/");
+					else
+						route(`/worlds/${props.wid}`);
+				} }>
+					<IconArrowLeft class="me-1" />
+					{ props.wid === "Sub"
+						? <Locale k="WORLDS_BACK_TO_WORLDS" />
+						: <Locale k="WORLDS_BACK_TO_AREAS" />
+					}
+				</button>
+			</div>
+			<div class="col text-end">
+				{ currentMode === "map"
+					? props.mid in MapDB && MapDB[props.mid].substory.length > 0
+						? <button
+							class="btn btn-dark"
+							onClick={ e => {
+								e.preventDefault();
+								setCurrentMode("substory");
+								route(`/worlds/${props.wid}/${props.mid}/substory`, true);
+							} }
+						>
+							<IconChatSquareTextFill class="me-1" />
+							<Locale k="WORLDS_SUBSTORY" />
 						</button>
-					</div>
-					<div class="col text-end">
-						{ CurrentMode.value === "map"
-							? props.mid in MapDB && MapDB[props.mid].substory.length > 0
-								? <button class="btn btn-dark" onClick={ (): void => CurrentMode.set("substory") }>
-									<IconChatSquareTextFill class="me-1" />
-									<Locale k="WORLDS_SUBSTORY" />
-								</button>
-								: <></>
-							: <button class="btn btn-dark" onClick={ (): void => CurrentMode.set("map") }>
-								<IconCompass class="me-1" />
-								<Locale k="WORLDS_WORLD_MAP" />
-							</button>
+						: <></>
+					: <button
+						class="btn btn-dark"
+						onClick={ e => {
+							e.preventDefault();
+							setCurrentMode("map");
+							route(`/worlds/${props.wid}/${props.mid}`, true);
+						} }
+					>
+						<IconCompass class="me-1" />
+						<Locale k="WORLDS_WORLD_MAP" />
+					</button>
+				}
+			</div>
+		</div>
+		<hr />
+
+		{ currentMode === "map"
+			? <>
+				<div class="card bg-dark text-light">
+					<div class="card-header">
+						{ props.wid === "Sub"
+							? <h5 class="m-0 d-inline-block font-ibm">{ WorldName }</h5>
+							: props.wid === "Daily"
+								? <>
+									{ WorldName }
+									<h5 class="m-0 d-inline-block font-ibm">
+										<span class="badge bg-warning text-dark ms-2">{ AreaName }</span>
+									</h5>
+								</>
+								: <>
+									{ WorldName }
+									<h5 class="m-0 d-inline-block font-ibm">
+										<span class="badge bg-warning text-dark ms-2">
+											<Locale k="WORLDS_WORLD_TITLE" p={ [props.mid] } /> :: { AreaName }
+										</span>
+									</h5>
+								</>
 						}
 					</div>
-				</div>
-				<hr />
-
-				{ CurrentMode.value === "map"
-					? <>
-						<div class="card bg-dark text-light">
-							<div class="card-header">
-								{ props.wid === "Sub"
-									? <h5 class="m-0 d-inline-block font-ibm">{ WorldName }</h5>
-									: props.wid === "Daily"
-										? <>
-											{ WorldName }
-											<h5 class="m-0 d-inline-block font-ibm">
-												<span class="badge bg-warning text-dark ms-2">{ AreaName }</span>
-											</h5>
-										</>
-										: <>
-											{ WorldName }
-											<h5 class="m-0 d-inline-block font-ibm">
-												<span class="badge bg-warning text-dark ms-2">
-													<Locale k="WORLDS_WORLD_TITLE" p={ [props.mid] } /> :: { AreaName }
-												</span>
-											</h5>
-										</>
-								}
-							</div>
-							<div class="worlds-map-bg" data-new={ NewMapList.includes(props.wid) ? "1" : "0" }>
-								<div>
-									{ props.wid === "Sub"
+					<div
+						class="worlds-map-bg"
+						data-new={ NewMapList.includes(props.wid) ? "1" : "0" }
+						ref={ mapBGRef }
+					>
+						<div>
+							{ props.wid === "Sub"
+								? NodeList.map(x => <Link
+									href={ `/worlds/${props.wid}/${props.mid}/${x.text}` }
+									onClick={ (): void => {
+										selected.set(x);
+										NodeChange(x);
+									} }
+								>
+									<button class={ `btn btn-${selectedValue === x ? "warning" : "light"} m-2` }>
+										<span class={ `badge ${selectedValue === x ? "bg-dark text-light" : "bg-warning text-dark"} me-1` }>
+											{ SubstoryName(x.text) }
+										</span>
+										<Locale k={ `WORLD_MAP_Sub_${x.text}` } />
+									</button>
+								</Link>)
+								: props.wid === "Daily"
+									? NodeList.map(x => <Link
+										href={ `/worlds/${props.wid}/${props.mid}/${x.text}` }
+										onClick={ (): void => {
+											selected.set(x);
+											NodeChange(x);
+										} }
+									>
+										<button class={ `btn btn-${selectedValue === x ? "stat-hp" : "light"} m-2` }>
+											<Locale k={ `WORLD_MAP_Daily_${x.text}` } />
+										</button>
+									</Link>)
+									: props.wid === "Cha"
 										? NodeList.map(x => <Link
 											href={ `/worlds/${props.wid}/${props.mid}/${x.text}` }
 											onClick={ (): void => {
@@ -396,462 +501,348 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 											} }
 										>
 											<button class={ `btn btn-${selectedValue === x ? "warning" : "light"} m-2` }>
-												<span class={ `badge ${selectedValue === x ? "bg-dark text-light" : "bg-warning text-dark"} me-1` }>
-													{ SubstoryName(x.text) }
-												</span>
-												<Locale k={ `WORLD_MAP_Sub_${x.text}` } />
+												<Locale k={ `WORLD_MAP_Cha_${x.text}` } />
+												{/* { x.name.replace(/.+\(([^)]+)\)$/, "$1") } */ }
 											</button>
 										</Link>)
-										: props.wid === "Daily"
-											? NodeList.map(x => <Link
-												href={ `/worlds/${props.wid}/${props.mid}/${x.text}` }
-												onClick={ (): void => {
-													selected.set(x);
-													NodeChange(x);
-												} }
-											>
-												<button class={ `btn btn-${selectedValue === x ? "stat-hp" : "light"} m-2` }>
-													<Locale k={ `WORLD_MAP_Daily_${x.text}` } />
-												</button>
-											</Link>)
-											: props.wid === "Cha"
-												? NodeList.map(x => <Link
-													href={ `/worlds/${props.wid}/${props.mid}/${x.text}` }
-													onClick={ (): void => {
-														selected.set(x);
-														NodeChange(x);
-													} }
-												>
-													<button class={ `btn btn-${selectedValue === x ? "warning" : "light"} m-2` }>
-														<Locale k={ `WORLD_MAP_Cha_${x.text}` } />
-														{/* { x.name.replace(/.+\(([^)]+)\)$/, "$1") } */ }
-													</button>
-												</Link>)
-												: <MapGrid
-													nodes={ NodeList }
-													wid={ props.wid }
-													mid={ props.mid }
-													hardcoded={ MapHardcoded }
-													onSelect={ (node: MapNodeEntity): void => {
-														selected.set(node);
-														NodeChange(node);
-													} }
-													selected={ selected.value }
-												/>
-									}
-								</div>
-							</div>
+										: <MapGrid
+											nodes={ NodeList }
+											wid={ props.wid }
+											mid={ props.mid }
+											hardcoded={ MapHardcoded }
+											onSelect={ (node: MapNodeEntity, el: HTMLAnchorElement, x: number): void => {
+												if (selected.value?.key !== node.key) {
+													selected.set(node);
+													NodeChange(node);
+												}
+
+												if (mapBGRef.current) {
+													const c = mapBGRef.current;
+													const w = c.clientWidth - 20; // 1em padding
+													const ew = 96;
+
+													console.log(c.scrollLeft, w, x, ew);
+													if (
+														(x + ew > c.scrollLeft + w) ||
+														(x < c.scrollLeft)
+													)
+														c.scrollTo({
+															left: x - w / 2,
+															behavior: "smooth",
+														});
+												}
+											} }
+											selected={ selected.value }
+										/>
+							}
 						</div>
+					</div>
+				</div>
 
-						{ selectedValue
-							? <div class="card mt-3 bg-dark text-light">
-								<div class="card-body">
-									{ props.wid in MapPosition &&
-										props.mid in MapPosition[props.wid] &&
-										selectedValue.text in MapPosition[props.wid][props.mid] &&
-										MapPosition[props.wid][props.mid][selectedValue.text][4]
-										? <div class="float-end">
-											<img
-												class={ style.BadgeImage }
-												src={ `${AssetsRoot}/world/badge/${MapPosition[props.wid][props.mid][selectedValue.text][4]}.png` }
-											/>
-										</div>
-										: <></>
+				{ selectedValue
+					? <div class="card mt-3 bg-dark text-light">
+						<div class="card-body">
+							{ props.wid in MapPosition &&
+								props.mid in MapPosition[props.wid] &&
+								selectedValue.text in MapPosition[props.wid][props.mid] &&
+								MapPosition[props.wid][props.mid][selectedValue.text][4]
+								? <div class="float-end ms-3">
+									<img
+										class={ style.BadgeImage }
+										src={ `${AssetsRoot}/world/badge/${MapPosition[props.wid][props.mid][selectedValue.text][4]}.png` }
+									/>
+								</div>
+								: <></>
+							}
+
+							<h5>
+								{ props.wid === "Sub"
+									? <div class="float-start me-3">
+										<UnitFace uid={ SubStoryUnit[selectedValue.text] } size="56" />
+									</div>
+									: <></>
+								}
+
+								<span class="badge bg-warning text-dark me-2 selected-node-badge">
+									{ props.wid === "Sub"
+										? SubstoryName(selectedValue.text)
+										: <span class="font-exo2">
+											{ selectedValue.text }
+											{ selectedValue.type === STAGE_SUB_TYPE.STORY && <>
+												<IconCaretRightFill class="mx-1" />
+												Story
+											</> }
+										</span>
 									}
+								</span>
 
-									<h5>
-										{ props.wid === "Sub"
-											? <div class="float-start me-3">
-												<UnitFace uid={ SubStoryUnit[selectedValue.text] } size="56" />
+								<span class="font-ibm">
+									<Locale plain k={ `WORLD_MAP_${props.wid}_${selectedValue.text}` } />
+								</span>
+
+								{ selectedValue
+									? storyMeta === undefined
+										? <div class="float-end">
+											<IconThreeDots class="mx-4" />
+										</div>
+										: storyMeta !== false
+											? <div class="float-end">
+												{ (storyMeta.spec & StorySpec.OP) !== 0
+													? <button
+														type="button"
+														class="me-1 btn btn-sm btn-stat-hp"
+														onClick={ e => {
+															e.preventDefault();
+															route(`/story/${selectedValue.key}/OP`);
+														} }
+													>
+														<IconBook class="me-1" />
+														OP
+													</button>
+													: <></>
+												}
+												{ (storyMeta.spec & StorySpec.MID) !== 0
+													? Object.keys(storyMeta.index)
+														.filter(k => k.startsWith("mid-"))
+														.map(k => <button
+															type="button"
+															class="me-1 btn btn-sm btn-stat-hp"
+															onClick={ e => {
+																e.preventDefault();
+																route(`/story/${selectedValue.key}/${k}`);
+															} }
+														>
+															<IconBook class="me-1" />
+															{ Object.keys(storyMeta.index).filter(k => k.startsWith("mid-")).length === 1
+																? <>MID</>
+																: <>MID { k.substring(4) }</>
+															}
+														</button>)
+													: <></>
+												}
+												{ (storyMeta.spec & StorySpec.ED) !== 0
+													? <button
+														type="button"
+														class="me-1 btn btn-sm btn-stat-hp"
+														onClick={ e => {
+															e.preventDefault();
+															route(`/story/${selectedValue.key}/ED`);
+														} }
+													>
+														<IconBook class="me-1" />
+														{ selectedValue.type === STAGE_SUB_TYPE.STORY
+															? <>Story</>
+															: <>ED</>
+														}
+													</button>
+													: <></>
+												}
 											</div>
 											: <></>
-										}
-
-										<span class="badge bg-warning text-dark me-2 selected-node-badge">
-											{ props.wid === "Sub"
-												? SubstoryName(selectedValue.text)
-												: <span class="font-exo2">
-													{ selectedValue.text }
-													{ selectedValue.type === STAGE_SUB_TYPE.STORY && <>
-														<IconCaretRightFill class="mx-1" />
-														Story
-													</> }
-												</span>
-											}
-										</span>
-
-										<span class="font-ibm">
-											<Locale plain k={ `WORLD_MAP_${props.wid}_${selectedValue.text}` } />
-										</span>
-									</h5>
-									<div><Locale plain k={ `WORLD_MAP_DESC_${props.wid}_${selectedValue.text}` } /></div>
-								</div>
+									: <></>
+								}
+							</h5>
+							<div>
+								<Locale plain k={ `WORLD_MAP_DESC_${props.wid}_${selectedValue.text}` } />
 							</div>
-							: <></>
-						}
+						</div>
+					</div>
+					: <></>
+				}
 
-						<EnemyPopup
-							asSub
-							enemy={ selectedEnemy.value }
-							level={ selectedEnemyLevel.value }
-							display={ enemyModalDisplay.value }
-							onHidden={ (): void => enemyModalDisplay.set(false) }
-						/>
-						<EquipPopup
-							asSub
-							equip={ selectedEquip.value }
-							display={ equipModalDisplay.value }
-							onHidden={ (): void => equipModalDisplay.set(false) }
-						/>
+				<EnemyPopup
+					asSub
+					enemy={ selectedEnemy.value }
+					level={ selectedEnemyLevel.value }
+					display={ enemyModalDisplay.value }
+					onHidden={ (): void => enemyModalDisplay.set(false) }
+				/>
+				<EquipPopup
+					asSub
+					equip={ selectedEquip.value }
+					display={ equipModalDisplay.value }
+					onHidden={ (): void => equipModalDisplay.set(false) }
+				/>
 
-						<div class="card mt-2">
-							<div class="card-header">
-								<ul class="nav nav-tabs card-header-tabs">
+				<div class="card mt-2">
+					<div class="card-header">
+						<ul class="nav nav-tabs card-header-tabs">
+							<li class="nav-item">
+								<a
+									href="#"
+									class={ `nav-link ${isActive(CurrentTab.value === "reward")} text-dark` }
+									onClick={ (e: Event): void => {
+										e.preventDefault();
+										CurrentTab.set("reward");
+									} }
+								>
+									<IconAwardFill class="me-1" />
+									<Locale k="WORLD_VIEW_CLEAR_REWARDS" />
+								</a>
+							</li>
+							{ selectedValue && selectedValue.type !== STAGE_SUB_TYPE.STORY
+								? <>
 									<li class="nav-item">
 										<a
 											href="#"
-											class={ `nav-link ${isActive(CurrentTab.value === "reward")} text-dark` }
+											class={ `nav-link ${isActive(CurrentTab.value === "drop")} text-dark` }
 											onClick={ (e: Event): void => {
 												e.preventDefault();
-												CurrentTab.set("reward");
+												CurrentTab.set("drop");
 											} }
 										>
-											<IconAwardFill class="me-1" />
-											<Locale k="WORLD_VIEW_CLEAR_REWARDS" />
+											<IconGiftFill class="me-1" />
+											<Locale k="WORLD_VIEW_DROPS" />
 										</a>
 									</li>
-									{ selectedValue && selectedValue.type !== STAGE_SUB_TYPE.STORY
+									<li class="nav-item">
+										<a
+											href="#"
+											class={ `nav-link ${isActive(CurrentTab.value === "squad")} text-dark` }
+											onClick={ (e: Event): void => {
+												e.preventDefault();
+												CurrentTab.set("squad");
+											} }
+										>
+											<IconPersonBoundingBox class="me-1" />
+											<Locale k="WORLD_VIEW_SQUAD" />
+										</a>
+									</li>
+									{ Waves[selectedWave.value]
 										? <>
 											<li class="nav-item">
 												<a
 													href="#"
-													class={ `nav-link ${isActive(CurrentTab.value === "drop")} text-dark` }
+													class={ `nav-link ${isActive(CurrentTab.value === "enemy")} text-dark` }
 													onClick={ (e: Event): void => {
 														e.preventDefault();
-														CurrentTab.set("drop");
+														CurrentTab.set("enemy");
 													} }
 												>
-													<IconGiftFill class="me-1" />
-													<Locale k="WORLD_VIEW_DROPS" />
-												</a>
-											</li>
-											{ Waves[selectedWave.value]
-												? <li class="nav-item">
-													<a
-														href="#"
-														class={ `nav-link ${isActive(CurrentTab.value === "enemy")} text-dark` }
-														onClick={ (e: Event): void => {
-															e.preventDefault();
-															CurrentTab.set("enemy");
-														} }
-													>
-														<IconBugFill class="me-1" />
-														<Locale k="WORLD_VIEW_ENEMY" />
-													</a>
-												</li>
-												: <></>
-											}
-											<li class="nav-item">
-												<a
-													href="#"
-													class={ `nav-link ${isActive(CurrentTab.value === "search")} text-dark` }
-													onClick={ (e: Event): void => {
-														e.preventDefault();
-														CurrentTab.set("search");
-													} }
-												>
-													<IconSearch class="me-1" />
-													<Locale k="WORLD_VIEW_EXPLORATION" />
+													<IconBugFill class="me-1" />
+													<Locale k="WORLD_VIEW_ENEMY" />
 												</a>
 											</li>
 										</>
 										: <></>
 									}
-								</ul>
-							</div>
-
-							{ CurrentTab.value === "reward"
-								? <div id="world-map-reward" class="card-body">
-									{ !selectedValue
-										? <div class="text-center py-4 text-secondary">
-											<Locale k="WORLD_VIEW_SELECT_NODE" />
-										</div>
-										: <div class="row">
-											{ selectedValue && selectedValue.type !== STAGE_SUB_TYPE.STORY
-												? <>
-													<div class="col-12 col-md-6">
-														<div class="card text-dark">
-															<div class="card-header">
-																<Locale k="WORLD_VIEW_CLEAR_REWARDS" />
-															</div>
-															<div class="card-body">
-																<div
-																	class={ `row row-cols-1 row-cols-lg-${RewardDrops.filter(x => !x.am).length === 0 ? 1 : 2} px-2` }
-																>
-																	{ RewardDrops.filter(x => !x.am).length === 0
-																		? <div class="text-center py-4 text-secondary">
-																			<Locale k="WORLD_VIEW_CLEAR_REWARDS_NONE" />
-																		</div>
-																		: RewardDrops.filter(x => !x.am)
-																			.map((reward, i) => {
-																				if ("cash" in reward)
-																					return <DropRes res="cash" count={ reward.cash } />;
-																				if ("metal" in reward)
-																					return <DropRes res="metal" count={ reward.metal } />;
-																				if ("nutrient" in reward)
-																					return <DropRes res="nutrient" count={ reward.nutrient } />;
-																				if ("power" in reward)
-																					return <DropRes res="power" count={ reward.power } />;
-																				if ("unit" in reward) {
-																					return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
-																						<DropUnit id={ reward.unit.uid } />
-																					</Link>;
-																				}
-																				if ("equip" in reward) {
-																					return <Link class="drop-equip"
-																						href={ `/equips/${reward.equip.fullKey}` }
-																						onClick={ (e: Event): void => {
-																							e.preventDefault();
-																							e.stopPropagation();
-																							selectedEquip.set(reward.equip);
-																							equipModalDisplay.set(true);
-																						} }
-																					>
-																						<DropEquip equip={ reward.equip } count={ reward.count } />
-																					</Link>;
-																				}
-																				return <DropItem item={ reward.consumable } count={ reward.count } />;
-																			})
-																			.map(el => <div class="p-0">{ el }</div>)
-																	}
-																</div>
-															</div>
-														</div>
-														<div class="card text-dark mt-2">
-															<div class="card-header">
-																<Locale k="WORLD_VIEW_4STAR_REWARDS" />
-															</div>
-															<div class="card-body">
-																<div
-																	class={ `row row-cols-1 row-cols-lg-${RewardDrops.filter(x => x.am).length === 0 ? 1 : 2} px-2` }
-																>
-																	{ RewardDrops.filter(x => x.am).length === 0
-																		? <div class="text-center py-4 text-secondary">
-																			<Locale k="WORLD_VIEW_4START_REWARDS_NONE" />
-																		</div>
-																		: RewardDrops.filter(x => x.am)
-																			.map((reward, i) => {
-																				if ("cash" in reward)
-																					return <DropRes res="cash" count={ reward.cash } am />;
-																				if ("metal" in reward)
-																					return <DropRes res="metal" count={ reward.metal } am />;
-																				if ("nutrient" in reward)
-																					return <DropRes res="nutrient" count={ reward.nutrient } am />;
-																				if ("power" in reward)
-																					return <DropRes res="power" count={ reward.power } am />;
-																				if ("unit" in reward) {
-																					return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
-																						<DropUnit id={ reward.unit.uid } />
-																					</Link>;
-																				}
-																				if ("equip" in reward) {
-																					return <Link class="drop-equip"
-																						href={ `/equips/${reward.equip.fullKey}` }
-																						onClick={ (e: Event): void => {
-																							e.preventDefault();
-																							e.stopPropagation();
-																							selectedEquip.set(reward.equip);
-																							equipModalDisplay.set(true);
-																						} }
-																					>
-																						<DropEquip equip={ reward.equip } count={ reward.count } />
-																					</Link>;
-																				}
-																				return <DropItem item={ reward.consumable } count={ reward.count } />;
-																			})
-																			.map(el => <div class="p-0">{ el }</div>)
-																	}
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-12 col-md-6 mt-md-0 mt-4">
-														<div class="card text-dark">
-															<div class="card-header">
-																<Locale k="WORLD_VIEW_UNLOCK_CONDITION" />
-															</div>
-															<div class="card-body">
-																<ul class="list-group">
-																	{ selectedValue.prevIds.map(r => <li class="list-group-item">
-																		<Locale
-																			k="WORLD_VIEW_UNLOCK_CONDITION_ITEM"
-																			p={ [<>
-																				{ r.wid === "Story"
-																					? <Locale k={ `WORLD_${r.wid}` } fallback={ r.wid } />
-																					: <Locale k={ `WORLD_WORLD_${r.wid}_${r.cid}` } fallback={ r.cid } />
-																				}
-																				<span class="badge bg-warning text-dark ms-1 font-exo2">
-																					{ r.text }
-																				</span>
-																			</>] }
-																		/>
-																	</li>) }
-																</ul>
-															</div>
-														</div>
-														<div class="card text-dark mt-2">
-															<div class="card-header">
-																<Locale k="WORLD_VIEW_CLEAR_CONDITION" />
-															</div>
-															<div class="card-body">
-																<ul class="list-group">
-																	{ selectedValue.missions.map(m => <li class="list-group-item">
-																		{/* ★ <Locale k={ m } components={ { ref: UnitReference } } /> */ }
-																		<div>
-																			<IconStarFill class="me-2" />
-																			<MissionText mission={ m } />
-																		</div>
-																		<small class="text-secondary ps-4">
-																			<Locale plain k={ m } />
-																		</small>
-																	</li>) }
-																</ul>
-															</div>
-														</div>
-													</div>
-												</>
-												: <>
-													<div class="col-12 col-md-6">
-														<div class="card text-dark">
-															<div class="card-header">
-																<Locale k="WORLD_VIEW_CLEAR_REWARDS" />
-															</div>
-															<div class="card-body">
-																<div
-																	class={ `row row-cols-1 row-cols-lg-${RewardDrops.filter(x => !x.am).length === 0 ? 1 : 2} px-2` }
-																>
-																	{ RewardDrops.filter(x => !x.am).length === 0
-																		? <div class="text-center py-4 text-secondary">
-																			<Locale k="WORLD_VIEW_CLEAR_REWARDS_NONE" />
-																		</div>
-																		: RewardDrops.filter(x => !x.am)
-																			.map((reward, i) => {
-																				if ("cash" in reward)
-																					return <DropRes res="cash" count={ reward.cash } />;
-																				if ("metal" in reward)
-																					return <DropRes res="metal" count={ reward.metal } />;
-																				if ("nutrient" in reward)
-																					return <DropRes res="nutrient" count={ reward.nutrient } />;
-																				if ("power" in reward)
-																					return <DropRes res="power" count={ reward.power } />;
-																				if ("unit" in reward) {
-																					return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
-																						<DropUnit id={ reward.unit.uid } />
-																					</Link>;
-																				}
-																				if ("equip" in reward) {
-																					return <Link class="drop-equip"
-																						href={ `/equips/${reward.equip.fullKey}` }
-																						onClick={ (e: Event): void => {
-																							e.preventDefault();
-																							e.stopPropagation();
-																							selectedEquip.set(reward.equip);
-																							equipModalDisplay.set(true);
-																						} }
-																					>
-																						<DropEquip equip={ reward.equip } count={ reward.count } />
-																					</Link>;
-																				}
-																				return <DropItem item={ reward.consumable } count={ reward.count } />;
-																			})
-																			.map(el => <div class="p-0">{ el }</div>)
-																	}
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="col-12 col-md-6">
-														<div class="card text-dark">
-															<div class="card-header">
-																<Locale k="WORLD_VIEW_4STAR_REWARDS" />
-															</div>
-															<div class="card-body">
-																<div
-																	class={ `row row-cols-1 row-cols-lg-${RewardDrops.filter(x => x.am).length === 0 ? 1 : 2} px-2` }
-																>
-																	{ RewardDrops.filter(x => x.am).length === 0
-																		? <div class="text-center py-4 text-secondary">
-																			<Locale k="WORLD_VIEW_4START_REWARDS_NONE" />
-																		</div>
-																		: RewardDrops.filter(x => x.am)
-																			.map((reward, i) => {
-																				if ("cash" in reward)
-																					return <DropRes res="cash" count={ reward.cash } am />;
-																				if ("metal" in reward)
-																					return <DropRes res="metal" count={ reward.metal } am />;
-																				if ("nutrient" in reward)
-																					return <DropRes res="nutrient" count={ reward.nutrient } am />;
-																				if ("power" in reward)
-																					return <DropRes res="power" count={ reward.power } am />;
-																				if ("unit" in reward) {
-																					return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
-																						<DropUnit id={ reward.unit.uid } />
-																					</Link>;
-																				}
-																				if ("equip" in reward) {
-																					return <Link class="drop-equip"
-																						href={ `/equips/${reward.equip.fullKey}` }
-																						onClick={ (e: Event): void => {
-																							e.preventDefault();
-																							e.stopPropagation();
-																							selectedEquip.set(reward.equip);
-																							equipModalDisplay.set(true);
-																						} }
-																					>
-																						<DropEquip equip={ reward.equip } count={ reward.count } />
-																					</Link>;
-																				}
-																				return <DropItem item={ reward.consumable } count={ reward.count } />;
-																			})
-																			.map(el => <div class="p-0">{ el }</div>)
-																	}
-																</div>
-															</div>
-														</div>
-													</div>
-												</>
-											}
-										</div>
-									}
-								</div>
+									<li class="nav-item">
+										<a
+											href="#"
+											class={ `nav-link ${isActive(CurrentTab.value === "search")} text-dark` }
+											onClick={ (e: Event): void => {
+												e.preventDefault();
+												CurrentTab.set("search");
+											} }
+										>
+											<IconSearch class="me-1" />
+											<Locale k="WORLD_VIEW_EXPLORATION" />
+										</a>
+									</li>
+								</>
 								: <></>
 							}
-							{ CurrentTab.value === "drop"
-								? <div id="world-map-drops" class="card-body">
-									{ !selectedValue
-										? <div class="text-center py-4 text-secondary">
-											<Locale k="WORLD_VIEW_SELECT_NODE" />
-										</div>
-										: <div class="row">
+						</ul>
+					</div>
+
+					{ CurrentTab.value === "reward"
+						? <div id="world-map-reward" class="card-body">
+							{ !selectedValue
+								? <div class="text-center py-4 text-secondary">
+									<Locale k="WORLD_VIEW_SELECT_NODE" />
+								</div>
+								: <div class="row">
+									{ selectedValue && selectedValue.type !== STAGE_SUB_TYPE.STORY
+										? <>
 											<div class="col-12 col-md-6">
 												<div class="card text-dark">
 													<div class="card-header">
-														<Locale k="WORLD_VIEW_DROPS_UNIT" />
+														<Locale k="WORLD_VIEW_CLEAR_REWARDS" />
 													</div>
 													<div class="card-body">
-														<div class={ `row row-cols-1 row-cols-lg-${UnitDrops.length === 0 ? 1 : 2} text-center px-2` }>
-															{ UnitDrops.length === 0
+														<div
+															class={ `row row-cols-1 row-cols-lg-${RewardDrops.filter(x => !x.am).length === 0 ? 1 : 2} px-2` }
+														>
+															{ RewardDrops.filter(x => !x.am).length === 0
 																? <div class="text-center py-4 text-secondary">
-																	<Locale k="WORLD_VIEW_NO_DROPS" />
+																	<Locale k="WORLD_VIEW_CLEAR_REWARDS_NONE" />
 																</div>
-																: UnitDrops
-																	.map(unit => {
-																		if (unit.uid.startsWith("Module_"))
-																			return <DropUnit id={ unit.uid } />;
-
-																		return <Link class="drop-unit" href={ `/units/${unit.uid}` }>
-																			<DropUnit id={ unit.uid } />
-																		</Link>;
+																: RewardDrops.filter(x => !x.am)
+																	.map((reward, i) => {
+																		if ("cash" in reward)
+																			return <DropRes res="cash" count={ reward.cash } />;
+																		if ("metal" in reward)
+																			return <DropRes res="metal" count={ reward.metal } />;
+																		if ("nutrient" in reward)
+																			return <DropRes res="nutrient" count={ reward.nutrient } />;
+																		if ("power" in reward)
+																			return <DropRes res="power" count={ reward.power } />;
+																		if ("unit" in reward) {
+																			return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
+																				<DropUnit id={ reward.unit.uid } />
+																			</Link>;
+																		}
+																		if ("equip" in reward) {
+																			return <Link class="drop-equip"
+																				href={ `/equips/${reward.equip.fullKey}` }
+																				onClick={ (e: Event): void => {
+																					e.preventDefault();
+																					e.stopPropagation();
+																					selectedEquip.set(reward.equip);
+																					equipModalDisplay.set(true);
+																				} }
+																			>
+																				<DropEquip equip={ reward.equip } count={ reward.count } />
+																			</Link>;
+																		}
+																		return <DropItem item={ reward.consumable } count={ reward.count } />;
+																	})
+																	.map(el => <div class="p-0">{ el }</div>)
+															}
+														</div>
+													</div>
+												</div>
+												<div class="card text-dark mt-2">
+													<div class="card-header">
+														<Locale k="WORLD_VIEW_4STAR_REWARDS" />
+													</div>
+													<div class="card-body">
+														<div
+															class={ `row row-cols-1 row-cols-lg-${RewardDrops.filter(x => x.am).length === 0 ? 1 : 2} px-2` }
+														>
+															{ RewardDrops.filter(x => x.am).length === 0
+																? <div class="text-center py-4 text-secondary">
+																	<Locale k="WORLD_VIEW_4START_REWARDS_NONE" />
+																</div>
+																: RewardDrops.filter(x => x.am)
+																	.map((reward, i) => {
+																		if ("cash" in reward)
+																			return <DropRes res="cash" count={ reward.cash } am />;
+																		if ("metal" in reward)
+																			return <DropRes res="metal" count={ reward.metal } am />;
+																		if ("nutrient" in reward)
+																			return <DropRes res="nutrient" count={ reward.nutrient } am />;
+																		if ("power" in reward)
+																			return <DropRes res="power" count={ reward.power } am />;
+																		if ("unit" in reward) {
+																			return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
+																				<DropUnit id={ reward.unit.uid } />
+																			</Link>;
+																		}
+																		if ("equip" in reward) {
+																			return <Link class="drop-equip"
+																				href={ `/equips/${reward.equip.fullKey}` }
+																				onClick={ (e: Event): void => {
+																					e.preventDefault();
+																					e.stopPropagation();
+																					selectedEquip.set(reward.equip);
+																					equipModalDisplay.set(true);
+																				} }
+																			>
+																				<DropEquip equip={ reward.equip } count={ reward.count } />
+																			</Link>;
+																		}
+																		return <DropItem item={ reward.consumable } count={ reward.count } />;
 																	})
 																	.map(el => <div class="p-0">{ el }</div>)
 															}
@@ -862,259 +853,508 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 											<div class="col-12 col-md-6 mt-md-0 mt-4">
 												<div class="card text-dark">
 													<div class="card-header">
-														<Locale k="WORLD_VIEW_DROPS_ITEMS" />
+														<Locale k="WORLD_VIEW_UNLOCK_CONDITION" />
 													</div>
 													<div class="card-body">
-														<div class={ `row row-cols-1 row-cols-lg-${ItemDrops.length === 0 ? 1 : 2} text-center px-2` }>
-															{ ItemDrops.length === 0
-																? <div class="text-center py-4 text-secondary">
-																	<Locale k="WORLD_VIEW_NO_DROPS" />
+														<ul class="list-group">
+															{ selectedValue.prevIds.map(r => <li class="list-group-item">
+																<Locale
+																	k="WORLD_VIEW_UNLOCK_CONDITION_ITEM"
+																	p={ [<>
+																		{ r.wid === "Story"
+																			? <Locale k={ `WORLD_${r.wid}` } fallback={ r.wid } />
+																			: <Locale k={ `WORLD_WORLD_${r.wid}_${r.cid}` } fallback={ r.cid } />
+																		}
+																		<span class="badge bg-warning text-dark ms-1 font-exo2">
+																			{ r.text }
+																		</span>
+																	</>] }
+																/>
+															</li>) }
+														</ul>
+													</div>
+												</div>
+												<div class="card text-dark mt-2">
+													<div class="card-header">
+														<Locale k="WORLD_VIEW_CLEAR_CONDITION" />
+													</div>
+													<div class="card-body">
+														<ul class="list-group">
+															{ selectedValue.missions.map(m => <li class="list-group-item">
+																{/* ★ <Locale k={ m } components={ { ref: UnitReference } } /> */ }
+																<div>
+																	<IconStarFill class="me-2" />
+																	<MissionText mission={ m } />
 																</div>
-																: ItemDrops
-																	.map((item, i) => "rarity" in item
-																		? <Link class="drop-equip"
-																			href={ `/equips/${item.fullKey}` }
-																			onClick={ (e: Event): void => {
-																				e.preventDefault();
-																				e.stopPropagation();
-																				selectedEquip.set(item);
-																				equipModalDisplay.set(true);
-																			} }
-																		>
-																			<DropEquip equip={ item } />
-																		</Link>
-																		: <DropItem item={ item } />)
+																<small class="text-secondary ps-4">
+																	<Locale plain k={ m } />
+																</small>
+															</li>) }
+														</ul>
+													</div>
+												</div>
+											</div>
+										</>
+										: <>
+											<div class="col-12 col-md-6">
+												<div class="card text-dark">
+													<div class="card-header">
+														<Locale k="WORLD_VIEW_CLEAR_REWARDS" />
+													</div>
+													<div class="card-body">
+														<div
+															class={ `row row-cols-1 row-cols-lg-${RewardDrops.filter(x => !x.am).length === 0 ? 1 : 2} px-2` }
+														>
+															{ RewardDrops.filter(x => !x.am).length === 0
+																? <div class="text-center py-4 text-secondary">
+																	<Locale k="WORLD_VIEW_CLEAR_REWARDS_NONE" />
+																</div>
+																: RewardDrops.filter(x => !x.am)
+																	.map((reward, i) => {
+																		if ("cash" in reward)
+																			return <DropRes res="cash" count={ reward.cash } />;
+																		if ("metal" in reward)
+																			return <DropRes res="metal" count={ reward.metal } />;
+																		if ("nutrient" in reward)
+																			return <DropRes res="nutrient" count={ reward.nutrient } />;
+																		if ("power" in reward)
+																			return <DropRes res="power" count={ reward.power } />;
+																		if ("unit" in reward) {
+																			return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
+																				<DropUnit id={ reward.unit.uid } />
+																			</Link>;
+																		}
+																		if ("equip" in reward) {
+																			return <Link class="drop-equip"
+																				href={ `/equips/${reward.equip.fullKey}` }
+																				onClick={ (e: Event): void => {
+																					e.preventDefault();
+																					e.stopPropagation();
+																					selectedEquip.set(reward.equip);
+																					equipModalDisplay.set(true);
+																				} }
+																			>
+																				<DropEquip equip={ reward.equip } count={ reward.count } />
+																			</Link>;
+																		}
+																		return <DropItem item={ reward.consumable } count={ reward.count } />;
+																	})
 																	.map(el => <div class="p-0">{ el }</div>)
 															}
 														</div>
 													</div>
 												</div>
 											</div>
-										</div> }
-								</div>
-								: <></>
-							}
-							{ CurrentTab.value === "enemy"
-								? <div id="world-map-enemies" class="card-body text-center">
-									{ !selectedValue
-										? <div class="py-4 text-secondary">
-											<Locale k="WORLD_VIEW_SELECT_NODE" />
-										</div>
-										: <>
-											<div class="mb-2">
-												<span class="badge bg-danger mx-1">
-													<Locale
-														k="WORLD_VIEW_ENEMY_TOTAL_EXP"
-														p={ [<span class="font-exo2">{ TotalExp }</span>] }
-													/>
-												</span>
-												<span class="badge bg-danger mx-1">
-													<Locale
-														k="WORLD_VIEW_ENEMY_TOTAL_SKILL_EXP"
-														p={ [<span class="font-exo2">{ TotalSkillExp }</span>] }
-													/>
-												</span>
-
-												<span class="badge bg-substory mx-1">
-													<Locale
-														k="WORLD_VIEW_ENEMY_PLAYER_EXP"
-														p={ [<span class="font-exo2">
-															{ PlayerExp >= 0
-																? PlayerExp
-																: <span class="text-secondary">
-																	<Locale k="WORLD_VIEW_ENEMY_PLAYER_EXP_NONE" />
-																</span>
-															}
-														</span>] }
-													/>
-												</span>
-											</div>
-											{ Waves.map((wave, waveIdx) => <Link
-												href="#"
-												class="wave-button"
-												onClick={ (e: Event): void => {
-													e.preventDefault();
-													if (selectedValue) {
-														selectedWave.set(waveIdx);
-														selectedWaveIndex.set(0);
-													}
-												} }
-											>
-												<img
-													class="current-map-marker"
-													src={ `${AssetsRoot}/map-current.png` }
-													style={ { display: waveIdx === selectedWave.value ? "" : "none" } } />
-												<TbarIcon icon="TbarIcon_MP_NightChick_RV" size={ 42 } />
-											</Link>) }
-											<div class="mt-3">
-												<div class="mb-3">
-													<div class="btn btn-group">
-														{ Waves[selectedWave.value].map((_, idx) => <button
-															class={ `btn btn-outline-dark font-exo2 ${isActive(selectedWaveIndex.value === idx)}` }
-															onClick={ (): void => selectedWaveIndex.set(idx) }
+											<div class="col-12 col-md-6">
+												<div class="card text-dark">
+													<div class="card-header">
+														<Locale k="WORLD_VIEW_4STAR_REWARDS" />
+													</div>
+													<div class="card-body">
+														<div
+															class={ `row row-cols-1 row-cols-lg-${RewardDrops.filter(x => x.am).length === 0 ? 1 : 2} px-2` }
 														>
-															#{ idx + 1 }
-															<span class="badge bg-warning text-dark ms-2">{ _.r }%</span>
-														</button>) }
+															{ RewardDrops.filter(x => x.am).length === 0
+																? <div class="text-center py-4 text-secondary">
+																	<Locale k="WORLD_VIEW_4START_REWARDS_NONE" />
+																</div>
+																: RewardDrops.filter(x => x.am)
+																	.map((reward, i) => {
+																		if ("cash" in reward)
+																			return <DropRes res="cash" count={ reward.cash } am />;
+																		if ("metal" in reward)
+																			return <DropRes res="metal" count={ reward.metal } am />;
+																		if ("nutrient" in reward)
+																			return <DropRes res="nutrient" count={ reward.nutrient } am />;
+																		if ("power" in reward)
+																			return <DropRes res="power" count={ reward.power } am />;
+																		if ("unit" in reward) {
+																			return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
+																				<DropUnit id={ reward.unit.uid } />
+																			</Link>;
+																		}
+																		if ("equip" in reward) {
+																			return <Link class="drop-equip"
+																				href={ `/equips/${reward.equip.fullKey}` }
+																				onClick={ (e: Event): void => {
+																					e.preventDefault();
+																					e.stopPropagation();
+																					selectedEquip.set(reward.equip);
+																					equipModalDisplay.set(true);
+																				} }
+																			>
+																				<DropEquip equip={ reward.equip } count={ reward.count } />
+																			</Link>;
+																		}
+																		return <DropItem item={ reward.consumable } count={ reward.count } />;
+																	})
+																	.map(el => <div class="p-0">{ el }</div>)
+															}
+														</div>
 													</div>
 												</div>
-												<div class="mb-2">
-													<span class="badge bg-warning text-dark mx-1">
-														<Locale
-															k="WORLD_VIEW_ENEMY_WAVE_EXP"
-															p={ [<span class="font-exo2">{ CurrentWaveExp }</span>] }
-														/>
-													</span>
-													<span class="badge bg-warning text-dark mx-1">
-														<Locale
-															k="WORLD_VIEW_ENEMY_WAVE_SKILL_EXP"
-															p={ [<span class="font-exo2">{ CurrentSkillExp }</span>] }
-														/>
-													</span>
-												</div>
-
-												<span
-													class="m-3 p-1"
-													style={ {
-														fontSize: "3em",
-														opacity: selectedWave.value === 0 ? 0.4 : 1,
-														cursor: selectedWave.value === 0 ? "" : "pointer",
-													} }
-													onClick={ (): void => {
-														if (selectedWave.value > 0)
-															selectedWave.set(selectedWave.value - 1);
-													} }
-												>
-													<IconChevronLeft />
-												</span>
-												<div class="enemy-grid">
-													{ CurrentWave.map((enemy, pos) => <div>
-														{ enemy
-															? <>
-																<img src={ `${AssetsRoot}/${ImageExt}/tbar/${enemy.enemy.icon}.${ImageExt}` } />
-																<div class="my-1" style="font-size:0.8em;font-weight:bold">
-																	<Locale k={ `ENEMY_${enemy.enemy.id}` } />
-																</div>
-																<span
-																	class={ `badge bg-${(enemy.enemy.category & 1) ? "danger" : "substory"}` }
-																>Lv.{ enemy.lv }</span>
-
-																<Link href="#" class="stretched-link" onClick={ (e: Event): void => {
-																	e.preventDefault();
-																	OpenEnemyInfo(enemy.enemy, enemy.lv);
-																} } />
-															</>
-															: <></>
-														}
-													</div>) }
-												</div>
-												<span
-													class="m-3 p-1"
-													style={ {
-														fontSize: "3em",
-														opacity: selectedWave.value === Waves.length - 1 ? 0.4 : 1,
-														cursor: selectedWave.value === Waves.length - 1 ? "" : "pointer",
-													} }
-													onClick={ (): void => {
-														if (selectedWave.value < Waves.length - 1)
-															selectedWave.set(selectedWave.value + 1);
-													} }
-												>
-													<IconChevronRight />
-												</span>
 											</div>
-										</> }
+										</>
+									}
 								</div>
-								: <></>
-							}
-							{ CurrentTab.value === "search"
-								? <div id="world-map-search" class="card-body text-center">
-									<MapSearchInfo searchInfo={ SearchInfo } />
-								</div>
-								: <></>
 							}
 						</div>
-					</>
-					: <div class="card mt-3 bg-dark text-light">
-						<div class="card-header">
-							{ props.wid === "Sub"
-								? <h5 class="m-0 d-inline-block">{ WorldName }</h5>
-								: props.wid === "Daily"
-									? <>
-										{ WorldName }
-										<h5 class="m-0 d-inline-block">
-											<span class="badge bg-warning text-dark ms-2">{ AreaName }</span>
-										</h5>
-									</>
-									: <>
-										{ WorldName }
-										<h5 class="m-0 d-inline-block">
-											<span class="badge bg-warning text-dark ms-2">
-												<Locale k="WORLDS_WORLD_TITLE" p={ [props.mid] } /> :: { AreaName }
-											</span>
-										</h5>
-									</>
-							}
-						</div>
-						<div class="card-body">
-							<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
-								{ props.mid in MapDB && MapDB[props.mid].substory.map(x => <div class={ `col mt-1 mb-4 ${style.SubStoryGroup}` }>
-									<div class="float-start me-2">
-										<PCIcon class={ style.SubStoryGroupIcon } item={ x.icon } />
-									</div>
+						: <></>
+					}
+					{ CurrentTab.value === "drop"
+						? <div id="world-map-drops" class="card-body">
+							{ !selectedValue
+								? <div class="text-center py-4 text-secondary">
+									<Locale k="WORLD_VIEW_SELECT_NODE" />
+								</div>
+								: <div class="row">
+									<div class="col-12 col-md-6">
+										<div class="card text-dark">
+											<div class="card-header">
+												<Locale k="WORLD_VIEW_DROPS_UNIT" />
+											</div>
+											<div class="card-body">
+												<div class={ `row row-cols-1 row-cols-lg-${UnitDrops.length === 0 ? 1 : 2} text-center px-2` }>
+													{ UnitDrops.length === 0
+														? <div class="text-center py-4 text-secondary">
+															<Locale k="WORLD_VIEW_NO_DROPS" />
+														</div>
+														: UnitDrops
+															.map(unit => {
+																if (unit.uid.startsWith("Module_"))
+																	return <DropUnit id={ unit.uid } />;
 
-									<span>
-										<Locale plain k={ x.char } />
-									</span>
-
-									<div class="clearfix" />
-									<div class={ style.SubStoryList }>
-										{ x.list.map(y => {
-											function conv (id: string | string[]): preact.VNode {
-												if (Array.isArray(id)) { // Map
-													const wid = /Chapter_[0-9]+(Ev.+)$/.exec(id[1]);
-													if (!wid) // Not event
-														return <>{ id[2] }</>;
-
-													return <span class={ `badge ${style.SubStoryUnlockCondStage}` }>
-														<Locale plain k={ `WORLD_${wid[1]}` } />
-														<span class="ms-2">{ id[2] }</span>
-													</span>;
-												}
-												return <Locale plain k={ id } />;
-											}
-
-											return <div class={ style.SubStory }>
-												<PCIcon item={ y.icon } size={ 40 } />
-
-												<span class="ms-2">
-													<Locale plain k={ y.key } />
-												</span>
-
-												<div class={ style.SubStoryUnlock }>
-													<IconUnlockFill class="me-2" />
-
-													{ y.unlock.params
-														.map(p => <span class={ style.SubStoryUnlockCond }>
-															<Locale
-																plain
-																k={ `SUBSTORY_UNLOCK_${y.unlock.cond}` }
-																p={ [conv(p)] }
-															/>
-														</span>)
-														.gap(<Locale plain k={ `SUBSTORY_UNLOCK_JOIN_${y.unlock.type}` } />)
+																return <Link class="drop-unit" href={ `/units/${unit.uid}` }>
+																	<DropUnit id={ unit.uid } />
+																</Link>;
+															})
+															.map(el => <div class="p-0">{ el }</div>)
 													}
 												</div>
-											</div>;
-										}) }
+											</div>
+										</div>
 									</div>
-								</div>) }
-							</div>
+									<div class="col-12 col-md-6 mt-md-0 mt-4">
+										<div class="card text-dark">
+											<div class="card-header">
+												<Locale k="WORLD_VIEW_DROPS_ITEMS" />
+											</div>
+											<div class="card-body">
+												<div class={ `row row-cols-1 row-cols-lg-${ItemDrops.length === 0 ? 1 : 2} text-center px-2` }>
+													{ ItemDrops.length === 0
+														? <div class="text-center py-4 text-secondary">
+															<Locale k="WORLD_VIEW_NO_DROPS" />
+														</div>
+														: ItemDrops
+															.map((item, i) => "rarity" in item
+																? <Link class="drop-equip"
+																	href={ `/equips/${item.fullKey}` }
+																	onClick={ (e: Event): void => {
+																		e.preventDefault();
+																		e.stopPropagation();
+																		selectedEquip.set(item);
+																		equipModalDisplay.set(true);
+																	} }
+																>
+																	<DropEquip equip={ item } />
+																</Link>
+																: <DropItem item={ item } />)
+															.map(el => <div class="p-0">{ el }</div>)
+													}
+												</div>
+											</div>
+										</div>
+									</div>
+								</div> }
 						</div>
+						: <></>
+					}
+					{ CurrentTab.value === "squad"
+						? <div id="world-map-squad" class="card-body">
+							<table class="table w-auto">
+								<tbody>
+									<tr>
+										<th class="bg-dark text-bg-dark">
+											<Locale k="WORLD_VIEW_SQUAD_MAXIMUM" />
+										</th>
+										<td>
+											<Locale
+												k="WORLD_VIEW_SQUAD_MAXIMUM_FORMAT"
+												p={ [selectedValue?.squads.count ?? 0] }
+											/>
+										</td>
+									</tr>
+									<tr>
+										<th class="bg-dark text-bg-dark">
+											<Locale k="WORLD_VIEW_SQUAD_SHIFTS" />
+										</th>
+										<td>
+											{ selectedValue?.squads.shift ?? 0 === 0
+												? <Locale
+													k="WORLD_VIEW_SQUAD_SHIFTS_FORMAT"
+													p={ [selectedValue?.squads.count ?? 0] }
+												/>
+												: <strong class="text-danger">
+													<Locale k="WORLD_VIEW_SQUAD_SHIFTS_CANNOT" />
+												</strong>
+											}
+										</td>
+									</tr>
+									<tr>
+										<th class="bg-dark text-bg-dark">
+											<Locale k="WORLD_VIEW_SQUAD_FRIEND" />
+										</th>
+										<td>
+											{ selectedValue?.squads.friend
+												? <span class="text-success">
+													<Locale k="WORLD_VIEW_SQUAD_FRIEND_YES" />
+												</span>
+												: <strong class="text-danger">
+													<Locale k="WORLD_VIEW_SQUAD_FRIEND_NO" />
+												</strong>
+											}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						: <></>
+					}
+					{ CurrentTab.value === "enemy"
+						? <div id="world-map-enemies" class="card-body text-center">
+							{ !selectedValue
+								? <div class="py-4 text-secondary">
+									<Locale k="WORLD_VIEW_SELECT_NODE" />
+								</div>
+								: <>
+									<div class="mb-2">
+										<span class="badge bg-danger mx-1">
+											<Locale
+												k="WORLD_VIEW_ENEMY_TOTAL_EXP"
+												p={ [<span class="font-exo2">{ TotalExp }</span>] }
+											/>
+										</span>
+										<span class="badge bg-danger mx-1">
+											<Locale
+												k="WORLD_VIEW_ENEMY_TOTAL_SKILL_EXP"
+												p={ [<span class="font-exo2">{ TotalSkillExp }</span>] }
+											/>
+										</span>
+
+										<span class="badge bg-substory mx-1">
+											<Locale
+												k="WORLD_VIEW_ENEMY_PLAYER_EXP"
+												p={ [<span class="font-exo2">
+													{ PlayerExp >= 0
+														? PlayerExp
+														: <span class="text-secondary">
+															<Locale k="WORLD_VIEW_ENEMY_PLAYER_EXP_NONE" />
+														</span>
+													}
+												</span>] }
+											/>
+										</span>
+									</div>
+									{ Waves.map((wave, waveIdx) => <Link
+										href="#"
+										class="wave-button"
+										onClick={ (e: Event): void => {
+											e.preventDefault();
+											if (selectedValue) {
+												selectedWave.set(waveIdx);
+												selectedWaveIndex.set(0);
+											}
+										} }
+									>
+										<img
+											class="current-map-marker"
+											src={ `${AssetsRoot}/map-current.png` }
+											style={ { display: waveIdx === selectedWave.value ? "" : "none" } } />
+										<TbarIcon icon="TbarIcon_MP_NightChick_RV" size={ 42 } />
+									</Link>) }
+									<div class="mt-3">
+										<div class="mb-3">
+											<div class="btn btn-group">
+												{ Waves[selectedWave.value].map((_, idx) => <button
+													class={ `btn btn-outline-dark font-exo2 ${isActive(selectedWaveIndex.value === idx)}` }
+													onClick={ (): void => selectedWaveIndex.set(idx) }
+												>
+													#{ idx + 1 }
+													<span class="badge bg-warning text-dark ms-2">{ _.r }%</span>
+												</button>) }
+											</div>
+										</div>
+										<div class="mb-2">
+											<span class="badge bg-warning text-dark mx-1">
+												<Locale
+													k="WORLD_VIEW_ENEMY_WAVE_EXP"
+													p={ [<span class="font-exo2">{ CurrentWaveExp }</span>] }
+												/>
+											</span>
+											<span class="badge bg-warning text-dark mx-1">
+												<Locale
+													k="WORLD_VIEW_ENEMY_WAVE_SKILL_EXP"
+													p={ [<span class="font-exo2">{ CurrentSkillExp }</span>] }
+												/>
+											</span>
+										</div>
+
+										<span
+											class="m-3 p-1"
+											style={ {
+												fontSize: "3em",
+												opacity: selectedWave.value === 0 ? 0.4 : 1,
+												cursor: selectedWave.value === 0 ? "" : "pointer",
+											} }
+											onClick={ (): void => {
+												if (selectedWave.value > 0)
+													selectedWave.set(selectedWave.value - 1);
+											} }
+										>
+											<IconChevronLeft />
+										</span>
+										<div class="enemy-grid">
+											{ CurrentWave.map((enemy, pos) => <div>
+												{ enemy
+													? <>
+														<img src={ `${AssetsRoot}/${ImageExt}/tbar/${enemy.enemy.icon}.${ImageExt}` } />
+														<div class="my-1" style="font-size:0.8em;font-weight:bold">
+															<Locale k={ `ENEMY_${enemy.enemy.id}` } />
+														</div>
+														<span
+															class={ `badge bg-${(enemy.enemy.category & 1) ? "danger" : "substory"}` }
+														>Lv.{ enemy.lv }</span>
+
+														<Link href="#" class="stretched-link" onClick={ (e: Event): void => {
+															e.preventDefault();
+															OpenEnemyInfo(enemy.enemy, enemy.lv);
+														} } />
+													</>
+													: <></>
+												}
+											</div>) }
+										</div>
+										<span
+											class="m-3 p-1"
+											style={ {
+												fontSize: "3em",
+												opacity: selectedWave.value === Waves.length - 1 ? 0.4 : 1,
+												cursor: selectedWave.value === Waves.length - 1 ? "" : "pointer",
+											} }
+											onClick={ (): void => {
+												if (selectedWave.value < Waves.length - 1)
+													selectedWave.set(selectedWave.value + 1);
+											} }
+										>
+											<IconChevronRight />
+										</span>
+									</div>
+								</> }
+						</div>
+						: <></>
+					}
+					{ CurrentTab.value === "search"
+						? <div id="world-map-search" class="card-body text-center">
+							<MapSearchInfo searchInfo={ SearchInfo } />
+						</div>
+						: <></>
+					}
+				</div>
+			</>
+			: <div class="card mt-3 bg-dark text-light">
+				<div class="card-header">
+					{ props.wid === "Sub"
+						? <h5 class="m-0 d-inline-block">{ WorldName }</h5>
+						: props.wid === "Daily"
+							? <>
+								{ WorldName }
+								<h5 class="m-0 d-inline-block">
+									<span class="badge bg-warning text-dark ms-2">{ AreaName }</span>
+								</h5>
+							</>
+							: <>
+								{ WorldName }
+								<h5 class="m-0 d-inline-block">
+									<span class="badge bg-warning text-dark ms-2">
+										<Locale k="WORLDS_WORLD_TITLE" p={ [props.mid] } /> :: { AreaName }
+									</span>
+								</h5>
+							</>
+					}
+				</div>
+				<div class="card-body">
+					<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
+						{ props.mid in MapDB && MapDB[props.mid].substory.map(x => <div class={ `col mt-1 mb-4 ${style.SubStoryGroup}` }>
+							<div class="float-start me-2">
+								<PCIcon class={ style.SubStoryGroupIcon } item={ x.icon } />
+							</div>
+
+							<span>
+								<Locale plain k={ x.char } />
+							</span>
+
+							<div class="clearfix" />
+							<div class={ style.SubStoryList }>
+								{ x.list.map(y => {
+									function conv (id: string | string[]): preact.VNode {
+										if (Array.isArray(id)) { // Map
+											const wid = /Chapter_[0-9]+(Ev.+)$/.exec(id[1]);
+											if (!wid) // Not event
+												return <>{ id[2] }</>;
+
+											return <span class={ `badge ${style.SubStoryUnlockCondStage}` }>
+												<Locale plain k={ `WORLD_${wid[1]}` } />
+												<span class="ms-2">{ id[2] }</span>
+											</span>;
+										}
+										return <Locale plain k={ id } />;
+									}
+
+									return <div class={ style.SubStory }>
+										<div class="float-end p-1 pe-2">
+											<button
+												type="button"
+												class="me-1 btn btn-sm btn-stat-hp"
+												onClick={ e => {
+													e.preventDefault();
+													route(`/story/${x.key}/${y.key}`);
+												} }
+											>
+												<IconBook class="me-1" />
+												Story
+											</button>
+										</div>
+
+										<PCIcon item={ y.icon } size={ 40 } />
+
+										<span class="ms-2">
+											<Locale plain k={ y.key } />
+										</span>
+
+										<div>
+											<div class={ style.SubStoryUnlock }>
+												<IconUnlockFill class="me-2" />
+
+												{ y.unlock.params
+													.map(p => <span class={ style.SubStoryUnlockCond }>
+														<Locale
+															plain
+															k={ `SUBSTORY_UNLOCK_${y.unlock.cond}` }
+															p={ [conv(p)] }
+														/>
+													</span>)
+													.gap(<Locale plain k={ `SUBSTORY_UNLOCK_JOIN_${y.unlock.type}` } />)
+												}
+											</div>
+										</div>
+									</div>;
+								}) }
+							</div>
+						</div>) }
 					</div>
-				}
-			</div>;
-		}) }
-	/>;
+				</div>
+			</div>
+		}
+	</div>;
 };
 export default MapView;
