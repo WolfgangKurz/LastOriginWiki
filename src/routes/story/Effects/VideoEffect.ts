@@ -14,7 +14,7 @@ export default class VideoEffect extends EffectBase {
 		this.container = new PIXI.Container();
 		this.container.name = "@VideoEffect";
 		this.container.zIndex = 900;
-		screen.addChild(this.container);
+		screen.parent.addChild(this.container);
 
 		const url = `${AssetsRoot}/story/video/${source}.webm`;
 		PIXI.Texture.fromURL<PIXI.VideoResource>(url)

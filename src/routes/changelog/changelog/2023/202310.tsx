@@ -5,6 +5,11 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12359" date="2023-10-29"
+		bugfix={ <>
+			<li>스토리 뷰어가 화면 전환 효과로 비정상 작동하는 부분을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12358" date="2023-10-29"
 		bugfix={ <>
 			<li>터치로 스토리 뷰어가 작동하지 않는 문제를 수정했습니다.</li>
