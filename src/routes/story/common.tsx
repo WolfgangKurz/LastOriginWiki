@@ -9,7 +9,8 @@ import { LocaleGet } from "@/components/locale";
 // 	);
 // }
 export function Nn (text: string) {
-	return text.replace(/\{0\}/g, `[c][66bbff]${LocaleGet("STORY_PLAYER")}[-][/c]`)
+	return text.replace(/[<>]/g, p => p === "<" ? "&lt;" : "&gt;")
+		.replace(/\{0\}/g, `[c][66bbff]${LocaleGet("STORY_PLAYER")}[-][/c]`)
 		.replace(/&n/g, "\n")
 		.replace(/\[(\/)?i\]/g, (p, p1) => `<${p1 || ""}>`)
 		.replace(/\[c\]\[([^\]]+)\]/g, (p, p1) => `<span data-color="${p1}" style="color:#${p1}">`)

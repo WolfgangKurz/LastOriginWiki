@@ -137,6 +137,7 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			"2DModel_PECS_Azaz_NS2", "2DModel_BR_RoyalArsenal_NS2",
 			"2DModel_PECS_Azaz_NS2_DL_N", "2DModel_BR_RoyalArsenal_NS2_DL_N",
 			"2DModel_MiniPerrault_N", "2DModel_Superior01_N",
+			"2DModel_BR_Efreeti_NS1_DL_N",
 		];
 		if (list.includes(model)) return true;
 		return false;
@@ -155,6 +156,7 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			AGS_RheinRitter_NS1_DL_0_O: "AGS_RheinRitter_1_O_S",
 			BR_Alvis_NS1_DL_0_O: "BR_Alvis_1_O_S",
 			BR_DrM_N_DL_0_O: "BR_DrM_0_O_S",
+			BR_Efreeti_NS1_DL_0_O: "BR_Efreeti_1_O_S",
 			BR_Emily_NS1_DL_0_O: "BR_Emily_1_O",
 			BR_Gnome_NS2_DL_0_O: "BR_Gnome_2_O_S",
 			BR_Hela_N_DL_0_O: "BR_Hela_0_O_S",
@@ -182,8 +184,10 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			"3P_Melite_1_O": "3P_Melite_1_O_S",
 			"3P_Salacia_1_O": "3P_Salacia_1_O_S",
 			"3P_Sowan_2_O": "3P_Sowan_2_O_S",
+			"3P_Titania_1_O": "3P_Titania_1_O_S",
 			BR_Andvari_0_O: "BR_Andvari_0_O_S",
 			BR_Amy_0_O: "BR_Amy_0_O_S",
+			BR_Amy_2_O: "BR_Amy_2_O_S",
 			BR_Brunhild_0_O: "BR_Brunhild_0_O_S",
 			BR_Habetrot_0_O: "BR_Habetrot_0_O_S",
 			BR_Harpy_1_O: "BR_Harpy_1_O_B",
@@ -205,6 +209,7 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			BR_StratoAngel_0_O: "BR_StratoAngel_0_O_S",
 			BR_Vargr_0_O: "BR_Vargr_0_O_S",
 			BR_Wraithy_2_O: "BR_Wraithy_2_O_S",
+			DS_Angel_1_O: "DS_Angel_1_O_B",
 			DS_Ramiel_0_O: "DS_Ramiel_0_O_S",
 			PECS_Boryeon_1_O: "PECS_Boryeon_1_O_S",
 			PECS_BS_1_O: "PECS_BS_1_O_S",
@@ -218,6 +223,7 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			PECS_Olivia_0_O: "PECS_Olivia_0_O_S",
 			PECS_Orangeade_0_O: "PECS_Orangeade_0_O_S",
 			PECS_Peregrinus_0_O: "PECS_Peregrinus_0_O_S",
+			PECS_Rena_0_O: "PECS_Rena_0_O_S",
 			PECS_Saetti_2_O: "PECS_Saetti_2_O_S",
 			ST_Lancer_2_O: "ST_Lancer_2_O_S",
 			ST_Mercury_0_O: "ST_Mercury_0_O_S",
@@ -387,14 +393,17 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 				}
 			};
 			cover.addEventListener("click", func);
+			cover.addEventListener("tap", func);
 		}
 
 		return () => {
 			if (screenEffectTimer)
 				clearTimeout(screenEffectTimer);
 
-			if (cover && func)
+			if (cover && func) {
+				cover.removeEventListener("tap", func);
 				cover.removeEventListener("click", func);
+			}
 		};
 	}, [cover, curData, screenEffect, props.onNext, props.onDone, sel, selDisp]);
 
@@ -854,7 +863,12 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 		let fadeOut = true;
 
 		if (screen && addImage) {
-			const fullImage = /^Cut_FightTogether_/;
+			const fullImage: Array<string | RegExp> = [
+				/^Cut_FightTogether_/,
+			];
+			const semiFullImage: Array<string | RegExp> = [
+				"Cut_AnimalFriends",
+			];
 			PIXI.Texture.fromURL(`${AssetsRoot}/story/add/${addImage}.webp`)
 				.then(tex => {
 					if (disposed) {
@@ -866,9 +880,12 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 					add.pivot.set(tex.width / 2, tex.height / 2);
 					add.position.set(640, 240);
 
-					if (fullImage.test(addImage)) {
+					if (fullImage.some(r => typeof r === "string" ? r === addImage : r.test(addImage))) {
 						add.position.set(640, 360);
 						add.scale.set(720 / tex.height);
+					} else if (semiFullImage.some(r => typeof r === "string" ? r === addImage : r.test(addImage))) {
+						add.position.set(640, 264);
+						add.scale.set(480 / tex.height);
 					} else if (tex.height > 358)
 						add.scale.set(358 / tex.height);
 

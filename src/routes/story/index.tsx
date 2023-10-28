@@ -4,7 +4,9 @@ import Store from "@/store";
 
 import { DIALOG_SPEAKER, SCG_ACTIVATION } from "@/types/Enums";
 import { DialogCharacter, StoryData, StoryMetadata } from "@/types/Story/Story";
+import SubStoryDB from "@/types/DB/SubStory";
 
+import { useUpdate } from "@/libs/hooks";
 import { AssetsRoot, ImageExtension, SubStoryUnit } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import { CurrentDB } from "@/libs/DB";
@@ -13,7 +15,7 @@ import { BuildClass } from "@/libs/Class";
 import { parseVNode } from "@/libs/VNode";
 import { UpdateTitle } from "@/libs/Site";
 
-import { GetJson, JsonLoaderCore } from "@/components/loader";
+import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import UnitFace from "@/components/unit-face";
 import IconGlobe2 from "@/components/bootstrap-icon/icons/Globe2";
@@ -41,6 +43,8 @@ const FaceAlias: Record<string, string> = {
 };
 
 const Story: FunctionalComponent<StoryProps> = (props) => {
+	const update = useUpdate();
+
 	const [error, setError] = useState(false);
 
 	const [storyMetadata, setStoryMetadata] = useState<StoryMetadata | null>(null);
@@ -156,43 +160,81 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		} else {
 			const reg = /^ChCS-([0-9]+)Stage([0-9]+)$/;
 			const r = reg.exec(props.id);
-			if (r) { // substory
+			if (r) { // old substory
 				const key = `S${parseInt(r[1], 10)}-${parseInt(r[2], 10)}`;
 				return {
-					wid: "Sub",
+					wid: "-",
 					mid: 1,
 					nid: key,
+					storyType: "Sub",
+				};
+			} else if (props.id.startsWith("SubStory_")) { // map substory
+				const reg = /^SubStory_Chapter_([^_]+)_(.+)$/;
+				const r = reg.exec(props.id)!;
+
+				const k = r[1];
+				const unit = r[2];
+
+				const mr = /^([0-9]+)(.+)$/.exec(k)!;
+
+				return {
+					wid: mr[2],
+					mid: parseInt(mr[1], 10),
+					nid: unit,
+					storyType: "Sub2",
+				};
+			} else if (props.id.startsWith("Story_")) { // separated substory
+				const reg = /^Story_Char_(.+)_N_.+_([0-9]+)-(START|END)$/;
+				const r = reg.exec(props.type)!;
+
+				return {
+					wid: props.type.substring(0, props.type.lastIndexOf("-")),
+					mid: parseInt(r[2], 10),
+					nid: r[1],
+					storyType: "Sub3",
 				};
 			}
 		}
 		return { wid: "", mid: 0, nid: 0, storyType: props.type };
 	}, [props.id, props.type]);
 
+	const SubStoryDB = storyType === "Sub3" ? GetJson<SubStoryDB>(StaticDB.SubStory) : null;
+	useEffect(() => {
+		if (storyType === "Sub3" && !SubStoryDB)
+			JsonLoaderCore(CurrentDB, StaticDB.SubStory).then(() => update());
+	}, [storyType, SubStoryDB]);
+
+	const subGroup = useMemo(() => {
+		if (!SubStoryDB) return null;
+
+		return SubStoryDB.story.find(r => r.key === wid) || null;
+	}, [SubStoryDB]);
+
 	const world = useMemo(() => {
+		if (storyType === "Sub3") {
+			if (!subGroup) return "...";
+			return LocaleGet(subGroup.group);
+		}
 		return LocaleGet(`WORLD_WORLD_${wid}_${mid}`);
-	}, [lang, wid, mid, nid]);
+	}, [lang, storyType, wid, mid, nid]);
 
 	useEffect(() => {
 		setStoryMetadata(null);
 
-		if (!props.id || !props.type || (props.type !== "OP" && props.type !== "ED" && !props.type.startsWith("mid-"))) {
-			setError(true);
+		const cached = GetJson<StoryMetadata>(`story/${props.id}`);
+		if (cached) {
+			setStoryMetadata(cached);
+			setBGM(cached.bgm[props.type]);
 		} else {
-			const cached = GetJson<StoryMetadata>(`story/${props.id}`);
-			if (cached) {
-				setStoryMetadata(cached);
-				setBGM(cached.bgm[props.type]);
-			} else {
-				JsonLoaderCore(CurrentDB, `story/${props.id}`)
-					.then(() => {
-						const data = GetJson<StoryMetadata>(`story/${props.id}`);
-						setStoryMetadata(data);
-						setBGM(data.bgm[props.type]);
-					})
-					.catch(() => {
-						setError(true);
-					});
-			}
+			JsonLoaderCore(CurrentDB, `story/${props.id}`)
+				.then(() => {
+					const data = GetJson<StoryMetadata>(`story/${props.id}`);
+					setStoryMetadata(data);
+					setBGM(data.bgm[props.type]);
+				})
+				.catch(() => {
+					setError(true);
+				});
 		}
 	}, [props.id, props.type]);
 
@@ -234,12 +276,22 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 			);
 	}, [storyData]);
 
+	const subUnit = useMemo(() => {
+		if (!["Sub2", "Sub3"].includes(storyType)) return "";
+		return nid.toString();
+	}, [storyType, nid]);
+
 	if (error) return <Notfound />;
 	return <div>
 		<div class="text-start">
 			<button class="btn btn-dark" onClick={ e => {
 				e.preventDefault();
-				route(`/worlds/${wid}/${mid}/${nid}`);
+				if (storyType === "Sub2")
+					route(`/worlds/${wid}/${mid}/substory`);
+				else if (storyType === "Sub3")
+					route("/worlds/Sub");
+				else
+					route(`/worlds/${wid}/${mid}/${nid}`);
 			} }>
 				<IconArrowLeft class="me-1" />
 				<Locale k="WORLDS_BACK_TO_WORLDS" />
@@ -261,19 +313,45 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 
 		<h5 class="font-ibm mt-3">
 			{ world }
+
 			<span class="ms-4">
-				{ wid === "Sub"
+				{ storyType === "Sub"
 					? <span class="badge bg-warning text-bg-warning">
 						<Locale k={ `UNIT_${SubStoryUnit[nid]}` } />
 					</span>
-					: <>
-						{ nid }
-						<span class="ms-2">{ storyType }</span>
-					</>
+					: storyType === "Sub2" || storyType === "Sub3"
+						? <span class="badge bg-substory text-bg-substory">
+							<Locale k={ `UNIT_${subUnit}` } />
+						</span>
+						: <>
+							{ nid }
+							<span class="ms-2">{ storyType }</span>
+						</>
 				}
 			</span>
 		</h5>
-		<h1 class="font-ibm mb-4">{ storyMetadata ? LText(storyMetadata.title) : "..." }</h1>
+		{ storyType === "Sub2"
+			? <h3 class="font-ibm mb-2">
+				{ storyMetadata ? LText(storyMetadata.title) : "..." }
+			</h3>
+			: <></>
+		}
+		<h1 class={ BuildClass("font-ibm", storyType === "Sub3" ? "mb-1" : "mb-4") }>
+			{ storyMetadata
+				? storyType === "Sub2"
+					? <Locale plain k={ props.type } />
+					: storyType === "Sub3"
+						? <Locale plain k={ wid } />
+						: LText(storyMetadata.title)
+				: "..."
+			}
+		</h1>
+		{ storyType === "Sub3"
+			? <h6 class="mb-4">
+				<Locale plain k={ `${wid}_DESC` } />
+			</h6>
+			: <></>
+		}
 
 		<div class="my-2">
 			{ faces.map(f => <UnitFace class="mx-1" { ...f } size="3rem" />) }

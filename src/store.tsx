@@ -155,6 +155,13 @@ const Store = {
 		SearchText: signal(""),
 	},
 
+	Worlds: {
+		Sub: {
+			Troop: signal<string | null>(null),
+			Group: signal<string | null>(null),
+		},
+	},
+
 	Story: {
 		lang: signal<LocaleTypes>(CurrentLocale),
 	},

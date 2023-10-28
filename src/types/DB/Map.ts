@@ -73,6 +73,7 @@ export interface MapNodeEntity {
 export interface MapSubStory {
 	key: string;
 	icon: string;
+	dialog: string;
 	unlock: {
 		cond: UNLOCK_COND;
 		type: 0 | 1;
@@ -81,6 +82,7 @@ export interface MapSubStory {
 }
 
 export interface MapSubStoryGroup {
+	key: string; // for substory viewer
 	char: string;
 	icon: string;
 	list: MapSubStory[];

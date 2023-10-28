@@ -5,6 +5,27 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12358" date="2023-10-29"
+		bugfix={ <>
+			<li>터치로 스토리 뷰어가 작동하지 않는 문제를 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li>세계 정보의 서브스토리에 스토리 뷰어 연결이 추가되었습니다.</li>
+			<li>
+				세계 정보의 외전 페이지가 개편되었습니다.<br />
+				모든 외전 스토리를 감상할 수 있습니다.
+			</li>
+			<li>
+				스토리 뷰어가 갱신되었습니다.
+				<ol>
+					<li>모든 이벤트 스토리가 작업되었습니다.</li>
+					<li>스크립트에서 &lt; 및 &gt; 표현에 오류가 있던 점을 수정했습니다.</li>
+					<li>일부 추가 이미지의 크기가 올바르지 않던 점을 수정했습니다.</li>
+					<li>화면 전환 효과가 추가되었습니다.</li>
+				</ol>
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12354" date="2023-10-27"
 		bugfix={ <>
 			<li>

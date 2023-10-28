@@ -77,7 +77,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 
 	const update = useUpdate();
 
-	const CurrentMode = objState<"map" | "substory">("map");
+	const [currentMode, setCurrentMode] = useState<"map" | "substory">("map");
 
 	const CurrentTab = objState<"reward" | "drop" | "squad" | "enemy" | "search">("reward");
 	const selected = objState<MapNodeEntity | null>(null);
@@ -155,6 +155,13 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${props.wid}`));
 	else
 		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${props.wid}`), LocaleGet("WORLDS_WORLD_TITLE", props.mid));
+
+	useEffect(() => {
+		if (currentMode === "substory" && props.node !== "substory")
+			setCurrentMode("map");
+		else if (currentMode !== "substory" && props.node === "substory")
+			setCurrentMode("substory");
+	}, [currentMode, props.node]);
 
 	const MapDB = GetJson<World>(`map/${props.wid}`);
 	const MapsDB = GetJson<Maps>(StaticDB.Maps);
@@ -399,14 +406,28 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				</button>
 			</div>
 			<div class="col text-end">
-				{ CurrentMode.value === "map"
+				{ currentMode === "map"
 					? props.mid in MapDB && MapDB[props.mid].substory.length > 0
-						? <button class="btn btn-dark" onClick={ (): void => CurrentMode.set("substory") }>
+						? <button
+							class="btn btn-dark"
+							onClick={ e => {
+								e.preventDefault();
+								setCurrentMode("substory");
+								route(`/worlds/${props.wid}/${props.mid}/substory`, true);
+							} }
+						>
 							<IconChatSquareTextFill class="me-1" />
 							<Locale k="WORLDS_SUBSTORY" />
 						</button>
 						: <></>
-					: <button class="btn btn-dark" onClick={ (): void => CurrentMode.set("map") }>
+					: <button
+						class="btn btn-dark"
+						onClick={ e => {
+							e.preventDefault();
+							setCurrentMode("map");
+							route(`/worlds/${props.wid}/${props.mid}`, true);
+						} }
+					>
 						<IconCompass class="me-1" />
 						<Locale k="WORLDS_WORLD_MAP" />
 					</button>
@@ -415,7 +436,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 		</div>
 		<hr />
 
-		{ CurrentMode.value === "map"
+		{ currentMode === "map"
 			? <>
 				<div class="card bg-dark text-light">
 					<div class="card-header">
@@ -580,7 +601,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 													</button>
 													: <></>
 												}
-												{ (storyMeta.spec & StorySpec.Mid) !== 0
+												{ (storyMeta.spec & StorySpec.MID) !== 0
 													? Object.keys(storyMeta.index)
 														.filter(k => k.startsWith("mid-"))
 														.map(k => <button
@@ -1290,25 +1311,41 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 									}
 
 									return <div class={ style.SubStory }>
+										<div class="float-end p-1 pe-2">
+											<button
+												type="button"
+												class="me-1 btn btn-sm btn-stat-hp"
+												onClick={ e => {
+													e.preventDefault();
+													route(`/story/${x.key}/${y.key}`);
+												} }
+											>
+												<IconBook class="me-1" />
+												Story
+											</button>
+										</div>
+
 										<PCIcon item={ y.icon } size={ 40 } />
 
 										<span class="ms-2">
 											<Locale plain k={ y.key } />
 										</span>
 
-										<div class={ style.SubStoryUnlock }>
-											<IconUnlockFill class="me-2" />
+										<div>
+											<div class={ style.SubStoryUnlock }>
+												<IconUnlockFill class="me-2" />
 
-											{ y.unlock.params
-												.map(p => <span class={ style.SubStoryUnlockCond }>
-													<Locale
-														plain
-														k={ `SUBSTORY_UNLOCK_${y.unlock.cond}` }
-														p={ [conv(p)] }
-													/>
-												</span>)
-												.gap(<Locale plain k={ `SUBSTORY_UNLOCK_JOIN_${y.unlock.type}` } />)
-											}
+												{ y.unlock.params
+													.map(p => <span class={ style.SubStoryUnlockCond }>
+														<Locale
+															plain
+															k={ `SUBSTORY_UNLOCK_${y.unlock.cond}` }
+															p={ [conv(p)] }
+														/>
+													</span>)
+													.gap(<Locale plain k={ `SUBSTORY_UNLOCK_JOIN_${y.unlock.type}` } />)
+												}
+											</div>
 										</div>
 									</div>;
 								}) }

@@ -9,8 +9,9 @@ type DialogKey = string;
 export enum StorySpec {
 	None = 0,
 	OP = 1,
-	Mid = 2,
+	MID = 2,
 	ED = 4,
+	SUB = 8, // Substory
 }
 
 export interface StoryMetadata {

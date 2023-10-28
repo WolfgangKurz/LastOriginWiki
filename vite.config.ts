@@ -119,6 +119,7 @@ export default ({ mode }) => {
 
 	const prependData = `${[
 		"@charset \"UTF-8\";",
+		"@use \"sass:color\";",
 		"@use \"sass:math\";",
 		"@use \"sass:list\";",
 		"@use \"sass:map\";",

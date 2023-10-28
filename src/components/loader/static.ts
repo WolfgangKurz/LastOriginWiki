@@ -11,7 +11,7 @@ export const StaticDB = {
 	Sticker: "sticker",
 	Exchange: "exchange",
 	EW: "ew",
-	Story: "story",
+	SubStory: "substory",
 	Research: "research",
 	Maps: "maps",
 	RoguelikeLimitEffects: "roguelike/limiteffects",

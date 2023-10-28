@@ -44,9 +44,7 @@ const WorldItem: FunctionalComponent<WorldItemProps> = (props) => {
 			</div>
 		</div>
 		{ props.linked
-			? props.wid === "Sub"
-				? <Link href={ `/worlds/${props.wid}/1/` } class="stretched-link" />
-				: <Link href={ `/worlds/${props.wid}` } class="stretched-link" />
+			? <Link href={ `/worlds/${props.wid}` } class="stretched-link" />
 			: <></>
 		}
 	</div>;
