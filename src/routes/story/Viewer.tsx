@@ -3,7 +3,7 @@ import Store from "@/store";
 
 import * as PIXI from "pixi.js";
 
-import { APPEAR_EFFECT, DIALOG_SPEAKER, OFF_EFFECT, SCG_ACTIVATION } from "@/types/Enums";
+import { APPEAR_EFFECT, DIALOG_SPEAKER, OFF_EFFECT, SCG_ACTIVATION, SCREEN_EFFECT } from "@/types/Enums";
 import { DialogCharacter, DialogSelection, StoryData } from "@/types/Story/Story";
 import { StoryModelMeta } from "@/types/Story/Model";
 
@@ -39,6 +39,7 @@ import style from "./style.module.scss";
  * * 510 - C Activate
  * * 511 - L Activate
  * * 511 - R Activate
+ * 590 - ScreenEffect
  * 600 - Add
  * 900 - Effect
  * 1000 - Dialog
@@ -66,6 +67,7 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 
 	const [dialog, setDialog] = useState<DialogObject | null>(null);
 	const [selection, setSelection] = useState<SelectionObject | null>(null);
+	const [screenEffectObject, setScreenEffectObject] = useState<FadeSprite | null>(null);
 
 	const [voice, setVoice] = useState<string>("");
 	const [bgm, setBGM] = useState<string>("");
@@ -83,9 +85,12 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 	const [addImageAppear, setAddImageAppear] = useState<APPEAR_EFFECT>(APPEAR_EFFECT.NONE);
 	const [addImageOff, setAddImageOff] = useState<OFF_EFFECT>(OFF_EFFECT.NONE);
 
+	const [screenEffect, setScreenEffect] = useState<SCREEN_EFFECT>(SCREEN_EFFECT.NONE);
+
 	const [sel, setSel] = useState<DialogSelection[]>([]);
 	const [selDisp, setSelDisp] = useState(false);
 
+	const screenEffectFilter = useMemo(() => new PIXI.ColorMatrixFilter(), []);
 	const speakerFilter = useMemo(() => [0, 0, 0].map(() => new PIXI.ColorMatrixFilter()), []);
 
 	const viewerRef = useRef<HTMLDivElement>(null);
@@ -131,7 +136,7 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			"2DModel_DS_Ramiel_N_DL_N", "2DModel_DS_BunnySlayer_N_DL_N",
 			"2DModel_PECS_Azaz_NS2", "2DModel_BR_RoyalArsenal_NS2",
 			"2DModel_PECS_Azaz_NS2_DL_N", "2DModel_BR_RoyalArsenal_NS2_DL_N",
-			"2DModel_MiniPerrault_N",
+			"2DModel_MiniPerrault_N", "2DModel_Superior01_N",
 		];
 		if (list.includes(model)) return true;
 		return false;
@@ -144,6 +149,7 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			"3P_Amphitrite_N_DL_0_O": "3P_Amphitrite_0_O_S",
 			"3P_Alice_NS1_DL_0_O": "3P_Alice_1_O_BS",
 			"3P_Daphne_NS2_DL_0_O": "3P_Daphne_2_O_S",
+			"3P_Galatea_N_DL_0_O": "3P_Galatea_0_O_S",
 			"3P_Salacia_N_DL_0_O": "3P_Salacia_0_O_S",
 			"3P_Titania_NS2_DL_0_O": "3P_Titania_2_O_S",
 			AGS_RheinRitter_NS1_DL_0_O: "AGS_RheinRitter_1_O_S",
@@ -163,20 +169,31 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			PECS_ElvenForestmaker_NS1_DL_0_O: "PECS_ElvenForestmaker_1_O",
 			PECS_HighElven_N_DL_0_O: "PECS_HighElven_0_O",
 			PECS_Hussar_NS1_DL_0_O: "PECS_Hussar_1_O_S",
+			PECS_Sadius_N_DL_0_O: "PECS_Sadius_0_O_S",
+			PECS_Sonia_N_DL_0_O: "PECS_Sonia_0_O_S",
 			PECS_Triaina_N_DL_0_O: "PECS_Triaina_0_O_S",
 
+			"3P_Amphitrite_1_O": "3P_Amphitrite_1_O_S",
 			"3P_BlackLilith_0_O": "3P_BlackLilith_0_O_S",
 			"3P_Eternity_2_O": "3P_Eternity_2_O_S",
 			"3P_Frigga_1_O": "3P_Frigga_1_O_S",
+			"3P_Maria_2_O": "3P_Maria_2_O_S",
 			"3P_Melite_0_O": "3P_Melite_0_O_S",
+			"3P_Melite_1_O": "3P_Melite_1_O_S",
+			"3P_Salacia_1_O": "3P_Salacia_1_O_S",
 			"3P_Sowan_2_O": "3P_Sowan_2_O_S",
 			BR_Andvari_0_O: "BR_Andvari_0_O_S",
 			BR_Amy_0_O: "BR_Amy_0_O_S",
+			BR_Brunhild_0_O: "BR_Brunhild_0_O_S",
 			BR_Habetrot_0_O: "BR_Habetrot_0_O_S",
 			BR_Harpy_1_O: "BR_Harpy_1_O_B",
+			BR_Hela_1_O: "BR_Hela_1_O_S",
+			BR_Hyena_1_O: "BR_Hyena_1_O_S",
 			BR_Leona_0_O: "BR_Leona_0_O_S",
+			BR_Leprechaun_2_O: "BR_Leprechaun_2_O_B",
 			BR_Nashorn_0_O: "BR_Nashorn_0_O_S",
 			BR_Neodym_0_O: "BR_Neodym_0_O_S",
+			BR_Neodym_3_O: "BR_Neodym_3_O_B",
 			BR_Miho_3_O: "BR_Miho_3_O_S",
 			BR_RoyalArsenal_0_O: "BR_RoyalArsenal_0_O_S",
 			BR_Salamander_0_O: "BR_Salamander_0_O_S",
@@ -187,19 +204,29 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			BR_Sleipnir_2_O: "BR_Sleipnir_2_O_S",
 			BR_StratoAngel_0_O: "BR_StratoAngel_0_O_S",
 			BR_Vargr_0_O: "BR_Vargr_0_O_S",
+			BR_Wraithy_2_O: "BR_Wraithy_2_O_S",
 			DS_Ramiel_0_O: "DS_Ramiel_0_O_S",
 			PECS_Boryeon_1_O: "PECS_Boryeon_1_O_S",
 			PECS_BS_1_O: "PECS_BS_1_O_S",
 			PECS_CoCoWhiteShell_0_O: "PECS_CoCoWhiteShell_0_O_S",
+			PECS_Ella_1_O: "PECS_Ella_1_O_S",
+			PECS_Erato_0_O: "PECS_Erato_0_O_S",
 			PECS_Glacias_1_O: "PECS_Glacias_1_O_S",
 			PECS_LemonadeAlpha_0_O: "PECS_LemonadeAlpha_0_O_S",
 			PECS_Mnemosyne_0_O: "PECS_Mnemosyne_0_O_S",
 			PECS_Muse_0_O: "PECS_Muse_0_O_S",
+			PECS_Olivia_0_O: "PECS_Olivia_0_O_S",
 			PECS_Orangeade_0_O: "PECS_Orangeade_0_O_S",
 			PECS_Peregrinus_0_O: "PECS_Peregrinus_0_O_S",
+			PECS_Saetti_2_O: "PECS_Saetti_2_O_S",
+			ST_Lancer_2_O: "ST_Lancer_2_O_S",
+			ST_Mercury_0_O: "ST_Mercury_0_O_S",
 			SJ_Tachi_0_O: "SJ_Tachi_0_O_S",
 			ST_Ullr_0_O: "ST_Ullr_0_O_S",
-			ST_Mercury_0_O: "ST_Mercury_0_O_S",
+			ST_Ullr_1_O: "ST_Ullr_1_O_S",
+
+			BR_Brownie_01_0_O: "BR_Brownie_0_O",
+			BR_Brownie_02_0_O: "BR_Brownie_0_O",
 		};
 
 		const reg = /^2DModel_(.+)_([NPS])(S([0-9]+))?$/;
@@ -300,6 +327,17 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			setSelection(selection);
 			app.stage.addChild(selection);
 
+			// 1x1 white gif dataURI
+			const screenEffect = new FadeSprite(PIXI.Texture.from("data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs="));
+			screenEffect.name = "@screenEffect";
+			screenEffect.zIndex = 590;
+			screenEffect.alpha = 0;
+			screenEffect.filters = [screenEffectFilter];
+			screenEffect.width = cover.width;
+			screenEffect.height = cover.height;
+			setScreenEffectObject(screenEffect);
+			app.stage.addChild(screenEffect);
+
 			app.stage.sortableChildren = true;
 			screen.sortableChildren = true;
 
@@ -313,27 +351,52 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 
 	useEffect(() => { // click event handler
 		let func: (() => void) | undefined = undefined;
+		let screenEffectTimer: number | null = null;
+
 		if (curData && cover) {
 			func = () => {
-				if (props.onNext) {
-					if (sel.length === 0 || selDisp) {
-						const i = props.data.findIndex(r => r.key === curData.next);
-						if (i >= 0)
-							props.onNext(i);
-						else if (props.onDone)
-							props.onDone();
-					} else
-						setSelDisp(true);
+				const fn = () => {
+					if (props.onNext) {
+						if (sel.length === 0 || selDisp) {
+							const i = props.data.findIndex(r => r.key === curData.next);
+							if (i >= 0)
+								props.onNext(i);
+							else if (props.onDone)
+								props.onDone();
+						} else
+							setSelDisp(true);
+					}
+				};
+
+				switch (screenEffect) {
+					case SCREEN_EFFECT.FADE_OUT_BLACK:
+					case SCREEN_EFFECT.FADE_OUT_WHITE:
+						if (screenEffectObject) {
+							if (!screenEffectObject.fading) {
+								screenEffectObject.fadeIn(1.0);
+								screenEffectTimer = setTimeout(() => fn(), 1000);
+							} else {
+								screenEffectObject.stopFade();
+								fn();
+							}
+						}
+						break;
+					default:
+						fn();
+						break;
 				}
 			};
 			cover.addEventListener("click", func);
 		}
 
 		return () => {
+			if (screenEffectTimer)
+				clearTimeout(screenEffectTimer);
+
 			if (cover && func)
 				cover.removeEventListener("click", func);
 		};
-	}, [cover, curData, props.onNext, props.onDone, sel, selDisp]);
+	}, [cover, curData, screenEffect, props.onNext, props.onDone, sel, selDisp]);
 
 	useEffect(() => { // Effect
 		let effectTimer: number = -1;
@@ -401,6 +464,8 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 		console.debug("[STORY:curData]", curData);
 
 		if (screen && curData) {
+			setScreenEffect(curData.screenEffect);
+
 			if (isValidLText(curData.bg.name)) setBGName(curData.bg.name);
 			if (isValidLText(curData.bg.desc)) setBGDesc(curData.bg.desc);
 			if (curData.bg.image) setBGImage(curData.bg.image);
@@ -787,7 +852,9 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 		let add: FadeSprite | null = null;
 		let fadeIn = true;
 		let fadeOut = true;
+
 		if (screen && addImage) {
+			const fullImage = /^Cut_FightTogether_/;
 			PIXI.Texture.fromURL(`${AssetsRoot}/story/add/${addImage}.webp`)
 				.then(tex => {
 					if (disposed) {
@@ -798,7 +865,11 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 					add = new FadeSprite(tex);
 					add.pivot.set(tex.width / 2, tex.height / 2);
 					add.position.set(640, 240);
-					if (tex.height > 358)
+
+					if (fullImage.test(addImage)) {
+						add.position.set(640, 360);
+						add.scale.set(720 / tex.height);
+					} else if (tex.height > 358)
 						add.scale.set(358 / tex.height);
 
 					add.zIndex = 600;
@@ -896,6 +967,34 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 				selection.off("select", fn);
 		};
 	}, [curData, selection, props.onNext, props.onDone, sel, selDisp]);
+
+	useEffect(() => { // Screen Effect
+		let timer: number | null = null;
+
+		if (screenEffectObject) {
+			if (screenEffect === SCREEN_EFFECT.FADE_IN_BLACK || screenEffect === SCREEN_EFFECT.FADE_OUT_BLACK)
+				screenEffectFilter.tint(0x000000);
+			else if (screenEffect === SCREEN_EFFECT.FADE_IN_WHITE || screenEffect === SCREEN_EFFECT.FADE_OUT_WHITE)
+				screenEffectFilter.tint(0xffffff);
+
+			if (screenEffect === SCREEN_EFFECT.FADE_IN_BLACK || screenEffect === SCREEN_EFFECT.FADE_IN_WHITE) {
+				screenEffectObject.fadeOut(1.0);
+
+				timer = setTimeout(() => {
+					if (props.onNext)
+						props.onNext(props.cursor + 1);
+				}, 1000);
+			}
+		}
+
+		return () => {
+			if (screenEffectObject)
+				screenEffectObject.stopFade();
+
+			if (timer !== null)
+				clearTimeout(timer);
+		};
+	}, [screenEffectObject, screenEffect]);
 
 	return <>
 		{ bgm && <audio

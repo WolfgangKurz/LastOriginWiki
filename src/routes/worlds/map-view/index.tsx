@@ -525,7 +525,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 								props.mid in MapPosition[props.wid] &&
 								selectedValue.text in MapPosition[props.wid][props.mid] &&
 								MapPosition[props.wid][props.mid][selectedValue.text][4]
-								? <div class="float-end">
+								? <div class="float-end ms-3">
 									<img
 										class={ style.BadgeImage }
 										src={ `${AssetsRoot}/world/badge/${MapPosition[props.wid][props.mid][selectedValue.text][4]}.png` }
@@ -582,7 +582,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												}
 												{ (storyMeta.spec & StorySpec.Mid) !== 0
 													? Object.keys(storyMeta.index)
-														.filter(k => k.startsWith("mid."))
+														.filter(k => k.startsWith("mid-"))
 														.map(k => <button
 															type="button"
 															class="me-1 btn btn-sm btn-stat-hp"
@@ -592,7 +592,10 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 															} }
 														>
 															<IconBook class="me-1" />
-															Mid { k.substring(4) }
+															{ Object.keys(storyMeta.index).filter(k => k.startsWith("mid-")).length === 1
+																? <>MID</>
+																: <>MID { k.substring(4) }</>
+															}
 														</button>)
 													: <></>
 												}
@@ -606,7 +609,10 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 														} }
 													>
 														<IconBook class="me-1" />
-														ED
+														{ selectedValue.type === STAGE_SUB_TYPE.STORY
+															? <>Story</>
+															: <>ED</>
+														}
 													</button>
 													: <></>
 												}

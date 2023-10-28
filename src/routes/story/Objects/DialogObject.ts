@@ -46,7 +46,7 @@ export default class DialogObject extends PIXI.Container {
 			};
 
 			this.textObject.text = _(value);
-			this.textObject.updateText(true);
+			this.textObject.updateText();
 			this.textObject.fadeIn(this.FadeDuration);
 		}
 	}

@@ -1092,6 +1092,7 @@ export enum SCREEN_EFFECT {
 	FADE_IN_BLACK,
 	FADE_OUT_WHITE,
 	FADE_IN_WHITE,
+	__MAX__,
 }
 export enum SCG_ACTIVATION {
 	NONE = 0,

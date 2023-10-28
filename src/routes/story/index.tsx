@@ -33,6 +33,8 @@ interface StoryProps {
 
 const FaceAlias: Record<string, string> = {
 	AGS_MrAlfred_0: "AGS_MrAlfred_0",
+	BR_Brownie_01_0: "BR_Brownie_0",
+	BR_Brownie_02_0: "BR_Brownie_0",
 	BR_NightAngelFake_0: "BR_NightAngel_0",
 	MP_Robert_0: "AGS_MrAlfred2_1",
 	PECS_LemonadeOmega_0: "MP_LemonadeOmega_0",
@@ -134,9 +136,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 						: "s"
 					: (r[5] || "");
 
-			const type = props.type === "OP" || props.type === "ED"
-				? props.type
-				: `Mid ${parseInt(props.type.substring(4), 10) - 2}`;
+			const type = props.type.toUpperCase();
 
 			if (r[2]) { // EvXX
 				return {
@@ -175,7 +175,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 	useEffect(() => {
 		setStoryMetadata(null);
 
-		if (!props.id || !props.type || (props.type !== "OP" && props.type !== "ED" && !props.type.startsWith("mid."))) {
+		if (!props.id || !props.type || (props.type !== "OP" && props.type !== "ED" && !props.type.startsWith("mid-"))) {
 			setError(true);
 		} else {
 			const cached = GetJson<StoryMetadata>(`story/${props.id}`);
