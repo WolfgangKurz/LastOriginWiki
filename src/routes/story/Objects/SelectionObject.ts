@@ -81,9 +81,8 @@ export default class SelectionObject extends PIXI.Container {
 			btn.pivot.set(btn.width / 2, btn.height / 2);
 			btn.position.set(640, 360 + baseY + i * (btn.height + gap));
 
-			btn.addEventListener("click", () => {
-				this.emit("select", i);
-			});
+			btn.addEventListener("click", () => this.emit("select", i));
+			btn.addEventListener("tap", () => this.emit("select", i));
 
 			const text = new FadeText(txt, {
 				fill: 0x000000,
