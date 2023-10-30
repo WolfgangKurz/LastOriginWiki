@@ -1,7 +1,7 @@
 // Content automatically generated
 export interface DBHashType { [K: string]: string | DBHashType; }
 export default {
-	"buildtime": "0fa4a125",
+	"buildtime": "339bf5ed",
 	"locale": {
 		"TC": "cde90d6e",
 		"KR": "352ba9f7",

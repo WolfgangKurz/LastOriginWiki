@@ -17,7 +17,7 @@ export default class DialogObject extends PIXI.Container {
 	private dialogObject: PIXI.NineSlicePlane | null = null;
 	private charDisp: FadeSprite | null = null;
 	private textObject: FadeText | null = null;
-	private speakerObject: PIXI.HTMLText | null = null;
+	private speakerObject: FadeText | null = null;
 
 	private _display = false;
 	public get display () {
@@ -136,7 +136,7 @@ export default class DialogObject extends PIXI.Container {
 		this.textObject.position.set(30, 81);
 		this.dialogObject.addChild(this.textObject);
 
-		this.speakerObject = new PIXI.HTMLText("", {
+		this.speakerObject = new FadeText("", {
 			fontFamily,
 			fontWeight: "500",
 			fontSize: 20,
