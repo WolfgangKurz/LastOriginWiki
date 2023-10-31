@@ -41,7 +41,43 @@ skills:
       acc_bonus: 0
       buff_rate: 100
       buffs:
-        - unknown: Effect_MP_WaspEX_TR_1C_Middle_TU_1
+        - key: Effect_MP_WaspEX_TR_1C_Middle_TU_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_FireDMG_DOT
+              desc:
+                desc: Effect_MP_WaspEX_TR_1C_Middle_TU_1_1
+                type: 0
+                value: "150"
+                level: "30"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 66
+                fixed_damage:
+                  elem: fire
+                  damage:
+                    base: 150
+                    per: 30
+              overlap: 4
+          maxStack: 0
   - key: Skill_MP_WaspEX_TR_1C_Middle_TU_2
     icon: SuicideBomb
     passive: false
@@ -61,7 +97,58 @@ skills:
       acc_bonus: 0
       buff_rate: 100
       buffs:
-        - unknown: Effect_MP_WaspEX_TR_1C_Middle_TU_2
+        - key: Effect_MP_WaspEX_TR_1C_Middle_TU_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_WaspEX_TR_1C_Middle_TU_2_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_WaspEX_TR_1C_Middle_TU_2_2
+                type: 0
+                value: "9.990000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 70
+                fixed_damage:
+                  base: 999%
+                  per: 0%
+              overlap: 0
+          maxStack: 0
   - key: Skill_MP_WaspEX_TR_1C_Middle_TU_3
     icon: P.SelfSpdBuff
     passive: true
@@ -82,5 +169,71 @@ skills:
       acc_bonus: 0
       buff_rate: 100
       buffs:
-        - unknown: Effect_MP_WaspEX_TR_1C_Middle_TU_3
+        - key: Effect_MP_WaspEX_TR_1C_Middle_TU_3
+          on: team_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_MP_WaspEX_TR_1C_Middle_TU_3_1
+                type: 1
+                value: "0.250000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 25%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_DOWN
+              desc:
+                desc: Effect_MP_WaspEX_TR_1C_Middle_TU_3_2
+                type: 1
+                value: "-0.150000"
+                level: "-0.010000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: -15%
+                  per: -1%
+              overlap: 4
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_WaspEX_TR_1C_Middle_TU_3_3
+                type: 1
+                value: "-0.050000"
+                level: "-0.010000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: -5%
+                  per: -1%
+              overlap: 4
+          maxStack: 0
 ai: AI_MP_Dummy03_TR

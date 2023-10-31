@@ -1,12 +1,12 @@
 // Content automatically generated
 export interface DBHashType { [K: string]: string | DBHashType; }
 export default {
-	"buildtime": "82871ed9",
+	"buildtime": "676a71c0",
 	"locale": {
-		"TC": "9c0eb80c",
-		"KR": "1283d3e7",
-		"JP": "ccf418f7",
-		"EN": "23a909d8"
+		"TC": "1d955280",
+		"KR": "be5fac83",
+		"JP": "09ea7792",
+		"EN": "a1501fde"
 	},
 	"korea": {
 		"substory": "261741be",
@@ -3066,9 +3066,9 @@ export default {
 			"WaspEX_TU3": "9c872b92",
 			"WaspEX_TU2": "b2ea2398",
 			"WaspEX_TU": "f363eb73",
-			"WaspEX_TR_1C_Middle_TU2": "3d302ca0",
-			"WaspEX_TR_1C_Middle_TU": "7dbd981c",
-			"WaspEX_TR_1C_Middle_N": "0f3d6f6b",
+			"WaspEX_TR_1C_Middle_TU2": "1bbb5628",
+			"WaspEX_TR_1C_Middle_TU": "95082087",
+			"WaspEX_TR_1C_Middle_N": "41f40143",
 			"WaspEX_N": "70d534ce",
 			"WaspEX_EV1": "d52c7180",
 			"WaspEX_C": "f3a35962",
