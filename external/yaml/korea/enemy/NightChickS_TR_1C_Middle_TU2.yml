@@ -1,0 +1,176 @@
+uid: NightChickS_TR_1C_Middle_TU2
+rarity: 2
+type: 0
+role: 0
+category: 0
+stat:
+  hp:
+    - 15000
+    - 480
+  atk:
+    - 35
+    - 2
+  def:
+    - 0
+    - 0
+  spd: 10
+  cri: 0
+  acc: 197
+  eva: 0
+  res:
+    fire: 0
+    chill: 80
+    thunder: 0
+skills:
+  - key: Skill_MP_NightChickS_N_1
+    icon: MeleeAttack
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 1
+      range: 2
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: false
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 0
+      buffs:
+        - key: Effect_MP_NightChickS_N_1
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs: []
+          maxStack: 0
+  - key: Skill_MP_NightChickS_N_2
+    icon: SelfDefBuff
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 3
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 999
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickS_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_NightChickS_N_2_1
+                type: 1
+                value: "0.250000"
+                level: "0.012500"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 36
+                damage_reduce:
+                  base: 25%
+                  per: 1.25%
+              overlap: 4
+          maxStack: 1
+  - key: Skill_MP_NightChickS_N_3
+    icon: P.TeamDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 2
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,0,1,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_NightChickS_N_3
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_MP_NightChickS_N_2
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DEF_Char
+              desc:
+                desc: Effect_MP_NightChickS_N_3_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 76
+                guard: target
+              overlap: 4
+          maxStack: 0
+ai: AI_Jako_Defense_02

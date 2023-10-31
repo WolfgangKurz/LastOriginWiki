@@ -97,7 +97,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 
 	function convWeapon (inp: string): preact.ComponentChildren {
 		return inp.split(" / ")
-			.gap(<hr class="my-1 mx-2" />);
+			.gap(<div class={ style.GradientSeparator } />);
 	}
 
 	function convData (data: number[]): number[] {

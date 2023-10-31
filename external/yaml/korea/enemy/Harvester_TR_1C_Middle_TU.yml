@@ -1,0 +1,186 @@
+uid: Harvester_TR_1C_Middle_TU
+rarity: 2
+type: 1
+role: 2
+category: 0
+stat:
+  hp:
+    - 3800
+    - 180
+  atk:
+    - 150
+    - 2
+  def:
+    - 0
+    - 0
+  spd: 5
+  cri: 0
+  acc: 200
+  eva: 0
+  res:
+    fire: 0
+    chill: 80
+    thunder: 15
+skills:
+  - key: Skill_MP_Harvester_N_1
+    icon: MeleeAttack
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 2
+      range: 1
+      ap: 10
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Harvester_N_1
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 78
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_STUN
+              desc:
+                desc: Effect_MP_Harvester_N_1_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 50%
+                type: 22
+                stun: true
+              overlap: 1
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Harvester_N_1_2
+                type: 1
+                value: "0.300000"
+                level: "0.015000"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 30%
+                  per: 1.5%
+              overlap: 0
+          maxStack: 0
+  - key: Skill_MP_Harvester_N_2
+    icon: Hang
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 0.5
+      range: 4
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Harvester_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_Pull
+              desc:
+                desc: Effect_MP_Harvester_N_2_1
+                type: 0
+                value: "2"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 53
+                position:
+                  type: pull
+                  range:
+                    base: 2
+                    per: 0
+              overlap: 0
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_Harvester_N_2_2
+                type: 1
+                value: "-0.250000"
+                level: "-0.012500"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: -25%
+                  per: -1.25%
+              overlap: 4
+            - icon: BuffIcon_SNARE
+              desc:
+                desc: Effect_MP_Harvester_N_2_3
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 50%
+                type: 78
+                immovable: true
+              overlap: 1
+          maxStack: 0
+ai: AI_MP_Dummy06_TR

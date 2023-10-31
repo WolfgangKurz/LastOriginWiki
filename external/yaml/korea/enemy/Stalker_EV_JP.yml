@@ -1,0 +1,190 @@
+uid: Stalker_EV_JP
+rarity: 5
+type: 0
+role: 1
+category: 1
+stat:
+  hp:
+    - 160
+    - 140
+  atk:
+    - 81
+    - 13.5
+  def:
+    - 40
+    - 0.75
+  spd: 4.1
+  cri: 10
+  acc: 280
+  eva: 50
+  res:
+    fire: 35
+    chill: 35
+    thunder: 35
+skills:
+  - key: Skill_MP_Stalker_N_1
+    icon: Chargeshot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 1
+      range: 6
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: false
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 0
+      buffs:
+        - key: Effect_MP_Stalker_N_1
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs: []
+          maxStack: 0
+  - key: Skill_MP_Stalker_TU2_2
+    icon: SelfAtkBuff
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Stalker_TU2_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_charge
+              desc:
+                desc: Effect_MP_Stalker_TU2_2_1
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 10
+              value:
+                isBuff: true
+                type: 54
+                next_crit:
+                  base: 100%
+                  per: 0%
+              overlap: 0
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Stalker_TU2_2_2
+                type: 1
+                value: "1"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 15
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 100%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+  - key: Skill_MP_Stalker_N_3
+    icon: P.SuicideBomb
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 1,1,1,1,0,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Stalker_N_3
+          on: self_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_Stalker_N_3_1
+                type: 1
+                value: "2.500000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 70
+                fixed_damage:
+                  base: 250%
+                  per: 0%
+              overlap: 0
+          maxStack: 0
+ai: AI_Boss_Stalker_01

@@ -196,7 +196,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 		const h = Math.floor(duration / 3600);
 		const m = Math.floor(duration / 60) % 60;
 		const s = duration % 60;
-		return `${(`0${h}`).substr(-2)}:${(`0${m}`).substr(-2)}:${(`0${s}`).substr(-2)}`;
+		return `${(`0${h}`).slice(-2)}:${(`0${m}`).slice(-2)}:${(`0${s}`).slice(-2)}`;
 	})();
 
 	const UpgradeCostTable = ((): preact.VNode[][] => {
@@ -289,6 +289,16 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 
 	const RenderDrops = (target: FilterableEquip | null) => {
 		if (!target) return <></>;
+
+		const CraftTime = ((): string => {
+			const duration = target?.craft;
+			if (!duration) return "-";
+
+			const h = Math.floor(duration / 3600);
+			const m = Math.floor(duration / 60) % 60;
+			const s = duration % 60;
+			return `${(`0${h}`).slice(-2)}:${(`0${m}`).slice(-2)}:${(`0${s}`).slice(-2)}`;
+		})();
 
 		return target.source.length === 0 && !target.craft
 			? <span class="text-secondary">
@@ -569,10 +579,12 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 											<div class="alert alert-light mb-3 p-1">
 												<Locale
 													k="EQUIP_VIEW_SOURCE_T4"
-													p={ [<Locale
-														plain
-														k={ `EQUIP_${GetFullKey(target.type, target.key, ACTOR_GRADE.SSS)}` }
-													/>] }
+													p={ [
+														<span style="text-decoration:underline">{
+															LocaleGet(`EQUIP_${GetFullKey(target.type, target.key, ACTOR_GRADE.SSS)}`)
+																.replace(/ SSS$/, "")
+														}</span>
+													] }
 												/>
 											</div>
 											{ RenderDrops(targetT4) }
