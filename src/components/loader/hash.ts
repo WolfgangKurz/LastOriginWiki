@@ -1,7 +1,7 @@
 // Content automatically generated
 export interface DBHashType { [K: string]: string | DBHashType; }
 export default {
-	"buildtime": "926d0585",
+	"buildtime": "cc19235f",
 	"locale": {
 		"TC": "f5fa18dd",
 		"KR": "aa982f3e",
@@ -16,7 +16,7 @@ export default {
 		"mission": "e7e5f8f5",
 		"maps": "f93199cb",
 		"gacha": "09d9f97a",
-		"filterable.unit": "b567da8f",
+		"filterable.unit": "c7990921",
 		"filterable.facility": "b3f0e54b",
 		"filterable.equip": "7c5fd295",
 		"filterable.enemy": "db637d70",
@@ -85,7 +85,7 @@ export default {
 			"PECS_Carolina": "f0b520f6",
 			"PECS_BS": "0f662904",
 			"PECS_Boryeon": "0b3d7b3a",
-			"PECS_BlindPrincess": "e82e201e",
+			"PECS_BlindPrincess": "f4de367d",
 			"PECS_Babariana": "bbf5f1cd",
 			"PECS_Azaz": "afd2b5bc",
 			"PECS_Audrey": "b0fc0fa2",
