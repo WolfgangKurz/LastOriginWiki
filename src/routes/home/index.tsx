@@ -8,9 +8,12 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/scss";
 import "swiper/scss/pagination";
 
+import TimeAgo from "javascript-time-ago";
+
 import { AssetsRoot, CurrentEvent, EventTo, Host, ImageExtension, IsAprilFool } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { CurrentLocale } from "@/libs/Locale";
+import { GetTimeAgoLocale } from "@/libs/Setup";
 
 import Locale from "@/components/locale";
 import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
@@ -73,6 +76,7 @@ const Home: FunctionalComponent = () => {
 		const s = dt.getSeconds();
 		return `${pad(y, 4)}-${pad(m, 2)}-${pad(d, 2)} ${pad(h, 2)}:${pad(i, 2)}:${pad(s, 2)}`;
 	})();
+	const BuildTimeAgo = new TimeAgo(GetTimeAgoLocale(CurrentLocale)).format(BuildInfo.time);
 
 	const BuildVersion = BuildInfo.build;
 
@@ -84,7 +88,7 @@ const Home: FunctionalComponent = () => {
 		SwiperCore.use([Autoplay, Pagination]);
 	}, []);
 
-	const previewSkins = ["PECS_Draculina_2", "PECS_Serpent_2"];
+	const previewSkins = ["BR_HongRyun_4", "3P_Alice_3", "PECS_BlindPrincess_1", "PECS_Ignis_2"];
 
 	return <div class={ `${style.home} home` }>
 		<div class="alert alert-primary">
@@ -154,7 +158,11 @@ const Home: FunctionalComponent = () => {
 			<div>
 				<Locale k="HOME_BUILD_INFO" p={ [
 					BuildVersion,
-					BuildTime,
+					<span
+						class={ style.BuildTime }
+						title={ BuildTime }
+						style={ { cursor: "help" } }
+					>{ BuildTimeAgo }</span>,
 				] } />
 			</div>
 		</div>

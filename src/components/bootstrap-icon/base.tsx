@@ -1,4 +1,4 @@
-import { FunctionalComponent } from "preact";
+import { FunctionalComponent, JSX } from "preact";
 
 import { BuildClass } from "@/libs/Class";
 
@@ -9,6 +9,7 @@ export interface IconProps {
 	size?: string | number;
 	color?: string;
 	viewBox?: string;
+	style?: string | JSX.CSSProperties;
 }
 
 const IconBase: FunctionalComponent<IconProps> = (props) => {
@@ -23,6 +24,7 @@ const IconBase: FunctionalComponent<IconProps> = (props) => {
 		width={ size }
 		height={ size }
 		fill={ color }
+		style={ props.style }
 	>
 		{ props.children }
 	</svg>;

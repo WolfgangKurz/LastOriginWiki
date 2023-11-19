@@ -56,6 +56,8 @@ interface ViewerProps {
 	cursor: number;
 	onDone?: () => void;
 	onNext?: (cursor: number) => void;
+
+	onVoice?: (voice: string) => void;
 }
 
 const Viewer: FunctionalComponent<ViewerProps> = (props) => {
@@ -138,6 +140,8 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			"2DModel_PECS_Azaz_NS2_DL_N", "2DModel_BR_RoyalArsenal_NS2_DL_N",
 			"2DModel_MiniPerrault_N", "2DModel_Superior01_N",
 			"2DModel_BR_Efreeti_NS1_DL_N",
+			"2DModel_PECS_LemonadeBeta_N", "2DModel_PECS_Shepherd_N",
+			"2DModel_Mercenary_N", "2DModel_Simon_N", "2DModel_Simon2_N",
 		];
 		if (list.includes(model)) return true;
 		return false;
@@ -160,6 +164,7 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			BR_Emily_NS1_DL_0_O: "BR_Emily_1_O",
 			BR_Gnome_NS2_DL_0_O: "BR_Gnome_2_O_S",
 			BR_Hela_N_DL_0_O: "BR_Hela_0_O_S",
+			BR_HongRyun_NS4_DL_0_O: "BR_HongRyun_4_O_B",
 			BR_May_NS2_DL_0_O: "BR_May_2_O_S",
 			BR_Nereid_N_DL_0_O: "BR_Nereid_0_O",
 			BR_NightAngel_NS2_DL_0_O: "BR_NightAngel_2_O_S",
@@ -212,6 +217,7 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			DS_Angel_1_O: "DS_Angel_1_O_B",
 			DS_Ramiel_0_O: "DS_Ramiel_0_O_S",
 			PECS_Boryeon_1_O: "PECS_Boryeon_1_O_S",
+			PECS_BlindPrincess_1_O: "PECS_BlindPrincess_1_O_B",
 			PECS_BS_1_O: "PECS_BS_1_O_S",
 			PECS_CoCoWhiteShell_0_O: "PECS_CoCoWhiteShell_0_O_S",
 			PECS_Ella_1_O: "PECS_Ella_1_O_S",
@@ -479,7 +485,12 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			if (isValidLText(curData.bg.desc)) setBGDesc(curData.bg.desc);
 			if (curData.bg.image) setBGImage(curData.bg.image);
 
-			if (curData.voice) setVoice(curData.voice);
+			if (curData.voice) {
+				if (props.onVoice)
+					props.onVoice(curData.voice);
+				else
+					setVoice(curData.voice);
+			}
 
 			if (curData.char.L) setCharL(curData.char.L);
 			else if (charL) setCharL(null);

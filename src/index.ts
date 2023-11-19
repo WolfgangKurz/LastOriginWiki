@@ -7,12 +7,15 @@ import App from "@/app";
 import "@/themes/index.scss";
 
 import { Extend } from "@/libs/Functions";
+import { SetupLibraries } from "@/libs/Setup";
 
 import { GetJson, JsonLoaderCore } from "@/components/loader";
 import buildtime from "@/buildtime";
 import Store from "@/store";
 
 Extend();
+
+SetupLibraries();
 
 YAML.ensure().then(() => {
 	const verCheck = () => {

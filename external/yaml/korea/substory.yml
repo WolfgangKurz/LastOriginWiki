@@ -283,6 +283,19 @@ group:
       - Story_Char_BR_AS12TurtleDragon_N_40_BR_AS12TurtleDragon_3
       - Story_Char_BR_AS12TurtleDragon_N_40_BR_Miho_4
       - Story_Char_BR_AS12TurtleDragon_N_40_BR_AS12TurtleDragon_5
+  - troop: Story_Troop_Group_Squad_TeamMongus
+    key: PCStory_CH_BR_HongRyun_1
+    type: 0
+    char: BR_HongRyun
+    skin: 4
+    group: TeamMongus
+    story:
+      - Story_Char_BR_HongRyun_N_52_BR_Amy_1
+      - Story_Char_BR_HongRyun_N_52_BR_AS12TurtleDragon_2
+      - Story_Char_BR_HongRyun_N_52_PECS_Leanne_3
+      - Story_Char_BR_HongRyun_N_52_BR_HongRyun_4
+      - Story_Char_BR_HongRyun_N_52_BR_Miho_5
+      - Story_Char_BR_HongRyun_N_52_BR_HongRyun_6
   - troop: Story_Troop_Group_Squad_AutoGuardSystem
     key: PCStory_CH_AGS_RheinRitter_1
     type: 0
@@ -605,6 +618,19 @@ group:
       - Story_Char_PECS_Circe_N_9_PECS_Circe_3
       - Story_Char_PECS_Circe_N_9_PECS_Circe_4
       - Story_Char_PECS_Circe_N_9_PECS_DutchGirl_5
+  - troop: Story_Troop_Group_Squad_Bismarck
+    key: PCStory_CH_PECS_BlindPrincess_1
+    type: 0
+    char: PECS_BlindPrincess
+    skin: 1
+    group: Bismarck
+    story:
+      - Story_Char_PECS_BlindPrincess_N_51_PECS_Merlin_1
+      - Story_Char_PECS_BlindPrincess_N_51_AGS_Goltarion_2
+      - Story_Char_PECS_BlindPrincess_N_51_PECS_BlindPrincess_3
+      - Story_Char_PECS_BlindPrincess_N_51_PECS_Erato_4
+      - Story_Char_PECS_BlindPrincess_N_51_PECS_BlindPrincess_5
+      - Story_Char_PECS_BlindPrincess_N_51_PECS_BlindPrincess_6
   - troop: Story_Troop_Group_Squad_EmpressHound
     key: PCStory_CH_BR_JangHwa_1
     type: 0
@@ -2757,6 +2783,150 @@ story:
       trigger:
         type: 0
         value: Cut_ChCS-44Stage05_1
+  - group: PCStory_CH_BR_HongRyun_1
+    key: Story_Char_BR_HongRyun_N_52_BR_Amy_1
+    order: 1
+    char: BR_Amy
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-56Stage01_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 2
+          value: Char_BR_HongRyun_N
+          sub: "1"
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-56Stage01_1
+  - group: PCStory_CH_BR_HongRyun_1
+    key: Story_Char_BR_HongRyun_N_52_BR_AS12TurtleDragon_2
+    order: 2
+    char: BR_AS12TurtleDragon
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-56Stage02_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_BR_HongRyun_N_52_BR_Amy_1
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-56Stage02_1
+  - group: PCStory_CH_BR_HongRyun_1
+    key: Story_Char_BR_HongRyun_N_52_PECS_Leanne_3
+    order: 3
+    char: PECS_Leanne
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-56Stage03_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_BR_HongRyun_N_52_BR_AS12TurtleDragon_2
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-56Stage03_1
+  - group: PCStory_CH_BR_HongRyun_1
+    key: Story_Char_BR_HongRyun_N_52_BR_HongRyun_4
+    order: 4
+    char: BR_HongRyun
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-56Stage04_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_BR_HongRyun_N_52_PECS_Leanne_3
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-56Stage04_1
+  - group: PCStory_CH_BR_HongRyun_1
+    key: Story_Char_BR_HongRyun_N_52_BR_Miho_5
+    order: 5
+    char: BR_Miho
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-56Stage05_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_BR_HongRyun_N_52_BR_HongRyun_4
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-56Stage05_1
+  - group: PCStory_CH_BR_HongRyun_1
+    key: Story_Char_BR_HongRyun_N_52_BR_HongRyun_6
+    order: 6
+    char: BR_HongRyun
+    skin: 4
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-56Stage06_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_BR_HongRyun_N_52_BR_Miho_5
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-56Stage06_1
   - group: PCStory_CH_AGS_RheinRitter_1
     key: Story_Char_AGS_RheinRitter_N_41_PECS_Azaz_1
     order: 1
@@ -5949,6 +6119,150 @@ story:
       trigger:
         type: 0
         value: Cut_ChCS-13Stage05_1
+  - group: PCStory_CH_PECS_BlindPrincess_1
+    key: Story_Char_PECS_BlindPrincess_N_51_PECS_Merlin_1
+    order: 1
+    char: PECS_Merlin
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-55Stage01_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 8
+          value: Char_PECS_BlindPrincess_N
+          sub: "100"
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-55Stage01_1
+  - group: PCStory_CH_PECS_BlindPrincess_1
+    key: Story_Char_PECS_BlindPrincess_N_51_AGS_Goltarion_2
+    order: 2
+    char: AGS_Goltarion
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-55Stage02_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_BlindPrincess_N_51_PECS_Merlin_1
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-55Stage02_1
+  - group: PCStory_CH_PECS_BlindPrincess_1
+    key: Story_Char_PECS_BlindPrincess_N_51_PECS_BlindPrincess_3
+    order: 3
+    char: PECS_BlindPrincess
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-55Stage03_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_BlindPrincess_N_51_AGS_Goltarion_2
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-55Stage03_1
+  - group: PCStory_CH_PECS_BlindPrincess_1
+    key: Story_Char_PECS_BlindPrincess_N_51_PECS_Erato_4
+    order: 4
+    char: PECS_Erato
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-55Stage04_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_BlindPrincess_N_51_PECS_BlindPrincess_3
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-55Stage04_1
+  - group: PCStory_CH_PECS_BlindPrincess_1
+    key: Story_Char_PECS_BlindPrincess_N_51_PECS_BlindPrincess_5
+    order: 5
+    char: PECS_BlindPrincess
+    skin: 1
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-55Stage05_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_BlindPrincess_N_51_PECS_Erato_4
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-55Stage05_1
+  - group: PCStory_CH_PECS_BlindPrincess_1
+    key: Story_Char_PECS_BlindPrincess_N_51_PECS_BlindPrincess_6
+    order: 6
+    char: PECS_BlindPrincess
+    skin: 1
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-55Stage06_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_BlindPrincess_N_51_PECS_BlindPrincess_5
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-55Stage06_1
   - group: PCStory_CH_BR_JangHwa_1
     key: Story_Char_BR_JangHwa_N_21_BR_JangHwa_1
     order: 1
