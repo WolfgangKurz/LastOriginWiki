@@ -649,25 +649,9 @@ skills:
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_Alvis_N_1_2
-                    type: 1
-                    value: "-0.050000"
-                    level: "-0.002500"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -5%
-                      per: -0.25%
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_3
+                    desc: Effect_BR_Alvis_N_1_2
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -683,7 +667,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_4
+                    desc: Effect_BR_Alvis_N_1_3
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -696,6 +680,96 @@ skills:
                     critical:
                       base: -10%
                       per: -0.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_1_4
+                    type: 1
+                    value: "-0.030000"
+                    level: "-0.005000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -3%
+                      per: -0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Alvis_N_11
+              on: attack_success
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_Leona_CH_4
+                      - Effect_BUFF_QMObserver_N_1
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ATK_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_1
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_2
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_3
+                    type: 1
+                    value: "-0.015000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -1.5%
+                      per: -0.25%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -743,25 +817,9 @@ skills:
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_Alvis_N_1_2
-                    type: 1
-                    value: "-0.050000"
-                    level: "-0.002500"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -5%
-                      per: -0.25%
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_3
+                    desc: Effect_BR_Alvis_N_1_2
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -777,7 +835,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_4
+                    desc: Effect_BR_Alvis_N_1_3
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -790,6 +848,96 @@ skills:
                     critical:
                       base: -10%
                       per: -0.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_1_4
+                    type: 1
+                    value: "-0.030000"
+                    level: "-0.005000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -3%
+                      per: -0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Alvis_N_11
+              on: attack_success
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_Leona_CH_4
+                      - Effect_BUFF_QMObserver_N_1
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ATK_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_1
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_2
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_3
+                    type: 1
+                    value: "-0.015000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -1.5%
+                      per: -0.25%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -837,25 +985,9 @@ skills:
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_Alvis_N_1_2
-                    type: 1
-                    value: "-0.050000"
-                    level: "-0.002500"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -5%
-                      per: -0.25%
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_3
+                    desc: Effect_BR_Alvis_N_1_2
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -871,7 +1003,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_4
+                    desc: Effect_BR_Alvis_N_1_3
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -884,6 +1016,96 @@ skills:
                     critical:
                       base: -10%
                       per: -0.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_1_4
+                    type: 1
+                    value: "-0.030000"
+                    level: "-0.005000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -3%
+                      per: -0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Alvis_N_11
+              on: attack_success
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_Leona_CH_4
+                      - Effect_BUFF_QMObserver_N_1
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ATK_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_1
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_2
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_3
+                    type: 1
+                    value: "-0.015000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -1.5%
+                      per: -0.25%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -931,25 +1153,9 @@ skills:
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_Alvis_N_1_2
-                    type: 1
-                    value: "-0.050000"
-                    level: "-0.002500"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -5%
-                      per: -0.25%
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_3
+                    desc: Effect_BR_Alvis_N_1_2
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -965,7 +1171,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_4
+                    desc: Effect_BR_Alvis_N_1_3
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -978,6 +1184,96 @@ skills:
                     critical:
                       base: -10%
                       per: -0.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_1_4
+                    type: 1
+                    value: "-0.030000"
+                    level: "-0.005000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -3%
+                      per: -0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Alvis_N_11
+              on: attack_success
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_Leona_CH_4
+                      - Effect_BUFF_QMObserver_N_1
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ATK_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_1
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_2
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_3
+                    type: 1
+                    value: "-0.015000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -1.5%
+                      per: -0.25%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1025,25 +1321,9 @@ skills:
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_Alvis_N_1_2
-                    type: 1
-                    value: "-0.050000"
-                    level: "-0.002500"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -5%
-                      per: -0.25%
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_3
+                    desc: Effect_BR_Alvis_N_1_2
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -1059,7 +1339,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_4
+                    desc: Effect_BR_Alvis_N_1_3
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -1072,6 +1352,96 @@ skills:
                     critical:
                       base: -10%
                       per: -0.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_1_4
+                    type: 1
+                    value: "-0.030000"
+                    level: "-0.005000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -3%
+                      per: -0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Alvis_N_11
+              on: attack_success
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_Leona_CH_4
+                      - Effect_BUFF_QMObserver_N_1
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ATK_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_1
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_2
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_3
+                    type: 1
+                    value: "-0.015000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -1.5%
+                      per: -0.25%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1119,25 +1489,9 @@ skills:
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_Alvis_N_1_2
-                    type: 1
-                    value: "-0.050000"
-                    level: "-0.002500"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -5%
-                      per: -0.25%
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_3
+                    desc: Effect_BR_Alvis_N_1_2
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -1153,7 +1507,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_4
+                    desc: Effect_BR_Alvis_N_1_3
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -1166,6 +1520,96 @@ skills:
                     critical:
                       base: -10%
                       per: -0.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_1_4
+                    type: 1
+                    value: "-0.030000"
+                    level: "-0.005000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -3%
+                      per: -0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Alvis_N_11
+              on: attack_success
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_Leona_CH_4
+                      - Effect_BUFF_QMObserver_N_1
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ATK_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_1
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_2
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_3
+                    type: 1
+                    value: "-0.015000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -1.5%
+                      per: -0.25%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1213,25 +1657,9 @@ skills:
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_Alvis_N_1_2
-                    type: 1
-                    value: "-0.050000"
-                    level: "-0.002500"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -5%
-                      per: -0.25%
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_3
+                    desc: Effect_BR_Alvis_N_1_2
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -1247,7 +1675,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_4
+                    desc: Effect_BR_Alvis_N_1_3
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -1260,6 +1688,96 @@ skills:
                     critical:
                       base: -10%
                       per: -0.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_1_4
+                    type: 1
+                    value: "-0.030000"
+                    level: "-0.005000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -3%
+                      per: -0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Alvis_N_11
+              on: attack_success
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_Leona_CH_4
+                      - Effect_BUFF_QMObserver_N_1
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ATK_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_1
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_2
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_3
+                    type: 1
+                    value: "-0.015000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -1.5%
+                      per: -0.25%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1307,25 +1825,9 @@ skills:
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_Alvis_N_1_2
-                    type: 1
-                    value: "-0.050000"
-                    level: "-0.002500"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -5%
-                      per: -0.25%
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_3
+                    desc: Effect_BR_Alvis_N_1_2
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -1341,7 +1843,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_4
+                    desc: Effect_BR_Alvis_N_1_3
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -1354,6 +1856,96 @@ skills:
                     critical:
                       base: -10%
                       per: -0.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_1_4
+                    type: 1
+                    value: "-0.030000"
+                    level: "-0.005000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -3%
+                      per: -0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Alvis_N_11
+              on: attack_success
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_Leona_CH_4
+                      - Effect_BUFF_QMObserver_N_1
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ATK_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_1
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_2
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_3
+                    type: 1
+                    value: "-0.015000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -1.5%
+                      per: -0.25%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1401,25 +1993,9 @@ skills:
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_Alvis_N_1_2
-                    type: 1
-                    value: "-0.050000"
-                    level: "-0.002500"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -5%
-                      per: -0.25%
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_3
+                    desc: Effect_BR_Alvis_N_1_2
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -1435,7 +2011,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_4
+                    desc: Effect_BR_Alvis_N_1_3
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -1448,6 +2024,96 @@ skills:
                     critical:
                       base: -10%
                       per: -0.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_1_4
+                    type: 1
+                    value: "-0.030000"
+                    level: "-0.005000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -3%
+                      per: -0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Alvis_N_11
+              on: attack_success
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_Leona_CH_4
+                      - Effect_BUFF_QMObserver_N_1
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ATK_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_1
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_2
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_3
+                    type: 1
+                    value: "-0.015000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -1.5%
+                      per: -0.25%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1495,25 +2161,9 @@ skills:
                     type: 74
                     provoke: self
                   overlap: 1
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_Alvis_N_1_2
-                    type: 1
-                    value: "-0.050000"
-                    level: "-0.002500"
-                  attr: 1
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -5%
-                      per: -0.25%
-                  overlap: 4
                 - icon: BuffIcon_ATK_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_3
+                    desc: Effect_BR_Alvis_N_1_2
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -1529,7 +2179,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_DOWN
                   desc:
-                    desc: Effect_BR_Alvis_N_1_4
+                    desc: Effect_BR_Alvis_N_1_3
                     type: 1
                     value: "-0.100000"
                     level: "-0.005000"
@@ -1542,6 +2192,96 @@ skills:
                     critical:
                       base: -10%
                       per: -0.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_1_4
+                    type: 1
+                    value: "-0.030000"
+                    level: "-0.005000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -3%
+                      per: -0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Alvis_N_11
+              on: attack_success
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_Leona_CH_4
+                      - Effect_BUFF_QMObserver_N_1
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ATK_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_1
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_2
+                    type: 1
+                    value: "-0.050000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -5%
+                      per: -0.25%
+                  overlap: 4
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_BR_Alvis_N_11_3
+                    type: 1
+                    value: "-0.015000"
+                    level: "-0.002500"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: -1.5%
+                      per: -0.25%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1567,18 +2307,9 @@ skills:
             base: 0
             per: 0
             chance: 1
-          - icon: BuffIcon_AP_DOWN
-            desc:
-              desc: Effect_BR_Alvis_N_1_2
-              type: 1
-              value: "-0.050000"
-              level: "-0.002500"
-            base: -0.05
-            per: -0.0025
-            chance: 1
           - icon: BuffIcon_ATK_DOWN
             desc:
-              desc: Effect_BR_Alvis_N_1_3
+              desc: Effect_BR_Alvis_N_1_2
               type: 1
               value: "-0.100000"
               level: "-0.005000"
@@ -1587,12 +2318,48 @@ skills:
             chance: 1
           - icon: BuffIcon_CRITICAL_DOWN
             desc:
-              desc: Effect_BR_Alvis_N_1_4
+              desc: Effect_BR_Alvis_N_1_3
               type: 1
               value: "-0.100000"
               level: "-0.005000"
             base: -0.1
             per: -0.005
+            chance: 1
+          - icon: BuffIcon_AP_DOWN
+            desc:
+              desc: Effect_BR_Alvis_N_1_4
+              type: 1
+              value: "-0.030000"
+              level: "-0.005000"
+            base: -0.03
+            per: -0.005
+            chance: 1
+          - icon: BuffIcon_ATK_DOWN
+            desc:
+              desc: Effect_BR_Alvis_N_11_1
+              type: 1
+              value: "-0.050000"
+              level: "-0.002500"
+            base: -0.05
+            per: -0.0025
+            chance: 1
+          - icon: BuffIcon_CRITICAL_DOWN
+            desc:
+              desc: Effect_BR_Alvis_N_11_2
+              type: 1
+              value: "-0.050000"
+              level: "-0.002500"
+            base: -0.05
+            per: -0.0025
+            chance: 1
+          - icon: BuffIcon_AP_DOWN
+            desc:
+              desc: Effect_BR_Alvis_N_11_3
+              type: 1
+              value: "-0.015000"
+              level: "-0.002500"
+            base: -0.015
+            per: -0.0025
             chance: 1
   "2":
     key: "2"
@@ -1892,6 +2659,107 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_BR_Alvis_N_3
+              on: wave
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+              role:
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_Alvis_N_3_1
+                    type: 0
+                    value: "1"
+                    level: "0.100000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 1
+                      per: 0.1
+                  overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Alvis_N_3_2
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
+                - icon: BuffIcon_DEF_UP
+                  desc:
+                    desc: Effect_BR_Alvis_N_3_3
+                    type: 1
+                    value: "0.400000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 3
+                    defense:
+                      base: 40%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_ICERES_UP
+                  desc:
+                    desc: Effect_BR_Alvis_N_3_4
+                    type: 1
+                    value: "0.500000"
+                    level: "0.025000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: 50%
+                        per: 2.5%
+                  overlap: 4
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_BR_Alvis_N_3_5
+                    type: 1
+                    value: "0.300000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 36
+                    damage_reduce:
+                      base: 30%
+                      per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Alvis_N_31
               on: round
               if:
                 - false
@@ -1908,8 +2776,8 @@ skills:
               buffs:
                 - icon: BuffIcon_DEF_Char
                   desc:
-                    desc: Effect_BR_Alvis_N_3_1
-                    type: 0
+                    desc: Effect_BR_Alvis_N_31_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 0
@@ -1920,79 +2788,9 @@ skills:
                     type: 76
                     guard: target
                   overlap: 4
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_Alvis_N_3_2
-                    type: 0
-                    value: "1"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 20
-                    ap:
-                      base: 1
-                      per: 0.05
-                  overlap: 4
-                - icon: BuffIcon_DEF_UP
-                  desc:
-                    desc: Effect_BR_Alvis_N_3_3
-                    type: 1
-                    value: "0.450000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 3
-                    defense:
-                      base: 45%
-                      per: 3%
-                  overlap: 4
-                - icon: BuffIcon_ICERES_UP
-                  desc:
-                    desc: Effect_BR_Alvis_N_3_4
-                    type: 1
-                    value: "0.500000"
-                    level: "0.025000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 17
-                    resist:
-                      elem: ice
-                      value:
-                        base: 50%
-                        per: 2.5%
-                  overlap: 4
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_BR_Alvis_N_3_5
-                    type: 1
-                    value: "0.100000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 36
-                    damage_reduce:
-                      base: 10%
-                      per: 1%
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Alvis_N_13
+            - key: Effect_BR_Alvis_N_32
               on: round
               if:
                 - false
@@ -2012,10 +2810,10 @@ skills:
               buffs:
                 - icon: BuffIcon_DEF_UP
                   desc:
-                    desc: Effect_BR_Alvis_N_13_1
+                    desc: Effect_BR_Alvis_N_32_1
                     type: 1
-                    value: "0.450000"
-                    level: "0.030000"
+                    value: "0.400000"
+                    level: "0.050000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -2023,12 +2821,12 @@ skills:
                     isBuff: true
                     type: 3
                     defense:
-                      base: 45%
-                      per: 3%
+                      base: 40%
+                      per: 5%
                   overlap: 4
                 - icon: BuffIcon_ICERES_UP
                   desc:
-                    desc: Effect_BR_Alvis_N_13_2
+                    desc: Effect_BR_Alvis_N_32_2
                     type: 1
                     value: "0.500000"
                     level: "0.025000"
@@ -2046,10 +2844,10 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
-                    desc: Effect_BR_Alvis_N_13_3
+                    desc: Effect_BR_Alvis_N_32_3
                     type: 1
-                    value: "0.100000"
-                    level: "0.010000"
+                    value: "0.300000"
+                    level: "0.020000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -2057,42 +2855,9 @@ skills:
                     isBuff: true
                     type: 36
                     damage_reduce:
-                      base: 10%
-                      per: 1%
+                      base: 30%
+                      per: 2%
                   overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_Alvis_N_16
-              on: wave
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-              role:
-                - 1
-                - 2
-              target: 2
-              buffs:
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_Alvis_N_16_1
-                    type: 0
-                    value: "1"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 20
-                    ap:
-                      base: 1
-                      per: 0.05
-                  overlap: 0
               maxStack: 0
               overlapGroup: -1
     values:
@@ -2108,32 +2873,32 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_DEF_Char
+        - - icon: BuffIcon_AP_UP
             desc:
               desc: Effect_BR_Alvis_N_3_1
               type: 0
+              value: "1"
+              level: "0.100000"
+            base: 1
+            per: 0.1
+            chance: 1
+          - icon: BuffIcon_DEF_Char
+            desc:
+              desc: Effect_BR_Alvis_N_3_2
+              type: 1
               value: "0"
               level: "0"
             base: 0
             per: 0
-            chance: 1
-          - icon: BuffIcon_AP_UP
-            desc:
-              desc: Effect_BR_Alvis_N_3_2
-              type: 0
-              value: "1"
-              level: "0.050000"
-            base: 1
-            per: 0.05
             chance: 0
           - icon: BuffIcon_DEF_UP
             desc:
               desc: Effect_BR_Alvis_N_3_3
               type: 1
-              value: "0.450000"
-              level: "0.030000"
-            base: 0.45
-            per: 0.03
+              value: "0.400000"
+              level: "0.050000"
+            base: 0.4
+            per: 0.05
             chance: 0
           - icon: BuffIcon_ICERES_UP
             desc:
@@ -2148,23 +2913,32 @@ skills:
             desc:
               desc: Effect_BR_Alvis_N_3_5
               type: 1
-              value: "0.100000"
-              level: "0.010000"
-            base: 0.1
-            per: 0.01
+              value: "0.300000"
+              level: "0.020000"
+            base: 0.3
+            per: 0.02
             chance: 0
+          - icon: BuffIcon_DEF_Char
+            desc:
+              desc: Effect_BR_Alvis_N_31_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
           - icon: BuffIcon_DEF_UP
             desc:
-              desc: Effect_BR_Alvis_N_13_1
+              desc: Effect_BR_Alvis_N_32_1
               type: 1
-              value: "0.450000"
-              level: "0.030000"
-            base: 0.45
-            per: 0.03
+              value: "0.400000"
+              level: "0.050000"
+            base: 0.4
+            per: 0.05
             chance: 1
           - icon: BuffIcon_ICERES_UP
             desc:
-              desc: Effect_BR_Alvis_N_13_2
+              desc: Effect_BR_Alvis_N_32_2
               type: 1
               value: "0.500000"
               level: "0.025000"
@@ -2173,21 +2947,12 @@ skills:
             chance: 1
           - icon: BuffIcon_DAMAGE_REDUCE
             desc:
-              desc: Effect_BR_Alvis_N_13_3
+              desc: Effect_BR_Alvis_N_32_3
               type: 1
-              value: "0.100000"
-              level: "0.010000"
-            base: 0.1
-            per: 0.01
-            chance: 1
-          - icon: BuffIcon_AP_UP
-            desc:
-              desc: Effect_BR_Alvis_N_16_1
-              type: 0
-              value: "1"
-              level: "0.050000"
-            base: 1
-            per: 0.05
+              value: "0.300000"
+              level: "0.020000"
+            base: 0.3
+            per: 0.02
             chance: 1
   "4":
     key: "4"
@@ -2281,7 +3046,7 @@ skills:
                     level: "0.020000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
                     chance: 0%
@@ -2289,23 +3054,6 @@ skills:
                     damage_increase:
                       base: 10%
                       per: 2%
-                  overlap: 4
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_BR_Alvis_N_4_4
-                    type: 1
-                    value: "0.100000"
-                    level: "0.015000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 36
-                    damage_reduce:
-                      base: 10%
-                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2354,8 +3102,18 @@ skills:
             - key: Effect_BR_Alvis_N_42
               on: round
               if:
-                - false
-                - false
+                - test: higher
+                  target: target
+                  operand: SPD
+                  ratio: 0
+                  than: SPD
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_Leona_N_4
+                      - Effect_BUFF_QMObserver_N_1
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -2367,25 +3125,73 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 4
               buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
+                - icon: BuffIcon_EVADE_DOWN
                   desc:
                     desc: Effect_BR_Alvis_N_42_1
                     type: 1
-                    value: "0.100000"
-                    level: "0.015000"
-                  attr: 0
+                    value: "-0.050000"
+                    level: "-0.005000"
+                  attr: 1
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 10%
-                      per: 1.5%
+                    type: 11
+                    evade:
+                      base: -5%
+                      per: -0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Alvis_N_43
+              on: round
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 74
+                    attr: 1
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_Leona_N_4
+                      - Effect_BUFF_QMObserver_N_1
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Alvis_N_43_1
+                    type: 1
+                    value: "0.050000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    count: 1
+                    trigger: damaged
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 5%
+                      per: 1%
+                  overlap: 4
+              maxStack: 1
               overlapGroup: -1
     values:
       index:
@@ -2427,15 +3233,6 @@ skills:
             base: 0.1
             per: 0.02
             chance: 0
-          - icon: BuffIcon_DAMAGE_REDUCE
-            desc:
-              desc: Effect_BR_Alvis_N_4_4
-              type: 1
-              value: "0.100000"
-              level: "0.015000"
-            base: 0.1
-            per: 0.015
-            chance: 0
           - icon: BuffIcon_VULNERABLE
             desc:
               desc: Effect_BR_Alvis_N_41_1
@@ -2445,14 +3242,23 @@ skills:
             base: 0.1
             per: 0.02
             chance: 1
-          - icon: BuffIcon_DAMAGE_REDUCE
+          - icon: BuffIcon_EVADE_DOWN
             desc:
               desc: Effect_BR_Alvis_N_42_1
               type: 1
-              value: "0.100000"
-              level: "0.015000"
-            base: 0.1
-            per: 0.015
+              value: "-0.050000"
+              level: "-0.005000"
+            base: -0.05
+            per: -0.005
+            chance: 1
+          - icon: BuffIcon_VULNERABLE
+            desc:
+              desc: Effect_BR_Alvis_N_43_1
+              type: 1
+              value: "0.050000"
+              level: "0.010000"
+            base: 0.05
+            per: 0.01
             chance: 1
   "5":
     key: "5"
@@ -2478,7 +3284,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: F>1,1,1,1,0,0,1,1,1
+          grid: F>1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true

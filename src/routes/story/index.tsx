@@ -5,12 +5,12 @@ import Store from "@/store";
 import { DIALOG_SPEAKER, SCG_ACTIVATION } from "@/types/Enums";
 import { DialogCharacter, StoryData, StoryMetadata } from "@/types/Story/Story";
 import SubStoryDB from "@/types/DB/SubStory";
+import { LocaleList, LocaleTypes } from "@/types/Locale";
 
 import { useUpdate } from "@/libs/hooks";
 import { AssetsRoot, ImageExtension, SubStoryUnit } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import { CurrentDB } from "@/libs/DB";
-import { LocaleList, LocaleTypes } from "@/libs/Locale";
 import { BuildClass } from "@/libs/Class";
 import { parseVNode } from "@/libs/VNode";
 import { UpdateTitle } from "@/libs/Site";

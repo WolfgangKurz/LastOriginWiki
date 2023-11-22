@@ -528,6 +528,7 @@ source:
     - 4-4
     - 4-1Ex
     - 5-4Ex
+    - 12-6
   - - Ev:Ev1:Ev-4B
   - - Ev:Ev2:Ev2-5B
   - - Ev:Ev5:Ev-8
@@ -585,7 +586,6 @@ skills:
                     select:
                       - 2
                       - 3
-                      - 10
                       - 11
                     attr: 1
                 - false
@@ -619,84 +619,6 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_18
-              on: round
-              if:
-                - in_battle:
-                    - Char_BR_Hyena_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_18_1
-                    type: 1
-                    value: "0.040000"
-                    level: "0.002000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 4%
-                      per: 0.2%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
         - rate: 1.38
           type: 0
@@ -719,7 +641,6 @@ skills:
                     select:
                       - 2
                       - 3
-                      - 10
                       - 11
                     attr: 1
                 - false
@@ -753,84 +674,6 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_18
-              on: round
-              if:
-                - in_battle:
-                    - Char_BR_Hyena_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_18_1
-                    type: 1
-                    value: "0.040000"
-                    level: "0.002000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 4%
-                      per: 0.2%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
         - rate: 1.49
           type: 0
@@ -853,7 +696,6 @@ skills:
                     select:
                       - 2
                       - 3
-                      - 10
                       - 11
                     attr: 1
                 - false
@@ -887,84 +729,6 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_18
-              on: round
-              if:
-                - in_battle:
-                    - Char_BR_Hyena_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_18_1
-                    type: 1
-                    value: "0.040000"
-                    level: "0.002000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 4%
-                      per: 0.2%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
         - rate: 1.6
           type: 0
@@ -987,7 +751,6 @@ skills:
                     select:
                       - 2
                       - 3
-                      - 10
                       - 11
                     attr: 1
                 - false
@@ -1021,84 +784,6 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_18
-              on: round
-              if:
-                - in_battle:
-                    - Char_BR_Hyena_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_18_1
-                    type: 1
-                    value: "0.040000"
-                    level: "0.002000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 4%
-                      per: 0.2%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
         - rate: 1.71
           type: 0
@@ -1121,7 +806,6 @@ skills:
                     select:
                       - 2
                       - 3
-                      - 10
                       - 11
                     attr: 1
                 - false
@@ -1155,84 +839,6 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_18
-              on: round
-              if:
-                - in_battle:
-                    - Char_BR_Hyena_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_18_1
-                    type: 1
-                    value: "0.040000"
-                    level: "0.002000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 4%
-                      per: 0.2%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
         - rate: 1.82
           type: 0
@@ -1255,7 +861,6 @@ skills:
                     select:
                       - 2
                       - 3
-                      - 10
                       - 11
                     attr: 1
                 - false
@@ -1289,84 +894,6 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_18
-              on: round
-              if:
-                - in_battle:
-                    - Char_BR_Hyena_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_18_1
-                    type: 1
-                    value: "0.040000"
-                    level: "0.002000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 4%
-                      per: 0.2%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
         - rate: 1.93
           type: 0
@@ -1389,7 +916,6 @@ skills:
                     select:
                       - 2
                       - 3
-                      - 10
                       - 11
                     attr: 1
                 - false
@@ -1423,84 +949,6 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_18
-              on: round
-              if:
-                - in_battle:
-                    - Char_BR_Hyena_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_18_1
-                    type: 1
-                    value: "0.040000"
-                    level: "0.002000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 4%
-                      per: 0.2%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
         - rate: 2.04
           type: 0
@@ -1523,7 +971,6 @@ skills:
                     select:
                       - 2
                       - 3
-                      - 10
                       - 11
                     attr: 1
                 - false
@@ -1557,84 +1004,6 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_18
-              on: round
-              if:
-                - in_battle:
-                    - Char_BR_Hyena_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_18_1
-                    type: 1
-                    value: "0.040000"
-                    level: "0.002000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 4%
-                      per: 0.2%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
         - rate: 2.15
           type: 0
@@ -1657,7 +1026,6 @@ skills:
                     select:
                       - 2
                       - 3
-                      - 10
                       - 11
                     attr: 1
                 - false
@@ -1691,84 +1059,6 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_18
-              on: round
-              if:
-                - in_battle:
-                    - Char_BR_Hyena_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_18_1
-                    type: 1
-                    value: "0.040000"
-                    level: "0.002000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 4%
-                      per: 0.2%
-                  overlap: 4
-              maxStack: 1
               overlapGroup: -1
         - rate: 2.26
           type: 0
@@ -1791,7 +1081,6 @@ skills:
                     select:
                       - 2
                       - 3
-                      - 10
                       - 11
                     attr: 1
                 - false
@@ -1826,84 +1115,6 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_18
-              on: round
-              if:
-                - in_battle:
-                    - Char_BR_Hyena_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_18_1
-                    type: 1
-                    value: "0.040000"
-                    level: "0.002000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 4%
-                      per: 0.2%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
     values:
       index:
         - 0
@@ -1925,24 +1136,6 @@ skills:
               level: "0.010000"
             base: 0.2
             per: 0.01
-            chance: 1
-          - icon: BuffIcon_PhyATK_UP
-            desc:
-              desc: Effect_BR_Khan_N_19_1
-              type: 1
-              value: "0.200000"
-              level: "0"
-            base: 0.2
-            per: 0
-            chance: 1
-          - icon: BuffIcon_AP_UP
-            desc:
-              desc: Effect_BR_QuickCamel_N_18_1
-              type: 1
-              value: "0.040000"
-              level: "0.002000"
-            base: 0.04
-            per: 0.002
             chance: 1
   "2":
     key: "2"
@@ -1979,84 +1172,11 @@ skills:
               on: attack_success
               if:
                 - on:
-                    target: target
-                    func: OR
+                    target: self
+                    func: UNFILLED
                     select:
-                      - 78
-                      - 87
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_1
-                    type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 4
-                - icon: BuffIcon_ARMORED_DMG_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_2
-                    type: 1
-                    value: "0.150000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 61
-                    damage_multiply:
-                      target: heavy
-                      value:
-                        base: 15%
-                        per: 1%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_3
-                    type: 1
-                    value: "0.300000"
-                    level: "0.040000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 30%
-                      per: 4%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_11
-              on: attack_success
-              if:
-                - false
+                      - Effect_BR_QuickCamel_N_5
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2071,9 +1191,25 @@ skills:
                 - 2
               target: 0
               buffs:
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_2_1
+                    type: 1
+                    value: "0.300000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: 30%
+                      per: 4%
+                  overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_1
+                    desc: Effect_BR_QuickCamel_N_2_2
                     type: 1
                     value: "0.150000"
                     level: "0.010000"
@@ -2089,32 +1225,34 @@ skills:
                         base: 15%
                         per: 1%
                   overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_2
+                    desc: Effect_BR_QuickCamel_N_2_3
                     type: 1
                     value: "0.300000"
-                    level: "0.040000"
+                    level: "0.015000"
                   attr: 0
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
+                    chance: 0%
+                    type: 83
+                    damage_add:
                       base: 30%
-                      per: 4%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
+            - key: Effect_BR_QuickCamel_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - 78
+                      - 87
                     attr: 6
                 - false
               body:
@@ -2132,10 +1270,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0"
+                    value: "0.300000"
+                    level: "0.015000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2143,8 +1281,8 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 0%
+                      base: 30%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2164,84 +1302,11 @@ skills:
               on: attack_success
               if:
                 - on:
-                    target: target
-                    func: OR
+                    target: self
+                    func: UNFILLED
                     select:
-                      - 78
-                      - 87
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_1
-                    type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 4
-                - icon: BuffIcon_ARMORED_DMG_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_2
-                    type: 1
-                    value: "0.150000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 61
-                    damage_multiply:
-                      target: heavy
-                      value:
-                        base: 15%
-                        per: 1%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_3
-                    type: 1
-                    value: "0.300000"
-                    level: "0.040000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 30%
-                      per: 4%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_11
-              on: attack_success
-              if:
-                - false
+                      - Effect_BR_QuickCamel_N_5
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2256,9 +1321,25 @@ skills:
                 - 2
               target: 0
               buffs:
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_2_1
+                    type: 1
+                    value: "0.300000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: 30%
+                      per: 4%
+                  overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_1
+                    desc: Effect_BR_QuickCamel_N_2_2
                     type: 1
                     value: "0.150000"
                     level: "0.010000"
@@ -2274,32 +1355,34 @@ skills:
                         base: 15%
                         per: 1%
                   overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_2
+                    desc: Effect_BR_QuickCamel_N_2_3
                     type: 1
                     value: "0.300000"
-                    level: "0.040000"
+                    level: "0.015000"
                   attr: 0
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
+                    chance: 0%
+                    type: 83
+                    damage_add:
                       base: 30%
-                      per: 4%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
+            - key: Effect_BR_QuickCamel_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - 78
+                      - 87
                     attr: 6
                 - false
               body:
@@ -2317,10 +1400,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0"
+                    value: "0.300000"
+                    level: "0.015000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2328,8 +1411,8 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 0%
+                      base: 30%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2349,84 +1432,11 @@ skills:
               on: attack_success
               if:
                 - on:
-                    target: target
-                    func: OR
+                    target: self
+                    func: UNFILLED
                     select:
-                      - 78
-                      - 87
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_1
-                    type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 4
-                - icon: BuffIcon_ARMORED_DMG_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_2
-                    type: 1
-                    value: "0.150000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 61
-                    damage_multiply:
-                      target: heavy
-                      value:
-                        base: 15%
-                        per: 1%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_3
-                    type: 1
-                    value: "0.300000"
-                    level: "0.040000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 30%
-                      per: 4%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_11
-              on: attack_success
-              if:
-                - false
+                      - Effect_BR_QuickCamel_N_5
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2441,9 +1451,25 @@ skills:
                 - 2
               target: 0
               buffs:
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_2_1
+                    type: 1
+                    value: "0.300000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: 30%
+                      per: 4%
+                  overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_1
+                    desc: Effect_BR_QuickCamel_N_2_2
                     type: 1
                     value: "0.150000"
                     level: "0.010000"
@@ -2459,32 +1485,34 @@ skills:
                         base: 15%
                         per: 1%
                   overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_2
+                    desc: Effect_BR_QuickCamel_N_2_3
                     type: 1
                     value: "0.300000"
-                    level: "0.040000"
+                    level: "0.015000"
                   attr: 0
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
+                    chance: 0%
+                    type: 83
+                    damage_add:
                       base: 30%
-                      per: 4%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
+            - key: Effect_BR_QuickCamel_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - 78
+                      - 87
                     attr: 6
                 - false
               body:
@@ -2502,10 +1530,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0"
+                    value: "0.300000"
+                    level: "0.015000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2513,8 +1541,8 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 0%
+                      base: 30%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2534,84 +1562,11 @@ skills:
               on: attack_success
               if:
                 - on:
-                    target: target
-                    func: OR
+                    target: self
+                    func: UNFILLED
                     select:
-                      - 78
-                      - 87
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_1
-                    type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 4
-                - icon: BuffIcon_ARMORED_DMG_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_2
-                    type: 1
-                    value: "0.150000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 61
-                    damage_multiply:
-                      target: heavy
-                      value:
-                        base: 15%
-                        per: 1%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_3
-                    type: 1
-                    value: "0.300000"
-                    level: "0.040000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 30%
-                      per: 4%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_11
-              on: attack_success
-              if:
-                - false
+                      - Effect_BR_QuickCamel_N_5
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2626,9 +1581,25 @@ skills:
                 - 2
               target: 0
               buffs:
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_2_1
+                    type: 1
+                    value: "0.300000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: 30%
+                      per: 4%
+                  overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_1
+                    desc: Effect_BR_QuickCamel_N_2_2
                     type: 1
                     value: "0.150000"
                     level: "0.010000"
@@ -2644,32 +1615,34 @@ skills:
                         base: 15%
                         per: 1%
                   overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_2
+                    desc: Effect_BR_QuickCamel_N_2_3
                     type: 1
                     value: "0.300000"
-                    level: "0.040000"
+                    level: "0.015000"
                   attr: 0
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
+                    chance: 0%
+                    type: 83
+                    damage_add:
                       base: 30%
-                      per: 4%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
+            - key: Effect_BR_QuickCamel_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - 78
+                      - 87
                     attr: 6
                 - false
               body:
@@ -2687,10 +1660,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0"
+                    value: "0.300000"
+                    level: "0.015000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2698,8 +1671,8 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 0%
+                      base: 30%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2719,84 +1692,11 @@ skills:
               on: attack_success
               if:
                 - on:
-                    target: target
-                    func: OR
+                    target: self
+                    func: UNFILLED
                     select:
-                      - 78
-                      - 87
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_1
-                    type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 4
-                - icon: BuffIcon_ARMORED_DMG_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_2
-                    type: 1
-                    value: "0.150000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 61
-                    damage_multiply:
-                      target: heavy
-                      value:
-                        base: 15%
-                        per: 1%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_3
-                    type: 1
-                    value: "0.300000"
-                    level: "0.040000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 30%
-                      per: 4%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_11
-              on: attack_success
-              if:
-                - false
+                      - Effect_BR_QuickCamel_N_5
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2811,9 +1711,25 @@ skills:
                 - 2
               target: 0
               buffs:
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_2_1
+                    type: 1
+                    value: "0.300000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: 30%
+                      per: 4%
+                  overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_1
+                    desc: Effect_BR_QuickCamel_N_2_2
                     type: 1
                     value: "0.150000"
                     level: "0.010000"
@@ -2829,32 +1745,34 @@ skills:
                         base: 15%
                         per: 1%
                   overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_2
+                    desc: Effect_BR_QuickCamel_N_2_3
                     type: 1
                     value: "0.300000"
-                    level: "0.040000"
+                    level: "0.015000"
                   attr: 0
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
+                    chance: 0%
+                    type: 83
+                    damage_add:
                       base: 30%
-                      per: 4%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
+            - key: Effect_BR_QuickCamel_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - 78
+                      - 87
                     attr: 6
                 - false
               body:
@@ -2872,10 +1790,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0"
+                    value: "0.300000"
+                    level: "0.015000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2883,8 +1801,8 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 0%
+                      base: 30%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2904,84 +1822,11 @@ skills:
               on: attack_success
               if:
                 - on:
-                    target: target
-                    func: OR
+                    target: self
+                    func: UNFILLED
                     select:
-                      - 78
-                      - 87
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_1
-                    type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 4
-                - icon: BuffIcon_ARMORED_DMG_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_2
-                    type: 1
-                    value: "0.150000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 61
-                    damage_multiply:
-                      target: heavy
-                      value:
-                        base: 15%
-                        per: 1%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_3
-                    type: 1
-                    value: "0.300000"
-                    level: "0.040000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 30%
-                      per: 4%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_11
-              on: attack_success
-              if:
-                - false
+                      - Effect_BR_QuickCamel_N_5
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2996,9 +1841,25 @@ skills:
                 - 2
               target: 0
               buffs:
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_2_1
+                    type: 1
+                    value: "0.300000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: 30%
+                      per: 4%
+                  overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_1
+                    desc: Effect_BR_QuickCamel_N_2_2
                     type: 1
                     value: "0.150000"
                     level: "0.010000"
@@ -3014,32 +1875,34 @@ skills:
                         base: 15%
                         per: 1%
                   overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_2
+                    desc: Effect_BR_QuickCamel_N_2_3
                     type: 1
                     value: "0.300000"
-                    level: "0.040000"
+                    level: "0.015000"
                   attr: 0
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
+                    chance: 0%
+                    type: 83
+                    damage_add:
                       base: 30%
-                      per: 4%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
+            - key: Effect_BR_QuickCamel_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - 78
+                      - 87
                     attr: 6
                 - false
               body:
@@ -3057,10 +1920,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0"
+                    value: "0.300000"
+                    level: "0.015000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3068,8 +1931,8 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 0%
+                      base: 30%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3089,84 +1952,11 @@ skills:
               on: attack_success
               if:
                 - on:
-                    target: target
-                    func: OR
+                    target: self
+                    func: UNFILLED
                     select:
-                      - 78
-                      - 87
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_1
-                    type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 4
-                - icon: BuffIcon_ARMORED_DMG_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_2
-                    type: 1
-                    value: "0.150000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 61
-                    damage_multiply:
-                      target: heavy
-                      value:
-                        base: 15%
-                        per: 1%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_3
-                    type: 1
-                    value: "0.300000"
-                    level: "0.040000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 30%
-                      per: 4%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_11
-              on: attack_success
-              if:
-                - false
+                      - Effect_BR_QuickCamel_N_5
+                    attr: 6
                 - false
               body:
                 - 0
@@ -3181,9 +1971,25 @@ skills:
                 - 2
               target: 0
               buffs:
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_2_1
+                    type: 1
+                    value: "0.300000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: 30%
+                      per: 4%
+                  overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_1
+                    desc: Effect_BR_QuickCamel_N_2_2
                     type: 1
                     value: "0.150000"
                     level: "0.010000"
@@ -3199,32 +2005,34 @@ skills:
                         base: 15%
                         per: 1%
                   overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_2
+                    desc: Effect_BR_QuickCamel_N_2_3
                     type: 1
                     value: "0.300000"
-                    level: "0.040000"
+                    level: "0.015000"
                   attr: 0
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
+                    chance: 0%
+                    type: 83
+                    damage_add:
                       base: 30%
-                      per: 4%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
+            - key: Effect_BR_QuickCamel_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - 78
+                      - 87
                     attr: 6
                 - false
               body:
@@ -3242,10 +2050,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0"
+                    value: "0.300000"
+                    level: "0.015000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3253,8 +2061,8 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 0%
+                      base: 30%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3274,84 +2082,11 @@ skills:
               on: attack_success
               if:
                 - on:
-                    target: target
-                    func: OR
+                    target: self
+                    func: UNFILLED
                     select:
-                      - 78
-                      - 87
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_1
-                    type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 4
-                - icon: BuffIcon_ARMORED_DMG_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_2
-                    type: 1
-                    value: "0.150000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 61
-                    damage_multiply:
-                      target: heavy
-                      value:
-                        base: 15%
-                        per: 1%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_3
-                    type: 1
-                    value: "0.300000"
-                    level: "0.040000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 30%
-                      per: 4%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_11
-              on: attack_success
-              if:
-                - false
+                      - Effect_BR_QuickCamel_N_5
+                    attr: 6
                 - false
               body:
                 - 0
@@ -3366,9 +2101,25 @@ skills:
                 - 2
               target: 0
               buffs:
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_2_1
+                    type: 1
+                    value: "0.300000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: 30%
+                      per: 4%
+                  overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_1
+                    desc: Effect_BR_QuickCamel_N_2_2
                     type: 1
                     value: "0.150000"
                     level: "0.010000"
@@ -3384,32 +2135,34 @@ skills:
                         base: 15%
                         per: 1%
                   overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_2
+                    desc: Effect_BR_QuickCamel_N_2_3
                     type: 1
                     value: "0.300000"
-                    level: "0.040000"
+                    level: "0.015000"
                   attr: 0
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
+                    chance: 0%
+                    type: 83
+                    damage_add:
                       base: 30%
-                      per: 4%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
+            - key: Effect_BR_QuickCamel_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - 78
+                      - 87
                     attr: 6
                 - false
               body:
@@ -3427,10 +2180,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0"
+                    value: "0.300000"
+                    level: "0.015000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3438,8 +2191,8 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 0%
+                      base: 30%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3459,84 +2212,11 @@ skills:
               on: attack_success
               if:
                 - on:
-                    target: target
-                    func: OR
+                    target: self
+                    func: UNFILLED
                     select:
-                      - 78
-                      - 87
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_1
-                    type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 4
-                - icon: BuffIcon_ARMORED_DMG_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_2
-                    type: 1
-                    value: "0.150000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 61
-                    damage_multiply:
-                      target: heavy
-                      value:
-                        base: 15%
-                        per: 1%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_3
-                    type: 1
-                    value: "0.300000"
-                    level: "0.040000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 30%
-                      per: 4%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_11
-              on: attack_success
-              if:
-                - false
+                      - Effect_BR_QuickCamel_N_5
+                    attr: 6
                 - false
               body:
                 - 0
@@ -3551,9 +2231,25 @@ skills:
                 - 2
               target: 0
               buffs:
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_2_1
+                    type: 1
+                    value: "0.300000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: 30%
+                      per: 4%
+                  overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_1
+                    desc: Effect_BR_QuickCamel_N_2_2
                     type: 1
                     value: "0.150000"
                     level: "0.010000"
@@ -3569,32 +2265,34 @@ skills:
                         base: 15%
                         per: 1%
                   overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_2
+                    desc: Effect_BR_QuickCamel_N_2_3
                     type: 1
                     value: "0.300000"
-                    level: "0.040000"
+                    level: "0.015000"
                   attr: 0
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
+                    chance: 0%
+                    type: 83
+                    damage_add:
                       base: 30%
-                      per: 4%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
+            - key: Effect_BR_QuickCamel_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - 78
+                      - 87
                     attr: 6
                 - false
               body:
@@ -3612,10 +2310,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0"
+                    value: "0.300000"
+                    level: "0.015000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3623,8 +2321,8 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 0%
+                      base: 30%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3644,84 +2342,11 @@ skills:
               on: attack_success
               if:
                 - on:
-                    target: target
-                    func: OR
+                    target: self
+                    func: UNFILLED
                     select:
-                      - 78
-                      - 87
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_1
-                    type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 4
-                - icon: BuffIcon_ARMORED_DMG_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_2
-                    type: 1
-                    value: "0.150000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 61
-                    damage_multiply:
-                      target: heavy
-                      value:
-                        base: 15%
-                        per: 1%
-                  overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_2_3
-                    type: 1
-                    value: "0.300000"
-                    level: "0.040000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 58
-                    penetration:
-                      base: 30%
-                      per: 4%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_11
-              on: attack_success
-              if:
-                - false
+                      - Effect_BR_QuickCamel_N_5
+                    attr: 6
                 - false
               body:
                 - 0
@@ -3736,9 +2361,25 @@ skills:
                 - 2
               target: 0
               buffs:
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_2_1
+                    type: 1
+                    value: "0.300000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: 30%
+                      per: 4%
+                  overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_1
+                    desc: Effect_BR_QuickCamel_N_2_2
                     type: 1
                     value: "0.150000"
                     level: "0.010000"
@@ -3754,32 +2395,34 @@ skills:
                         base: 15%
                         per: 1%
                   overlap: 4
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_11_2
+                    desc: Effect_BR_QuickCamel_N_2_3
                     type: 1
                     value: "0.300000"
-                    level: "0.040000"
+                    level: "0.015000"
                   attr: 0
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 58
-                    penetration:
+                    chance: 0%
+                    type: 83
+                    damage_add:
                       base: 30%
-                      per: 4%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
+            - key: Effect_BR_QuickCamel_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - 78
+                      - 87
                     attr: 6
                 - false
               body:
@@ -3797,10 +2440,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0"
+                    value: "0.300000"
+                    level: "0.015000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3808,8 +2451,8 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 0%
+                      base: 30%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3826,14 +2469,14 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_PhyATK_UP
+        - - icon: BuffIcon_DEF_PIERCE_UP
             desc:
               desc: Effect_BR_QuickCamel_N_2_1
               type: 1
               value: "0.300000"
-              level: "0.015000"
+              level: "0.040000"
             base: 0.3
-            per: 0.015
+            per: 0.04
             chance: 1
           - icon: BuffIcon_ARMORED_DMG_UP
             desc:
@@ -3843,49 +2486,31 @@ skills:
               level: "0.010000"
             base: 0.15
             per: 0.01
-            chance: 0
-          - icon: BuffIcon_DEF_PIERCE_UP
+            chance: 1
+          - icon: BuffIcon_PhyATK_UP
             desc:
               desc: Effect_BR_QuickCamel_N_2_3
               type: 1
               value: "0.300000"
-              level: "0.040000"
+              level: "0.015000"
             base: 0.3
-            per: 0.04
+            per: 0.015
             chance: 0
-          - icon: BuffIcon_ARMORED_DMG_UP
-            desc:
-              desc: Effect_BR_QuickCamel_N_11_1
-              type: 1
-              value: "0.150000"
-              level: "0.010000"
-            base: 0.15
-            per: 0.01
-            chance: 1
-          - icon: BuffIcon_DEF_PIERCE_UP
-            desc:
-              desc: Effect_BR_QuickCamel_N_11_2
-              type: 1
-              value: "0.300000"
-              level: "0.040000"
-            base: 0.3
-            per: 0.04
-            chance: 1
           - icon: BuffIcon_PhyATK_UP
             desc:
-              desc: Effect_BR_Khan_N_19_1
+              desc: Effect_BR_QuickCamel_N_21_1
               type: 1
-              value: "0.200000"
-              level: "0"
-            base: 0.2
-            per: 0
+              value: "0.300000"
+              level: "0.015000"
+            base: 0.3
+            per: 0.015
             chance: 1
   "3":
     key: "3"
-    icon: P.TeamAtkBuff
+    icon: P.TeamSpdBuff
     target: team
     delayed: false
-    target_ground: false
+    target_ground: true
     leastGrade: 3
     buffs:
       index:
@@ -3904,7 +2529,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,1,0,0,0,0,0,1,0
+          grid: F>1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -3915,8 +2540,10 @@ skills:
             - key: Effect_BR_QuickCamel_N_3
               on: round
               if:
-                - false
-                - false
+                - pos: 0
+                - pos:
+                    target: target
+                    position: 0
               body:
                 - 0
                 - 1
@@ -3945,9 +2572,25 @@ skills:
                       base: 100%
                       per: 0%
                   overlap: 4
-                - icon: BuffIcon_AP_UP
+                - icon: BuffIcon_ATK_UP
                   desc:
                     desc: Effect_BR_QuickCamel_N_3_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_3_3
                     type: 0
                     value: "1"
                     level: "0.050000"
@@ -3964,11 +2607,186 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_12
+            - key: Effect_BR_QuickCamel_N_31
+              on: round
+              if:
+                - pos: 1
+                - pos:
+                    target: target
+                    position: 1
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_SUPPORT_ATTACK
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_31_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 77
+                    attack_support:
+                      base: 100%
+                      per: 0%
+                  overlap: 4
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_31_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_32
+              on: round
+              if:
+                - pos: 2
+                - pos:
+                    target: target
+                    position: 2
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_SUPPORT_ATTACK
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_32_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 77
+                    attack_support:
+                      base: 100%
+                      per: 0%
+                  overlap: 4
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_32_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_33
+              on: round
+              if:
+                - on:
+                    target: target
+                    select:
+                      - Effect_BR_QuickCamel_N_3
+                      - Effect_BR_QuickCamel_N_31
+                      - Effect_BR_QuickCamel_N_32
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+                - target:
+                    - Char_BR_Khan_N
+                    - Char_BR_WarWolf_N
+                    - Char_BR_TalonFeather_N
+                    - Char_BR_Salamander_N
+                    - Char_BR_Hyena_N
+                    - Char_BR_Scarabya_N
+                    - Char_BR_Kheshig_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_SUPPORT_ATTACK
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_33_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 77
+                    attack_support:
+                      base: 100%
+                      per: 0%
+                  overlap: 4
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_33_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_34
               on: wave
               if:
-                - false
-                - false
+                - pos: 0
+                - pos:
+                    target: target
+                    position: 0
               body:
                 - 0
                 - 1
@@ -3983,7 +2801,81 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_12_1
+                    desc: Effect_BR_QuickCamel_N_34_1
+                    type: 0
+                    value: "1"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 1
+                      per: 0.05
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_35
+              on: wave
+              if:
+                - pos: 1
+                - pos:
+                    target: target
+                    position: 1
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_35_1
+                    type: 0
+                    value: "1"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 1
+                      per: 0.05
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_36
+              on: wave
+              if:
+                - pos: 2
+                - pos:
+                    target: target
+                    position: 2
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_36_1
                     type: 0
                     value: "1"
                     level: "0.050000"
@@ -4021,18 +2913,99 @@ skills:
             base: 1
             per: 0
             chance: 1
-          - icon: BuffIcon_AP_UP
+          - icon: BuffIcon_ATK_UP
             desc:
               desc: Effect_BR_QuickCamel_N_3_2
+              type: 1
+              value: "0.150000"
+              level: "0.010000"
+            base: 0.15
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_QuickCamel_N_3_3
               type: 0
               value: "1"
               level: "0.050000"
             base: 1
             per: 0.05
             chance: 0
+          - icon: BuffIcon_SUPPORT_ATTACK
+            desc:
+              desc: Effect_BR_QuickCamel_N_31_1
+              type: 1
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_QuickCamel_N_31_2
+              type: 1
+              value: "0.150000"
+              level: "0.010000"
+            base: 0.15
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_SUPPORT_ATTACK
+            desc:
+              desc: Effect_BR_QuickCamel_N_32_1
+              type: 1
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_QuickCamel_N_32_2
+              type: 1
+              value: "0.150000"
+              level: "0.010000"
+            base: 0.15
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_SUPPORT_ATTACK
+            desc:
+              desc: Effect_BR_QuickCamel_N_33_1
+              type: 1
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_QuickCamel_N_33_2
+              type: 1
+              value: "0.150000"
+              level: "0.010000"
+            base: 0.15
+            per: 0.01
+            chance: 1
           - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_QuickCamel_N_12_1
+              desc: Effect_BR_QuickCamel_N_34_1
+              type: 0
+              value: "1"
+              level: "0.050000"
+            base: 1
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_QuickCamel_N_35_1
+              type: 0
+              value: "1"
+              level: "0.050000"
+            base: 1
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_QuickCamel_N_36_1
               type: 0
               value: "1"
               level: "0.050000"
@@ -4041,7 +3014,7 @@ skills:
             chance: 1
   "4":
     key: "4"
-    icon: P.SelfAtkBuff
+    icon: P.SetTurret
     target: team
     delayed: false
     target_ground: false
@@ -4063,7 +3036,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 1,1,1,1,1,1,1,1,1
+          grid: 0,0,0,0,1,0,0,0,0
           summon: null
           use: null
           enabled: true
@@ -4094,7 +3067,7 @@ skills:
                     desc: Effect_BR_QuickCamel_N_4_1
                     type: 1
                     value: "0.150000"
-                    level: "0.007500"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -4103,7 +3076,7 @@ skills:
                     type: 1
                     attack:
                       base: 15%
-                      per: 0.75%
+                      per: 1%
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_UP
                   desc:
@@ -4141,43 +3114,49 @@ skills:
                   desc:
                     desc: Effect_BR_QuickCamel_N_4_4
                     type: 1
-                    value: "0.040000"
+                    value: "0.020000"
                     level: "0.002000"
                   attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
                     chance: 0%
                     type: 13
                     turnSpeed:
-                      base: 4%
+                      base: 2%
                       per: 0.2%
                   overlap: 4
-                - icon: BuffIcon_SUPPORT_ATTACK
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
                     desc: Effect_BR_QuickCamel_N_4_5
-                    type: 0
-                    value: "1"
+                    type: 1
+                    value: "0"
                     level: "0"
                   attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 77
-                    attack_support:
-                      base: 100%
-                      per: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: "0"
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_13
+            - key: Effect_BR_QuickCamel_N_41
               on: round
               if:
-                - in_battle:
-                    - Char_BR_Khan_N
+                - unitCount:
+                    filter: squad
+                    type:
+                      - 0
+                      - 2
+                      - 1
+                    count:
+                      - 1
                 - false
               body:
                 - 0
@@ -4194,9 +3173,9 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_13_1
+                    desc: Effect_BR_QuickCamel_N_41_1
                     type: 1
-                    value: "0.040000"
+                    value: "0.020000"
                     level: "0.002000"
                   attr: 0
                   erase:
@@ -4205,98 +3184,30 @@ skills:
                     isBuff: true
                     type: 13
                     turnSpeed:
-                      base: 4%
+                      base: 2%
                       per: 0.2%
                   overlap: 4
-              maxStack: 1
+              maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_14
+            - key: Effect_BR_QuickCamel_N_42
               on: round
               if:
-                - in_battle:
-                    - Char_BR_WarWolf_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_14_1
-                    type: 1
-                    value: "0.040000"
-                    level: "0.002000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 4%
-                      per: 0.2%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_15
-              on: round
-              if:
-                - in_battle:
-                    - Char_BR_TalonFeather_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_15_1
-                    type: 1
-                    value: "0.040000"
-                    level: "0.002000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 4%
-                      per: 0.2%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_16
-              on: round
-              if:
-                - target:
+                - unitCount:
+                    filter: squad
+                    type:
+                      - 0
+                      - 2
+                      - 1
+                    count:
+                      - 2
+                - notInBattle:
                     - Char_BR_Khan_N
                     - Char_BR_WarWolf_N
                     - Char_BR_TalonFeather_N
                     - Char_BR_Salamander_N
                     - Char_BR_Hyena_N
-                    - Char_BR_QuickCamel_N
                     - Char_BR_Scarabya_N
                     - Char_BR_Kheshig_N
-                - false
               body:
                 - 0
                 - 1
@@ -4308,143 +3219,45 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 2
+              target: 0
               buffs:
-                - icon: BuffIcon_SUPPORT_ATTACK
+                - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_16_1
+                    desc: Effect_BR_QuickCamel_N_42_1
                     type: 1
-                    value: "1"
-                    level: "0"
+                    value: "0.040000"
+                    level: "0.004000"
                   attr: 0
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 77
-                    attack_support:
-                      base: 100%
-                      per: 0%
+                    type: 13
+                    turnSpeed:
+                      base: 4%
+                      per: 0.4%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_17
+            - key: Effect_BR_QuickCamel_N_43
               on: round
               if:
-                - in_battle:
+                - unitCount:
+                    filter: squad
+                    type:
+                      - 0
+                      - 2
+                      - 1
+                    count:
+                      - 3
+                - notInBattle:
+                    - Char_BR_Khan_N
+                    - Char_BR_WarWolf_N
+                    - Char_BR_TalonFeather_N
                     - Char_BR_Salamander_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_17_1
-                    type: 1
-                    value: "0.040000"
-                    level: "0.002000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 4%
-                      per: 0.2%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_18
-              on: round
-              if:
-                - in_battle:
                     - Char_BR_Hyena_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_18_1
-                    type: 1
-                    value: "0.040000"
-                    level: "0.002000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 4%
-                      per: 0.2%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_19
-              on: round
-              if:
-                - in_battle:
-                    - Char_BR_QuickCamel_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_19_1
-                    type: 1
-                    value: "0.040000"
-                    level: "0.002000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 4%
-                      per: 0.2%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_110
-              on: round
-              if:
-                - in_battle:
                     - Char_BR_Scarabya_N
-                - false
+                    - Char_BR_Kheshig_N
               body:
                 - 0
                 - 1
@@ -4460,10 +3273,10 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_110_1
+                    desc: Effect_BR_QuickCamel_N_43_1
                     type: 1
-                    value: "0.040000"
-                    level: "0.002000"
+                    value: "0.060000"
+                    level: "0.006000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -4471,17 +3284,30 @@ skills:
                     isBuff: true
                     type: 13
                     turnSpeed:
-                      base: 4%
-                      per: 0.2%
+                      base: 6%
+                      per: 0.6%
                   overlap: 4
-              maxStack: 1
+              maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_111
+            - key: Effect_BR_QuickCamel_N_44
               on: round
               if:
-                - in_battle:
+                - unitCount:
+                    filter: squad
+                    type:
+                      - 0
+                      - 2
+                      - 1
+                    count:
+                      - 4
+                - notInBattle:
+                    - Char_BR_Khan_N
+                    - Char_BR_WarWolf_N
+                    - Char_BR_TalonFeather_N
+                    - Char_BR_Salamander_N
+                    - Char_BR_Hyena_N
+                    - Char_BR_Scarabya_N
                     - Char_BR_Kheshig_N
-                - false
               body:
                 - 0
                 - 1
@@ -4497,10 +3323,10 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_BR_QuickCamel_N_111_1
+                    desc: Effect_BR_QuickCamel_N_44_1
                     type: 1
-                    value: "0.040000"
-                    level: "0.002000"
+                    value: "0.080000"
+                    level: "0.008000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -4508,10 +3334,260 @@ skills:
                     isBuff: true
                     type: 13
                     turnSpeed:
-                      base: 4%
-                      per: 0.2%
+                      base: 8%
+                      per: 0.8%
                   overlap: 4
-              maxStack: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_45
+              on: round
+              if:
+                - unitCount:
+                    filter: squad
+                    type:
+                      - 0
+                      - 2
+                      - 1
+                    count:
+                      - 5
+                - notInBattle:
+                    - Char_BR_Khan_N
+                    - Char_BR_WarWolf_N
+                    - Char_BR_TalonFeather_N
+                    - Char_BR_Salamander_N
+                    - Char_BR_Hyena_N
+                    - Char_BR_Scarabya_N
+                    - Char_BR_Kheshig_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_45_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_46
+              on: round
+              if:
+                - unitCount:
+                    filter: squad
+                    type:
+                      - 0
+                      - 2
+                      - 1
+                    count:
+                      - 2
+                - in_battle:
+                    - Char_BR_Khan_N
+                    - Char_BR_WarWolf_N
+                    - Char_BR_TalonFeather_N
+                    - Char_BR_Salamander_N
+                    - Char_BR_Hyena_N
+                    - Char_BR_Scarabya_N
+                    - Char_BR_Kheshig_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_46_1
+                    type: 1
+                    value: "0.060000"
+                    level: "0.006000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: 6%
+                      per: 0.6%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_47
+              on: round
+              if:
+                - unitCount:
+                    filter: squad
+                    type:
+                      - 0
+                      - 2
+                      - 1
+                    count:
+                      - 3
+                - in_battle:
+                    - Char_BR_Khan_N
+                    - Char_BR_WarWolf_N
+                    - Char_BR_TalonFeather_N
+                    - Char_BR_Salamander_N
+                    - Char_BR_Hyena_N
+                    - Char_BR_Scarabya_N
+                    - Char_BR_Kheshig_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_47_1
+                    type: 1
+                    value: "0.090000"
+                    level: "0.009000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: 9%
+                      per: 0.9%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_48
+              on: round
+              if:
+                - unitCount:
+                    filter: squad
+                    type:
+                      - 0
+                      - 2
+                      - 1
+                    count:
+                      - 4
+                - in_battle:
+                    - Char_BR_Khan_N
+                    - Char_BR_WarWolf_N
+                    - Char_BR_TalonFeather_N
+                    - Char_BR_Salamander_N
+                    - Char_BR_Hyena_N
+                    - Char_BR_Scarabya_N
+                    - Char_BR_Kheshig_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_48_1
+                    type: 1
+                    value: "0.120000"
+                    level: "0.012000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: 12%
+                      per: 1.2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_49
+              on: round
+              if:
+                - unitCount:
+                    filter: squad
+                    type:
+                      - 0
+                      - 2
+                      - 1
+                    count:
+                      - 5
+                - in_battle:
+                    - Char_BR_Khan_N
+                    - Char_BR_WarWolf_N
+                    - Char_BR_TalonFeather_N
+                    - Char_BR_Salamander_N
+                    - Char_BR_Hyena_N
+                    - Char_BR_Scarabya_N
+                    - Char_BR_Kheshig_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_49_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: 15%
+                      per: 1.5%
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
     values:
       index:
@@ -4531,9 +3607,9 @@ skills:
               desc: Effect_BR_QuickCamel_N_4_1
               type: 1
               value: "0.150000"
-              level: "0.007500"
+              level: "0.010000"
             base: 0.15
-            per: 0.0075
+            per: 0.01
             chance: 1
           - icon: BuffIcon_CRITICAL_UP
             desc:
@@ -4557,107 +3633,107 @@ skills:
             desc:
               desc: Effect_BR_QuickCamel_N_4_4
               type: 1
-              value: "0.040000"
+              value: "0.020000"
               level: "0.002000"
-            base: 0.04
+            base: 0.02
             per: 0.002
             chance: 0
-          - icon: BuffIcon_SUPPORT_ATTACK
+          - icon: BuffIcon_TOGETHER_ATTACK
             desc:
               desc: Effect_BR_QuickCamel_N_4_5
-              type: 0
-              value: "1"
+              type: 1
+              value: "0"
               level: "0"
-            base: 1
+            base: 0
             per: 0
             chance: 0
           - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_QuickCamel_N_13_1
+              desc: Effect_BR_QuickCamel_N_41_1
               type: 1
-              value: "0.040000"
+              value: "0.020000"
               level: "0.002000"
-            base: 0.04
+            base: 0.02
             per: 0.002
             chance: 1
           - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_QuickCamel_N_14_1
+              desc: Effect_BR_QuickCamel_N_42_1
               type: 1
               value: "0.040000"
-              level: "0.002000"
+              level: "0.004000"
             base: 0.04
-            per: 0.002
+            per: 0.004
             chance: 1
           - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_QuickCamel_N_15_1
+              desc: Effect_BR_QuickCamel_N_43_1
               type: 1
-              value: "0.040000"
-              level: "0.002000"
-            base: 0.04
-            per: 0.002
-            chance: 1
-          - icon: BuffIcon_SUPPORT_ATTACK
-            desc:
-              desc: Effect_BR_QuickCamel_N_16_1
-              type: 1
-              value: "1"
-              level: "0"
-            base: 1
-            per: 0
+              value: "0.060000"
+              level: "0.006000"
+            base: 0.06
+            per: 0.006
             chance: 1
           - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_QuickCamel_N_17_1
+              desc: Effect_BR_QuickCamel_N_44_1
               type: 1
-              value: "0.040000"
-              level: "0.002000"
-            base: 0.04
-            per: 0.002
+              value: "0.080000"
+              level: "0.008000"
+            base: 0.08
+            per: 0.008
             chance: 1
           - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_QuickCamel_N_18_1
+              desc: Effect_BR_QuickCamel_N_45_1
               type: 1
-              value: "0.040000"
-              level: "0.002000"
-            base: 0.04
-            per: 0.002
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
             chance: 1
           - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_QuickCamel_N_19_1
+              desc: Effect_BR_QuickCamel_N_46_1
               type: 1
-              value: "0.040000"
-              level: "0.002000"
-            base: 0.04
-            per: 0.002
+              value: "0.060000"
+              level: "0.006000"
+            base: 0.06
+            per: 0.006
             chance: 1
           - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_QuickCamel_N_110_1
+              desc: Effect_BR_QuickCamel_N_47_1
               type: 1
-              value: "0.040000"
-              level: "0.002000"
-            base: 0.04
-            per: 0.002
+              value: "0.090000"
+              level: "0.009000"
+            base: 0.09
+            per: 0.009
             chance: 1
           - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_QuickCamel_N_111_1
+              desc: Effect_BR_QuickCamel_N_48_1
               type: 1
-              value: "0.040000"
-              level: "0.002000"
-            base: 0.04
-            per: 0.002
+              value: "0.120000"
+              level: "0.012000"
+            base: 0.12
+            per: 0.012
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_QuickCamel_N_49_1
+              type: 1
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
             chance: 1
   "5":
     key: "5"
     icon: P.TeamAtkBuff
     target: team
     delayed: false
-    target_ground: false
+    target_ground: true
     leastGrade: 5
     buffs:
       index:
@@ -4676,7 +3752,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,1,0,1,1,0,0,1,0
+          grid: 1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -4694,50 +3770,53 @@ skills:
                 - 1
               class:
                 - 0
+                - 1
+                - 2
               role:
                 - 0
                 - 1
                 - 2
-              target: 2
+              target: 0
               buffs:
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_BR_QuickCamel_N_5_1
                     type: 1
-                    value: "0.110000"
+                    value: "0.300000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: 30%
+                      per: 4%
+                  overlap: 4
+                - icon: BuffIcon_ARMORED_DMG_UP
+                  desc:
+                    desc: Effect_BR_QuickCamel_N_5_2
+                    type: 1
+                    value: "0.150000"
                     level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 1
-                    attack:
-                      base: 11%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_5_2
-                    type: 1
-                    value: "0.055000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 1
-                    attack:
-                      base: 5.5%
-                      per: 0.5%
+                    type: 61
+                    damage_multiply:
+                      target: heavy
+                      value:
+                        base: 15%
+                        per: 1%
                   overlap: 4
                 - icon: BuffIcon_BARRIER_PIERCE
                   desc:
                     desc: Effect_BR_QuickCamel_N_5_3
                     type: 0
-                    value: "1"
+                    value: "0"
                     level: "0"
                   attr: 0
                   erase:
@@ -4748,98 +3827,22 @@ skills:
                     type: 94
                     penetration_force: true
                   overlap: 4
-              maxStack: 1
+              maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_QuickCamel_N_51
               on: round
               if:
+                - in_battle:
+                    - Char_BR_Khan_N
                 - target:
                     - Char_BR_Khan_N
-                    - Char_BR_WarWolf_N
-                    - Char_BR_Hyena_N
                     - Char_BR_QuickCamel_N
-                    - Char_BR_Kheshig_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 2
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_51_1
-                    type: 1
-                    value: "0.055000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 5.5%
-                      per: 0.5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_52
-              on: round
-              if:
-                - target:
+                    - Char_BR_WarWolf_N
                     - Char_BR_TalonFeather_N
                     - Char_BR_Salamander_N
+                    - Char_BR_Hyena_N
                     - Char_BR_Scarabya_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 2
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_QuickCamel_N_52_1
-                    type: 1
-                    value: "0.165000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 16.5%
-                      per: 1.5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_BR_QuickCamel_N_53
-              on: round
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_31
-                    attr: 6
-                - false
+                    - Char_BR_Kheshig_N
               body:
                 - 0
                 - 1
@@ -4855,7 +3858,7 @@ skills:
               buffs:
                 - icon: BuffIcon_BARRIER_PIERCE
                   desc:
-                    desc: Effect_BR_QuickCamel_N_53_1
+                    desc: Effect_BR_QuickCamel_N_51_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -4867,7 +3870,7 @@ skills:
                     type: 94
                     penetration_force: true
                   overlap: 4
-              maxStack: 1
+              maxStack: 0
               overlapGroup: -1
     values:
       index:
@@ -4882,54 +3885,36 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_ATK_UP
+        - - icon: BuffIcon_DEF_PIERCE_UP
             desc:
               desc: Effect_BR_QuickCamel_N_5_1
               type: 1
-              value: "0.110000"
-              level: "0.010000"
-            base: 0.11
-            per: 0.01
+              value: "0.300000"
+              level: "0.040000"
+            base: 0.3
+            per: 0.04
             chance: 1
-          - icon: BuffIcon_ATK_UP
+          - icon: BuffIcon_ARMORED_DMG_UP
             desc:
               desc: Effect_BR_QuickCamel_N_5_2
               type: 1
-              value: "0.055000"
-              level: "0.005000"
-            base: 0.055
-            per: 0.005
-            chance: 0
+              value: "0.150000"
+              level: "0.010000"
+            base: 0.15
+            per: 0.01
+            chance: 1
           - icon: BuffIcon_BARRIER_PIERCE
             desc:
               desc: Effect_BR_QuickCamel_N_5_3
               type: 0
-              value: "1"
+              value: "0"
               level: "0"
-            base: 1
+            base: 0
             per: 0
             chance: 0
-          - icon: BuffIcon_ATK_UP
-            desc:
-              desc: Effect_BR_QuickCamel_N_51_1
-              type: 1
-              value: "0.055000"
-              level: "0.005000"
-            base: 0.055
-            per: 0.005
-            chance: 1
-          - icon: BuffIcon_ATK_UP
-            desc:
-              desc: Effect_BR_QuickCamel_N_52_1
-              type: 1
-              value: "0.165000"
-              level: "0.015000"
-            base: 0.165
-            per: 0.015
-            chance: 1
           - icon: BuffIcon_BARRIER_PIERCE
             desc:
-              desc: Effect_BR_QuickCamel_N_53_1
+              desc: Effect_BR_QuickCamel_N_51_1
               type: 1
               value: "0"
               level: "0"
@@ -5241,7 +4226,7 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: |-
-        Hi! I'm here. What’s up?
+        Hi! I'm here. What's up?
         Nothing? You were just bored?
       Idle_01_02: |-
         Hmm… Commander, Wanna go out

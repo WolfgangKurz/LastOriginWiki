@@ -1,13 +1,11 @@
+import { LocaleTypes, LocaleList } from "@/types/Locale";
+
 import { getCookie, setCookie } from "@/libs/Cookie";
 
 export function ChangeLanguage (lang: LocaleTypes): void {
 	setCookie("LO_LANG", lang);
 	window.location.reload();
 }
-
-export type LocaleTypes = "KR" | "JP" | "EN" | "TC" | "SC";
-// export const LocaleList: LocaleTypes[] = ["KR", "JP", "EN", "TC", "SC"];
-export const LocaleList: LocaleTypes[] = ["KR", "JP", "EN", "TC"];
 
 function LangValidation (name: string | undefined): LocaleTypes {
 	const list = LocaleList as string[];

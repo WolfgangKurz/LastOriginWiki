@@ -23,6 +23,18 @@ promotions:
         count: 250
       - id: RobotParts_HeavyWeapon
         count: 50
+  - to: 5
+    level: 90
+    favor: "100"
+    req:
+      - id: Consumable_OriginDustAdv
+        count: 450
+      - id: Consumable_OriginDustSp
+        count: 150
+      - id: Special_Module
+        count: 100
+      - id: RobotParts_HeavyWeapon
+        count: 150
 lvLimits:
   - level: 101
     items:
@@ -584,7 +596,7 @@ skills:
         - 8
         - 9
       data:
-        - rate: 1.17
+        - rate: 1.45
           type: 0
           range: 4
           ap: 4
@@ -603,11 +615,8 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - 2
-                      - 3
-                      - 10
-                      - 11
-                    attr: 1
+                      - 87
+                    attr: 6
                 - false
               body:
                 - 0
@@ -626,7 +635,7 @@ skills:
                   desc:
                     desc: Effect_BR_Nymph_N_1_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -635,24 +644,12 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
                       per: 1%
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.27
-          type: 0
-          range: 4
-          ap: 4
-          grid: 0,0,0,0,1,0,0,0,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_BR_Nymph_N_1
+            - key: Effect_BR_Nymph_N_11
               on: attack_success
               if:
                 - on:
@@ -661,8 +658,6 @@ skills:
                     select:
                       - 2
                       - 3
-                      - 10
-                      - 11
                     attr: 1
                 - false
               body:
@@ -680,9 +675,9 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nymph_N_1_1
+                    desc: Effect_BR_Nymph_N_11_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -691,33 +686,18 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
                       per: 1%
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.37
-          type: 0
-          range: 4
-          ap: 4
-          grid: 0,0,0,0,1,0,0,0,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_BR_Nymph_N_1
+            - key: Effect_BR_Nymph_N_12
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - 2
-                      - 3
-                      - 10
                       - 11
                     attr: 1
                 - false
@@ -736,9 +716,9 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nymph_N_1_1
+                    desc: Effect_BR_Nymph_N_12_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -747,12 +727,12 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
                       per: 1%
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.47
+        - rate: 1.59
           type: 0
           range: 4
           ap: 4
@@ -771,11 +751,8 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - 2
-                      - 3
-                      - 10
-                      - 11
-                    attr: 1
+                      - 87
+                    attr: 6
                 - false
               body:
                 - 0
@@ -794,7 +771,7 @@ skills:
                   desc:
                     desc: Effect_BR_Nymph_N_1_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -803,24 +780,12 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
                       per: 1%
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.57
-          type: 0
-          range: 4
-          ap: 4
-          grid: 0,0,0,0,1,0,0,0,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_BR_Nymph_N_1
+            - key: Effect_BR_Nymph_N_11
               on: attack_success
               if:
                 - on:
@@ -829,8 +794,6 @@ skills:
                     select:
                       - 2
                       - 3
-                      - 10
-                      - 11
                     attr: 1
                 - false
               body:
@@ -848,9 +811,9 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nymph_N_1_1
+                    desc: Effect_BR_Nymph_N_11_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -859,33 +822,18 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
                       per: 1%
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.67
-          type: 0
-          range: 4
-          ap: 4
-          grid: 0,0,0,0,1,0,0,0,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_BR_Nymph_N_1
+            - key: Effect_BR_Nymph_N_12
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - 2
-                      - 3
-                      - 10
                       - 11
                     attr: 1
                 - false
@@ -904,9 +852,9 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nymph_N_1_1
+                    desc: Effect_BR_Nymph_N_12_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -915,12 +863,12 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
                       per: 1%
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.77
+        - rate: 1.73
           type: 0
           range: 4
           ap: 4
@@ -939,11 +887,8 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - 2
-                      - 3
-                      - 10
-                      - 11
-                    attr: 1
+                      - 87
+                    attr: 6
                 - false
               body:
                 - 0
@@ -962,7 +907,7 @@ skills:
                   desc:
                     desc: Effect_BR_Nymph_N_1_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -971,9 +916,92 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
                       per: 1%
-                  overlap: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_11
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 2
+                      - 3
+                    attr: 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_11_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_12
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 11
+                    attr: 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 1.87
@@ -995,11 +1023,8 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - 2
-                      - 3
-                      - 10
-                      - 11
-                    attr: 1
+                      - 87
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1018,7 +1043,7 @@ skills:
                   desc:
                     desc: Effect_BR_Nymph_N_1_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -1027,12 +1052,95 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
                       per: 1%
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.97
+            - key: Effect_BR_Nymph_N_11
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 2
+                      - 3
+                    attr: 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_11_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_12
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 11
+                    attr: 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.01
           type: 0
           range: 4
           ap: 4
@@ -1051,11 +1159,8 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - 2
-                      - 3
-                      - 10
-                      - 11
-                    attr: 1
+                      - 87
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1074,7 +1179,7 @@ skills:
                   desc:
                     desc: Effect_BR_Nymph_N_1_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -1083,12 +1188,95 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
                       per: 1%
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.07
+            - key: Effect_BR_Nymph_N_11
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 2
+                      - 3
+                    attr: 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_11_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_12
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 11
+                    attr: 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.15
           type: 0
           range: 4
           ap: 4
@@ -1107,11 +1295,8 @@ skills:
                     target: target
                     func: OR
                     select:
-                      - 2
-                      - 3
-                      - 10
-                      - 11
-                    attr: 1
+                      - 87
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1130,7 +1315,7 @@ skills:
                   desc:
                     desc: Effect_BR_Nymph_N_1_1
                     type: 1
-                    value: "0.200000"
+                    value: "0.100000"
                     level: "0.010000"
                   attr: 3
                   erase:
@@ -1139,9 +1324,636 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
+                      base: 10%
                       per: 1%
-                  overlap: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_11
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 2
+                      - 3
+                    attr: 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_11_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_12
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 11
+                    attr: 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.29
+          type: 0
+          range: 4
+          ap: 4
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Nymph_N_1
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_1_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_11
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 2
+                      - 3
+                    attr: 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_11_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_12
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 11
+                    attr: 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.43
+          type: 0
+          range: 4
+          ap: 4
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Nymph_N_1
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_1_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_11
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 2
+                      - 3
+                    attr: 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_11_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_12
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 11
+                    attr: 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.57
+          type: 0
+          range: 4
+          ap: 4
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Nymph_N_1
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_1_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_11
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 2
+                      - 3
+                    attr: 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_11_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_12
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 11
+                    attr: 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.71
+          type: 0
+          range: 4
+          ap: 4
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Nymph_N_1
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_1_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_11
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 2
+                      - 3
+                    attr: 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_11_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_12
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 11
+                    attr: 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
     values:
@@ -1161,9 +1973,27 @@ skills:
             desc:
               desc: Effect_BR_Nymph_N_1_1
               type: 1
-              value: "0.200000"
+              value: "0.100000"
               level: "0.010000"
-            base: 0.2
+            base: 0.1
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_PhyATK_UP
+            desc:
+              desc: Effect_BR_Nymph_N_11_1
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_PhyATK_UP
+            desc:
+              desc: Effect_BR_Nymph_N_12_1
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
             per: 0.01
             chance: 1
   "2":
@@ -1185,7 +2015,7 @@ skills:
         - 8
         - 9
       data:
-        - rate: 1.095
+        - rate: 1.21
           type: 0
           range: 4
           ap: 7
@@ -1193,19 +2023,90 @@ skills:
           summon: null
           use: null
           enabled: true
-          dismiss_guard: false
+          dismiss_guard: true
           acc_bonus: 0
           buff_rate: 100
           buffs:
             - key: Effect_BR_Nymph_N_2
+              on:
+                after: use_skill
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_ACCURACY_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_1
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_2
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - 87
-                    attr: 1
+                      - 48
+                      - 74
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1222,10 +2123,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nymph_N_2_1
+                    desc: Effect_BR_Nymph_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
+                    value: "0.200000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1233,32 +2134,66 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 1.25%
-                  overlap: 0
-                - icon: BuffIcon_TROOPER_DMG_UP
-                  desc:
-                    desc: Effect_BR_Nymph_N_2_2
-                    type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nymph_N_11
+            - key: Effect_BR_Nymph_N_52
               on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Nymph_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_52_1
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -20%
+                      per: -1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.34
+          type: 0
+          range: 4
+          ap: 7
+          grid: 0,1,0,0,1,0,0,1,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Nymph_N_2
+              on:
+                after: use_skill
               if:
                 - false
                 - false
@@ -1273,49 +2208,69 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 4
               buffs:
-                - icon: BuffIcon_TROOPER_DMG_UP
+                - icon: BuffIcon_ACCURACY_DOWN
                   desc:
-                    desc: Effect_BR_Nymph_N_11_1
+                    desc: Effect_BR_Nymph_N_2_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 0
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_2
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.19
-          type: 0
-          range: 4
-          ap: 7
-          grid: 0,1,0,0,1,0,0,1,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_BR_Nymph_N_2
+            - key: Effect_BR_Nymph_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - 87
-                    attr: 1
+                      - 48
+                      - 74
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1332,10 +2287,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nymph_N_2_1
+                    desc: Effect_BR_Nymph_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
+                    value: "0.200000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1343,32 +2298,66 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 1.25%
-                  overlap: 0
-                - icon: BuffIcon_TROOPER_DMG_UP
-                  desc:
-                    desc: Effect_BR_Nymph_N_2_2
-                    type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nymph_N_11
+            - key: Effect_BR_Nymph_N_52
               on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Nymph_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_52_1
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -20%
+                      per: -1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.47
+          type: 0
+          range: 4
+          ap: 7
+          grid: 0,1,0,0,1,0,0,1,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Nymph_N_2
+              on:
+                after: use_skill
               if:
                 - false
                 - false
@@ -1383,49 +2372,69 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 4
               buffs:
-                - icon: BuffIcon_TROOPER_DMG_UP
+                - icon: BuffIcon_ACCURACY_DOWN
                   desc:
-                    desc: Effect_BR_Nymph_N_11_1
+                    desc: Effect_BR_Nymph_N_2_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 0
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_2
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.285
-          type: 0
-          range: 4
-          ap: 7
-          grid: 0,1,0,0,1,0,0,1,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_BR_Nymph_N_2
+            - key: Effect_BR_Nymph_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - 87
-                    attr: 1
+                      - 48
+                      - 74
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1442,10 +2451,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nymph_N_2_1
+                    desc: Effect_BR_Nymph_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
+                    value: "0.200000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1453,32 +2462,66 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 1.25%
-                  overlap: 0
-                - icon: BuffIcon_TROOPER_DMG_UP
-                  desc:
-                    desc: Effect_BR_Nymph_N_2_2
-                    type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nymph_N_11
+            - key: Effect_BR_Nymph_N_52
               on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Nymph_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_52_1
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -20%
+                      per: -1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.6
+          type: 0
+          range: 4
+          ap: 7
+          grid: 0,1,0,0,1,0,0,1,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Nymph_N_2
+              on:
+                after: use_skill
               if:
                 - false
                 - false
@@ -1493,49 +2536,69 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 4
               buffs:
-                - icon: BuffIcon_TROOPER_DMG_UP
+                - icon: BuffIcon_ACCURACY_DOWN
                   desc:
-                    desc: Effect_BR_Nymph_N_11_1
+                    desc: Effect_BR_Nymph_N_2_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 0
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_2
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.38
-          type: 0
-          range: 4
-          ap: 7
-          grid: 0,1,0,0,1,0,0,1,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_BR_Nymph_N_2
+            - key: Effect_BR_Nymph_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - 87
-                    attr: 1
+                      - 48
+                      - 74
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1552,10 +2615,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nymph_N_2_1
+                    desc: Effect_BR_Nymph_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
+                    value: "0.200000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1563,32 +2626,66 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 1.25%
-                  overlap: 0
-                - icon: BuffIcon_TROOPER_DMG_UP
-                  desc:
-                    desc: Effect_BR_Nymph_N_2_2
-                    type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nymph_N_11
+            - key: Effect_BR_Nymph_N_52
               on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Nymph_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_52_1
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -20%
+                      per: -1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.73
+          type: 0
+          range: 4
+          ap: 7
+          grid: 0,1,0,0,1,0,0,1,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Nymph_N_2
+              on:
+                after: use_skill
               if:
                 - false
                 - false
@@ -1603,49 +2700,69 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 4
               buffs:
-                - icon: BuffIcon_TROOPER_DMG_UP
+                - icon: BuffIcon_ACCURACY_DOWN
                   desc:
-                    desc: Effect_BR_Nymph_N_11_1
+                    desc: Effect_BR_Nymph_N_2_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 0
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_2
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.475
-          type: 0
-          range: 4
-          ap: 7
-          grid: 0,1,0,0,1,0,0,1,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_BR_Nymph_N_2
+            - key: Effect_BR_Nymph_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - 87
-                    attr: 1
+                      - 48
+                      - 74
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1662,10 +2779,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nymph_N_2_1
+                    desc: Effect_BR_Nymph_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
+                    value: "0.200000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1673,32 +2790,66 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 1.25%
-                  overlap: 0
-                - icon: BuffIcon_TROOPER_DMG_UP
-                  desc:
-                    desc: Effect_BR_Nymph_N_2_2
-                    type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nymph_N_11
+            - key: Effect_BR_Nymph_N_52
               on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Nymph_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_52_1
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -20%
+                      per: -1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.86
+          type: 0
+          range: 4
+          ap: 7
+          grid: 0,1,0,0,1,0,0,1,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Nymph_N_2
+              on:
+                after: use_skill
               if:
                 - false
                 - false
@@ -1713,49 +2864,69 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 4
               buffs:
-                - icon: BuffIcon_TROOPER_DMG_UP
+                - icon: BuffIcon_ACCURACY_DOWN
                   desc:
-                    desc: Effect_BR_Nymph_N_11_1
+                    desc: Effect_BR_Nymph_N_2_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 0
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_2
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.57
-          type: 0
-          range: 4
-          ap: 7
-          grid: 0,1,0,0,1,0,0,1,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_BR_Nymph_N_2
+            - key: Effect_BR_Nymph_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - 87
-                    attr: 1
+                      - 48
+                      - 74
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1772,10 +2943,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nymph_N_2_1
+                    desc: Effect_BR_Nymph_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
+                    value: "0.200000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1783,32 +2954,66 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 1.25%
-                  overlap: 0
-                - icon: BuffIcon_TROOPER_DMG_UP
-                  desc:
-                    desc: Effect_BR_Nymph_N_2_2
-                    type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nymph_N_11
+            - key: Effect_BR_Nymph_N_52
               on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Nymph_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_52_1
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -20%
+                      per: -1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.99
+          type: 0
+          range: 4
+          ap: 7
+          grid: 0,1,0,0,1,0,0,1,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Nymph_N_2
+              on:
+                after: use_skill
               if:
                 - false
                 - false
@@ -1823,49 +3028,69 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 4
               buffs:
-                - icon: BuffIcon_TROOPER_DMG_UP
+                - icon: BuffIcon_ACCURACY_DOWN
                   desc:
-                    desc: Effect_BR_Nymph_N_11_1
+                    desc: Effect_BR_Nymph_N_2_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 0
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_2
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.665
-          type: 0
-          range: 4
-          ap: 7
-          grid: 0,1,0,0,1,0,0,1,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_BR_Nymph_N_2
+            - key: Effect_BR_Nymph_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - 87
-                    attr: 1
+                      - 48
+                      - 74
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1882,10 +3107,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nymph_N_2_1
+                    desc: Effect_BR_Nymph_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
+                    value: "0.200000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1893,32 +3118,66 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 1.25%
-                  overlap: 0
-                - icon: BuffIcon_TROOPER_DMG_UP
-                  desc:
-                    desc: Effect_BR_Nymph_N_2_2
-                    type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nymph_N_11
+            - key: Effect_BR_Nymph_N_52
               on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Nymph_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_52_1
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -20%
+                      per: -1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.12
+          type: 0
+          range: 4
+          ap: 7
+          grid: 0,1,0,0,1,0,0,1,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Nymph_N_2
+              on:
+                after: use_skill
               if:
                 - false
                 - false
@@ -1933,49 +3192,69 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 4
               buffs:
-                - icon: BuffIcon_TROOPER_DMG_UP
+                - icon: BuffIcon_ACCURACY_DOWN
                   desc:
-                    desc: Effect_BR_Nymph_N_11_1
+                    desc: Effect_BR_Nymph_N_2_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 0
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_2
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.76
-          type: 0
-          range: 4
-          ap: 7
-          grid: 0,1,0,0,1,0,0,1,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_BR_Nymph_N_2
+            - key: Effect_BR_Nymph_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - 87
-                    attr: 1
+                      - 48
+                      - 74
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1992,10 +3271,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nymph_N_2_1
+                    desc: Effect_BR_Nymph_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
+                    value: "0.200000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2003,32 +3282,66 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 1.25%
-                  overlap: 0
-                - icon: BuffIcon_TROOPER_DMG_UP
-                  desc:
-                    desc: Effect_BR_Nymph_N_2_2
-                    type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nymph_N_11
+            - key: Effect_BR_Nymph_N_52
               on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Nymph_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_52_1
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -20%
+                      per: -1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.25
+          type: 0
+          range: 4
+          ap: 7
+          grid: 0,1,0,0,1,0,0,1,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Nymph_N_2
+              on:
+                after: use_skill
               if:
                 - false
                 - false
@@ -2043,49 +3356,69 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 4
               buffs:
-                - icon: BuffIcon_TROOPER_DMG_UP
+                - icon: BuffIcon_ACCURACY_DOWN
                   desc:
-                    desc: Effect_BR_Nymph_N_11_1
+                    desc: Effect_BR_Nymph_N_2_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 0
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_2
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.855
-          type: 0
-          range: 4
-          ap: 7
-          grid: 0,1,0,0,1,0,0,1,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_BR_Nymph_N_2
+            - key: Effect_BR_Nymph_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - 87
-                    attr: 1
+                      - 48
+                      - 74
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2102,10 +3435,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nymph_N_2_1
+                    desc: Effect_BR_Nymph_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
+                    value: "0.200000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2113,32 +3446,66 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 1.25%
-                  overlap: 0
-                - icon: BuffIcon_TROOPER_DMG_UP
-                  desc:
-                    desc: Effect_BR_Nymph_N_2_2
-                    type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nymph_N_11
+            - key: Effect_BR_Nymph_N_52
               on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Nymph_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_52_1
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -20%
+                      per: -1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.38
+          type: 0
+          range: 4
+          ap: 7
+          grid: 0,1,0,0,1,0,0,1,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: true
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Nymph_N_2
+              on:
+                after: use_skill
               if:
                 - false
                 - false
@@ -2153,49 +3520,69 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 4
               buffs:
-                - icon: BuffIcon_TROOPER_DMG_UP
+                - icon: BuffIcon_ACCURACY_DOWN
                   desc:
-                    desc: Effect_BR_Nymph_N_11_1
+                    desc: Effect_BR_Nymph_N_2_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 0
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_2
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_2_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.020000"
+                  attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.95
-          type: 0
-          range: 4
-          ap: 7
-          grid: 0,1,0,0,1,0,0,1,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_BR_Nymph_N_2
+            - key: Effect_BR_Nymph_N_21
               on: attack_success
               if:
                 - on:
                     target: target
                     func: OR
                     select:
-                      - 87
-                    attr: 1
+                      - 48
+                      - 74
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2212,10 +3599,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nymph_N_2_1
+                    desc: Effect_BR_Nymph_N_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
+                    value: "0.200000"
+                    level: "0.020000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2223,34 +3610,19 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 1.25%
-                  overlap: 0
-                - icon: BuffIcon_TROOPER_DMG_UP
-                  desc:
-                    desc: Effect_BR_Nymph_N_2_2
-                    type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nymph_N_11
+            - key: Effect_BR_Nymph_N_52
               on: attack_success
               if:
-                - false
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Nymph_N_51
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2263,25 +3635,23 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 3
               buffs:
-                - icon: BuffIcon_TROOPER_DMG_UP
+                - icon: BuffIcon_DEF_DOWN
                   desc:
-                    desc: Effect_BR_Nymph_N_11_1
+                    desc: Effect_BR_Nymph_N_52_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.012500"
-                  attr: 0
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 25%
-                        per: 1.25%
+                    type: 3
+                    defense:
+                      base: -20%
+                      per: -1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2298,39 +3668,57 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_PhyATK_UP
+        - - icon: BuffIcon_ACCURACY_DOWN
             desc:
               desc: Effect_BR_Nymph_N_2_1
               type: 1
-              value: "0.250000"
-              level: "0.012500"
-            base: 0.25
-            per: 0.0125
+              value: "-0.200000"
+              level: "-0.020000"
+            base: -0.2
+            per: -0.02
             chance: 1
-          - icon: BuffIcon_TROOPER_DMG_UP
+          - icon: BuffIcon_EVADE_DOWN
             desc:
               desc: Effect_BR_Nymph_N_2_2
               type: 1
-              value: "0.250000"
-              level: "0.012500"
-            base: 0.25
-            per: 0.0125
-            chance: 0
-          - icon: BuffIcon_TROOPER_DMG_UP
+              value: "-0.200000"
+              level: "-0.020000"
+            base: -0.2
+            per: -0.02
+            chance: 1
+          - icon: BuffIcon_PhyATK_UP
             desc:
-              desc: Effect_BR_Nymph_N_11_1
+              desc: Effect_BR_Nymph_N_2_3
               type: 1
-              value: "0.250000"
-              level: "0.012500"
-            base: 0.25
-            per: 0.0125
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
+            chance: 0
+          - icon: BuffIcon_PhyATK_UP
+            desc:
+              desc: Effect_BR_Nymph_N_21_1
+              type: 1
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_DEF_DOWN
+            desc:
+              desc: Effect_BR_Nymph_N_52_1
+              type: 1
+              value: "-0.200000"
+              level: "-0.010000"
+            base: -0.2
+            per: -0.01
             chance: 1
   "3":
     key: "3"
-    icon: P.SelfAtkBuff
+    icon: P.TeamAtkBuff
     target: team
     delayed: false
-    target_ground: false
+    target_ground: true
     leastGrade: 3
     buffs:
       index:
@@ -2349,7 +3737,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,0,0,0,0,1,0,0,0
+          grid: 0,0,0,0,1,1,0,0,0
           summon: null
           use: null
           enabled: true
@@ -2358,7 +3746,7 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_BR_Nymph_N_3
-              on: wave
+              on: round
               if:
                 - false
                 - false
@@ -2375,14 +3763,65 @@ skills:
                 - 2
               target: 2
               buffs:
-                - icon: BuffIcon_SUPPORT_ATTACK
+                - icon: BuffIcon_ATK_UP
                   desc:
                     desc: Effect_BR_Nymph_N_3_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_3_2
+                    type: 1
+                    value: "0.050000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 5%
+                      per: 0.5%
+                  overlap: 4
+                - icon: BuffIcon_TROOPER_DMG_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_3_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: 20%
+                        per: 1%
+                  overlap: 4
+                - icon: BuffIcon_SUPPORT_ATTACK
+                  desc:
+                    desc: Effect_BR_Nymph_N_3_4
                     type: 1
                     value: "1"
                     level: "0"
                   attr: 0
-                  erase: {}
+                  erase:
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 77
@@ -2390,25 +3829,85 @@ skills:
                       base: 100%
                       per: 0%
                   overlap: 4
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_Nymph_N_3_2
-                    type: 0
-                    value: "1.500000"
-                    level: "0.100000"
-                  attr: 0
-                  erase: {}
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 20
-                    ap:
-                      base: 1.5
-                      per: 0.1
-                  overlap: 0
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nymph_N_12
+            - key: Effect_BR_Nymph_N_31
+              on: round
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_Leona_N_4
+                      - Effect_BUFF_QMObserver_N_1
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_31_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 10%
+                      per: 0.5%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_31_2
+                    type: 1
+                    value: "0.025000"
+                    level: "0.002500"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 2.5%
+                      per: 0.25%
+                  overlap: 4
+                - icon: BuffIcon_TROOPER_DMG_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_31_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: 10%
+                        per: 0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_32
               on: wave
               if:
                 - false
@@ -2428,7 +3927,7 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_BR_Nymph_N_12_1
+                    desc: Effect_BR_Nymph_N_32_1
                     type: 0
                     value: "1.500000"
                     level: "0.100000"
@@ -2441,7 +3940,7 @@ skills:
                     ap:
                       base: 1.5
                       per: 0.1
-                  overlap: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
     values:
@@ -2457,27 +3956,72 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_SUPPORT_ATTACK
+        - - icon: BuffIcon_ATK_UP
             desc:
               desc: Effect_BR_Nymph_N_3_1
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_Nymph_N_3_2
+              type: 1
+              value: "0.050000"
+              level: "0.005000"
+            base: 0.05
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_TROOPER_DMG_UP
+            desc:
+              desc: Effect_BR_Nymph_N_3_3
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_SUPPORT_ATTACK
+            desc:
+              desc: Effect_BR_Nymph_N_3_4
               type: 1
               value: "1"
               level: "0"
             base: 1
             per: 0
             chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_Nymph_N_31_1
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_Nymph_N_31_2
+              type: 1
+              value: "0.025000"
+              level: "0.002500"
+            base: 0.025
+            per: 0.0025
+            chance: 1
+          - icon: BuffIcon_TROOPER_DMG_UP
+            desc:
+              desc: Effect_BR_Nymph_N_31_3
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 1
           - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_Nymph_N_3_2
-              type: 0
-              value: "1.500000"
-              level: "0.100000"
-            base: 1.5
-            per: 0.1
-            chance: 0
-          - icon: BuffIcon_AP_UP
-            desc:
-              desc: Effect_BR_Nymph_N_12_1
+              desc: Effect_BR_Nymph_N_32_1
               type: 0
               value: "1.500000"
               level: "0.100000"
@@ -2486,10 +4030,10 @@ skills:
             chance: 1
   "4":
     key: "4"
-    icon: P.SelfAtkBuff
+    icon: P.TeamDefBuff
     target: team
     delayed: false
-    target_ground: false
+    target_ground: true
     leastGrade: 4
     buffs:
       index:
@@ -2533,99 +4077,85 @@ skills:
                 - 2
               target: 2
               buffs:
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_EVADE_UP
                   desc:
                     desc: Effect_BR_Nymph_N_4_1
                     type: 1
-                    value: "0.150000"
-                    level: "0.007500"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 1
-                    attack:
-                      base: 15%
-                      per: 0.75%
+                    type: 11
+                    evade:
+                      base: 20%
+                      per: 1%
                   overlap: 4
-                - icon: BuffIcon_CRITICAL_UP
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_BR_Nymph_N_4_2
                     type: 1
                     value: "0.100000"
-                    level: "0.005000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 9
-                    critical:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_Nymph_N_4_3
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 11
-                    evade:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 4
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_BR_Nymph_N_4_4
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
                     type: 36
                     damage_reduce:
-                      base: 15%
-                      per: 0.75%
+                      base: 10%
+                      per: 1%
                   overlap: 4
                 - icon: BuffIcon_COUNTER
                   desc:
-                    desc: Effect_BR_Nymph_N_4_5
+                    desc: Effect_BR_Nymph_N_4_3
                     type: 1
                     value: "0.300000"
-                    level: "0.040000"
+                    level: "0.050000"
                   attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
                     chance: 0%
                     type: 29
                     counter:
                       base: 30%
-                      per: 4%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_ICERES_UP
+                  desc:
+                    desc: Effect_BR_Nymph_N_4_4
+                    type: 1
+                    value: "0.500000"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: 50%
+                        per: 0%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nymph_N_13
+            - key: Effect_BR_Nymph_N_41
               on: round
               if:
                 - on:
-                    target: target
+                    target: squad
                     func: OR
                     select:
-                      - Effect_BR_Nymph_N_3
+                      - Effect_BR_Leona_CH_4
+                      - Effect_BUFF_QMObserver_N_1
                     attr: 6
                 - false
               body:
@@ -2642,10 +4172,10 @@ skills:
               buffs:
                 - icon: BuffIcon_EVADE_UP
                   desc:
-                    desc: Effect_BR_Nymph_N_13_1
+                    desc: Effect_BR_Nymph_N_41_1
                     type: 1
-                    value: "0.150000"
-                    level: "0.007500"
+                    value: "0.100000"
+                    level: "0.005000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -2653,15 +4183,15 @@ skills:
                     isBuff: true
                     type: 11
                     evade:
-                      base: 15%
-                      per: 0.75%
+                      base: 10%
+                      per: 0.5%
                   overlap: 4
                 - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
-                    desc: Effect_BR_Nymph_N_13_2
+                    desc: Effect_BR_Nymph_N_41_2
                     type: 1
-                    value: "0.150000"
-                    level: "0.007500"
+                    value: "0.050000"
+                    level: "0.005000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -2669,15 +4199,81 @@ skills:
                     isBuff: true
                     type: 36
                     damage_reduce:
-                      base: 15%
-                      per: 0.75%
+                      base: 5%
+                      per: 0.5%
                   overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_42
+              on: round
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_Leona_CH_4
+                      - Effect_BUFF_QMObserver_N_1
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
                 - icon: BuffIcon_COUNTER
                   desc:
-                    desc: Effect_BR_Nymph_N_13_3
+                    desc: Effect_BR_Nymph_N_42_1
+                    type: 1
+                    value: "0.450000"
+                    level: "0.075000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 29
+                    counter:
+                      base: 45%
+                      per: 7.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_43
+              on: round
+              if:
+                - on:
+                    target: target
+                    select:
+                      - Effect_BR_Nymph_N_42
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_COUNTER
+                  desc:
+                    desc: Effect_BR_Nymph_N_43_1
                     type: 1
                     value: "0.300000"
-                    level: "0.040000"
+                    level: "0.050000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -2686,7 +4282,7 @@ skills:
                     type: 29
                     counter:
                       base: 30%
-                      per: 4%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2703,77 +4299,327 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_ATK_UP
+        - - icon: BuffIcon_EVADE_UP
             desc:
               desc: Effect_BR_Nymph_N_4_1
               type: 1
-              value: "0.150000"
-              level: "0.007500"
-            base: 0.15
-            per: 0.0075
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
             chance: 1
-          - icon: BuffIcon_CRITICAL_UP
+          - icon: BuffIcon_DAMAGE_REDUCE
             desc:
               desc: Effect_BR_Nymph_N_4_2
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_COUNTER
+            desc:
+              desc: Effect_BR_Nymph_N_4_3
+              type: 1
+              value: "0.300000"
+              level: "0.050000"
+            base: 0.3
+            per: 0.05
+            chance: 0
+          - icon: BuffIcon_ICERES_UP
+            desc:
+              desc: Effect_BR_Nymph_N_4_4
+              type: 1
+              value: "0.500000"
+              level: "0"
+            base: 0.5
+            per: 0
+            chance: 0
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_BR_Nymph_N_41_1
               type: 1
               value: "0.100000"
               level: "0.005000"
             base: 0.1
             per: 0.005
             chance: 1
-          - icon: BuffIcon_EVADE_UP
-            desc:
-              desc: Effect_BR_Nymph_N_4_3
-              type: 1
-              value: "0.150000"
-              level: "0.007500"
-            base: 0.15
-            per: 0.0075
-            chance: 0
           - icon: BuffIcon_DAMAGE_REDUCE
             desc:
-              desc: Effect_BR_Nymph_N_4_4
+              desc: Effect_BR_Nymph_N_41_2
               type: 1
-              value: "0.150000"
-              level: "0.007500"
-            base: 0.15
-            per: 0.0075
-            chance: 0
-          - icon: BuffIcon_COUNTER
-            desc:
-              desc: Effect_BR_Nymph_N_4_5
-              type: 1
-              value: "0.300000"
-              level: "0.040000"
-            base: 0.3
-            per: 0.04
-            chance: 0
-          - icon: BuffIcon_EVADE_UP
-            desc:
-              desc: Effect_BR_Nymph_N_13_1
-              type: 1
-              value: "0.150000"
-              level: "0.007500"
-            base: 0.15
-            per: 0.0075
-            chance: 1
-          - icon: BuffIcon_DAMAGE_REDUCE
-            desc:
-              desc: Effect_BR_Nymph_N_13_2
-              type: 1
-              value: "0.150000"
-              level: "0.007500"
-            base: 0.15
-            per: 0.0075
+              value: "0.050000"
+              level: "0.005000"
+            base: 0.05
+            per: 0.005
             chance: 1
           - icon: BuffIcon_COUNTER
             desc:
-              desc: Effect_BR_Nymph_N_13_3
+              desc: Effect_BR_Nymph_N_42_1
+              type: 1
+              value: "0.450000"
+              level: "0.075000"
+            base: 0.45
+            per: 0.075
+            chance: 1
+          - icon: BuffIcon_COUNTER
+            desc:
+              desc: Effect_BR_Nymph_N_43_1
               type: 1
               value: "0.300000"
-              level: "0.040000"
+              level: "0.050000"
             base: 0.3
-            per: 0.04
+            per: 0.05
+            chance: 1
+  "5":
+    key: "5"
+    icon: P.Command
+    target: team
+    delayed: false
+    target_ground: true
+    leastGrade: 5
+    buffs:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - rate: 0
+          type: 0
+          range: 0
+          ap: 0
+          grid: F>1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Nymph_N_5
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DamageAmp_Opp
+                  desc:
+                    desc: Effect_BR_Nymph_N_5_1
+                    type: 1
+                    value: "0.300000"
+                    level: "0.030000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 81
+                    damage_by_hp:
+                      target: target
+                      damage:
+                        base: 30%
+                        per: 3%
+                  overlap: 4
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_BR_Nymph_N_5_2
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 3
+                    defense:
+                      base: -20%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_SUPPORT_ATTACK
+                  desc:
+                    desc: Effect_BR_Nymph_N_5_3
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 77
+                    attack_support:
+                      base: 100%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_51
+              on: round
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_MG80MODKit_N_1
+                      - Effect_BUFF_MG80MODKit_N_2
+                      - Effect_BUFF_MG80MODKit_N_3
+                      - Effect_BUFF_MG80MODKit_N_4
+                      - Effect_BUFF_MG80MODKit_N_5
+                      - Effect_BUFF_MG80MODKit_N_6
+                      - Effect_BUFF_MG80MODKit_N_7
+                      - Effect_BUFF_MG80MODKit_N_8
+                      - Effect_BUFF_MG80MODKit_N_9
+                      - Effect_BUFF_MG80MODKit_N_10
+                      - Effect_BUFF_MG80MODKit_N_11
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DamageAmp_Opp
+                  desc:
+                    desc: Effect_BR_Nymph_N_51_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 81
+                    damage_by_hp:
+                      target: target
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nymph_N_53
+              on: round
+              if:
+                - notInBattle:
+                    - Char_BR_Valkyrie_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_SUPPORT_ATTACK
+                  desc:
+                    desc: Effect_BR_Nymph_N_53_1
+                    type: 1
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 77
+                    attack_support:
+                      base: 100%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_DamageAmp_Opp
+            desc:
+              desc: Effect_BR_Nymph_N_5_1
+              type: 1
+              value: "0.300000"
+              level: "0.030000"
+            base: 0.3
+            per: 0.03
+            chance: 1
+          - icon: BuffIcon_DEF_DOWN
+            desc:
+              desc: Effect_BR_Nymph_N_5_2
+              type: 1
+              value: "-0.200000"
+              level: "-0.010000"
+            base: -0.2
+            per: -0.01
+            chance: 0
+          - icon: BuffIcon_SUPPORT_ATTACK
+            desc:
+              desc: Effect_BR_Nymph_N_5_3
+              type: 1
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 0
+          - icon: BuffIcon_DamageAmp_Opp
+            desc:
+              desc: Effect_BR_Nymph_N_51_1
+              type: 1
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
+            chance: 1
+          - icon: BuffIcon_SUPPORT_ATTACK
+            desc:
+              desc: Effect_BR_Nymph_N_53_1
+              type: 1
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
             chance: 1
 dialogue:
   KR:
@@ -3111,7 +4957,7 @@ dialogue:
         Sometimes I feel sad.
       SPIdle_01_01: Not yet!
       Idle_02_01: |-
-        Don't worry. Even if there’s an event now,
+        Don't worry. Even if there's an event now,
         it would be for you.
       Idle_03_01: |-
         What do you think, Commander? Should I

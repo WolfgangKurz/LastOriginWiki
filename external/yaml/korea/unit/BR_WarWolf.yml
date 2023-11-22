@@ -606,6 +606,7 @@ source:
     - 9-8
     - 9-2Ex
     - 11-3
+    - 12-1
   - - Ev:Ev1:Ev-4B
   - - Ev:Ev2:Ev-1
     - Ev:Ev2:Ev-2
@@ -774,23 +775,6 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_1_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -833,48 +817,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_111
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -895,8 +838,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -909,7 +852,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
         - rate: 1.38
           type: 0
@@ -965,23 +908,6 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_1_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -1024,48 +950,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_111
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -1086,8 +971,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -1100,7 +985,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
         - rate: 1.49
           type: 0
@@ -1156,23 +1041,6 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_1_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -1215,48 +1083,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_111
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -1277,8 +1104,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -1291,7 +1118,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
         - rate: 1.6
           type: 0
@@ -1347,23 +1174,6 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_1_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -1406,48 +1216,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_111
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -1468,8 +1237,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -1482,7 +1251,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
         - rate: 1.71
           type: 0
@@ -1538,23 +1307,6 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_1_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -1597,48 +1349,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_111
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -1659,8 +1370,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -1673,7 +1384,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
         - rate: 1.82
           type: 0
@@ -1729,23 +1440,6 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_1_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -1788,48 +1482,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_111
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -1850,8 +1503,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -1864,7 +1517,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
         - rate: 1.93
           type: 0
@@ -1920,23 +1573,6 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_1_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -1979,48 +1615,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_111
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -2041,8 +1636,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -2055,7 +1650,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
         - rate: 2.04
           type: 0
@@ -2111,23 +1706,6 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_1_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -2170,48 +1748,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_111
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -2232,8 +1769,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -2246,7 +1783,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
         - rate: 2.15
           type: 0
@@ -2302,23 +1839,6 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_1_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -2361,48 +1881,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_111
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -2423,8 +1902,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -2437,7 +1916,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
         - rate: 2.26
           type: 0
@@ -2493,23 +1972,6 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_1_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -2552,48 +2014,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_111
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -2614,8 +2035,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -2628,7 +2049,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
     values:
       index:
@@ -2652,15 +2073,6 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
-          - icon: BuffIcon_TOGETHER_ATTACK
-            desc:
-              desc: Effect_BR_WarWolf_N_1_2
-              type: 0
-              value: "0"
-              level: "0"
-            base: 0
-            per: 0
-            chance: 0
           - icon: BuffIcon_PhyATK_UP
             desc:
               desc: Effect_BR_WarWolf_N_14_1
@@ -2670,19 +2082,10 @@ skills:
             base: 0.02
             per: 0.02
             chance: 1
-          - icon: BuffIcon_PhyATK_UP
-            desc:
-              desc: Effect_BR_Khan_N_19_1
-              type: 1
-              value: "0.200000"
-              level: "0"
-            base: 0.2
-            per: 0
-            chance: 1
           - icon: BuffIcon_TOGETHER_ATTACK
             desc:
-              desc: Effect_BR_WarWolf_N_111_1
-              type: 0
+              desc: Effect_BR_QuickCamel_N_410_1
+              type: 1
               value: Char_BR_QuickCamel_N
               level: "0"
             value: Char_BR_QuickCamel_N
@@ -2752,23 +2155,6 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_2_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -2811,48 +2197,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_222
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -2873,8 +2218,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -2887,7 +2232,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
         - rate: 2.63
           type: 0
@@ -2935,23 +2280,6 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_2_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -2994,48 +2322,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_222
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -3056,8 +2343,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -3070,7 +2357,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
         - rate: 2.845
           type: 0
@@ -3118,23 +2405,6 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_2_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -3177,48 +2447,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_222
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -3239,8 +2468,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -3253,7 +2482,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
         - rate: 3.06
           type: 0
@@ -3301,23 +2530,6 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_2_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -3360,48 +2572,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_222
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -3422,8 +2593,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -3436,7 +2607,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
         - rate: 3.275
           type: 0
@@ -3484,23 +2655,6 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_2_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -3543,48 +2697,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_222
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -3605,8 +2718,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -3619,7 +2732,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
         - rate: 3.49
           type: 0
@@ -3667,23 +2780,6 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_2_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -3726,48 +2822,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_222
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -3788,8 +2843,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -3802,7 +2857,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
         - rate: 3.705
           type: 0
@@ -3850,23 +2905,6 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_2_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -3909,48 +2947,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_222
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -3971,8 +2968,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -3985,7 +2982,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
         - rate: 3.92
           type: 0
@@ -4033,23 +3030,6 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_2_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -4092,48 +3072,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_222
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -4154,8 +3093,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -4168,7 +3107,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
         - rate: 4.135
           type: 0
@@ -4216,23 +3155,6 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_2_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -4275,48 +3197,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_222
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -4337,8 +3218,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -4351,7 +3232,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
         - rate: 4.35
           type: 0
@@ -4399,23 +3280,6 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_WarWolf_N_2_2
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_WarWolf_N_14
@@ -4458,48 +3322,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_WarWolf_N_222
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -4520,8 +3343,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_WarWolf_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -4534,7 +3357,7 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
     values:
       index:
@@ -4558,15 +3381,6 @@ skills:
             base: 0.4
             per: 0.02
             chance: 1
-          - icon: BuffIcon_TOGETHER_ATTACK
-            desc:
-              desc: Effect_BR_WarWolf_N_2_2
-              type: 0
-              value: "0"
-              level: "0"
-            base: 0
-            per: 0
-            chance: 0
           - icon: BuffIcon_PhyATK_UP
             desc:
               desc: Effect_BR_WarWolf_N_14_1
@@ -4576,19 +3390,10 @@ skills:
             base: 0.02
             per: 0.02
             chance: 1
-          - icon: BuffIcon_PhyATK_UP
-            desc:
-              desc: Effect_BR_Khan_N_19_1
-              type: 1
-              value: "0.200000"
-              level: "0"
-            base: 0.2
-            per: 0
-            chance: 1
           - icon: BuffIcon_TOGETHER_ATTACK
             desc:
-              desc: Effect_BR_WarWolf_N_222_1
-              type: 0
+              desc: Effect_BR_QuickCamel_N_410_1
+              type: 1
               value: Char_BR_QuickCamel_N
               level: "0"
             value: Char_BR_QuickCamel_N
