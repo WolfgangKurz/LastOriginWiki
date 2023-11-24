@@ -650,20 +650,6 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 					: <></>
 				}
 
-				<EnemyPopup
-					asSub
-					enemy={ selectedEnemy.value }
-					level={ selectedEnemyLevel.value }
-					display={ enemyModalDisplay.value }
-					onHidden={ (): void => enemyModalDisplay.set(false) }
-				/>
-				<EquipPopup
-					asSub
-					equip={ selectedEquip.value }
-					display={ equipModalDisplay.value }
-					onHidden={ (): void => equipModalDisplay.set(false) }
-				/>
-
 				<div class="card mt-2">
 					<div class="card-header">
 						<ul class="nav nav-tabs card-header-tabs">
@@ -1355,6 +1341,20 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				</div>
 			</div>
 		}
+
+		<EnemyPopup
+			asSub
+			enemy={ selectedEnemy.value }
+			level={ selectedEnemyLevel.value }
+			display={ enemyModalDisplay.value }
+			onHidden={ (): void => enemyModalDisplay.set(false) }
+		/>
+		<EquipPopup
+			asSub
+			equip={ selectedEquip.value }
+			display={ equipModalDisplay.value }
+			onHidden={ (): void => equipModalDisplay.set(false) }
+		/>
 	</div>;
 };
 export default MapView;
