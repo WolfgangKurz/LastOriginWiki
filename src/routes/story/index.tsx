@@ -81,7 +81,8 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 	}
 	function Activates (data: StoryData): DialogCharacter[] {
 		return Object.values(data.char)
-			.filter(r => r.SCG === SCG_ACTIVATION.ACTIVATION);
+			.filter(r => r.SCG === SCG_ACTIVATION.ACTIVATION)
+			.filter(r => !r.image.includes("_Cut"));
 	}
 	function ImageToFace (model: string): { uid: string; skin: number; fallback: string; } {
 		let sid = model
@@ -155,9 +156,11 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 					wid: r[2] === "Ev"
 						? "Ev1"
 						: r[2].startsWith("N")
-							? "Story"
+							? r[1] // Story
 							: r[2],
-					mid,
+					mid: r[2].startsWith("N")
+						? parseInt(r[2].substring(1), 10).toString()
+						: mid,
 					nid: `${r[2].startsWith("Ev") ? "Ev" : ""}${mid}-${parseInt(r[3], 10)}${postfix}`,
 					storyType: type,
 				};
@@ -280,7 +283,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		if (!storyData) return [];
 		return storyData
 			.flatMap(r => Object.values(r.char))
-			.filter(r => r.image)
+			.filter(r => r.image && !r.image.includes("_Cut"))
 			.map(r => ImageToFace(r.image))
 			.reduce((p, c) => p.some(r => r.uid === c.uid && r.skin === c.skin)
 				? p

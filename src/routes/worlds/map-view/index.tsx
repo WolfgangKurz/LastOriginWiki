@@ -11,9 +11,10 @@ import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 import { Consumable } from "@/types/DB/Consumable";
 import { StoryMetadata, StorySpec } from "@/types/Story/Story";
 
+import { useUpdate } from "@/libs/hooks";
 import { objState } from "@/libs/State";
 import { AssetsRoot, ImageExtension, NewMapList, SubStoryUnit } from "@/libs/Const";
-import { useUpdate } from "@/libs/hooks";
+import { BuildClass } from "@/libs/Class";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import MapPosition from "@/libs/MapPosition";
@@ -101,6 +102,9 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 		? selectedValue.wave || []
 		: [];
 
+	const isStory = /^[0-9]+$/.test(props.wid);
+	const wid = isStory ? "Story" : props.wid;
+
 	useEffect(() => {
 		const MapDB = GetJson<World>(`map/${props.wid}`);
 		const MapsDB = GetJson<Maps>(StaticDB.Maps);
@@ -146,15 +150,17 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 
 	SetMeta(
 		["description", "twitter:description"],
-		`${LocaleGet(`WORLD_${props.wid}`)}의 제 ${props.mid}구역 정보를 표시합니다. 지역의 클리어 보상과 드랍 정보, 적 정보를 확인할 수 있습니다.`,
+		`${LocaleGet(`WORLD_${wid}`)}의 제 ${props.mid}구역 정보를 표시합니다. 지역의 클리어 보상과 드랍 정보, 적 정보를 확인할 수 있습니다.`,
 	);
-	SetMeta("keywords", `,${LocaleGet(`WORLD_${props.wid}`)}`, true);
-	SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/${props.wid}_${props.mid}.png`);
+	SetMeta("keywords", `,${LocaleGet(`WORLD_${wid}`)}`, true);
+	SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/${wid}_${props.mid}.png`);
 
 	if (props.wid === "Sub")
-		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${props.wid}`));
+		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${wid}`));
+	else if (isStory)
+		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${wid}`), LocaleGet("WORLDS_WORLD_TITLE", props.wid));
 	else
-		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${props.wid}`), LocaleGet("WORLDS_WORLD_TITLE", props.mid));
+		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${wid}`), LocaleGet("WORLDS_WORLD_TITLE", props.mid));
 
 	useEffect(() => {
 		if (currentMode === "substory" && props.node !== "substory")
@@ -173,12 +179,12 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 		return <Loading.Data />;
 
 	const WorldName = <span class={ `font-ibm ${style.WorldName}` }>
-		<Locale k={ `WORLD_${props.wid}` } fallback={ props.wid } />
+		<Locale k={ `WORLD_${wid}` } fallback={ props.wid } />
 	</span>;
 	const AreaName = (props.mid in MapDB)
 		? <Locale
 			k={ `WORLD_WORLD_${props.wid}_${props.mid}` }
-			fallback={ <Locale k={ "WORLDS_WORLD_TITLE" } p={ [props.mid] } /> }
+			fallback={ <Locale k={ "WORLDS_WORLD_TITLE" } p={ [isStory ? props.wid : props.mid] } /> }
 		/>
 		: <>???</>;
 
@@ -389,12 +395,16 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 		? storyMetaTableRef.current[selectedValue.key]
 		: undefined;
 
+	const hasChapter = isStory && Object.keys(MapsDB[props.wid]).length > 1;
+
 	return <div class="worlds-map text-start">
 		<div class="row">
 			<div class="col-auto">
 				<button class="btn btn-dark" onClick={ (): void => {
 					if (props.wid === "Sub")
 						route("/worlds/");
+					else if (isStory)
+						route("/worlds/Story");
 					else
 						route(`/worlds/${props.wid}`);
 				} }>
@@ -453,7 +463,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 									{ WorldName }
 									<h5 class="m-0 d-inline-block font-ibm">
 										<span class="badge bg-warning text-dark ms-2">
-											<Locale k="WORLDS_WORLD_TITLE" p={ [props.mid] } /> :: { AreaName }
+											<Locale k="WORLDS_WORLD_TITLE" p={ [isStory ? props.wid : props.mid] } /> :: { AreaName }
 										</span>
 									</h5>
 								</>
@@ -464,6 +474,22 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 						data-new={ NewMapList.includes(props.wid) ? "1" : "0" }
 						ref={ mapBGRef }
 					>
+						{ hasChapter
+							? <div class={ style.ChapterSelect }>
+								{ Object.keys(MapsDB[props.wid])
+									.map(k => <button
+										class={ BuildClass("btn btn-sm me-1", isActive(props.mid === k, "btn-light", "btn-outline-light")) }
+										onClick={ e => {
+											e.preventDefault();
+											route(`/worlds/${props.wid}/${k}`);
+										} }
+									>
+										{ props.wid }-{ k }
+									</button>)
+								}
+							</div>
+							: <></>
+						}
 						<div>
 							{ props.wid === "Sub"
 								? NodeList.map(x => <Link

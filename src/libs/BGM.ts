@@ -3,7 +3,7 @@ import { BGMAlbum } from "@/types/BGM";
 const BGMAlbums: BGMAlbum[] = [
 	{
 		id: "album01",
-		title: "LastOrigin Original Sound Track",
+		title: "LastOrigin Sound Track",
 		author: "LastOrigin",
 		image: "album01",
 		songs: [
@@ -236,6 +236,22 @@ const BGMAlbums: BGMAlbum[] = [
 				duration: 124,
 				filename: "Album01/Stronghold_March.mp3",
 				lyrics: [{ time: 0, text: "Stronghold March" }],
+			},
+			{
+				type: "audio",
+				id: "track_horror",
+				title: "Horror",
+				duration: 140,
+				filename: "Album01/Horror.mp3",
+				lyrics: [{ time: 0, text: "Horror" }],
+			},
+			{
+				type: "audio",
+				id: "track_beta",
+				title: "Beta",
+				duration: 127,
+				filename: "Album01/Beta.mp3",
+				lyrics: [{ time: 0, text: "Beta" }],
 			},
 		],
 	},
@@ -1153,7 +1169,7 @@ const BGMAlbums: BGMAlbum[] = [
 					{ time: 205.04, text: "쓸쓸한 기억 속에 벗어난 날 만나" },
 					{ time: 209.79, text: "I find one light 한순간의 my dream" },
 					{ time: 216.7, text: "어떤 선택이라도 내게는 하나뿐인" },
-					{ time: 221.56, text: "Gray cloud Oh gray clouds" },
+					{ time: 221.56, text: "Gray clouds Oh Gray clouds" },
 					{ time: 226.83, text: "I know that answer, right" },
 					{ time: 231.13, text: "" },
 					{ time: 237.43, text: "Gray clouds" },

@@ -23,6 +23,7 @@ import { CurrentLocale } from "@/libs/Locale";
 import { BuildClass } from "@/libs/Class";
 import { AssetsRoot, ImageExtension, RarityDisplay } from "@/libs/Const";
 import { DecomposeHangulSyllable, FormatDate, FormatNumber, isActive } from "@/libs/Functions";
+import { ParseDescriptionText } from "@/libs/FunctionsX";
 
 import { DBSourceConverter, GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
@@ -338,7 +339,9 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 										image="UI_Icon_Consumable_GiftItem_Damage"
 										size="small"
 									/>
-									<Locale k="UNIT_VIEW_SECRETROOM_TYPE" />
+									<span class="d-inline-block">
+										<Locale k="UNIT_VIEW_SECRETROOM_TYPE" />
+									</span>
 								</th>
 								<td class={ BuildClass(
 									"font-exo2 align-middle",
@@ -357,7 +360,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 							</tr>
 							<tr>
 								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_WEIGHT" /></th>
-								<td class="font-exo2">{ unit.weight }</td>
+								<td class="font-exo2">{ ParseDescriptionText(unit.weight) }</td>
 							</tr>
 							<tr>
 								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_BATTLESTYLE" /></th>

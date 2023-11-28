@@ -63,6 +63,8 @@
 
 :global .worlds-map {
 	.worlds-map-bg {
+		position: relative;
+
 		background-image: url($assetsRoot + "/world/bg.png");
 		background-position: center;
 		background-repeat: no-repeat;
@@ -126,5 +128,17 @@
 			max-width: 100px;
 			max-height: 100px;
 		}
+	}
+}
+
+.ChapterSelect {
+	position: sticky;
+	margin-left: -0.5rem;
+	margin-top: -0.5rem;
+	left: 0rem;
+	top: 0rem;
+
+	& + div {
+		margin-top: 0.5rem;
 	}
 }

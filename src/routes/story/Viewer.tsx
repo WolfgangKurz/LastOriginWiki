@@ -6,11 +6,11 @@ import * as PIXI from "pixi.js";
 import { APPEAR_EFFECT, DIALOG_SPEAKER, OFF_EFFECT, SCG_ACTIVATION, SCREEN_EFFECT } from "@/types/Enums";
 import { DialogCharacter, DialogSelection, StoryData } from "@/types/Story/Story";
 import { StoryModelMeta } from "@/types/Story/Model";
+import { LocaleTypes } from "@/types/Locale";
 
 import { useUpdate } from "@/libs/hooks";
 import { AssetsRoot } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
-import { LocaleTypes } from "@/libs/Locale";
 import BGMAlbums from "@/libs/BGM";
 
 import Locale from "@/components/locale";
@@ -118,6 +118,9 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 		return model.includes("_Commu");
 	}
 	function getCommuImage (image: string, imageVar: string): string {
+		if (imageVar.startsWith("Cut_"))
+			return `${AssetsRoot}/story/add/${imageVar}.webp`;
+
 		const v = imageVar || (image.replace(/^2DModel_/, "") + "_Idle");
 		return `${AssetsRoot}/story/model/commu/${v}.webp`;
 	}
@@ -142,6 +145,7 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			"2DModel_BR_Efreeti_NS1_DL_N",
 			"2DModel_PECS_LemonadeBeta_N", "2DModel_PECS_Shepherd_N",
 			"2DModel_Mercenary_N", "2DModel_Simon_N", "2DModel_Simon2_N",
+			"2DModel_PECS_LemonadeGamma_N_DL_N",
 		];
 		if (list.includes(model)) return true;
 		return false;
@@ -645,7 +649,7 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			for (let i = 0; i < 3; i++) {
 				const c = charRef.current[i];
 				const k = (["L", "R", "C", ""] satisfies Array<"L" | "R" | "C" | "">)[i];
-				if (c) {
+				if (c && c.zIndex !== 600) { // not Cut (add)
 					if (curData.char[k]?.SCG === SCG_ACTIVATION.ACTIVATION)
 						c.zIndex = zTable[k] + 10;
 					else
@@ -685,6 +689,8 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 					char = new (isCommu(charL.image) ? CommuSprite : FadeSprite)(tex);
 					char.filters = [speakerFilter[0]];
 					char.name = "CharL";
+					char.pivot.set(tex.width / 2, tex.height / 4 * 3);
+					char.zIndex = 501;
 
 					const p = [1280 / SPLITCOUNT * 1, 720];
 					const s = [1, 1];
@@ -696,18 +702,26 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 							s[1] *= e.scale[1];
 						});
 					} else if (isCommu(charL.image)) {
-						p[1] -= 375;
-						s[0] = 213 / tex.width;
-						s[1] = 282 / tex.height;
+						if (!charL.image.includes("Cut_")) {
+							p[1] -= 375;
+							s[0] = 213 / tex.width;
+							s[1] = 282 / tex.height;
+						} else {
+							char.zIndex = 600;
+							char.pivot.set(tex.width / 2, tex.height / 2);
+							p[0] = 640;
+							p[1] = 240;
+							s[0] = s[1] = 1;
+							if (tex.height > 358)
+								s[0] = s[1] = 358 / tex.height;
+						}
 					} else {
 						const ratio = Math.min(1, 720 / tex.height);
 						p[1] -= 40;
 						s[0] = s[1] = ratio;
 					}
-					char.pivot.set(tex.width / 2, tex.height / 4 * 3);
 					char.position.set(...p);
 					char.scale.set(...s);
-					char.zIndex = 501;
 					char.fadeIn(0.15);
 					screen.addChild(char);
 
@@ -753,6 +767,8 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 					char = new (isCommu(charR.image) ? CommuSprite : FadeSprite)(tex);
 					char.filters = [speakerFilter[1]];
 					char.name = "CharR";
+					char.pivot.set(tex.width / 2, tex.height / 4 * 3);
+					char.zIndex = 502;
 
 					const p = [1280 / SPLITCOUNT * (SPLITCOUNT - 1), 720];
 					const s = [-1, 1];
@@ -764,19 +780,27 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 							s[1] *= e.scale[1];
 						});
 					} else if (isCommu(charR.image)) {
-						p[1] -= 375;
-						s[0] = 213 / tex.width;
-						s[1] = 282 / tex.height;
+						if (!charR.image.includes("Cut_")) {
+							p[1] -= 375;
+							s[0] = 213 / tex.width;
+							s[1] = 282 / tex.height;
+						} else {
+							char.zIndex = 600;
+							char.pivot.set(tex.width / 2, tex.height / 2);
+							p[0] = 640;
+							p[1] = 240;
+							s[0] = s[1] = 1;
+							if (tex.height > 358)
+								s[0] = s[1] = 358 / tex.height;
+						}
 					} else {
 						const ratio = Math.min(1, 720 / tex.height);
 						p[1] -= 40;
 						s[0] = -ratio;
 						s[1] = ratio;
 					}
-					char.pivot.set(tex.width / 2, tex.height / 4 * 3);
 					char.position.set(...p);
 					char.scale.set(...s);
-					char.zIndex = 502;
 					char.fadeIn(0.15);
 					screen.addChild(char);
 
@@ -822,6 +846,8 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 					char = new (isCommu(charC.image) ? CommuSprite : FadeSprite)(tex);
 					char.filters = [speakerFilter[2]];
 					char.name = "CharC";
+					char.pivot.set(tex.width / 2, tex.height / 4 * 3);
+					char.zIndex = 500;
 
 					const p = [1280 / 2, 720];
 					const s = [1, 1];
@@ -833,18 +859,26 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 							s[1] *= e.scale[1];
 						});
 					} else if (isCommu(charC.image)) {
-						p[1] -= 375;
-						s[0] = 213 / tex.width;
-						s[1] = 282 / tex.height;
+						if (!charC.image.includes("Cut_")) {
+							p[1] -= 375;
+							s[0] = 213 / tex.width;
+							s[1] = 282 / tex.height;
+						} else {
+							char.zIndex = 600;
+							char.pivot.set(tex.width / 2, tex.height / 2);
+							p[0] = 640;
+							p[1] = 240;
+							s[0] = s[1] = 1;
+							if (tex.height > 358)
+								s[0] = s[1] = 358 / tex.height;
+						}
 					} else {
 						const ratio = Math.min(1, 720 / tex.height);
 						p[1] -= 40;
 						s[0] = s[1] = ratio;
 					}
-					char.pivot.set(tex.width / 2, tex.height / 4 * 3);
 					char.position.set(...p);
 					char.scale.set(...s);
-					char.zIndex = 500;
 					char.fadeIn(0.15);
 					screen.addChild(char);
 
