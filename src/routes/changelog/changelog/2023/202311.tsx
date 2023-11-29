@@ -5,6 +5,11 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12381" date="2023-11-29"
+		bugfix={ <>
+			<li>전투원 <BY>레모네이드 베타</BY>의 스킬 정보가 입력되지 않은 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12380" date="2023-11-29"
 		new={ <>
 			<li>신규 장비 <BY>시원한 맥주캔</BY> 정보가 추가되었습니다.</li>
