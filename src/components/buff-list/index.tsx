@@ -1541,7 +1541,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					<span class="badge bg-dark text-bg-dark me-2">
 						{ getBuffUid(props.uid, stat.key) }
 					</span>
-					<Locale k={ stat.key } />
+					<Locale plain k={ stat.key } />
 
 					{ IsDev
 						? <small class="ms-2 text-secondary">{ stat.key }</small>
