@@ -593,7 +593,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 										<hr />
 
 										{ buffList[skill.key].length > 0
-											? <BuffList list={ buffList[skill.key] } dummy />
+											? <BuffList uid={ target.id } list={ buffList[skill.key] } dummy />
 											: <></>
 										}
 									</div>

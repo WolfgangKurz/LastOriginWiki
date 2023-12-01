@@ -332,7 +332,12 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 			}
 
 			{ displayBuffList.value && buffList[skill.key].length > 0
-				? <BuffList list={ buffList[skill.key] } level={ finalSkillLevel } dummy={ displayBuffDummy.value } />
+				? <BuffList
+					uid={ unit.uid }
+					list={ buffList[skill.key] }
+					level={ finalSkillLevel }
+					dummy={ displayBuffDummy.value }
+				/>
 				: <></>
 			}
 		</>;

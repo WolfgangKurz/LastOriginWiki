@@ -374,7 +374,7 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 								<hr />
 
 								{ buffList[skill.key].length > 0
-									? <BuffList list={ buffList[skill.key] } />
+									? <BuffList uid={ Summon.uid } list={ buffList[skill.key] } />
 									: <></>
 								}
 							</div>

@@ -565,7 +565,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 								</tbody>
 							</table>
 
-							{ StatusList && <BuffList class="mt-2" list={ StatusList } dummy /> }
+							{ StatusList && <BuffList class="mt-2" uid={ target.fullKey } list={ StatusList } dummy /> }
 						</>
 					}
 					{ displayTab === "drop" &&

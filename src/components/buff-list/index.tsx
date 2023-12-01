@@ -1,19 +1,20 @@
-import preact, { Fragment, FunctionalComponent } from "preact";
+import preact, { Fragment, FunctionalComponent, isValidElement } from "preact";
+import { useState } from "preact/hooks";
 import render from "preact-render-to-string";
 import Decimal from "decimal.js";
 
 import { BuffEffectValue, BUFFEFFECT_TYPE, BuffEffect } from "@/types/BuffEffect";
 import { BuffStatStatic, BuffStat } from "@/types/Buffs";
-import { BUFFEFFECT_ERASE_TYPE, BuffErase } from "@/types/BuffErase";
+import { BuffErase } from "@/types/BuffErase";
 import { BuffTrigger } from "@/types/BuffTrigger";
 import { UNIT_POSITION, BUFF_ATTR_TYPE, SKILL_ATTR, ACTOR_BODY_TYPE, ACTOR_CLASS, ROLE_TYPE, TARGET_TYPE, NUM_OUTPUTTYPE, BUFF_OVERLAP_TYPE } from "@/types/Enums";
 import { StatPointValue } from "@/types/Stat";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { Enemy } from "@/types/DB/Enemy";
 
-import { objState } from "@/libs/State";
 import { ImageExtension, AssetsRoot, TroopNameTable, IsDev } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
+import { BuildClass } from "@/libs/Class";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import LocaleBase, { LocaleExists, LocaleGet, LocaleProps } from "@/components/locale";
@@ -25,13 +26,35 @@ import ElemIcon from "@/components/elem-icon";
 import UnitLink from "@/components/unit-link";
 
 import style from "./style.module.scss";
+import { diff2 } from "@/libs/Functions";
 
 // default fallback ??? string
-const Locale: FunctionalComponent<LocaleProps<any>> = (props) => <LocaleBase fallback="???" { ...props } />;
+const Locale: FunctionalComponent<LocaleProps<any>> = (props) =>
+	<LocaleBase
+		fallback={ IsDev
+			? <span title={ props.k }>???</span>
+			: "???"
+		}
+		{ ...props }
+	/>;
 
 type BuffColors = "primary" | "secondary" | "danger" | "warning" | "info" | "dark" | "light";
 
+const cachedBuffUid: Record<string, string[]> = {};
+function getBuffUid (uid: string, buff: string): number {
+	if (uid in cachedBuffUid) {
+		const index = cachedBuffUid[uid].indexOf(buff);
+		if (index >= 0) return index + 1;
+		cachedBuffUid[uid].push(buff);
+		return cachedBuffUid[uid].length;
+	}
+
+	cachedBuffUid[uid] = [];
+	return getBuffUid(uid, buff);
+}
+
 interface BuffRendererProps {
+	uid: string;
 	stat: BuffStat | BuffStat[];
 	level?: number;
 	invert?: boolean;
@@ -40,9 +63,64 @@ interface BuffRendererProps {
 
 export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 	const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
-	const ReferencedEnemy = objState<Enemy | null>(null);
+	const [ReferencedEnemy, setReferencedEnemy] = useState<Enemy | null>(null);
 
-	const VNodeUnique = (entity: preact.VNode): string => render(entity);
+	const VNodeRender = (entity: preact.VNode): string => render(entity);
+	const VNodeReduce = (() => { // collapse 'same target type, same name` buffs into one
+		type BuffUidInfo = {
+			type: preact.ComponentChild;
+			uid: string | number;
+			name: preact.ComponentChild;
+		};
+		function getBuffUidInfo (node: preact.VNode): (false | BuffUidInfo) {
+			if (node.type !== "span") return false;
+			if (!Array.isArray(node.props.children)) return false;
+			if (node.props.children.length < 2) return false;
+
+			const c = node.props.children[1];
+			if (!isValidElement(c)) return false;
+
+			if (c.type !== "span") return false;
+			if (!("data-type" in c.props)) return false;
+			if (c.props["data-type"] !== "buff-uid") return false;
+			if (typeof c.props.children !== "string" && typeof c.props.children !== "number") return false;
+
+			return {
+				type: node.props.children[0],
+				uid: c.props.children,
+				name: node.props.children[2],
+			};
+		}
+
+		return (prev: preact.VNode[], current: preact.VNode, i: number): preact.VNode[] => {
+			const currentInfo = getBuffUidInfo(current);
+			if (!currentInfo) return [...prev, current];
+
+			const list = [...prev];
+			const [foundIndex, found] = (() => {
+				for (let j = 0; j < list.length; j++) {
+					const info = getBuffUidInfo(list[j]);
+					if (info && diff2(currentInfo.type, info.type) && diff2(currentInfo.name, info.name))
+						return [j, info];
+				}
+				return [-1, null];
+			})();
+			if (foundIndex === -1) {
+				list.push(current);
+				return list;
+			}
+
+			const uidSpan = list[foundIndex].props.children![1] as preact.VNode;
+			if (typeof uidSpan.props.children === "number") {
+				if (uidSpan.props.children !== found!.uid)
+					uidSpan.props.children = `${uidSpan.props.children},${found!.uid}`;
+			} else if (typeof uidSpan.props.children === "string") {
+				if (!uidSpan.props.children.split(",").includes(found!.uid.toString()))
+					uidSpan.props.children = `${uidSpan.props.children},${found!.uid}`;
+			}
+			return list;
+		};
+	})();
 
 	function signedValue (value: BuffEffectValue, level: number = 0, forRatio: boolean = false): string {
 		const p = typeof value.base === "string" && value.base.endsWith("%") ? "%" : "";
@@ -174,6 +252,9 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				</>
 				: <></>
 			}
+			<span data-type="buff-uid" class="badge bg-dark ms-1">
+				{ getBuffUid(props.uid, name) }
+			</span>
 			<Locale plain k={ name } />
 		</span>;
 	}
@@ -622,7 +703,8 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 
 				const src = trigger.in_battle
 					.map(convertBuff)
-					.unique(VNodeUnique);
+					.reduce(VNodeReduce, [])
+					.unique(VNodeRender);
 				return <Locale plain k="BUFFTRIGGER_IN_BATTLE" p={ [
 					<>{ src.gap(<Locale plain k="BUFFTRIGGER_OR" />) }</>,
 				] } />;
@@ -632,7 +714,8 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 
 				const src = trigger.in_squad
 					.map(convertBuff)
-					.unique(VNodeUnique);
+					.reduce(VNodeReduce, [])
+					.unique(VNodeRender);
 				return <Locale plain k="BUFFTRIGGER_IN_SQUAD" p={ [
 					<>{ src.gap(<Locale plain k="BUFFTRIGGER_OR" />) }</>,
 				] } />;
@@ -642,7 +725,8 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 
 				const src = trigger.in_enemy
 					.map(convertBuff)
-					.unique(VNodeUnique);
+					.reduce(VNodeReduce, [])
+					.unique(VNodeRender);
 				return <Locale plain k="BUFFTRIGGER_IN_ENEMY" p={ [
 					<>{ src.gap(<Locale plain k="BUFFTRIGGER_OR" />) }</>,
 				] } />;
@@ -671,13 +755,15 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						// BuffTrigger_On_BuffKey
 						? (trigger.on.select as string[])
 							.map(x => convertBuff(x, trigger.on.attr))
-							.unique(VNodeUnique)
+							.reduce(VNodeReduce, [])
+							.unique(VNodeRender)
 						// BuffTrigger_On_BuffEffectType
 						: (trigger.on.select as BUFFEFFECT_TYPE[])
 							.map(x => <span class={ `SubBadge ${style["SubBadge"]}` }>
 								{ getBuffEffectTypeText(x, trigger.on.attr) }
 							</span>)
-							.unique(VNodeUnique);
+							.reduce(VNodeReduce, [])
+							.unique(VNodeRender);
 
 					if (select.length === 1)
 						return <Locale plain k={ `BUFFTRIGGER_ON_SINGLE_${trigger.on.func}` } p={ [select[0]] } />;
@@ -688,7 +774,8 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				} else if ("target" in trigger.on && "stack" in trigger.on) {
 					const select = (trigger.on.select as string[])
 						.map(convertBuff)
-						.unique(VNodeUnique);
+						.reduce(VNodeReduce, [])
+						.unique(VNodeRender);
 
 					// BuffTrigger_On_BuffStack
 					const target = <Locale plain k={ `BUFFTARGET_${trigger.on.target.toUpperCase()}` } />;
@@ -720,11 +807,13 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 								<u><Locale plain k={ `BUFFEFFECT_ATTR_PREFIX_${trigger.on.attr}` } /></u>
 								{ x }
 							</>)
-							.unique(VNodeUnique)
+							.reduce(VNodeReduce, [])
+							.unique(VNodeRender)
 						// BuffTrigger_On_BuffTypeExists
 						: (trigger.on.select as BUFFEFFECT_TYPE[])
 							.map(x => getBuffEffectTypeText(x, trigger.on.attr))
-							.unique(VNodeUnique);
+							.reduce(VNodeReduce, [])
+							.unique(VNodeRender);
 
 					const target = <Locale plain k={ `BUFFTARGET_${trigger.on.target.toUpperCase()}` } />;
 
@@ -785,7 +874,8 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 
 				const list = (typeof trigger.target === "string" ? [trigger.target] : trigger.target)
 					.map(convertBuff)
-					.unique(VNodeUnique);
+					.reduce(VNodeReduce, [])
+					.unique(VNodeRender);
 				return <Locale plain k="BUFFTRIGGER_ON_TARGET_SINGLE_OR" p={ [
 					<>{ list.gap(", ") }</>,
 				] } />;
@@ -1184,10 +1274,10 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						const detail = GetJson<Enemy>(enemyKey);
 						if (!detail) return;
 
-						ReferencedEnemy.set(detail);
+						setReferencedEnemy(detail);
 					});
 
-				if (!ReferencedEnemy.value) return <></>;
+				if (!ReferencedEnemy) return <></>;
 
 				return <Locale plain k="BUFFEFFECT_COOP" p={ [
 					<strong>
@@ -1195,7 +1285,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					</strong>,
 					<span class="text-danger">#{ stat.collaborate.skill }</span>,
 					<span class="text-danger">
-						<Locale plain k={ ReferencedEnemy.value.skills[stat.collaborate.skill - 1].key } />
+						<Locale plain k={ ReferencedEnemy.skills[stat.collaborate.skill - 1].key } />
 					</span>,
 				] } />;
 			}
@@ -1438,13 +1528,29 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 	const level = props.level;
 
 	const elems: preact.VNode[] = [];
-	let commonCond = <></>;
+	const commonCond: preact.VNode[] = [];
 
 	if ("unknown" in stat) { // Unknown
 		elems.push(<div class="clearfix text-secondary">
 			<small>{ stat.unknown }</small>
 		</div>);
 	} else if ("buffs" in stat) { // 버프 형식의 수치
+		commonCond.push(
+			<li class={ BuildClass("list-group-item list-group-item-warning px-2 py-1", style.BuffName) }>
+				<strong>
+					<span class="badge bg-dark text-bg-dark me-2">
+						{ getBuffUid(props.uid, stat.key) }
+					</span>
+					<Locale k={ stat.key } />
+
+					{ IsDev
+						? <small class="ms-2 text-secondary">{ stat.key }</small>
+						: <></>
+					}
+				</strong>
+			</li>,
+		);
+
 		const target = getTargetText(stat.body, stat.class, stat.role, stat.target);
 		const on = getTriggerText(stat.on);
 		const apply = (stat.if || [])
@@ -1453,7 +1559,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			.gap(<span class="mx-1 opacity-75">
 				<Locale k="BUFFTRIGGER_AND" />
 			</span>);
-		commonCond = <li class="list-group-item list-group-item-warning p-1">
+		commonCond.push(<li class="list-group-item list-group-item-warning p-1">
 			{ on
 				? <span class="badge bg-success ms-1 text-wrap">{ on }</span>
 				: <></>
@@ -1468,7 +1574,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				</span>
 				: <></>
 			}
-		</li>;
+		</li>);
 
 		const ext = ImageExtension();
 		stat.buffs.forEach(buff => {
@@ -1663,6 +1769,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 interface BuffListProps {
 	class?: string;
 
+	uid?: string;
 	list?: readonly BuffStat[];
 	level?: number;
 	invert?: boolean;
@@ -1677,6 +1784,7 @@ const BuffList: FunctionalComponent<BuffListProps> = (props) => {
 
 		const staticList = list.filter(x => !("buffs" in x || "unknown" in x));
 		const dynamicList = list.filter(x => "buffs" in x || "unknown" in x).map(stat => <BuffRenderer
+			uid={ props.uid ?? "" }
 			stat={ stat }
 			level={ level }
 			invert={ props.invert }
@@ -1685,7 +1793,13 @@ const BuffList: FunctionalComponent<BuffListProps> = (props) => {
 		return <div class={ `${style.BuffList} text-dark ${props.class || ""}` }>
 			{ staticList.length > 0
 				? <ul class="list-group text-start">
-					<BuffRenderer stat={ staticList } level={ level } invert={ props.invert } dummy={ dummy } />
+					<BuffRenderer
+						uid={ props.uid ?? "" }
+						stat={ staticList }
+						level={ level }
+						invert={ props.invert }
+						dummy={ dummy }
+					/>
 				</ul>
 				: <></>
 			}
