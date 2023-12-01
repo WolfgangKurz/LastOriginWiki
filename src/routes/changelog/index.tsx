@@ -48,7 +48,7 @@ const Changelog: FunctionalComponent = () => {
 		content.set(undefined);
 		import(`./changelog/${_year}/${currentDate.value}.tsx`)
 			.then(x => content.set(x.default))
-			.catch(() => content.set(<h5 class="text-secondary text-center m-4">Failed to load</h5>));
+			.catch(() => content.set(<h5 class="text-secondary text-center m-4">No data</h5>));
 	}
 
 	SetMeta(["description", "twitter:description"], "멸망 전의 전술 교본 사이트의 변경 내역입니다.");

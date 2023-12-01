@@ -1,10 +1,11 @@
-import EntitySource from "@/libs/EntitySource";
 import { UnitDialogueAudioType, UnitDialogueDataType } from "@/types/DB/Dialogue";
 import { MapWaveDrop } from "@/types/DB/Map";
 import { SkillGroup } from "@/types/DB/Skill";
 import { UnitStats } from "@/types/DB/UnitStats";
 import { ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, ITEM_TYPE, FACETYPE, CHARTYPE_GIFTITEM_DAMAGE_TYPE } from "@/types/Enums";
-import RoguelikeSkill from "./Roguelike.Skill";
+// import RoguelikeSkill from "./Roguelike.Skill";
+
+import EntitySource from "@/libs/EntitySource";
 
 export type LinkBonusType =
 	"" |
