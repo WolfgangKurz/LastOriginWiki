@@ -115,7 +115,7 @@ export default ({ mode }) => {
 			);
 		})();
 	} else
-		console.log("skip hash update - on dev");
+		console.log(`skip hash update - on ${mode}`);
 
 	const prependData = `${[
 		"@charset \"UTF-8\";",

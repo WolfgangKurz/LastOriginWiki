@@ -630,31 +630,55 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 								<Locale k="ENEMY_VIEW_STAGE" />
 							</div>
 							<div class="card-body p-2">
-								{ Sources.map((area, aindex) => <div>
-									{ aindex > 0 ? <hr class="my-2" /> : <></> }
-									{ area.length > 0
-										? area[0].IsEvent
+								{ Sources
+									.filter(r => r.length > 0)
+									.reduce<EntitySource[][]>((p, c) => {
+										if (c[0].IsStory) {
+											const pi = p.findIndex(r => r[0].IsStory);
+											if (pi >= 0)
+												return p.map((v, i) => i === pi ? [...v, ...c] : v);
+										}
+										return [...p, c];
+									}, [])
+									.map((area, aindex) => <div>
+										{ aindex > 0 && <hr class="my-1" /> }
+										{ area[0].IsEvent
 											? <h6 style="font-weight: bold">
 												<Locale k={ area[0].EventName } />
 											</h6>
-											: area[0].IsChallenge
+											: area[0].IsDaily
 												? <h6 style="font-weight: bold">
-													<Locale k={ `COMMON_CHALLENGE_${area[0].ChallengeName}` } />
+													<Locale k="WORLD_Daily" />
 												</h6>
-												: area[0].IsSubStory
+												: area[0].IsChallenge
 													? <h6 style="font-weight: bold">
-														<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />
+														<Locale k={ `COMMON_CHALLENGE_${area[0].ChallengeName}` } />
 													</h6>
-													: area[0].IsNewEternalWar
+													: area[0].IsSubStory
 														? <h6 style="font-weight: bold">
-															<Locale k="COMMON_SOURCE_NEW" />
+															<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />
 														</h6>
-														: <></>
-										: <></>
-									}
+														: area[0].IsNewEternalWar
+															? <h6 style="font-weight: bold">
+																<Locale k="COMMON_SOURCE_NEW" />
+															</h6>
+															: <></>
+										}
 
-									{ area.map(source => <SourceBadge class="my-1" source={ source } linked />) }
-								</div>) }
+										{ (() => {
+											const _area: Record<string, EntitySource[]> = {};
+											area.forEach(s => {
+												const k = s.IsEvent ? `${s.World}:${s.Chapter}` : s.World;
+												if (!(k in _area)) _area[k] = [];
+												_area[k].push(s);
+											});
+											return Object.keys(_area).map((k, i) => <span>
+												{ i > 0 && <span class="border-start mx-1" /> }
+												{ _area[k].map(source => <SourceBadge class="my-1" source={ source } linked />) }
+											</span>);
+										})() }
+									</div>)
+								}
 								{/* { isEWEnemy
 									? <>
 										{ Sources.length > 0 ? <hr class="my-2" /> : <></> }
