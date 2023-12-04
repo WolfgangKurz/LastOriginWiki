@@ -1,6 +1,8 @@
 import { ComponentType, FunctionalComponent, createElement } from "preact";
 
-import { CurrentLocale, LocaleTypes } from "@/libs/Locale";
+import type { LocaleTypes } from "@/types/Locale";
+
+import { CurrentLocale } from "@/libs/Locale";
 import { CurrentDB } from "@/libs/DB";
 
 import { GetJson, JsonInvalidate, JsonLoaderCore, StaticDB } from "@/components/loader";
