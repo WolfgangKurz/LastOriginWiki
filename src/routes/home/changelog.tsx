@@ -5,7 +5,12 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12398" date="2023-12-03"
+	<ChangelogItem title="Build 12399" date="2023-12-07"
+		bugfix={ <>
+			<li>전투원 및 장비의 획득처에 클리어 보상이 누락된 문제를 수정했습니다.</li>
+		</> }
+	/>
+	<ChangelogItem title="Build 12398" date="2023-12-07"
 		new={ <>
 			<li>신규 배경 정보가 추가되었습니다.</li>
 			<li>신규 장식품 정보가 추가되었습니다.</li>
