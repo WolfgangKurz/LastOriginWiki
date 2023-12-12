@@ -604,6 +604,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 							? <div class="row">
 								<div class="col border border-top-0 text-start p-3">
 									<AIList
+										uid={ target.id }
 										name={ LocaleGet(`ENEMY_${target.id}`) }
 										aiKey={ targetEnemy.ai }
 										enemy

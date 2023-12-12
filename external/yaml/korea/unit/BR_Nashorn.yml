@@ -460,7 +460,8 @@ fullLinkBonus:
   - ACC_75
   - SPD_15
 craft: 27540
-equips: []
+equips:
+  - Sub_Bedroll_T4
 stat:
   - HP:
       - 220
@@ -1776,7 +1777,23 @@ skills:
               on:
                 after: use_skill
               if:
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Bedroll_N_1
+                      - Effect_BUFF_Bedroll_N_2
+                      - Effect_BUFF_Bedroll_N_3
+                      - Effect_BUFF_Bedroll_N_4
+                      - Effect_BUFF_Bedroll_N_5
+                      - Effect_BUFF_Bedroll_N_6
+                      - Effect_BUFF_Bedroll_N_7
+                      - Effect_BUFF_Bedroll_N_8
+                      - Effect_BUFF_Bedroll_N_9
+                      - Effect_BUFF_Bedroll_N_10
+                      - Effect_BUFF_Bedroll_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1828,7 +1845,23 @@ skills:
                 - target:
                     - Char_BR_BloodyPanther_N
                     - Char_BR_Nashorn_N
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Bedroll_N_1
+                      - Effect_BUFF_Bedroll_N_2
+                      - Effect_BUFF_Bedroll_N_3
+                      - Effect_BUFF_Bedroll_N_4
+                      - Effect_BUFF_Bedroll_N_5
+                      - Effect_BUFF_Bedroll_N_6
+                      - Effect_BUFF_Bedroll_N_7
+                      - Effect_BUFF_Bedroll_N_8
+                      - Effect_BUFF_Bedroll_N_9
+                      - Effect_BUFF_Bedroll_N_10
+                      - Effect_BUFF_Bedroll_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -1873,6 +1906,137 @@ skills:
                     skill_ratio:
                       base: 20%
                       per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nashorn_N_23
+              on:
+                after: use_skill
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Bedroll_N_1
+                      - Effect_BUFF_Bedroll_N_2
+                      - Effect_BUFF_Bedroll_N_3
+                      - Effect_BUFF_Bedroll_N_4
+                      - Effect_BUFF_Bedroll_N_5
+                      - Effect_BUFF_Bedroll_N_6
+                      - Effect_BUFF_Bedroll_N_7
+                      - Effect_BUFF_Bedroll_N_8
+                      - Effect_BUFF_Bedroll_N_9
+                      - Effect_BUFF_Bedroll_N_10
+                      - Effect_BUFF_Bedroll_N_11
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 1
+              role:
+                - 1
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_Nashorn_N_23_1
+                    type: 1
+                    value: "0.400000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 40%
+                      per: 4%
+                  overlap: 4
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_BR_Nashorn_N_23_2
+                    type: 1
+                    value: "0.400000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 106
+                    skill_ratio:
+                      base: 40%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nashorn_N_24
+              on:
+                after: use_skill
+              if:
+                - target:
+                    - Char_BR_BloodyPanther_N
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Bedroll_N_1
+                      - Effect_BUFF_Bedroll_N_2
+                      - Effect_BUFF_Bedroll_N_3
+                      - Effect_BUFF_Bedroll_N_4
+                      - Effect_BUFF_Bedroll_N_5
+                      - Effect_BUFF_Bedroll_N_6
+                      - Effect_BUFF_Bedroll_N_7
+                      - Effect_BUFF_Bedroll_N_8
+                      - Effect_BUFF_Bedroll_N_9
+                      - Effect_BUFF_Bedroll_N_10
+                      - Effect_BUFF_Bedroll_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_Nashorn_N_24_1
+                    type: 1
+                    value: "0.400000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 40%
+                      per: 4%
+                  overlap: 4
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_BR_Nashorn_N_24_2
+                    type: 1
+                    value: "0.400000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 106
+                    skill_ratio:
+                      base: 40%
+                      per: 4%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1942,6 +2106,42 @@ skills:
               level: "0.020000"
             base: 0.2
             per: 0.02
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_Nashorn_N_23_1
+              type: 1
+              value: "0.400000"
+              level: "0.040000"
+            base: 0.4
+            per: 0.04
+            chance: 1
+          - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_BR_Nashorn_N_23_2
+              type: 1
+              value: "0.400000"
+              level: "0.040000"
+            base: 0.4
+            per: 0.04
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_Nashorn_N_24_1
+              type: 1
+              value: "0.400000"
+              level: "0.040000"
+            base: 0.4
+            per: 0.04
+            chance: 1
+          - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_BR_Nashorn_N_24_2
+              type: 1
+              value: "0.400000"
+              level: "0.040000"
+            base: 0.4
+            per: 0.04
             chance: 1
   "3":
     key: "3"
@@ -2060,7 +2260,23 @@ skills:
                       - 2
                     count:
                       - 1
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Bedroll_N_1
+                      - Effect_BUFF_Bedroll_N_2
+                      - Effect_BUFF_Bedroll_N_3
+                      - Effect_BUFF_Bedroll_N_4
+                      - Effect_BUFF_Bedroll_N_5
+                      - Effect_BUFF_Bedroll_N_6
+                      - Effect_BUFF_Bedroll_N_7
+                      - Effect_BUFF_Bedroll_N_8
+                      - Effect_BUFF_Bedroll_N_9
+                      - Effect_BUFF_Bedroll_N_10
+                      - Effect_BUFF_Bedroll_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -2119,6 +2335,146 @@ skills:
                     ap:
                       base: 0.75
                       per: 0.075
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nashorn_N_32
+              on: wave
+              if:
+                - unitCount:
+                    filter:
+                      - squad
+                      - supporter
+                    type:
+                      - 2
+                    count:
+                      - 1
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Bedroll_N_1
+                      - Effect_BUFF_Bedroll_N_2
+                      - Effect_BUFF_Bedroll_N_3
+                      - Effect_BUFF_Bedroll_N_4
+                      - Effect_BUFF_Bedroll_N_5
+                      - Effect_BUFF_Bedroll_N_6
+                      - Effect_BUFF_Bedroll_N_7
+                      - Effect_BUFF_Bedroll_N_8
+                      - Effect_BUFF_Bedroll_N_9
+                      - Effect_BUFF_Bedroll_N_10
+                      - Effect_BUFF_Bedroll_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 1
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_Nashorn_N_32_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 8
+                    critical:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nashorn_N_33
+              on: round
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Nashorn_N_32
+                    attr: 6
+                - on:
+                    target: target
+                    select:
+                      - Effect_BUFF_Bedroll_N_1
+                      - Effect_BUFF_Bedroll_N_2
+                      - Effect_BUFF_Bedroll_N_3
+                      - Effect_BUFF_Bedroll_N_4
+                      - Effect_BUFF_Bedroll_N_5
+                      - Effect_BUFF_Bedroll_N_6
+                      - Effect_BUFF_Bedroll_N_7
+                      - Effect_BUFF_Bedroll_N_8
+                      - Effect_BUFF_Bedroll_N_9
+                      - Effect_BUFF_Bedroll_N_10
+                      - Effect_BUFF_Bedroll_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 1
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_BR_Nashorn_N_33_1
+                    type: 1
+                    value: "0.600000"
+                    level: "0.030000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 60%
+                      per: 3%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_Nashorn_N_33_2
+                    type: 1
+                    value: "0.300000"
+                    level: "0.030000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 30%
+                      per: 3%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_Nashorn_N_33_3
+                    type: 0
+                    value: "1.500000"
+                    level: "0.150000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 1.5
+                      per: 0.15
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2188,6 +2544,42 @@ skills:
               level: "0.075000"
             base: 0.75
             per: 0.075
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_Nashorn_N_32_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_Nashorn_N_33_1
+              type: 1
+              value: "0.600000"
+              level: "0.030000"
+            base: 0.6
+            per: 0.03
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_Nashorn_N_33_2
+              type: 1
+              value: "0.300000"
+              level: "0.030000"
+            base: 0.3
+            per: 0.03
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_Nashorn_N_33_3
+              type: 0
+              value: "1.500000"
+              level: "0.150000"
+            base: 1.5
+            per: 0.15
             chance: 1
   "4":
     key: "4"
@@ -2376,6 +2768,17 @@ skills:
                       - Effect_BUFF_DummyAPEq_N_18
                       - Effect_BUFF_DummyAPEq_N_19
                       - Effect_BUFF_DummyAPEq_N_20
+                      - Effect_BUFF_Bedroll_N_1
+                      - Effect_BUFF_Bedroll_N_2
+                      - Effect_BUFF_Bedroll_N_3
+                      - Effect_BUFF_Bedroll_N_4
+                      - Effect_BUFF_Bedroll_N_5
+                      - Effect_BUFF_Bedroll_N_6
+                      - Effect_BUFF_Bedroll_N_7
+                      - Effect_BUFF_Bedroll_N_8
+                      - Effect_BUFF_Bedroll_N_9
+                      - Effect_BUFF_Bedroll_N_10
+                      - Effect_BUFF_Bedroll_N_11
                     attr: 6
                 - false
               body:

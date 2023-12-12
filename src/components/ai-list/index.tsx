@@ -4,14 +4,12 @@ import renderToString from "preact-render-to-string";
 
 import html2canvas from "@/external/html2canvas";
 
-import { ReactFlow, Edge, MarkerType, Node, useEdgesState, useNodesState, useReactFlow, useNodes } from "@reactflow/core";
+import { ReactFlow, Edge, MarkerType, Node, useEdgesState, useNodesState } from "@reactflow/core";
 import { Background as FlowBackground, BackgroundVariant } from "@reactflow/background";
 import { Controls as FlowControls, ControlButton as FlowControlButton } from "@reactflow/controls";
 import "reactflow/dist/style.css";
 
 import dagre from "@dagrejs/dagre";
-
-import { SkillEntity } from "@/types/DB/Skill";
 
 import { FlowRoot } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
@@ -19,6 +17,8 @@ import { BuildClass } from "@/libs/Class";
 import Locale, { LocaleGet } from "@/components/locale";
 import IconDownload from "@/components/bootstrap-icon/icons/Download";
 import IconConfusedFace from "@/components/bootstrap-icon/icons/ConfusedFace";
+
+import { getBuffUid } from "@/components/buff-list/cache";
 
 import CustomEdge from "./CustomEdge";
 
@@ -33,6 +33,8 @@ interface FlowPreset {
 }
 
 interface AIListProps {
+	uid: string;
+
 	enemy: boolean;
 	aiKey: string;
 
@@ -54,8 +56,8 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 
 	useEffect(() => { // resetter
 		setGraph(false);
-		setFlowNodes([]);
-		setFlowEdges([]);
+		setFlowNodes(() => []);
+		setFlowEdges(() => []);
 		setError("");
 	}, [props.aiKey]);
 
@@ -104,10 +106,14 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 						let r = LocaleGet(`${buff}_1`);
 						if (r === key) r = LocaleGet(buff);
 
+						const uid = <span class="badge bg-dark text-bg-dark">
+							{ getBuffUid(props.uid, buff) }
+						</span>;
+
 						if (r.includes(":"))
-							return <>{ r.replace(/^(.+):[^:]+$/, "$1") }</>;
+							return <>{ uid } { r.replace(/^(.+):[^:]+$/, "$1") }</>;
 						else
-							return <>{ r }</>;
+							return <>{ uid } { r }</>;
 					}
 
 					const colors = {
@@ -712,8 +718,8 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 						node.position.y = n.y - n.height / 2;
 					});
 
-					setFlowNodes(nodes);
-					setFlowEdges(edges);
+					setFlowNodes(() => nodes);
+					setFlowEdges(() => edges);
 				})
 				.catch(e => {
 					setError(e.toString());

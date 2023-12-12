@@ -15,6 +15,7 @@ import { Enemy } from "@/types/DB/Enemy";
 import { ImageExtension, AssetsRoot, TroopNameTable, IsDev } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 import { BuildClass } from "@/libs/Class";
+import { diff2 } from "@/libs/Functions";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import LocaleBase, { LocaleExists, LocaleGet, LocaleProps } from "@/components/locale";
@@ -25,8 +26,9 @@ import StatIcon from "@/components/stat-icon";
 import ElemIcon from "@/components/elem-icon";
 import UnitLink from "@/components/unit-link";
 
+import { getBuffUid } from "./cache";
+
 import style from "./style.module.scss";
-import { diff2 } from "@/libs/Functions";
 
 // default fallback ??? string
 const Locale: FunctionalComponent<LocaleProps<any>> = (props) =>
@@ -39,19 +41,6 @@ const Locale: FunctionalComponent<LocaleProps<any>> = (props) =>
 	/>;
 
 type BuffColors = "primary" | "secondary" | "danger" | "warning" | "info" | "dark" | "light";
-
-const cachedBuffUid: Record<string, string[]> = {};
-function getBuffUid (uid: string, buff: string): number {
-	if (uid in cachedBuffUid) {
-		const index = cachedBuffUid[uid].indexOf(buff);
-		if (index >= 0) return index + 1;
-		cachedBuffUid[uid].push(buff);
-		return cachedBuffUid[uid].length;
-	}
-
-	cachedBuffUid[uid] = [];
-	return getBuffUid(uid, buff);
-}
 
 interface BuffRendererProps {
 	uid: string;
@@ -977,6 +966,10 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		else if ("off" in stat) {
 			if (typeof stat.off === "string") {
 				return <Locale plain k="BUFFEFFECT_OFF" p={ [<span class="badge bg-warning text-dark">
+					<span data-type="buff-uid" class="badge bg-dark ms-1">
+						{ getBuffUid(props.uid, stat.off) }
+					</span>
+
 					<Locale plain k={ stat.off } />
 				</span>] } />;
 			} else if (typeof stat.off === "number")

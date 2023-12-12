@@ -385,6 +385,7 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 						? <div class="row">
 							<div class="col border border-top-0 text-start p-3">
 								<AIList
+									uid={ Summon.uid }
 									aiKey={ Summon.ai }
 									// skills={ Skills.filter(x => x) as unknown as SkillEntity[] }
 									enemy={ false }

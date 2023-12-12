@@ -1,0 +1,21 @@
+start > cond1
+	cond1 y cond1_1
+		cond1_1 y wait
+		cond1_1 n skill2_highest-hp
+	cond1 n cond2_1
+		cond2_1 y skill1_buff_Effect_MP_LemonadeBeta_Challenge2_54
+			skill1_buff_Effect_MP_LemonadeBeta_Challenge2_54 f cond2_2
+		cond2_1 n cond2_2
+			cond2_2 y skill1_buff_Effect_MP_LemonadeBeta_Challenge2_55
+				skill1_buff_Effect_MP_LemonadeBeta_Challenge2_55 f cond2_3
+			cond2_2 n cond2_3
+				cond2_3 y skill1_buff_Effect_MP_LemonadeBeta_Challenge2_56
+					skill1_buff_Effect_MP_LemonadeBeta_Challenge2_56 f skill1
+				cond2_3 n skill1
+
+cond1 = check_buff_self_>_2_Effect_MP_LemonadeBeta_Challenge2_11
+cond1_1 = check_buff_target_Effect_MP_LemonadeBeta_Challenge2_12 check_buff_target_Effect_MP_LemonadeBeta_Challenge2_13 check_buff_target_Effect_MP_LemonadeBeta_Challenge2_14
+
+cond2_1 = check_buff_target_==_0_Effect_MP_LemonadeBeta_Challenge2_12
+cond2_2 = check_buff_target_==_0_Effect_MP_LemonadeBeta_Challenge2_13
+cond2_3 = check_buff_target_==_0_Effect_MP_LemonadeBeta_Challenge2_14

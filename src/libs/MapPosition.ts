@@ -1,10 +1,10 @@
 interface MapPositionType {
 	[wid: string]: {
 		[mid: string]: {
-			[node: string]: [number, number] | // [x, y]
-			[number, number, boolean] | // [x, y, prev-line]
-			[number, number, boolean, number] | // [x, y, prev-line, node-type]
-			[number, number, boolean, number, string]; // [x, y, prev-line, node-type, icon]
+			[node: string]: [x: number, y: number] |
+			[x: number, y: number, displayPrevLine: boolean] |
+			[x: number, y: number, displayPrevLine: boolean, nodeType: number] |
+			[x: number, y: number, displayPrevLine: boolean, nodeType: number, icon: string];
 		};
 	};
 }
@@ -48,6 +48,25 @@ const MapPosition: MapPositionType = {
 			"12-4Ex": [0.4, 2],
 			"12-5Ex": [1.2, 2],
 			"12-6Ex": [2, 2],
+		},
+		3: {
+			"12-17": [0, 1],
+			"12-18": [0.8, 1],
+			"12-19": [1.6, 1],
+			"12-20": [2.4, 1],
+			"12-21": [3.2, 1],
+			"12-22": [4, 1],
+
+			"12-9B": [4, 0],
+			"12-10B": [4.8, 0],
+			"12-11B": [5.6, 0],
+			"12-12B": [6.4, 0],
+
+			"12-7Ex": [0.4, 2],
+			"12-8Ex": [1.2, 2],
+			"12-9Ex": [2, 2],
+
+			"12-1C": [4, 2, false],
 		},
 	},
 	Ev13: {
