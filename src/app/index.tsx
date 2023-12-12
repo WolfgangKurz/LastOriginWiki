@@ -134,7 +134,7 @@ const App: FunctionalComponent = () => {
 		}
 
 		<div class="toast-container">
-			{ !hasCookie("swaytwig:toast:jp-locale-message-20231008") && CurrentLocale === "JP" && false /* temporary */
+			{ !hasCookie("swaytwig:toast:jp-locale-message-20231213") && CurrentLocale === "JP" /* temporary */
 				? <div class="toast show align-items-center text-bg-danger border-1 shadow" role="alert">
 					<div class="d-flex">
 						<div class="toast-body">
@@ -147,7 +147,7 @@ const App: FunctionalComponent = () => {
 							class="btn-close btn-close-white me-2 m-auto"
 							data-bs-dismiss="toast"
 							onClick={ _ => {
-								setCookie("swaytwig:toast:jp-locale-message-20231008", "1");
+								setCookie("swaytwig:toast:jp-locale-message-20231213", "1");
 							} }
 						/>
 					</div>
