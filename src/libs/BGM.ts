@@ -253,6 +253,14 @@ const BGMAlbums: BGMAlbum[] = [
 				filename: "Album01/Beta.mp3",
 				lyrics: [{ time: 0, text: "Beta" }],
 			},
+			{
+				type: "audio",
+				id: "track_boss_beta",
+				title: "Boss Beta",
+				duration: 136,
+				filename: "Album01/Boss_Beta.mp3",
+				lyrics: [{ time: 0, text: "Boss Beta" }],
+			},
 		],
 	},
 	{
