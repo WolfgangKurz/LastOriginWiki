@@ -5,12 +5,14 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12404" date="2023-12-16"
+		bugfix={ <>
+			<li>스토리 뷰어 일부 기능이 롤백된 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12403" date="2023-12-15"
 		new={ <>
 			<li>신규 BGM이 추가되었습니다.</li>
-		</> }
-		bugfix={ <>
-			<li>스토리 뷰어의 일부 컷 씬이 표시되지 않는 문제를 수정했습니다.</li>
 		</> }
 	/>
 	<ChangelogItem title="Build 12401" date="2023-12-13"
