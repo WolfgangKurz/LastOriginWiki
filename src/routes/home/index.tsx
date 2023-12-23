@@ -88,9 +88,12 @@ const Home: FunctionalComponent = () => {
 		SwiperCore.use([Autoplay, Pagination]);
 	}, []);
 
-	const previewSkins = ["BR_Salamander_1"];
+	const previewSkins = ["PECS_Circe_2", "PECS_DutchGirl_2"];
 
 	return <div class={ `${style.home} home` }>
+		<div class="alert alert-danger mline">
+			<Locale k="COMMON_NSFW_CAUTION" plain />
+		</div>
 		<div class="alert alert-primary">
 			사이트 개발자가 더 이상 게임을 하지 않기 때문에 정보에 오류가 있을 수 있습니다.
 		</div>
@@ -294,6 +297,19 @@ const Home: FunctionalComponent = () => {
 
 		<p>
 			<Locale k="HOME_COPYRIGHT" />
+		</p>
+		<p>
+			<small>
+				<Locale
+					k="COMMON_PROJECT_SINCE"
+					p={ [
+						Math.floor(
+							new Date(Date.now() - new Date(2020, 5 - 1, 16).getTime())
+								.getTime() / 100 / 86400
+						).toLocaleString(),
+					] }
+				/>
+			</small>
 		</p>
 
 		{/* <div class="mt-4">

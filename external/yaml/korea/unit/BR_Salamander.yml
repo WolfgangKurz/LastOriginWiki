@@ -10,6 +10,19 @@ slots:
   - 0
   - 1
   - 2
+promotions:
+  - to: 5
+    level: 90
+    favor: "100"
+    req:
+      - id: Consumable_OriginDustAdv
+        count: 450
+      - id: Consumable_OriginDustSp
+        count: 150
+      - id: Special_Module
+        count: 100
+      - id: RobotParts_HeavyWeapon
+        count: 150
 lvLimits:
   - level: 101
     items:
@@ -556,7 +569,7 @@ skills:
                   desc:
                     desc: Effect_BR_Salamander_N_1_1
                     type: 0
-                    value: "230"
+                    value: "300"
                     level: "10"
                   attr: 1
                   erase:
@@ -567,8 +580,65 @@ skills:
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 230
+                        base: 300
                         per: 10
+                  overlap: 4
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_1_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_11_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -608,6 +678,91 @@ skills:
                       with: Char_BR_QuickCamel_N
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 2.2
           type: 1
@@ -643,7 +798,7 @@ skills:
                   desc:
                     desc: Effect_BR_Salamander_N_1_1
                     type: 0
-                    value: "230"
+                    value: "300"
                     level: "10"
                   attr: 1
                   erase:
@@ -654,8 +809,65 @@ skills:
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 230
+                        base: 300
                         per: 10
+                  overlap: 4
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_1_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_11_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -695,6 +907,91 @@ skills:
                       with: Char_BR_QuickCamel_N
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 2.3
           type: 1
@@ -730,7 +1027,7 @@ skills:
                   desc:
                     desc: Effect_BR_Salamander_N_1_1
                     type: 0
-                    value: "230"
+                    value: "300"
                     level: "10"
                   attr: 1
                   erase:
@@ -741,8 +1038,65 @@ skills:
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 230
+                        base: 300
                         per: 10
+                  overlap: 4
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_1_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_11_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -782,6 +1136,91 @@ skills:
                       with: Char_BR_QuickCamel_N
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 2.4
           type: 1
@@ -817,7 +1256,7 @@ skills:
                   desc:
                     desc: Effect_BR_Salamander_N_1_1
                     type: 0
-                    value: "230"
+                    value: "300"
                     level: "10"
                   attr: 1
                   erase:
@@ -828,8 +1267,65 @@ skills:
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 230
+                        base: 300
                         per: 10
+                  overlap: 4
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_1_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_11_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -869,6 +1365,91 @@ skills:
                       with: Char_BR_QuickCamel_N
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 2.5
           type: 1
@@ -904,7 +1485,7 @@ skills:
                   desc:
                     desc: Effect_BR_Salamander_N_1_1
                     type: 0
-                    value: "230"
+                    value: "300"
                     level: "10"
                   attr: 1
                   erase:
@@ -915,8 +1496,65 @@ skills:
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 230
+                        base: 300
                         per: 10
+                  overlap: 4
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_1_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_11_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -956,6 +1594,91 @@ skills:
                       with: Char_BR_QuickCamel_N
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 2.6
           type: 1
@@ -991,7 +1714,7 @@ skills:
                   desc:
                     desc: Effect_BR_Salamander_N_1_1
                     type: 0
-                    value: "230"
+                    value: "300"
                     level: "10"
                   attr: 1
                   erase:
@@ -1002,8 +1725,65 @@ skills:
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 230
+                        base: 300
                         per: 10
+                  overlap: 4
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_1_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_11_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1043,6 +1823,91 @@ skills:
                       with: Char_BR_QuickCamel_N
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 2.7
           type: 1
@@ -1078,7 +1943,7 @@ skills:
                   desc:
                     desc: Effect_BR_Salamander_N_1_1
                     type: 0
-                    value: "230"
+                    value: "300"
                     level: "10"
                   attr: 1
                   erase:
@@ -1089,8 +1954,65 @@ skills:
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 230
+                        base: 300
                         per: 10
+                  overlap: 4
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_1_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_11_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1130,6 +2052,91 @@ skills:
                       with: Char_BR_QuickCamel_N
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 2.8
           type: 1
@@ -1165,7 +2172,7 @@ skills:
                   desc:
                     desc: Effect_BR_Salamander_N_1_1
                     type: 0
-                    value: "230"
+                    value: "300"
                     level: "10"
                   attr: 1
                   erase:
@@ -1176,8 +2183,65 @@ skills:
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 230
+                        base: 300
                         per: 10
+                  overlap: 4
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_1_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_11_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1217,6 +2281,91 @@ skills:
                       with: Char_BR_QuickCamel_N
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 2.9
           type: 1
@@ -1252,7 +2401,7 @@ skills:
                   desc:
                     desc: Effect_BR_Salamander_N_1_1
                     type: 0
-                    value: "230"
+                    value: "300"
                     level: "10"
                   attr: 1
                   erase:
@@ -1263,8 +2412,65 @@ skills:
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 230
+                        base: 300
                         per: 10
+                  overlap: 4
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_1_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_11_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1304,6 +2510,91 @@ skills:
                       with: Char_BR_QuickCamel_N
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 3
           type: 1
@@ -1339,7 +2630,7 @@ skills:
                   desc:
                     desc: Effect_BR_Salamander_N_1_1
                     type: 0
-                    value: "230"
+                    value: "300"
                     level: "10"
                   attr: 1
                   erase:
@@ -1350,8 +2641,65 @@ skills:
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 230
+                        base: 300
                         per: 10
+                  overlap: 4
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_1_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_11_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 15%
+                        per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1392,6 +2740,91 @@ skills:
                   overlap: 4
               maxStack: 1
               overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -1409,10 +2842,28 @@ skills:
             desc:
               desc: Effect_BR_Salamander_N_1_1
               type: 0
-              value: "230"
+              value: "300"
               level: "10"
-            base: 230
+            base: 300
             per: 10
+            chance: 1
+          - icon: BuffIcon_FireATK_UP
+            desc:
+              desc: Effect_BR_Salamander_N_1_2
+              type: 1
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
+            chance: 0
+          - icon: BuffIcon_FireATK_UP
+            desc:
+              desc: Effect_BR_Salamander_N_11_1
+              type: 1
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
             chance: 1
           - icon: BuffIcon_TOGETHER_ATTACK
             desc:
@@ -1421,6 +2872,24 @@ skills:
               value: Char_BR_QuickCamel_N
               level: "0"
             value: Char_BR_QuickCamel_N
+            chance: 1
+          - icon: BuffIcon_PhyATK_UP
+            desc:
+              desc: Effect_BR_Hyena_N_512_1
+              type: 1
+              value: "0.200000"
+              level: "0"
+            base: 0.2
+            per: 0
+            chance: 1
+          - icon: BuffIcon_FireATK_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_511_1
+              type: 1
+              value: "0.200000"
+              level: "0"
+            base: 0.2
+            per: 0
             chance: 1
   "2":
     key: "2"
@@ -1471,12 +2940,28 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_DEF_DOWN
                   desc:
                     desc: Effect_BR_Salamander_N_2_1
                     type: 1
-                    value: "-0.260000"
-                    level: "-0.010000"
+                    value: "-0.150000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -15%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_2
+                    type: 1
+                    value: "-0.150000"
+                    level: "-0.015000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1486,8 +2971,146 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -26%
-                        per: -1%
+                        base: -15%
+                        per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_3
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1521,12 +3144,28 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_DEF_DOWN
                   desc:
                     desc: Effect_BR_Salamander_N_2_1
                     type: 1
-                    value: "-0.260000"
-                    level: "-0.010000"
+                    value: "-0.150000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -15%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_2
+                    type: 1
+                    value: "-0.150000"
+                    level: "-0.015000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1536,8 +3175,146 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -26%
-                        per: -1%
+                        base: -15%
+                        per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_3
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1571,12 +3348,28 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_DEF_DOWN
                   desc:
                     desc: Effect_BR_Salamander_N_2_1
                     type: 1
-                    value: "-0.260000"
-                    level: "-0.010000"
+                    value: "-0.150000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -15%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_2
+                    type: 1
+                    value: "-0.150000"
+                    level: "-0.015000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1586,8 +3379,146 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -26%
-                        per: -1%
+                        base: -15%
+                        per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_3
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1621,12 +3552,28 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_DEF_DOWN
                   desc:
                     desc: Effect_BR_Salamander_N_2_1
                     type: 1
-                    value: "-0.260000"
-                    level: "-0.010000"
+                    value: "-0.150000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -15%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_2
+                    type: 1
+                    value: "-0.150000"
+                    level: "-0.015000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1636,8 +3583,146 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -26%
-                        per: -1%
+                        base: -15%
+                        per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_3
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1671,12 +3756,28 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_DEF_DOWN
                   desc:
                     desc: Effect_BR_Salamander_N_2_1
                     type: 1
-                    value: "-0.260000"
-                    level: "-0.010000"
+                    value: "-0.150000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -15%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_2
+                    type: 1
+                    value: "-0.150000"
+                    level: "-0.015000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1686,8 +3787,146 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -26%
-                        per: -1%
+                        base: -15%
+                        per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_3
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1721,12 +3960,28 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_DEF_DOWN
                   desc:
                     desc: Effect_BR_Salamander_N_2_1
                     type: 1
-                    value: "-0.260000"
-                    level: "-0.010000"
+                    value: "-0.150000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -15%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_2
+                    type: 1
+                    value: "-0.150000"
+                    level: "-0.015000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1736,8 +3991,146 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -26%
-                        per: -1%
+                        base: -15%
+                        per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_3
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1771,12 +4164,28 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_DEF_DOWN
                   desc:
                     desc: Effect_BR_Salamander_N_2_1
                     type: 1
-                    value: "-0.260000"
-                    level: "-0.010000"
+                    value: "-0.150000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -15%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_2
+                    type: 1
+                    value: "-0.150000"
+                    level: "-0.015000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1786,8 +4195,146 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -26%
-                        per: -1%
+                        base: -15%
+                        per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_3
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1821,12 +4368,28 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_DEF_DOWN
                   desc:
                     desc: Effect_BR_Salamander_N_2_1
                     type: 1
-                    value: "-0.260000"
-                    level: "-0.010000"
+                    value: "-0.150000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -15%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_2
+                    type: 1
+                    value: "-0.150000"
+                    level: "-0.015000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1836,8 +4399,146 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -26%
-                        per: -1%
+                        base: -15%
+                        per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_3
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1871,12 +4572,28 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_DEF_DOWN
                   desc:
                     desc: Effect_BR_Salamander_N_2_1
                     type: 1
-                    value: "-0.260000"
-                    level: "-0.010000"
+                    value: "-0.150000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -15%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_2
+                    type: 1
+                    value: "-0.150000"
+                    level: "-0.015000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1886,8 +4603,146 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -26%
-                        per: -1%
+                        base: -15%
+                        per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_3
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1921,12 +4776,28 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_DEF_DOWN
                   desc:
                     desc: Effect_BR_Salamander_N_2_1
                     type: 1
-                    value: "-0.260000"
-                    level: "-0.010000"
+                    value: "-0.150000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -15%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_2
+                    type: 1
+                    value: "-0.150000"
+                    level: "-0.015000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1936,8 +4807,146 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -26%
-                        per: -1%
+                        base: -15%
+                        per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_2_3
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_21
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_Salamander_N_21_1
+                    type: 1
+                    value: "36"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 36
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Hyena_N_512
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BR_Hyena_N_511
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_Hyena_N_512_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_511
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FireATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_511_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 84
+                    damage_add:
+                      elem: fire
+                      damage:
+                        base: 20%
+                        per: 0%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1954,21 +4963,66 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_FIRERES_DOWN
+        - - icon: BuffIcon_DEF_DOWN
             desc:
               desc: Effect_BR_Salamander_N_2_1
               type: 1
-              value: "-0.260000"
-              level: "-0.010000"
-            base: -0.26
-            per: -0.01
+              value: "-0.150000"
+              level: "-0.015000"
+            base: -0.15
+            per: -0.015
+            chance: 1
+          - icon: BuffIcon_FIRERES_DOWN
+            desc:
+              desc: Effect_BR_Salamander_N_2_2
+              type: 1
+              value: "-0.150000"
+              level: "-0.015000"
+            base: -0.15
+            per: -0.015
+            chance: 1
+          - icon: BuffIcon_REMOVE_BUFF
+            desc:
+              desc: Effect_BR_Salamander_N_2_3
+              type: 1
+              value: "36"
+              level: "0"
+            base: 36
+            per: 0
+            chance: 0
+          - icon: BuffIcon_REMOVE_BUFF
+            desc:
+              desc: Effect_BR_Salamander_N_21_1
+              type: 1
+              value: "36"
+              level: "0"
+            base: 36
+            per: 0
+            chance: 1
+          - icon: BuffIcon_PhyATK_UP
+            desc:
+              desc: Effect_BR_Hyena_N_512_1
+              type: 1
+              value: "0.200000"
+              level: "0"
+            base: 0.2
+            per: 0
+            chance: 1
+          - icon: BuffIcon_FireATK_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_511_1
+              type: 1
+              value: "0.200000"
+              level: "0"
+            base: 0.2
+            per: 0
             chance: 1
   "3":
     key: "3"
     icon: P.SelfAtkBuff
     target: team
     delayed: false
-    target_ground: false
+    target_ground: true
     leastGrade: 3
     buffs:
       index:
@@ -1987,7 +5041,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
+          grid: F>1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -1996,9 +5050,16 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_BR_Salamander_N_3
-              on: round
+              on: wave
               if:
-                - false
+                - unitCount:
+                    filter: enemy
+                    type:
+                      - 0
+                      - 2
+                      - 1
+                    count:
+                      - 1
                 - false
               body:
                 - 0
@@ -2013,40 +5074,36 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_ICERES_UP
+                - icon: BuffIcon_ATK_UP
                   desc:
                     desc: Effect_BR_Salamander_N_3_1
                     type: 1
-                    value: "0.110000"
-                    level: "0.010000"
+                    value: "0.050000"
+                    level: "0.005000"
                   attr: 0
-                  erase:
-                    rounds: 1
+                  erase: {}
                   value:
                     isBuff: true
-                    type: 17
-                    resist:
-                      elem: ice
-                      value:
-                        base: 11%
-                        per: 1%
+                    type: 1
+                    attack:
+                      base: 5%
+                      per: 0.5%
                   overlap: 4
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_CRITICAL_UP
                   desc:
                     desc: Effect_BR_Salamander_N_3_2
                     type: 1
-                    value: "0.062000"
-                    level: "0.002000"
+                    value: "0.010000"
+                    level: "0.005000"
                   attr: 0
-                  erase:
-                    rounds: 1
+                  erase: {}
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 1
-                    attack:
-                      base: 6.2%
-                      per: 0.2%
+                    type: 9
+                    critical:
+                      base: 1%
+                      per: 0.5%
                   overlap: 4
                 - icon: BuffIcon_SUPPORT_ATTACK
                   desc:
@@ -2055,8 +5112,7 @@ skills:
                     value: "1"
                     level: "0"
                   attr: 0
-                  erase:
-                    rounds: 1
+                  erase: {}
                   value:
                     isBuff: true
                     chance: 0%
@@ -2068,7 +5124,7 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Salamander_N_31
-              on: round
+              on: wave
               if:
                 - unitCount:
                     filter: enemy
@@ -2077,7 +5133,7 @@ skills:
                       - 2
                       - 1
                     count:
-                      - 1
+                      - 2
                 - false
               body:
                 - 0
@@ -2096,65 +5152,21 @@ skills:
                   desc:
                     desc: Effect_BR_Salamander_N_31_1
                     type: 1
-                    value: "0.062000"
-                    level: "0.002000"
+                    value: "0.100000"
+                    level: "0.010000"
                   attr: 0
-                  erase:
-                    rounds: 1
+                  erase: {}
                   value:
                     isBuff: true
                     type: 1
                     attack:
-                      base: 6.2%
-                      per: 0.2%
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Salamander_N_32
-              on: round
-              if:
-                - unitCount:
-                    filter: enemy
-                    type:
-                      - 0
-                      - 2
-                      - 1
-                    count:
-                      - 2
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_Salamander_N_32_1
-                    type: 1
-                    value: "0.124000"
-                    level: "0.004000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 12.4%
-                      per: 0.4%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_Salamander_N_33
-              on: round
+              on: wave
               if:
                 - unitCount:
                     filter: enemy
@@ -2180,24 +5192,23 @@ skills:
               buffs:
                 - icon: BuffIcon_ATK_UP
                   desc:
-                    desc: Effect_BR_Salamander_N_33_1
+                    desc: Effect_BR_Salamander_N_32_1
                     type: 1
-                    value: "0.186000"
-                    level: "0.006000"
+                    value: "0.150000"
+                    level: "0.015000"
                   attr: 0
-                  erase:
-                    rounds: 1
+                  erase: {}
                   value:
                     isBuff: true
                     type: 1
                     attack:
-                      base: 18.6%
-                      per: 0.6%
+                      base: 15%
+                      per: 1.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Salamander_N_34
-              on: round
+            - key: Effect_BR_Salamander_N_33
+              on: wave
               if:
                 - unitCount:
                     filter: enemy
@@ -2223,24 +5234,23 @@ skills:
               buffs:
                 - icon: BuffIcon_ATK_UP
                   desc:
-                    desc: Effect_BR_Salamander_N_34_1
+                    desc: Effect_BR_Salamander_N_33_1
                     type: 1
-                    value: "0.248000"
-                    level: "0.008000"
+                    value: "0.200000"
+                    level: "0.020000"
                   attr: 0
-                  erase:
-                    rounds: 1
+                  erase: {}
                   value:
                     isBuff: true
                     type: 1
                     attack:
-                      base: 24.8%
-                      per: 0.8%
+                      base: 20%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Salamander_N_35
-              on: round
+            - key: Effect_BR_Salamander_N_34
+              on: wave
               if:
                 - unitCount:
                     filter: enemy
@@ -2266,24 +5276,23 @@ skills:
               buffs:
                 - icon: BuffIcon_ATK_UP
                   desc:
-                    desc: Effect_BR_Salamander_N_35_1
+                    desc: Effect_BR_Salamander_N_34_1
                     type: 1
-                    value: "0.310000"
-                    level: "0.010000"
+                    value: "0.250000"
+                    level: "0.025000"
                   attr: 0
-                  erase:
-                    rounds: 1
+                  erase: {}
                   value:
                     isBuff: true
                     type: 1
                     attack:
-                      base: 31%
-                      per: 1%
+                      base: 25%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Salamander_N_36
-              on: round
+            - key: Effect_BR_Salamander_N_35
+              on: wave
               if:
                 - unitCount:
                     filter: enemy
@@ -2309,24 +5318,23 @@ skills:
               buffs:
                 - icon: BuffIcon_ATK_UP
                   desc:
-                    desc: Effect_BR_Salamander_N_36_1
+                    desc: Effect_BR_Salamander_N_35_1
                     type: 1
-                    value: "0.372000"
-                    level: "0.012000"
+                    value: "0.300000"
+                    level: "0.030000"
                   attr: 0
-                  erase:
-                    rounds: 1
+                  erase: {}
                   value:
                     isBuff: true
                     type: 1
                     attack:
-                      base: 37.2%
-                      per: 1.2%
+                      base: 30%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Salamander_N_37
-              on: round
+            - key: Effect_BR_Salamander_N_36
+              on: wave
               if:
                 - unitCount:
                     filter: enemy
@@ -2352,24 +5360,23 @@ skills:
               buffs:
                 - icon: BuffIcon_ATK_UP
                   desc:
-                    desc: Effect_BR_Salamander_N_37_1
+                    desc: Effect_BR_Salamander_N_36_1
                     type: 1
-                    value: "0.434000"
-                    level: "0.014000"
+                    value: "0.350000"
+                    level: "0.035000"
                   attr: 0
-                  erase:
-                    rounds: 1
+                  erase: {}
                   value:
                     isBuff: true
                     type: 1
                     attack:
-                      base: 43.4%
-                      per: 1.4%
+                      base: 35%
+                      per: 3.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Salamander_N_38
-              on: round
+            - key: Effect_BR_Salamander_N_37
+              on: wave
               if:
                 - unitCount:
                     filter: enemy
@@ -2395,24 +5402,23 @@ skills:
               buffs:
                 - icon: BuffIcon_ATK_UP
                   desc:
-                    desc: Effect_BR_Salamander_N_38_1
+                    desc: Effect_BR_Salamander_N_37_1
                     type: 1
-                    value: "0.496000"
-                    level: "0.016000"
+                    value: "0.400000"
+                    level: "0.040000"
                   attr: 0
-                  erase:
-                    rounds: 1
+                  erase: {}
                   value:
                     isBuff: true
                     type: 1
                     attack:
-                      base: 49.6%
-                      per: 1.6%
+                      base: 40%
+                      per: 4%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Salamander_N_39
-              on: round
+            - key: Effect_BR_Salamander_N_38
+              on: wave
               if:
                 - unitCount:
                     filter: enemy
@@ -2438,19 +5444,309 @@ skills:
               buffs:
                 - icon: BuffIcon_ATK_UP
                   desc:
+                    desc: Effect_BR_Salamander_N_38_1
+                    type: 1
+                    value: "0.450000"
+                    level: "0.045000"
+                  attr: 0
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 45%
+                      per: 4.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_39
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 1
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_SUPPORT_ATTACK
+                  desc:
                     desc: Effect_BR_Salamander_N_39_1
                     type: 1
-                    value: "0.558000"
-                    level: "0.018000"
+                    value: "1"
+                    level: "0"
                   attr: 0
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
+                    type: 77
+                    attack_support:
+                      base: 100%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_310
+              on: round
+              if:
+                - target:
+                    - Char_BR_Khan_N
+                    - Char_BR_WarWolf_N
+                    - Char_BR_TalonFeather_N
+                    - Char_BR_Hyena_N
+                    - Char_BR_Kheshig_N
+                - notInBattle:
+                    - Char_BR_QuickCamel_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_SUPPORT_ATTACK
+                  desc:
+                    desc: Effect_BR_Salamander_N_310_1
                     type: 1
-                    attack:
-                      base: 55.8%
-                      per: 1.8%
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 77
+                    attack_support:
+                      base: 100%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_311
+              on: round
+              if:
+                - unitCount:
+                    filter: squad
+                    type:
+                      - 0
+                      - 2
+                      - 1
+                    count:
+                      - 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_311_1
+                    type: 1
+                    value: "0.010000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 1%
+                      per: 0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_312
+              on: round
+              if:
+                - unitCount:
+                    filter: squad
+                    type:
+                      - 0
+                      - 2
+                      - 1
+                    count:
+                      - 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_312_1
+                    type: 1
+                    value: "0.020000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 2%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_313
+              on: round
+              if:
+                - unitCount:
+                    filter: squad
+                    type:
+                      - 0
+                      - 2
+                      - 1
+                    count:
+                      - 3
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_313_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.015000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 3%
+                      per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_314
+              on: round
+              if:
+                - unitCount:
+                    filter: squad
+                    type:
+                      - 0
+                      - 2
+                      - 1
+                    count:
+                      - 4
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_314_1
+                    type: 1
+                    value: "0.040000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 4%
+                      per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_315
+              on: round
+              if:
+                - unitCount:
+                    filter: squad
+                    type:
+                      - 0
+                      - 2
+                      - 1
+                    count:
+                      - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_315_1
+                    type: 1
+                    value: "0.050000"
+                    level: "0.025000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 5%
+                      per: 2.5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2467,23 +5763,23 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_ICERES_UP
+        - - icon: BuffIcon_ATK_UP
             desc:
               desc: Effect_BR_Salamander_N_3_1
               type: 1
-              value: "0.110000"
-              level: "0.010000"
-            base: 0.11
-            per: 0.01
+              value: "0.050000"
+              level: "0.005000"
+            base: 0.05
+            per: 0.005
             chance: 1
-          - icon: BuffIcon_ATK_UP
+          - icon: BuffIcon_CRITICAL_UP
             desc:
               desc: Effect_BR_Salamander_N_3_2
               type: 1
-              value: "0.062000"
-              level: "0.002000"
-            base: 0.062
-            per: 0.002
+              value: "0.010000"
+              level: "0.005000"
+            base: 0.01
+            per: 0.005
             chance: 0
           - icon: BuffIcon_SUPPORT_ATTACK
             desc:
@@ -2498,89 +5794,143 @@ skills:
             desc:
               desc: Effect_BR_Salamander_N_31_1
               type: 1
-              value: "0.062000"
-              level: "0.002000"
-            base: 0.062
-            per: 0.002
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
             chance: 1
           - icon: BuffIcon_ATK_UP
             desc:
               desc: Effect_BR_Salamander_N_32_1
               type: 1
-              value: "0.124000"
-              level: "0.004000"
-            base: 0.124
-            per: 0.004
+              value: "0.150000"
+              level: "0.015000"
+            base: 0.15
+            per: 0.015
             chance: 1
           - icon: BuffIcon_ATK_UP
             desc:
               desc: Effect_BR_Salamander_N_33_1
               type: 1
-              value: "0.186000"
-              level: "0.006000"
-            base: 0.186
-            per: 0.006
+              value: "0.200000"
+              level: "0.020000"
+            base: 0.2
+            per: 0.02
             chance: 1
           - icon: BuffIcon_ATK_UP
             desc:
               desc: Effect_BR_Salamander_N_34_1
               type: 1
-              value: "0.248000"
-              level: "0.008000"
-            base: 0.248
-            per: 0.008
+              value: "0.250000"
+              level: "0.025000"
+            base: 0.25
+            per: 0.025
             chance: 1
           - icon: BuffIcon_ATK_UP
             desc:
               desc: Effect_BR_Salamander_N_35_1
               type: 1
-              value: "0.310000"
-              level: "0.010000"
-            base: 0.31
-            per: 0.01
+              value: "0.300000"
+              level: "0.030000"
+            base: 0.3
+            per: 0.03
             chance: 1
           - icon: BuffIcon_ATK_UP
             desc:
               desc: Effect_BR_Salamander_N_36_1
               type: 1
-              value: "0.372000"
-              level: "0.012000"
-            base: 0.372
-            per: 0.012
+              value: "0.350000"
+              level: "0.035000"
+            base: 0.35
+            per: 0.035
             chance: 1
           - icon: BuffIcon_ATK_UP
             desc:
               desc: Effect_BR_Salamander_N_37_1
               type: 1
-              value: "0.434000"
-              level: "0.014000"
-            base: 0.434
-            per: 0.014
+              value: "0.400000"
+              level: "0.040000"
+            base: 0.4
+            per: 0.04
             chance: 1
           - icon: BuffIcon_ATK_UP
             desc:
               desc: Effect_BR_Salamander_N_38_1
               type: 1
-              value: "0.496000"
-              level: "0.016000"
-            base: 0.496
-            per: 0.016
+              value: "0.450000"
+              level: "0.045000"
+            base: 0.45
+            per: 0.045
             chance: 1
-          - icon: BuffIcon_ATK_UP
+          - icon: BuffIcon_SUPPORT_ATTACK
             desc:
               desc: Effect_BR_Salamander_N_39_1
               type: 1
-              value: "0.558000"
-              level: "0.018000"
-            base: 0.558
-            per: 0.018
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_SUPPORT_ATTACK
+            desc:
+              desc: Effect_BR_Salamander_N_310_1
+              type: 1
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_Salamander_N_311_1
+              type: 1
+              value: "0.010000"
+              level: "0.005000"
+            base: 0.01
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_Salamander_N_312_1
+              type: 1
+              value: "0.020000"
+              level: "0.010000"
+            base: 0.02
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_Salamander_N_313_1
+              type: 1
+              value: "0.030000"
+              level: "0.015000"
+            base: 0.03
+            per: 0.015
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_Salamander_N_314_1
+              type: 1
+              value: "0.040000"
+              level: "0.020000"
+            base: 0.04
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_Salamander_N_315_1
+              type: 1
+              value: "0.050000"
+              level: "0.025000"
+            base: 0.05
+            per: 0.025
             chance: 1
   "4":
     key: "4"
     icon: P.TeamDefDeBuff
     target: enemy
     delayed: false
-    target_ground: false
+    target_ground: true
     leastGrade: 4
     buffs:
       index:
@@ -2629,8 +5979,8 @@ skills:
                   desc:
                     desc: Effect_BR_Salamander_N_4_1
                     type: 1
-                    value: "-0.160000"
-                    level: "-0.010000"
+                    value: "-0.100000"
+                    level: "-0.005000"
                   attr: 1
                   erase:
                     rounds: 3
@@ -2640,22 +5990,35 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: -16%
-                        per: -1%
+                        base: -10%
+                        per: -0.5%
+                  overlap: 4
+                - icon: BuffIcon_FireDMG_DOT
+                  desc:
+                    desc: Effect_BR_Salamander_N_4_2
+                    type: 0
+                    value: "500"
+                    level: "50"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 66
+                    fixed_damage:
+                      elem: fire
+                      damage:
+                        base: 500
+                        per: 50
                   overlap: 4
               maxStack: 6
-              overlapGroup: -1
-            - key: Effect_BR_Salamander_N_331
-              on: round
+              overlapGroup: 4
+            - key: Effect_BR_Salamander_N_41
+              on:
+                after: support
               if:
-                - target:
-                    - Char_BR_Khan_N
-                    - Char_BR_QuickCamel_N
-                    - Char_BR_WarWolf_N
-                    - Char_BR_TalonFeather_N
-                    - Char_BR_Hyena_N
-                    - Char_BR_Scarabya_N
-                    - Char_BR_Kheshig_N
+                - false
                 - false
               body:
                 - 0
@@ -2668,23 +6031,101 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 2
+              target: 4
               buffs:
-                - icon: BuffIcon_SUPPORT_ATTACK
+                - icon: BuffIcon_FIRERES_DOWN
                   desc:
-                    desc: Effect_BR_Salamander_N_331_1
+                    desc: Effect_BR_Salamander_N_41_1
                     type: 1
-                    value: "1"
-                    level: "0"
-                  attr: 0
+                    value: "-0.100000"
+                    level: "-0.005000"
+                  attr: 1
                   erase:
-                    rounds: 1
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 77
-                    attack_support:
-                      base: 100%
-                      per: 0%
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -10%
+                        per: -0.5%
+                  overlap: 4
+              maxStack: 6
+              overlapGroup: 4
+            - key: Effect_BR_Salamander_N_42
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BR_Salamander_N_42_1
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.005000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -10%
+                        per: -0.5%
+                  overlap: 4
+              maxStack: 6
+              overlapGroup: 4
+            - key: Effect_BR_Salamander_N_43
+              on: enemy_killed
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_FireDMG_DOT
+                  desc:
+                    desc: Effect_BR_Salamander_N_43_1
+                    type: 0
+                    value: "500"
+                    level: "50"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 66
+                    fixed_damage:
+                      elem: fire
+                      damage:
+                        base: 500
+                        per: 50
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2705,40 +6146,715 @@ skills:
             desc:
               desc: Effect_BR_Salamander_N_4_1
               type: 1
-              value: "-0.160000"
-              level: "-0.010000"
-            base: -0.16
-            per: -0.01
+              value: "-0.100000"
+              level: "-0.005000"
+            base: -0.1
+            per: -0.005
             chance: 1
-          - icon: BuffIcon_SUPPORT_ATTACK
+          - icon: BuffIcon_FireDMG_DOT
             desc:
-              desc: Effect_BR_Salamander_N_331_1
+              desc: Effect_BR_Salamander_N_4_2
+              type: 0
+              value: "500"
+              level: "50"
+            base: 500
+            per: 50
+            chance: 0
+          - icon: BuffIcon_FIRERES_DOWN
+            desc:
+              desc: Effect_BR_Salamander_N_41_1
               type: 1
-              value: "1"
+              value: "-0.100000"
+              level: "-0.005000"
+            base: -0.1
+            per: -0.005
+            chance: 1
+          - icon: BuffIcon_FIRERES_DOWN
+            desc:
+              desc: Effect_BR_Salamander_N_42_1
+              type: 1
+              value: "-0.100000"
+              level: "-0.005000"
+            base: -0.1
+            per: -0.005
+            chance: 1
+          - icon: BuffIcon_FireDMG_DOT
+            desc:
+              desc: Effect_BR_Salamander_N_43_1
+              type: 0
+              value: "500"
+              level: "50"
+            base: 500
+            per: 50
+            chance: 1
+  "5":
+    key: "5"
+    icon: P.TeamAtkBuff
+    target: enemy
+    delayed: false
+    target_ground: true
+    leastGrade: 5
+    buffs:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - rate: 0
+          type: 0
+          range: 0
+          ap: 0
+          grid: F>1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Salamander_N_5
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_Guardpierce_Apply
+                  desc:
+                    desc: Effect_BR_Salamander_N_5_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 130
+                    guardpierce_apply: true
+                  overlap: 4
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_5_2
+                    type: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 1
+                    attack:
+                      base: 25%
+                      per: 2.5%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_5_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 9
+                    critical:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_5_4
+                    type: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 11
+                    evade:
+                      base: 25%
+                      per: 2.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_51
+              on: wave
+              if:
+                - unitCount:
+                    filter:
+                      - squad
+                      - supporter
+                    type:
+                      - 2
+                    count:
+                      - 3
+                      - 4
+                      - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 1
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_51_1
+                    type: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 0
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 25%
+                      per: 2.5%
+                  overlap: 4
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_51_2
+                    type: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 0
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 25%
+                      per: 2.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_52
+              on: round
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_Salamander_N_51
+                    attr: 6
+                - target:
+                    - Char_BR_Khan_N
+                    - Char_BR_QuickCamel_N
+                    - Char_BR_WarWolf_N
+                    - Char_BR_TalonFeather_N
+                    - Char_BR_Hyena_N
+                    - Char_BR_Kheshig_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_52_1
+                    type: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 25%
+                      per: 2.5%
+                  overlap: 4
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_52_2
+                    type: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 25%
+                      per: 2.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_53
+              on: wave
+              if:
+                - unitCount:
+                    filter:
+                      - squad
+                      - supporter
+                    type:
+                      - 2
+                    count:
+                      - 2
+                - unitCount:
+                    filter:
+                      - squad
+                      - attacker
+                    type:
+                      - 1
+                    count:
+                      - 3
+              body:
+                - 0
+                - 1
+              class:
+                - 1
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_53_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 0
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_53_2
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 0
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_54
+              on: round
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_Salamander_N_53
+                    attr: 6
+                - target:
+                    - Char_BR_Khan_N
+                    - Char_BR_QuickCamel_N
+                    - Char_BR_WarWolf_N
+                    - Char_BR_TalonFeather_N
+                    - Char_BR_Hyena_N
+                    - Char_BR_Kheshig_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_54_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_54_2
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_55
+              on: wave
+              if:
+                - unitCount:
+                    filter:
+                      - squad
+                      - supporter
+                    type:
+                      - 2
+                    count:
+                      - 1
+                - unitCount:
+                    filter:
+                      - squad
+                      - attacker
+                    type:
+                      - 1
+                    count:
+                      - 4
+              body:
+                - 0
+                - 1
+              class:
+                - 1
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_55_1
+                    type: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 0
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: 25%
+                      per: 2.5%
+                  overlap: 4
+                - icon: BuffIcon_DEBUFF_PERDOWN
+                  desc:
+                    desc: Effect_BR_Salamander_N_55_2
+                    type: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 0
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 91
+                    resist:
+                      type: debuff_perdown
+                      value:
+                        base: 25%
+                        per: 2.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Salamander_N_56
+              on: round
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_Salamander_N_55
+                    attr: 6
+                - target:
+                    - Char_BR_Khan_N
+                    - Char_BR_QuickCamel_N
+                    - Char_BR_WarWolf_N
+                    - Char_BR_TalonFeather_N
+                    - Char_BR_Hyena_N
+                    - Char_BR_Kheshig_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_BR_Salamander_N_56_1
+                    type: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: 25%
+                      per: 2.5%
+                  overlap: 4
+                - icon: BuffIcon_DEBUFF_PERDOWN
+                  desc:
+                    desc: Effect_BR_Salamander_N_56_2
+                    type: 1
+                    value: "0.250000"
+                    level: "0.025000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 91
+                    resist:
+                      type: debuff_perdown
+                      value:
+                        base: 25%
+                        per: 2.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_Guardpierce_Apply
+            desc:
+              desc: Effect_BR_Salamander_N_5_1
+              type: 1
+              value: "0"
               level: "0"
-            base: 1
+            base: 0
             per: 0
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_Salamander_N_5_2
+              type: 1
+              value: "0.250000"
+              level: "0.025000"
+            base: 0.25
+            per: 0.025
+            chance: 0
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_Salamander_N_5_3
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_BR_Salamander_N_5_4
+              type: 1
+              value: "0.250000"
+              level: "0.025000"
+            base: 0.25
+            per: 0.025
+            chance: 0
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_Salamander_N_51_1
+              type: 1
+              value: "0.250000"
+              level: "0.025000"
+            base: 0.25
+            per: 0.025
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_Salamander_N_51_2
+              type: 1
+              value: "0.250000"
+              level: "0.025000"
+            base: 0.25
+            per: 0.025
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_Salamander_N_52_1
+              type: 1
+              value: "0.250000"
+              level: "0.025000"
+            base: 0.25
+            per: 0.025
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_Salamander_N_52_2
+              type: 1
+              value: "0.250000"
+              level: "0.025000"
+            base: 0.25
+            per: 0.025
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_Salamander_N_53_1
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_Salamander_N_53_2
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_Salamander_N_54_1
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_Salamander_N_54_2
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_BR_Salamander_N_55_1
+              type: 1
+              value: "0.250000"
+              level: "0.025000"
+            base: 0.25
+            per: 0.025
+            chance: 1
+          - icon: BuffIcon_DEBUFF_PERDOWN
+            desc:
+              desc: Effect_BR_Salamander_N_55_2
+              type: 1
+              value: "0.250000"
+              level: "0.025000"
+            base: 0.25
+            per: 0.025
+            chance: 1
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_BR_Salamander_N_56_1
+              type: 1
+              value: "0.250000"
+              level: "0.025000"
+            base: 0.25
+            per: 0.025
+            chance: 1
+          - icon: BuffIcon_DEBUFF_PERDOWN
+            desc:
+              desc: Effect_BR_Salamander_N_56_2
+              type: 1
+              value: "0.250000"
+              level: "0.025000"
+            base: 0.25
+            per: 0.025
             chance: 1
 dialogue:
   KR:
     "1":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 잠시만. 카드 좀 챙기고.
+      Leader: 같이 갈 애들 내가 불러도 되지?
+      SortiePick: 이번 판만 끝나고 나갈게.
+      StageStart: 누가 더 많이 잡나 내기해 볼까?
+      Retreat: 허! 무, 무효! 무효라고!
+      SearchStart: 아~ 재미없는데. 저번에 애들이랑 내기했다고 이러는 거야?
+      SearchEnd: 으흣! 같이 간 애들이랑 즐거운 시간을 보냈다고.
+      BattleFocus: 자, 말만 하시라.
+      ActionApprove: 무르진 않겠지?
+      SpSkill: 어허, 화끈한데?
+      Retire: 어떻게든… 잘 피해 다녔는데…
+      Repair: 어, 왔어? 자, 재활 운동 도와줘. 게임은 고르게 해줄게.
+      Reinforce: 이제는 안 들키려나?
+      ItemEquip: 이건 써도 된다고 공인한 거지?
+      CoreLink: 흠… 오고 가는게 있어야 재밌는데.
+      PresentGet: 어~ 고마워. 호드 대화방에 올려야지.
+      Login: 허! 늦었네? 자자, 어서 앉아. 한판 붙자고.
       Idle_01_01: |-
         탈론이 최근에 몰래 무슨 짓을 하고 다니더니
         어느새 이런 옷을 준비했더라고.
@@ -2780,7 +6896,7 @@ dialogue:
         카페 호라이즌으로 모이라고 하네.
         하지만… 못 간다고 했지.
         지금은 사령관이랑 데이트 해야하니까.
-      MVP: ""
+      MVP: 으흐하! 내가 이겼지? 판돈 다 가져간다?
     "":
       Join: 오, 네가 사령관이야? 뭐든 좋으니까 걸고 한 판, 어때?
       SquadJoin: 하~아... 출동인가?
@@ -3266,7 +7382,7 @@ skins:
         - true
         - false
         - false
-        - false
+        - true
         - false
         - false
         - false
