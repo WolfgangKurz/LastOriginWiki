@@ -5,6 +5,11 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12411" date="2023-12-16"
+		bugfix={ <>
+			<li>스토리 뷰어에서 일부 이미지가 제대로 표시되지 않던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12408" date="2023-12-23"
 		new={ <>
 			<li>신규 이벤트 <BY>당신의 쐐기에 진심을</BY>의 정보가 추가되었습니다.</li>

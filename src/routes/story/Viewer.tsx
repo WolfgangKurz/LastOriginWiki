@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "preact/hooks"
 import Store from "@/store";
 
 import * as PIXI from "pixi.js";
+import * as LAYERS from "@pixi/layers";
 
 import { APPEAR_EFFECT, DIALOG_SPEAKER, OFF_EFFECT, SCG_ACTIVATION, SCREEN_EFFECT } from "@/types/Enums";
 import { DialogCharacter, DialogSelection, StoryData } from "@/types/Story/Story";
@@ -335,10 +336,12 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 					move: true,
 					click: true,
 					wheel: true,
-				}
+				},
 			});
 			globalThis.__PIXI_APP__ = app;
 			setApp(app);
+
+			app.stage = new LAYERS.Stage();
 
 			const screen = new PIXI.Container();
 			screen.name = "@screen";

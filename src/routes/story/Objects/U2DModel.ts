@@ -1,4 +1,5 @@
 import * as PIXI from "pixi.js";
+import * as LAYERS from "@pixi/layers";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
@@ -67,8 +68,39 @@ interface NodeTreeItem {
 	child: NodeTreeItem[];
 }
 
+const U2DCache: Record<string, [texture: PIXI.Texture, url: string, timer: number | null]> = {};
+const U2DCacheDuration = 60 * 1000;
+function getCache (key: string): PIXI.Texture | null {
+	if (key in U2DCache) {
+		const target = U2DCache[key];
+		if (target[2] !== null) {
+			clearTimeout(target[2]);
+			target[2] = null;
+		}
+		return target[0];
+	}
+	return null;
+}
+function setCache (key: string, url: string, value: PIXI.Texture) {
+	removeCache(key, true);
+	U2DCache[key] = [value, url, null];
+}
+function removeCache (key: string, immediately = false) {
+	if (key in U2DCache) {
+		const target = U2DCache[key];
+		if (target[2] !== null) clearTimeout(target[2]); // reset cache time
+
+		target[2] = setTimeout(() => {
+			target[0].destroy();
+			URL.revokeObjectURL(target[1]);
+			delete U2DCache[key];
+		}, immediately ? 0 : U2DCacheDuration);
+	}
+}
+
 export default class Story2DModel extends FadeContainer {
-	private objectURLs: string[] = [];
+	private _objectURLs: string[] = [];
+	private _sprites: string[] = [];
 
 	private readonly _model: string;
 	public get model (): string {
@@ -98,6 +130,8 @@ export default class Story2DModel extends FadeContainer {
 
 		const baseURL = `${AssetsRoot}/2dmodel/O/${image}`;
 		const imgExt = ImageExtension();
+
+		this.layerableChildren = true;
 
 		const canvas = document.createElement("canvas");
 		// make sprites with clip path
@@ -141,7 +175,7 @@ export default class Story2DModel extends FadeContainer {
 				if (!b) return reject();
 
 				const url = URL.createObjectURL(b);
-				this.objectURLs.push(url);
+				this._objectURLs.push(url);
 				resolve(url);
 			});
 		});
@@ -156,18 +190,41 @@ export default class Story2DModel extends FadeContainer {
 					.flat()
 					.forEach(node => (_nodes[node.id] = node));
 
+				const _z: Record<number, number> = {};
+				const _layers: Record<number, LAYERS.Layer> = {};
+				Object.keys(r.object) // Make z-index table (id -> z)
+					.forEach(z => {
+						const __z = parseInt(z);
+						r.object[__z].forEach(e => (_z[e.id] = __z));
+
+						const group = new LAYERS.Group(__z, true);
+						_layers[__z] = new LAYERS.Layer(group);
+						_layers[__z].name = `*Layer [z=${__z}]`;
+						this.addChild(_layers[__z]);
+					});
+
 				// preload all images
 				await Promise.all(
 					[...r.sprite, ...r.face]
-						.unique(o => o.tex)
+						// .unique(o => o.tex)
 						.map(sp => new Promise<void>(async (resolve, reject) => {
+							const key = `${this._model}/${sp.tex}/${sp.name}`;
+							const cached = getCache(key);
+							if (cached) {
+								this.spMap[sp.name] = sp;
+								this.texMap[sp.name] = cached;
+								return resolve();
+							}
+
 							const image = new Image();
 							image.addEventListener("load", () => {
+
 								createClippedTexture(image, sp.vector, sp.v)
 									.then(tex => {
 										this.spMap[sp.name] = sp;
-										this.texMap[sp.tex] = PIXI.Texture.from(tex);
-										// image.remove();
+										this.texMap[sp.name] = PIXI.Texture.from(tex);
+										setCache(key, tex, this.texMap[sp.name]);
+										this._sprites.push(key);
 										resolve();
 									});
 							});
@@ -273,6 +330,11 @@ export default class Story2DModel extends FadeContainer {
 						entity.sprite.anchor.set(.5, .5);
 						entity.sprite.sortableChildren = true;
 						entity.sprite.name = entity.name;
+
+						entity.sprite.zIndex = (_z[entity.id] ?? 0);
+						entity.sprite.parentLayer = _layers[entity.sprite.zIndex];
+						entity.sprite.layerableChildren = true;
+
 						setNodeTransform(node, entity.sprite);
 
 						let parent = treeItems.find(r => r.id === node.parent);
@@ -337,7 +399,7 @@ export default class Story2DModel extends FadeContainer {
 
 						if ("sprite" in o && o.sprite !== undefined) {
 							const sp = this.spMap[o.sprite];
-							sprite.texture = this.texMap[sp.tex];
+							sprite.texture = this.texMap[sp.name];
 						}
 
 						if (r.list.dialogDeactive?.includes(o.name))
@@ -352,21 +414,26 @@ export default class Story2DModel extends FadeContainer {
 			});
 
 		this.ticker = this.tick.bind(this);
-		// PIXI.Ticker.shared.add(this.ticker);
+		PIXI.Ticker.shared.add(this.ticker);
 	}
 
 	private prevWidth: number = NaN;
 	private prevHeight: number = NaN;
+	private _len: number = -1;
 	private tick () {
-		if (this.width !== this.prevWidth || this.height !== this.prevHeight) {
-			this.prevWidth = this.width;
-			this.prevHeight = this.height;
+		// if (this._len !== this._layer._sortedChildren.length) {
+		// 	this._len = this._layer._sortedChildren.length;
+		// 	console.log("#", this._layer._sortedChildren.map(r => [r.zIndex, r.name]));
+		// }
+		// if (this.width !== this.prevWidth || this.height !== this.prevHeight) {
+		// 	this.prevWidth = this.width;
+		// 	this.prevHeight = this.height;
 
-			this.pivot.set(
-				Math.abs(this.width) / 2,
-				this.height / 4 * 3,
-			); // set pivot...
-		}
+		// 	this.pivot.set(
+		// 		Math.abs(this.width) / 2,
+		// 		this.height / 4 * 3,
+		// 	); // set pivot...
+		// }
 	}
 
 	setFace (imageVar: string) {
@@ -383,7 +450,7 @@ export default class Story2DModel extends FadeContainer {
 		if (faceNode) {
 			const face = this.faceList.find(c => c.name === faceName);
 			if (face)
-				faceNode.sprite.texture = this.texMap[face.tex];
+				faceNode.sprite.texture = this.texMap[face.name];
 			else
 				console.warn("[Story:U2DModel] no face sprite for " + faceName);
 
@@ -392,8 +459,16 @@ export default class Story2DModel extends FadeContainer {
 	}
 
 	destroy (options?: boolean | PIXI.IDestroyOptions | undefined): void {
-		super.destroy(options);
-		this.objectURLs.forEach(url => URL.revokeObjectURL(url));
+		// texture destroying controlled by component
+		if (options === undefined)
+			super.destroy({ texture: false });
+		else if (typeof options === "boolean")
+			super.destroy({ texture: false });
+		else
+			super.destroy({ ...options, texture: false });
+
+		// this._objectURLs.forEach(url => URL.revokeObjectURL(url));
+		this._sprites.forEach(key => removeCache(key));
 		// PIXI.Ticker.shared.remove(this.ticker);
 	}
 }
