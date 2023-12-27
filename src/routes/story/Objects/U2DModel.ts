@@ -120,8 +120,6 @@ export default class Story2DModel extends FadeContainer {
 	private faceList: SPRITE_DATA[] = [];
 	private treeItems: NodeTreeItem[] = [];
 
-	private ticker: typeof this.tick;
-
 	constructor (image: string) {
 		super();
 		this.sortableChildren = true;
@@ -412,28 +410,6 @@ export default class Story2DModel extends FadeContainer {
 				this.ready = true;
 				this.setFace(this.face);
 			});
-
-		this.ticker = this.tick.bind(this);
-		PIXI.Ticker.shared.add(this.ticker);
-	}
-
-	private prevWidth: number = NaN;
-	private prevHeight: number = NaN;
-	private _len: number = -1;
-	private tick () {
-		// if (this._len !== this._layer._sortedChildren.length) {
-		// 	this._len = this._layer._sortedChildren.length;
-		// 	console.log("#", this._layer._sortedChildren.map(r => [r.zIndex, r.name]));
-		// }
-		// if (this.width !== this.prevWidth || this.height !== this.prevHeight) {
-		// 	this.prevWidth = this.width;
-		// 	this.prevHeight = this.height;
-
-		// 	this.pivot.set(
-		// 		Math.abs(this.width) / 2,
-		// 		this.height / 4 * 3,
-		// 	); // set pivot...
-		// }
 	}
 
 	setFace (imageVar: string) {

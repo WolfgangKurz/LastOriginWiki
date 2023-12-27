@@ -442,7 +442,8 @@ country: MN
 age: "27"
 secretRoomType: Adult
 marriageVoice: true
-introVoice: []
+introVoice:
+  - ko
 favor:
   present: 1
   clear: 1.5
@@ -492,6 +493,7 @@ cv:
   "1": {}
   "2": {}
   "3": {}
+  "4": {}
   "":
     ko: ""
     jp: 田中あいみ
@@ -6048,28 +6050,11 @@ skills:
                 - target:
                     - Char_BR_QuickCamel_N
                     - Char_BR_WarWolf_N
-                    - Char_BR_TalonFeather_N
                     - Char_BR_Salamander_N
                     - Char_BR_Hyena_N
                     - Char_BR_Scarabya_N
                     - Char_BR_Kheshig_N
-                - on:
-                    target: target
-                    select:
-                      - Effect_BUFF_Monitoring_N_1
-                      - Effect_BUFF_Monitoring_N_2
-                      - Effect_BUFF_Monitoring_N_3
-                      - Effect_BUFF_Monitoring_N_4
-                      - Effect_BUFF_Monitoring_N_5
-                      - Effect_BUFF_Monitoring_N_6
-                      - Effect_BUFF_Monitoring_N_7
-                      - Effect_BUFF_Monitoring_N_8
-                      - Effect_BUFF_Monitoring_N_9
-                      - Effect_BUFF_Monitoring_N_10
-                      - Effect_BUFF_Monitoring_N_11
-                    stack: 0
-                    func: UNFILLED
-                    attr: 6
+                - false
               body:
                 - 0
                 - 1
@@ -6107,6 +6092,60 @@ skills:
               if:
                 - on:
                     target: target
+                    select:
+                      - Effect_BUFF_Monitoring_N_1
+                      - Effect_BUFF_Monitoring_N_2
+                      - Effect_BUFF_Monitoring_N_3
+                      - Effect_BUFF_Monitoring_N_4
+                      - Effect_BUFF_Monitoring_N_5
+                      - Effect_BUFF_Monitoring_N_6
+                      - Effect_BUFF_Monitoring_N_7
+                      - Effect_BUFF_Monitoring_N_8
+                      - Effect_BUFF_Monitoring_N_9
+                      - Effect_BUFF_Monitoring_N_10
+                      - Effect_BUFF_Monitoring_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+                - target:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_43_1
+                    type: 1
+                    value: "2"
+                    level: "0.200000"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: evade
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: 200%
+                      per: 20%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 5
+            - key: Effect_BR_Khan_N_44
+              on: round
+              if:
+                - on:
+                    target: target
                     func: OR
                     select:
                       - Effect_BUFF_Monitoring_N_1
@@ -6137,7 +6176,7 @@ skills:
               buffs:
                 - icon: BuffIcon_EVADE_UP
                   desc:
-                    desc: Effect_BR_Khan_N_43_1
+                    desc: Effect_BR_Khan_N_44_1
                     type: 1
                     value: "2"
                     level: "0.200000"
@@ -6152,7 +6191,7 @@ skills:
                       per: 20%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
+              overlapGroup: 5
     values:
       index:
         - 0
@@ -6232,6 +6271,15 @@ skills:
           - icon: BuffIcon_EVADE_UP
             desc:
               desc: Effect_BR_Khan_N_43_1
+              type: 1
+              value: "2"
+              level: "0.200000"
+            base: 2
+            per: 0.2
+            chance: 1
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_BR_Khan_N_44_1
               type: 1
               value: "2"
               level: "0.200000"

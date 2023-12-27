@@ -3067,7 +3067,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
+          grid: F>1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -3296,6 +3296,130 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_DS_Sarena_N_4
+              on: damaged
+              if:
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_FPS_N_1
+                      - Effect_BUFF_FPS_N_2
+                      - Effect_BUFF_FPS_N_3
+                      - Effect_BUFF_FPS_N_4
+                      - Effect_BUFF_FPS_N_5
+                      - Effect_BUFF_FPS_N_6
+                      - Effect_BUFF_FPS_N_7
+                      - Effect_BUFF_FPS_N_8
+                      - Effect_BUFF_FPS_N_9
+                      - Effect_BUFF_FPS_N_10
+                      - Effect_BUFF_FPS_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+                - in_battle:
+                    - Char_DS_Sarena_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_DS_Sarena_N_4_1
+                    type: 1
+                    value: "0.200000"
+                    level: "-0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 20%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_DS_Sarena_N_4_2
+                    type: 0
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 20
+                    ap:
+                      base: 1
+                      per: 0
+                  overlap: 4
+                - icon: BuffIcon_DEF_Side
+                  desc:
+                    desc: Effect_DS_Sarena_N_4_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 75
+                    guard: row
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_DS_Sarena_N_42
+              on: damaged
+              if:
+                - in_battle:
+                    - Char_DS_Sarena_N
+                - target:
+                    - Char_AGS_Goltarion_N
+                    - Char_DS_Sarena_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_DS_Sarena_N_42_1
+                    type: 0
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 1
+                      per: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -3351,6 +3475,42 @@ skills:
               level: "0.020000"
             base: 0.12
             per: 0.02
+            chance: 1
+          - icon: BuffIcon_VULNERABLE
+            desc:
+              desc: Effect_DS_Sarena_N_4_1
+              type: 1
+              value: "0.200000"
+              level: "-0.010000"
+            base: 0.2
+            per: -0.01
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_DS_Sarena_N_4_2
+              type: 0
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 0
+          - icon: BuffIcon_DEF_Side
+            desc:
+              desc: Effect_DS_Sarena_N_4_3
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 0
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_DS_Sarena_N_42_1
+              type: 0
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
             chance: 1
   "4":
     key: "4"
@@ -3622,6 +3782,7 @@ skills:
                 - target:
                     - Char_DS_Baekto_N
                     - Char_DS_MoMo_N
+                    - Char_DS_Sarena_N
               body:
                 - 0
                 - 1
@@ -3959,6 +4120,7 @@ skills:
                 - target:
                     - Char_DS_Baekto_N
                     - Char_DS_MoMo_N
+                    - Char_DS_Sarena_N
               body:
                 - 0
                 - 1
@@ -4296,6 +4458,7 @@ skills:
                 - target:
                     - Char_DS_Baekto_N
                     - Char_DS_MoMo_N
+                    - Char_DS_Sarena_N
               body:
                 - 0
                 - 1
@@ -4541,6 +4704,7 @@ skills:
               if:
                 - target:
                     - Char_DS_MoMo_N
+                    - Char_DS_Sarena_N
                 - false
               body:
                 - 0
@@ -4732,6 +4896,7 @@ skills:
               if:
                 - in_battle:
                     - Char_DS_Baekto_N
+                    - Char_DS_Sarena_N
                 - false
               body:
                 - 0
