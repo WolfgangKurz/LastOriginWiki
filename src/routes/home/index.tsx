@@ -88,7 +88,7 @@ const Home: FunctionalComponent = () => {
 		SwiperCore.use([Autoplay, Pagination]);
 	}, []);
 
-	const previewSkins = ["QuickCamel_2"];
+	const previewSkins = ["BR_QuickCamel_2"];
 
 	return <div class={ `${style.home} home` }>
 		<div class="alert alert-danger mline">

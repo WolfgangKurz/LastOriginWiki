@@ -62,7 +62,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 					return <span class="badge bg-primary">{ a }</span>;
 				}
 			})
-			.map(x => <div>{ x }</div>);
+			.map(x => <div class="d-inline-block mx-1">{ x }</div>);
 	}
 
 	function ParseDesc (key: string): preact.VNode[] {
@@ -200,16 +200,15 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 								<div class="mb-1">
 									<Locale k="UNIT_VIEW_ILLUSTRATOR" />
 								</div>
-								{
-									skin.artist === "???"
-										? <BootstrapTooltip content={ <Locale k="UNIT_VIEW_ILLUSTRATOR_HIDDEN_TOOLTIP" /> }>
-											<span class={ `badge ${style.IllustratorHidden}` }>
-												<Locale k="UNIT_VIEW_ILLUSTRATOR_HIDDEN" />
+								{ skin.artist === "???"
+									? <BootstrapTooltip content={ <Locale k="UNIT_VIEW_ILLUSTRATOR_HIDDEN_TOOLTIP" /> }>
+										<span class={ `badge ${style.IllustratorHidden}` }>
+											<Locale k="UNIT_VIEW_ILLUSTRATOR_HIDDEN" />
 
-												<IconQuestionCircleFill class="ms-1" />
-											</span>
-										</BootstrapTooltip>
-										: compileArtist(skin.artist)
+											<IconQuestionCircleFill class="ms-1" />
+										</span>
+									</BootstrapTooltip>
+									: compileArtist(skin.artist)
 								}
 							</div>
 							: <></>
