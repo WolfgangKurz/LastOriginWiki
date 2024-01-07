@@ -1,2 +1,2 @@
 // eslint-disable-next-line
-export default {"time":1704031449605,"build":12416}
+export default {"time":1704632268717,"build":12418}

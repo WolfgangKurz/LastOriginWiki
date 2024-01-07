@@ -461,7 +461,8 @@ fullLinkBonus:
   - ACC_75
   - SPD_10
 craft: 29220
-equips: []
+equips:
+  - Sub_FPS_T4
 stat:
   - HP:
       - 307
@@ -5143,23 +5144,7 @@ skills:
             - key: Effect_DS_Sarena_N_31
               on: round
               if:
-                - on:
-                    target: self
-                    select:
-                      - Effect_BUFF_FPS_N_1
-                      - Effect_BUFF_FPS_N_2
-                      - Effect_BUFF_FPS_N_3
-                      - Effect_BUFF_FPS_N_4
-                      - Effect_BUFF_FPS_N_5
-                      - Effect_BUFF_FPS_N_6
-                      - Effect_BUFF_FPS_N_7
-                      - Effect_BUFF_FPS_N_8
-                      - Effect_BUFF_FPS_N_9
-                      - Effect_BUFF_FPS_N_10
-                      - Effect_BUFF_FPS_N_11
-                    stack: 0
-                    func: UNFILLED
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -5185,54 +5170,6 @@ skills:
                     rounds: 1
                     until:
                       use_skill: 2
-                  value:
-                    isBuff: true
-                    type: 130
-                    guardpierce_apply: true
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_DS_Sarena_N_32
-              on: round
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BUFF_FPS_N_1
-                      - Effect_BUFF_FPS_N_2
-                      - Effect_BUFF_FPS_N_3
-                      - Effect_BUFF_FPS_N_4
-                      - Effect_BUFF_FPS_N_5
-                      - Effect_BUFF_FPS_N_6
-                      - Effect_BUFF_FPS_N_7
-                      - Effect_BUFF_FPS_N_8
-                      - Effect_BUFF_FPS_N_9
-                      - Effect_BUFF_FPS_N_10
-                      - Effect_BUFF_FPS_N_11
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_Guardpierce_Apply
-                  desc:
-                    desc: Effect_DS_Sarena_N_32_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
                   value:
                     isBuff: true
                     type: 130
@@ -5298,15 +5235,6 @@ skills:
             base: 0
             per: 0
             chance: 1
-          - icon: BuffIcon_Guardpierce_Apply
-            desc:
-              desc: Effect_DS_Sarena_N_32_1
-              type: 1
-              value: "0"
-              level: "0"
-            base: 0
-            per: 0
-            chance: 1
   "4":
     key: "4"
     icon: P.TeamSpdBuff
@@ -5342,25 +5270,9 @@ skills:
             - key: Effect_DS_Sarena_N_4
               on: damaged
               if:
-                - on:
-                    target: self
-                    select:
-                      - Effect_BUFF_FPS_N_1
-                      - Effect_BUFF_FPS_N_2
-                      - Effect_BUFF_FPS_N_3
-                      - Effect_BUFF_FPS_N_4
-                      - Effect_BUFF_FPS_N_5
-                      - Effect_BUFF_FPS_N_6
-                      - Effect_BUFF_FPS_N_7
-                      - Effect_BUFF_FPS_N_8
-                      - Effect_BUFF_FPS_N_9
-                      - Effect_BUFF_FPS_N_10
-                      - Effect_BUFF_FPS_N_11
-                    stack: 0
-                    func: UNFILLED
-                    attr: 6
                 - in_battle:
                     - Char_DS_Sarena_N
+                - false
               body:
                 - 0
                 - 1
@@ -5421,56 +5333,6 @@ skills:
                     chance: 0%
                     type: 75
                     guard: row
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_DS_Sarena_N_41
-              on: damaged
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BUFF_FPS_N_1
-                      - Effect_BUFF_FPS_N_2
-                      - Effect_BUFF_FPS_N_3
-                      - Effect_BUFF_FPS_N_4
-                      - Effect_BUFF_FPS_N_5
-                      - Effect_BUFF_FPS_N_6
-                      - Effect_BUFF_FPS_N_7
-                      - Effect_BUFF_FPS_N_8
-                      - Effect_BUFF_FPS_N_9
-                      - Effect_BUFF_FPS_N_10
-                      - Effect_BUFF_FPS_N_11
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_VULNERABLE
-                  desc:
-                    desc: Effect_DS_Sarena_N_41_1
-                    type: 1
-                    value: "0.100000"
-                    level: "-0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: -0.5%
                   overlap: 4
               maxStack: 1
               overlapGroup: -1
@@ -5581,7 +5443,7 @@ skills:
                   desc:
                     desc: Effect_DS_Sarena_N_44_1
                     type: 0
-                    value: "0.600000"
+                    value: "0.300000"
                     level: "0"
                   attr: 0
                   erase:
@@ -5590,7 +5452,7 @@ skills:
                     isBuff: true
                     type: 20
                     ap:
-                      base: 0.6
+                      base: 0.3
                       per: 0
                   overlap: 4
               maxStack: 0
@@ -5631,7 +5493,7 @@ skills:
                   desc:
                     desc: Effect_DS_Sarena_N_45_1
                     type: 0
-                    value: "0.600000"
+                    value: "0.300000"
                     level: "0"
                   attr: 0
                   erase:
@@ -5640,7 +5502,7 @@ skills:
                     isBuff: true
                     type: 20
                     ap:
-                      base: 0.6
+                      base: 0.3
                       per: 0
                   overlap: 4
               maxStack: 0
@@ -5685,15 +5547,6 @@ skills:
             base: 0
             per: 0
             chance: 0
-          - icon: BuffIcon_VULNERABLE
-            desc:
-              desc: Effect_DS_Sarena_N_41_1
-              type: 1
-              value: "0.100000"
-              level: "-0.005000"
-            base: 0.1
-            per: -0.005
-            chance: 1
           - icon: BuffIcon_AP_UP
             desc:
               desc: Effect_DS_Sarena_N_42_1
@@ -5716,18 +5569,18 @@ skills:
             desc:
               desc: Effect_DS_Sarena_N_44_1
               type: 0
-              value: "0.600000"
+              value: "0.300000"
               level: "0"
-            base: 0.6
+            base: 0.3
             per: 0
             chance: 1
           - icon: BuffIcon_AP_UP
             desc:
               desc: Effect_DS_Sarena_N_45_1
               type: 0
-              value: "0.600000"
+              value: "0.300000"
               level: "0"
-            base: 0.6
+            base: 0.3
             per: 0
             chance: 1
   "5":
