@@ -550,6 +550,18 @@ group:
       - Story_Char_DS_Faucre_N_34_AGS_Goltarion_2
       - Story_Char_DS_Faucre_N_34_PECS_Muse_3
       - Story_Char_DS_Faucre_N_34_DS_Faucre_4
+  - troop: Story_Troop_Group_Squad_Dentertainment
+    key: PCStory_CH_DS_KunoichiEnrai_2
+    type: 0
+    char: DS_KunoichiEnrai
+    skin: 1
+    group: Dentertainment
+    story:
+      - Story_Char_DS_KunoichiEnrai_N_53_DS_Cloverace_1
+      - Story_Char_DS_KunoichiEnrai_N_53_AGS_RheinRitter_2
+      - Story_Char_DS_KunoichiEnrai_N_53_PECS_Babariana_3
+      - Story_Char_DS_KunoichiEnrai_N_53_DS_Baekto_4
+      - Story_Char_DS_KunoichiEnrai_N_53_DS_KunoichiEnrai_5
   - troop: Story_Troop_Group_Squad_Horizon
     key: PCStory_CH_BR_InvDragon_1
     type: 0
@@ -5495,6 +5507,126 @@ story:
       trigger:
         type: 0
         value: Cut_ChCS-38Stage04_1
+  - group: PCStory_CH_DS_KunoichiEnrai_2
+    key: Story_Char_DS_KunoichiEnrai_N_53_DS_Cloverace_1
+    order: 1
+    char: DS_Cloverace
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-57Stage01_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 2
+          value: Char_DS_KunoichiEnrai_N
+          sub: "1"
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-57Stage01_1
+  - group: PCStory_CH_DS_KunoichiEnrai_2
+    key: Story_Char_DS_KunoichiEnrai_N_53_AGS_RheinRitter_2
+    order: 2
+    char: AGS_RheinRitter
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-57Stage02_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_DS_KunoichiEnrai_N_53_DS_Cloverace_1
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-57Stage02_1
+  - group: PCStory_CH_DS_KunoichiEnrai_2
+    key: Story_Char_DS_KunoichiEnrai_N_53_PECS_Babariana_3
+    order: 3
+    char: PECS_Babariana
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-57Stage03_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_DS_KunoichiEnrai_N_53_AGS_RheinRitter_2
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-57Stage03_1
+  - group: PCStory_CH_DS_KunoichiEnrai_2
+    key: Story_Char_DS_KunoichiEnrai_N_53_DS_Baekto_4
+    order: 4
+    char: DS_Baekto
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-57Stage04_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_DS_KunoichiEnrai_N_53_PECS_Babariana_3
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-57Stage04_1
+  - group: PCStory_CH_DS_KunoichiEnrai_2
+    key: Story_Char_DS_KunoichiEnrai_N_53_DS_KunoichiEnrai_5
+    order: 5
+    char: DS_KunoichiEnrai
+    skin: 1
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-57Stage05_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_DS_KunoichiEnrai_N_53_DS_Baekto_4
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-57Stage05_1
   - group: PCStory_CH_BR_InvDragon_1
     key: Story_Char_BR_InvDragon_N_23_BR_Sirene_1
     order: 1
