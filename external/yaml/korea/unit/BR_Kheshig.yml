@@ -455,7 +455,9 @@ country: ""
 age: ""
 secretRoomType: Adult
 marriageVoice: true
-introVoice: []
+introVoice:
+  - jp
+  - jpdmm
 favor:
   present: 1
   clear: 0.25
@@ -631,24 +633,50 @@ skills:
                       base: 15%
                       per: 1.5%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Kheshig_N_1_4
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
-                    value: "0"
+                    value: "0.200000"
                     level: "0"
                   attr: 3
                   erase:
-                    rounds: 1
+                    rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_11
               on: attack_success
               if:
@@ -698,42 +726,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Kheshig_N_12
-              on: attack_success
-              if:
-                - in_battle:
-                    - Char_BR_QuickCamel_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_Kheshig_N_12_1
-                    type: 1
-                    value: Char_BR_QuickCamel_N
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: Char_BR_QuickCamel_N
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_13
               on:
                 after: use_skill
@@ -775,15 +768,12 @@ skills:
                       per: 0
                   overlap: 0
               maxStack: 0
-            - key: Effect_BR_Khan_N_19
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
+                - in_battle:
+                    - Char_BR_QuickCamel_N
                 - false
               body:
                 - 0
@@ -796,25 +786,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_410_1
                     type: 1
-                    value: "0.200000"
+                    value: Char_BR_QuickCamel_N
                     level: "0"
-                  attr: 3
+                  attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 1.353
           type: 0
           range: 3
@@ -893,24 +884,50 @@ skills:
                       base: 15%
                       per: 1.5%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Kheshig_N_1_4
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
-                    value: "0"
+                    value: "0.200000"
                     level: "0"
                   attr: 3
                   erase:
-                    rounds: 1
+                    rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_11
               on: attack_success
               if:
@@ -960,42 +977,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Kheshig_N_12
-              on: attack_success
-              if:
-                - in_battle:
-                    - Char_BR_QuickCamel_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_Kheshig_N_12_1
-                    type: 1
-                    value: Char_BR_QuickCamel_N
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: Char_BR_QuickCamel_N
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_13
               on:
                 after: use_skill
@@ -1037,15 +1019,12 @@ skills:
                       per: 0
                   overlap: 0
               maxStack: 0
-            - key: Effect_BR_Khan_N_19
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
+                - in_battle:
+                    - Char_BR_QuickCamel_N
                 - false
               body:
                 - 0
@@ -1058,25 +1037,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_410_1
                     type: 1
-                    value: "0.200000"
+                    value: Char_BR_QuickCamel_N
                     level: "0"
-                  attr: 3
+                  attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 1.476
           type: 0
           range: 3
@@ -1155,24 +1135,50 @@ skills:
                       base: 15%
                       per: 1.5%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Kheshig_N_1_4
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
-                    value: "0"
+                    value: "0.200000"
                     level: "0"
                   attr: 3
                   erase:
-                    rounds: 1
+                    rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_11
               on: attack_success
               if:
@@ -1222,42 +1228,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Kheshig_N_12
-              on: attack_success
-              if:
-                - in_battle:
-                    - Char_BR_QuickCamel_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_Kheshig_N_12_1
-                    type: 1
-                    value: Char_BR_QuickCamel_N
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: Char_BR_QuickCamel_N
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_13
               on:
                 after: use_skill
@@ -1299,15 +1270,12 @@ skills:
                       per: 0
                   overlap: 0
               maxStack: 0
-            - key: Effect_BR_Khan_N_19
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
+                - in_battle:
+                    - Char_BR_QuickCamel_N
                 - false
               body:
                 - 0
@@ -1320,25 +1288,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_410_1
                     type: 1
-                    value: "0.200000"
+                    value: Char_BR_QuickCamel_N
                     level: "0"
-                  attr: 3
+                  attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 1.599
           type: 0
           range: 3
@@ -1417,24 +1386,50 @@ skills:
                       base: 15%
                       per: 1.5%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Kheshig_N_1_4
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
-                    value: "0"
+                    value: "0.200000"
                     level: "0"
                   attr: 3
                   erase:
-                    rounds: 1
+                    rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_11
               on: attack_success
               if:
@@ -1484,42 +1479,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Kheshig_N_12
-              on: attack_success
-              if:
-                - in_battle:
-                    - Char_BR_QuickCamel_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_Kheshig_N_12_1
-                    type: 1
-                    value: Char_BR_QuickCamel_N
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: Char_BR_QuickCamel_N
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_13
               on:
                 after: use_skill
@@ -1561,15 +1521,12 @@ skills:
                       per: 0
                   overlap: 0
               maxStack: 0
-            - key: Effect_BR_Khan_N_19
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
+                - in_battle:
+                    - Char_BR_QuickCamel_N
                 - false
               body:
                 - 0
@@ -1582,25 +1539,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_410_1
                     type: 1
-                    value: "0.200000"
+                    value: Char_BR_QuickCamel_N
                     level: "0"
-                  attr: 3
+                  attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 1.722
           type: 0
           range: 3
@@ -1679,24 +1637,50 @@ skills:
                       base: 15%
                       per: 1.5%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Kheshig_N_1_4
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
-                    value: "0"
+                    value: "0.200000"
                     level: "0"
                   attr: 3
                   erase:
-                    rounds: 1
+                    rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_11
               on: attack_success
               if:
@@ -1746,42 +1730,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Kheshig_N_12
-              on: attack_success
-              if:
-                - in_battle:
-                    - Char_BR_QuickCamel_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_Kheshig_N_12_1
-                    type: 1
-                    value: Char_BR_QuickCamel_N
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: Char_BR_QuickCamel_N
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_13
               on:
                 after: use_skill
@@ -1823,15 +1772,12 @@ skills:
                       per: 0
                   overlap: 0
               maxStack: 0
-            - key: Effect_BR_Khan_N_19
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
+                - in_battle:
+                    - Char_BR_QuickCamel_N
                 - false
               body:
                 - 0
@@ -1844,25 +1790,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_410_1
                     type: 1
-                    value: "0.200000"
+                    value: Char_BR_QuickCamel_N
                     level: "0"
-                  attr: 3
+                  attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 1.845
           type: 0
           range: 3
@@ -1941,24 +1888,50 @@ skills:
                       base: 15%
                       per: 1.5%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Kheshig_N_1_4
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
-                    value: "0"
+                    value: "0.200000"
                     level: "0"
                   attr: 3
                   erase:
-                    rounds: 1
+                    rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_11
               on: attack_success
               if:
@@ -2008,42 +1981,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Kheshig_N_12
-              on: attack_success
-              if:
-                - in_battle:
-                    - Char_BR_QuickCamel_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_Kheshig_N_12_1
-                    type: 1
-                    value: Char_BR_QuickCamel_N
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: Char_BR_QuickCamel_N
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_13
               on:
                 after: use_skill
@@ -2085,15 +2023,12 @@ skills:
                       per: 0
                   overlap: 0
               maxStack: 0
-            - key: Effect_BR_Khan_N_19
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
+                - in_battle:
+                    - Char_BR_QuickCamel_N
                 - false
               body:
                 - 0
@@ -2106,25 +2041,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_410_1
                     type: 1
-                    value: "0.200000"
+                    value: Char_BR_QuickCamel_N
                     level: "0"
-                  attr: 3
+                  attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 1.968
           type: 0
           range: 3
@@ -2203,24 +2139,50 @@ skills:
                       base: 15%
                       per: 1.5%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Kheshig_N_1_4
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
-                    value: "0"
+                    value: "0.200000"
                     level: "0"
                   attr: 3
                   erase:
-                    rounds: 1
+                    rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_11
               on: attack_success
               if:
@@ -2270,42 +2232,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Kheshig_N_12
-              on: attack_success
-              if:
-                - in_battle:
-                    - Char_BR_QuickCamel_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_Kheshig_N_12_1
-                    type: 1
-                    value: Char_BR_QuickCamel_N
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: Char_BR_QuickCamel_N
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_13
               on:
                 after: use_skill
@@ -2347,15 +2274,12 @@ skills:
                       per: 0
                   overlap: 0
               maxStack: 0
-            - key: Effect_BR_Khan_N_19
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
+                - in_battle:
+                    - Char_BR_QuickCamel_N
                 - false
               body:
                 - 0
@@ -2368,25 +2292,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_410_1
                     type: 1
-                    value: "0.200000"
+                    value: Char_BR_QuickCamel_N
                     level: "0"
-                  attr: 3
+                  attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 2.091
           type: 0
           range: 3
@@ -2465,24 +2390,50 @@ skills:
                       base: 15%
                       per: 1.5%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Kheshig_N_1_4
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
-                    value: "0"
+                    value: "0.200000"
                     level: "0"
                   attr: 3
                   erase:
-                    rounds: 1
+                    rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_11
               on: attack_success
               if:
@@ -2532,42 +2483,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Kheshig_N_12
-              on: attack_success
-              if:
-                - in_battle:
-                    - Char_BR_QuickCamel_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_Kheshig_N_12_1
-                    type: 1
-                    value: Char_BR_QuickCamel_N
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: Char_BR_QuickCamel_N
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_13
               on:
                 after: use_skill
@@ -2609,15 +2525,12 @@ skills:
                       per: 0
                   overlap: 0
               maxStack: 0
-            - key: Effect_BR_Khan_N_19
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
+                - in_battle:
+                    - Char_BR_QuickCamel_N
                 - false
               body:
                 - 0
@@ -2630,25 +2543,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_410_1
                     type: 1
-                    value: "0.200000"
+                    value: Char_BR_QuickCamel_N
                     level: "0"
-                  attr: 3
+                  attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 2.214
           type: 0
           range: 3
@@ -2727,24 +2641,50 @@ skills:
                       base: 15%
                       per: 1.5%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Kheshig_N_1_4
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
-                    value: "0"
+                    value: "0.200000"
                     level: "0"
                   attr: 3
                   erase:
-                    rounds: 1
+                    rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_11
               on: attack_success
               if:
@@ -2794,42 +2734,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Kheshig_N_12
-              on: attack_success
-              if:
-                - in_battle:
-                    - Char_BR_QuickCamel_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_Kheshig_N_12_1
-                    type: 1
-                    value: Char_BR_QuickCamel_N
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: Char_BR_QuickCamel_N
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_13
               on:
                 after: use_skill
@@ -2871,15 +2776,12 @@ skills:
                       per: 0
                   overlap: 0
               maxStack: 0
-            - key: Effect_BR_Khan_N_19
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
+                - in_battle:
+                    - Char_BR_QuickCamel_N
                 - false
               body:
                 - 0
@@ -2892,25 +2794,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_410_1
                     type: 1
-                    value: "0.200000"
+                    value: Char_BR_QuickCamel_N
                     level: "0"
-                  attr: 3
+                  attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 2.337
           type: 0
           range: 3
@@ -2989,24 +2892,50 @@ skills:
                       base: 15%
                       per: 1.5%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Kheshig_N_1_4
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
-                    value: "0"
+                    value: "0.200000"
                     level: "0"
                   attr: 3
                   erase:
-                    rounds: 1
+                    rounds: 0
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_11
               on: attack_success
               if:
@@ -3056,42 +2985,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Kheshig_N_12
-              on: attack_success
-              if:
-                - in_battle:
-                    - Char_BR_QuickCamel_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_Kheshig_N_12_1
-                    type: 1
-                    value: Char_BR_QuickCamel_N
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: Char_BR_QuickCamel_N
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_13
               on:
                 after: use_skill
@@ -3133,15 +3027,12 @@ skills:
                       per: 0
                   overlap: 0
               maxStack: 0
-            - key: Effect_BR_Khan_N_19
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
+                - in_battle:
+                    - Char_BR_QuickCamel_N
                 - false
               body:
                 - 0
@@ -3154,25 +3045,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_QuickCamel_N_410_1
                     type: 1
-                    value: "0.200000"
+                    value: Char_BR_QuickCamel_N
                     level: "0"
-                  attr: 3
+                  attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -3213,15 +3105,15 @@ skills:
             base: 0.15
             per: 0.015
             chance: 0
-          - icon: BuffIcon_TOGETHER_ATTACK
+          - icon: BuffIcon_PhyATK_UP
             desc:
-              desc: Effect_BR_Kheshig_N_1_4
+              desc: Effect_BR_TalonFeather_N_510_1
               type: 1
-              value: "0"
+              value: "0.200000"
               level: "0"
-            base: 0
+            base: 0.2
             per: 0
-            chance: 0
+            chance: 1
           - icon: BuffIcon_MARKING
             desc:
               desc: Effect_BR_Kheshig_N_11_1
@@ -3240,14 +3132,6 @@ skills:
             base: 0.15
             per: 0.015
             chance: 1
-          - icon: BuffIcon_TOGETHER_ATTACK
-            desc:
-              desc: Effect_BR_Kheshig_N_12_1
-              type: 1
-              value: Char_BR_QuickCamel_N
-              level: "0"
-            value: Char_BR_QuickCamel_N
-            chance: 1
           - icon: BuffIcon_AP_UP
             desc:
               desc: Effect_BR_Kheshig_N_13_1
@@ -3257,14 +3141,13 @@ skills:
             base: 1
             per: 0
             chance: 1
-          - icon: BuffIcon_PhyATK_UP
+          - icon: BuffIcon_TOGETHER_ATTACK
             desc:
-              desc: Effect_BR_Khan_N_19_1
+              desc: Effect_BR_QuickCamel_N_410_1
               type: 1
-              value: "0.200000"
+              value: Char_BR_QuickCamel_N
               level: "0"
-            base: 0.2
-            per: 0
+            value: Char_BR_QuickCamel_N
             chance: 1
   "2":
     key: "2"
@@ -3391,6 +3274,7 @@ skills:
                       per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_22
               on:
                 after: use_skill
@@ -3461,6 +3345,7 @@ skills:
                       per: 0.75%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_23
               on:
                 after: use_skill
@@ -3531,6 +3416,7 @@ skills:
                       per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_24
               on:
                 after: use_skill
@@ -3601,6 +3487,7 @@ skills:
                       per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_25
               on:
                 after: use_skill
@@ -3642,6 +3529,7 @@ skills:
                       per: 0
                   overlap: 0
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -3903,6 +3791,7 @@ skills:
                         per: 3%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_36
               on: round
               if:
@@ -3946,6 +3835,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_37
               on: round
               if:
@@ -3989,6 +3879,7 @@ skills:
                     off: 1
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_38
               on: round
               if:
@@ -4034,6 +3925,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_39
               on: round
               if:
@@ -4081,6 +3973,7 @@ skills:
                         per: 3%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 0
           type: 0
           range: 0
@@ -4183,6 +4076,7 @@ skills:
                         per: 3%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_36
               on: round
               if:
@@ -4226,6 +4120,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_37
               on: round
               if:
@@ -4269,6 +4164,7 @@ skills:
                     off: 1
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_38
               on: round
               if:
@@ -4314,6 +4210,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_39
               on: round
               if:
@@ -4361,6 +4258,7 @@ skills:
                         per: 3%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 0
           type: 0
           range: 0
@@ -4463,6 +4361,7 @@ skills:
                         per: 3%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_36
               on: round
               if:
@@ -4506,6 +4405,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_37
               on: round
               if:
@@ -4549,6 +4449,7 @@ skills:
                     off: 1
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_38
               on: round
               if:
@@ -4594,6 +4495,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_39
               on: round
               if:
@@ -4641,6 +4543,7 @@ skills:
                         per: 3%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -4955,6 +4858,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_4
               on: wave
               if:
@@ -4994,6 +4898,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_41
               on: wave
               if:
@@ -5033,6 +4938,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_42
               on: wave
               if:
@@ -5072,6 +4978,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_43
               on: round
               if:
@@ -5112,6 +5019,7 @@ skills:
                       per: 0.3%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_44
               on: round
               if:
@@ -5152,6 +5060,7 @@ skills:
                       per: 0.3%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_45
               on: round
               if:
@@ -5192,6 +5101,7 @@ skills:
                       per: 0.3%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_46
               on: round
               if:
@@ -5234,6 +5144,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -5412,6 +5323,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Kheshig_N_51
               on: round
               if:
@@ -5454,6 +5366,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -5687,16 +5600,18 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: ""
-      Idle_01_02: お嬢ちゃん！私言ったよね？この辺にはまだ鉄虫が残ってるって！
-      Idle_01_03: 何を探してんのか知らないけど、今日はもう帰った方がいいわ！
-      SPIdle_01_01: きゃっ！？しまった！前に鉄虫！
-      Idle_02_01: すみません。ですが、今日じゃないとダメなんです！
-      Idle_03_01: 私の予測は今日なんです！
-      Idle_04_01: 何が！？
-      SPIdle_02_01: お嬢ちゃん！しっかりつかまって！
-      Oath: 銃声？
-      OathIdle_01: クローバーエースッ！
+      Idle_01_01: うぅっ。フェザーさんが「今はホードだけの時間だから入っていい」って言ってたのに…い、いえ、司令官さまが嫌だとかではなく…恥ずかしいんですよぉ……
+      Idle_01_02: |-
+        さっきまでホードの皆さんがいたのに急にいなくなった……。そして、司令官さまが入ってきた……。 
+        ……まさか！？
+      Idle_01_03: 温泉には色々な効能があります。伊達に湯治という言葉があるわけではありません。この温泉は美容、疲労回復、それから… せ、精力増強！？
+      SPIdle_01_01: ふわぁぁぁぁ！？い、今のは！？何かの間違いですよね！？
+      Idle_02_01: ここは女湯だと聞いていたんですが…司令官さまが急に入ってこられてびっくりしました。今も胸が……え？もともと男女の区分はされてない…のですか！？あ……そうなんですねぇ……で、でも急に入ってこられては困ります！！
+      Idle_03_01: あ、あの……司令官さま。なんだかぼーっとしませんか？クラクラ…しませんか？一回、出られた方がいいのでは？……司令官さまが出てくださらないと私が出られないんですよぅ…
+      Idle_04_01: か、体にホードの隊章のタトゥーを入れたんですが…まだ…お見せしてなかったですよね？…司令官さま……見ますか？司令官さまが一番乗り……です。
+      SPIdle_02_01: 誰か来たらどうするんですかぁ…ううっ……！わ、私も覚悟を決めました…誰か来ても…やめないでくださいね！！
+      Oath: ひどいです、司令官さま。毎日私にいたずらして、からかって、い、いやらしいことをして…それなのに…急にこんな風に…指輪をくださるなんてズルいですよぉ。これで全部なかったことにしようだなんて、思わないでくださいね？私、怒りますよ。一生かけて償ってください！私も…えへへ。一生をかけて愛しますから。
+      OathIdle_01: こっちに来てください。この温泉は健康にいいそうです。ここで疲れをとって、免疫力も高めて…えへへ、マッサージもしてあげますね……そして、長生きして、ず～っと…幸せでいましょう。
       MVP: ""
     "":
       Join: 初めまして司令官さま！わたし、T-4ケシクと申します。お目にかかれてとっても光栄です！
@@ -5774,7 +5689,7 @@ dialogue:
         Uhh. Feather told me that I could enter…
         since only the Horde members were using it…
         No, no no, I don't… not like you…
-        I mean… I’m shy…
+        I mean… I'm shy…
       Idle_01_02: |-
         There were Horde members here until just a minute ago…
         They all left all of a sudden.
@@ -5797,7 +5712,7 @@ dialogue:
         Aren't you feeling a little… dizzy?
         I'm getting a bit… woozy…
         I think it might be better… if we got out…
-        You’ll have to leave first…
+        You'll have to leave first…
         so that I can leave…
       Idle_04_01: |-
         I… have the symbols of the Horde… on my body…
@@ -5813,7 +5728,7 @@ dialogue:
 
         And then you give me a ring at a time like this? Pffft. Don't think you're going to get off easy.
 
-        I’ll make sure to punish you. For the rest of your life. Hehe. I'll love you forever and ever.
+        I'll make sure to punish you. For the rest of your life. Hehe. I'll love you forever and ever.
       OathIdle_01: |-
         Come over here.
         This hot spring is apparently good for your health.
@@ -5919,10 +5834,10 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: |-
-        Ack! Are you surprised? I’m sure you didn’t expect
+        Ack! Are you surprised? I’m sure you didn't expect
         to see me here first. I've looked at some good places already.
-        You haven’t bathed in the sunlight in a while, have you?
-        Why don’t you stay for a bit?
+        You haven't bathed in the sunlight in a while, have you?
+        Why don't you stay for a bit?
       Idle_01_02: |-
         It will take more than just a few years of effort
         to become as strong as her. The reason for…
@@ -6175,3 +6090,4 @@ skins:
         voiceId: 1
         2dmodel: 2DModel_BR_Kheshig_NS1
         2dmodel_dam: 2DModel_BR_Kheshig_NS1_Dam
+        consumableKey: Skin_BR_Kheshig_1

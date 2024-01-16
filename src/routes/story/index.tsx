@@ -5,12 +5,12 @@ import Store from "@/store";
 import { DIALOG_SPEAKER, SCG_ACTIVATION } from "@/types/Enums";
 import { DialogCharacter, StoryData, StoryMetadata } from "@/types/Story/Story";
 import SubStoryDB from "@/types/DB/SubStory";
+import { LocaleList, LocaleTypes } from "@/types/Locale";
 
 import { useUpdate } from "@/libs/hooks";
 import { AssetsRoot, ImageExtension, SubStoryUnit } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import { CurrentDB } from "@/libs/DB";
-import { LocaleList, LocaleTypes } from "@/libs/Locale";
 import { BuildClass } from "@/libs/Class";
 import { parseVNode } from "@/libs/VNode";
 import { UpdateTitle } from "@/libs/Site";
@@ -20,6 +20,7 @@ import Locale, { LocaleGet } from "@/components/locale";
 import UnitFace from "@/components/unit-face";
 import IconGlobe2 from "@/components/bootstrap-icon/icons/Globe2";
 import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
+import IconVolumeUpFill from "@/components/bootstrap-icon/icons/VolumeUpFill";
 
 import Notfound from "@/routes/notfound";
 
@@ -49,6 +50,8 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 
 	const [storyMetadata, setStoryMetadata] = useState<StoryMetadata | null>(null);
 	const [storyData, setStoryData] = useState<StoryData[] | null>(null);
+
+	const [voicePreview, setVoicePreview] = useState<string>("");
 	const [bgm, setBGM] = useState("");
 	const [cursor, setCursor] = useState(0);
 
@@ -62,6 +65,11 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 
 	const imgExt = ImageExtension();
 
+	function getVoice (voice: string): string {
+		if (!voice) return "";
+		return `${AssetsRoot}/audio/voice-ko/${voice}.mp3`;
+	}
+
 	function Speaker (data: StoryData): DialogCharacter | undefined {
 		const speakerTable: Record<DIALOG_SPEAKER, "L" | "C" | "R" | ""> = {
 			[DIALOG_SPEAKER.LEFT]: "L",
@@ -73,7 +81,8 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 	}
 	function Activates (data: StoryData): DialogCharacter[] {
 		return Object.values(data.char)
-			.filter(r => r.SCG === SCG_ACTIVATION.ACTIVATION);
+			.filter(r => r.SCG === SCG_ACTIVATION.ACTIVATION)
+			.filter(r => !r.image.includes("_Cut"));
 	}
 	function ImageToFace (model: string): { uid: string; skin: number; fallback: string; } {
 		let sid = model
@@ -127,7 +136,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 	}, [lang]);
 
 	const { wid, mid, nid, storyType } = useMemo(() => {
-		const reg = /^Ch([0-9]+)(Ev([0-9]+)?)?Stage([0-9]+)(B|Ex|EX|C|S)?$/;
+		const reg = /^Ch([0-9]+)(N[0-9]+|Ev|Ev[0-9]+)?Stage([0-9]+)(B|Ex|EX|C|S)?$/;
 		const r = reg.exec(props.id);
 		if (r) {
 			const mid = parseInt(r[1], 10);
@@ -142,18 +151,24 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 
 			const type = props.type.toUpperCase();
 
-			if (r[2]) { // EvXX
+			if (r[2]) { // EvXX or 12 chapter...
 				return {
-					wid: r[2] === "Ev" ? "Ev1" : r[2],
-					mid,
-					nid: `Ev${mid}-${parseInt(r[4], 10)}${postfix}`,
+					wid: r[2] === "Ev"
+						? "Ev1"
+						: r[2].startsWith("N")
+							? r[1] // Story
+							: r[2],
+					mid: r[2].startsWith("N")
+						? parseInt(r[2].substring(1), 10).toString()
+						: mid,
+					nid: `${r[2].startsWith("Ev") ? "Ev" : ""}${mid}-${parseInt(r[3], 10)}${postfix}`,
 					storyType: type,
 				};
 			} else { // Story
 				return {
 					wid: "Story",
 					mid,
-					nid: `${mid}-${parseInt(r[4], 10)}${postfix}`,
+					nid: `${mid}-${parseInt(r[3], 10)}${postfix}`,
 					storyType: type,
 				};
 			}
@@ -268,7 +283,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		if (!storyData) return [];
 		return storyData
 			.flatMap(r => Object.values(r.char))
-			.filter(r => r.image)
+			.filter(r => r.image && !r.image.includes("_Cut"))
 			.map(r => ImageToFace(r.image))
 			.reduce((p, c) => p.some(r => r.uid === c.uid && r.skin === c.skin)
 				? p
@@ -410,9 +425,18 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 				data={ storyData as StoryData[] }
 				onDone={ () => setCursor(-1) }
 				onNext={ cursor => setCursor(cursor) }
+				onVoice={ voice => setVoicePreview(voice) }
 			/> }
 
 			{ tab === "transcription" && storyData && <>
+				{ voicePreview && <audio
+					class={ style.BackgroundAudio }
+					src={ getVoice(voicePreview) }
+					autoplay
+					volume={ 0.25 }
+					onEnded={ () => setVoicePreview("") }
+				/> }
+
 				{ storyData.map((d, i) => {
 					const speaker = Speaker(d);
 					const activates = Activates(d);
@@ -446,8 +470,24 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 							</div> }
 
 							<div class="col">
-								{ speaker && <div>
+								{ speaker && <div class={ d.voice && voicePreview == d.voice ? "text-primary" : "" }>
 									<strong class="mb-1">{ LText(speaker.name) }</strong>
+
+									{ d.voice && <a
+										class={ "d-inline-block ms-2" }
+										href="#"
+										style={ {
+											color: "inherit",
+											lineHeight: "1em",
+										} }
+										onClick={ e => {
+											e.preventDefault();
+											e.stopPropagation();
+											setVoicePreview(d.voice);
+										} }
+									>
+										<IconVolumeUpFill style={ { verticalAlign: "top" } } />
+									</a> }
 								</div> }
 
 								<div class={ style.TranscriptionText }>

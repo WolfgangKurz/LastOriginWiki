@@ -72,6 +72,7 @@ const UnitFace: FunctionalComponent<UnitFaceProps> = (props) => {
 			width={ n }
 			height={ n }
 			style={ Object.assign(s, props.style || {}) }
+			alt={ props.uid }
 			onError={ e => {
 				e.preventDefault();
 				if (!fallback) setFallback(true);
@@ -85,6 +86,7 @@ const UnitFace: FunctionalComponent<UnitFaceProps> = (props) => {
 		data-d={ JSON.stringify(props) }
 		src={ path }
 		style={ props.style }
+		alt={ props.uid }
 		onError={ e => {
 			e.preventDefault();
 			if (!fallback) setFallback(true);

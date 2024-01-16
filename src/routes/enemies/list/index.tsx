@@ -75,7 +75,8 @@ const EnemiesList: FunctionalComponent<EnemiesListProps> = (props) => {
 						.map(x => typeof x === "object" ? x.initial || "" : x)
 						.join("");
 
-					if (!(new RegExp(Store.Enemies.SearchText.value, "i").test(name) ||
+					if (!(new RegExp(Store.Enemies.SearchText.value, "i").test(x.id) ||
+						new RegExp(Store.Enemies.SearchText.value, "i").test(name) ||
 						new RegExp(Store.Enemies.SearchText.value, "i").test(firstName))) return false;
 				}
 				return true;

@@ -331,7 +331,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 						</div>
 					</div>
 					<hr class="mx-1 mt-2 mb-1" />
-					<BuffList list={ [x.effect] } level={ x.lv } />
+					<BuffList uid={ `EW_Suitability_${mid}_${sid}_${difficulty}` } list={ [x.effect] } level={ x.lv } />
 				</div>
 			</div>) }
 		</>;

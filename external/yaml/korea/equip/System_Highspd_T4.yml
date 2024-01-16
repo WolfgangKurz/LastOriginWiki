@@ -45,12 +45,17 @@ upgrade:
           count: 20
         - item: RobotParts_HDCalculationControl
           count: 10
-  upgrade: null
+  upgrade:
+    to: System_Highspd_T5
+    cost:
+      - item: Consumable_EWMPMetal
+        count: 1500
 limit: null
 source:
-  - - 4-3Ex
-    - 5-7B
-    - 6-8Ex
+  - - 4:1:4-3Ex
+  - - 5:1:5-7B
+  - - 6:1:6-8Ex
+  - - 12:1:12-1Ex
   - - Ev:Ev1:Ev-2Ex
   - - Ev:Ev6:Ev2-1Ex
   - - Ev:Ev7:*Ev1-5
@@ -61,251 +66,6 @@ source:
   - - Ev:Ev18:EV3-2Ex
   - - Exc:21:1
 stats:
-  - - key: Effect_BUFF_DummyChS_N_10
-      on: wave
-      if:
-        - false
-        - false
-      body:
-        - 0
-        - 1
-      class:
-        - 0
-        - 1
-        - 2
-      role:
-        - 0
-        - 1
-        - 2
-      target: 0
-      buffs:
-        - icon: BuffIcon_ATK_UP
-          desc:
-            desc: Effect_BUFF_DummyChS_N_10_1
-            type: 1
-            value: "0.095000"
-            level: "0"
-          attr: 3
-          erase: {}
-          value:
-            isBuff: true
-            type: 1
-            attack:
-              base: 9.5%
-              per: 0%
-          overlap: 4
-        - icon: BuffIcon_RANGE_DOWN
-          desc:
-            desc: Effect_BUFF_DummyChS_N_10_2
-            type: 0
-            value: "-1"
-            level: "0"
-          attr: 3
-          erase: {}
-          value:
-            isBuff: true
-            type: 55
-            range:
-              base: -1
-              per: 0
-          overlap: 4
-      maxStack: 0
-  - - key: Effect_BUFF_DummyChS_N_11
-      on: wave
-      if:
-        - false
-        - false
-      body:
-        - 0
-        - 1
-      class:
-        - 0
-        - 1
-        - 2
-      role:
-        - 0
-        - 1
-        - 2
-      target: 0
-      buffs:
-        - icon: BuffIcon_ATK_UP
-          desc:
-            desc: Effect_BUFF_DummyChS_N_11_1
-            type: 1
-            value: "0.100000"
-            level: "0"
-          attr: 3
-          erase: {}
-          value:
-            isBuff: true
-            type: 1
-            attack:
-              base: 10%
-              per: 0%
-          overlap: 4
-        - icon: BuffIcon_RANGE_DOWN
-          desc:
-            desc: Effect_BUFF_DummyChS_N_11_2
-            type: 0
-            value: "-1"
-            level: "0"
-          attr: 3
-          erase: {}
-          value:
-            isBuff: true
-            type: 55
-            range:
-              base: -1
-              per: 0
-          overlap: 4
-      maxStack: 0
-  - - key: Effect_BUFF_DummyChS_N_12
-      on: wave
-      if:
-        - false
-        - false
-      body:
-        - 0
-        - 1
-      class:
-        - 0
-        - 1
-        - 2
-      role:
-        - 0
-        - 1
-        - 2
-      target: 0
-      buffs:
-        - icon: BuffIcon_ATK_UP
-          desc:
-            desc: Effect_BUFF_DummyChS_N_12_1
-            type: 1
-            value: "0.105000"
-            level: "0"
-          attr: 3
-          erase: {}
-          value:
-            isBuff: true
-            type: 1
-            attack:
-              base: 10.5%
-              per: 0%
-          overlap: 4
-        - icon: BuffIcon_RANGE_DOWN
-          desc:
-            desc: Effect_BUFF_DummyChS_N_12_2
-            type: 0
-            value: "-1"
-            level: "0"
-          attr: 3
-          erase: {}
-          value:
-            isBuff: true
-            type: 55
-            range:
-              base: -1
-              per: 0
-          overlap: 4
-      maxStack: 0
-  - - key: Effect_BUFF_DummyChS_N_13
-      on: wave
-      if:
-        - false
-        - false
-      body:
-        - 0
-        - 1
-      class:
-        - 0
-        - 1
-        - 2
-      role:
-        - 0
-        - 1
-        - 2
-      target: 0
-      buffs:
-        - icon: BuffIcon_ATK_UP
-          desc:
-            desc: Effect_BUFF_DummyChS_N_13_1
-            type: 1
-            value: "0.110000"
-            level: "0"
-          attr: 3
-          erase: {}
-          value:
-            isBuff: true
-            type: 1
-            attack:
-              base: 11%
-              per: 0%
-          overlap: 4
-        - icon: BuffIcon_RANGE_DOWN
-          desc:
-            desc: Effect_BUFF_DummyChS_N_13_2
-            type: 0
-            value: "-1"
-            level: "0"
-          attr: 3
-          erase: {}
-          value:
-            isBuff: true
-            type: 55
-            range:
-              base: -1
-              per: 0
-          overlap: 4
-      maxStack: 0
-  - - key: Effect_BUFF_DummyChS_N_14
-      on: wave
-      if:
-        - false
-        - false
-      body:
-        - 0
-        - 1
-      class:
-        - 0
-        - 1
-        - 2
-      role:
-        - 0
-        - 1
-        - 2
-      target: 0
-      buffs:
-        - icon: BuffIcon_ATK_UP
-          desc:
-            desc: Effect_BUFF_DummyChS_N_14_1
-            type: 1
-            value: "0.115000"
-            level: "0"
-          attr: 3
-          erase: {}
-          value:
-            isBuff: true
-            type: 1
-            attack:
-              base: 11.5%
-              per: 0%
-          overlap: 4
-        - icon: BuffIcon_RANGE_DOWN
-          desc:
-            desc: Effect_BUFF_DummyChS_N_14_2
-            type: 0
-            value: "-1"
-            level: "0"
-          attr: 3
-          erase: {}
-          value:
-            isBuff: true
-            type: 55
-            range:
-              base: -1
-              per: 0
-          overlap: 4
-      maxStack: 0
   - - key: Effect_BUFF_DummyChS_N_15
       on: wave
       if:
@@ -328,7 +88,7 @@ stats:
           desc:
             desc: Effect_BUFF_DummyChS_N_15_1
             type: 1
-            value: "0.120000"
+            value: "0.150000"
             level: "0"
           attr: 3
           erase: {}
@@ -336,7 +96,7 @@ stats:
             isBuff: true
             type: 1
             attack:
-              base: 12%
+              base: 15%
               per: 0%
           overlap: 4
         - icon: BuffIcon_RANGE_DOWN
@@ -377,7 +137,7 @@ stats:
           desc:
             desc: Effect_BUFF_DummyChS_N_16_1
             type: 1
-            value: "0.125000"
+            value: "0.160000"
             level: "0"
           attr: 3
           erase: {}
@@ -385,7 +145,7 @@ stats:
             isBuff: true
             type: 1
             attack:
-              base: 12.5%
+              base: 16%
               per: 0%
           overlap: 4
         - icon: BuffIcon_RANGE_DOWN
@@ -426,7 +186,7 @@ stats:
           desc:
             desc: Effect_BUFF_DummyChS_N_17_1
             type: 1
-            value: "0.130000"
+            value: "0.170000"
             level: "0"
           attr: 3
           erase: {}
@@ -434,7 +194,7 @@ stats:
             isBuff: true
             type: 1
             attack:
-              base: 13%
+              base: 17%
               per: 0%
           overlap: 4
         - icon: BuffIcon_RANGE_DOWN
@@ -475,7 +235,7 @@ stats:
           desc:
             desc: Effect_BUFF_DummyChS_N_18_1
             type: 1
-            value: "0.135000"
+            value: "0.180000"
             level: "0"
           attr: 3
           erase: {}
@@ -483,7 +243,7 @@ stats:
             isBuff: true
             type: 1
             attack:
-              base: 13.5%
+              base: 18%
               per: 0%
           overlap: 4
         - icon: BuffIcon_RANGE_DOWN
@@ -524,7 +284,7 @@ stats:
           desc:
             desc: Effect_BUFF_DummyChS_N_19_1
             type: 1
-            value: "0.140000"
+            value: "0.190000"
             level: "0"
           attr: 3
           erase: {}
@@ -532,7 +292,7 @@ stats:
             isBuff: true
             type: 1
             attack:
-              base: 14%
+              base: 19%
               per: 0%
           overlap: 4
         - icon: BuffIcon_RANGE_DOWN
@@ -573,7 +333,7 @@ stats:
           desc:
             desc: Effect_BUFF_DummyChS_N_20_1
             type: 1
-            value: "0.150000"
+            value: "0.200000"
             level: "0"
           attr: 3
           erase: {}
@@ -581,12 +341,257 @@ stats:
             isBuff: true
             type: 1
             attack:
-              base: 15%
+              base: 20%
               per: 0%
           overlap: 4
         - icon: BuffIcon_RANGE_DOWN
           desc:
             desc: Effect_BUFF_DummyChS_N_20_2
+            type: 0
+            value: "-1"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 55
+            range:
+              base: -1
+              per: 0
+          overlap: 4
+      maxStack: 0
+  - - key: Effect_BUFF_DummyChS_N_21
+      on: wave
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_DummyChS_N_21_1
+            type: 1
+            value: "0.210000"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 21%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_RANGE_DOWN
+          desc:
+            desc: Effect_BUFF_DummyChS_N_21_2
+            type: 0
+            value: "-1"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 55
+            range:
+              base: -1
+              per: 0
+          overlap: 4
+      maxStack: 0
+  - - key: Effect_BUFF_DummyChS_N_22
+      on: wave
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_DummyChS_N_22_1
+            type: 1
+            value: "0.220000"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 22%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_RANGE_DOWN
+          desc:
+            desc: Effect_BUFF_DummyChS_N_22_2
+            type: 0
+            value: "-1"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 55
+            range:
+              base: -1
+              per: 0
+          overlap: 4
+      maxStack: 0
+  - - key: Effect_BUFF_DummyChS_N_23
+      on: wave
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_DummyChS_N_23_1
+            type: 1
+            value: "0.230000"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 23%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_RANGE_DOWN
+          desc:
+            desc: Effect_BUFF_DummyChS_N_23_2
+            type: 0
+            value: "-1"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 55
+            range:
+              base: -1
+              per: 0
+          overlap: 4
+      maxStack: 0
+  - - key: Effect_BUFF_DummyChS_N_24
+      on: wave
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_DummyChS_N_24_1
+            type: 1
+            value: "0.240000"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 24%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_RANGE_DOWN
+          desc:
+            desc: Effect_BUFF_DummyChS_N_24_2
+            type: 0
+            value: "-1"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 55
+            range:
+              base: -1
+              per: 0
+          overlap: 4
+      maxStack: 0
+  - - key: Effect_BUFF_DummyChS_N_25
+      on: wave
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ATK_UP
+          desc:
+            desc: Effect_BUFF_DummyChS_N_25_1
+            type: 1
+            value: "0.250000"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 1
+            attack:
+              base: 25%
+              per: 0%
+          overlap: 4
+        - icon: BuffIcon_RANGE_DOWN
+          desc:
+            desc: Effect_BUFF_DummyChS_N_25_2
             type: 0
             value: "-1"
             level: "0"

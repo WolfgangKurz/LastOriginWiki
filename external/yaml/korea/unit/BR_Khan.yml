@@ -442,7 +442,10 @@ country: MN
 age: "27"
 secretRoomType: Adult
 marriageVoice: true
-introVoice: []
+introVoice:
+  - jp
+  - jpdmm
+  - ko
 favor:
   present: 1
   clear: 1.5
@@ -492,14 +495,16 @@ cv:
   "1": {}
   "2": {}
   "3": {}
+  "4": {}
   "":
     ko: ""
     jp: 田中あいみ
     jpdmm: 田中あいみ
   M: {}
 source:
-  - - "*10-7B"
-    - 5-4Ex
+  - - 5:1:5-4Ex
+  - - 10:1:*10-7B
+  - - 12:1:12-2Ex
   - - Ev:Ev1:Ev-4B
   - - Ev:Ev2:Ev2-5B
   - - Ev:Ev5:*Ev-8
@@ -579,10 +584,10 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_1_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -591,13 +596,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_1_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -617,20 +680,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -651,8 +751,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -665,7 +765,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 1.38
           type: 0
           range: 3
@@ -712,10 +813,10 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_1_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -724,13 +825,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_1_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -750,20 +909,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -784,8 +980,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -798,7 +994,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 1.49
           type: 0
           range: 3
@@ -845,10 +1042,10 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_1_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -857,13 +1054,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_1_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -883,20 +1138,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -917,8 +1209,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -931,7 +1223,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 1.6
           type: 0
           range: 3
@@ -978,10 +1271,10 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_1_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -990,13 +1283,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_1_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -1016,20 +1367,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -1050,8 +1438,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -1064,7 +1452,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 1.71
           type: 0
           range: 3
@@ -1111,10 +1500,10 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_1_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -1123,13 +1512,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_1_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -1149,20 +1596,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -1183,8 +1667,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -1197,7 +1681,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 1.82
           type: 0
           range: 3
@@ -1244,10 +1729,10 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_1_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -1256,13 +1741,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_1_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -1282,20 +1825,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -1316,8 +1896,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -1330,7 +1910,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 1.93
           type: 0
           range: 3
@@ -1377,10 +1958,10 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_1_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -1389,13 +1970,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_1_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -1415,20 +2054,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -1449,8 +2125,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -1463,7 +2139,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 2.04
           type: 0
           range: 3
@@ -1510,10 +2187,10 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_1_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -1522,13 +2199,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_1_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -1548,20 +2283,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -1582,8 +2354,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -1596,7 +2368,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 2.15
           type: 0
           range: 3
@@ -1643,10 +2416,10 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_1_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -1655,13 +2428,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_1_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -1681,20 +2512,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -1715,8 +2583,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -1729,7 +2597,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 2.26
           type: 0
           range: 3
@@ -1776,10 +2645,10 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_1_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -1788,13 +2657,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_1_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -1814,20 +2741,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -1848,8 +2812,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -1862,7 +2826,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -1885,28 +2850,55 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
-          - icon: BuffIcon_TOGETHER_ATTACK
+          - icon: BuffIcon_MARKING
             desc:
               desc: Effect_BR_Khan_N_1_2
-              type: 0
+              type: 1
               value: "0"
               level: "0"
             base: 0
             per: 0
             chance: 0
+          - icon: BuffIcon_VULNERABLE
+            desc:
+              desc: Effect_BR_Khan_N_1_3
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_PhyATK_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_510_1
+              type: 1
+              value: "0.200000"
+              level: "0"
+            base: 0.2
+            per: 0
+            chance: 1
           - icon: BuffIcon_MARKING
             desc:
-              desc: Effect_BR_Khan_N_18_1
-              type: 0
+              desc: Effect_BR_Khan_N_11_1
+              type: 1
               value: "0"
               level: "0"
             base: 0
             per: 0
             chance: 1
+          - icon: BuffIcon_VULNERABLE
+            desc:
+              desc: Effect_BR_Khan_N_12_1
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 1
           - icon: BuffIcon_TOGETHER_ATTACK
             desc:
-              desc: Effect_BR_Khan_N_111_1
-              type: 0
+              desc: Effect_BR_QuickCamel_N_410_1
+              type: 1
               value: Char_BR_QuickCamel_N
               level: "0"
             value: Char_BR_QuickCamel_N
@@ -1976,10 +2968,10 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_2_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -1988,13 +2980,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_2_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -2014,20 +3064,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_222
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -2048,8 +3135,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -2062,7 +3149,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 2.615
           type: 0
           range: 3
@@ -2109,10 +3197,10 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_2_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -2121,13 +3209,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_2_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -2147,20 +3293,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_222
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -2181,8 +3364,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -2195,7 +3378,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 2.83
           type: 0
           range: 3
@@ -2242,10 +3426,10 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_2_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -2254,13 +3438,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_2_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -2280,20 +3522,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_222
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -2314,8 +3593,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -2328,7 +3607,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 3.045
           type: 0
           range: 3
@@ -2375,10 +3655,10 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_2_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -2387,13 +3667,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_2_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -2413,20 +3751,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_222
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -2447,8 +3822,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -2461,7 +3836,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 3.26
           type: 0
           range: 3
@@ -2508,10 +3884,10 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_2_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -2520,13 +3896,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_2_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -2546,20 +3980,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_222
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -2580,8 +4051,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -2594,7 +4065,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 3.475
           type: 0
           range: 3
@@ -2641,10 +4113,10 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_2_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -2653,13 +4125,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_2_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -2679,20 +4209,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_222
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -2713,8 +4280,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -2727,7 +4294,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 3.69
           type: 0
           range: 3
@@ -2774,10 +4342,10 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_2_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -2786,13 +4354,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_2_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -2812,20 +4438,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_222
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -2846,8 +4509,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -2860,7 +4523,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 3.905
           type: 0
           range: 3
@@ -2907,10 +4571,10 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_2_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -2919,13 +4583,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_2_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -2945,20 +4667,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_222
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -2979,8 +4738,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -2993,7 +4752,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 4.12
           type: 0
           range: 3
@@ -3040,10 +4800,10 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_2_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -3052,13 +4812,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_2_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -3078,20 +4896,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_222
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -3112,8 +4967,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -3126,7 +4981,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
         - rate: 4.335
           type: 0
           range: 3
@@ -3173,10 +5029,10 @@ skills:
                       base: 40%
                       per: 2%
                   overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_BR_Khan_N_2_2
-                    type: 0
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 3
@@ -3185,13 +5041,71 @@ skills:
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_2_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_18
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_11
               on: attack_success
               if:
                 - false
@@ -3211,20 +5125,57 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Khan_N_18_1
-                    type: 0
+                    desc: Effect_BR_Khan_N_11_1
+                    type: 1
                     value: "0"
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 2
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 87
                     attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_12
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_BR_Khan_N_12_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 1
-            - key: Effect_BR_Khan_N_222
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -3245,8 +5196,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_Khan_N_222_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -3259,7 +5210,8 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -3282,28 +5234,55 @@ skills:
             base: 0.4
             per: 0.02
             chance: 1
-          - icon: BuffIcon_TOGETHER_ATTACK
+          - icon: BuffIcon_MARKING
             desc:
               desc: Effect_BR_Khan_N_2_2
-              type: 0
+              type: 1
               value: "0"
               level: "0"
             base: 0
             per: 0
             chance: 0
+          - icon: BuffIcon_VULNERABLE
+            desc:
+              desc: Effect_BR_Khan_N_2_3
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_PhyATK_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_510_1
+              type: 1
+              value: "0.200000"
+              level: "0"
+            base: 0.2
+            per: 0
+            chance: 1
           - icon: BuffIcon_MARKING
             desc:
-              desc: Effect_BR_Khan_N_18_1
-              type: 0
+              desc: Effect_BR_Khan_N_11_1
+              type: 1
               value: "0"
               level: "0"
             base: 0
             per: 0
             chance: 1
+          - icon: BuffIcon_VULNERABLE
+            desc:
+              desc: Effect_BR_Khan_N_12_1
+              type: 1
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 1
           - icon: BuffIcon_TOGETHER_ATTACK
             desc:
-              desc: Effect_BR_Khan_N_222_1
-              type: 0
+              desc: Effect_BR_QuickCamel_N_410_1
+              type: 1
               value: Char_BR_QuickCamel_N
               level: "0"
             value: Char_BR_QuickCamel_N
@@ -3313,7 +5292,7 @@ skills:
     icon: P.Command
     target: team
     delayed: false
-    target_ground: false
+    target_ground: true
     leastGrade: 3
     buffs:
       index:
@@ -3372,59 +5351,60 @@ skills:
                       base: 1
                       per: 0.05
                   overlap: 4
-                - icon: BuffIcon_ACCURACY_UP
+                - icon: BuffIcon_ATK_UP
                   desc:
                     desc: Effect_BR_Khan_N_3_2
                     type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 7
-                    accuracy:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 4
-                - icon: BuffIcon_CRITICAL_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_3_3
-                    type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 9
-                    critical:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_3_4
-                    type: 1
                     value: "0.150000"
-                    level: "0.007500"
+                    level: "0.010000"
                   attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
                     chance: 0%
                     type: 1
                     attack:
                       base: 15%
-                      per: 0.75%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_3_3
+                    type: 1
+                    value: "0.300000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 7
+                    accuracy:
+                      base: 30%
+                      per: 2%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_3_4
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 9
+                    critical:
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_11
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_31
               on: wave
               if:
                 - pos: 0
@@ -3443,7 +5423,7 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_BR_Khan_N_11_1
+                    desc: Effect_BR_Khan_N_31_1
                     type: 0
                     value: "0.500000"
                     level: "0.025000"
@@ -3458,56 +5438,8 @@ skills:
                       per: 0.025
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_14
-              on: round
-              if:
-                - pos: 0
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-              role:
-                - 0
-                - 1
-                - 2
-              target: 2
-              buffs:
-                - icon: BuffIcon_ACCURACY_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_14_1
-                    type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 7
-                    accuracy:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 4
-                - icon: BuffIcon_CRITICAL_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_14_2
-                    type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_Khan_N_15
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_32
               on: wave
               if:
                 - pos: 0
@@ -3527,7 +5459,7 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_BR_Khan_N_15_1
+                    desc: Effect_BR_Khan_N_32_1
                     type: 0
                     value: "1"
                     level: "0.050000"
@@ -3542,10 +5474,116 @@ skills:
                       per: 0.05
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_16
-              on: round
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_33
+              on: wave
               if:
                 - pos: 0
+                - target:
+                    - Char_BR_TalonFeather_N
+                    - Char_BR_Salamander_N
+                    - Char_BR_Scarabya_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_33_1
+                    type: 0
+                    value: "0.500000"
+                    level: "0.025000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 0.5
+                      per: 0.025
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_34
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_34_1
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_34_2
+                    type: 1
+                    value: "0.300000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 30%
+                      per: 2%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_34_3
+                    type: 1
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_35
+              on: round
+              if:
+                - false
                 - false
               body:
                 - 0
@@ -3559,12 +5597,28 @@ skills:
                 - 2
               target: 2
               buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_35_1
+                    type: 1
+                    value: "0.075000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 7.5%
+                      per: 0.5%
+                  overlap: 4
                 - icon: BuffIcon_ACCURACY_UP
                   desc:
-                    desc: Effect_BR_Khan_N_16_1
+                    desc: Effect_BR_Khan_N_35_2
                     type: 1
                     value: "0.150000"
-                    level: "0.007500"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -3573,14 +5627,14 @@ skills:
                     type: 7
                     accuracy:
                       base: 15%
-                      per: 0.75%
+                      per: 1%
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_UP
                   desc:
-                    desc: Effect_BR_Khan_N_16_2
+                    desc: Effect_BR_Khan_N_35_3
                     type: 1
                     value: "0.050000"
-                    level: "0.002500"
+                    level: "0.005000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -3589,20 +5643,17 @@ skills:
                     type: 9
                     critical:
                       base: 5%
-                      per: 0.25%
+                      per: 0.5%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_Khan_N_17
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_36
               on: round
               if:
                 - target:
-                    - Char_BR_QuickCamel_N
-                    - Char_BR_WarWolf_N
                     - Char_BR_TalonFeather_N
                     - Char_BR_Salamander_N
-                    - Char_BR_Hyena_N
                     - Char_BR_Scarabya_N
-                    - Char_BR_Kheshig_N
                 - false
               body:
                 - 0
@@ -3619,10 +5670,10 @@ skills:
               buffs:
                 - icon: BuffIcon_ATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_17_1
+                    desc: Effect_BR_Khan_N_36_1
                     type: 1
-                    value: "0.150000"
-                    level: "0.007500"
+                    value: "0.075000"
+                    level: "0.005000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -3630,51 +5681,43 @@ skills:
                     isBuff: true
                     type: 1
                     attack:
-                      base: 15%
-                      per: 0.75%
+                      base: 7.5%
+                      per: 0.5%
                   overlap: 4
-              maxStack: 0
-            - key: Effect_BR_Khan_N_31
-              on: wave
-              if:
-                - target:
-                    - Char_BR_QuickCamel_N
-                    - Char_BR_WarWolf_N
-                    - Char_BR_TalonFeather_N
-                    - Char_BR_Salamander_N
-                    - Char_BR_Hyena_N
-                    - Char_BR_Khan_N
-                    - Char_BR_Kheshig_N
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 2
-              buffs:
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_ACCURACY_UP
                   desc:
-                    desc: Effect_BR_Khan_N_31_1
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase: {}
+                    desc: Effect_BR_Khan_N_36_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
                   value:
                     isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_36_3
                     type: 1
-                    attack:
-                      base: 0%
-                      per: 0%
+                    value: "0.050000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 5%
+                      per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -3697,111 +5740,147 @@ skills:
             base: 1
             per: 0.05
             chance: 1
-          - icon: BuffIcon_ACCURACY_UP
+          - icon: BuffIcon_ATK_UP
             desc:
               desc: Effect_BR_Khan_N_3_2
               type: 1
-              value: "0.300000"
-              level: "0.015000"
-            base: 0.3
-            per: 0.015
+              value: "0.150000"
+              level: "0.010000"
+            base: 0.15
+            per: 0.01
             chance: 0
-          - icon: BuffIcon_CRITICAL_UP
+          - icon: BuffIcon_ACCURACY_UP
             desc:
               desc: Effect_BR_Khan_N_3_3
               type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
+              value: "0.300000"
+              level: "0.020000"
+            base: 0.3
+            per: 0.02
             chance: 0
-          - icon: BuffIcon_ATK_UP
+          - icon: BuffIcon_CRITICAL_UP
             desc:
               desc: Effect_BR_Khan_N_3_4
               type: 1
-              value: "0.150000"
-              level: "0.007500"
-            base: 0.15
-            per: 0.0075
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
             chance: 0
           - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_Khan_N_11_1
+              desc: Effect_BR_Khan_N_31_1
               type: 0
               value: "0.500000"
               level: "0.025000"
             base: 0.5
             per: 0.025
             chance: 1
-          - icon: BuffIcon_ACCURACY_UP
-            desc:
-              desc: Effect_BR_Khan_N_14_1
-              type: 1
-              value: "0.300000"
-              level: "0.015000"
-            base: 0.3
-            per: 0.015
-            chance: 1
-          - icon: BuffIcon_CRITICAL_UP
-            desc:
-              desc: Effect_BR_Khan_N_14_2
-              type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
-            chance: 1
           - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_Khan_N_15_1
+              desc: Effect_BR_Khan_N_32_1
               type: 0
               value: "1"
               level: "0.050000"
             base: 1
             per: 0.05
             chance: 1
-          - icon: BuffIcon_ACCURACY_UP
+          - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_Khan_N_16_1
+              desc: Effect_BR_Khan_N_33_1
+              type: 0
+              value: "0.500000"
+              level: "0.025000"
+            base: 0.5
+            per: 0.025
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_Khan_N_34_1
               type: 1
               value: "0.150000"
-              level: "0.007500"
+              level: "0.010000"
             base: 0.15
-            per: 0.0075
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_Khan_N_34_2
+              type: 1
+              value: "0.300000"
+              level: "0.020000"
+            base: 0.3
+            per: 0.02
             chance: 1
           - icon: BuffIcon_CRITICAL_UP
             desc:
-              desc: Effect_BR_Khan_N_16_2
+              desc: Effect_BR_Khan_N_34_3
               type: 1
-              value: "0.050000"
-              level: "0.002500"
-            base: 0.05
-            per: 0.0025
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
             chance: 1
           - icon: BuffIcon_ATK_UP
             desc:
-              desc: Effect_BR_Khan_N_17_1
+              desc: Effect_BR_Khan_N_35_1
+              type: 1
+              value: "0.075000"
+              level: "0.005000"
+            base: 0.075
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_Khan_N_35_2
               type: 1
               value: "0.150000"
-              level: "0.007500"
+              level: "0.010000"
             base: 0.15
-            per: 0.0075
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_Khan_N_35_3
+              type: 1
+              value: "0.050000"
+              level: "0.005000"
+            base: 0.05
+            per: 0.005
             chance: 1
           - icon: BuffIcon_ATK_UP
             desc:
-              desc: Effect_BR_Khan_N_31_1
-              type: 0
-              value: "0"
-              level: "0"
-            base: 0
-            per: 0
+              desc: Effect_BR_Khan_N_36_1
+              type: 1
+              value: "0.075000"
+              level: "0.005000"
+            base: 0.075
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_Khan_N_36_2
+              type: 1
+              value: "0.150000"
+              level: "0.010000"
+            base: 0.15
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_Khan_N_36_3
+              type: 1
+              value: "0.050000"
+              level: "0.005000"
+            base: 0.05
+            per: 0.005
             chance: 1
   "4":
     key: "4"
     icon: P.Scan
     target: team
     delayed: false
-    target_ground: false
+    target_ground: true
     leastGrade: 4
     buffs:
       index:
@@ -3820,7 +5899,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
+          grid: 1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -3846,25 +5925,9 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_DEF_PIERCE_UP
+                - icon: BuffIcon_SKILL_UP
                   desc:
                     desc: Effect_BR_Khan_N_4_1
-                    type: 1
-                    value: "0.300000"
-                    level: "0.040000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 58
-                    penetration:
-                      base: 30%
-                      per: 4%
-                  overlap: 4
-                - icon: BuffIcon_TROOPER_DMG_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_4_2
                     type: 1
                     value: "0.100000"
                     level: "0.005000"
@@ -3873,37 +5936,252 @@ skills:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 60
-                    damage_multiply:
-                      target: light
-                      value:
-                        base: 10%
-                        per: 0.5%
+                    type: 112
+                    value: skill_ratio
+                    by:
+                      base: 10%
+                      per: 0.5%
+                      type: down
+                      target: attacker
+                      by: evade
                   overlap: 4
-                - icon: BuffIcon_ARMORED_DMG_UP
+                - icon: BuffIcon_EVADE_UP
                   desc:
-                    desc: Effect_BR_Khan_N_4_3
+                    desc: Effect_BR_Khan_N_4_2
                     type: 1
-                    value: "0.150000"
-                    level: "0.007500"
+                    value: "1.500000"
+                    level: "0.150000"
                   attr: 0
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 61
-                    damage_multiply:
-                      target: heavy
-                      value:
-                        base: 15%
-                        per: 0.75%
+                    chance: 0%
+                    type: 11
+                    evade:
+                      base: 150%
+                      per: 15%
                   overlap: 4
+                - icon: BuffIcon_MARKING
+                  desc:
+                    desc: Effect_BR_Khan_N_4_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 87
+                    attack_target: true
+                  overlap: 1
                 - icon: BuffIcon_EVADE_UP
                   desc:
                     desc: Effect_BR_Khan_N_4_4
                     type: 1
-                    value: "0.350000"
-                    level: "0.050000"
+                    value: "2"
+                    level: "0.200000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 11
+                    evade:
+                      base: 200%
+                      per: 20%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_41
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_41_1
+                    type: 1
+                    value: "1.500000"
+                    level: "0.150000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: 150%
+                      per: 15%
+                  overlap: 4
+                - icon: BuffIcon_MARKING
+                  desc:
+                    desc: Effect_BR_Khan_N_41_2
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 87
+                    attack_target: true
+                  overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_42
+              on: round
+              if:
+                - target:
+                    - Char_BR_QuickCamel_N
+                    - Char_BR_WarWolf_N
+                    - Char_BR_Salamander_N
+                    - Char_BR_Hyena_N
+                    - Char_BR_Scarabya_N
+                    - Char_BR_Kheshig_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_42_1
+                    type: 1
+                    value: "2"
+                    level: "0.200000"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: evade
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: 200%
+                      per: 20%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_43
+              on: round
+              if:
+                - on:
+                    target: target
+                    select:
+                      - Effect_BUFF_Monitoring_N_1
+                      - Effect_BUFF_Monitoring_N_2
+                      - Effect_BUFF_Monitoring_N_3
+                      - Effect_BUFF_Monitoring_N_4
+                      - Effect_BUFF_Monitoring_N_5
+                      - Effect_BUFF_Monitoring_N_6
+                      - Effect_BUFF_Monitoring_N_7
+                      - Effect_BUFF_Monitoring_N_8
+                      - Effect_BUFF_Monitoring_N_9
+                      - Effect_BUFF_Monitoring_N_10
+                      - Effect_BUFF_Monitoring_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+                - target:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_43_1
+                    type: 1
+                    value: "2"
+                    level: "0.200000"
+                  attr: 0
+                  erase:
+                    count: 1
+                    trigger: evade
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: 200%
+                      per: 20%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 5
+            - key: Effect_BR_Khan_N_44
+              on: round
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_BUFF_Monitoring_N_1
+                      - Effect_BUFF_Monitoring_N_2
+                      - Effect_BUFF_Monitoring_N_3
+                      - Effect_BUFF_Monitoring_N_4
+                      - Effect_BUFF_Monitoring_N_5
+                      - Effect_BUFF_Monitoring_N_6
+                      - Effect_BUFF_Monitoring_N_7
+                      - Effect_BUFF_Monitoring_N_8
+                      - Effect_BUFF_Monitoring_N_9
+                      - Effect_BUFF_Monitoring_N_10
+                      - Effect_BUFF_Monitoring_N_11
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_44_1
+                    type: 1
+                    value: "2"
+                    level: "0.200000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -3911,25 +6189,11 @@ skills:
                     isBuff: true
                     type: 11
                     evade:
-                      base: 35%
-                      per: 5%
+                      base: 200%
+                      per: 20%
                   overlap: 4
-                - icon: BuffIcon_MARKING
-                  desc:
-                    desc: Effect_BR_Khan_N_4_5
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 87
-                    attack_target: true
-                  overlap: 4
-              maxStack: 0
+              maxStack: 1
+              overlapGroup: 5
     values:
       index:
         - 0
@@ -3943,51 +6207,87 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_DEF_PIERCE_UP
+        - - icon: BuffIcon_SKILL_UP
             desc:
               desc: Effect_BR_Khan_N_4_1
-              type: 1
-              value: "0.300000"
-              level: "0.040000"
-            base: 0.3
-            per: 0.04
-            chance: 1
-          - icon: BuffIcon_TROOPER_DMG_UP
-            desc:
-              desc: Effect_BR_Khan_N_4_2
               type: 1
               value: "0.100000"
               level: "0.005000"
             base: 0.1
             per: 0.005
             chance: 1
-          - icon: BuffIcon_ARMORED_DMG_UP
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_BR_Khan_N_4_2
+              type: 1
+              value: "1.500000"
+              level: "0.150000"
+            base: 1.5
+            per: 0.15
+            chance: 0
+          - icon: BuffIcon_MARKING
             desc:
               desc: Effect_BR_Khan_N_4_3
               type: 1
-              value: "0.150000"
-              level: "0.007500"
-            base: 0.15
-            per: 0.0075
-            chance: 1
-          - icon: BuffIcon_EVADE_UP
-            desc:
-              desc: Effect_BR_Khan_N_4_4
-              type: 1
-              value: "0.350000"
-              level: "0.050000"
-            base: 0.35
-            per: 0.05
-            chance: 1
-          - icon: BuffIcon_MARKING
-            desc:
-              desc: Effect_BR_Khan_N_4_5
-              type: 0
               value: "0"
               level: "0"
             base: 0
             per: 0
             chance: 0
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_BR_Khan_N_4_4
+              type: 1
+              value: "2"
+              level: "0.200000"
+            base: 2
+            per: 0.2
+            chance: 0
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_BR_Khan_N_41_1
+              type: 1
+              value: "1.500000"
+              level: "0.150000"
+            base: 1.5
+            per: 0.15
+            chance: 1
+          - icon: BuffIcon_MARKING
+            desc:
+              desc: Effect_BR_Khan_N_41_2
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_BR_Khan_N_42_1
+              type: 1
+              value: "2"
+              level: "0.200000"
+            base: 2
+            per: 0.2
+            chance: 1
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_BR_Khan_N_43_1
+              type: 1
+              value: "2"
+              level: "0.200000"
+            base: 2
+            per: 0.2
+            chance: 1
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_BR_Khan_N_44_1
+              type: 1
+              value: "2"
+              level: "0.200000"
+            base: 2
+            per: 0.2
+            chance: 1
   "5":
     key: "5"
     icon: P.SelfAtkBuff
@@ -4038,39 +6338,95 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
                     desc: Effect_BR_Khan_N_5_1
                     type: 1
-                    value: "0.080000"
-                    level: "0.004000"
+                    value: "0.300000"
+                    level: "0.040000"
                   attr: 0
-                  erase: {}
+                  erase:
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 1
-                    attack:
-                      base: 8%
-                      per: 0.4%
+                    type: 58
+                    penetration:
+                      base: 30%
+                      per: 4%
                   overlap: 4
-                - icon: BuffIcon_AP_UP
+                - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
                     desc: Effect_BR_Khan_N_5_2
                     type: 1
-                    value: "0.040000"
-                    level: "0.002000"
+                    value: "0.100000"
+                    level: "0.005000"
                   attr: 0
-                  erase: {}
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: 10%
+                        per: 0.5%
+                  overlap: 4
+                - icon: BuffIcon_ARMORED_DMG_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_5_3
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 61
+                    damage_multiply:
+                      target: heavy
+                      value:
+                        base: 15%
+                        per: 1%
+                  overlap: 4
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_5_4
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 1
+                    attack:
+                      base: 10%
+                      per: 0.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_5_5
+                    type: 1
+                    value: "0.020000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 3
                   value:
                     isBuff: true
                     chance: 0%
                     type: 13
                     turnSpeed:
-                      base: 4%
-                      per: 0.2%
+                      base: 2%
+                      per: 0.5%
                   overlap: 4
-              maxStack: 3
-            - key: Effect_BR_Khan_N_12
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_51
               on: round
               if:
                 - false
@@ -4088,23 +6444,41 @@ skills:
                 - 2
               target: 0
               buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_51_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 10%
+                      per: 0.5%
+                  overlap: 4
                 - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_BR_Khan_N_12_1
+                    desc: Effect_BR_Khan_N_51_2
                     type: 1
-                    value: "0.040000"
-                    level: "0.002000"
+                    value: "0.020000"
+                    level: "0.005000"
                   attr: 0
-                  erase: {}
+                  erase:
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 13
                     turnSpeed:
-                      base: 4%
-                      per: 0.2%
+                      base: 2%
+                      per: 0.5%
                   overlap: 4
-              maxStack: 3
-            - key: Effect_BR_Khan_N_13
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_52
               on: enemy_killed
               if:
                 - false
@@ -4124,10 +6498,10 @@ skills:
               buffs:
                 - icon: BuffIcon_ATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_13_1
+                    desc: Effect_BR_Khan_N_52_1
                     type: 1
-                    value: "0.080000"
-                    level: "0.004000"
+                    value: "0.100000"
+                    level: "0.005000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -4135,15 +6509,15 @@ skills:
                     isBuff: true
                     type: 1
                     attack:
-                      base: 8%
-                      per: 0.4%
+                      base: 10%
+                      per: 0.5%
                   overlap: 4
                 - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_BR_Khan_N_13_2
+                    desc: Effect_BR_Khan_N_52_2
                     type: 1
-                    value: "0.040000"
-                    level: "0.002000"
+                    value: "0.020000"
+                    level: "0.005000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -4151,10 +6525,77 @@ skills:
                     isBuff: true
                     type: 13
                     turnSpeed:
-                      base: 4%
-                      per: 0.2%
+                      base: 2%
+                      per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Khan_N_53
+              on: evade
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_AngelLegs_N_1
+                      - Effect_BUFF_AngelLegs_N_2
+                      - Effect_BUFF_AngelLegs_N_3
+                      - Effect_BUFF_AngelLegs_N_4
+                      - Effect_BUFF_AngelLegs_N_5
+                      - Effect_BUFF_AngelLegs_N_6
+                      - Effect_BUFF_AngelLegs_N_7
+                      - Effect_BUFF_AngelLegs_N_8
+                      - Effect_BUFF_AngelLegs_N_9
+                      - Effect_BUFF_AngelLegs_N_10
+                      - Effect_BUFF_AngelLegs_N_11
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_53_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 10%
+                      per: 0.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_Khan_N_53_2
+                    type: 1
+                    value: "0.020000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: 2%
+                      per: 0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -4168,50 +6609,104 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_ATK_UP
+        - - icon: BuffIcon_DEF_PIERCE_UP
             desc:
               desc: Effect_BR_Khan_N_5_1
               type: 1
-              value: "0.080000"
-              level: "0.004000"
-            base: 0.08
-            per: 0.004
+              value: "0.300000"
+              level: "0.040000"
+            base: 0.3
+            per: 0.04
             chance: 1
-          - icon: BuffIcon_AP_UP
+          - icon: BuffIcon_TROOPER_DMG_UP
             desc:
               desc: Effect_BR_Khan_N_5_2
               type: 1
-              value: "0.040000"
-              level: "0.002000"
-            base: 0.04
-            per: 0.002
-            chance: 0
-          - icon: BuffIcon_AP_UP
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_ARMORED_DMG_UP
             desc:
-              desc: Effect_BR_Khan_N_12_1
+              desc: Effect_BR_Khan_N_5_3
               type: 1
-              value: "0.040000"
-              level: "0.002000"
-            base: 0.04
-            per: 0.002
+              value: "0.150000"
+              level: "0.010000"
+            base: 0.15
+            per: 0.01
             chance: 1
           - icon: BuffIcon_ATK_UP
             desc:
-              desc: Effect_BR_Khan_N_13_1
+              desc: Effect_BR_Khan_N_5_4
               type: 1
-              value: "0.080000"
-              level: "0.004000"
-            base: 0.08
-            per: 0.004
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 0
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_Khan_N_5_5
+              type: 1
+              value: "0.020000"
+              level: "0.005000"
+            base: 0.02
+            per: 0.005
+            chance: 0
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_Khan_N_51_1
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
             chance: 1
           - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_Khan_N_13_2
+              desc: Effect_BR_Khan_N_51_2
               type: 1
-              value: "0.040000"
-              level: "0.002000"
-            base: 0.04
-            per: 0.002
+              value: "0.020000"
+              level: "0.005000"
+            base: 0.02
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_Khan_N_52_1
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_Khan_N_52_2
+              type: 1
+              value: "0.020000"
+              level: "0.005000"
+            base: 0.02
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_Khan_N_53_1
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_Khan_N_53_2
+              type: 1
+              value: "0.020000"
+              level: "0.005000"
+            base: 0.02
+            per: 0.005
             chance: 1
 dialogue:
   KR:
@@ -4381,6 +6876,68 @@ dialogue:
         어떤 게 마음에 드는지 골라주겠나?
         그대가 고르면… 그것을 입도록 하겠다.​
       MVP: 주, 주목받고 싶지 않다.
+    "4":
+      SquadJoin: 누구와 같은 반이지?
+      Leader: 내가 반장인가?
+      SortiePick: 청소 시간이로군. 하나도 남김 없이 쓸어버리겠다.
+      StageStart: 청소가 끝나면 카페 호라이즌에 모이도록.
+      Retreat: 종이 울렸군. 지각하기 전에 돌아가지.
+      SearchStart: 미화 활동이로군. 빼먹지는 않을 테니 걱정 말도록.
+      SearchEnd: 모두 수고했다. 쿠폰이 있으니까 카페 호라이즌으로.
+      BattleFocus: 불렀나, 선배?
+      ActionApprove: 알겠다, 선배.
+      SpSkill: 날 막겠다고?
+      Retire: 이미… 찍혔던 건가…
+      Repair: 보건실은… 낮잠 잘 때만 필요한데…
+      Reinforce: 추가 시험을 치를 필요는 없겠군.
+      ItemEquip: 가방에 잘 달아 놓겠다.
+      CoreLink: 나로는 부족한가, 선배?
+      PresentGet: 사진을… 찍어도 되겠나? 자랑하고 싶다.
+      Login: 날 너무 기다리게 하는군…  선배.
+      Idle_01_01: |-
+        내가 사령관을 선배라고 부를 지,
+        오빠라고 부를 지 부하들이
+        논쟁을 벌이더군. 결국엔 오빠라고 부르고
+        싶지만 주위 시선 때문에 
+        선배라고 부르는 캐릭터로… 합의하더군.
+      Idle_01_02: |-
+        지고지순, 소꿉친구, 외강내유, 포니테일,
+        문무겸비, 불량학생, 관심갈구, 반전매력...
+        탈론페더는 유능한 부관이지만… 
+        난 가끔 부관이 무슨 말을 하는지 모르겠다.
+      Idle_01_03: |-
+        버려진 고양이를 줍거나 그러지는 않지만…
+        버려질 녀석들을 주워다가
+        제구실하게 만든 일은 있지.
+      SPIdle_01_01: 나보다 성급하군… 선배.
+      Idle_02_01: |-
+        학교는 다녀본 적 없다.
+        하지만 부하들 중에 다른 의미의 '학교'를
+        다녀온 녀석들은 많다.
+        지금... 워울프도 간 상태지.
+      Idle_03_01: |-
+        선배… 오늘 방과 후에… 시간 괜찮나?
+        시간이 되면 단 둘이 카페 호라이즌에…
+        컬러풀 하트풀 베리베리 올베리 러블리
+        파르페… 먹으러 가지 않겠나?
+        고맙다…
+      Idle_04_01: |-
+        부끄럽지 않다고 말하면 거짓말이겠지.
+        하지만 부하들의 성의… 장난질에 가깝기는
+        하지만… 녀석들의 성의를 무시 못 하겠더군.
+        그리고… 무엇보다… 오빠가… 좋아하니까.
+      SPIdle_02_01: |-
+        이럴 때 탈론페더가 이 말을 하라고 하더군.
+        여기 등장하는 모든 인물은 20세 이상이다…
+        오빠… 그러니까 부디 마음껏…
+      Oath: 이런 모습이 되면 선배가 좋아할 거라고 부하들이 그러더군. 지금까지 반신반의했지만… 선배가 고백한 것을 보면 사실인가 보군. 하지만
+        선배가 원한다면 그 어떤 모습이든 보여주겠다. 사랑하는… 오, 오빠를 위해서라면.
+      OathIdle_01: |-
+        사령관, 당신, 그대, 선배, 자기, 오빠…
+        그대가 무슨 호칭을 좋아할 지 검증 중이다.
+        달링? 각하? 주군? 오라버니? 허니? ……아빠?
+        왜 여기에 반응하나?
+      MVP: 상장은 넣어두도록. 이미 많으니까.
     "":
       Join: 내 이름은 칸, 호드의 대장이지. 잘 부탁한다.
       SquadJoin: 좋아. 언제나 전투는 환영이지.
@@ -4541,23 +7098,46 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: |-
-        奇数ラウンド開始時、スコールの力が満ち足り自分は再攻撃効果を獲得します。
-        偶数ラウンド開始時、ハティの力が満ち足り自分は保護無視効果を獲得します。
-        敵撃破時、2ラウンドの間、スコールとハティの力が同時に発動します。
-        スコールとハティの力が同時に発動する時、アクティブスキルのダメージ量が増加します。
-      Idle_01_02: 反撃/バリア獲得。条件付き標的獲得/除去。
-      Idle_01_03: ラグナロク：攻撃力/スキル威力減少
-      SPIdle_01_01: 美味しい…：攻撃力{0}%
-      Idle_02_01: 効率的な変数遮断：クリティカル/効果耐性増加
-      Idle_03_01: フローズビトニル：ダメージ量{0}%
-      Idle_04_01: 忠実な番犬：{0}%の威力で反撃
-      SPIdle_02_01: マナガルム：保護無視有効化
-      Oath: |-
-        スコールとハティを交差させ指定範囲の対象に{0}の保護無視ダメージを与えます。
-        命中時、自分の<盈虧>効果によって3ラウンドの間、対象に追加効果を付与します。
-        スコール：攻撃力減少/ハティ：スキル威力減少(それぞれ最大3スタック)
-      OathIdle_01: 効率的な変数遮断：防御力{0}%
+      Idle_01_01: フェザーとキャメルが滅亡前の雑誌と下着を持ってきて……。つい好奇心に駆られ…着てみただけだ…
+      Idle_01_02: 念のために聞くが…ホードの誰かから私のところに行くように言われたのか？……答えないところを見るとそうみたいだな…ウェアウルフか？
+      Idle_01_03: そうだな…あ～……せっかく来たことだし…軽くお茶でもどうだ？先日スカラビアからもらった美味いお茶があるんだが……
+      SPIdle_01_01: ま、待て！それは…早すぎる…！
+      Idle_02_01: この枕はサラマンダーから貰ったものだ。意味は分からないが裏と表にYESと書いてある。ん？司令官はこれの意味を知ってるのか？
+      Idle_03_01: あっ…、そういえばハイエナとケシクからアロマキャンドルをもらった。 確かこの辺に……ん、ここにあったか。どんな香りか嗅いでみるか？
+      Idle_04_01: うぅっ！あ…いや…、何でもない。すまない。妙な気分で……その……少しでいい…そばにいてくれないか？もっとそばに…来てくれ。
+      SPIdle_02_01: …そ…そういうことをするために着たが……。その…今日はゆっくりと長く…あなたを愛したい。いいか…？
+      Oath: も、もちろん…こうなることを期待してこれを着た。だが、この格好でこういう状況になるとは思っていなかった…。い、嫌なわけないだろう…。嬉しいに決まってる！
+        そう…嬉しいんだ……。ふふ、恥ずかしさのあまり、慌ててしまった……。今言うべきことはただ一つ……私もあなたを愛してる。
+      OathIdle_01: 私が読んでいた雑誌だ。どれがいいか選んでくれ。あなたが選んでくれたものを…着ることにしよう。
+      MVP: ""
+    "4":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: 私の名前はカーン。ホードの隊長だ。よろしく頼む。
@@ -4783,6 +7363,35 @@ dialogue:
         I’ve been reading a magazine.
         Pick your favorite among these choices.
         If you choose, then wear that I shall.​
+      MVP: ""
+    "4":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: My name is Khan. I’m the leader of the Hordes I look forward to working
@@ -5037,6 +7646,35 @@ dialogue:
         你可以挑選一個喜歡的嗎？
         你挑選後…我就穿上它。​
       MVP: ""
+    "4":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: 我叫可汗，是部落的隊長。請多關照！
       SquadJoin: ""
@@ -5174,6 +7812,7 @@ skins:
         tbarId: 1
         voiceId: 1
         2dmodel_dam: 2DModel_BR_Khan_NS1_Dam
+        consumableKey: Skin_BR_Khan_1
     - sid: 2
       artist: Kakiman
       price: 182
@@ -5205,6 +7844,7 @@ skins:
         iconId: 2
         tbarId: 2
         voiceId: 2
+        consumableKey: Skin_BR_Khan_2
     - sid: 3
       artist: Kakiman
       price: 114
@@ -5237,3 +7877,37 @@ skins:
         tbarId: 3
         voiceId: 3
         2dmodel: 2DModel_BR_Khan_NS3
+        consumableKey: Skin_BR_Khan_3
+    - sid: 4
+      artist: MEL
+      price: 147
+      G: true
+      Spine: false
+      parts: 4
+      stage: false
+      subset:
+        - true
+        - false
+        - false
+        - true
+        - false
+        - false
+        - false
+        - false
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - School
+      facelist: []
+      releaseDate: 1701734400000
+      metadata:
+        imageId: 4
+        iconId: 4
+        tbarId: 4
+        voiceId: 4
+        2dmodel: 2DModel_BR_Khan_NS4
+        consumableKey: Skin_BR_Khan_4

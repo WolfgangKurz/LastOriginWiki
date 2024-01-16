@@ -45,7 +45,11 @@ upgrade:
           count: 30
         - item: RobotParts_SuperAlloyArmor
           count: 40
-  upgrade: null
+  upgrade:
+    to: Sub_NitroEx3000_T5
+    cost:
+      - item: Consumable_EWMPMetal
+        count: 1500
 limit: null
 source:
   - - Ev:Ev19:EV2-4B
@@ -67,7 +71,7 @@ stats:
         base: 0.1
         per: 0
     - key: Effect_BUFF_NitroEx3000_N_1
-      on: round
+      on: evade
       if:
         - false
         - false
@@ -76,14 +80,13 @@ stats:
       class:
         - 0
         - 1
-        - 2
       role:
         - 0
         - 1
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_ACCURACY_DOWN
+        - icon: BuffIcon_SKILL_DOWN
           desc:
             desc: Effect_BUFF_NitroEx3000_N_1_1
             type: 1
@@ -94,12 +97,12 @@ stats:
             rounds: 1
           value:
             isBuff: true
-            type: 7
-            accuracy:
+            type: 106
+            skill_ratio:
               base: -100%
               per: 0%
           overlap: 4
-      maxStack: 0
+      maxStack: 1
   - - type: 17
       resist:
         elem: ice
@@ -115,7 +118,7 @@ stats:
         base: 0.12
         per: 0
     - key: Effect_BUFF_NitroEx3000_N_2
-      on: round
+      on: evade
       if:
         - false
         - false
@@ -124,31 +127,29 @@ stats:
       class:
         - 0
         - 1
-        - 2
       role:
         - 0
         - 1
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_ACCURACY_DOWN
+        - icon: BuffIcon_SKILL_DOWN
           desc:
             desc: Effect_BUFF_NitroEx3000_N_2_1
             type: 1
-            value: "-1"
+            value: "-0.950000"
             level: "0"
           attr: 1
           erase:
             rounds: 1
           value:
             isBuff: true
-            chance: 90%
-            type: 7
-            accuracy:
-              base: -100%
+            type: 106
+            skill_ratio:
+              base: -95%
               per: 0%
           overlap: 4
-      maxStack: 0
+      maxStack: 1
   - - type: 17
       resist:
         elem: ice
@@ -164,7 +165,7 @@ stats:
         base: 0.14
         per: 0
     - key: Effect_BUFF_NitroEx3000_N_3
-      on: round
+      on: evade
       if:
         - false
         - false
@@ -173,31 +174,29 @@ stats:
       class:
         - 0
         - 1
-        - 2
       role:
         - 0
         - 1
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_ACCURACY_DOWN
+        - icon: BuffIcon_SKILL_DOWN
           desc:
             desc: Effect_BUFF_NitroEx3000_N_3_1
             type: 1
-            value: "-1"
+            value: "-0.900000"
             level: "0"
           attr: 1
           erase:
             rounds: 1
           value:
             isBuff: true
-            chance: 80%
-            type: 7
-            accuracy:
-              base: -100%
+            type: 106
+            skill_ratio:
+              base: -90%
               per: 0%
           overlap: 4
-      maxStack: 0
+      maxStack: 1
   - - type: 17
       resist:
         elem: ice
@@ -213,7 +212,7 @@ stats:
         base: 0.16
         per: 0
     - key: Effect_BUFF_NitroEx3000_N_4
-      on: round
+      on: evade
       if:
         - false
         - false
@@ -222,31 +221,29 @@ stats:
       class:
         - 0
         - 1
-        - 2
       role:
         - 0
         - 1
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_ACCURACY_DOWN
+        - icon: BuffIcon_SKILL_DOWN
           desc:
             desc: Effect_BUFF_NitroEx3000_N_4_1
             type: 1
-            value: "-1"
+            value: "-0.800000"
             level: "0"
           attr: 1
           erase:
             rounds: 1
           value:
             isBuff: true
-            chance: 70%
-            type: 7
-            accuracy:
-              base: -100%
+            type: 106
+            skill_ratio:
+              base: -80%
               per: 0%
           overlap: 4
-      maxStack: 0
+      maxStack: 1
   - - type: 17
       resist:
         elem: ice
@@ -262,7 +259,7 @@ stats:
         base: 0.18
         per: 0
     - key: Effect_BUFF_NitroEx3000_N_5
-      on: round
+      on: evade
       if:
         - false
         - false
@@ -271,31 +268,29 @@ stats:
       class:
         - 0
         - 1
-        - 2
       role:
         - 0
         - 1
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_ACCURACY_DOWN
+        - icon: BuffIcon_SKILL_DOWN
           desc:
             desc: Effect_BUFF_NitroEx3000_N_5_1
             type: 1
-            value: "-1"
+            value: "-0.700000"
             level: "0"
           attr: 1
           erase:
             rounds: 1
           value:
             isBuff: true
-            chance: 60%
-            type: 7
-            accuracy:
-              base: -100%
+            type: 106
+            skill_ratio:
+              base: -70%
               per: 0%
           overlap: 4
-      maxStack: 0
+      maxStack: 1
   - - type: 17
       resist:
         elem: ice
@@ -311,7 +306,7 @@ stats:
         base: 0.2
         per: 0
     - key: Effect_BUFF_NitroEx3000_N_6
-      on: round
+      on: evade
       if:
         - false
         - false
@@ -320,31 +315,29 @@ stats:
       class:
         - 0
         - 1
-        - 2
       role:
         - 0
         - 1
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_ACCURACY_DOWN
+        - icon: BuffIcon_SKILL_DOWN
           desc:
             desc: Effect_BUFF_NitroEx3000_N_6_1
             type: 1
-            value: "-1"
+            value: "-0.600000"
             level: "0"
           attr: 1
           erase:
             rounds: 1
           value:
             isBuff: true
-            chance: 50%
-            type: 7
-            accuracy:
-              base: -100%
+            type: 106
+            skill_ratio:
+              base: -60%
               per: 0%
           overlap: 4
-      maxStack: 0
+      maxStack: 1
   - - type: 17
       resist:
         elem: ice
@@ -360,7 +353,7 @@ stats:
         base: 0.22
         per: 0
     - key: Effect_BUFF_NitroEx3000_N_7
-      on: round
+      on: evade
       if:
         - false
         - false
@@ -369,31 +362,29 @@ stats:
       class:
         - 0
         - 1
-        - 2
       role:
         - 0
         - 1
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_ACCURACY_DOWN
+        - icon: BuffIcon_SKILL_DOWN
           desc:
             desc: Effect_BUFF_NitroEx3000_N_7_1
             type: 1
-            value: "-1"
+            value: "-0.500000"
             level: "0"
           attr: 1
           erase:
             rounds: 1
           value:
             isBuff: true
-            chance: 40%
-            type: 7
-            accuracy:
-              base: -100%
+            type: 106
+            skill_ratio:
+              base: -50%
               per: 0%
           overlap: 4
-      maxStack: 0
+      maxStack: 1
   - - type: 17
       resist:
         elem: ice
@@ -409,7 +400,7 @@ stats:
         base: 0.24
         per: 0
     - key: Effect_BUFF_NitroEx3000_N_8
-      on: round
+      on: evade
       if:
         - false
         - false
@@ -418,31 +409,29 @@ stats:
       class:
         - 0
         - 1
-        - 2
       role:
         - 0
         - 1
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_ACCURACY_DOWN
+        - icon: BuffIcon_SKILL_DOWN
           desc:
             desc: Effect_BUFF_NitroEx3000_N_8_1
             type: 1
-            value: "-1"
+            value: "-0.400000"
             level: "0"
           attr: 1
           erase:
             rounds: 1
           value:
             isBuff: true
-            chance: 30%
-            type: 7
-            accuracy:
-              base: -100%
+            type: 106
+            skill_ratio:
+              base: -40%
               per: 0%
           overlap: 4
-      maxStack: 0
+      maxStack: 1
   - - type: 17
       resist:
         elem: ice
@@ -458,7 +447,7 @@ stats:
         base: 0.26
         per: 0
     - key: Effect_BUFF_NitroEx3000_N_9
-      on: round
+      on: evade
       if:
         - false
         - false
@@ -467,31 +456,29 @@ stats:
       class:
         - 0
         - 1
-        - 2
       role:
         - 0
         - 1
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_ACCURACY_DOWN
+        - icon: BuffIcon_SKILL_DOWN
           desc:
             desc: Effect_BUFF_NitroEx3000_N_9_1
             type: 1
-            value: "-1"
+            value: "-0.300000"
             level: "0"
           attr: 1
           erase:
             rounds: 1
           value:
             isBuff: true
-            chance: 20%
-            type: 7
-            accuracy:
-              base: -100%
+            type: 106
+            skill_ratio:
+              base: -30%
               per: 0%
           overlap: 4
-      maxStack: 0
+      maxStack: 1
   - - type: 17
       resist:
         elem: ice
@@ -507,7 +494,7 @@ stats:
         base: 0.28
         per: 0
     - key: Effect_BUFF_NitroEx3000_N_10
-      on: round
+      on: evade
       if:
         - false
         - false
@@ -516,31 +503,29 @@ stats:
       class:
         - 0
         - 1
-        - 2
       role:
         - 0
         - 1
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_ACCURACY_DOWN
+        - icon: BuffIcon_SKILL_DOWN
           desc:
             desc: Effect_BUFF_NitroEx3000_N_10_1
             type: 1
-            value: "-1"
+            value: "-0.200000"
             level: "0"
           attr: 1
           erase:
             rounds: 1
           value:
             isBuff: true
-            chance: 10%
-            type: 7
-            accuracy:
-              base: -100%
+            type: 106
+            skill_ratio:
+              base: -20%
               per: 0%
           overlap: 4
-      maxStack: 0
+      maxStack: 1
   - - type: 17
       resist:
         elem: ice
@@ -556,7 +541,7 @@ stats:
         base: 0.3
         per: 0
     - key: Effect_BUFF_NitroEx3000_N_11
-      on: round
+      on: evade
       if:
         - false
         - false
@@ -565,28 +550,26 @@ stats:
       class:
         - 0
         - 1
-        - 2
       role:
         - 0
         - 1
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_ACCURACY_DOWN
+        - icon: BuffIcon_SKILL_DOWN
           desc:
             desc: Effect_BUFF_NitroEx3000_N_11_1
             type: 1
-            value: "-1"
+            value: "-0.100000"
             level: "0"
           attr: 1
           erase:
             rounds: 1
           value:
             isBuff: true
-            chance: 3%
-            type: 7
-            accuracy:
-              base: -100%
+            type: 106
+            skill_ratio:
+              base: -10%
               per: 0%
           overlap: 4
-      maxStack: 0
+      maxStack: 1

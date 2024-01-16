@@ -23,6 +23,8 @@ import { CurrentLocale } from "@/libs/Locale";
 import { BuildClass } from "@/libs/Class";
 import { AssetsRoot, ImageExtension, RarityDisplay } from "@/libs/Const";
 import { DecomposeHangulSyllable, FormatDate, FormatNumber, isActive } from "@/libs/Functions";
+import { ParseDescriptionText } from "@/libs/FunctionsX";
+import EntitySource from "@/libs/EntitySource";
 
 import { DBSourceConverter, GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
@@ -97,7 +99,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 
 	function convWeapon (inp: string): preact.ComponentChildren {
 		return inp.split(" / ")
-			.gap(<hr class="my-1 mx-2" />);
+			.gap(<div class={ style.GradientSeparator } />);
 	}
 
 	function convData (data: number[]): number[] {
@@ -338,7 +340,9 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 										image="UI_Icon_Consumable_GiftItem_Damage"
 										size="small"
 									/>
-									<Locale k="UNIT_VIEW_SECRETROOM_TYPE" />
+									<span class="d-inline-block">
+										<Locale k="UNIT_VIEW_SECRETROOM_TYPE" />
+									</span>
 								</th>
 								<td class={ BuildClass(
 									"font-exo2 align-middle",
@@ -357,7 +361,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 							</tr>
 							<tr>
 								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_WEIGHT" /></th>
-								<td class="font-exo2">{ unit.weight }</td>
+								<td class="font-exo2">{ ParseDescriptionText(unit.weight) }</td>
 							</tr>
 							<tr>
 								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_BATTLESTYLE" /></th>
@@ -555,127 +559,159 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 				<table class="table table-bordered table-fixed text-center table-unit-modal">
 					<thead class="thead-dark">
 						<tr>
-							<th><Locale k="UNIT_VIEW_DROPS" /></th>
+							<th>
+								<Locale k="UNIT_VIEW_DROPS" />
+
+								{ unit.craft
+									? <span class={ `badge bg-light text-bg-light mx-3 my-1 ${style.CreationBadge}` }>
+										{ unit.cost
+											? <div class={ style.CostInfo }>
+												<div class="d-block d-sm-inline-block">
+													<span class="pe-3 font-exo2">
+														<img class="res-icon" src={ `${AssetsRoot}/res-component.png` } />
+														{ FormatNumber(unit.cost.res[0]) }
+													</span>
+													<span class="pe-3 font-exo2">
+														<img class="res-icon" src={ `${AssetsRoot}/res-nutrition.png` } />
+														{ FormatNumber(unit.cost.res[1]) }
+													</span>
+													<span class="pe-sm-3 font-exo2">
+														<img class="res-icon" src={ `${AssetsRoot}/res-power.png` } />
+														{ FormatNumber(unit.cost.res[2]) }
+													</span>
+												</div>
+												<span>
+													<IconHourglassSplit class="me-1" />
+													<span class="font-exo2">{ CraftTime }</span>
+												</span>
+
+												{ unit.research && <span>
+													<PopupBase
+														display={ researchTreeDisplay.value }
+														size="lg"
+														footerVariant="dark"
+														footerText="white"
+														footerClass="justify-content-start"
+														header={ <div class="text-start">
+															<Locale k="UNIT_RESEARCH_TREE" />
+														</div> }
+														onHidden={ (): void => researchTreeDisplay.set(false) }
+													>
+														<div class="bg-dark">
+															<ResearchTree unit={ unit } />
+														</div>
+													</PopupBase>
+													<button
+														class="ms-3 btn btn-light btn-sm"
+														onClick={ (e) => {
+															e.preventDefault();
+															researchTreeDisplay.set(true);
+														} }
+													>
+														<Locale k="UNIT_RESEARCH_TREE" />
+													</button>
+												</span> }
+
+												<hr class="my-2" />
+
+												<div class="container">
+													<div class="row row-cols-auto">
+														{ unit.cost.aicore > 0
+															? <span class="badge bg-semilight text-dark me-1 mb-1">
+																<EquipIcon class="me-2 vertical-align-middle" image="UI_Icon_Consumable_AICore" size="24" />
+																<Locale k="CONSUMABLE_TestItem_4" />
+																&nbsp;x{ FormatNumber(unit.cost.aicore) }
+															</span>
+															: <></>
+														}
+														{ unit.cost.items.map(e => {
+															const item = ConsumableDB.find(c => c.key === e.item);
+															if (!item) return <>-</>;
+
+															return <span class="badge bg-semilight text-dark me-1 mb-1">
+																<EquipIcon class="me-2 vertical-align-middle" image={ item.icon } size="24" />
+																<Locale k={ `CONSUMABLE_${item.key}` } />
+																&nbsp;x{ FormatNumber(e.count) }
+															</span>;
+														}) }
+													</div>
+												</div>
+											</div>
+											: <h6 class="m-0 p-0">
+												<IconHammer />
+												<strong>
+													<span class="ps-1 pe-3">
+														<Locale k="UNIT_VIEW_DROPS_CREATIONTIME" />
+													</span>
+													<span class="font-exo2">{ CraftTime }</span>
+												</strong>
+											</h6>
+										}
+									</span>
+									: <></>
+								}
+							</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td class="px-0 py-1 drop-list">
-								{ unit.source.length === 0 && !unit.craft
+								{ unit.source.length === 0
 									? <div class="p-3">
 										<span class="text-secondary">
 											<Locale k="UNIT_VIEW_DROPS_EMPTY" />
 										</span>
 									</div>
 									: <>
-										{ unit.craft
-											? <span class={ `badge bg-dark mx-2 my-1 ${style.CreationBadge}` }>
-												{ unit.cost
-													? <div class={ style.CostInfo }>
-														<div class="d-block d-sm-inline-block">
-															<span class="pe-3 font-exo2">
-																<img class="res-icon" src={ `${AssetsRoot}/res-component.png` } />
-																{ FormatNumber(unit.cost.res[0]) }
-															</span>
-															<span class="pe-3 font-exo2">
-																<img class="res-icon" src={ `${AssetsRoot}/res-nutrition.png` } />
-																{ FormatNumber(unit.cost.res[1]) }
-															</span>
-															<span class="pe-sm-3 font-exo2">
-																<img class="res-icon" src={ `${AssetsRoot}/res-power.png` } />
-																{ FormatNumber(unit.cost.res[2]) }
-															</span>
-														</div>
-														<span>
-															<IconHourglassSplit class="me-1" />
-															<span class="font-exo2">{ CraftTime }</span>
-														</span>
-
-														{ unit.research && <span>
-															<PopupBase
-																display={ researchTreeDisplay.value }
-																size="lg"
-																footerVariant="dark"
-																footerText="white"
-																footerClass="justify-content-start"
-																header={ <div class="text-start">
-																	<Locale k="UNIT_RESEARCH_TREE" />
-																</div> }
-																onHidden={ (): void => researchTreeDisplay.set(false) }
-															>
-																<div class="bg-dark">
-																	<ResearchTree unit={ unit } />
-																</div>
-															</PopupBase>
-															<button
-																class="ms-3 btn btn-light btn-sm"
-																onClick={ (e) => {
-																	e.preventDefault();
-																	researchTreeDisplay.set(true);
-																} }
-															>
-																<Locale k="UNIT_RESEARCH_TREE" />
-															</button>
-														</span> }
-
-														<hr class="my-2" />
-
-														<div class="container">
-															<div class="row row-cols-auto">
-																{ unit.cost.aicore > 0
-																	? <span class="badge bg-semilight text-dark me-1 mb-1">
-																		<EquipIcon class="me-2 vertical-align-middle" image="UI_Icon_Consumable_AICore" size="24" />
-																		<Locale k="CONSUMABLE_TestItem_4" />
-																		&nbsp;x{ FormatNumber(unit.cost.aicore) }
-																	</span>
-																	: <></>
-																}
-																{ unit.cost.items.map(e => {
-																	const item = ConsumableDB.find(c => c.key === e.item);
-																	if (!item) return <>-</>;
-
-																	return <span class="badge bg-semilight text-dark me-1 mb-1">
-																		<EquipIcon class="me-2 vertical-align-middle" image={ item.icon } size="24" />
-																		<Locale k={ `CONSUMABLE_${item.key}` } />
-																		&nbsp;x{ FormatNumber(e.count) }
-																	</span>;
-																}) }
-															</div>
-														</div>
-													</div>
-													: <h6 class="m-0 p-0">
-														<IconHammer />
-														<strong>
-															<span class="ps-1 pe-3">
-																<Locale k="UNIT_VIEW_DROPS_CREATIONTIME" />
-															</span>
-															<span class="font-exo2">{ CraftTime }</span>
-														</strong>
-													</h6>
+										{ unit.source
+											.filter(r => r.length > 0)
+											.reduce<EntitySource[][]>((p, c) => {
+												if (c[0].IsStory) {
+													const pi = p.findIndex(r => r[0].IsStory);
+													if (pi >= 0)
+														return p.map((v, i) => i === pi ? [...v, ...c] : v);
 												}
-											</span>
-											: <></>
-										}
-
-										{ unit.source.map((area, aindex) => <div>
-											{ unit.craft || aindex > 0 ? <hr class="my-1" /> : <></> }
-											{ area.length > 0 && area[0].IsEvent
-												? <h6 style="font-weight: bold">
-													<Locale k={ area[0].EventName } />
-												</h6>
-												: area.length > 0 && area[0].IsChallenge
+												return [...p, c];
+											}, [])
+											.map((area, aindex) => <div>
+												{ aindex > 0 && <hr class="my-1" /> }
+												{ area[0].IsEvent
 													? <h6 style="font-weight: bold">
-														<Locale k={ `COMMON_CHALLENGE_${area[0].ChallengeName}` } />
+														<Locale k={ area[0].EventName } />
 													</h6>
-													: area.length > 0 && area[0].IsSubStory
+													: area[0].IsDaily
 														? <h6 style="font-weight: bold">
-															<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />
+															<Locale k="WORLD_Daily" />
 														</h6>
-														: <></>
-											}
+														: area[0].IsChallenge
+															? <h6 style="font-weight: bold">
+																<Locale k={ `COMMON_CHALLENGE_${area[0].ChallengeName}` } />
+															</h6>
+															: area[0].IsSubStory
+																? <h6 style="font-weight: bold">
+																	<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />
+																</h6>
+																: area[0].IsNewEternalWar
+																	? <h6 style="font-weight: bold">
+																		<Locale k="COMMON_SOURCE_NEW" />
+																	</h6>
+																	: <></>
+												}
 
-											{ area.map(source => <SourceBadge class="my-1" source={ source } linked />) }
-										</div>) }
+												{ (() => {
+													const _area: Record<string, EntitySource[]> = {};
+													area.forEach(s => {
+														const k = s.IsEvent ? `${s.World}:${s.Chapter}` : s.World;
+														if (!(k in _area)) _area[k] = [];
+														_area[k].push(s);
+													});
+													return Object.keys(_area).map((k, i) => <span>
+														{ i > 0 && <span class="border-start mx-1" /> }
+														{ _area[k].map(source => <SourceBadge class="my-1" source={ source } linked />) }
+													</span>);
+												})() }
+											</div>)
+										}
 									</>
 								}
 							</td>

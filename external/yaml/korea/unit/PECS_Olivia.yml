@@ -456,8 +456,9 @@ age: ""
 secretRoomType: Adult
 marriageVoice: true
 introVoice:
-  - - ko
-    - Introduce
+  - jp
+  - jpdmm
+  - ko
 favor:
   present: 3
   clear: 1
@@ -524,7 +525,7 @@ cv:
   "": {}
   M: {}
 source:
-  - - "*11-7"
+  - - 11:1:*11-7
 research: false
 skills:
   "1":
@@ -561,12 +562,7 @@ skills:
             - key: Effect_PECS_Olivia_N_1
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -615,15 +611,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_11
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -655,6 +647,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_12
               on: attack_success
               if:
@@ -690,8 +683,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_12_1
                     type: 1
-                    value: "0.060000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.005000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -699,10 +692,11 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 6%
-                      per: 1%
+                      base: 3%
+                      per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_13
               on: attack_success
               if:
@@ -738,8 +732,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_13_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.100000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -747,10 +741,11 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 20%
-                      per: 2%
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.716
           type: 0
           range: 3
@@ -766,12 +761,7 @@ skills:
             - key: Effect_PECS_Olivia_N_1
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -820,15 +810,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_11
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -860,6 +846,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_12
               on: attack_success
               if:
@@ -895,8 +882,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_12_1
                     type: 1
-                    value: "0.060000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.005000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -904,10 +891,11 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 6%
-                      per: 1%
+                      base: 3%
+                      per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_13
               on: attack_success
               if:
@@ -943,8 +931,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_13_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.100000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -952,10 +940,11 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 20%
-                      per: 2%
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.882
           type: 0
           range: 3
@@ -971,12 +960,7 @@ skills:
             - key: Effect_PECS_Olivia_N_1
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -1025,15 +1009,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_11
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -1065,6 +1045,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_12
               on: attack_success
               if:
@@ -1100,8 +1081,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_12_1
                     type: 1
-                    value: "0.060000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.005000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1109,10 +1090,11 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 6%
-                      per: 1%
+                      base: 3%
+                      per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_13
               on: attack_success
               if:
@@ -1148,8 +1130,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_13_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.100000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -1157,10 +1139,11 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 20%
-                      per: 2%
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.048
           type: 0
           range: 3
@@ -1176,12 +1159,7 @@ skills:
             - key: Effect_PECS_Olivia_N_1
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -1230,15 +1208,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_11
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -1270,6 +1244,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_12
               on: attack_success
               if:
@@ -1305,8 +1280,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_12_1
                     type: 1
-                    value: "0.060000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.005000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1314,10 +1289,11 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 6%
-                      per: 1%
+                      base: 3%
+                      per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_13
               on: attack_success
               if:
@@ -1353,8 +1329,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_13_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.100000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -1362,10 +1338,11 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 20%
-                      per: 2%
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.214
           type: 0
           range: 3
@@ -1381,12 +1358,7 @@ skills:
             - key: Effect_PECS_Olivia_N_1
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -1435,15 +1407,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_11
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -1475,6 +1443,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_12
               on: attack_success
               if:
@@ -1510,8 +1479,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_12_1
                     type: 1
-                    value: "0.060000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.005000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1519,10 +1488,11 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 6%
-                      per: 1%
+                      base: 3%
+                      per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_13
               on: attack_success
               if:
@@ -1558,8 +1528,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_13_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.100000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -1567,10 +1537,11 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 20%
-                      per: 2%
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.38
           type: 0
           range: 3
@@ -1586,12 +1557,7 @@ skills:
             - key: Effect_PECS_Olivia_N_1
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -1640,15 +1606,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_11
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -1680,6 +1642,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_12
               on: attack_success
               if:
@@ -1715,8 +1678,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_12_1
                     type: 1
-                    value: "0.060000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.005000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1724,10 +1687,11 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 6%
-                      per: 1%
+                      base: 3%
+                      per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_13
               on: attack_success
               if:
@@ -1763,8 +1727,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_13_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.100000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -1772,10 +1736,11 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 20%
-                      per: 2%
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.546
           type: 0
           range: 3
@@ -1791,12 +1756,7 @@ skills:
             - key: Effect_PECS_Olivia_N_1
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -1845,15 +1805,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_11
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -1885,6 +1841,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_12
               on: attack_success
               if:
@@ -1920,8 +1877,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_12_1
                     type: 1
-                    value: "0.060000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.005000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1929,10 +1886,11 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 6%
-                      per: 1%
+                      base: 3%
+                      per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_13
               on: attack_success
               if:
@@ -1968,8 +1926,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_13_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.100000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -1977,10 +1935,11 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 20%
-                      per: 2%
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.712
           type: 0
           range: 3
@@ -1996,12 +1955,7 @@ skills:
             - key: Effect_PECS_Olivia_N_1
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -2050,15 +2004,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_11
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -2090,6 +2040,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_12
               on: attack_success
               if:
@@ -2125,8 +2076,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_12_1
                     type: 1
-                    value: "0.060000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.005000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -2134,10 +2085,11 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 6%
-                      per: 1%
+                      base: 3%
+                      per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_13
               on: attack_success
               if:
@@ -2173,8 +2125,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_13_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.100000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -2182,10 +2134,11 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 20%
-                      per: 2%
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.878
           type: 0
           range: 3
@@ -2201,12 +2154,7 @@ skills:
             - key: Effect_PECS_Olivia_N_1
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -2255,15 +2203,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_11
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -2295,6 +2239,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_12
               on: attack_success
               if:
@@ -2330,8 +2275,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_12_1
                     type: 1
-                    value: "0.060000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.005000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -2339,10 +2284,11 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 6%
-                      per: 1%
+                      base: 3%
+                      per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_13
               on: attack_success
               if:
@@ -2378,8 +2324,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_13_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.100000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -2387,10 +2333,11 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 20%
-                      per: 2%
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.044
           type: 0
           range: 3
@@ -2406,12 +2353,7 @@ skills:
             - key: Effect_PECS_Olivia_N_1
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -2460,15 +2402,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_11
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -2500,6 +2438,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_12
               on: attack_success
               if:
@@ -2535,8 +2474,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_12_1
                     type: 1
-                    value: "0.060000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.005000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -2544,10 +2483,11 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 6%
-                      per: 1%
+                      base: 3%
+                      per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_13
               on: attack_success
               if:
@@ -2583,8 +2523,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_13_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.100000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -2592,10 +2532,11 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 20%
-                      per: 2%
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -2640,19 +2581,19 @@ skills:
             desc:
               desc: Effect_PECS_Olivia_N_12_1
               type: 1
-              value: "0.060000"
-              level: "0.010000"
-            base: 0.06
-            per: 0.01
+              value: "0.030000"
+              level: "0.005000"
+            base: 0.03
+            per: 0.005
             chance: 1
           - icon: BuffIcon_DEF_PIERCE_UP
             desc:
               desc: Effect_PECS_Olivia_N_13_1
               type: 1
-              value: "0.200000"
-              level: "0.020000"
-            base: 0.2
-            per: 0.02
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
             chance: 1
   "2":
     key: "2"
@@ -2753,6 +2694,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -2791,44 +2733,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -2870,6 +2775,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -2910,6 +2816,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -2950,6 +2857,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -2990,6 +2898,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -3030,6 +2939,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -3070,6 +2980,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -3097,8 +3008,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3106,10 +3017,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -3137,8 +3049,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3146,10 +3058,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -3177,8 +3090,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3186,10 +3099,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -3217,8 +3131,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3226,10 +3140,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -3257,8 +3172,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3266,10 +3181,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -3310,6 +3226,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 0.8
           type: 0
           range: 3
@@ -3390,6 +3307,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -3428,44 +3346,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -3507,6 +3388,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -3547,6 +3429,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -3587,6 +3470,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -3627,6 +3511,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -3667,6 +3552,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -3707,6 +3593,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -3734,8 +3621,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3743,10 +3630,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -3774,8 +3662,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3783,10 +3671,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -3814,8 +3703,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3823,10 +3712,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -3854,8 +3744,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3863,10 +3753,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -3894,8 +3785,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3903,10 +3794,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -3947,6 +3839,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 1.2
           type: 0
           range: 3
@@ -4027,6 +3920,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -4065,44 +3959,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -4144,6 +4001,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -4184,6 +4042,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -4224,6 +4083,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -4264,6 +4124,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -4304,6 +4165,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -4344,6 +4206,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -4371,8 +4234,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -4380,10 +4243,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -4411,8 +4275,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -4420,10 +4284,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -4451,8 +4316,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -4460,10 +4325,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -4491,8 +4357,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -4500,10 +4366,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -4531,8 +4398,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -4540,10 +4407,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -4584,6 +4452,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 1.6
           type: 0
           range: 3
@@ -4664,6 +4533,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -4702,44 +4572,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -4781,6 +4614,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -4821,6 +4655,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -4861,6 +4696,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -4901,6 +4737,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -4941,6 +4778,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -4981,6 +4819,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -5008,8 +4847,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5017,10 +4856,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -5048,8 +4888,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5057,10 +4897,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -5088,8 +4929,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5097,10 +4938,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -5128,8 +4970,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5137,10 +4979,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -5168,8 +5011,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5177,10 +5020,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -5221,6 +5065,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 2
           type: 0
           range: 3
@@ -5301,6 +5146,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -5339,44 +5185,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -5418,6 +5227,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -5458,6 +5268,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -5498,6 +5309,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -5538,6 +5350,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -5578,6 +5391,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -5618,6 +5432,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -5645,8 +5460,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5654,10 +5469,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -5685,8 +5501,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5694,10 +5510,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -5725,8 +5542,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5734,10 +5551,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -5765,8 +5583,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5774,10 +5592,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -5805,8 +5624,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5814,10 +5633,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -5858,6 +5678,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 2.4
           type: 0
           range: 3
@@ -5938,6 +5759,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -5976,44 +5798,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -6055,6 +5840,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -6095,6 +5881,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -6135,6 +5922,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -6175,6 +5963,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -6215,6 +6004,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -6255,6 +6045,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -6282,8 +6073,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -6291,10 +6082,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -6322,8 +6114,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -6331,10 +6123,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -6362,8 +6155,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -6371,10 +6164,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -6402,8 +6196,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -6411,10 +6205,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -6442,8 +6237,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -6451,10 +6246,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -6495,6 +6291,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 2.8
           type: 0
           range: 3
@@ -6575,6 +6372,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -6613,44 +6411,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -6692,6 +6453,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -6732,6 +6494,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -6772,6 +6535,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -6812,6 +6576,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -6852,6 +6617,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -6892,6 +6658,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -6919,8 +6686,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -6928,10 +6695,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -6959,8 +6727,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -6968,10 +6736,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -6999,8 +6768,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -7008,10 +6777,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -7039,8 +6809,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -7048,10 +6818,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -7079,8 +6850,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -7088,10 +6859,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -7132,6 +6904,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 3.2
           type: 0
           range: 3
@@ -7212,6 +6985,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -7250,44 +7024,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -7329,6 +7066,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -7369,6 +7107,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -7409,6 +7148,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -7449,6 +7189,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -7489,6 +7230,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -7529,6 +7271,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -7556,8 +7299,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -7565,10 +7308,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -7596,8 +7340,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -7605,10 +7349,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -7636,8 +7381,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -7645,10 +7390,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -7676,8 +7422,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -7685,10 +7431,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -7716,8 +7463,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -7725,10 +7472,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -7769,6 +7517,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 3.6
           type: 0
           range: 3
@@ -7849,6 +7598,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -7887,44 +7637,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -7966,6 +7679,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -8006,6 +7720,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -8046,6 +7761,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -8086,6 +7802,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -8126,6 +7843,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -8166,6 +7884,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -8193,8 +7912,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -8202,10 +7921,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -8233,8 +7953,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -8242,10 +7962,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -8273,8 +7994,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -8282,10 +8003,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -8313,8 +8035,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -8322,10 +8044,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -8353,8 +8076,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -8362,10 +8085,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -8406,6 +8130,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 4
           type: 0
           range: 3
@@ -8486,6 +8211,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -8524,44 +8250,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -8603,6 +8292,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -8643,6 +8333,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -8683,6 +8374,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -8723,6 +8415,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -8763,6 +8456,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -8803,6 +8497,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -8830,8 +8525,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -8839,10 +8534,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -8870,8 +8566,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -8879,10 +8575,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -8910,8 +8607,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -8919,10 +8616,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -8950,8 +8648,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -8959,10 +8657,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -8990,8 +8689,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -8999,10 +8698,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -9043,6 +8743,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -9086,15 +8787,6 @@ skills:
           - icon: BuffIcon_REMOVE_BUFF
             desc:
               desc: Effect_PECS_Olivia_N_21_1
-              type: 1
-              value: "0"
-              level: "0"
-            base: 0
-            per: 0
-            chance: 1
-          - icon: BuffIcon_REMOVE_BUFF
-            desc:
-              desc: Effect_PECS_Olivia_N_22_1
               type: 1
               value: "0"
               level: "0"
@@ -9159,46 +8851,46 @@ skills:
             desc:
               desc: Effect_PECS_Olivia_N_29_1
               type: 1
-              value: "0.400000"
-              level: "0.020000"
-            base: 0.4
-            per: 0.02
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
             chance: 1
           - icon: BuffIcon_PhyATK_UP
             desc:
               desc: Effect_PECS_Olivia_N_210_1
               type: 1
-              value: "0.400000"
-              level: "0.020000"
-            base: 0.4
-            per: 0.02
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
             chance: 1
           - icon: BuffIcon_PhyATK_UP
             desc:
               desc: Effect_PECS_Olivia_N_211_1
               type: 1
-              value: "0.400000"
-              level: "0.020000"
-            base: 0.4
-            per: 0.02
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
             chance: 1
           - icon: BuffIcon_PhyATK_UP
             desc:
               desc: Effect_PECS_Olivia_N_212_1
               type: 1
-              value: "0.400000"
-              level: "0.020000"
-            base: 0.4
-            per: 0.02
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
             chance: 1
           - icon: BuffIcon_PhyATK_UP
             desc:
               desc: Effect_PECS_Olivia_N_213_1
               type: 1
-              value: "0.400000"
-              level: "0.020000"
-            base: 0.4
-            per: 0.02
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
             chance: 1
           - icon: BuffIcon_AP_UP
             desc:
@@ -9292,6 +8984,7 @@ skills:
                     act_count: 1
                   overlap: 4
               maxStack: 2
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_32
               on: round
               if:
@@ -9325,6 +9018,7 @@ skills:
                     act_count: 1
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_36
               on: round
               if:
@@ -9364,6 +9058,7 @@ skills:
                     metamolphosis: true
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -9511,6 +9206,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_41
               on: attack
               if:
@@ -9550,6 +9246,7 @@ skills:
                       type: 77
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_42
               on: round
               if:
@@ -9589,6 +9286,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_43
               on: round
               if:
@@ -9640,6 +9338,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_44
               on: round
               if:
@@ -9688,6 +9387,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -9879,6 +9579,7 @@ skills:
                       per: -1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_51
               on:
                 after: support
@@ -9932,6 +9633,7 @@ skills:
                       per: -1%
                   overlap: 4
               maxStack: 5
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_52
               on:
                 after: support
@@ -9985,6 +9687,7 @@ skills:
                       per: -1%
                   overlap: 4
               maxStack: 5
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -10136,15 +9839,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_1
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -10193,15 +9892,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_11
               on: attack_success
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_PECS_Olivia_N_5
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -10233,6 +9928,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_12
               on: attack_success
               if:
@@ -10268,8 +9964,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_12_1
                     type: 1
-                    value: "0.060000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.005000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -10277,10 +9973,11 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 6%
-                      per: 1%
+                      base: 3%
+                      per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_13
               on: attack_success
               if:
@@ -10316,8 +10013,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_13_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.100000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 2
@@ -10325,10 +10022,11 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 20%
-                      per: 2%
+                      base: 10%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -10391,19 +10089,19 @@ skills:
             desc:
               desc: Effect_PECS_Olivia_N_12_1
               type: 1
-              value: "0.060000"
-              level: "0.010000"
-            base: 0.06
-            per: 0.01
+              value: "0.030000"
+              level: "0.005000"
+            base: 0.03
+            per: 0.005
             chance: 1
           - icon: BuffIcon_DEF_PIERCE_UP
             desc:
               desc: Effect_PECS_Olivia_N_13_1
               type: 1
-              value: "0.200000"
-              level: "0.020000"
-            base: 0.2
-            per: 0.02
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
             chance: 1
   F2:
     key: F2
@@ -10504,6 +10202,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -10542,44 +10241,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -10621,6 +10283,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -10661,6 +10324,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -10701,6 +10365,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -10741,6 +10406,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -10781,6 +10447,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -10821,6 +10488,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -10848,8 +10516,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -10857,10 +10525,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -10888,8 +10557,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -10897,10 +10566,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -10928,8 +10598,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -10937,10 +10607,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -10968,8 +10639,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -10977,10 +10648,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -11008,8 +10680,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -11017,10 +10689,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -11061,6 +10734,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 0.966
           type: 0
           range: 3
@@ -11141,6 +10815,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -11179,44 +10854,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -11258,6 +10896,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -11298,6 +10937,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -11338,6 +10978,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -11378,6 +11019,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -11418,6 +11060,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -11458,6 +11101,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -11485,8 +11129,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -11494,10 +11138,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -11525,8 +11170,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -11534,10 +11179,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -11565,8 +11211,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -11574,10 +11220,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -11605,8 +11252,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -11614,10 +11261,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -11645,8 +11293,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -11654,10 +11302,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -11698,6 +11347,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 1.532
           type: 0
           range: 3
@@ -11778,6 +11428,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -11816,44 +11467,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -11895,6 +11509,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -11935,6 +11550,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -11975,6 +11591,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -12015,6 +11632,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -12055,6 +11673,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -12095,6 +11714,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -12122,8 +11742,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -12131,10 +11751,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -12162,8 +11783,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -12171,10 +11792,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -12202,8 +11824,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -12211,10 +11833,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -12242,8 +11865,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -12251,10 +11874,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -12282,8 +11906,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -12291,10 +11915,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -12335,6 +11960,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 2.098
           type: 0
           range: 3
@@ -12415,6 +12041,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -12453,44 +12080,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -12532,6 +12122,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -12572,6 +12163,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -12612,6 +12204,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -12652,6 +12245,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -12692,6 +12286,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -12732,6 +12327,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -12759,8 +12355,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -12768,10 +12364,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -12799,8 +12396,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -12808,10 +12405,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -12839,8 +12437,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -12848,10 +12446,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -12879,8 +12478,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -12888,10 +12487,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -12919,8 +12519,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -12928,10 +12528,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -12972,6 +12573,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 2.664
           type: 0
           range: 3
@@ -13052,6 +12654,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -13090,44 +12693,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -13169,6 +12735,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -13209,6 +12776,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -13249,6 +12817,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -13289,6 +12858,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -13329,6 +12899,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -13369,6 +12940,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -13396,8 +12968,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -13405,10 +12977,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -13436,8 +13009,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -13445,10 +13018,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -13476,8 +13050,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -13485,10 +13059,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -13516,8 +13091,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -13525,10 +13100,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -13556,8 +13132,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -13565,10 +13141,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -13609,6 +13186,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 3.23
           type: 0
           range: 3
@@ -13689,6 +13267,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -13727,44 +13306,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -13806,6 +13348,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -13846,6 +13389,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -13886,6 +13430,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -13926,6 +13471,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -13966,6 +13512,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -14006,6 +13553,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -14033,8 +13581,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -14042,10 +13590,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -14073,8 +13622,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -14082,10 +13631,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -14113,8 +13663,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -14122,10 +13672,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -14153,8 +13704,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -14162,10 +13713,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -14193,8 +13745,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -14202,10 +13754,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -14246,6 +13799,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 3.796
           type: 0
           range: 3
@@ -14326,6 +13880,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -14364,44 +13919,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -14443,6 +13961,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -14483,6 +14002,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -14523,6 +14043,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -14563,6 +14084,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -14603,6 +14125,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -14643,6 +14166,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -14670,8 +14194,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -14679,10 +14203,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -14710,8 +14235,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -14719,10 +14244,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -14750,8 +14276,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -14759,10 +14285,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -14790,8 +14317,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -14799,10 +14326,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -14830,8 +14358,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -14839,10 +14367,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -14883,6 +14412,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 4.362
           type: 0
           range: 3
@@ -14963,6 +14493,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -15001,44 +14532,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -15080,6 +14574,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -15120,6 +14615,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -15160,6 +14656,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -15200,6 +14697,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -15240,6 +14738,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -15280,6 +14779,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -15307,8 +14807,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -15316,10 +14816,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -15347,8 +14848,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -15356,10 +14857,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -15387,8 +14889,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -15396,10 +14898,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -15427,8 +14930,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -15436,10 +14939,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -15467,8 +14971,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -15476,10 +14980,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -15520,6 +15025,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 4.928
           type: 0
           range: 3
@@ -15600,6 +15106,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -15638,44 +15145,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -15717,6 +15187,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -15757,6 +15228,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -15797,6 +15269,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -15837,6 +15310,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -15877,6 +15351,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -15917,6 +15392,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -15944,8 +15420,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -15953,10 +15429,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -15984,8 +15461,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -15993,10 +15470,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -16024,8 +15502,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -16033,10 +15511,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -16064,8 +15543,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -16073,10 +15552,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -16104,8 +15584,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -16113,10 +15593,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -16157,6 +15638,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
         - rate: 5.494
           type: 0
           range: 3
@@ -16237,6 +15719,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_21
               on: attack_success
               if:
@@ -16275,44 +15758,7 @@ skills:
                     off: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_PECS_Olivia_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_PECS_Olivia_N_12
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_REMOVE_BUFF
-                  desc:
-                    desc: Effect_PECS_Olivia_N_22_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 99
-                    off: 0
-                  overlap: 4
-              maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_23
               on:
                 after: use_skill
@@ -16354,6 +15800,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_24
               on: attack_success
               if:
@@ -16394,6 +15841,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_25
               on: attack_success
               if:
@@ -16434,6 +15882,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_26
               on: attack_success
               if:
@@ -16474,6 +15923,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_27
               on: attack_success
               if:
@@ -16514,6 +15964,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_28
               on: attack_success
               if:
@@ -16554,6 +16005,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_29
               on: attack_success
               if:
@@ -16581,8 +16033,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_29_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -16590,10 +16042,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_210
               on: attack_success
               if:
@@ -16621,8 +16074,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_210_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -16630,10 +16083,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_211
               on: attack_success
               if:
@@ -16661,8 +16115,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_211_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -16670,10 +16124,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_212
               on: attack_success
               if:
@@ -16701,8 +16156,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_212_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -16710,10 +16165,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_213
               on: attack_success
               if:
@@ -16741,8 +16197,8 @@ skills:
                   desc:
                     desc: Effect_PECS_Olivia_N_213_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.200000"
+                    level: "0.010000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -16750,10 +16206,11 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 40%
-                      per: 2%
+                      base: 20%
+                      per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Olivia_N_214
               on:
                 after: use_skill
@@ -16794,6 +16251,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -16837,15 +16295,6 @@ skills:
           - icon: BuffIcon_REMOVE_BUFF
             desc:
               desc: Effect_PECS_Olivia_N_21_1
-              type: 1
-              value: "0"
-              level: "0"
-            base: 0
-            per: 0
-            chance: 1
-          - icon: BuffIcon_REMOVE_BUFF
-            desc:
-              desc: Effect_PECS_Olivia_N_22_1
               type: 1
               value: "0"
               level: "0"
@@ -16910,46 +16359,46 @@ skills:
             desc:
               desc: Effect_PECS_Olivia_N_29_1
               type: 1
-              value: "0.400000"
-              level: "0.020000"
-            base: 0.4
-            per: 0.02
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
             chance: 1
           - icon: BuffIcon_PhyATK_UP
             desc:
               desc: Effect_PECS_Olivia_N_210_1
               type: 1
-              value: "0.400000"
-              level: "0.020000"
-            base: 0.4
-            per: 0.02
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
             chance: 1
           - icon: BuffIcon_PhyATK_UP
             desc:
               desc: Effect_PECS_Olivia_N_211_1
               type: 1
-              value: "0.400000"
-              level: "0.020000"
-            base: 0.4
-            per: 0.02
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
             chance: 1
           - icon: BuffIcon_PhyATK_UP
             desc:
               desc: Effect_PECS_Olivia_N_212_1
               type: 1
-              value: "0.400000"
-              level: "0.020000"
-            base: 0.4
-            per: 0.02
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
             chance: 1
           - icon: BuffIcon_PhyATK_UP
             desc:
               desc: Effect_PECS_Olivia_N_213_1
               type: 1
-              value: "0.400000"
-              level: "0.020000"
-            base: 0.4
-            per: 0.02
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
             chance: 1
           - icon: BuffIcon_AP_UP
             desc:
@@ -17237,7 +16686,7 @@ dialogue:
       Idle_01_01: |-
         Am I not working? I am. I'm preparing for the contest.
         Also, Taylor and Audrey are there.
-        It's fine that I’m not there...
+        It's fine that I'm not there…
         What? Taylor said the same thing?
       Idle_01_02: |-
         Are we wearing matching outfits?
@@ -17246,7 +16695,7 @@ dialogue:
         This is a sensitive topic.
       Idle_01_03: |-
         Why don't you participate in the contest as well?
-        Don't worry, you won’t be alone.
+        Don't worry, you won't be alone.
         There's an AGS competitor as well.
       SPIdle_01_01: First warning! You get two and you're automatically out!
       Idle_02_01: |-
@@ -17263,17 +16712,17 @@ dialogue:
         Is there anyone who wants to help me?
         You're ignoring me on purpose, aren't you?
       SPIdle_02_01: |-
-        Okay, I’m handing you the leash.
+        Okay, I'm handing you the leash.
         Don't you get it?
-        In that case... you’ll just have to learn from now on.
-        Yeah? Mmm... Mmm... Mmmaster?
+        In that case… you'll just have to learn from now on.
+        Yeah? Mmm… Mmm… Mmmaster?
       Oath: Was it because of the magic of the sea? Or maybe my charms? Meh, who
         cares? As long as the fact that you’re into me doesn’t change. Me? You
-        still don't get it, don't you? This leash on my swimsuit... who do you
-        think it’s for? I was always yours.
+        still don't get it, don't you? This leash on my swimsuit… who do you
+        think it's for? I was always yours.
       OathIdle_01: |-
         Are you nervous? Okay, breathe.
-        Inhale... exhale... inhale... exhale...
+        Inhale… exhale… inhale… exhale…
         Feeling better? Time to get on the stage with your chin up high!
         You were always my greatest masterpiece!
       MVP: ""
@@ -17330,9 +16779,9 @@ dialogue:
       Idle_03_01: >-
         Taylor and Audrey designed outfits for movies and plays,
 
-        but they couldn’t come near me in this field. You know what they say, a genius can't beat those who work hard,
+        but they couldn't come near me in this field. You know what they say, a genius can't beat those who work hard,
 
-        and the ones who work hard can’t beat those who enjoy it. Of course, it’s the same the other way around.
+        and the ones who work hard can't beat those who enjoy it. Of course, it's the same the other way around.
       Idle_04_01: >-
         Harpyia yesterday, War Wolf today, Muse tomorrow,
 
@@ -17621,3 +17070,4 @@ skins:
         iconId: 1
         tbarId: 1
         voiceId: 1
+        consumableKey: Skin_PECS_Olivia_1

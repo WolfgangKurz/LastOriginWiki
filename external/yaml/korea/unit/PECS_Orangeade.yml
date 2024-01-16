@@ -455,7 +455,9 @@ country: ""
 age: ""
 secretRoomType: Adult
 marriageVoice: true
-introVoice: []
+introVoice:
+  - jp
+  - jpdmm
 favor:
   present: 2
   clear: 1
@@ -528,8 +530,8 @@ cv:
     jp: 杉田萌
     jpdmm: 杉田萌
 source:
-  - - "*9-4"
-    - 10-1Ex
+  - - 9:1:*9-4
+  - - 10:1:10-1Ex
   - - Ev:Ev18:EV3-3B
 research: false
 skills:
@@ -613,6 +615,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.6
           type: 0
           range: 6
@@ -674,6 +677,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.65
           type: 0
           range: 6
@@ -735,6 +739,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.7
           type: 0
           range: 6
@@ -796,6 +801,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.75
           type: 0
           range: 6
@@ -857,6 +863,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.8
           type: 0
           range: 6
@@ -918,6 +925,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.85
           type: 0
           range: 6
@@ -979,6 +987,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.9
           type: 0
           range: 6
@@ -1040,6 +1049,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.95
           type: 0
           range: 6
@@ -1101,6 +1111,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1
           type: 0
           range: 6
@@ -1162,6 +1173,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -1265,6 +1277,7 @@ skills:
                       by: atk
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Orangeade_N_21
               on:
                 after: use_skill
@@ -1311,6 +1324,7 @@ skills:
                       by: atk
                   overlap: 4
               maxStack: 2
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -1434,6 +1448,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Orangeade_N_31
               on: wave
               if:
@@ -1468,6 +1483,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -1600,6 +1616,7 @@ skills:
                       per: 10
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -1723,6 +1740,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0
           type: 0
           range: 0
@@ -1795,6 +1813,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -2132,7 +2151,7 @@ dialogue:
         It's going to be a really special day!​
       Idle_01_02: |-
         Orange Ade! I've read 10,000 romantic comedies.
-        I’m an elite dating experts! I will make today’s date
+        I'm an elite dating experts! I will make today's date
         to the perfect date ever!​
       Idle_01_03: |-
         Hehe, it’s supposed to be a work day but having day off.
@@ -2166,7 +2185,7 @@ dialogue:
       SPIdle_02_01: |-
         Ehehe… We are still on a day time date, Commander…
         Can't wait for a night time date?
-        Then, I know it’s still a day time…
+        Then, I know it's still a day time…
         Shall we go straight to the night date?​
       Oath: >-
         I've been imagining a lot of moments of being loved by someone while
@@ -2174,7 +2193,7 @@ dialogue:
 
         But the moment… is very different from the imagination. The real moment is… much happier!
 
-        The best! Awesome! The real world! Hehehehe! Let’s take a good care of each other, Commander.
+        The best! Awesome! The real world! Hehehehe! Let's take a good care of each other, Commander.
       OathIdle_01: |-
         We do date many times, but it’s always fun!
         I am excited just like the first time.
@@ -2239,8 +2258,8 @@ dialogue:
         I won’t… get into trouble, but… Oh, whatever.
         But you have to be gentle.​
       Oath: … Are you giving this to me? Really? Seriously? Awesome! I've only seen
-        this happening in cartoons… It’s very cliche, but this is the moment
-        I’ve been waiting for. Now that I realized you feel the same way as me…
+        this happening in cartoons… It's very cliche, but this is the moment
+        I've been waiting for. Now that I realized you feel the same way as me…
         Ahaha! I feel a little shy. Thank you for making today special.
       OathIdle_01: |-
         You’re my husband… 
@@ -2540,3 +2559,4 @@ skins:
         iconId: 1
         tbarId: 1
         voiceId: 1
+        consumableKey: Skin_PECS_Orangeade_1

@@ -442,7 +442,8 @@ country: ""
 age: ""
 secretRoomType: Adult
 marriageVoice: true
-introVoice: []
+introVoice:
+  - ko
 favor:
   present: 3
   clear: 0.5
@@ -460,7 +461,8 @@ fullLinkBonus:
   - ACC_75
   - SPD_15
 craft: 27540
-equips: []
+equips:
+  - Sub_Bedroll_T4
 stat:
   - HP:
       - 220
@@ -588,6 +590,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_N_11
               on: criticaled
               if:
@@ -623,6 +626,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.35
           type: 0
           range: 3
@@ -699,6 +703,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_N_11
               on: criticaled
               if:
@@ -734,6 +739,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.46
           type: 0
           range: 3
@@ -810,6 +816,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_N_11
               on: criticaled
               if:
@@ -845,6 +852,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.57
           type: 0
           range: 3
@@ -921,6 +929,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_N_11
               on: criticaled
               if:
@@ -956,6 +965,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.68
           type: 0
           range: 3
@@ -1032,6 +1042,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_N_11
               on: criticaled
               if:
@@ -1067,6 +1078,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.79
           type: 0
           range: 3
@@ -1143,6 +1155,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_N_11
               on: criticaled
               if:
@@ -1178,6 +1191,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.9
           type: 0
           range: 3
@@ -1254,6 +1268,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_N_11
               on: criticaled
               if:
@@ -1289,6 +1304,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.01
           type: 0
           range: 3
@@ -1365,6 +1381,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_N_11
               on: criticaled
               if:
@@ -1400,6 +1417,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.12
           type: 0
           range: 3
@@ -1476,6 +1494,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_N_11
               on: criticaled
               if:
@@ -1511,6 +1530,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.23
           type: 0
           range: 3
@@ -1587,6 +1607,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_N_11
               on: criticaled
               if:
@@ -1622,6 +1643,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -1751,11 +1773,28 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_N_21
               on:
                 after: use_skill
               if:
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Bedroll_N_1
+                      - Effect_BUFF_Bedroll_N_2
+                      - Effect_BUFF_Bedroll_N_3
+                      - Effect_BUFF_Bedroll_N_4
+                      - Effect_BUFF_Bedroll_N_5
+                      - Effect_BUFF_Bedroll_N_6
+                      - Effect_BUFF_Bedroll_N_7
+                      - Effect_BUFF_Bedroll_N_8
+                      - Effect_BUFF_Bedroll_N_9
+                      - Effect_BUFF_Bedroll_N_10
+                      - Effect_BUFF_Bedroll_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1799,6 +1838,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_N_22
               on:
                 after: use_skill
@@ -1806,7 +1846,23 @@ skills:
                 - target:
                     - Char_BR_BloodyPanther_N
                     - Char_BR_Nashorn_N
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Bedroll_N_1
+                      - Effect_BUFF_Bedroll_N_2
+                      - Effect_BUFF_Bedroll_N_3
+                      - Effect_BUFF_Bedroll_N_4
+                      - Effect_BUFF_Bedroll_N_5
+                      - Effect_BUFF_Bedroll_N_6
+                      - Effect_BUFF_Bedroll_N_7
+                      - Effect_BUFF_Bedroll_N_8
+                      - Effect_BUFF_Bedroll_N_9
+                      - Effect_BUFF_Bedroll_N_10
+                      - Effect_BUFF_Bedroll_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -1853,6 +1909,138 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nashorn_N_23
+              on:
+                after: use_skill
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Bedroll_N_1
+                      - Effect_BUFF_Bedroll_N_2
+                      - Effect_BUFF_Bedroll_N_3
+                      - Effect_BUFF_Bedroll_N_4
+                      - Effect_BUFF_Bedroll_N_5
+                      - Effect_BUFF_Bedroll_N_6
+                      - Effect_BUFF_Bedroll_N_7
+                      - Effect_BUFF_Bedroll_N_8
+                      - Effect_BUFF_Bedroll_N_9
+                      - Effect_BUFF_Bedroll_N_10
+                      - Effect_BUFF_Bedroll_N_11
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 1
+              role:
+                - 1
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_Nashorn_N_23_1
+                    type: 1
+                    value: "0.400000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 40%
+                      per: 4%
+                  overlap: 4
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_BR_Nashorn_N_23_2
+                    type: 1
+                    value: "0.400000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 106
+                    skill_ratio:
+                      base: 40%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nashorn_N_24
+              on:
+                after: use_skill
+              if:
+                - target:
+                    - Char_BR_BloodyPanther_N
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Bedroll_N_1
+                      - Effect_BUFF_Bedroll_N_2
+                      - Effect_BUFF_Bedroll_N_3
+                      - Effect_BUFF_Bedroll_N_4
+                      - Effect_BUFF_Bedroll_N_5
+                      - Effect_BUFF_Bedroll_N_6
+                      - Effect_BUFF_Bedroll_N_7
+                      - Effect_BUFF_Bedroll_N_8
+                      - Effect_BUFF_Bedroll_N_9
+                      - Effect_BUFF_Bedroll_N_10
+                      - Effect_BUFF_Bedroll_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_Nashorn_N_24_1
+                    type: 1
+                    value: "0.400000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 40%
+                      per: 4%
+                  overlap: 4
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_BR_Nashorn_N_24_2
+                    type: 1
+                    value: "0.400000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 106
+                    skill_ratio:
+                      base: 40%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -1919,6 +2107,42 @@ skills:
               level: "0.020000"
             base: 0.2
             per: 0.02
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_Nashorn_N_23_1
+              type: 1
+              value: "0.400000"
+              level: "0.040000"
+            base: 0.4
+            per: 0.04
+            chance: 1
+          - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_BR_Nashorn_N_23_2
+              type: 1
+              value: "0.400000"
+              level: "0.040000"
+            base: 0.4
+            per: 0.04
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_Nashorn_N_24_1
+              type: 1
+              value: "0.400000"
+              level: "0.040000"
+            base: 0.4
+            per: 0.04
+            chance: 1
+          - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_BR_Nashorn_N_24_2
+              type: 1
+              value: "0.400000"
+              level: "0.040000"
+            base: 0.4
+            per: 0.04
             chance: 1
   "3":
     key: "3"
@@ -2025,6 +2249,7 @@ skills:
                       per: 0.05
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_N_31
               on: round
               if:
@@ -2036,7 +2261,23 @@ skills:
                       - 2
                     count:
                       - 1
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Bedroll_N_1
+                      - Effect_BUFF_Bedroll_N_2
+                      - Effect_BUFF_Bedroll_N_3
+                      - Effect_BUFF_Bedroll_N_4
+                      - Effect_BUFF_Bedroll_N_5
+                      - Effect_BUFF_Bedroll_N_6
+                      - Effect_BUFF_Bedroll_N_7
+                      - Effect_BUFF_Bedroll_N_8
+                      - Effect_BUFF_Bedroll_N_9
+                      - Effect_BUFF_Bedroll_N_10
+                      - Effect_BUFF_Bedroll_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -2097,6 +2338,147 @@ skills:
                       per: 0.075
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nashorn_N_32
+              on: wave
+              if:
+                - unitCount:
+                    filter:
+                      - squad
+                      - supporter
+                    type:
+                      - 2
+                    count:
+                      - 1
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Bedroll_N_1
+                      - Effect_BUFF_Bedroll_N_2
+                      - Effect_BUFF_Bedroll_N_3
+                      - Effect_BUFF_Bedroll_N_4
+                      - Effect_BUFF_Bedroll_N_5
+                      - Effect_BUFF_Bedroll_N_6
+                      - Effect_BUFF_Bedroll_N_7
+                      - Effect_BUFF_Bedroll_N_8
+                      - Effect_BUFF_Bedroll_N_9
+                      - Effect_BUFF_Bedroll_N_10
+                      - Effect_BUFF_Bedroll_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 1
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_Nashorn_N_32_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 8
+                    critical:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Nashorn_N_33
+              on: round
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Nashorn_N_32
+                    attr: 6
+                - on:
+                    target: target
+                    select:
+                      - Effect_BUFF_Bedroll_N_1
+                      - Effect_BUFF_Bedroll_N_2
+                      - Effect_BUFF_Bedroll_N_3
+                      - Effect_BUFF_Bedroll_N_4
+                      - Effect_BUFF_Bedroll_N_5
+                      - Effect_BUFF_Bedroll_N_6
+                      - Effect_BUFF_Bedroll_N_7
+                      - Effect_BUFF_Bedroll_N_8
+                      - Effect_BUFF_Bedroll_N_9
+                      - Effect_BUFF_Bedroll_N_10
+                      - Effect_BUFF_Bedroll_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 1
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_BR_Nashorn_N_33_1
+                    type: 1
+                    value: "0.600000"
+                    level: "0.030000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 60%
+                      per: 3%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_Nashorn_N_33_2
+                    type: 1
+                    value: "0.300000"
+                    level: "0.030000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 30%
+                      per: 3%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_Nashorn_N_33_3
+                    type: 0
+                    value: "1.500000"
+                    level: "0.150000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 1.5
+                      per: 0.15
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -2163,6 +2545,42 @@ skills:
               level: "0.075000"
             base: 0.75
             per: 0.075
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_Nashorn_N_32_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_Nashorn_N_33_1
+              type: 1
+              value: "0.600000"
+              level: "0.030000"
+            base: 0.6
+            per: 0.03
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_Nashorn_N_33_2
+              type: 1
+              value: "0.300000"
+              level: "0.030000"
+            base: 0.3
+            per: 0.03
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_Nashorn_N_33_3
+              type: 0
+              value: "1.500000"
+              level: "0.150000"
+            base: 1.5
+            per: 0.15
             chance: 1
   "4":
     key: "4"
@@ -2246,6 +2664,7 @@ skills:
                     metamolphosis: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_N_41
               on: wave
               if:
@@ -2280,6 +2699,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_N_42
               on: wait
               if:
@@ -2322,6 +2742,7 @@ skills:
                     metamolphosis: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_N_43
               on: wave
               if:
@@ -2348,6 +2769,17 @@ skills:
                       - Effect_BUFF_DummyAPEq_N_18
                       - Effect_BUFF_DummyAPEq_N_19
                       - Effect_BUFF_DummyAPEq_N_20
+                      - Effect_BUFF_Bedroll_N_1
+                      - Effect_BUFF_Bedroll_N_2
+                      - Effect_BUFF_Bedroll_N_3
+                      - Effect_BUFF_Bedroll_N_4
+                      - Effect_BUFF_Bedroll_N_5
+                      - Effect_BUFF_Bedroll_N_6
+                      - Effect_BUFF_Bedroll_N_7
+                      - Effect_BUFF_Bedroll_N_8
+                      - Effect_BUFF_Bedroll_N_9
+                      - Effect_BUFF_Bedroll_N_10
+                      - Effect_BUFF_Bedroll_N_11
                     attr: 6
                 - false
               body:
@@ -2378,6 +2810,7 @@ skills:
                     metamolphosis: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_N_44
               on: wait
               if:
@@ -2421,6 +2854,7 @@ skills:
                     off: Effect_BR_Nashorn_N_41
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -2589,6 +3023,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_N_51
               on: round
               if:
@@ -2626,6 +3061,7 @@ skills:
                     guardpierce_apply: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -2754,6 +3190,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_11
               on: criticaled
               if:
@@ -2785,6 +3222,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -2820,6 +3258,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -2855,6 +3294,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.6
           type: 0
           range: 4
@@ -2915,6 +3355,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_11
               on: criticaled
               if:
@@ -2946,6 +3387,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -2981,6 +3423,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -3016,6 +3459,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.85
           type: 0
           range: 4
@@ -3076,6 +3520,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_11
               on: criticaled
               if:
@@ -3107,6 +3552,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -3142,6 +3588,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -3177,6 +3624,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 3.1
           type: 0
           range: 4
@@ -3237,6 +3685,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_11
               on: criticaled
               if:
@@ -3268,6 +3717,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -3303,6 +3753,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -3338,6 +3789,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 3.35
           type: 0
           range: 4
@@ -3398,6 +3850,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_11
               on: criticaled
               if:
@@ -3429,6 +3882,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -3464,6 +3918,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -3499,6 +3954,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 3.6
           type: 0
           range: 4
@@ -3559,6 +4015,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_11
               on: criticaled
               if:
@@ -3590,6 +4047,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -3625,6 +4083,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -3660,6 +4119,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 3.85
           type: 0
           range: 4
@@ -3720,6 +4180,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_11
               on: criticaled
               if:
@@ -3751,6 +4212,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -3786,6 +4248,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -3821,6 +4284,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 4.1
           type: 0
           range: 4
@@ -3881,6 +4345,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_11
               on: criticaled
               if:
@@ -3912,6 +4377,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -3947,6 +4413,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -3982,6 +4449,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 4.35
           type: 0
           range: 4
@@ -4042,6 +4510,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_11
               on: criticaled
               if:
@@ -4073,6 +4542,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -4108,6 +4578,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -4143,6 +4614,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 4.6
           type: 0
           range: 4
@@ -4203,6 +4675,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_11
               on: criticaled
               if:
@@ -4234,6 +4707,7 @@ skills:
                     buff_disallow: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -4269,6 +4743,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -4304,6 +4779,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -4445,6 +4921,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_21
               on: attack_success
               if:
@@ -4487,6 +4964,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -4522,6 +5000,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -4557,6 +5036,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.49
           type: 0
           range: 4
@@ -4621,6 +5101,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_21
               on: attack_success
               if:
@@ -4663,6 +5144,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -4698,6 +5180,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -4733,6 +5216,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.7
           type: 0
           range: 4
@@ -4797,6 +5281,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_21
               on: attack_success
               if:
@@ -4839,6 +5324,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -4874,6 +5360,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -4909,6 +5396,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.91
           type: 0
           range: 4
@@ -4973,6 +5461,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_21
               on: attack_success
               if:
@@ -5015,6 +5504,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -5050,6 +5540,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -5085,6 +5576,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 3.12
           type: 0
           range: 4
@@ -5149,6 +5641,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_21
               on: attack_success
               if:
@@ -5191,6 +5684,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -5226,6 +5720,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -5261,6 +5756,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 3.33
           type: 0
           range: 4
@@ -5325,6 +5821,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_21
               on: attack_success
               if:
@@ -5367,6 +5864,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -5402,6 +5900,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -5437,6 +5936,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 3.54
           type: 0
           range: 4
@@ -5501,6 +6001,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_21
               on: attack_success
               if:
@@ -5543,6 +6044,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -5578,6 +6080,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -5613,6 +6116,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 3.75
           type: 0
           range: 4
@@ -5677,6 +6181,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_21
               on: attack_success
               if:
@@ -5719,6 +6224,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -5754,6 +6260,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -5789,6 +6296,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 3.96
           type: 0
           range: 4
@@ -5853,6 +6361,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_21
               on: attack_success
               if:
@@ -5895,6 +6404,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -5930,6 +6440,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -5965,6 +6476,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 4.17
           type: 0
           range: 4
@@ -6029,6 +6541,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_21
               on: attack_success
               if:
@@ -6071,6 +6584,7 @@ skills:
                       per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_12
               on:
                 after: use_skill
@@ -6106,6 +6620,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Nashorn_CH_13
               on:
                 after: counter
@@ -6141,6 +6656,7 @@ skills:
                       type: 64
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -6460,45 +6976,40 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: |-
-        Do you mean this outfit? This is my summer combat suit.
-        Even Steel-Line has one.
-        Why shouldn’t there be one for the Armored Maidens?
-      Idle_01_02: |-
-        Ah, so busy. Busy busy.
-        Getting proper rest is also a soldier’s duty, is it not?
-        I'm busy every single day.
-      Idle_01_03: |-
         The things in my bag?
         Panther said she’ll bring
-        the sunblock, air pump, lifesaver, and a mat...
+        the sunblock, air pump, lifesaver, and a mat…
         I just brought everything I could.
-      SPIdle_01_01: |-
-        I know we’re supposed to do what we’re told,
-        but please do know that I don’t agree with you.
-      Idle_02_01: |-
+      Idle_01_02: |-
         They call me the sand sea otter.
         I can lay down on the beach
         longer than anybody else.
-      Idle_03_01: |-
+      Idle_01_03: |-
         Our sisters tend to work quite a lot.
         So, shouldn’t we rest when we can?
         I'm just trying to set a good example.
-      Idle_04_01: |-
+      SPIdle_01_01: >-
+        Lie down. I’ll put some sunblock on you. My hands may slip and touch you
+        in the wrong places…
+
+        but please understand that it’s not a mistake.
+      Idle_02_01: |-
         Do you want to wear a straw hat? Aren't you thirsty?
         Are you a good swimmer?
         Even these simple chitchats with you are fun.
-      SPIdle_02_01: |-
-        The dog tags burned my chest...
-        Here, you see? Maybe I should put some saliva on the burns...
-      Oath: Do you feel carefree because you're on a beach? Hehe, then I can’t miss
-        this chance. Don’t ask me to return it. Because I won’t. However... I’m
-        very lazy, but I make sure I do one thing right. Commander, I’ll make
-        sure to keep you happy for the rest of your life.
-      OathIdle_01: >-
-        Lie down. I’ll put some sunblock on you. My hands may slip and touch you
-        in the wrong places...
-
-        but please understand that it’s not a mistake.
+      Idle_03_01: |-
+        I know we’re supposed to do what we’re told,
+        but please do know that I don’t agree with you.
+      Idle_04_01: |-
+        The dog tags burned my chest…
+        Here, you see? Maybe I should put some saliva on the burns…
+      SPIdle_02_01: Summer combat suit? (Nashorn)
+      Oath: |-
+        We talked about beauty
+        with Scathy, Mighty R, Tiequan, and Spartoia.
+        We came to the conclusion that absolute beauty
+        can be found in a well-trained body.
+      OathIdle_01: Beach Parade
       MVP: ""
     "":
       Join: Anti-armor gunner Nashorn here. Has my deputy joined already?
@@ -6523,7 +7034,7 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         My achievements?
-        ...Please ask my deputy, Panther.
+        …Please ask my deputy, Panther.
       Idle_01_02: |-
         Caution is required when handling excessive firepower.
         I use up a whole lot of resources and can cause friendly fire.
@@ -6533,14 +7044,14 @@ dialogue:
         I worry about working under the influence.
       SPIdle_01_01: My emotions have been scarred, so I shall rest a while.
       Idle_02_01: |-
-        Those who don’t work, don't get to eat...
-        Those who don’t eat, should not be asked to work...
+        Those who don't work, don't get to eat…
+        Those who don't eat, should not be asked to work…
         I shall be fasting for a while.
       Idle_03_01: |-
         It’s more comfortable when your soldiers are skilled.
         Obviously Panther is amazing, Io is diligent,
-        Cali is constantly improving, and Spriggan...
-        Hmm... I'm gonna need some time to think.
+        Cali is constantly improving, and Spriggan…
+        Hmm… I'm gonna need some time to think.
       Idle_04_01: |-
         I work too, when I'm required to.
         Like for example, at times like this
@@ -6548,11 +7059,11 @@ dialogue:
         and then take you to my room, Commander.
       SPIdle_02_01: |-
         You may exclude me from battle for ten months.
-        ...But... Anything related to you, Commander... is fine.
+        …But… Anything related to you, Commander… is fine.
       Oath: Oh, am I going to be excluded from work now? Haha, I'm kidding. Commander,
-        you're a strange one. I'm so lazy, and yet you value me... But then
-        again, I feel like love makes me want to be more active. I keep wanting
-        to serve you. That being said... I’ll see you tonight.
+        you're a strange one. I'm so lazy, and yet you value me… But then again,
+        I feel like love makes me want to be more active. I keep wanting to
+        serve you. That being said… I'll see you tonight.
       OathIdle_01: |-
         Commander, you work too hard.
         Take a lesson from me and rest.
@@ -6580,8 +7091,8 @@ dialogue:
       Idle_01_01: |-
         How do I spend my free time?
         There’s not much to it.
-        I walk, talk to other agents, read books...
-        or make love to you, like we are doing now...
+        I walk, talk to other agents, read books…
+        or make love to you, like we are doing now…
       Idle_01_02: |-
         A wise man once said
         those who are skilled but lazy
@@ -6589,7 +7100,7 @@ dialogue:
         So, learn to rest from time to time.
       Idle_01_03: |-
         I don't like war. I hate the fact that the harder I work,
-        the more who will suffer... I truly hate it.
+        the more who will suffer… I truly hate it.
         Though that's not something that should be said
         by someone born as a weapon.
       SPIdle_01_01: |-
@@ -6617,40 +7128,38 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: |-
-        你說這件衣服嗎？這是夏季戰鬥服。
-        鋼線都有夏季戰鬥服了，
-        裝甲少女怎麼可能沒有？
-      Idle_01_02: |-
-        啊，好忙、好忙。
-        對軍人來說，休息不也是工作的一環嗎？
-        每天都好忙。
-      Idle_01_03: |-
         你說我包包裡面的東西嗎？
         防曬霜、潛水泵、泳圈、涼蓆和遮陽傘
         是血豹帶來的…
         為了有備無患，就帶了很多東西來。
-      SPIdle_01_01: |-
-        如果你要我脫，我就會脫，
-        但你要知道我不是甘願的。
-      Idle_02_01: |-
+      Idle_01_02: |-
         我的綽號是「沙灘海獺」。
         躺在沙灘上什麼都不做，
         我有把握贏過任何人。
-      Idle_03_01: |-
+      Idle_01_03: |-
         我們成員平常都很辛苦。
         所以能休息的時候就該好好休息。
         而我正在以身作則。
-      Idle_04_01: |-
+      SPIdle_01_01: |-
+        請躺下。我幫我你擦防曬霜。我的手可能會滑到奇怪的地方…
+        那不是失誤，請你諒解。
+      Idle_02_01: |-
         你要戴草帽嗎？口渴不渴？
         你會不會游泳？呵呵，和司令官在一起時，
         連進行這種平凡的對話都好快樂。
-      SPIdle_02_01: |-
+      Idle_03_01: |-
+        如果你要我脫，我就會脫，
+        但你要知道我不是甘願的。
+      Idle_04_01: |-
         軍牌項鍊害我的胸口燙傷了…
         這裡，你有看到嗎？用口水塗一塗好像會變好…
-      Oath: 因為來到海邊，所以讓人有種開闊的感覺嗎？呵呵，那當然不能錯過這個機會。請不要叫我還你。我不會歸還的。不過…就算我懈怠別的事，有件事我一定會認真去做。我會用一輩子的時間讓司令官…讓你感到幸福。
-      OathIdle_01: |-
-        請躺下。我幫我你擦防曬霜。我的手可能會滑到奇怪的地方…
-        那不是失誤，請你諒解。
+      SPIdle_02_01: 夏季戰鬥服？(納斯霍恩)
+      Oath: |-
+        我和斯卡迪、麥提R、鐵拳、史巴托尼亞
+        一起討論有關「美」的話題。
+        我們得到了一個結論：精心鍛練的身體
+        就能展現出極致的美。
+      OathIdle_01: 前進海邊
       MVP: ""
     "":
       Join: 我是反裝甲砲兵納斯霍恩。我的副官已經加入了嗎？
@@ -6813,3 +7322,4 @@ skins:
         tbarId: 1
         voiceId: 1
         2dmodel: 2DModel_BR_Nashorn_NS1
+        consumableKey: Skin_BR_Nashorn_1

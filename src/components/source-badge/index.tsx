@@ -199,21 +199,25 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 				? `/worlds/Cha/${Source.ChallengeId}/${Source.Map}`
 				: Source.IsSubStory
 					? `/worlds/Sub/1/${Source.Map}`
-					: `/worlds/${Source.EventId}/${((x): string => {
-						if (!x.includes("-")) return x;
+					: Source.IsDaily
+						? `/worlds/Daily/${Source.Chapter}/${Source.Map}`
+						: /^[0-9]+$/.test(Source.EventId)
+							? `/worlds/${Source.World}/${Source.Chapter}/${Source.Map}`
+							: `/worlds/${Source.EventId}/${((x): string => {
+								if (!x.includes("-")) return x;
 
-						let ls = x.substring(0, x.indexOf("-"));
-						if (!/^[A-Za-z]+[0-9]+/.test(ls)) {
-							if (/^[A-Za-z]+\-/.test(x)) return "1";
-							return ls;
-						}
-						ls = ls.replace(/^[A-Za-z]+([0-9]+)/, "$1");
+								let ls = x.substring(0, x.indexOf("-"));
+								if (!/^[A-Za-z]+[0-9]+/.test(ls)) {
+									if (/^[A-Za-z]+\-/.test(x)) return "1";
+									return ls;
+								}
+								ls = ls.replace(/^[A-Za-z]+([0-9]+)/, "$1");
 
-						if (!ls) return "1";
-						return ls;
-					})(Source.Map)}/${Source.Map}`;
+								if (!ls) return "1";
+								return ls;
+							})(Source.Map)}/${Source.Map}`;
 
-			return <Link href={ link }>
+			return <Link href={ link } target="_blank">
 				<span
 					class={ `badge bg-${variant} source-badge mx-1 ${props.class || ""}` }
 					data-source={ Source.toString() }
@@ -224,7 +228,7 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 			</Link>;
 		} else if (Source.IsNewEternalWar) {
 			const link = `/eternalwar/${Source.NewEternalWar}`;
-			return <Link href={ link }>
+			return <Link href={ link } target="_blank">
 				<span
 					class={ `badge bg-${variant} source-badge mx-1 ${props.class || ""}` }
 					data-source={ Source.toString() }
@@ -235,7 +239,7 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 			</Link>;
 		} else if (Source.IsInfiniteWar) {
 			const link = `/infinitewar/${Source.InfiniteWar}`;
-			return <Link href={ link }>
+			return <Link href={ link } target="_blank">
 				<span
 					class={ `badge bg-${variant} source-badge mx-1 ${props.class || ""}` }
 					data-source={ Source.toString() }

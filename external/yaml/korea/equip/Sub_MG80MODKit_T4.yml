@@ -49,7 +49,7 @@ upgrade:
 limit:
   - BR_Nymph
 source:
-  - - 4-3Ex
+  - - 4:1:4-3Ex
   - - Ev:Ev9:Ev3-3s
   - - Ev:Ev14:EV1-5B
 stats:
@@ -64,18 +64,6 @@ stats:
     - type: 12
       turnSpeed:
         base: 0.15
-        per: 0
-  - - type: 0
-      attack:
-        base: 49.5
-        per: 0
-    - type: 8
-      critical:
-        base: 5.25%
-        per: 0%
-    - type: 12
-      turnSpeed:
-        base: 0.1575
         per: 0
     - key: Effect_BUFF_MG80MODKit_N_1
       on: wave
@@ -115,15 +103,15 @@ stats:
       maxStack: 0
   - - type: 0
       attack:
-        base: 54
+        base: 49.5
         per: 0
     - type: 8
       critical:
-        base: 5.5%
+        base: 5.25%
         per: 0%
     - type: 12
       turnSpeed:
-        base: 0.165
+        base: 0.1575
         per: 0
     - key: Effect_BUFF_MG80MODKit_N_2
       on: wave
@@ -163,15 +151,15 @@ stats:
       maxStack: 0
   - - type: 0
       attack:
-        base: 58.5
+        base: 54
         per: 0
     - type: 8
       critical:
-        base: 6%
+        base: 5.5%
         per: 0%
     - type: 12
       turnSpeed:
-        base: 0.1725
+        base: 0.165
         per: 0
     - key: Effect_BUFF_MG80MODKit_N_3
       on: wave
@@ -211,15 +199,15 @@ stats:
       maxStack: 0
   - - type: 0
       attack:
-        base: 63
+        base: 58.5
         per: 0
     - type: 8
       critical:
-        base: 6.75%
+        base: 6%
         per: 0%
     - type: 12
       turnSpeed:
-        base: 0.18
+        base: 0.1725
         per: 0
     - key: Effect_BUFF_MG80MODKit_N_4
       on: wave
@@ -259,15 +247,15 @@ stats:
       maxStack: 0
   - - type: 0
       attack:
-        base: 67.5
+        base: 63
         per: 0
     - type: 8
       critical:
-        base: 7.75%
+        base: 6.75%
         per: 0%
     - type: 12
       turnSpeed:
-        base: 0.1875
+        base: 0.18
         per: 0
     - key: Effect_BUFF_MG80MODKit_N_5
       on: wave
@@ -307,15 +295,15 @@ stats:
       maxStack: 0
   - - type: 0
       attack:
-        base: 72
+        base: 67.5
         per: 0
     - type: 8
       critical:
-        base: 8.5%
+        base: 7.75%
         per: 0%
     - type: 12
       turnSpeed:
-        base: 0.195
+        base: 0.1875
         per: 0
     - key: Effect_BUFF_MG80MODKit_N_6
       on: wave
@@ -355,15 +343,15 @@ stats:
       maxStack: 0
   - - type: 0
       attack:
-        base: 76.5
+        base: 72
         per: 0
     - type: 8
       critical:
-        base: 10%
+        base: 8.5%
         per: 0%
     - type: 12
       turnSpeed:
-        base: 0.2025
+        base: 0.195
         per: 0
     - key: Effect_BUFF_MG80MODKit_N_7
       on: wave
@@ -403,15 +391,15 @@ stats:
       maxStack: 0
   - - type: 0
       attack:
-        base: 81
+        base: 76.5
         per: 0
     - type: 8
       critical:
-        base: 12%
+        base: 10%
         per: 0%
     - type: 12
       turnSpeed:
-        base: 0.21
+        base: 0.2025
         per: 0
     - key: Effect_BUFF_MG80MODKit_N_8
       on: wave
@@ -451,15 +439,15 @@ stats:
       maxStack: 0
   - - type: 0
       attack:
-        base: 86
+        base: 81
         per: 0
     - type: 8
       critical:
-        base: 15%
+        base: 12%
         per: 0%
     - type: 12
       turnSpeed:
-        base: 0.2175
+        base: 0.21
         per: 0
     - key: Effect_BUFF_MG80MODKit_N_9
       on: wave
@@ -499,15 +487,15 @@ stats:
       maxStack: 0
   - - type: 0
       attack:
-        base: 90
+        base: 86
         per: 0
     - type: 8
       critical:
-        base: 20%
+        base: 15%
         per: 0%
     - type: 12
       turnSpeed:
-        base: 0.225
+        base: 0.2175
         per: 0
     - key: Effect_BUFF_MG80MODKit_N_10
       on: wave
@@ -530,6 +518,54 @@ stats:
         - icon: BuffIcon_TROOPER_DMG_UP
           desc:
             desc: Effect_BUFF_MG80MODKit_N_10_1
+            type: 1
+            value: "0.240000"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 60
+            damage_multiply:
+              target: light
+              value:
+                base: 24%
+                per: 0%
+          overlap: 4
+      maxStack: 0
+  - - type: 0
+      attack:
+        base: 90
+        per: 0
+    - type: 8
+      critical:
+        base: 20%
+        per: 0%
+    - type: 12
+      turnSpeed:
+        base: 0.225
+        per: 0
+    - key: Effect_BUFF_MG80MODKit_N_11
+      on: wave
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_TROOPER_DMG_UP
+          desc:
+            desc: Effect_BUFF_MG80MODKit_N_11_1
             type: 1
             value: "0.250000"
             level: "0"

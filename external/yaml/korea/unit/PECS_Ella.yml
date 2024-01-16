@@ -502,7 +502,7 @@ cv:
     jp: 高橋有香
     jpdmm: 高橋有香
 source:
-  - - 10-2Ex
+  - - 10:1:10-2Ex
   - - Ev:Ev12:Ev1-2Ex
   - - Ev:Ev14:EV2-1Ex
   - - Ev:Ev19:EV3-7B
@@ -575,6 +575,7 @@ skills:
                       per: -2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.09
           type: 0
           range: 3
@@ -622,6 +623,7 @@ skills:
                       per: -2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.16
           type: 0
           range: 3
@@ -669,6 +671,7 @@ skills:
                       per: -2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.23
           type: 0
           range: 3
@@ -716,6 +719,7 @@ skills:
                       per: -2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.3
           type: 0
           range: 3
@@ -763,6 +767,7 @@ skills:
                       per: -2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.37
           type: 0
           range: 3
@@ -810,6 +815,7 @@ skills:
                       per: -2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.44
           type: 0
           range: 3
@@ -857,6 +863,7 @@ skills:
                       per: -2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.51
           type: 0
           range: 3
@@ -904,6 +911,7 @@ skills:
                       per: -2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.58
           type: 0
           range: 3
@@ -951,6 +959,7 @@ skills:
                       per: -2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.65
           type: 0
           range: 3
@@ -998,6 +1007,7 @@ skills:
                       per: -2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -1139,6 +1149,7 @@ skills:
                     off: 1
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -1289,6 +1300,7 @@ skills:
                       per: 3%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Ella_N_31
               on: damaged
               if:
@@ -1324,6 +1336,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 3
+              overlapGroup: -1
             - key: Effect_PECS_Ella_N_32
               on: wave
               if:
@@ -1359,6 +1372,7 @@ skills:
                       per: 3%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Ella_N_33
               on: round
               if:
@@ -1397,6 +1411,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Ella_N_34
               on: round
               if:
@@ -1435,6 +1450,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -1624,6 +1640,7 @@ skills:
                         per: -1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Ella_N_41
               on: round
               if:
@@ -1665,6 +1682,7 @@ skills:
                         per: -3%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Ella_N_42
               on: round
               if:
@@ -1706,6 +1724,7 @@ skills:
                         per: -3%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Ella_N_43
               on: round
               if:
@@ -1747,6 +1766,7 @@ skills:
                         per: -3%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -1951,6 +1971,7 @@ skills:
                         per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Ella_N_51
               on: round
               if:
@@ -2057,6 +2078,7 @@ skills:
                         per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -2496,10 +2518,10 @@ dialogue:
         want to stay like this forever.
       SPIdle_02_01: |-
         Ah… N-no… It's fine.
-        I can feel that you care for me… It’s not tough at all.
-      Oath: Commander… You're giving this to me because I’ve been helpful, right? From
+        I can feel that you care for me… It's not tough at all.
+      Oath: Commander… You're giving this to me because I've been helpful, right? From
         now on- Huh? No…? Then… J-just staying beside you is meaningful enough?
-        That’s… Commander, Ella will stay with you from now on… No, forever.
+        That's… Commander, Ella will stay with you from now on… No, forever.
       OathIdle_01: |-
         Commander, can I really just stay like this?
         If you’re uncomfortable…… Yes.
@@ -2720,7 +2742,9 @@ skins:
     2dmodel: 2DModel_PECS_Ella_N
   skins:
     - sid: 1
-      artist: Jam, SIMA
+      artist: |-
+        Jam
+        SIMA
       price: 136
       G: true
       Spine: false

@@ -479,7 +479,10 @@ country: US
 age: "26"
 secretRoomType: Adult
 marriageVoice: true
-introVoice: []
+introVoice:
+  - jp
+  - jpdmm
+  - ko
 favor:
   present: 1
   clear: 1.5
@@ -583,46 +586,48 @@ cv:
     jpdmm: 宮崎羽衣
   M: {}
 source:
-  - - 1-6
-    - 1-7
-    - 1-8
-    - 2-8
-    - 3-5
-    - 2-1Ex
-    - 2-2Ex
-    - 2-3Ex
-    - 2-4Ex
-    - 3-1Ex
-    - 3-2Ex
-    - 3-3Ex
-    - 3-4Ex
-    - 4-4
-    - 4-7
-    - 1-5B
-    - 5-3
-    - 5-6
-    - 5-7
-    - 6-2
-    - 6-4
-    - 6-6
-    - 6-8
-    - 6-1Ex
-    - 6-2Ex
-    - 6-3Ex
-    - 6-4Ex
-    - 7-1
-    - 7-3
-    - 7-6
-    - 6-8Ex
-    - 8-1
-    - 8-3
-    - 8-6
-    - 8-7
-    - 8-1Ex
-    - 9-4B
-    - 9-1Ex
-    - 10-8
-    - 11-3
+  - - 1:1:1-6
+    - 1:1:1-7
+    - 1:1:1-8
+    - 1:1:1-5B
+  - - 2:1:2-8
+    - 2:1:2-1Ex
+    - 2:1:2-2Ex
+    - 2:1:2-3Ex
+    - 2:1:2-4Ex
+  - - 3:1:3-5
+    - 3:1:3-1Ex
+    - 3:1:3-2Ex
+    - 3:1:3-3Ex
+    - 3:1:3-4Ex
+  - - 4:1:4-4
+    - 4:1:4-7
+  - - 5:1:5-3
+    - 5:1:5-6
+    - 5:1:5-7
+  - - 6:1:6-2
+    - 6:1:6-4
+    - 6:1:6-6
+    - 6:1:6-8
+    - 6:1:6-1Ex
+    - 6:1:6-2Ex
+    - 6:1:6-3Ex
+    - 6:1:6-4Ex
+    - 6:1:6-8Ex
+  - - 7:1:7-1
+    - 7:1:7-3
+    - 7:1:7-6
+  - - 8:1:8-1
+    - 8:1:8-3
+    - 8:1:8-6
+    - 8:1:8-7
+    - 8:1:8-1Ex
+  - - 9:1:9-4B
+    - 9:1:9-1Ex
+  - - 10:1:10-8
+  - - 11:1:11-3
+  - - 12:1:12-6
+    - 12:2:12-10
   - - Ev:Ev1:Ev-6
     - Ev:Ev1:Ev-2B
     - Ev:Ev1:Ev-1Ex
@@ -701,6 +706,7 @@ source:
     - Ev:Ev20:EV3-2B
   - - Ev:Ev21:EV1-2
     - Ev:Ev21:EV1-1Ex
+  - - Ev:Ev22:EV1-3Ex
   - - Ev:Ev23:EV1-2
     - Ev:Ev23:EV1-3Ex
     - Ev:Ev23:EV2-1Ex
@@ -838,6 +844,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_11
               on: attack_success
               if:
@@ -873,6 +880,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_12
               on: attack_success
               if:
@@ -938,6 +946,7 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_13
               on: attack_success
               if:
@@ -983,6 +992,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -1022,6 +1032,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.38
           type: 0
           range: 3
@@ -1135,6 +1146,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_11
               on: attack_success
               if:
@@ -1170,6 +1182,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_12
               on: attack_success
               if:
@@ -1235,6 +1248,7 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_13
               on: attack_success
               if:
@@ -1280,6 +1294,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -1319,6 +1334,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.49
           type: 0
           range: 3
@@ -1432,6 +1448,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_11
               on: attack_success
               if:
@@ -1467,6 +1484,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_12
               on: attack_success
               if:
@@ -1532,6 +1550,7 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_13
               on: attack_success
               if:
@@ -1577,6 +1596,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -1616,6 +1636,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.6
           type: 0
           range: 3
@@ -1729,6 +1750,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_11
               on: attack_success
               if:
@@ -1764,6 +1786,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_12
               on: attack_success
               if:
@@ -1829,6 +1852,7 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_13
               on: attack_success
               if:
@@ -1874,6 +1898,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -1913,6 +1938,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.71
           type: 0
           range: 3
@@ -2026,6 +2052,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_11
               on: attack_success
               if:
@@ -2061,6 +2088,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_12
               on: attack_success
               if:
@@ -2126,6 +2154,7 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_13
               on: attack_success
               if:
@@ -2171,6 +2200,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -2210,6 +2240,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.82
           type: 0
           range: 3
@@ -2323,6 +2354,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_11
               on: attack_success
               if:
@@ -2358,6 +2390,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_12
               on: attack_success
               if:
@@ -2423,6 +2456,7 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_13
               on: attack_success
               if:
@@ -2468,6 +2502,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -2507,6 +2542,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.93
           type: 0
           range: 3
@@ -2620,6 +2656,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_11
               on: attack_success
               if:
@@ -2655,6 +2692,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_12
               on: attack_success
               if:
@@ -2720,6 +2758,7 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_13
               on: attack_success
               if:
@@ -2765,6 +2804,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -2804,6 +2844,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.04
           type: 0
           range: 3
@@ -2917,6 +2958,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_11
               on: attack_success
               if:
@@ -2952,6 +2994,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_12
               on: attack_success
               if:
@@ -3017,6 +3060,7 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_13
               on: attack_success
               if:
@@ -3062,6 +3106,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -3101,6 +3146,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.15
           type: 0
           range: 3
@@ -3214,6 +3260,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_11
               on: attack_success
               if:
@@ -3249,6 +3296,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_12
               on: attack_success
               if:
@@ -3314,6 +3362,7 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_13
               on: attack_success
               if:
@@ -3359,6 +3408,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -3398,6 +3448,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.26
           type: 0
           range: 3
@@ -3511,6 +3562,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_11
               on: attack_success
               if:
@@ -3546,6 +3598,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_12
               on: attack_success
               if:
@@ -3611,6 +3664,7 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_13
               on: attack_success
               if:
@@ -3656,6 +3710,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -3695,6 +3750,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -3812,7 +3868,7 @@ skills:
     icon: AntiArmorShot
     target: enemy
     delayed: false
-    target_ground: false
+    target_ground: true
     buffs:
       index:
         - 0
@@ -3926,6 +3982,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_21
               on: attack_success
               if:
@@ -3961,6 +4018,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_22
               on: attack_success
               if:
@@ -4014,6 +4072,7 @@ skills:
                         per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_23
               on: attack_success
               if:
@@ -4058,6 +4117,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -4097,6 +4157,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.285
           type: 0
           range: 3
@@ -4197,6 +4258,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_21
               on: attack_success
               if:
@@ -4232,6 +4294,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_22
               on: attack_success
               if:
@@ -4285,6 +4348,7 @@ skills:
                         per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_23
               on: attack_success
               if:
@@ -4329,6 +4393,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -4368,6 +4433,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.47
           type: 0
           range: 3
@@ -4468,6 +4534,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_21
               on: attack_success
               if:
@@ -4503,6 +4570,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_22
               on: attack_success
               if:
@@ -4556,6 +4624,7 @@ skills:
                         per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_23
               on: attack_success
               if:
@@ -4600,6 +4669,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -4639,6 +4709,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.655
           type: 0
           range: 3
@@ -4739,6 +4810,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_21
               on: attack_success
               if:
@@ -4774,6 +4846,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_22
               on: attack_success
               if:
@@ -4827,6 +4900,7 @@ skills:
                         per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_23
               on: attack_success
               if:
@@ -4871,6 +4945,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -4910,6 +4985,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.84
           type: 0
           range: 3
@@ -5010,6 +5086,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_21
               on: attack_success
               if:
@@ -5045,6 +5122,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_22
               on: attack_success
               if:
@@ -5098,6 +5176,7 @@ skills:
                         per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_23
               on: attack_success
               if:
@@ -5142,6 +5221,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -5181,6 +5261,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 3.025
           type: 0
           range: 3
@@ -5281,6 +5362,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_21
               on: attack_success
               if:
@@ -5316,6 +5398,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_22
               on: attack_success
               if:
@@ -5369,6 +5452,7 @@ skills:
                         per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_23
               on: attack_success
               if:
@@ -5413,6 +5497,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -5452,6 +5537,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 3.21
           type: 0
           range: 3
@@ -5552,6 +5638,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_21
               on: attack_success
               if:
@@ -5587,6 +5674,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_22
               on: attack_success
               if:
@@ -5640,6 +5728,7 @@ skills:
                         per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_23
               on: attack_success
               if:
@@ -5684,6 +5773,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -5723,6 +5813,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 3.395
           type: 0
           range: 3
@@ -5823,6 +5914,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_21
               on: attack_success
               if:
@@ -5858,6 +5950,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_22
               on: attack_success
               if:
@@ -5911,6 +6004,7 @@ skills:
                         per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_23
               on: attack_success
               if:
@@ -5955,6 +6049,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -5994,6 +6089,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 3.58
           type: 0
           range: 3
@@ -6094,6 +6190,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_21
               on: attack_success
               if:
@@ -6129,6 +6226,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_22
               on: attack_success
               if:
@@ -6182,6 +6280,7 @@ skills:
                         per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_23
               on: attack_success
               if:
@@ -6226,6 +6325,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -6265,6 +6365,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 3.765
           type: 0
           range: 3
@@ -6365,6 +6466,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_21
               on: attack_success
               if:
@@ -6400,6 +6502,7 @@ skills:
                       target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_22
               on: attack_success
               if:
@@ -6453,6 +6556,7 @@ skills:
                         per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_23
               on: attack_success
               if:
@@ -6497,6 +6601,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_52
               on: attack_success
               if:
@@ -6536,6 +6641,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -6762,6 +6868,7 @@ skills:
                       per: 0.05
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_31
               on: attack
               if:
@@ -6797,6 +6904,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_32
               on: round
               if:
@@ -6844,6 +6952,7 @@ skills:
                       per: 0.05
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -7043,6 +7152,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_41
               on: round
               if:
@@ -7094,6 +7204,7 @@ skills:
                       per: 5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_42
               on: damaged
               if:
@@ -7129,6 +7240,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 5
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -7308,6 +7420,7 @@ skills:
                       per: 15
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_51
               on: round
               if:
@@ -7349,6 +7462,7 @@ skills:
                       per: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_SandMan_N_53
               on: round
               if:
@@ -7390,6 +7504,7 @@ skills:
                       per: 15
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -7846,8 +7961,8 @@ dialogue:
       Login: ""
       Idle_01_01: |-
         You mean these clothes?
-        You said you couldn't sleep these days...
-        So I wore this hoping it'd help...
+        You said you couldn't sleep these days…
+        So I wore this hoping it'd help…
       Idle_01_02: |-
         I sometimes dream of the past.
         I dream of the time when you weren’t around.
@@ -7865,8 +7980,8 @@ dialogue:
         It’s more magical than magic itself.
       Idle_04_01: |-
         You wonder what my type is?
-        I want them to have eyes like yours... hair like yours...
-        Oh and a voice like yours...
+        I want them to have eyes like yours… hair like yours…
+        Oh and a voice like yours…
         Yes, everything about you is my type.
       SPIdle_02_01: |-
         Your Excellency, if you want,
@@ -8274,3 +8389,4 @@ skins:
         voiceId: 2
         2dmodel: 2DModel_BR_SandMan_NS2
         2dmodel_dam: 2DModel_BR_SandMan_NS2_Dam
+        consumableKey: Skin_BR_SandMan_2

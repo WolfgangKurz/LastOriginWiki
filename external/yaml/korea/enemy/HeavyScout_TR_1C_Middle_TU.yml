@@ -1,0 +1,329 @@
+uid: HeavyScout_TR_1C_Middle_TU
+rarity: 3
+type: 2
+role: 1
+category: 0
+stat:
+  hp:
+    - 3500
+    - 140
+  atk:
+    - 40
+    - 5
+  def:
+    - 0
+    - 0
+  spd: 6.5
+  cri: 0
+  acc: 415
+  eva: 0
+  res:
+    fire: 0
+    chill: 80
+    thunder: 0
+skills:
+  - key: Skill_MP_HeavyScout_N_1
+    icon: AntiArmorShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 1.2
+      range: 2
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_HeavyScout_N_1
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 2
+                  - 3
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_HeavyScout_N_1_1
+                type: 1
+                value: "0.200000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 20%
+                  per: 1%
+              overlap: 0
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_HeavyScout_N_1_2
+                type: 1
+                value: "0.500000"
+                level: "0.025000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 58
+                penetration:
+                  base: 50%
+                  per: 2.5%
+              overlap: 0
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_BUFF_DummyPierce_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_BUFF_DummyPierce_N_1_1
+                type: 1
+                value: "0.300000"
+                level: "0.040000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 30%
+                  per: 4%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_HeavyScout_N_2
+    icon: SelfSpdBuff
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 0
+      range: 6
+      ap: 5
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 999
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_HeavyScout_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_MP_HeavyScout_N_2_1
+                type: 1
+                value: "0.500000"
+                level: "0.025000"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 50%
+                  per: 2.5%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_MP_HeavyScout_N_2_2
+                type: 1
+                value: "0.150000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 15%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_HeavyScout_N_2_3
+                type: 1
+                value: "0.250000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 25%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_HeavyScout_N_3
+    icon: P.TeamAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,1,0,0,1,0,0,1,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_HeavyScout_N_3
+          on: wait
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 1
+          target: 2
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_HeavyScout_N_3_1
+                type: 0
+                value: "1"
+                level: "0.100000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 1
+                  per: 0.1
+              overlap: 0
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_MP_HeavyScout_N_3_2
+                type: 1
+                value: "0.150000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 15%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_RANGE_UP
+              desc:
+                desc: Effect_MP_HeavyScout_N_3_3
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 55
+                range:
+                  base: 1
+                  per: 0
+              overlap: 4
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_HeavyScout_N_3_4
+                type: 1
+                value: "0.150000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 15%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+ai: AI_MP_Dummy05_TR

@@ -12,10 +12,12 @@ import { Consumable } from "@/types/DB/Consumable";
 import { Equip } from "@/types/DB/Equip";
 
 import { useUpdate } from "@/libs/hooks";
+import { BuildClass } from "@/libs/Class";
 import { AssetsRoot, RarityDisplay } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
+import EntitySource from "@/libs/EntitySource";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
@@ -196,7 +198,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 		const h = Math.floor(duration / 3600);
 		const m = Math.floor(duration / 60) % 60;
 		const s = duration % 60;
-		return `${(`0${h}`).substr(-2)}:${(`0${m}`).substr(-2)}:${(`0${s}`).substr(-2)}`;
+		return `${(`0${h}`).slice(-2)}:${(`0${m}`).slice(-2)}:${(`0${s}`).slice(-2)}`;
 	})();
 
 	const UpgradeCostTable = ((): preact.VNode[][] => {
@@ -290,6 +292,16 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 	const RenderDrops = (target: FilterableEquip | null) => {
 		if (!target) return <></>;
 
+		const CraftTime = ((): string => {
+			const duration = target?.craft;
+			if (!duration) return "-";
+
+			const h = Math.floor(duration / 3600);
+			const m = Math.floor(duration / 60) % 60;
+			const s = duration % 60;
+			return `${(`0${h}`).slice(-2)}:${(`0${m}`).slice(-2)}:${(`0${s}`).slice(-2)}`;
+		})();
+
 		return target.source.length === 0 && !target.craft
 			? <span class="text-secondary">
 				<Locale k="UNIT_VIEW_DROPS_EMPTY" />
@@ -311,25 +323,55 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 					: <></>
 				}
 
-				{ target.source.map((area, aindex) => <div>
-					{ target.craft || aindex > 0 ? <hr class="my-1" /> : <></> }
-					{ area.length > 0 && area[0].IsEvent
-						? <h6 style="font-weight: bold">
-							<Locale k={ area[0].EventName } />
-						</h6>
-						: area.length > 0 && area[0].IsChallenge
+				{ target.source
+					.filter(r => r.length > 0)
+					.reduce<EntitySource[][]>((p, c) => {
+						if (c[0].IsStory) {
+							const pi = p.findIndex(r => r[0].IsStory);
+							if (pi >= 0)
+								return p.map((v, i) => i === pi ? [...v, ...c] : v);
+						}
+						return [...p, c];
+					}, [])
+					.map((area, aindex) => <div>
+						{ (target.craft || aindex > 0) && <hr class="my-1" /> }
+						{ area[0].IsEvent
 							? <h6 style="font-weight: bold">
-								<Locale k={ `COMMON_CHALLENGE_${area[0].ChallengeName}` } />
+								<Locale k={ area[0].EventName } />
 							</h6>
-							: area.length > 0 && area[0].IsSubStory
+							: area[0].IsDaily
 								? <h6 style="font-weight: bold">
-									<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />
+									<Locale k="WORLD_Daily" />
 								</h6>
-								: <></>
-					}
+								: area[0].IsChallenge
+									? <h6 style="font-weight: bold">
+										<Locale k={ `COMMON_CHALLENGE_${area[0].ChallengeName}` } />
+									</h6>
+									: area[0].IsSubStory
+										? <h6 style="font-weight: bold">
+											<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />
+										</h6>
+										: area[0].IsNewEternalWar
+											? <h6 style="font-weight: bold">
+												<Locale k="COMMON_SOURCE_NEW" />
+											</h6>
+											: <></>
+						}
 
-					{ area.map(source => <SourceBadge class="my-1" source={ source } linked />) }
-				</div>) }
+						{ (() => {
+							const _area: Record<string, EntitySource[]> = {};
+							area.forEach(s => {
+								const k = s.IsEvent ? `${s.World}:${s.Chapter}` : s.World;
+								if (!(k in _area)) _area[k] = [];
+								_area[k].push(s);
+							});
+							return Object.keys(_area).map((k, i) => <span>
+								{ i > 0 && <span class="border-start mx-1" /> }
+								{ _area[k].map(source => <SourceBadge class="my-1" source={ source } linked />) }
+							</span>);
+						})() }
+					</div>)
+				}
 			</>;
 	};
 
@@ -555,7 +597,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 								</tbody>
 							</table>
 
-							{ StatusList && <BuffList class="mt-2" list={ StatusList } dummy /> }
+							{ StatusList && <BuffList class="mt-2" uid={ target.fullKey } list={ StatusList } dummy /> }
 						</>
 					}
 					{ displayTab === "drop" &&
@@ -569,10 +611,12 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 											<div class="alert alert-light mb-3 p-1">
 												<Locale
 													k="EQUIP_VIEW_SOURCE_T4"
-													p={ [<Locale
-														plain
-														k={ `EQUIP_${GetFullKey(target.type, target.key, ACTOR_GRADE.SSS)}` }
-													/>] }
+													p={ [
+														<span style="text-decoration:underline">{
+															LocaleGet(`EQUIP_${GetFullKey(target.type, target.key, ACTOR_GRADE.SSS)}`)
+																.replace(/ SSS$/, "")
+														}</span>
+													] }
 												/>
 											</div>
 											{ RenderDrops(targetT4) }

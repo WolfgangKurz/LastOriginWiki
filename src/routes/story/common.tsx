@@ -16,4 +16,6 @@ export function Nn (text: string) {
 		.replace(/\[c\]\[([^\]]+)\]/g, (p, p1) => `<span data-color="${p1}" style="color:#${p1}">`)
 		.replace(/\[-\]\[\/c\]/g, "</span>");
 }
-export const fontFamily = ["IBM Plex Sans KR", "IBM Plex Sans", "Spoqa Han Sans", "Spoqa Han Sans JP", "sans-serif"];
+export const fontFamily = ["IBM Plex Sans KR", "IBM Plex Sans", "Spoqa Han Sans", "Spoqa Han Sans JP", "sans-serif"]
+	.map(r => r.includes(" ") ? `"${r}"` : r)
+	.join(", ");

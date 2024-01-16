@@ -1,17 +1,21 @@
 import { FunctionalComponent } from "preact";
 import Decimal from "decimal.js";
 
-import { ACTOR_GRADE, ITEM_GRADE, STAGE_SUB_TYPE } from "@/types/Enums";
-import { MapWaveGroup, World } from "@/types/DB/Map";
+import { ACTOR_GRADE, ITEM_GRADE, STAGE_SUB_TYPE, UNIT_POSITION } from "@/types/Enums";
+import { MapWaveGroup, Maps, World } from "@/types/DB/Map";
 import { Equip } from "@/types/DB/Equip";
 import { Unit } from "@/types/DB/Unit";
+import { SkillGroup } from "@/types/DB/Skill";
 
+import { CurrentDB } from "@/libs/DB";
+import { useUpdate } from "@/libs/hooks";
 import { objState } from "@/libs/State";
-import { RarityDisplay, WorldIds } from "@/libs/Const";
+import { RarityDisplay, TroopNameTable, WorldIds } from "@/libs/Const";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
-import Loader, { GetJson } from "@/components/loader";
+import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import Loading from "@/components/loading";
 import Locale, { LocaleGet } from "@/components/locale";
 import IconX from "@/components/bootstrap-icon/icons/X";
 import IconPlusSquareFill from "@/components/bootstrap-icon/icons/PlusSquareFill";
@@ -20,6 +24,9 @@ import SkillIcon from "@/components/skill-icon";
 import EquipIcon from "@/components/equip-icon";
 
 import style from "./style.module.scss";
+import ElemIcon from "@/components/elem-icon";
+import { BUFFEFFECT_TYPE } from "@/types/BuffEffect";
+import { BuffTrigger } from "@/types/BuffTrigger";
 
 interface BonusCharInfo {
 	uid: string;
@@ -44,8 +51,6 @@ interface BonusEquipStateInfo extends BonusEquipInfo {
 type BonusInfo = BonusCharInfo | BonusEquipInfo;
 type BonusState = BonusCharStateInfo | BonusEquipStateInfo;
 
-const WorldIdList = WorldIds.filter(x => !x.startsWith("EvA"));
-
 interface EXPSet {
 	world: string;
 	map: string;
@@ -58,6 +63,8 @@ interface EXPSet {
 }
 
 const EXPCalc: FunctionalComponent = () => {
+	const update = useUpdate();
+
 	const linkColors = ["secondary", "success", "success", "success", "success", "primary"];
 	const rarities: ACTOR_GRADE[] = [
 		ACTOR_GRADE.B,
@@ -84,6 +91,21 @@ const EXPCalc: FunctionalComponent = () => {
 			skill: 3,
 			icon: "ExpUp",
 		},
+		{
+			uid: "BR_Uroborus",
+			skill: 5,
+			icon: "ExpUp",
+		},
+		// {
+		// 	uid: "PECS_MightyR",
+		// 	skill: 4,
+		// 	icon: "ExpUp",
+		// },
+		// {
+		// 	uid: "PECS_MightyR",
+		// 	skill: 5,
+		// 	icon: "ExpUp",
+		// },
 		{
 			uid: "Chip_KillExp",
 			rarities: [ACTOR_GRADE.SS, ACTOR_GRADE.S, ACTOR_GRADE.A, ACTOR_GRADE.B],
@@ -164,6 +186,60 @@ const EXPCalc: FunctionalComponent = () => {
 	SetMeta(["twitter:image", "og:image"], null);
 
 	UpdateTitle(LocaleGet("MENU_ETC_EXPCALC"));
+
+	const targetJson = [
+		// ...WorldIdList
+		// 	.filter(wid => wid !== "Story")
+		// 	.map(wid => `map/${wid}`),
+		StaticDB.Maps,
+		...bonuses
+			.map(x => {
+				if ("skill" in x) return `unit/${x.uid}`;
+				return x.rarities.map(r => `equip/${x.uid}_T${r - 1}`);
+			})
+			.flat()
+			.unique(),
+	];
+
+	{
+		const needToLoad = targetJson.filter(r => !GetJson(r));
+		if (needToLoad.length > 0) {
+			Promise.all(
+				needToLoad.map(r => new Promise<void>(resolve => JsonLoaderCore(CurrentDB, r).then(_ => resolve())))
+			).then(() => update());
+			return <Loading.Data />;
+		}
+	}
+
+	const MapsDB = GetJson<Maps>(StaticDB.Maps);
+	{
+		const needToLoad = Object.keys(MapsDB)
+			.map(k => `map/${k}`)
+			.filter(r => !GetJson(r));
+		if (needToLoad.length > 0) {
+			Promise.all(
+				needToLoad.map(r => new Promise<void>(resolve => JsonLoaderCore(CurrentDB, r).then(_ => resolve())))
+			).then(() => update());
+			return <Loading.Data />;
+		}
+	}
+
+	const MapDB = (() => {
+		const ret: Record<string, World> = {};
+		Object.keys(MapsDB).forEach(k => {
+			const dat = GetJson<World>(`map/${k}`);
+			ret[k] = dat;
+		});
+		return ret;
+	})();
+
+	const worlds = [
+		"Story",
+		...Object.keys(MapsDB)
+			.filter(x => !excludeWorlds.includes(x))
+			.filter(x => !/^[0-9]+$/.test(x)),
+	];
+
 
 	return <div class="EXPCalculator">
 		<div class="row">
@@ -305,402 +381,451 @@ const EXPCalc: FunctionalComponent = () => {
 		</div>
 		<hr />
 
-		<Loader
-			json={ [
-				...WorldIdList.map(wid => `map/${wid}`),
-				...bonuses
-					.map(x => {
-						if ("skill" in x)
-							return [`unit/${x.uid}`];
-						return x.rarities.map(r => `equip/${x.uid}_T${r - 1}`);
-					})
-					.flat(),
-			] }
-			content={ (): preact.VNode => {
-				const MapDB = (() => {
-					interface Worlds {
-						[key: string]: World;
-					}
+		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-3">
+			{ expSet.value.map((x, i) => {
+				interface IndexedBonus<T extends BonusState = BonusState> {
+					data: T;
+					index: number;
+				}
 
-					const ret: Worlds = {};
-					WorldIdList.forEach(wid => ret[wid] = GetJson<World>(`map/${wid}`));
-					return ret;
+				const maps = x.world
+					? x.world === "Story"
+						? Object.keys(MapsDB).filter(y => /^[0-9]+$/.test(y))
+						: Object.keys(x.world in MapsDB ? MapsDB[x.world] : {})
+					: [];
+				const nodes = x.world && x.map
+					? (x.world === "Story"
+						? Object.values(MapDB[x.map]).map(y => y.list).flat()
+						: MapDB[x.world][x.map].list
+					).filter(r => r.type !== STAGE_SUB_TYPE.STORY)
+					: [];
+
+				const indexedBonuses = x.bonus.map<IndexedBonus>((x, i) => ({ data: x, index: i }));
+				const skillBonuses = indexedBonuses.filter(x => "skill" in x.data) as IndexedBonus<BonusCharStateInfo>[];
+				const equipBonuses = indexedBonuses.filter(x => !("skill" in x.data)) as IndexedBonus<BonusEquipStateInfo>[];
+
+				const selectedNode = x.world && x.map && x.node && nodes.find(y => y.text === x.node);
+
+				const selectedWaves = ((): MapWaveGroup[] => {
+					if (!selectedNode) return [];
+
+					const waves = selectedNode.wave;
+					if (!waves) return [];
+
+					return waves
+						.map(x => x.reduce((p, c) => {
+							if (!p) return c;
+							if (c.e.exp < p.e.exp) return p;
+
+							return c;
+						}, undefined as (MapWaveGroup | undefined)))
+						.filter(x => x) as MapWaveGroup[];
 				})();
 
-				const worlds = Object.keys(MapDB).filter(x => !excludeWorlds.includes(x));
+				const SumBonusValues = (base: Decimal, wave: MapWaveGroup): Decimal => {
+					let sumValue = base;
 
-				return <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-3">
-					{ expSet.value.map((x, i) => {
-						interface IndexedBonus<T extends BonusState = BonusState> {
-							data: T;
-							index: number;
-						}
-						const maps = (x.world && Object.keys(MapDB[x.world])) || [];
-						const nodes = (x.world && x.map && MapDB[x.world][x.map].list.filter(x => x.type !== STAGE_SUB_TYPE.STORY)) || [];
+					equipBonuses.forEach(y => {
+						if (y.data.level < 0) return;
 
-						const indexedBonuses = x.bonus.map<IndexedBonus>((x, i) => ({ data: x, index: i }));
-						const skillBonuses = indexedBonuses.filter(x => "skill" in x.data) as IndexedBonus<BonusCharStateInfo>[];
-						const equipBonuses = indexedBonuses.filter(x => !("skill" in x.data)) as IndexedBonus<BonusEquipStateInfo>[];
+						const equip = GetJson<Equip>(`equip/${y.data.uid}_T${y.data.rarity - 1}`);
+						if (!equip) return; // ??
 
-						const selectedNode = x.world && x.map && x.node &&
-							MapDB[x.world][x.map].list.find(y => y.text === x.node);
+						const lines = equip.stats[y.data.level];
+						const data = lines.find(s => "buffs" in s);
+						if (!data || !("buffs" in data)) return; // ????
 
-						const selectedWaves = ((): MapWaveGroup[] => {
-							if (!selectedNode) return [];
+						const expbuff = data.buffs.find(b => "exp" in b.value);
+						if (!expbuff || !("exp" in expbuff.value)) return; // ??????
 
-							const waves = selectedNode.wave;
-							if (!waves) return [];
+						const exp = expbuff.value.exp;
 
-							return waves
-								.map(x => x.reduce((p, c) => {
-									if (!p) return c;
-									if (c.e.exp < p.e.exp) return p;
-
-									return c;
-								}, undefined as (MapWaveGroup | undefined)))
-								.filter(x => x) as MapWaveGroup[];
-						})();
-
-						const SumBonusValues = (base: Decimal, wave: MapWaveGroup): Decimal => {
-							let sumValue = base;
-
-							equipBonuses.forEach(y => {
-								if (y.data.level < 0) return;
-
-								const equip = GetJson<Equip>(`equip/${y.data.uid}_T${y.data.rarity - 1}`);
-								if (!equip) return; // ??
-
-								const lines = equip.stats[y.data.level];
-								const data = lines.find(s => "buffs" in s);
-								if (!data || !("buffs" in data)) return; // ????
-
-								const expbuff = data.buffs.find(b => "exp" in b.value);
-								if (!expbuff || !("exp" in expbuff.value)) return; // ??????
-
-								const exp = expbuff.value.exp;
-
-								sumValue = sumValue.add(
-									base.mul(
-										Decimal.mul(
-											Decimal.add(
-												Decimal.div(exp.base.replace(/%$/, ""), 100),
-												Decimal.mul(
-													Decimal.div(exp.per.replace(/%$/, ""), 100),
-													y.data.level,
-												),
-											),
-											Math.max(y.data.stack, 1),
-										),
-									).floor(),
-								);
-							});
-
-							skillBonuses.forEach(y => {
-								if (y.data.level < 0) return;
-
-								const unit = GetJson<Unit>(`unit/${y.data.uid}`);
-								if (!unit) return; // ??
-
-								const skills = unit.skills[y.data.skill.toString() as keyof Unit["skills"]];
-								if (!skills) return; // ????
-
-								const skill = skills.buffs.data[skills.buffs.index[Math.min(9, y.data.level)]];
-								const buff = skill.buffs.find(z => "if" in z);
-								if (!buff || !("if" in buff)) return; // ??????
-
-								const expbuff = buff.buffs.find(z => "exp" in z.value);
-								if (!expbuff || !("exp" in expbuff.value)) return; // ??????
-
-								const exp = expbuff.value.exp;
-
-								if (buff.on === "enemy_dead") {
-									sumValue = sumValue.add(
-										base.mul(
-											Decimal.mul(
-												Decimal.add(
-													Decimal.div(exp.base.replace(/%$/, ""), 100),
-													Decimal.mul(
-														Decimal.div(exp.per.replace(/%$/, ""), 100),
-														y.data.level - 1,
-													),
-												),
-												wave.e.enemy.filter(x => x).length,
-											),
-										).floor(),
-									);
-								} else {
-									sumValue = sumValue.add(
-										base.mul(
-											Decimal.add(
-												Decimal.div(exp.base.replace(/%$/, ""), 100),
-												Decimal.mul(
-													Decimal.div(exp.per.replace(/%$/, ""), 100),
-													y.data.level - 1,
-												),
-											),
-										).floor(),
-									);
-								}
-							});
-
-							return sumValue;
-						};
-						const ResultExp = (wave: number): number => {
-							if (selectedWaves.length <= wave) return 0;
-
-							const base = selectedWaves[wave].e.exp;
-							let exp = new Decimal(base);
-
-							// {[(웨이브 경험치 X 리더 보너스) X 장비 및 스킬에 의한 상승량 총합] X 이벤트 경험치} X 링크 보너스 + 시설 경험치 + 부스트 경험치
-							if (x.isLeader) exp = exp.mul(1.2).floor();
-
-							// exp = exp.mul(SumBonusValues(selectedWaves[wave])).floor();
-							exp = SumBonusValues(exp, selectedWaves[wave]);
-
-							exp = exp.mul(
-								Decimal.div(eventBonus.value, 100).add(1),
-							).floor();
-
-							exp = exp.mul(
-								Decimal.div(CoreLinks.value, 25).add(1),
-							).floor();
-
-							if (boostBonus.value)
-								exp = exp.add(Decimal.div(base, 2)).floor();
-
-							exp = exp.add(
+						sumValue = sumValue.add(
+							base.mul(
 								Decimal.mul(
-									base,
-									facilityLevel.value.reduce((p, c) => p.add(
-										Decimal.div(facilityBonuses[c], 100),
-									), new Decimal(0)),
+									Decimal.add(
+										Decimal.div(exp.base.replace(/%$/, ""), 100),
+										Decimal.mul(
+											Decimal.div(exp.per.replace(/%$/, ""), 100),
+											y.data.level,
+										),
+									),
+									Math.max(y.data.stack, 1),
+								),
+							).floor(),
+						);
+					});
+
+					skillBonuses.forEach(y => {
+						if (y.data.level < 0) return;
+
+						const unit = GetJson<Unit>(`unit/${y.data.uid}`);
+						if (!unit) return; // ??
+
+						const skills = unit.skills[y.data.skill.toString() as keyof Unit["skills"]];
+						if (!skills) return; // ????
+
+						const skill = skills.buffs.data[skills.buffs.index[Math.min(9, y.data.level)]];
+						const buff = skill.buffs.find(z => "if" in z);
+						if (!buff || !("if" in buff)) return; // ??????
+
+						const expbuff = buff.buffs.find(z => "exp" in z.value);
+						if (!expbuff || !("exp" in expbuff.value)) return; // ??????
+
+						const exp = expbuff.value.exp;
+
+						if (buff.on === "enemy_dead") {
+							sumValue = sumValue.add(
+								base.mul(
+									Decimal.mul(
+										Decimal.add(
+											Decimal.div(exp.base.replace(/%$/, ""), 100),
+											Decimal.mul(
+												Decimal.div(exp.per.replace(/%$/, ""), 100),
+												y.data.level - 1,
+											),
+										),
+										wave.e.enemy.filter(x => x).length,
+									),
 								).floor(),
 							);
+						} else {
+							sumValue = sumValue.add(
+								base.mul(
+									Decimal.add(
+										Decimal.div(exp.base.replace(/%$/, ""), 100),
+										Decimal.mul(
+											Decimal.div(exp.per.replace(/%$/, ""), 100),
+											y.data.level - 1,
+										),
+									),
+								).floor(),
+							);
+						}
+					});
 
-							return exp
-								.floor()
-								.toNumber();
-						};
+					return sumValue;
+				};
+				const ResultExp = (wave: number): number => {
+					if (selectedWaves.length <= wave) return 0;
 
-						const requiredExp = ((): number => {
-							// const rarityMultiply: Record<ACTOR_GRADE, number> = {
-							// 	[ACTOR_GRADE.SSS]: 0,
-							// 	[ACTOR_GRADE.SS]: 1.875,
-							// 	[ACTOR_GRADE.S]: 1.5,
-							// 	[ACTOR_GRADE.A]: 1.25,
-							// 	[ACTOR_GRADE.B]: 1,
-							// };
-							const startExp = ((): Decimal => {
-								let exp = new Decimal(baseExp.value);
-								for (let i = 0; i < baseLevel.value; i++)
-									exp = exp.add(unitEXPTable[unitRarity.value]![i] || 0);
+					const base = selectedWaves[wave].e.exp;
+					let exp = new Decimal(base);
 
-								return exp;
-							})();
-							const destExp = ((): Decimal => {
-								let exp = new Decimal(0);
-								for (let i = 0; i < destLevel.value; i++)
-									exp = exp.add(unitEXPTable[unitRarity.value]![i] || 0);
+					// {[(웨이브 경험치 X 리더 보너스) X 장비 및 스킬에 의한 상승량 총합] X 이벤트 경험치} X 링크 보너스 + 시설 경험치 + 부스트 경험치
+					if (x.isLeader) exp = exp.mul(1.2).floor();
 
-								return exp;
-							})();
-							return Decimal.max(0, Decimal.sub(destExp, startExp))
-								.toNumber();
-						})();
+					// exp = exp.mul(SumBonusValues(selectedWaves[wave])).floor();
+					exp = SumBonusValues(exp, selectedWaves[wave]);
 
-						return <div class="col p-2">
-							<div class="p-3 border border-secondary rounded">
-								<div class="float-end mb-2">
-									<button
-										class="btn btn-sm btn-danger px-2 py-0"
-										onClick={ (): void => {
-											expSet.set((v) => [
-												...v.slice(0, i),
-												...v.slice(i + 1),
-											]);
-										} }
-									>
-										<IconX />
-									</button>
-								</div>
-								<div class="clearfix" />
+					exp = exp.mul(
+						Decimal.div(eventBonus.value, 100).add(1),
+					).floor();
 
+					exp = exp.mul(
+						Decimal.div(CoreLinks.value, 25).add(1),
+					).floor();
+
+					if (boostBonus.value)
+						exp = exp.add(Decimal.div(base, 2)).floor();
+
+					exp = exp.add(
+						Decimal.mul(
+							base,
+							facilityLevel.value.reduce((p, c) => p.add(
+								Decimal.div(facilityBonuses[c], 100),
+							), new Decimal(0)),
+						).floor(),
+					);
+
+					return exp
+						.floor()
+						.toNumber();
+				};
+
+				const requiredExp = ((): number => {
+					// const rarityMultiply: Record<ACTOR_GRADE, number> = {
+					// 	[ACTOR_GRADE.SSS]: 0,
+					// 	[ACTOR_GRADE.SS]: 1.875,
+					// 	[ACTOR_GRADE.S]: 1.5,
+					// 	[ACTOR_GRADE.A]: 1.25,
+					// 	[ACTOR_GRADE.B]: 1,
+					// };
+					const startExp = ((): Decimal => {
+						let exp = new Decimal(baseExp.value);
+						for (let i = 0; i < baseLevel.value; i++)
+							exp = exp.add(unitEXPTable[unitRarity.value]![i] || 0);
+
+						return exp;
+					})();
+					const destExp = ((): Decimal => {
+						let exp = new Decimal(0);
+						for (let i = 0; i < destLevel.value; i++)
+							exp = exp.add(unitEXPTable[unitRarity.value]![i] || 0);
+
+						return exp;
+					})();
+					return Decimal.max(0, Decimal.sub(destExp, startExp))
+						.toNumber();
+				})();
+
+				return <div class="col p-2">
+					<div class="p-3 border border-secondary rounded">
+						<div class="float-end mb-2">
+							<button
+								class="btn btn-sm btn-danger px-2 py-0"
+								onClick={ (): void => {
+									expSet.set((v) => [
+										...v.slice(0, i),
+										...v.slice(i + 1),
+									]);
+								} }
+							>
+								<IconX />
+							</button>
+						</div>
+						<div class="clearfix" />
+
+						<select
+							class="form-select mb-1"
+							value={ x.world }
+							onChange={ (e): void => {
+								e.preventDefault();
+
+								const world = (e.target as HTMLSelectElement).value;
+								const map = world === "Story"
+									? "1"
+									: Object.keys(MapDB[world])[0];
+
+								expSet.set((v) => [
+									...v.slice(0, i),
+									{
+										...x,
+										world,
+										map,
+										// node: MapDB[world][map].list.filter(x => x.type !== STAGE_SUB_TYPE.STORY)[0].text,
+										node: "",
+									},
+									...v.slice(i + 1),
+								]);
+							} }
+						>
+							{ worlds.map(w => <option value={ w }>
+								{ w !== "Story" && `${w} - ` }
+								<Locale k={ `WORLD_${w}` } />
+							</option>) }
+						</select>
+
+						<div class="row row-cols-2 gx-1">
+							<div class="col">
 								<select
 									class="form-select mb-1"
-									value={ x.world }
+									disabled={ !x.world }
+									value={ x.map }
 									onChange={ (e): void => {
 										e.preventDefault();
 
-										const world = (e.target as HTMLSelectElement).value;
-										const map = Object.keys(MapDB[world])[0];
+										const map = (e.target as HTMLSelectElement).value;
 										expSet.set((v) => [
 											...v.slice(0, i),
 											{
 												...x,
-												world,
 												map,
-												node: MapDB[world][map].list.filter(x => x.type !== STAGE_SUB_TYPE.STORY)[0].text,
+												node: "", //MapDB[x.world][map].list.filter(x => x.type !== STAGE_SUB_TYPE.STORY)[0].text,
 											},
 											...v.slice(i + 1),
 										]);
 									} }
 								>
-									{ worlds.map(w => <option value={ w }>
-										{ w !== "Story" && `${w} - ` }
-										<Locale k={ `WORLD_${w}` } />
+									{ maps.map(m => <option value={ m }>
+										<Locale k="WORLDS_WORLD_TITLE" p={ [m] } />
 									</option>) }
 								</select>
+							</div>
+							<div class="col">
+								<select
+									class="form-select mb-1"
+									disabled={ !x.world || !x.map }
+									value={ x.node }
+									onChange={ (e): void => {
+										e.preventDefault();
+										expSet.set((v) => [
+											...v.slice(0, i),
+											{ ...x, node: (e.target as HTMLSelectElement).value },
+											...v.slice(i + 1),
+										]);
+									} }
+								>
+									{ nodes.map(n => <option value={ n.text }>{ n.text }</option>) }
+								</select>
+							</div>
+						</div>
 
-								<div class="row row-cols-2 gx-1">
-									<div class="col">
-										<select
-											class="form-select mb-1"
-											disabled={ !x.world }
-											value={ x.map }
-											onChange={ (e): void => {
-												e.preventDefault();
+						<div>
+							<div class="form-check text-start">
+								<label class="form-check-label">
+									<input
+										class="form-check-input"
+										type="checkbox"
+										value=""
+										checked={ x.isLeader }
+										onChange={ (e): void => {
+											e.preventDefault();
 
-												const map = (e.target as HTMLSelectElement).value;
-												expSet.set((v) => [
-													...v.slice(0, i),
-													{
-														...x,
-														map,
-														node: MapDB[x.world][map].list.filter(x => x.type !== STAGE_SUB_TYPE.STORY)[0].text,
-													},
-													...v.slice(i + 1),
-												]);
-											} }
-										>
-											{ maps.map(m => <option value={ m }>
-												<Locale k="WORLDS_WORLD_TITLE" p={ [m] } />
-											</option>) }
-										</select>
-									</div>
-									<div class="col">
-										<select
-											class="form-select mb-1"
-											disabled={ !x.world || !x.map }
-											value={ x.node }
-											onChange={ (e): void => {
-												e.preventDefault();
-												expSet.set((v) => [
-													...v.slice(0, i),
-													{ ...x, node: (e.target as HTMLSelectElement).value },
-													...v.slice(i + 1),
-												]);
-											} }
-										>
-											{ nodes.map(n => <option value={ n.text }>{ n.text }</option>) }
-										</select>
-									</div>
-								</div>
+											const value = (e.target as HTMLInputElement).checked;
+											expSet.set((v) => [
+												...v.slice(0, i),
+												{ ...x, isLeader: value },
+												...v.slice(i + 1),
+											]);
+										} }
+									/>
+									<Locale k="EXPCALC_LEADER_BONUS" />
+								</label>
+							</div>
+						</div>
 
-								<div>
-									<div class="form-check text-start">
-										<label class="form-check-label">
-											<input
-												class="form-check-input"
-												type="checkbox"
-												value=""
-												checked={ x.isLeader }
+						<hr class="my-1" />
+
+						<ul class="nav nav-tabs my-3">
+							{ contentTabs.map((d, idx) => <li class="nav-item">
+								<a href="#"
+									class={ `nav-link text-dark ${isActive(x._tab === idx)}` }
+									onClick={ (e): void => {
+										e.preventDefault();
+										expSet.set((v) => [
+											...v.slice(0, i),
+											{ ...x, _tab: idx },
+											...v.slice(i + 1),
+										]);
+									} }
+								>
+									<Locale k={ `EXPCALC_${d}` } />
+								</a>
+							</li>) }
+						</ul>
+
+						{ /* 보너스 */ }
+						{ x._tab === 0
+							? <>
+								{ skillBonuses
+									.map(({ data, index }) => <div class={ `clearfix ${style.bonusLine}` } >
+										<UnitFace uid={ data.uid } />
+										<SkillIcon icon={ data.icon } passive />
+										<Locale plain k={ `UNIT_SKILL_${data.uid}_${data.skill}` } />
+
+										<div class="float-end">
+											<select
+												class="d-inline-block form-select form-select-sm"
+												value={ data.level }
 												onChange={ (e): void => {
 													e.preventDefault();
 
-													const value = (e.target as HTMLInputElement).checked;
+													const value = parseInt((e.target as HTMLSelectElement).value, 10);
 													expSet.set((v) => [
 														...v.slice(0, i),
-														{ ...x, isLeader: value },
+														{
+															...x,
+															bonus: [
+																...x.bonus.slice(0, index),
+																{ ...data, level: value },
+																...x.bonus.slice(index + 1),
+															],
+														},
 														...v.slice(i + 1),
 													]);
 												} }
-											/>
-											<Locale k="EXPCALC_LEADER_BONUS" />
-										</label>
-									</div>
-								</div>
+											>
+												<option value={ -1 }>
+													<Locale k="EXPCALC_BONUS_NONE" />
+												</option>
 
-								<hr class="my-1" />
-
-								<ul class="nav nav-tabs my-3">
-									{ contentTabs.map((d, idx) => <li class="nav-item">
-										<a href="#"
-											class={ `nav-link text-dark ${isActive(x._tab === idx)}` }
-											onClick={ (e): void => {
-												e.preventDefault();
-												expSet.set((v) => [
-													...v.slice(0, i),
-													{ ...x, _tab: idx },
-													...v.slice(i + 1),
-												]);
-											} }
-										>
-											<Locale k={ `EXPCALC_${d}` } />
-										</a>
-									</li>) }
-								</ul>
-
-								{ /* 보너스 */ }
-								{ x._tab === 0
-									? <>
-										{ skillBonuses
-											.map(({ data, index }) => <div class={ `clearfix ${style.bonusLine}` } >
-												<UnitFace uid={ data.uid } />
-												<SkillIcon icon={ data.icon } passive />
-												<Locale plain k={ `UNIT_SKILL_${data.uid}_${data.skill}` } />
-
-												<div class="float-end">
-													<select
-														class="d-inline-block form-select form-select-sm"
-														value={ data.level }
-														onChange={ (e): void => {
-															e.preventDefault();
-
-															const value = parseInt((e.target as HTMLSelectElement).value, 10);
-															expSet.set((v) => [
-																...v.slice(0, i),
-																{
-																	...x,
-																	bonus: [
-																		...x.bonus.slice(0, index),
-																		{ ...data, level: value },
-																		...x.bonus.slice(index + 1),
-																	],
-																},
-																...v.slice(i + 1),
-															]);
-														} }
-													>
-														<option value={ -1 }>
-															<Locale k="EXPCALC_BONUS_NONE" />
-														</option>
-
-														{ new Array(13)
-															.fill(0)
-															.map((_, i) => <option value={ i + 1 }>Lv. { i + 1 }</option>)
-														}
-													</select>
-												</div>
-											</div>)
-											.gap(<hr class="my-1" />)
-										}
-									</>
-									: <></>
+												{ new Array(13)
+													.fill(0)
+													.map((_, i) => <option value={ i + 1 }>Lv. { i + 1 }</option>)
+												}
+											</select>
+										</div>
+									</div>)
+									.gap(<hr class="my-1" />)
 								}
+							</>
+							: <></>
+						}
 
-								{ x._tab === 1
-									? <>
-										{ equipBonuses
-											.map(({ data, index }) => <div class={ `clearfix ${style.bonusLine}` } >
-												<div>
-													<EquipIcon image={ `UI_Icon_Equip_${data.uid}_T${data.rarity - 1}` } />
+						{ x._tab === 1
+							? <>
+								{ equipBonuses
+									.map(({ data, index }) => <div class={ `clearfix ${style.bonusLine}` } >
+										<div>
+											<EquipIcon image={ `UI_Icon_Equip_${data.uid}_T${data.rarity - 1}` } />
 
-													{ LocaleGet(`EQUIP_${data.uid}_T${data.rarity - 1}`).replace(/ (RE|MP|SP|EX)$/, "") }
+											{ LocaleGet(`EQUIP_${data.uid}_T${data.rarity - 1}`).replace(/ (RE|MP|SP|EX)$/, "") }
 
-													<div class="float-end">
+											<div class="float-end">
+												<select
+													class="d-inline-block form-select form-select-sm"
+													value={ data.level }
+													onChange={ (e): void => {
+														e.preventDefault();
+
+														const value = parseInt((e.target as HTMLSelectElement).value, 10);
+														expSet.set((v) => [
+															...v.slice(0, i),
+															{
+																...x,
+																bonus: [
+																	...x.bonus.slice(0, index),
+																	{ ...data, level: value },
+																	...x.bonus.slice(index + 1),
+																],
+															},
+															...v.slice(i + 1),
+														]);
+													} }
+												>
+													<option value={ -1 }>
+														<Locale k="EXPCALC_BONUS_NONE" />
+													</option>
+
+													{ new Array(11)
+														.fill(0)
+														.map((_, i) => <option value={ i }>Lv. { i }</option>)
+													}
+												</select>
+											</div>
+											<div class="ps-5">
+												<select
+													class={ `form-select form-select-sm ${style.raritySelector}` }
+													disabled={ data.level < 0 }
+													value={ data.rarity }
+													onChange={ (e): void => {
+														e.preventDefault();
+
+														const value = parseInt((e.target as HTMLSelectElement).value, 10);
+														expSet.set((v) => [
+															...v.slice(0, i),
+															{
+																...x,
+																bonus: [
+																	...x.bonus.slice(0, index),
+																	{ ...data, rarity: value },
+																	...x.bonus.slice(index + 1),
+																],
+															},
+															...v.slice(i + 1),
+														]);
+													} }
+												>
+													{ data.rarities.map(x => <option value={ x }>{ RarityDisplay[x] }</option>) }
+												</select>
+
+												{ data.stacks && data.stacks > 1
+													? <div class="float-end">
 														<select
-															class="d-inline-block form-select form-select-sm"
-															value={ data.level }
+															class="d-inline-block w-auto form-select form-select-sm"
+															disabled={ data.level < 0 }
+															value={ data.stack }
 															onChange={ (e): void => {
 																e.preventDefault();
 
@@ -711,7 +836,7 @@ const EXPCalc: FunctionalComponent = () => {
 																		...x,
 																		bonus: [
 																			...x.bonus.slice(0, index),
-																			{ ...data, level: value },
+																			{ ...data, stack: value },
 																			...x.bonus.slice(index + 1),
 																		],
 																	},
@@ -719,166 +844,104 @@ const EXPCalc: FunctionalComponent = () => {
 																]);
 															} }
 														>
-															<option value={ -1 }>
-																<Locale k="EXPCALC_BONUS_NONE" />
-															</option>
-
-															{ new Array(11)
+															{ new Array(data.stacks)
 																.fill(0)
-																.map((_, i) => <option value={ i }>Lv. { i }</option>)
+																.map((_, x) => <option value={ x + 1 }>x{ x + 1 }</option>)
 															}
 														</select>
 													</div>
-													<div class="ps-5">
-														<select
-															class={ `form-select form-select-sm ${style.raritySelector}` }
-															disabled={ data.level < 0 }
-															value={ data.rarity }
-															onChange={ (e): void => {
-																e.preventDefault();
-
-																const value = parseInt((e.target as HTMLSelectElement).value, 10);
-																expSet.set((v) => [
-																	...v.slice(0, i),
-																	{
-																		...x,
-																		bonus: [
-																			...x.bonus.slice(0, index),
-																			{ ...data, rarity: value },
-																			...x.bonus.slice(index + 1),
-																		],
-																	},
-																	...v.slice(i + 1),
-																]);
-															} }
-														>
-															{ data.rarities.map(x => <option value={ x }>{ RarityDisplay[x] }</option>) }
-														</select>
-
-														{ data.stacks && data.stacks > 1
-															? <div class="float-end">
-																<select
-																	class="d-inline-block w-auto form-select form-select-sm"
-																	disabled={ data.level < 0 }
-																	value={ data.stack }
-																	onChange={ (e): void => {
-																		e.preventDefault();
-
-																		const value = parseInt((e.target as HTMLSelectElement).value, 10);
-																		expSet.set((v) => [
-																			...v.slice(0, i),
-																			{
-																				...x,
-																				bonus: [
-																					...x.bonus.slice(0, index),
-																					{ ...data, stack: value },
-																					...x.bonus.slice(index + 1),
-																				],
-																			},
-																			...v.slice(i + 1),
-																		]);
-																	} }
-																>
-																	{ new Array(data.stacks)
-																		.fill(0)
-																		.map((_, x) => <option value={ x + 1 }>x{ x + 1 }</option>)
-																	}
-																</select>
-															</div>
-															: <></>
-														}
-													</div>
-												</div>
-											</div>)
-											.gap(<hr class="my-1" />)
-										}
-									</>
-									: <></>
+													: <></>
+												}
+											</div>
+										</div>
+									</div>)
+									.gap(<hr class="my-1" />)
 								}
+							</>
+							: <></>
+						}
 
-								{ x._tab === 2
-									? ((): preact.VNode => {
-										const ret = selectedWaves.map((_, i) => ResultExp(i));
-										const totalExp = ret.reduce((p, c) => p + c, 0);
-										const totalSorties = Decimal.div(requiredExp, totalExp)
-											.ceil()
-											.toNumber();
+						{ x._tab === 2
+							? ((): preact.VNode => {
+								const ret = selectedWaves.map((_, i) => ResultExp(i));
+								const totalExp = ret.reduce((p, c) => p + c, 0);
+								const totalSorties = Decimal.div(requiredExp, totalExp)
+									.ceil()
+									.toNumber();
 
-										return <>
-											<table class="table table-sm">
-												<tbody>
-													{ selectedWaves.map((x, i) => <tr>
-														<td>
-															<Locale k="EXPCALC_WAVE" p={ [i + 1] } />
-														</td>
-														<td>
-															<Locale k="EXPCALC_WAVE_EXP" p={ [ret[i]] } />
-														</td>
-													</tr>) }
-												</tbody>
-											</table>
-											<div class="mt-3">
-												<span class="badge bg-danger">
-													<Locale k="EXPCALC_REQUIRE_TOTAL" p={ [FormatNumber(totalExp)] } />
-												</span>
-											</div>
-											<div class="mt-2">
-												<span class="badge bg-success">
-													<Locale k="EXPCALC_REQUIRE_EXP" p={ [FormatNumber(requiredExp)] } />
-												</span>
-											</div>
-											<div class="mt-2">
-												<span class="badge bg-primary">
-													<Locale k="EXPCALC_REQUIRE_SORTIES" p={ [FormatNumber(totalSorties)] } />
-												</span>
-											</div>
-										</>;
-									})()
-									: <></>
-								}
-							</div>
-						</div>;
-					}) }
-
-					<div class={ `col p-2 ${style.addBox}` }>
-						<button class="p-3 btn btn-outline-secondary" onClick={ (e): void => {
-							e.preventDefault();
-							expSet.set((c) => {
-								return [...c, {
-									world: "",
-									map: "",
-									node: "",
-
-									isLeader: false,
-									bonus: bonuses.map(x => {
-										if ("skill" in x) {
-											// 전투원
-											return {
-												...x,
-												level: -1,
-											};
-										}
-										return {
-											...x,
-											rarity: x.rarities[0],
-											stack: x.stacks || 1,
-											level: -1,
-										};
-									}),
-
-									_tab: 0,
-								}];
-							});
-						} }>
-							<div class="mb-2" style="font-size:2em">
-								<IconPlusSquareFill />
-							</div>
-							<Locale k="EXPCALC_NEW_CALC" />
-						</button>
+								return <>
+									<table class="table table-sm">
+										<tbody>
+											{ selectedWaves.map((x, i) => <tr>
+												<td>
+													<Locale k="EXPCALC_WAVE" p={ [i + 1] } />
+												</td>
+												<td>
+													<Locale k="EXPCALC_WAVE_EXP" p={ [ret[i]] } />
+												</td>
+											</tr>) }
+										</tbody>
+									</table>
+									<div class="mt-3">
+										<span class="badge bg-danger">
+											<Locale k="EXPCALC_REQUIRE_TOTAL" p={ [FormatNumber(totalExp)] } />
+										</span>
+									</div>
+									<div class="mt-2">
+										<span class="badge bg-success">
+											<Locale k="EXPCALC_REQUIRE_EXP" p={ [FormatNumber(requiredExp)] } />
+										</span>
+									</div>
+									<div class="mt-2">
+										<span class="badge bg-primary">
+											<Locale k="EXPCALC_REQUIRE_SORTIES" p={ [FormatNumber(totalSorties)] } />
+										</span>
+									</div>
+								</>;
+							})()
+							: <></>
+						}
 					</div>
 				</div>;
-			} }
-		/>
+			}) }
+
+			<div class={ `col p-2 ${style.addBox}` }>
+				<button class="p-3 btn btn-outline-secondary" onClick={ (e): void => {
+					e.preventDefault();
+					expSet.set((c) => {
+						return [...c, {
+							world: "",
+							map: "",
+							node: "",
+
+							isLeader: false,
+							bonus: bonuses.map(x => {
+								if ("skill" in x) {
+									// 전투원
+									return {
+										...x,
+										level: -1,
+									};
+								}
+								return {
+									...x,
+									rarity: x.rarities[0],
+									stack: x.stacks || 1,
+									level: -1,
+								};
+							}),
+
+							_tab: 0,
+						}];
+					});
+				} }>
+					<div class="mb-2" style="font-size:2em">
+						<IconPlusSquareFill />
+					</div>
+					<Locale k="EXPCALC_NEW_CALC" />
+				</button>
+			</div>
+		</div>
 	</div>;
 };
 export default EXPCalc;

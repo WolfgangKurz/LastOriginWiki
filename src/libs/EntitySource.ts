@@ -105,7 +105,13 @@ export default class EntitySource {
 	public get EventId (): string {
 		if (this.IsEvent)
 			return this.Parts[1];
-		return "Story";
+		return this.Parts[0];
+	}
+
+	/** 이벤트 챕터 */
+	public get EventChapter (): string {
+		if (!this.IsEvent) return "";
+		return this.Map.substring(0, this.Map.indexOf("-")); // EV2-1 -> Ev2
 	}
 
 	/** 이벤트 이름 **Locale Key** */
@@ -167,6 +173,12 @@ export default class EntitySource {
 	// -------------- 외부 통신 요청
 
 	// -------------- 맵
+	/** 스토리 맵 여부 */
+	public get IsStory (): boolean {
+		if (!this.IsMap) return false;
+		return /^[0-9]+$/.test(this.World);
+	}
+
 	/** 사이드 스테이지 여부 */
 	public get IsSideMap (): boolean {
 		if (!this.IsMap) return false;
@@ -187,7 +199,7 @@ export default class EntitySource {
 		} return this.Parts[0].includes("Ex");
 	}
 
-	/** 맵 보상 여부 */
+	/** 맵 보상 (초회 클리어 or 드랍) 여부 */
 	public get IsMap (): boolean {
 		return ![
 			this.IsEternalWarExchange, this.IsNewEternalWarExchange,
@@ -210,15 +222,27 @@ export default class EntitySource {
 		return this.Parts[0][0] === "*";
 	}
 
+	public get World (): string { // Alias
+		return this.EventId;
+	}
+
+	public get Chapter (): string {
+		if (!this.IsMap) return "";
+		if (this.IsEvent) return this.EventChapter;
+		return this.Parts[1];
+	}
+
 	/** 맵 이름 */
 	public get Map (): string {
 		const index = this.IsEvent
 			? this.Parts.length - 1
 			: this.IsSubStory
 				? 1
-				: 0;
+				: this.IsStory || this.IsDaily
+					? 2 // Story
+					: 0;
 		return this.IsReward && !this.IsSubStory
-			? this.Parts[index].substr(1)
+			? this.Parts[index].substring(1)
 			: this.Parts[index];
 	}
 	// -------------- 맵
@@ -233,7 +257,7 @@ export default class EntitySource {
 	public get SubStoryGroup (): string {
 		if (!this.IsSubStory) return "";
 		if (this.Parts[0][0] === "*")
-			return this.Parts[0].substr(1);
+			return this.Parts[0].substring(1);
 		return this.Parts[0];
 	}
 
@@ -294,6 +318,12 @@ export default class EntitySource {
 		return this.Parts[1];
 	}
 	// -------------- 영전
+
+	// -------------- 일일 훈련
+	public get IsDaily (): boolean {
+		return this.Parts[0] === "Daily";
+	}
+	// -------------- 일일 훈련
 
 	// -------------- 한정
 	public get IsLimited (): boolean {

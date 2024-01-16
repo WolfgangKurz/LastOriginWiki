@@ -8,6 +8,8 @@ declare global {
 		unique<K> (this: T[], comparer: (entity: T) => K): T[];
 
 		least (this: T[], length: number): Array<T | undefined>;
+
+		filter (predicate: (value: T, index: number, array: T[]) => boolean, thisArg?: any): NonNullable<T>[];
 	}
 
 	// export interface Object {

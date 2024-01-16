@@ -442,7 +442,9 @@ country: ""
 age: "23"
 secretRoomType: Adult
 marriageVoice: true
-introVoice: []
+introVoice:
+  - jp
+  - jpdmm
 favor:
   present: 1.5
   clear: 0.5
@@ -501,7 +503,7 @@ cv:
     jp: 紫苑雪
     jpdmm: 紫苑雪
 source:
-  - - 9-1Ex
+  - - 9:1:9-1Ex
   - - Ev:Ev12:EV2-2Ex
   - - Ev:Ev14:EV1-6Ex
   - - Ev:Ev18:EV3-2B
@@ -593,6 +595,7 @@ skills:
                       target: 0
                   overlap: 0
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Muse_N_11
               on:
                 after: use_skill
@@ -629,6 +632,7 @@ skills:
                       per: -2%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -804,6 +808,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Muse_N_21
               on:
                 after: use_skill
@@ -840,6 +845,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Muse_N_22
               on:
                 after: use_skill
@@ -876,6 +882,7 @@ skills:
                       per: 2%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Muse_N_23
               on:
                 after: use_skill
@@ -912,6 +919,7 @@ skills:
                       per: 1.6%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_PECS_Muse_N_24
               on:
                 after: use_skill
@@ -948,6 +956,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -1139,6 +1148,7 @@ skills:
                     debuff_immune: 13
                   overlap: 0
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Muse_N_31
               on: round
               if:
@@ -1186,6 +1196,7 @@ skills:
                     debuff_immune: 13
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -1324,6 +1335,7 @@ skills:
                     off: 1
                   overlap: 0
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Muse_N_41
               on: round
               if:
@@ -1357,6 +1369,7 @@ skills:
                     off: 1
                   overlap: 0
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -1838,7 +1851,7 @@ dialogue:
       Idle_02_01: |-
         Am I not embarrassed? I am…
         But… I'm only wearing this dress
-        for you… It’s okay… Hehe…
+        for you… It's okay… Hehe…
       Idle_03_01: |-
         I never thought I’d be the star
         of a different stage other than
@@ -1861,7 +1874,7 @@ dialogue:
         R-really? You're… giving this… to me? Oh… umm… It's just I was already
         happy to be able to wear a dress.
 
-        Today was already more than perfect… And now I’m even getting a gift? Can anyone be this happy?
+        Today was already more than perfect… And now I'm even getting a gift? Can anyone be this happy?
 
         I love you, darling.
       OathIdle_01: |-
@@ -1919,7 +1932,7 @@ dialogue:
         You're giving this to me…? How come…? What…? You have feelings for me…?
         ……! W-wait…! This is so unexpected…
 
-        *Squeals* Please… don’t come closer…! Pretty? I must look so hideous right now… If you keep saying so, I might actually start to think it’s true…! So, you really mean it…? I’m relieved, that I’m not the only one…
+        *Squeals* Please… don't come closer…! Pretty? I must look so hideous right now… If you keep saying so, I might actually start to think it's true…! So, you really mean it…? I'm relieved, that I'm not the only one…
       OathIdle_01: I’m still afraid of other people, but… If you hold my hand, I feel
         relaxed.
       MVP: ""
@@ -2292,3 +2305,4 @@ skins:
         tbarId: 2
         voiceId: 2
         2dmodel: 2DModel_PECS_Muse_NS2
+        consumableKey: Skin_PECS_Muse_2

@@ -2,18 +2,21 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "preact/hooks"
 import Store from "@/store";
 
 import * as PIXI from "pixi.js";
+import * as LAYERS from "@pixi/layers";
 
 import { APPEAR_EFFECT, DIALOG_SPEAKER, OFF_EFFECT, SCG_ACTIVATION, SCREEN_EFFECT } from "@/types/Enums";
 import { DialogCharacter, DialogSelection, StoryData } from "@/types/Story/Story";
 import { StoryModelMeta } from "@/types/Story/Model";
+import { LocaleTypes } from "@/types/Locale";
 
 import { useUpdate } from "@/libs/hooks";
+import { CurrentDB } from "@/libs/DB";
 import { AssetsRoot } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
-import { LocaleTypes } from "@/libs/Locale";
 import BGMAlbums from "@/libs/BGM";
 
 import Locale from "@/components/locale";
+import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 
 import { fontFamily, Nn } from "./common";
 import EffectBase from "./Effects/EffectBase";
@@ -23,12 +26,14 @@ import Animation_OpenEyes from "./Animations/Animation_OpenEyes";
 
 import FadeText from "./Objects/FadeText";
 import FadeSprite from "./Objects/FadeSprite";
-import FadeContainer from "./Objects/FadeContainer";
 import DialogObject from "./Objects/DialogObject";
 import SelectionObject from "./Objects/SelectionObject";
 import CommuSprite from "./Objects/CommuSprite";
+import U2DModel from "./Objects/U2DModel";
 
 import style from "./style.module.scss";
+
+type CharSpriteType = U2DModel | FadeSprite | CommuSprite;
 
 /**
  * 50 - BG
@@ -56,6 +61,8 @@ interface ViewerProps {
 	cursor: number;
 	onDone?: () => void;
 	onNext?: (cursor: number) => void;
+
+	onVoice?: (voice: string) => void;
 }
 
 const Viewer: FunctionalComponent<ViewerProps> = (props) => {
@@ -76,10 +83,8 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 	const [bgDesc, setBGDesc] = useState<Record<LocaleTypes, string | undefined> | null>(null);
 	const [bgImage, setBGImage] = useState<string>("");
 
-	const [charL, setCharL] = useState<DialogCharacter | null>(null);
-	const [charR, setCharR] = useState<DialogCharacter | null>(null);
-	const [charC, setCharC] = useState<DialogCharacter | null>(null);
-	const charRef = useRef<Tuple<FadeSprite | CommuSprite | undefined, 3>>([undefined, undefined, undefined]);
+	const [chars, setChars] = useState<Tuple<DialogCharacter | null, 3>>([null, null, null]);
+	const charRef = useRef<Tuple<CharSpriteType | undefined, 3>>([undefined, undefined, undefined]);
 
 	const [addImage, setAddImage] = useState<string>("");
 	const [addImageAppear, setAddImageAppear] = useState<APPEAR_EFFECT>(APPEAR_EFFECT.NONE);
@@ -94,6 +99,28 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 	const speakerFilter = useMemo(() => [0, 0, 0].map(() => new PIXI.ColorMatrixFilter()), []);
 
 	const viewerRef = useRef<HTMLDivElement>(null);
+
+	const [ignore2DModel, setIgnore2DModel] = useState(false);
+
+	const modelList = GetJson<string[]>(StaticDB.Story2DModel);
+	if (!modelList && !ignore2DModel) {
+		JsonLoaderCore(CurrentDB, StaticDB.Story2DModel)
+			.catch(() => setIgnore2DModel(true))
+			.finally(() => {
+				console.log("#");
+				update();
+			});
+
+		return <></>;
+	}
+
+	function setCharsByIndex (value: DialogCharacter | null, index: 0 | 1 | 2) {
+		setChars(prev => {
+			const ret: Mutable<typeof chars> = [...prev];
+			ret[index] = value;
+			return ret;
+		});
+	}
 
 	const curData = props.cursor >= props.data.length
 		? undefined
@@ -116,6 +143,9 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 		return model.includes("_Commu");
 	}
 	function getCommuImage (image: string, imageVar: string): string {
+		if (imageVar.startsWith("Cut_"))
+			return `${AssetsRoot}/story/add/${imageVar}.webp`;
+
 		const v = imageVar || (image.replace(/^2DModel_/, "") + "_Idle");
 		return `${AssetsRoot}/story/model/commu/${v}.webp`;
 	}
@@ -138,6 +168,9 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			"2DModel_PECS_Azaz_NS2_DL_N", "2DModel_BR_RoyalArsenal_NS2_DL_N",
 			"2DModel_MiniPerrault_N", "2DModel_Superior01_N",
 			"2DModel_BR_Efreeti_NS1_DL_N",
+			"2DModel_PECS_LemonadeBeta_N", "2DModel_PECS_Shepherd_N",
+			"2DModel_Mercenary_N", "2DModel_Simon_N", "2DModel_Simon2_N",
+			"2DModel_PECS_LemonadeGamma_N_DL_N",
 		];
 		if (list.includes(model)) return true;
 		return false;
@@ -160,6 +193,7 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			BR_Emily_NS1_DL_0_O: "BR_Emily_1_O",
 			BR_Gnome_NS2_DL_0_O: "BR_Gnome_2_O_S",
 			BR_Hela_N_DL_0_O: "BR_Hela_0_O_S",
+			BR_HongRyun_NS4_DL_0_O: "BR_HongRyun_4_O_B",
 			BR_May_NS2_DL_0_O: "BR_May_2_O_S",
 			BR_Nereid_N_DL_0_O: "BR_Nereid_0_O",
 			BR_NightAngel_NS2_DL_0_O: "BR_NightAngel_2_O_S",
@@ -212,6 +246,7 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			DS_Angel_1_O: "DS_Angel_1_O_B",
 			DS_Ramiel_0_O: "DS_Ramiel_0_O_S",
 			PECS_Boryeon_1_O: "PECS_Boryeon_1_O_S",
+			PECS_BlindPrincess_1_O: "PECS_BlindPrincess_1_O_B",
 			PECS_BS_1_O: "PECS_BS_1_O_S",
 			PECS_CoCoWhiteShell_0_O: "PECS_CoCoWhiteShell_0_O_S",
 			PECS_Ella_1_O: "PECS_Ella_1_O_S",
@@ -301,10 +336,12 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 					move: true,
 					click: true,
 					wheel: true,
-				}
+				},
 			});
 			globalThis.__PIXI_APP__ = app;
 			setApp(app);
+
+			app.stage = new LAYERS.Stage();
 
 			const screen = new PIXI.Container();
 			screen.name = "@screen";
@@ -479,16 +516,21 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			if (isValidLText(curData.bg.desc)) setBGDesc(curData.bg.desc);
 			if (curData.bg.image) setBGImage(curData.bg.image);
 
-			if (curData.voice) setVoice(curData.voice);
+			if (curData.voice) {
+				if (props.onVoice)
+					props.onVoice(curData.voice);
+				else
+					setVoice(curData.voice);
+			}
 
-			if (curData.char.L) setCharL(curData.char.L);
-			else if (charL) setCharL(null);
+			if (curData.char.L) setCharsByIndex(curData.char.L, 0);
+			else if (chars[0]) setCharsByIndex(null, 0);
 
-			if (curData.char.R) setCharR(curData.char.R);
-			else if (charR) setCharR(null);
+			if (curData.char.R) setCharsByIndex(curData.char.R, 1);
+			else if (chars[1]) setCharsByIndex(null, 1);
 
-			if (curData.char.C) setCharC(curData.char.C);
-			else if (charC) setCharC(null);
+			if (curData.char.C) setCharsByIndex(curData.char.C, 2);
+			else if (chars[2]) setCharsByIndex(null, 2);
 
 			if (curData.add) {
 				if (curData.add.image !== addImage)
@@ -634,7 +676,7 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 			for (let i = 0; i < 3; i++) {
 				const c = charRef.current[i];
 				const k = (["L", "R", "C", ""] satisfies Array<"L" | "R" | "C" | "">)[i];
-				if (c) {
+				if (c && c.zIndex !== 600) { // not Cut (add)
 					if (curData.char[k]?.SCG === SCG_ACTIVATION.ACTIVATION)
 						c.zIndex = zTable[k] + 10;
 					else
@@ -646,213 +688,121 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 
 	{ // Char L/R/C
 		const SPLITCOUNT = 6;
+		const SPLITINDEX = [1, SPLITCOUNT - 1, SPLITCOUNT / 2];
 
-		useEffect(() => { // CharL
-			let disposed = false;
-			let char: FadeSprite | CommuSprite | null = null;
-			if (screen && charL && charL.image) {
-				const c = ConvertChar(charL.image);
-				Promise.all([
-					PIXI.Texture.fromURL(c
-						? `${AssetsRoot}/webp/full/${c}.webp`
-						: isCommu(charL.image)
-							? getCommuImage(charL.image, charL.imageVar)
-							: `${AssetsRoot}/story/model/${charL.image}.webp`
-					),
-					isCommu(charL.image)
-						? Promise.resolve()
-						: fetch(`${AssetsRoot}/story/model/${c || charL.image}.json`)
-							.then(meta => meta.json())
-							.then(meta => meta as StoryModelMeta[])
-							.catch(() => undefined),
-				]).then(([tex, meta]) => {
-					if (disposed) {
-						tex.destroy();
-						return;
-					}
+		for (let i = 0; i < 3; i++) {
+			const index = i;
 
-					char = new (isCommu(charL.image) ? CommuSprite : FadeSprite)(tex);
-					char.filters = [speakerFilter[0]];
-					char.name = "CharL";
+			useEffect(() => { // Char
+				const target = chars[index];
 
-					const p = [1280 / SPLITCOUNT * 1, 720];
-					const s = [1, 1];
-					if (meta) {
-						meta.forEach(e => {
-							p[0] += e.pos[0] * 100;
-							p[1] += e.pos[1] * 100;
-							s[0] *= e.scale[0];
-							s[1] *= e.scale[1];
-						});
-					} else if (isCommu(charL.image)) {
-						p[1] -= 375;
-						s[0] = 213 / tex.width;
-						s[1] = 282 / tex.height;
+				if (charRef.current[index]) {
+					const char = charRef.current[index]!;
+					if (
+						(screen && target && target.image) && // new char exists
+						char instanceof U2DModel && // U2DModel based (face changeable)
+						target.image === char.model // same model image
+					) {
+						// reusable (change face only)
+						char.setFace(target.imageVar);
+						return () => { };
 					} else {
-						const ratio = Math.min(1, 720 / tex.height);
-						p[1] -= 40;
-						s[0] = s[1] = ratio;
+						charRef.current[index] = undefined;
+						char.fadeOut(0.15);
+						setTimeout(() => char!.destroy(), 150);
 					}
-					char.pivot.set(tex.width / 2, tex.height / 4 * 3);
-					char.position.set(...p);
-					char.scale.set(...s);
-					char.zIndex = 501;
-					char.fadeIn(0.15);
-					screen.addChild(char);
-
-					charRef.current[0] = char;
-					update();
-				}).catch(() => void (0));
-			}
-
-			return () => {
-				disposed = true;
-				charRef.current[0] = undefined;
-
-				if (char) {
-					char.fadeOut(0.15);
-					setTimeout(() => char!.destroy(), 150);
 				}
-			};
-		}, [screen, charL?.image, charL?.imageVar]);
-		useEffect(() => { // CharR
-			let disposed = false;
-			let char: FadeSprite | CommuSprite | null = null;
-			if (screen && charR && charR.image) {
-				const c = ConvertChar(charR.image);
-				Promise.all([
-					PIXI.Texture.fromURL(c
-						? `${AssetsRoot}/webp/full/${c}.webp`
-						: isCommu(charR.image)
-							? getCommuImage(charR.image, charR.imageVar)
-							: `${AssetsRoot}/story/model/${charR.image}.webp`
-					),
-					isCommu(charR.image)
-						? Promise.resolve()
-						: fetch(`${AssetsRoot}/story/model/${c || charR.image}.json`)
-							.then(meta => meta.json())
-							.then(meta => meta as StoryModelMeta[])
-							.catch(() => undefined),
-				]).then(([tex, meta]) => {
-					if (disposed) {
-						tex.destroy();
-						return;
-					}
 
-					char = new (isCommu(charR.image) ? CommuSprite : FadeSprite)(tex);
-					char.filters = [speakerFilter[1]];
-					char.name = "CharR";
+				let disposed = false;
+				let char: CharSpriteType | null = null;
+				if (screen && target && target.image) {
+					const c = ConvertChar(target.image);
+					const has2DModel = modelList?.includes(target.image) ?? false;
+					const forCommu = isCommu(target.image);
 
-					const p = [1280 / SPLITCOUNT * (SPLITCOUNT - 1), 720];
-					const s = [-1, 1];
-					if (meta) {
-						meta.forEach(e => {
-							p[0] -= e.pos[0] * 100;
-							p[1] += e.pos[1] * 100;
-							s[0] *= e.scale[0];
-							s[1] *= e.scale[1];
-						});
-					} else if (isCommu(charR.image)) {
-						p[1] -= 375;
-						s[0] = 213 / tex.width;
-						s[1] = 282 / tex.height;
-					} else {
-						const ratio = Math.min(1, 720 / tex.height);
-						p[1] -= 40;
-						s[0] = -ratio;
-						s[1] = ratio;
-					}
-					char.pivot.set(tex.width / 2, tex.height / 4 * 3);
-					char.position.set(...p);
-					char.scale.set(...s);
-					char.zIndex = 502;
-					char.fadeIn(0.15);
-					screen.addChild(char);
+					Promise.all(has2DModel
+						? new Array(2).fill(Promise.resolve())
+						: [
+							PIXI.Texture.fromURL(c
+								? `${AssetsRoot}/webp/full/${c}.webp`
+								: forCommu
+									? getCommuImage(target.image, target.imageVar)
+									: `${AssetsRoot}/story/model/${target.image}.webp`
+							),
+							forCommu
+								? Promise.resolve()
+								: fetch(`${AssetsRoot}/story/model/${c || target.image}.json`)
+									.then(meta => meta.json())
+									.then(meta => meta as StoryModelMeta[])
+									.catch(() => undefined),
+						]
+					).then(([tex, meta]) => {
+						if (disposed) {
+							tex.destroy();
+							return;
+						}
 
-					charRef.current[1] = char;
-					update();
-				}).catch(() => void (0));
-			}
+						const p = [1280 / SPLITCOUNT * SPLITINDEX[index], 720];
+						const s = [index === 1 ? -1 : 1, 1];
 
-			return () => {
-				disposed = true;
-				charRef.current[1] = undefined;
+						if (has2DModel) {
+							char = new U2DModel(target.image);
+							char.setFace(target.imageVar);
+							// p[1] = 720 / 7 * 5;
+							p[1] = 360;
+						} else {
+							char = new (forCommu ? CommuSprite : FadeSprite)(tex);
+							char.pivot.set(tex.width / 2, tex.height / 4 * 3);
 
-				if (char) {
-					char.fadeOut(0.15);
-					setTimeout(() => char!.destroy(), 150);
+							if (meta) {
+								meta.forEach(e => {
+									p[0] += e.pos[0] * 100;
+									p[1] += e.pos[1] * 100;
+									s[0] *= e.scale[0];
+									s[1] *= e.scale[1];
+								});
+							} else if (isCommu(target.image)) {
+								if (!target.image.includes("Cut_")) {
+									p[1] -= 375;
+									s[0] = 213 / tex.width;
+									s[1] = 282 / tex.height;
+								} else {
+									char.zIndex = 600;
+									char.pivot.set(tex.width / 2, tex.height / 2);
+									p[0] = 640;
+									p[1] = 240;
+									s[0] = s[1] = 1;
+									if (tex.height > 358)
+										s[0] = s[1] = 358 / tex.height;
+								}
+							} else {
+								const ratio = Math.min(1, 720 / tex.height);
+								p[1] -= 40;
+								s[0] = s[1] = ratio;
+							}
+						}
+
+						char.filters = [speakerFilter[index]];
+						char.name = "Char" + ["L", "R", "C"][index];
+						char.zIndex = 501 + index;
+
+						char.position.set(...p);
+						char.scale.set(...s);
+						char.fadeIn(0.15);
+
+						screen.addChild(char);
+
+						charRef.current[index] = char;
+						update();
+					}).catch(() => void (0));
 				}
-			};
-		}, [screen, charR?.image, charR?.imageVar]);
-		useEffect(() => { // CharC
-			let disposed = false;
-			let char: FadeSprite | CommuSprite | null = null;
-			if (screen && charC && charC.image) {
-				const c = ConvertChar(charC.image);
-				Promise.all([
-					PIXI.Texture.fromURL(c
-						? `${AssetsRoot}/webp/full/${c}.webp`
-						: isCommu(charC.image)
-							? getCommuImage(charC.image, charC.imageVar)
-							: `${AssetsRoot}/story/model/${charC.image}.webp`
-					),
-					isCommu(charC.image)
-						? Promise.resolve()
-						: fetch(`${AssetsRoot}/story/model/${c || charC.image}.json`)
-							.then(meta => meta.json())
-							.then(meta => meta as StoryModelMeta[])
-							.catch(() => undefined),
-				]).then(([tex, meta]) => {
-					if (disposed) {
-						tex.destroy();
-						return;
-					}
 
-					char = new (isCommu(charC.image) ? CommuSprite : FadeSprite)(tex);
-					char.filters = [speakerFilter[2]];
-					char.name = "CharC";
-
-					const p = [1280 / 2, 720];
-					const s = [1, 1];
-					if (meta) {
-						meta.forEach(e => {
-							p[0] += e.pos[0] * 100;
-							p[1] += e.pos[1] * 100;
-							s[0] *= e.scale[0];
-							s[1] *= e.scale[1];
-						});
-					} else if (isCommu(charC.image)) {
-						p[1] -= 375;
-						s[0] = 213 / tex.width;
-						s[1] = 282 / tex.height;
-					} else {
-						const ratio = Math.min(1, 720 / tex.height);
-						p[1] -= 40;
-						s[0] = s[1] = ratio;
-					}
-					char.pivot.set(tex.width / 2, tex.height / 4 * 3);
-					char.position.set(...p);
-					char.scale.set(...s);
-					char.zIndex = 500;
-					char.fadeIn(0.15);
-					screen.addChild(char);
-
-					charRef.current[2] = char;
-					update();
-				}).catch(() => void (0));
-			}
-
-			return () => {
-				disposed = true;
-				charRef.current[2] = undefined;
-
-				if (char) {
-					char.fadeOut(0.15);
-					setTimeout(() => char!.destroy(), 150);
-				}
-			};
-		}, [screen, charC?.image, charC?.imageVar]);
-	};
+				return () => {
+					disposed = true;
+				};
+			}, [screen, chars[index]?.image, chars[index]?.imageVar]);
+		}
+	}
 
 	useEffect(() => { // Add Image
 		let disposed = false;

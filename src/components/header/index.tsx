@@ -2,8 +2,10 @@ import { FunctionalComponent } from "preact";
 import { Link } from "preact-router/match";
 // import { Dropdown } from "bootstrap";
 
+import { LocaleList } from "@/types/Locale";
+
 import { AssetsRoot, Host, IsAprilFool, IsDev } from "@/libs/Const";
-import { ChangeLanguage, CurrentLocale, LocaleList } from "@/libs/Locale";
+import { ChangeLanguage, CurrentLocale } from "@/libs/Locale";
 import { ChangeDB, CurrentDB, DBList, DBTypes } from "@/libs/DB";
 
 import Locale, { ReloadLocale } from "@/components/locale";

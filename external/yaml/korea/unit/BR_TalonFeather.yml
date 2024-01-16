@@ -10,6 +10,19 @@ slots:
   - 0
   - 1
   - 2
+promotions:
+  - to: 5
+    level: 90
+    favor: "100"
+    req:
+      - id: Consumable_OriginDustAdv
+        count: 450
+      - id: Consumable_OriginDustSp
+        count: 150
+      - id: Special_Module
+        count: 100
+      - id: RobotParts_HDCalculationControl
+        count: 150
 lvLimits:
   - level: 101
     items:
@@ -462,7 +475,8 @@ fullLinkBonus:
   - Buff_2
   - SPD_10
 craft: 15300
-equips: []
+equips:
+  - Sub_Monitoring_T4
 stat:
   - HP:
       - 152
@@ -476,6 +490,23 @@ stat:
     SPD: 4.4
     CRI: 5.2
     ACC: 130
+    EVA: 35
+    Resist:
+      fire: 0
+      ice: 0
+      lightning: 0
+  - HP:
+      - 222
+      - 1905
+    ATK:
+      - 58
+      - 652
+    DEF:
+      - 11
+      - 77.33
+    SPD: 4.5
+    CRI: 20
+    ACC: 135
     EVA: 35
     Resist:
       fire: 0
@@ -498,8 +529,8 @@ cv:
   M:
     ko: 김윤채
 source:
-  - - 8-6
-    - 9-2Ex
+  - - 8:1:8-6
+  - - 9:1:9-2Ex
   - - Ev:Ev5:*Ev-2
   - - Ev:Ev8:Ev2-6
   - - Ev:Ev9:Ev3-3s
@@ -585,7 +616,7 @@ skills:
                     level: "0.010000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
                     chance: 0%
@@ -594,41 +625,25 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_1_3
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
+                    type: 0
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_1_4
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 88
+                    off:
+                      type: 0
+                      target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_11
               on: attack_success
               if:
@@ -664,18 +679,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_12
-              on: attack_success
+              on: criticaled
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 2
-                      - 3
-                      - 10
-                      - 11
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -690,64 +698,41 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_12_1
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 0
-              maxStack: 0
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
+                    type: 0
+                    value: "50"
                     level: "0"
                   attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 88
+                    off:
+                      type: 50
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_12_2
+                    type: 0
+                    value: "75"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 75
+                      target: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_TalonFeather_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -768,8 +753,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_TalonFeather_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -782,7 +767,50 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.33
           type: 0
           range: 3
@@ -835,7 +863,7 @@ skills:
                     level: "0.010000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
                     chance: 0%
@@ -844,41 +872,25 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_1_3
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
+                    type: 0
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_1_4
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 88
+                    off:
+                      type: 0
+                      target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_11
               on: attack_success
               if:
@@ -914,18 +926,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_12
-              on: attack_success
+              on: criticaled
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 2
-                      - 3
-                      - 10
-                      - 11
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -940,64 +945,41 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_12_1
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 0
-              maxStack: 0
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
+                    type: 0
+                    value: "50"
                     level: "0"
                   attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 88
+                    off:
+                      type: 50
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_12_2
+                    type: 0
+                    value: "75"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 75
+                      target: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_TalonFeather_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -1018,8 +1000,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_TalonFeather_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -1032,7 +1014,50 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.435
           type: 0
           range: 3
@@ -1085,7 +1110,7 @@ skills:
                     level: "0.010000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
                     chance: 0%
@@ -1094,41 +1119,25 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_1_3
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
+                    type: 0
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_1_4
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 88
+                    off:
+                      type: 0
+                      target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_11
               on: attack_success
               if:
@@ -1164,18 +1173,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_12
-              on: attack_success
+              on: criticaled
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 2
-                      - 3
-                      - 10
-                      - 11
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -1190,64 +1192,41 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_12_1
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 0
-              maxStack: 0
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
+                    type: 0
+                    value: "50"
                     level: "0"
                   attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 88
+                    off:
+                      type: 50
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_12_2
+                    type: 0
+                    value: "75"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 75
+                      target: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_TalonFeather_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -1268,8 +1247,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_TalonFeather_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -1282,7 +1261,50 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.54
           type: 0
           range: 3
@@ -1335,7 +1357,7 @@ skills:
                     level: "0.010000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
                     chance: 0%
@@ -1344,41 +1366,25 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_1_3
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
+                    type: 0
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_1_4
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 88
+                    off:
+                      type: 0
+                      target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_11
               on: attack_success
               if:
@@ -1414,18 +1420,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_12
-              on: attack_success
+              on: criticaled
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 2
-                      - 3
-                      - 10
-                      - 11
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -1440,64 +1439,41 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_12_1
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 0
-              maxStack: 0
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
+                    type: 0
+                    value: "50"
                     level: "0"
                   attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 88
+                    off:
+                      type: 50
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_12_2
+                    type: 0
+                    value: "75"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 75
+                      target: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_TalonFeather_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -1518,8 +1494,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_TalonFeather_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -1532,7 +1508,50 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.645
           type: 0
           range: 3
@@ -1585,7 +1604,7 @@ skills:
                     level: "0.010000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
                     chance: 0%
@@ -1594,41 +1613,25 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_1_3
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
+                    type: 0
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_1_4
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 88
+                    off:
+                      type: 0
+                      target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_11
               on: attack_success
               if:
@@ -1664,18 +1667,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_12
-              on: attack_success
+              on: criticaled
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 2
-                      - 3
-                      - 10
-                      - 11
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -1690,64 +1686,41 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_12_1
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 0
-              maxStack: 0
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
+                    type: 0
+                    value: "50"
                     level: "0"
                   attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 88
+                    off:
+                      type: 50
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_12_2
+                    type: 0
+                    value: "75"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 75
+                      target: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_TalonFeather_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -1768,8 +1741,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_TalonFeather_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -1782,7 +1755,50 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.75
           type: 0
           range: 3
@@ -1835,7 +1851,7 @@ skills:
                     level: "0.010000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
                     chance: 0%
@@ -1844,41 +1860,25 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_1_3
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
+                    type: 0
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_1_4
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 88
+                    off:
+                      type: 0
+                      target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_11
               on: attack_success
               if:
@@ -1914,18 +1914,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_12
-              on: attack_success
+              on: criticaled
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 2
-                      - 3
-                      - 10
-                      - 11
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -1940,64 +1933,41 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_12_1
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 0
-              maxStack: 0
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
+                    type: 0
+                    value: "50"
                     level: "0"
                   attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 88
+                    off:
+                      type: 50
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_12_2
+                    type: 0
+                    value: "75"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 75
+                      target: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_TalonFeather_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -2018,8 +1988,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_TalonFeather_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -2032,7 +2002,50 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.855
           type: 0
           range: 3
@@ -2085,7 +2098,7 @@ skills:
                     level: "0.010000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
                     chance: 0%
@@ -2094,41 +2107,25 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_1_3
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
+                    type: 0
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_1_4
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 88
+                    off:
+                      type: 0
+                      target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_11
               on: attack_success
               if:
@@ -2164,18 +2161,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_12
-              on: attack_success
+              on: criticaled
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 2
-                      - 3
-                      - 10
-                      - 11
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -2190,64 +2180,41 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_12_1
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 0
-              maxStack: 0
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
+                    type: 0
+                    value: "50"
                     level: "0"
                   attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 88
+                    off:
+                      type: 50
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_12_2
+                    type: 0
+                    value: "75"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 75
+                      target: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_TalonFeather_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -2268,8 +2235,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_TalonFeather_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -2282,7 +2249,50 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.96
           type: 0
           range: 3
@@ -2335,7 +2345,7 @@ skills:
                     level: "0.010000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
                     chance: 0%
@@ -2344,41 +2354,25 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_1_3
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
+                    type: 0
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_1_4
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 88
+                    off:
+                      type: 0
+                      target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_11
               on: attack_success
               if:
@@ -2414,18 +2408,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_12
-              on: attack_success
+              on: criticaled
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 2
-                      - 3
-                      - 10
-                      - 11
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -2440,64 +2427,41 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_12_1
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 0
-              maxStack: 0
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
+                    type: 0
+                    value: "50"
                     level: "0"
                   attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 88
+                    off:
+                      type: 50
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_12_2
+                    type: 0
+                    value: "75"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 75
+                      target: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_TalonFeather_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -2518,8 +2482,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_TalonFeather_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -2532,7 +2496,50 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.065
           type: 0
           range: 3
@@ -2585,7 +2592,7 @@ skills:
                     level: "0.010000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
                     chance: 0%
@@ -2594,41 +2601,25 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_1_3
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
+                    type: 0
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_1_4
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 88
+                    off:
+                      type: 0
+                      target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_11
               on: attack_success
               if:
@@ -2664,18 +2655,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_12
-              on: attack_success
+              on: criticaled
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 2
-                      - 3
-                      - 10
-                      - 11
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -2690,64 +2674,41 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_12_1
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 0
-              maxStack: 0
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
+                    type: 0
+                    value: "50"
                     level: "0"
                   attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 88
+                    off:
+                      type: 50
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_12_2
+                    type: 0
+                    value: "75"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 75
+                      target: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_TalonFeather_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -2768,8 +2729,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_TalonFeather_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -2782,7 +2743,50 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.17
           type: 0
           range: 3
@@ -2835,7 +2839,7 @@ skills:
                     level: "0.010000"
                   attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
                     chance: 0%
@@ -2844,41 +2848,25 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_1_3
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
+                    type: 0
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 4
-                - icon: BuffIcon_TOGETHER_ATTACK
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_1_4
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 1
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 103
-                    collaborate:
-                      skill: 2
-                      with: "0"
+                    type: 88
+                    off:
+                      type: 0
+                      target: 0
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_11
               on: attack_success
               if:
@@ -2914,18 +2902,11 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_BR_TalonFeather_N_12
-              on: attack_success
+              on: criticaled
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 2
-                      - 3
-                      - 10
-                      - 11
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -2940,64 +2921,41 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_BR_TalonFeather_N_12_1
-                    type: 1
-                    value: "0.150000"
-                    level: "0.007500"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 15%
-                      per: 0.75%
-                  overlap: 0
-              maxStack: 0
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_Khan_N_18
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_PhyATK_UP
-                  desc:
-                    desc: Effect_BR_Khan_N_19_1
-                    type: 1
-                    value: "0.200000"
+                    type: 0
+                    value: "50"
                     level: "0"
                   attr: 3
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 20%
-                      per: 0%
+                    type: 88
+                    off:
+                      type: 50
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_12_2
+                    type: 0
+                    value: "75"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 75
+                      target: 0
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_TalonFeather_N_111
+              overlapGroup: -1
+            - key: Effect_BR_QuickCamel_N_410
               on: attack_success
               if:
                 - in_battle:
@@ -3018,8 +2976,8 @@ skills:
               buffs:
                 - icon: BuffIcon_TOGETHER_ATTACK
                   desc:
-                    desc: Effect_BR_TalonFeather_N_111_1
-                    type: 0
+                    desc: Effect_BR_QuickCamel_N_410_1
+                    type: 1
                     value: Char_BR_QuickCamel_N
                     level: "0"
                   attr: 0
@@ -3032,7 +2990,50 @@ skills:
                       skill: 2
                       with: Char_BR_QuickCamel_N
                   overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_510_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -3064,18 +3065,9 @@ skills:
             base: 0.2
             per: 0.01
             chance: 0
-          - icon: BuffIcon_PhyATK_UP
+          - icon: BuffIcon_REMOVE_BUFF
             desc:
               desc: Effect_BR_TalonFeather_N_1_3
-              type: 1
-              value: "0.150000"
-              level: "0.007500"
-            base: 0.15
-            per: 0.0075
-            chance: 0
-          - icon: BuffIcon_TOGETHER_ATTACK
-            desc:
-              desc: Effect_BR_TalonFeather_N_1_4
               type: 0
               value: "0"
               level: "0"
@@ -3091,31 +3083,40 @@ skills:
             base: 0.2
             per: 0.01
             chance: 1
-          - icon: BuffIcon_PhyATK_UP
+          - icon: BuffIcon_REMOVE_BUFF
             desc:
               desc: Effect_BR_TalonFeather_N_12_1
+              type: 0
+              value: "50"
+              level: "0"
+            base: 50
+            per: 0
+            chance: 1
+          - icon: BuffIcon_REMOVE_BUFF
+            desc:
+              desc: Effect_BR_TalonFeather_N_12_2
+              type: 0
+              value: "75"
+              level: "0"
+            base: 75
+            per: 0
+            chance: 1
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_BR_QuickCamel_N_410_1
               type: 1
-              value: "0.150000"
-              level: "0.007500"
-            base: 0.15
-            per: 0.0075
+              value: Char_BR_QuickCamel_N
+              level: "0"
+            value: Char_BR_QuickCamel_N
             chance: 1
           - icon: BuffIcon_PhyATK_UP
             desc:
-              desc: Effect_BR_Khan_N_19_1
+              desc: Effect_BR_TalonFeather_N_510_1
               type: 1
               value: "0.200000"
               level: "0"
             base: 0.2
             per: 0
-            chance: 1
-          - icon: BuffIcon_TOGETHER_ATTACK
-            desc:
-              desc: Effect_BR_TalonFeather_N_111_1
-              type: 0
-              value: Char_BR_QuickCamel_N
-              level: "0"
-            value: Char_BR_QuickCamel_N
             chance: 1
   "2":
     key: "2"
@@ -3140,7 +3141,7 @@ skills:
           type: 0
           range: 4
           ap: 9
-          grid: 0,1,0,1,1,1,0,1,0
+          grid: 1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -3186,8 +3187,8 @@ skills:
                   desc:
                     desc: Effect_BR_TalonFeather_N_2_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -3195,8 +3196,8 @@ skills:
                     isBuff: true
                     type: 7
                     accuracy:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_DOWN
                   desc:
@@ -3222,42 +3223,6 @@ skills:
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: -1
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_TalonFeather_N_13
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_RANGE_DOWN
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_13_1
-                    type: 0
-                    value: "-1"
-                    level: "0"
-                  attr: 1
-                  erase:
                     rounds: 2
                   value:
                     isBuff: true
@@ -3266,15 +3231,24 @@ skills:
                       base: -1
                       per: 0
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_21
+              on: criticaled
               if:
                 - on:
-                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - Effect_BR_TalonFeather_N_5
+                      - Effect_BR_TalonFeather_N_51
+                      - Effect_BR_TalonFeather_N_52
+                      - Effect_BR_TalonFeather_N_53
+                      - Effect_BR_TalonFeather_N_54
+                      - Effect_BR_TalonFeather_N_55
+                      - Effect_BR_TalonFeather_N_56
+                      - Effect_BR_TalonFeather_N_57
+                      - Effect_BR_TalonFeather_N_58
+                      - Effect_BR_TalonFeather_N_59
                     attr: 6
                 - false
               body:
@@ -3290,9 +3264,99 @@ skills:
                 - 2
               target: 3
               buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_1
+                    type: 0
+                    value: "9"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 9
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_2
+                    type: 0
+                    value: "7"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 7
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_3
+                    type: 0
+                    value: "11"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 11
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_4
+                    type: 0
+                    value: "55"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 55
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
                     value: "0.200000"
                     level: "0"
@@ -3307,11 +3371,12 @@ skills:
                       per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.05
           type: 0
           range: 4
           ap: 9
-          grid: 0,1,0,1,1,1,0,1,0
+          grid: 1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -3357,8 +3422,8 @@ skills:
                   desc:
                     desc: Effect_BR_TalonFeather_N_2_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -3366,8 +3431,8 @@ skills:
                     isBuff: true
                     type: 7
                     accuracy:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_DOWN
                   desc:
@@ -3393,42 +3458,6 @@ skills:
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: -1
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_TalonFeather_N_13
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_RANGE_DOWN
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_13_1
-                    type: 0
-                    value: "-1"
-                    level: "0"
-                  attr: 1
-                  erase:
                     rounds: 2
                   value:
                     isBuff: true
@@ -3437,15 +3466,24 @@ skills:
                       base: -1
                       per: 0
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_21
+              on: criticaled
               if:
                 - on:
-                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - Effect_BR_TalonFeather_N_5
+                      - Effect_BR_TalonFeather_N_51
+                      - Effect_BR_TalonFeather_N_52
+                      - Effect_BR_TalonFeather_N_53
+                      - Effect_BR_TalonFeather_N_54
+                      - Effect_BR_TalonFeather_N_55
+                      - Effect_BR_TalonFeather_N_56
+                      - Effect_BR_TalonFeather_N_57
+                      - Effect_BR_TalonFeather_N_58
+                      - Effect_BR_TalonFeather_N_59
                     attr: 6
                 - false
               body:
@@ -3461,9 +3499,99 @@ skills:
                 - 2
               target: 3
               buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_1
+                    type: 0
+                    value: "9"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 9
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_2
+                    type: 0
+                    value: "7"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 7
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_3
+                    type: 0
+                    value: "11"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 11
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_4
+                    type: 0
+                    value: "55"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 55
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
                     value: "0.200000"
                     level: "0"
@@ -3478,11 +3606,12 @@ skills:
                       per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.05
           type: 0
           range: 4
           ap: 9
-          grid: 0,1,0,1,1,1,0,1,0
+          grid: 1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -3528,8 +3657,8 @@ skills:
                   desc:
                     desc: Effect_BR_TalonFeather_N_2_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -3537,8 +3666,8 @@ skills:
                     isBuff: true
                     type: 7
                     accuracy:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_DOWN
                   desc:
@@ -3564,42 +3693,6 @@ skills:
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: -1
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_TalonFeather_N_13
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_RANGE_DOWN
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_13_1
-                    type: 0
-                    value: "-1"
-                    level: "0"
-                  attr: 1
-                  erase:
                     rounds: 2
                   value:
                     isBuff: true
@@ -3608,15 +3701,24 @@ skills:
                       base: -1
                       per: 0
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_21
+              on: criticaled
               if:
                 - on:
-                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - Effect_BR_TalonFeather_N_5
+                      - Effect_BR_TalonFeather_N_51
+                      - Effect_BR_TalonFeather_N_52
+                      - Effect_BR_TalonFeather_N_53
+                      - Effect_BR_TalonFeather_N_54
+                      - Effect_BR_TalonFeather_N_55
+                      - Effect_BR_TalonFeather_N_56
+                      - Effect_BR_TalonFeather_N_57
+                      - Effect_BR_TalonFeather_N_58
+                      - Effect_BR_TalonFeather_N_59
                     attr: 6
                 - false
               body:
@@ -3632,9 +3734,99 @@ skills:
                 - 2
               target: 3
               buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_1
+                    type: 0
+                    value: "9"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 9
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_2
+                    type: 0
+                    value: "7"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 7
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_3
+                    type: 0
+                    value: "11"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 11
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_4
+                    type: 0
+                    value: "55"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 55
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
                     value: "0.200000"
                     level: "0"
@@ -3649,11 +3841,12 @@ skills:
                       per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.05
           type: 0
           range: 4
           ap: 9
-          grid: 0,1,0,1,1,1,0,1,0
+          grid: 1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -3699,8 +3892,8 @@ skills:
                   desc:
                     desc: Effect_BR_TalonFeather_N_2_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -3708,8 +3901,8 @@ skills:
                     isBuff: true
                     type: 7
                     accuracy:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_DOWN
                   desc:
@@ -3735,42 +3928,6 @@ skills:
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: -1
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_TalonFeather_N_13
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_RANGE_DOWN
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_13_1
-                    type: 0
-                    value: "-1"
-                    level: "0"
-                  attr: 1
-                  erase:
                     rounds: 2
                   value:
                     isBuff: true
@@ -3779,15 +3936,24 @@ skills:
                       base: -1
                       per: 0
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_21
+              on: criticaled
               if:
                 - on:
-                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - Effect_BR_TalonFeather_N_5
+                      - Effect_BR_TalonFeather_N_51
+                      - Effect_BR_TalonFeather_N_52
+                      - Effect_BR_TalonFeather_N_53
+                      - Effect_BR_TalonFeather_N_54
+                      - Effect_BR_TalonFeather_N_55
+                      - Effect_BR_TalonFeather_N_56
+                      - Effect_BR_TalonFeather_N_57
+                      - Effect_BR_TalonFeather_N_58
+                      - Effect_BR_TalonFeather_N_59
                     attr: 6
                 - false
               body:
@@ -3803,9 +3969,99 @@ skills:
                 - 2
               target: 3
               buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_1
+                    type: 0
+                    value: "9"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 9
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_2
+                    type: 0
+                    value: "7"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 7
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_3
+                    type: 0
+                    value: "11"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 11
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_4
+                    type: 0
+                    value: "55"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 55
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
                     value: "0.200000"
                     level: "0"
@@ -3820,11 +4076,12 @@ skills:
                       per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.05
           type: 0
           range: 4
           ap: 9
-          grid: 0,1,0,1,1,1,0,1,0
+          grid: 1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -3870,8 +4127,8 @@ skills:
                   desc:
                     desc: Effect_BR_TalonFeather_N_2_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -3879,8 +4136,8 @@ skills:
                     isBuff: true
                     type: 7
                     accuracy:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_DOWN
                   desc:
@@ -3906,42 +4163,6 @@ skills:
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: -1
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_TalonFeather_N_13
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_RANGE_DOWN
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_13_1
-                    type: 0
-                    value: "-1"
-                    level: "0"
-                  attr: 1
-                  erase:
                     rounds: 2
                   value:
                     isBuff: true
@@ -3950,15 +4171,24 @@ skills:
                       base: -1
                       per: 0
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_21
+              on: criticaled
               if:
                 - on:
-                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - Effect_BR_TalonFeather_N_5
+                      - Effect_BR_TalonFeather_N_51
+                      - Effect_BR_TalonFeather_N_52
+                      - Effect_BR_TalonFeather_N_53
+                      - Effect_BR_TalonFeather_N_54
+                      - Effect_BR_TalonFeather_N_55
+                      - Effect_BR_TalonFeather_N_56
+                      - Effect_BR_TalonFeather_N_57
+                      - Effect_BR_TalonFeather_N_58
+                      - Effect_BR_TalonFeather_N_59
                     attr: 6
                 - false
               body:
@@ -3974,9 +4204,99 @@ skills:
                 - 2
               target: 3
               buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_1
+                    type: 0
+                    value: "9"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 9
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_2
+                    type: 0
+                    value: "7"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 7
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_3
+                    type: 0
+                    value: "11"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 11
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_4
+                    type: 0
+                    value: "55"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 55
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
                     value: "0.200000"
                     level: "0"
@@ -3991,11 +4311,12 @@ skills:
                       per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.05
           type: 0
           range: 4
           ap: 9
-          grid: 0,1,0,1,1,1,0,1,0
+          grid: 1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -4041,8 +4362,8 @@ skills:
                   desc:
                     desc: Effect_BR_TalonFeather_N_2_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -4050,8 +4371,8 @@ skills:
                     isBuff: true
                     type: 7
                     accuracy:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_DOWN
                   desc:
@@ -4077,42 +4398,6 @@ skills:
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: -1
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_TalonFeather_N_13
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_RANGE_DOWN
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_13_1
-                    type: 0
-                    value: "-1"
-                    level: "0"
-                  attr: 1
-                  erase:
                     rounds: 2
                   value:
                     isBuff: true
@@ -4121,15 +4406,24 @@ skills:
                       base: -1
                       per: 0
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_21
+              on: criticaled
               if:
                 - on:
-                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - Effect_BR_TalonFeather_N_5
+                      - Effect_BR_TalonFeather_N_51
+                      - Effect_BR_TalonFeather_N_52
+                      - Effect_BR_TalonFeather_N_53
+                      - Effect_BR_TalonFeather_N_54
+                      - Effect_BR_TalonFeather_N_55
+                      - Effect_BR_TalonFeather_N_56
+                      - Effect_BR_TalonFeather_N_57
+                      - Effect_BR_TalonFeather_N_58
+                      - Effect_BR_TalonFeather_N_59
                     attr: 6
                 - false
               body:
@@ -4145,9 +4439,99 @@ skills:
                 - 2
               target: 3
               buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_1
+                    type: 0
+                    value: "9"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 9
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_2
+                    type: 0
+                    value: "7"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 7
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_3
+                    type: 0
+                    value: "11"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 11
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_4
+                    type: 0
+                    value: "55"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 55
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
                     value: "0.200000"
                     level: "0"
@@ -4162,11 +4546,12 @@ skills:
                       per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.05
           type: 0
           range: 4
           ap: 9
-          grid: 0,1,0,1,1,1,0,1,0
+          grid: 1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -4212,8 +4597,8 @@ skills:
                   desc:
                     desc: Effect_BR_TalonFeather_N_2_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -4221,8 +4606,8 @@ skills:
                     isBuff: true
                     type: 7
                     accuracy:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_DOWN
                   desc:
@@ -4248,42 +4633,6 @@ skills:
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: -1
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_TalonFeather_N_13
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_RANGE_DOWN
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_13_1
-                    type: 0
-                    value: "-1"
-                    level: "0"
-                  attr: 1
-                  erase:
                     rounds: 2
                   value:
                     isBuff: true
@@ -4292,15 +4641,24 @@ skills:
                       base: -1
                       per: 0
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_21
+              on: criticaled
               if:
                 - on:
-                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - Effect_BR_TalonFeather_N_5
+                      - Effect_BR_TalonFeather_N_51
+                      - Effect_BR_TalonFeather_N_52
+                      - Effect_BR_TalonFeather_N_53
+                      - Effect_BR_TalonFeather_N_54
+                      - Effect_BR_TalonFeather_N_55
+                      - Effect_BR_TalonFeather_N_56
+                      - Effect_BR_TalonFeather_N_57
+                      - Effect_BR_TalonFeather_N_58
+                      - Effect_BR_TalonFeather_N_59
                     attr: 6
                 - false
               body:
@@ -4316,9 +4674,99 @@ skills:
                 - 2
               target: 3
               buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_1
+                    type: 0
+                    value: "9"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 9
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_2
+                    type: 0
+                    value: "7"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 7
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_3
+                    type: 0
+                    value: "11"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 11
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_4
+                    type: 0
+                    value: "55"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 55
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
                     value: "0.200000"
                     level: "0"
@@ -4333,11 +4781,12 @@ skills:
                       per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.05
           type: 0
           range: 4
           ap: 9
-          grid: 0,1,0,1,1,1,0,1,0
+          grid: 1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -4383,8 +4832,8 @@ skills:
                   desc:
                     desc: Effect_BR_TalonFeather_N_2_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -4392,8 +4841,8 @@ skills:
                     isBuff: true
                     type: 7
                     accuracy:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_DOWN
                   desc:
@@ -4419,42 +4868,6 @@ skills:
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: -1
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_TalonFeather_N_13
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_RANGE_DOWN
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_13_1
-                    type: 0
-                    value: "-1"
-                    level: "0"
-                  attr: 1
-                  erase:
                     rounds: 2
                   value:
                     isBuff: true
@@ -4463,15 +4876,24 @@ skills:
                       base: -1
                       per: 0
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_21
+              on: criticaled
               if:
                 - on:
-                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - Effect_BR_TalonFeather_N_5
+                      - Effect_BR_TalonFeather_N_51
+                      - Effect_BR_TalonFeather_N_52
+                      - Effect_BR_TalonFeather_N_53
+                      - Effect_BR_TalonFeather_N_54
+                      - Effect_BR_TalonFeather_N_55
+                      - Effect_BR_TalonFeather_N_56
+                      - Effect_BR_TalonFeather_N_57
+                      - Effect_BR_TalonFeather_N_58
+                      - Effect_BR_TalonFeather_N_59
                     attr: 6
                 - false
               body:
@@ -4487,9 +4909,99 @@ skills:
                 - 2
               target: 3
               buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_1
+                    type: 0
+                    value: "9"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 9
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_2
+                    type: 0
+                    value: "7"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 7
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_3
+                    type: 0
+                    value: "11"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 11
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_4
+                    type: 0
+                    value: "55"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 55
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
                     value: "0.200000"
                     level: "0"
@@ -4504,11 +5016,12 @@ skills:
                       per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.05
           type: 0
           range: 4
           ap: 9
-          grid: 0,1,0,1,1,1,0,1,0
+          grid: 1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -4554,8 +5067,8 @@ skills:
                   desc:
                     desc: Effect_BR_TalonFeather_N_2_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -4563,8 +5076,8 @@ skills:
                     isBuff: true
                     type: 7
                     accuracy:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_DOWN
                   desc:
@@ -4590,42 +5103,6 @@ skills:
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: -1
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_TalonFeather_N_13
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_RANGE_DOWN
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_13_1
-                    type: 0
-                    value: "-1"
-                    level: "0"
-                  attr: 1
-                  erase:
                     rounds: 2
                   value:
                     isBuff: true
@@ -4634,15 +5111,24 @@ skills:
                       base: -1
                       per: 0
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_21
+              on: criticaled
               if:
                 - on:
-                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - Effect_BR_TalonFeather_N_5
+                      - Effect_BR_TalonFeather_N_51
+                      - Effect_BR_TalonFeather_N_52
+                      - Effect_BR_TalonFeather_N_53
+                      - Effect_BR_TalonFeather_N_54
+                      - Effect_BR_TalonFeather_N_55
+                      - Effect_BR_TalonFeather_N_56
+                      - Effect_BR_TalonFeather_N_57
+                      - Effect_BR_TalonFeather_N_58
+                      - Effect_BR_TalonFeather_N_59
                     attr: 6
                 - false
               body:
@@ -4658,9 +5144,99 @@ skills:
                 - 2
               target: 3
               buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_1
+                    type: 0
+                    value: "9"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 9
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_2
+                    type: 0
+                    value: "7"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 7
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_3
+                    type: 0
+                    value: "11"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 11
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_4
+                    type: 0
+                    value: "55"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 55
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
                     value: "0.200000"
                     level: "0"
@@ -4675,6 +5251,7 @@ skills:
                       per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 0.05
           type: 0
           range: 4
@@ -4725,8 +5302,8 @@ skills:
                   desc:
                     desc: Effect_BR_TalonFeather_N_2_2
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "-0.200000"
+                    level: "-0.020000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -4734,8 +5311,8 @@ skills:
                     isBuff: true
                     type: 7
                     accuracy:
-                      base: -25%
-                      per: -1.25%
+                      base: -20%
+                      per: -2%
                   overlap: 4
                 - icon: BuffIcon_EVADE_DOWN
                   desc:
@@ -4761,42 +5338,6 @@ skills:
                     level: "0"
                   attr: 1
                   erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 55
-                    range:
-                      base: -1
-                      per: 0
-                  overlap: 4
-              maxStack: 0
-            - key: Effect_BR_TalonFeather_N_13
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_RANGE_DOWN
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_13_1
-                    type: 0
-                    value: "-1"
-                    level: "0"
-                  attr: 1
-                  erase:
                     rounds: 2
                   value:
                     isBuff: true
@@ -4805,15 +5346,24 @@ skills:
                       base: -1
                       per: 0
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_Khan_N_19
-              on: attack_success
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_21
+              on: criticaled
               if:
                 - on:
-                    target: target
                     func: OR
                     select:
-                      - Effect_BR_Khan_N_18
+                      - Effect_BR_TalonFeather_N_5
+                      - Effect_BR_TalonFeather_N_51
+                      - Effect_BR_TalonFeather_N_52
+                      - Effect_BR_TalonFeather_N_53
+                      - Effect_BR_TalonFeather_N_54
+                      - Effect_BR_TalonFeather_N_55
+                      - Effect_BR_TalonFeather_N_56
+                      - Effect_BR_TalonFeather_N_57
+                      - Effect_BR_TalonFeather_N_58
+                      - Effect_BR_TalonFeather_N_59
                     attr: 6
                 - false
               body:
@@ -4829,9 +5379,99 @@ skills:
                 - 2
               target: 3
               buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_1
+                    type: 0
+                    value: "9"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 9
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_2
+                    type: 0
+                    value: "7"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 7
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_3
+                    type: 0
+                    value: "11"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 11
+                      target: 0
+                  overlap: 4
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_21_4
+                    type: 0
+                    value: "55"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 55
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_510
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - in_battle:
+                    - Char_BR_TalonFeather_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Khan_N_19_1
+                    desc: Effect_BR_TalonFeather_N_510_1
                     type: 1
                     value: "0.200000"
                     level: "0"
@@ -4846,6 +5486,7 @@ skills:
                       per: 0%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -4872,10 +5513,10 @@ skills:
             desc:
               desc: Effect_BR_TalonFeather_N_2_2
               type: 1
-              value: "-0.250000"
-              level: "-0.012500"
-            base: -0.25
-            per: -0.0125
+              value: "-0.200000"
+              level: "-0.020000"
+            base: -0.2
+            per: -0.02
             chance: 1
           - icon: BuffIcon_EVADE_DOWN
             desc:
@@ -4894,19 +5535,46 @@ skills:
               level: "0"
             base: -1
             per: 0
-            chance: 0
-          - icon: BuffIcon_RANGE_DOWN
+            chance: 1
+          - icon: BuffIcon_REMOVE_BUFF
             desc:
-              desc: Effect_BR_TalonFeather_N_13_1
+              desc: Effect_BR_TalonFeather_N_21_1
               type: 0
-              value: "-1"
+              value: "9"
               level: "0"
-            base: -1
+            base: 9
+            per: 0
+            chance: 1
+          - icon: BuffIcon_REMOVE_BUFF
+            desc:
+              desc: Effect_BR_TalonFeather_N_21_2
+              type: 0
+              value: "7"
+              level: "0"
+            base: 7
+            per: 0
+            chance: 1
+          - icon: BuffIcon_REMOVE_BUFF
+            desc:
+              desc: Effect_BR_TalonFeather_N_21_3
+              type: 0
+              value: "11"
+              level: "0"
+            base: 11
+            per: 0
+            chance: 1
+          - icon: BuffIcon_REMOVE_BUFF
+            desc:
+              desc: Effect_BR_TalonFeather_N_21_4
+              type: 0
+              value: "55"
+              level: "0"
+            base: 55
             per: 0
             chance: 1
           - icon: BuffIcon_PhyATK_UP
             desc:
-              desc: Effect_BR_Khan_N_19_1
+              desc: Effect_BR_TalonFeather_N_510_1
               type: 1
               value: "0.200000"
               level: "0"
@@ -4966,8 +5634,8 @@ skills:
                   desc:
                     desc: Effect_BR_TalonFeather_N_3_1
                     type: 0
-                    value: "0.800000"
-                    level: "0.040000"
+                    value: "0.600000"
+                    level: "0.060000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -4975,11 +5643,29 @@ skills:
                     isBuff: true
                     type: 20
                     ap:
-                      base: 0.8
-                      per: 0.04
-                  overlap: 3
+                      base: 0.6
+                      per: 0.06
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_3_2
+                    type: 0
+                    value: "0.300000"
+                    level: "0.030000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 20
+                    ap:
+                      base: 0.3
+                      per: 0.03
+                  overlap: 4
               maxStack: 0
-            - key: Effect_BR_TalonFeather_N_14
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_31
               on: round
               if:
                 - on:
@@ -5002,10 +5688,10 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_BR_TalonFeather_N_14_1
+                    desc: Effect_BR_TalonFeather_N_31_1
                     type: 0
-                    value: "0.400000"
-                    level: "0.020000"
+                    value: "0.300000"
+                    level: "0.030000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -5013,10 +5699,50 @@ skills:
                     isBuff: true
                     type: 20
                     ap:
-                      base: 0.4
-                      per: 0.02
-                  overlap: 3
+                      base: 0.3
+                      per: 0.03
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_32
+              on: round
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - 77
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_32_1
+                    type: 0
+                    value: "0.300000"
+                    level: "0.030000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 0.3
+                      per: 0.03
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -5034,19 +5760,37 @@ skills:
             desc:
               desc: Effect_BR_TalonFeather_N_3_1
               type: 0
-              value: "0.800000"
-              level: "0.040000"
-            base: 0.8
-            per: 0.04
+              value: "0.600000"
+              level: "0.060000"
+            base: 0.6
+            per: 0.06
             chance: 1
           - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_TalonFeather_N_14_1
+              desc: Effect_BR_TalonFeather_N_3_2
               type: 0
-              value: "0.400000"
-              level: "0.020000"
-            base: 0.4
-            per: 0.02
+              value: "0.300000"
+              level: "0.030000"
+            base: 0.3
+            per: 0.03
+            chance: 0
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_31_1
+              type: 0
+              value: "0.300000"
+              level: "0.030000"
+            base: 0.3
+            per: 0.03
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_32_1
+              type: 0
+              value: "0.300000"
+              level: "0.030000"
+            base: 0.3
+            per: 0.03
             chance: 1
   "4":
     key: "4"
@@ -5072,7 +5816,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,0,1,0,1,1,0,0,1
+          grid: 0,1,1,0,1,1,0,1,1
           summon: null
           use: null
           enabled: true
@@ -5081,6 +5825,102 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_BR_TalonFeather_N_4
+              on: wave
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_SCOUTING
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_4_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 23
+                    scout: true
+                  overlap: 4
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_4_2
+                    type: 1
+                    value: "0.400000"
+                    level: "0.050000"
+                  attr: 0
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: 40%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_4_3
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 0
+                  erase: {}
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 1
+                    attack:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_4_4
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 0
+                  erase: {}
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 9
+                    critical:
+                      base: 10%
+                      per: 0.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_4_5
+                    type: 1
+                    value: "0.030000"
+                    level: "0.005000"
+                  attr: 0
+                  erase: {}
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 13
+                    turnSpeed:
+                      base: 3%
+                      per: 0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_41
               on: round
               if:
                 - false
@@ -5099,10 +5939,10 @@ skills:
               buffs:
                 - icon: BuffIcon_ATK_UP
                   desc:
-                    desc: Effect_BR_TalonFeather_N_4_1
+                    desc: Effect_BR_TalonFeather_N_41_1
                     type: 1
                     value: "0.150000"
-                    level: "0.007500"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -5111,11 +5951,11 @@ skills:
                     type: 1
                     attack:
                       base: 15%
-                      per: 0.75%
+                      per: 1%
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_UP
                   desc:
-                    desc: Effect_BR_TalonFeather_N_4_2
+                    desc: Effect_BR_TalonFeather_N_41_2
                     type: 1
                     value: "0.100000"
                     level: "0.005000"
@@ -5131,7 +5971,65 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_BR_TalonFeather_N_4_3
+                    desc: Effect_BR_TalonFeather_N_41_3
+                    type: 1
+                    value: "0.030000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: 3%
+                      per: 0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_42
+              on: round
+              if:
+                - target:
+                    - Char_BR_Khan_N
+                    - Char_BR_QuickCamel_N
+                    - Char_BR_WarWolf_N
+                    - Char_BR_Salamander_N
+                    - Char_BR_Hyena_N
+                    - Char_BR_Scarabya_N
+                    - Char_BR_Kheshig_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_42_1
+                    type: 1
+                    value: "0.075000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 7.5%
+                      per: 0.5%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_42_2
                     type: 1
                     value: "0.050000"
                     level: "0.002500"
@@ -5140,48 +6038,38 @@ skills:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 13
-                    turnSpeed:
+                    type: 9
+                    critical:
                       base: 5%
                       per: 0.25%
                   overlap: 4
-                - icon: BuffIcon_EVADE_UP
+                - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_BR_TalonFeather_N_4_4
+                    desc: Effect_BR_TalonFeather_N_42_3
                     type: 1
-                    value: "0.400000"
-                    level: "0.050000"
+                    value: "0.015000"
+                    level: "0.002500"
                   attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 1
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 11
-                    evade:
-                      base: 40%
-                      per: 5%
-                  overlap: 4
-                - icon: BuffIcon_SCOUTING
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_4_5
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 23
-                    scout: true
+                    type: 13
+                    turnSpeed:
+                      base: 1.5%
+                      per: 0.25%
                   overlap: 4
               maxStack: 0
-            - key: Effect_BR_TalonFeather_N_15
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_43
               on: round
               if:
-                - pos: 2
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_BR_TalonFeather_N_42
+                    attr: 6
                 - false
               body:
                 - 0
@@ -5196,125 +6084,56 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_EVADE_UP
+                - icon: BuffIcon_ATK_UP
                   desc:
-                    desc: Effect_BR_TalonFeather_N_15_1
+                    desc: Effect_BR_TalonFeather_N_43_1
                     type: 1
-                    value: "0.400000"
-                    level: "0.050000"
+                    value: "0.225000"
+                    level: "0.015000"
                   attr: 0
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 11
-                    evade:
-                      base: 40%
-                      per: 5%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_TalonFeather_N_16
-              on: round
-              if:
-                - pos: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_16_1
                     type: 1
-                    value: "0.350000"
-                    level: "0.040000"
+                    attack:
+                      base: 22.5%
+                      per: 1.5%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_43_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.007500"
                   attr: 0
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 11
-                    evade:
-                      base: 35%
-                      per: 4%
+                    type: 9
+                    critical:
+                      base: 15%
+                      per: 0.75%
                   overlap: 4
-              maxStack: 1
-            - key: Effect_BR_TalonFeather_N_17
-              on: round
-              if:
-                - pos: 0
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_EVADE_UP
+                - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_BR_TalonFeather_N_17_1
+                    desc: Effect_BR_TalonFeather_N_43_3
                     type: 1
-                    value: "0.300000"
-                    level: "0.030000"
+                    value: "0.045000"
+                    level: "0.007500"
                   attr: 0
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 11
-                    evade:
-                      base: 30%
-                      per: 3%
-                  overlap: 4
-              maxStack: 1
-            - key: Effect_BR_TalonFeather_N_18
-              on: wave_end
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_SCOUTING
-                  desc:
-                    desc: Effect_BR_TalonFeather_N_18_1
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 0
-                  erase: {}
-                  value:
-                    isBuff: true
-                    type: 23
-                    scout: true
+                    type: 13
+                    turnSpeed:
+                      base: 4.5%
+                      per: 0.75%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -5328,18 +6147,63 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_ATK_UP
+        - - icon: BuffIcon_SCOUTING
             desc:
               desc: Effect_BR_TalonFeather_N_4_1
               type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_4_2
+              type: 1
+              value: "0.400000"
+              level: "0.050000"
+            base: 0.4
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_4_3
+              type: 1
               value: "0.150000"
-              level: "0.007500"
+              level: "0.010000"
             base: 0.15
-            per: 0.0075
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_4_4
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
+            chance: 0
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_4_5
+              type: 1
+              value: "0.030000"
+              level: "0.005000"
+            base: 0.03
+            per: 0.005
+            chance: 0
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_41_1
+              type: 1
+              value: "0.150000"
+              level: "0.010000"
+            base: 0.15
+            per: 0.01
             chance: 1
           - icon: BuffIcon_CRITICAL_UP
             desc:
-              desc: Effect_BR_TalonFeather_N_4_2
+              desc: Effect_BR_TalonFeather_N_41_2
               type: 1
               value: "0.100000"
               level: "0.005000"
@@ -5348,66 +6212,907 @@ skills:
             chance: 1
           - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_TalonFeather_N_4_3
+              desc: Effect_BR_TalonFeather_N_41_3
+              type: 1
+              value: "0.030000"
+              level: "0.005000"
+            base: 0.03
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_42_1
+              type: 1
+              value: "0.075000"
+              level: "0.005000"
+            base: 0.075
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_42_2
               type: 1
               value: "0.050000"
               level: "0.002500"
             base: 0.05
             per: 0.0025
             chance: 1
-          - icon: BuffIcon_EVADE_UP
+          - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_TalonFeather_N_4_4
+              desc: Effect_BR_TalonFeather_N_42_3
               type: 1
-              value: "0.400000"
-              level: "0.050000"
-            base: 0.4
-            per: 0.05
-            chance: 0
-          - icon: BuffIcon_SCOUTING
+              value: "0.015000"
+              level: "0.002500"
+            base: 0.015
+            per: 0.0025
+            chance: 1
+          - icon: BuffIcon_ATK_UP
             desc:
-              desc: Effect_BR_TalonFeather_N_4_5
+              desc: Effect_BR_TalonFeather_N_43_1
+              type: 1
+              value: "0.225000"
+              level: "0.015000"
+            base: 0.225
+            per: 0.015
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_43_2
+              type: 1
+              value: "0.150000"
+              level: "0.007500"
+            base: 0.15
+            per: 0.0075
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_43_3
+              type: 1
+              value: "0.045000"
+              level: "0.007500"
+            base: 0.045
+            per: 0.0075
+            chance: 1
+  "5":
+    key: "5"
+    icon: P.AWACS
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 5
+    buffs:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - rate: 0
+          type: 0
+          range: 0
+          ap: 0
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_TalonFeather_N_5
+              on: round
+              if:
+                - unitCount:
+                    filter:
+                      - enemy
+                      - air
+                    type:
+                      - 2
+                    count:
+                      - 0
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_5_1
+                    type: 1
+                    value: "0.500000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 50%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_5_2
+                    type: 0
+                    value: "0.400000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 0.4
+                      per: 0.02
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_5_3
+                    type: 1
+                    value: "0.200000"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 0%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_51
+              on: round
+              if:
+                - unitCount:
+                    filter:
+                      - enemy
+                      - air
+                    type:
+                      - 2
+                    count:
+                      - 1
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_51_1
+                    type: 1
+                    value: "0.750000"
+                    level: "0.075000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 75%
+                      per: 7.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_51_2
+                    type: 0
+                    value: "0.600000"
+                    level: "0.030000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 0.6
+                      per: 0.03
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_52
+              on: round
+              if:
+                - unitCount:
+                    filter:
+                      - enemy
+                      - air
+                    type:
+                      - 2
+                    count:
+                      - 2
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_52_1
+                    type: 1
+                    value: "1"
+                    level: "0.100000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 100%
+                      per: 10%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_52_2
+                    type: 0
+                    value: "0.800000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 0.8
+                      per: 0.04
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_53
+              on: round
+              if:
+                - unitCount:
+                    filter:
+                      - enemy
+                      - air
+                    type:
+                      - 2
+                    count:
+                      - 3
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_53_1
+                    type: 1
+                    value: "1.250000"
+                    level: "0.125000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 125%
+                      per: 12.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_53_2
+                    type: 0
+                    value: "1"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 1
+                      per: 0.05
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_54
+              on: round
+              if:
+                - unitCount:
+                    filter:
+                      - enemy
+                      - air
+                    type:
+                      - 2
+                    count:
+                      - 4
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_54_1
+                    type: 1
+                    value: "1.500000"
+                    level: "0.150000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 150%
+                      per: 15%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_54_2
+                    type: 0
+                    value: "1.200000"
+                    level: "0.060000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 1.2
+                      per: 0.06
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_55
+              on: round
+              if:
+                - unitCount:
+                    filter:
+                      - enemy
+                      - air
+                    type:
+                      - 2
+                    count:
+                      - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_55_1
+                    type: 1
+                    value: "1.750000"
+                    level: "0.175000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 175%
+                      per: 17.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_55_2
+                    type: 0
+                    value: "1.400000"
+                    level: "0.070000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 1.4
+                      per: 0.07
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_56
+              on: round
+              if:
+                - unitCount:
+                    filter:
+                      - enemy
+                      - air
+                    type:
+                      - 2
+                    count:
+                      - 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_56_1
+                    type: 1
+                    value: "2"
+                    level: "0.200000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 200%
+                      per: 20%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_56_2
+                    type: 0
+                    value: "1.600000"
+                    level: "0.080000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 1.6
+                      per: 0.08
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_57
+              on: round
+              if:
+                - unitCount:
+                    filter:
+                      - enemy
+                      - air
+                    type:
+                      - 2
+                    count:
+                      - 7
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_57_1
+                    type: 1
+                    value: "2.250000"
+                    level: "0.225000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 225%
+                      per: 22.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_57_2
+                    type: 0
+                    value: "1.800000"
+                    level: "0.090000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 1.8
+                      per: 0.09
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_58
+              on: round
+              if:
+                - unitCount:
+                    filter:
+                      - enemy
+                      - air
+                    type:
+                      - 2
+                    count:
+                      - 8
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_58_1
+                    type: 1
+                    value: "2.500000"
+                    level: "0.250000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 250%
+                      per: 25%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_58_2
+                    type: 0
+                    value: "2"
+                    level: "0.100000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 2
+                      per: 0.1
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_TalonFeather_N_59
+              on: round
+              if:
+                - unitCount:
+                    filter:
+                      - enemy
+                      - air
+                    type:
+                      - 2
+                    count:
+                      - 9
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_59_1
+                    type: 1
+                    value: "2.750000"
+                    level: "0.275000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 275%
+                      per: 27.5%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_TalonFeather_N_59_2
+                    type: 0
+                    value: "2.200000"
+                    level: "0.110000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 2.2
+                      per: 0.11
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_5_1
+              type: 1
+              value: "0.500000"
+              level: "0.050000"
+            base: 0.5
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_5_2
               type: 0
-              value: "0"
+              value: "0.400000"
+              level: "0.020000"
+            base: 0.4
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_PhyATK_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_5_3
+              type: 1
+              value: "0.200000"
               level: "0"
-            base: 0
+            base: 0.2
             per: 0
             chance: 0
-          - icon: BuffIcon_EVADE_UP
+          - icon: BuffIcon_ACCURACY_UP
             desc:
-              desc: Effect_BR_TalonFeather_N_15_1
+              desc: Effect_BR_TalonFeather_N_51_1
               type: 1
-              value: "0.400000"
-              level: "0.050000"
-            base: 0.4
-            per: 0.05
+              value: "0.750000"
+              level: "0.075000"
+            base: 0.75
+            per: 0.075
             chance: 1
-          - icon: BuffIcon_EVADE_UP
+          - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_TalonFeather_N_16_1
-              type: 1
-              value: "0.350000"
-              level: "0.040000"
-            base: 0.35
-            per: 0.04
-            chance: 1
-          - icon: BuffIcon_EVADE_UP
-            desc:
-              desc: Effect_BR_TalonFeather_N_17_1
-              type: 1
-              value: "0.300000"
+              desc: Effect_BR_TalonFeather_N_51_2
+              type: 0
+              value: "0.600000"
               level: "0.030000"
-            base: 0.3
+            base: 0.6
             per: 0.03
             chance: 1
-          - icon: BuffIcon_SCOUTING
+          - icon: BuffIcon_ACCURACY_UP
             desc:
-              desc: Effect_BR_TalonFeather_N_18_1
+              desc: Effect_BR_TalonFeather_N_52_1
+              type: 1
+              value: "1"
+              level: "0.100000"
+            base: 1
+            per: 0.1
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_52_2
               type: 0
-              value: "0"
-              level: "0"
-            base: 0
-            per: 0
+              value: "0.800000"
+              level: "0.040000"
+            base: 0.8
+            per: 0.04
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_53_1
+              type: 1
+              value: "1.250000"
+              level: "0.125000"
+            base: 1.25
+            per: 0.125
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_53_2
+              type: 0
+              value: "1"
+              level: "0.050000"
+            base: 1
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_54_1
+              type: 1
+              value: "1.500000"
+              level: "0.150000"
+            base: 1.5
+            per: 0.15
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_54_2
+              type: 0
+              value: "1.200000"
+              level: "0.060000"
+            base: 1.2
+            per: 0.06
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_55_1
+              type: 1
+              value: "1.750000"
+              level: "0.175000"
+            base: 1.75
+            per: 0.175
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_55_2
+              type: 0
+              value: "1.400000"
+              level: "0.070000"
+            base: 1.4
+            per: 0.07
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_56_1
+              type: 1
+              value: "2"
+              level: "0.200000"
+            base: 2
+            per: 0.2
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_56_2
+              type: 0
+              value: "1.600000"
+              level: "0.080000"
+            base: 1.6
+            per: 0.08
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_57_1
+              type: 1
+              value: "2.250000"
+              level: "0.225000"
+            base: 2.25
+            per: 0.225
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_57_2
+              type: 0
+              value: "1.800000"
+              level: "0.090000"
+            base: 1.8
+            per: 0.09
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_58_1
+              type: 1
+              value: "2.500000"
+              level: "0.250000"
+            base: 2.5
+            per: 0.25
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_58_2
+              type: 0
+              value: "2"
+              level: "0.100000"
+            base: 2
+            per: 0.1
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_59_1
+              type: 1
+              value: "2.750000"
+              level: "0.275000"
+            base: 2.75
+            per: 0.275
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_TalonFeather_N_59_2
+              type: 0
+              value: "2.200000"
+              level: "0.110000"
+            base: 2.2
+            per: 0.11
             chance: 1
 dialogue:
   KR:
@@ -5866,8 +7571,8 @@ dialogue:
         That’s not how it starts!​
       Idle_02_01: |-
         Next, it's your turn. Introduce your self
-        according to the concept. Haha, it’s not difficult thing.
-        It’s pretty simple. Talon Feather is the world most-
+        according to the concept. Haha, it's not difficult thing.
+        It's pretty simple. Talon Feather is the world most-
         Umm… You got it, right?​
       Idle_03_01: |-
         Why wedding dress besides all other clothes?..
@@ -6283,6 +7988,7 @@ skins:
         voiceId: 1
         2dmodel: 2DModel_BR_TalonFeather_NS1
         2dmodel_dam: 2DModel_BR_TalonFeather_NS1_Dam
+        consumableKey: Skin_BR_TalonFeather_1
     - sid: 2
       artist: Sol
       price: 114
@@ -6315,3 +8021,4 @@ skins:
         tbarId: 2
         voiceId: 2
         2dmodel: 2DModel_BR_TalonFeather_NS2
+        consumableKey: Skin_BR_TalonFeather_2

@@ -1,5 +1,5 @@
-import { LocaleTypes } from "../../libs/Locale";
-import { APPEAR_EFFECT, DIALOG_SPEAKER, OFF_EFFECT, SCG_ACTIVATION, SCREEN_EFFECT } from "../../types/Enums";
+import { LocaleTypes } from "../Locale";
+import { APPEAR_EFFECT, DIALOG_SPEAKER, OFF_EFFECT, SCG_ACTIVATION, SCREEN_EFFECT } from "../Enums";
 
 type Localed<T> = Record<LocaleTypes, T>;
 type LString = Localed<string | undefined>;

@@ -455,7 +455,10 @@ country: SG
 age: "22"
 secretRoomType: Adult
 marriageVoice: true
-introVoice: []
+introVoice:
+  - jp
+  - jpdmm
+  - ko
 favor:
   present: 1
   clear: 1
@@ -534,16 +537,19 @@ chart:
   - 2
   - 6
 cv:
+  "1": {}
+  "2": {}
   "": {}
   M: {}
 source:
-  - - 3-1
-    - 2-4Ex
-    - 3-1Ex
-    - 4-4
-    - 4-8
-    - 5-1Ex
-    - 9-2Ex
+  - - 2:1:2-4Ex
+  - - 3:1:3-1
+    - 3:1:3-1Ex
+  - - 4:1:4-4
+    - 4:1:4-8
+  - - 5:1:5-1Ex
+  - - 9:1:9-2Ex
+  - - 12:1:12-1Ex
   - - Ev:Ev1:Ev-1Ex
   - - Ev:Ev2:Ev2-2B
   - - Ev:Ev3:Ev-6Ex
@@ -568,6 +574,8 @@ source:
   - - Ev:Ev20:EV1-2Ex
     - Ev:Ev20:EV3-3B
   - - Ev:Ev21:EV1-2Ex
+  - - Ev:Ev22:EV1-6
+    - Ev:Ev22:EV2-8
 research: false
 skills:
   "1":
@@ -677,6 +685,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BUFF_Flood_N_4
               on: attack_success
               if:
@@ -714,6 +723,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 1
             - key: Effect_BUFF_Flood_N_5
               on: attack_success
               if:
@@ -751,6 +761,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 2
             - key: Effect_BUFF_Flood_N_6
               on: attack_success
               if:
@@ -788,6 +799,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 3
         - rate: 0.58
           type: 2
           range: 3
@@ -876,6 +888,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BUFF_Flood_N_4
               on: attack_success
               if:
@@ -913,6 +926,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 1
             - key: Effect_BUFF_Flood_N_5
               on: attack_success
               if:
@@ -950,6 +964,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 2
             - key: Effect_BUFF_Flood_N_6
               on: attack_success
               if:
@@ -987,6 +1002,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 3
         - rate: 0.625
           type: 2
           range: 3
@@ -1075,6 +1091,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BUFF_Flood_N_4
               on: attack_success
               if:
@@ -1112,6 +1129,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 1
             - key: Effect_BUFF_Flood_N_5
               on: attack_success
               if:
@@ -1149,6 +1167,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 2
             - key: Effect_BUFF_Flood_N_6
               on: attack_success
               if:
@@ -1186,6 +1205,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 3
         - rate: 0.67
           type: 2
           range: 3
@@ -1274,6 +1294,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BUFF_Flood_N_4
               on: attack_success
               if:
@@ -1311,6 +1332,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 1
             - key: Effect_BUFF_Flood_N_5
               on: attack_success
               if:
@@ -1348,6 +1370,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 2
             - key: Effect_BUFF_Flood_N_6
               on: attack_success
               if:
@@ -1385,6 +1408,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 3
         - rate: 0.715
           type: 2
           range: 3
@@ -1473,6 +1497,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BUFF_Flood_N_4
               on: attack_success
               if:
@@ -1510,6 +1535,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 1
             - key: Effect_BUFF_Flood_N_5
               on: attack_success
               if:
@@ -1547,6 +1573,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 2
             - key: Effect_BUFF_Flood_N_6
               on: attack_success
               if:
@@ -1584,6 +1611,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 3
         - rate: 0.76
           type: 2
           range: 3
@@ -1672,6 +1700,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BUFF_Flood_N_4
               on: attack_success
               if:
@@ -1709,6 +1738,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 1
             - key: Effect_BUFF_Flood_N_5
               on: attack_success
               if:
@@ -1746,6 +1776,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 2
             - key: Effect_BUFF_Flood_N_6
               on: attack_success
               if:
@@ -1783,6 +1814,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 3
         - rate: 0.805
           type: 2
           range: 3
@@ -1871,6 +1903,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BUFF_Flood_N_4
               on: attack_success
               if:
@@ -1908,6 +1941,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 1
             - key: Effect_BUFF_Flood_N_5
               on: attack_success
               if:
@@ -1945,6 +1979,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 2
             - key: Effect_BUFF_Flood_N_6
               on: attack_success
               if:
@@ -1982,6 +2017,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 3
         - rate: 0.85
           type: 2
           range: 3
@@ -2070,6 +2106,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BUFF_Flood_N_4
               on: attack_success
               if:
@@ -2107,6 +2144,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 1
             - key: Effect_BUFF_Flood_N_5
               on: attack_success
               if:
@@ -2144,6 +2182,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 2
             - key: Effect_BUFF_Flood_N_6
               on: attack_success
               if:
@@ -2181,6 +2220,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 3
         - rate: 0.895
           type: 2
           range: 3
@@ -2269,6 +2309,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BUFF_Flood_N_4
               on: attack_success
               if:
@@ -2306,6 +2347,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 1
             - key: Effect_BUFF_Flood_N_5
               on: attack_success
               if:
@@ -2343,6 +2385,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 2
             - key: Effect_BUFF_Flood_N_6
               on: attack_success
               if:
@@ -2380,6 +2423,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 3
         - rate: 0.94
           type: 2
           range: 3
@@ -2468,6 +2512,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BUFF_Flood_N_4
               on: attack_success
               if:
@@ -2505,6 +2550,7 @@ skills:
                         per: 2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 1
             - key: Effect_BUFF_Flood_N_5
               on: attack_success
               if:
@@ -2542,6 +2588,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 2
             - key: Effect_BUFF_Flood_N_6
               on: attack_success
               if:
@@ -2579,6 +2626,7 @@ skills:
                         per: -2.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: 3
     values:
       index:
         - 0
@@ -2786,6 +2834,7 @@ skills:
                       with: "0"
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_11
               on: attack_success
               if:
@@ -2819,6 +2868,7 @@ skills:
                     immovable: true
                   overlap: 1
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_21
               on: attack_success
               if:
@@ -2854,6 +2904,7 @@ skills:
                       with: Char_PECS_Sadius_N
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.165
           type: 2
           range: 3
@@ -2975,6 +3026,7 @@ skills:
                       with: "0"
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_11
               on: attack_success
               if:
@@ -3008,6 +3060,7 @@ skills:
                     immovable: true
                   overlap: 1
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_21
               on: attack_success
               if:
@@ -3043,6 +3096,7 @@ skills:
                       with: Char_PECS_Sadius_N
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.255
           type: 2
           range: 3
@@ -3164,6 +3218,7 @@ skills:
                       with: "0"
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_11
               on: attack_success
               if:
@@ -3197,6 +3252,7 @@ skills:
                     immovable: true
                   overlap: 1
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_21
               on: attack_success
               if:
@@ -3232,6 +3288,7 @@ skills:
                       with: Char_PECS_Sadius_N
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.345
           type: 2
           range: 3
@@ -3353,6 +3410,7 @@ skills:
                       with: "0"
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_11
               on: attack_success
               if:
@@ -3386,6 +3444,7 @@ skills:
                     immovable: true
                   overlap: 1
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_21
               on: attack_success
               if:
@@ -3421,6 +3480,7 @@ skills:
                       with: Char_PECS_Sadius_N
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.435
           type: 2
           range: 3
@@ -3542,6 +3602,7 @@ skills:
                       with: "0"
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_11
               on: attack_success
               if:
@@ -3575,6 +3636,7 @@ skills:
                     immovable: true
                   overlap: 1
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_21
               on: attack_success
               if:
@@ -3610,6 +3672,7 @@ skills:
                       with: Char_PECS_Sadius_N
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.525
           type: 2
           range: 3
@@ -3731,6 +3794,7 @@ skills:
                       with: "0"
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_11
               on: attack_success
               if:
@@ -3764,6 +3828,7 @@ skills:
                     immovable: true
                   overlap: 1
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_21
               on: attack_success
               if:
@@ -3799,6 +3864,7 @@ skills:
                       with: Char_PECS_Sadius_N
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.615
           type: 2
           range: 3
@@ -3920,6 +3986,7 @@ skills:
                       with: "0"
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_11
               on: attack_success
               if:
@@ -3953,6 +4020,7 @@ skills:
                     immovable: true
                   overlap: 1
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_21
               on: attack_success
               if:
@@ -3988,6 +4056,7 @@ skills:
                       with: Char_PECS_Sadius_N
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.705
           type: 2
           range: 3
@@ -4109,6 +4178,7 @@ skills:
                       with: "0"
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_11
               on: attack_success
               if:
@@ -4142,6 +4212,7 @@ skills:
                     immovable: true
                   overlap: 1
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_21
               on: attack_success
               if:
@@ -4177,6 +4248,7 @@ skills:
                       with: Char_PECS_Sadius_N
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.795
           type: 2
           range: 3
@@ -4298,6 +4370,7 @@ skills:
                       with: "0"
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_11
               on: attack_success
               if:
@@ -4331,6 +4404,7 @@ skills:
                     immovable: true
                   overlap: 1
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_21
               on: attack_success
               if:
@@ -4366,6 +4440,7 @@ skills:
                       with: Char_PECS_Sadius_N
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.885
           type: 2
           range: 3
@@ -4487,6 +4562,7 @@ skills:
                       with: "0"
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_11
               on: attack_success
               if:
@@ -4520,6 +4596,7 @@ skills:
                     immovable: true
                   overlap: 1
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_21
               on: attack_success
               if:
@@ -4555,6 +4632,7 @@ skills:
                       with: Char_PECS_Sadius_N
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -4702,6 +4780,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_31
               on: round
               if:
@@ -4737,6 +4816,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -4915,6 +4995,7 @@ skills:
                         per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_43
               on: wave
               if:
@@ -4949,6 +5030,7 @@ skills:
                       per: 100
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_44
               on: round
               if:
@@ -4986,6 +5068,7 @@ skills:
                         per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_PECS_Serpent_N_45
               on: round
               if:
@@ -5023,6 +5106,7 @@ skills:
                         per: 2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -5110,6 +5194,127 @@ skills:
             chance: 1
 dialogue:
   KR:
+    "1":
+      SquadJoin: 걱정 마. 학생들을 지키는 게 선생님의 일이잖아?
+      Leader: 서펀트 선생님께 맡겨 줘.
+      SortiePick: 구명튜브 챙겼고 구명조끼도 챙겼고… 좋아. 출발하자.
+      StageStart: 너희들, 준비 운동은 확실히 한 거지?
+      Retreat: 안전요원의 지시에 따라 침착하게 퇴각해.
+      SearchStart: 조, 조금 있으면 수업 시작할 텐데…
+      SearchEnd: 수영복 입고 어디까지 갔다 오게 하는 거야…
+      BattleFocus: 듣고 있어.
+      ActionApprove: 좋아. 나한테 맡겨.
+      SpSkill: 거기서 꼼짝 말고 있어.
+      Retire: 어… 준비 운동도 잘 했는데…
+      Repair: 수영 선생님이 물먹어 버렸네.
+      Reinforce: 랩타임이 몇 초나 줄어들까?
+      ItemEquip: 너무 무거우면 수영할 때 방해되는데.
+      CoreLink: 저기, 잠깐 랩타임 좀 재줄래?
+      PresentGet: 이거, 진짜 나한테 주는 거야? 땡큐, 사령관.
+      Login: 사령관. 뛰어오면 안 돼. 넘어지면 어떡하려고.
+      Idle_01_01: |-
+        수영 수업하는 거 힘들지 않냐고? 
+        하나도 안 힘들어! 
+        일하면서 수영하는 것도 즐겁고, 다들 
+        수영하면서 즐거워하는 것도 볼 수 있잖아!
+      Idle_01_02: |-
+        경영 수영복은 보통 등만 파여있는 거 아냐? 
+        아무리 생각해 봐도 이 수영복은
+        조금 이상한데…
+      Idle_01_03: |-
+        문제가 생기지 않게 여기저기 감시한다.
+        문제가 생기면 해결한다. 
+        평소에 하던 일이랑 별로 다를 것도 없어!
+      SPIdle_01_01: |-
+        사령관 마음대로 만지라고 
+        이렇게 입고 있는거 아니거든!?
+      Idle_02_01: |-
+        우린 잠수함에서 생활하고 있으니까 
+        생존 수영은 꼭 배워야 한다구! 사령관도 
+        배워볼래? 위험하면 내가 언제든지 
+        달려갈 거지만, 배워서 나쁠 건 없잖아?
+      Idle_03_01: |-
+        사령관? 기절한 척 하고 있어도 
+        인공호흡 안 해줄거야~ 
+        그런 장난 치지 않아도… 
+        그 정도는 해 줄 수 있다니까…
+      Idle_04_01: |-
+        사령관! 오늘도 수영장 문 닫으면 같이 
+        청소 해 줄거지? 둘이서 하면 청소도 
+        빨리 끝나고, 다른 애들 때문에
+        참았던 일도… 마음껏 할 수 있잖아?
+      SPIdle_02_01: |-
+        사령관! 거기만 그렇게 만지면
+        선크림 다 지워지잖아!
+        사령관 손 모양으로 타버리지 않게…
+        다시 꼼꼼히 발라줘야 된다?
+      Oath: 정말이지… 사령관 때문에 내가 점점 이상해지는 거 같아. 수영장에서 다치는 사람이 없나 열심히 두리번거려야 되는데, 수영장에서
+        사령관이 보이면 사령관만 보게 되는걸… 책임져야 해, 사령관! 사령관한테 빠져서 허우적대는 나를 구할 수 있는 건, 이제 사령관
+        뿐이란 말이야!
+      OathIdle_01: |-
+        사령관! 전신 운동하고 나서
+        스트레칭 빼먹으면 안 된다고!
+        어젯밤에… 전신 운동할 때 알려줬잖아…
+      MVP: MVP? 당연히 학생들 덕분이지.
+    "2":
+      SquadJoin: 사령관의 부름으로 저승에서 돌아왔다!
+      Leader: 유령이 대장이라니 팀원들이 불안해하지 않을까?
+      SortiePick: 자, 가자. 녀석들을 놀라 자빠지게 만들어 주자고.
+      StageStart: 다들 방심하지 마. 죽어본 사람이 하는 말이니까 경청하라고.
+      Retreat: 이 원한, 죽어서도 잊지 않으리.
+      SearchStart: 사령관한테 빙의돼서 계속 사령관이랑 같이 있고 싶은데. 진짜 가야 돼?
+      SearchEnd: 어~ 피곤해 죽겠네. 아. 이, 이런 차림으로 말하면 조금 그런가?
+      BattleFocus: 누가 감히 나를 부르느냐?
+      ActionApprove: 저 녀석도 데리고 가볼까?
+      SpSkill: 저승에서 온 한기다!
+      Retire: 으으… 퇴치…당한다…
+      Repair: 으으아… 죽다 살았네… 농담이 아니라 진짜 그랬거든?
+      Reinforce: 더 강해졌어. 영혼까지 끌어모아서!
+      ItemEquip: 봤지, 사령관? 이게 폴터가이스트 현상이야.
+      CoreLink: 너무 많이 모여있으면 퇴치당하는 거 아니야?
+      PresentGet: 유령한테 주는 공물인가? 고맙게 받을게.
+      Login: |-
+        에헤헤. 저쪽에 숨어있다가 사령관이 다가오면…
+        으어? 사령관? 언제부터 거기 있었어?
+      Idle_01_01: |-
+        머리에 쓰고 있는 세모난 이게 뭐냐고…?
+        나… 나도 잘 모르는데, 모모가 
+        유령이면 당연히 써야 되는 거라고 그래서…
+      Idle_01_02: |-
+        원통하다~ 누가 내 한을 풀어줄 것이냐~
+        헤헤! 어때, 사령관? 조금 유령 같았어?
+      Idle_01_03: |-
+        LRL이랑 알비스를 놀라게 해주려고 
+        기다리고 있었는데… 놀라게 하기는커녕
+        아프지 않냐고 걱정만 시키고 말았어…
+      SPIdle_01_01: 못된 장난치는 사령관은 유령이 잡아간다~
+      Idle_02_01: |-
+        방심하지 마, 사령관! 유령이 된 서펀트는 
+        어디서든 나타날 수 있거든!
+        사령관이 방심하는 틈에 나타나서…
+        사령관을 꽈악 하고 끌어안아 버릴 거야!
+      Idle_03_01: |-
+        사령관, 나를 성불 시키고 싶어? 
+        십자가도, 성수도, 소금도 통하지 않을걸~? 
+        뭐, 사령관이 꽈악 안아주면 
+        미련 없이 성불해 버릴지도 모르지만…
+      Idle_04_01: |-
+        귀접은 몸에 해로울 수도 
+        있다고 하길래 열심히 참고 있는 건데…
+        사령관이 나를 그렇게 바라보면…
+        나도 더 이상 참을 수가 없잖아…
+      SPIdle_02_01: |-
+        우리 사령관의 이 넘치는 양기를 
+        유령의 음기로 덮어줘야 하는데… 
+        나까지 몸이 뜨거워져 버리네…
+      Oath: 유령을 성불시키려면 소원을 들어줘야 한다고 하는데, 사령관이 내 소원을 들어줘 버렸네? 헤헤, 그래도 아직은 성불할 수 없지!
+        죽어서도 바라던 사령관의 반지를 드디어 받게 되었는걸! 나도 사랑해, 사령관! 유령한테 평생이란 말은 어색하니까, 영원히!
+        사령관만을 사랑할게!
+      OathIdle_01: |-
+        사령관과 함께하는 날들이 너무 행복해서 
+        성불해 버릴 것 같아… 헤헤, 농담이야! 
+        하지만 죽을 만큼 행복한 건 진심이라구!
+      MVP: 만족해서 미련 없이 성불해 버릴 것 같아. 에헷. 농담이야.
     "":
       Join: 엽! 반가워. 사령관. 이제 사령관의 명령을 수행하면 되는 거지?
       SquadJoin: 오케이! 알겠어.
@@ -5202,6 +5407,64 @@ dialogue:
         못 말려... 알았어, 꼭 붙어 있을게.​
       MVP: 달력 메인은 내가 차지하겠는걸?
   JP:
+    "1":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: よっ！会えて嬉しいよ、司令官。では司令官の命令に従えばいいんだね？
       SquadJoin: ""
@@ -5258,6 +5521,64 @@ dialogue:
       SPIdle_01_01: 超熱烈ファンファン：強化不可(前列)
       MVP: ""
   EN:
+    "1":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: Yeap! Nice to meet you, Commander. I just need to follow your orders,
         right?
@@ -5333,10 +5654,10 @@ dialogue:
       PresentGet: ""
       Login: ""
       Idle_01_01: |-
-        What would I have done if I weren’t a Firefighter?
+        What would I have done if I weren't a Firefighter?
         A P.E. teacher would suit me well too, right?
         Well, whatever job I take, it won't change the fact
-        that I’ll be with the Commandere.​
+        that I'll be with the Commandere.​
       Idle_01_02: >-
         Snacks? Hmm… Later. I’m shooting for a calendar soon
 
@@ -5356,6 +5677,64 @@ dialogue:
         Really… Alright, I’ll be right next to you.​
       MVP: ""
   TC:
+    "1":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: 喲！見到你很高興。司令官。那麼從現在開始執行你的命令就行了嗎？
       SquadJoin: ""
@@ -5478,10 +5857,10 @@ skins:
   skins:
     - sid: 1
       artist: SIMA
-      price: 91
+      price: 56
       G: true
       Spine: false
-      parts: 2
+      parts: 6
       stage: false
       subset:
         - true
@@ -5507,3 +5886,38 @@ skins:
         iconId: 1
         tbarId: 1
         voiceId: 1
+        consumableKey: Skin_PECS_Serpent_1
+    - sid: 2
+      artist: TunaMaYo
+      price: 147
+      G: true
+      Spine: false
+      parts: 68
+      stage: false
+      subset:
+        - true
+        - true
+        - false
+        - true
+        - false
+        - true
+        - true
+        - false
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - Costume
+      facelist: []
+      releaseDate: 1698710400000
+      metadata:
+        imageId: 2
+        iconId: 2
+        tbarId: 2
+        voiceId: 2
+        2dmodel: 2DModel_PECS_Serpent_NS2
+        2dmodel_dam: 2DModel_PECS_Serpent_NS2_Dam
+        consumableKey: Skin_PECS_Serpent_2

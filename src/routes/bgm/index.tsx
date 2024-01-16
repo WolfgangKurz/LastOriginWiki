@@ -103,6 +103,11 @@ const BGM: FunctionalComponent = () => {
 					img.src = `${AssetsRoot}/bgm/${i}.jpg`;
 				})),
 		).then(() => setAlbumsLoaded(true));
+
+		document.documentElement.dataset.bgm = "1";
+		return () => {
+			delete document.documentElement.dataset.bgm;
+		};
 	}, []);
 
 	const updateItemCount = useCallback(throttle(() => {

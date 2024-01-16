@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "preact";
-import { useEffect, useLayoutEffect, useRef, useState } from "preact/hooks";
+import { useEffect, useMemo, useRef, useState } from "preact/hooks";
 import { Link, route } from "preact-router";
 
 import { ACTOR_GRADE, STAGE_SUB_TYPE, UNLOCK_COND } from "@/types/Enums";
@@ -11,9 +11,9 @@ import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 import { Consumable } from "@/types/DB/Consumable";
 import { StoryMetadata, StorySpec } from "@/types/Story/Story";
 
-import { objState } from "@/libs/State";
-import { AssetsRoot, ImageExtension, NewMapList, SubStoryUnit } from "@/libs/Const";
 import { useUpdate } from "@/libs/hooks";
+import { AssetsRoot, ImageExtension, NewMapList, SubStoryUnit } from "@/libs/Const";
+import { BuildClass } from "@/libs/Class";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import MapPosition from "@/libs/MapPosition";
@@ -26,6 +26,7 @@ import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
 import IconChatSquareTextFill from "@/components/bootstrap-icon/icons/ChatSquareTextFill";
 import IconCompass from "@/components/bootstrap-icon/icons/Compass";
 import IconCaretRightFill from "@/components/bootstrap-icon/icons/CaretRightFill";
+import IconMusicNote from "@/components/bootstrap-icon/icons/MusicNote";
 import IconAwardFill from "@/components/bootstrap-icon/icons/AwardFill";
 import IconGiftFill from "@/components/bootstrap-icon/icons/GiftFill";
 import IconBugFill from "@/components/bootstrap-icon/icons/BugFill";
@@ -79,27 +80,26 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 
 	const [currentMode, setCurrentMode] = useState<"map" | "substory">("map");
 
-	const CurrentTab = objState<"reward" | "drop" | "squad" | "enemy" | "search">("reward");
-	const selected = objState<MapNodeEntity | null>(null);
+	const [CurrentTab, setCurrentTab] = useState<"reward" | "drop" | "squad" | "enemy" | "search">("reward");
+	const [selected, setSelected] = useState<MapNodeEntity | null>(null);
 
-	const selectedWave = objState<number>(0);
-	const selectedWaveIndex = objState<number>(0);
+	const [selectedWave, setSelectedWave] = useState<number>(0);
+	const [selectedWaveIndex, setSelectedWaveIndex] = useState<number>(0);
 
-	const selectedEnemy = objState<FilterableEnemy | null>(null);
-	const selectedEnemyLevel = objState<number>(1);
-	const enemyModalDisplay = objState<boolean>(false);
+	const [selectedEnemy, setSelectedEnemy] = useState<FilterableEnemy | null>(null);
+	const [selectedEnemyLevel, setSelectedEnemyLevel] = useState<number>(1);
+	const [enemyModalDisplay, setEnemyModalDisplay] = useState<boolean>(false);
 
-	const selectedEquip = objState<FilterableEquip | null>(null);
-	const equipModalDisplay = objState<boolean>(false);
+	const [selectedEquip, setSelectedEquip] = useState<FilterableEquip | null>(null);
+	const [equipModalDisplay, setEquipModalDisplay] = useState<boolean>(false);
 
 	const storyMetaTableRef = useRef<Record<string, StoryMetadata | false>>({});
 	const mapBGRef = useRef<HTMLDivElement>(null);
 
-	const selectedValue = selected.value;
+	const selectedValue = selected;
 
-	const Waves = selectedValue
-		? selectedValue.wave || []
-		: [];
+	const isStory = /^[0-9]+$/.test(props.wid);
+	const wid = isStory ? "Story" : props.wid;
 
 	useEffect(() => {
 		const MapDB = GetJson<World>(`map/${props.wid}`);
@@ -146,15 +146,17 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 
 	SetMeta(
 		["description", "twitter:description"],
-		`${LocaleGet(`WORLD_${props.wid}`)}의 제 ${props.mid}구역 정보를 표시합니다. 지역의 클리어 보상과 드랍 정보, 적 정보를 확인할 수 있습니다.`,
+		`${LocaleGet(`WORLD_${wid}`)}의 제 ${props.mid}구역 정보를 표시합니다. 지역의 클리어 보상과 드랍 정보, 적 정보를 확인할 수 있습니다.`,
 	);
-	SetMeta("keywords", `,${LocaleGet(`WORLD_${props.wid}`)}`, true);
-	SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/${props.wid}_${props.mid}.png`);
+	SetMeta("keywords", `,${LocaleGet(`WORLD_${wid}`)}`, true);
+	SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/${wid}_${props.mid}.png`);
 
 	if (props.wid === "Sub")
-		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${props.wid}`));
+		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${wid}`));
+	else if (isStory)
+		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${wid}`), LocaleGet("WORLDS_WORLD_TITLE", props.wid));
 	else
-		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${props.wid}`), LocaleGet("WORLDS_WORLD_TITLE", props.mid));
+		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${wid}`), LocaleGet("WORLDS_WORLD_TITLE", props.mid));
 
 	useEffect(() => {
 		if (currentMode === "substory" && props.node !== "substory")
@@ -173,23 +175,26 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 		return <Loading.Data />;
 
 	const WorldName = <span class={ `font-ibm ${style.WorldName}` }>
-		<Locale k={ `WORLD_${props.wid}` } fallback={ props.wid } />
+		<Locale k={ `WORLD_${wid}` } fallback={ props.wid } />
 	</span>;
 	const AreaName = (props.mid in MapDB)
 		? <Locale
 			k={ `WORLD_WORLD_${props.wid}_${props.mid}` }
-			fallback={ <Locale k={ "WORLDS_WORLD_TITLE" } p={ [props.mid] } /> }
+			fallback={ <Locale k={ "WORLDS_WORLD_TITLE" } p={ [isStory ? props.wid : props.mid] } /> }
 		/>
 		: <>???</>;
 
-	const CurrentWave = ((): Array<WaveEnemyInfo | null> => {
+	const Waves = useMemo(() => selectedValue?.wave || [], [selectedValue]);
+
+	const CurrentWave = useMemo((): Array<WaveEnemyInfo | null> => {
+		if (!selectedValue || selectedValue.type === STAGE_SUB_TYPE.STORY)
+			return new Array(9).fill(null);
+
 		if (
-			!selectedValue ||
-			selectedValue.type === STAGE_SUB_TYPE.STORY ||
-			!(Waves[selectedWave.value] && Waves[selectedWave.value][selectedWaveIndex.value].e)
+			!(Waves[selectedWave] && Waves[selectedWave][selectedWaveIndex].e)
 		) return new Array(9).fill(null);
 
-		return Waves[selectedWave.value][selectedWaveIndex.value].e.enemy
+		return Waves[selectedWave][selectedWaveIndex].e.enemy
 			.map(x => {
 				if (!x) return null;
 
@@ -201,15 +206,15 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 					...x,
 				};
 			});
-	})();
+	}, [selectedValue, Waves, selectedWave, selectedWaveIndex, FilterableEnemyDB]);
 
-	const UnitDrops = ((): Array<FilterableUnit | ModuleUnit> => {
+	const UnitDrops = useMemo((): Array<FilterableUnit | ModuleUnit> => {
 		if (!selectedValue) return [];
 
 		const rarityTable = ["D", "C", "B", "A", "S", "SS"];
 		const ids: string[] = [];
 		const ret: Array<FilterableUnit | ModuleUnit> = [];
-		Waves.forEach(_ => {
+		(selectedValue.wave || []).forEach(_ => {
 			_.forEach(__ => {
 				if (__.e) {
 					__.e.drops
@@ -236,13 +241,13 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 			});
 		});
 		return ret.sort((a, b) => b.rarity - a.rarity);
-	})();
-	const ItemDrops = ((): Array<FilterableEquip | Consumable> => {
+	}, [selectedValue, FilterableUnitDB]);
+	const ItemDrops = useMemo((): Array<FilterableEquip | Consumable> => {
 		if (!selectedValue) return [];
 
 		const ids: string[] = [];
 		const ret: Array<FilterableEquip | Consumable> = [];
-		Waves.forEach(_ => {
+		(selectedValue.wave || []).forEach(_ => {
 			_.forEach(__ => {
 				if (__.e) {
 					__.e.drops
@@ -252,7 +257,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 							ids.push(x.id);
 
 							if (x.id.startsWith("Equip_")) {
-								const k = x.id.substr(6);
+								const k = x.id.substring(6);
 								const eq = FilterableEquipDB.find(y => y.fullKey === k);
 								if (eq) return eq;
 							} else {
@@ -276,8 +281,8 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				return b.rarity - a.rarity;
 			return 0;
 		});
-	})();
-	const RewardDrops = ((): RewardDropType[] => {
+	}, [selectedValue, FilterableEquipDB, ConsumableDB]);
+	const RewardDrops = useMemo((): RewardDropType[] => {
 		if (!selectedValue) return [];
 
 		const f = (x: RawReward): RewardDropType | null => {
@@ -294,7 +299,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 			if ("count" in x) {
 				const i = x.item;
 				if (i.startsWith("Equip_")) {
-					const k = i.substr(6);
+					const k = i.substring(6);
 					const eq = FilterableEquipDB.find(y => y.fullKey === k);
 					if (eq) return { equip: eq, count: x.count };
 				} else {
@@ -314,14 +319,14 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				.filter(x => x)
 				.map(x => ({ ...x, am: true })),
 		].filter(x => x) as RewardDropType[];
-	})();
+	}, [selectedValue, FilterableUnitDB, FilterableEquipDB, ConsumableDB]);
 
-	const MapHardcoded = ((): boolean => {
+	const MapHardcoded = useMemo((): boolean => {
 		if (!(props.wid in MapsDB)) return false;
 		if (!(props.mid in MapsDB[props.wid])) return false;
 		return MapsDB[props.wid][props.mid];
-	})();
-	const NodeList = ((): MapNodeEntity[] => {
+	}, [MapsDB, props.wid, props.mid]);
+	const NodeList = useMemo((): MapNodeEntity[] => {
 		const ret: MapNodeEntity[] = [];
 
 		const area = MapDB[props.mid];
@@ -333,28 +338,43 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 			ret.push(...area.list);
 
 		return ret;
-	})();
+	}, [MapDB, props.mid]);
 
-	const [CurrentWaveExp, CurrentSkillExp, PlayerExp] = (
-		selectedValue &&
-		selectedValue.type !== STAGE_SUB_TYPE.STORY &&
-		Waves[selectedWave.value] &&
-		Waves[selectedWave.value][selectedWaveIndex.value].e
-	)
-		? (() => {
-			const wave = Waves[selectedWave.value][selectedWaveIndex.value].e;
-			return [FormatNumber(wave.exp), FormatNumber(wave.sexp), selectedValue.playerExp];
-		})()
-		: [0, 0, 0];
+	const [CurrentWaveExp, CurrentSkillExp, PlayerExp] = useMemo((): [string, string, number] => {
+		if (selectedValue && selectedValue.type !== STAGE_SUB_TYPE.STORY) {
+			if (Waves[selectedWave] && Waves[selectedWave][selectedWaveIndex].e) {
+				const wave = Waves[selectedWave][selectedWaveIndex].e;
+				return [
+					FormatNumber(wave.exp),
+					FormatNumber(wave.sexp),
+					selectedValue.playerExp,
+				];
+			};
+		}
+		return ["0", "0", 0];
+	}, [selectedValue, selectedWave, selectedWaveIndex]);
 
-	const [TotalExp, TotalSkillExp] = selectedValue
-		? (() => {
+	const [TotalExp, TotalSkillExp] = useMemo((): [string, string] => {
+		if (selectedValue)
 			return [
-				FormatNumber(Waves.reduce((p, c) => (p + c.reduce((p1, c1) => Math.max(p1, (c1.e && c1.e.exp) || 0), 0) || 0), 0)),
-				FormatNumber(Waves.reduce((p, c) => (p + c.reduce((p1, c1) => Math.max(p1, (c1.e && c1.e.sexp) || 0), 0) || 0), 0)),
+				FormatNumber(Waves.reduce(
+					(p, c) => (p + c.reduce(
+						(p1, c1) => Math.max(p1, (c1.e && c1.e.exp) || 0),
+						0,
+					) || 0),
+					0,
+				)),
+				FormatNumber(Waves.reduce(
+					(p, c) => (p + c.reduce(
+						(p1, c1) => Math.max(p1, (c1.e && c1.e.sexp) || 0),
+						0,
+					) || 0),
+					0,
+				)),
 			];
-		})()
-		: [0, 0];
+
+		return ["0", "0"];
+	}, [selectedValue, Waves]);
 
 	const SearchInfo = selectedValue
 		? selectedValue.search || false
@@ -366,28 +386,47 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 		return <Locale plain k={ `UNIT_${unit.uid}` } />;
 	}
 
-	if (props.node) {
-		const found = NodeList.find(y => y.text === props.node);
-		if (found)
-			selected.set(found);
-	}
+	useEffect(() => {
+		if (props.node) {
+			const found = NodeList.find(y => y.text === props.node);
+			if (found)
+				setSelected(found);
+		}
+	}, [props.node, NodeList]);
 
 	function NodeChange (node: MapNodeEntity): void {
 		if (node.type === STAGE_SUB_TYPE.STORY)
-			CurrentTab.set("reward");
-		selectedWave.set(0);
+			setCurrentTab("reward");
+		setSelectedWave(0);
 		route(`/worlds/${props.wid}/${props.mid}/${node ? node.text : ""}`);
 	}
 
 	function OpenEnemyInfo (enemy: FilterableEnemy, level: number): void {
-		selectedEnemy.set(enemy);
-		selectedEnemyLevel.set(level);
-		enemyModalDisplay.set(true);
+		setSelectedEnemy(enemy);
+		setSelectedEnemyLevel(level);
+		setEnemyModalDisplay(true);
 	}
 
 	const storyMeta = selectedValue && (selectedValue.key in storyMetaTableRef.current)
 		? storyMetaTableRef.current[selectedValue.key]
 		: undefined;
+
+	const hasChapter = isStory && Object.keys(MapsDB[props.wid]).length > 1;
+
+	const Rewardable = useMemo(() => {
+		if (!selectedValue) return false;
+
+		if (RewardDrops.length > 0) return true;
+		if (selectedValue.prevIds.length > 0) return true;
+		if (selectedValue.missions.filter(m => m).length > 0) return true;
+
+		return false;
+
+	}, [selectedValue, RewardDrops]);
+	useEffect(() => {
+		if (!Rewardable && CurrentTab === "reward")
+			setCurrentTab("drop");
+	}, [Rewardable, CurrentTab]);
 
 	return <div class="worlds-map text-start">
 		<div class="row">
@@ -395,6 +434,8 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				<button class="btn btn-dark" onClick={ (): void => {
 					if (props.wid === "Sub")
 						route("/worlds/");
+					else if (isStory)
+						route("/worlds/Story");
 					else
 						route(`/worlds/${props.wid}`);
 				} }>
@@ -453,7 +494,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 									{ WorldName }
 									<h5 class="m-0 d-inline-block font-ibm">
 										<span class="badge bg-warning text-dark ms-2">
-											<Locale k="WORLDS_WORLD_TITLE" p={ [props.mid] } /> :: { AreaName }
+											<Locale k="WORLDS_WORLD_TITLE" p={ [isStory ? props.wid : props.mid] } /> :: { AreaName }
 										</span>
 									</h5>
 								</>
@@ -464,12 +505,28 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 						data-new={ NewMapList.includes(props.wid) ? "1" : "0" }
 						ref={ mapBGRef }
 					>
+						{ hasChapter
+							? <div class={ style.ChapterSelect }>
+								{ Object.keys(MapsDB[props.wid])
+									.map(k => <button
+										class={ BuildClass("btn btn-sm me-1", isActive(props.mid === k, "btn-light", "btn-outline-light")) }
+										onClick={ e => {
+											e.preventDefault();
+											route(`/worlds/${props.wid}/${k}`);
+										} }
+									>
+										{ props.wid }-{ k }
+									</button>)
+								}
+							</div>
+							: <></>
+						}
 						<div>
 							{ props.wid === "Sub"
 								? NodeList.map(x => <Link
 									href={ `/worlds/${props.wid}/${props.mid}/${x.text}` }
 									onClick={ (): void => {
-										selected.set(x);
+										setSelected(x);
 										NodeChange(x);
 									} }
 								>
@@ -484,7 +541,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 									? NodeList.map(x => <Link
 										href={ `/worlds/${props.wid}/${props.mid}/${x.text}` }
 										onClick={ (): void => {
-											selected.set(x);
+											setSelected(x);
 											NodeChange(x);
 										} }
 									>
@@ -496,7 +553,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 										? NodeList.map(x => <Link
 											href={ `/worlds/${props.wid}/${props.mid}/${x.text}` }
 											onClick={ (): void => {
-												selected.set(x);
+												setSelected(x);
 												NodeChange(x);
 											} }
 										>
@@ -511,8 +568,8 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 											mid={ props.mid }
 											hardcoded={ MapHardcoded }
 											onSelect={ (node: MapNodeEntity, el: HTMLAnchorElement, x: number): void => {
-												if (selected.value?.key !== node.key) {
-													selected.set(node);
+												if (selected?.key !== node.key) {
+													setSelected(node);
 													NodeChange(node);
 												}
 
@@ -532,7 +589,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 														});
 												}
 											} }
-											selected={ selected.value }
+											selected={ selected }
 										/>
 							}
 						</div>
@@ -650,45 +707,39 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 					: <></>
 				}
 
-				<EnemyPopup
-					asSub
-					enemy={ selectedEnemy.value }
-					level={ selectedEnemyLevel.value }
-					display={ enemyModalDisplay.value }
-					onHidden={ (): void => enemyModalDisplay.set(false) }
-				/>
-				<EquipPopup
-					asSub
-					equip={ selectedEquip.value }
-					display={ equipModalDisplay.value }
-					onHidden={ (): void => equipModalDisplay.set(false) }
-				/>
-
-				<div class="card mt-2">
+				{ (Rewardable || (selectedValue && selectedValue!.type !== STAGE_SUB_TYPE.STORY)) && <div class="card mt-2">
 					<div class="card-header">
 						<ul class="nav nav-tabs card-header-tabs">
-							<li class="nav-item">
+							{ (Rewardable || true) && <li class="nav-item">
 								<a
 									href="#"
-									class={ `nav-link ${isActive(CurrentTab.value === "reward")} text-dark` }
+									class={ `nav-link ${isActive(CurrentTab === "reward")} text-dark` }
 									onClick={ (e: Event): void => {
 										e.preventDefault();
-										CurrentTab.set("reward");
+										setCurrentTab("reward");
 									} }
 								>
-									<IconAwardFill class="me-1" />
-									<Locale k="WORLD_VIEW_CLEAR_REWARDS" />
+									{ selectedValue && selectedValue.type === STAGE_SUB_TYPE.STORY
+										? <>
+											<IconMusicNote class="me-1" />
+											<Locale k="WORLD_VIEW_WATCH_REWARDS" />
+										</>
+										: <>
+											<IconAwardFill class="me-1" />
+											<Locale k="WORLD_VIEW_CLEAR_REWARDS" />
+										</>
+									}
 								</a>
-							</li>
+							</li> }
 							{ selectedValue && selectedValue.type !== STAGE_SUB_TYPE.STORY
 								? <>
 									<li class="nav-item">
 										<a
 											href="#"
-											class={ `nav-link ${isActive(CurrentTab.value === "drop")} text-dark` }
+											class={ `nav-link ${isActive(CurrentTab === "drop")} text-dark` }
 											onClick={ (e: Event): void => {
 												e.preventDefault();
-												CurrentTab.set("drop");
+												setCurrentTab("drop");
 											} }
 										>
 											<IconGiftFill class="me-1" />
@@ -698,25 +749,25 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 									<li class="nav-item">
 										<a
 											href="#"
-											class={ `nav-link ${isActive(CurrentTab.value === "squad")} text-dark` }
+											class={ `nav-link ${isActive(CurrentTab === "squad")} text-dark` }
 											onClick={ (e: Event): void => {
 												e.preventDefault();
-												CurrentTab.set("squad");
+												setCurrentTab("squad");
 											} }
 										>
 											<IconPersonBoundingBox class="me-1" />
 											<Locale k="WORLD_VIEW_SQUAD" />
 										</a>
 									</li>
-									{ Waves[selectedWave.value]
+									{ Waves[selectedWave]
 										? <>
 											<li class="nav-item">
 												<a
 													href="#"
-													class={ `nav-link ${isActive(CurrentTab.value === "enemy")} text-dark` }
+													class={ `nav-link ${isActive(CurrentTab === "enemy")} text-dark` }
 													onClick={ (e: Event): void => {
 														e.preventDefault();
-														CurrentTab.set("enemy");
+														setCurrentTab("enemy");
 													} }
 												>
 													<IconBugFill class="me-1" />
@@ -729,10 +780,10 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 									<li class="nav-item">
 										<a
 											href="#"
-											class={ `nav-link ${isActive(CurrentTab.value === "search")} text-dark` }
+											class={ `nav-link ${isActive(CurrentTab === "search")} text-dark` }
 											onClick={ (e: Event): void => {
 												e.preventDefault();
-												CurrentTab.set("search");
+												setCurrentTab("search");
 											} }
 										>
 											<IconSearch class="me-1" />
@@ -745,7 +796,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 						</ul>
 					</div>
 
-					{ CurrentTab.value === "reward"
+					{ CurrentTab === "reward"
 						? <div id="world-map-reward" class="card-body">
 							{ !selectedValue
 								? <div class="text-center py-4 text-secondary">
@@ -788,8 +839,8 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																				onClick={ (e: Event): void => {
 																					e.preventDefault();
 																					e.stopPropagation();
-																					selectedEquip.set(reward.equip);
-																					equipModalDisplay.set(true);
+																					setSelectedEquip(reward.equip);
+																					setEquipModalDisplay(true);
 																				} }
 																			>
 																				<DropEquip equip={ reward.equip } count={ reward.count } />
@@ -835,8 +886,8 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																				onClick={ (e: Event): void => {
 																					e.preventDefault();
 																					e.stopPropagation();
-																					selectedEquip.set(reward.equip);
-																					equipModalDisplay.set(true);
+																					setSelectedEquip(reward.equip);
+																					setEquipModalDisplay(true);
 																				} }
 																			>
 																				<DropEquip equip={ reward.equip } count={ reward.count } />
@@ -856,22 +907,27 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 														<Locale k="WORLD_VIEW_UNLOCK_CONDITION" />
 													</div>
 													<div class="card-body">
-														<ul class="list-group">
-															{ selectedValue.prevIds.map(r => <li class="list-group-item">
-																<Locale
-																	k="WORLD_VIEW_UNLOCK_CONDITION_ITEM"
-																	p={ [<>
-																		{ r.wid === "Story"
-																			? <Locale k={ `WORLD_${r.wid}` } fallback={ r.wid } />
-																			: <Locale k={ `WORLD_WORLD_${r.wid}_${r.cid}` } fallback={ r.cid } />
-																		}
-																		<span class="badge bg-warning text-dark ms-1 font-exo2">
-																			{ r.text }
-																		</span>
-																	</>] }
-																/>
-															</li>) }
-														</ul>
+														{ selectedValue.prevIds.length === 0
+															? <div class="text-secondary">
+																<Locale plain k="WORLD_VIEW_CONDITION_EMPTY" />
+															</div>
+															: <ul class="list-group">
+																{ selectedValue.prevIds.map(r => <li class="list-group-item">
+																	<Locale
+																		k="WORLD_VIEW_UNLOCK_CONDITION_ITEM"
+																		p={ [<>
+																			{ r.wid === "Story"
+																				? <Locale k={ `WORLD_${r.wid}` } fallback={ r.wid } />
+																				: <Locale k={ `WORLD_WORLD_${r.wid}_${r.cid}` } fallback={ r.cid } />
+																			}
+																			<span class="badge bg-warning text-dark ms-1 font-exo2">
+																				{ r.text }
+																			</span>
+																		</>] }
+																	/>
+																</li>) }
+															</ul>
+														}
 													</div>
 												</div>
 												<div class="card text-dark mt-2">
@@ -879,18 +935,26 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 														<Locale k="WORLD_VIEW_CLEAR_CONDITION" />
 													</div>
 													<div class="card-body">
-														<ul class="list-group">
-															{ selectedValue.missions.map(m => <li class="list-group-item">
-																{/* ★ <Locale k={ m } components={ { ref: UnitReference } } /> */ }
-																<div>
-																	<IconStarFill class="me-2" />
-																	<MissionText mission={ m } />
-																</div>
-																<small class="text-secondary ps-4">
-																	<Locale plain k={ m } />
-																</small>
-															</li>) }
-														</ul>
+														{ ((mm) => {
+															if (mm.length === 0) {
+																return <div class="text-secondary">
+																	<Locale plain k="WORLD_VIEW_CONDITION_EMPTY" />
+																</div>;
+															}
+
+															return <ul class="list-group">
+																{ mm.map(m => <li class="list-group-item">
+																	{/* ★ <Locale k={ m } components={ { ref: UnitReference } } /> */ }
+																	<div>
+																		<IconStarFill class="me-2" />
+																		<MissionText mission={ m } />
+																	</div>
+																	<small class="text-secondary ps-4">
+																		<Locale plain k={ m } />
+																	</small>
+																</li>) }
+															</ul>;
+														})(selectedValue.missions.filter(m => m)) }
 													</div>
 												</div>
 											</div>
@@ -899,17 +963,20 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 											<div class="col-12 col-md-6">
 												<div class="card text-dark">
 													<div class="card-header">
-														<Locale k="WORLD_VIEW_CLEAR_REWARDS" />
+														<Locale k="WORLD_VIEW_WATCH_REWARDS" />
 													</div>
 													<div class="card-body">
 														<div
-															class={ `row row-cols-1 row-cols-lg-${RewardDrops.filter(x => !x.am).length === 0 ? 1 : 2} px-2` }
+															class={ BuildClass(
+																"px-2 row row-cols-1",
+																`row-cols-lg-${RewardDrops.length === 0 ? 1 : 2}`,
+															) }
 														>
-															{ RewardDrops.filter(x => !x.am).length === 0
+															{ RewardDrops.length === 0
 																? <div class="text-center py-4 text-secondary">
-																	<Locale k="WORLD_VIEW_CLEAR_REWARDS_NONE" />
+																	<Locale k="WORLD_VIEW_WATCH_REWARDS_NONE" />
 																</div>
-																: RewardDrops.filter(x => !x.am)
+																: RewardDrops
 																	.map((reward, i) => {
 																		if ("cash" in reward)
 																			return <DropRes res="cash" count={ reward.cash } />;
@@ -930,8 +997,8 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																				onClick={ (e: Event): void => {
 																					e.preventDefault();
 																					e.stopPropagation();
-																					selectedEquip.set(reward.equip);
-																					equipModalDisplay.set(true);
+																					setSelectedEquip(reward.equip);
+																					setEquipModalDisplay(true);
 																				} }
 																			>
 																				<DropEquip equip={ reward.equip } count={ reward.count } />
@@ -948,49 +1015,30 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 											<div class="col-12 col-md-6">
 												<div class="card text-dark">
 													<div class="card-header">
-														<Locale k="WORLD_VIEW_4STAR_REWARDS" />
+														<Locale k="WORLD_VIEW_UNLOCK_CONDITION" />
 													</div>
 													<div class="card-body">
-														<div
-															class={ `row row-cols-1 row-cols-lg-${RewardDrops.filter(x => x.am).length === 0 ? 1 : 2} px-2` }
-														>
-															{ RewardDrops.filter(x => x.am).length === 0
-																? <div class="text-center py-4 text-secondary">
-																	<Locale k="WORLD_VIEW_4START_REWARDS_NONE" />
-																</div>
-																: RewardDrops.filter(x => x.am)
-																	.map((reward, i) => {
-																		if ("cash" in reward)
-																			return <DropRes res="cash" count={ reward.cash } am />;
-																		if ("metal" in reward)
-																			return <DropRes res="metal" count={ reward.metal } am />;
-																		if ("nutrient" in reward)
-																			return <DropRes res="nutrient" count={ reward.nutrient } am />;
-																		if ("power" in reward)
-																			return <DropRes res="power" count={ reward.power } am />;
-																		if ("unit" in reward) {
-																			return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
-																				<DropUnit id={ reward.unit.uid } />
-																			</Link>;
-																		}
-																		if ("equip" in reward) {
-																			return <Link class="drop-equip"
-																				href={ `/equips/${reward.equip.fullKey}` }
-																				onClick={ (e: Event): void => {
-																					e.preventDefault();
-																					e.stopPropagation();
-																					selectedEquip.set(reward.equip);
-																					equipModalDisplay.set(true);
-																				} }
-																			>
-																				<DropEquip equip={ reward.equip } count={ reward.count } />
-																			</Link>;
-																		}
-																		return <DropItem item={ reward.consumable } count={ reward.count } />;
-																	})
-																	.map(el => <div class="p-0">{ el }</div>)
-															}
-														</div>
+														{ selectedValue.prevIds.length === 0
+															? <div class="text-secondary">
+																<Locale plain k="WORLD_VIEW_CONDITION_EMPTY" />
+															</div>
+															: <ul class="list-group">
+																{ selectedValue.prevIds.map(r => <li class="list-group-item">
+																	<Locale
+																		k="WORLD_VIEW_UNLOCK_CONDITION_ITEM"
+																		p={ [<>
+																			{ r.wid === "Story"
+																				? <Locale k={ `WORLD_${r.wid}` } fallback={ r.wid } />
+																				: <Locale k={ `WORLD_WORLD_${r.wid}_${r.cid}` } fallback={ r.cid } />
+																			}
+																			<span class="badge bg-warning text-dark ms-1 font-exo2">
+																				{ r.text }
+																			</span>
+																		</>] }
+																	/>
+																</li>) }
+															</ul>
+														}
 													</div>
 												</div>
 											</div>
@@ -1001,7 +1049,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 						</div>
 						: <></>
 					}
-					{ CurrentTab.value === "drop"
+					{ CurrentTab === "drop"
 						? <div id="world-map-drops" class="card-body">
 							{ !selectedValue
 								? <div class="text-center py-4 text-secondary">
@@ -1052,8 +1100,8 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																	onClick={ (e: Event): void => {
 																		e.preventDefault();
 																		e.stopPropagation();
-																		selectedEquip.set(item);
-																		equipModalDisplay.set(true);
+																		setSelectedEquip(item);
+																		setEquipModalDisplay(true);
 																	} }
 																>
 																	<DropEquip equip={ item } />
@@ -1069,7 +1117,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 						</div>
 						: <></>
 					}
-					{ CurrentTab.value === "squad"
+					{ CurrentTab === "squad"
 						? <div id="world-map-squad" class="card-body">
 							<table class="table w-auto">
 								<tbody>
@@ -1120,7 +1168,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 						</div>
 						: <></>
 					}
-					{ CurrentTab.value === "enemy"
+					{ CurrentTab === "enemy"
 						? <div id="world-map-enemies" class="card-body text-center">
 							{ !selectedValue
 								? <div class="py-4 text-secondary">
@@ -1161,23 +1209,23 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 										onClick={ (e: Event): void => {
 											e.preventDefault();
 											if (selectedValue) {
-												selectedWave.set(waveIdx);
-												selectedWaveIndex.set(0);
+												setSelectedWave(waveIdx);
+												setSelectedWaveIndex(0);
 											}
 										} }
 									>
 										<img
 											class="current-map-marker"
 											src={ `${AssetsRoot}/map-current.png` }
-											style={ { display: waveIdx === selectedWave.value ? "" : "none" } } />
+											style={ { display: waveIdx === selectedWave ? "" : "none" } } />
 										<TbarIcon icon="TbarIcon_MP_NightChick_RV" size={ 42 } />
 									</Link>) }
 									<div class="mt-3">
 										<div class="mb-3">
 											<div class="btn btn-group">
-												{ Waves[selectedWave.value].map((_, idx) => <button
-													class={ `btn btn-outline-dark font-exo2 ${isActive(selectedWaveIndex.value === idx)}` }
-													onClick={ (): void => selectedWaveIndex.set(idx) }
+												{ Waves[selectedWave].map((_, idx) => <button
+													class={ `btn btn-outline-dark font-exo2 ${isActive(selectedWaveIndex === idx)}` }
+													onClick={ (): void => setSelectedWaveIndex(idx) }
 												>
 													#{ idx + 1 }
 													<span class="badge bg-warning text-dark ms-2">{ _.r }%</span>
@@ -1203,12 +1251,12 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 											class="m-3 p-1"
 											style={ {
 												fontSize: "3em",
-												opacity: selectedWave.value === 0 ? 0.4 : 1,
-												cursor: selectedWave.value === 0 ? "" : "pointer",
+												opacity: selectedWave === 0 ? 0.4 : 1,
+												cursor: selectedWave === 0 ? "" : "pointer",
 											} }
 											onClick={ (): void => {
-												if (selectedWave.value > 0)
-													selectedWave.set(selectedWave.value - 1);
+												if (selectedWave > 0)
+													setSelectedWave(selectedWave - 1);
 											} }
 										>
 											<IconChevronLeft />
@@ -1238,12 +1286,12 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 											class="m-3 p-1"
 											style={ {
 												fontSize: "3em",
-												opacity: selectedWave.value === Waves.length - 1 ? 0.4 : 1,
-												cursor: selectedWave.value === Waves.length - 1 ? "" : "pointer",
+												opacity: selectedWave === Waves.length - 1 ? 0.4 : 1,
+												cursor: selectedWave === Waves.length - 1 ? "" : "pointer",
 											} }
 											onClick={ (): void => {
-												if (selectedWave.value < Waves.length - 1)
-													selectedWave.set(selectedWave.value + 1);
+												if (selectedWave < Waves.length - 1)
+													setSelectedWave(selectedWave + 1);
 											} }
 										>
 											<IconChevronRight />
@@ -1253,13 +1301,13 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 						</div>
 						: <></>
 					}
-					{ CurrentTab.value === "search"
+					{ CurrentTab === "search"
 						? <div id="world-map-search" class="card-body text-center">
 							<MapSearchInfo searchInfo={ SearchInfo } />
 						</div>
 						: <></>
 					}
-				</div>
+				</div> }
 			</>
 			: <div class="card mt-3 bg-dark text-light">
 				<div class="card-header">
@@ -1355,6 +1403,20 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 				</div>
 			</div>
 		}
+
+		<EnemyPopup
+			asSub
+			enemy={ selectedEnemy }
+			level={ selectedEnemyLevel }
+			display={ enemyModalDisplay }
+			onHidden={ (): void => setEnemyModalDisplay(false) }
+		/>
+		<EquipPopup
+			asSub
+			equip={ selectedEquip }
+			display={ equipModalDisplay }
+			onHidden={ (): void => setEquipModalDisplay(false) }
+		/>
 	</div>;
 };
 export default MapView;

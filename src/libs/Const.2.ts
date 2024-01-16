@@ -91,8 +91,19 @@ export const SkinBanners: string[] = [
 	"PECS_Boryeon_2", "BR_Nymph_2",
 	"3P_Galatea_2",
 	"3P_Frigga_2",
+	"PECS_Draculina_2", "PECS_Serpent_2",
+	"PECS_BlindPrincess_1", "PECS_Ignis_2",
+	"BR_HongRyun_4", "3P_Alice_3",
+	"3P_Alcyone_1",
+	"3P_Rhea_3",
+	"DS_KunoichiEnrai_1", "BR_Khan_4",
+	"BR_Salamander_1",
+	"PECS_Circe_2", "PECS_DutchGirl_2",
+	"BR_QuickCamel_2",
+	"BR_ALWraith_3",
 ];
 
 export const SkillVideo: Record<string, number[]> = {
 	DS_Koyori: [2],
+	DS_Sarena: [2],
 };

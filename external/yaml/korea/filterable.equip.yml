@@ -8,7 +8,8 @@
   craft: 600
   limit: null
   source:
-    - - 10-2B
+    - - 10:1:10-2B
+    - - 12:2:12-6B
     - - Ev:Ev1:Ev-1B
     - - Ev:Ev2:Ev-1s
       - Ev:Ev2:Ev3-1
@@ -183,11 +184,12 @@
   craft: 1200
   limit: null
   source:
-    - - 2-1B
-      - 2-3B
-      - 2-4B
-      - 2-7B
-      - 10-2B
+    - - 2:1:2-1B
+      - 2:1:2-3B
+      - 2:1:2-4B
+      - 2:1:2-7B
+    - - 10:1:10-2B
+    - - 12:2:12-6B
     - - Ev:Ev1:Ev-1B
     - - Ev:Ev10:Ev2-5
     - - Ev:Ev11:Ev1-1
@@ -237,6 +239,7 @@
   craft: 1800
   limit: null
   source:
+    - - 12:2:12-6B
     - - Ev:Ev2:Ev-4s
     - - Ev:Ev3:Ev-1
     - - Ev:Ev4:Ev-1
@@ -306,8 +309,8 @@
   craft: 2400
   limit: null
   source:
-    - - 5-8Ex
-      - 10-2B
+    - - 5:1:5-8Ex
+    - - 10:1:10-2B
     - - Ev:Ev1:Ev-2B
     - - Ev:Ev2:Ev3-4
     - - Ev:Ev4:*Ev-1
@@ -320,7 +323,6 @@
     - - Ev:Ev14:EV1-1Ex
     - - Ev:Ev20:EV2-3
     - - Ev:EvA0:3:Exc:FixTool:500
-    - - ""
   upgrade:
     enchant:
       - res: 500
@@ -363,7 +365,11 @@
             count: 100
           - item: RobotParts_MPParts
             count: 25
-    upgrade: null
+    upgrade:
+      to: Chip_Atk_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 0
       positive: true
@@ -377,7 +383,8 @@
   craft: 300
   limit: null
   source:
-    - - 10-5B
+    - - 10:1:10-5B
+    - - 12:2:12-7B
     - - Ev:Ev1:Ev-3B
     - - Ev:Ev2:Ev-1s
       - Ev:Ev2:Ev-2s
@@ -545,10 +552,11 @@
   craft: 600
   limit: null
   source:
-    - - 2-1B
-      - 2-3B
-      - 2-4B
-      - 10-5B
+    - - 2:1:2-1B
+      - 2:1:2-3B
+      - 2:1:2-4B
+    - - 10:1:10-5B
+    - - 12:2:12-7B
     - - Ev:Ev1:Ev-3B
     - - Ev:Ev2:Ev-5s
     - - Ev:Ev7:Ev2-1Ex
@@ -600,7 +608,8 @@
   craft: 900
   limit: null
   source:
-    - - 6-8
+    - - 6:1:6-8
+    - - 12:2:12-7B
     - - Ev:Ev1:Ev-1B
     - - Ev:Ev3:Ev-4
     - - Ev:Ev4:Ev-4
@@ -672,9 +681,9 @@
   craft: 1200
   limit: null
   source:
-    - - 6-8
-      - 6-8Ex
-      - 10-5B
+    - - 6:1:6-8
+      - 6:1:6-8Ex
+    - - 10:1:10-5B
     - - Ev:Ev2:Ev3-6
     - - Ev:Ev4:*Ev-3
       - Ev:Ev4:*Ev-8
@@ -731,7 +740,11 @@
             count: 100
           - item: RobotParts_MPParts
             count: 25
-    upgrade: null
+    upgrade:
+      to: Chip_Acc_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 6
       positive: true
@@ -745,7 +758,8 @@
   craft: 480
   limit: null
   source:
-    - - 10-3B
+    - - 10:1:10-3B
+    - - 12:2:12-8B
     - - Ev:Ev1:Ev-1B
     - - Ev:Ev2:Ev-1s
       - Ev:Ev2:Ev-2s
@@ -926,12 +940,13 @@
   craft: 960
   limit: null
   source:
-    - - 2-1B
-      - 2-3B
-      - 2-4B
-      - 2-7B
-      - 4-6B
-      - 10-3B
+    - - 2:1:2-1B
+      - 2:1:2-3B
+      - 2:1:2-4B
+      - 2:1:2-7B
+    - - 4:1:4-6B
+    - - 10:1:10-3B
+    - - 12:2:12-8B
     - - Ev:Ev1:Ev-1B
     - - Ev:Ev11:Ev1-3
       - Ev:Ev11:Ev2-3
@@ -980,8 +995,9 @@
   craft: 1440
   limit: null
   source:
-    - - 4-6B
-      - 3-3B
+    - - 3:1:3-3B
+    - - 4:1:4-6B
+    - - 12:2:12-8B
     - - Ev:Ev3:Ev-3
     - - Ev:Ev4:Ev-3
     - - Ev:Ev5:Ev-2
@@ -1049,10 +1065,10 @@
   craft: 1920
   limit: null
   source:
-    - - 2-4Ex
-      - 4-6B
-      - 6-8Ex
-      - 10-3B
+    - - 2:1:2-4Ex
+    - - 4:1:4-6B
+    - - 6:1:6-8Ex
+    - - 10:1:10-3B
     - - Ev:Ev2:Ev3-5
     - - Ev:Ev4:*Ev-2
     - - Ev:Ev5:*Ev-1B
@@ -1105,7 +1121,11 @@
             count: 100
           - item: RobotParts_MPParts
             count: 25
-    upgrade: null
+    upgrade:
+      to: Chip_Def_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 2
       positive: true
@@ -1286,8 +1306,8 @@
   craft: 720
   limit: null
   source:
-    - - 2-1B
-      - 2-3B
+    - - 2:1:2-1B
+      - 2:1:2-3B
     - - Ev:Ev1:Ev-2B
     - - Ev:Ev2:Ev-4s
     - - Ev:Ev10:Ev1-5
@@ -1408,7 +1428,7 @@
   craft: 1440
   limit: null
   source:
-    - - 5-8Ex
+    - - 5:1:5-8Ex
     - - Ev:Ev2:Ev2-2
     - - Ev:Ev4:*Ev-4
     - - Ev:Ev5:*Ev-5
@@ -1463,7 +1483,11 @@
             count: 100
           - item: RobotParts_MPParts
             count: 25
-    upgrade: null
+    upgrade:
+      to: Chip_Ev_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 10
       positive: true
@@ -1477,7 +1501,7 @@
   craft: 720
   limit: null
   source:
-    - - 11-7
+    - - 11:1:11-7
     - - Ev:Ev1:Ev-2B
     - - Ev:Ev2:Ev-1s
       - Ev:Ev2:Ev-2s
@@ -1546,8 +1570,8 @@
   craft: 1440
   limit: null
   source:
-    - - 2-7B
-      - 11-7
+    - - 2:1:2-7B
+    - - 11:1:11-7
     - - Ev:Ev1:Ev-2B
     - - Ev:Ev6:Ev-5Ex
     - - Ev:Ev10:Ev2-3
@@ -1595,7 +1619,7 @@
   craft: 2160
   limit: null
   source:
-    - - 6-4
+    - - 6:1:6-4
     - - Ev:Ev2:Ev-5s
     - - Ev:Ev3:Ev-5
     - - Ev:Ev4:Ev-7
@@ -1660,8 +1684,8 @@
   craft: 2880
   limit: null
   source:
-    - - 6-8Ex
-      - 11-7
+    - - 6:1:6-8Ex
+    - - 11:1:11-7
     - - Ev:Ev2:*Ev2-5B
     - - Ev:Ev3:*Ev-6Ex
     - - Ev:Ev5:*Ev-5Ex
@@ -1715,7 +1739,11 @@
             count: 100
           - item: RobotParts_MPParts
             count: 25
-    upgrade: null
+    upgrade:
+      to: Chip_Cri_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 8
       positive: true
@@ -1729,7 +1757,7 @@
   craft: 420
   limit: null
   source:
-    - - 10-4B
+    - - 10:1:10-4B
     - - Ev:Ev1:Ev-3B
     - - Ev:Ev2:Ev-1s
       - Ev:Ev2:Ev-2s
@@ -1782,8 +1810,8 @@
   craft: 840
   limit: null
   source:
-    - - 2-1B
-      - 10-4B
+    - - 2:1:2-1B
+    - - 10:1:10-4B
     - - Ev:Ev1:Ev-3B
     - - Ev:Ev7:Ev2-3Ex
     - - Ev:Ev14:EV1-3
@@ -1829,7 +1857,7 @@
   craft: 1260
   limit: null
   source:
-    - - 3-3B
+    - - 3:1:3-3B
     - - Ev:Ev4:Ev-5
     - - Ev:Ev6:Ev-3
     - - Ev:Ev7:Ev1-5
@@ -1887,8 +1915,8 @@
   craft: 1680
   limit: null
   source:
-    - - 2-4Ex
-      - 10-4B
+    - - 2:1:2-4Ex
+    - - 10:1:10-4B
     - - Ev:Ev4:*Ev-9
     - - Ev:Ev5:*Ev-6
     - - Ev:Ev7:Ev2-3Ex
@@ -1935,7 +1963,11 @@
             count: 100
           - item: RobotParts_MPParts
             count: 25
-    upgrade: null
+    upgrade:
+      to: Chip_Hp_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 4
       positive: true
@@ -1949,11 +1981,12 @@
   craft: 900
   limit: null
   source:
-    - - 4-1Ex
-      - 5-6B
-      - 8-6
-      - 10-7B
-      - 11-5
+    - - 4:1:4-1Ex
+    - - 5:1:5-6B
+    - - 8:1:8-6
+    - - 10:1:10-7B
+    - - 11:1:11-5
+    - - 12:2:12-5B
     - - Ev:Ev2:Ev2-1
       - Ev:Ev2:Ev2-2
       - Ev:Ev2:Ev2-3
@@ -2007,11 +2040,12 @@
   craft: 1800
   limit: null
   source:
-    - - 4-1Ex
-      - 5-6B
-      - 8-6
-      - 10-7B
-      - 11-5
+    - - 4:1:4-1Ex
+    - - 5:1:5-6B
+    - - 8:1:8-6
+    - - 10:1:10-7B
+    - - 11:1:11-5
+    - - 12:2:12-5B
     - - Ev:Ev3:Ev-1Ex
     - - Ev:Ev5:Ev-2Ex
     - - Ev:Ev14:EV1-1Ex
@@ -2060,10 +2094,11 @@
   craft: 2700
   limit: null
   source:
-    - - 2-8
-      - 4-1Ex
-      - 5-6B
-      - 8-6
+    - - 2:1:2-8
+    - - 4:1:4-1Ex
+    - - 5:1:5-6B
+    - - 8:1:8-6
+    - - 12:2:12-5B
     - - Ev:Ev3:Ev-1Ex
     - - Ev:Ev5:Ev-2Ex
     - - Ev:Ev17:EV1-2Ex
@@ -2121,15 +2156,15 @@
   craft: 3600
   limit: null
   source:
-    - - "*4-2Ex"
-      - 2-3Ex
-      - 4-1Ex
-      - 5-6B
-      - 5-1Ex
-      - 7-8Ex
-      - 8-6
-      - 10-7B
-      - 11-5
+    - - 2:1:2-3Ex
+    - - 4:1:4-1Ex
+      - 4:1:*4-2Ex
+    - - 5:1:5-6B
+      - 5:1:5-1Ex
+    - - 7:1:7-8Ex
+    - - 8:1:8-6
+    - - 10:1:10-7B
+    - - 11:1:11-5
     - - Ev:Ev1:Ev-1B
     - - Ev:Ev2:*Ev3-2s
     - - Ev:Ev3:*Ev-5
@@ -2201,9 +2236,9 @@
   craft: false
   limit: null
   source:
-    - - 3-8
-      - 4-6B
-      - 5-4
+    - - 3:1:3-8
+    - - 4:1:4-6B
+    - - 5:1:5-4
     - - Ev:Ev1:Ev-4B
     - - Ev:Ev2:Ev2-1
       - Ev:Ev2:Ev2-2
@@ -2259,10 +2294,10 @@
   craft: false
   limit: null
   source:
-    - - 3-8
-      - 2-7B
-      - 4-6B
-      - 5-4
+    - - 2:1:2-7B
+    - - 3:1:3-8
+    - - 4:1:4-6B
+    - - 5:1:5-4
     - - Ev:Ev1:Ev-4B
     - - Ev:Ev2:Ev2-3
     - - Ev:Ev3:Ev-2Ex
@@ -2312,8 +2347,8 @@
   craft: false
   limit: null
   source:
-    - - 4-4Ex
-      - 5-4
+    - - 4:1:4-4Ex
+    - - 5:1:5-4
     - - Ev:Ev3:Ev-2Ex
     - - Ev:Ev4:Ev-6
     - - Ev:Ev5:Ev-6
@@ -2374,8 +2409,8 @@
   craft: false
   limit: null
   source:
-    - - "*3-8"
-      - 5-3Ex
+    - - 3:1:*3-8
+    - - 5:1:5-3Ex
     - - Ev:Ev1:Ev-4B
     - - Ev:Ev3:Ev-2Ex
     - - Ev:Ev5:*Ev-7
@@ -2430,7 +2465,11 @@
             count: 20
           - item: RobotParts_ExParts
             count: 10
-    upgrade: null
+    upgrade:
+      to: Chip_Spd_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 12
       positive: true
@@ -2444,7 +2483,7 @@
   craft: 1200
   limit: null
   source:
-    - - 11-1B
+    - - 11:1:11-1B
     - - Ev:Ev3:Ev-8
     - - Ev:Ev12:Ev1-6
     - - Ev:Ev18:EV3-1B
@@ -2495,8 +2534,8 @@
   craft: 2400
   limit: null
   source:
-    - - 3-6B
-      - 11-1B
+    - - 3:1:3-6B
+    - - 11:1:11-1B
     - - Ev:Ev3:Ev-8
     - - Ev:Ev12:Ev1-6
     - - Ev:Ev14:EV2-5B
@@ -2549,8 +2588,8 @@
   craft: 3600
   limit: null
   source:
-    - - 3-6B
-      - 11-1B
+    - - 3:1:3-6B
+    - - 11:1:11-1B
     - - Ev:Ev3:Ev-8
     - - Ev:Ev4:Ev-10
     - - Ev:Ev5:Ev-7
@@ -2617,8 +2656,9 @@
   craft: 4800
   limit: null
   source:
-    - - 3-1Ex
-      - 6-8Ex
+    - - 3:1:3-1Ex
+    - - 6:1:6-8Ex
+    - - 12:1:12-1B
     - - Ev:Ev3:Ev-8
     - - Ev:Ev4:*Ev-5
     - - Ev:Ev5:*Ev2-7
@@ -2668,7 +2708,11 @@
             count: 20
           - item: RobotParts_HDCalculationControl
             count: 10
-    upgrade: null
+    upgrade:
+      to: System_Normal_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 1
       positive: true
@@ -2688,7 +2732,7 @@
   craft: 1500
   limit: null
   source:
-    - - 11-2B
+    - - 11:1:11-2B
     - - Ev:Ev1:Ev-3Ex
     - - Ev:Ev6:Ev-3Ex
     - - Ev:Ev9:Ev1-1Ex
@@ -2739,7 +2783,7 @@
   craft: 3000
   limit: null
   source:
-    - - 11-2B
+    - - 11:1:11-2B
     - - Ev:Ev1:Ev-3Ex
     - - Ev:Ev6:Ev-3Ex
     - - Ev:Ev9:Ev1-1Ex
@@ -2792,7 +2836,7 @@
   craft: 4500
   limit: null
   source:
-    - - 11-2B
+    - - 11:1:11-2B
     - - Ev:Ev1:Ev-3Ex
     - - Ev:Ev5:Ev-1B
     - - Ev:Ev6:Ev-3Ex
@@ -2857,8 +2901,9 @@
   craft: 6000
   limit: null
   source:
-    - - 5-8Ex
-      - 6-2Ex
+    - - 5:1:5-8Ex
+    - - 6:1:6-2Ex
+    - - 12:1:12-2B
     - - Ev:Ev6:Ev-3Ex
     - - Ev:Ev7:*Ev2-3
     - - Ev:Ev9:Ev1-1Ex
@@ -2907,7 +2952,11 @@
             count: 20
           - item: RobotParts_HDCalculationControl
             count: 10
-    upgrade: null
+    upgrade:
+      to: System_Assault_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 1
       positive: true
@@ -2925,7 +2974,7 @@
   craft: 1380
   limit: null
   source:
-    - - 10-7
+    - - 10:1:10-7
     - - Ev:Ev9:Ev2-8
     - - Ev:Ev18:EV3-3B
     - - Ev:Ev19:EV1-6
@@ -2971,8 +3020,8 @@
   craft: 2760
   limit: null
   source:
-    - - 3-3B
-      - 10-7
+    - - 3:1:3-3B
+    - - 10:1:10-7
     - - Ev:Ev2:Ev2-2
     - - Ev:Ev9:Ev2-8
     - - Ev:Ev14:EV2-4B
@@ -3021,8 +3070,8 @@
   craft: 4140
   limit: null
   source:
-    - - 3-3B
-      - 10-7
+    - - 3:1:3-3B
+    - - 10:1:10-7
     - - Ev:Ev2:Ev3-2ep
     - - Ev:Ev4:Ev-9
     - - Ev:Ev5:Ev-2B
@@ -3085,9 +3134,10 @@
   craft: 5520
   limit: null
   source:
-    - - 3-4Ex
-      - 5-8Ex
-      - 11-4Ex
+    - - 3:1:3-4Ex
+    - - 5:1:5-8Ex
+    - - 11:1:11-4Ex
+    - - 12:2:12-7B
     - - Ev:Ev1:Ev-3B
     - - Ev:Ev2:Ev3-2ep
     - - Ev:Ev4:*Ev-6
@@ -3142,7 +3192,11 @@
             count: 20
           - item: RobotParts_HDCalculationControl
             count: 10
-    upgrade: null
+    upgrade:
+      to: System_Defense_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 3
       positive: true
@@ -3159,7 +3213,7 @@
   limit:
     - Supporter
   source:
-    - - 11-3B
+    - - 11:1:11-3B
     - - Ev:Ev10:Ev1-4
     - - Ev:Ev11:Ev1-5
     - - Ev:Ev17:EV2-1
@@ -3206,8 +3260,8 @@
   limit:
     - Supporter
   source:
-    - - 3-6B
-      - 11-3B
+    - - 3:1:3-6B
+    - - 11:1:11-3B
     - - Ev:Ev10:Ev1-4
     - - Ev:Ev11:Ev1-5
     - - Ev:Ev17:EV2-1
@@ -3254,8 +3308,8 @@
   limit:
     - Supporter
   source:
-    - - 3-6B
-      - 11-3B
+    - - 3:1:3-6B
+    - - 11:1:11-3B
     - - Ev:Ev7:Ev2-1B
     - - Ev:Ev10:Ev1-4
     - - Ev:Ev11:Ev1-5
@@ -3313,7 +3367,8 @@
   limit:
     - Supporter
   source:
-    - - 6-8
+    - - 6:1:6-8
+    - - 12:1:12-3Ex
     - - Ev:Ev10:Ev1-4
     - - Exc:19:7
   upgrade:
@@ -3372,7 +3427,7 @@
   craft: 1620
   limit: null
   source:
-    - - 5-7B
+    - - 5:1:5-7B
     - - Ev:Ev1:Ev-2Ex
     - - Ev:Ev6:Ev2-1Ex
     - - Ev:Ev11:Ev1-6
@@ -3420,8 +3475,8 @@
   craft: 3240
   limit: null
   source:
-    - - 4-3Ex
-      - 5-7B
+    - - 4:1:4-3Ex
+    - - 5:1:5-7B
     - - Ev:Ev1:Ev-2Ex
     - - Ev:Ev2:Ev3-8
     - - Ev:Ev6:Ev2-1Ex
@@ -3472,8 +3527,8 @@
   craft: 4860
   limit: null
   source:
-    - - 4-3Ex
-      - 5-7B
+    - - 4:1:4-3Ex
+    - - 5:1:5-7B
     - - Ev:Ev1:Ev-2Ex
     - - Ev:Ev4:Ev-8
     - - Ev:Ev5:Ev-8
@@ -3537,9 +3592,10 @@
   craft: 6480
   limit: null
   source:
-    - - 4-3Ex
-      - 5-7B
-      - 6-8Ex
+    - - 4:1:4-3Ex
+    - - 5:1:5-7B
+    - - 6:1:6-8Ex
+    - - 12:1:12-1Ex
     - - Ev:Ev1:Ev-2Ex
     - - Ev:Ev6:Ev2-1Ex
     - - Ev:Ev7:*Ev1-5
@@ -3591,7 +3647,11 @@
             count: 20
           - item: RobotParts_HDCalculationControl
             count: 10
-    upgrade: null
+    upgrade:
+      to: System_Highspd_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 1
       positive: true
@@ -3607,9 +3667,9 @@
   craft: 2400
   limit: null
   source:
-    - - 6-5B
-      - 10-6
-      - 11-5B
+    - - 6:1:6-5B
+    - - 10:1:10-6
+    - - 11:1:11-5B
     - - Ev:Ev6:Ev-4Ex
     - - Ev:Ev9:Ev2-6
     - - Ev:Ev17:EV2-3
@@ -3661,9 +3721,9 @@
   craft: 3600
   limit: null
   source:
-    - - 6-5B
-      - 10-6
-      - 11-5B
+    - - 6:1:6-5B
+    - - 10:1:10-6
+    - - 11:1:11-5B
     - - Ev:Ev6:Ev-4Ex
     - - Ev:Ev9:Ev2-6
     - - Ev:Ev14:EV2-1Ex
@@ -3717,9 +3777,9 @@
   craft: 4800
   limit: null
   source:
-    - - 6-5B
-      - 10-6
-      - 11-5B
+    - - 6:1:6-5B
+    - - 10:1:10-6
+    - - 11:1:11-5B
     - - Ev:Ev6:Ev-4Ex
     - - Ev:Ev7:Ev2-2B
     - - Ev:Ev9:Ev2-6
@@ -3784,7 +3844,8 @@
   craft: 7200
   limit: null
   source:
-    - - 6-5B
+    - - 6:1:6-5B
+    - - 12:1:12-7
     - - Ev:Ev6:Ev-4Ex
     - - Ev:Ev9:Ev2-6
     - - Ev:Ev14:EV2-1Ex
@@ -3831,7 +3892,11 @@
             count: 20
           - item: RobotParts_HDCalculationControl
             count: 10
-    upgrade: null
+    upgrade:
+      to: System_Maneuver_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 6
       positive: true
@@ -3853,9 +3918,10 @@
   craft: false
   limit: null
   source:
-    - - 4-8
-      - 4-3B
-      - 5-3Ex
+    - - 4:1:4-8
+      - 4:1:4-3B
+    - - 5:1:5-3Ex
+    - - 12:1:12-1B
     - - Ev:Ev4:Ev-2Ex
     - - Ev:Ev9:Ev1-6
   upgrade:
@@ -3898,10 +3964,11 @@
   craft: false
   limit: null
   source:
-    - - 4-8
-      - 4-3B
-      - 5-3Ex
-      - 3-2B
+    - - 3:1:3-2B
+    - - 4:1:4-8
+      - 4:1:4-3B
+    - - 5:1:5-3Ex
+    - - 12:1:12-1B
     - - Ev:Ev2:Ev2-1
     - - Ev:Ev4:Ev-2Ex
     - - Ev:Ev9:Ev1-6
@@ -3946,9 +4013,10 @@
   craft: false
   limit: null
   source:
-    - - 4-8
-      - 5-3Ex
-      - 3-2B
+    - - 3:1:3-2B
+    - - 4:1:4-8
+    - - 5:1:5-3Ex
+    - - 12:1:12-1B
     - - Ev:Ev1:Ev-3B
     - - Ev:Ev4:Ev-2Ex
     - - Ev:Ev5:Ev2-2
@@ -4006,9 +4074,9 @@
   craft: false
   limit: null
   source:
-    - - "*4-4Ex"
-      - 4-8
-      - 5-3Ex
+    - - 4:1:4-8
+      - 4:1:*4-4Ex
+    - - 5:1:5-3Ex
     - - Ev:Ev2:Ev3-7
     - - Ev:Ev4:Ev-2Ex
     - - Ev:Ev7:*Ev1-6
@@ -4071,7 +4139,7 @@
   craft: false
   limit: null
   source:
-    - - 4-3B
+    - - 4:1:4-3B
     - - Ev:Ev4:Ev-1Ex
     - - Ev:Ev9:Ev1-8
   upgrade:
@@ -4114,10 +4182,10 @@
   craft: false
   limit: null
   source:
-    - - 4-3B
-      - 4-2Ex
-      - 5-1Ex
-      - 3-2B
+    - - 3:1:3-2B
+    - - 4:1:4-3B
+      - 4:1:4-2Ex
+    - - 5:1:5-1Ex
     - - Ev:Ev2:Ev2-1
     - - Ev:Ev4:Ev-1Ex
     - - Ev:Ev9:Ev1-8
@@ -4162,12 +4230,12 @@
   craft: false
   limit: null
   source:
-    - - "*3-7B"
-      - 2-2Ex
-      - 2-3Ex
-      - 4-2Ex
-      - 5-1Ex
-      - 3-2B
+    - - 2:1:2-2Ex
+      - 2:1:2-3Ex
+    - - 3:1:3-2B
+      - 3:1:*3-7B
+    - - 4:1:4-2Ex
+    - - 5:1:5-1Ex
     - - Ev:Ev2:Ev2-4
       - Ev:Ev2:Ev3-2
     - - Ev:Ev4:Ev-1Ex
@@ -4226,7 +4294,7 @@
   craft: false
   limit: null
   source:
-    - - 5-1Ex
+    - - 5:1:5-1Ex
     - - Ev:Ev2:*Ev3-2ep
     - - Ev:Ev4:Ev-1Ex
     - - Ev:Ev5:*Ev-3Ex
@@ -4289,7 +4357,7 @@
   craft: false
   limit: null
   source:
-    - - 4-2Ex
+    - - 4:1:4-2Ex
     - - Ev:Ev4:Ev-3Ex
     - - Ev:Ev9:Ev1-7
   upgrade:
@@ -4332,8 +4400,8 @@
   craft: false
   limit: null
   source:
-    - - 4-2Ex
-      - 5-2Ex
+    - - 4:1:4-2Ex
+    - - 5:1:5-2Ex
     - - Ev:Ev4:Ev-3Ex
     - - Ev:Ev9:Ev1-7
     - - Ev:Ev14:EV2-2Ex
@@ -4377,9 +4445,9 @@
   craft: false
   limit: null
   source:
-    - - 4-2Ex
-      - 5-8
-      - 5-2Ex
+    - - 4:1:4-2Ex
+    - - 5:1:5-8
+      - 5:1:5-2Ex
     - - Ev:Ev2:Ev3-3
     - - Ev:Ev4:Ev-3Ex
     - - Ev:Ev5:Ev2-3
@@ -4437,10 +4505,10 @@
   craft: false
   limit: null
   source:
-    - - "*4-3Ex"
-      - 5-8
-      - 5-2Ex
     - - "*Sub1:S15-2"
+    - - 4:1:*4-3Ex
+    - - 5:1:5-8
+      - 5:1:5-2Ex
     - - Ev:Ev4:Ev-3Ex
     - - Ev:Ev5:*Ev-4Ex
     - - Ev:Ev7:Ev3-2s
@@ -4505,9 +4573,10 @@
   craft: false
   limit: null
   source:
-    - - 4-2B
-      - 3-7B
-      - 10-8
+    - - 3:1:3-7B
+    - - 4:1:4-2B
+    - - 10:1:10-8
+    - - 12:1:12-3B
     - - Ev:Ev12:Ev1-8
     - - Ev:Ev17:EV2-4
     - - Ev:Ev18:EV3-5B
@@ -4551,10 +4620,11 @@
   craft: false
   limit: null
   source:
-    - - 4-2B
-      - 5-4Ex
-      - 3-7B
-      - 10-8
+    - - 3:1:3-7B
+    - - 4:1:4-2B
+    - - 5:1:5-4Ex
+    - - 10:1:10-8
+    - - 12:1:12-3B
     - - Ev:Ev12:Ev1-8
     - - Ev:Ev17:EV2-4
     - - Ev:Ev18:EV3-5B
@@ -4598,9 +4668,10 @@
   craft: false
   limit: null
   source:
-    - - 5-4Ex
-      - 3-7B
-      - 10-8
+    - - 3:1:3-7B
+    - - 5:1:5-4Ex
+    - - 10:1:10-8
+    - - 12:1:12-3B
     - - Ev:Ev2:Ev2-1
     - - Ev:Ev5:Ev2-4
     - - Ev:Ev7:Ev2-4
@@ -4657,10 +4728,11 @@
   craft: false
   limit: null
   source:
-    - - "*3-3B"
-      - "*5-3B"
-      - 5-4Ex
-      - 7-8Ex
+    - - 3:1:*3-3B
+    - - 5:1:5-4Ex
+      - 5:1:*5-3B
+    - - 7:1:7-8Ex
+    - - 12:1:12-2Ex
     - - Ev:Ev12:Ev1-8
     - - Exc:19:8
   upgrade:
@@ -4865,8 +4937,8 @@
   craft: 7680
   limit: null
   source:
-    - - 5-4Ex
-      - 11-2Ex
+    - - 5:1:5-4Ex
+    - - 11:1:11-2Ex
     - - Ev:Ev2:Ev2-4
     - - Ev:Ev3:*Ev-4Ex
     - - Ev:Ev4:*Ev-4Ex
@@ -4874,6 +4946,7 @@
     - - Ev:Ev6:*Ev2-4Ex
     - - Ev:Ev7:Ev2-2Ex
     - - Ev:Ev15:EV1-5
+    - - Ev:Ev22:EV2-4B
     - - Exc:19:6
       - Exc:20:7
   upgrade:
@@ -4930,9 +5003,9 @@
   fullKey: Sub_Observer_T1
   icon: UI_Icon_Equip_Sub_Observer_T1
   craft: false
-  limit:
-    - Attacker
+  limit: null
   source:
+    - - 12:3:12-11B
     - - Ev:Ev18:EV1-2B
   upgrade:
     enchant:
@@ -4976,9 +5049,9 @@
   fullKey: Sub_Observer_T2
   icon: UI_Icon_Equip_Sub_Observer_T2
   craft: false
-  limit:
-    - Attacker
+  limit: null
   source:
+    - - 12:3:12-11B
     - - Ev:Ev18:EV1-2B
   upgrade:
     enchant:
@@ -5022,9 +5095,9 @@
   fullKey: Sub_Observer_T3
   icon: UI_Icon_Equip_Sub_Observer_T3
   craft: false
-  limit:
-    - Attacker
+  limit: null
   source:
+    - - 12:3:12-11B
     - - Ev:Ev7:Ev2-3B
     - - Ev:Ev8:Ev1-5
     - - Ev:Ev18:EV1-2B
@@ -5080,11 +5153,10 @@
   fullKey: Sub_Observer_T4
   icon: UI_Icon_Equip_Sub_Observer_T4
   craft: false
-  limit:
-    - Attacker
+  limit: null
   source:
-    - - 5-2Ex
-      - 7-8Ex
+    - - 5:1:5-2Ex
+    - - 7:1:7-8Ex
     - - Ev:Ev4:*Ev-3Ex
     - - Ev:Ev5:*Ev2-3B
     - - Ev:Ev6:*Ev2-3Ex
@@ -5131,7 +5203,11 @@
             count: 15
           - item: RobotParts_HDCalculationControl
             count: 20
-    upgrade: null
+    upgrade:
+      to: Sub_Observer_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 6
       positive: true
@@ -5150,8 +5226,8 @@
   limit:
     - Heavy
   source:
-    - - 4-2B
-      - 6-3Ex
+    - - 4:1:4-2B
+    - - 6:1:6-3Ex
     - - Ev:Ev5:Ev-3Ex
     - - Ev:Ev19:EV3-4
   upgrade:
@@ -5197,8 +5273,8 @@
   limit:
     - Heavy
   source:
-    - - 4-2B
-      - 6-3Ex
+    - - 4:1:4-2B
+    - - 6:1:6-3Ex
     - - Ev:Ev2:Ev2-5
     - - Ev:Ev5:Ev-3Ex
     - - Ev:Ev15:EV1-6
@@ -5247,7 +5323,7 @@
   limit:
     - Heavy
   source:
-    - - 6-3Ex
+    - - 6:1:6-3Ex
     - - Ev:Ev2:Ev2-5
     - - Ev:Ev5:Ev-3Ex
     - - Ev:Ev6:Ev2-5
@@ -5308,7 +5384,7 @@
   limit:
     - Heavy
   source:
-    - - 6-3Ex
+    - - 6:1:6-3Ex
     - - Ev:Ev5:Ev-3Ex
     - - Ev:Ev7:*Ev2-6
     - - Ev:Ev10:*Ev2-2Ex
@@ -5471,7 +5547,7 @@
   limit:
     - Flying
   source:
-    - - 6-8
+    - - 6:1:6-8
     - - Ev:Ev1:Ev-1Ex
     - - Ev:Ev2:Ev2-4
     - - Ev:Ev3:Ev-5Ex
@@ -5534,7 +5610,7 @@
   limit:
     - Flying
   source:
-    - - 6-8
+    - - 6:1:6-8
     - - Ev:Ev1:Ev-1Ex
     - - Ev:Ev2:Ev3-8
     - - Ev:Ev3:*Ev-2Ex
@@ -5602,6 +5678,7 @@
   craft: 1500
   limit: null
   source:
+    - - 12:2:12-5Ex
     - - Ev:Ev17:EV3-1
   upgrade:
     enchant:
@@ -5631,9 +5708,9 @@
         - item: Consumable_EquipProPart_T1
           count: 4
   effects:
-    - type: 8
-      positive: true
     - type: 6
+      positive: true
+    - type: 8
       positive: true
     - type: 89
       positive: false
@@ -5647,7 +5724,7 @@
   craft: 3000
   limit: null
   source:
-    - - 4-4Ex
+    - - 4:1:4-4Ex
     - - Ev:Ev2:Ev3-7
     - - Ev:Ev15:EV1-3
     - - Ev:Ev17:EV3-1
@@ -5679,9 +5756,9 @@
         - item: Consumable_EquipProPart_T2
           count: 4
   effects:
-    - type: 8
-      positive: true
     - type: 6
+      positive: true
+    - type: 8
       positive: true
     - type: 89
       positive: false
@@ -5695,7 +5772,7 @@
   craft: 4500
   limit: null
   source:
-    - - 4-4Ex
+    - - 4:1:4-4Ex
     - - Ev:Ev2:Ev3-7
     - - Ev:Ev6:Ev2-4
       - Ev:Ev6:Ev2-1ep
@@ -5739,9 +5816,9 @@
         - item: Consumable_EquipProPart_T3
           count: 4
   effects:
-    - type: 8
-      positive: true
     - type: 6
+      positive: true
+    - type: 8
       positive: true
     - type: 89
       positive: false
@@ -5755,7 +5832,7 @@
   craft: 6000
   limit: null
   source:
-    - - 4-4Ex
+    - - 4:1:4-4Ex
     - - Ev:Ev2:Ev2-1
     - - Ev:Ev4:*Ev-1Ex
     - - Ev:Ev5:*Ev-2B
@@ -5803,11 +5880,15 @@
             count: 15
           - item: RobotParts_HeavyWeapon
             count: 20
-    upgrade: null
+    upgrade:
+      to: Sub_SpSight_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
-    - type: 8
-      positive: true
     - type: 6
+      positive: true
+    - type: 8
       positive: true
     - type: 89
       positive: false
@@ -5821,6 +5902,7 @@
   craft: 2520
   limit: null
   source:
+    - - 12:2:12-6Ex
     - - Ev:Ev4:Ev-5Ex
     - - Ev:Ev6:Ev-2Ex
     - - Ev:Ev7:Ev1-3Ex
@@ -5867,8 +5949,8 @@
   craft: 5040
   limit: null
   source:
-    - - 5-4
-      - 5-8
+    - - 5:1:5-4
+      - 5:1:5-8
     - - Ev:Ev2:Ev2-5
     - - Ev:Ev4:Ev-5Ex
     - - Ev:Ev6:Ev-2Ex
@@ -5919,8 +6001,8 @@
   craft: 7560
   limit: null
   source:
-    - - 5-4
-      - 5-8
+    - - 5:1:5-4
+      - 5:1:5-8
     - - Ev:Ev2:Ev3-1
     - - Ev:Ev4:Ev-12
       - Ev:Ev4:Ev-5Ex
@@ -5983,9 +6065,9 @@
   craft: 10080
   limit: null
   source:
-    - - "*10-6"
-      - 5-8
-      - 7-8Ex
+    - - 5:1:5-8
+    - - 7:1:7-8Ex
+    - - 10:1:*10-6
     - - Ev:Ev2:*Ev3-3s
     - - Ev:Ev3:*Ev-5Ex
     - - Ev:Ev4:Ev-5Ex
@@ -6209,7 +6291,7 @@
   craft: 10560
   limit: null
   source:
-    - - 8-2B
+    - - 8:1:8-2B
     - - Ev:Ev3:Ev-4Ex
     - - Ev:Ev5:Ev-7Ex
     - - Ev:Ev8:Ev1-1Ex
@@ -6276,7 +6358,8 @@
   craft: 2700
   limit: null
   source:
-    - - 6-2Ex
+    - - 6:1:6-2Ex
+    - - 12:3:12-7Ex
     - - Ev:Ev6:Ev2-2Ex
     - - Ev:Ev17:EV3-3
     - - Ev:Ev19:EV1-6B
@@ -6320,7 +6403,8 @@
   craft: 5400
   limit: null
   source:
-    - - 6-2Ex
+    - - 6:1:6-2Ex
+    - - 12:3:12-7Ex
     - - Ev:Ev6:Ev2-2Ex
     - - Ev:Ev17:EV3-3
     - - Ev:Ev19:EV1-6B
@@ -6364,7 +6448,8 @@
   craft: 8100
   limit: null
   source:
-    - - 6-2Ex
+    - - 6:1:6-2Ex
+    - - 12:3:12-7Ex
     - - Ev:Ev2:Ev3-8
     - - Ev:Ev5:Ev2-5
     - - Ev:Ev6:Ev2-2Ex
@@ -6421,9 +6506,10 @@
   craft: 10800
   limit: null
   source:
-    - - "*9-8"
-      - "*10-3"
-      - 6-2Ex
+    - - 6:1:6-2Ex
+    - - 9:1:*9-8
+    - - 10:1:*10-3
+    - - 12:3:12-7Ex
     - - Ev:Ev2:*Ev3-4s
     - - Ev:Ev3:*Ev-7
     - - Ev:Ev4:*Ev-11
@@ -6631,8 +6717,8 @@
   craft: 3600
   limit: null
   source:
-    - - "*4-4"
     - - "*Sub1:S10-1"
+    - - 4:1:*4-4
     - - Ev:Ev16:EV1-6Ex
     - - Exc:20:2.Exc:21:2
   upgrade:
@@ -6743,7 +6829,7 @@
   limit:
     - Heavy+Attacker
   source:
-    - - 10-1Ex
+    - - 10:1:10-1Ex
     - - Ev:Ev2:Ev2-5
     - - Ev:Ev5:Ev-6Ex
     - - Ev:Ev17:EV3-4
@@ -6792,7 +6878,7 @@
   limit:
     - Heavy+Attacker
   source:
-    - - 10-1Ex
+    - - 10:1:10-1Ex
     - - Ev:Ev2:Ev2-5
     - - Ev:Ev5:Ev-6Ex
     - - Ev:Ev17:EV3-4
@@ -6851,8 +6937,9 @@
   limit:
     - Heavy+Attacker
   source:
-    - - 6-3Ex
-      - 10-1Ex
+    - - 6:1:6-3Ex
+    - - 10:1:10-1Ex
+    - - 12:3:12-9B
     - - Ev:Ev2:Ev2-5
     - - Ev:Ev3:*Ev-3Ex
     - - Ev:Ev5:Ev-6Ex
@@ -6919,7 +7006,7 @@
   limit:
     - Attacker
   source:
-    - - 7-4
+    - - 7:1:7-4
     - - Ev:Ev3:Ev-3Ex
     - - Ev:Ev6:Ev2-4Ex
     - - Ev:Ev18:EV1-4B
@@ -6969,7 +7056,7 @@
   limit:
     - Attacker
   source:
-    - - 7-4
+    - - 7:1:7-4
     - - Ev:Ev2:Ev3-2ep
     - - Ev:Ev3:Ev-3Ex
     - - Ev:Ev6:Ev2-4Ex
@@ -7020,7 +7107,7 @@
   limit:
     - Attacker
   source:
-    - - 7-4
+    - - 7:1:7-4
     - - Ev:Ev3:Ev-3Ex
     - - Ev:Ev5:Ev2-2B
     - - Ev:Ev6:Ev2-4Ex
@@ -7081,7 +7168,7 @@
   limit:
     - Attacker
   source:
-    - - 7-4
+    - - 7:1:7-4
     - - Ev:Ev3:Ev-3Ex
     - - Ev:Ev6:Ev2-4Ex
     - - Ev:Ev7:Ev1-1Ex
@@ -7129,7 +7216,11 @@
             count: 20
           - item: RobotParts_HeavyWeapon
             count: 30
-    upgrade: null
+    upgrade:
+      to: Sub_AdvRadar_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 1
       positive: true
@@ -7147,7 +7238,8 @@
   craft: 2700
   limit: null
   source:
-    - - 6-4Ex
+    - - 6:1:6-4Ex
+    - - 12:3:12-9Ex
     - - Ev:Ev1:Ev-4B
     - - Ev:Ev5:Ev-4Ex
     - - Ev:Ev8:Ev1-2Ex
@@ -7193,8 +7285,9 @@
   craft: 3600
   limit: null
   source:
-    - - 3-7B
-      - 6-4Ex
+    - - 3:1:3-7B
+    - - 6:1:6-4Ex
+    - - 12:3:12-9Ex
     - - Ev:Ev1:Ev-4B
     - - Ev:Ev2:Ev2-3
       - Ev:Ev2:Ev3-5
@@ -7244,8 +7337,9 @@
   craft: 4500
   limit: null
   source:
-    - - 3-7B
-      - 6-4Ex
+    - - 3:1:3-7B
+    - - 6:1:6-4Ex
+    - - 12:3:12-9Ex
     - - Ev:Ev1:Ev-4B
     - - Ev:Ev5:Ev-4Ex
     - - Ev:Ev8:Ev1-2Ex
@@ -7303,8 +7397,9 @@
   craft: 5400
   limit: null
   source:
-    - - "*10-7"
-      - 6-4Ex
+    - - 6:1:6-4Ex
+    - - 10:1:*10-7
+    - - 12:3:12-9Ex
     - - Ev:Ev1:Ev-3Ex
     - - Ev:Ev5:Ev-4Ex
     - - Ev:Ev8:Ev1-2Ex
@@ -7371,6 +7466,7 @@
   limit:
     - Supporter
   source:
+    - - 12:3:12-8Ex
     - - Ev:Ev3:Ev-6Ex
     - - Ev:Ev12:EV2-3Ex
     - - Ev:Ev19:EV1-8B
@@ -7417,7 +7513,7 @@
   limit:
     - Supporter
   source:
-    - - 6-1Ex
+    - - 6:1:6-1Ex
     - - Ev:Ev3:Ev-6Ex
     - - Ev:Ev12:EV2-3Ex
     - - Ev:Ev19:EV1-8B
@@ -7464,7 +7560,7 @@
   limit:
     - Supporter
   source:
-    - - 6-1Ex
+    - - 6:1:6-1Ex
     - - Ev:Ev3:Ev-6Ex
     - - Ev:Ev5:Ev-3B
     - - Ev:Ev6:Ev2-6
@@ -7524,8 +7620,8 @@
   limit:
     - Supporter
   source:
-    - - 6-1Ex
-      - 7-8Ex
+    - - 6:1:6-1Ex
+    - - 7:1:7-8Ex
     - - Ev:Ev3:Ev-6Ex
     - - Ev:Ev5:*Ev2-4B
     - - Ev:Ev6:*Ev-4Ex
@@ -7591,7 +7687,7 @@
   limit:
     - 3P_ConstantiaS2
   source:
-    - - 4-2B
+    - - 4:1:4-2B
     - - Ev:Ev9:Ev3-2s
   upgrade:
     enchant:
@@ -7654,7 +7750,7 @@
   limit:
     - BR_PA00EL
   source:
-    - - 5-7B
+    - - 5:1:5-7B
     - - Ev:Ev9:Ev3-2s
   upgrade:
     enchant:
@@ -7723,7 +7819,7 @@
   limit:
     - DS_Johanna
   source:
-    - - 4-1Ex
+    - - 4:1:4-1Ex
     - - Ev:Ev9:Ev3-4s
     - - Ev:Ev18:EV1-3Ex
     - - Ev:Ev19:EV3-4B
@@ -7792,8 +7888,8 @@
   limit:
     - PECS_LRL
   source:
-    - - "*1-1Ex"
-      - 1-1Ex
+    - - 1:1:1-1Ex
+      - 1:1:*1-1Ex
     - - Ev:Ev14:EV1-1
   upgrade:
     enchant:
@@ -7855,6 +7951,7 @@
   craft: 1800
   limit: null
   source:
+    - - 12:2:12-4Ex
     - - Ev:Ev12:EV2-7
   upgrade:
     enchant:
@@ -7896,7 +7993,8 @@
   craft: 2700
   limit: null
   source:
-    - - 10-2Ex
+    - - 10:1:10-2Ex
+    - - 12:2:12-4Ex
     - - Ev:Ev12:EV2-7
     - - Ev:Ev15:EV1-5
     - - Ev:Ev18:EV1-3Ex
@@ -7940,7 +8038,8 @@
   craft: 3600
   limit: null
   source:
-    - - 10-2Ex
+    - - 10:1:10-2Ex
+    - - 12:2:12-4Ex
     - - Ev:Ev2:Ev3-5
     - - Ev:Ev4:Ev-11
     - - Ev:Ev5:Ev2-6
@@ -7998,9 +8097,10 @@
   craft: 4500
   limit: null
   source:
-    - - "*8-4B"
-      - 6-4
-      - 10-2Ex
+    - - 6:1:6-4
+    - - 8:1:*8-4B
+    - - 10:1:10-2Ex
+    - - 12:2:12-4Ex
     - - Ev:Ev2:*Ev2-4B
     - - Ev:Ev3:*Ev-6
     - - Ev:Ev4:*Ev-2Ex
@@ -8066,6 +8166,7 @@
   craft: 1800
   limit: null
   source:
+    - - 12:2:12-5Ex
     - - Ev:Ev5:Ev-1Ex
   upgrade:
     enchant:
@@ -8107,7 +8208,8 @@
   craft: 2700
   limit: null
   source:
-    - - 10-2Ex
+    - - 10:1:10-2Ex
+    - - 12:2:12-5Ex
     - - Ev:Ev2:Ev-2s
     - - Ev:Ev5:Ev-1Ex
     - - Ev:Ev15:EV1-4
@@ -8151,7 +8253,8 @@
   craft: 3600
   limit: null
   source:
-    - - 10-2Ex
+    - - 10:1:10-2Ex
+    - - 12:2:12-5Ex
     - - Ev:Ev2:Ev3-6
     - - Ev:Ev5:Ev-1Ex
       - Ev:Ev5:Ev2-7
@@ -8207,9 +8310,10 @@
   craft: 4500
   limit: null
   source:
-    - - "*8-1"
-      - 6-4
-      - 10-2Ex
+    - - 6:1:6-4
+    - - 8:1:*8-1
+    - - 10:1:10-2Ex
+    - - 12:2:12-5Ex
     - - Ev:Ev2:*Ev2-2B
     - - Ev:Ev3:*Ev-1Ex
     - - Ev:Ev5:Ev-1Ex
@@ -8275,7 +8379,8 @@
   icon: UI_Icon_Equip_Sub_AntiLightning_T1
   craft: 1800
   limit: null
-  source: []
+  source:
+    - - 12:2:12-6Ex
   upgrade:
     enchant:
       - res: 75
@@ -8316,7 +8421,8 @@
   craft: 2700
   limit: null
   source:
-    - - 10-2Ex
+    - - 10:1:10-2Ex
+    - - 12:2:12-6Ex
     - - Ev:Ev2:Ev-3s
     - - Ev:Ev15:EV1-6
   upgrade:
@@ -8359,7 +8465,8 @@
   craft: 3600
   limit: null
   source:
-    - - 10-2Ex
+    - - 10:1:10-2Ex
+    - - 12:2:12-6Ex
     - - Ev:Ev2:Ev3-4
     - - Ev:Ev5:Ev2-8
     - - Ev:Ev7:Ev2-5
@@ -8414,9 +8521,10 @@
   craft: 4500
   limit: null
   source:
-    - - "*8-5"
-      - 6-4
-      - 10-2Ex
+    - - 6:1:6-4
+    - - 8:1:*8-5
+    - - 10:1:10-2Ex
+    - - 12:2:12-6Ex
     - - Ev:Ev2:*Ev2-1B
     - - Ev:Ev3:*Ev-2
     - - Ev:Ev6:*Ev-5
@@ -8707,7 +8815,7 @@
   limit:
     - BR_Bulgasari
   source:
-    - - 5-8Ex
+    - - 5:1:5-8Ex
     - - Ev:Ev9:Ev3-1s
     - - Ev:Ev13:Ev1-5
   upgrade:
@@ -8781,7 +8889,7 @@
   limit:
     - BR_Nereid
   source:
-    - - 5-2Ex
+    - - 5:1:5-2Ex
     - - Ev:Ev9:Ev3-1s
   upgrade:
     enchant:
@@ -8846,7 +8954,7 @@
   limit:
     - BR_Sylphid
   source:
-    - - 5-4Ex
+    - - 5:1:5-4Ex
     - - Ev:Ev9:Ev3-3s
     - - Ev:Ev14:EV2-5
   upgrade:
@@ -8910,7 +9018,7 @@
   limit:
     - PECS_Stinger
   source:
-    - - 4-4Ex
+    - - 4:1:4-4Ex
     - - Ev:Ev14:EV1-1B
     - - Ev:Ev19:EV1-4B
   upgrade:
@@ -8978,7 +9086,7 @@
   limit:
     - BR_Nymph
   source:
-    - - 4-3Ex
+    - - 4:1:4-3Ex
     - - Ev:Ev9:Ev3-3s
     - - Ev:Ev14:EV1-5B
   upgrade:
@@ -9044,7 +9152,7 @@
   limit:
     - BR_Scathy
   source:
-    - - 5-1Ex
+    - - 5:1:5-1Ex
     - - Ev:Ev9:Ev3-3s
     - - Ev:Ev18:EV1-2Ex
   upgrade:
@@ -9092,7 +9200,7 @@
   limit:
     - BR_Miho
   source:
-    - - 1-4Ex
+    - - 1:1:1-4Ex
     - - Ev:Ev13:Ev1-4
     - - Ev:Ev14:EV1-7B
     - - Ev:Ev8:2:Exc:PositiveClue:50
@@ -9198,7 +9306,7 @@
   limit:
     - Flying
   source:
-    - - 6-1Ex
+    - - 6:1:6-1Ex
     - - Ev:Ev2:Ev2-4
     - - Ev:Ev6:*Ev-2Ex
     - - Ev:Ev7:*Ev2-4
@@ -9271,7 +9379,7 @@
   craft: 900
   limit: null
   source:
-    - - 6-6B
+    - - 6:1:6-6B
     - - Ev:Ev19:EV2-1B
   upgrade:
     enchant:
@@ -9315,7 +9423,7 @@
   craft: 1800
   limit: null
   source:
-    - - 6-6B
+    - - 6:1:6-6B
     - - Ev:Ev14:EV1-11
     - - Ev:Ev16:EV1-1B
     - - Ev:Ev19:EV2-1B
@@ -9361,7 +9469,7 @@
   craft: 2700
   limit: null
   source:
-    - - 6-6B
+    - - 6:1:6-6B
     - - Ev:Ev14:EV1-11
     - - Ev:Ev16:EV1-1B
     - - Ev:Ev19:EV2-1B
@@ -9417,7 +9525,7 @@
   craft: 3600
   limit: null
   source:
-    - - 6-6B
+    - - 6:1:6-6B
     - - Ev:Ev8:Ev2-5
     - - Ev:Ev14:EV1-11
     - - Ev:Ev19:EV2-1B
@@ -9480,7 +9588,7 @@
   limit:
     - BR_Marie
   source:
-    - - 6-4Ex
+    - - 6:1:6-4Ex
     - - Ev:Ev9:Ev3-1s
     - - Ev:Ev14:EV2-4Ex
     - - Ev:Ev17:EV3-1Ex
@@ -9547,7 +9655,7 @@
   craft: 960
   limit: null
   source:
-    - - 7-1Ex
+    - - 7:1:7-1Ex
     - - Ev:Ev4:Ev-4Ex
     - - Ev:Ev8:Ev2-1Ex
     - - Ev:Ev9:Ev2-7
@@ -9595,7 +9703,7 @@
   craft: 1920
   limit: null
   source:
-    - - 7-1Ex
+    - - 7:1:7-1Ex
     - - Ev:Ev2:Ev3-6
     - - Ev:Ev4:Ev-4Ex
     - - Ev:Ev8:Ev2-1Ex
@@ -9644,7 +9752,7 @@
   craft: 2880
   limit: null
   source:
-    - - 7-1Ex
+    - - 7:1:7-1Ex
     - - Ev:Ev4:Ev-4Ex
     - - Ev:Ev8:Ev2-1Ex
     - - Ev:Ev9:Ev2-7
@@ -9702,7 +9810,7 @@
   craft: 3840
   limit: null
   source:
-    - - 7-1Ex
+    - - 7:1:7-1Ex
     - - Ev:Ev2:Ev2-3
     - - Ev:Ev4:Ev-4Ex
     - - Ev:Ev7:*Ev1-2Ex
@@ -9770,8 +9878,8 @@
   craft: 1200
   limit: null
   source:
-    - - 7-5B
-      - 10-6B
+    - - 7:1:7-5B
+    - - 10:1:10-6B
     - - Ev:Ev9:Ev2-6B
   upgrade:
     enchant:
@@ -9813,8 +9921,8 @@
   craft: 2400
   limit: null
   source:
-    - - 7-5B
-      - 10-6B
+    - - 7:1:7-5B
+    - - 10:1:10-6B
     - - Ev:Ev2:Ev3-2
     - - Ev:Ev9:Ev2-6B
   upgrade:
@@ -9857,7 +9965,7 @@
   craft: 3600
   limit: null
   source:
-    - - 7-5B
+    - - 7:1:7-5B
     - - Ev:Ev3:Ev-6
     - - Ev:Ev7:Ev2-4B
     - - Ev:Ev9:Ev2-6B
@@ -9911,9 +10019,9 @@
   craft: 4800
   limit: null
   source:
-    - - 7-5B
-      - 10-6B
     - - "*Sub1:S14-1"
+    - - 7:1:7-5B
+    - - 10:1:10-6B
     - - Ev:Ev6:*Ev2-3
     - - Ev:Ev8:*Ev1-5
     - - Ev:Ev9:Ev2-6B
@@ -9974,6 +10082,7 @@
   craft: 3600
   limit: null
   source:
+    - - 12:2:12-4Ex
     - - Ev:Ev18:EV1-5B
   upgrade:
     enchant:
@@ -10025,7 +10134,7 @@
   craft: 7200
   limit: null
   source:
-    - - 7-8
+    - - 7:1:7-8
     - - Ev:Ev2:Ev3-1
     - - Ev:Ev18:EV1-5B
   upgrade:
@@ -10078,7 +10187,7 @@
   craft: 10800
   limit: null
   source:
-    - - 7-8
+    - - 7:1:7-8
     - - Ev:Ev18:EV1-5B
   upgrade:
     enchant:
@@ -10140,7 +10249,7 @@
   craft: 14400
   limit: null
   source:
-    - - 7-8
+    - - 7:1:7-8
     - - Ev:Ev2:*Ev3-1s
     - - Ev:Ev5:*Ev2-2B
     - - Ev:Ev9:*Ev1-6
@@ -10212,7 +10321,8 @@
   craft: 4200
   limit: null
   source:
-    - - 7-3Ex
+    - - 7:1:7-3Ex
+    - - 12:3:12-7Ex
     - - Ev:Ev7:Ev1-1Ex
   upgrade:
     enchant:
@@ -10258,7 +10368,7 @@
   craft: 8400
   limit: null
   source:
-    - - 7-3Ex
+    - - 7:1:7-3Ex
     - - Ev:Ev2:Ev2-4
     - - Ev:Ev7:Ev1-1Ex
   upgrade:
@@ -10305,7 +10415,7 @@
   craft: 12600
   limit: null
   source:
-    - - 7-3Ex
+    - - 7:1:7-3Ex
     - - Ev:Ev5:Ev2-2ep
     - - Ev:Ev7:Ev1-1Ex
   upgrade:
@@ -10362,7 +10472,7 @@
   craft: 16800
   limit: null
   source:
-    - - 7-3Ex
+    - - 7:1:7-3Ex
     - - Ev:Ev7:Ev1-1Ex
     - - Exc:19:12
       - Exc:20:10
@@ -10427,6 +10537,7 @@
   limit:
     - Flying+Defender
   source:
+    - - 12:1:12-2B
     - - Ev:Ev17:EV2-6
   upgrade:
     enchant:
@@ -10473,6 +10584,7 @@
   limit:
     - Flying+Defender
   source:
+    - - 12:1:12-2B
     - - Ev:Ev2:Ev3-3
     - - Ev:Ev14:EV2-3Ex
     - - Ev:Ev17:EV2-6
@@ -10522,7 +10634,8 @@
   limit:
     - Flying+Defender
   source:
-    - - 7-8
+    - - 7:1:7-8
+    - - 12:1:12-2B
     - - Ev:Ev2:Ev2-2
     - - Ev:Ev5:Ev-4B
     - - Ev:Ev14:EV2-3Ex
@@ -10583,7 +10696,8 @@
   limit:
     - Flying+Defender
   source:
-    - - 7-8
+    - - 7:1:7-8
+    - - 12:2:12-6B
     - - Ev:Ev2:Ev2-5
     - - Ev:Ev4:*Ev-5Ex
     - - Ev:Ev5:*Ev-6Ex
@@ -10634,7 +10748,11 @@
             count: 30
           - item: RobotParts_HDCalculationControl
             count: 15
-    upgrade: null
+    upgrade:
+      to: System_HManeuver_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 6
       positive: true
@@ -10652,8 +10770,8 @@
   craft: 3480
   limit: null
   source:
-    - - 7-4Ex
-      - 11-4B
+    - - 7:1:7-4Ex
+    - - 11:1:11-4B
     - - Ev:Ev5:Ev-5Ex
     - - Ev:Ev17:EV2-7
     - - Ev:Ev18:EV3-6B
@@ -10705,8 +10823,8 @@
   craft: 6960
   limit: null
   source:
-    - - 7-4Ex
-      - 11-4B
+    - - 7:1:7-4Ex
+    - - 11:1:11-4B
     - - Ev:Ev2:Ev2-4
     - - Ev:Ev5:Ev-5Ex
     - - Ev:Ev14:EV2-2Ex
@@ -10760,8 +10878,8 @@
   craft: 10440
   limit: null
   source:
-    - - 7-4Ex
-      - 11-4B
+    - - 7:1:7-4Ex
+    - - 11:1:11-4B
     - - Ev:Ev5:Ev-5Ex
     - - Ev:Ev14:EV2-2Ex
     - - Ev:Ev17:EV2-7
@@ -10824,7 +10942,8 @@
   craft: 13920
   limit: null
   source:
-    - - 7-4Ex
+    - - 7:1:7-4Ex
+    - - 12:2:12-5B
     - - Ev:Ev5:Ev-5Ex
     - - Ev:Ev6:*Ev-5Ex
     - - Ev:Ev7:*Ev1-3Ex
@@ -10874,7 +10993,11 @@
             count: 10
           - item: RobotParts_HDCalculationControl
             count: 25
-    upgrade: null
+    upgrade:
+      to: System_EXAM_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 1
       positive: true
@@ -11001,7 +11124,7 @@
   limit:
     - BR_Undine
   source:
-    - - 6-1Ex
+    - - 6:1:6-1Ex
     - - Ev:Ev9:Ev3-2s
     - - Ev:Ev16:EV1-5Ex
   upgrade:
@@ -11224,6 +11347,8 @@
       positive: true
     - type: 55
       positive: true
+    - type: 101
+      positive: false
     - type: 89
       positive: false
 - available: false
@@ -11608,6 +11733,7 @@
   craft: 3480
   limit: null
   source:
+    - - 12:3:12-8Ex
     - - Ev:Ev6:Ev2-3Ex
     - - Ev:Ev19:EV1-4B
   upgrade:
@@ -11652,6 +11778,7 @@
   craft: 6960
   limit: null
   source:
+    - - 12:3:12-8Ex
     - - Ev:Ev6:Ev2-3Ex
     - - Ev:Ev14:EV2-5Ex
     - - Ev:Ev15:EV1-7
@@ -11698,6 +11825,7 @@
   craft: 10440
   limit: null
   source:
+    - - 12:3:12-8Ex
     - - Ev:Ev6:Ev2-3Ex
     - - Ev:Ev14:EV2-5Ex
     - - Ev:Ev15:EV1-7
@@ -11754,7 +11882,8 @@
   craft: 13920
   limit: null
   source:
-    - - 9-2
+    - - 9:1:9-2
+    - - 12:3:12-8Ex
     - - Ev:Ev6:Ev2-3Ex
     - - Ev:Ev7:*Ev2-1Ex
     - - Ev:Ev9:*Ev2-7B
@@ -11819,8 +11948,8 @@
   craft: false
   limit: null
   source:
-    - - 7-6B
-      - 11-6
+    - - 7:1:7-6B
+    - - 11:1:11-6
     - - Ev:Ev4:Ev-6Ex
     - - Ev:Ev6:Ev-1Ex
     - - Ev:Ev18:EV2-6B
@@ -11871,8 +12000,8 @@
   craft: false
   limit: null
   source:
-    - - 7-6B
-      - 11-6
+    - - 7:1:7-6B
+    - - 11:1:11-6
     - - Ev:Ev4:Ev-6Ex
     - - Ev:Ev6:Ev-1Ex
     - - Ev:Ev14:EV1-9B
@@ -11924,7 +12053,7 @@
   craft: false
   limit: null
   source:
-    - - 7-6B
+    - - 7:1:7-6B
     - - Ev:Ev4:Ev-6Ex
     - - Ev:Ev5:Ev2-1ep
     - - Ev:Ev6:Ev-1Ex
@@ -11990,8 +12119,8 @@
   craft: false
   limit: null
   source:
-    - - 7-6B
-      - 11-6
+    - - 7:1:7-6B
+    - - 11:1:11-6
     - - Ev:Ev4:Ev-6Ex
     - - Ev:Ev6:Ev-1Ex
     - - Ev:Ev19:EV2-2B
@@ -12163,7 +12292,11 @@
             count: 30
           - item: RobotParts_SuperAlloyArmor
             count: 40
-    upgrade: null
+    upgrade:
+      to: Sub_NitroEx3000_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 17
       positive: true
@@ -12171,7 +12304,7 @@
       positive: true
     - type: 12
       positive: true
-    - type: 7
+    - type: 106
       positive: false
 - available: true
   roguelike: false
@@ -12410,7 +12543,7 @@
   craft: false
   limit: null
   source:
-    - - 8-7
+    - - 8:1:8-7
     - - Ev:Ev6:Ev2-6Ex
     - - Ev:Ev8:Ev2-2Ex
     - - Ev:Ev19:EV2-4B
@@ -12456,7 +12589,7 @@
   craft: false
   limit: null
   source:
-    - - 8-7
+    - - 8:1:8-7
     - - Ev:Ev6:Ev2-6Ex
     - - Ev:Ev8:Ev2-2Ex
     - - Ev:Ev14:EV1-12
@@ -12504,7 +12637,7 @@
   craft: false
   limit: null
   source:
-    - - 8-7
+    - - 8:1:8-7
     - - Ev:Ev6:Ev2-6Ex
     - - Ev:Ev8:Ev2-2Ex
     - - Ev:Ev14:EV1-12
@@ -12562,11 +12695,12 @@
   craft: false
   limit: null
   source:
-    - - 8-7
+    - - 8:1:8-7
     - - Ev:Ev6:Ev2-6Ex
     - - Ev:Ev8:Ev2-2Ex
     - - Ev:Ev14:EV1-12
     - - Ev:Ev19:EV2-4B
+    - - Ev:Ev22:EV2-2
     - - Ev:EvA0:1:Exc:FixMat:2000
   upgrade:
     enchant:
@@ -12627,7 +12761,7 @@
   limit:
     - Light
   source:
-    - - 7-2Ex
+    - - 7:1:7-2Ex
     - - Ev:Ev6:Ev2-5Ex
     - - Ev:Ev7:Ev1-2Ex
     - - Ev:Ev18:EV1-6B
@@ -12677,7 +12811,7 @@
   limit:
     - Light
   source:
-    - - 7-2Ex
+    - - 7:1:7-2Ex
     - - Ev:Ev6:Ev2-5Ex
     - - Ev:Ev7:Ev1-2Ex
     - - Ev:Ev15:EV1-2
@@ -12728,7 +12862,7 @@
   limit:
     - Light
   source:
-    - - 7-2Ex
+    - - 7:1:7-2Ex
     - - Ev:Ev6:Ev2-5Ex
     - - Ev:Ev7:Ev1-2Ex
     - - Ev:Ev15:EV1-2
@@ -12789,7 +12923,8 @@
   limit:
     - Light
   source:
-    - - 7-2Ex
+    - - 7:1:7-2Ex
+    - - 12:3:12-10B
     - - Ev:Ev6:Ev2-5Ex
     - - Ev:Ev7:Ev1-2Ex
     - - Ev:Ev15:EV1-2
@@ -13038,7 +13173,7 @@
   limit:
     - PECS_Cerberus
   source:
-    - - 7-1Ex
+    - - 7:1:7-1Ex
     - - Ev:Ev9:Ev3-4s
     - - Ev:Ev14:EV1-6Ex
   upgrade:
@@ -13106,7 +13241,7 @@
   limit:
     - 3P_ScissorsLise
   source:
-    - - 7-2Ex
+    - - 7:1:7-2Ex
     - - Ev:Ev9:Ev3-4s
     - - Ev:Ev14:EV1-11
     - - Ev:Ev16:EV1-4Ex
@@ -13175,7 +13310,7 @@
   limit:
     - AGS_Gigantes
   source:
-    - - 7-3Ex
+    - - 7:1:7-3Ex
     - - Ev:Ev14:EV2-4B
     - - Ev:Ev19:EV1-6B
   upgrade:
@@ -13245,7 +13380,7 @@
   limit:
     - BR_Leona
   source:
-    - - 7-4Ex
+    - - 7:1:7-4Ex
     - - Ev:Ev14:EV1-12
     - - Ev:Ev19:EV3-5B
     - - Exc:20:9
@@ -13309,7 +13444,7 @@
   craft: false
   limit: null
   source:
-    - - 9-3Ex
+    - - 9:1:9-3Ex
     - - Ev:Ev9:Ev2-3Ex
     - - Ev:Ev11:Ev3-1
   upgrade:
@@ -13354,7 +13489,7 @@
   craft: false
   limit: null
   source:
-    - - 9-3Ex
+    - - 9:1:9-3Ex
     - - Ev:Ev9:Ev2-3Ex
     - - Ev:Ev11:Ev3-1
     - - Ev:Ev14:EV1-7B
@@ -13401,7 +13536,7 @@
   craft: false
   limit: null
   source:
-    - - 9-3Ex
+    - - 9:1:9-3Ex
     - - Ev:Ev9:Ev2-3Ex
     - - Ev:Ev11:Ev3-1
     - - Ev:Ev14:EV1-7B
@@ -13458,8 +13593,8 @@
   craft: false
   limit: null
   source:
-    - - 9-3Ex
     - - "*Cha2-3"
+    - - 9:1:9-3Ex
     - - Ev:Ev9:Ev2-3Ex
     - - Ev:Ev11:Ev3-1
     - - Ev:Ev14:EV1-7B
@@ -13531,7 +13666,7 @@
   craft: false
   limit: null
   source:
-    - - 8-8
+    - - 8:1:8-8
     - - Ev:Ev12:Ev1-1Ex
   upgrade:
     enchant:
@@ -13575,7 +13710,7 @@
   craft: false
   limit: null
   source:
-    - - 8-8
+    - - 8:1:8-8
     - - Ev:Ev12:Ev1-1Ex
     - - Ev:Ev14:EV1-6Ex
     - - Ev:Ev16:EV1-5Ex
@@ -13621,7 +13756,7 @@
   craft: false
   limit: null
   source:
-    - - 8-8
+    - - 8:1:8-8
     - - Ev:Ev12:Ev1-1Ex
     - - Ev:Ev14:EV1-6Ex
     - - Ev:Ev16:EV1-5Ex
@@ -13677,7 +13812,7 @@
   craft: false
   limit: null
   source:
-    - - 8-8
+    - - 8:1:8-8
     - - Ev:Ev9:*Ev2-3Ex
     - - Ev:Ev12:Ev1-1Ex
     - - Ev:Ev14:EV1-6Ex
@@ -13747,7 +13882,7 @@
   craft: false
   limit: null
   source:
-    - - 9-1Ex
+    - - 9:1:9-1Ex
     - - Ev:Ev10:Ev2-1Ex
     - - Ev:Ev11:Ev3-1
     - - Ev:Ev12:Ev1-2Ex
@@ -13794,7 +13929,7 @@
   craft: false
   limit: null
   source:
-    - - 9-1Ex
+    - - 9:1:9-1Ex
     - - Ev:Ev10:Ev2-1Ex
     - - Ev:Ev11:Ev3-1
     - - Ev:Ev12:Ev1-2Ex
@@ -13843,7 +13978,7 @@
   craft: false
   limit: null
   source:
-    - - 9-1Ex
+    - - 9:1:9-1Ex
     - - Ev:Ev10:Ev2-1Ex
     - - Ev:Ev11:Ev3-1
     - - Ev:Ev12:Ev1-2Ex
@@ -13902,7 +14037,7 @@
   craft: false
   limit: null
   source:
-    - - 9-1Ex
+    - - 9:1:9-1Ex
     - - Ev:Ev10:Ev2-1Ex
     - - Ev:Ev11:Ev3-1
     - - Ev:Ev12:Ev1-2Ex
@@ -13973,7 +14108,7 @@
   craft: false
   limit: null
   source:
-    - - 8-1Ex
+    - - 8:1:8-1Ex
     - - Ev:Ev12:Ev1-3Ex
     - - Ev:Ev19:EV3-7B
   upgrade:
@@ -14018,7 +14153,7 @@
   craft: false
   limit: null
   source:
-    - - 8-1Ex
+    - - 8:1:8-1Ex
     - - Ev:Ev12:Ev1-3Ex
     - - Ev:Ev14:EV1-6Ex
     - - Ev:Ev16:EV1-4Ex
@@ -14066,7 +14201,7 @@
   craft: false
   limit: null
   source:
-    - - 8-1Ex
+    - - 8:1:8-1Ex
     - - Ev:Ev12:Ev1-3Ex
     - - Ev:Ev14:EV1-6Ex
     - - Ev:Ev16:EV1-4Ex
@@ -14124,7 +14259,7 @@
   craft: false
   limit: null
   source:
-    - - 8-1Ex
+    - - 8:1:8-1Ex
     - - Ev:Ev9:*Ev1-3Ex
     - - Ev:Ev11:*Ev1-6B
     - - Ev:Ev12:Ev1-3Ex
@@ -14195,7 +14330,7 @@
   craft: false
   limit: null
   source:
-    - - 9-4Ex
+    - - 9:1:9-4Ex
     - - Ev:Ev9:Ev1-3Ex
     - - Ev:Ev11:Ev3-2
     - - Ev:Ev19:EV3-5B
@@ -14241,7 +14376,7 @@
   craft: false
   limit: null
   source:
-    - - 9-4Ex
+    - - 9:1:9-4Ex
     - - Ev:Ev9:Ev1-3Ex
     - - Ev:Ev11:Ev3-2
     - - Ev:Ev14:EV1-5Ex
@@ -14290,7 +14425,7 @@
   craft: false
   limit: null
   source:
-    - - 9-4Ex
+    - - 9:1:9-4Ex
     - - Ev:Ev9:Ev1-3Ex
     - - Ev:Ev11:Ev3-2
     - - Ev:Ev14:EV1-5Ex
@@ -14349,9 +14484,9 @@
   craft: false
   limit: null
   source:
-    - - "*7-8Ex"
-      - 9-4Ex
     - - "*Cha1-3"
+    - - 7:1:*7-8Ex
+    - - 9:1:9-4Ex
     - - Ev:Ev9:Ev1-3Ex
     - - Ev:Ev11:Ev3-2
     - - Ev:Ev14:EV1-5Ex
@@ -14420,7 +14555,7 @@
   craft: false
   limit: null
   source:
-    - - 9-2Ex
+    - - 9:1:9-2Ex
     - - Ev:Ev10:Ev1-2Ex
     - - Ev:Ev11:Ev3-2
   upgrade:
@@ -14465,7 +14600,7 @@
   craft: false
   limit: null
   source:
-    - - 9-2Ex
+    - - 9:1:9-2Ex
     - - Ev:Ev10:Ev1-2Ex
     - - Ev:Ev11:Ev3-2
     - - Ev:Ev14:EV1-5Ex
@@ -14511,7 +14646,7 @@
   craft: false
   limit: null
   source:
-    - - 9-2Ex
+    - - 9:1:9-2Ex
     - - Ev:Ev10:Ev1-2Ex
     - - Ev:Ev11:Ev3-2
     - - Ev:Ev14:EV1-5Ex
@@ -14567,7 +14702,7 @@
   craft: false
   limit: null
   source:
-    - - 9-2Ex
+    - - 9:1:9-2Ex
     - - Ev:Ev7:*Ev2-3Ex
     - - Ev:Ev10:Ev1-2Ex
     - - Ev:Ev11:Ev3-2
@@ -14636,7 +14771,7 @@
   craft: false
   limit: null
   source:
-    - - 8-2Ex
+    - - 8:1:8-2Ex
     - - Ev:Ev19:EV3-4B
   upgrade:
     enchant:
@@ -14680,7 +14815,7 @@
   craft: false
   limit: null
   source:
-    - - 8-2Ex
+    - - 8:1:8-2Ex
     - - Ev:Ev14:EV1-4Ex
     - - Ev:Ev16:EV1-2Ex
     - - Ev:Ev18:EV2-3Ex
@@ -14727,7 +14862,7 @@
   craft: false
   limit: null
   source:
-    - - 8-2Ex
+    - - 8:1:8-2Ex
     - - Ev:Ev14:EV1-4Ex
     - - Ev:Ev16:EV1-2Ex
     - - Ev:Ev18:EV2-3Ex
@@ -14784,7 +14919,7 @@
   craft: false
   limit: null
   source:
-    - - 8-2Ex
+    - - 8:1:8-2Ex
     - - Ev:Ev14:EV1-4Ex
     - - Ev:Ev16:EV1-2Ex
     - - Ev:Ev18:EV2-3Ex
@@ -15501,7 +15636,7 @@
   limit:
     - PECS_DarkElf
   source:
-    - - 8-1Ex
+    - - 8:1:8-1Ex
     - - Ev:Ev7:Ev2-2Ex
     - - Ev:Ev14:EV1-3
     - - Ev:Ev18:EV2-1Ex
@@ -15570,7 +15705,7 @@
   limit:
     - PECS_ElvenForestmaker
   source:
-    - - 8-2Ex
+    - - 8:1:8-2Ex
     - - Ev:Ev7:Ev2-3Ex
     - - Ev:Ev14:EV1-3
     - - Ev:Ev18:EV2-2Ex
@@ -15643,7 +15778,7 @@
   limit:
     - PECS_Veronica
   source:
-    - - 8-3B
+    - - 8:1:8-3B
     - - Ev:Ev7:Ev1-3Ex
     - - Ev:Ev12:Bt3-6B
     - - Ev:Ev14:EV1-4Ex
@@ -15712,7 +15847,7 @@
   limit:
     - AGS_Tyrant
   source:
-    - - 8-5B
+    - - 8:1:8-5B
     - - Ev:Ev7:Ev3-3s
     - - Ev:Ev14:EV2-6Ex
     - - Ev:Ev16:EV1-1B
@@ -15777,7 +15912,7 @@
   limit:
     - AGS_Seljuq
   source:
-    - - 8-4B
+    - - 8:1:8-4B
     - - Ev:Ev14:EV2-7
     - - Ev:Ev19:EV1-5B
     - - Exc:20:8
@@ -15888,11 +16023,11 @@
             count: 30
     upgrade: null
   effects:
-    - type: 8
-      positive: true
     - type: 6
       positive: true
-    - type: 89
+    - type: 8
+      positive: true
+    - type: 101
       positive: false
 - available: true
   roguelike: false
@@ -16110,6 +16245,7 @@
   craft: false
   limit: null
   source:
+    - - 12:1:12-4B
     - - Ev:Ev9:Ev2-2Ex
     - - Ev:Ev11:Ev2-2Ex
   upgrade:
@@ -16154,6 +16290,7 @@
   craft: false
   limit: null
   source:
+    - - 12:1:12-4B
     - - Ev:Ev9:Ev2-2Ex
     - - Ev:Ev11:Ev2-2Ex
     - - Ev:Ev14:EV2-5Ex
@@ -16199,6 +16336,7 @@
   craft: false
   limit: null
   source:
+    - - 12:1:12-4B
     - - Ev:Ev9:Ev2-2Ex
     - - Ev:Ev11:Ev2-2Ex
     - - Ev:Ev14:EV2-5Ex
@@ -16316,7 +16454,7 @@
   craft: false
   limit: null
   source:
-    - - 9-8
+    - - 9:1:9-8
     - - Ev:Ev9:Ev1-2Ex
     - - Ev:Ev11:Ev2-3Ex
   upgrade:
@@ -16361,7 +16499,7 @@
   craft: false
   limit: null
   source:
-    - - 9-8
+    - - 9:1:9-8
     - - Ev:Ev9:Ev1-2Ex
     - - Ev:Ev11:Ev2-3Ex
     - - Ev:Ev14:EV2-6Ex
@@ -16407,7 +16545,7 @@
   craft: false
   limit: null
   source:
-    - - 9-8
+    - - 9:1:9-8
     - - Ev:Ev9:Ev1-2Ex
     - - Ev:Ev11:Ev2-3Ex
     - - Ev:Ev14:EV2-6Ex
@@ -16463,8 +16601,8 @@
   craft: false
   limit: null
   source:
-    - - 9-8
-      - 11-1Ex
+    - - 9:1:9-8
+    - - 11:1:11-1Ex
     - - Ev:Ev8:Ev2-2Ex
     - - Ev:Ev9:Ev1-2Ex
     - - Ev:Ev11:Ev2-3Ex
@@ -16645,7 +16783,7 @@
   limit:
     - Attacker
   source:
-    - - 8-8
+    - - 8:1:8-8
   upgrade:
     enchant:
       - res: 500
@@ -16755,6 +16893,8 @@
       positive: true
     - type: 12
       positive: true
+    - type: 106
+      positive: false
 - available: true
   roguelike: false
   rarity: 5
@@ -16825,7 +16965,7 @@
   limit:
     - BR_Khan
   source:
-    - - 9-4Ex
+    - - 9:1:9-4Ex
     - - Ev:Ev11:Ev1-1Ex
     - - Ev:Ev12:Bt3-6B
     - - Ev:Ev14:EV1-9B
@@ -16876,10 +17016,6 @@
             count: 30
     upgrade: null
   effects:
-    - type: 87
-      positive: false
-    - type: 11
-      positive: true
     - type: 36
       positive: false
 - available: true
@@ -16893,7 +17029,7 @@
   limit:
     - BR_Khan
   source:
-    - - 9-2Ex
+    - - 9:1:9-2Ex
     - - Ev:Ev12:Bt3-6B
     - - Ev:Ev14:EV1-9B
     - - Ev:Ev17:EV2-2Ex
@@ -16987,12 +17123,8 @@
       cost:
         - item: Consumable_EquipProPart_T1
           count: 4
-        - item: Consumable_EquipProMineralChip_T1
-          count: 4
-        - item: Consumable_EquipProSourceChip_T1
-          count: 4
-        - item: Consumable_EssenceCrystal_T1
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 12
   effects:
     - type: 1
       positive: true
@@ -17036,12 +17168,8 @@
       cost:
         - item: Consumable_EquipProPart_T2
           count: 4
-        - item: Consumable_EquipProMineralChip_T2
-          count: 4
-        - item: Consumable_EquipProSourceChip_T2
-          count: 4
-        - item: Consumable_EssenceCrystal_T2
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 60
   effects:
     - type: 1
       positive: true
@@ -17095,12 +17223,8 @@
       cost:
         - item: Consumable_EquipProPart_T3
           count: 4
-        - item: Consumable_EquipProMineralChip_T3
-          count: 4
-        - item: Consumable_EquipProSourceChip_T3
-          count: 4
-        - item: Consumable_EssenceCrystal_T3
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 240
   effects:
     - type: 1
       positive: true
@@ -17165,12 +17289,8 @@
       cost:
         - item: Consumable_EquipProPart_T4
           count: 4
-        - item: Consumable_EquipProMineralChip_T4
-          count: 4
-        - item: Consumable_EquipProSourceChip_T4
-          count: 4
-        - item: Consumable_EssenceCrystal_T4
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 1920
   effects:
     - type: 1
       positive: true
@@ -17273,12 +17393,8 @@
       cost:
         - item: Consumable_EquipProPart_T1
           count: 4
-        - item: Consumable_EquipProMineralChip_T1
-          count: 4
-        - item: Consumable_EquipProSourceChip_T1
-          count: 4
-        - item: Consumable_EssenceCrystal_T1
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 12
   effects:
     - type: 1
       positive: true
@@ -17322,12 +17438,8 @@
       cost:
         - item: Consumable_EquipProPart_T2
           count: 4
-        - item: Consumable_EquipProMineralChip_T2
-          count: 4
-        - item: Consumable_EquipProSourceChip_T2
-          count: 4
-        - item: Consumable_EssenceCrystal_T2
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 60
   effects:
     - type: 1
       positive: true
@@ -17381,12 +17493,8 @@
       cost:
         - item: Consumable_EquipProPart_T3
           count: 4
-        - item: Consumable_EquipProMineralChip_T3
-          count: 4
-        - item: Consumable_EquipProSourceChip_T3
-          count: 4
-        - item: Consumable_EssenceCrystal_T3
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 240
   effects:
     - type: 1
       positive: true
@@ -17451,12 +17559,8 @@
       cost:
         - item: Consumable_EquipProPart_T4
           count: 4
-        - item: Consumable_EquipProMineralChip_T4
-          count: 4
-        - item: Consumable_EquipProSourceChip_T4
-          count: 4
-        - item: Consumable_EssenceCrystal_T4
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 1920
   effects:
     - type: 1
       positive: true
@@ -17559,12 +17663,8 @@
       cost:
         - item: Consumable_EquipProPart_T1
           count: 4
-        - item: Consumable_EquipProMineralChip_T1
-          count: 4
-        - item: Consumable_EquipProSourceChip_T1
-          count: 4
-        - item: Consumable_EssenceCrystal_T1
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 12
   effects:
     - type: 1
       positive: true
@@ -17608,12 +17708,8 @@
       cost:
         - item: Consumable_EquipProPart_T2
           count: 4
-        - item: Consumable_EquipProMineralChip_T2
-          count: 4
-        - item: Consumable_EquipProSourceChip_T2
-          count: 4
-        - item: Consumable_EssenceCrystal_T2
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 60
   effects:
     - type: 1
       positive: true
@@ -17667,12 +17763,8 @@
       cost:
         - item: Consumable_EquipProPart_T3
           count: 4
-        - item: Consumable_EquipProMineralChip_T3
-          count: 4
-        - item: Consumable_EquipProSourceChip_T3
-          count: 4
-        - item: Consumable_EssenceCrystal_T3
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 240
   effects:
     - type: 1
       positive: true
@@ -17737,12 +17829,8 @@
       cost:
         - item: Consumable_EquipProPart_T4
           count: 4
-        - item: Consumable_EquipProMineralChip_T4
-          count: 4
-        - item: Consumable_EquipProSourceChip_T4
-          count: 4
-        - item: Consumable_EssenceCrystal_T4
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 1920
   effects:
     - type: 1
       positive: true
@@ -17845,12 +17933,8 @@
       cost:
         - item: Consumable_EquipProPart_T1
           count: 4
-        - item: Consumable_EquipProMineralOS_T1
-          count: 4
-        - item: Consumable_EquipProSourceOS_T1
-          count: 4
-        - item: Consumable_EssenceCrystal_T1
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 12
   effects:
     - type: 3
       positive: true
@@ -17894,12 +17978,8 @@
       cost:
         - item: Consumable_EquipProPart_T2
           count: 4
-        - item: Consumable_EquipProMineralOS_T2
-          count: 4
-        - item: Consumable_EquipProSourceOS_T2
-          count: 4
-        - item: Consumable_EssenceCrystal_T2
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 60
   effects:
     - type: 3
       positive: true
@@ -17953,12 +18033,8 @@
       cost:
         - item: Consumable_EquipProPart_T3
           count: 4
-        - item: Consumable_EquipProMineralOS_T3
-          count: 4
-        - item: Consumable_EquipProSourceOS_T3
-          count: 4
-        - item: Consumable_EssenceCrystal_T3
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 240
   effects:
     - type: 3
       positive: true
@@ -18023,12 +18099,8 @@
       cost:
         - item: Consumable_EquipProPart_T4
           count: 4
-        - item: Consumable_EquipProMineralOS_T4
-          count: 4
-        - item: Consumable_EquipProSourceOS_T4
-          count: 4
-        - item: Consumable_EssenceCrystal_T4
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 1920
   effects:
     - type: 3
       positive: true
@@ -18131,12 +18203,8 @@
       cost:
         - item: Consumable_EquipProPart_T1
           count: 4
-        - item: Consumable_EquipProMineralOS_T1
-          count: 4
-        - item: Consumable_EquipProSourceOS_T1
-          count: 4
-        - item: Consumable_EssenceCrystal_T1
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 12
   effects:
     - type: 11
       positive: true
@@ -18180,12 +18248,8 @@
       cost:
         - item: Consumable_EquipProPart_T2
           count: 4
-        - item: Consumable_EquipProMineralOS_T2
-          count: 4
-        - item: Consumable_EquipProSourceOS_T2
-          count: 4
-        - item: Consumable_EssenceCrystal_T2
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 60
   effects:
     - type: 11
       positive: true
@@ -18239,12 +18303,8 @@
       cost:
         - item: Consumable_EquipProPart_T3
           count: 4
-        - item: Consumable_EquipProMineralOS_T3
-          count: 4
-        - item: Consumable_EquipProSourceOS_T3
-          count: 4
-        - item: Consumable_EssenceCrystal_T3
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 240
   effects:
     - type: 11
       positive: true
@@ -18309,12 +18369,8 @@
       cost:
         - item: Consumable_EquipProPart_T4
           count: 4
-        - item: Consumable_EquipProMineralOS_T4
-          count: 4
-        - item: Consumable_EquipProSourceOS_T4
-          count: 4
-        - item: Consumable_EssenceCrystal_T4
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 1920
   effects:
     - type: 11
       positive: true
@@ -18417,12 +18473,8 @@
       cost:
         - item: Consumable_EquipProPart_T1
           count: 4
-        - item: Consumable_EquipProMineralOS_T1
-          count: 4
-        - item: Consumable_EquipProSourceOS_T1
-          count: 4
-        - item: Consumable_EssenceCrystal_T1
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 12
   effects:
     - type: 4
       positive: true
@@ -18466,12 +18518,8 @@
       cost:
         - item: Consumable_EquipProPart_T2
           count: 4
-        - item: Consumable_EquipProMineralOS_T2
-          count: 4
-        - item: Consumable_EquipProSourceOS_T2
-          count: 4
-        - item: Consumable_EssenceCrystal_T2
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 60
   effects:
     - type: 4
       positive: true
@@ -18525,12 +18573,8 @@
       cost:
         - item: Consumable_EquipProPart_T3
           count: 4
-        - item: Consumable_EquipProMineralOS_T3
-          count: 4
-        - item: Consumable_EquipProSourceOS_T3
-          count: 4
-        - item: Consumable_EssenceCrystal_T3
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 240
   effects:
     - type: 4
       positive: true
@@ -18595,12 +18639,8 @@
       cost:
         - item: Consumable_EquipProPart_T4
           count: 4
-        - item: Consumable_EquipProMineralOS_T4
-          count: 4
-        - item: Consumable_EquipProSourceOS_T4
-          count: 4
-        - item: Consumable_EssenceCrystal_T4
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 1920
   effects:
     - type: 4
       positive: true
@@ -18703,12 +18743,8 @@
       cost:
         - item: Consumable_EquipProPart_T1
           count: 4
-        - item: Consumable_EquipProMineralSub_T1
-          count: 4
-        - item: Consumable_EquipProSourceSub_T1
-          count: 4
-        - item: Consumable_EssenceCrystal_T1
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 12
   effects:
     - type: 13
       positive: true
@@ -18752,12 +18788,8 @@
       cost:
         - item: Consumable_EquipProPart_T2
           count: 4
-        - item: Consumable_EquipProMineralSub_T2
-          count: 4
-        - item: Consumable_EquipProSourceSub_T2
-          count: 4
-        - item: Consumable_EssenceCrystal_T2
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 60
   effects:
     - type: 13
       positive: true
@@ -18811,12 +18843,8 @@
       cost:
         - item: Consumable_EquipProPart_T3
           count: 4
-        - item: Consumable_EquipProMineralSub_T3
-          count: 4
-        - item: Consumable_EquipProSourceSub_T3
-          count: 4
-        - item: Consumable_EssenceCrystal_T3
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 240
   effects:
     - type: 13
       positive: true
@@ -18881,12 +18909,8 @@
       cost:
         - item: Consumable_EquipProPart_T4
           count: 4
-        - item: Consumable_EquipProMineralSub_T4
-          count: 4
-        - item: Consumable_EquipProSourceSub_T4
-          count: 4
-        - item: Consumable_EssenceCrystal_T4
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 1920
   effects:
     - type: 13
       positive: true
@@ -18989,12 +19013,8 @@
       cost:
         - item: Consumable_EquipProPart_T1
           count: 4
-        - item: Consumable_EquipProMineralSub_T1
-          count: 4
-        - item: Consumable_EquipProSourceSub_T1
-          count: 4
-        - item: Consumable_EssenceCrystal_T1
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 12
   effects:
     - type: 13
       positive: true
@@ -19038,12 +19058,8 @@
       cost:
         - item: Consumable_EquipProPart_T2
           count: 4
-        - item: Consumable_EquipProMineralSub_T2
-          count: 4
-        - item: Consumable_EquipProSourceSub_T2
-          count: 4
-        - item: Consumable_EssenceCrystal_T2
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 60
   effects:
     - type: 13
       positive: true
@@ -19097,12 +19113,8 @@
       cost:
         - item: Consumable_EquipProPart_T3
           count: 4
-        - item: Consumable_EquipProMineralSub_T3
-          count: 4
-        - item: Consumable_EquipProSourceSub_T3
-          count: 4
-        - item: Consumable_EssenceCrystal_T3
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 240
   effects:
     - type: 13
       positive: true
@@ -19167,12 +19179,8 @@
       cost:
         - item: Consumable_EquipProPart_T4
           count: 4
-        - item: Consumable_EquipProMineralSub_T4
-          count: 4
-        - item: Consumable_EquipProSourceSub_T4
-          count: 4
-        - item: Consumable_EssenceCrystal_T4
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 1920
   effects:
     - type: 13
       positive: true
@@ -19275,12 +19283,8 @@
       cost:
         - item: Consumable_EquipProPart_T1
           count: 4
-        - item: Consumable_EquipProMineralSub_T1
-          count: 4
-        - item: Consumable_EquipProSourceSub_T1
-          count: 4
-        - item: Consumable_EssenceCrystal_T1
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 12
   effects:
     - type: 13
       positive: true
@@ -19324,12 +19328,8 @@
       cost:
         - item: Consumable_EquipProPart_T2
           count: 4
-        - item: Consumable_EquipProMineralSub_T2
-          count: 4
-        - item: Consumable_EquipProSourceSub_T2
-          count: 4
-        - item: Consumable_EssenceCrystal_T2
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 60
   effects:
     - type: 13
       positive: true
@@ -19383,12 +19383,8 @@
       cost:
         - item: Consumable_EquipProPart_T3
           count: 4
-        - item: Consumable_EquipProMineralSub_T3
-          count: 4
-        - item: Consumable_EquipProSourceSub_T3
-          count: 4
-        - item: Consumable_EssenceCrystal_T3
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 240
   effects:
     - type: 13
       positive: true
@@ -19453,12 +19449,8 @@
       cost:
         - item: Consumable_EquipProPart_T4
           count: 4
-        - item: Consumable_EquipProMineralSub_T4
-          count: 4
-        - item: Consumable_EquipProSourceSub_T4
-          count: 4
-        - item: Consumable_EssenceCrystal_T4
-          count: 4
+        - item: Consumable_EWMPMetal
+          count: 1920
   effects:
     - type: 13
       positive: true
@@ -19847,7 +19839,7 @@
   limit:
     - PECS_Draculina
   source:
-    - - 9-4B
+    - - 9:1:9-4B
     - - Ev:Ev11:Ev1-3Ex
     - - Ev:Ev12:Bt3-2B
     - - Ev:Ev14:EV1-5Ex
@@ -19915,7 +19907,7 @@
   limit:
     - AGS_Goltarion
   source:
-    - - 9-5B
+    - - 9:1:9-5B
     - - Ev:Ev11:Ev1-2Ex
     - - Ev:Ev12:Bt3-6B
     - - Ev:Ev14:EV2-5B
@@ -19982,7 +19974,7 @@
   limit:
     - BR_Blackhound
   source:
-    - - 9-6B
+    - - 9:1:9-6B
     - - Ev:Ev11:Ev2-1Ex
     - - Ev:Ev12:Bt3-6B
     - - Ev:Ev14:EV2-3Ex
@@ -20049,7 +20041,7 @@
   limit:
     - BR_Lindwurm
   source:
-    - - 9-7B
+    - - 9:1:9-7B
     - - Ev:Ev11:Ev2-2Ex
     - - Ev:Ev12:Bt3-4B
     - - Ev:Ev14:EV2-3Ex
@@ -20116,7 +20108,7 @@
   limit:
     - BR_Bulgasari
   source:
-    - - 9-1Ex
+    - - 9:1:9-1Ex
     - - Ev:Ev11:Ev2-3Ex
     - - Ev:Ev12:Bt3-2B
     - - Ev:Ev14:EV2-2Ex
@@ -20238,7 +20230,7 @@
   limit:
     - AGS_Albatross
   source:
-    - - 9-3Ex
+    - - 9:1:9-3Ex
     - - Ev:Ev6:Ev2-6Ex
     - - Ev:Ev12:Bt3-4B
     - - Ev:Ev14:EV2-5Ex
@@ -20491,6 +20483,7 @@
   limit:
     - Light+Attacker
   source:
+    - - 12:3:12-9Ex
     - - Ev:Ev12:EV2-2Ex
     - - Ev:Ev18:EV1-3B
   upgrade:
@@ -20538,7 +20531,7 @@
   limit:
     - Light+Attacker
   source:
-    - - 10-1Ex
+    - - 10:1:10-1Ex
     - - Ev:Ev12:EV2-2Ex
     - - Ev:Ev18:EV1-3B
   upgrade:
@@ -20586,7 +20579,7 @@
   limit:
     - Light+Attacker
   source:
-    - - 10-1Ex
+    - - 10:1:10-1Ex
     - - Ev:Ev12:EV2-2Ex
     - - Ev:Ev18:EV1-3B
   upgrade:
@@ -20644,8 +20637,8 @@
   limit:
     - Light+Attacker
   source:
-    - - 9-1
-      - 10-1Ex
+    - - 9:1:9-1
+    - - 10:1:10-1Ex
     - - Ev:Ev12:EV2-2Ex
   upgrade:
     enchant:
@@ -20708,6 +20701,7 @@
   limit:
     - Flying+Attacker
   source:
+    - - 12:3:12-12B
     - - Ev:Ev12:EV2-1Ex
   upgrade:
     enchant:
@@ -20754,7 +20748,8 @@
   limit:
     - Flying+Attacker
   source:
-    - - 10-1Ex
+    - - 10:1:10-1Ex
+    - - 12:3:12-12B
     - - Ev:Ev12:EV2-1Ex
   upgrade:
     enchant:
@@ -20801,7 +20796,8 @@
   limit:
     - Flying+Attacker
   source:
-    - - 10-1Ex
+    - - 10:1:10-1Ex
+    - - 12:3:12-12B
     - - Ev:Ev12:EV2-1Ex
   upgrade:
     enchant:
@@ -20858,9 +20854,9 @@
   limit:
     - Flying+Attacker
   source:
-    - - 9-5
-      - 10-1Ex
-      - 11-3Ex
+    - - 9:1:9-5
+    - - 10:1:10-1Ex
+    - - 11:1:11-3Ex
     - - Ev:Ev12:EV2-1Ex
   upgrade:
     enchant:
@@ -21030,12 +21026,10 @@
             count: 40
     upgrade: null
   effects:
+    - type: 8
+      positive: true
     - type: 7
       positive: true
-    - type: 9
-      positive: true
-    - type: 101
-      positive: false
 - available: true
   roguelike: false
   rarity: 5
@@ -21616,7 +21610,7 @@
   limit:
     - PECS_CyclopsePrincess
   source:
-    - - 11-1B
+    - - 11:1:11-1B
     - - Ev:Ev14:EV2-1Ex
     - - Ev:Ev15:EV1-7
     - - Ev:Ev18:EV1-1Ex
@@ -22757,7 +22751,7 @@
   limit:
     - PECS_Spartoia
   source:
-    - - 10-2B
+    - - 10:1:10-2B
   upgrade:
     enchant:
       - res: 1250
@@ -22817,7 +22811,7 @@
   limit:
     - BR_Amy
   source:
-    - - 10-3B
+    - - 10:1:10-3B
   upgrade:
     enchant:
       - res: 1250
@@ -22879,7 +22873,7 @@
   limit:
     - DS_MoMo
   source:
-    - - 10-4B
+    - - 10:1:10-4B
   upgrade:
     enchant:
       - res: 1250
@@ -22941,7 +22935,7 @@
   limit:
     - BR_Scarabya
   source:
-    - - 10-5B
+    - - 10:1:10-5B
   upgrade:
     enchant:
       - res: 1250
@@ -23011,7 +23005,7 @@
   limit:
     - DS_Arman
   source:
-    - - 10-6B
+    - - 10:1:10-6B
   upgrade:
     enchant:
       - res: 1500
@@ -23077,7 +23071,7 @@
   limit:
     - BR_InvDragon
   source:
-    - - 10-7B
+    - - 10:1:10-7B
   upgrade:
     enchant:
       - res: 1250
@@ -24265,7 +24259,7 @@
   limit:
     - AGS_Roc
   source:
-    - - 11-2B
+    - - 11:1:11-2B
   upgrade:
     enchant:
       - res: 1500
@@ -24327,7 +24321,7 @@
   limit:
     - PECS_QueenMane
   source:
-    - - 11-3B
+    - - 11:1:11-3B
   upgrade:
     enchant:
       - res: 1500
@@ -24387,7 +24381,7 @@
   limit:
     - ST_Lancer
   source:
-    - - 11-4B
+    - - 11:1:11-4B
   upgrade:
     enchant:
       - res: 1000
@@ -24449,7 +24443,7 @@
   limit:
     - AGS_Shade
   source:
-    - - 11-5B
+    - - 11:1:11-5B
   upgrade:
     enchant:
       - res: 1000
@@ -25151,4 +25145,1955 @@
     - type: 98
       positive: false
     - type: 94
+      positive: false
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 0
+  key: Atk
+  fullKey: Chip_Atk_T5
+  icon: UI_Icon_Equip_Chip_Atk_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 1800
+        item:
+          - item: Advanced_Module
+            count: 5
+      - res: 2400
+        item:
+          - item: Advanced_Module
+            count: 15
+      - res: 3000
+        item:
+          - item: Advanced_Module
+            count: 25
+      - res: 3600
+        item:
+          - item: Advanced_Module
+            count: 35
+      - res: 4200
+        item:
+          - item: Advanced_Module
+            count: 45
+      - res: 4800
+        item:
+          - item: Advanced_Module
+            count: 55
+          - item: Special_Module
+            count: 5
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 5400
+        item:
+          - item: Advanced_Module
+            count: 65
+          - item: Special_Module
+            count: 8
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 6000
+        item:
+          - item: Advanced_Module
+            count: 75
+          - item: Special_Module
+            count: 10
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 6600
+        item:
+          - item: Advanced_Module
+            count: 85
+          - item: Special_Module
+            count: 12
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 7200
+        item:
+          - item: Advanced_Module
+            count: 95
+          - item: Special_Module
+            count: 15
+          - item: RobotParts_HDCalculationControl
+            count: 25
+    upgrade: null
+  effects:
+    - type: 0
+      positive: true
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 0
+  key: Acc
+  fullKey: Chip_Acc_T5
+  icon: UI_Icon_Equip_Chip_Acc_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 1800
+        item:
+          - item: Advanced_Module
+            count: 5
+      - res: 2400
+        item:
+          - item: Advanced_Module
+            count: 15
+      - res: 3000
+        item:
+          - item: Advanced_Module
+            count: 25
+      - res: 3600
+        item:
+          - item: Advanced_Module
+            count: 35
+      - res: 4200
+        item:
+          - item: Advanced_Module
+            count: 45
+      - res: 4800
+        item:
+          - item: Advanced_Module
+            count: 55
+          - item: Special_Module
+            count: 5
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 5400
+        item:
+          - item: Advanced_Module
+            count: 65
+          - item: Special_Module
+            count: 8
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 6000
+        item:
+          - item: Advanced_Module
+            count: 75
+          - item: Special_Module
+            count: 10
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 6600
+        item:
+          - item: Advanced_Module
+            count: 85
+          - item: Special_Module
+            count: 12
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 7200
+        item:
+          - item: Advanced_Module
+            count: 95
+          - item: Special_Module
+            count: 15
+          - item: RobotParts_HDCalculationControl
+            count: 25
+    upgrade: null
+  effects:
+    - type: 6
+      positive: true
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 0
+  key: Def
+  fullKey: Chip_Def_T5
+  icon: UI_Icon_Equip_Chip_Def_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 1800
+        item:
+          - item: Advanced_Module
+            count: 5
+      - res: 2400
+        item:
+          - item: Advanced_Module
+            count: 15
+      - res: 3000
+        item:
+          - item: Advanced_Module
+            count: 25
+      - res: 3600
+        item:
+          - item: Advanced_Module
+            count: 35
+      - res: 4200
+        item:
+          - item: Advanced_Module
+            count: 45
+      - res: 4800
+        item:
+          - item: Advanced_Module
+            count: 55
+          - item: Special_Module
+            count: 5
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 5400
+        item:
+          - item: Advanced_Module
+            count: 65
+          - item: Special_Module
+            count: 8
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 6000
+        item:
+          - item: Advanced_Module
+            count: 75
+          - item: Special_Module
+            count: 10
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 6600
+        item:
+          - item: Advanced_Module
+            count: 85
+          - item: Special_Module
+            count: 12
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 7200
+        item:
+          - item: Advanced_Module
+            count: 95
+          - item: Special_Module
+            count: 15
+          - item: RobotParts_HDCalculationControl
+            count: 25
+    upgrade: null
+  effects:
+    - type: 2
+      positive: true
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 0
+  key: Ev
+  fullKey: Chip_Ev_T5
+  icon: UI_Icon_Equip_Chip_Ev_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 1800
+        item:
+          - item: Advanced_Module
+            count: 5
+      - res: 2400
+        item:
+          - item: Advanced_Module
+            count: 15
+      - res: 3000
+        item:
+          - item: Advanced_Module
+            count: 25
+      - res: 3600
+        item:
+          - item: Advanced_Module
+            count: 35
+      - res: 4200
+        item:
+          - item: Advanced_Module
+            count: 45
+      - res: 4800
+        item:
+          - item: Advanced_Module
+            count: 55
+          - item: Special_Module
+            count: 5
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 5400
+        item:
+          - item: Advanced_Module
+            count: 65
+          - item: Special_Module
+            count: 8
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 6000
+        item:
+          - item: Advanced_Module
+            count: 75
+          - item: Special_Module
+            count: 10
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 6600
+        item:
+          - item: Advanced_Module
+            count: 85
+          - item: Special_Module
+            count: 12
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 7200
+        item:
+          - item: Advanced_Module
+            count: 95
+          - item: Special_Module
+            count: 15
+          - item: RobotParts_HDCalculationControl
+            count: 25
+    upgrade: null
+  effects:
+    - type: 10
+      positive: true
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 0
+  key: Cri
+  fullKey: Chip_Cri_T5
+  icon: UI_Icon_Equip_Chip_Cri_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 1800
+        item:
+          - item: Advanced_Module
+            count: 5
+      - res: 2400
+        item:
+          - item: Advanced_Module
+            count: 15
+      - res: 3000
+        item:
+          - item: Advanced_Module
+            count: 25
+      - res: 3600
+        item:
+          - item: Advanced_Module
+            count: 35
+      - res: 4200
+        item:
+          - item: Advanced_Module
+            count: 45
+      - res: 4800
+        item:
+          - item: Advanced_Module
+            count: 55
+          - item: Special_Module
+            count: 5
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 5400
+        item:
+          - item: Advanced_Module
+            count: 65
+          - item: Special_Module
+            count: 8
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 6000
+        item:
+          - item: Advanced_Module
+            count: 75
+          - item: Special_Module
+            count: 10
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 6600
+        item:
+          - item: Advanced_Module
+            count: 85
+          - item: Special_Module
+            count: 12
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 7200
+        item:
+          - item: Advanced_Module
+            count: 95
+          - item: Special_Module
+            count: 15
+          - item: RobotParts_HDCalculationControl
+            count: 25
+    upgrade: null
+  effects:
+    - type: 8
+      positive: true
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 0
+  key: Hp
+  fullKey: Chip_Hp_T5
+  icon: UI_Icon_Equip_Chip_Hp_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 1800
+        item:
+          - item: Advanced_Module
+            count: 5
+      - res: 2400
+        item:
+          - item: Advanced_Module
+            count: 15
+      - res: 3000
+        item:
+          - item: Advanced_Module
+            count: 25
+      - res: 3600
+        item:
+          - item: Advanced_Module
+            count: 35
+      - res: 4200
+        item:
+          - item: Advanced_Module
+            count: 45
+      - res: 4800
+        item:
+          - item: Advanced_Module
+            count: 55
+          - item: Special_Module
+            count: 5
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 5400
+        item:
+          - item: Advanced_Module
+            count: 65
+          - item: Special_Module
+            count: 8
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 6000
+        item:
+          - item: Advanced_Module
+            count: 75
+          - item: Special_Module
+            count: 10
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 6600
+        item:
+          - item: Advanced_Module
+            count: 85
+          - item: Special_Module
+            count: 12
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 7200
+        item:
+          - item: Advanced_Module
+            count: 95
+          - item: Special_Module
+            count: 15
+          - item: RobotParts_HDCalculationControl
+            count: 25
+    upgrade: null
+  effects:
+    - type: 4
+      positive: true
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 0
+  key: Spd
+  fullKey: Chip_Spd_T5
+  icon: UI_Icon_Equip_Chip_Spd_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 1800
+        item:
+          - item: Advanced_Module
+            count: 5
+      - res: 2400
+        item:
+          - item: Advanced_Module
+            count: 15
+      - res: 3000
+        item:
+          - item: Advanced_Module
+            count: 25
+      - res: 3600
+        item:
+          - item: Advanced_Module
+            count: 35
+      - res: 4200
+        item:
+          - item: Advanced_Module
+            count: 45
+      - res: 4800
+        item:
+          - item: Advanced_Module
+            count: 55
+          - item: Special_Module
+            count: 5
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 5400
+        item:
+          - item: Advanced_Module
+            count: 65
+          - item: Special_Module
+            count: 8
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 6000
+        item:
+          - item: Advanced_Module
+            count: 75
+          - item: Special_Module
+            count: 10
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 6600
+        item:
+          - item: Advanced_Module
+            count: 85
+          - item: Special_Module
+            count: 12
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 7200
+        item:
+          - item: Advanced_Module
+            count: 95
+          - item: Special_Module
+            count: 15
+          - item: RobotParts_HDCalculationControl
+            count: 25
+    upgrade: null
+  effects:
+    - type: 12
+      positive: true
+- available: true
+  roguelike: false
+  rarity: 5
+  type: 1
+  key: Riot
+  fullKey: System_Riot_T4
+  icon: UI_Icon_Equip_System_Riot_T4
+  craft: false
+  limit:
+    - AGS_Deathstalker
+  source:
+    - - 12:1:12-3B
+  upgrade:
+    enchant:
+      - res: 1500
+        item: []
+      - res: 2325
+        item: []
+      - res: 3150
+        item: []
+      - res: 3975
+        item: []
+      - res: 4800
+        item: []
+      - res: 5625
+        item:
+          - item: Advanced_Module
+            count: 10
+          - item: RobotParts_HDCalculationControl
+            count: 5
+      - res: 6450
+        item:
+          - item: Advanced_Module
+            count: 15
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 7275
+        item:
+          - item: Advanced_Module
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 8100
+        item:
+          - item: Advanced_Module
+            count: 25
+          - item: RobotParts_HDCalculationControl
+            count: 20
+      - res: 8925
+        item:
+          - item: Special_Module
+            count: 10
+          - item: RobotParts_HDCalculationControl
+            count: 25
+    upgrade: null
+  effects:
+    - type: 60
+      positive: true
+    - type: 61
+      positive: true
+- available: true
+  roguelike: false
+  rarity: 5
+  type: 2
+  key: Cupping
+  fullKey: Sub_Cupping_T4
+  icon: UI_Icon_Equip_Sub_Cupping_T4
+  craft: false
+  limit:
+    - PECS_Hathor
+  source:
+    - - 12:1:12-4B
+  upgrade:
+    enchant:
+      - res: 1500
+        item: []
+      - res: 2325
+        item: []
+      - res: 3150
+        item: []
+      - res: 3975
+        item: []
+      - res: 4800
+        item: []
+      - res: 5625
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 40
+          - item: RobotParts_Weapon
+            count: 50
+      - res: 6450
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 80
+          - item: RobotParts_Weapon
+            count: 100
+      - res: 7275
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 120
+          - item: RobotParts_Weapon
+            count: 150
+      - res: 8100
+        item:
+          - item: Consumable_EquipProPart_T2
+            count: 20
+          - item: RobotParts_HeavyWeapon
+            count: 25
+      - res: 8925
+        item:
+          - item: Consumable_EquipProPart_T2
+            count: 40
+          - item: RobotParts_HeavyWeapon
+            count: 50
+    upgrade: null
+  effects:
+    - type: 0
+      positive: true
+    - type: 101
+      positive: false
+- available: true
+  roguelike: false
+  rarity: 5
+  type: 2
+  key: Beercan
+  fullKey: Sub_Beercan_T4
+  icon: UI_Icon_Equip_Sub_Beercan_T4
+  craft: false
+  limit:
+    - PECS_Merlin
+  source:
+    - - 12:2:12-8B
+  upgrade:
+    enchant:
+      - res: 1500
+        item: []
+      - res: 2325
+        item: []
+      - res: 3150
+        item: []
+      - res: 3975
+        item: []
+      - res: 4800
+        item: []
+      - res: 5625
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 40
+          - item: RobotParts_Weapon
+            count: 50
+      - res: 6450
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 80
+          - item: RobotParts_Weapon
+            count: 100
+      - res: 7275
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 120
+          - item: RobotParts_Weapon
+            count: 150
+      - res: 8100
+        item:
+          - item: Consumable_EquipProPart_T2
+            count: 20
+          - item: RobotParts_HeavyWeapon
+            count: 25
+      - res: 8925
+        item:
+          - item: Consumable_EquipProPart_T2
+            count: 40
+          - item: RobotParts_HeavyWeapon
+            count: 50
+    upgrade: null
+  effects:
+    - type: 10
+      positive: false
+    - type: 12
+      positive: true
+    - type: 101
+      positive: false
+- available: true
+  roguelike: false
+  rarity: 5
+  type: 2
+  key: Wyatt
+  fullKey: Sub_Wyatt_T4
+  icon: UI_Icon_Equip_Sub_Wyatt_T4
+  craft: false
+  limit:
+    - BR_WarWolf
+  source:
+    - - 12:3:12-11B
+  upgrade:
+    enchant:
+      - res: 1500
+        item: []
+      - res: 2325
+        item: []
+      - res: 3150
+        item: []
+      - res: 3975
+        item: []
+      - res: 4800
+        item: []
+      - res: 5625
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 40
+          - item: RobotParts_Weapon
+            count: 50
+      - res: 6450
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 80
+          - item: RobotParts_Weapon
+            count: 100
+      - res: 7275
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 120
+          - item: RobotParts_Weapon
+            count: 150
+      - res: 8100
+        item:
+          - item: Consumable_EquipProPart_T2
+            count: 20
+          - item: RobotParts_HeavyWeapon
+            count: 25
+      - res: 8925
+        item:
+          - item: Consumable_EquipProPart_T2
+            count: 40
+          - item: RobotParts_HeavyWeapon
+            count: 50
+    upgrade: null
+  effects:
+    - type: 6
+      positive: true
+    - type: 130
+      positive: false
+    - type: 55
+      positive: true
+- available: true
+  roguelike: false
+  rarity: 5
+  type: 2
+  key: Bedroll
+  fullKey: Sub_Bedroll_T4
+  icon: UI_Icon_Equip_Sub_Bedroll_T4
+  craft: false
+  limit:
+    - BR_Nashorn
+  source:
+    - - 12:3:12-12B
+  upgrade:
+    enchant:
+      - res: 1500
+        item: []
+      - res: 2325
+        item: []
+      - res: 3150
+        item: []
+      - res: 3975
+        item: []
+      - res: 4800
+        item: []
+      - res: 5625
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 40
+          - item: RobotParts_CalculationControl
+            count: 50
+      - res: 6450
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 80
+          - item: RobotParts_CalculationControl
+            count: 100
+      - res: 7275
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 120
+          - item: RobotParts_CalculationControl
+            count: 150
+      - res: 8100
+        item:
+          - item: Consumable_EquipProPart_T2
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 25
+      - res: 8925
+        item:
+          - item: Consumable_EquipProPart_T2
+            count: 40
+          - item: RobotParts_HDCalculationControl
+            count: 50
+    upgrade: null
+  effects:
+    - type: 17
+      positive: true
+    - type: 12
+      positive: true
+    - type: 13
+      positive: true
+    - type: 20
+      positive: true
+- available: true
+  roguelike: false
+  rarity: 5
+  type: 2
+  key: Monitoring
+  fullKey: Sub_Monitoring_T4
+  icon: UI_Icon_Equip_Sub_Monitoring_T4
+  craft: false
+  limit:
+    - BR_TalonFeather
+  source:
+    - - Altite:1000
+  upgrade:
+    enchant:
+      - res: 1500
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 20
+          - item: RobotParts_MPParts
+            count: 1000
+          - item: RobotParts_AlloyArmor
+            count: 1000
+          - item: RobotParts_Booster
+            count: 1000
+          - item: RobotParts_Weapon
+            count: 1000
+          - item: RobotParts_CalculationControl
+            count: 1000
+      - res: 2325
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 40
+          - item: RobotParts_MPParts
+            count: 1500
+          - item: RobotParts_AlloyArmor
+            count: 1500
+          - item: RobotParts_Booster
+            count: 1500
+          - item: RobotParts_Weapon
+            count: 1500
+          - item: RobotParts_CalculationControl
+            count: 1500
+      - res: 3150
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 60
+          - item: RobotParts_MPParts
+            count: 2000
+          - item: RobotParts_AlloyArmor
+            count: 2000
+          - item: RobotParts_Booster
+            count: 2000
+          - item: RobotParts_Weapon
+            count: 2000
+          - item: RobotParts_CalculationControl
+            count: 2000
+      - res: 3975
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 80
+          - item: RobotParts_MPParts
+            count: 2500
+          - item: RobotParts_AlloyArmor
+            count: 2500
+          - item: RobotParts_Booster
+            count: 2500
+          - item: RobotParts_Weapon
+            count: 2500
+          - item: RobotParts_CalculationControl
+            count: 2500
+      - res: 4800
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 100
+          - item: RobotParts_MPParts
+            count: 3000
+          - item: RobotParts_AlloyArmor
+            count: 3000
+          - item: RobotParts_Booster
+            count: 3000
+          - item: RobotParts_Weapon
+            count: 3000
+          - item: RobotParts_CalculationControl
+            count: 3000
+      - res: 5625
+        item:
+          - item: Consumable_EquipProPart_T2
+            count: 5
+          - item: RobotParts_ExParts
+            count: 250
+          - item: RobotParts_SuperAlloyArmor
+            count: 250
+          - item: RobotParts_HighpowerBooster
+            count: 250
+          - item: RobotParts_HeavyWeapon
+            count: 250
+          - item: RobotParts_HDCalculationControl
+            count: 250
+      - res: 6450
+        item:
+          - item: Consumable_EquipProPart_T2
+            count: 10
+          - item: RobotParts_ExParts
+            count: 500
+          - item: RobotParts_SuperAlloyArmor
+            count: 500
+          - item: RobotParts_HighpowerBooster
+            count: 500
+          - item: RobotParts_HeavyWeapon
+            count: 500
+          - item: RobotParts_HDCalculationControl
+            count: 500
+      - res: 7275
+        item:
+          - item: Consumable_EquipProPart_T2
+            count: 15
+          - item: RobotParts_ExParts
+            count: 750
+          - item: RobotParts_SuperAlloyArmor
+            count: 750
+          - item: RobotParts_HighpowerBooster
+            count: 750
+          - item: RobotParts_HeavyWeapon
+            count: 750
+          - item: RobotParts_HDCalculationControl
+            count: 750
+      - res: 8100
+        item:
+          - item: Consumable_EquipProPart_T2
+            count: 20
+          - item: RobotParts_ExParts
+            count: 1000
+          - item: RobotParts_SuperAlloyArmor
+            count: 1000
+          - item: RobotParts_HighpowerBooster
+            count: 1000
+          - item: RobotParts_HeavyWeapon
+            count: 1000
+          - item: RobotParts_HDCalculationControl
+            count: 1000
+      - res: 8925
+        item:
+          - item: Consumable_EquipProPart_T2
+            count: 25
+          - item: RobotParts_ExParts
+            count: 1250
+          - item: RobotParts_SuperAlloyArmor
+            count: 1250
+          - item: RobotParts_HighpowerBooster
+            count: 1250
+          - item: RobotParts_HeavyWeapon
+            count: 1250
+          - item: RobotParts_HDCalculationControl
+            count: 1250
+    upgrade: null
+  effects:
+    - type: 8
+      positive: true
+    - type: 20
+      positive: true
+    - type: 55
+      positive: true
+- available: true
+  roguelike: false
+  rarity: 5
+  type: 2
+  key: TracerRounds
+  fullKey: Sub_TracerRounds_T4
+  icon: UI_Icon_Equip_Sub_TracerRounds_T4
+  craft: false
+  limit:
+    - Light
+  source:
+    - - RefinedAlterium:1500
+  upgrade:
+    enchant:
+      - res: 4000
+        item: []
+      - res: 6200
+        item: []
+      - res: 8400
+        item: []
+      - res: 10600
+        item: []
+      - res: 12800
+        item: []
+      - res: 15000
+        item:
+          - item: Special_Module
+            count: 50
+          - item: RobotParts_ExParts
+            count: 150
+          - item: Consumable_EWMPMetal
+            count: 300
+      - res: 17200
+        item:
+          - item: Special_Module
+            count: 100
+          - item: RobotParts_ExParts
+            count: 175
+          - item: Consumable_EWMPMetal
+            count: 350
+      - res: 19400
+        item:
+          - item: Special_Module
+            count: 150
+          - item: RobotParts_ExParts
+            count: 200
+          - item: Consumable_EWMPMetal
+            count: 400
+      - res: 21600
+        item:
+          - item: Special_Module
+            count: 200
+          - item: RobotParts_ExParts
+            count: 225
+          - item: Consumable_EWMPMetal
+            count: 450
+      - res: 23800
+        item:
+          - item: Special_Module
+            count: 250
+          - item: RobotParts_ExParts
+            count: 250
+          - item: Consumable_EWMPMetal
+            count: 500
+    upgrade: null
+  effects:
+    - type: 6
+      positive: true
+    - type: 8
+      positive: true
+    - type: 88
+      positive: false
+    - type: 87
+      positive: false
+- available: true
+  roguelike: false
+  rarity: 5
+  type: 2
+  key: BlueScreenRounds
+  fullKey: Sub_BlueScreenRounds_T4
+  icon: UI_Icon_Equip_Sub_BlueScreenRounds_T4
+  craft: false
+  limit:
+    - Flying
+  source:
+    - - RefinedAlterium:1500
+  upgrade:
+    enchant:
+      - res: 4000
+        item: []
+      - res: 6200
+        item: []
+      - res: 8400
+        item: []
+      - res: 10600
+        item: []
+      - res: 12800
+        item: []
+      - res: 15000
+        item:
+          - item: Special_Module
+            count: 50
+          - item: RobotParts_ExParts
+            count: 150
+          - item: Consumable_EWMPMetal
+            count: 300
+      - res: 17200
+        item:
+          - item: Special_Module
+            count: 100
+          - item: RobotParts_ExParts
+            count: 175
+          - item: Consumable_EWMPMetal
+            count: 350
+      - res: 19400
+        item:
+          - item: Special_Module
+            count: 150
+          - item: RobotParts_ExParts
+            count: 200
+          - item: Consumable_EWMPMetal
+            count: 400
+      - res: 21600
+        item:
+          - item: Special_Module
+            count: 200
+          - item: RobotParts_ExParts
+            count: 225
+          - item: Consumable_EWMPMetal
+            count: 450
+      - res: 23800
+        item:
+          - item: Special_Module
+            count: 250
+          - item: RobotParts_ExParts
+            count: 250
+          - item: Consumable_EWMPMetal
+            count: 500
+    upgrade: null
+  effects:
+    - type: 6
+      positive: true
+    - type: 8
+      positive: true
+    - type: 106
+      positive: false
+- available: true
+  roguelike: false
+  rarity: 5
+  type: 2
+  key: TandemCharge
+  fullKey: Sub_TandemCharge_T4
+  icon: UI_Icon_Equip_Sub_TandemCharge_T4
+  craft: false
+  limit:
+    - Heavy
+  source:
+    - - RefinedAlterium:1500
+  upgrade:
+    enchant:
+      - res: 4000
+        item: []
+      - res: 6200
+        item: []
+      - res: 8400
+        item: []
+      - res: 10600
+        item: []
+      - res: 12800
+        item: []
+      - res: 15000
+        item:
+          - item: Special_Module
+            count: 50
+          - item: RobotParts_ExParts
+            count: 150
+          - item: Consumable_EWMPMetal
+            count: 300
+      - res: 17200
+        item:
+          - item: Special_Module
+            count: 100
+          - item: RobotParts_ExParts
+            count: 175
+          - item: Consumable_EWMPMetal
+            count: 350
+      - res: 19400
+        item:
+          - item: Special_Module
+            count: 150
+          - item: RobotParts_ExParts
+            count: 200
+          - item: Consumable_EWMPMetal
+            count: 400
+      - res: 21600
+        item:
+          - item: Special_Module
+            count: 200
+          - item: RobotParts_ExParts
+            count: 225
+          - item: Consumable_EWMPMetal
+            count: 450
+      - res: 23800
+        item:
+          - item: Special_Module
+            count: 250
+          - item: RobotParts_ExParts
+            count: 250
+          - item: Consumable_EWMPMetal
+            count: 500
+    upgrade: null
+  effects:
+    - type: 6
+      positive: true
+    - type: 8
+      positive: true
+    - type: 88
+      positive: false
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 1
+  key: Normal
+  fullKey: System_Normal_T5
+  icon: UI_Icon_Equip_System_Normal_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 1500
+        item: []
+      - res: 2325
+        item: []
+      - res: 3150
+        item: []
+      - res: 3975
+        item: []
+      - res: 4800
+        item: []
+      - res: 5625
+        item:
+          - item: Advanced_Module
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 6450
+        item:
+          - item: Advanced_Module
+            count: 40
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 7275
+        item:
+          - item: Advanced_Module
+            count: 60
+          - item: RobotParts_HDCalculationControl
+            count: 20
+      - res: 8100
+        item:
+          - item: Special_Module
+            count: 15
+          - item: RobotParts_HDCalculationControl
+            count: 30
+      - res: 8925
+        item:
+          - item: Special_Module
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 40
+    upgrade: null
+  effects:
+    - type: 1
+      positive: true
+    - type: 3
+      positive: true
+    - type: 7
+      positive: true
+    - type: 11
+      positive: true
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 1
+  key: Assault
+  fullKey: System_Assault_T5
+  icon: UI_Icon_Equip_System_Assault_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 1500
+        item: []
+      - res: 2325
+        item: []
+      - res: 3150
+        item: []
+      - res: 3975
+        item: []
+      - res: 4800
+        item: []
+      - res: 5625
+        item:
+          - item: Advanced_Module
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 6450
+        item:
+          - item: Advanced_Module
+            count: 40
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 7275
+        item:
+          - item: Advanced_Module
+            count: 60
+          - item: RobotParts_HDCalculationControl
+            count: 20
+      - res: 8100
+        item:
+          - item: Special_Module
+            count: 15
+          - item: RobotParts_HDCalculationControl
+            count: 30
+      - res: 8925
+        item:
+          - item: Special_Module
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 40
+    upgrade: null
+  effects:
+    - type: 1
+      positive: true
+    - type: 48
+      positive: false
+    - type: 13
+      positive: true
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 1
+  key: Defense
+  fullKey: System_Defense_T5
+  icon: UI_Icon_Equip_System_Defense_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 1500
+        item: []
+      - res: 2325
+        item: []
+      - res: 3150
+        item: []
+      - res: 3975
+        item: []
+      - res: 4800
+        item: []
+      - res: 5625
+        item:
+          - item: Advanced_Module
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 6450
+        item:
+          - item: Advanced_Module
+            count: 40
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 7275
+        item:
+          - item: Advanced_Module
+            count: 60
+          - item: RobotParts_HDCalculationControl
+            count: 20
+      - res: 8100
+        item:
+          - item: Special_Module
+            count: 15
+          - item: RobotParts_HDCalculationControl
+            count: 30
+      - res: 8925
+        item:
+          - item: Special_Module
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 40
+    upgrade: null
+  effects:
+    - type: 3
+      positive: true
+    - type: 36
+      positive: false
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 1
+  key: Maneuver
+  fullKey: System_Maneuver_T5
+  icon: UI_Icon_Equip_System_Maneuver_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 1500
+        item: []
+      - res: 2325
+        item: []
+      - res: 3150
+        item: []
+      - res: 3975
+        item: []
+      - res: 4800
+        item: []
+      - res: 5625
+        item:
+          - item: Advanced_Module
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 6450
+        item:
+          - item: Advanced_Module
+            count: 40
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 7275
+        item:
+          - item: Advanced_Module
+            count: 60
+          - item: RobotParts_HDCalculationControl
+            count: 20
+      - res: 8100
+        item:
+          - item: Special_Module
+            count: 15
+          - item: RobotParts_HDCalculationControl
+            count: 30
+      - res: 8925
+        item:
+          - item: Special_Module
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 40
+    upgrade: null
+  effects:
+    - type: 6
+      positive: true
+    - type: 8
+      positive: true
+    - type: 1
+      positive: true
+    - type: 13
+      positive: false
+    - type: 89
+      positive: false
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 1
+  key: HManeuver
+  fullKey: System_HManeuver_T5
+  icon: UI_Icon_Equip_System_HManeuver_T5
+  craft: false
+  limit:
+    - Flying+Defender
+  source: []
+  upgrade:
+    enchant:
+      - res: 1500
+        item: []
+      - res: 2325
+        item: []
+      - res: 3150
+        item: []
+      - res: 3975
+        item: []
+      - res: 4800
+        item: []
+      - res: 5625
+        item:
+          - item: Advanced_Module
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 6450
+        item:
+          - item: Advanced_Module
+            count: 40
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 7275
+        item:
+          - item: Advanced_Module
+            count: 60
+          - item: RobotParts_HDCalculationControl
+            count: 20
+      - res: 8100
+        item:
+          - item: Special_Module
+            count: 15
+          - item: RobotParts_HDCalculationControl
+            count: 30
+      - res: 8925
+        item:
+          - item: Special_Module
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 40
+    upgrade: null
+  effects:
+    - type: 6
+      positive: true
+    - type: 10
+      positive: true
+    - type: 36
+      positive: false
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 1
+  key: EXAM
+  fullKey: System_EXAM_T5
+  icon: UI_Icon_Equip_System_EXAM_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 1500
+        item: []
+      - res: 2325
+        item: []
+      - res: 3150
+        item: []
+      - res: 3975
+        item: []
+      - res: 4800
+        item: []
+      - res: 5625
+        item:
+          - item: Advanced_Module
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 6450
+        item:
+          - item: Advanced_Module
+            count: 40
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 7275
+        item:
+          - item: Advanced_Module
+            count: 60
+          - item: RobotParts_HDCalculationControl
+            count: 20
+      - res: 8100
+        item:
+          - item: Special_Module
+            count: 15
+          - item: RobotParts_HDCalculationControl
+            count: 30
+      - res: 8925
+        item:
+          - item: Special_Module
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 40
+    upgrade: null
+  effects:
+    - type: 1
+      positive: true
+    - type: 9
+      positive: true
+    - type: 7
+      positive: true
+    - type: 11
+      positive: true
+    - type: 13
+      positive: true
+- available: true
+  roguelike: false
+  rarity: 5
+  type: 2
+  key: FPS
+  fullKey: Sub_FPS_T4
+  icon: UI_Icon_Equip_Sub_FPS_T4
+  craft: false
+  limit:
+    - DS_Sarena
+  source:
+    - - 5:1:5-6B
+    - - Ev:Ev22:EV2-8
+  upgrade:
+    enchant:
+      - res: 1500
+        item: []
+      - res: 2325
+        item: []
+      - res: 3150
+        item: []
+      - res: 3975
+        item: []
+      - res: 4800
+        item: []
+      - res: 5625
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 40
+          - item: RobotParts_Weapon
+            count: 50
+      - res: 6450
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 80
+          - item: RobotParts_Weapon
+            count: 100
+      - res: 7275
+        item:
+          - item: Consumable_EquipProPart_T1
+            count: 120
+          - item: RobotParts_Weapon
+            count: 150
+      - res: 8100
+        item:
+          - item: Consumable_EquipProPart_T2
+            count: 20
+          - item: RobotParts_HeavyWeapon
+            count: 25
+      - res: 8925
+        item:
+          - item: Consumable_EquipProPart_T2
+            count: 40
+          - item: RobotParts_HeavyWeapon
+            count: 50
+    upgrade: null
+  effects:
+    - type: 0
+      positive: true
+    - type: 58
+      positive: true
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 1
+  key: Highspd
+  fullKey: System_Highspd_T5
+  icon: UI_Icon_Equip_System_Highspd_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 1500
+        item: []
+      - res: 2325
+        item: []
+      - res: 3150
+        item: []
+      - res: 3975
+        item: []
+      - res: 4800
+        item: []
+      - res: 5625
+        item:
+          - item: Advanced_Module
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 6450
+        item:
+          - item: Advanced_Module
+            count: 40
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 7275
+        item:
+          - item: Advanced_Module
+            count: 60
+          - item: RobotParts_HDCalculationControl
+            count: 20
+      - res: 8100
+        item:
+          - item: Special_Module
+            count: 15
+          - item: RobotParts_HDCalculationControl
+            count: 30
+      - res: 8925
+        item:
+          - item: Special_Module
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 40
+    upgrade: null
+  effects:
+    - type: 1
+      positive: true
+    - type: 55
+      positive: false
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 2
+  key: Observer
+  fullKey: Sub_Observer_T5
+  icon: UI_Icon_Equip_Sub_Observer_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 1500
+        item: []
+      - res: 2325
+        item: []
+      - res: 3150
+        item: []
+      - res: 3975
+        item: []
+      - res: 4800
+        item: []
+      - res: 5625
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 5
+          - item: RobotParts_HDCalculationControl
+            count: 5
+      - res: 6450
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 10
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 7275
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 15
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 8100
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 20
+      - res: 8925
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 25
+          - item: RobotParts_HDCalculationControl
+            count: 25
+    upgrade: null
+  effects:
+    - type: 6
+      positive: true
+    - type: 55
+      positive: true
+    - type: 89
+      positive: false
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 2
+  key: SpSight
+  fullKey: Sub_SpSight_T5
+  icon: UI_Icon_Equip_Sub_SpSight_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 1500
+        item: []
+      - res: 2325
+        item: []
+      - res: 3150
+        item: []
+      - res: 3975
+        item: []
+      - res: 4800
+        item: []
+      - res: 5625
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 5
+          - item: RobotParts_HeavyWeapon
+            count: 5
+      - res: 6450
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 10
+          - item: RobotParts_HeavyWeapon
+            count: 10
+      - res: 7275
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 15
+          - item: RobotParts_HeavyWeapon
+            count: 15
+      - res: 8100
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 20
+          - item: RobotParts_HeavyWeapon
+            count: 20
+      - res: 8925
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 25
+          - item: RobotParts_HeavyWeapon
+            count: 25
+    upgrade: null
+  effects:
+    - type: 6
+      positive: true
+    - type: 8
+      positive: true
+    - type: 89
+      positive: false
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 2
+  key: AdvRadar
+  fullKey: Sub_AdvRadar_T5
+  icon: UI_Icon_Equip_Sub_AdvRadar_T5
+  craft: false
+  limit:
+    - Attacker
+  source: []
+  upgrade:
+    enchant:
+      - res: 2000
+        item: []
+      - res: 3100
+        item: []
+      - res: 4200
+        item: []
+      - res: 5300
+        item: []
+      - res: 6400
+        item: []
+      - res: 7500
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 10
+          - item: RobotParts_HeavyWeapon
+            count: 10
+      - res: 8600
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 15
+          - item: RobotParts_HeavyWeapon
+            count: 15
+      - res: 9700
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 20
+          - item: RobotParts_HeavyWeapon
+            count: 20
+      - res: 10800
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 25
+          - item: RobotParts_HeavyWeapon
+            count: 25
+      - res: 11900
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 30
+          - item: RobotParts_HeavyWeapon
+            count: 30
+    upgrade: null
+  effects:
+    - type: 1
+      positive: true
+    - type: 7
+      positive: true
+    - type: 9
+      positive: true
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 2
+  key: NitroEx3000
+  fullKey: Sub_NitroEx3000_T5
+  icon: UI_Icon_Equip_Sub_NitroEx3000_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 2500
+        item: []
+      - res: 3875
+        item: []
+      - res: 5250
+        item: []
+      - res: 6625
+        item: []
+      - res: 8000
+        item: []
+      - res: 9375
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 20
+          - item: RobotParts_SuperAlloyArmor
+            count: 20
+      - res: 10750
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 25
+          - item: RobotParts_SuperAlloyArmor
+            count: 25
+      - res: 12125
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 30
+          - item: RobotParts_SuperAlloyArmor
+            count: 30
+      - res: 13500
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 35
+          - item: RobotParts_SuperAlloyArmor
+            count: 35
+      - res: 14875
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 40
+          - item: RobotParts_SuperAlloyArmor
+            count: 40
+    upgrade: null
+  effects:
+    - type: 17
+      positive: true
+    - type: 10
+      positive: true
+    - type: 12
+      positive: true
+    - type: 106
       positive: false

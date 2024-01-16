@@ -47,18 +47,19 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const [FullUnitSize, setFullUnitSize] = useState<[number, number]>([0, 0]);
 	const FullUnitEl = useRef<HTMLDivElement>(null);
 
-	const face = objState<string>("");
-	const faceList = objState<string[]>([]);
+	const [face, setFace] = useState<string>("");
+	const [faceList, setFaceList] = useState<string[]>([]);
 
-	const IsDamaged = objState<boolean>(false);
-	const IsSimplified = objState<boolean>(false);
-	const IsBG = objState<boolean>(false);
-	const IsGoogle = objState<boolean>(false);
-	const IsSpecialTouch = objState<boolean>(false);
+	const [isCensored, setIsCensored] = useState<boolean>(false);
+	const [isDamaged, setIsDamaged] = useState<boolean>(false);
+	const [hideParts, setHideParts] = useState<boolean>(false);
+	const [hideBG, setHideBG] = useState<boolean>(false);
 
-	const IsAnimating = objState<boolean>(false);
-	const IsBlackBG = objState<boolean>(false);
-	const HideGroup = objState<boolean>(false);
+	const [isSpecialTouchMode, setIsSpecialTouchMode] = useState<boolean>(false);
+
+	const [enableAnimation, setEnableAnimation] = useState<boolean>(false);
+	const [asBlackBG, setAsBlackBG] = useState<boolean>(false);
+	const [hideGroupLogo, setHideGroupLogo] = useState<boolean>(false);
 
 	const [detailView, setDetailView] = useState(false);
 
@@ -94,26 +95,26 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 		const postfix = ((): string => {
 			const ret: string[] = [];
-			if (IsDamaged.value) ret.push("D");
-			if (IsBG.value) ret.push("B");
-			if (IsSimplified.value) ret.push("S");
+			if (isDamaged) ret.push("D");
+			if (hideBG) ret.push("B");
+			if (hideParts) ret.push("S");
 			return (ret.length > 0 ? "_" : "") + ret.join("");
 		})();
 
-		return `${AssetsRoot}/${ext}/full/${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}${postfix}.${ext}`;
+		return `${AssetsRoot}/${ext}/full/${unit.uid}_${skinId}_${skin.G && isCensored ? "G" : "O"}${postfix}.${ext}`;
 	})();
 	const SkinVideoURL = ((): string => {
 		if (!props.collapsed && !props.animate) return "";
-		if (IsDamaged.value) return "";
+		if (isDamaged) return "";
 
 		let flag: SKIN_ANIM_SUBSET_ENUM = 0;
 		const postfix = ((): string => {
 			const ret: string[] = [];
-			if (IsBG.value) {
+			if (hideBG) {
 				flag |= SKIN_ANIM_SUBSET_ENUM.B_;
 				ret.push("B");
 			}
-			if (IsSimplified.value) {
+			if (hideParts) {
 				flag |= SKIN_ANIM_SUBSET_ENUM._S;
 				ret.push("S");
 			}
@@ -122,73 +123,73 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		if (!skin.anim[flag]) return "";
 
 		const skinId = skin.isDef ? 0 : skin.metadata.imageId;
-		return `${unit.uid}_${skinId}_${skin.G && IsGoogle.value ? "G" : "O"}${postfix}`;
+		return `${unit.uid}_${skinId}_${skin.G && isCensored ? "G" : "O"}${postfix}`;
 	})();
 
-	if (!skin.G && IsGoogle.value) // not have google
-		IsGoogle.set(false);
+	if (!skin.G && isCensored) // not have google
+		setIsCensored(false);
 
 	// skin mod adjust
-	if (IsDamaged.value) {
-		if (IsSimplified.value && IsBG.value && !skin.subset[SKIN_SUBSET_ENUM.DBS]) {
+	if (isDamaged) {
+		if (hideParts && hideBG && !skin.subset[SKIN_SUBSET_ENUM.DBS]) {
 			if (skin.subset[SKIN_SUBSET_ENUM.DB_])
-				IsBG.set(false);
+				setHideBG(false);
 			else if (skin.subset[SKIN_SUBSET_ENUM.D_S])
-				IsSimplified.set(false);
+				setHideParts(false);
 			else {
-				IsBG.set(false);
-				IsSimplified.set(false);
+				setHideBG(false);
+				setHideParts(false);
 			}
-		} else if (IsSimplified.value && !IsBG.value && !skin.subset[SKIN_SUBSET_ENUM.D_S])
-			IsSimplified.set(false);
-		else if (IsBG.value && !IsSimplified.value && !skin.subset[SKIN_SUBSET_ENUM.DB_])
-			IsBG.set(false);
-		else if (!IsBG.value && !IsSimplified.value && skin.subset[SKIN_SUBSET_ENUM.D__]) {
-			IsBG.set(false);
-			IsSimplified.set(false);
-		} else if (!IsBG.value && !IsSimplified.value && !skin.subset[SKIN_SUBSET_ENUM.D__])
-			IsDamaged.set(false);
+		} else if (hideParts && !hideBG && !skin.subset[SKIN_SUBSET_ENUM.D_S])
+			setHideParts(false);
+		else if (hideBG && !hideParts && !skin.subset[SKIN_SUBSET_ENUM.DB_])
+			setHideBG(false);
+		else if (!hideBG && !hideParts && skin.subset[SKIN_SUBSET_ENUM.D__]) {
+			setHideBG(false);
+			setHideParts(false);
+		} else if (!hideBG && !hideParts && !skin.subset[SKIN_SUBSET_ENUM.D__])
+			setIsDamaged(false);
 	} else {
-		if (IsSimplified.value && IsBG.value && !skin.subset[SKIN_SUBSET_ENUM._BS]) {
+		if (hideParts && hideBG && !skin.subset[SKIN_SUBSET_ENUM._BS]) {
 			if (skin.subset[SKIN_SUBSET_ENUM._B_])
-				IsBG.set(false);
+				setHideBG(false);
 			else if (skin.subset[SKIN_SUBSET_ENUM.__S])
-				IsSimplified.set(false);
+				setHideParts(false);
 			else {
-				IsBG.set(false);
-				IsSimplified.set(false);
+				setHideBG(false);
+				setHideParts(false);
 			}
-		} else if (IsSimplified.value && !IsBG.value && !skin.subset[SKIN_SUBSET_ENUM.__S])
-			IsSimplified.set(false);
-		else if (IsBG.value && !IsSimplified.value && !skin.subset[SKIN_SUBSET_ENUM._B_])
-			IsBG.set(false);
+		} else if (hideParts && !hideBG && !skin.subset[SKIN_SUBSET_ENUM.__S])
+			setHideParts(false);
+		else if (hideBG && !hideParts && !skin.subset[SKIN_SUBSET_ENUM._B_])
+			setHideBG(false);
 	}
 
-	const AvailableS = !IsDamaged.value
-		? skin.subset[SKIN_SUBSET_ENUM.__S] || (skin.subset[SKIN_SUBSET_ENUM._BS] && IsBG.value)
-		: skin.subset[SKIN_SUBSET_ENUM.D_S] || (skin.subset[SKIN_SUBSET_ENUM.DBS] && IsBG.value);
+	const AvailableS = !isDamaged
+		? skin.subset[SKIN_SUBSET_ENUM.__S] || (skin.subset[SKIN_SUBSET_ENUM._BS] && hideBG)
+		: skin.subset[SKIN_SUBSET_ENUM.D_S] || (skin.subset[SKIN_SUBSET_ENUM.DBS] && hideBG);
 
-	const AvailableBG = !IsDamaged.value
-		? skin.subset[SKIN_SUBSET_ENUM._B_] || (skin.subset[SKIN_SUBSET_ENUM._BS] && IsSimplified.value)
-		: skin.subset[SKIN_SUBSET_ENUM.DB_] || (skin.subset[SKIN_SUBSET_ENUM.DBS] && IsSimplified.value);
+	const AvailableBG = !isDamaged
+		? skin.subset[SKIN_SUBSET_ENUM._B_] || (skin.subset[SKIN_SUBSET_ENUM._BS] && hideParts)
+		: skin.subset[SKIN_SUBSET_ENUM.DB_] || (skin.subset[SKIN_SUBSET_ENUM.DBS] && hideParts);
 
 	const AvailableAnim = (() => {
 		if (skin.Spine) return true;
 
-		if (IsSimplified.value && IsBG.value)
+		if (hideParts && hideBG)
 			return skin.anim[SKIN_ANIM_SUBSET_ENUM.BS];
-		else if (IsSimplified.value && !IsBG.value)
+		else if (hideParts && !hideBG)
 			return skin.anim[SKIN_ANIM_SUBSET_ENUM._S];
-		else if (!IsSimplified.value && IsBG.value)
+		else if (!hideParts && hideBG)
 			return skin.anim[SKIN_ANIM_SUBSET_ENUM.B_];
 		else
 			return skin.anim[SKIN_ANIM_SUBSET_ENUM.__];
 	})();
 
 	const modelId = `${unit.uid}_N${skin.isDef ? "" : `S${skin.metadata.imageId}`}`;
-	const DisplaySpine = skin.Spine && (props.animate || props.collapsed) && !IsDamaged.value;
-	const Display2DModel = (!IsDamaged.value && !!skin.metadata["2dmodel"]) ||
-		(IsDamaged.value && !!skin.metadata["2dmodel_dam"]);
+	const DisplaySpine = skin.Spine && (props.animate || props.collapsed) && !isDamaged;
+	const Display2DModel = (!isDamaged && !!skin.metadata["2dmodel"]) ||
+		(isDamaged && !!skin.metadata["2dmodel_dam"]);
 
 	return <div class={ style.SkinView }>
 		<div class={ `ratio ${Aspect} ${style.SkinFull} ${props.collapsed ? style.Collapsed : ""}` }>
@@ -209,26 +210,26 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					{ DisplaySpine
 						? <SpineRenderer
 							uid={ modelId }
-							google={ IsGoogle.value }
-							specialTouch={ IsSpecialTouch.value }
+							google={ isCensored }
+							specialTouch={ isSpecialTouchMode }
 
 							// collider={ true }
-							hidePart={ IsSimplified.value }
-							// hideBg={ IsBG.value }
+							hidePart={ hideParts }
+							// hideBg={ isBGCollapsed }
 							// hideDialog={ false }
 
-							face={ face.value }
+							face={ face }
 							onFaceList={ (list) => {
-								faceList.set(list);
+								setFaceList(list);
 
 								if (list.includes("Idle"))
-									face.set("Idle");
+									setFace("Idle");
 								else {
 									const listU = list.map(f => f.toUpperCase());
 									for (const ft of Object.keys(FACETYPE)) {
 										const index = listU.indexOf(ft);
 										if (index >= 0) {
-											face.set(list[index]);
+											setFace(list[index]);
 											break;
 										}
 									}
@@ -251,8 +252,8 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 									maxScale={ 3 }
 								>
 									<U2DModelRenderer
-										root={ `${AssetsRoot}/2dmodel/${IsGoogle.value ? "G" : "O"}/` }
-										target={ !IsDamaged.value ? skin.metadata["2dmodel"]! : skin.metadata["2dmodel_dam"]! }
+										root={ `${AssetsRoot}/2dmodel/${isCensored ? "G" : "O"}/` }
+										target={ !isDamaged ? skin.metadata["2dmodel"]! : skin.metadata["2dmodel_dam"]! }
 
 										scale={ 1.5 }
 										textureExt={ imageExt }
@@ -260,17 +261,17 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 										width={ FullUnitSize[0] }
 										height={ FullUnitSize[1] }
 
-										hideParts={ IsSimplified.value }
-										hideBG={ IsBG.value }
+										hideParts={ hideParts }
+										hideBG={ hideBG }
 
-										face={ face.value }
+										face={ face }
 										onFaceList={ (list) => {
 											const _list = [...list];
 											if (!_list.includes("Idle"))
 												_list.splice(0, 0, "Idle"); // insert into 0
 
-											faceList.set(_list);
-											face.set("Idle");
+											setFaceList(_list);
+											setFace("Idle");
 										} }
 									/>
 								</Pinch>
@@ -307,175 +308,163 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					: <></>
 				}
 
-				<>
-					<div class={ style.SkinPropMarriage }>
-						{ unit.marriageVoice ? <BootstrapTooltip
+				<div class={ style.SkinPropMarriage }>
+					{ unit.marriageVoice ? <BootstrapTooltip
+						placement="top"
+						content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_MARRIAGE" /></span> }
+					>
+						<div class="position-relative alert">
+							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/marriage.png` } />
+						</div>
+					</BootstrapTooltip>
+						: <div class={ `position-relative alert ${style.Invalid}` }>
+							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/marriage.png` } />
+						</div>
+					}
+				</div>
+				<div class={ style.SkinPropAnimated }>
+					{ (skin.parts & (1 << SKIN_IN_PARTS.LOBBY_ANIMATION)) > 0
+						? <BootstrapTooltip
 							placement="top"
-							content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_MARRIAGE" /></span> }
+							content={ <span class="word-keep">
+								<Locale k={ skin.stage ? "UNIT_VIEW_SKIN_L2D_PLUS" : "UNIT_VIEW_SKIN_L2D" } />
+							</span> }
 						>
 							<div class="position-relative alert">
-								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/marriage.png` } />
+								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/l2d${skin.stage ? "p" : ""}.png` } />
 							</div>
 						</BootstrapTooltip>
-							: <div class={ `position-relative alert ${style.Invalid}` }>
-								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/marriage.png` } />
-							</div>
-						}
-					</div>
-					<div class={ style.SkinPropAnimated }>
-						{ (skin.parts & (1 << SKIN_IN_PARTS.LOBBY_ANIMATION)) > 0
-							? <BootstrapTooltip
-								placement="top"
-								content={ <span class="word-keep">
-									<Locale k={ skin.stage ? "UNIT_VIEW_SKIN_L2D_PLUS" : "UNIT_VIEW_SKIN_L2D" } />
-								</span> }
-							>
-								<div class="position-relative alert">
-									<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/l2d${skin.stage ? "p" : ""}.png` } />
-								</div>
-							</BootstrapTooltip>
-							: <div class={ `position-relative alert ${style.Invalid}` }>
-								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/l2d.png` } />
-							</div>
-						}
-					</div>
-					<div class={ style.SkinPropVoice }>
-						{ (skin.parts & (1 << SKIN_IN_PARTS.VOICE)) > 0
-							? <BootstrapTooltip
-								placement="top"
-								content={ <span class="word-keep">
-									<Locale k={ skin.isDef ? "UNIT_VIEW_SKIN_DEFAULT" : "UNIT_VIEW_SKIN_VOICE" } />
-								</span> }
-							>
-								<div class="position-relative alert">
-									<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/voice.png` } />
-								</div>
-							</BootstrapTooltip>
-							: <div class={ `position-relative alert ${style.Invalid}` }>
+						: <div class={ `position-relative alert ${style.Invalid}` }>
+							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/l2d.png` } />
+						</div>
+					}
+				</div>
+				<div class={ style.SkinPropVoice }>
+					{ (skin.parts & (1 << SKIN_IN_PARTS.VOICE)) > 0
+						? <BootstrapTooltip
+							placement="top"
+							content={ <span class="word-keep">
+								<Locale k={ skin.isDef ? "UNIT_VIEW_SKIN_DEFAULT" : "UNIT_VIEW_SKIN_VOICE" } />
+							</span> }
+						>
+							<div class="position-relative alert">
 								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/voice.png` } />
 							</div>
-						}
-					</div>
-					<div class={ style.SkinPropEffect }>
-						{ (skin.parts & (1 << SKIN_IN_PARTS.SD_EFFECT)) > 0
-							? <BootstrapTooltip
-								placement="top"
-								content={ <span class="word-keep">
-									<Locale k={ skin.isDef ? "UNIT_VIEW_SKIN_DEFAULT" : "UNIT_VIEW_SKIN_EFFECT" } />
-								</span> }
-							>
-								<div class="position-relative alert">
-									<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/fx.png` } />
-								</div>
-							</BootstrapTooltip>
-							: <div class={ `position-relative alert ${style.Invalid}` }>
+						</BootstrapTooltip>
+						: <div class={ `position-relative alert ${style.Invalid}` }>
+							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/voice.png` } />
+						</div>
+					}
+				</div>
+				<div class={ style.SkinPropEffect }>
+					{ (skin.parts & (1 << SKIN_IN_PARTS.SD_EFFECT)) > 0
+						? <BootstrapTooltip
+							placement="top"
+							content={ <span class="word-keep">
+								<Locale k={ skin.isDef ? "UNIT_VIEW_SKIN_DEFAULT" : "UNIT_VIEW_SKIN_EFFECT" } />
+							</span> }
+						>
+							<div class="position-relative alert">
 								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/fx.png` } />
 							</div>
-						}
-					</div>
-					<div class={ style.SkinPropMotion }>
-						{ (skin.parts & (1 << SKIN_IN_PARTS.SD_ANIMATION)) > 0
-							? <BootstrapTooltip
-								placement="top"
-								content={ <span class="word-keep">
-									<Locale k={ skin.isDef ? "UNIT_VIEW_SKIN_DEFAULT" : "UNIT_VIEW_SKIN_MOTION" } />
-								</span> }
-							>
-								<div class="position-relative alert">
-									<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/sd.png` } />
-								</div>
-							</BootstrapTooltip>
-							: <div class={ `position-relative alert ${style.Invalid}` }>
+						</BootstrapTooltip>
+						: <div class={ `position-relative alert ${style.Invalid}` }>
+							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/fx.png` } />
+						</div>
+					}
+				</div>
+				<div class={ style.SkinPropMotion }>
+					{ (skin.parts & (1 << SKIN_IN_PARTS.SD_ANIMATION)) > 0
+						? <BootstrapTooltip
+							placement="top"
+							content={ <span class="word-keep">
+								<Locale k={ skin.isDef ? "UNIT_VIEW_SKIN_DEFAULT" : "UNIT_VIEW_SKIN_MOTION" } />
+							</span> }
+						>
+							<div class="position-relative alert">
 								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/sd.png` } />
 							</div>
-						}
-					</div>
-					<div class={ style.SkinPropDamaged }>
-						{ (skin.parts & (1 << SKIN_IN_PARTS.DAMAGE_IMAGE)) > 0
-							? <BootstrapTooltip
-								placement="top"
-								content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_DAMAGED" /></span> }
-							>
-								<div class="position-relative alert">
-									<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/damaged.png` } />
-								</div>
-							</BootstrapTooltip>
-							:
-							<div class={ `position-relative alert ${style.Invalid}` }>
+						</BootstrapTooltip>
+						: <div class={ `position-relative alert ${style.Invalid}` }>
+							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/sd.png` } />
+						</div>
+					}
+				</div>
+				<div class={ style.SkinPropDamaged }>
+					{ (skin.parts & (1 << SKIN_IN_PARTS.DAMAGE_IMAGE)) > 0
+						? <BootstrapTooltip
+							placement="top"
+							content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_DAMAGED" /></span> }
+						>
+							<div class="position-relative alert">
 								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/damaged.png` } />
 							</div>
-						}
-					</div>
-					<div class={ style.SkinPropBG }>
-						{ (skin.parts & (1 << SKIN_IN_PARTS.PROPS)) > 0
-							? <BootstrapTooltip
-								placement="top"
-								content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_BG" /></span> }
-							>
-								<div class="position-relative alert">
-									<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/object.png` } />
-								</div>
-							</BootstrapTooltip>
-							:
-							<div class={ `position-relative alert ${style.Invalid}` }>
+						</BootstrapTooltip>
+						:
+						<div class={ `position-relative alert ${style.Invalid}` }>
+							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/damaged.png` } />
+						</div>
+					}
+				</div>
+				<div class={ style.SkinPropBG }>
+					{ (skin.parts & (1 << SKIN_IN_PARTS.PROPS)) > 0
+						? <BootstrapTooltip
+							placement="top"
+							content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_BG" /></span> }
+						>
+							<div class="position-relative alert">
 								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/object.png` } />
 							</div>
-						}
-					</div>
-				</>
+						</BootstrapTooltip>
+						:
+						<div class={ `position-relative alert ${style.Invalid}` }>
+							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/object.png` } />
+						</div>
+					}
+				</div>
 
 				{ [
-					skin.subset[SKIN_SUBSET_ENUM.D__]
-						? <div
-							class={ `${style.SkinToggle} ${style.Damaged}` }
-							data-damaged={ IsDamaged.value ? 1 : 0 }
-							onClick={ (): void => IsDamaged.set(!IsDamaged.value) }
-						/>
-						: <></>,
-					AvailableS
-						? <div
-							class={ `${style.SkinToggle} ${style.Simplified}` }
-							data-simplified={ IsSimplified.value ? 1 : 0 }
-							onClick={ (): void => IsSimplified.set(!IsSimplified.value) }
-						/>
-						: <></>,
-					AvailableBG
-						? <div
-							class={ `${style.SkinToggle} ${style.BG}` }
-							data-bg={ IsBG.value ? 1 : 0 }
-							onClick={ (): void => IsBG.set(!IsBG.value) }
-						/>
-						: <></>,
-					skin.G
-						? <div
-							class={ `${style.SkinToggle} ${style.Platform}` }
-							data-platform={ IsGoogle.value ? 1 : 0 }
-							onClick={ (): void => IsGoogle.set(!IsGoogle.value) }
-						/>
-						: <></>,
-					DisplaySpine
-						? <div
-							class={ `${style.SkinToggle} ${style.Touch}` }
-							data-touch={ IsSpecialTouch.value ? 1 : 0 }
-							onClick={ (): void => IsSpecialTouch.set(!IsSpecialTouch.value) }
-						/>
-						: <></>,
-				] }
+					skin.subset[SKIN_SUBSET_ENUM.D__] && <div
+						class={ `${style.SkinToggle} ${style.Damaged}` }
+						data-damaged={ isDamaged ? 1 : 0 }
+						onClick={ (): void => setIsDamaged(!isDamaged) }
+					/>,
+					AvailableS && <div
+						class={ `${style.SkinToggle} ${style.Simplified}` }
+						data-simplified={ hideParts ? 1 : 0 }
+						onClick={ (): void => setHideParts(!hideParts) }
+					/>,
+					AvailableBG && <div
+						class={ `${style.SkinToggle} ${style.BG}` }
+						data-bg={ hideBG ? 1 : 0 }
+						onClick={ (): void => setHideBG(!hideBG) }
+					/>,
+					skin.G && <div
+						class={ `${style.SkinToggle} ${style.Platform}` }
+						data-platform={ isCensored ? 1 : 0 }
+						onClick={ (): void => setIsCensored(!isCensored) }
+					/>,
+					DisplaySpine && <div
+						class={ `${style.SkinToggle} ${style.Touch}` }
+						data-touch={ isSpecialTouchMode ? 1 : 0 }
+						onClick={ (): void => setIsSpecialTouchMode(!isSpecialTouchMode) }
+					/>,
+				].filter(r => r) }
 
 				{ (
-					(skin.Spine && props.animate && !IsDamaged.value && !props.collapsed) ||
+					(skin.Spine && props.animate && !isDamaged && !props.collapsed) ||
 					Display2DModel
-				) && faceList.value.length > 0
+				) && faceList.length > 0
 					? <div class={ `${style.FaceList} ${props.collapsed ? style.FaceListMargin : ""}` }>
 						<select
 							class={ `form-select form-select-sm ${style.FaceList}` }
-							value={ face.value }
+							value={ face }
 							onChange={ (e): void => {
 								const value = (e.target as HTMLSelectElement).value;
-								face.set(value);
+								setFace(value);
 							} }
 						>
-							{ faceList.value.map(f => {
+							{ faceList.map(f => {
 								const ft = FACETYPE[f.toUpperCase()];
 								return <option value={ f }>
 									{ ft
@@ -519,10 +508,12 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 											class="form-check-input"
 											type="checkbox"
 											disabled={ !AvailableAnim }
-											checked={ IsAnimating.value }
-											onClick={ (): void => IsAnimating.set(!IsAnimating.value) }
+											checked={ enableAnimation }
+											onClick={ (): void => setEnableAnimation(!enableAnimation) }
 										/>
-										<Locale k="UNIT_VIEW_SKIN_ANIMATION_SWITCH" />
+										<span class={ !AvailableAnim ? "text-secondary" : undefined }>
+											<Locale k="UNIT_VIEW_SKIN_ANIMATION_SWITCH" />
+										</span>
 									</label>
 								</div>
 
@@ -533,8 +524,8 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 										<input
 											class="form-check-input"
 											type="checkbox"
-											checked={ IsBlackBG.value }
-											onClick={ (): void => IsBlackBG.set(!IsBlackBG.value) }
+											checked={ asBlackBG }
+											onClick={ (): void => setAsBlackBG(!asBlackBG) }
 										/>
 										<Locale k="UNIT_VIEW_SKIN_BLACKBG_SWITCH" />
 									</label>
@@ -547,8 +538,8 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 										<input
 											class="form-check-input"
 											type="checkbox"
-											checked={ HideGroup.value }
-											onClick={ (): void => HideGroup.set(!HideGroup.value) }
+											checked={ hideGroupLogo }
+											onClick={ (): void => setHideGroupLogo(!hideGroupLogo) }
 										/>
 										<Locale k="UNIT_VIEW_SKIN_HIDEGROUP_SWITCH" />
 									</label>
@@ -558,9 +549,9 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							{ detailView && <SkinView
 								unit={ unit }
 								skin={ skin }
-								animate={ IsAnimating.value }
-								black={ IsBlackBG.value }
-								hideGroup={ HideGroup.value }
+								animate={ enableAnimation }
+								black={ asBlackBG }
+								hideGroup={ hideGroupLogo }
 							/> }
 						</PopupBase>
 					</>

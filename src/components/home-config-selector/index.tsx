@@ -1,8 +1,10 @@
 import { FunctionalComponent } from "preact";
 
+import { LocaleList } from "@/types/Locale";
+
 import { AssetsRoot, ImageExtension, ImageExtensionList } from "@/libs/Const";
 import { ChangeImage, isActive } from "@/libs/Functions";
-import { ChangeLanguage, CurrentLocale, LocaleList } from "@/libs/Locale";
+import { ChangeLanguage, CurrentLocale } from "@/libs/Locale";
 // import { LangValidation, LocaleGet } from "@/libs/Locale";
 import { ChangeDB, CurrentDB, DBList, DBTypes } from "@/libs/DB";
 

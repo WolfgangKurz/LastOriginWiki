@@ -1,0 +1,258 @@
+uid: Gigantes_TR_1C_Middle_N
+rarity: 3
+type: 1
+role: 0
+category: 0
+stat:
+  hp:
+    - 1000
+    - 75
+  atk:
+    - 70
+    - 7
+  def:
+    - 100
+    - 5
+  spd: 3.1
+  cri: 5
+  acc: 80
+  eva: 0
+  res:
+    fire: 0
+    chill: 0
+    thunder: -25
+skills:
+  - key: Skill_MP_Gigantes_N_1
+    icon: MeleeAttack
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 1.8
+      range: 1
+      ap: 9
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Gigantes_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_STUN
+              desc:
+                desc: Effect_MP_Gigantes_N_1_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 50%
+                type: 22
+                stun: true
+              overlap: 0
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_Gigantes_N_2
+    icon: AssaultAttack
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 1.3
+      range: 2
+      ap: 7
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Gigantes_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_Push
+              desc:
+                desc: Effect_MP_Gigantes_N_2_1
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 52
+                position:
+                  type: push
+                  range:
+                    base: 1
+                    per: 0
+              overlap: 0
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Gigantes_N_2_2
+                type: 0
+                value: "50"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 50
+                  target: 0
+              overlap: 0
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Gigantes_N_2_3
+                type: 0
+                value: "75"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 75
+                  target: 0
+              overlap: 0
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_Gigantes_N_3
+    icon: P.TeamDefBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Gigantes_N_3
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_Line
+              desc:
+                desc: Effect_MP_Gigantes_N_3_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 50
+                guard: col
+              overlap: 1
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Gigantes_N_11
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_MP_Gigantes_N_11_1
+                type: 1
+                value: "1.250000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: 125%
+                  per: 1%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: -1
+ai: AI_MP_Dummy03_TR

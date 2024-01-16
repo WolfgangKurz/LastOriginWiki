@@ -467,7 +467,9 @@ country: GB
 age: "27"
 secretRoomType: Adult
 marriageVoice: true
-introVoice: []
+introVoice:
+  - jp
+  - jpdmm
 favor:
   present: 1.2
   clear: 1.2
@@ -554,10 +556,11 @@ cv:
     jpdmm: 上田麗奈
   M: {}
 source:
-  - - "*2-1"
-    - 6-1Ex
-    - 7-4
-    - 9-5
+  - - 2:1:*2-1
+  - - 6:1:6-1Ex
+  - - 7:1:7-4
+  - - 9:1:9-5
+  - - 12:1:12-2Ex
   - - Ev:Ev1:Ev-4B
   - - Ev:Ev3:Ev-2Ex
   - - Ev:Ev5:Ev2-2ep
@@ -575,6 +578,7 @@ source:
   - - Ev:Ev19:EV3-4B
   - - Ev:Ev20:EV1-6
   - - Ev:Ev21:EV2-1Ex
+  - - Ev:Ev22:EV1-2Ex
   - - Ev:Ev23:EV1-1Ex
 research: false
 skills:
@@ -658,6 +662,7 @@ skills:
                       per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.38
           type: 0
           range: 2
@@ -719,6 +724,7 @@ skills:
                       per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.49
           type: 0
           range: 2
@@ -780,6 +786,7 @@ skills:
                       per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.6
           type: 0
           range: 2
@@ -841,6 +848,7 @@ skills:
                       per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.71
           type: 0
           range: 2
@@ -902,6 +910,7 @@ skills:
                       per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.82
           type: 0
           range: 2
@@ -963,6 +972,7 @@ skills:
                       per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 1.93
           type: 0
           range: 2
@@ -1024,6 +1034,7 @@ skills:
                       per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.04
           type: 0
           range: 2
@@ -1085,6 +1096,7 @@ skills:
                       per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.15
           type: 0
           range: 2
@@ -1146,6 +1158,7 @@ skills:
                       per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.26
           type: 0
           range: 2
@@ -1207,6 +1220,7 @@ skills:
                       per: 0.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -1310,6 +1324,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.07
           type: 0
           range: 5
@@ -1363,6 +1378,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.235
           type: 0
           range: 5
@@ -1416,6 +1432,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.4
           type: 0
           range: 5
@@ -1469,6 +1486,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.565
           type: 0
           range: 5
@@ -1522,6 +1540,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.73
           type: 0
           range: 5
@@ -1575,6 +1594,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 2.895
           type: 0
           range: 5
@@ -1628,6 +1648,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 3.06
           type: 0
           range: 5
@@ -1681,6 +1702,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 3.225
           type: 0
           range: 5
@@ -1734,6 +1756,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
         - rate: 3.39
           type: 0
           range: 5
@@ -1787,6 +1810,7 @@ skills:
                       per: 1.5%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -1895,6 +1919,7 @@ skills:
                       per: 0.1
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
             - key: Effect_BR_Amy_N_11
               on: enemy_killed
               if:
@@ -1930,6 +1955,7 @@ skills:
                       per: 0.1
                   overlap: 3
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -2092,6 +2118,7 @@ skills:
                       per: 0.2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Amy_N_41
               on: round
               if:
@@ -2148,6 +2175,7 @@ skills:
                       per: 0.2%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Amy_N_42
               on: round
               if:
@@ -2204,6 +2232,7 @@ skills:
                       per: 0.4%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Amy_N_43
               on: round
               if:
@@ -2260,6 +2289,7 @@ skills:
                       per: 0.6%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Amy_N_44
               on: round
               if:
@@ -2316,6 +2346,7 @@ skills:
                       per: 0.8%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Amy_N_45
               on: round
               if:
@@ -2372,6 +2403,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Amy_N_46
               on: round
               if:
@@ -2428,6 +2460,7 @@ skills:
                       per: 0.4%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Amy_N_47
               on: round
               if:
@@ -2484,6 +2517,7 @@ skills:
                       per: 0.6%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Amy_N_48
               on: round
               if:
@@ -2540,6 +2574,7 @@ skills:
                       per: 0.8%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Amy_N_49
               on: round
               if:
@@ -2596,6 +2631,7 @@ skills:
                       per: 1%
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -2904,6 +2940,7 @@ skills:
                       per: -0.05
                   overlap: 0
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Amy_N_51
               on: enemy_killed
               if:
@@ -2937,6 +2974,7 @@ skills:
                       per: -0.05
                   overlap: 0
               maxStack: 0
+              overlapGroup: -1
             - key: Effect_BR_Amy_N_52
               on: round
               if:
@@ -2968,6 +3006,7 @@ skills:
                     penetration_force: true
                   overlap: 4
               maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -3585,6 +3624,7 @@ skins:
         iconId: 1
         tbarId: 1
         voiceId: 1
+        consumableKey: Skin_BR_Amy_1
     - sid: 2
       artist: Taesi
       price: 91
