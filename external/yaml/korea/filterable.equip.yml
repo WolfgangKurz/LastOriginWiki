@@ -3647,7 +3647,11 @@
             count: 20
           - item: RobotParts_HDCalculationControl
             count: 10
-    upgrade: null
+    upgrade:
+      to: System_Highspd_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 1
       positive: true
@@ -4999,8 +5003,7 @@
   fullKey: Sub_Observer_T1
   icon: UI_Icon_Equip_Sub_Observer_T1
   craft: false
-  limit:
-    - Attacker
+  limit: null
   source:
     - - 12:3:12-11B
     - - Ev:Ev18:EV1-2B
@@ -5046,8 +5049,7 @@
   fullKey: Sub_Observer_T2
   icon: UI_Icon_Equip_Sub_Observer_T2
   craft: false
-  limit:
-    - Attacker
+  limit: null
   source:
     - - 12:3:12-11B
     - - Ev:Ev18:EV1-2B
@@ -5093,8 +5095,7 @@
   fullKey: Sub_Observer_T3
   icon: UI_Icon_Equip_Sub_Observer_T3
   craft: false
-  limit:
-    - Attacker
+  limit: null
   source:
     - - 12:3:12-11B
     - - Ev:Ev7:Ev2-3B
@@ -5152,8 +5153,7 @@
   fullKey: Sub_Observer_T4
   icon: UI_Icon_Equip_Sub_Observer_T4
   craft: false
-  limit:
-    - Attacker
+  limit: null
   source:
     - - 5:1:5-2Ex
     - - 7:1:7-8Ex
@@ -5203,7 +5203,11 @@
             count: 15
           - item: RobotParts_HDCalculationControl
             count: 20
-    upgrade: null
+    upgrade:
+      to: Sub_Observer_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 6
       positive: true
@@ -5704,9 +5708,9 @@
         - item: Consumable_EquipProPart_T1
           count: 4
   effects:
-    - type: 8
-      positive: true
     - type: 6
+      positive: true
+    - type: 8
       positive: true
     - type: 89
       positive: false
@@ -5752,9 +5756,9 @@
         - item: Consumable_EquipProPart_T2
           count: 4
   effects:
-    - type: 8
-      positive: true
     - type: 6
+      positive: true
+    - type: 8
       positive: true
     - type: 89
       positive: false
@@ -5812,9 +5816,9 @@
         - item: Consumable_EquipProPart_T3
           count: 4
   effects:
-    - type: 8
-      positive: true
     - type: 6
+      positive: true
+    - type: 8
       positive: true
     - type: 89
       positive: false
@@ -5876,11 +5880,15 @@
             count: 15
           - item: RobotParts_HeavyWeapon
             count: 20
-    upgrade: null
+    upgrade:
+      to: Sub_SpSight_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
-    - type: 8
-      positive: true
     - type: 6
+      positive: true
+    - type: 8
       positive: true
     - type: 89
       positive: false
@@ -7208,7 +7216,11 @@
             count: 20
           - item: RobotParts_HeavyWeapon
             count: 30
-    upgrade: null
+    upgrade:
+      to: Sub_AdvRadar_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 1
       positive: true
@@ -11335,6 +11347,8 @@
       positive: true
     - type: 55
       positive: true
+    - type: 101
+      positive: false
     - type: 89
       positive: false
 - available: false
@@ -12278,7 +12292,11 @@
             count: 30
           - item: RobotParts_SuperAlloyArmor
             count: 40
-    upgrade: null
+    upgrade:
+      to: Sub_NitroEx3000_T5
+      cost:
+        - item: Consumable_EWMPMetal
+          count: 1500
   effects:
     - type: 17
       positive: true
@@ -12286,7 +12304,7 @@
       positive: true
     - type: 12
       positive: true
-    - type: 7
+    - type: 106
       positive: false
 - available: true
   roguelike: false
@@ -16005,11 +16023,11 @@
             count: 30
     upgrade: null
   effects:
-    - type: 8
-      positive: true
     - type: 6
       positive: true
-    - type: 89
+    - type: 8
+      positive: true
+    - type: 101
       positive: false
 - available: true
   roguelike: false
@@ -16875,6 +16893,8 @@
       positive: true
     - type: 12
       positive: true
+    - type: 106
+      positive: false
 - available: true
   roguelike: false
   rarity: 5
@@ -21006,12 +21026,10 @@
             count: 40
     upgrade: null
   effects:
+    - type: 8
+      positive: true
     - type: 7
       positive: true
-    - type: 9
-      positive: true
-    - type: 101
-      positive: false
 - available: true
   roguelike: false
   rarity: 5
@@ -26778,3 +26796,304 @@
       positive: true
     - type: 58
       positive: true
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 1
+  key: Highspd
+  fullKey: System_Highspd_T5
+  icon: UI_Icon_Equip_System_Highspd_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 1500
+        item: []
+      - res: 2325
+        item: []
+      - res: 3150
+        item: []
+      - res: 3975
+        item: []
+      - res: 4800
+        item: []
+      - res: 5625
+        item:
+          - item: Advanced_Module
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 6450
+        item:
+          - item: Advanced_Module
+            count: 40
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 7275
+        item:
+          - item: Advanced_Module
+            count: 60
+          - item: RobotParts_HDCalculationControl
+            count: 20
+      - res: 8100
+        item:
+          - item: Special_Module
+            count: 15
+          - item: RobotParts_HDCalculationControl
+            count: 30
+      - res: 8925
+        item:
+          - item: Special_Module
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 40
+    upgrade: null
+  effects:
+    - type: 1
+      positive: true
+    - type: 55
+      positive: false
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 2
+  key: Observer
+  fullKey: Sub_Observer_T5
+  icon: UI_Icon_Equip_Sub_Observer_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 1500
+        item: []
+      - res: 2325
+        item: []
+      - res: 3150
+        item: []
+      - res: 3975
+        item: []
+      - res: 4800
+        item: []
+      - res: 5625
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 5
+          - item: RobotParts_HDCalculationControl
+            count: 5
+      - res: 6450
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 10
+          - item: RobotParts_HDCalculationControl
+            count: 10
+      - res: 7275
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 15
+          - item: RobotParts_HDCalculationControl
+            count: 15
+      - res: 8100
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 20
+          - item: RobotParts_HDCalculationControl
+            count: 20
+      - res: 8925
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 25
+          - item: RobotParts_HDCalculationControl
+            count: 25
+    upgrade: null
+  effects:
+    - type: 6
+      positive: true
+    - type: 55
+      positive: true
+    - type: 89
+      positive: false
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 2
+  key: SpSight
+  fullKey: Sub_SpSight_T5
+  icon: UI_Icon_Equip_Sub_SpSight_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 1500
+        item: []
+      - res: 2325
+        item: []
+      - res: 3150
+        item: []
+      - res: 3975
+        item: []
+      - res: 4800
+        item: []
+      - res: 5625
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 5
+          - item: RobotParts_HeavyWeapon
+            count: 5
+      - res: 6450
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 10
+          - item: RobotParts_HeavyWeapon
+            count: 10
+      - res: 7275
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 15
+          - item: RobotParts_HeavyWeapon
+            count: 15
+      - res: 8100
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 20
+          - item: RobotParts_HeavyWeapon
+            count: 20
+      - res: 8925
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 25
+          - item: RobotParts_HeavyWeapon
+            count: 25
+    upgrade: null
+  effects:
+    - type: 6
+      positive: true
+    - type: 8
+      positive: true
+    - type: 89
+      positive: false
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 2
+  key: AdvRadar
+  fullKey: Sub_AdvRadar_T5
+  icon: UI_Icon_Equip_Sub_AdvRadar_T5
+  craft: false
+  limit:
+    - Attacker
+  source: []
+  upgrade:
+    enchant:
+      - res: 2000
+        item: []
+      - res: 3100
+        item: []
+      - res: 4200
+        item: []
+      - res: 5300
+        item: []
+      - res: 6400
+        item: []
+      - res: 7500
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 10
+          - item: RobotParts_HeavyWeapon
+            count: 10
+      - res: 8600
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 15
+          - item: RobotParts_HeavyWeapon
+            count: 15
+      - res: 9700
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 20
+          - item: RobotParts_HeavyWeapon
+            count: 20
+      - res: 10800
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 25
+          - item: RobotParts_HeavyWeapon
+            count: 25
+      - res: 11900
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 30
+          - item: RobotParts_HeavyWeapon
+            count: 30
+    upgrade: null
+  effects:
+    - type: 1
+      positive: true
+    - type: 7
+      positive: true
+    - type: 9
+      positive: true
+- available: true
+  roguelike: false
+  rarity: 6
+  type: 2
+  key: NitroEx3000
+  fullKey: Sub_NitroEx3000_T5
+  icon: UI_Icon_Equip_Sub_NitroEx3000_T5
+  craft: false
+  limit: null
+  source: []
+  upgrade:
+    enchant:
+      - res: 2500
+        item: []
+      - res: 3875
+        item: []
+      - res: 5250
+        item: []
+      - res: 6625
+        item: []
+      - res: 8000
+        item: []
+      - res: 9375
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 20
+          - item: RobotParts_SuperAlloyArmor
+            count: 20
+      - res: 10750
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 25
+          - item: RobotParts_SuperAlloyArmor
+            count: 25
+      - res: 12125
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 30
+          - item: RobotParts_SuperAlloyArmor
+            count: 30
+      - res: 13500
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 35
+          - item: RobotParts_SuperAlloyArmor
+            count: 35
+      - res: 14875
+        item:
+          - item: Consumable_EquipProPart_T3
+            count: 40
+          - item: RobotParts_SuperAlloyArmor
+            count: 40
+    upgrade: null
+  effects:
+    - type: 17
+      positive: true
+    - type: 10
+      positive: true
+    - type: 12
+      positive: true
+    - type: 106
+      positive: false
