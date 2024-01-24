@@ -4,7 +4,7 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12435" date="2024-01-25"
+	<ChangelogItem title="Build 12439" date="2024-01-25"
 		new={ <>
 			<li>신규 이벤트 <BY>우주에서 온 황금</BY>의 정보가 추가되었습니다.</li>
 			<li>신규 전투원 <BY>파프니르</BY>의 정보가 추가되었습니다.</li>
