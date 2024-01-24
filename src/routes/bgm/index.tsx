@@ -180,7 +180,7 @@ const BGM: FunctionalComponent = () => {
 				for (let i = 0; i < lyrics.length; i++) {
 					const l = lyrics[i];
 
-					if (t >= l.time)
+					if (l.time >= 0 && t >= l.time)
 						lyricsIndex = i;
 					else
 						break;

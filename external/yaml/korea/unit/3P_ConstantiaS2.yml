@@ -23,6 +23,18 @@ promotions:
         count: 250
       - id: RobotParts_HDCalculationControl
         count: 50
+  - to: 5
+    level: 90
+    favor: "100"
+    req:
+      - id: Consumable_OriginDustAdv
+        count: 450
+      - id: Consumable_OriginDustSp
+        count: 150
+      - id: Special_Module
+        count: 100
+      - id: RobotParts_HDCalculationControl
+        count: 150
 lvLimits:
   - level: 101
     items:
@@ -514,18 +526,18 @@ stat:
       ice: 0
       lightning: 0
   - HP:
-      - 306
-      - 1979.1
+      - 431
+      - 2104.1
     ATK:
-      - 114
-      - 750.57
+      - 113
+      - 749.57
     DEF:
-      - 33
-      - 74.58
+      - 38
+      - 79.58
     SPD: 4.1
     CRI: 10
-    ACC: 170
-    EVA: 7.5
+    ACC: 175
+    EVA: 10
     Resist:
       fire: 0
       ice: 0
@@ -600,12 +612,7 @@ skills:
             - key: Effect_3P_ConstantiaS2_N_1
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 78
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -620,23 +627,80 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_VULNERABLE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 0
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_1_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_11_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
               overlapGroup: -1
         - rate: 1.38
           type: 0
@@ -653,12 +717,7 @@ skills:
             - key: Effect_3P_ConstantiaS2_N_1
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 78
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -673,23 +732,80 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_VULNERABLE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 0
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_1_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_11_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
               overlapGroup: -1
         - rate: 1.49
           type: 0
@@ -706,12 +822,7 @@ skills:
             - key: Effect_3P_ConstantiaS2_N_1
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 78
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -726,23 +837,80 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_VULNERABLE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 0
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_1_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_11_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
               overlapGroup: -1
         - rate: 1.6
           type: 0
@@ -759,12 +927,7 @@ skills:
             - key: Effect_3P_ConstantiaS2_N_1
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 78
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -779,23 +942,80 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_VULNERABLE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 0
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_1_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_11_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
               overlapGroup: -1
         - rate: 1.71
           type: 0
@@ -812,12 +1032,7 @@ skills:
             - key: Effect_3P_ConstantiaS2_N_1
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 78
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -832,23 +1047,80 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_VULNERABLE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 0
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_1_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_11_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
               overlapGroup: -1
         - rate: 1.82
           type: 0
@@ -865,12 +1137,7 @@ skills:
             - key: Effect_3P_ConstantiaS2_N_1
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 78
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -885,23 +1152,80 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_VULNERABLE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 0
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_1_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_11_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
               overlapGroup: -1
         - rate: 1.93
           type: 0
@@ -918,12 +1242,7 @@ skills:
             - key: Effect_3P_ConstantiaS2_N_1
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 78
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -938,23 +1257,80 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_VULNERABLE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 0
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_1_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_11_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
               overlapGroup: -1
         - rate: 2.04
           type: 0
@@ -971,12 +1347,7 @@ skills:
             - key: Effect_3P_ConstantiaS2_N_1
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 78
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -991,23 +1362,80 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_VULNERABLE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 0
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_1_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_11_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
               overlapGroup: -1
         - rate: 2.15
           type: 0
@@ -1024,12 +1452,7 @@ skills:
             - key: Effect_3P_ConstantiaS2_N_1
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 78
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -1044,23 +1467,80 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_VULNERABLE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 0
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_1_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_11_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
               overlapGroup: -1
         - rate: 2.26
           type: 0
@@ -1077,12 +1557,7 @@ skills:
             - key: Effect_3P_ConstantiaS2_N_1
               on: attack_success
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 78
-                    attr: 1
+                - false
                 - false
               body:
                 - 0
@@ -1097,23 +1572,80 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_VULNERABLE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.015000"
-                  attr: 3
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 30%
-                      per: 1.5%
-                  overlap: 0
+                    type: 48
+                    damage_increase:
+                      base: 10%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_1_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
               maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_11
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_TROOPER_DMG_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_11_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: -25%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
               overlapGroup: -1
     values:
       index:
@@ -1128,14 +1660,32 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_PhyATK_UP
+        - - icon: BuffIcon_VULNERABLE
             desc:
               desc: Effect_3P_ConstantiaS2_N_1_1
               type: 1
-              value: "0.300000"
-              level: "0.015000"
-            base: 0.3
-            per: 0.015
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_TROOPER_DMG_DOWN
+            desc:
+              desc: Effect_3P_ConstantiaS2_N_1_2
+              type: 1
+              value: "-0.250000"
+              level: "-0.025000"
+            base: -0.25
+            per: -0.025
+            chance: 0
+          - icon: BuffIcon_TROOPER_DMG_DOWN
+            desc:
+              desc: Effect_3P_ConstantiaS2_N_11_1
+              type: 1
+              value: "-0.250000"
+              level: "-0.025000"
+            base: -0.25
+            per: -0.025
             chance: 1
   "2":
     key: "2"
@@ -1186,22 +1736,20 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_AP_DOWN
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
-                    rounds: 1
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -25%
-                      per: -1.25%
-                  overlap: 4
+                    type: 87
+                    attack_target: true
+                  overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_2
@@ -1216,36 +1764,112 @@ skills:
                     type: 78
                     immovable: true
                   overlap: 1
-                - icon: BuffIcon_VULNERABLE
+                - icon: BuffIcon_AP_DOWN
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_3
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
+                    value: "-0.250000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
+                    chance: 0%
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
                   overlap: 4
-                - icon: BuffIcon_MARKING
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_4
-                    type: 0
-                    value: "0"
+                    type: 1
+                    value: "29"
                     level: "0"
                   attr: 1
                   erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_21
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 87
-                    attack_target: true
-                  overlap: 1
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_22_1
+                    type: 1
+                    value: "29"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 0.58
@@ -1278,22 +1902,20 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_AP_DOWN
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
-                    rounds: 1
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -25%
-                      per: -1.25%
-                  overlap: 4
+                    type: 87
+                    attack_target: true
+                  overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_2
@@ -1308,36 +1930,112 @@ skills:
                     type: 78
                     immovable: true
                   overlap: 1
-                - icon: BuffIcon_VULNERABLE
+                - icon: BuffIcon_AP_DOWN
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_3
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
+                    value: "-0.250000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
+                    chance: 0%
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
                   overlap: 4
-                - icon: BuffIcon_MARKING
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_4
-                    type: 0
-                    value: "0"
+                    type: 1
+                    value: "29"
                     level: "0"
                   attr: 1
                   erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_21
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 87
-                    attack_target: true
-                  overlap: 1
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_22_1
+                    type: 1
+                    value: "29"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 0.625
@@ -1370,22 +2068,20 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_AP_DOWN
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
-                    rounds: 1
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -25%
-                      per: -1.25%
-                  overlap: 4
+                    type: 87
+                    attack_target: true
+                  overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_2
@@ -1400,36 +2096,112 @@ skills:
                     type: 78
                     immovable: true
                   overlap: 1
-                - icon: BuffIcon_VULNERABLE
+                - icon: BuffIcon_AP_DOWN
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_3
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
+                    value: "-0.250000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
+                    chance: 0%
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
                   overlap: 4
-                - icon: BuffIcon_MARKING
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_4
-                    type: 0
-                    value: "0"
+                    type: 1
+                    value: "29"
                     level: "0"
                   attr: 1
                   erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_21
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 87
-                    attack_target: true
-                  overlap: 1
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_22_1
+                    type: 1
+                    value: "29"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 0.67
@@ -1462,22 +2234,20 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_AP_DOWN
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
-                    rounds: 1
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -25%
-                      per: -1.25%
-                  overlap: 4
+                    type: 87
+                    attack_target: true
+                  overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_2
@@ -1492,36 +2262,112 @@ skills:
                     type: 78
                     immovable: true
                   overlap: 1
-                - icon: BuffIcon_VULNERABLE
+                - icon: BuffIcon_AP_DOWN
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_3
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
+                    value: "-0.250000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
+                    chance: 0%
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
                   overlap: 4
-                - icon: BuffIcon_MARKING
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_4
-                    type: 0
-                    value: "0"
+                    type: 1
+                    value: "29"
                     level: "0"
                   attr: 1
                   erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_21
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 87
-                    attack_target: true
-                  overlap: 1
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_22_1
+                    type: 1
+                    value: "29"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 0.715
@@ -1554,22 +2400,20 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_AP_DOWN
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
-                    rounds: 1
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -25%
-                      per: -1.25%
-                  overlap: 4
+                    type: 87
+                    attack_target: true
+                  overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_2
@@ -1584,36 +2428,112 @@ skills:
                     type: 78
                     immovable: true
                   overlap: 1
-                - icon: BuffIcon_VULNERABLE
+                - icon: BuffIcon_AP_DOWN
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_3
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
+                    value: "-0.250000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
+                    chance: 0%
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
                   overlap: 4
-                - icon: BuffIcon_MARKING
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_4
-                    type: 0
-                    value: "0"
+                    type: 1
+                    value: "29"
                     level: "0"
                   attr: 1
                   erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_21
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 87
-                    attack_target: true
-                  overlap: 1
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_22_1
+                    type: 1
+                    value: "29"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 0.76
@@ -1646,22 +2566,20 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_AP_DOWN
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
-                    rounds: 1
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -25%
-                      per: -1.25%
-                  overlap: 4
+                    type: 87
+                    attack_target: true
+                  overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_2
@@ -1676,36 +2594,112 @@ skills:
                     type: 78
                     immovable: true
                   overlap: 1
-                - icon: BuffIcon_VULNERABLE
+                - icon: BuffIcon_AP_DOWN
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_3
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
+                    value: "-0.250000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
+                    chance: 0%
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
                   overlap: 4
-                - icon: BuffIcon_MARKING
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_4
-                    type: 0
-                    value: "0"
+                    type: 1
+                    value: "29"
                     level: "0"
                   attr: 1
                   erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_21
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 87
-                    attack_target: true
-                  overlap: 1
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_22_1
+                    type: 1
+                    value: "29"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 0.805
@@ -1738,22 +2732,20 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_AP_DOWN
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
-                    rounds: 1
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -25%
-                      per: -1.25%
-                  overlap: 4
+                    type: 87
+                    attack_target: true
+                  overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_2
@@ -1768,36 +2760,112 @@ skills:
                     type: 78
                     immovable: true
                   overlap: 1
-                - icon: BuffIcon_VULNERABLE
+                - icon: BuffIcon_AP_DOWN
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_3
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
+                    value: "-0.250000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
+                    chance: 0%
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
                   overlap: 4
-                - icon: BuffIcon_MARKING
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_4
-                    type: 0
-                    value: "0"
+                    type: 1
+                    value: "29"
                     level: "0"
                   attr: 1
                   erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_21
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 87
-                    attack_target: true
-                  overlap: 1
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_22_1
+                    type: 1
+                    value: "29"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 0.85
@@ -1830,22 +2898,20 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_AP_DOWN
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
-                    rounds: 1
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -25%
-                      per: -1.25%
-                  overlap: 4
+                    type: 87
+                    attack_target: true
+                  overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_2
@@ -1860,36 +2926,112 @@ skills:
                     type: 78
                     immovable: true
                   overlap: 1
-                - icon: BuffIcon_VULNERABLE
+                - icon: BuffIcon_AP_DOWN
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_3
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
+                    value: "-0.250000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
+                    chance: 0%
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
                   overlap: 4
-                - icon: BuffIcon_MARKING
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_4
-                    type: 0
-                    value: "0"
+                    type: 1
+                    value: "29"
                     level: "0"
                   attr: 1
                   erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_21
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 87
-                    attack_target: true
-                  overlap: 1
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_22_1
+                    type: 1
+                    value: "29"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 0.895
@@ -1922,22 +3064,20 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_AP_DOWN
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
-                    rounds: 1
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -25%
-                      per: -1.25%
-                  overlap: 4
+                    type: 87
+                    attack_target: true
+                  overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_2
@@ -1952,36 +3092,112 @@ skills:
                     type: 78
                     immovable: true
                   overlap: 1
-                - icon: BuffIcon_VULNERABLE
+                - icon: BuffIcon_AP_DOWN
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_3
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
+                    value: "-0.250000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
+                    chance: 0%
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
                   overlap: 4
-                - icon: BuffIcon_MARKING
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_4
-                    type: 0
-                    value: "0"
+                    type: 1
+                    value: "29"
                     level: "0"
                   attr: 1
                   erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_21
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 87
-                    attack_target: true
-                  overlap: 1
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_22_1
+                    type: 1
+                    value: "29"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 0.94
@@ -2014,22 +3230,20 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_AP_DOWN
+                - icon: BuffIcon_MARKING
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_1
                     type: 1
-                    value: "-0.250000"
-                    level: "-0.012500"
+                    value: "0"
+                    level: "0"
                   attr: 1
                   erase:
-                    rounds: 1
+                    rounds: 2
                   value:
                     isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -25%
-                      per: -1.25%
-                  overlap: 4
+                    type: 87
+                    attack_target: true
+                  overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_2
@@ -2044,36 +3258,112 @@ skills:
                     type: 78
                     immovable: true
                   overlap: 1
-                - icon: BuffIcon_VULNERABLE
+                - icon: BuffIcon_AP_DOWN
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_3
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
+                    value: "-0.250000"
+                    level: "-0.010000"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 48
-                    damage_increase:
-                      base: 10%
-                      per: 0.5%
+                    chance: 0%
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
                   overlap: 4
-                - icon: BuffIcon_MARKING
+                - icon: BuffIcon_REMOVE_BUFF
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_2_4
-                    type: 0
-                    value: "0"
+                    type: 1
+                    value: "29"
                     level: "0"
                   attr: 1
                   erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_21
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_AP_DOWN
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    type: 87
-                    attack_target: true
-                  overlap: 1
+                    type: 13
+                    turnSpeed:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_REMOVE_BUFF
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_22_1
+                    type: 1
+                    value: "29"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 88
+                    off:
+                      type: 29
+                      target: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
     values:
@@ -2089,14 +3379,14 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_AP_DOWN
+        - - icon: BuffIcon_MARKING
             desc:
               desc: Effect_3P_ConstantiaS2_N_2_1
               type: 1
-              value: "-0.250000"
-              level: "-0.012500"
-            base: -0.25
-            per: -0.0125
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
             chance: 1
           - icon: BuffIcon_SNARE
             desc:
@@ -2107,22 +3397,40 @@ skills:
             base: 0
             per: 0
             chance: 1
-          - icon: BuffIcon_VULNERABLE
+          - icon: BuffIcon_AP_DOWN
             desc:
               desc: Effect_3P_ConstantiaS2_N_2_3
               type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
-            chance: 1
-          - icon: BuffIcon_MARKING
+              value: "-0.250000"
+              level: "-0.010000"
+            base: -0.25
+            per: -0.01
+            chance: 0
+          - icon: BuffIcon_REMOVE_BUFF
             desc:
               desc: Effect_3P_ConstantiaS2_N_2_4
-              type: 0
-              value: "0"
+              type: 1
+              value: "29"
               level: "0"
-            base: 0
+            base: 29
+            per: 0
+            chance: 0
+          - icon: BuffIcon_AP_DOWN
+            desc:
+              desc: Effect_3P_ConstantiaS2_N_21_1
+              type: 1
+              value: "-0.250000"
+              level: "-0.010000"
+            base: -0.25
+            per: -0.01
+            chance: 1
+          - icon: BuffIcon_REMOVE_BUFF
+            desc:
+              desc: Effect_3P_ConstantiaS2_N_22_1
+              type: 1
+              value: "29"
+              level: "0"
+            base: 29
             per: 0
             chance: 1
   "3":
@@ -2149,7 +3457,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
+          grid: F>1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -2190,7 +3498,60 @@ skills:
                     ap:
                       base: 4
                       per: 0.2
-                  overlap: 0
+                  overlap: 4
+                - icon: BuffIcon_EXP_UP
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_3_2
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 95
+                    exp:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_ConstantiaS2_N_31
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_EXP_UP
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_31_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 95
+                    exp:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
     values:
@@ -2214,6 +3575,24 @@ skills:
               level: "0.200000"
             base: 4
             per: 0.2
+            chance: 1
+          - icon: BuffIcon_EXP_UP
+            desc:
+              desc: Effect_3P_ConstantiaS2_N_3_2
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_EXP_UP
+            desc:
+              desc: Effect_3P_ConstantiaS2_N_31_1
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
             chance: 1
   "4":
     key: "4"
@@ -2273,7 +3652,7 @@ skills:
                     level: "0.005000"
                   attr: 0
                   erase:
-                    rounds: 3
+                    rounds: 2
                   value:
                     isBuff: true
                     type: 1
@@ -2289,10 +3668,9 @@ skills:
                     level: "0.010000"
                   attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 7
                     accuracy:
                       base: 20%
@@ -2306,19 +3684,18 @@ skills:
                     level: "0.005000"
                   attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 2
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 9
                     critical:
                       base: 5%
                       per: 0.5%
                   overlap: 4
-              maxStack: 1
+              maxStack: 0
               overlapGroup: -1
-            - key: Effect_3P_ConstantiaS2_N_11
-              on: attack
+            - key: Effect_3P_ConstantiaS2_N_41
+              on: wave
               if:
                 - false
                 - false
@@ -2333,129 +3710,24 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 2
+              target: 0
               buffs:
-                - icon: BuffIcon_ATK_UP
+                - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_3P_ConstantiaS2_N_11_1
+                    desc: Effect_3P_ConstantiaS2_N_41_1
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase: {}
                   value:
                     isBuff: true
-                    chance: 0%
-                    type: 1
-                    attack:
-                      base: 10%
-                      per: 0.5%
+                    type: 12
+                    turnSpeed:
+                      base: 0
+                      per: 0
                   overlap: 4
-                - icon: BuffIcon_ACCURACY_UP
-                  desc:
-                    desc: Effect_3P_ConstantiaS2_N_11_2
-                    type: 1
-                    value: "0.200000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 3
-                  value:
-                    isBuff: true
-                    type: 7
-                    accuracy:
-                      base: 20%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_CRITICAL_UP
-                  desc:
-                    desc: Effect_3P_ConstantiaS2_N_11_3
-                    type: 1
-                    value: "0.050000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 9
-                    critical:
-                      base: 5%
-                      per: 0.5%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_3P_ConstantiaS2_N_12
-              on: attack
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 2
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_3P_ConstantiaS2_N_12_1
-                    type: 1
-                    value: "0.100000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 1
-                    attack:
-                      base: 10%
-                      per: 0.5%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_UP
-                  desc:
-                    desc: Effect_3P_ConstantiaS2_N_12_2
-                    type: 1
-                    value: "0.200000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 7
-                    accuracy:
-                      base: 20%
-                      per: 1%
-                  overlap: 4
-                - icon: BuffIcon_CRITICAL_UP
-                  desc:
-                    desc: Effect_3P_ConstantiaS2_N_12_3
-                    type: 1
-                    value: "0.050000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 3
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: 5%
-                      per: 0.5%
-                  overlap: 4
-              maxStack: 1
+              maxStack: 0
               overlapGroup: -1
     values:
       index:
@@ -2487,7 +3759,7 @@ skills:
               level: "0.010000"
             base: 0.2
             per: 0.01
-            chance: 0
+            chance: 1
           - icon: BuffIcon_CRITICAL_UP
             desc:
               desc: Effect_3P_ConstantiaS2_N_4_3
@@ -2496,64 +3768,19 @@ skills:
               level: "0.005000"
             base: 0.05
             per: 0.005
-            chance: 0
-          - icon: BuffIcon_ATK_UP
-            desc:
-              desc: Effect_3P_ConstantiaS2_N_11_1
-              type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
-            chance: 0
-          - icon: BuffIcon_ACCURACY_UP
-            desc:
-              desc: Effect_3P_ConstantiaS2_N_11_2
-              type: 1
-              value: "0.200000"
-              level: "0.010000"
-            base: 0.2
-            per: 0.01
             chance: 1
-          - icon: BuffIcon_CRITICAL_UP
+          - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_3P_ConstantiaS2_N_11_3
+              desc: Effect_3P_ConstantiaS2_N_41_1
               type: 1
-              value: "0.050000"
-              level: "0.005000"
-            base: 0.05
-            per: 0.005
-            chance: 0
-          - icon: BuffIcon_ATK_UP
-            desc:
-              desc: Effect_3P_ConstantiaS2_N_12_1
-              type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
-            chance: 0
-          - icon: BuffIcon_ACCURACY_UP
-            desc:
-              desc: Effect_3P_ConstantiaS2_N_12_2
-              type: 1
-              value: "0.200000"
-              level: "0.010000"
-            base: 0.2
-            per: 0.01
-            chance: 0
-          - icon: BuffIcon_CRITICAL_UP
-            desc:
-              desc: Effect_3P_ConstantiaS2_N_12_3
-              type: 1
-              value: "0.050000"
-              level: "0.005000"
-            base: 0.05
-            per: 0.005
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
             chance: 1
   "5":
     key: "5"
-    icon: P.SelfDefBuff
+    icon: P.Beam
     target: team
     delayed: false
     target_ground: false
@@ -2561,30 +3788,30 @@ skills:
     buffs:
       index:
         - 0
-        - 1
-        - 2
-        - 3
-        - 4
-        - 5
-        - 6
-        - 7
-        - 8
-        - 9
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
       data:
         - rate: 0
           type: 0
           range: 0
           ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
+          grid: F>1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
           dismiss_guard: false
           acc_bonus: 0
-          buff_rate: 102
+          buff_rate: 100
           buffs:
             - key: Effect_3P_ConstantiaS2_N_5
-              on: damaged
+              on: wave
               if:
                 - false
                 - false
@@ -2601,45 +3828,55 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_DEF_All
+                - icon: BuffIcon_DEBUFF_PERDOWN
                   desc:
                     desc: Effect_3P_ConstantiaS2_N_5_1
-                    type: 0
-                    value: "0"
-                    level: "0.020000"
-                  attr: 0
-                  erase:
-                    rounds: 0
+                    type: 1
+                    value: "0.200000"
+                    level: "0.050000"
+                  attr: 3
+                  erase: {}
                   value:
                     isBuff: true
-                    chance: 10%
-                    type: 33
-                    damage_immune:
+                    type: 91
+                    resist:
+                      type: debuff_perdown
+                      value:
+                        base: 20%
+                        per: 5%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_3P_ConstantiaS2_N_5_2
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase: {}
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 20
+                    ap:
                       base: 0
-                      per: 0.02
-                  overlap: 0
+                      per: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 0
-          type: 0
-          range: 0
-          ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 104
-          buffs:
-            - key: Effect_3P_ConstantiaS2_N_5
-              on: damaged
+            - key: Effect_3P_ConstantiaS2_N_51
+              on: wave
               if:
-                - false
-                - false
+                - in_battle:
+                    - Char_3P_Labiata_N
+                - on:
+                    target: target
+                    select:
+                      - Effect_3P_ConstantiaS2_N_5
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
-                - 1
               class:
                 - 0
                 - 1
@@ -2648,44 +3885,37 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 2
               buffs:
-                - icon: BuffIcon_DEF_All
+                - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_3P_ConstantiaS2_N_5_1
+                    desc: Effect_3P_ConstantiaS2_N_51_1
                     type: 0
-                    value: "0"
-                    level: "0.020000"
+                    value: "4"
+                    level: "0.200000"
                   attr: 0
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 10%
-                    type: 33
-                    damage_immune:
-                      base: 0
-                      per: 0.02
-                  overlap: 0
+                    type: 20
+                    ap:
+                      base: 4
+                      per: 0.2
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 0
-          type: 0
-          range: 0
-          ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 106
-          buffs:
-            - key: Effect_3P_ConstantiaS2_N_5
-              on: damaged
+            - key: Effect_3P_ConstantiaS2_N_52
+              on: wave
               if:
-                - false
-                - false
+                - notInBattle:
+                    - Char_3P_Labiata_N
+                - target:
+                    - Char_3P_Vanilla_N
+                    - Char_3P_Alice_N
+                    - Char_3P_Ran_N
+                    - Char_3P_BlackWyrm_N
+                    - Char_3P_Hirume_N
               body:
                 - 0
                 - 1
@@ -2697,368 +3927,24 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 2
               buffs:
-                - icon: BuffIcon_DEF_All
+                - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_3P_ConstantiaS2_N_5_1
+                    desc: Effect_3P_ConstantiaS2_N_52_1
                     type: 0
-                    value: "0"
-                    level: "0.020000"
+                    value: "4"
+                    level: "0.200000"
                   attr: 0
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    chance: 10%
-                    type: 33
-                    damage_immune:
-                      base: 0
-                      per: 0.02
-                  overlap: 0
-              maxStack: 0
-              overlapGroup: -1
-        - rate: 0
-          type: 0
-          range: 0
-          ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 108
-          buffs:
-            - key: Effect_3P_ConstantiaS2_N_5
-              on: damaged
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_All
-                  desc:
-                    desc: Effect_3P_ConstantiaS2_N_5_1
-                    type: 0
-                    value: "0"
-                    level: "0.020000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 10%
-                    type: 33
-                    damage_immune:
-                      base: 0
-                      per: 0.02
-                  overlap: 0
-              maxStack: 0
-              overlapGroup: -1
-        - rate: 0
-          type: 0
-          range: 0
-          ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 110
-          buffs:
-            - key: Effect_3P_ConstantiaS2_N_5
-              on: damaged
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_All
-                  desc:
-                    desc: Effect_3P_ConstantiaS2_N_5_1
-                    type: 0
-                    value: "0"
-                    level: "0.020000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 10%
-                    type: 33
-                    damage_immune:
-                      base: 0
-                      per: 0.02
-                  overlap: 0
-              maxStack: 0
-              overlapGroup: -1
-        - rate: 0
-          type: 0
-          range: 0
-          ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 112
-          buffs:
-            - key: Effect_3P_ConstantiaS2_N_5
-              on: damaged
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_All
-                  desc:
-                    desc: Effect_3P_ConstantiaS2_N_5_1
-                    type: 0
-                    value: "0"
-                    level: "0.020000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 10%
-                    type: 33
-                    damage_immune:
-                      base: 0
-                      per: 0.02
-                  overlap: 0
-              maxStack: 0
-              overlapGroup: -1
-        - rate: 0
-          type: 0
-          range: 0
-          ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 114
-          buffs:
-            - key: Effect_3P_ConstantiaS2_N_5
-              on: damaged
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_All
-                  desc:
-                    desc: Effect_3P_ConstantiaS2_N_5_1
-                    type: 0
-                    value: "0"
-                    level: "0.020000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 10%
-                    type: 33
-                    damage_immune:
-                      base: 0
-                      per: 0.02
-                  overlap: 0
-              maxStack: 0
-              overlapGroup: -1
-        - rate: 0
-          type: 0
-          range: 0
-          ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 116
-          buffs:
-            - key: Effect_3P_ConstantiaS2_N_5
-              on: damaged
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_All
-                  desc:
-                    desc: Effect_3P_ConstantiaS2_N_5_1
-                    type: 0
-                    value: "0"
-                    level: "0.020000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 10%
-                    type: 33
-                    damage_immune:
-                      base: 0
-                      per: 0.02
-                  overlap: 0
-              maxStack: 0
-              overlapGroup: -1
-        - rate: 0
-          type: 0
-          range: 0
-          ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 118
-          buffs:
-            - key: Effect_3P_ConstantiaS2_N_5
-              on: damaged
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_All
-                  desc:
-                    desc: Effect_3P_ConstantiaS2_N_5_1
-                    type: 0
-                    value: "0"
-                    level: "0.020000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 10%
-                    type: 33
-                    damage_immune:
-                      base: 0
-                      per: 0.02
-                  overlap: 0
-              maxStack: 0
-              overlapGroup: -1
-        - rate: 0
-          type: 0
-          range: 0
-          ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 120
-          buffs:
-            - key: Effect_3P_ConstantiaS2_N_5
-              on: damaged
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DEF_All
-                  desc:
-                    desc: Effect_3P_ConstantiaS2_N_5_1
-                    type: 0
-                    value: "0"
-                    level: "0.020000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 10%
-                    type: 33
-                    damage_immune:
-                      base: 0
-                      per: 0.02
-                  overlap: 0
+                    type: 20
+                    ap:
+                      base: 4
+                      per: 0.2
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
     values:
@@ -3074,15 +3960,42 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_DEF_All
+        - - icon: BuffIcon_DEBUFF_PERDOWN
             desc:
               desc: Effect_3P_ConstantiaS2_N_5_1
-              type: 0
+              type: 1
+              value: "0.200000"
+              level: "0.050000"
+            base: 0.2
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_3P_ConstantiaS2_N_5_2
+              type: 1
               value: "0"
-              level: "0.020000"
+              level: "0"
             base: 0
-            per: 0.02
-            chance: 0.1
+            per: 0
+            chance: 0
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_3P_ConstantiaS2_N_51_1
+              type: 0
+              value: "4"
+              level: "0.200000"
+            base: 4
+            per: 0.2
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_3P_ConstantiaS2_N_52_1
+              type: 0
+              value: "4"
+              level: "0.200000"
+            base: 4
+            per: 0.2
+            chance: 1
 dialogue:
   KR:
     "3":

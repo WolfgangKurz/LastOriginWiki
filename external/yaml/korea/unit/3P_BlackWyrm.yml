@@ -4775,6 +4775,47 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_42
+              on: round
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_3P_ConstantiaS2_N_41
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_42_1
+                    type: 1
+                    value: "0.050000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: 5%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -4832,6 +4873,15 @@ skills:
               level: "0"
             base: 0
             per: 0
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_3P_BlackWyrm_N_42_1
+              type: 1
+              value: "0.050000"
+              level: "0.010000"
+            base: 0.05
+            per: 0.01
             chance: 1
   "5":
     key: "5"

@@ -576,6 +576,7 @@ source:
   - - Ev:Ev20:EV2-2
   - - Ev:Ev21:EV1-6
   - - Ev:Ev22:EV1-3
+  - - Ev:Ev24:EV1-4B
 research: false
 skills:
   "1":
@@ -4499,6 +4500,47 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_3P_Vanilla_N_41
+              on: round
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_3P_ConstantiaS2_N_41
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_3P_Vanilla_N_41_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: 10%
+                      per: 0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -4556,6 +4598,15 @@ skills:
               level: "0"
             base: 1
             per: 0
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_3P_Vanilla_N_41_1
+              type: 1
+              value: "0.100000"
+              level: "0.005000"
+            base: 0.1
+            per: 0.005
             chance: 1
 dialogue:
   KR:
