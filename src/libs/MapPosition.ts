@@ -1,10 +1,11 @@
 interface MapPositionType {
 	[wid: string]: {
 		[mid: string]: {
-			[node: string]: [x: number, y: number] |
-			[x: number, y: number, displayPrevLine: boolean] |
-			[x: number, y: number, displayPrevLine: boolean, nodeType: number] |
-			[x: number, y: number, displayPrevLine: boolean, nodeType: number, icon: string];
+			[node: string]:
+			[x: number, y: number] |
+			[x: number, y: number, displayPrevLine: boolean | [x: number, y: number]] |
+			[x: number, y: number, displayPrevLine: boolean | [x: number, y: number], nodeType: number] |
+			[x: number, y: number, displayPrevLine: boolean | [x: number, y: number], nodeType: number, icon: string];
 		};
 	};
 }
@@ -503,7 +504,7 @@ const MapPosition: MapPositionType = {
 
 			"EV1-1B": [1.6, 0],
 			"EV1-2B": [2.4, 0],
-			"EV1-3B": [5.6, 0],
+			"EV1-3B": [5.6, 0, [4.8, 1]],
 			"EV1-4B": [6.4, 0],
 
 			"EV1-1Ex": [0.4, 2],
