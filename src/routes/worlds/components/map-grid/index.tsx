@@ -196,8 +196,15 @@ const MapGrid: FunctionalComponent<MapGridProps> = (props) => {
 			nodes
 				.filter(n => n.prev.includes(node.offset))
 				.forEach(n => {
-					const p = MapPosition[wid][mid][n.text][2];
-					if (!(hasPos && !byOffset) || p !== false) {
+					function _fn (wid: string, mid: string, text: string) {
+						if (!(wid in MapPosition)) return false;
+						if (!(mid in MapPosition[wid])) return false;
+						if (!(text in MapPosition[wid][mid])) return false;
+						return MapPosition[wid][mid][text][2] ?? false;
+					}
+
+					const p = _fn(wid, mid, n.text);
+					if (!(hasPos && !byOffset) || MapPosition[wid][mid][n.text][2] !== false) {
 						const posX2 = n.offset % 8;
 
 						if (hasPos && !byOffset) {
