@@ -76,8 +76,68 @@
 	}
 
 	.table-enchant tr:last-child {
-		td, th {
+		td,
+		th {
 			border-top-width: 3px !important;
+		}
+	}
+
+	.drop-list {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-auto-rows: auto;
+		grid-auto-flow: row;
+		line-height: 1;
+
+		padding: 0;
+		margin: 0;
+		border: 0;
+
+		a {
+			display: inline-block;
+			line-height: 1;
+		}
+
+		> div {
+			&:not(:first-child) {
+				border-top: 1px solid $secondary;
+			}
+
+			&.headerless {
+				grid-column: 1 / 3;
+			}
+			&.drop-header {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				padding: 10px;
+				max-width: 80px;
+				line-height: 1.4;
+
+				word-break: keep-all;
+				background-color: $dark;
+				color: $light;
+			}
+			&.perma {
+				background-color: rgba($warning, 0.14);
+			}
+			&:not(.drop-header) {
+				border-right: 1px solid $secondary;
+
+				+ :not(.drop-header) {
+					padding-bottom: 0.25em;
+					border-left: 1px solid $secondary;
+				}
+			}
+			&:last-child:not(.drop-header) {
+				border-bottom: 1px solid $secondary;
+			}
+
+			> h6 {
+				margin: 0.25em 0;
+				font-weight: bold;
+			}
 		}
 	}
 }
