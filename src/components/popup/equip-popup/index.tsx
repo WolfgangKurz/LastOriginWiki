@@ -13,7 +13,7 @@ import { Equip } from "@/types/DB/Equip";
 
 import { useUpdate } from "@/libs/hooks";
 import { BuildClass } from "@/libs/Class";
-import { AssetsRoot, PermanentEvents, RarityDisplay } from "@/libs/Const";
+import { AssetsRoot, CurrentEvent, PermanentEvents, RarityDisplay } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
@@ -345,7 +345,16 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 											<Locale k={ area[0].EventName } />,
 											true,
 										];
+									} else if (CurrentEvent === area[0].EventId) {
+										return [
+											<span class="text-stat-hp">
+												<Locale k="COMMON_SOURCE_EVENT_CURRENT" />
+											</span>,
+											<Locale k={ area[0].EventName } />,
+											true,
+										];
 									}
+
 									return [
 										<span class="text-info">
 											<Locale k="COMMON_SOURCE_EVENT" />

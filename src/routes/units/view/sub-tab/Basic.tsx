@@ -21,7 +21,7 @@ import { Unit } from "@/types/DB/Unit";
 import { objState } from "@/libs/State";
 import { CurrentLocale } from "@/libs/Locale";
 import { BuildClass } from "@/libs/Class";
-import { AssetsRoot, ImageExtension, PermanentEvents, RarityDisplay } from "@/libs/Const";
+import { AssetsRoot, CurrentEvent, ImageExtension, PermanentEvents, RarityDisplay } from "@/libs/Const";
 import { DecomposeHangulSyllable, FormatDate, FormatNumber, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 import EntitySource from "@/libs/EntitySource";
@@ -684,7 +684,16 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 																<Locale k={ area[0].EventName } />,
 																true,
 															];
+														} else if (CurrentEvent === area[0].EventId) {
+															return [
+																<span class="text-stat-hp">
+																	<Locale k="COMMON_SOURCE_EVENT_CURRENT" />
+																</span>,
+																<Locale k={ area[0].EventName } />,
+																true,
+															];
 														}
+
 														return [
 															<span class="text-info">
 																<Locale k="COMMON_SOURCE_EVENT" />

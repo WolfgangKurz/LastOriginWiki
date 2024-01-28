@@ -4,6 +4,11 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12452" date="2024-01-28"
+		update={ <>
+			<li>전투원 및 장비 드랍처에 <BY>현재 이벤트</BY> 구분이 추가되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12451" date="2024-01-28"
 		update={ <>
 			<li>전투원 및 장비 드랍처를 더 보기 쉽게 개선했습니다.</li>
