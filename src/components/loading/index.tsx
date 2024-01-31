@@ -7,7 +7,7 @@ import style from "./style.module.scss";
 const Loading = {
 	Data: (() => <div class={ style.DataLoading }>
 		<picture>
-			<source srcset={ `${AssetsRoot}/ui/data_loading.avif` } type="image/avif" />
+			{/* <source srcset={ `${AssetsRoot}/ui/data_loading.avif` } type="image/avif" /> */}
 			<source srcset={ `${AssetsRoot}/ui/data_loading.webp` } type="image/webp" />
 			<img class="m-2" src={ `${AssetsRoot}/ui/data_loading.gif` } />
 		</picture>
@@ -17,7 +17,7 @@ const Loading = {
 
 	Page: (() => <div class={ style.PageLoading }>
 		<picture>
-			<source srcset={ `${AssetsRoot}/ui/page_loading.avif` } type="image/avif" />
+			{/* <source srcset={ `${AssetsRoot}/ui/page_loading.avif` } type="image/avif" /> */}
 			<source srcset={ `${AssetsRoot}/ui/page_loading.webp` } type="image/webp" />
 			<img class="m-2" src={ `${AssetsRoot}/ui/page_loading.gif` } />
 		</picture>
