@@ -1,7 +1,7 @@
 // Content automatically generated
 export interface DBHashType { [K: string]: string | DBHashType; }
 export default {
-	"buildtime": "d835eebd",
+	"buildtime": "6c41522c",
 	"locale": {
 		"TC": "01cd474c",
 		"KR": "2d0a9552",
@@ -3340,7 +3340,7 @@ export default {
 			"UnderWatcherSensor_EW": "6ba5d1c3",
 			"UnderWatcherSensor_B05": "cf206184",
 			"UnderWatcherGenerator_TU2": "94d32806",
-			"UnderWatcherGenerator_EW2": "8c6f4d5d",
+			"UnderWatcherGenerator_EW2": "31dae8cc",
 			"UnderWatcherGenerator_EW": "219cd2dd",
 			"UnderWatcherGenerator_B05": "871989e1",
 			"UnderWatcherArm_TU2": "ade8deff",
@@ -4126,12 +4126,12 @@ export default {
 			"HeavyScoutG_TU3": "2a280d6d",
 			"HeavyScoutG_TU2": "e27824d0",
 			"HeavyScoutG_TU": "d795002f",
-			"HauntedFortress_TU5": "74487b86",
-			"HauntedFortress_TU4": "335d9147",
-			"HauntedFortress_TU3": "e4b43dd0",
-			"HauntedFortress_TU2": "f79ccd63",
-			"HauntedFortress_TU": "d04e7245",
-			"HauntedFortress_N": "219b1d18",
+			"HauntedFortress_TU5": "8353e40c",
+			"HauntedFortress_TU4": "65961821",
+			"HauntedFortress_TU3": "773014a5",
+			"HauntedFortress_TU2": "355cd4ef",
+			"HauntedFortress_TU": "1fbf55a1",
+			"HauntedFortress_N": "52499b24",
 			"Harvester_TU6": "71200727",
 			"Harvester_TU5": "50af46a4",
 			"Harvester_TU4": "25c6b887",

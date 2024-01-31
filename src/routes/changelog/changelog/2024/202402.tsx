@@ -11,7 +11,8 @@ const Changelog: FunctionalComponent = () => <>
 		</> }
 		update={ <>
 			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
-			<li>일부 장비의 스킬 정보가 갱신되었습니다.</li>
+			<li>일부 장비의 정보가 갱신되었습니다.</li>
+			<li>일부 적의 정보가 갱신되었습니다.</li>
 		</> }
 		skin={ <>
 			<li>
