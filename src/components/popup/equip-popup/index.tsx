@@ -636,7 +636,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 									{ RenderDrops(target) }
 
 									{ target.rarity === ACTOR_GRADE.SSS
-										? <div class="alert alert-warning mt-3 p-1 pb-2">
+										? <div class="alert alert-danger mt-3 p-1 pb-2">
 											<div class="alert alert-light mb-3 p-1">
 												<Locale
 													k="EQUIP_VIEW_SOURCE_T4"

@@ -480,6 +480,15 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 									<UnitBadge role={ unit.role } size="large" transparent black />
 								</td>
 							</tr>
+							<tr>
+								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_ALIAS" /></th>
+								<td class="text-break">
+									{ LocaleGet(`UNIT_ALIAS_${unit.uid}`)
+										.split(",")
+										.gap(<span class="mx-2 border-end" />)
+									}
+								</td>
+							</tr>
 						</tbody>
 					</table>
 				</div>

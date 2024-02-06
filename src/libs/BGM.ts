@@ -269,6 +269,14 @@ const BGMAlbums: BGMAlbum[] = [
 				filename: "Album01/Out_Of_Control.mp3",
 				lyrics: [{ time: 0, text: "Out Of Control" }],
 			},
+			{
+				type: "audio",
+				id: "track_uneager",
+				title: "Uneager",
+				duration: 119,
+				filename: "Album01/Uneager.mp3",
+				lyrics: [{ time: 0, text: "Uneager" }],
+			},
 		],
 	},
 	{

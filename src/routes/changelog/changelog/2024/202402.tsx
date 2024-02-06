@@ -2,8 +2,60 @@ import { FunctionalComponent } from "preact";
 
 import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
+import IconGithub from "@/components/bootstrap-icon/icons/Github";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12458" date="2024-02-07"
+		site={ <>
+			<li>
+				사이트 개편안의 일부를 선행 적용했습니다.
+				<ol>
+					<li><BY>전투원정보</BY>의 <BY>테이블 보기</BY>의 디자인이 변경되었습니다.</li>
+					<li>이제 <BY>전투원정보</BY>의 이름 검색이 띄어쓰기를 무시합니다.</li>
+					<li>
+						이제 <BY>전투원정보</BY>의 이름 검색이 <BO>별명</BO>에도 검색됩니다.<br />
+						별명의 추가 또는 수정 요청은&nbsp;
+						<a class="mx-1" href="https://github.com/WolfgangKurz/LastOriginWiki/issues" target="_blank">
+							<IconGithub /> Github Issue
+						</a>
+						를 통해 가능합니다.
+					</li>
+					<li>
+						전투원 상세정보에 <BO>별명</BO> 항목이 추가되었습니다.
+					</li>
+				</ol>
+			</li>
+		</> }
+		new={ <>
+			<li>이벤트 <BY>우주에서 온 황금</BY>의 2부 정보가 추가되었습니다.</li>
+			<li>신규 배경 정보가 추가되었습니다.</li>
+			<li>신규 BGM 정보가 추가되었습니다.</li>
+			<li>신규 적 그룹 정보가 추가되었습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>
+				<BY>THE RADIANT SOUNDS (BGM)</BY>에서 유튜브 음원을 처음 재생할 때,
+				재생되지 않았지만 재생 버튼이 표시되지 않아 재생할 수 없는 문제를 수정했습니다.
+			</li>
+		</> }
+		update={ <>
+			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
+			<li>U2DModelRenderer의 일부 버그가 수정되었습니다.</li>
+			<li>
+				SSS급 장비의 장비 팝업에서 SS급 드랍처 정보의 배경 색상이
+				메인스토리 / 상시 이벤트 / 진행중인 이벤트 표시 색상과 비슷해 가시성이 저하되어
+				색상을 변경하여 해당 부분을 개선했습니다.
+			</li>
+		</> }
+		skin={ <>
+			<li>
+				<BY>레모네이드 알파</BY>의 스킨 <BY>어론 님 오신 밤</BY>의 정보가 추가되었습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2024-02-07 01:33:14</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12454" date="2024-02-01"
 		new={ <>
 			<li>이벤트 <BY>우주에서 온 황금</BY>의 서브스토리 정보가 추가되었습니다.</li>

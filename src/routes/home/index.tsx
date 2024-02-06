@@ -91,11 +91,17 @@ const Home: FunctionalComponent = () => {
 	const previewSkins = ["PECS_LemonadeAlpha_2"];
 
 	return <div class={ `${style.home} home` }>
-		<div class="alert alert-danger mline">
-			<Locale k="COMMON_NSFW_CAUTION" plain />
-		</div>
-		<div class="alert alert-primary">
-			사이트 개발자가 더 이상 게임을 하지 않기 때문에 정보에 오류가 있을 수 있습니다.
+		<div class="row row-cols-1 row-cols-lg-2 align-items-center">
+			<div class="col">
+				<div class="alert alert-danger mline">
+					<Locale k="COMMON_NSFW_CAUTION" plain />
+				</div>
+			</div>
+			<div class="col">
+				<div class="col alert alert-primary">
+					사이트 개발자가 더 이상 게임을 하지 않기 때문에 정보에 오류가 있을 수 있습니다.
+				</div>
+			</div>
 		</div>
 
 		<div>
@@ -179,6 +185,7 @@ const Home: FunctionalComponent = () => {
 			</a>
 		</div>
 		<Locale k="HOME_DEVELOPER" />
+
 		<hr />
 
 		<div class={ style.MenuBox }>
@@ -257,6 +264,8 @@ const Home: FunctionalComponent = () => {
 					</NavItemExternal>
 				</div>
 			</div>
+
+			<hr />
 		</div>
 
 		{ previewSkins.length > 0 && <Swiper
@@ -277,6 +286,8 @@ const Home: FunctionalComponent = () => {
 				</SwiperSlide>;
 			}) }
 		</Swiper> }
+
+		<hr />
 
 		<Changelog />
 

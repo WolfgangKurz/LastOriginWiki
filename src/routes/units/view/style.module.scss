@@ -402,6 +402,9 @@ table.InfoTable {
 		}
 
 		> div {
+			background-color: $light;
+			color: $dark;
+
 			&:not(:first-child) {
 				border-top: 1px solid $secondary;
 			}
@@ -425,7 +428,8 @@ table.InfoTable {
 				color: $light;
 			}
 			&.perma {
-				background-color: rgba($warning, 0.14);
+				// background-color: rgba($warning, 0.14);
+				background-color: color.mix($warning, $light, 14%);
 			}
 			&:not(.drop-header) {
 				border-right: 1px solid $secondary;

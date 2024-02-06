@@ -55,9 +55,6 @@ const App: FunctionalComponent = () => {
 	}, [loc]);
 
 	return <div id="app">
-		<link href={ `${Host}/assets/font/SpoqaHanSans-kr.css` } rel="stylesheet" />
-		<link href={ `${Host}/assets/font/SpoqaHanSans-jp.css` } rel="stylesheet" />
-
 		{ loc
 			? <>
 				<Header />

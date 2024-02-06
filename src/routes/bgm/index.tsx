@@ -208,7 +208,7 @@ const BGM: FunctionalComponent = () => {
 		if (playerRef.current)
 			isPlaying.set(!playerRef.current.paused);
 		else if (ytPlayerRef.current)
-			isPlaying.set(!ytPlayerRef.current.paused);
+			isPlaying.set(ytPlayerRef.current.isLoaded && !ytPlayerRef.current.paused);
 		else
 			isPlaying.set(false);
 	}, [playerRef.current, ytPlayerRef.current]);

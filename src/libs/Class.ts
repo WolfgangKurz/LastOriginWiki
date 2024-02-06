@@ -19,3 +19,4 @@ export function BuildClass (...classNames: Array<Classable | Record<string, bool
 		.filter(x => x)
 		.join(" ");
 }
+export const cn = BuildClass;

@@ -286,8 +286,6 @@ export enum ACTOR_CLASS {
 
 	FLYING = 2,
 	AIR = 2,
-
-	__MAX__ = 3,
 }
 
 /** 전투원 역할 */
@@ -299,8 +297,6 @@ export enum ROLE_TYPE {
 	ATTACKER = 1,
 
 	SUPPORTER = 2,
-
-	__MAX__ = 3,
 }
 
 /** 전투원 등급 */
