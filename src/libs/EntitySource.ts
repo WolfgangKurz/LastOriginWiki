@@ -219,7 +219,7 @@ export default class EntitySource {
 		} else if (this.IsChallenge)
 			return this.Parts[0][0] === "*";
 
-		return this.Parts[0][0] === "*";
+		return this.Parts.length > 2 && this.Parts[2][0] === "*";
 	}
 
 	public get World (): string { // Alias

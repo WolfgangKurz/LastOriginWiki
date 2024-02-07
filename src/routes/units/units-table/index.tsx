@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "preact";
-import { route } from "preact-router";
+import { Link, route } from "preact-router";
 
 import Store from "@/store";
 
@@ -102,16 +102,12 @@ const UnitsTable: FunctionalComponent<UnitsListProps> = (props) => {
 										UnitList(rarity, type, role),
 										x => <>{
 											x.map(unit =>
-												<div
-													class={ style.UnitItem }
-													onClick={ e => {
-														e.preventDefault();
-														route(`/units/${unit.uid}`);
-													} }
-												>
-													<UnitFace uid={ unit.uid } />
-													<Locale k={ `UNIT_${unit.uid}` } />
-												</div>
+												<Link href={ `/units/${unit.uid}` }>
+													<div class={ style.UnitItem }>
+														<UnitFace uid={ unit.uid } />
+														<Locale k={ `UNIT_${unit.uid}` } />
+													</div>
+												</Link>
 											)
 										}</>,
 										<span class="small text-secondary">

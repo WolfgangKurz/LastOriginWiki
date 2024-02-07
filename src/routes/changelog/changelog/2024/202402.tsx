@@ -5,6 +5,22 @@ import { BY, BR, BO, BB, BG } from "../../components/badges";
 import IconGithub from "@/components/bootstrap-icon/icons/Github";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12460" date="2024-02-07"
+		bugfix={ <>
+			<li>
+				<BY>전투원정보</BY>의 테이블 보기에서 전투원 항목이 링크로 취급되지 않던 문제를 수정했습니다.
+			</li>
+			<li>
+				전투원의 상세 정보에서 별명이 비어있는 경우 잘못된 내용이 표시되던 문제를 수정했습니다.
+			</li>
+			<li>
+				전투원 및 장비의 획득처에서 <BY>메인스토리</BY> 클리어 보상이 * 로 표시되던 문제를 수정했습니다.
+			</li>
+			<li>
+				적 <BR>추격자</BR>의 행동 원리가 잘못 표시되던 문제를 수정했습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12458" date="2024-02-07"
 		site={ <>
 			<li>

@@ -27,7 +27,7 @@ import { ParseDescriptionText } from "@/libs/FunctionsX";
 import EntitySource from "@/libs/EntitySource";
 
 import { DBSourceConverter, GetJson, StaticDB } from "@/components/loader";
-import Locale, { LocaleGet } from "@/components/locale";
+import Locale, { LocaleGet, LocaleGetEmpty } from "@/components/locale";
 import IconHourglassSplit from "@/components/bootstrap-icon/icons/HourglassSplit";
 import IconHammer from "@/components/bootstrap-icon/icons/Hammer";
 import IconVolumeUpFill from "@/components/bootstrap-icon/icons/VolumeUpFill";
@@ -483,7 +483,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 							<tr>
 								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_ALIAS" /></th>
 								<td class="text-break">
-									{ LocaleGet(`UNIT_ALIAS_${unit.uid}`)
+									{ (LocaleGetEmpty(`UNIT_ALIAS_${unit.uid}`) || "")
 										.split(",")
 										.gap(<span class="mx-2 border-end" />)
 									}
