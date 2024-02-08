@@ -6,6 +6,11 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12465" date="2024-02-09"
+		bugfix={ <>
+			<li>Spine 애니메이션 스킨이 표시되지 않던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12463" date="2024-02-09"
 		bugfix={ <>
 			<li>
