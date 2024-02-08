@@ -59,3 +59,24 @@
 		z-index: 1000;
 	}
 }
+
+:global {
+	.TextMeasurer {
+		position: fixed;
+		left: -100px;
+		top: -100px;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		pointer-events: none;
+		opacity: 0;
+
+		> div {
+			width: 100000px;
+		}
+
+		.Measurer {
+			display: inline-block;
+		}
+	}
+}

@@ -126,6 +126,27 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 			fallback: `${AssetsRoot}/${imgExt}/story/${r[1]}_${skin}.${imgExt}`,
 		};
 	}
+	function convTokens (text: string): string {
+		return text
+			.split(/(\0[^\0]+\0[^\0]+\0[^\0]+\0)/gs)
+			.map(p => {
+				if (p[0] === "\0") { // formatted
+					const r = (/\0([^\0]+)\0([^\0]+)\0([^\0]+)\0/gs).exec(p);
+					if (r) {
+						switch (r[1]) {
+							case "color":
+								return `<span data-color="${r[2]}" style="color:#${r[2]}">${r[3]}</span>`;
+
+							default:
+								return r[3];
+						}
+					}
+				}
+
+				return p;
+			})
+			.join("");
+	}
 
 	const LText = useCallback((str: Record<LocaleTypes, string | undefined>): string => {
 		for (const lang of langFallback) {
@@ -491,7 +512,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 								</div> }
 
 								<div class={ style.TranscriptionText }>
-									{ parseVNode(Nn(LText(d.text)), [], {}) }
+									{ parseVNode(convTokens(Nn(LText(d.text))), [], {}) }
 								</div>
 
 								{ d.sel

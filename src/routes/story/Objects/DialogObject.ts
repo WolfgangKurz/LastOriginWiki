@@ -38,15 +38,14 @@ export default class DialogObject extends PIXI.Container {
 	public setText (value: string) {
 		this._text = value;
 		if (this.textObject) {
-			const _ = (s: string): string => {
-				const v = new Array(5)
-					.fill("0 0 1.5px #000")
-					.join(",");
-				return `<span style="text-shadow:${v}">${s}</span>`;
-			};
+			// const _ = (s: string): string => {
+			// 	const v = new Array(5)
+			// 		.fill("0 0 1.5px #000")
+			// 		.join(",");
+			// 	return `<span style="text-shadow:${v}">${s}</span>`;
+			// };
 
-			this.textObject.text = _(value);
-			this.textObject.updateText();
+			this.textObject.text = value;
 			this.textObject.fadeIn(this.FadeDuration);
 		}
 	}
@@ -65,10 +64,8 @@ export default class DialogObject extends PIXI.Container {
 		this._speaker = speaker;
 		this._speakerPosition = position;
 
-		if (this.speakerObject && speaker) {
+		if (this.speakerObject && speaker)
 			this.speakerObject.text = speaker;
-			this.speakerObject.updateText();
-		}
 
 		if (speaker) {
 			if (this.charDisp) {
@@ -127,6 +124,8 @@ export default class DialogObject extends PIXI.Container {
 			fontFamily,
 			fontSize: 28,
 			fill: 0xffffff,
+			stroke: 0x000000,
+			strokeThickness: 1.5,
 			whiteSpace: "pre-line",
 			wordWrap: true,
 			wordWrapWidth: this.WIDTH - 60,
@@ -141,6 +140,8 @@ export default class DialogObject extends PIXI.Container {
 			fontWeight: "500",
 			fontSize: 20,
 			fill: 0xffffff,
+			stroke: 0x000000,
+			strokeThickness: 1,
 		});
 		this.speakerObject.anchor.set(0.5, 0.5);
 		this.speakerObject.position.set(170, 16);

@@ -561,20 +561,20 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 	useEffect(() => { // BG Name (left top)
 		let text: FadeText | null = null;
 		if (bgName && screen) {
-			const _ = (s: string): string => {
-				const v = new Array(10)
-					.fill("0 0 2px #000")
-					.join(",");
-				return `<span style="text-shadow:${v}">${s}</span>`;
-			};
+			// const _ = (s: string): string => {
+			// 	const v = new Array(10)
+			// 		.fill("0 0 2px #000")
+			// 		.join(",");
+			// 	return `<span style="text-shadow:${v}">${s}</span>`;
+			// };
 
-			text = new FadeText(_(LText(bgName)), {
+			text = new FadeText(LText(bgName), {
 				fontFamily,
 				fontWeight: "500",
 				fontSize: 24,
 				fill: 0xffffff,
 				stroke: 0x000000,
-				strokeThickness: 2,
+				strokeThickness: 1.5,
 			});
 			text.name = "@bgName";
 			text.position.set(20, 20);
@@ -594,17 +594,19 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 	useEffect(() => { // BG Desc (center)
 		let text: FadeText | null = null;
 		if (bgDesc && screen) {
-			const _ = (s: string): string => {
-				const v = new Array(15)
-					.fill("0 0 3px #000")
-					.join(",");
-				return `<span style="text-shadow:${v}">${s}</span>`;
-			};
+			// const _ = (s: string): string => {
+			// 	const v = new Array(15)
+			// 		.fill("0 0 3px #000")
+			// 		.join(",");
+			// 	return `<span style="text-shadow:${v}">${s}</span>`;
+			// };
 
-			text = new FadeText(_(LText(bgDesc)), {
+			text = new FadeText(LText(bgDesc), {
 				fontFamily,
 				fontSize: 48,
 				fill: 0xffffff,
+				stroke: 0x000000,
+				strokeThickness: 2,
 			});
 			text.name = "@bgDesc";
 			text.anchor.set(0.5, 0.5);

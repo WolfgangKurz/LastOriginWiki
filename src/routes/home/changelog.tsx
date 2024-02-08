@@ -6,6 +6,14 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12463" date="2024-02-09"
+		bugfix={ <>
+			<li>
+				일부 환경에서 <BY>스토리 뷰어</BY>의 텍스트가 잘려 보이는 현상을 수정했습니다.<br />
+				실제 오류가 개발 환경에서 확인되지 않아 수정되지 않았을 수도 있습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12460" date="2024-02-07"
 		bugfix={ <>
 			<li>
