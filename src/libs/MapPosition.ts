@@ -1,10 +1,11 @@
 interface MapPositionType {
 	[wid: string]: {
 		[mid: string]: {
-			[node: string]: [x: number, y: number] |
-			[x: number, y: number, displayPrevLine: boolean] |
-			[x: number, y: number, displayPrevLine: boolean, nodeType: number] |
-			[x: number, y: number, displayPrevLine: boolean, nodeType: number, icon: string];
+			[node: string]:
+			[x: number, y: number] |
+			[x: number, y: number, displayPrevLine: boolean | [x: number, y: number]] |
+			[x: number, y: number, displayPrevLine: boolean | [x: number, y: number], nodeType: number] |
+			[x: number, y: number, displayPrevLine: boolean | [x: number, y: number], nodeType: number, icon: string];
 		};
 	};
 }
@@ -488,6 +489,46 @@ const MapPosition: MapPositionType = {
 			"EV2-2Ex": [0.8, 2],
 			"EV2-3Ex": [1.6, 2],
 			"EV2-1C": [4, 2, false],
+		},
+	},
+	Ev24: {
+		1: {
+			"EV1-1": [0, 1],
+			"EV1-2": [0.8, 1],
+			"EV1-3": [1.6, 1],
+			"EV1-4": [2.4, 1],
+			"EV1-5": [3.2, 1],
+			"EV1-6": [4, 1],
+			"EV1-7": [4.8, 1],
+			"EV1-8": [5.6, 1],
+
+			"EV1-1B": [1.6, 0],
+			"EV1-2B": [2.4, 0],
+			"EV1-3B": [5.6, 0, [4.8, 1]],
+			"EV1-4B": [6.4, 0],
+
+			"EV1-1Ex": [0.4, 2],
+			"EV1-2Ex": [1.2, 2],
+			"EV1-3Ex": [2, 2],
+		},
+		2: {
+			"EV2-1": [0, 1],
+			"EV2-2": [0.8, 1],
+			"EV2-3": [1.6, 1],
+			"EV2-4": [2.4, 1],
+			"EV2-5": [3.2, 1],
+			"EV2-6": [4, 1],
+			"EV2-7": [4.8, 1],
+			"EV2-8": [5.6, 1],
+
+			"EV2-1B": [1.6, 0],
+			"EV2-2B": [2.4, 0],
+			"EV2-3B": [4.8, 0],
+			"EV2-4B": [5.6, 0],
+
+			"EV2-1Ex": [0.4, 2],
+			"EV2-2Ex": [1.2, 2],
+			"EV2-3Ex": [2, 2],
 		},
 	},
 };

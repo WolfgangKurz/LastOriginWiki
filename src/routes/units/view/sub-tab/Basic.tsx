@@ -21,13 +21,13 @@ import { Unit } from "@/types/DB/Unit";
 import { objState } from "@/libs/State";
 import { CurrentLocale } from "@/libs/Locale";
 import { BuildClass } from "@/libs/Class";
-import { AssetsRoot, ImageExtension, RarityDisplay } from "@/libs/Const";
+import { AssetsRoot, CurrentEvent, ImageExtension, PermanentEvents, RarityDisplay } from "@/libs/Const";
 import { DecomposeHangulSyllable, FormatDate, FormatNumber, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 import EntitySource from "@/libs/EntitySource";
 
 import { DBSourceConverter, GetJson, StaticDB } from "@/components/loader";
-import Locale, { LocaleGet } from "@/components/locale";
+import Locale, { LocaleGet, LocaleGetEmpty } from "@/components/locale";
 import IconHourglassSplit from "@/components/bootstrap-icon/icons/HourglassSplit";
 import IconHammer from "@/components/bootstrap-icon/icons/Hammer";
 import IconVolumeUpFill from "@/components/bootstrap-icon/icons/VolumeUpFill";
@@ -480,6 +480,15 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 									<UnitBadge role={ unit.role } size="large" transparent black />
 								</td>
 							</tr>
+							<tr>
+								<th class="bg-dark text-white"><Locale k="UNIT_VIEW_ALIAS" /></th>
+								<td class="text-break">
+									{ (LocaleGetEmpty(`UNIT_ALIAS_${unit.uid}`) || "")
+										.split(",")
+										.gap(<span class="mx-2 border-end" />)
+									}
+								</td>
+							</tr>
 						</tbody>
 					</table>
 				</div>
@@ -655,7 +664,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 					</thead>
 					<tbody>
 						<tr>
-							<td class="px-0 py-1 drop-list">
+							<td class="drop-list">
 								{ unit.source.length === 0
 									? <div class="p-3">
 										<span class="text-secondary">
@@ -673,44 +682,69 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit, skinIndex,
 												}
 												return [...p, c];
 											}, [])
-											.map((area, aindex) => <div>
-												{ aindex > 0 && <hr class="my-1" /> }
-												{ area[0].IsEvent
-													? <h6 style="font-weight: bold">
-														<Locale k={ area[0].EventName } />
-													</h6>
-													: area[0].IsDaily
-														? <h6 style="font-weight: bold">
-															<Locale k="WORLD_Daily" />
-														</h6>
-														: area[0].IsChallenge
-															? <h6 style="font-weight: bold">
-																<Locale k={ `COMMON_CHALLENGE_${area[0].ChallengeName}` } />
-															</h6>
-															: area[0].IsSubStory
-																? <h6 style="font-weight: bold">
-																	<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />
-																</h6>
-																: area[0].IsNewEternalWar
-																	? <h6 style="font-weight: bold">
-																		<Locale k="COMMON_SOURCE_NEW" />
-																	</h6>
-																	: <></>
-												}
+											.map(area => {
+												let [header, text, perma] = (() => {
+													if (area[0].IsEvent) {
+														if (PermanentEvents.includes(area[0].EventId)) {
+															return [
+																<span class="text-warning">
+																	<Locale k="UNIT_VIEW_DROPS_PERMANENT" />
+																</span>,
+																<Locale k={ area[0].EventName } />,
+																true,
+															];
+														} else if (CurrentEvent === area[0].EventId) {
+															return [
+																<span class="text-stat-hp">
+																	<Locale k="COMMON_SOURCE_EVENT_CURRENT" />
+																</span>,
+																<Locale k={ area[0].EventName } />,
+																true,
+															];
+														}
 
-												{ (() => {
-													const _area: Record<string, EntitySource[]> = {};
-													area.forEach(s => {
-														const k = s.IsEvent ? `${s.World}:${s.Chapter}` : s.World;
-														if (!(k in _area)) _area[k] = [];
-														_area[k].push(s);
-													});
-													return Object.keys(_area).map((k, i) => <span>
-														{ i > 0 && <span class="border-start mx-1" /> }
-														{ _area[k].map(source => <SourceBadge class="my-1" source={ source } linked />) }
-													</span>);
-												})() }
-											</div>)
+														return [
+															<span class="text-info">
+																<Locale k="COMMON_SOURCE_EVENT" />
+															</span>,
+															<Locale k={ area[0].EventName } />,
+														];
+													}
+													else if (area[0].IsDaily)
+														return [<Locale k="WORLD_Daily" />];
+													else if (area[0].IsChallenge)
+														return [<Locale k={ `COMMON_CHALLENGE_${area[0].ChallengeName}` } />];
+													else if (area[0].IsSubStory)
+														return [<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />];
+													else if (area[0].IsNewEternalWar)
+														return [<Locale k="COMMON_SOURCE_NEW" />];
+
+													return [<Locale k="COMMON_SOURCE_MAINSTORY" />, undefined, true];
+												})();
+												text ||= header;
+
+												return <>
+													{ header && <div class="drop-header">
+														{ header }
+													</div> }
+													<div class={ BuildClass(!header && "headerless", perma && "perma") }>
+														<h6>{ text }</h6>
+
+														{ (() => {
+															const _area: Record<string, EntitySource[]> = {};
+															area.forEach(s => {
+																const k = s.IsEvent ? `${s.World}:${s.Chapter}` : s.World;
+																if (!(k in _area)) _area[k] = [];
+																_area[k].push(s);
+															});
+															return Object.keys(_area).map((k, i) => <span>
+																{ i > 0 && <span class="border-start mx-1" /> }
+																{ _area[k].map(source => <SourceBadge class="my-1" source={ source } linked />) }
+															</span>);
+														})() }
+													</div>
+												</>;
+											})
 										}
 									</>
 								}

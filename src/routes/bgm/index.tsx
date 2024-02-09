@@ -180,7 +180,7 @@ const BGM: FunctionalComponent = () => {
 				for (let i = 0; i < lyrics.length; i++) {
 					const l = lyrics[i];
 
-					if (t >= l.time)
+					if (l.time >= 0 && t >= l.time)
 						lyricsIndex = i;
 					else
 						break;
@@ -208,7 +208,7 @@ const BGM: FunctionalComponent = () => {
 		if (playerRef.current)
 			isPlaying.set(!playerRef.current.paused);
 		else if (ytPlayerRef.current)
-			isPlaying.set(!ytPlayerRef.current.paused);
+			isPlaying.set(ytPlayerRef.current.isLoaded && !ytPlayerRef.current.paused);
 		else
 			isPlaying.set(false);
 	}, [playerRef.current, ytPlayerRef.current]);

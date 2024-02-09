@@ -62,7 +62,7 @@ interface MODEL_DATA {
 
 interface GameObjectFilter {
 	id: string;
-	values: Tuple<number, 20>; // 5 x 4
+	values: Tuple<number, 20>; // 5 x 4, colorMatrix
 }
 interface GameObjectData {
 	id: number;
@@ -227,6 +227,16 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 		return Matrix3D.toString(_mat);
 	}
 
+	function getNodeKey (node: MODEL_OBJECT, objects: Record<number, MODEL_OBJECT[]>): string {
+		const list: string[] = ["", "__2dmodel__", node.name];
+
+		let current: MODEL_OBJECT | undefined = node;
+		while (current && (current = Object.values(objects).flat().find(r => r.id === current!.parent)))
+			list.push(current.name.replace(/ /g, "_"));
+
+		return list.join("$");
+	}
+
 	const [jsonData, setJsonData] = useState<MODEL_DATA | null>(null);
 
 	type SPRITE_MAP = Record<string, SPRITE_DATA & { url: string; }>;
@@ -345,11 +355,11 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 			const idTree: GameNodeData[] = [];
 			Object.values(r.object)
 				.flat()
-				.forEach(r => {
+				.forEach(o => {
 					idTree.push({
-						id: r.id,
-						parent: r.parent,
-						name: `$2dmodel$${r.name}`,
+						id: o.id,
+						parent: o.parent,
+						name: getNodeKey(o, r.object),
 					});
 				});
 			setIdParentPairData(idTree);
@@ -369,7 +379,7 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 						// color matrix
 						if ("color" in o && o.color) {
 							_filters.push({
-								id: `$2dmodel$filter$${o.name}`,
+								id: `$__filter__${getNodeKey(o, r.object)}`,
 								values: [
 									o.color[0], 0, 0, 0, 0,
 									0, o.color[1], 0, 0, 0,
@@ -377,7 +387,7 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 									0, 0, 0, o.color[3], 0,
 								],
 							});
-							filter = `url(#$2dmodel$filter$${o.name})`;
+							filter = `url(#$__filter__${getNodeKey(o, r.object)})`;
 						}
 
 						if ("shader" in o && o.shader) {
@@ -388,7 +398,7 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 									break;
 								case "additive":
 								case "additive-soft":
-									blend = "screen";
+									blend = "screen"; // there's no additive(linear-dodge) in css/svg filter
 									break;
 							}
 						}
@@ -419,7 +429,7 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 						const img: GameObjectData = {
 							id: o.id,
 
-							name: `$2dmodel$${o.name}`,
+							name: getNodeKey(o, r.object),
 							url,
 							zIndex: (renderOrder - zMin + 1),
 							transform: transform || undefined,
@@ -444,17 +454,21 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 	useEffect(() => {
 		if (!jsonData) return;
 
+		function _model (name: string): MODEL_OBJECT {
+			return Object.values(jsonData!.object).flat().find(r => r.name === name)!;
+		}
+
 		const _hides = new Set<string>();
 		if (props.hideParts) {
 			if ("parts" in jsonData.list)
-				jsonData.list.parts.forEach(p => _hides.add(`$2dmodel$${p}`));
+				jsonData.list.parts.forEach(p => _hides.add(getNodeKey(_model(p), jsonData.object)));
 			else if ("swapActive" in jsonData.list)
-				jsonData.list.swapActive.forEach(p => _hides.add(`$2dmodel$${p}`));
+				jsonData.list.swapActive.forEach(p => _hides.add(getNodeKey(_model(p), jsonData.object)));
 		} else if ("swapInactive" in jsonData.list)
-			jsonData.list.swapInactive.forEach(p => _hides.add(`$2dmodel$${p}`));
+			jsonData.list.swapInactive.forEach(p => _hides.add(getNodeKey(_model(p), jsonData.object)));
 
-		if (props.hideBG) jsonData.list.bg.forEach(p => _hides.add(`$2dmodel$${p}`));
-		if (props.hideDialog) jsonData.list.dialogDeactive.forEach(p => _hides.add(`$2dmodel$${p}`));
+		if (props.hideBG) jsonData.list.bg.forEach(p => _hides.add(getNodeKey(_model(p), jsonData.object)));
+		if (props.hideDialog) jsonData.list.dialogDeactive.forEach(p => _hides.add(getNodeKey(_model(p), jsonData.object)));
 
 		const go = [...gameObjectList];
 		go.forEach(e => (e.hidden = false)); // reset

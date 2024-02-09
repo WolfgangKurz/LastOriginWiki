@@ -25,13 +25,29 @@ const Worlds: FunctionalComponent = () => {
 		</h2>
 		<hr />
 
-		<h4>
-			<Locale k="WORLDS_MAINSTORY_EVENT" components={ { IconDot } } />
-		</h4>
-		<div class="row row-cols-1 row-cols-lg-2">
+		<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-4">
 			{ Tops.map(item => <div class="col">
 				<WorldItem linked wid={ item } />
 			</div>) }
+
+			<div class="col">
+				<WorldItem
+					linked
+					link="/eternalwar"
+					wid=""
+					image="EW"
+					title={ <Locale k="WORLDS_ETERNALWAR" /> }
+				/>
+			</div>
+			<div class="col">
+				<WorldItem
+					linked
+					link="/infinitewar"
+					wid=""
+					image="IW"
+					title={ <Locale k="WORLDS_INFINITEWAR" /> }
+				/>
+			</div>
 		</div>
 		<hr />
 

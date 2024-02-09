@@ -96,9 +96,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 
 					<NavItem href="/enemies" text="MENU_ENEMIES" />
 					<NavItem href="/worlds" text="MENU_WORLDS" />
-
-					<NavItem href="/eternalwar" text="MENU_ETERNALWAR" />
-					<NavItem href="/infinitewar" text="MENU_INFINITEWAR" />
+					<NavItem href="/story" text="MENU_STORY" />
 
 					<NavItem href="/simulator" text="MENU_SIMULATOR" />
 

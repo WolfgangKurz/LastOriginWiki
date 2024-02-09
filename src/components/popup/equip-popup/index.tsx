@@ -13,7 +13,7 @@ import { Equip } from "@/types/DB/Equip";
 
 import { useUpdate } from "@/libs/hooks";
 import { BuildClass } from "@/libs/Class";
-import { AssetsRoot, RarityDisplay } from "@/libs/Const";
+import { AssetsRoot, CurrentEvent, PermanentEvents, RarityDisplay } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
@@ -323,55 +323,84 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 					: <></>
 				}
 
-				{ target.source
-					.filter(r => r.length > 0)
-					.reduce<EntitySource[][]>((p, c) => {
-						if (c[0].IsStory) {
-							const pi = p.findIndex(r => r[0].IsStory);
-							if (pi >= 0)
-								return p.map((v, i) => i === pi ? [...v, ...c] : v);
-						}
-						return [...p, c];
-					}, [])
-					.map((area, aindex) => <div>
-						{ (target.craft || aindex > 0) && <hr class="my-1" /> }
-						{ area[0].IsEvent
-							? <h6 style="font-weight: bold">
-								<Locale k={ area[0].EventName } />
-							</h6>
-							: area[0].IsDaily
-								? <h6 style="font-weight: bold">
-									<Locale k="WORLD_Daily" />
-								</h6>
-								: area[0].IsChallenge
-									? <h6 style="font-weight: bold">
-										<Locale k={ `COMMON_CHALLENGE_${area[0].ChallengeName}` } />
-									</h6>
-									: area[0].IsSubStory
-										? <h6 style="font-weight: bold">
-											<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />
-										</h6>
-										: area[0].IsNewEternalWar
-											? <h6 style="font-weight: bold">
-												<Locale k="COMMON_SOURCE_NEW" />
-											</h6>
-											: <></>
-						}
+				<div class="drop-list">
+					{ target.source
+						.filter(r => r.length > 0)
+						.reduce<EntitySource[][]>((p, c) => {
+							if (c[0].IsStory) {
+								const pi = p.findIndex(r => r[0].IsStory);
+								if (pi >= 0)
+									return p.map((v, i) => i === pi ? [...v, ...c] : v);
+							}
+							return [...p, c];
+						}, [])
+						.map((area, aindex) => {
+							let [header, text, perma] = (() => {
+								if (area[0].IsEvent) {
+									if (PermanentEvents.includes(area[0].EventId)) {
+										return [
+											<span class="text-warning">
+												<Locale k="UNIT_VIEW_DROPS_PERMANENT" />
+											</span>,
+											<Locale k={ area[0].EventName } />,
+											true,
+										];
+									} else if (CurrentEvent === area[0].EventId) {
+										return [
+											<span class="text-stat-hp">
+												<Locale k="COMMON_SOURCE_EVENT_CURRENT" />
+											</span>,
+											<Locale k={ area[0].EventName } />,
+											true,
+										];
+									}
 
-						{ (() => {
-							const _area: Record<string, EntitySource[]> = {};
-							area.forEach(s => {
-								const k = s.IsEvent ? `${s.World}:${s.Chapter}` : s.World;
-								if (!(k in _area)) _area[k] = [];
-								_area[k].push(s);
-							});
-							return Object.keys(_area).map((k, i) => <span>
-								{ i > 0 && <span class="border-start mx-1" /> }
-								{ _area[k].map(source => <SourceBadge class="my-1" source={ source } linked />) }
-							</span>);
-						})() }
-					</div>)
-				}
+									return [
+										<span class="text-info">
+											<Locale k="COMMON_SOURCE_EVENT" />
+										</span>,
+										<Locale k={ area[0].EventName } />,
+									];
+								}
+								else if (area[0].IsDaily)
+									return [<Locale k="WORLD_Daily" />];
+								else if (area[0].IsChallenge)
+									return [<Locale k={ `COMMON_CHALLENGE_${area[0].ChallengeName}` } />];
+								else if (area[0].IsSubStory)
+									return [<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />];
+								else if (area[0].IsNewEternalWar)
+									return [<Locale k="COMMON_SOURCE_NEW" />];
+
+								if (area[0].IsExchange)
+									return [];
+								return [<Locale k="COMMON_SOURCE_MAINSTORY" />, undefined, true];
+							})();
+							text ||= header;
+
+							return <>
+								{ header && <div class="drop-header">
+									{ header }
+								</div> }
+								<div class={ BuildClass(!header && "headerless", perma && "perma") }>
+									<h6>{ text }</h6>
+
+									{ (() => {
+										const _area: Record<string, EntitySource[]> = {};
+										area.forEach(s => {
+											const k = s.IsEvent ? `${s.World}:${s.Chapter}` : s.World;
+											if (!(k in _area)) _area[k] = [];
+											_area[k].push(s);
+										});
+										return Object.keys(_area).map((k, i) => <span>
+											{ i > 0 && <span class="border-start mx-1" /> }
+											{ _area[k].map(source => <SourceBadge class="my-1" source={ source } linked />) }
+										</span>);
+									})() }
+								</div>
+							</>;
+						})
+					}
+				</div>
 			</>;
 	};
 
@@ -607,7 +636,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 									{ RenderDrops(target) }
 
 									{ target.rarity === ACTOR_GRADE.SSS
-										? <div class="alert alert-warning mt-3 p-1 pb-2">
+										? <div class="alert alert-danger mt-3 p-1 pb-2">
 											<div class="alert alert-light mb-3 p-1">
 												<Locale
 													k="EQUIP_VIEW_SOURCE_T4"

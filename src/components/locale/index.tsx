@@ -145,9 +145,13 @@ const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
 export default Locale;
 
 export function LocaleGet (k: string, ...p: any[]): string {
+	return LocaleGetEmpty(k, ...p) ?? k;
+}
+
+export function LocaleGetEmpty (k: string, ...p: any[]): string | undefined {
 	const locale = GetLocaleTable(CurrentLocale);
-	const t = (locale && locale[k]) || k;
-	return t.replace(/\{([0-9]+)\}/g, (p0, p1) => {
+	const t = locale && k in locale ? locale[k] : undefined;
+	return t?.replace(/\{([0-9]+)\}/g, (p0, p1) => {
 		const idx = parseInt(p1, 10);
 		if (idx < 0 || idx >= p.length) return "";
 		return p[idx];

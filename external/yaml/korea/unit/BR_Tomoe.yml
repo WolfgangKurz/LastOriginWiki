@@ -458,6 +458,7 @@ marriageVoice: true
 introVoice:
   - jp
   - jpdmm
+  - ko
 favor:
   present: 1.2
   clear: 1.2
@@ -553,6 +554,7 @@ chart:
   - 2
   - 4
 cv:
+  "2": {}
   "":
     ko: ""
     jp: 南早紀
@@ -683,6 +685,12 @@ source:
     - Ev:Ev23:EV1-2Ex
     - Ev:Ev23:EV2-3
     - Ev:Ev23:EV2-2Ex
+  - - Ev:Ev24:EV1-3
+    - Ev:Ev24:EV1-3B
+    - Ev:Ev24:EV2-2
+    - Ev:Ev24:EV2-7
+    - Ev:Ev24:EV2-3B
+    - Ev:Ev24:EV2-2Ex
 research: false
 skills:
   "1":
@@ -2727,6 +2735,66 @@ skills:
             chance: 1
 dialogue:
   KR:
+    "2":
+      SquadJoin: 걱정 마. 슈퍼스파이 토모님이 다 해치울 테니까.
+      Leader: 대장이면 소총이 아니라 대총을 써야 하는 거 아니야?
+      SortiePick: 적진에 잠입하는 임무구나?
+      StageStart: 잠입 작전답게 화려하게 가자!
+      Retreat: 이게 바로 슈퍼스파이 리턴즈!
+      SearchStart: 탐사 임무도 내게 맡겨둬.
+      SearchEnd: 멋지게 앞구르기로 귀환! 어때, 내가 구해온 것들은?
+      BattleFocus: 이번 티켓은 누구야?
+      ActionApprove: 티켓 확인!
+      SpSkill: 그린에이드 투척!
+      Retire: 잠입… 실패야.
+      Repair: 으… 다음에는 절대 안 질 거야.
+      Reinforce: 어제보다 더 업그레이트된 모습을 보여줄게.
+      ItemEquip: 아~ 슈퍼스파이에게 어울리는 장비네.
+      CoreLink: 아. 두 배로 똑똑해진 느낌이야. 영어로 하면 트윈 헤드 토모!
+      PresentGet: 사령관이 준 이 선물, 방범처리해서 보관해야겠네.
+      Login: 오늘은 슈퍼스파이 토모야. 어때? 이 옷도 잘 어울리지?
+      Idle_01_01: |-
+        슈퍼스파이한테 가장 중요한 게 뭐게?
+        바로 천재적인 두뇌야!
+        오르카의 지니어스를 담당하는
+        나랑 아주 잘 어울리는 역할이지?
+      Idle_01_02: |-
+        사령관, 같이 스틸라인 온라인 하자!
+        오늘 할 일? 당연히 다 끝냈지!
+        영어로 하면 디엔드, DIEND라고!
+      Idle_01_03: |-
+        조심하는 게 좋을 거야, 사령관!
+        이 슈퍼스파이 토모 님이 마음을 먹으면
+        그 어떤 보완장치로도 막을 수 없으니까!
+      SPIdle_01_01: |-
+        뭐, 뭐 하는 거야?!
+        내 16가지 쿵푸 기술로 혼내주는 수가 있어!
+      Idle_02_01: |-
+        슈퍼스파이라는 건 핵무기를 탑재한
+        보행 병기랑 싸워서 이겨야 하는 거지?
+        걱정 마, 메이 대장이랑 잘 얘기해서
+        혐의해 볼 테니까!
+      Idle_03_01: |-
+        말티즈 한 잔, 젓지 말고 흔들어서.
+        어때, 첩보영화 주인공처럼 보였어?
+        후후, 내 섹시한 모습에 반하면 곤란해!
+      Idle_04_01: |-
+        왜 슈퍼스파이가 되기로 한 거냐면…
+        슈퍼스파이 옆에는 로맨틱한 관계의
+        연인이 있는 법이잖아?
+        사령관이랑... 그런 관계가 되었으면 했거든.
+      SPIdle_02_01: |-
+        슈퍼스파이 토모님의 미인계에 걸렸구나?
+        독 먹은 쥐가 된 사령관을 어떻게 할까…
+        히히, 못 도망가게 꼭 끌어안고 있어야지.
+      Oath: 헤헤, 언젠가는 이런 날이 올 거라고 생각했어. 스파이가 주인공으로 나오는 영화나 게임을 보면, 엔딩 장면에서 스파이는 항상 사랑하는
+        사람과 이어지게 되잖아? 그러니까 이렇게 우리 둘이 맺어지는 건 당연한 일이지. 난 사령관을 계속 좋아하고 있었으니까.
+      OathIdle_01: |-
+        스파이는 가끔 가짜 가족을 만들기도 한대.
+        하지만 걱정하지 마!
+        사령관이랑 나는 그런 게 아니라…
+        진짜로 연인 사이니까.
+      MVP: 흐흐흥. 역시 내가 최고지. VIP 자리는 내 지정석이라고.
     "":
       Join: 자, 친구 토모가 왔어! 완전 좋지?
       SquadJoin: 좋아! 내가 들어가는 건 그... 무슨 용의 점이야!
@@ -2823,6 +2891,35 @@ dialogue:
         응... 지금부터...
       MVP: 어땠어 사령관? 상위 백퍼센트의 실력이였지?
   JP:
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: やほ～！みんなの友達、トモちゃん参上っ！マジヤバでしょ？
       SquadJoin: ""
@@ -2871,12 +2968,56 @@ dialogue:
       CoreLink: ""
       PresentGet: ""
       Login: ""
-      Idle_01_01: 応急処置：{0}HPで戦闘続行
-      Idle_01_02: 応急処置：ダメージ最小化
-      Idle_01_03: 胸に抱く風景
-      SPIdle_01_01: 突撃開始：行動力{0}%(ケシク)
+      Idle_01_01: |-
+        (미번역)무슨 일 있어? 기운 없어 보이네.
+        으음... 하는 수 없지! 여기서 지성미 넘치고
+        '별세미인'인 내가 배워온 걸 해줄게.
+        무릎베개라고- 바, 반대로 눕는 거야!
+      Idle_01_02: |-
+        (미번역)사령관이랑 같이 학교 다녔으면 어땠을까?
+        옆자리에 앉아서 같이 수업도 듣고, 교과서도
+        나눠보고, 하굣길에 손잡고... 지금도
+        행복하지만, 학교생활도 즐거웠을 것 같아. 그치?
+      Idle_01_03: |-
+        (미번역)보충수업 좀 빼줘, 사령관~ 시험에서
+        낙제됐다고 계속 나오래... 수업 말고 뭐할
+        거냐구? 놀아야지! 이번에 스틸라인 온라인
+        2인 모드 추가됐어. 내일까지 같이 하자!
+      SPIdle_01_01: |-
+        (미번역)잔뜩 공부해왔는데... 또 전부 잊어버렸어.
+        하나부터 열까지 다시 가르쳐줄래, 사령관?
+        응... 지금부터...
       MVP: ""
   EN:
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: Alright friends! Tomo is here! So cool, right?
       SquadJoin: ""
@@ -2981,6 +3122,35 @@ dialogue:
         Yes… From now on…
       MVP: ""
   TC:
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: 大家好呀~大家的好朋友托莫來了！很高興吧？
       SquadJoin: ""
@@ -3138,6 +3308,40 @@ skins:
         tbarId: 1
         voiceId: 1
         consumableKey: Skin_BR_Tomoe_1
+    - sid: 2
+      artist: TunaMaYo
+      price: 147
+      G: true
+      Spine: false
+      parts: 68
+      stage: false
+      subset:
+        - true
+        - true
+        - false
+        - true
+        - false
+        - true
+        - false
+        - false
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - Costume
+      facelist: []
+      releaseDate: 1706054400000
+      metadata:
+        imageId: 2
+        iconId: 2
+        tbarId: 2
+        voiceId: 2
+        2dmodel: 2DModel_BR_Tomoe_NS2
+        2dmodel_dam: 2DModel_BR_Tomoe_NS2_Dam
+        consumableKey: Skin_BR_Tomoe_2
     - sid: 21
       artist: PaintAle
       priceEx: Ingame

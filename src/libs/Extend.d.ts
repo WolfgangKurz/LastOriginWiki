@@ -15,4 +15,8 @@ declare global {
 	// export interface Object {
 	// 	map<T, K extends string, U> (callbackfn: (value: T, index: K, object: this) => U, thisArg?: any): U[];
 	// }
+
+	export interface Document {
+		fonts: FontFaceSet;
+	}
 }

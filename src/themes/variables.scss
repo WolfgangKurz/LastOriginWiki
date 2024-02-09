@@ -84,11 +84,11 @@ $theme-colors: map-merge($theme-colors, $colors);
 	}
 }
 
-$font-family-sans-serif: "Spoqa Han Sans", "Spoqa Han Sans JP", sans-serif;
+$font-family-sans-serif: "Pretendard JP Variable", "Pretendard Variable", sans-serif;
 
 @mixin font-ibm {
-	font-family: "IBM Plex Sans KR", "IBM Plex Sans", "Spoqa Han Sans", "Spoqa Han Sans JP", sans-serif;
+	font-family: list.append(("IBM Plex Sans KR"), $font-family-sans-serif, $separator: comma);
 }
 @mixin font-exo2 {
-	font-family: "Exo 2", "Spoqa Han Sans", "Spoqa Han Sans JP", sans-serif;
+	font-family: list.append(("Exo 2"), $font-family-sans-serif, $separator: comma);
 }

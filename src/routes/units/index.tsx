@@ -59,18 +59,30 @@ const Units: FunctionalComponent = () => {
 		if (Store.Units.DisplayType.value === "skin") return FilterableUnitDB;
 
 		if (Store.Units.SearchType.value === "simple") {
+			const input = new RegExp(
+				Store.Units.SearchText.value.replace(/ /g, ""), // ignore space
+				"i",
+			);
+
 			return FilterableUnitDB
 				.filter(x => {
 					try {
-						const name = LocaleGet(`UNIT_${x.uid}`);
+						const name = LocaleGet(`UNIT_${x.uid}`).replace(/ /g, ""); // ignore space
 						const firstName = name
 							.split("")
 							.map(x => DecomposeHangulSyllable(x) || x)
 							.map(x => typeof x === "object" ? x.initial || "" : x)
 							.join("");
 
-						return new RegExp(Store.Units.SearchText.value, "i").test(name) ||
-							new RegExp(Store.Units.SearchText.value, "i").test(firstName);
+						const alias = LocaleGet(`UNIT_ALIAS_${x.uid}`).replace(/ /g, ""); // ignore space
+						const aliasFirstName = alias
+							.split("")
+							.map(x => DecomposeHangulSyllable(x) || x)
+							.map(x => typeof x === "object" ? x.initial || "" : x)
+							.join("");
+
+						return input.test(name) || input.test(firstName) ||
+							input.test(alias) || input.test(aliasFirstName);
 					} catch {
 						return false;
 					}

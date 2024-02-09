@@ -219,7 +219,7 @@ class Spine {
 
 		this.skeleton.setSkin(newSkin);
 		this.skeleton.setToSetupPose();
-		this.skeleton.updateWorldTransform();
+		this.skeleton.updateWorldTransform(spine.Physics.update);
 
 		let offset = new spine.Vector2(), size = new spine.Vector2();
 		this.skeleton.getBounds(offset, size);
@@ -241,7 +241,7 @@ class Spine {
 		this.skeleton.setToSetupPose();
 		this.state.update(delta);
 		this.state.apply(this.skeleton);
-		this.skeleton.updateWorldTransform();
+		this.skeleton.updateWorldTransform(spine.Physics.update);
 	}
 
 	render (canvas: spine.SpineCanvas) {

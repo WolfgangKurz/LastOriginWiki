@@ -4,8 +4,9 @@ import { Signal, signal } from "@preact/signals";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/types/Enums";
 import { BuffEffectList, BuffEffectListGroupKeys } from "@/types/BuffEffect";
 import { EffectFilterListType } from "@/types/Buff";
+import type { LocaleTypes } from "@/types/Locale";
 
-import { CurrentLocale, LocaleTypes } from "@/libs/Locale";
+import { CurrentLocale } from "@/libs/Locale";
 
 import { Condition as UnitsCondition } from "@/routes/units/search/AdvancedSearch";
 
@@ -164,6 +165,7 @@ const Store = {
 
 	Story: {
 		lang: signal<LocaleTypes>(CurrentLocale),
+		back: signal<boolean>(false),
 	},
 };
 export default Store;

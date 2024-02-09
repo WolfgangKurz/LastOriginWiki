@@ -1,0 +1,17 @@
+.UnitTypeIcon {
+	display: inline-block;
+	width: var(--size, 1em);
+	height: var(--size, 1em);
+	vertical-align: text-bottom;
+
+	background-repeat: no-repeat;
+	background-size: var(--size, 1em);
+	filter: var(--filter);
+
+	@for $i from 0 to 3 {
+		&.Type-#{$i} {
+			$idx: $i + 1;
+			background-image: url($assetsRoot + "/ui/common/unit-type-" + $idx + ".png");
+		}
+	}
+}
