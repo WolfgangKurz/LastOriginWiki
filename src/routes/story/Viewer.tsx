@@ -1,133 +1,160 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "preact/hooks";
+import { route } from "preact-router";
 import Store from "@/store";
 
-import * as PIXI from "pixi.js";
-import * as LAYERS from "@pixi/layers";
-
-import { APPEAR_EFFECT, DIALOG_SPEAKER, OFF_EFFECT, SCG_ACTIVATION, SCREEN_EFFECT } from "@/types/Enums";
-import { DialogCharacter, DialogSelection, StoryData } from "@/types/Story/Story";
-import { StoryModelMeta } from "@/types/Story/Model";
-import { LocaleTypes } from "@/types/Locale";
+import { DIALOG_SPEAKER, SCG_ACTIVATION } from "@/types/Enums";
+import { DialogCharacter, StoryData, StoryMetadata } from "@/types/Story/Story";
+import SubStoryDB from "@/types/DB/SubStory";
+import { LocaleList, LocaleTypes } from "@/types/Locale";
 
 import { useUpdate } from "@/libs/hooks";
+import { AssetsRoot, ImageExtension, SubStoryUnit } from "@/libs/Const";
+import { isActive } from "@/libs/Functions";
 import { CurrentDB } from "@/libs/DB";
-import { AssetsRoot } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
-import BGMAlbums from "@/libs/BGM";
+import { parseVNode } from "@/libs/VNode";
+import { UpdateTitle } from "@/libs/Site";
 
-import Locale from "@/components/locale";
 import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import Locale, { LocaleGet } from "@/components/locale";
+import UnitFace from "@/components/unit-face";
+import IconGlobe2 from "@/components/bootstrap-icon/icons/Globe2";
+import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
+import IconVolumeUpFill from "@/components/bootstrap-icon/icons/VolumeUpFill";
 
-import { fontFamily, Nn } from "./common";
-import EffectBase from "./Effects/EffectBase";
-import VideoEffect from "./Effects/VideoEffect";
-import ShakeAndSoundEffect from "./Effects/ShakeAndSoundEffect";
-import Animation_OpenEyes from "./Animations/Animation_OpenEyes";
+import Notfound from "@/routes/notfound";
 
-import FadeText from "./Objects/FadeText";
-import FadeSprite from "./Objects/FadeSprite";
-import DialogObject from "./Objects/DialogObject";
-import SelectionObject from "./Objects/SelectionObject";
-import CommuSprite from "./Objects/CommuSprite";
-import U2DModel from "./Objects/U2DModel";
+import { Nn } from "./common";
+import Player from "./Player";
 
 import style from "./style.module.scss";
 
-type CharSpriteType = U2DModel | FadeSprite | CommuSprite;
-
-/**
- * 50 - BG
- * 500 - Character
- * * 500 - C
- * * 501 - L
- * * 502 - R
- * * 510 - C Activate
- * * 511 - L Activate
- * * 511 - R Activate
- * 590 - ScreenEffect
- * 600 - Add
- * 900 - Effect
- * 1000 - Dialog
- * 1100 - Cover
- * 1200 - Selections
- */
-
-interface ViewerProps {
-	display?: boolean;
-
-	data: StoryData[];
-	bgm: string;
-
-	cursor: number;
-	onDone?: () => void;
-	onNext?: (cursor: number) => void;
-
-	onVoice?: (voice: string) => void;
+interface StoryProps {
+	id: string;
+	type: string;
 }
 
-const Viewer: FunctionalComponent<ViewerProps> = (props) => {
+const FaceAlias: Record<string, string> = {
+	AGS_MrAlfred_0: "AGS_MrAlfred_0",
+	BR_Brownie_01_0: "BR_Brownie_0",
+	BR_Brownie_02_0: "BR_Brownie_0",
+	BR_NightAngelFake_0: "BR_NightAngel_0",
+	MP_Robert_0: "AGS_MrAlfred2_1",
+	PECS_LemonadeOmega_0: "MP_LemonadeOmega_0",
+};
+
+const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	const update = useUpdate();
 
-	const [app, setApp] = useState<PIXI.Application | null>(null);
-	const [cover, setCover] = useState<PIXI.Sprite | null>(null);
-	const [screen, setScreen] = useState<PIXI.Container | null>(null);
+	const [isBackMode] = useState(Store.Story.back.value);
 
-	const [dialog, setDialog] = useState<DialogObject | null>(null);
-	const [selection, setSelection] = useState<SelectionObject | null>(null);
-	const [screenEffectObject, setScreenEffectObject] = useState<FadeSprite | null>(null);
+	const [error, setError] = useState(false);
 
-	const [voice, setVoice] = useState<string>("");
-	const [bgm, setBGM] = useState<string>("");
+	const [storyMetadata, setStoryMetadata] = useState<StoryMetadata | null>(null);
+	const [storyData, setStoryData] = useState<StoryData[] | null>(null);
 
-	const [bgName, setBGName] = useState<Record<LocaleTypes, string | undefined> | null>(null);
-	const [bgDesc, setBGDesc] = useState<Record<LocaleTypes, string | undefined> | null>(null);
-	const [bgImage, setBGImage] = useState<string>("");
+	const [voicePreview, setVoicePreview] = useState<string>("");
+	const [bgm, setBGM] = useState("");
+	const [cursor, setCursor] = useState(0);
 
-	const [chars, setChars] = useState<Tuple<DialogCharacter | null, 3>>([null, null, null]);
-	const charRef = useRef<Tuple<CharSpriteType | undefined, 3>>([undefined, undefined, undefined]);
+	const [tab, setTab] = useState<"player" | "transcription">("player");
+	const [run, setRun] = useState(false);
 
-	const [addImage, setAddImage] = useState<string>("");
-	const [addImageAppear, setAddImageAppear] = useState<APPEAR_EFFECT>(APPEAR_EFFECT.NONE);
-	const [addImageOff, setAddImageOff] = useState<OFF_EFFECT>(OFF_EFFECT.NONE);
-
-	const [screenEffect, setScreenEffect] = useState<SCREEN_EFFECT>(SCREEN_EFFECT.NONE);
-
-	const [sel, setSel] = useState<DialogSelection[]>([]);
-	const [selDisp, setSelDisp] = useState(false);
-
-	const screenEffectFilter = useMemo(() => new PIXI.ColorMatrixFilter(), []);
-	const speakerFilter = useMemo(() => [0, 0, 0].map(() => new PIXI.ColorMatrixFilter()), []);
-
-	const viewerRef = useRef<HTMLDivElement>(null);
-
-	const [ignore2DModel, setIgnore2DModel] = useState(false);
-
-	const modelList = GetJson<string[]>(StaticDB.Story2DModel);
-	if (!modelList && !ignore2DModel) {
-		JsonLoaderCore(CurrentDB, StaticDB.Story2DModel)
-			.catch(() => setIgnore2DModel(true))
-			.finally(() => {
-				console.log("#");
-				update();
-			});
-
-		return <></>;
-	}
-
-	function setCharsByIndex (value: DialogCharacter | null, index: 0 | 1 | 2) {
-		setChars(prev => {
-			const ret: Mutable<typeof chars> = [...prev];
-			ret[index] = value;
-			return ret;
-		});
-	}
-
-	const curData = props.cursor >= props.data.length
-		? undefined
-		: props.data[props.cursor];
+	const transcriptionRefs = useRef<HTMLDivElement[]>([]);
 
 	const lang = Store.Story.lang.value;
 	const langFallback = [lang, "EN", "KR"].unique();
+
+	const imgExt = ImageExtension();
+
+	useEffect(() => {
+		if (Store.Story.back.peek())
+			Store.Story.back.value = false;
+	}, []);
+
+	function getVoice (voice: string): string {
+		if (!voice) return "";
+		return `${AssetsRoot}/audio/voice-ko/${voice}.mp3`;
+	}
+
+	function Speaker (data: StoryData): DialogCharacter | undefined {
+		const speakerTable: Record<DIALOG_SPEAKER, "L" | "C" | "R" | ""> = {
+			[DIALOG_SPEAKER.LEFT]: "L",
+			[DIALOG_SPEAKER.CENTER]: "C",
+			[DIALOG_SPEAKER.RIGHT]: "R",
+			[DIALOG_SPEAKER.NONE]: "",
+		};
+		return data.char[speakerTable[data.speaker]];
+	}
+	function Activates (data: StoryData): DialogCharacter[] {
+		return Object.values(data.char)
+			.filter(r => r.SCG === SCG_ACTIVATION.ACTIVATION)
+			.filter(r => !r.image.includes("_Cut"));
+	}
+	function ImageToFace (model: string): { uid: string; skin: number; fallback: string; } {
+		let sid = model
+			.replace(/_DL_N/g, "")
+			.replace(/^2DModel_(.+)_([NPS])(S[0-9]+)?$/, (p, p1, p2, p3) => {
+				if (p2 === "N") {
+					if (p3)
+						return `${p1}_${p3.substring(1)}`;
+					else
+						return `${p1}_0`;
+				} else if (p2 === "P")
+					return `${p1}_${parseInt(p3.substring(1), 10) + 19}`;
+				else if (p2 === "S")
+					return `${p1}_${parseInt(p3.substring(1), 10) + 20}`;
+				return `${p1}_0`;
+			});
+		if (sid in FaceAlias) sid = FaceAlias[sid];
+
+		if (sid.includes("_Dialog")) { // story 2dmodel
+			return {
+				uid: "!",
+				skin: 0,
+				fallback: `${AssetsRoot}/${imgExt}/story/${sid.replace(/^2DModel_/, "")}.${imgExt}`,
+			};
+		} else if (sid.includes("_Commu")) // commu
+			return ImageToFace(model.replace(/(2DModel_|_Commu)/, ""));
+
+		const r = /^(.+)_([0-9]+)$/.exec(sid);
+		if (!r) {
+			return {
+				uid: sid,
+				skin: 0,
+				fallback: `${AssetsRoot}/${imgExt}/story/${sid}_0.${imgExt}`,
+			};
+		}
+
+		const skin = parseInt(r[2], 10);
+		return {
+			uid: r[1],
+			skin,
+			fallback: `${AssetsRoot}/${imgExt}/story/${r[1]}_${skin}.${imgExt}`,
+		};
+	}
+	function convTokens (text: string): string {
+		return text
+			.split(/(\0[^\0]+\0[^\0]+\0[^\0]+\0)/gs)
+			.map(p => {
+				if (p[0] === "\0") { // formatted
+					const r = (/\0([^\0]+)\0([^\0]+)\0([^\0]+)\0/gs).exec(p);
+					if (r) {
+						switch (r[1]) {
+							case "color":
+								return `<span data-color="${r[2]}" style="color:#${r[2]}">${r[3]}</span>`;
+
+							default:
+								return r[3];
+						}
+					}
+				}
+
+				return p;
+			})
+			.join("");
+	}
+
 	const LText = useCallback((str: Record<LocaleTypes, string | undefined>): string => {
 		for (const lang of langFallback) {
 			if ((lang in str) && str[lang])
@@ -135,884 +162,406 @@ const Viewer: FunctionalComponent<ViewerProps> = (props) => {
 		}
 		return "";
 	}, [lang]);
-	function isValidLText (str: Record<LocaleTypes, string | undefined>): boolean {
-		return Object.values(str).filter(x => x).length > 0;
-	}
 
-	function isCommu (model: string): boolean {
-		return model.includes("_Commu");
-	}
-	function getCommuImage (image: string, imageVar: string): string {
-		if (imageVar.startsWith("Cut_"))
-			return `${AssetsRoot}/story/add/${imageVar}.webp`;
+	const { wid, mid, nid, storyType } = useMemo(() => {
+		const reg = /^Ch([0-9]+)(N[0-9]+|Ev|Ev[0-9]+)?Stage([0-9]+)(B|Ex|EX|C|S)?$/;
+		const r = reg.exec(props.id);
+		if (r) {
+			const mid = parseInt(r[1], 10);
+			// const t = parseInt(r[5], 10);
+			const postfix = r[5] === "EX"
+				? "Ex"
+				: r[5] === "S"
+					? (r[2] === "Ev5" || r[2] === "Ev6")
+						? "ep"
+						: "s"
+					: (r[5] || "");
 
-		const v = imageVar || (image.replace(/^2DModel_/, "") + "_Idle");
-		return `${AssetsRoot}/story/model/commu/${v}.webp`;
-	}
-	function isStoryModel (model: string): boolean {
-		const list = [
-			"2DModel_Woman_N", "2DModel_BR_PastGirl_N", "2DModel_BR_PastMan_N",
-			"2DModel_BR_PastMan2_N", "2DModel_BR_TomoeKIN_N", "2DModel_Eva_N",
-			"2DModel_KaenFake_N", "2DModel_Kasasagi_N", "2DModel_Kirishima_N",
-			"2DModel_Man_N", "2DModel_MP_AzazelAlter_N", "2DModel_MP_IronPrince_N",
-			"2DModel_MP_Kidnapper_N", "2DModel_PECS_LemonadeDelta_N", "2DModel_PECS_LemonadeGamma_N",
-			"2DModel_MP_LemonadeOmega_N", "2DModel_MP_MetalGuard_N", "2DModel_MP_NightChick_N",
-			"2DModel_MP_Robert_N", "2DModel_MP_RocC_N", "2DModel_MP_RocC1_N", "2DModel_MP_Speaker_N",
-			"2DModel_MP_Stalker_N", "2DModel_PECS_HelmetWristCut_N", "2DModel_PECS_MachinaFake_N",
-			"2DModel_PECS_SecretaryYumi_N", "2DModel_PECS_WristCut_N", "2DModel_Priest01_N",
-			"2DModel_Priest02_N", "2DModel_PriestAngel_N", "2DModel_PriestGirl01_N",
-			"2DModel_PROP_Diyap11_1_N", "2DModel_Sherlock_N",
-			"2DModel_AGS_MrAlfred_N", "2DModel_PECS_HighElven_N_DL_N", "2DModel_BR_NightAngelFake_N",
-			"2DModel_DS_Ramiel_N_DL_N", "2DModel_DS_BunnySlayer_N_DL_N",
-			"2DModel_PECS_Azaz_NS2", "2DModel_BR_RoyalArsenal_NS2",
-			"2DModel_PECS_Azaz_NS2_DL_N", "2DModel_BR_RoyalArsenal_NS2_DL_N",
-			"2DModel_MiniPerrault_N", "2DModel_Superior01_N",
-			"2DModel_BR_Efreeti_NS1_DL_N",
-			"2DModel_PECS_LemonadeBeta_N", "2DModel_PECS_Shepherd_N",
-			"2DModel_Mercenary_N", "2DModel_Simon_N", "2DModel_Simon2_N",
-			"2DModel_PECS_LemonadeGamma_N_DL_N",
-		];
-		if (list.includes(model)) return true;
-		return false;
-	}
-	function ConvertChar (model: string): string | false {
-		if (isCommu(model)) return false; // Commu image will be processed with different way
-		if (isStoryModel(model)) return false;
+			const type = props.type.toUpperCase();
 
-		const charTable: Record<string, string> = {
-			"3P_Amphitrite_N_DL_0_O": "3P_Amphitrite_0_O_S",
-			"3P_Alice_NS1_DL_0_O": "3P_Alice_1_O_BS",
-			"3P_Daphne_NS2_DL_0_O": "3P_Daphne_2_O_S",
-			"3P_Galatea_N_DL_0_O": "3P_Galatea_0_O_S",
-			"3P_Salacia_N_DL_0_O": "3P_Salacia_0_O_S",
-			"3P_Titania_NS2_DL_0_O": "3P_Titania_2_O_S",
-			AGS_RheinRitter_NS1_DL_0_O: "AGS_RheinRitter_1_O_S",
-			BR_Alvis_NS1_DL_0_O: "BR_Alvis_1_O_S",
-			BR_DrM_N_DL_0_O: "BR_DrM_0_O_S",
-			BR_Efreeti_NS1_DL_0_O: "BR_Efreeti_1_O_S",
-			BR_Emily_NS1_DL_0_O: "BR_Emily_1_O",
-			BR_Gnome_NS2_DL_0_O: "BR_Gnome_2_O_S",
-			BR_Hela_N_DL_0_O: "BR_Hela_0_O_S",
-			BR_HongRyun_NS4_DL_0_O: "BR_HongRyun_4_O_B",
-			BR_May_NS2_DL_0_O: "BR_May_2_O_S",
-			BR_Nereid_N_DL_0_O: "BR_Nereid_0_O",
-			BR_NightAngel_NS2_DL_0_O: "BR_NightAngel_2_O_S",
-			BR_Phantom_N_DL_0_O: "BR_Phantom_0_O",
-			BR_RoyalArsenal_N_DL_0_O: "BR_RoyalArsenal_0_O_S",
-			BR_Sirene_N_DL_0_O: "BR_Sirene_0_O_S",
-			BR_StratoAngel_NS1_DL_0_O: "BR_StratoAngel_1_O_S",
-			PECS_DarkElf_NS1_DL_0_O: "PECS_DarkElf_1_O_S",
-			PECS_ElvenForestmaker_NS1_DL_0_O: "PECS_ElvenForestmaker_1_O",
-			PECS_HighElven_N_DL_0_O: "PECS_HighElven_0_O",
-			PECS_Hussar_NS1_DL_0_O: "PECS_Hussar_1_O_S",
-			PECS_Sadius_N_DL_0_O: "PECS_Sadius_0_O_S",
-			PECS_Sonia_N_DL_0_O: "PECS_Sonia_0_O_S",
-			PECS_Triaina_N_DL_0_O: "PECS_Triaina_0_O_S",
-
-			"3P_Amphitrite_1_O": "3P_Amphitrite_1_O_S",
-			"3P_BlackLilith_0_O": "3P_BlackLilith_0_O_S",
-			"3P_Eternity_2_O": "3P_Eternity_2_O_S",
-			"3P_Frigga_1_O": "3P_Frigga_1_O_S",
-			"3P_Maria_2_O": "3P_Maria_2_O_S",
-			"3P_Melite_0_O": "3P_Melite_0_O_S",
-			"3P_Melite_1_O": "3P_Melite_1_O_S",
-			"3P_Salacia_1_O": "3P_Salacia_1_O_S",
-			"3P_Sowan_2_O": "3P_Sowan_2_O_S",
-			"3P_Titania_1_O": "3P_Titania_1_O_S",
-			BR_Andvari_0_O: "BR_Andvari_0_O_S",
-			BR_Amy_0_O: "BR_Amy_0_O_S",
-			BR_Amy_2_O: "BR_Amy_2_O_S",
-			BR_Brunhild_0_O: "BR_Brunhild_0_O_S",
-			BR_Habetrot_0_O: "BR_Habetrot_0_O_S",
-			BR_Harpy_1_O: "BR_Harpy_1_O_B",
-			BR_Hela_1_O: "BR_Hela_1_O_S",
-			BR_Hyena_1_O: "BR_Hyena_1_O_S",
-			BR_Leona_0_O: "BR_Leona_0_O_S",
-			BR_Leprechaun_2_O: "BR_Leprechaun_2_O_B",
-			BR_Nashorn_0_O: "BR_Nashorn_0_O_S",
-			BR_Neodym_0_O: "BR_Neodym_0_O_S",
-			BR_Neodym_3_O: "BR_Neodym_3_O_B",
-			BR_Miho_3_O: "BR_Miho_3_O_S",
-			BR_RoyalArsenal_0_O: "BR_RoyalArsenal_0_O_S",
-			BR_Salamander_0_O: "BR_Salamander_0_O_S",
-			BR_Scarabya_0_O: "BR_Scarabya_0_O_S",
-			BR_Scarabya_1_O: "BR_Scarabya_1_O_S",
-			BR_Sirene_1_O: "BR_Sirene_1_O_B",
-			BR_Sirene_2_O: "BR_Sirene_2_O_S",
-			BR_Sleipnir_2_O: "BR_Sleipnir_2_O_S",
-			BR_StratoAngel_0_O: "BR_StratoAngel_0_O_S",
-			BR_Vargr_0_O: "BR_Vargr_0_O_S",
-			BR_Wraithy_2_O: "BR_Wraithy_2_O_S",
-			DS_Angel_1_O: "DS_Angel_1_O_B",
-			DS_Ramiel_0_O: "DS_Ramiel_0_O_S",
-			PECS_Boryeon_1_O: "PECS_Boryeon_1_O_S",
-			PECS_BlindPrincess_1_O: "PECS_BlindPrincess_1_O_B",
-			PECS_BS_1_O: "PECS_BS_1_O_S",
-			PECS_CoCoWhiteShell_0_O: "PECS_CoCoWhiteShell_0_O_S",
-			PECS_Ella_1_O: "PECS_Ella_1_O_S",
-			PECS_Erato_0_O: "PECS_Erato_0_O_S",
-			PECS_Glacias_1_O: "PECS_Glacias_1_O_S",
-			PECS_LemonadeAlpha_0_O: "PECS_LemonadeAlpha_0_O_S",
-			PECS_Mnemosyne_0_O: "PECS_Mnemosyne_0_O_S",
-			PECS_Muse_0_O: "PECS_Muse_0_O_S",
-			PECS_Olivia_0_O: "PECS_Olivia_0_O_S",
-			PECS_Orangeade_0_O: "PECS_Orangeade_0_O_S",
-			PECS_Peregrinus_0_O: "PECS_Peregrinus_0_O_S",
-			PECS_Rena_0_O: "PECS_Rena_0_O_S",
-			PECS_Saetti_2_O: "PECS_Saetti_2_O_S",
-			ST_Lancer_2_O: "ST_Lancer_2_O_S",
-			ST_Mercury_0_O: "ST_Mercury_0_O_S",
-			SJ_Tachi_0_O: "SJ_Tachi_0_O_S",
-			ST_Ullr_0_O: "ST_Ullr_0_O_S",
-			ST_Ullr_1_O: "ST_Ullr_1_O_S",
-
-			BR_Brownie_01_0_O: "BR_Brownie_0_O",
-			BR_Brownie_02_0_O: "BR_Brownie_0_O",
-		};
-
-		const reg = /^2DModel_(.+)_([NPS])(S([0-9]+))?$/;
-		if (reg.test(model)) {
-			const char = model.replace(reg, (p, p1, p2, p3, p4) => {
-				if (p2 === "N")
-					return `${p1}_${p4 ?? 0}_O`;
-				else if (p2 === "P")
-					return `${p1}_${parseInt(p4, 10) + 19}_O`;
-				else if (p2 === "S")
-					return `${p1}_${parseInt(p4, 10) + 20}_O`;
-
-				return `${p1}_0_O`;
-			});
-
-			if (char in charTable)
-				return charTable[char];
-
-			return char;
-		}
-		return false;
-	}
-
-	function getVoice (voice: string): string {
-		if (!voice) return "";
-		return `${AssetsRoot}/audio/voice-ko/${voice}.mp3`;
-	}
-	function getBGM (bgm: string): string {
-		if (!bgm) return "";
-		if (bgm === "15 BGM_Empty") return "";
-
-		const bgmTable: Record<string, string> = {
-			Valentine_01: "Valentine",
-		};
-
-		let normalized = bgm.replace(/^([0-9]+[_ ])?(BGM_)?(.+)$/, "$3");
-		if (normalized in bgmTable) normalized = bgmTable[normalized];
-		for (const album of BGMAlbums) {
-			for (const song of album.songs) {
-				if (song.type !== "audio") continue;
-
-				const target = song.filename.replace(/^[^/]+\/(.+)\.mp3$/, "$1");
-				if (normalized === target)
-					return `${AssetsRoot}/audio/bgm/${song.filename}`;
-			}
-		}
-
-		console.warn("Unknown BGM : " + bgm);
-		return "";
-	}
-
-	useEffect(() => { // initialize
-		let app: PIXI.Application | null = null;
-
-		if (viewerRef.current) {
-			app = new PIXI.Application({
-				antialias: true,
-				backgroundColor: 0x000000,
-
-				width: 1280,
-				height: 720,
-
-				// eventMode: "passive",
-				eventFeatures: {
-					globalMove: false,
-					move: true,
-					click: true,
-					wheel: true,
-				},
-			});
-			globalThis.__PIXI_APP__ = app;
-			setApp(app);
-
-			app.stage = new LAYERS.Stage();
-
-			const screen = new PIXI.Container();
-			screen.name = "@screen";
-			setScreen(screen);
-			app.stage.addChild(screen);
-
-			const cover = new PIXI.Sprite();
-			cover.name = "@cover";
-			cover.width = 1280;
-			cover.height = 720;
-			cover.zIndex = 1100;
-			cover.eventMode = "static";
-			app.stage.addChild(cover);
-			setCover(cover);
-
-			const dialog = new DialogObject();
-			dialog.name = "@dialog";
-			dialog.zIndex = 1000;
-			setDialog(dialog);
-			screen.addChild(dialog);
-
-			const selection = new SelectionObject();
-			selection.name = "@selection";
-			selection.zIndex = 1200;
-			selection.setDisplay(false);
-			setSelection(selection);
-			app.stage.addChild(selection);
-
-			// 1x1 white gif dataURI
-			const screenEffect = new FadeSprite(PIXI.Texture.from("data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs="));
-			screenEffect.name = "@screenEffect";
-			screenEffect.zIndex = 590;
-			screenEffect.alpha = 0;
-			screenEffect.filters = [screenEffectFilter];
-			screenEffect.width = cover.width;
-			screenEffect.height = cover.height;
-			setScreenEffectObject(screenEffect);
-			app.stage.addChild(screenEffect);
-
-			app.stage.sortableChildren = true;
-			screen.sortableChildren = true;
-
-			viewerRef.current.appendChild(app.view as unknown as HTMLCanvasElement); // :(
-		}
-
-		return () => {
-			if (app) app.destroy(true);
-		};
-	}, [viewerRef.current]);
-
-	useEffect(() => { // click event handler
-		let func: (() => void) | undefined = undefined;
-		let screenEffectTimer: number | null = null;
-
-		if (curData && cover) {
-			func = () => {
-				const fn = () => {
-					if (props.onNext) {
-						if (sel.length === 0 || selDisp) {
-							const i = props.data.findIndex(r => r.key === curData.next);
-							if (i >= 0)
-								props.onNext(i);
-							else if (props.onDone)
-								props.onDone();
-						} else
-							setSelDisp(true);
-					}
+			if (r[2]) { // EvXX or 12 chapter...
+				return {
+					wid: r[2] === "Ev"
+						? "Ev1"
+						: r[2].startsWith("N")
+							? r[1] // Story
+							: r[2],
+					mid: r[2].startsWith("N")
+						? parseInt(r[2].substring(1), 10).toString()
+						: mid,
+					nid: `${r[2].startsWith("Ev") ? "Ev" : ""}${mid}-${parseInt(r[3], 10)}${postfix}`,
+					storyType: type,
 				};
-
-				switch (screenEffect) {
-					case SCREEN_EFFECT.FADE_OUT_BLACK:
-					case SCREEN_EFFECT.FADE_OUT_WHITE:
-						if (screenEffectObject) {
-							if (!screenEffectObject.fading) {
-								screenEffectObject.fadeIn(1.0);
-								screenEffectTimer = setTimeout(() => fn(), 1000);
-							} else {
-								screenEffectObject.stopFade();
-								fn();
-							}
-						}
-						break;
-					default:
-						fn();
-						break;
-				}
-			};
-			cover.addEventListener("click", func);
-			cover.addEventListener("tap", func);
-		}
-
-		return () => {
-			if (screenEffectTimer)
-				clearTimeout(screenEffectTimer);
-
-			if (cover && func) {
-				cover.removeEventListener("tap", func);
-				cover.removeEventListener("click", func);
-			}
-		};
-	}, [cover, curData, screenEffect, props.onNext, props.onDone, sel, selDisp]);
-
-	useEffect(() => { // Effect
-		let effectTimer: number = -1;
-		let effect: EffectBase | null = null;
-
-		if (screen && curData?.addEffect) {
-			effect = (() => {
-				const autoNext = () => {
-					if (props.onNext) {
-						const i = props.data.findIndex(r => r.key === curData.next);
-						if (i >= 0)
-							props.onNext(i);
-						else if (props.onDone)
-							props.onDone();
-					}
+			} else { // Story
+				return {
+					wid: parseInt(r[1], 10).toString(), // "Story",
+					mid,
+					nid: `${mid}-${parseInt(r[3], 10)}${postfix}`,
+					storyType: type,
 				};
+			}
+		} else {
+			const reg = /^ChCS-([0-9]+)Stage([0-9]+)$/;
+			const r = reg.exec(props.id);
+			if (r) { // old substory
+				const key = `S${parseInt(r[1], 10)}-${parseInt(r[2], 10)}`;
+				return {
+					wid: "-",
+					mid: 1,
+					nid: key,
+					storyType: "Sub",
+				};
+			} else if (props.id.startsWith("SubStory_")) { // map substory
+				const reg = /^SubStory_Chapter_([^_]+)_(.+)$/;
+				const r = reg.exec(props.id)!;
 
-				if (curData.addEffect === "Prefab_BangNShaking_01")
-					return new ShakeAndSoundEffect(screen, "Explosion_03", 1.0, 4.7, 1.0, false, 0.0);
-				else if (curData.addEffect === "Prefeb_OpenEyes") {
-					const effect = new Animation_OpenEyes(screen);
-					effect.onDone = autoNext;
-					return effect;
-				} else if (curData.addEffect === "Prefab_IdolEnding") {
-					const effect = new VideoEffect(screen, "Idol_Ending");
-					effect.onDone = autoNext;
-					return effect;
-				} else if (curData.addEffect === "Prefab_3rdAnniversary") {
-					const effect = new VideoEffect(screen, "3rdAnniversary");
-					effect.onDone = autoNext;
-					return effect;
-				}
+				const k = r[1];
+				const unit = r[2];
 
-				console.warn("[STORY] Unknown Effect '" + curData.addEffect + "'");
-				return null;
-			})();
+				const mr = /^([0-9]+)(.+)$/.exec(k)!;
 
-			if (effect) {
-				let time = Date.now();
-				effectTimer = setInterval(() => {
-					const now = Date.now();
-					const delta = (now - time) * 0.001;
-					time = now;
+				return {
+					wid: mr[2],
+					mid: parseInt(mr[1], 10),
+					nid: unit,
+					storyType: "Sub2",
+				};
+			} else if (props.id.startsWith("Story_")) { // separated substory
+				const reg = /^Story_Char_(.+)_N_.+_([0-9]+)-(START|END)$/;
+				const r = reg.exec(props.type)!;
 
-					if (effect) effect.Update(delta);
-				}, 50);
+				return {
+					wid: props.type.substring(0, props.type.lastIndexOf("-")),
+					mid: parseInt(r[2], 10),
+					nid: r[1],
+					storyType: "Sub3",
+				};
 			}
 		}
+		return { wid: "", mid: 0, nid: 0, storyType: props.type };
+	}, [props.id, props.type]);
 
-		return () => {
-			if (screen)
-				screen.position.set(0, 0);
+	const SubStoryDB = storyType === "Sub3" ? GetJson<SubStoryDB>(StaticDB.SubStory) : null;
+	useEffect(() => {
+		if (storyType === "Sub3" && !SubStoryDB)
+			JsonLoaderCore(CurrentDB, StaticDB.SubStory).then(() => update());
+	}, [storyType, SubStoryDB]);
 
-			if (effect) {
-				effect.Destroy();
-				effect = null;
-			}
+	const subGroup = useMemo(() => {
+		if (!SubStoryDB) return null;
 
-			if (effectTimer !== -1)
-				clearInterval(effectTimer);
-		};
-	}, [screen, curData]);
+		return SubStoryDB.story.find(r => r.key === wid) || null;
+	}, [SubStoryDB]);
 
-	useEffect(() => { // curData processing
-		console.debug("[STORY:curData]", curData);
-
-		if (screen && curData) {
-			setScreenEffect(curData.screenEffect);
-
-			if (isValidLText(curData.bg.name)) setBGName(curData.bg.name);
-			if (isValidLText(curData.bg.desc)) setBGDesc(curData.bg.desc);
-			if (curData.bg.image) setBGImage(curData.bg.image);
-
-			if (curData.voice) {
-				if (props.onVoice)
-					props.onVoice(curData.voice);
-				else
-					setVoice(curData.voice);
-			}
-
-			if (curData.char.L) setCharsByIndex(curData.char.L, 0);
-			else if (chars[0]) setCharsByIndex(null, 0);
-
-			if (curData.char.R) setCharsByIndex(curData.char.R, 1);
-			else if (chars[1]) setCharsByIndex(null, 1);
-
-			if (curData.char.C) setCharsByIndex(curData.char.C, 2);
-			else if (chars[2]) setCharsByIndex(null, 2);
-
-			if (curData.add) {
-				if (curData.add.image !== addImage)
-					setAddImage(curData.add.image);
-
-				if (curData.add.appear !== addImageAppear)
-					setAddImageAppear(curData.add.appear);
-
-				if (curData.add.off !== addImageOff)
-					setAddImageOff(curData.add.off);
-			}
-
-			if (curData.sel) {
-				setSelDisp(false);
-				setSel(curData.sel);
-			}
+	const world = useMemo(() => {
+		if (storyType === "Sub3") {
+			if (!subGroup) return "...";
+			return LocaleGet(subGroup.group);
 		}
-	}, [screen, curData]);
-	useEffect(() => { // BGM processing
-		let _bgm = props.bgm; // find bgm to play
-		for (let i = 0; i <= props.cursor; i++) {
-			const v = props.data[i].bgm;
-			if (v) _bgm = v;
-		}
-		if (bgm !== _bgm) setBGM(_bgm);
-	}, [props.bgm, props.data, props.cursor, bgm]);
+		return LocaleGet(`WORLD_WORLD_${wid}_${mid}`);
+	}, [lang, storyType, wid, mid, nid]);
 
-	useEffect(() => { // BG Name (left top)
-		let text: FadeText | null = null;
-		if (bgName && screen) {
-			// const _ = (s: string): string => {
-			// 	const v = new Array(10)
-			// 		.fill("0 0 2px #000")
-			// 		.join(",");
-			// 	return `<span style="text-shadow:${v}">${s}</span>`;
-			// };
+	useEffect(() => {
+		setStoryMetadata(null);
 
-			text = new FadeText(LText(bgName), {
-				fontFamily,
-				fontWeight: "500",
-				fontSize: 24,
-				fill: 0xffffff,
-				stroke: 0x000000,
-				strokeThickness: 1.5,
-			});
-			text.name = "@bgName";
-			text.position.set(20, 20);
-			text.zIndex = 950;
-			screen.addChild(text);
-
-			setTimeout(() => {
-				if (text && !text.destroyed)
-					text.fadeOut(2.0);
-			}, 4000);
-		}
-
-		return () => {
-			if (text) text.destroy();
-		};
-	}, [screen, bgName]);
-	useEffect(() => { // BG Desc (center)
-		let text: FadeText | null = null;
-		if (bgDesc && screen) {
-			// const _ = (s: string): string => {
-			// 	const v = new Array(15)
-			// 		.fill("0 0 3px #000")
-			// 		.join(",");
-			// 	return `<span style="text-shadow:${v}">${s}</span>`;
-			// };
-
-			text = new FadeText(LText(bgDesc), {
-				fontFamily,
-				fontSize: 48,
-				fill: 0xffffff,
-				stroke: 0x000000,
-				strokeThickness: 2,
-			});
-			text.name = "@bgDesc";
-			text.anchor.set(0.5, 0.5);
-			text.position.set(640, 360);
-			text.zIndex = 950;
-			screen.addChild(text);
-
-			setTimeout(() => {
-				if (text && !text.destroyed)
-					text.fadeOut(2.0);
-			}, 2000);
-		}
-
-		return () => {
-			if (text) text.destroy();
-		};
-	}, [screen, bgDesc]);
-	useEffect(() => { // BG Image
-		let disposed = false;
-		let bg: FadeSprite | null = null;
-		if (screen && bgImage) {
-			const bgZ: [test: string | RegExp, z: number][] = [
-				["Cut_SubmarineMaintenance", 0], // except
-				["Cut_ArkofMemory_01", 0],
-				["Cut_ArkofMemory_02", 0],
-
-				[/^Cut_/, 500], // over Char
-				["Eva_Cut", 500],
-				[/^BG_11_[1-7]$/, 500], // cut-scene
-			];
-
-			PIXI.Texture.fromURL(`${AssetsRoot}/story/bg/${bgImage}.jpg`)
-				.then(tex => {
-					if (disposed) {
-						tex.destroy();
-						return;
-					}
-
-					const z = (() => {
-						const f = bgZ.find(r => typeof r[0] === "string"
-							? r[0] === bgImage
-							: r[0].test(bgImage)
-						);
-						return f ? f[1] : 0;
-					})();
-
-					bg = new FadeSprite(tex);
-					bg.name = "@bg";
-					bg.width = 1280;
-					bg.height = 720;
-					bg.zIndex = 50 + z;
-					screen.addChild(bg);
+		const cached = GetJson<StoryMetadata>(`story/${props.id}`);
+		if (cached) {
+			setStoryMetadata(cached);
+			setBGM(cached.bgm[props.type]);
+		} else {
+			JsonLoaderCore(CurrentDB, `story/${props.id}`)
+				.then(() => {
+					const data = GetJson<StoryMetadata>(`story/${props.id}`);
+					setStoryMetadata(data);
+					setBGM(data.bgm[props.type]);
+				})
+				.catch(() => {
+					setError(true);
 				});
 		}
+	}, [props.id, props.type]);
 
-		return () => {
-			disposed = true;
-			if (bg) {
-				bg.fadeOut(0.23);
-				setTimeout(() => bg!.destroy(), 1000);
-			}
-		};
-	}, [screen, bgImage]);
+	useEffect(() => {
+		setStoryData(null);
 
-	useEffect(() => { // SCG Activation
-		if (curData) {
-			const zTable: Record<"L" | "R" | "C", number> = { L: 501, R: 502, C: 500 };
-
-			for (let i = 0; i < 3; i++) {
-				const c = charRef.current[i];
-				const k = (["L", "R", "C", ""] satisfies Array<"L" | "R" | "C" | "">)[i];
-				if (c && c.zIndex !== 600) { // not Cut (add)
-					if (curData.char[k]?.SCG === SCG_ACTIVATION.ACTIVATION)
-						c.zIndex = zTable[k] + 10;
-					else
-						c.zIndex = zTable[k];
-				}
-			}
-		}
-	}, [...charRef.current, curData]);
-
-	{ // Char L/R/C
-		const SPLITCOUNT = 6;
-		const SPLITINDEX = [1, SPLITCOUNT - 1, SPLITCOUNT / 2];
-
-		for (let i = 0; i < 3; i++) {
-			const index = i;
-
-			useEffect(() => { // Char
-				const target = chars[index];
-
-				if (charRef.current[index]) {
-					const char = charRef.current[index]!;
-					if (
-						(screen && target && target.image) && // new char exists
-						char instanceof U2DModel && // U2DModel based (face changeable)
-						target.image === char.model // same model image
-					) {
-						// reusable (change face only)
-						char.setFace(target.imageVar);
-						return () => { };
-					} else {
-						charRef.current[index] = undefined;
-						char.fadeOut(0.15);
-						setTimeout(() => char!.destroy(), 150);
-					}
-				}
-
-				let disposed = false;
-				let char: CharSpriteType | null = null;
-				if (screen && target && target.image) {
-					const c = ConvertChar(target.image);
-					const has2DModel = modelList?.includes(target.image) ?? false;
-					const forCommu = isCommu(target.image);
-
-					Promise.all(has2DModel
-						? new Array(2).fill(Promise.resolve())
-						: [
-							PIXI.Texture.fromURL(c
-								? `${AssetsRoot}/webp/full/${c}.webp`
-								: forCommu
-									? getCommuImage(target.image, target.imageVar)
-									: `${AssetsRoot}/story/model/${target.image}.webp`
-							),
-							forCommu
-								? Promise.resolve()
-								: fetch(`${AssetsRoot}/story/model/${c || target.image}.json`)
-									.then(meta => meta.json())
-									.then(meta => meta as StoryModelMeta[])
-									.catch(() => undefined),
-						]
-					).then(([tex, meta]) => {
-						if (disposed) {
-							tex.destroy();
-							return;
-						}
-
-						const p = [1280 / SPLITCOUNT * SPLITINDEX[index], 720];
-						const s = [index === 1 ? -1 : 1, 1];
-
-						if (has2DModel) {
-							char = new U2DModel(target.image);
-							char.setFace(target.imageVar);
-							// p[1] = 720 / 7 * 5;
-							p[1] = 360;
-						} else {
-							char = new (forCommu ? CommuSprite : FadeSprite)(tex);
-							char.pivot.set(tex.width / 2, tex.height / 4 * 3);
-
-							if (meta) {
-								meta.forEach(e => {
-									p[0] += e.pos[0] * 100;
-									p[1] += e.pos[1] * 100;
-									s[0] *= e.scale[0];
-									s[1] *= e.scale[1];
-								});
-							} else if (isCommu(target.image)) {
-								if (!target.image.includes("Cut_")) {
-									p[1] -= 375;
-									s[0] = 213 / tex.width;
-									s[1] = 282 / tex.height;
-								} else {
-									char.zIndex = 600;
-									char.pivot.set(tex.width / 2, tex.height / 2);
-									p[0] = 640;
-									p[1] = 240;
-									s[0] = s[1] = 1;
-									if (tex.height > 358)
-										s[0] = s[1] = 358 / tex.height;
-								}
-							} else {
-								const ratio = Math.min(1, 720 / tex.height);
-								p[1] -= 40;
-								s[0] = s[1] = ratio;
-							}
-						}
-
-						char.filters = [speakerFilter[index]];
-						char.name = "Char" + ["L", "R", "C"][index];
-						char.zIndex = 501 + index;
-
-						char.position.set(...p);
-						char.scale.set(...s);
-						char.fadeIn(0.15);
-
-						screen.addChild(char);
-
-						charRef.current[index] = char;
-						update();
-					}).catch(() => void (0));
-				}
-
-				return () => {
-					disposed = true;
-				};
-			}, [screen, chars[index]?.image, chars[index]?.imageVar]);
-		}
-	}
-
-	useEffect(() => { // Add Image
-		let disposed = false;
-
-		let type: "add" | "off" = "add";
-		let add: FadeSprite | null = null;
-		let fadeIn = true;
-		let fadeOut = true;
-
-		if (screen && addImage) {
-			const fullImage: Array<string | RegExp> = [
-				/^Cut_FightTogether_/,
-			];
-			const semiFullImage: Array<string | RegExp> = [
-				"Cut_AnimalFriends",
-			];
-			PIXI.Texture.fromURL(`${AssetsRoot}/story/add/${addImage}.webp`)
-				.then(tex => {
-					if (disposed) {
-						tex.destroy();
-						return;
-					}
-
-					add = new FadeSprite(tex);
-					add.pivot.set(tex.width / 2, tex.height / 2);
-					add.position.set(640, 240);
-
-					if (fullImage.some(r => typeof r === "string" ? r === addImage : r.test(addImage))) {
-						add.position.set(640, 360);
-						add.scale.set(720 / tex.height);
-					} else if (semiFullImage.some(r => typeof r === "string" ? r === addImage : r.test(addImage))) {
-						add.position.set(640, 264);
-						add.scale.set(480 / tex.height);
-					} else if (tex.height > 358)
-						add.scale.set(358 / tex.height);
-
-					add.zIndex = 600;
-					screen.addChild(add);
-
-					if (addImageOff != OFF_EFFECT.NONE && addImageOff != OFF_EFFECT.__MAX__)
-						type = "off";
-
-					if (addImageAppear === APPEAR_EFFECT.POPUP)
-						fadeIn = false;
-					if (addImageOff === OFF_EFFECT.DISAPPEAR)
-						fadeOut = false;
-
-					if (type === "add") {
-						if (fadeIn)
-							add.fadeIn(0.5);
-						else
-							add.alpha = 1;
-					} else {
-						if (fadeOut)
-							add.fadeOut(0.5);
-						else
-							add.alpha = 0;
-					}
-				});
-		}
-
-		return () => {
-			disposed = true;
-			if (add) add!.destroy();
-		};
-	}, [screen, addImage, addImageAppear, addImageOff]);
-
-	useEffect(() => { // Dialog
-		if (dialog && curData) {
-			const hasText = Object.values(curData.text).some(r => r);
-			if (hasText) {
-				const speakerTable: Record<DIALOG_SPEAKER, "L" | "C" | "R" | ""> = {
-					[DIALOG_SPEAKER.LEFT]: "L",
-					[DIALOG_SPEAKER.CENTER]: "C",
-					[DIALOG_SPEAKER.RIGHT]: "R",
-					[DIALOG_SPEAKER.NONE]: "",
-				};
-				const speaker = curData.char[speakerTable[curData.speaker]];
-				speakerFilter[0].tint(curData.char.L?.SCG === SCG_ACTIVATION.ACTIVATION ? 0xffffff : 0x808080, false);
-				speakerFilter[1].tint(curData.char.R?.SCG === SCG_ACTIVATION.ACTIVATION ? 0xffffff : 0x808080, false);
-				speakerFilter[2].tint(curData.char.C?.SCG === SCG_ACTIVATION.ACTIVATION ? 0xffffff : 0x808080, false);
-
-				dialog.setText(Nn(LText(curData.text)) || "~");
-				if (speaker) {
-					dialog.setSpeaker(LText(speaker.name), curData.speaker);
-				} else
-					dialog.setSpeaker("", DIALOG_SPEAKER.NONE);
-
-				if (!dialog.display)
-					dialog.setDisplay(true);
+		if (storyMetadata) {
+			const target = storyMetadata.index[props.type];
+			const cached = GetJson<StoryData[]>(`story/script/${target}`);
+			if (cached) {
+				setStoryData(cached);
 			} else {
-				if (dialog.display)
-					dialog.setDisplay(false);
+				JsonLoaderCore(CurrentDB, `story/script/${target}`)
+					.then(() => {
+						const data = GetJson<StoryData[]>(`story/script/${target}`);
+						setStoryData(data);
+					});
 			}
 		}
-	}, [dialog, curData]);
-	useEffect(() => { // Selection
-		let fn: (idx: number) => void;
+	}, [storyMetadata]);
 
-		if (curData && selection) {
-			if (sel.length > 0 && selDisp) {
-				fn = (idx: number) => {
-					if (props.onNext) {
-						const i = props.data.findIndex(r => r.key === sel[idx].next);
-						if (i >= 0)
-							props.onNext(i);
-						else {
-							const j = props.data.findIndex(r => r.key === curData.next);
-							if (j >= 0)
-								props.onNext(j);
-							else if (props.onDone)
-								props.onDone();
-						}
-					}
-
-					setSel([]);
-					setSelDisp(false);
-				};
-				selection.on("select", fn);
-
-				selection.setText(sel.map(r => LText(r.text)));
-				selection.setDisplay(true);
-			} else
-				selection.setDisplay(false);
+	useEffect(() => {
+		if (!world || !storyMetadata) {
+			UpdateTitle("Story Viewer");
+		} else {
+			UpdateTitle(LText(storyMetadata.title), world);
 		}
+	}, [lang, world, storyMetadata]);
 
-		return () => {
-			if (selection && fn)
-				selection.off("select", fn);
-		};
-	}, [curData, selection, props.onNext, props.onDone, sel, selDisp]);
+	const faces = useMemo(() => {
+		if (!storyData) return [];
+		return storyData
+			.flatMap(r => Object.values(r.char))
+			.filter(r => r.image && !r.image.includes("_Cut"))
+			.map(r => ImageToFace(r.image))
+			.reduce((p, c) => p.some(r => r.uid === c.uid && r.skin === c.skin)
+				? p
+				: [...p, c], [] as Array<{ uid: string, skin: number, fallback: string; }>,
+			);
+	}, [storyData]);
 
-	useEffect(() => { // Screen Effect
-		let timer: number | null = null;
+	const subUnit = useMemo(() => {
+		if (!["Sub2", "Sub3"].includes(storyType)) return "";
+		return nid.toString();
+	}, [storyType, nid]);
 
-		if (screenEffectObject) {
-			if (screenEffect === SCREEN_EFFECT.FADE_IN_BLACK || screenEffect === SCREEN_EFFECT.FADE_OUT_BLACK)
-				screenEffectFilter.tint(0x000000);
-			else if (screenEffect === SCREEN_EFFECT.FADE_IN_WHITE || screenEffect === SCREEN_EFFECT.FADE_OUT_WHITE)
-				screenEffectFilter.tint(0xffffff);
-
-			if (screenEffect === SCREEN_EFFECT.FADE_IN_BLACK || screenEffect === SCREEN_EFFECT.FADE_IN_WHITE) {
-				screenEffectObject.fadeOut(1.0);
-
-				timer = setTimeout(() => {
-					if (props.onNext)
-						props.onNext(props.cursor + 1);
-				}, 1000);
+	if (error) return <Notfound />;
+	return <div>
+		<div class="text-start">
+			{ isBackMode
+				? <button class="btn btn-dark" onClick={ e => {
+					e.preventDefault();
+					window.history.back();
+				} }>
+					<IconArrowLeft class="me-1" />
+					<Locale k="COMMON_BACK" />
+				</button>
+				: <button class="btn btn-dark" onClick={ e => {
+					e.preventDefault();
+					if (storyType === "Sub2")
+						route(`/worlds/${wid}/${mid}/substory`);
+					else if (storyType === "Sub3")
+						route("/worlds/Sub");
+					else
+						route(`/worlds/${wid}/${mid}/${nid}`);
+				} }>
+					<IconArrowLeft class="me-1" />
+					<Locale k="WORLDS_BACK_TO_WORLDS" />
+				</button>
 			}
-		}
-
-		return () => {
-			if (screenEffectObject)
-				screenEffectObject.stopFade();
-
-			if (timer !== null)
-				clearTimeout(timer);
-		};
-	}, [screenEffectObject, screenEffect]);
-
-	return <>
-		{ bgm && <audio
-			class={ style.BackgroundAudio }
-			src={ getBGM(bgm) }
-			autoplay
-			loop
-			volume={ 0.25 }
-		/> }
-		{ voice && <audio
-			class={ style.BackgroundAudio }
-			src={ getVoice(voice) }
-			autoplay
-			volume={ 0.25 }
-		/> }
-		<div
-			class={ BuildClass(style.Viewer, props.display === false && style.Hidden) }
-			tabIndex={ 1 }
-			onKeyDown={ e => {
-				if (e.key === "ArrowLeft") {
-					if (props.cursor > 0 && props.onNext) {
-						if (selDisp)
-							setSelDisp(false);
-						else {
-							setSel([]);
-							props.onNext(props.cursor - 1);
-						}
-					}
-				} else if (e.key === "ArrowRight" || e.key === " " || e.key === "Enter") {
-					if (props.onNext && curData) {
-						if (sel.length === 0) {
-							const i = props.data.findIndex(r => r.key === curData.next);
-							if (i >= 0)
-								props.onNext(i);
-							else if (props.onDone)
-								props.onDone();
-						} else if (!selDisp)
-							setSelDisp(true);
-						else
-							return;
-					}
-				}
-			} }
-			ref={ viewerRef }
-		>
-			{ !curData && <div class={ style.DoneScreen }>
-				<Locale k="STORY_VIEWER_DONE" />
-			</div> }
 		</div>
-	</>;
+
+		<div class="input-group justify-content-center my-2">
+			<div class="input-group-text">
+				<IconGlobe2 class="me-1" />
+			</div>
+
+			{ LocaleList.map(locale => <button
+				class={ `btn btn-primary ${isActive(lang === locale)}` }
+				onClick={ () => (Store.Story.lang.value = locale) }
+			>
+				<img src={ `${AssetsRoot}/flags/${locale}.png` } alt={ locale } />
+			</button>) }
+		</div>
+
+		<h5 class="font-ibm mt-3">
+			{ world }
+
+			<span class="ms-4">
+				{ storyType === "Sub"
+					? <span class="badge bg-warning text-bg-warning">
+						<Locale k={ `UNIT_${SubStoryUnit[nid]}` } />
+					</span>
+					: storyType === "Sub2" || storyType === "Sub3"
+						? <span class="badge bg-substory text-bg-substory">
+							<Locale k={ `UNIT_${subUnit}` } />
+						</span>
+						: <>
+							{ nid }
+							<span class="ms-2">{ storyType }</span>
+						</>
+				}
+			</span>
+		</h5>
+		{ storyType === "Sub2"
+			? <h3 class="font-ibm mb-2">
+				{ storyMetadata ? LText(storyMetadata.title) : "..." }
+			</h3>
+			: <></>
+		}
+		<h1 class={ BuildClass("font-ibm", storyType === "Sub3" ? "mb-1" : "mb-4") }>
+			{ storyMetadata
+				? storyType === "Sub2"
+					? <Locale plain k={ props.type } />
+					: storyType === "Sub3"
+						? <Locale plain k={ wid } />
+						: LText(storyMetadata.title)
+				: "..."
+			}
+		</h1>
+		{ storyType === "Sub3"
+			? <h6 class="mb-4">
+				<Locale plain k={ `${wid}_DESC` } />
+			</h6>
+			: <></>
+		}
+
+		<div class="my-2">
+			{ faces.map(f => <UnitFace class="mx-1" { ...f } size="3rem" />) }
+		</div>
+
+		<ul class="nav nav-tabs">
+			<li class="nav-item">
+				<a
+					class={ BuildClass("nav-link", isActive(tab === "player")) }
+					href="#"
+					onClick={ e => {
+						e.preventDefault();
+						setTab("player");
+					} }
+				>
+					<Locale k="STORY_PLAYER" />
+				</a>
+			</li>
+			<li class="nav-item">
+				<a
+					class={ BuildClass("nav-link", isActive(tab === "transcription")) }
+					href="#"
+					onClick={ e => {
+						e.preventDefault();
+						setTab("transcription");
+					} }
+				>
+					<Locale k="STORY_TRANSCRIPTION" />
+				</a>
+			</li>
+		</ul>
+		<div class="border border-top-0 p-2">
+			{ tab === "player" && <>
+				{ !run && <div class="d-flex justify-content-center align-items-center">
+					<div class="alert alert-light small mt-0 mb-1" style={ { whiteSpace: "pre-line" } }>
+						<Locale plain k="STORY_PLAYER_ENTERANCE" />
+
+						<br /><br />
+						<button
+							type="button"
+							class="btn btn-dark"
+							onClick={ e => {
+								e.preventDefault();
+								setRun(true);
+							} }
+						>
+							<Locale k="STORY_PLAYER_START" />
+						</button>
+					</div>
+				</div> }
+			</> }
+			{ storyData && run && <Player
+				display={ tab === "player" }
+				cursor={ cursor }
+				bgm={ bgm }
+				data={ storyData as StoryData[] }
+				onDone={ () => setCursor(-1) }
+				onNext={ cursor => setCursor(cursor) }
+				onVoice={ voice => setVoicePreview(voice) }
+			/> }
+
+			{ tab === "transcription" && storyData && <>
+				{ voicePreview && <audio
+					class={ style.BackgroundAudio }
+					src={ getVoice(voicePreview) }
+					autoplay
+					volume={ 0.25 }
+					onEnded={ () => setVoicePreview("") }
+				/> }
+
+				{ storyData.map((d, i) => {
+					const speaker = Speaker(d);
+					const activates = Activates(d);
+
+					return <div
+						class={ BuildClass(
+							style.TranscriptionLine,
+							"alert",
+							isActive(cursor === i, "alert-warning", "alert-light"),
+							"p-2", activates.length === 0 && "px-3",
+							"m-1",
+							"text-start",
+						) }
+						onClick={ e => {
+							e.preventDefault();
+							setCursor(i);
+						} }
+						ref={ el => {
+							if (el)
+								transcriptionRefs.current[i] = el;
+							else
+								delete transcriptionRefs.current[i];
+						} }
+					>
+						<div class="row">
+							{ activates.length > 0 && <div class="col-auto">
+								{ activates.map(s => <UnitFace
+									{ ...ImageToFace(s.image) }
+									size="3rem"
+								/>) }
+							</div> }
+
+							<div class="col">
+								{ speaker && <div class={ d.voice && voicePreview == d.voice ? "text-primary" : "" }>
+									<strong class="mb-1">{ LText(speaker.name) }</strong>
+
+									{ d.voice && <a
+										class={ "d-inline-block ms-2" }
+										href="#"
+										style={ {
+											color: "inherit",
+											lineHeight: "1em",
+										} }
+										onClick={ e => {
+											e.preventDefault();
+											e.stopPropagation();
+											setVoicePreview(d.voice);
+										} }
+									>
+										<IconVolumeUpFill style={ { verticalAlign: "top" } } />
+									</a> }
+								</div> }
+
+								<div class={ style.TranscriptionText }>
+									{ parseVNode(convTokens(Nn(LText(d.text))), [], {}) }
+								</div>
+
+								{ d.sel
+									? <div class={ style.TranscriptionSelection }>
+										{ d.sel.map(s => <div>
+											<button
+												type="button"
+												class="btn btn-warning mt-1"
+												onClick={ e => {
+													e.preventDefault();
+													e.stopImmediatePropagation();
+
+													const found = storyData.findIndex(r => r.key === s.next);
+													if (found >= 0) {
+														setCursor(found);
+														transcriptionRefs.current[i].scrollIntoView();
+													}
+												} }
+											>
+												{ Nn(LText(s.text)) }
+											</button>
+										</div>) }
+									</div>
+									: <></>
+								}
+							</div>
+						</div>
+					</div>;
+				}) }
+
+				<div class="mt-2 py-1 text-secondary">END</div>
+			</> }
+		</div>
+	</div>;
 };
 export default Viewer;

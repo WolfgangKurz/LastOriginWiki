@@ -1,551 +1,383 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "preact/hooks";
-import { route } from "preact-router";
+import { useEffect, useMemo, useState } from "preact/hooks";
+import { Link, route } from "preact-router";
 import Store from "@/store";
 
-import { DIALOG_SPEAKER, SCG_ACTIVATION } from "@/types/Enums";
-import { DialogCharacter, StoryData, StoryMetadata } from "@/types/Story/Story";
-import SubStoryDB from "@/types/DB/SubStory";
-import { LocaleList, LocaleTypes } from "@/types/Locale";
+import StoryMap, { StoryMapSubstory } from "@/types/DB/StoryMap";
+import { STAGE_SUB_TYPE } from "@/types/Enums";
 
 import { useUpdate } from "@/libs/hooks";
-import { AssetsRoot, ImageExtension, SubStoryUnit } from "@/libs/Const";
-import { isActive } from "@/libs/Functions";
+import { AssetsRoot } from "@/libs/Const";
+import { cn } from "@/libs/Class";
 import { CurrentDB } from "@/libs/DB";
-import { BuildClass } from "@/libs/Class";
-import { parseVNode } from "@/libs/VNode";
-import { UpdateTitle } from "@/libs/Site";
 
-import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
-import UnitFace from "@/components/unit-face";
-import IconGlobe2 from "@/components/bootstrap-icon/icons/Globe2";
-import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
-import IconVolumeUpFill from "@/components/bootstrap-icon/icons/VolumeUpFill";
+import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import PopupBase from "@/components/popup/base";
+import PCIcon from "@/components/pc-icon";
 
-import Notfound from "@/routes/notfound";
-
-import { Nn } from "./common";
-import Viewer from "./Viewer";
+import IconBook from "@/components/bootstrap-icon/icons/Book";
 
 import style from "./style.module.scss";
 
-interface StoryProps {
-	id: string;
-	type: string;
-}
+type StoryKeySourceType = string | number | [string | number, number | number[]];
+type StoryKeyType = [string | number, number[]];
 
-const FaceAlias: Record<string, string> = {
-	AGS_MrAlfred_0: "AGS_MrAlfred_0",
-	BR_Brownie_01_0: "BR_Brownie_0",
-	BR_Brownie_02_0: "BR_Brownie_0",
-	BR_NightAngelFake_0: "BR_NightAngel_0",
-	MP_Robert_0: "AGS_MrAlfred2_1",
-	PECS_LemonadeOmega_0: "MP_LemonadeOmega_0",
-};
+interface StoryProps {
+	chapter?: string;
+}
 
 const Story: FunctionalComponent<StoryProps> = (props) => {
 	const update = useUpdate();
 
-	const [error, setError] = useState(false);
-
-	const [storyMetadata, setStoryMetadata] = useState<StoryMetadata | null>(null);
-	const [storyData, setStoryData] = useState<StoryData[] | null>(null);
-
-	const [voicePreview, setVoicePreview] = useState<string>("");
-	const [bgm, setBGM] = useState("");
-	const [cursor, setCursor] = useState(0);
-
-	const [tab, setTab] = useState<"viewer" | "transcription">("viewer");
-	const [run, setRun] = useState(false);
-
-	const transcriptionRefs = useRef<HTMLDivElement[]>([]);
-
-	const lang = Store.Story.lang.value;
-	const langFallback = [lang, "EN", "KR"].unique();
-
-	const imgExt = ImageExtension();
-
-	function getVoice (voice: string): string {
-		if (!voice) return "";
-		return `${AssetsRoot}/audio/voice-ko/${voice}.mp3`;
-	}
-
-	function Speaker (data: StoryData): DialogCharacter | undefined {
-		const speakerTable: Record<DIALOG_SPEAKER, "L" | "C" | "R" | ""> = {
-			[DIALOG_SPEAKER.LEFT]: "L",
-			[DIALOG_SPEAKER.CENTER]: "C",
-			[DIALOG_SPEAKER.RIGHT]: "R",
-			[DIALOG_SPEAKER.NONE]: "",
-		};
-		return data.char[speakerTable[data.speaker]];
-	}
-	function Activates (data: StoryData): DialogCharacter[] {
-		return Object.values(data.char)
-			.filter(r => r.SCG === SCG_ACTIVATION.ACTIVATION)
-			.filter(r => !r.image.includes("_Cut"));
-	}
-	function ImageToFace (model: string): { uid: string; skin: number; fallback: string; } {
-		let sid = model
-			.replace(/_DL_N/g, "")
-			.replace(/^2DModel_(.+)_([NPS])(S[0-9]+)?$/, (p, p1, p2, p3) => {
-				if (p2 === "N") {
-					if (p3)
-						return `${p1}_${p3.substring(1)}`;
-					else
-						return `${p1}_0`;
-				} else if (p2 === "P")
-					return `${p1}_${parseInt(p3.substring(1), 10) + 19}`;
-				else if (p2 === "S")
-					return `${p1}_${parseInt(p3.substring(1), 10) + 20}`;
-				return `${p1}_0`;
-			});
-		if (sid in FaceAlias) sid = FaceAlias[sid];
-
-		if (sid.includes("_Dialog")) { // story 2dmodel
-			return {
-				uid: "!",
-				skin: 0,
-				fallback: `${AssetsRoot}/${imgExt}/story/${sid.replace(/^2DModel_/, "")}.${imgExt}`,
-			};
-		} else if (sid.includes("_Commu")) // commu
-			return ImageToFace(model.replace(/(2DModel_|_Commu)/, ""));
-
-		const r = /^(.+)_([0-9]+)$/.exec(sid);
-		if (!r) {
-			return {
-				uid: sid,
-				skin: 0,
-				fallback: `${AssetsRoot}/${imgExt}/story/${sid}_0.${imgExt}`,
-			};
-		}
-
-		const skin = parseInt(r[2], 10);
-		return {
-			uid: r[1],
-			skin,
-			fallback: `${AssetsRoot}/${imgExt}/story/${r[1]}_${skin}.${imgExt}`,
-		};
-	}
-	function convTokens (text: string): string {
-		return text
-			.split(/(\0[^\0]+\0[^\0]+\0[^\0]+\0)/gs)
-			.map(p => {
-				if (p[0] === "\0") { // formatted
-					const r = (/\0([^\0]+)\0([^\0]+)\0([^\0]+)\0/gs).exec(p);
-					if (r) {
-						switch (r[1]) {
-							case "color":
-								return `<span data-color="${r[2]}" style="color:#${r[2]}">${r[3]}</span>`;
-
-							default:
-								return r[3];
-						}
-					}
-				}
-
-				return p;
-			})
-			.join("");
-	}
-
-	const LText = useCallback((str: Record<LocaleTypes, string | undefined>): string => {
-		for (const lang of langFallback) {
-			if ((lang in str) && str[lang])
-				return str[lang];
-		}
-		return "";
-	}, [lang]);
-
-	const { wid, mid, nid, storyType } = useMemo(() => {
-		const reg = /^Ch([0-9]+)(N[0-9]+|Ev|Ev[0-9]+)?Stage([0-9]+)(B|Ex|EX|C|S)?$/;
-		const r = reg.exec(props.id);
-		if (r) {
-			const mid = parseInt(r[1], 10);
-			// const t = parseInt(r[5], 10);
-			const postfix = r[5] === "EX"
-				? "Ex"
-				: r[5] === "S"
-					? (r[2] === "Ev5" || r[2] === "Ev6")
-						? "ep"
-						: "s"
-					: (r[5] || "");
-
-			const type = props.type.toUpperCase();
-
-			if (r[2]) { // EvXX or 12 chapter...
-				return {
-					wid: r[2] === "Ev"
-						? "Ev1"
-						: r[2].startsWith("N")
-							? r[1] // Story
-							: r[2],
-					mid: r[2].startsWith("N")
-						? parseInt(r[2].substring(1), 10).toString()
-						: mid,
-					nid: `${r[2].startsWith("Ev") ? "Ev" : ""}${mid}-${parseInt(r[3], 10)}${postfix}`,
-					storyType: type,
-				};
-			} else { // Story
-				return {
-					wid: "Story",
-					mid,
-					nid: `${mid}-${parseInt(r[3], 10)}${postfix}`,
-					storyType: type,
-				};
-			}
-		} else {
-			const reg = /^ChCS-([0-9]+)Stage([0-9]+)$/;
-			const r = reg.exec(props.id);
-			if (r) { // old substory
-				const key = `S${parseInt(r[1], 10)}-${parseInt(r[2], 10)}`;
-				return {
-					wid: "-",
-					mid: 1,
-					nid: key,
-					storyType: "Sub",
-				};
-			} else if (props.id.startsWith("SubStory_")) { // map substory
-				const reg = /^SubStory_Chapter_([^_]+)_(.+)$/;
-				const r = reg.exec(props.id)!;
-
-				const k = r[1];
-				const unit = r[2];
-
-				const mr = /^([0-9]+)(.+)$/.exec(k)!;
-
-				return {
-					wid: mr[2],
-					mid: parseInt(mr[1], 10),
-					nid: unit,
-					storyType: "Sub2",
-				};
-			} else if (props.id.startsWith("Story_")) { // separated substory
-				const reg = /^Story_Char_(.+)_N_.+_([0-9]+)-(START|END)$/;
-				const r = reg.exec(props.type)!;
-
-				return {
-					wid: props.type.substring(0, props.type.lastIndexOf("-")),
-					mid: parseInt(r[2], 10),
-					nid: r[1],
-					storyType: "Sub3",
-				};
-			}
-		}
-		return { wid: "", mid: 0, nid: 0, storyType: props.type };
-	}, [props.id, props.type]);
-
-	const SubStoryDB = storyType === "Sub3" ? GetJson<SubStoryDB>(StaticDB.SubStory) : null;
-	useEffect(() => {
-		if (storyType === "Sub3" && !SubStoryDB)
-			JsonLoaderCore(CurrentDB, StaticDB.SubStory).then(() => update());
-	}, [storyType, SubStoryDB]);
-
-	const subGroup = useMemo(() => {
-		if (!SubStoryDB) return null;
-
-		return SubStoryDB.story.find(r => r.key === wid) || null;
-	}, [SubStoryDB]);
-
-	const world = useMemo(() => {
-		if (storyType === "Sub3") {
-			if (!subGroup) return "...";
-			return LocaleGet(subGroup.group);
-		}
-		return LocaleGet(`WORLD_WORLD_${wid}_${mid}`);
-	}, [lang, storyType, wid, mid, nid]);
+	const [selectedKey, setSelectedKey] = useState<[string | number, number] | null>(null);
 
 	useEffect(() => {
-		setStoryMetadata(null);
-
-		const cached = GetJson<StoryMetadata>(`story/${props.id}`);
-		if (cached) {
-			setStoryMetadata(cached);
-			setBGM(cached.bgm[props.type]);
-		} else {
-			JsonLoaderCore(CurrentDB, `story/${props.id}`)
-				.then(() => {
-					const data = GetJson<StoryMetadata>(`story/${props.id}`);
-					setStoryMetadata(data);
-					setBGM(data.bgm[props.type]);
-				})
-				.catch(() => {
-					setError(true);
-				});
-		}
-	}, [props.id, props.type]);
-
-	useEffect(() => {
-		setStoryData(null);
-
-		if (storyMetadata) {
-			const target = storyMetadata.index[props.type];
-			const cached = GetJson<StoryData[]>(`story/script/${target}`);
-			if (cached) {
-				setStoryData(cached);
-			} else {
-				JsonLoaderCore(CurrentDB, `story/script/${target}`)
-					.then(() => {
-						const data = GetJson<StoryData[]>(`story/script/${target}`);
-						setStoryData(data);
-					});
+		if (props.chapter) {
+			const p = /^(.+)_([0-9]+)$/.exec(props.chapter);
+			if (p) {
+				setSelectedKey([
+					/^[0-9]+$/.test(p[1])
+						? parseInt(p[1], 10)
+						: p[1],
+					parseInt(p[2], 10),
+				]);
 			}
-		}
-	}, [storyMetadata]);
+		} else if (selectedKey)
+			setSelectedKey(null);
+	}, [props.chapter]);
 
+	const sKey = useMemo(() => selectedKey ? selectedKey[0] : null, [selectedKey]);
+	const sSub = useMemo(() => selectedKey ? selectedKey[1] : null, [selectedKey]);
+
+	const StoryMapDB = GetJson<StoryMap>(StaticDB.StoryMap);
 	useEffect(() => {
-		if (!world || !storyMetadata) {
-			UpdateTitle("Story Viewer");
-		} else {
-			UpdateTitle(LText(storyMetadata.title), world);
+		if (!StoryMapDB) {
+			JsonLoaderCore(CurrentDB, StaticDB.StoryMap)
+				.then(() => update());
 		}
-	}, [lang, world, storyMetadata]);
+	}, [StoryMapDB]);
 
-	const faces = useMemo(() => {
-		if (!storyData) return [];
-		return storyData
-			.flatMap(r => Object.values(r.char))
-			.filter(r => r.image && !r.image.includes("_Cut"))
-			.map(r => ImageToFace(r.image))
-			.reduce((p, c) => p.some(r => r.uid === c.uid && r.skin === c.skin)
-				? p
-				: [...p, c], [] as Array<{ uid: string, skin: number, fallback: string; }>,
-			);
-	}, [storyData]);
-
-	const subUnit = useMemo(() => {
-		if (!["Sub2", "Sub3"].includes(storyType)) return "";
-		return nid.toString();
-	}, [storyType, nid]);
-
-	if (error) return <Notfound />;
-	return <div>
-		<div class="text-start">
-			<button class="btn btn-dark" onClick={ e => {
-				e.preventDefault();
-				if (storyType === "Sub2")
-					route(`/worlds/${wid}/${mid}/substory`);
-				else if (storyType === "Sub3")
-					route("/worlds/Sub");
-				else
-					route(`/worlds/${wid}/${mid}/${nid}`);
-			} }>
-				<IconArrowLeft class="me-1" />
-				<Locale k="WORLDS_BACK_TO_WORLDS" />
-			</button>
-		</div>
-
-		<div class="input-group justify-content-center my-2">
-			<div class="input-group-text">
-				<IconGlobe2 class="me-1" />
-			</div>
-
-			{ LocaleList.map(locale => <button
-				class={ `btn btn-primary ${isActive(lang === locale)}` }
-				onClick={ () => (Store.Story.lang.value = locale) }
-			>
-				<img src={ `${AssetsRoot}/flags/${locale}.png` } alt={ locale } />
-			</button>) }
-		</div>
-
-		<h5 class="font-ibm mt-3">
-			{ world }
-
-			<span class="ms-4">
-				{ storyType === "Sub"
-					? <span class="badge bg-warning text-bg-warning">
-						<Locale k={ `UNIT_${SubStoryUnit[nid]}` } />
-					</span>
-					: storyType === "Sub2" || storyType === "Sub3"
-						? <span class="badge bg-substory text-bg-substory">
-							<Locale k={ `UNIT_${subUnit}` } />
-						</span>
-						: <>
-							{ nid }
-							<span class="ms-2">{ storyType }</span>
-						</>
-				}
-			</span>
-		</h5>
-		{ storyType === "Sub2"
-			? <h3 class="font-ibm mb-2">
-				{ storyMetadata ? LText(storyMetadata.title) : "..." }
-			</h3>
-			: <></>
+	const StoryListSource: StoryKeySourceType[] = [
+		1, 2, 3, 4, 5, 6,
+		"Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6",
+		7,
+		"Ev7", "Ev8",
+		8,
+		"Ev9",
+		"Ev17", // 분노의 늑대 송곳니
+		"Ev10", "Ev11",
+		"Ev22", // 당신의 쐐기에 진심을
+		"Ev12", "Ev13",
+		9,
+		["Ev14", [1, 2]],
+		"Ev15", "Ev16", "Ev18",
+		10,
+		"Ev19",
+		11,
+		"Ev20", "Ev21", "Ev23",
+		12,
+		"Ev24",
+	];
+	const StoryList: StoryKeyType[] = StoryListSource.map(r => {
+		if (Array.isArray(r)) {
+			const s = r[1];
+			if (Array.isArray(s)) return [r[0], s];
+			return [r[0], [s]];
 		}
-		<h1 class={ BuildClass("font-ibm", storyType === "Sub3" ? "mb-1" : "mb-4") }>
-			{ storyMetadata
-				? storyType === "Sub2"
-					? <Locale plain k={ props.type } />
-					: storyType === "Sub3"
-						? <Locale plain k={ wid } />
-						: LText(storyMetadata.title)
-				: "..."
-			}
-		</h1>
-		{ storyType === "Sub3"
-			? <h6 class="mb-4">
-				<Locale plain k={ `${wid}_DESC` } />
-			</h6>
-			: <></>
+		return [r, [0]];
+	});
+
+	function GetWorldIcon (k: number | string, s: number): string {
+		if (typeof k === "number") {
+			if (s === 0)
+				return `Story_${k}`;
+			else
+				return `Story_${k}_${s}`;
 		}
+		return `${k}_${s || 1}`;
+	}
+	function GetWorldLocale (k: number | string, s: number): string {
+		const reg = /(( [0-9]+부)|( Part [0-9]+)|( 第[0-9]+部)|(第.+幕))$/;
+		const text = LocaleGet(`WORLD_WORLD_${k}_${s || 1}`);
+		return text.replace(reg, "").trim();
+	}
 
-		<div class="my-2">
-			{ faces.map(f => <UnitFace class="mx-1" { ...f } size="3rem" />) }
-		</div>
+	const Maps = useMemo(() => {
+		if (sKey !== null && sSub !== null && StoryMapDB) {
+			if (sSub === 0)
+				return Object.values(StoryMapDB[sKey])
+					.map(c => c.list)
+					.gap(null)
+					.flat();
+			else
+				return StoryMapDB[sKey][sSub].list;
+		}
+		return [];
+	}, [sKey, sSub, StoryMapDB]);
+	const Substories = useMemo(() => {
+		if (sKey !== null && sSub !== null && StoryMapDB) {
+			if (sSub === 0)
+				return Object.values(StoryMapDB[sKey])
+					.reduce<StoryMapSubstory[]>((p, c) => p.concat(...c.substory), []);
+			else
+				return StoryMapDB[sKey][sSub].substory;
+		}
+		return [];
+	}, [sKey, sSub, StoryMapDB]);
 
-		<ul class="nav nav-tabs">
-			<li class="nav-item">
-				<a
-					class={ BuildClass("nav-link", isActive(tab === "viewer")) }
-					href="#"
-					onClick={ e => {
-						e.preventDefault();
-						setTab("viewer");
-					} }
-				>
-					<Locale k="STORY_VIEWER" />
-				</a>
-			</li>
-			<li class="nav-item">
-				<a
-					class={ BuildClass("nav-link", isActive(tab === "transcription")) }
-					href="#"
-					onClick={ e => {
-						e.preventDefault();
-						setTab("transcription");
-					} }
-				>
-					<Locale k="STORY_TRANSCRIPTION" />
-				</a>
-			</li>
-		</ul>
-		<div class="border border-top-0 p-2">
-			{ tab === "viewer" && <>
-				{ !run && <div class="d-flex justify-content-center align-items-center">
-					<div class="alert alert-light small mt-0 mb-1" style={ { whiteSpace: "pre-line" } }>
-						<Locale plain k="STORY_VIEWER_ENTERANCE" />
+	function validArray<T> (arr: T[] | undefined | null, onValid: (arr: T[]) => preact.ComponentChildren, onInvalid: () => preact.ComponentChildren): preact.ComponentChildren {
+		if (arr && arr.length > 0) return onValid(arr);
+		return onInvalid();
+	}
 
-						<br /><br />
-						<button
-							type="button"
-							class="btn btn-dark"
-							onClick={ e => {
-								e.preventDefault();
-								setRun(true);
-							} }
-						>
-							<Locale k="STORY_VIEWER_START" />
-						</button>
-					</div>
-				</div> }
-			</> }
-			{ storyData && run && <Viewer
-				display={ tab === "viewer" }
-				cursor={ cursor }
-				bgm={ bgm }
-				data={ storyData as StoryData[] }
-				onDone={ () => setCursor(-1) }
-				onNext={ cursor => setCursor(cursor) }
-				onVoice={ voice => setVoicePreview(voice) }
-			/> }
+	return <div class={ style.Story }>
+		<h2>
+			<Locale k="STORY" />
+		</h2>
 
-			{ tab === "transcription" && storyData && <>
-				{ voicePreview && <audio
-					class={ style.BackgroundAudio }
-					src={ getVoice(voicePreview) }
-					autoplay
-					volume={ 0.25 }
-					onEnded={ () => setVoicePreview("") }
-				/> }
+		<hr />
 
-				{ storyData.map((d, i) => {
-					const speaker = Speaker(d);
-					const activates = Activates(d);
-
-					return <div
-						class={ BuildClass(
-							style.TranscriptionLine,
-							"alert",
-							isActive(cursor === i, "alert-warning", "alert-light"),
-							"p-2", activates.length === 0 && "px-3",
-							"m-1",
-							"text-start",
-						) }
-						onClick={ e => {
-							e.preventDefault();
-							setCursor(i);
-						} }
-						ref={ el => {
-							if (el)
-								transcriptionRefs.current[i] = el;
-							else
-								delete transcriptionRefs.current[i];
-						} }
+		<div class={ style.Timeline }>
+			{ StoryList.map(k =>
+				k[1].map(s => <div class={ style.StoryMapItem }>
+					<Link
+						class={ style.Box }
+						href={ `/story/${k[0]}_${s}` }
 					>
-						<div class="row">
-							{ activates.length > 0 && <div class="col-auto">
-								{ activates.map(s => <UnitFace
-									{ ...ImageToFace(s.image) }
-									size="3rem"
-								/>) }
-							</div> }
+						<img src={ `${AssetsRoot}/world/icons/${GetWorldIcon(k[0], s)}.png` } />
 
-							<div class="col">
-								{ speaker && <div class={ d.voice && voicePreview == d.voice ? "text-primary" : "" }>
-									<strong class="mb-1">{ LText(speaker.name) }</strong>
+						<div class={ style.StoryType }>
+							{ typeof k[0] === "number"
+								? <>
+									<span class="badge bg-warning text-bg-warning mx-1">
+										<Locale k="STORY_TYPE_MAINSTORY" />
+									</span>
 
-									{ d.voice && <a
-										class={ "d-inline-block ms-2" }
-										href="#"
-										style={ {
-											color: "inherit",
-											lineHeight: "1em",
-										} }
-										onClick={ e => {
-											e.preventDefault();
-											e.stopPropagation();
-											setVoicePreview(d.voice);
-										} }
-									>
-										<IconVolumeUpFill style={ { verticalAlign: "top" } } />
-									</a> }
-								</div> }
+									<span class="badge bg-dark text-bg-dark mx-1">
+										<Locale k="WORLDS_WORLD_TITLE" p={ [k[0]] } />
+									</span>
+								</>
+								: <>
+									<span class="badge bg-danger text-bg-danger mx-1">
+										<Locale k="STORY_TYPE_EVENT" />
+									</span>
 
-								<div class={ style.TranscriptionText }>
-									{ parseVNode(convTokens(Nn(LText(d.text))), [], {}) }
+									{ s !== 0 && <span class="badge bg-dark text-bg-dark mx-1">
+										<Locale k="WORLDS_WORLD_TITLE" p={ [s] } />
+									</span> }
+								</>
+							}
+						</div>
+						<div class={ style.StoryName }>
+							{ GetWorldLocale(k[0], s) }
+						</div>
+					</Link>
+				</div>)
+			) }
+		</div>
+
+		<PopupBase
+			display={ !!selectedKey }
+			onHidden={ () => route("/story") }
+			size="lg"
+
+			headerClass={ style.PopupHeader }
+			header={ sKey !== null && sSub !== null
+				? <>
+					{ typeof sKey === "number"
+						? <>
+							<span class="badge bg-warning text-bg-warning mx-1">
+								<Locale k="STORY_TYPE_MAINSTORY" />
+							</span>
+
+							<span class="badge bg-dark text-bg-dark mx-1">
+								<Locale k="WORLDS_WORLD_TITLE" p={ [sKey] } />
+							</span>
+						</>
+						: <>
+							<span class="badge bg-danger text-bg-danger mx-1">
+								<Locale k="STORY_TYPE_EVENT" />
+							</span>
+
+							{ sSub !== 0 && <span class="badge bg-dark text-bg-dark mx-1">
+								<Locale k="WORLDS_WORLD_TITLE" p={ [sSub] } />
+							</span> }
+						</>
+					}
+
+					<span class="ps-2">
+						{ GetWorldLocale(sKey, sSub) }
+					</span>
+				</>
+				: undefined
+			}
+		>
+			<div class="row row-cols-1 row-cols-lg-2">
+				<div class="col">
+					<h5 class="mb-3">
+						<Locale k="STORY_TYPE_STORY" />
+					</h5>
+
+					<div class={ style.StoryItemList }>
+						{ Maps.map(r => r === null
+							? <hr class="my-4" />
+							: <div class={ style.StoryItem }>
+								<strong>
+									<img
+										class={ style.NodeIcon }
+										src={ `${AssetsRoot}/world/mapicon_${r.type === STAGE_SUB_TYPE.STORY
+											? 0 // temp
+											: r.type}${r.type === STAGE_SUB_TYPE.STORY ? "s" : "n"}.png`
+										}
+									/>
+									{ r.text }
+								</strong>
+
+								<i />
+
+								<div>
+									{ r.type === STAGE_SUB_TYPE.STORY
+										? <button
+											type="button"
+											class="btn btn-sm btn-stat-hp"
+											onClick={ e => {
+												e.preventDefault();
+												Store.Story.back.value = true;
+												route(`/story/${r.key}/ED`);
+											} }
+										>
+											<IconBook class="me-1" />
+											Story
+										</button>
+										: <div class={ cn("btn-group", style.Buttons) }>
+											{ "OP" in r.index
+												? <button
+													type="button"
+													class="btn btn-sm btn-stat-hp"
+													onClick={ e => {
+														e.preventDefault();
+														Store.Story.back.value = true;
+														route(`/story/${r.key}/OP`);
+													} }
+												>
+													<IconBook class="me-1" />
+													OP
+												</button>
+												: <button
+													type="button"
+													class="btn btn-sm"
+													disabled
+												>
+													<IconBook class="me-1" />
+													OP
+												</button>
+											}
+
+											{ validArray(
+												Object.keys(r.index).filter(v => v.startsWith("mid-")),
+												a => a.map(v => <button
+													type="button"
+													class="btn btn-sm btn-stat-hp"
+													onClick={ e => {
+														e.preventDefault();
+														Store.Story.back.value = true;
+														route(`/story/${r.key}/${v}`);
+													} }
+												>
+													<IconBook class="me-1" />
+													MID
+												</button>),
+												() => <button
+													type="button"
+													class="btn btn-sm"
+													disabled
+												>
+													<IconBook class="me-1" />
+													MID
+												</button>,
+											) }
+
+											{ "ED" in r.index
+												? <button
+													type="button"
+													class="btn btn-sm btn-stat-hp"
+													onClick={ e => {
+														e.preventDefault();
+														Store.Story.back.value = true;
+														route(`/story/${r.key}/ED`);
+													} }
+												>
+													<IconBook class="me-1" />
+													ED
+												</button>
+												: <button
+													type="button"
+													class="btn btn-sm"
+													disabled
+												>
+													<IconBook class="me-1" />
+													ED
+												</button>
+											}
+										</div>
+									}
 								</div>
 
-								{ d.sel
-									? <div class={ style.TranscriptionSelection }>
-										{ d.sel.map(s => <div>
-											<button
-												type="button"
-												class="btn btn-warning mt-1"
-												onClick={ e => {
-													e.preventDefault();
-													e.stopImmediatePropagation();
+								<div class={ style.StoryTitle }>
+									<Locale plain k={ `WORLD_MAP_${sKey}_${r.text}` } />
+								</div>
+							</div>)
+						}
+					</div>
+				</div>
 
-													const found = storyData.findIndex(r => r.key === s.next);
-													if (found >= 0) {
-														setCursor(found);
-														transcriptionRefs.current[i].scrollIntoView();
-													}
-												} }
-											>
-												{ Nn(LText(s.text)) }
-											</button>
-										</div>) }
-									</div>
-									: <></>
-								}
-							</div>
+				<div class="col mt-5 mt-lg-0">
+					<h5 class="mb-3">
+						<Locale k="STORY_TYPE_SUBSTORY" />
+					</h5>
+
+					{ Substories.length === 0
+						? <div class={ style.SubstoryEmpty }>
+							<img src={ `${AssetsRoot}/ui/no_substory.png` } />
+							<br />
+							<Locale plain k="WORLDS_SUBSTORY_EMPTY" />
 						</div>
-					</div>;
-				}) }
+						: <div class={ style.SubstoryItemList }>
+							{ Substories.map(r => <div class={ style.StoryItem }>
+								<strong>
+									<PCIcon class={ style.SubstoryIcon } item={ r.icon } size={ 48 } />
 
-				<div class="mt-2 py-1 text-secondary">END</div>
-			</> }
-		</div>
+									<Locale k={ r.char } />
+								</strong>
+
+								<div class={ style.SubstoryList }>
+									{ r.list.map(s => <div class={ style.SubstoryItem }>
+										<PCIcon class={ cn("me-2", style.SubstoryIcon) } item={ s.icon } size={ 32 } />
+
+										<span>
+											<Locale k={ s.key } />
+										</span>
+
+										<button
+											type="button"
+											class="btn btn-sm btn-stat-hp"
+											onClick={ e => {
+												e.preventDefault();
+												Store.Story.back.value = true;
+												route(`/story/${r.key}/${s.key}`);
+											} }
+										>
+											<IconBook class="me-1" />
+											Story
+										</button>
+									</div>) }
+								</div>
+							</div>) }
+						</div>
+					}
+				</div>
+			</div>
+		</PopupBase>
 	</div>;
 };
 export default Story;

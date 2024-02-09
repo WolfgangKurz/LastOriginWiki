@@ -1,3 +1,142 @@
+.Timeline {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	row-gap: 3rem;
+}
+
+.StoryMapItem {
+	border-radius: 0.25rem;
+
+	.Box {
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: auto auto auto;
+		justify-content: center;
+		row-gap: 0.25rem;
+
+		text-align: center;
+		text-decoration: none;
+		color: inherit;
+
+		> img {
+			display: block;
+			margin: auto;
+			width: 88px;
+		}
+		> .StoryName {
+			font-weight: 600;
+			font-size: 18px;
+		}
+	}
+}
+
+.StoryItemList {
+	.StoryItem {
+		display: grid;
+		grid-template-columns: 120px 1fr auto;
+		grid-template-rows: auto auto;
+		row-gap: 0.5rem;
+
+		padding: 0.5rem;
+
+		&:nth-child(2n + 1) {
+			background-color: rgba($dark, 0.075);
+		}
+
+		strong {
+			display: inline-flex;
+			padding-left: 0.5rem;
+			flex-direction: row;
+			justify-content: start;
+			align-items: center;
+			column-gap: 0.5rem;
+
+			.NodeIcon {
+				height: 1.2em;
+				vertical-align: middle;
+				filter: drop-shadow(0 0 2px #000);
+			}
+		}
+
+		.Buttons {
+			> button + button {
+				margin-left: 1px !important;
+			}
+		}
+
+		.StoryTitle {
+			grid-column: 1 / 4;
+			grid-row: 2;
+
+			overflow-wrap: anywhere;
+			word-break: keep-all;
+
+			font-weight: 600;
+			font-size: 16px;
+			text-align: center;
+		}
+	}
+}
+.SubstoryItemList {
+	.StoryItem {
+		+ .StoryItem {
+			margin-top: 2rem;
+		}
+
+		strong {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			column-gap: 0.5rem;
+		}
+
+		.SubstoryIcon {
+			border-radius: 0.25rem;
+		}
+
+		.SubstoryList {
+			margin-top: 0.25rem;
+			text-align: start;
+
+			.SubstoryItem {
+				display: grid;
+				grid-template-columns: auto 1fr auto;
+				align-items: center;
+
+				padding: 0.25rem;
+
+				> span {
+					overflow-wrap: anywhere;
+					word-break: keep-all;
+				}
+
+				&:nth-child(2n + 1) {
+					background-color: rgba($dark, 0.075);
+				}
+				&:nth-child(2n):last-child {
+					border-bottom: 1px solid rgba($dark, 0.075);
+				}
+			}
+		}
+	}
+}
+
+.PopupHeader > h5 {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	overflow-wrap: anywhere;
+	word-break: keep-all;
+}
+.SubstoryEmpty {
+	color: $secondary;
+
+	> img {
+		width: 200px;
+	}
+}
+
 .TranscriptionLine {
 	position: relative;
 	cursor: pointer;
@@ -18,7 +157,7 @@
 	margin-top: 1rem;
 }
 
-.Viewer {
+.Player {
 	position: relative;
 
 	> canvas {

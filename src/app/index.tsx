@@ -88,8 +88,7 @@ const App: FunctionalComponent = () => {
 						<AsyncRoute path="/worlds/:wid/:mid/drop" { ...pRoute(() => import("@/routes/worlds/drop-table")) } />
 						<AsyncRoute path="/worlds/:wid/:mid/:node?" { ...pRoute(() => import("@/routes/worlds/map-view")) } />
 
-						<AsyncRoute path="/eternalwar" { ...pRoute(() => import("@/routes/eternalwar")) } />
-						<AsyncRoute path="/eternalwar/:mid" { ...pRoute(() => import("@/routes/eternalwar")) } />
+						<AsyncRoute path="/eternalwar/:mid?" { ...pRoute(() => import("@/routes/eternalwar")) } />
 
 						<AsyncRoute path="/infinitewar" { ...pRoute(() => import("@/routes/infinitewar")) } />
 						<AsyncRoute path="/infinitewar/:season/:stage?" { ...pRoute(() => import("@/routes/infinitewar/season")) } />
@@ -107,7 +106,8 @@ const App: FunctionalComponent = () => {
 
 						<AsyncRoute path="/gacha" { ...pRoute(() => import("@/routes/gacha")) } />
 
-						<AsyncRoute path="/story/:id/:type" { ...pRoute(() => import("@/routes/story")) } />
+						<AsyncRoute path="/story/:chapter?" { ...pRoute(() => import("@/routes/story")) } />
+						<AsyncRoute path="/story/:id/:type" { ...pRoute(() => import("@/routes/story/Viewer")) } />
 
 						{/* <AsyncRoute path="/test/:uid?" { ...pRoute(() => import("@/routes/test")) } /> */ }
 

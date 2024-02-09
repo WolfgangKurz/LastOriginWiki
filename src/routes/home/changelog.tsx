@@ -6,6 +6,25 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12469" date="2024-02-10"
+		site={ <>
+			<li>
+				사이트 메뉴에서 <BY>변화의 성소</BY> 및 <BY>총력전</BY>을 제거하고 <BY>세계정보</BY> 페이지로 이전했습니다.
+			</li>
+			<li>
+				스토리 감상을 위한 <BY>스토리</BY> 메뉴가 추가되었습니다.
+			</li>
+			<li>
+				스토리 뷰어 명칭을 플레이어로 변경했습니다.
+			</li>
+		</> }
+		bugfix={ <>
+			<li>스토리 플레이어에서 일부 화자의 이름이 표시되지 않는 점을 수정했습니다.</li>
+			<li>
+				<BY>전투원정보</BY>의 <BY>테이블 보기</BY>에서 일부 전투원 이름이 잘리는 문제를 수정했습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12465" date="2024-02-09"
 		bugfix={ <>
 			<li>Spine 애니메이션 스킨이 표시되지 않던 문제를 수정했습니다.</li>

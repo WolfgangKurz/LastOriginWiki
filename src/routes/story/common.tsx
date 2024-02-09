@@ -19,7 +19,7 @@ import { LocaleGet } from "@/components/locale";
 
 export function Nn (text: string) {
 	return text
-		.replace(/\{0\}/g, `[c][66bbff]${LocaleGet("STORY_PLAYER")}[-][/c]`)
+		.replace(/\{0\}/g, `[c][66bbff]${LocaleGet("STORY_PLAYER_GAMEPLAYER")}[-][/c]`)
 		.replace(/&n/g, "\n")
 		.replace(/\[c\]\[([^\]]+)\]/g, (_, p1) => `\0color\0${p1}\0`)
 		.replace(/\[-\]\[\/c\]/g, "\0");
