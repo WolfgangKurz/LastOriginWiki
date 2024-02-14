@@ -256,7 +256,6 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 										target={ !isDamaged ? skin.metadata["2dmodel"]! : skin.metadata["2dmodel_dam"]! }
 
 										scale={ 1.5 }
-										textureExt={ imageExt }
 
 										width={ FullUnitSize[0] }
 										height={ FullUnitSize[1] }

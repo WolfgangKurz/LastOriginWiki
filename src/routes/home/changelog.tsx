@@ -6,6 +6,16 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12475" date="2024-02-14"
+		bugfix={ <>
+			<li>
+				스토리 플레이어에서 일부 전투원이 올바르게 표시되지 않는 문제를 수정했습니다.
+			</li>
+		</> }
+		dialogue={ <>
+			<li>일부 전투원의 일본어 소개 및 대사 보이스가 추가/갱신되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12470" date="2024-02-14"
 		skin={ <>
 			<li>

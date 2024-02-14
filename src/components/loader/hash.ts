@@ -1,7 +1,7 @@
 // Content automatically generated
 export interface DBHashType { [K: string]: string | DBHashType; }
 export default {
-	"buildtime": "d18f971b",
+	"buildtime": "3438b307",
 	"locale": {
 		"TC": "83fa3f8c",
 		"KR": "917eea10",
@@ -59,7 +59,7 @@ export default {
 			"PECS_MissSafety": "44fe6f67",
 			"PECS_MightyR": "3784c96a",
 			"PECS_Mery": "730350e6",
-			"PECS_Merlin": "bbb7e65e",
+			"PECS_Merlin": "987abec2",
 			"PECS_Machina": "625278a9",
 			"PECS_Lumberjane": "ff9e1ae5",
 			"PECS_LRL": "50b995ff",
@@ -115,7 +115,7 @@ export default {
 			"BR_WarWolf": "b649391b",
 			"BR_Vargr": "85896092",
 			"BR_Valkyrie": "fb400fd3",
-			"BR_Uroborus": "b7bd4f0d",
+			"BR_Uroborus": "404121e2",
 			"BR_Undine": "c75f3a58",
 			"BR_Tomoe": "4e46b69d",
 			"BR_Thetis": "6c946d50",
@@ -145,7 +145,7 @@ export default {
 			"BR_NickyTracy": "70b1431e",
 			"BR_Nereid": "a60691d6",
 			"BR_Neodym": "9b6f0e23",
-			"BR_Nashorn": "689a736b",
+			"BR_Nashorn": "10daa009",
 			"BR_Miho": "13ca773e",
 			"BR_May": "8f3a2beb",
 			"BR_Marie": "6469ec7c",
