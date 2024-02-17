@@ -36,6 +36,14 @@ const Changelog: FunctionalComponent = () => <>
 			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
 			<li>일부 장비의 정보가 갱신되었습니다.</li>
 		</> }
+		skin={ <>
+			<li>
+				<BY>라비아타 프로토타입</BY>의 스킨 <BY>눈 속에 피는 꽃</BY>의 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>P/A-00 그리폰</BY>의 스킨 <BY>벌써 5년</BY>의 정보가 추가되었습니다.
+			</li>
+		</> }
 	/>
 	<ChangelogItem title="Build 12425" date="2024-01-16"
 		new={ <>

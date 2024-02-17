@@ -1,7 +1,7 @@
 // Content automatically generated
 export interface DBHashType { [K: string]: string | DBHashType; }
 export default {
-	"buildtime": "f9be9840",
+	"buildtime": "09a61888",
 	"locale": {
 		"TC": "83fa3f8c",
 		"KR": "917eea10",
@@ -139,7 +139,7 @@ export default {
 			"BR_Phoenix": "32af664f",
 			"BR_Phantom": "9bd15774",
 			"BR_Pani": "07c9bc37",
-			"BR_PA00EL": "326757a3",
+			"BR_PA00EL": "c62fea00",
 			"BR_Nymph": "bbef141c",
 			"BR_NightAngel": "8314d0ec",
 			"BR_NickyTracy": "70b1431e",
@@ -221,7 +221,7 @@ export default {
 			"3P_Poi": "fc5ace0c",
 			"3P_Melite": "37991690",
 			"3P_Maria": "4a320b94",
-			"3P_Labiata": "f8d9e166",
+			"3P_Labiata": "7fdc315d",
 			"3P_Hirume": "a0cc4a99",
 			"3P_Hachiko": "cd33cdcb",
 			"3P_Galatea": "4321800b",

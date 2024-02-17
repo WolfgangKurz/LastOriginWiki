@@ -6,6 +6,16 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12479" date="2024-02-18"
+		dialogue={ <>
+			<li>
+				전투원 <BY>라비아타 프로토타입</BY>의 스킨 <BR>눈 속에 피는 꽃</BR>의 대사 정보가 누락된 문제가 수정되었습니다.
+			</li>
+			<li>
+				전투원 <BY>P/A-00 그리폰</BY>의 스킨 <BR>벌써 5년</BR>의 대사 정보가 누락된 문제가 수정되었습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12477" date="2024-02-17"
 		update={ <>
 			<li>
