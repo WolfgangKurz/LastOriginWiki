@@ -6,9 +6,8 @@ import { BuffEffectList, BuffEffectListGroupKeys } from "@/types/BuffEffect";
 import { EffectFilterListType } from "@/types/Buff";
 import type { LocaleTypes } from "@/types/Locale";
 
-import { CurrentLocale } from "@/libs/Locale";
-
 import { Condition as UnitsCondition } from "@/routes/units/search/AdvancedSearch";
+import { CurrentLocale } from "@/libs/Locale";
 
 export function toggle (signal: Signal<boolean>): void;
 export function toggle (signal: Signal<boolean[]>, index: number): void;
@@ -33,7 +32,6 @@ export function toggleList<T> (list: Signal<T[]>, v: T): void {
 
 const Store = {
 	requireReload: signal(false),
-	localeInvalidated: signal(false),
 
 	Units: {
 		DisplayType: signal<"table" | "list" | "group" | "skin" | "time">("table"),
@@ -164,7 +162,7 @@ const Store = {
 	},
 
 	Story: {
-		lang: signal<LocaleTypes>(CurrentLocale),
+		lang: signal<LocaleTypes>(CurrentLocale.peek()),
 		back: signal<boolean>(false),
 	},
 };

@@ -1,70 +1,71 @@
 .ChangelogItem {
-	margin-bottom: 4em;
+	margin-bottom: 30px;
 	text-align: left;
 
-	h3 {
-		&::after {
-			content: "";
-			display: table;
-			clear: both;
+	.Title {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		column-gap: 10px;
+
+		margin-bottom: 5px;
+		font-weight: 600;
+		font-size: 20px;
+
+		> svg {
+			font-size: 6px;
 		}
 
-		.ReleaseTag {
-			float: right;
-			margin-right: 0.8em;
-			line-height: 1.75rem;
-			font-size: 60%;
-			color: $substory;
+		> .Date {
+			font-weight: 600;
+			font-size: 14px;
+			color: $secondary;
+		}
 
-			> svg {
-				margin-top: -0.1em;
+		.Tags {
+			margin-left: 10px;
+
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			column-gap: 5px;
+
+			.Tag {
+				padding: 1px 6px;
+				border-radius: 4px;
+				font-size: 12px;
 			}
 		}
 	}
 
-	.Tags {
-		font-size: 80%;
+	.Sector {
+		margin-bottom: 4px;
 	}
 
-	:global(.badge) {
-		margin-left: 0.25em;
-		margin-right: 0.25em;
-		margin-bottom: 5px;
-		padding: 0.25em 0.4em;
-		font-size: inherit;
-
-		&:first-child {
-			margin-left: 0;
-		}
-	}
-
-	@each $key, $color in $theme-colors {
+	$-colors: map.merge(
+		$theme-colors,
+		(
+			substory: $substory
+		)
+	);
+	@each $key, $color in $-colors {
 		.SectorVariant-#{$key} {
 			padding: 0.25em 0;
 			border-left: 0.25em solid $color;
 			background-color: rgba($color, 0.07);
+			font-weight: 500;
+			font-size: 14px;
 
-			> h5 {
-				display: inline-block;
+			> .Category {
+				font-weight: 700;
+				font-size: 16px;
 				padding: 0 0.25em 0.125em 0.5em;
 			}
 			> ol,
 			> ul {
 				margin-bottom: 0;
 			}
-		}
-	}
-	.SectorVariant-substory {
-		padding: 0.25em 0;
-		border-left: 0.25em solid #07499b;
-
-		> h5 {
-			display: inline-block;
-			padding: 0 0.25em 0.125em 0.5em;
-		}
-		> ol,
-		> ul {
-			margin-bottom: 0;
 		}
 	}
 }

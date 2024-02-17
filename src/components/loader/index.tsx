@@ -1,7 +1,8 @@
+// TODO : Remove <Loader> component and move file to `libs`
+
 import { FunctionalComponent, createElement } from "preact";
 import { useCallback, useEffect, useState } from "preact/hooks";
 
-// import YAML from "yaml";
 import * as YAML from "@/external/yaml";
 
 import { DataRoot } from "@/libs/Const";
@@ -35,11 +36,11 @@ enum LoaderState {
 }
 
 const LoadQueue: Record<string, Array<() => void>> = {};
-const CachedJson: Record<string, any> = {};
+const Cache: Record<string, any> = {};
 
-function Load<T = any> (db: string, json: string): Promise<void> {
+function Load (db: string, json: string): Promise<void> {
 	return new Promise<void>((resolve, reject) => {
-		if (json in CachedJson) return resolve();
+		if (json in Cache) return resolve();
 
 		let first = false;
 		if (!(json in LoadQueue)) {
@@ -74,8 +75,8 @@ function Load<T = any> (db: string, json: string): Promise<void> {
 		xhr.open("GET", `${DataRoot}/${_rootJson.substring(2)}${_postfix}`);
 		xhr.addEventListener("load", (e) => {
 			if (Math.floor(xhr.status / 100) === 2) {
-				const data = YAML.load(xhr.responseText, undefined) as T;
-				CachedJson[json] = data;
+				const data = YAML.load(xhr.responseText, undefined);
+				Cache[json] = data;
 				LoadQueue[json].forEach(c => c());
 				delete LoadQueue[json];
 			} else
@@ -116,22 +117,36 @@ export function DBSourceConverter<T extends {}> (data: T): T {
 		.map(x => x.map(y => typeof y === "string" ? new EntitySource(y) : y));
 	return _;
 }
+
+/**
+ * @deprecated This method should not be used. Use `useDBData` instead.
+ * @param json File to get
+ * @param converter Preprocess function before return data
+ * @returns Data to get. `undefined` if not loaded yet or not exists.
+ */
 export function GetJson<T> (json: string, converter?: JsonDataConverter<T>): T {
-	if (converter) return converter(CachedJson[json] as T);
-	return CachedJson[json] as T;
+	if (converter) return converter(Cache[json] as T);
+	return Cache[json] as T;
 }
+
+/**
+ * @deprecated This method should not be used. Use `useDBData` instead.
+ * @param db DB of data
+ * @param json File to load
+ * @returns Loader `Promise`.
+ */
 export function JsonLoaderCore (db: string, json: string | string[] | undefined): Promise<void[]> {
 	const list = normalize(json);
 
-	if (list.length === 0 || list.every(x => x in CachedJson))
+	if (list.length === 0 || list.every(x => x in Cache))
 		return Promise.resolve([]);
 
 	return Promise.all(list.map(x => Load(db, x)));
 }
 
-export function JsonInvalidate (json: string): void {
-	if (json in CachedJson)
-		delete CachedJson[json];
+export function UnsetDBData (dataname: string): void {
+	if (dataname in Cache)
+		delete Cache[dataname];
 }
 
 function comp (a: string[] | readonly string[], b: string[] | readonly string[]): boolean {
@@ -144,6 +159,9 @@ interface DefaultFailedBadgeProps {
 	list: string[];
 }
 
+/**
+ * @deprecated This component should not be used.
+ */
 const DefaultFailedBadge: FunctionalComponent<DefaultFailedBadgeProps> = ({ db, list }) =>
 	<span class="d-inline-block badge bg-danger">
 		Failed to load data { list.map(x => <strong>"{ db }/{ x }"</strong>).gap(", ") }.<br />
@@ -151,6 +169,9 @@ const DefaultFailedBadge: FunctionalComponent<DefaultFailedBadgeProps> = ({ db, 
 	</span>;
 const DefaultLoadingBadge: FunctionalComponent = () => <Loading.Data />;
 
+/**
+ * @deprecated This component should not be used. Use `useDBData` instead.
+ */
 const Loader: FunctionalComponent<LoaderProps> = (props) => {
 	const db = props.db || CurrentDB;
 	const target = normalize(props.json);
@@ -175,7 +196,7 @@ const Loader: FunctionalComponent<LoaderProps> = (props) => {
 	}, [list, target]);
 
 	if (state === LoaderState.EMPTY) {
-		if (target.length === 0 || target.every(x => x in CachedJson)) {
+		if (target.length === 0 || target.every(x => x in Cache)) {
 			setState(LoaderState.DONE);
 			return response();
 		}

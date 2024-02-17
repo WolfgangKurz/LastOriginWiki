@@ -1,0 +1,53 @@
+.ConfigSelector {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	column-gap: 20px;
+	row-gap: 10px;
+
+	margin: 20px 0;
+	font-size: 16px;
+
+	img {
+		display: block;
+		margin: 0;
+	}
+
+	> div {
+		> *:first-child {
+			margin: 0 15px;
+		}
+
+		.Buttons {
+			display: inline-flex;
+			flex-direction: row;
+			align-items: center;
+
+			border-radius: 4px;
+			background-color: $gray-200;
+
+			button {
+				padding: 2px 12px;
+				height: 32px;
+
+				border: 0;
+				border-radius: 4px;
+				background-color: transparent;
+				transition: background-color 0.1s ease;
+				font-size: 14px;
+				cursor: pointer;
+
+				&:hover {
+					background-color: $gray-400;
+				}
+
+				&.Current,
+				&.Current:hover {
+					background-color: $primary;
+					color: $light;
+				}
+			}
+		}
+	}
+}

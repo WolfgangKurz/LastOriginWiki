@@ -1,9 +1,12 @@
 import { FunctionalComponent } from "preact";
 
+import { cn } from "@/libs/Class";
+
 import Locale from "@/components/locale";
 import IconTagFill from "@/components/bootstrap-icon/icons/TagFill";
 
 import style from "./style.module.scss";
+import IconDiamondFill from "@/components/bootstrap-icon/icons/DiamondFill";
 
 interface ChangelogItemProps {
 	tag?: string;
@@ -24,32 +27,29 @@ const ChangelogItem: FunctionalComponent<ChangelogItemProps> = (props) => {
 	const tags = ["site", "knownissue", "bugfix", "delete", "new", "update", "skin", "dialogue"]
 		.filter(x => props[x as keyof ChangelogItemProps]);
 
-	function TagVariant (tag: string): string[] {
+	function TagVariant (tag: string): string {
 		switch (tag) {
 			default:
 			case "default":
-				return ["", ""];
+				return "";
 			case "site":
-				return ["secondary", "bg-secondary"];
+				return "secondary";
 			case "knownissue":
-				return ["danger-dark", "bg-danger-dark"];
+				return "danger-dark";
 			case "bugfix":
-				return ["danger", "bg-danger"];
+				return "danger";
 			case "delete":
-				return ["dark", "bg-dark"];
+				return "dark";
 			case "new":
-				return ["primary", "bg-primary"];
+				return "primary";
 			case "skin":
-				return ["substory", "bg-substory"];
+				return "substory";
 			case "update":
-				return ["warning", "bg-warning", "text-dark"];
+				return "warning";
 			case "dialogue":
-				return ["success", "bg-success"];
+				return "success";
 		}
 	}
-	const TagVariantList = (tag: string): string => TagVariant(tag)
-		.slice(1)
-		.join(" ");
 
 	function TagName (tag: string): preact.VNode {
 		switch (tag) {
@@ -76,31 +76,35 @@ const ChangelogItem: FunctionalComponent<ChangelogItemProps> = (props) => {
 	}
 
 	return <div class={ style.ChangelogItem }>
-		<h3>
+		<div class={ style.Title }>
+			<IconDiamondFill />
+
 			{ props.title }
-			<small class="ps-3 float-end float-md-none text-secondary">{ props.date }</small>
-			{ props.tag
-				? <span class={ style.ReleaseTag }>
-					<IconTagFill class="me-1" />
-					{ props.tag }
-				</span>
-				: <></>
-			}
-		</h3>
-		<div class={ `${style.Tags} ms-2 pb-1` }>
-			{ tags.map(x => <span class={ `badge ${TagVariantList(x)} me-1` }>
-				{ TagName(x) }
-			</span>) }
+
+			<span class={ style.Date }>{ props.date }</span>
+
+			{ props.tag && <span class={ style.ReleaseTag }>
+				<IconTagFill class="me-1" />
+				{ props.tag }
+			</span> }
+
+			<div class={ style.Tags }>
+				{ tags
+					.map(x => [x, TagVariant(x)])
+					.map(([x, y]) => <span class={ cn(style.Tag, `bg-${y}`, `text-bg-${y}`) }>
+						{ TagName(x) }
+					</span>)
+				}
+			</div>
 		</div>
 
-		{ tags.map(x => <div class={ `mt-2 ms-1 sector-${x} ${style[`SectorVariant-${TagVariant(x)[0]}`]}` }>
-			<h5>
-				<strong>
-					{ TagName(x) }
-				</strong>
-			</h5>
-			<ol>{ props[x as keyof ChangelogItemProps] }</ol>
-		</div>) }
+		{ tags
+			.map(x => [x, TagVariant(x)])
+			.map(([x, y]) => <div class={ cn(style.Sector, style[`SectorVariant-${y}`]) }>
+				<div class={ style.Category }>{ TagName(x) }</div>
+				<ol>{ props[x as keyof ChangelogItemProps] }</ol>
+			</div>)
+		}
 	</div>;
 };
 export default ChangelogItem;

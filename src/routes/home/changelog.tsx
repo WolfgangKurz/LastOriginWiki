@@ -1,11 +1,21 @@
 import { FunctionalComponent } from "preact";
 
-import IconArrowRight from "@/components/bootstrap-icon/icons/ArrowRight";
-import IconGithub from "@/components/bootstrap-icon/icons/Github";
 import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12481" date="2024-02-18"
+		site={ <>
+			<li>
+				사이트 개편안의 일부를 선행 적용했습니다.
+				<ol>
+					<li>홈 페이지의 디자인을 변경했습니다.</li>
+					<li>Changelog 페이지의 디자인을 일부 변경했습니다.</li>
+					<li>내부 코드 변경을 진행중입니다.</li>
+				</ol>
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12479" date="2024-02-18"
 		dialogue={ <>
 			<li>

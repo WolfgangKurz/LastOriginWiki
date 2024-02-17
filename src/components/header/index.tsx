@@ -1,19 +1,21 @@
 import { FunctionalComponent } from "preact";
 import { Link } from "preact-router/match";
 // import { Dropdown } from "bootstrap";
+import Store from "@/store";
 
 import { LocaleList } from "@/types/Locale";
 
-import { AssetsRoot, Host, IsAprilFool, IsDev } from "@/libs/Const";
+import { AssetsRoot, Host, IsDev } from "@/libs/Const";
 import { ChangeLanguage, CurrentLocale } from "@/libs/Locale";
 import { ChangeDB, CurrentDB, DBList, DBTypes } from "@/libs/DB";
 
 import Locale, { ReloadLocale } from "@/components/locale";
 import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
 import IconServer from "@/components/bootstrap-icon/icons/Server";
-import IconGlobe2 from "@/components/bootstrap-icon/icons/Globe2";
+import IconTranslate from "@/components/bootstrap-icon/icons/Translate";
 
 import style from "./style.module.scss";
+import IconList from "@/components/bootstrap-icon/icons/List";
 
 interface LinkData {
 	href: string;
@@ -55,7 +57,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 		<div class="container-fluid">
 			<div class={ `${style["navbar-brand"]} navbar-brand` }>
 				<img
-					src={ `${AssetsRoot}/${IsAprilFool ? "icon2" : "icon"}.png` }
+					src={ `${AssetsRoot}/icon.png` }
 				/>
 				<span>
 					<i class={ style.subtitle } data-locale={ CurrentLocale }>
@@ -84,7 +86,8 @@ const Header: FunctionalComponent = (): preact.VNode => {
 				aria-expanded="false"
 				aria-label="Toggle navigation"
 			>
-				<span class="navbar-toggler-icon" />
+				<IconList/>
+				{/* <span class="navbar-toggler-icon" /> */}
 			</button>
 
 			<div class="collapse navbar-collapse" id="topNavbarList">
@@ -216,7 +219,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 									class="nav-link"
 									onClick={ e => {
 										e.preventDefault();
-										ReloadLocale(CurrentLocale);
+										ReloadLocale(CurrentLocale.value);
 									} }
 								>
 									Re-locale
@@ -235,18 +238,26 @@ const Header: FunctionalComponent = (): preact.VNode => {
 									data-bs-toggle="dropdown"
 									aria-expanded="false"
 								>
-									<IconGlobe2 class="me-1" />
-									<img class="mx-1" src={ `${AssetsRoot}/flags/${CurrentLocale}.png` } alt={ CurrentLocale } />
-									{ CurrentLocale }
+									<IconTranslate class="me-1" />
+									<img
+										class="mx-2"
+										src={ `${AssetsRoot}/flags/${CurrentLocale.value}.png` }
+										alt={ CurrentLocale.value }
+									/>
 								</a>
-								<ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="topNavbarDropdown2">
+								<ul
+									class="dropdown-menu dropdown-menu-end dropdown-menu-dark text-center"
+									aria-labelledby="topNavbarDropdown2"
+									style={ {
+										"--bs-dropdown-min-width": "initial"
+									} }
+								>
 									{ LocaleList.map(lang => <li>
 										<a href="#" class="dropdown-item" onClick={ (e): void => {
 											e.preventDefault();
 											ChangeLanguage(lang);
 										} }>
-											<img class="me-3" src={ `${AssetsRoot}/flags/${lang}.png` } alt={ lang } />
-											{ lang }
+											<img src={ `${AssetsRoot}/flags/${lang}.png` } alt={ lang } />
 										</a>
 									</li>) }
 								</ul>

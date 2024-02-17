@@ -8,6 +8,7 @@ import { Maps, World } from "@/types/DB/Map";
 import SubStoryDB, { SubStoryStory, SubStoryStoryTrigger } from "@/types/DB/SubStory";
 
 import { useUpdate } from "@/libs/hooks";
+import { useLocale } from "@/libs/Locale";
 import { CurrentDB } from "@/libs/DB";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
@@ -15,7 +16,7 @@ import { BuildClass } from "@/libs/Class";
 import { isActive } from "@/libs/Functions";
 
 import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
-import Locale, { LocaleGet } from "@/components/locale";
+import Locale from "@/components/locale";
 import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
 import IconCompass from "@/components/bootstrap-icon/icons/Compass";
 import IconTable from "@/components/bootstrap-icon/icons/Table";
@@ -30,6 +31,7 @@ interface WORLDViewProps {
 }
 
 const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
+	const [loc] = useLocale();
 	const update = useUpdate();
 	const imgExt = ImageExtension();
 
@@ -39,10 +41,10 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 	const isStory = wid === "Story";
 
 	useEffect(() => {
-		SetMeta(["description", "twitter:description"], `${LocaleGet(`WORLD_${wid}`)}의 구역 목록을 표시합니다. 구역의 지도 정보와 이야기를 선택하여 확인할 수 있습니다.`);
+		SetMeta(["description", "twitter:description"], `${loc[`WORLD_${wid}`]}의 구역 목록을 표시합니다. 구역의 지도 정보와 이야기를 선택하여 확인할 수 있습니다.`);
 		SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/${wid}_1.png`);
-		SetMeta("keywords", `,${LocaleGet(`WORLD_${wid}`)}`, true);
-		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${wid}`));
+		SetMeta("keywords", `,${loc[`WORLD_${wid}`]}`, true);
+		UpdateTitle(loc["MENU_WORLDS"], loc[`WORLD_${wid}`]);
 	}, [wid]);
 
 	if (isStory) {

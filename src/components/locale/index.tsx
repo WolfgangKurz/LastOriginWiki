@@ -1,11 +1,12 @@
 import { ComponentType, FunctionalComponent, createElement } from "preact";
+import Store from "@/store";
 
 import type { LocaleTypes } from "@/types/Locale";
 
-import { CurrentLocale } from "@/libs/Locale";
+import { CurrentLocale, useLocale } from "@/libs/Locale";
 import { CurrentDB } from "@/libs/DB";
 
-import { GetJson, JsonInvalidate, JsonLoaderCore, StaticDB } from "@/components/loader";
+import { GetJson, UnsetDBData, JsonLoaderCore, StaticDB } from "@/components/loader";
 
 type LocaleComponentProp<T> = Record<string, ComponentType<T>>;
 
@@ -94,17 +95,37 @@ function parseVNode<T> (template: string, p: LocaleProps<T>["p"], components: Lo
 export const GetLocaleTable = (locale: LocaleTypes) =>
 	GetJson<Record<string, string>>(StaticDB.Locale[locale]);
 
+export interface LocalePropsLegacy<T> {
+	k: string;
+	p?: Array<string | number | boolean | preact.VNode>;
+	preprocessor?: (source: string) => string;
+	fallback?: string | number | boolean | preact.VNode;
+	components?: LocaleComponentProp<T>;
+
+	/**
+	 * @deprecated This property should not be used. Use `raw` instead.
+	 */
+	plain?: boolean;
+}
 export interface LocaleProps<T> {
 	k: string;
 	p?: Array<string | number | boolean | preact.VNode>;
 	preprocessor?: (source: string) => string;
 	fallback?: string | number | boolean | preact.VNode;
 	components?: LocaleComponentProp<T>;
-	plain?: boolean;
+
+	/** default `true` for compatibility, will be changed to `false` in future. */
+	raw?: boolean;
 }
 
-const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
-	const locale = GetLocaleTable(CurrentLocale);
+const Locale: FunctionalComponent<LocalePropsLegacy<any> | LocaleProps<any>> = (props) => {
+	const [locale] = useLocale();
+
+	const isRaw = "raw" in props
+		? props.raw
+		: "plain" in props
+			? !props.plain
+			: true; // for compatibility
 
 	if (locale) {
 		let t = locale[props.k];
@@ -112,24 +133,24 @@ const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
 			if (props.preprocessor)
 				t = props.preprocessor(t);
 
-			if (props.plain) {
-				return <>{ (t).split(paramRegex).map(x => {
-					const r = paramRegex.exec(x);
-					return r
-						? ((): preact.VNode => {
-							const idx = parseInt(r[1].slice(1, r[1].length - 1), 10);
-							if (props.p) {
-								const v = props.p[idx];
-								if (typeof v === "string" || typeof v === "number" || typeof v === "boolean")
-									return <>{ props.p[idx] }</>;
-								return v;
-							}
-							return <></>;
-						})()
-						: <>{ x }</>;
-				}) }</>;
-			}
-			return <>{ parseVNode(t, props.p, props.components || {}) }</>;
+			if (isRaw)
+				return <>{ parseVNode(t, props.p, props.components || {}) }</>;
+
+			return <>{ (t).split(paramRegex).map(x => {
+				const r = paramRegex.exec(x);
+				return r
+					? ((): preact.VNode => {
+						const idx = parseInt(r[1].slice(1, r[1].length - 1), 10);
+						if (props.p) {
+							const v = props.p[idx];
+							if (typeof v === "string" || typeof v === "number" || typeof v === "boolean")
+								return <>{ props.p[idx] }</>;
+							return v;
+						}
+						return <></>;
+					})()
+					: <>{ x }</>;
+			}) }</>;
 		}
 
 		return typeof props.fallback === "string" ||
@@ -137,19 +158,31 @@ const Locale: FunctionalComponent<LocaleProps<any>> = (props) => {
 			typeof props.fallback === "boolean"
 			? <>{ props.fallback }</>
 			: typeof props.fallback === "undefined"
-				? <>{ props.k }</>
+				? <></> // no more default fallback as input Key
 				: props.fallback;
 	}
-	return <>{ props.k }</>;
+	return <></>; // no more default fallback as input Key
 };
 export default Locale;
 
+/**
+ * @deprecated This method should not be used. Use `useLocale()` instead.
+ * @param k Key string of locale.
+ * @param p Parameter of locale.
+ * @returns Localized text. `k` parameter if key not in locale table.
+ */
 export function LocaleGet (k: string, ...p: any[]): string {
 	return LocaleGetEmpty(k, ...p) ?? k;
 }
 
+/**
+ * @deprecated This method should not be used. Use `useLocale()` instead.
+ * @param k Key string of locale.
+ * @param p Parameter of locale.
+ * @returns Localized text. `undefined` if key not in locale table.
+ */
 export function LocaleGetEmpty (k: string, ...p: any[]): string | undefined {
-	const locale = GetLocaleTable(CurrentLocale);
+	const locale = GetLocaleTable(CurrentLocale.peek());
 	const t = locale && k in locale ? locale[k] : undefined;
 	return t?.replace(/\{([0-9]+)\}/g, (p0, p1) => {
 		const idx = parseInt(p1, 10);
@@ -159,11 +192,11 @@ export function LocaleGetEmpty (k: string, ...p: any[]): string | undefined {
 }
 
 export function LocaleExists (k: string): boolean {
-	const locale = GetLocaleTable(CurrentLocale);
-	return locale && k in locale;
+	const [locale, loaded] = useLocale();
+	return loaded && k in locale;
 }
 
 export function ReloadLocale (locale: string): void {
-	JsonInvalidate(StaticDB.Locale[locale]);
+	UnsetDBData(StaticDB.Locale[locale]);
 	JsonLoaderCore(CurrentDB, StaticDB.Locale[locale]);
 }
