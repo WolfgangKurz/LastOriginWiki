@@ -95,7 +95,6 @@ interface _2DModelRendererProps {
 
 	root: string;
 	target: string;
-	textureExt?: string;
 
 	hideParts?: boolean;
 	hideBG?: boolean;
@@ -257,7 +256,7 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 		fetch(`${props.root}${props.target}/data.json`)
 			.then(r => r.json() as Promise<MODEL_DATA>)
 			.then(r => setJsonData(r));
-	}, [props.root, props.target, props.textureExt]);
+	}, [props.root, props.target]);
 
 	useEffect(() => {
 		if (!jsonData) {
@@ -284,8 +283,8 @@ const U2DModelRenderer: FunctionalComponent<_2DModelRendererProps> = (props) => 
 			};
 			const images = await Promise.all(
 				[
-					...new Set(r.sprite.flat().map(o => `${o.tex}.${props.textureExt || "png"}`)),
-					...new Set(r.face.map(o => `${o.tex}.${props.textureExt || "png"}`)),
+					...new Set(r.sprite.flat().map(o => `${o.tex}.webp`)),
+					...new Set(r.face.map(o => `${o.tex}.webp`)),
 				].map(tex => new Promise<IMAGE_LOAD_RESULT>((resolve, reject) => {
 					const img = new Image();
 					const loadHandler = () => {

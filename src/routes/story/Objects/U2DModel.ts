@@ -1,7 +1,7 @@
 import * as PIXI from "pixi.js";
 import * as LAYERS from "@pixi/layers";
 
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, IsDev } from "@/libs/Const";
 
 import FadeContainer from "./FadeContainer";
 import Matrix3D from "@/components/u2dmodel-renderer/Matrix3D";
@@ -127,7 +127,6 @@ export default class Story2DModel extends FadeContainer {
 		this._model = image;
 
 		const baseURL = `${AssetsRoot}/2dmodel/O/${image}`;
-		const imgExt = ImageExtension();
 
 		this.layerableChildren = true;
 
@@ -216,7 +215,6 @@ export default class Story2DModel extends FadeContainer {
 
 							const image = new Image();
 							image.addEventListener("load", () => {
-
 								createClippedTexture(image, sp.vector, sp.v)
 									.then(tex => {
 										this.spMap[sp.name] = sp;
@@ -231,7 +229,7 @@ export default class Story2DModel extends FadeContainer {
 								reject(e);
 							});
 							image.crossOrigin = "Anonymous";
-							image.src = `${baseURL}/${sp.tex}.${imgExt}`;
+							image.src = `${baseURL}/${sp.tex}.webp`;
 						})),
 				);
 
@@ -248,7 +246,7 @@ export default class Story2DModel extends FadeContainer {
 				(() => {
 					const all = Object.values(r.object).flat();
 
-					function setNodeTransform (obj: MODEL_OBJECT, target: PIXI.Container) {
+					const setNodeTransform = (obj: MODEL_OBJECT, target: PIXI.Container) => {
 						function quat2eul (quat: Tuple<number, 4>) { // quat2eul (radian)
 							const q = {
 								x: quat[0],
@@ -303,16 +301,16 @@ export default class Story2DModel extends FadeContainer {
 						const sY = Math.sqrt(mat[1] * mat[1] + mat[5] * mat[5]); // [4]^2 * [5]^2
 						const kX = Math.atan2(mat[4], mat[0]); // [1], [0]
 						const kY = Math.atan2(mat[1], mat[5]); // [4], [5]
-						const r = Math.atan2(mat[4], mat[0]); // [1], [0]
+						const r_ = Math.atan2(mat[4], mat[0]); // [1], [0]
 
 						target.setTransform(
 							pX, pY,
 							sX, sY,
-							r,
+							r_,
 							kX, kY,
 						);
-					}
-					function requireTreeNode (node: MODEL_OBJECT): NodeTreeItem {
+					};
+					const requireTreeNode = (node: MODEL_OBJECT): NodeTreeItem => {
 						const cached = treeItems.find(r => r.id === node.id);
 						if (cached) return cached; // already cached
 
@@ -347,15 +345,17 @@ export default class Story2DModel extends FadeContainer {
 						parent.child.push(entity);
 						parent.sprite.addChild(entity.sprite);
 						return entity;
-					}
+					};
 
 					all.forEach(r => requireTreeNode(r));
 
-					// function debugTree (entry: NodeTreeItem, depth: number = 0) {
-					// 	console.log("  ".repeat(depth) + entry.name);
-					// 	entry.child.forEach(c => debugTree(c, depth + 1));
-					// }
-					// debugTree(treeRoot);
+					if (IsDev && false) {
+						function debugTree (entry: NodeTreeItem, depth: number = 0) {
+							console.log("  ".repeat(depth) + entry.name);
+							entry.child.forEach(c => debugTree(c, depth + 1));
+						}
+						debugTree(treeRoot);
+					}
 				})();
 
 				// Traverse GameObject tree (has SpriteRenderer only)
@@ -364,11 +364,6 @@ export default class Story2DModel extends FadeContainer {
 					.forEach(node => {
 						const o = node.data;
 
-						// const sprite = new PIXI.Sprite();
-						// sprite.filters = [];
-						// sprite.name = "#sprite";
-						// sprite.setParent(node.sprite);
-						// node.sprite = sprite;
 						const sprite = node.sprite;
 
 						if ("color" in o && o.color) { // has SpriteRenderer (even if sprite has not set)
@@ -389,8 +384,11 @@ export default class Story2DModel extends FadeContainer {
 									sprite.blendMode = PIXI.BLEND_MODES.MULTIPLY;
 									break;
 								case "additive":
+									sprite.blendMode = PIXI.BLEND_MODES.ADD;
+									break;
 								case "additive-soft":
 									sprite.blendMode = PIXI.BLEND_MODES.ADD;
+									sprite.alpha = 0.5;
 									break;
 							}
 						}
@@ -398,6 +396,13 @@ export default class Story2DModel extends FadeContainer {
 						if ("sprite" in o && o.sprite !== undefined) {
 							const sp = this.spMap[o.sprite];
 							sprite.texture = this.texMap[sp.name];
+
+							const ppu = sp.vector.u;
+							const ppum = 100 / ppu; // ppu multiply
+							sprite.scale.set(
+								sprite.scale.x * ppum,
+								sprite.scale.y * ppum,
+							);
 						}
 
 						if (r.list.dialogDeactive?.includes(o.name))
