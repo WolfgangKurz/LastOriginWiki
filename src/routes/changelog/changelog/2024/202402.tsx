@@ -5,6 +5,18 @@ import { BY, BR, BO, BB, BG } from "../../components/badges";
 import IconGithub from "@/components/bootstrap-icon/icons/Github";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12477" date="2024-02-17"
+		update={ <>
+			<li>
+				스토리 플레이어에서 전투원의 Spine 애니메이션이 표시되도록 수정했습니다.
+			</li>
+		</> }
+		bugfix={ <>
+			<li>
+				스토리 플레이어에서 일부 전투원이 표시되지 않는 문제를 수정했습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12475" date="2024-02-14"
 		bugfix={ <>
 			<li>

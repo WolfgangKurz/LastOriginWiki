@@ -1,7 +1,7 @@
 import * as PIXI from "pixi.js";
 import * as LAYERS from "@pixi/layers";
 
-import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, IsDev } from "@/libs/Const";
 
 import FadeContainer from "./FadeContainer";
 import Matrix3D from "@/components/u2dmodel-renderer/Matrix3D";
@@ -215,7 +215,6 @@ export default class Story2DModel extends FadeContainer {
 
 							const image = new Image();
 							image.addEventListener("load", () => {
-
 								createClippedTexture(image, sp.vector, sp.v)
 									.then(tex => {
 										this.spMap[sp.name] = sp;
@@ -329,8 +328,8 @@ export default class Story2DModel extends FadeContainer {
 						entity.sprite.name = entity.name;
 
 						entity.sprite.zIndex = (_z[entity.id] ?? 0);
-						// entity.sprite.parentLayer = _layers[entity.sprite.zIndex];
-						// entity.sprite.layerableChildren = true;
+						entity.sprite.parentLayer = _layers[entity.sprite.zIndex];
+						entity.sprite.layerableChildren = true;
 
 						setNodeTransform(node, entity.sprite);
 
@@ -350,11 +349,13 @@ export default class Story2DModel extends FadeContainer {
 
 					all.forEach(r => requireTreeNode(r));
 
-					// function debugTree (entry: NodeTreeItem, depth: number = 0) {
-					// 	console.log("  ".repeat(depth) + entry.name);
-					// 	entry.child.forEach(c => debugTree(c, depth + 1));
-					// }
-					// debugTree(treeRoot);
+					if (IsDev && false) {
+						function debugTree (entry: NodeTreeItem, depth: number = 0) {
+							console.log("  ".repeat(depth) + entry.name);
+							entry.child.forEach(c => debugTree(c, depth + 1));
+						}
+						debugTree(treeRoot);
+					}
 				})();
 
 				// Traverse GameObject tree (has SpriteRenderer only)
@@ -363,11 +364,6 @@ export default class Story2DModel extends FadeContainer {
 					.forEach(node => {
 						const o = node.data;
 
-						// const sprite = new PIXI.Sprite();
-						// sprite.filters = [];
-						// sprite.name = "#sprite";
-						// sprite.setParent(node.sprite);
-						// node.sprite = sprite;
 						const sprite = node.sprite;
 
 						if ("color" in o && o.color) { // has SpriteRenderer (even if sprite has not set)

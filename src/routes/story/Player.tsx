@@ -11,7 +11,7 @@ import { LocaleTypes } from "@/types/Locale";
 
 import { useUpdate } from "@/libs/hooks";
 import { CurrentDB } from "@/libs/DB";
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot, IsDev } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
 import BGMAlbums from "@/libs/BGM";
 
@@ -30,10 +30,17 @@ import DialogObject from "./Objects/DialogObject";
 import SelectionObject from "./Objects/SelectionObject";
 import CommuSprite from "./Objects/CommuSprite";
 import U2DModel from "./Objects/U2DModel";
+import SpineModel from "./Objects/SpineModel";
 
 import style from "./style.module.scss";
 
-type CharSpriteType = U2DModel | FadeSprite | CommuSprite;
+type CharSpriteType = FadeSprite | CommuSprite | U2DModel | SpineModel;
+
+enum CharModelType {
+	None = 0,
+	U2DModel = 1,
+	Spine = 2,
+}
 
 /**
  * 50 - BG
@@ -102,7 +109,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 
 	const [ignore2DModel, setIgnore2DModel] = useState(false);
 
-	const modelList = GetJson<string[]>(StaticDB.Story2DModel);
+	const modelList = GetJson<Record<string, CharModelType>>(StaticDB.Story2DModel);
 	if (!modelList && !ignore2DModel) {
 		JsonLoaderCore(CurrentDB, StaticDB.Story2DModel)
 			.catch(() => setIgnore2DModel(true))
@@ -344,7 +351,8 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 					wheel: true,
 				},
 			});
-			globalThis.__PIXI_APP__ = app;
+			if (IsDev)
+				globalThis.__PIXI_APP__ = app;
 			setApp(app);
 
 			app.stage = new LAYERS.Stage();
@@ -708,10 +716,10 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 					const char = charRef.current[index]!;
 					if (
 						(screen && target && target.image) && // new char exists
-						char instanceof U2DModel && // U2DModel based (face changeable)
+						(char instanceof U2DModel || char instanceof SpineModel) && // U2DModel based (face changeable)
 						target.image === char.model // same model image
 					) {
-						// reusable (change face only)
+						// reusable (only face changed)
 						char.setFace(target.imageVar);
 						return () => { };
 					} else {
@@ -725,10 +733,13 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				let char: CharSpriteType | null = null;
 				if (screen && target && target.image) {
 					const c = ConvertChar(target.image);
-					const has2DModel = modelList?.includes(target.image) ?? false;
+					console.log(target.image);
+					const modelType = target.image in (modelList || {})
+						? modelList[target.image]
+						: CharModelType.None;
 					const forCommu = isCommu(target.image);
 
-					Promise.all(has2DModel
+					Promise.all(modelType !== CharModelType.None
 						? new Array(2).fill(Promise.resolve())
 						: [
 							PIXI.Texture.fromURL(c
@@ -753,11 +764,15 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 						const p = [1280 / SPLITCOUNT * SPLITINDEX[index], 720];
 						const s = [index === 1 ? -1 : 1, 1];
 
-						if (has2DModel) {
+						if (modelType === CharModelType.U2DModel) {
 							char = new U2DModel(target.image);
 							char.setFace(target.imageVar);
 							// p[1] = 720 / 7 * 5;
 							p[1] = 360;
+						} else if (modelType === CharModelType.Spine) {
+							char = new SpineModel(target.image);
+							char.setFace(target.imageVar);
+							p[1] = 1040;
 						} else {
 							char = new (forCommu ? CommuSprite : FadeSprite)(tex);
 							char.pivot.set(tex.width / 2, tex.height / 4 * 3);
