@@ -72,14 +72,14 @@ updateMeta();
 export function UpdateTitle (...title: string[]): void {
 	const loc = GetLocaleTable(CurrentLocale.value) || {};
 	document.title = [
-		...title.map(t => t.replace(/&#x200B;/g, "")),
+		...title.filter(r => !!r).map(t => t.replace(/&#x200B;/g, "")),
 		loc["COMMON_TITLE"],
 	].filter(r => !!r).join(" - ");
 
 	SetMeta(
 		["twitter:title", "og:title"],
 		[
-			...title.map(t => t.replace(/&#x200B;/g, "")),
+			...title.filter(r => !!r).map(t => t.replace(/&#x200B;/g, "")),
 			loc["COMMON_TITLE"], // Meta always title
 		].filter(r => !!r).join(" - "),
 	);
