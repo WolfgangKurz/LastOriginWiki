@@ -5,6 +5,24 @@ import { BY, BR, BO, BB, BG } from "../../components/badges";
 import IconGithub from "@/components/bootstrap-icon/icons/Github";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12486" date="2024-02-18"
+		site={ <>
+			<li>
+				사이트 개편안의 일부를 선행 적용했습니다.
+				<ol>
+					<li>
+						<BY>전투원정보</BY>의 <BG>목록 보기</BG>의 디자인이 변경되었습니다.
+					</li>
+					<li>
+						<BY>전투원정보</BY>의 <BG>목록 보기</BG> 및 <BG>그룹별 보기</BG>가 통합되었습니다.
+					</li>
+					<li>
+						<BY>전투원정보</BY>의 <BG>제조 시간</BG>이 <BR>@deprecated</BR>가 되었습니다.
+					</li>
+				</ol>
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12484" date="2024-02-18"
 		bugfix={ <>
 			<li>일부 상황에서 사이트 동작이 멈추는 문제를 수정했습니다.</li>

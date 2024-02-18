@@ -1,5 +1,6 @@
 import { FunctionalComponent } from "preact";
-import { Link, route } from "preact-router";
+import { Link } from "preact-router";
+import { useMemo } from "preact/hooks";
 
 import Store from "@/store";
 
@@ -53,9 +54,14 @@ const UnitsTable: FunctionalComponent<UnitsListProps> = (props) => {
 		[ROLE_TYPE.SUPPORTER]: "SUPPORTER",
 	};
 
+	const activatedRoles = useMemo(
+		() => RoleList.filter(role => Store.Units.Role[role].value).length,
+		[...Object.values(Store.Units.Role).map(r => r.value)],
+	);
+
 	return <div>
 		{ TypeList.map(type => Store.Units.Type[type].value
-			? <div class={ style.UnitTable }>
+			? <div class={ style.UnitTable } style={ { "--cols": activatedRoles } }>
 				<div class={ style.TypeHeader }>
 					{/* <UnitBadge type={ type } transparent /> */ }
 					<UnitTypeIcon class="me-1" type={ type } />

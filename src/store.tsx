@@ -74,6 +74,9 @@ const Store = {
 		},
 
 		SearchText: signal(""),
+		SearchWithShortname: signal(false),
+		SearchListOrder: signal<"dict" | "name" | "rarity">("dict"),
+		SearchGroupByGroup: signal(false),
 
 		SearchType: signal<"simple" | "advanced">("simple"),
 		AdvSearchConds: signal<readonly UnitsCondition[]>([]),

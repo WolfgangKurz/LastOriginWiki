@@ -9,6 +9,7 @@ import Locale from "@/components/locale";
 import UnitCard from "@/components/unit-card";
 
 import "./style.scss";
+import Badge from "@/components/Badge";
 
 const UnitsTimetable: FunctionalComponent<UnitsListProps> = (props) => {
 	function CraftTime (time: string): string {
@@ -26,6 +27,15 @@ const UnitsTimetable: FunctionalComponent<UnitsListProps> = (props) => {
 	})();
 
 	return <div class="unit-time-table">
+		<div class="text-center">
+			<div class="d-inline-block alert alert-primary">
+				<Badge class="me-2" variant="danger">
+					@deprecated
+				</Badge>
+				This page will be removed in the future.
+			</div>
+		</div>
+
 		<table class="table table-striped unit-table mb-3">
 			<thead class="thead-dark">
 				<tr>

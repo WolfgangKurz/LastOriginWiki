@@ -83,11 +83,6 @@ const ChangelogItem: FunctionalComponent<ChangelogItemProps> = (props) => {
 
 			<span class={ style.Date }>{ props.date }</span>
 
-			{ props.tag && <span class={ style.ReleaseTag }>
-				<IconTagFill class="me-1" />
-				{ props.tag }
-			</span> }
-
 			<div class={ style.Tags }>
 				{ tags
 					.map(x => [x, TagVariant(x)])

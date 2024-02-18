@@ -1,0 +1,133 @@
+.Button {
+	$lighten-value: 88%;
+	$darken-value: 80%;
+
+	padding: 8px 12px;
+	border-radius: 4px;
+	cursor: pointer;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 8px;
+
+	border: 1px solid transparent;
+	background-color: transparent($light, 0.85);
+	line-height: 1;
+	font-weight: 500;
+	color: $light;
+
+	&:disabled {
+		opacity: 0.5;
+		cursor: default;
+	}
+
+	&.Small {
+		padding: 4px 8px;
+	}
+
+	&:not(:disabled) {
+		&:hover {
+			background-color: transparent($light, 0.9); // color.mix($light, $dark, 95%);
+		}
+		&:active {
+			background-color: transparent($light, 0.8); // color.mix($light, $dark, 88%);
+		}
+	}
+	&.Active {
+		background-color: color.mix($light, $dark, $darken-value);
+	}
+
+	&.Outline {
+		border: 1px solid $dark;
+	}
+
+	@each $key, $color in $theme-colors {
+		&.Variant-#{$key} {
+			background-color: $color;
+			color: contrast-color($color);
+
+			&:not(:disabled) {
+				&:hover {
+					background-color: color.mix($color, $light, $lighten-value);
+				}
+				&:active {
+					background-color: color.mix($color, $dark, $darken-value);
+				}
+			}
+			&.Active {
+				background-color: color.mix($color, $dark, $darken-value);
+			}
+
+			&.Outline {
+				border-color: $color;
+				background-color: $light;
+				color: $color;
+
+				&:not(:disabled) {
+					&:hover {
+						background-color: color.mix($light, $color, $lighten-value);
+					}
+					&:active {
+						background-color: color.mix($light, $color, $darken-value);
+					}
+				}
+
+				&.Active {
+					background-color: $color;
+					color: bw-contrast-color($color);
+
+					&:not(:disabled) {
+						&:hover {
+							background-color: color.mix($color, $light, $lighten-value);
+						}
+						&:active {
+							background-color: color.mix($color, $dark, $darken-value);
+						}
+					}
+				}
+			}
+		}
+	}
+	@each $key, $color in $colors {
+		&.TextVariant-#{$key} {
+			&,
+			&.Outline {
+				color: $color;
+			}
+		}
+	}
+}
+
+.ButtonGroup {
+	display: inline-flex;
+	flex-direction: row;
+	// align-items: center;
+
+	border-radius: 4px;
+
+	> input {
+		position: relative;
+		flex: 1 1 auto;
+		width: 1%;
+		min-width: 0;
+	}
+
+	> input,
+	> .Button {
+		border-radius: 0;
+
+		&:not(:last-child) {
+			border-right: 0;
+		}
+
+		&:first-child {
+			border-top-left-radius: 4px;
+			border-bottom-left-radius: 4px;
+		}
+		&:last-child {
+			border-top-right-radius: 4px;
+			border-bottom-right-radius: 4px;
+		}
+	}
+}

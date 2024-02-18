@@ -17,21 +17,20 @@ import { BuildClass } from "@/libs/Class";
 
 import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
 import Locale from "@/components/locale";
+import Button from "@/components/Button";
 import Loading from "@/components/loading";
 import IconTable from "@/components/bootstrap-icon/icons/Table";
 import IconGrid3x3GapFill from "@/components/bootstrap-icon/icons/Grid3x3GapFill";
-import IconTagsFill from "@/components/bootstrap-icon/icons/TagsFill";
-import IconTshirt from "@/components/bootstrap-icon/icons/Tshirt";
 import IconHammer from "@/components/bootstrap-icon/icons/Hammer";
 import IconSearch from "@/components/bootstrap-icon/icons/Search";
 import IconListCheck from "@/components/bootstrap-icon/icons/ListCheck";
+import IconHanger from "@/components/Icons/IconHanger";
 
 import SimpleSearch from "./search/SimpleSearch";
 import AdvancedSearch, { Condition, ConditionActiveTarget, ConditionBuffSlot, ConditionCategory, ConditionCompare, ConditionCompareYN, IsInvalidBuffType } from "./search/AdvancedSearch";
 
 import UnitsTable from "./units-table";
 import UnitsList from "./units-list";
-import UnitsGroup from "./units-group";
 import UnitsSkin from "./units-skin";
 import UnitsTimetable from "./units-timetable";
 
@@ -282,48 +281,40 @@ const Units: FunctionalComponent = () => {
 
 	return <div class="chars">
 		<div class="text-center mb-3">
-			<div class={ `btn-group ${style.TabButtons}` }>
-				<button
-					type="button"
-					class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "table")}` }
-					onClick={ (): void => void (Store.Units.DisplayType.value = "table") }
+			<Button.Group>
+				<Button
+					variant="primary"
+					outline={ Store.Units.DisplayType.value !== "table" }
+					onClick={ () => Store.Units.DisplayType.value = "table" }
 				>
 					<IconTable class="me-1" />
 					<Locale k="UNITS_VIEW_TABLE" />
-				</button>
-				<button
-					type="button"
-					class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "list")}` }
-					onClick={ (): void => void (Store.Units.DisplayType.value = "list") }
+				</Button>
+				<Button
+					variant="primary"
+					outline={ Store.Units.DisplayType.value !== "list" }
+					onClick={ () => Store.Units.DisplayType.value = "list" }
 				>
 					<IconGrid3x3GapFill class="me-1" />
 					<Locale k="UNITS_VIEW_LIST" />
-				</button>
-				<button
-					type="button"
-					class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "group")}` }
-					onClick={ (): void => void (Store.Units.DisplayType.value = "group") }
+				</Button>
+				<Button
+					variant="primary"
+					outline={ Store.Units.DisplayType.value !== "skin" }
+					onClick={ () => Store.Units.DisplayType.value = "skin" }
 				>
-					<IconTagsFill class="me-1" />
-					<Locale k="UNITS_VIEW_GROUP" />
-				</button>
-				<button
-					type="button"
-					class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "skin")}` }
-					onClick={ (): void => void (Store.Units.DisplayType.value = "skin") }
-				>
-					<IconTshirt class="me-1" />
+					<IconHanger class={ style.TabIconAlt } />
 					<Locale k="UNITS_VIEW_SKIN" />
-				</button>
-				<button
-					type="button"
-					class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "time")}` }
-					onClick={ (): void => void (Store.Units.DisplayType.value = "time") }
+				</Button>
+				<Button
+					variant="primary"
+					outline={ Store.Units.DisplayType.value !== "time" }
+					onClick={ () => Store.Units.DisplayType.value = "time" }
 				>
 					<IconHammer class="me-1" />
 					<Locale k="UNITS_VIEW_CREATIONTIME" />
-				</button>
-			</div>
+				</Button>
+			</Button.Group>
 		</div>
 
 		{ Store.Units.DisplayType.value !== "skin"
@@ -380,7 +371,6 @@ const Units: FunctionalComponent = () => {
 			: [
 				Store.Units.DisplayType.value === "table" && <UnitsTable list={ UnitList } />,
 				Store.Units.DisplayType.value === "list" && <UnitsList list={ UnitList } />,
-				Store.Units.DisplayType.value === "group" && <UnitsGroup list={ UnitList } />,
 				Store.Units.DisplayType.value === "skin" && <UnitsSkin list={ UnitList } />,
 				Store.Units.DisplayType.value === "time" && <UnitsTimetable list={ UnitList } />,
 			]

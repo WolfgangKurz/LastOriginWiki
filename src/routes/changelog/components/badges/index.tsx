@@ -1,14 +1,12 @@
 import { FunctionalComponent } from "preact";
 
-import { cn } from "@/libs/Class";
+import Badge from "@/components/Badge";
 
-import style from "./style.module.scss";
+const Build = (variant: string): FunctionalComponent =>
+	((props) => <Badge variant={ variant }>{ props.children }</Badge>);
 
-const Build = (className: string): FunctionalComponent =>
-	((props) => <span class={ cn(style.Badge, className) }> { props.children }</span>);
-
-export const BY: FunctionalComponent = Build(style.BY); // yellow, warning
-export const BR: FunctionalComponent = Build(style.BR); // red, danger
-export const BO: FunctionalComponent = Build(style.BO); // orange
-export const BB: FunctionalComponent = Build(style.BB); // black, dark
-export const BG: FunctionalComponent = Build(style.BG); // green, success
+export const BY: FunctionalComponent = Build("warning"); // yellow
+export const BR: FunctionalComponent = Build("danger"); // red
+export const BO: FunctionalComponent = Build("orange"); // orange
+export const BB: FunctionalComponent = Build("dark"); // black
+export const BG: FunctionalComponent = Build("success"); // green
