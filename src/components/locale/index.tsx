@@ -191,9 +191,14 @@ export function LocaleGetEmpty (k: string, ...p: any[]): string | undefined {
 	});
 }
 
+/**
+ * @deprecated This method should not be used. Use `useLocale()` instead.
+ * @param k Key string of locale.
+ * @returns Key exists in locale table.
+ */
 export function LocaleExists (k: string): boolean {
-	const [locale, loaded] = useLocale();
-	return loaded && k in locale;
+	const locale = GetLocaleTable(CurrentLocale.peek());
+	return locale && k in locale;
 }
 
 export function ReloadLocale (locale: string): void {

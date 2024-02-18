@@ -5,6 +5,11 @@ import { BY, BR, BO, BB, BG } from "../../components/badges";
 import IconGithub from "@/components/bootstrap-icon/icons/Github";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12484" date="2024-02-18"
+		bugfix={ <>
+			<li>일부 상황에서 사이트 동작이 멈추는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12481" date="2024-02-18"
 		site={ <>
 			<li>
