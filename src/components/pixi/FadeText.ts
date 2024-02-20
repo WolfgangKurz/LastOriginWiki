@@ -337,7 +337,7 @@ export default class FadeText extends PIXI.Sprite {
 			const secs = dt / PIXI.Ticker.targetFPMS / 1000;
 			this.alpha += secs / duration;
 
-			if (this.alpha >= 1 || !this._fading) {
+			if (this.alpha >= 1 || !this._fading || this.destroyed) {
 				this._fading = false;
 				ticker.remove(onTick);
 				this.alpha = 1;
@@ -359,7 +359,7 @@ export default class FadeText extends PIXI.Sprite {
 			const secs = dt / PIXI.Ticker.targetFPMS / 1000;
 			this.alpha -= secs / duration;
 
-			if (this.alpha <= 0 || !this._fading) {
+			if (this.alpha <= 0 || !this._fading || this.destroyed) {
 				this._fading = false;
 				ticker.remove(onTick);
 				this.alpha = 0;

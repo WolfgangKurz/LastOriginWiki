@@ -532,7 +532,7 @@ skills:
         - 9
       data:
         - rate: 1.915
-          type: 0
+          type: 1
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
@@ -540,13 +540,18 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 10
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -572,6 +577,7 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 1
                     attack:
                       base: -30%
@@ -588,29 +594,11 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 11
                     evade:
                       base: -25%
                       per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_1_3
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 23%
-                        per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -619,10 +607,10 @@ skills:
               if:
                 - on:
                     target: target
-                    func: OR
+                    func: UNFILLED
                     select:
                       - 66
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -637,26 +625,42 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_ATK_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 3
+                    value: "-0.300000"
+                    level: "-0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 23%
-                      per: 3%
+                    type: 1
+                    attack:
+                      base: -30%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_11_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -25%
+                      per: -1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 2.085
-          type: 0
+          type: 1
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
@@ -664,13 +668,18 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 20
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -696,6 +705,7 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 1
                     attack:
                       base: -30%
@@ -712,29 +722,11 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 11
                     evade:
                       base: -25%
                       per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_1_3
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 23%
-                        per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -743,10 +735,10 @@ skills:
               if:
                 - on:
                     target: target
-                    func: OR
+                    func: UNFILLED
                     select:
                       - 66
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -761,26 +753,42 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_ATK_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 3
+                    value: "-0.300000"
+                    level: "-0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 23%
-                      per: 3%
+                    type: 1
+                    attack:
+                      base: -30%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_11_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -25%
+                      per: -1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 2.255
-          type: 0
+          type: 1
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
@@ -788,13 +796,18 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 30
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -820,6 +833,7 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 1
                     attack:
                       base: -30%
@@ -836,29 +850,11 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 11
                     evade:
                       base: -25%
                       per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_1_3
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 23%
-                        per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -867,10 +863,10 @@ skills:
               if:
                 - on:
                     target: target
-                    func: OR
+                    func: UNFILLED
                     select:
                       - 66
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -885,26 +881,42 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_ATK_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 3
+                    value: "-0.300000"
+                    level: "-0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 23%
-                      per: 3%
+                    type: 1
+                    attack:
+                      base: -30%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_11_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -25%
+                      per: -1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 2.425
-          type: 0
+          type: 1
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
@@ -912,13 +924,18 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 40
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -944,6 +961,7 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 1
                     attack:
                       base: -30%
@@ -960,29 +978,11 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 11
                     evade:
                       base: -25%
                       per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_1_3
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 23%
-                        per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -991,10 +991,10 @@ skills:
               if:
                 - on:
                     target: target
-                    func: OR
+                    func: UNFILLED
                     select:
                       - 66
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1009,26 +1009,42 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_ATK_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 3
+                    value: "-0.300000"
+                    level: "-0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 23%
-                      per: 3%
+                    type: 1
+                    attack:
+                      base: -30%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_11_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -25%
+                      per: -1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 2.595
-          type: 0
+          type: 1
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
@@ -1036,13 +1052,18 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 50
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1068,6 +1089,7 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 1
                     attack:
                       base: -30%
@@ -1084,29 +1106,11 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 11
                     evade:
                       base: -25%
                       per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_1_3
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 23%
-                        per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1115,10 +1119,10 @@ skills:
               if:
                 - on:
                     target: target
-                    func: OR
+                    func: UNFILLED
                     select:
                       - 66
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1133,26 +1137,42 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_ATK_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 3
+                    value: "-0.300000"
+                    level: "-0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 23%
-                      per: 3%
+                    type: 1
+                    attack:
+                      base: -30%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_11_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -25%
+                      per: -1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 2.765
-          type: 0
+          type: 1
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
@@ -1160,13 +1180,18 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 60
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1192,6 +1217,7 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 1
                     attack:
                       base: -30%
@@ -1208,29 +1234,11 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 11
                     evade:
                       base: -25%
                       per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_1_3
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 23%
-                        per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1239,10 +1247,10 @@ skills:
               if:
                 - on:
                     target: target
-                    func: OR
+                    func: UNFILLED
                     select:
                       - 66
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1257,26 +1265,42 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_ATK_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 3
+                    value: "-0.300000"
+                    level: "-0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 23%
-                      per: 3%
+                    type: 1
+                    attack:
+                      base: -30%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_11_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -25%
+                      per: -1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 2.935
-          type: 0
+          type: 1
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
@@ -1284,13 +1308,18 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 70
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1316,6 +1345,7 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 1
                     attack:
                       base: -30%
@@ -1332,29 +1362,11 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 11
                     evade:
                       base: -25%
                       per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_1_3
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 23%
-                        per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1363,10 +1375,10 @@ skills:
               if:
                 - on:
                     target: target
-                    func: OR
+                    func: UNFILLED
                     select:
                       - 66
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1381,26 +1393,42 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_ATK_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 3
+                    value: "-0.300000"
+                    level: "-0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 23%
-                      per: 3%
+                    type: 1
+                    attack:
+                      base: -30%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_11_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -25%
+                      per: -1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 3.105
-          type: 0
+          type: 1
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
@@ -1408,13 +1436,18 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 80
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1440,6 +1473,7 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 1
                     attack:
                       base: -30%
@@ -1456,29 +1490,11 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 11
                     evade:
                       base: -25%
                       per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_1_3
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 23%
-                        per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1487,10 +1503,10 @@ skills:
               if:
                 - on:
                     target: target
-                    func: OR
+                    func: UNFILLED
                     select:
                       - 66
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1505,26 +1521,42 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_ATK_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 3
+                    value: "-0.300000"
+                    level: "-0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 23%
-                      per: 3%
+                    type: 1
+                    attack:
+                      base: -30%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_11_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -25%
+                      per: -1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 3.275
-          type: 0
+          type: 1
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
@@ -1532,13 +1564,18 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 90
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1564,6 +1601,7 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 1
                     attack:
                       base: -30%
@@ -1580,29 +1618,11 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 11
                     evade:
                       base: -25%
                       per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_1_3
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 23%
-                        per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1611,10 +1631,10 @@ skills:
               if:
                 - on:
                     target: target
-                    func: OR
+                    func: UNFILLED
                     select:
                       - 66
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1629,26 +1649,42 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_ATK_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 3
+                    value: "-0.300000"
+                    level: "-0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 23%
-                      per: 3%
+                    type: 1
+                    attack:
+                      base: -30%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_11_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -25%
+                      per: -1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
         - rate: 3.445
-          type: 0
+          type: 1
           range: 3
           ap: 6
           grid: 0,0,0,0,1,0,0,0,0
@@ -1656,13 +1692,18 @@ skills:
           use: null
           enabled: true
           dismiss_guard: false
-          acc_bonus: 0
+          acc_bonus: 100
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1688,6 +1729,7 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 1
                     attack:
                       base: -30%
@@ -1704,29 +1746,11 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 11
                     evade:
                       base: -25%
                       per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_1_3
-                    type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 23%
-                        per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1735,10 +1759,10 @@ skills:
               if:
                 - on:
                     target: target
-                    func: OR
+                    func: UNFILLED
                     select:
                       - 66
-                    attr: 1
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1753,21 +1777,37 @@ skills:
                 - 2
               target: 3
               buffs:
-                - icon: BuffIcon_PhyATK_UP
+                - icon: BuffIcon_ATK_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_11_1
                     type: 1
-                    value: "0.230000"
-                    level: "0.030000"
-                  attr: 3
+                    value: "-0.300000"
+                    level: "-0.010000"
+                  attr: 1
                   erase:
-                    rounds: 0
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 83
-                    damage_add:
-                      base: 23%
-                      per: 3%
+                    type: 1
+                    attack:
+                      base: -30%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_11_2
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -25%
+                      per: -1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1792,7 +1832,7 @@ skills:
               level: "-0.010000"
             base: -0.3
             per: -0.01
-            chance: 1
+            chance: 9.99
           - icon: BuffIcon_EVADE_DOWN
             desc:
               desc: Effect_3P_BlackWyrm_N_1_2
@@ -1801,24 +1841,24 @@ skills:
               level: "-0.010000"
             base: -0.25
             per: -0.01
-            chance: 1
-          - icon: BuffIcon_FireATK_UP
-            desc:
-              desc: Effect_3P_BlackWyrm_N_1_3
-              type: 1
-              value: "0.230000"
-              level: "0.030000"
-            base: 0.23
-            per: 0.03
-            chance: 0
-          - icon: BuffIcon_PhyATK_UP
+            chance: 9.99
+          - icon: BuffIcon_ATK_DOWN
             desc:
               desc: Effect_3P_BlackWyrm_N_11_1
               type: 1
-              value: "0.230000"
-              level: "0.030000"
-            base: 0.23
-            per: 0.03
+              value: "-0.300000"
+              level: "-0.010000"
+            base: -0.3
+            per: -0.01
+            chance: 1
+          - icon: BuffIcon_EVADE_DOWN
+            desc:
+              desc: Effect_3P_BlackWyrm_N_11_2
+              type: 1
+              value: "-0.250000"
+              level: "-0.010000"
+            base: -0.25
+            per: -0.01
             chance: 1
   "2":
     key: "2"
@@ -1847,14 +1887,19 @@ skills:
           summon: null
           use: null
           enabled: true
-          dismiss_guard: false
+          dismiss_guard: true
           acc_bonus: 0
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_2
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1880,14 +1925,127 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 3
                     defense:
                       base: -25%
                       per: -1%
                   overlap: 4
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_CRITICAL_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_2_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_3
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -20%
+                        per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FireDMG_DOT
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_4
+                    type: 0
+                    value: "300"
+                    level: "30"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 66
+                    fixed_damage:
+                      elem: fire
+                      damage:
+                        base: 300
+                        per: 30
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: UNFILLED
+                    select:
+                      - 66
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_3
                     type: 1
                     value: "-0.200000"
                     level: "-0.010000"
@@ -1903,140 +2061,44 @@ skills:
                         base: -20%
                         per: -1%
                   overlap: 4
-                - icon: BuffIcon_CRITICAL_DOWN
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_3
-                    type: 1
-                    value: "-0.100000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 3
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: -10%
-                      per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_4
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_22
+              on:
+                after: use_skill
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
-                    desc: Effect_3P_BlackWyrm_N_2_5
+                    desc: Effect_3P_BlackWyrm_N_22_1
                     type: 0
-                    value: "30"
+                    value: "300"
                     level: "30"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 66
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 30
+                        base: 300
                         per: 30
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_21
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_21_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 66
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_22_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2056,28 +2118,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_FireDMG_DOT
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_3P_BlackWyrm_N_23_1
-                    type: 0
-                    value: "30"
-                    level: "30"
-                  attr: 1
+                    type: 1
+                    value: "0.350000"
+                    level: "0.030000"
+                  attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 66
-                    fixed_damage:
-                      elem: fire
-                      damage:
-                        base: 30
-                        per: 30
+                    type: 36
+                    damage_reduce:
+                      base: 35%
+                      per: 3%
                   overlap: 4
-              maxStack: 0
-              overlapGroup: -1
+              maxStack: 1
+              overlapGroup: 12
         - rate: 1.965
           type: 1
           range: 5
@@ -2086,14 +2146,19 @@ skills:
           summon: null
           use: null
           enabled: true
-          dismiss_guard: false
+          dismiss_guard: true
           acc_bonus: 0
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_2
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2119,14 +2184,127 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 3
                     defense:
                       base: -25%
                       per: -1%
                   overlap: 4
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_CRITICAL_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_2_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_3
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -20%
+                        per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FireDMG_DOT
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_4
+                    type: 0
+                    value: "300"
+                    level: "30"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 66
+                    fixed_damage:
+                      elem: fire
+                      damage:
+                        base: 300
+                        per: 30
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: UNFILLED
+                    select:
+                      - 66
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_3
                     type: 1
                     value: "-0.200000"
                     level: "-0.010000"
@@ -2142,140 +2320,44 @@ skills:
                         base: -20%
                         per: -1%
                   overlap: 4
-                - icon: BuffIcon_CRITICAL_DOWN
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_3
-                    type: 1
-                    value: "-0.100000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 3
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: -10%
-                      per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_4
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_22
+              on:
+                after: use_skill
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
-                    desc: Effect_3P_BlackWyrm_N_2_5
+                    desc: Effect_3P_BlackWyrm_N_22_1
                     type: 0
-                    value: "30"
+                    value: "300"
                     level: "30"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 66
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 30
+                        base: 300
                         per: 30
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_21
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_21_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 66
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_22_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2295,28 +2377,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_FireDMG_DOT
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_3P_BlackWyrm_N_23_1
-                    type: 0
-                    value: "30"
-                    level: "30"
-                  attr: 1
+                    type: 1
+                    value: "0.350000"
+                    level: "0.030000"
+                  attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 66
-                    fixed_damage:
-                      elem: fire
-                      damage:
-                        base: 30
-                        per: 30
+                    type: 36
+                    damage_reduce:
+                      base: 35%
+                      per: 3%
                   overlap: 4
-              maxStack: 0
-              overlapGroup: -1
+              maxStack: 1
+              overlapGroup: 12
         - rate: 2.125
           type: 1
           range: 5
@@ -2325,14 +2405,19 @@ skills:
           summon: null
           use: null
           enabled: true
-          dismiss_guard: false
+          dismiss_guard: true
           acc_bonus: 0
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_2
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2358,14 +2443,127 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 3
                     defense:
                       base: -25%
                       per: -1%
                   overlap: 4
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_CRITICAL_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_2_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_3
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -20%
+                        per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FireDMG_DOT
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_4
+                    type: 0
+                    value: "300"
+                    level: "30"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 66
+                    fixed_damage:
+                      elem: fire
+                      damage:
+                        base: 300
+                        per: 30
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: UNFILLED
+                    select:
+                      - 66
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_3
                     type: 1
                     value: "-0.200000"
                     level: "-0.010000"
@@ -2381,140 +2579,44 @@ skills:
                         base: -20%
                         per: -1%
                   overlap: 4
-                - icon: BuffIcon_CRITICAL_DOWN
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_3
-                    type: 1
-                    value: "-0.100000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 3
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: -10%
-                      per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_4
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_22
+              on:
+                after: use_skill
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
-                    desc: Effect_3P_BlackWyrm_N_2_5
+                    desc: Effect_3P_BlackWyrm_N_22_1
                     type: 0
-                    value: "30"
+                    value: "300"
                     level: "30"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 66
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 30
+                        base: 300
                         per: 30
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_21
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_21_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 66
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_22_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2534,28 +2636,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_FireDMG_DOT
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_3P_BlackWyrm_N_23_1
-                    type: 0
-                    value: "30"
-                    level: "30"
-                  attr: 1
+                    type: 1
+                    value: "0.350000"
+                    level: "0.030000"
+                  attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 66
-                    fixed_damage:
-                      elem: fire
-                      damage:
-                        base: 30
-                        per: 30
+                    type: 36
+                    damage_reduce:
+                      base: 35%
+                      per: 3%
                   overlap: 4
-              maxStack: 0
-              overlapGroup: -1
+              maxStack: 1
+              overlapGroup: 12
         - rate: 2.285
           type: 1
           range: 5
@@ -2564,14 +2664,19 @@ skills:
           summon: null
           use: null
           enabled: true
-          dismiss_guard: false
+          dismiss_guard: true
           acc_bonus: 0
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_2
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2597,14 +2702,127 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 3
                     defense:
                       base: -25%
                       per: -1%
                   overlap: 4
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_CRITICAL_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_2_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_3
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -20%
+                        per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FireDMG_DOT
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_4
+                    type: 0
+                    value: "300"
+                    level: "30"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 66
+                    fixed_damage:
+                      elem: fire
+                      damage:
+                        base: 300
+                        per: 30
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: UNFILLED
+                    select:
+                      - 66
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_3
                     type: 1
                     value: "-0.200000"
                     level: "-0.010000"
@@ -2620,140 +2838,44 @@ skills:
                         base: -20%
                         per: -1%
                   overlap: 4
-                - icon: BuffIcon_CRITICAL_DOWN
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_3
-                    type: 1
-                    value: "-0.100000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 3
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: -10%
-                      per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_4
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_22
+              on:
+                after: use_skill
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
-                    desc: Effect_3P_BlackWyrm_N_2_5
+                    desc: Effect_3P_BlackWyrm_N_22_1
                     type: 0
-                    value: "30"
+                    value: "300"
                     level: "30"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 66
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 30
+                        base: 300
                         per: 30
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_21
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_21_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 66
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_22_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2773,28 +2895,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_FireDMG_DOT
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_3P_BlackWyrm_N_23_1
-                    type: 0
-                    value: "30"
-                    level: "30"
-                  attr: 1
+                    type: 1
+                    value: "0.350000"
+                    level: "0.030000"
+                  attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 66
-                    fixed_damage:
-                      elem: fire
-                      damage:
-                        base: 30
-                        per: 30
+                    type: 36
+                    damage_reduce:
+                      base: 35%
+                      per: 3%
                   overlap: 4
-              maxStack: 0
-              overlapGroup: -1
+              maxStack: 1
+              overlapGroup: 12
         - rate: 2.445
           type: 1
           range: 5
@@ -2803,14 +2923,19 @@ skills:
           summon: null
           use: null
           enabled: true
-          dismiss_guard: false
+          dismiss_guard: true
           acc_bonus: 0
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_2
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2836,14 +2961,127 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 3
                     defense:
                       base: -25%
                       per: -1%
                   overlap: 4
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_CRITICAL_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_2_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_3
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -20%
+                        per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FireDMG_DOT
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_4
+                    type: 0
+                    value: "300"
+                    level: "30"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 66
+                    fixed_damage:
+                      elem: fire
+                      damage:
+                        base: 300
+                        per: 30
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: UNFILLED
+                    select:
+                      - 66
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_3
                     type: 1
                     value: "-0.200000"
                     level: "-0.010000"
@@ -2859,140 +3097,44 @@ skills:
                         base: -20%
                         per: -1%
                   overlap: 4
-                - icon: BuffIcon_CRITICAL_DOWN
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_3
-                    type: 1
-                    value: "-0.100000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 3
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: -10%
-                      per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_4
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_22
+              on:
+                after: use_skill
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
-                    desc: Effect_3P_BlackWyrm_N_2_5
+                    desc: Effect_3P_BlackWyrm_N_22_1
                     type: 0
-                    value: "30"
+                    value: "300"
                     level: "30"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 66
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 30
+                        base: 300
                         per: 30
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_21
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_21_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 66
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_22_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3012,28 +3154,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_FireDMG_DOT
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_3P_BlackWyrm_N_23_1
-                    type: 0
-                    value: "30"
-                    level: "30"
-                  attr: 1
+                    type: 1
+                    value: "0.350000"
+                    level: "0.030000"
+                  attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 66
-                    fixed_damage:
-                      elem: fire
-                      damage:
-                        base: 30
-                        per: 30
+                    type: 36
+                    damage_reduce:
+                      base: 35%
+                      per: 3%
                   overlap: 4
-              maxStack: 0
-              overlapGroup: -1
+              maxStack: 1
+              overlapGroup: 12
         - rate: 2.605
           type: 1
           range: 5
@@ -3042,14 +3182,19 @@ skills:
           summon: null
           use: null
           enabled: true
-          dismiss_guard: false
+          dismiss_guard: true
           acc_bonus: 0
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_2
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -3075,14 +3220,127 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 3
                     defense:
                       base: -25%
                       per: -1%
                   overlap: 4
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_CRITICAL_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_2_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_3
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -20%
+                        per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FireDMG_DOT
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_4
+                    type: 0
+                    value: "300"
+                    level: "30"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 66
+                    fixed_damage:
+                      elem: fire
+                      damage:
+                        base: 300
+                        per: 30
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: UNFILLED
+                    select:
+                      - 66
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_3
                     type: 1
                     value: "-0.200000"
                     level: "-0.010000"
@@ -3098,140 +3356,44 @@ skills:
                         base: -20%
                         per: -1%
                   overlap: 4
-                - icon: BuffIcon_CRITICAL_DOWN
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_3
-                    type: 1
-                    value: "-0.100000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 3
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: -10%
-                      per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_4
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_22
+              on:
+                after: use_skill
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
-                    desc: Effect_3P_BlackWyrm_N_2_5
+                    desc: Effect_3P_BlackWyrm_N_22_1
                     type: 0
-                    value: "30"
+                    value: "300"
                     level: "30"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 66
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 30
+                        base: 300
                         per: 30
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_21
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_21_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 66
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_22_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3251,28 +3413,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_FireDMG_DOT
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_3P_BlackWyrm_N_23_1
-                    type: 0
-                    value: "30"
-                    level: "30"
-                  attr: 1
+                    type: 1
+                    value: "0.350000"
+                    level: "0.030000"
+                  attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 66
-                    fixed_damage:
-                      elem: fire
-                      damage:
-                        base: 30
-                        per: 30
+                    type: 36
+                    damage_reduce:
+                      base: 35%
+                      per: 3%
                   overlap: 4
-              maxStack: 0
-              overlapGroup: -1
+              maxStack: 1
+              overlapGroup: 12
         - rate: 2.765
           type: 1
           range: 5
@@ -3281,14 +3441,19 @@ skills:
           summon: null
           use: null
           enabled: true
-          dismiss_guard: false
+          dismiss_guard: true
           acc_bonus: 0
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_2
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -3314,14 +3479,127 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 3
                     defense:
                       base: -25%
                       per: -1%
                   overlap: 4
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_CRITICAL_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_2_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_3
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -20%
+                        per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FireDMG_DOT
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_4
+                    type: 0
+                    value: "300"
+                    level: "30"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 66
+                    fixed_damage:
+                      elem: fire
+                      damage:
+                        base: 300
+                        per: 30
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: UNFILLED
+                    select:
+                      - 66
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_3
                     type: 1
                     value: "-0.200000"
                     level: "-0.010000"
@@ -3337,140 +3615,44 @@ skills:
                         base: -20%
                         per: -1%
                   overlap: 4
-                - icon: BuffIcon_CRITICAL_DOWN
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_3
-                    type: 1
-                    value: "-0.100000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 3
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: -10%
-                      per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_4
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_22
+              on:
+                after: use_skill
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
-                    desc: Effect_3P_BlackWyrm_N_2_5
+                    desc: Effect_3P_BlackWyrm_N_22_1
                     type: 0
-                    value: "30"
+                    value: "300"
                     level: "30"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 66
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 30
+                        base: 300
                         per: 30
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_21
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_21_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 66
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_22_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3490,28 +3672,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_FireDMG_DOT
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_3P_BlackWyrm_N_23_1
-                    type: 0
-                    value: "30"
-                    level: "30"
-                  attr: 1
+                    type: 1
+                    value: "0.350000"
+                    level: "0.030000"
+                  attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 66
-                    fixed_damage:
-                      elem: fire
-                      damage:
-                        base: 30
-                        per: 30
+                    type: 36
+                    damage_reduce:
+                      base: 35%
+                      per: 3%
                   overlap: 4
-              maxStack: 0
-              overlapGroup: -1
+              maxStack: 1
+              overlapGroup: 12
         - rate: 2.925
           type: 1
           range: 5
@@ -3520,14 +3700,19 @@ skills:
           summon: null
           use: null
           enabled: true
-          dismiss_guard: false
+          dismiss_guard: true
           acc_bonus: 0
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_2
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -3553,14 +3738,127 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 3
                     defense:
                       base: -25%
                       per: -1%
                   overlap: 4
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_CRITICAL_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_2_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_3
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -20%
+                        per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FireDMG_DOT
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_4
+                    type: 0
+                    value: "300"
+                    level: "30"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 66
+                    fixed_damage:
+                      elem: fire
+                      damage:
+                        base: 300
+                        per: 30
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: UNFILLED
+                    select:
+                      - 66
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_3
                     type: 1
                     value: "-0.200000"
                     level: "-0.010000"
@@ -3576,140 +3874,44 @@ skills:
                         base: -20%
                         per: -1%
                   overlap: 4
-                - icon: BuffIcon_CRITICAL_DOWN
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_3
-                    type: 1
-                    value: "-0.100000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 3
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: -10%
-                      per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_4
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_22
+              on:
+                after: use_skill
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
-                    desc: Effect_3P_BlackWyrm_N_2_5
+                    desc: Effect_3P_BlackWyrm_N_22_1
                     type: 0
-                    value: "30"
+                    value: "300"
                     level: "30"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 66
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 30
+                        base: 300
                         per: 30
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_21
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_21_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 66
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_22_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3729,28 +3931,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_FireDMG_DOT
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_3P_BlackWyrm_N_23_1
-                    type: 0
-                    value: "30"
-                    level: "30"
-                  attr: 1
+                    type: 1
+                    value: "0.350000"
+                    level: "0.030000"
+                  attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 66
-                    fixed_damage:
-                      elem: fire
-                      damage:
-                        base: 30
-                        per: 30
+                    type: 36
+                    damage_reduce:
+                      base: 35%
+                      per: 3%
                   overlap: 4
-              maxStack: 0
-              overlapGroup: -1
+              maxStack: 1
+              overlapGroup: 12
         - rate: 3.085
           type: 1
           range: 5
@@ -3759,14 +3959,19 @@ skills:
           summon: null
           use: null
           enabled: true
-          dismiss_guard: false
+          dismiss_guard: true
           acc_bonus: 0
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_2
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -3792,14 +3997,127 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 3
                     defense:
                       base: -25%
                       per: -1%
                   overlap: 4
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_CRITICAL_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_2_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_3
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -20%
+                        per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FireDMG_DOT
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_4
+                    type: 0
+                    value: "300"
+                    level: "30"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 66
+                    fixed_damage:
+                      elem: fire
+                      damage:
+                        base: 300
+                        per: 30
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: UNFILLED
+                    select:
+                      - 66
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_3
                     type: 1
                     value: "-0.200000"
                     level: "-0.010000"
@@ -3815,140 +4133,44 @@ skills:
                         base: -20%
                         per: -1%
                   overlap: 4
-                - icon: BuffIcon_CRITICAL_DOWN
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_3
-                    type: 1
-                    value: "-0.100000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 3
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: -10%
-                      per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_4
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_22
+              on:
+                after: use_skill
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
-                    desc: Effect_3P_BlackWyrm_N_2_5
+                    desc: Effect_3P_BlackWyrm_N_22_1
                     type: 0
-                    value: "30"
+                    value: "300"
                     level: "30"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 66
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 30
+                        base: 300
                         per: 30
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_21
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_21_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 66
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_22_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3968,28 +4190,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_FireDMG_DOT
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_3P_BlackWyrm_N_23_1
-                    type: 0
-                    value: "30"
-                    level: "30"
-                  attr: 1
+                    type: 1
+                    value: "0.350000"
+                    level: "0.030000"
+                  attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 66
-                    fixed_damage:
-                      elem: fire
-                      damage:
-                        base: 30
-                        per: 30
+                    type: 36
+                    damage_reduce:
+                      base: 35%
+                      per: 3%
                   overlap: 4
-              maxStack: 0
-              overlapGroup: -1
+              maxStack: 1
+              overlapGroup: 12
         - rate: 3.245
           type: 1
           range: 5
@@ -3998,14 +4218,19 @@ skills:
           summon: null
           use: null
           enabled: true
-          dismiss_guard: false
+          dismiss_guard: true
           acc_bonus: 0
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_2
               on: attack_success
               if:
-                - false
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 66
+                    attr: 6
                 - false
               body:
                 - 0
@@ -4031,14 +4256,127 @@ skills:
                     rounds: 3
                   value:
                     isBuff: true
+                    chance: 999%
                     type: 3
                     defense:
                       base: -25%
                       per: -1%
                   overlap: 4
-                - icon: BuffIcon_FIRERES_DOWN
+                - icon: BuffIcon_CRITICAL_DOWN
                   desc:
                     desc: Effect_3P_BlackWyrm_N_2_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_3
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    chance: 999%
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -20%
+                        per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FireDMG_DOT
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_2_4
+                    type: 0
+                    value: "300"
+                    level: "30"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 66
+                    fixed_damage:
+                      elem: fire
+                      damage:
+                        base: 300
+                        per: 30
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_21
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: UNFILLED
+                    select:
+                      - 66
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_1
+                    type: 1
+                    value: "-0.250000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -25%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_2
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: -10%
+                      per: -1%
+                  overlap: 4
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_21_3
                     type: 1
                     value: "-0.200000"
                     level: "-0.010000"
@@ -4054,140 +4392,44 @@ skills:
                         base: -20%
                         per: -1%
                   overlap: 4
-                - icon: BuffIcon_CRITICAL_DOWN
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_3
-                    type: 1
-                    value: "-0.100000"
-                    level: "-0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 3
-                  value:
-                    isBuff: true
-                    type: 9
-                    critical:
-                      base: -10%
-                      per: -1%
-                  overlap: 4
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_2_4
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 1
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_22
+              on:
+                after: use_skill
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
-                    desc: Effect_3P_BlackWyrm_N_2_5
+                    desc: Effect_3P_BlackWyrm_N_22_1
                     type: 0
-                    value: "30"
+                    value: "300"
                     level: "30"
                   attr: 1
                   erase:
                     rounds: 2
                   value:
                     isBuff: true
-                    chance: 0%
                     type: 66
                     fixed_damage:
                       elem: fire
                       damage:
-                        base: 30
+                        base: 300
                         per: 30
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_21
-              on: criticaled
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_21_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_22
-              on: attack_success
-              if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - 66
-                    attr: 1
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 3
-              buffs:
-                - icon: BuffIcon_FireATK_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_22_1
-                    type: 1
-                    value: "0.160000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 84
-                    damage_add:
-                      elem: fire
-                      damage:
-                        base: 16%
-                        per: 1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -4207,28 +4449,26 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 3
+              target: 0
               buffs:
-                - icon: BuffIcon_FireDMG_DOT
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_3P_BlackWyrm_N_23_1
-                    type: 0
-                    value: "30"
-                    level: "30"
-                  attr: 1
+                    type: 1
+                    value: "0.350000"
+                    level: "0.030000"
+                  attr: 0
                   erase:
-                    rounds: 2
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 66
-                    fixed_damage:
-                      elem: fire
-                      damage:
-                        base: 30
-                        per: 30
+                    type: 36
+                    damage_reduce:
+                      base: 35%
+                      per: 3%
                   overlap: 4
-              maxStack: 0
-              overlapGroup: -1
+              maxStack: 1
+              overlapGroup: 12
     values:
       index:
         - 0
@@ -4250,69 +4490,78 @@ skills:
               level: "-0.010000"
             base: -0.25
             per: -0.01
-            chance: 1
-          - icon: BuffIcon_FIRERES_DOWN
+            chance: 9.99
+          - icon: BuffIcon_CRITICAL_DOWN
             desc:
               desc: Effect_3P_BlackWyrm_N_2_2
+              type: 1
+              value: "-0.100000"
+              level: "-0.010000"
+            base: -0.1
+            per: -0.01
+            chance: 9.99
+          - icon: BuffIcon_FIRERES_DOWN
+            desc:
+              desc: Effect_3P_BlackWyrm_N_2_3
               type: 1
               value: "-0.200000"
               level: "-0.010000"
             base: -0.2
             per: -0.01
+            chance: 9.99
+          - icon: BuffIcon_FireDMG_DOT
+            desc:
+              desc: Effect_3P_BlackWyrm_N_2_4
+              type: 0
+              value: "300"
+              level: "30"
+            base: 300
+            per: 30
+            chance: 0
+          - icon: BuffIcon_DEF_DOWN
+            desc:
+              desc: Effect_3P_BlackWyrm_N_21_1
+              type: 1
+              value: "-0.250000"
+              level: "-0.010000"
+            base: -0.25
+            per: -0.01
             chance: 1
           - icon: BuffIcon_CRITICAL_DOWN
             desc:
-              desc: Effect_3P_BlackWyrm_N_2_3
+              desc: Effect_3P_BlackWyrm_N_21_2
               type: 1
               value: "-0.100000"
               level: "-0.010000"
             base: -0.1
             per: -0.01
             chance: 1
-          - icon: BuffIcon_FireATK_UP
+          - icon: BuffIcon_FIRERES_DOWN
             desc:
-              desc: Effect_3P_BlackWyrm_N_2_4
+              desc: Effect_3P_BlackWyrm_N_21_3
               type: 1
-              value: "0.160000"
-              level: "0.010000"
-            base: 0.16
-            per: 0.01
-            chance: 0
-          - icon: BuffIcon_FireDMG_DOT
-            desc:
-              desc: Effect_3P_BlackWyrm_N_2_5
-              type: 0
-              value: "30"
-              level: "30"
-            base: 30
-            per: 30
-            chance: 0
-          - icon: BuffIcon_FireATK_UP
-            desc:
-              desc: Effect_3P_BlackWyrm_N_21_1
-              type: 1
-              value: "0.160000"
-              level: "0.010000"
-            base: 0.16
-            per: 0.01
+              value: "-0.200000"
+              level: "-0.010000"
+            base: -0.2
+            per: -0.01
             chance: 1
-          - icon: BuffIcon_FireATK_UP
+          - icon: BuffIcon_FireDMG_DOT
             desc:
               desc: Effect_3P_BlackWyrm_N_22_1
-              type: 1
-              value: "0.160000"
-              level: "0.010000"
-            base: 0.16
-            per: 0.01
+              type: 0
+              value: "300"
+              level: "30"
+            base: 300
+            per: 30
             chance: 1
-          - icon: BuffIcon_FireDMG_DOT
+          - icon: BuffIcon_DAMAGE_REDUCE
             desc:
               desc: Effect_3P_BlackWyrm_N_23_1
-              type: 0
-              value: "30"
-              level: "30"
-            base: 30
-            per: 30
+              type: 1
+              value: "0.350000"
+              level: "0.030000"
+            base: 0.35
+            per: 0.03
             chance: 1
   "3":
     key: "3"
@@ -4347,7 +4596,7 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_3P_BlackWyrm_N_3
-              on: round
+              on: wave
               if:
                 - false
                 - false
@@ -4364,77 +4613,41 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_DEF_UP
+                - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_3P_BlackWyrm_N_3_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.020000"
+                    value: "0.350000"
+                    level: "0.030000"
                   attr: 0
                   erase:
-                    rounds: 1
+                    rounds: 3
                   value:
                     isBuff: true
-                    type: 3
-                    defense:
-                      base: 30%
-                      per: 2%
+                    type: 36
+                    damage_reduce:
+                      base: 35%
+                      per: 3%
                   overlap: 4
-                - icon: BuffIcon_DAMAGE_REDUCE
+                - icon: BuffIcon_DEF_All
                   desc:
                     desc: Effect_3P_BlackWyrm_N_3_2
-                    type: 1
-                    value: "0.050000"
-                    level: "0.005000"
+                    type: 0
+                    value: "1"
+                    level: "0"
                   attr: 0
                   erase:
-                    rounds: 4
+                    rounds: 0
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 36
-                    damage_reduce:
-                      base: 5%
-                      per: 0.5%
+                    type: 33
+                    damage_immune:
+                      base: 1
+                      per: 0
                   overlap: 4
-                - icon: BuffIcon_FIRERES_UP
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_3_3
-                    type: 1
-                    value: "0.300000"
-                    level: "0.020000"
-                  attr: 0
-                  erase:
-                    rounds: 3
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 15
-                    resist:
-                      elem: fire
-                      value:
-                        base: 30%
-                        per: 2%
-                  overlap: 4
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_3_4
-                    type: 1
-                    value: "0.100000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 3
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 36
-                    damage_reduce:
-                      base: 10%
-                      per: 1%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
+              maxStack: 1
+              overlapGroup: 12
             - key: Effect_3P_BlackWyrm_N_31
               on:
                 damaged: fire
@@ -4454,30 +4667,34 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_FIRERES_UP
+                - icon: BuffIcon_DEF_All
                   desc:
                     desc: Effect_3P_BlackWyrm_N_31_1
-                    type: 1
-                    value: "0.300000"
-                    level: "0.020000"
+                    type: 0
+                    value: "1"
+                    level: "0"
                   attr: 0
-                  erase:
-                    rounds: 3
+                  erase: {}
                   value:
                     isBuff: true
-                    type: 15
-                    resist:
-                      elem: fire
-                      value:
-                        base: 30%
-                        per: 2%
+                    type: 33
+                    damage_immune:
+                      base: 1
+                      per: 0
                   overlap: 4
               maxStack: 1
               overlapGroup: -1
             - key: Effect_3P_BlackWyrm_N_32
-              on: round
+              on:
+                damaged: ice
               if:
-                - false
+                - in_battle:
+                    - Char_3P_Labiata_N
+                    - Char_3P_ConstantiaS2_N
+                    - Char_3P_Vanilla_N
+                    - Char_3P_Alice_N
+                    - Char_3P_Ran_N
+                    - Char_3P_Hirume_N
                 - false
               body:
                 - 0
@@ -4492,58 +4709,20 @@ skills:
                 - 2
               target: 0
               buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
+                - icon: BuffIcon_DEF_All
                   desc:
                     desc: Effect_3P_BlackWyrm_N_32_1
-                    type: 1
-                    value: "0.050000"
-                    level: "0.005000"
+                    type: 0
+                    value: "1"
+                    level: "0"
                   attr: 0
-                  erase:
-                    rounds: 4
+                  erase: {}
                   value:
                     isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 5%
-                      per: 0.5%
-                  overlap: 4
-              maxStack: 3
-              overlapGroup: -1
-            - key: Effect_3P_BlackWyrm_N_33
-              on:
-                damaged: fire
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_3P_BlackWyrm_N_33_1
-                    type: 1
-                    value: "0.100000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 3
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 10%
-                      per: 1%
+                    type: 33
+                    damage_immune:
+                      base: 1
+                      per: 0
                   overlap: 4
               maxStack: 1
               overlapGroup: -1
@@ -4560,68 +4739,41 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_DEF_UP
+        - - icon: BuffIcon_DAMAGE_REDUCE
             desc:
               desc: Effect_3P_BlackWyrm_N_3_1
               type: 1
-              value: "0.300000"
-              level: "0.020000"
-            base: 0.3
-            per: 0.02
+              value: "0.350000"
+              level: "0.030000"
+            base: 0.35
+            per: 0.03
             chance: 1
-          - icon: BuffIcon_DAMAGE_REDUCE
+          - icon: BuffIcon_DEF_All
             desc:
               desc: Effect_3P_BlackWyrm_N_3_2
-              type: 1
-              value: "0.050000"
-              level: "0.005000"
-            base: 0.05
-            per: 0.005
+              type: 0
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
             chance: 0
-          - icon: BuffIcon_FIRERES_UP
-            desc:
-              desc: Effect_3P_BlackWyrm_N_3_3
-              type: 1
-              value: "0.300000"
-              level: "0.020000"
-            base: 0.3
-            per: 0.02
-            chance: 0
-          - icon: BuffIcon_DAMAGE_REDUCE
-            desc:
-              desc: Effect_3P_BlackWyrm_N_3_4
-              type: 1
-              value: "0.100000"
-              level: "0.010000"
-            base: 0.1
-            per: 0.01
-            chance: 0
-          - icon: BuffIcon_FIRERES_UP
+          - icon: BuffIcon_DEF_All
             desc:
               desc: Effect_3P_BlackWyrm_N_31_1
-              type: 1
-              value: "0.300000"
-              level: "0.020000"
-            base: 0.3
-            per: 0.02
+              type: 0
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
             chance: 1
-          - icon: BuffIcon_DAMAGE_REDUCE
+          - icon: BuffIcon_DEF_All
             desc:
               desc: Effect_3P_BlackWyrm_N_32_1
-              type: 1
-              value: "0.050000"
-              level: "0.005000"
-            base: 0.05
-            per: 0.005
-            chance: 1
-          - icon: BuffIcon_DAMAGE_REDUCE
-            desc:
-              desc: Effect_3P_BlackWyrm_N_33_1
-              type: 1
-              value: "0.100000"
-              level: "0.010000"
-            base: 0.1
-            per: 0.01
+              type: 0
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
             chance: 1
   "4":
     key: "4"
@@ -4647,7 +4799,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 6>1,0,0,1,1,0,1,0,0
+          grid: 6>1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -4677,8 +4829,8 @@ skills:
                   desc:
                     desc: Effect_3P_BlackWyrm_N_4_1
                     type: 1
-                    value: "0.450000"
-                    level: "0.010000"
+                    value: "0.300000"
+                    level: "0.030000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -4688,8 +4840,8 @@ skills:
                     resist:
                       elem: fire
                       value:
-                        base: 45%
-                        per: 1%
+                        base: 30%
+                        per: 3%
                   overlap: 4
                 - icon: BuffIcon_DEBUFF_PERDOWN
                   desc:
@@ -4740,6 +4892,25 @@ skills:
                     type: 76
                     guard: target
                   overlap: 4
+                - icon: BuffIcon_Remove_Buff_Resist
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_4_5
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 126
+                    resist:
+                      type: off
+                      value:
+                        base: 20%
+                        per: 1%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_BlackWyrm_N_41
@@ -4755,7 +4926,6 @@ skills:
                 - 1
                 - 2
               role:
-                - 0
                 - 1
                 - 2
               target: 2
@@ -4834,10 +5004,10 @@ skills:
             desc:
               desc: Effect_3P_BlackWyrm_N_4_1
               type: 1
-              value: "0.450000"
-              level: "0.010000"
-            base: 0.45
-            per: 0.01
+              value: "0.300000"
+              level: "0.030000"
+            base: 0.3
+            per: 0.03
             chance: 1
           - icon: BuffIcon_DEBUFF_PERDOWN
             desc:
@@ -4865,6 +5035,15 @@ skills:
               level: "0"
             base: 0
             per: 0
+            chance: 0
+          - icon: BuffIcon_Remove_Buff_Resist
+            desc:
+              desc: Effect_3P_BlackWyrm_N_4_5
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
             chance: 0
           - icon: BuffIcon_DEF_Char
             desc:
@@ -4938,21 +5117,182 @@ skills:
                   desc:
                     desc: Effect_3P_BlackWyrm_N_5_1
                     type: 1
-                    value: "-0.120000"
-                    level: "-0.020000"
+                    value: "-0.150000"
+                    level: "-0.015000"
                   attr: 1
                   erase:
-                    rounds: 4
+                    rounds: 3
                   value:
                     isBuff: true
                     type: 15
                     resist:
                       elem: fire
                       value:
-                        base: -12%
-                        per: -2%
+                        base: -15%
+                        per: -1.5%
                   overlap: 4
-              maxStack: 2
+              maxStack: 3
+              overlapGroup: 13
+            - key: Effect_3P_BlackWyrm_N_51
+              on: damaged
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_51_1
+                    type: 1
+                    value: "-0.150000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 3
+                  value:
+                    isBuff: true
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -15%
+                        per: -1.5%
+                  overlap: 4
+              maxStack: 3
+              overlapGroup: 13
+            - key: Effect_3P_BlackWyrm_N_52
+              on: wave
+              if:
+                - test: lower
+                  target: target
+                  operand: DEF
+                  ratio: 0
+                  than: DEF
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_52_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 6
+                    accuracy:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_53
+              on: wave
+              if:
+                - on:
+                    target: squad
+                    func: OR
+                    select:
+                      - Effect_3P_BlackWyrm_N_52
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_53_1
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 8
+                    critical:
+                      base: 0
+                      per: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_BlackWyrm_N_54
+              on: wave
+              if:
+                - on:
+                    target: self
+                    func: UNFILLED
+                    select:
+                      - Effect_3P_BlackWyrm_N_53
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_Remove_Buff_Resist
+                  desc:
+                    desc: Effect_3P_BlackWyrm_N_54_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 126
+                    resist:
+                      type: off
+                      value:
+                        base: 20%
+                        per: 1%
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
     values:
       index:
@@ -4971,10 +5311,46 @@ skills:
             desc:
               desc: Effect_3P_BlackWyrm_N_5_1
               type: 1
-              value: "-0.120000"
-              level: "-0.020000"
-            base: -0.12
-            per: -0.02
+              value: "-0.150000"
+              level: "-0.015000"
+            base: -0.15
+            per: -0.015
+            chance: 1
+          - icon: BuffIcon_FIRERES_DOWN
+            desc:
+              desc: Effect_3P_BlackWyrm_N_51_1
+              type: 1
+              value: "-0.150000"
+              level: "-0.015000"
+            base: -0.15
+            per: -0.015
+            chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_3P_BlackWyrm_N_52_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_3P_BlackWyrm_N_53_1
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_Remove_Buff_Resist
+            desc:
+              desc: Effect_3P_BlackWyrm_N_54_1
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
             chance: 1
 dialogue:
   KR:

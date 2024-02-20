@@ -1,7 +1,7 @@
 import * as PIXI from "pixi.js";
 import * as LAYERS from "@pixi/layers";
 
-import { AssetsRoot, ImageExtension, IsDev } from "@/libs/Const";
+import { AssetsRoot, IsDev } from "@/libs/Const";
 
 import FadeContainer from "./FadeContainer";
 import Matrix3D from "@/components/u2dmodel-renderer/Matrix3D";
@@ -98,7 +98,7 @@ function removeCache (key: string, immediately = false) {
 	}
 }
 
-export default class Story2DModel extends FadeContainer {
+export default class Pixi2DModel extends FadeContainer {
 	private _objectURLs: string[] = [];
 	private _sprites: string[] = [];
 
@@ -112,12 +112,37 @@ export default class Story2DModel extends FadeContainer {
 		return this._face;
 	}
 
+	private _dialogDeactive: boolean = false;
+	public get dialogDeactive (): boolean {
+		return this._dialogDeactive;
+	}
+
+	private _hidePart: boolean = false;
+	public get hidePart (): boolean {
+		return this._hidePart;
+	}
+
+	private _hideBG: boolean = false;
+	public get hideBG (): boolean {
+		return this._hideBG;
+	}
+
+	private _colliderVisible: boolean = false;
+	public get ColliderVisible (): boolean {
+		return this._colliderVisible;
+	}
+
 	private ready = false;
 
 	private spMap: Record<string, SPRITE_DATA> = {};
 	private texMap: Record<number, PIXI.Texture> = {};
 
 	private faceList: SPRITE_DATA[] = [];
+	private hidePartList: string[] = [];
+	private swapActiveList: string[] = [];
+	private swapInactiveList: string[] = [];
+	private hideBGList: string[] = [];
+	private dialogDeactiveList: string[] = [];
 	private treeItems: NodeTreeItem[] = [];
 
 	constructor (image: string) {
@@ -126,7 +151,7 @@ export default class Story2DModel extends FadeContainer {
 
 		this._model = image;
 
-		const baseURL = `${AssetsRoot}/2dmodel/O/${image}`;
+		const baseURL = `${AssetsRoot}/2dmodel/${image}`;
 
 		this.layerableChildren = true;
 
@@ -181,6 +206,15 @@ export default class Story2DModel extends FadeContainer {
 			.then(r => r.json() as Promise<MODEL_DATA>)
 			.then(async r => {
 				this.faceList = r.face;
+				this.hideBGList = r.list.bg || [];
+				this.dialogDeactiveList = r.list.dialogDeactive || [];
+
+				if ("parts" in r.list)
+					this.hidePartList = r.list.parts;
+				else if ("swapActive" in r.list) {
+					this.swapActiveList = r.list.swapActive;
+					this.swapInactiveList = r.list.swapInactive;
+				}
 
 				const _nodes: Record<number, MODEL_OBJECT> = {};
 				Object.values(r.object) // Make node table (id -> object)
@@ -209,7 +243,7 @@ export default class Story2DModel extends FadeContainer {
 							const cached = getCache(key);
 							if (cached) {
 								this.spMap[sp.name] = sp;
-								this.texMap[sp.name] = cached;
+								this.texMap[sp.name] = cached.clone();
 								return resolve();
 							}
 
@@ -217,9 +251,11 @@ export default class Story2DModel extends FadeContainer {
 							image.addEventListener("load", () => {
 								createClippedTexture(image, sp.vector, sp.v)
 									.then(tex => {
+										const _tex = PIXI.Texture.from(tex);
+										setCache(key, tex, _tex);
+
 										this.spMap[sp.name] = sp;
-										this.texMap[sp.name] = PIXI.Texture.from(tex);
-										setCache(key, tex, this.texMap[sp.name]);
+										this.texMap[sp.name] = _tex.clone();
 										this._sprites.push(key);
 										resolve();
 									});
@@ -318,7 +354,7 @@ export default class Story2DModel extends FadeContainer {
 							id: node.id,
 							name: node.name,
 							data: node,
-							sprite: new PIXI.Sprite(),
+							sprite: new PIXI.Sprite(PIXI.Texture.EMPTY),
 							child: [],
 						};
 
@@ -335,8 +371,8 @@ export default class Story2DModel extends FadeContainer {
 
 						let parent = treeItems.find(r => r.id === node.parent);
 						if (!parent) {
-							const parentSource = all.find(r => r.id === node.id);
-							if (!parentSource) throw new Error("[Story:U2DModel] Unknown parent node");
+							const parentSource = all.find(r => r.id === node.parent);
+							if (!parentSource) throw new Error("[Pixi2DModel] Unknown parent node");
 
 							parent = requireTreeNode(parentSource);
 						}
@@ -404,16 +440,23 @@ export default class Story2DModel extends FadeContainer {
 								sprite.scale.y * ppum,
 							);
 						}
-
-						if (r.list.dialogDeactive?.includes(o.name))
-							sprite.visible = false;
 					});
+
+				function polyfillFaces (list: string[]): string[] {
+					if (!list.some(r => r.includes("Idle")))
+						list.push("Idle");
+					return list;
+				}
+
+				const facePrefix = image.replace(/^2DModel_/, "") + "_";
+				this.emit("facelist", polyfillFaces(r.face.map(r => r.name)), facePrefix);
 			})
 			.finally(() => {
 				canvas.remove();
 
 				this.ready = true;
 				this.setFace(this.face);
+				this.UpdateNodeVisible();
 			});
 	}
 
@@ -432,21 +475,65 @@ export default class Story2DModel extends FadeContainer {
 			const face = this.faceList.find(c => c.name === faceName);
 			if (face)
 				faceNode.sprite.texture = this.texMap[face.name];
+			else if (faceName === "Idle")
+				faceNode.sprite.texture = PIXI.Texture.EMPTY;
 			else
-				console.warn("[Story:U2DModel] no face sprite for " + faceName);
+				console.warn("[Pixi2DModel] no face sprite for " + faceName);
 
 		} else
-			console.warn("[Story:U2DModel] no face element (" + faceName + ")");
+			console.warn("[Pixi2DModel] no face element (" + faceName + ")");
+	}
+
+	setDialogDeactive (deactive: boolean) {
+		this._dialogDeactive = deactive;
+		if (!this.ready) return;
+		this.UpdateNodeVisible();
+	}
+
+	setHidePart (hide: boolean) {
+		this._hidePart = hide;
+		if (!this.ready) return;
+		this.UpdateNodeVisible();
+	}
+
+	setHideBG (hide: boolean) {
+		this._hideBG = hide;
+		if (!this.ready) return;
+		this.UpdateNodeVisible();
+	}
+
+	setColliderVisible (visible: boolean) {
+		// Nothing to do
+	}
+
+	private UpdateNodeVisible () {
+		const items: string[] = [ // to restore visible to true
+			...this.hidePartList,
+			...this.swapActiveList,
+			...this.swapInactiveList,
+			...this.hideBGList,
+			...this.dialogDeactiveList,
+		].unique();
+		const namesToHide: string[] = [
+			...(this.hidePart ? this.hidePartList : []),
+			...(this.hidePart ? this.swapActiveList : this.swapInactiveList),
+			...(this.hideBG ? this.hideBGList : []),
+			...(this.dialogDeactive ? this.dialogDeactiveList : []),
+		].unique();
+
+		this.treeItems
+			.filter(r => items.includes(r.name))
+			.forEach(r => r.sprite.visible = !namesToHide.includes(r.name));
 	}
 
 	destroy (options?: boolean | PIXI.IDestroyOptions | undefined): void {
 		// texture destroying controlled by component
 		if (options === undefined)
-			super.destroy({ texture: false });
+			super.destroy({ texture: true });
 		else if (typeof options === "boolean")
-			super.destroy({ texture: false });
+			super.destroy({ texture: true });
 		else
-			super.destroy({ ...options, texture: false });
+			super.destroy({ ...options, texture: true });
 
 		// this._objectURLs.forEach(url => URL.revokeObjectURL(url));
 		this._sprites.forEach(key => removeCache(key));

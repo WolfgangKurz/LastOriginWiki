@@ -4,60 +4,41 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12486" date="2024-02-18"
-		site={ <>
-			<li>
-				사이트 개편안의 일부를 선행 적용했습니다.
-				<ol>
-					<li>
-						<BY>전투원정보</BY>의 <BG>목록 보기</BG>의 디자인이 변경되었습니다.
-					</li>
-					<li>
-						<BY>전투원정보</BY>의 <BG>목록 보기</BG> 및 <BG>그룹별 보기</BG>가 통합되었습니다.
-					</li>
-					<li>
-						<BY>전투원정보</BY>의 <BG>제조 시간</BG>이 <BR>@deprecated</BR>가 되었습니다.
-					</li>
-				</ol>
-			</li>
+	<ChangelogItem title="Build 12493" date="2024-02-21"
+		new={ <>
+			<li>이벤트 <BY>우주에서 온 황금</BY>의 3부 정보가 추가되었습니다.</li>
+			<li>신규 장비 <BY>구속용 초커</BY>의 정보가 추가되었습니다.</li>
+			<li>신규 적의 정보가 추가되었습니다.</li>
 		</> }
-	/>
-	<ChangelogItem title="Build 12484" date="2024-02-18"
-		bugfix={ <>
-			<li>일부 상황에서 사이트 동작이 멈추는 문제를 수정했습니다.</li>
-		</> }
-	/>
-	<ChangelogItem title="Build 12481" date="2024-02-18"
-		site={ <>
-			<li>
-				사이트 개편안의 일부를 선행 적용했습니다.
-				<ol>
-					<li>홈 페이지의 디자인을 변경했습니다.</li>
-					<li>Changelog 페이지의 디자인을 일부 변경했습니다.</li>
-					<li>내부 코드 변경을 진행중입니다.</li>
-				</ol>
-			</li>
-		</> }
-	/>
-	<ChangelogItem title="Build 12479" date="2024-02-18"
-		dialogue={ <>
-			<li>
-				전투원 <BY>라비아타 프로토타입</BY>의 스킨 <BR>눈 속에 피는 꽃</BR>의 대사 정보가 누락된 문제가 수정되었습니다.
-			</li>
-			<li>
-				전투원 <BY>P/A-00 그리폰</BY>의 스킨 <BR>벌써 5년</BR>의 대사 정보가 누락된 문제가 수정되었습니다.
-			</li>
-		</> }
-	/>
-	<ChangelogItem title="Build 12477" date="2024-02-17"
 		update={ <>
+			<li>전투원 <BY>바닐라 A1</BY>의 승급 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>바닐라 A1</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>천향의 히루메</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>블랙 웜 S9</BY>의 스킬 정보가 갱신되었습니다.</li>
+			<li>전투원 <BY>세라피아스 앨리스</BY>의 스킬 정보가 갱신되었습니다.</li>
 			<li>
-				스토리 플레이어에서 전투원의 Spine 애니메이션이 표시되도록 수정했습니다.
+				전투원의 Spine 애니메이션의 터치 기능이 이제 실제 터치 영역에 반응하도록 개선되었습니다.<br />
+				기존 터치 위치 변경 기능은 터치 영역 표시 기능으로 변경되었습니다.
+			</li>
+			<li>스토리 플레이어의 탭의 사용 경험이 개선되었습니다.</li>
+		</> }
+		knownissue={ <>
+			<li>스토리 플레이어에서 일부 끝 글자가 잘리는 현상이 확인되었습니다.</li>
+			<li>
+				전투원 <BY>바바리아나</BY>의 스킨 <BR>드림위버 모던 컬렉션 : 세련된 유혹</BR>의
+				Spine 애니메이션이 정상적으로 동작하지 않는 점이 확인되었습니다.
 			</li>
 		</> }
 		bugfix={ <>
+			<li>전투원의 Spine 애니메이션이 상하 반전되어 표시되는 문제를 수정했습니다.</li>
+			<li>스토리 플레이어에서 동일한 일러스트가 동시에 표시되는 경우 동작하지 않는 문제를 수정했습니다.</li>
+		</> }
+		skin={ <>
 			<li>
-				스토리 플레이어에서 일부 전투원이 표시되지 않는 문제를 수정했습니다.
+				<BY>화롯가의 포티아</BY>의 스킨 <BY>사령관님 전용 디저트</BY>의 중파 정보가 추가되었습니다.
+			</li>
+			<li>
+				<BY>포츈</BY>의 스킨 <BY>누나 오늘 휴가거든?</BY>의 정보가 추가되었습니다.
 			</li>
 		</> }
 	/>

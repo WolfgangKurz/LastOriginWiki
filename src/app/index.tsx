@@ -23,18 +23,6 @@ import { UpdateTitle } from "@/libs/Site";
 const App: FunctionalComponent = () => {
 	const [locale] = useLocale();
 
-	useEffect(() => {
-		if (typeof window !== "undefined") { // is on browser...?
-			["pageonloading", "pageonerror", "pagemayexpired"].forEach(e => {
-				const el = document.querySelector(`#${e}`);
-				if (el) {
-					const parent = el.parentNode;
-					if (parent)
-						parent.removeChild(el);
-				}
-			});
-		}
-	}, []);
 	useEffect(() => UpdateTitle(), [locale]);
 
 	const pRoute = (component: () => Promise<any>): Partial<AsyncRoute["props"]> => ({

@@ -138,7 +138,7 @@ export default ({ mode }) => {
 			},
 		},
 		optimizeDeps: {
-			include: ["swiper", "swiper/react"],
+			include: [],
 		},
 		build: {
 			assetsDir: "build",

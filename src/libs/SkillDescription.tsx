@@ -23,7 +23,7 @@ function InitPrebuiltSections (): void {
 	if (PrebuiltSections) return;
 
 	const section: Record<string, PrebuiltSectionType> = {};
-	const locs = GetLocaleTable(CurrentLocale);
+	const locs = GetLocaleTable(CurrentLocale.value) || {};
 	const keys = Object.keys(locs).filter(x => x.startsWith("UNIT_SKILL_SECTION_"));
 	keys.forEach(k => {
 		const kk = k.replace(/^UNIT_SKILL_SECTION_(.+)$/, "$1");

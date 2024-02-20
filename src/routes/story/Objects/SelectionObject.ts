@@ -5,8 +5,9 @@ import { DIALOG_SPEAKER } from "@/types/Enums";
 import { AssetsRoot } from "@/libs/Const";
 
 import { fontFamily } from "../common";
-import FadeText from "./FadeText";
-import FadeSprite from "./FadeSprite";
+
+import FadeText from "@/components/pixi/FadeText";
+import FadeSprite from "@/components/pixi/FadeSprite";
 
 export default class SelectionObject extends PIXI.Container {
 	private texButton: PIXI.Texture | null = null;

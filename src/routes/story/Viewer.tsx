@@ -11,7 +11,7 @@ import { useUpdate } from "@/libs/hooks";
 import { AssetsRoot, ImageExtension, SubStoryUnit } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import { CurrentDB } from "@/libs/DB";
-import { BuildClass } from "@/libs/Class";
+import { BuildClass, cn } from "@/libs/Class";
 import { parseVNode } from "@/libs/VNode";
 import { UpdateTitle } from "@/libs/Site";
 
@@ -409,7 +409,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			{ faces.map(f => <UnitFace class="mx-1" { ...f } size="3rem" />) }
 		</div>
 
-		<ul class="nav nav-tabs">
+		<ul class={ cn("nav nav-tabs pt-2", style.TabNav) }>
 			<li class="nav-item">
 				<a
 					class={ BuildClass("nav-link", isActive(tab === "player")) }
@@ -562,6 +562,6 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 				<div class="mt-2 py-1 text-secondary">END</div>
 			</> }
 		</div>
-	</div>;
+	</div >;
 };
 export default Viewer;

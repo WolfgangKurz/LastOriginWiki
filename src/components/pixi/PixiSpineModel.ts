@@ -2,7 +2,7 @@ import * as PIXI from "pixi.js";
 import * as spine from "@esotericsoftware/spine-pixi";
 import LZMADecompression from "@/external/lzma";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot, IsDev } from "@/libs/Const";
 
 import FadeContainer from "./FadeContainer";
 
@@ -10,6 +10,8 @@ interface CacheType {
 	skeleton: string;
 	urls: string[];
 	atlas: spine.TextureAtlas;
+	anim: SpineAnim;
+	metadata: SpineMetadata;
 }
 const SkeletonCache: Record<string, [data: CacheType, timer: number | null]> = {};
 const SkeletonCacheDuration = 60 * 1000;
@@ -44,7 +46,7 @@ function removeCache (key: string, immediately = false) {
 	}
 }
 
-//#region @/components/spine-renderer/Spine.ts
+//#region Interfaces
 interface SpineAnimTransitions {
 	cond: string;
 	to: string;
@@ -62,9 +64,18 @@ interface SpineAnimLayer {
 interface SpineAnim {
 	[layer: string]: SpineAnimLayer;
 }
+interface SpineTransform {
+	pos: [x: number, y: number];
+	size: [x: number, y: number];
+}
+interface SpineMetadata {
+	colliders: Record<string, SpineTransform>;
+	transform: SpineTransform;
+	specialTouch: string[];
+}
 //#endregion
 
-export default class StorySpineModel extends FadeContainer {
+export default class PixiSpineModel extends FadeContainer {
 	private readonly _model: string;
 	public get model (): string {
 		return this._model;
@@ -73,6 +84,16 @@ export default class StorySpineModel extends FadeContainer {
 	private _face: string = "";
 	public get face (): string {
 		return this._face;
+	}
+
+	private _hidePart: boolean = false;
+	public get hidePart (): boolean {
+		return this._hidePart;
+	}
+
+	private _colliderVisible: boolean = false;
+	public get colliderVisible (): boolean {
+		return this._colliderVisible;
 	}
 
 	private selectedSkins: string[] = [];
@@ -87,6 +108,8 @@ export default class StorySpineModel extends FadeContainer {
 
 	private state!: spine.AnimationState;
 
+	private colliderGraphics: PIXI.Graphics[] = [];
+
 	constructor (image: string) {
 		super();
 		this.sortableChildren = true;
@@ -97,6 +120,8 @@ export default class StorySpineModel extends FadeContainer {
 		const baseURL = `${AssetsRoot}/spine/${fname}`;
 
 		this.layerableChildren = true;
+
+		this.scale.set(3); // base Scale
 
 		new Promise<spine.Spine>((resolve) => {
 			const cached = getCache(this._model);
@@ -113,16 +138,16 @@ export default class StorySpineModel extends FadeContainer {
 						r,
 						fetch(`${baseURL}/${fname}.atlas`).then(r => r.text()),
 						fetch(`${baseURL}/${fname}_anim.json`).then(r => r.json()),
+						fetch(`${baseURL}/${fname}_meta.json`).then(r => r.json()),
 					]))
-					.then(([skeletonData, atlasText, anim]) => {
+					.then(([skeletonData, atlasText, anim, metadata]) => {
 						const atlas = new spine.TextureAtlas(atlasText);
-
-						this.animData = anim as SpineAnim;
-						this.animLayers = Object.keys(this.animData);
 
 						return Promise.all([
 							skeletonData,
 							atlas,
+							anim,
+							metadata,
 
 							...atlas.pages.map(page => {
 								// make alpha-merged image
@@ -179,11 +204,13 @@ export default class StorySpineModel extends FadeContainer {
 							}),
 						]);
 					})
-					.then(([skelData, atlas, ...urls]) => {
+					.then(([skelData, atlas, anim, metadata, ...urls]) => {
 						setCache(this._model, {
 							skeleton: skelData,
 							urls,
 							atlas,
+							anim,
+							metadata,
 						});
 						resolve(this.Load(getCache(this._model)!));
 					});
@@ -191,8 +218,18 @@ export default class StorySpineModel extends FadeContainer {
 		}).then(s => {
 			this.addChild(s);
 
+			const names = this.skeletonData!.skins.map(r => r.name);
+			const faces = names.filter(x => x.startsWith("face/"));
+			const list = faces.map(face => face.replace(/^.+_([^_]+)$/, "$1"));
+
+			const prefix = faces[0].replace(/^face\/(.+_)[^_]+$/, "$1");
+			this.emit("facelist", list, prefix);
+
 			if (this.lastFace)
 				this.setFace(this.lastFace);
+
+			this.setHidePart(this.hidePart);
+			this.setColliderVisible(this.colliderVisible);
 
 			// play default animation
 			if (this.animData) {
@@ -204,20 +241,101 @@ export default class StorySpineModel extends FadeContainer {
 	}
 
 	Load (data: CacheType) {
-		const atlas = data.atlas;
-		const skelData = data.skeleton;
+		// Spine model's BoxCollider will not be moved/changed
+		const cvTemp = document.createElement("canvas");
+		Object.keys(data.metadata.colliders)
+			.sort((a, b) => {
+				if (a == "specialTouch") return 1;
+				if (b == "specialTouch") return -1;
+				return 0;
+			})
+			.forEach(c => {
+				const _c = data.metadata.colliders[c];
 
-		const atlasLoader = new spine.AtlasAttachmentLoader(atlas);
+				const x = 100 * _c.pos[0];
+				const y = 100 * -_c.pos[1];
+				const w = Math.abs(100 * _c.size[0]);
+				const h = Math.abs(100 * _c.size[1]);
+
+				let sp: PIXI.Sprite;
+
+				const g = new PIXI.Graphics();
+				g.lineStyle({
+					width: 1,
+					color: 0x00ff00,
+					alignment: 0,
+					native: true,
+				});
+				g.drawRect(-w / 2, -h / 2, w, h);
+				g.eventMode = "none";
+
+				cvTemp.width = w;
+				cvTemp.height = h;
+
+				sp = new PIXI.Sprite(PIXI.Texture.from(cvTemp));
+				sp.addChild(g);
+				this.colliderGraphics.push(g);
+
+				const collider = sp;
+				collider.zIndex = 3;
+				collider.name = "[Collider] " + c;
+				collider.eventMode = "static";
+				collider.on("click", () => {
+					if (data.metadata.specialTouch.includes(c))
+						this.emit("special-touch", this);
+					else
+						this.emit("normal-touch", this);
+				});
+
+				collider.position.set(x, y);
+				collider.anchor.set(0.5);
+
+				this.addChild(collider);
+			});
+		cvTemp.remove();
+
+		const atlasLoader = new spine.AtlasAttachmentLoader(data.atlas);
 		const skeletonJson = new spine.SkeletonJson(atlasLoader);
-		skeletonJson.scale = 0.15;
+		skeletonJson.scale = data.metadata.transform.size[0]; // x and y should be equal
 
-		const skeletonData = skeletonJson.readSkeletonData(skelData);
+		const skeletonData = skeletonJson.readSkeletonData(data.skeleton);
 		this.skeletonData = skeletonData;
 
+		this.animData = data.anim as SpineAnim;
+		this.animLayers = Object.keys(this.animData);
+
 		const s = new spine.Spine(skeletonData);
+		s.position.x = data.metadata.transform.pos[0] * 100;
+		s.position.y = -data.metadata.transform.pos[1] * 100;
+		// s.position.y = 720;
 
 		this.skeleton = s.skeleton;
 		this.state = s.state;
+
+		this.state.addListener({
+			complete: (entry) => {
+				if (this.animData) {
+					const layer = this.animLayers[entry.trackIndex];
+					const state = this.animData[layer].states[this.animState[layer]];
+					const next = state.transitions.find(x => x.cond === "");
+
+					if (IsDev)
+						console.debug(`[Spine] Animation done, layer: "${layer}", state: "${this.animState[layer]}"`);
+
+					if (next) {
+						if (IsDev)
+							console.debug(`[Spine] Next state is "${next.to}", do force`);
+						this.playState(layer, next.to, true);
+					} else {
+						if (IsDev)
+							console.debug(`[Spine] Next not found`);
+					}
+				} else {
+					if (IsDev)
+						console.debug(`[Spine] animData not found`);
+				}
+			},
+		});
 
 		const skinNames = this.skeletonData!.skins.map(r => r.name);
 		for (const skin of skinNames) { // find Skin_Base
@@ -264,10 +382,6 @@ export default class StorySpineModel extends FadeContainer {
 		this.skeleton.setSkin(newSkin);
 		this.skeleton.setToSetupPose();
 		this.skeleton.updateWorldTransform(spine.Physics.update);
-
-		// let offset = new spine.Vector2(), size = new spine.Vector2();
-		// this.skeleton.getBounds(offset, size);
-		// this.lastBounds = { offset, size };
 	}
 
 	isLoopAnimation (layer: string, state: string): boolean {
@@ -290,41 +404,88 @@ export default class StorySpineModel extends FadeContainer {
 		return this.animData[layer].states[this.animState[layer]];
 	}
 
-	playState (layer: string, _state: string, force: boolean = false): spine.Animation | false {
+	play (event: string): spine.Animation[] | false {
+		if (!this.animData) return false;
+
+		let entry: spine.Animation[] | false = false;
+		if (!this.animLayers.every(layer => {
+			const state = this.currentState(layer);
+			if (!state) return false;
+
+			const next = state.transitions.find(x => x.cond === event);
+			if (!next) return false;
+
+			return this.playableState(layer, next.to);
+		})) return false;
+
+		this.animLayers.forEach(layer => {
+			const state = this.currentState(layer)!;
+			const next = state.transitions.find(x => x.cond === event)!;
+			const e = this.playState(layer, next.to);
+
+			if (e) {
+				if (!entry)
+					entry = [e];
+				else
+					entry.push(e);
+			}
+		});
+
+		return entry || false;
+	}
+
+	playableState (layer: string, _state: string, force: boolean = false): boolean {
 		if (!this.animData) {
-			// console.debug(`[Spine.playState] animData not found`);
+			if (IsDev)
+				console.debug(`[Spine.playableState] animData not found`);
 			return false;
 		}
 
 		const layerIdx = this.animLayers.indexOf(layer);
 		if (layerIdx < 0) {
-			// console.debug(`[Spine.playState] layer "${layer}" not found`);
+			if (IsDev)
+				console.debug(`[Spine.playableState] layer "${layer}" not found`);
 			return false;
 		}
 
 		const animState = this.animData[layer].states[_state];
 		if (!animState) {
-			// console.debug(`[Spine.playState] state "${_state}" in layer "${layer}" not found`);
+			if (IsDev)
+				console.debug(`[Spine.playableState] state "${_state}" in layer "${layer}" not found`);
 			return false;
 		}
 
-		if (!!this.animState[layer] && !force && !this.isLoopAnimation(layer, this.animState[layer])) {
-			// console.debug(`[Spine.playState] cannot interrupt non-looping animation`);
-			return false;
-		}
+		// if (!!this.animState[layer] && !force && !this.isLoopAnimation(layer, this.animState[layer])) {
+		// 	if (IsDev)
+		// 		console.debug(`[Spine.playableState] cannot interrupt non-looping animation`);
+		// 	return false;
+		// }
+
+		return true;
+	}
+
+	playState (layer: string, _state: string, force: boolean = false): spine.Animation | false {
+		if (!this.playableState(layer, _state, force)) return false;
+
+		const layerIdx = this.animLayers.indexOf(layer);
+		const animState = this.animData![layer].states[_state];
 
 		const state = this.state;
 		const anims = state.data.skeletonData.animations;
 		const anim = anims.find(x => x.name === animState.clip);
 		if (!anim) {
-			// console.debug(`[Spine.playState] clip "${animState.clip}" not found`);
+			if (IsDev)
+				console.debug(`[Spine.playState] clip "${animState.clip}" not found`);
 			return false;
 		}
 
 		this.animState[layer] = _state;
 
+		if (IsDev)
+			console.debug(`[Spine.playState] state "${_state}" in layer "${layer}" playing`);
+
 		const entry = state.setAnimationWith(layerIdx, anim, this.isLoopAnimation(layer, _state));
-		entry.mixDuration = 0.5;
+		entry.mixDuration = 0.2;
 		return anim;
 	}
 
@@ -332,6 +493,48 @@ export default class StorySpineModel extends FadeContainer {
 		if (this.lastFace) this.removeSkin("face/" + this.lastFace);
 		this.addSkin("face/" + face);
 		this.lastFace = face || "";
+	}
+
+	setGoogle (google: boolean) {
+		const names = this.skeletonData?.skins.map(r => r.name);
+		if (!names) return;
+
+		const hasGoogle = names.includes("breast/Censorship") && names.includes("breast/Unedited");
+		if (!hasGoogle) return;
+
+		if (google) {
+			this.removeSkin("breast/Unedited");
+			this.addSkin("breast/Censorship");
+		} else {
+			this.addSkin("breast/Unedited");
+			this.removeSkin("breast/Censorship");
+		}
+	}
+
+	setHideBG (hide: boolean) {
+		// Nothing to do yet
+	}
+
+	setHidePart (hide: boolean) {
+		this._hidePart = hide;
+		if (!this.skeletonData) return;
+
+		const names = this.skeletonData.skins.map(r => r.name);
+		if (!names) return;
+
+		if (hide)
+			names.filter(x => x.startsWith("decoration"))
+				.forEach(skin => this.removeSkin(skin));
+		else
+			names.filter(x => x.startsWith("decoration"))
+				.forEach(skin => this.addSkin(skin));
+	}
+
+	setColliderVisible (visible: boolean) {
+		this._colliderVisible = visible;
+		if (!this.colliderGraphics) return;
+
+		this.colliderGraphics.forEach(g => g.visible = visible);
 	}
 
 	destroy (options?: boolean | PIXI.IDestroyOptions | undefined): void {

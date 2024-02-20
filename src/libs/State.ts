@@ -6,6 +6,9 @@ export interface ObjectState<T> {
 }
 type Updater<T> = (prevState: T) => T;
 
+/**
+ * @deprecated This method should not be used. Use `useState` instead.
+ */
 export function objStated<T> (state: [T, StateUpdater<T>]): ObjectState<T> {
 	const [value, updator] = state;
 	return {
@@ -21,6 +24,9 @@ export function objStated<T> (state: [T, StateUpdater<T>]): ObjectState<T> {
 	};
 }
 
+/**
+ * @deprecated This method should not be used. Use `useState` instead.
+ */
 export function objState<T> (value: T): ObjectState<T> {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	return objStated(useState<T>(value));

@@ -5,7 +5,7 @@ import { groupBy } from "@/libs/Functions";
 
 import { AnimationFrame, AnimationValue } from "../Effects/AnimationEffect";
 
-import FadeContainer from "./FadeContainer";
+import FadeContainer from "@/components/pixi/FadeContainer";
 
 import vert from "./shader/vert.glsl?raw";
 import frag from "./shader/commu.frag.glsl?raw";
