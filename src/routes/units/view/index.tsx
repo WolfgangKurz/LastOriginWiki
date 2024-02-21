@@ -1,8 +1,9 @@
-import { createElement, FunctionalComponent, RenderableProps } from "preact";
+import { createElement, FunctionalComponent } from "preact";
+import { useState } from "preact/hooks";
+import { route } from "preact-router";
 
 import { Unit, UnitSkin } from "@/types/DB/Unit";
 
-import { ObjectState, objState } from "@/libs/State";
 import { AssetsRoot, ImageExtension, IsDev, RarityDisplay, UnitClassDisplay, UnitRoleDisplay } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import EntitySource from "@/libs/EntitySource";
@@ -11,11 +12,11 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import IconPersonSquare from "@/components/bootstrap-icon/icons/PersonSquare";
-import IconPersonHearts from "@/components/bootstrap-icon/icons/PersonHearts";
 import IconLightningFill from "@/components/bootstrap-icon/icons/LightningFill";
 import IconCapslockFill from "@/components/bootstrap-icon/icons/CapslockFill";
 import IconHandThumbsUpFill from "@/components/bootstrap-icon/icons/HandThumbsUpFill";
 import IconChatTextFill from "@/components/bootstrap-icon/icons/ChatTextFill";
+import IconHanger from "@/components/Icons/IconHanger";
 
 import BasicTab from "./sub-tab/Basic";
 import DialogueTab from "./sub-tab/Dialogue";
@@ -23,7 +24,6 @@ import LvLimitTab from "./sub-tab/LvLimit";
 import PromoTab from "./sub-tab/Promo";
 import SkillTab from "./sub-tab/Skill";
 import SkinTab from "./sub-tab/Skin";
-import { route } from "preact-router";
 
 type TabTypes = "basic" | "skin" | "lvlimit" | "promo" | "skills" | "dialogue";
 
@@ -35,8 +35,10 @@ interface SkinItem extends UnitSkin {
 export interface SubpageProps {
 	display: boolean;
 	unit: Unit;
-	skinIndex: ObjectState<number>;
+	skinIndex: number;
 	SkinList: SkinItem[];
+
+	onSkinIndexChange: (index: number) => void;
 }
 
 interface UnitsViewProps {
@@ -45,7 +47,7 @@ interface UnitsViewProps {
 }
 
 const View: FunctionalComponent<UnitsViewProps> = (props) => {
-	const DisplayTab = objState<TabTypes>(
+	const [DisplayTab, setDisplayTab] = useState<TabTypes>(
 		props.sub && props.sub.startsWith("s")
 			? "skin"
 			: "basic"
@@ -55,7 +57,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 		window.history.back();
 	}
 
-	const skinIndex = objState<number>(
+	const [skinIndex, setSkinIndex] = useState<number>(
 		props.sub && props.sub.startsWith("s")
 			? -parseInt(props.sub.substring(1), 10)
 			: 0
@@ -113,8 +115,8 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 			return list;
 		})();
 
-		if (skinIndex.value < 0)
-			skinIndex.set(SkinList.findIndex(s => s.sid === -skinIndex.value) || 0);
+		if (skinIndex < 0)
+			setSkinIndex(SkinList.findIndex(s => s.sid === -skinIndex) || 0);
 
 		SetMeta(
 			["description", "twitter:description"],
@@ -154,10 +156,10 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 						<li class="nav-item">
 							<a
 								href="#"
-								class={ `nav-link text-dark ${isActive(DisplayTab.value === "basic")}` }
+								class={ `nav-link text-dark ${isActive(DisplayTab === "basic")}` }
 								onClick={ (e): void => {
 									e.preventDefault();
-									DisplayTab.set("basic");
+									setDisplayTab("basic");
 								} }
 							>
 								<IconPersonSquare class="me-1" />
@@ -167,23 +169,23 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 						<li class="nav-item">
 							<a
 								href="#"
-								class={ `nav-link text-dark ${isActive(DisplayTab.value === "skin")}` }
+								class={ `nav-link text-dark ${isActive(DisplayTab === "skin")}` }
 								onClick={ (e): void => {
 									e.preventDefault();
-									DisplayTab.set("skin");
+									setDisplayTab("skin");
 								} }
 							>
-								<IconPersonHearts class="me-1" />
+								<IconHanger class="me-1" />
 								<Locale k="UNIT_VIEW_TAB_SKININFO" />
 							</a>
 						</li>
 						<li class="nav-item">
 							<a
 								href="#"
-								class={ `nav-link text-dark ${isActive(DisplayTab.value === "skills")}` }
+								class={ `nav-link text-dark ${isActive(DisplayTab === "skills")}` }
 								onClick={ (e): void => {
 									e.preventDefault();
-									DisplayTab.set("skills");
+									setDisplayTab("skills");
 								} }
 							>
 								<IconLightningFill class="me-1" />
@@ -193,10 +195,10 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 						<li class="nav-item">
 							<a
 								href="#"
-								class={ `nav-link text-dark ${isActive(DisplayTab.value === "lvlimit")}` }
+								class={ `nav-link text-dark ${isActive(DisplayTab === "lvlimit")}` }
 								onClick={ (e): void => {
 									e.preventDefault();
-									DisplayTab.set("lvlimit");
+									setDisplayTab("lvlimit");
 								} }
 							>
 								<IconCapslockFill class="me-1" />
@@ -206,10 +208,10 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 						<li class="nav-item">
 							<a
 								href="#"
-								class={ `nav-link text-dark ${isActive(DisplayTab.value === "promo")}` }
+								class={ `nav-link text-dark ${isActive(DisplayTab === "promo")}` }
 								onClick={ (e): void => {
 									e.preventDefault();
-									DisplayTab.set("promo");
+									setDisplayTab("promo");
 								} }
 							>
 								<IconHandThumbsUpFill class="me-1" />
@@ -219,10 +221,10 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 						{/* <li class="nav-item">
 							<a
 								href="#"
-								class={ `nav-link text-dark ${isActive(DisplayTab.value === "roguelike")}` }
+								class={ `nav-link text-dark ${isActive(DisplayTab === "roguelike")}` }
 								onClick={ (e): void => {
 									e.preventDefault();
-									DisplayTab.set("roguelike");
+									setDisplayTab("roguelike");
 								} }
 							>
 								<IconController class="me-1" />
@@ -232,10 +234,10 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 						<li class="nav-item">
 							<a
 								href="#"
-								class={ `nav-link text-dark ${isActive(DisplayTab.value === "dialogue")}` }
+								class={ `nav-link text-dark ${isActive(DisplayTab === "dialogue")}` }
 								onClick={ (e): void => {
 									e.preventDefault();
-									DisplayTab.set("dialogue");
+									setDisplayTab("dialogue");
 								} }
 							>
 								<IconChatTextFill class="me-1" />
@@ -248,10 +250,12 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 
 			{ Object.keys(TabContents).map(k =>
 				createElement(TabContents[k as TabTypes], {
-					display: DisplayTab.value === k,
+					display: DisplayTab === k,
 					unit,
 					skinIndex,
 					SkinList,
+
+					onSkinIndexChange: v => setSkinIndex(v),
 				}))
 			}
 		</div>;

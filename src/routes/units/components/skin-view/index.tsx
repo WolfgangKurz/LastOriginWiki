@@ -1,22 +1,21 @@
 import { FunctionalComponent } from "preact";
-import { useEffect, useRef, useState } from "preact/hooks";
-import ResizeObserver from "resize-observer-polyfill";
+import { useEffect, useMemo, useRef, useState } from "preact/hooks";
 
 import { FACETYPE, SKIN_IN_PARTS } from "@/types/Enums";
 import { SKIN_ANIM_SUBSET_ENUM, SKIN_SUBSET_ENUM, Unit, UnitSkin } from "@/types/DB/Unit";
 
-import { AssetsRoot, CanPlayWebM, ImageExtension } from "@/libs/Const";
+import { useImageExtension } from "@/libs/ImageExtension";
+import { AssetsRoot, CanPlayWebM } from "@/libs/Const";
+import { cn } from "@/libs/Class";
 
 import Locale from "@/components/locale";
-import { objState } from "@/libs/State";
-
 import PopupBase from "@/components/popup/base";
 import IconEmojiSmileFill from "@/components/bootstrap-icon/icons/EmojiSmileFill";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import MergedVideo from "@/components/merged-video";
 import Pinch from "@/components/pinch";
-import SpineRenderer from "@/components/spine-renderer";
-import U2DModelRenderer from "@/components/u2dmodel-renderer";
+
+import PixiView from "./PixiView";
 
 import style from "./style.module.scss";
 
@@ -36,18 +35,17 @@ interface SkinViewProps {
 }
 
 const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
-	const imageExt = ImageExtension();
+	const imageExt = useImageExtension();
 
 	const unit = props.unit;
 	const skin = props.skin;
 
 	// const skinDirection = objState<"" | "horz" | "vert">("");
 
-	const [resizeObserver, setResizeObserver] = useState<ResizeObserver | null>(null);
-	const [FullUnitSize, setFullUnitSize] = useState<[number, number]>([0, 0]);
 	const FullUnitEl = useRef<HTMLDivElement>(null);
 
 	const [face, setFace] = useState<string>("");
+	const [facePrefix, setFacePrefix] = useState("");
 	const [faceList, setFaceList] = useState<string[]>([]);
 
 	const [isCensored, setIsCensored] = useState<boolean>(false);
@@ -55,7 +53,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const [hideParts, setHideParts] = useState<boolean>(false);
 	const [hideBG, setHideBG] = useState<boolean>(false);
 
-	const [isSpecialTouchMode, setIsSpecialTouchMode] = useState<boolean>(false);
+	const [displayTouchCollider, setDisplayTouchCollider] = useState<boolean>(false);
 
 	const [enableAnimation, setEnableAnimation] = useState<boolean>(false);
 	const [asBlackBG, setAsBlackBG] = useState<boolean>(false);
@@ -63,117 +61,130 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 	const [detailView, setDetailView] = useState(false);
 
-	useEffect(() => {
-		if (FullUnitEl.current) {
-			const observer = new ResizeObserver((entries) => {
-				const rc = (entries[0].contentRect as DOMRectReadOnly);
-				setFullUnitSize([
-					Math.floor(rc.width / 2) * 2,
-					Math.floor(rc.height / 2) * 2,
-				]);
-			});
-			setResizeObserver(observer);
-
-			observer.observe(FullUnitEl.current);
-		}
-
-		return () => {
-			if (resizeObserver)
-				resizeObserver.disconnect();
-
-			setResizeObserver(null);
-		};
-	}, [FullUnitEl.current]);
-
 	// const Aspect = props.collapsed ? style["ratio-2x5"] : "ratio-4x3";
 	const Aspect = "ratio-2x4 ratio-lg-5x3";
 	// const Aspect = "ratio-2x4";
 
-	const SkinImageURL = ((): string => {
+	const SkinPostfix = useMemo(() => {
+		const ret: string[] = [];
+		if (isDamaged) ret.push("D");
+		if (hideBG) ret.push("B");
+		if (hideParts) ret.push("S");
+		return (ret.length > 0 ? "_" : "") + ret.join("");
+	}, [isDamaged, hideBG, hideParts]);
+	const SkinImageURL = useMemo(() => {
 		const skinId = skin.isDef ? 0 : skin.metadata.imageId;
-		const ext = imageExt;
+		return [
+			AssetsRoot,
+			imageExt,
+			"full",
+			[
+				unit.uid,
+				"_",
+				skinId,
+				"_",
+				skin.G && isCensored ? "G" : "O",
+				SkinPostfix,
+				".",
+				imageExt,
+			].join(""),
+		].join("/");
+	}, [unit.uid, skin, isCensored, SkinPostfix, imageExt]);
 
-		const postfix = ((): string => {
-			const ret: string[] = [];
-			if (isDamaged) ret.push("D");
-			if (hideBG) ret.push("B");
-			if (hideParts) ret.push("S");
-			return (ret.length > 0 ? "_" : "") + ret.join("");
-		})();
-
-		return `${AssetsRoot}/${ext}/full/${unit.uid}_${skinId}_${skin.G && isCensored ? "G" : "O"}${postfix}.${ext}`;
-	})();
-	const SkinVideoURL = ((): string => {
+	const SkinVideoPostfix = useMemo(() => {
+		let flag: SKIN_ANIM_SUBSET_ENUM = 0;
+		const ret: string[] = [];
+		if (hideBG) {
+			flag |= SKIN_ANIM_SUBSET_ENUM.B_;
+			ret.push("B");
+		}
+		if (hideParts) {
+			flag |= SKIN_ANIM_SUBSET_ENUM._S;
+			ret.push("S");
+		}
+		return [
+			flag,
+			(ret.length > 0 ? "_" : "") + ret.join(""),
+		];
+	}, [hideBG, hideParts]);
+	const SkinVideoURL = useMemo((): string => {
 		if (!props.collapsed && !props.animate) return "";
 		if (isDamaged) return "";
 
-		let flag: SKIN_ANIM_SUBSET_ENUM = 0;
-		const postfix = ((): string => {
-			const ret: string[] = [];
-			if (hideBG) {
-				flag |= SKIN_ANIM_SUBSET_ENUM.B_;
-				ret.push("B");
-			}
-			if (hideParts) {
-				flag |= SKIN_ANIM_SUBSET_ENUM._S;
-				ret.push("S");
-			}
-			return (ret.length > 0 ? "_" : "") + ret.join("");
-		})();
-		if (!skin.anim[flag]) return "";
+		if (!skin.anim[SkinVideoPostfix[0]]) return "";
 
 		const skinId = skin.isDef ? 0 : skin.metadata.imageId;
-		return `${unit.uid}_${skinId}_${skin.G && isCensored ? "G" : "O"}${postfix}`;
-	})();
+		return `${unit.uid}_${skinId}_${skin.G && isCensored ? "G" : "O"}${SkinVideoPostfix[1]}`;
+	}, [
+		props.collapsed,
+		props.animate,
+		unit.uid,
+		skin,
+		isDamaged,
+		SkinVideoPostfix,
+	]);
 
-	if (!skin.G && isCensored) // not have google
-		setIsCensored(false);
+	useEffect(() => {
+		if (!skin.G && isCensored) // not have google
+			setIsCensored(false);
+	}, [skin.G, isCensored]);
 
 	// skin mod adjust
-	if (isDamaged) {
-		if (hideParts && hideBG && !skin.subset[SKIN_SUBSET_ENUM.DBS]) {
-			if (skin.subset[SKIN_SUBSET_ENUM.DB_])
-				setHideBG(false);
-			else if (skin.subset[SKIN_SUBSET_ENUM.D_S])
+	useEffect(() => {
+		if (isDamaged) {
+			if (hideParts && hideBG && !skin.subset[SKIN_SUBSET_ENUM.DBS]) {
+				if (skin.subset[SKIN_SUBSET_ENUM.DB_])
+					setHideBG(false);
+				else if (skin.subset[SKIN_SUBSET_ENUM.D_S])
+					setHideParts(false);
+				else {
+					setHideBG(false);
+					setHideParts(false);
+				}
+			} else if (hideParts && !hideBG && !skin.subset[SKIN_SUBSET_ENUM.D_S])
 				setHideParts(false);
-			else {
+			else if (hideBG && !hideParts && !skin.subset[SKIN_SUBSET_ENUM.DB_])
 				setHideBG(false);
-				setHideParts(false);
-			}
-		} else if (hideParts && !hideBG && !skin.subset[SKIN_SUBSET_ENUM.D_S])
-			setHideParts(false);
-		else if (hideBG && !hideParts && !skin.subset[SKIN_SUBSET_ENUM.DB_])
-			setHideBG(false);
-		else if (!hideBG && !hideParts && skin.subset[SKIN_SUBSET_ENUM.D__]) {
-			setHideBG(false);
-			setHideParts(false);
-		} else if (!hideBG && !hideParts && !skin.subset[SKIN_SUBSET_ENUM.D__])
-			setIsDamaged(false);
-	} else {
-		if (hideParts && hideBG && !skin.subset[SKIN_SUBSET_ENUM._BS]) {
-			if (skin.subset[SKIN_SUBSET_ENUM._B_])
-				setHideBG(false);
-			else if (skin.subset[SKIN_SUBSET_ENUM.__S])
-				setHideParts(false);
-			else {
+			else if (!hideBG && !hideParts && skin.subset[SKIN_SUBSET_ENUM.D__]) {
 				setHideBG(false);
 				setHideParts(false);
-			}
-		} else if (hideParts && !hideBG && !skin.subset[SKIN_SUBSET_ENUM.__S])
-			setHideParts(false);
-		else if (hideBG && !hideParts && !skin.subset[SKIN_SUBSET_ENUM._B_])
-			setHideBG(false);
-	}
+			} else if (!hideBG && !hideParts && !skin.subset[SKIN_SUBSET_ENUM.D__])
+				setIsDamaged(false);
+		} else {
+			if (hideParts && hideBG && !skin.subset[SKIN_SUBSET_ENUM._BS]) {
+				if (skin.subset[SKIN_SUBSET_ENUM._B_])
+					setHideBG(false);
+				else if (skin.subset[SKIN_SUBSET_ENUM.__S])
+					setHideParts(false);
+				else {
+					setHideBG(false);
+					setHideParts(false);
+				}
+			} else if (hideParts && !hideBG && !skin.subset[SKIN_SUBSET_ENUM.__S])
+				setHideParts(false);
+			else if (hideBG && !hideParts && !skin.subset[SKIN_SUBSET_ENUM._B_])
+				setHideBG(false);
+		}
+	}, [
+		skin.subset,
+		isDamaged,
+		hideParts,
+		hideBG,
+	]);
 
-	const AvailableS = !isDamaged
+	const AvailableS = useMemo(() => !isDamaged
 		? skin.subset[SKIN_SUBSET_ENUM.__S] || (skin.subset[SKIN_SUBSET_ENUM._BS] && hideBG)
-		: skin.subset[SKIN_SUBSET_ENUM.D_S] || (skin.subset[SKIN_SUBSET_ENUM.DBS] && hideBG);
+		: skin.subset[SKIN_SUBSET_ENUM.D_S] || (skin.subset[SKIN_SUBSET_ENUM.DBS] && hideBG),
+		[skin.subset, isDamaged, hideBG],
+	);
 
-	const AvailableBG = !isDamaged
+	const AvailableBG = useMemo(() => !isDamaged
 		? skin.subset[SKIN_SUBSET_ENUM._B_] || (skin.subset[SKIN_SUBSET_ENUM._BS] && hideParts)
-		: skin.subset[SKIN_SUBSET_ENUM.DB_] || (skin.subset[SKIN_SUBSET_ENUM.DBS] && hideParts);
+		: skin.subset[SKIN_SUBSET_ENUM.DB_] || (skin.subset[SKIN_SUBSET_ENUM.DBS] && hideParts),
+		[skin.subset, isDamaged, hideParts],
+	);
 
-	const AvailableAnim = (() => {
+	const AvailableAnim = useMemo(() => {
 		if (skin.Spine) return true;
 
 		if (hideParts && hideBG)
@@ -184,10 +195,10 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			return skin.anim[SKIN_ANIM_SUBSET_ENUM.B_];
 		else
 			return skin.anim[SKIN_ANIM_SUBSET_ENUM.__];
-	})();
+	}, [skin.Spine, skin.anim, hideParts, hideBG]);
 
 	const modelId = `${unit.uid}_N${skin.isDef ? "" : `S${skin.metadata.imageId}`}`;
-	const DisplaySpine = skin.Spine && (props.animate || props.collapsed) && !isDamaged;
+	const DisplaySpine = skin.Spine && (!!props.animate || !!props.collapsed) && !isDamaged;
 	const Display2DModel = (!isDamaged && !!skin.metadata["2dmodel"]) ||
 		(isDamaged && !!skin.metadata["2dmodel_dam"]);
 
@@ -201,26 +212,29 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					</div>
 				</div>
 				<div
-					class={ [
+					class={ cn(
 						style.FullUnit,
 						(!props.collapsed || DisplaySpine || Display2DModel) && style.FullUnitMarginless,
-					].filter(x => x).join(" ") }
+					) }
 					ref={ FullUnitEl }
 				>
-					{ DisplaySpine
-						? <SpineRenderer
+					{ DisplaySpine || Display2DModel
+						? <PixiView
+							spine={ DisplaySpine }
+							U2DModelMetadata={ skin.metadata }
+
 							uid={ modelId }
 							google={ isCensored }
-							specialTouch={ isSpecialTouchMode }
+							damaged={ isDamaged }
+							displayTouchCollider={ displayTouchCollider }
 
-							// collider={ true }
 							hidePart={ hideParts }
-							// hideBg={ isBGCollapsed }
-							// hideDialog={ false }
+							hideBG={ hideBG }
 
-							face={ face }
-							onFaceList={ (list) => {
+							face={ facePrefix + face }
+							onFaceList={ (list, prefix) => {
 								setFaceList(list);
+								setFacePrefix(prefix);
 
 								if (list.includes("Idle"))
 									setFace("Idle");
@@ -236,6 +250,62 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								}
 							} }
 						/>
+						// ? <SpineRenderer
+						// 	uid={ modelId }
+						// 	google={ isCensored }
+						// 	specialTouch={ isSpecialTouchMode }
+
+						// 	// collider={ true }
+						// 	hidePart={ hideParts }
+						// 	// hideBg={ isBGCollapsed }
+						// 	// hideDialog={ false }
+
+						// 	face={ face }
+						// 	onFaceList={ (list) => {
+						// 		setFaceList(list);
+
+						// 		if (list.includes("Idle"))
+						// 			setFace("Idle");
+						// 		else {
+						// 			const listU = list.map(f => f.toUpperCase());
+						// 			for (const ft of Object.keys(FACETYPE)) {
+						// 				const index = listU.indexOf(ft);
+						// 				if (index >= 0) {
+						// 					setFace(list[index]);
+						// 					break;
+						// 				}
+						// 			}
+						// 		}
+						// 	} }
+						// />
+						// : Display2DModel
+						// 	? <Pinch
+						// 		minScale={ 0.5 }
+						// 		maxScale={ 3 }
+						// 	>
+						// 		<U2DModelRenderer
+						// 			root={ `${AssetsRoot}/2dmodel/${isCensored ? "G" : "O"}/` }
+						// 			target={ !isDamaged ? skin.metadata["2dmodel"]! : skin.metadata["2dmodel_dam"]! }
+
+						// 			scale={ 1.5 }
+
+						// 			width={ FullUnitSize[0] }
+						// 			height={ FullUnitSize[1] }
+
+						// 			hideParts={ hideParts }
+						// 			hideBG={ hideBG }
+
+						// 			face={ face }
+						// 			onFaceList={ (list) => {
+						// 				const _list = [...list];
+						// 				if (!_list.includes("Idle"))
+						// 					_list.splice(0, 0, "Idle"); // insert into 0
+
+						// 				setFaceList(_list);
+						// 				setFace("Idle");
+						// 			} }
+						// 		/>
+						// 	</Pinch>
 						: SkinVideoURL.length > 0
 							? CanPlayWebM()
 								? <video
@@ -246,42 +316,14 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 									src={ `${AssetsRoot}/webm/HD.Legacy/${SkinVideoURL}.mp4` }
 									type="video/mp4"
 								/>
-							: Display2DModel
+							: !props.collapsed // && !AvailableAnim
 								? <Pinch
 									minScale={ 0.5 }
 									maxScale={ 3 }
 								>
-									<U2DModelRenderer
-										root={ `${AssetsRoot}/2dmodel/${isCensored ? "G" : "O"}/` }
-										target={ !isDamaged ? skin.metadata["2dmodel"]! : skin.metadata["2dmodel_dam"]! }
-
-										scale={ 1.5 }
-
-										width={ FullUnitSize[0] }
-										height={ FullUnitSize[1] }
-
-										hideParts={ hideParts }
-										hideBG={ hideBG }
-
-										face={ face }
-										onFaceList={ (list) => {
-											const _list = [...list];
-											if (!_list.includes("Idle"))
-												_list.splice(0, 0, "Idle"); // insert into 0
-
-											setFaceList(_list);
-											setFace("Idle");
-										} }
-									/>
+									<img src={ SkinImageURL } />
 								</Pinch>
-								: !props.collapsed // && !AvailableAnim
-									? <Pinch
-										minScale={ 0.5 }
-										maxScale={ 3 }
-									>
-										<img src={ SkinImageURL } />
-									</Pinch>
-									: <img src={ SkinImageURL } />
+								: <img src={ SkinImageURL } />
 					}
 				</div>
 
@@ -422,38 +464,33 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					}
 				</div>
 
-				{ [
-					skin.subset[SKIN_SUBSET_ENUM.D__] && <div
-						class={ `${style.SkinToggle} ${style.Damaged}` }
-						data-damaged={ isDamaged ? 1 : 0 }
-						onClick={ (): void => setIsDamaged(!isDamaged) }
-					/>,
-					AvailableS && <div
-						class={ `${style.SkinToggle} ${style.Simplified}` }
-						data-simplified={ hideParts ? 1 : 0 }
-						onClick={ (): void => setHideParts(!hideParts) }
-					/>,
-					AvailableBG && <div
-						class={ `${style.SkinToggle} ${style.BG}` }
-						data-bg={ hideBG ? 1 : 0 }
-						onClick={ (): void => setHideBG(!hideBG) }
-					/>,
-					skin.G && <div
-						class={ `${style.SkinToggle} ${style.Platform}` }
-						data-platform={ isCensored ? 1 : 0 }
-						onClick={ (): void => setIsCensored(!isCensored) }
-					/>,
-					DisplaySpine && <div
-						class={ `${style.SkinToggle} ${style.Touch}` }
-						data-touch={ isSpecialTouchMode ? 1 : 0 }
-						onClick={ (): void => setIsSpecialTouchMode(!isSpecialTouchMode) }
-					/>,
-				].filter(r => r) }
+				{ skin.subset[SKIN_SUBSET_ENUM.D__] && <div
+					class={ `${style.SkinToggle} ${style.Damaged}` }
+					data-damaged={ isDamaged ? 1 : 0 }
+					onClick={ (): void => setIsDamaged(!isDamaged) }
+				/> }
+				{ AvailableS && <div
+					class={ `${style.SkinToggle} ${style.Simplified}` }
+					data-simplified={ hideParts ? 1 : 0 }
+					onClick={ (): void => setHideParts(!hideParts) }
+				/> }
+				{ AvailableBG && <div
+					class={ `${style.SkinToggle} ${style.BG}` }
+					data-bg={ hideBG ? 1 : 0 }
+					onClick={ (): void => setHideBG(!hideBG) }
+				/> }
+				{ skin.G && <div
+					class={ `${style.SkinToggle} ${style.Platform}` }
+					data-platform={ isCensored ? 1 : 0 }
+					onClick={ (): void => setIsCensored(!isCensored) }
+				/> }
+				{ DisplaySpine && <div
+					class={ `${style.SkinToggle} ${style.Touch}` }
+					data-touch={ displayTouchCollider ? 1 : 0 }
+					onClick={ (): void => setDisplayTouchCollider(!displayTouchCollider) }
+				/> }
 
-				{ (
-					(skin.Spine && props.animate && !isDamaged && !props.collapsed) ||
-					Display2DModel
-				) && faceList.length > 0
+				{ (DisplaySpine || Display2DModel) && faceList.length > 0
 					? <div class={ `${style.FaceList} ${props.collapsed ? style.FaceListMargin : ""}` }>
 						<select
 							class={ `form-select form-select-sm ${style.FaceList}` }

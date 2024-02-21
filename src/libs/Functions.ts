@@ -245,3 +245,15 @@ export function DecomposeHangulSyllable (char: string): Hangul | null {
 		final,
 	};
 }
+
+export function minMax (...items: number[]): [min: number, max: number] {
+	let min: number | undefined = undefined;
+	let max: number | undefined = undefined;
+
+	items.forEach(e => {
+		if (min === undefined || e < min) min = e;
+		if (max === undefined || e > max) max = e;
+	});
+
+	return [min ?? 0, max ?? 0];
+}

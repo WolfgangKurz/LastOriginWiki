@@ -1,5 +1,6 @@
-import { AssetsRoot, IsAprilFool } from "@/libs/Const";
-import { LocaleGet } from "@/components/locale";
+import { AssetsRoot } from "@/libs/Const";
+import { CurrentLocale } from "@/libs/Locale";
+import { GetLocaleTable } from "@/components/locale";
 
 type MetaKeys = "title" | "description" | "keywords" |
 	"twitter:card" | "twitter:site" | "twitter:title" | "twitter:description" | "twitter:image" |
@@ -67,17 +68,19 @@ export function SetMeta (name: MetaKeys | MetaKeys[], value: string | null, appe
 	.forEach(x => (meta[x] = defaultMeta[x]));
 updateMeta();
 
+// TODO : change to useTitle(title: string[], dep: any[]): void;
 export function UpdateTitle (...title: string[]): void {
+	const loc = GetLocaleTable(CurrentLocale.value) || {};
 	document.title = [
-		...title.map(t => t.replace(/&#x200B;/g, "")),
-		LocaleGet(IsAprilFool ? "CONSUMABLE_Consumable_TacticRecord_T3" : "COMMON_TITLE"),
-	].join(" - ");
+		...title.filter(r => !!r).map(t => t.replace(/&#x200B;/g, "")),
+		loc["COMMON_TITLE"],
+	].filter(r => !!r).join(" - ");
 
 	SetMeta(
 		["twitter:title", "og:title"],
 		[
-			...title.map(t => t.replace(/&#x200B;/g, "")),
-			LocaleGet("COMMON_TITLE"), // Meta always title
-		].join(" - "),
+			...title.filter(r => !!r).map(t => t.replace(/&#x200B;/g, "")),
+			loc["COMMON_TITLE"], // Meta always title
+		].filter(r => !!r).join(" - "),
 	);
 }

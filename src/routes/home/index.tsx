@@ -1,27 +1,24 @@
 import { FunctionalComponent } from "preact";
-import { useLayoutEffect } from "preact/hooks";
+import { useLayoutEffect, useMemo } from "preact/hooks";
 import { Link, route } from "preact-router";
-
-import SwiperCore from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-import "swiper/scss";
-import "swiper/scss/pagination";
 
 import TimeAgo from "javascript-time-ago";
 
-import { AssetsRoot, CurrentEvent, EventTo, Host, ImageExtension, IsAprilFool } from "@/libs/Const";
+import { AssetsRoot, CurrentEvent, EventTo, ImageExtension } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { CurrentLocale } from "@/libs/Locale";
 import { GetTimeAgoLocale } from "@/libs/Setup";
+import { cn } from "@/libs/Class";
 
 import Locale from "@/components/locale";
 import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
-import IconGithub from "@/components/bootstrap-icon/icons/Github";
 import IconHourglassSplit from "@/components/bootstrap-icon/icons/HourglassSplit";
-import HomeConfigSelector from "@/components/home-config-selector";
+import IconGithub from "@/components/bootstrap-icon/icons/Github";
+import IconEnvelope from "@/components/bootstrap-icon/icons/Envelope";
 import Countdown from "@/routes/home/Countdown";
 import Changelog from "./changelog";
+
+import ConfigSelector from "./components/ConfigSelector";
 
 import BuildInfo from "@/buildtime";
 
@@ -66,7 +63,7 @@ const Home: FunctionalComponent = () => {
 	const ext = ImageExtension();
 
 	const pad = (x: number, y: number): string => x.toString().padStart(y, "0");
-	const BuildTime = ((): string => {
+	const BuildTime = useMemo((): string => {
 		const dt = new Date(BuildInfo.time);
 		const y = dt.getFullYear();
 		const m = dt.getMonth() + 1;
@@ -75,119 +72,86 @@ const Home: FunctionalComponent = () => {
 		const i = dt.getMinutes();
 		const s = dt.getSeconds();
 		return `${pad(y, 4)}-${pad(m, 2)}-${pad(d, 2)} ${pad(h, 2)}:${pad(i, 2)}:${pad(s, 2)}`;
-	})();
-	const BuildTimeAgo = new TimeAgo(GetTimeAgoLocale(CurrentLocale)).format(BuildInfo.time);
-
+	}, []);
+	const BuildTimeAgo = useMemo(() => new TimeAgo(GetTimeAgoLocale(CurrentLocale.value)).format(BuildInfo.time), []);
 	const BuildVersion = BuildInfo.build;
+
+	const eventAvailable = useMemo(() => CurrentEvent && (new Date() < EventTo), [CurrentEvent, EventTo]);
 
 	SetMeta(["description", "twitter:description"], null);
 	SetMeta(["twitter:image", "og:image"], null);
 	UpdateTitle();
 
-	useLayoutEffect(() => {
-		SwiperCore.use([Autoplay, Pagination]);
-	}, []);
+	return <div class={ style.Home }>
+		<div class={ cn(style.Header) }>
+			{ eventAvailable && <Link
+				class={ style.EventBanner }
+				href={ `/worlds/${CurrentEvent}` }
+			>
+				<img
+					src={ `${AssetsRoot}/world/banner/${CurrentEvent}.png` }
+					class="mb-1"
+					height="120"
+					style={ { verticalAlign: "middle" } }
+				/>
+				<div>
+					<img class="me-2" src={ `${AssetsRoot}/flags/KR.png` } alt="[KR]" />
 
-	const previewSkins = ["3P_Hachiko_4", "3P_Fotia_2", "3P_Daphne_3"];
-
-	return <div class={ `${style.home} home` }>
-		<div class="row row-cols-1 row-cols-lg-2 align-items-center">
-			<div class="col">
-				<div class="alert alert-danger mline">
-					<Locale k="COMMON_NSFW_CAUTION" plain />
+					<IconHourglassSplit class="me-1 mb-1" />
+					<Countdown to={ EventTo } />
 				</div>
-			</div>
-			<div class="col">
-				<div class="col alert alert-primary">
-					사이트 개발자가 더 이상 게임을 하지 않기 때문에 정보에 오류가 있을 수 있습니다.
-				</div>
-			</div>
+			</Link> }
 		</div>
 
-		<div>
-			{ CurrentEvent && (new Date() < EventTo)
-				? <Link href={ `/worlds/${CurrentEvent}` } class="text-dark" style={ { textDecoration: "none" } }>
-					<div class="alert alert-danger d-inline-block px-4 text-dark mx-1 align-top" role="alert">
-						<div>
-							<img
-								src={ `${AssetsRoot}/world/event-${CurrentLocale}.png` }
-								height="24"
-								style={ { verticalAlign: "text-bottom" } }
-							/>
-						</div>
-						<img
-							src={ `${AssetsRoot}/world/banner/${CurrentEvent}.png` }
-							class="mb-1"
-							height="120"
-							style={ { verticalAlign: "middle" } }
-						/>
-						<div>
-							<span>
-								<img class="me-2" src={ `${AssetsRoot}/flags/KR.png` } alt="[KR]" />
+		<div class={ style.BrandContainer }>
+			<div class={ style.BrandBox }>
+				<img
+					class={ `${style.BrandIcon} heading-icon` }
+					src={ `${AssetsRoot}/icon.png` }
+				/>
 
-								<IconHourglassSplit class="me-1 mb-1" />
-								<strong>
-									<Countdown to={ EventTo } />
-								</strong>
-								{ /*
-									<IconCalendar3 class="me-1 mb-1" />
-									{ DateText(EventFrom) } ~ { DateText(EventTo) }
-								*/ }
-							</span>
-						</div>
-					</div>
-				</Link>
-				: <></>
-			}
-		</div>
+				<div class={ cn(style.Title, "font-ibm") }>
+					<Locale k="COMMON_TITLE" />
+				</div>
+				<div class={ style.BuildInfo }>
+					<Locale k="HOME_BUILD_INFO" p={ [
+						BuildVersion,
+						<span
+							class={ style.BuildTime }
+							title={ BuildTime }
+							style={ { cursor: "help" } }
+						>{ BuildTimeAgo }</span>,
+					] } />
+				</div>
+			</div>
 
-		<h2>
-			<img
-				class={ `${style["heading-icon"]} heading-icon` }
-				src={ `${AssetsRoot}/${IsAprilFool ? "icon2" : "icon"}.png` }
-			/>
-			<span class={ style["home-title"] }>
-				<i class={ style.subtitle }>
-					<Locale
-						k="COMMON_TITLE_SUB"
-						preprocessor={ (x) => x
-							.replace(/\$\~\//g, `${Host}/`)
-							.replace(/!!icon!!/g, "50")
-							.replace(/!!iconm!!/g, "1em")
-						}
-						fallback=""
-					/>
-				</i>
-				<span class="font-ibm">
-					<Locale k={ IsAprilFool ? "CONSUMABLE_Consumable_TacticRecord_T3" : "COMMON_TITLE" } />
+			<div class={ style.Links }>
+				<span>
+					<IconGithub class="me-1" />
+					<a href="https://github.com/WolfgangKurz/LastOriginWiki" target="_blank" rel="noopener noreferrer">
+						Source Code
+					</a>
 				</span>
-			</span>
-		</h2>
-		<div class="mb-4 text-secondary">
-			<div>
-				<Locale k="HOME_BUILD_INFO" p={ [
-					BuildVersion,
-					<span
-						class={ style.BuildTime }
-						title={ BuildTime }
-						style={ { cursor: "help" } }
-					>{ BuildTimeAgo }</span>,
-				] } />
+				<span>
+					<IconEnvelope class="me-1" />
+					<a href="mailto:wolfgangkurzdev@gmail.com">wolfgangkurzdev@gmail.com</a>
+				</span>
+			</div>
+
+			<div class={ style.Description }>
+				<Locale raw={ false } k="HOME_DEVELOPER" />
+			</div>
+
+			<div class={ style.Caution }>
+				<Locale raw={ false } k="COMMON_NSFW_CAUTION" />
 			</div>
 		</div>
 
-		<HomeConfigSelector />
-
-		<div>
-			<IconGithub class="me-2" />
-			<a href="https://github.com/WolfgangKurz/LastOriginWiki" target="_blank" rel="noopener noreferrer">
-				Github
-			</a>
-		</div>
-		<Locale k="HOME_DEVELOPER" />
+		<ConfigSelector />
 
 		<hr />
 
+		{/*
 		<div class={ style.MenuBox }>
 			<div class={ style["home-nav"] }>
 				<div class="btn-group">
@@ -264,28 +228,7 @@ const Home: FunctionalComponent = () => {
 			</div>
 
 			<hr />
-		</div>
-
-		{ previewSkins.length > 0 && <Swiper
-			className={ style.SkinBannerSwiper }
-			modules={ [Autoplay, Pagination] }
-			loop
-			autoplay
-			pagination
-		>
-			{ previewSkins.map(skin => {
-				const r = /^(.+)_([0-9]+)$/.exec(skin)!;
-				const key = r[1];
-				const sid = parseInt(r[2], 10);
-				return <SwiperSlide>
-					<Link href={ `/units/${key}/s${sid}` }>
-						<img class={ style.SkinBanner } src={ `${AssetsRoot}/skin/banners_G/${skin}.jpg` } />
-					</Link>
-				</SwiperSlide>;
-			}) }
-		</Swiper> }
-
-		<hr />
+		</div> */}
 
 		<Changelog />
 
@@ -300,9 +243,9 @@ const Home: FunctionalComponent = () => {
 		</p> */}
 		<hr />
 
-		{ ext === "png" ? <div class="alert alert-danger">
+		{ ext === "png" && <div class="alert alert-danger">
 			<Locale k="HOME_WEBP_UNAVAILABLE" />
-		</div> : <></> }
+		</div> }
 
 		<p>
 			<Locale k="HOME_COPYRIGHT" />

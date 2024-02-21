@@ -155,12 +155,12 @@ const CompareExistsTable: Record<ConditionCompareEN, string> = {
 	[ConditionCompareEN.Exists]: "EXISTS",
 	[ConditionCompareEN.NotExists]: "NOTEXISTS",
 };
-const ClassTable: Record<Exclude<ACTOR_CLASS, ACTOR_CLASS.__MAX__>, string> = {
+const ClassTable: Record<ACTOR_CLASS, string> = {
 	[ACTOR_CLASS.LIGHT]: "LIGHT",
 	[ACTOR_CLASS.FLYING]: "MOBILITY",
 	[ACTOR_CLASS.HEAVY]: "HEAVY",
 };
-const RoleTable: Record<Exclude<ROLE_TYPE, ROLE_TYPE.__MAX__>, string> = {
+const RoleTable: Record<ROLE_TYPE, string> = {
 	[ROLE_TYPE.ATTACKER]: "ATTACKER",
 	[ROLE_TYPE.DEFENDER]: "DEFENDER",
 	[ROLE_TYPE.SUPPORTER]: "SUPPORTER",

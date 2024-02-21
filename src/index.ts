@@ -34,5 +34,16 @@ YAML.ensure().then(() => {
 	setInterval(verCheck, 5 * 60 * 1000); // every 5min
 	verCheck();
 
+	if (typeof window !== "undefined") { // is on browser...?
+		["pageonloading", "pageonerror", "pagemayexpired"].forEach(e => {
+			const el = document.querySelector(`#${e}`);
+			if (el) {
+				const parent = el.parentNode;
+				if (parent)
+					parent.removeChild(el);
+			}
+		});
+	}
+
 	render(h(App, {}), document.getElementById("page")!);
 });

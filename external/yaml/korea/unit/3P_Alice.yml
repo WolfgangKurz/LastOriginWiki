@@ -462,7 +462,8 @@ fullLinkBonus:
   - Cri_20
   - SPD_10
 craft: 24720
-equips: []
+equips:
+  - Sub_Choker_T4
 stat:
   - HP:
       - 172
@@ -548,7 +549,23 @@ skills:
             - key: Effect_3P_Alice_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
                 - false
               body:
                 - 0
@@ -697,6 +714,116 @@ skills:
                     type: 94
                     penetration_force: true
                   overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_13
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_13_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_14
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 78
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_14_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -792,7 +919,23 @@ skills:
             - key: Effect_3P_Alice_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
                 - false
               body:
                 - 0
@@ -941,6 +1084,116 @@ skills:
                     type: 94
                     penetration_force: true
                   overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_13
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_13_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_14
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 78
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_14_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -1036,7 +1289,23 @@ skills:
             - key: Effect_3P_Alice_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1185,6 +1454,116 @@ skills:
                     type: 94
                     penetration_force: true
                   overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_13
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_13_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_14
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 78
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_14_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -1280,7 +1659,23 @@ skills:
             - key: Effect_3P_Alice_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1429,6 +1824,116 @@ skills:
                     type: 94
                     penetration_force: true
                   overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_13
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_13_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_14
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 78
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_14_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -1524,7 +2029,23 @@ skills:
             - key: Effect_3P_Alice_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1673,6 +2194,116 @@ skills:
                     type: 94
                     penetration_force: true
                   overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_13
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_13_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_14
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 78
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_14_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -1768,7 +2399,23 @@ skills:
             - key: Effect_3P_Alice_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
                 - false
               body:
                 - 0
@@ -1917,6 +2564,116 @@ skills:
                     type: 94
                     penetration_force: true
                   overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_13
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_13_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_14
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 78
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_14_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -2012,7 +2769,23 @@ skills:
             - key: Effect_3P_Alice_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2161,6 +2934,116 @@ skills:
                     type: 94
                     penetration_force: true
                   overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_13
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_13_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_14
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 78
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_14_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -2256,7 +3139,23 @@ skills:
             - key: Effect_3P_Alice_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2405,6 +3304,116 @@ skills:
                     type: 94
                     penetration_force: true
                   overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_13
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_13_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_14
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 78
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_14_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -2500,7 +3509,23 @@ skills:
             - key: Effect_3P_Alice_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2649,6 +3674,116 @@ skills:
                     type: 94
                     penetration_force: true
                   overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_13
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_13_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_14
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 78
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_14_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -2744,7 +3879,23 @@ skills:
             - key: Effect_3P_Alice_N_1
               on: attack_success
               if:
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
                 - false
               body:
                 - 0
@@ -2893,6 +4044,116 @@ skills:
                     type: 94
                     penetration_force: true
                   overlap: 1
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_13
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 87
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_13_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_14
+              on: attack_success
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - 78
+                    attr: 6
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_3P_Alice_N_14_1
+                    type: 1
+                    value: "0.200000"
+                    level: "0.010000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 20%
+                      per: 1%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -3040,6 +4301,24 @@ skills:
             base: 0
             per: 0
             chance: 1
+          - icon: BuffIcon_PhyATK_UP
+            desc:
+              desc: Effect_3P_Alice_N_13_1
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_PhyATK_UP
+            desc:
+              desc: Effect_3P_Alice_N_14_1
+              type: 1
+              value: "0.200000"
+              level: "0.010000"
+            base: 0.2
+            per: 0.01
+            chance: 1
           - icon: BuffIcon_DamageAmp_Opp
             desc:
               desc: Effect_3P_Alice_N_32_1
@@ -3098,7 +4377,23 @@ skills:
                     select:
                       - 87
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -3156,7 +4451,23 @@ skills:
                     select:
                       - 78
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -3221,6 +4532,86 @@ skills:
                       base: 10%
                       per: 0.5%
                   overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_Alice_N_23_1
+                    type: 1
+                    value: "-0.300000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -30%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_3P_Alice_N_23_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_MARKING
+                  desc:
+                    desc: Effect_3P_Alice_N_23_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 87
+                    attack_target: true
+                  overlap: 1
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -3322,7 +4713,23 @@ skills:
                     select:
                       - 87
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -3380,7 +4787,23 @@ skills:
                     select:
                       - 78
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -3445,6 +4868,86 @@ skills:
                       base: 10%
                       per: 0.5%
                   overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_Alice_N_23_1
+                    type: 1
+                    value: "-0.300000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -30%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_3P_Alice_N_23_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_MARKING
+                  desc:
+                    desc: Effect_3P_Alice_N_23_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 87
+                    attack_target: true
+                  overlap: 1
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -3546,7 +5049,23 @@ skills:
                     select:
                       - 87
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -3604,7 +5123,23 @@ skills:
                     select:
                       - 78
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -3669,6 +5204,86 @@ skills:
                       base: 10%
                       per: 0.5%
                   overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_Alice_N_23_1
+                    type: 1
+                    value: "-0.300000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -30%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_3P_Alice_N_23_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_MARKING
+                  desc:
+                    desc: Effect_3P_Alice_N_23_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 87
+                    attack_target: true
+                  overlap: 1
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -3770,7 +5385,23 @@ skills:
                     select:
                       - 87
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -3828,7 +5459,23 @@ skills:
                     select:
                       - 78
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -3893,6 +5540,86 @@ skills:
                       base: 10%
                       per: 0.5%
                   overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_Alice_N_23_1
+                    type: 1
+                    value: "-0.300000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -30%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_3P_Alice_N_23_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_MARKING
+                  desc:
+                    desc: Effect_3P_Alice_N_23_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 87
+                    attack_target: true
+                  overlap: 1
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -3994,7 +5721,23 @@ skills:
                     select:
                       - 87
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -4052,7 +5795,23 @@ skills:
                     select:
                       - 78
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -4117,6 +5876,86 @@ skills:
                       base: 10%
                       per: 0.5%
                   overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_Alice_N_23_1
+                    type: 1
+                    value: "-0.300000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -30%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_3P_Alice_N_23_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_MARKING
+                  desc:
+                    desc: Effect_3P_Alice_N_23_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 87
+                    attack_target: true
+                  overlap: 1
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -4218,7 +6057,23 @@ skills:
                     select:
                       - 87
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -4276,7 +6131,23 @@ skills:
                     select:
                       - 78
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -4341,6 +6212,86 @@ skills:
                       base: 10%
                       per: 0.5%
                   overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_Alice_N_23_1
+                    type: 1
+                    value: "-0.300000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -30%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_3P_Alice_N_23_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_MARKING
+                  desc:
+                    desc: Effect_3P_Alice_N_23_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 87
+                    attack_target: true
+                  overlap: 1
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -4442,7 +6393,23 @@ skills:
                     select:
                       - 87
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -4500,7 +6467,23 @@ skills:
                     select:
                       - 78
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -4565,6 +6548,86 @@ skills:
                       base: 10%
                       per: 0.5%
                   overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_Alice_N_23_1
+                    type: 1
+                    value: "-0.300000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -30%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_3P_Alice_N_23_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_MARKING
+                  desc:
+                    desc: Effect_3P_Alice_N_23_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 87
+                    attack_target: true
+                  overlap: 1
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -4666,7 +6729,23 @@ skills:
                     select:
                       - 87
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -4724,7 +6803,23 @@ skills:
                     select:
                       - 78
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -4789,6 +6884,86 @@ skills:
                       base: 10%
                       per: 0.5%
                   overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_Alice_N_23_1
+                    type: 1
+                    value: "-0.300000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -30%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_3P_Alice_N_23_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_MARKING
+                  desc:
+                    desc: Effect_3P_Alice_N_23_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 87
+                    attack_target: true
+                  overlap: 1
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -4890,7 +7065,23 @@ skills:
                     select:
                       - 87
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -4948,7 +7139,23 @@ skills:
                     select:
                       - 78
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -5013,6 +7220,86 @@ skills:
                       base: 10%
                       per: 0.5%
                   overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_Alice_N_23_1
+                    type: 1
+                    value: "-0.300000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -30%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_3P_Alice_N_23_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_MARKING
+                  desc:
+                    desc: Effect_3P_Alice_N_23_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 87
+                    attack_target: true
+                  overlap: 1
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -5114,7 +7401,23 @@ skills:
                     select:
                       - 87
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -5172,7 +7475,23 @@ skills:
                     select:
                       - 78
                     attr: 6
-                - false
+                - on:
+                    target: self
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
               body:
                 - 0
                 - 1
@@ -5237,6 +7556,86 @@ skills:
                       base: 10%
                       per: 0.5%
                   overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_3P_Alice_N_23
+              on: attack_success
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BUFF_Choker_N_1
+                      - Effect_BUFF_Choker_N_2
+                      - Effect_BUFF_Choker_N_3
+                      - Effect_BUFF_Choker_N_4
+                      - Effect_BUFF_Choker_N_5
+                      - Effect_BUFF_Choker_N_6
+                      - Effect_BUFF_Choker_N_7
+                      - Effect_BUFF_Choker_N_8
+                      - Effect_BUFF_Choker_N_9
+                      - Effect_BUFF_Choker_N_10
+                      - Effect_BUFF_Choker_N_11
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_3P_Alice_N_23_1
+                    type: 1
+                    value: "-0.300000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -30%
+                      per: -1.5%
+                  overlap: 4
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_3P_Alice_N_23_2
+                    type: 1
+                    value: "0.150000"
+                    level: "0.010000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 48
+                    damage_increase:
+                      base: 15%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_MARKING
+                  desc:
+                    desc: Effect_3P_Alice_N_23_3
+                    type: 1
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 87
+                    attack_target: true
+                  overlap: 1
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Alice_N_32
@@ -5365,6 +7764,33 @@ skills:
               level: "0.005000"
             base: 0.1
             per: 0.005
+            chance: 1
+          - icon: BuffIcon_EVADE_DOWN
+            desc:
+              desc: Effect_3P_Alice_N_23_1
+              type: 1
+              value: "-0.300000"
+              level: "-0.015000"
+            base: -0.3
+            per: -0.015
+            chance: 1
+          - icon: BuffIcon_VULNERABLE
+            desc:
+              desc: Effect_3P_Alice_N_23_2
+              type: 1
+              value: "0.150000"
+              level: "0.010000"
+            base: 0.15
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_MARKING
+            desc:
+              desc: Effect_3P_Alice_N_23_3
+              type: 1
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
             chance: 1
           - icon: BuffIcon_DamageAmp_Opp
             desc:

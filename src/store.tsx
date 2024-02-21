@@ -6,9 +6,8 @@ import { BuffEffectList, BuffEffectListGroupKeys } from "@/types/BuffEffect";
 import { EffectFilterListType } from "@/types/Buff";
 import type { LocaleTypes } from "@/types/Locale";
 
-import { CurrentLocale } from "@/libs/Locale";
-
 import { Condition as UnitsCondition } from "@/routes/units/search/AdvancedSearch";
+import { CurrentLocale } from "@/libs/Locale";
 
 export function toggle (signal: Signal<boolean>): void;
 export function toggle (signal: Signal<boolean[]>, index: number): void;
@@ -33,10 +32,9 @@ export function toggleList<T> (list: Signal<T[]>, v: T): void {
 
 const Store = {
 	requireReload: signal(false),
-	localeInvalidated: signal(false),
 
 	Units: {
-		DisplayType: signal<"table" | "list" | "group" | "skin" | "time">("table"),
+		DisplayType: signal<"table" | "list" | "skin">("table"),
 
 		Skins: {
 			Tab: signal<"" | "artist" | "releaseDate">(""),
@@ -76,6 +74,9 @@ const Store = {
 		},
 
 		SearchText: signal(""),
+		SearchWithShortname: signal(false),
+		SearchListOrder: signal<"dict" | "name" | "rarity">("dict"),
+		SearchGroupByGroup: signal<"none" | "roughly" | "exactly">("none"),
 
 		SearchType: signal<"simple" | "advanced">("simple"),
 		AdvSearchConds: signal<readonly UnitsCondition[]>([]),
@@ -164,7 +165,7 @@ const Store = {
 	},
 
 	Story: {
-		lang: signal<LocaleTypes>(CurrentLocale),
+		lang: signal<LocaleTypes>(CurrentLocale.peek()),
 		back: signal<boolean>(false),
 	},
 };

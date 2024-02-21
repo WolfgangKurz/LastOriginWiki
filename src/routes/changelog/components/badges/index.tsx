@@ -1,5 +1,13 @@
-export const BY: FunctionalComponent = (props) => <span class="badge bg-warning text-dark">{ props.children }</span>;
-export const BR: FunctionalComponent = (props) => <span class="badge bg-danger">{ props.children }</span>;
-export const BO: FunctionalComponent = (props) => <span class="badge bg-orange">{ props.children }</span>;
-export const BB: FunctionalComponent = (props) => <span class="badge bg-dark">{ props.children }</span>;
-export const BG: FunctionalComponent = (props) => <span class="badge bg-success">{ props.children }</span>;
+import { FunctionalComponent } from "preact";
+
+import Badge from "@/components/Badge";
+
+const Build = (variant: string): FunctionalComponent =>
+	((props) => <Badge variant={ variant }>{ props.children }</Badge>);
+
+export const BY: FunctionalComponent = Build("warning"); // yellow
+export const BR: FunctionalComponent = Build("danger"); // red
+export const BO: FunctionalComponent = Build("orange"); // orange
+export const BB: FunctionalComponent = Build("dark"); // black
+export const BG: FunctionalComponent = Build("success"); // green
+export const BP: FunctionalComponent = Build("primary"); // blue

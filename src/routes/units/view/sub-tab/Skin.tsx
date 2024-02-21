@@ -1,9 +1,10 @@
 import { FunctionComponent } from "preact";
-import { useLayoutEffect, useState } from "preact/hooks";
+import { useLayoutEffect, useMemo, useState } from "preact/hooks";
 import { Link } from "preact-router";
 
-import { AssetsRoot } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const.1";
 import { SkillVideo, SkinBanners } from "@/libs/Const.2";
+import { BuildClass } from "@/libs/Class";
 import { FormatDate, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 
@@ -19,20 +20,21 @@ import UnitFace2 from "../../components/unit-face2";
 import { SubpageProps } from "..";
 
 import style from "../style.module.scss";
-import { BuildClass } from "@/libs/Class";
 
-const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList }) => {
+const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList, onSkinIndexChange }) => {
 	if (!display) return <></>;
 
-	const skin = SkinList[skinIndex.value];
+	const skin = useMemo<typeof SkinList[0] | undefined>(() => SkinList[skinIndex], [SkinList, skinIndex]);
+	const ssid = useMemo(() => {
+		return skin && skin.sid
+			? Math.floor(skin.sid / 10) === 2
+				? `S${skin.sid - 20}`
+				: skin.sid?.toString()
+			: "";
+	}, [skin, skin?.sid]);
 
-	const ssid = skin && skin.sid
-		? Math.floor(skin.sid / 10) === 2
-			? `S${skin.sid - 20}`
-			: skin.sid?.toString()
-		: "";
-
-	const categories = skin.category.filter(x => x && x !== "ALL");
+	const categories = useMemo(() => skin ? skin.category.filter(x => x && x !== "ALL") : [], [skin]);
+	const SkinKey = useMemo(() => `${unit.uid}_${skin?.sid || 0}`, [unit, skin]);
 
 	const [shopPopupType, setShopPopupType] = useState<"O" | "G">("O");
 	const [currentSkillVideo, setCurrentSkillVideo] = useState(1);
@@ -40,15 +42,15 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 	const [IsBlackBG, setIsBlackBG] = useState<boolean>(false);
 	const [HideGroup, setHideGroup] = useState<boolean>(false);
 
+	const SkinLink = useMemo((): string => {
+		const loc = window.location;
+		return `${loc.origin}/units/${unit.uid}/s${skin?.sid || 0}`;
+	}, [skin?.sid]);
+
 	useLayoutEffect(() => {
 		if ((unit.uid in SkillVideo) && !SkillVideo[unit.uid].includes(currentSkillVideo))
 			setCurrentSkillVideo(SkillVideo[unit.uid][0]);
 	}, [unit.uid]);
-
-	const SkinLink = ((): string => {
-		const loc = window.location;
-		return `${loc.origin}/units/${unit.uid}/s${skin.sid || 0}`;
-	})();
 
 	function compileArtist (artist: string): preact.ComponentChildren {
 		return artist.split("\n")
@@ -76,8 +78,6 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 		);
 	}
 
-	const SkinKey = `${unit.uid}_${SkinList[skinIndex.value].sid || 0}`;
-
 	return <div style={ { display: display ? "" : "none" } }>
 		<div class={ `flex-nowrap ${style.SkinTabs}` }>
 			<ul class="nav nav-tabs justify-content-start">
@@ -86,12 +86,14 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 						href="#"
 						class={ [
 							"nav-link",
-							isActive(skinIndex.value === index),
-							skinIndex.value === index ? `rarity-${skin.isPro ? "SS" : unit.rarity}-force text-dark` : "text-dark",
+							isActive(skinIndex === index),
+							skinIndex === index
+								? `rarity-${skin.isPro ? "SS" : unit.rarity}-force text-dark`
+								: "text-dark",
 						].join(" ") }
 						onClick={ (e): void => {
 							e.preventDefault();
-							skinIndex.set(index);
+							onSkinIndexChange(index);
 						} }
 					>
 						<UnitFace uid={ unit.uid } skin={ skin.metadata.iconId ?? skin.metadata.imageId ?? 0 } size="64" />
@@ -106,7 +108,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 						<br />
 
 						{ skin.isPro
-							? index === skinIndex.value
+							? index === skinIndex
 								? <span class="badge bg-light text-dark me-1">
 									<Locale k="UNIT_CARD_PROMOTION_BADGE" p={ ["SS"] } />
 								</span>
@@ -135,7 +137,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 			</ul>
 		</div>
 
-		{ skin.sid && !skin.isPro
+		{ skin && skin.sid && !skin.isPro
 			? <div class={ `card mt-3 ${style.SkinNameDesc}` }>
 				<div class="card-header">
 					<Locale plain k={ skin.metadata.consumableKey
@@ -163,14 +165,14 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 						<div class="pb-2">
 							<UnitFace
 								uid={ unit.uid }
-								skin={ SkinList[skinIndex.value].metadata.iconId ?? SkinList[skinIndex.value].metadata.imageId ?? 0 }
+								skin={ skin?.metadata.iconId ?? skin?.metadata.imageId ?? 0 }
 								size="88"
 							/>
 						</div>
 						<div class="pb-2">
 							<UnitFace
 								uid={ unit.uid }
-								skin={ SkinList[skinIndex.value].metadata.tbarId ?? SkinList[skinIndex.value].metadata.imageId ?? 0 }
+								skin={ skin?.metadata.tbarId ?? skin?.metadata.imageId ?? 0 }
 								sd
 								size="88"
 							/>
@@ -195,7 +197,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 							: <></>
 						}
 
-						{ skin.artist
+						{ skin && skin.artist
 							? <div class="alert alert-primary py-2">
 								<div class="mb-1">
 									<Locale k="UNIT_VIEW_ILLUSTRATOR" />
@@ -214,7 +216,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 							: <></>
 						}
 
-						{ skin.releaseDate
+						{ skin?.releaseDate
 							? <div class="alert alert-warning text-dark py-2">
 								<div class="mb-1">
 									<Locale k="UNIT_VIEW_RELEASEDATE" />
@@ -260,10 +262,10 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 				</ul>
 			</div>
 			<div class="col">
-				{ SkinList[skinIndex.value]
+				{ skin
 					? <SkinView
 						unit={ unit }
-						skin={ SkinList[skinIndex.value] }
+						skin={ skin }
 						black={ IsBlackBG }
 						hideGroup={ HideGroup }
 						animate
@@ -273,10 +275,10 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 					: <></> }
 
 				<div class="p-2">
-					{ SkinList[skinIndex.value].facelist.map(fid => <UnitFace2
+					{ skin?.facelist.map(fid => <UnitFace2
 						uid={ unit.uid }
 						type={ fid }
-						skin={ SkinList[skinIndex.value].metadata.imageId ?? 0 }
+						skin={ skin.metadata.imageId ?? 0 }
 						size="120"
 					/>) }
 				</div>

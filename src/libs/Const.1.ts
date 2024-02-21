@@ -9,7 +9,6 @@ export type ImageExtensionTypes = "webp" | "png";
 export const ImageExtensionList: ImageExtensionTypes[] = ["webp", "png"];
 
 export const IsDev = import.meta.env.DEV;
-export const IsAprilFool = false; // (d => d.getMonth() === 3 && d.getDate() === 1)(new Date()); // 04-01
 
 export const Host = IsDev
 	? `http://${import.meta.env.VITE_LOCALHOST}:${import.meta.env.VITE_ASSET_PORT}`
@@ -648,14 +647,12 @@ export const UnitClassDisplay: Record<ACTOR_CLASS, string> = {
 	[ACTOR_CLASS.LIGHT]: "경장",
 	[ACTOR_CLASS.AIR]: "기동",
 	[ACTOR_CLASS.HEAVY]: "중장",
-	[ACTOR_CLASS.__MAX__]: "",
 };
 
 export const UnitRoleDisplay: Record<ROLE_TYPE, string> = {
 	[ROLE_TYPE.ATTACKER]: "공격기",
 	[ROLE_TYPE.DEFENDER]: "보호기",
 	[ROLE_TYPE.SUPPORTER]: "지원기",
-	[ROLE_TYPE.__MAX__]: "",
 };
 
 export const TroopNameTable: Record<string, string> = {

@@ -11,28 +11,27 @@ import { FilterableUnit, FilterableUnitSkill } from "@/types/DB/Unit.Filterable"
 import { BUFFEFFECT_TYPE } from "@/types/BuffEffect";
 
 import { useUpdate } from "@/libs/hooks";
+import { useLocale } from "@/libs/Locale";
 import { CurrentDB } from "@/libs/DB";
 import { BuildClass } from "@/libs/Class";
 
 import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
-import Locale, { LocaleGet } from "@/components/locale";
+import Locale from "@/components/locale";
+import Button from "@/components/Button";
 import Loading from "@/components/loading";
 import IconTable from "@/components/bootstrap-icon/icons/Table";
 import IconGrid3x3GapFill from "@/components/bootstrap-icon/icons/Grid3x3GapFill";
-import IconTagsFill from "@/components/bootstrap-icon/icons/TagsFill";
-import IconTshirt from "@/components/bootstrap-icon/icons/Tshirt";
 import IconHammer from "@/components/bootstrap-icon/icons/Hammer";
 import IconSearch from "@/components/bootstrap-icon/icons/Search";
 import IconListCheck from "@/components/bootstrap-icon/icons/ListCheck";
+import IconHanger from "@/components/Icons/IconHanger";
 
 import SimpleSearch from "./search/SimpleSearch";
 import AdvancedSearch, { Condition, ConditionActiveTarget, ConditionBuffSlot, ConditionCategory, ConditionCompare, ConditionCompareYN, IsInvalidBuffType } from "./search/AdvancedSearch";
 
 import UnitsTable from "./units-table";
 import UnitsList from "./units-list";
-import UnitsGroup from "./units-group";
 import UnitsSkin from "./units-skin";
-import UnitsTimetable from "./units-timetable";
 
 import style from "./style.module.scss";
 
@@ -41,9 +40,13 @@ export interface UnitsListProps {
 }
 
 const Units: FunctionalComponent = () => {
-	SetMeta(["description", "twitter:description"], "전투원의 목록을 표시합니다. 원하는 전투원을 찾기 위해 검색할 수 있습니다.");
-	SetMeta(["twitter:image", "og:image"], null);
-	UpdateTitle(LocaleGet("MENU_UNITS"));
+	const [loc] = useLocale();
+
+	useEffect(() => {
+		SetMeta(["description", "twitter:description"], "전투원의 목록을 표시합니다. 원하는 전투원을 찾기 위해 검색할 수 있습니다.");
+		SetMeta(["twitter:image", "og:image"], null);
+		UpdateTitle(loc["MENU_UNITS"]);
+	}, [loc]);
 
 	const update = useUpdate();
 
@@ -60,21 +63,21 @@ const Units: FunctionalComponent = () => {
 
 		if (Store.Units.SearchType.value === "simple") {
 			const input = new RegExp(
-				Store.Units.SearchText.value.replace(/ /g, ""), // ignore space
+				Store.Units.SearchText.value.replaceAll(" ", ""), // ignore space
 				"i",
 			);
 
 			return FilterableUnitDB
 				.filter(x => {
 					try {
-						const name = LocaleGet(`UNIT_${x.uid}`).replace(/ /g, ""); // ignore space
+						const name = (loc[`UNIT_${x.uid}`] || "").replaceAll(" ", ""); // ignore space
 						const firstName = name
 							.split("")
 							.map(x => DecomposeHangulSyllable(x) || x)
 							.map(x => typeof x === "object" ? x.initial || "" : x)
 							.join("");
 
-						const alias = LocaleGet(`UNIT_ALIAS_${x.uid}`).replace(/ /g, ""); // ignore space
+						const alias = (loc[`UNIT_ALIAS_${x.uid}`] || "").replaceAll(" ", ""); // ignore space
 						const aliasFirstName = alias
 							.split("")
 							.map(x => DecomposeHangulSyllable(x) || x)
@@ -263,7 +266,9 @@ const Units: FunctionalComponent = () => {
 			}
 		})));
 	}, [
+		loc,
 		FilterableUnitDB,
+		Store.Units.DisplayType.value,
 		Store.Units.SearchType.value,
 		Store.Units.AdvSearchConds.value,
 		...Object.values(Store.Units.Rarity).map(r => r.value),
@@ -275,48 +280,35 @@ const Units: FunctionalComponent = () => {
 
 	return <div class="chars">
 		<div class="text-center mb-3">
-			<div class={ `btn-group ${style.TabButtons}` }>
-				<button
-					type="button"
-					class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "table")}` }
-					onClick={ (): void => void (Store.Units.DisplayType.value = "table") }
+			<Button.Group>
+				<Button
+					class={ style.DisplayTab }
+					variant="primary"
+					outline={ Store.Units.DisplayType.value !== "table" }
+					onClick={ () => Store.Units.DisplayType.value = "table" }
 				>
-					<IconTable class="me-1" />
+					<IconTable class="mx-1" />
 					<Locale k="UNITS_VIEW_TABLE" />
-				</button>
-				<button
-					type="button"
-					class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "list")}` }
-					onClick={ (): void => void (Store.Units.DisplayType.value = "list") }
+				</Button>
+				<Button
+					class={ style.DisplayTab }
+					variant="primary"
+					outline={ Store.Units.DisplayType.value !== "list" }
+					onClick={ () => Store.Units.DisplayType.value = "list" }
 				>
-					<IconGrid3x3GapFill class="me-1" />
+					<IconGrid3x3GapFill class="mx-1" />
 					<Locale k="UNITS_VIEW_LIST" />
-				</button>
-				<button
-					type="button"
-					class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "group")}` }
-					onClick={ (): void => void (Store.Units.DisplayType.value = "group") }
+				</Button>
+				<Button
+					class={ style.DisplayTab }
+					variant="primary"
+					outline={ Store.Units.DisplayType.value !== "skin" }
+					onClick={ () => Store.Units.DisplayType.value = "skin" }
 				>
-					<IconTagsFill class="me-1" />
-					<Locale k="UNITS_VIEW_GROUP" />
-				</button>
-				<button
-					type="button"
-					class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "skin")}` }
-					onClick={ (): void => void (Store.Units.DisplayType.value = "skin") }
-				>
-					<IconTshirt class="me-1" />
+					<IconHanger class="mx-1" />
 					<Locale k="UNITS_VIEW_SKIN" />
-				</button>
-				<button
-					type="button"
-					class={ `btn btn-outline-primary ${isActive(Store.Units.DisplayType.value === "time")}` }
-					onClick={ (): void => void (Store.Units.DisplayType.value = "time") }
-				>
-					<IconHammer class="me-1" />
-					<Locale k="UNITS_VIEW_CREATIONTIME" />
-				</button>
-			</div>
+				</Button>
+			</Button.Group>
 		</div>
 
 		{ Store.Units.DisplayType.value !== "skin"
@@ -373,9 +365,7 @@ const Units: FunctionalComponent = () => {
 			: [
 				Store.Units.DisplayType.value === "table" && <UnitsTable list={ UnitList } />,
 				Store.Units.DisplayType.value === "list" && <UnitsList list={ UnitList } />,
-				Store.Units.DisplayType.value === "group" && <UnitsGroup list={ UnitList } />,
 				Store.Units.DisplayType.value === "skin" && <UnitsSkin list={ UnitList } />,
-				Store.Units.DisplayType.value === "time" && <UnitsTimetable list={ UnitList } />,
 			]
 		}
 	</div >;

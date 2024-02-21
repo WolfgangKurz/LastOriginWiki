@@ -1,0 +1,12 @@
+@function bw-contrast-color($color) {
+	$r: color.red($color);
+	$g: color.green($color);
+	$b: color.blue($color);
+
+	$rgb: ($r * 0.2126) + ($g * 0.7152) + ($b * 0.0722);
+	@if $rgb < 120 {
+		@return $light;
+	} @else {
+		@return $dark;
+	}
+}

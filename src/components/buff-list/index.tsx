@@ -18,7 +18,7 @@ import { BuildClass } from "@/libs/Class";
 import { diff2 } from "@/libs/Functions";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
-import LocaleBase, { LocaleExists, LocaleGet, LocaleProps } from "@/components/locale";
+import LocaleBase, { LocaleExists, LocaleGet, LocaleProps, LocalePropsLegacy } from "@/components/locale";
 import IconQuestionCircleFill from "@/components/bootstrap-icon/icons/QuestionCircleFill";
 import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
@@ -31,7 +31,7 @@ import { getBuffUid } from "./cache";
 import style from "./style.module.scss";
 
 // default fallback ??? string
-const Locale: FunctionalComponent<LocaleProps<any>> = (props) =>
+const Locale: FunctionalComponent<LocaleProps<any> | LocalePropsLegacy<any>> = (props) =>
 	<LocaleBase
 		fallback={ IsDev
 			? <span title={ props.k }>???</span>

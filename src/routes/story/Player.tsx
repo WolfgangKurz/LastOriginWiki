@@ -24,17 +24,18 @@ import VideoEffect from "./Effects/VideoEffect";
 import ShakeAndSoundEffect from "./Effects/ShakeAndSoundEffect";
 import Animation_OpenEyes from "./Animations/Animation_OpenEyes";
 
-import FadeText from "./Objects/FadeText";
-import FadeSprite from "./Objects/FadeSprite";
+import FadeText from "@/components/pixi/FadeText";
+import FadeSprite from "@/components/pixi/FadeSprite";
+import Pixi2DModel from "@/components/pixi/Pixi2DModel";
+import PixiSpineModel from "@/components/pixi/PixiSpineModel";
+
 import DialogObject from "./Objects/DialogObject";
 import SelectionObject from "./Objects/SelectionObject";
 import CommuSprite from "./Objects/CommuSprite";
-import U2DModel from "./Objects/U2DModel";
-import SpineModel from "./Objects/SpineModel";
 
 import style from "./style.module.scss";
 
-type CharSpriteType = FadeSprite | CommuSprite | U2DModel | SpineModel;
+type CharSpriteType = FadeSprite | CommuSprite | Pixi2DModel | PixiSpineModel;
 
 enum CharModelType {
 	None = 0,
@@ -75,7 +76,7 @@ interface PlayerProps {
 const Player: FunctionalComponent<PlayerProps> = (props) => {
 	const update = useUpdate();
 
-	const [app, setApp] = useState<PIXI.Application | null>(null);
+	const [app, setApp] = useState<PIXI.Application<HTMLCanvasElement> | null>(null);
 	const [cover, setCover] = useState<PIXI.Sprite | null>(null);
 	const [screen, setScreen] = useState<PIXI.Container | null>(null);
 
@@ -113,10 +114,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 	if (!modelList && !ignore2DModel) {
 		JsonLoaderCore(CurrentDB, StaticDB.Story2DModel)
 			.catch(() => setIgnore2DModel(true))
-			.finally(() => {
-				console.log("#");
-				update();
-			});
+			.finally(() => update());
 
 		return <></>;
 	}
@@ -333,7 +331,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 	}
 
 	useEffect(() => { // initialize
-		let app: PIXI.Application | null = null;
+		let app: PIXI.Application<HTMLCanvasElement> | null = null;
 
 		if (playerRef.current) {
 			app = new PIXI.Application({
@@ -342,6 +340,8 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 
 				width: 1280,
 				height: 720,
+				resolution: window.devicePixelRatio || 1,
+				autoDensity: true,
 
 				// eventMode: "passive",
 				eventFeatures: {
@@ -351,6 +351,8 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 					wheel: true,
 				},
 			});
+			app.ticker.maxFPS = 60; // fps limit
+
 			if (IsDev)
 				globalThis.__PIXI_APP__ = app;
 			setApp(app);
@@ -398,13 +400,13 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			app.stage.sortableChildren = true;
 			screen.sortableChildren = true;
 
-			playerRef.current.appendChild(app.view as unknown as HTMLCanvasElement); // :(
+			playerRef.current.appendChild(app.view); // :(
 		}
 
 		return () => {
 			if (app) app.destroy(true);
 		};
-	}, [playerRef.current]);
+	}, []);
 
 	useEffect(() => { // click event handler
 		let func: (() => void) | undefined = undefined;
@@ -716,7 +718,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 					const char = charRef.current[index]!;
 					if (
 						(screen && target && target.image) && // new char exists
-						(char instanceof U2DModel || char instanceof SpineModel) && // U2DModel based (face changeable)
+						(char instanceof Pixi2DModel || char instanceof PixiSpineModel) && // U2DModel based (face changeable)
 						target.image === char.model // same model image
 					) {
 						// reusable (only face changed)
@@ -733,7 +735,6 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				let char: CharSpriteType | null = null;
 				if (screen && target && target.image) {
 					const c = ConvertChar(target.image);
-					console.log(target.image);
 					const modelType = target.image in (modelList || {})
 						? modelList[target.image]
 						: CharModelType.None;
@@ -765,12 +766,13 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 						const s = [index === 1 ? -1 : 1, 1];
 
 						if (modelType === CharModelType.U2DModel) {
-							char = new U2DModel(target.image);
+							char = new Pixi2DModel("O/" + target.image); // always uncensored
+							char.setDialogDeactive(true);
 							char.setFace(target.imageVar);
 							// p[1] = 720 / 7 * 5;
 							p[1] = 360;
 						} else if (modelType === CharModelType.Spine) {
-							char = new SpineModel(target.image);
+							char = new PixiSpineModel(target.image);
 							char.setFace(target.imageVar);
 							p[1] = 1040;
 						} else {
