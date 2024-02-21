@@ -5,6 +5,12 @@ import { BY, BR, BO, BB, BG } from "../../components/badges";
 import IconGithub from "@/components/bootstrap-icon/icons/Github";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12520" date="2024-02-21"
+		bugfix={ <>
+			<li>일부 고 DPI 화면에서 스킨 뷰어 및 스토리 플레이어가 저해상도로 표시되는 문제를 수정했습니다.</li>
+			<li>터치 환경에서 스킨 뷰어의 Spine 애니메이션 스킨이 터치되지 않는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12500" date="2024-02-21"
 		knownissue={ <>
 			<li>모바일 환경에서 스토리 플레이어의 텍스트가 제대로 표시되지 않는 문제가 확인되었습니다.</li>

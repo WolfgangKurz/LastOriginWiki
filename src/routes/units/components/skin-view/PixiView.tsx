@@ -60,6 +60,9 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 				width: 1,
 				height: 1,
+				resolution: window.devicePixelRatio || 1,
+				autoDensity: true,
+				powerPreference: "low-power",
 
 				// eventMode: "passive",
 				eventFeatures: {
@@ -122,7 +125,11 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 		if (playerRef.current && surface) {
 			ob = new ResizeObserver(e => {
 				const rc = (e[0].contentRect as DOMRectReadOnly);
-				app?.renderer.resize(rc.width, rc.height);
+
+				if (app) {
+					app.renderer.resolution = window.devicePixelRatio || 1;
+					app.renderer.resize(rc.width, rc.height);
+				}
 				surface.position.set(rc.width / 2, rc.height / 2);
 				surface.scale.set(rc.height / 720);
 

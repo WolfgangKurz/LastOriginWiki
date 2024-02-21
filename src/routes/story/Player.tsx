@@ -340,6 +340,8 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 
 				width: 1280,
 				height: 720,
+				resolution: window.devicePixelRatio || 1,
+				autoDensity: true,
 
 				// eventMode: "passive",
 				eventFeatures: {

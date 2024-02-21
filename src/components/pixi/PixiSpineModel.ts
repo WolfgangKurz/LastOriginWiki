@@ -280,13 +280,12 @@ export default class PixiSpineModel extends FadeContainer {
 				collider.zIndex = 3;
 				collider.name = "[Collider] " + c;
 				collider.eventMode = "static";
-				collider.on("click", () => {
+				collider.on("pointertap", () => {
 					if (data.metadata.specialTouch.includes(c))
 						this.emit("special-touch", this);
 					else
 						this.emit("normal-touch", this);
 				});
-
 				collider.position.set(x, y);
 				collider.anchor.set(0.5);
 
