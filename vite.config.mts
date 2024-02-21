@@ -102,10 +102,14 @@ export default ({ mode }) => {
                 outs = deepmerge(outs, tree);
             });
 
+            const keys: string[] = [];
+            JSON.stringify(outs, (k, v) => (keys.push(k), v), "\t");
+            keys.sort();
+
             const output = [
                 "// Content automatically generated",
                 "export interface DBHashType { [K: string]: string | DBHashType; }",
-                `export default ${JSON.stringify(outs, undefined, "\t")} as DBHashType;`,
+                `export default ${JSON.stringify(outs, keys, "\t")} as DBHashType;`,
             ].join("\n");
 
             fs.writeFileSync(
