@@ -78,8 +78,9 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			AssetsRoot,
 			imageExt,
 			"full",
-			unit.uid,
 			[
+				unit.uid,
+				"_",
 				skinId,
 				"_",
 				skin.G && isCensored ? "G" : "O",

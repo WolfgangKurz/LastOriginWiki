@@ -5,6 +5,14 @@ import { BY, BR, BO, BB, BG } from "../../components/badges";
 import IconGithub from "@/components/bootstrap-icon/icons/Github";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12500" date="2024-02-21"
+		knownissue={ <>
+			<li>모바일 환경에서 스토리 플레이어의 텍스트가 제대로 표시되지 않는 문제가 확인되었습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>로비 애니메이션 표시를 해제한 스킨의 표시와 다운로드가 되지 않는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12493" date="2024-02-21"
 		new={ <>
 			<li>이벤트 <BY>우주에서 온 황금</BY>의 3부 정보가 추가되었습니다.</li>
