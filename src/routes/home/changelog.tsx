@@ -1,9 +1,38 @@
 import { FunctionalComponent } from "preact";
 
 import ChangelogItem from "@/routes/changelog/components/changelog-item";
-import { BY, BR, BO, BB, BG } from "@/routes/changelog/components/badges";
+import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12522" date="2024-02-22"
+		site={ <>
+			<li>전투원 정보의 <BP>제조 시간</BP> 보기가 삭제되었습니다.</li>
+		</> }
+		update={ <>
+			<li>전투원 정보의 각종 탭/필터 버튼 및 전투원 검색 상자를 작은 화면 사이즈에서 사용하기 용이하도록 개선했습니다.</li>
+			<li>전투원 상세 정보의 <BP>스킨 보기</BP> 탭의 아이콘이 변경되었습니다.</li>
+			<li>
+				전투원 정보의 <BP>목록 보기</BP>의 <BR>소속으로 묶기</BR> 기능이 다음과 같이 통합/개선되었습니다.
+				<ol>
+					<li>
+						<BR>분류 안함</BR> : 소속으로 분류하지 않고 목록으로 표시합니다.
+					</li>
+					<li>
+						<BR>평범하게 분류</BR> : 분리된 소속을 하나로 합쳐서 표시합니다.<br />
+						기존의 <BR>소속으로 묶기</BR> + 개편 전의 <BR>세부 그룹 합치기</BR>와 같습니다.
+					</li>
+					<li>
+						<BR>정확하게 분류</BR> : 분리된 소속을 합치지 않고 정확하게 표시합니다.<br />
+						기존의 <BR>소속으로 묶기</BR>와 같습니다.
+					</li>
+				</ol>
+			</li>
+			<li>
+				전투원 정보의 <BP>목록 보기</BP>에서 <BR>분류 안함</BR>이고 <BP>도감 번호순</BP> 정렬일 때,
+				채워지지 않은 번호가 표시되도록 변경했습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12520" date="2024-02-21"
 		bugfix={ <>
 			<li>일부 고 DPI 화면에서 스킨 뷰어 및 스토리 플레이어가 저해상도로 표시되는 문제를 수정했습니다.</li>

@@ -10,3 +10,4 @@ export const BR: FunctionalComponent = Build("danger"); // red
 export const BO: FunctionalComponent = Build("orange"); // orange
 export const BB: FunctionalComponent = Build("dark"); // black
 export const BG: FunctionalComponent = Build("success"); // green
+export const BP: FunctionalComponent = Build("primary"); // blue

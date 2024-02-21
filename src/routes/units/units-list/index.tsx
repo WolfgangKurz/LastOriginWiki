@@ -10,6 +10,7 @@ import { UnitsListProps } from "../";
 import { useLocale } from "@/libs/Locale";
 import { useImageExtension } from "@/libs/ImageExtension";
 import { AssetsRoot } from "@/libs/Const";
+import { cn } from "@/libs/Class";
 import { groupBy, minMax } from "@/libs/Functions";
 
 import Locale from "@/components/locale";
@@ -18,7 +19,7 @@ import Badge from "@/components/Badge";
 import Separator from "@/components/Separator";
 import UnitFace from "@/components/unit-face";
 
-import IconTagsFill from "@/components/bootstrap-icon/icons/TagsFill";
+import IconBookmarksFill from "@/components/bootstrap-icon/icons/BookmarksFill";
 import IconSpellcheck from "@/components/bootstrap-icon/icons/Spellcheck";
 import IconListOl from "@/components/bootstrap-icon/icons/ListOl";
 import IconStarFill from "@/components/bootstrap-icon/icons/StarFill";
@@ -32,15 +33,15 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 
 	const withShort = Store.Units.SearchWithShortname.value;
 	const listOrder = Store.Units.SearchListOrder.value;
-	const groupByGroup = Store.Units.SearchGroupByGroup.value;
+	const groupByMethod = Store.Units.SearchGroupByGroup.value;
 
 	const tabTypes: Array<"dict" | "name" | "rarity"> = ["dict", "name", "rarity"];
 
 	const UnitList = useMemo(() => {
-		if (groupByGroup)
+		if (groupByMethod !== "none")
 			return props.list;
 
-		const list = props.list.slice();
+		const list = props.list.slice(); // clone list
 
 		if (listOrder === "name") {
 			if (withShort)
@@ -62,31 +63,52 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 				);
 			}
 		} else {
-			const [min, max] = minMax(...list.map(r => r.id));
-			const arr: Array<FilterableUnit | undefined> = new Array(max - min);
+			const [_, max] = minMax(...list.map(r => r.id));
+			const arr: Array<FilterableUnit | undefined> = new Array(max).fill(null); // 1 ~ n
 
 			list.forEach(e => (arr[e.id - 1] = e));
 			return arr;
 		}
 
 		return list;
-	}, [props.list, withShort, listOrder, groupByGroup]);
+	}, [props.list, withShort, listOrder, groupByMethod]);
 
 	const Groups = useMemo(() => {
-		if (groupByGroup) {
-			return Object.values(groupBy(
+		if (groupByMethod !== "none") {
+			const g = groupBy(
 				UnitList.filter(r => !!r),
-				k => loc[`UNIT_GROUP_${k.group}`] || k.group,
-			));
+				k => groupByMethod === "roughly"
+					? k.group.replace(/^(.+)_[0-9]+$/, "$1_1")
+					: k.group,
+			);
+			const keys = Object.keys(g)
+				.sort((a, b) => {
+					const da = loc[`UNIT_GROUP_${a}`] || a;
+					const db = loc[`UNIT_GROUP_${b}`] || b;
+					return da.localeCompare(db);
+				});
+			return keys.map(k => g[k]);
 		}
 
-		if (listOrder !== "rarity") return [UnitList];
+		if (listOrder === "dict") return [UnitList];
 
 		return Object.values(groupBy(
 			UnitList,
 			k => k!.rarity,
 		)).reverse();
-	}, [UnitList, listOrder, groupByGroup]);
+	}, [UnitList, listOrder, groupByMethod]);
+
+	const nextGroupBy = useMemo((): typeof groupByMethod => {
+		switch (groupByMethod) {
+			case "none":
+				return "roughly";
+			case "roughly":
+				return "exactly";
+			case "exactly":
+				return "none";
+		}
+		return "none";
+	}, [groupByMethod]);
 
 	function empShortName (name: string, shortName: string): preact.VNode {
 		const s = shortName || name;
@@ -98,22 +120,25 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 	function getGroupImage (gid: string): string {
 		return gid.replace(/^(.+)_[^_]+$/, "$1");
 	}
+	function getGroup1 (gid: string): string {
+		return gid.replace(/^(.+)_[^_]+$/, "$1_1");
+	}
 
 	return <div>
 		<div class={ style.ListFilters }>
 			<Button
-				active={ groupByGroup }
-				outline
+				disabled={ (listOrder === "dict") || groupByMethod !== "none" }
+				outline={ !withShort }
 				variant="danger"
-				onClick={ () => Store.Units.SearchGroupByGroup.value = !groupByGroup }
+				onClick={ () => Store.Units.SearchWithShortname.value = !withShort }
 			>
-				<IconTagsFill />
-				<Locale k="UNITS_LIST_GROUPBY_GROUP" />
+				<IconSpellcheck />
+				<Locale k="UNITS_LIST_ORDERBY_SHORTNAME" />
 			</Button>
 
 			<Button.Group>
 				<Button
-					disabled={ groupByGroup }
+					disabled={ groupByMethod !== "none" }
 					variant="primary"
 					outline={ Store.Units.SearchListOrder.value !== tabTypes[0] }
 					onClick={ () => Store.Units.SearchListOrder.value = tabTypes[0] }
@@ -122,7 +147,7 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 					<Locale k="UNITS_LIST_ORDERBY_NO" />
 				</Button>
 				<Button
-					disabled={ groupByGroup }
+					disabled={ groupByMethod !== "none" }
 					variant="primary"
 					outline={ Store.Units.SearchListOrder.value !== tabTypes[1] }
 					onClick={ () => Store.Units.SearchListOrder.value = tabTypes[1] }
@@ -131,7 +156,7 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 					<Locale k="UNITS_LIST_ORDERBY_NAME" />
 				</Button>
 				<Button
-					disabled={ groupByGroup }
+					disabled={ groupByMethod !== "none" }
 					variant="primary"
 					outline={ Store.Units.SearchListOrder.value !== tabTypes[2] }
 					onClick={ () => Store.Units.SearchListOrder.value = tabTypes[2] }
@@ -142,45 +167,63 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 			</Button.Group>
 
 			<Button
-				disabled={ (listOrder === "dict") || groupByGroup }
-				outline={ !withShort }
+				active={ groupByMethod !== "none" }
+				outline
 				variant="danger"
-				onClick={ () => Store.Units.SearchWithShortname.value = !withShort }
+				onClick={ () => Store.Units.SearchGroupByGroup.value = nextGroupBy }
 			>
-				<IconSpellcheck />
-				<Locale k="UNITS_LIST_ORDERBY_SHORTNAME" />
+				<IconBookmarksFill />
+				<Locale k={ `UNITS_LIST_GROUPBY_${groupByMethod.toUpperCase()}` } />
 			</Button>
+		</div>
+		<div class={ style.GroupBy_Desc }>
+			<Locale k={ `UNITS_LIST_GROUPBY_${groupByMethod.toUpperCase()}_DESC` } />
 		</div>
 
 		<div>
 			{ Groups
 				.map(list => <div class={ style.Group }>
-					{ groupByGroup && <div class={ style.GroupInfo }>
-						<img src={ `${AssetsRoot}/${imgExt}/group/${getGroupImage(list[0]!.group)}.${imgExt}` } />
-						<Locale k={ `UNIT_GROUP_${list[0]!.group}` } />
-					</div> }
+					{ groupByMethod !== "none"
+						? <div class={ style.GroupInfo }>
+							<img src={ `${AssetsRoot}/${imgExt}/group/${getGroupImage(list[0]!.group)}.${imgExt}` } />
+							<Locale
+								k={ `UNIT_GROUP_${groupByMethod === "roughly"
+									? getGroup1(list[0]!.group)
+									: list[0]!.group}`
+								}
+								fallback={ <Locale
+									k={ `UNIT_GROUP_${groupByMethod === "roughly"
+										? getGroupImage(list[0]!.group)
+										: list[0]!.group}`
+									}
+									fallback={ list[0]!.group }
+								/> }
+							/>
+						</div>
+						: <></>
+					}
 
 					<div class={ style.UnitList }>
-						{ list.map(unit => <div
-							class={ style.UnitItem }
+						{ list.map((unit, i) => <div
+							class={ cn(style.UnitItem, !unit && style.Placeholder) }
 							onClick={ e => {
 								e.preventDefault();
 								if (unit) route(`/units/${unit.uid}`);
 							} }
 						>
-							{ unit && <>
-								<UnitFace uid={ unit.uid } />
+							<UnitFace uid={ unit?.uid ?? "" } />
 
-								<div class={ style.Info }>
-									No.{ unit.id }
+							<div class={ style.Info }>
+								No.{ unit?.id ?? (i + 1) }
 
-									<Badge variant={ `rarity-${ACTOR_GRADE[unit.rarity]}` }>
-										{ ACTOR_GRADE[unit.rarity] }
-									</Badge>
-								</div>
+								{ unit && <Badge variant={ `rarity-${ACTOR_GRADE[unit.rarity]}` }>
+									{ ACTOR_GRADE[unit.rarity] }
+								</Badge> }
+							</div>
 
-								<div>
-									{ !groupByGroup && listOrder !== "dict" && withShort
+							<div>
+								{ unit
+									? !groupByMethod && listOrder !== "dict" && withShort
 										? <span class="text-secondary">
 											{ empShortName(
 												loc[`UNIT_${unit.uid}`],
@@ -188,9 +231,9 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 											) }
 										</span>
 										: <Locale k={ `UNIT_${unit.uid}` } />
-									}
-								</div>
-							</> }
+									: <></>
+								}
+							</div>
 						</div>) }
 					</div>
 				</div>)

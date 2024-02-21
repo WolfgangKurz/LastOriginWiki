@@ -12,11 +12,11 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 import Loader, { GetJson, StaticDB } from "@/components/loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import IconPersonSquare from "@/components/bootstrap-icon/icons/PersonSquare";
-import IconPersonHearts from "@/components/bootstrap-icon/icons/PersonHearts";
 import IconLightningFill from "@/components/bootstrap-icon/icons/LightningFill";
 import IconCapslockFill from "@/components/bootstrap-icon/icons/CapslockFill";
 import IconHandThumbsUpFill from "@/components/bootstrap-icon/icons/HandThumbsUpFill";
 import IconChatTextFill from "@/components/bootstrap-icon/icons/ChatTextFill";
+import IconHanger from "@/components/Icons/IconHanger";
 
 import BasicTab from "./sub-tab/Basic";
 import DialogueTab from "./sub-tab/Dialogue";
@@ -175,7 +175,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 									setDisplayTab("skin");
 								} }
 							>
-								<IconPersonHearts class="me-1" />
+								<IconHanger class="me-1" />
 								<Locale k="UNIT_VIEW_TAB_SKININFO" />
 							</a>
 						</li>

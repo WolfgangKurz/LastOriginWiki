@@ -1,10 +1,47 @@
 .ListFilters {
-	margin-bottom: 20px;
-
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: space-between;
-	column-gap: 10px;
+	align-items: start;
+	gap: 10px;
+
+	@media screen and (max-width: 990px) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: stretch;
+
+		> :nth-child(1) {
+			// shortname
+			grid-column: 1;
+			grid-row: 2;
+		}
+		> :nth-child(2) {
+			// order by
+			grid-column: 1 / 3;
+			grid-row: 1;
+
+			display: grid;
+			grid-template-columns: auto auto auto;
+
+			> button {
+				flex-direction: column;
+			}
+		}
+		> :nth-child(3) {
+			// group by
+			grid-column: 2;
+			grid-row: 2;
+		}
+	}
+}
+.GroupBy_Desc {
+	margin-top: 4px;
+	margin-bottom: 20px;
+	text-align: right;
+	font-weight: 500;
+	font-size: 14px;
+	color: $danger;
 }
 
 .Group {
@@ -22,12 +59,17 @@
 		overflow-wrap: break-word;
 		word-break: keep-all;
 
-		width: 100px;
-		padding: 0 5px;
+		width: 110px;
+		padding: 0 15px;
 		margin-right: 10px;
 		border-right: 1px solid transparentize($dark, 0.75);
 		font-weight: 500;
 		font-size: 14px;
+
+		@media screen and (max-width: 990px) {
+			width: 100px;
+			padding: 0 5px;
+		}
 
 		> img {
 			width: 72px;
@@ -62,7 +104,7 @@
 		overflow-wrap: break-word;
 		word-break: keep-all;
 
-		&:hover {
+		&:not(.Placeholder):hover {
 			background-color: transparentize($dark, 0.675);
 		}
 
@@ -89,6 +131,14 @@
 			> span {
 				padding: 1px 4px;
 				font-size: 11px;
+			}
+		}
+
+		&.Placeholder {
+			cursor: unset;
+
+			> .Info {
+				background-color: rgba($dark, 0.33);
 			}
 		}
 	}

@@ -34,7 +34,7 @@ const Store = {
 	requireReload: signal(false),
 
 	Units: {
-		DisplayType: signal<"table" | "list" | "group" | "skin" | "time">("table"),
+		DisplayType: signal<"table" | "list" | "skin">("table"),
 
 		Skins: {
 			Tab: signal<"" | "artist" | "releaseDate">(""),
@@ -76,7 +76,7 @@ const Store = {
 		SearchText: signal(""),
 		SearchWithShortname: signal(false),
 		SearchListOrder: signal<"dict" | "name" | "rarity">("dict"),
-		SearchGroupByGroup: signal(false),
+		SearchGroupByGroup: signal<"none" | "roughly" | "exactly">("none"),
 
 		SearchType: signal<"simple" | "advanced">("simple"),
 		AdvSearchConds: signal<readonly UnitsCondition[]>([]),

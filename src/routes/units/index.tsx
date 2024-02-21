@@ -32,7 +32,6 @@ import AdvancedSearch, { Condition, ConditionActiveTarget, ConditionBuffSlot, Co
 import UnitsTable from "./units-table";
 import UnitsList from "./units-list";
 import UnitsSkin from "./units-skin";
-import UnitsTimetable from "./units-timetable";
 
 import style from "./style.module.scss";
 
@@ -283,36 +282,31 @@ const Units: FunctionalComponent = () => {
 		<div class="text-center mb-3">
 			<Button.Group>
 				<Button
+					class={ style.DisplayTab }
 					variant="primary"
 					outline={ Store.Units.DisplayType.value !== "table" }
 					onClick={ () => Store.Units.DisplayType.value = "table" }
 				>
-					<IconTable class="me-1" />
+					<IconTable class="mx-1" />
 					<Locale k="UNITS_VIEW_TABLE" />
 				</Button>
 				<Button
+					class={ style.DisplayTab }
 					variant="primary"
 					outline={ Store.Units.DisplayType.value !== "list" }
 					onClick={ () => Store.Units.DisplayType.value = "list" }
 				>
-					<IconGrid3x3GapFill class="me-1" />
+					<IconGrid3x3GapFill class="mx-1" />
 					<Locale k="UNITS_VIEW_LIST" />
 				</Button>
 				<Button
+					class={ style.DisplayTab }
 					variant="primary"
 					outline={ Store.Units.DisplayType.value !== "skin" }
 					onClick={ () => Store.Units.DisplayType.value = "skin" }
 				>
-					<IconHanger class={ style.TabIconAlt } />
+					<IconHanger class="mx-1" />
 					<Locale k="UNITS_VIEW_SKIN" />
-				</Button>
-				<Button
-					variant="primary"
-					outline={ Store.Units.DisplayType.value !== "time" }
-					onClick={ () => Store.Units.DisplayType.value = "time" }
-				>
-					<IconHammer class="me-1" />
-					<Locale k="UNITS_VIEW_CREATIONTIME" />
 				</Button>
 			</Button.Group>
 		</div>
@@ -372,7 +366,6 @@ const Units: FunctionalComponent = () => {
 				Store.Units.DisplayType.value === "table" && <UnitsTable list={ UnitList } />,
 				Store.Units.DisplayType.value === "list" && <UnitsList list={ UnitList } />,
 				Store.Units.DisplayType.value === "skin" && <UnitsSkin list={ UnitList } />,
-				Store.Units.DisplayType.value === "time" && <UnitsTimetable list={ UnitList } />,
 			]
 		}
 	</div >;
