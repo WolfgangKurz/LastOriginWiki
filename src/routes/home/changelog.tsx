@@ -4,6 +4,13 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12530" date="2024-02-22"
+		bugfix={ <>
+			<li>
+				사파리 브라우저에서 스킨 뷰어 및 스토리 플레이어의 Spine 애니메이션이 올바르게 표시되지 않는 문제를 수정했습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12522" date="2024-02-22"
 		site={ <>
 			<li>전투원 정보의 <BP>제조 시간</BP> 보기가 삭제되었습니다.</li>

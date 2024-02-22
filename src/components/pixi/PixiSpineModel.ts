@@ -191,7 +191,7 @@ export default class PixiSpineModel extends FadeContainer {
 										// ctx.putImageData(imgData, 0, 0);
 										return createImageBitmap(
 											new ImageData(arr, img.naturalWidth, img.naturalHeight),
-											{ premultiplyAlpha: "none", colorSpaceConversion: "none" },
+											{ premultiplyAlpha: "premultiply", colorSpaceConversion: "none" },
 										).then(_img => ({
 											url,
 											tex: spine.SpineTexture.from(new PIXI.BaseTexture(_img)),

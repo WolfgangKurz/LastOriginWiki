@@ -88,8 +88,8 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 			const animIndi = new FadeContainer();
 			animIndi.name = "[Animation Indicator]";
-			animIndi.x = 94 + 30;
-			animIndi.y = 0;
+			animIndi.x = 30;
+			animIndi.y = 30;
 			app.stage.addChild(animIndi);
 			setAnimationIndicator(animIndi);
 
@@ -133,7 +133,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 				surface.position.set(rc.width / 2, rc.height / 2);
 				surface.scale.set(rc.height / 720);
 
-				animationIndicator?.position.set(94 + 15, rc.height - 14 - 15);
+				animationIndicator?.position.set(30, 30);
 			});
 			ob.observe(playerRef.current);
 		}
