@@ -111,7 +111,10 @@ const UnitsTable: FunctionalComponent<UnitsListProps> = (props) => {
 												<Link href={ `/units/${unit.uid}` }>
 													<div class={ style.UnitItem }>
 														<UnitFace uid={ unit.uid } />
-														<Locale k={ `UNIT_${unit.uid}` } />
+														<Locale
+															raw={ false }
+															k={ `UNIT_${unit.uid}` }
+														/>
 													</div>
 												</Link>
 											)
