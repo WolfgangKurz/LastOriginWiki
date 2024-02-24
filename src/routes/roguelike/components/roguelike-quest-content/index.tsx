@@ -10,7 +10,7 @@ import { RawReward, RewardTypeBase } from "@/types/Reward";
 import { objState } from "@/libs/State";
 import { isActive } from "@/libs/Functions";
 
-import Loader, { StaticDB, GetJson } from "@/components/loader";
+import Loader, { StaticDB, GetJson } from "@/libs/Loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import DropEquip from "@/components/drop-equip";
 import DropItem from "@/components/drop-item";

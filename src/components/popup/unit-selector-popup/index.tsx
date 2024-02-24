@@ -7,7 +7,7 @@ import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/types/En
 import { objState } from "@/libs/State";
 import { isActive } from "@/libs/Functions";
 
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import UnitFace from "@/components/unit-face";
 import PopupBase from "@/components/popup/base";

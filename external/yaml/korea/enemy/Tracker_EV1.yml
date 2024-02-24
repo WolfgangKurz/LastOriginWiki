@@ -41,7 +41,90 @@ skills:
       acc_bonus: 0
       buff_rate: 100
       buffs:
-        - unknown: Effect_MP_Tracker_EV1_1
+        - key: Effect_MP_Tracker_EV1_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_MP_Tracker_EV1_1_1
+                type: 1
+                value: "-0.150000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: -15%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_Tracker_EV1_1_2
+                type: 1
+                value: "-0.100000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -10%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_DOWN
+              desc:
+                desc: Effect_MP_Tracker_EV1_1_3
+                type: 1
+                value: "-0.150000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: -15%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_Tracker_EV1_1_4
+                type: 1
+                value: "-0.050000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: -5%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
   - key: Skill_MP_Tracker_EV1_2
     icon: AssaultAttack
     passive: false
@@ -61,7 +144,56 @@ skills:
       acc_bonus: 0
       buff_rate: 100
       buffs:
-        - unknown: Effect_MP_Tracker_EV1_2
+        - key: Effect_MP_Tracker_EV1_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Tracker_EV1_2_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 99
+                off: 0
+              overlap: 4
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Tracker_EV1_2_2
+                type: 0
+                value: "25"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 25
+                  per: 0
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
   - key: Skill_MP_Tracker_EV1_3
     icon: P.SelfAtkBuff
     passive: true
@@ -82,7 +214,92 @@ skills:
       acc_bonus: 0
       buff_rate: 100
       buffs:
-        - unknown: Effect_MP_Tracker_EV1_3
+        - key: Effect_MP_Tracker_EV1_3
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Tracker_EV1_3_1
+                type: 1
+                value: "0.250000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 25%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Tracker_EV1_3_2
+                type: 1
+                value: "0.200000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 20%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Tracker_EV1_3_3
+                type: 1
+                value: "0.050000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 5%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_MP_Tracker_EV1_3_4
+                type: 1
+                value: "0.250000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 25%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
   - key: Skill_MP_Tracker_EV1_4
     icon: P.SelfDefBuff
     passive: true
@@ -103,7 +320,43 @@ skills:
       acc_bonus: 0
       buff_rate: 100
       buffs:
-        - unknown: Effect_MP_Tracker_EV1_4
+        - key: Effect_MP_Tracker_EV1_4
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_Tracker_EV1_4_1
+                type: 1
+                value: "99999999"
+                level: "0"
+              attr: 3
+              erase:
+                count: 2
+                trigger: damaged
+              value:
+                isBuff: true
+                type: 34
+                damage_minimize:
+                  base: 99999999
+                  per: 0
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
   - key: Skill_MP_Tracker_N_5
     icon: P.SelfAtkBuff
     passive: true

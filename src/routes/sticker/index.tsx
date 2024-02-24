@@ -5,7 +5,7 @@ import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { objState } from "@/libs/State";
 
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import EquipIcon from "@/components/equip-icon";
 import PopupBase from "@/components/popup/base";

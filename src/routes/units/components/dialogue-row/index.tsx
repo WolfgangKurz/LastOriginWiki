@@ -8,6 +8,7 @@ import { BuildClass } from "@/libs/Class";
 import Locale from "@/components/locale";
 
 import style from "./style.module.scss";
+import { useMemo } from "preact/hooks";
 
 interface DialogueRowProps {
 	type?: string;
@@ -24,56 +25,57 @@ const DialogueRow: FunctionComponent<DialogueRowProps> = (props) => {
 	const audio = props.audio || "ko";
 
 	/* eslint-disable camelcase */
-	const TypeColor = ({
-		Intro: "warning text-dark",
-		Join: "dark",
+	const TypeColor = useMemo(() =>
+		({
+			Intro: "warning text-dark",
+			Join: "dark",
 
-		SquadJoin: "dark",
-		Leader: "dark",
-		SortiePick: "dark",
-		StageStart: "dark",
-		Retreat: "dark",
-		SearchStart: "dark",
-		SearchEnd: "dark",
+			SquadJoin: "dark",
+			Leader: "dark",
+			SortiePick: "dark",
+			StageStart: "dark",
+			Retreat: "dark",
+			SearchStart: "dark",
+			SearchEnd: "dark",
 
-		BattleFocus: "primary",
-		ActionApprove: "primary",
-		SpSkill: "primary",
-		SpSkill_1: "primary",
-		SpSkill_2: "primary",
-		SpSkill_3: "primary",
-		SpSkill_4: "primary",
-		SpSkill_5: "primary",
-		SpSkill_6: "primary",
-		SpSkill_7: "primary",
-		SpSkill_8: "primary",
-		SpSkill_9: "primary",
-		Retire: "primary",
-		Repair: "primary",
-		Reinforce: "primary",
-		ItemEquip: "primary",
-		CoreLink: "primary",
-		PresentGet: "primary",
+			BattleFocus: "primary",
+			ActionApprove: "primary",
+			SpSkill: "primary",
+			SpSkill_1: "primary",
+			SpSkill_2: "primary",
+			SpSkill_3: "primary",
+			SpSkill_4: "primary",
+			SpSkill_5: "primary",
+			SpSkill_6: "primary",
+			SpSkill_7: "primary",
+			SpSkill_8: "primary",
+			SpSkill_9: "primary",
+			Retire: "primary",
+			Repair: "primary",
+			Reinforce: "primary",
+			ItemEquip: "primary",
+			CoreLink: "primary",
+			PresentGet: "primary",
 
-		Login: "success",
-		Idle_01_01: "success",
-		Idle_01_02: "success",
-		Idle_01_03: "success",
-		SPIdle_01_01: "success",
-		Idle_02_01: "success",
-		Idle_03_01: "success",
-		Idle_04_01: "success",
-		SPIdle_02_01: "success",
+			Login: "success",
+			Idle_01_01: "success",
+			Idle_01_02: "success",
+			Idle_01_03: "success",
+			SPIdle_01_01: "success",
+			Idle_02_01: "success",
+			Idle_03_01: "success",
+			Idle_04_01: "success",
+			SPIdle_02_01: "success",
 
-		Oath: "danger",
-		OathIdle_01: "danger",
-		MVP: "primary",
-	} as Record<string, string>)[type] || "secondary";
+			Oath: "danger",
+			OathIdle_01: "danger",
+			MVP: "primary",
+		} as Record<string, string>)[type] || "secondary",
+		[type],
+	);
 	/* eslint-enable camelcase */
 
-	const rowClass = ``;
-
-	const voiceUrl = `${AssetsRoot}/audio/voice-${audio}/${unitId}_${type}.mp3`;
+	const voiceUrl = useMemo(() => `${AssetsRoot}/audio/voice-${audio}/${unitId}_${type}.mp3`, [audio, unitId, type]);
 
 	return <div class={ BuildClass(style.DialogueRow, "row my-2 my-sm-0") }>
 		<div class={ BuildClass(style.TypeColumn, `bg-${TypeColor} text-bg-${TypeColor}`, "col col-12 col-sm-2 border-top") }>

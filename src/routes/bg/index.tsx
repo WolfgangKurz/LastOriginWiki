@@ -8,7 +8,7 @@ import { CurrentDB } from "@/libs/DB";
 import { useUpdate } from "@/libs/hooks";
 import { isActive } from "@/libs/Functions";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
 
 import style from "./style.module.scss";

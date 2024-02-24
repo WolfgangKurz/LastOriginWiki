@@ -17,7 +17,7 @@ import { CurrentDB } from "@/libs/DB";
 import { BuildClass } from "@/libs/Class";
 import { diff2 } from "@/libs/Functions";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import LocaleBase, { LocaleExists, LocaleGet, LocaleProps, LocalePropsLegacy } from "@/components/locale";
 import IconQuestionCircleFill from "@/components/bootstrap-icon/icons/QuestionCircleFill";
 import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";

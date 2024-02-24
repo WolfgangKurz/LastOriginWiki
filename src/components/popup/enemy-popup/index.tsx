@@ -16,7 +16,7 @@ import { CurrentDB } from "@/libs/DB";
 import EntitySource from "@/libs/EntitySource";
 import { FormatNumber, isActive } from "@/libs/Functions";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import IconChevronDoubleDown from "@/components/bootstrap-icon/icons/ChevronDoubleDown";
 import IconChevronDown from "@/components/bootstrap-icon/icons/ChevronDown";

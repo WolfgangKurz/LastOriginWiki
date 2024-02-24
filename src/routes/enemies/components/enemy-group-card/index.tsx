@@ -6,7 +6,7 @@ import { EnemyGroupEnetity } from "@/types/DB/EnemyGroup";
 import { objState } from "@/libs/State";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
-import Loader, { StaticDB, GetJson } from "@/components/loader";
+import Loader, { StaticDB, GetJson } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import EnemyPopup from "@/components/popup/enemy-popup";
 

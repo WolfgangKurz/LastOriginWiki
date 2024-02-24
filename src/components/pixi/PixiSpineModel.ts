@@ -184,7 +184,14 @@ export default class PixiSpineModel extends FadeContainer {
 
 										const imgData = ctx.getImageData(0, 0, cv.width, cv.height);
 										const arr = imgData.data.slice();
-										alpha.forEach((a, i) => (arr[i * 4 + 3] = a));
+										alpha.forEach((a, i) => {
+											// apply alpha, reverse premultiplied-alpha (rough, but works)
+											const af = a / 255;
+											arr[i * 4 + 0] /= af;
+											arr[i * 4 + 1] /= af;
+											arr[i * 4 + 2] /= af;
+											arr[i * 4 + 3] = a;
+										});
 
 										cv.remove();
 
@@ -192,10 +199,16 @@ export default class PixiSpineModel extends FadeContainer {
 										return createImageBitmap(
 											new ImageData(arr, img.naturalWidth, img.naturalHeight),
 											{ premultiplyAlpha: "premultiply", colorSpaceConversion: "none" },
-										).then(_img => ({
-											url,
-											tex: spine.SpineTexture.from(new PIXI.BaseTexture(_img)),
-										}));
+										)
+											.then(_img => {
+												const t = new PIXI.BaseTexture(_img, {
+													anisotropicLevel: 4,
+													mipmap: PIXI.MIPMAP_MODES.ON,
+													multisample: PIXI.MSAA_QUALITY.HIGH,
+												});
+												return t;
+											})
+											.then(tex => ({ url, tex: spine.SpineTexture.from(tex) }));
 									})
 									.then(({ url, tex }) => {
 										page.setTexture(tex);

@@ -8,7 +8,7 @@ import { FormatNumber, isActive, ToOrdinal } from "@/libs/Functions";
 
 import { useUpdate } from "@/libs/hooks";
 import { CurrentDB } from "@/libs/DB";
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import IconBoxSeam from "@/components/bootstrap-icon/icons/BoxSeam";
 import IconArrowCounterclockwise from "@/components/bootstrap-icon/icons/ArrowCounterclockwise";

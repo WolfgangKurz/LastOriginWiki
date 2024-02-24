@@ -12,7 +12,7 @@ import { objState } from "@/libs/State";
 import { ImageExtension, AssetsRoot } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 
-import Loader, { StaticDB, GetJson } from "@/components/loader";
+import Loader, { StaticDB, GetJson } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import IconArrowRight from "@/components/bootstrap-icon/icons/ArrowRight";
 import TextBadge from "@/components/text-badge";

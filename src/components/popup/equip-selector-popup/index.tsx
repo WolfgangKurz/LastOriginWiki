@@ -7,7 +7,7 @@ import { objState } from "@/libs/State";
 import { RarityDisplay } from "@/libs/Const";
 import { groupBy, isActive } from "@/libs/Functions";
 
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import EquipIcon from "@/components/equip-icon";
 import PopupBase from "@/components/popup/base";

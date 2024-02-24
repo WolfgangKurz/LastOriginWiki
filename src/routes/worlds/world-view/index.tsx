@@ -15,7 +15,7 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { BuildClass } from "@/libs/Class";
 import { isActive } from "@/libs/Functions";
 
-import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
 import IconCompass from "@/components/bootstrap-icon/icons/Compass";

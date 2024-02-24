@@ -6,10 +6,10 @@ import Store from "@/store";
 import { LocaleList } from "@/types/Locale";
 
 import { AssetsRoot, Host, IsDev } from "@/libs/Const";
-import { ChangeLanguage, CurrentLocale } from "@/libs/Locale";
+import { ChangeLanguage, CurrentLocale, ReloadLocale } from "@/libs/Locale";
 import { ChangeDB, CurrentDB, DBList, DBTypes } from "@/libs/DB";
 
-import Locale, { ReloadLocale } from "@/components/locale";
+import Locale from "@/components/locale";
 import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
 import IconServer from "@/components/bootstrap-icon/icons/Server";
 import IconTranslate from "@/components/bootstrap-icon/icons/Translate";
@@ -24,7 +24,12 @@ interface LinkData {
 
 const NavItem: FunctionalComponent<LinkData> = (props) => (
 	<li class={ `${style["nav-item"]} nav-item` }>
-		<Link href={ props.href } class="nav-link" activeClassName="active">
+		<Link
+			class="nav-link"
+			activeClassName="active"
+			href={ props.href }
+			path={ props.href === "/" ? "/" : `${props.href}/:*` }
+		>
 			{ props.children ? props.children : <Locale k={ props.text || "" } /> }
 		</Link>
 	</li>
@@ -32,7 +37,7 @@ const NavItem: FunctionalComponent<LinkData> = (props) => (
 
 const DropdownItem: FunctionalComponent<LinkData> = (props) => (
 	<li>
-		<Link href={ props.href } class="dropdown-item">
+		<Link class="dropdown-item" href={ props.href }>
 			{ props.children ? props.children : <Locale k={ props.text || "" } /> }
 		</Link>
 	</li>
@@ -86,8 +91,8 @@ const Header: FunctionalComponent = (): preact.VNode => {
 				aria-expanded="false"
 				aria-label="Toggle navigation"
 			>
-				<IconList/>
-				{/* <span class="navbar-toggler-icon" /> */}
+				<IconList />
+				{/* <span class="navbar-toggler-icon" /> */ }
 			</button>
 
 			<div class="collapse navbar-collapse" id="topNavbarList">

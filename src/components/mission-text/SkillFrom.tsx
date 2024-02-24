@@ -3,7 +3,7 @@ import { FunctionalComponent } from "preact";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import UnitReference from "@/components/unit-reference";
 import EnemyReference from "@/components/enemy-reference";
 

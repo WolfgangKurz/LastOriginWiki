@@ -11,7 +11,7 @@ import { CurrentDB } from "@/libs/DB";
 import { useUpdate } from "@/libs/hooks";
 import { BuildClass } from "@/libs/Class";
 
-import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import IconPlusCircleFill from "@/components/bootstrap-icon/icons/PlusCircleFill";

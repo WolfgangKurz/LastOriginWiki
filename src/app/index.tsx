@@ -1,11 +1,12 @@
 import { FunctionalComponent } from "preact";
-import { useEffect } from "preact/hooks";
+import { useEffect, useMemo } from "preact/hooks";
 import { Router } from "preact-router";
 import AsyncRoute from "preact-async-route";
 import Store from "@/store";
 
 import { CurrentLocale, useLocale } from "@/libs/Locale";
 import { hasCookie, setCookie } from "@/libs/Cookie";
+import { UpdateTitle } from "@/libs/Site";
 
 // import DynamicRoute from "@/components/dynamic-route";
 import Locale from "@/components/locale";
@@ -18,7 +19,44 @@ import IconChatDots from "@/components/bootstrap-icon/icons/ChatDots";
 import PopupBase from "@/components/popup/base";
 
 import "./style.scss";
-import { UpdateTitle } from "@/libs/Site";
+
+const Tint: FunctionalComponent<{ color: Tuple<number, 4>; }> = (props) => {
+	const r = useMemo(() => props.color[0], [props.color]);
+	const g = useMemo(() => props.color[1], [props.color]);
+	const b = useMemo(() => props.color[2], [props.color]);
+	const a = useMemo(() => props.color[3], [props.color]);
+	const id = useMemo(() =>
+		[r, g, b, a]
+			.map(r => Math.floor(r * 255).toString(16).padStart(2, "0"))
+			.join(""),
+		[r, g, b, a],
+	);
+
+	return <svg
+		width="1"
+		height="1"
+		viewBox="0 0 1 1"
+		xmlns="http://www.w3.org/2000/svg"
+		style={ {
+			position: "fixed",
+			left: "-10px",
+			top: "-10px",
+			opacity: "0",
+			pointerEvents: "none",
+		} }
+	>
+		<defs>
+			<filter id={ `filter_tint_${id}` }>
+				<feColorMatrix
+					in="SourceGraphic"
+					type="matrix"
+					values={ `${r} 0 0 0 0  0 ${g} 0 0 0  0 0 ${b} 0 0  0 0 0 ${a} 0` }
+					color-interpolation-filters="sRGB"
+				/>
+			</filter>
+		</defs>
+	</svg>;
+};
 
 const App: FunctionalComponent = () => {
 	const [locale] = useLocale();
@@ -32,6 +70,8 @@ const App: FunctionalComponent = () => {
 
 	return <div id="app">
 		<Header />
+
+		<Tint color={ [0, 0, 0, 1] } />
 
 		<div class="container p-4">
 			<Router>

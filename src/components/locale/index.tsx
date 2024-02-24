@@ -1,12 +1,9 @@
 import { ComponentType, FunctionalComponent, createElement } from "preact";
-import Store from "@/store";
 
 import type { LocaleTypes } from "@/types/Locale";
 
 import { CurrentLocale, useLocale } from "@/libs/Locale";
-import { CurrentDB } from "@/libs/DB";
-
-import { GetJson, UnsetDBData, JsonLoaderCore, StaticDB } from "@/components/loader";
+import { GetJson, StaticDB } from "@/libs/Loader";
 
 type LocaleComponentProp<T> = Record<string, ComponentType<T>>;
 
@@ -119,7 +116,7 @@ export interface LocaleProps<T> {
 }
 
 const Locale: FunctionalComponent<LocalePropsLegacy<any> | LocaleProps<any>> = (props) => {
-	const [locale] = useLocale();
+	const [locale, localeReady] = useLocale();
 
 	const isRaw = "raw" in props
 		? props.raw
@@ -127,39 +124,32 @@ const Locale: FunctionalComponent<LocalePropsLegacy<any> | LocaleProps<any>> = (
 			? !props.plain
 			: true; // for compatibility
 
-	if (locale) {
-		let t = locale[props.k];
-		if (t) {
+	if (localeReady) {
+		if (props.k in locale) {
+			let t = locale[props.k];
 			if (props.preprocessor)
 				t = props.preprocessor(t);
 
 			if (isRaw)
 				return <>{ parseVNode(t, props.p, props.components || {}) }</>;
 
-			return <>{ (t).split(paramRegex).map(x => {
-				const r = paramRegex.exec(x);
-				return r
-					? ((): preact.VNode => {
-						const idx = parseInt(r[1].slice(1, r[1].length - 1), 10);
-						if (props.p) {
-							const v = props.p[idx];
-							if (typeof v === "string" || typeof v === "number" || typeof v === "boolean")
+			return <>{ t
+				.split(paramRegex)
+				.map(x => {
+					const r = paramRegex.exec(x);
+					return r
+						? ((): preact.VNode => {
+							const idx = parseInt(r[1].slice(1, r[1].length - 1), 10);
+							if (props.p)
 								return <>{ props.p[idx] }</>;
-							return v;
-						}
-						return <></>;
-					})()
-					: <>{ x }</>;
-			}) }</>;
+							return <></>;
+						})()
+						: <>{ x }</>;
+				})
+			}</>;
 		}
 
-		return typeof props.fallback === "string" ||
-			typeof props.fallback === "number" ||
-			typeof props.fallback === "boolean"
-			? <>{ props.fallback }</>
-			: typeof props.fallback === "undefined"
-				? <></> // no more default fallback as input Key
-				: props.fallback;
+		return <>{ props.fallback }</>;
 	}
 	return <></>; // no more default fallback as input Key
 };
@@ -199,9 +189,4 @@ export function LocaleGetEmpty (k: string, ...p: any[]): string | undefined {
 export function LocaleExists (k: string): boolean {
 	const locale = GetLocaleTable(CurrentLocale.peek());
 	return locale && k in locale;
-}
-
-export function ReloadLocale (locale: string): void {
-	UnsetDBData(StaticDB.Locale[locale]);
-	JsonLoaderCore(CurrentDB, StaticDB.Locale[locale]);
 }

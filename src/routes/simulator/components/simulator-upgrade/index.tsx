@@ -12,7 +12,7 @@ import { RarityDisplay } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import { GetLinkBonus } from "@/libs/LinkBonus";
 
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import IconChevronDoubleDown from "@/components/bootstrap-icon/icons/ChevronDoubleDown";
 import IconChevronDoubleUp from "@/components/bootstrap-icon/icons/ChevronDoubleUp";

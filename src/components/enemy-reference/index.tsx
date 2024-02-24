@@ -5,7 +5,7 @@ import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";

@@ -15,7 +15,7 @@ import { useLocale } from "@/libs/Locale";
 import { CurrentDB } from "@/libs/DB";
 import { BuildClass } from "@/libs/Class";
 
-import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Button from "@/components/Button";
 import Loading from "@/components/loading";

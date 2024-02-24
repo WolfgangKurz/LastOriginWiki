@@ -251,7 +251,12 @@ export default class Pixi2DModel extends FadeContainer {
 							image.addEventListener("load", () => {
 								createClippedTexture(image, sp.vector, sp.v)
 									.then(tex => {
-										const _tex = PIXI.Texture.from(tex);
+										const _btex = PIXI.BaseTexture.from(tex, {
+											anisotropicLevel: 4,
+											mipmap: PIXI.MIPMAP_MODES.ON,
+											multisample: PIXI.MSAA_QUALITY.HIGH,
+										});
+										const _tex = PIXI.Texture.from(_btex);
 										setCache(key, tex, _tex);
 
 										this.spMap[sp.name] = sp;

@@ -16,7 +16,7 @@ import { BuildClass } from "@/libs/Class";
 import BGMAlbums from "@/libs/BGM";
 
 import Locale, { LocaleGet } from "@/components/locale";
-import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 
 import { fontFamily, Nn } from "./common";
 import EffectBase from "./Effects/EffectBase";

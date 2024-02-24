@@ -11,7 +11,7 @@ import { cn } from "@/libs/Class";
 import { CurrentDB } from "@/libs/DB";
 
 import Locale, { LocaleGet } from "@/components/locale";
-import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import PopupBase from "@/components/popup/base";
 import PCIcon from "@/components/pc-icon";
 

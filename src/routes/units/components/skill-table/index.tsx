@@ -295,6 +295,8 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 			</div>
 
 			<div>
+				{ flavor }
+
 				{ descList.lines.map((line) => <div class="unit-modal-skill">
 					{ !line
 						? descList.lines.length === 1
@@ -315,8 +317,6 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 						/>
 					}
 				</div>) }
-
-				{ flavor }
 			</div>
 
 			{ BuffRates[skill.key].some((x) => x !== 100)

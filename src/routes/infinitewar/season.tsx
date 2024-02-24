@@ -11,7 +11,7 @@ import { BuildClass } from "@/libs/Class";
 import { FormatNumber, isActive } from "@/libs/Functions";
 
 import Locale from "@/components/locale";
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import IconMap from "@/components/bootstrap-icon/icons/Map";
 import IconAwardFill from "@/components/bootstrap-icon/icons/AwardFill";
 import IconChevronDoubleDown from "@/components/bootstrap-icon/icons/ChevronDoubleDown";

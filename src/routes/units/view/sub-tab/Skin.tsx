@@ -19,7 +19,7 @@ import UnitFace2 from "../../components/unit-face2";
 
 import { SubpageProps } from "..";
 
-import style from "../style.module.scss";
+import style from "./style.module.scss";
 
 const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList, onSkinIndexChange }) => {
 	if (!display) return <></>;

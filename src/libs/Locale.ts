@@ -1,14 +1,10 @@
-import { useEffect, useMemo, useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 import { signal } from "@preact/signals";
 
 import { LocaleTypes, LocaleList } from "@/types/Locale";
 
-import { useUpdate } from "@/libs/hooks";
 import { getCookie, setCookie } from "@/libs/Cookie";
-import { UniqueID } from "@/libs/Functions";
-import { CurrentDB } from "@/libs/DB";
-
-import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import { StaticDB, unsetDBData, useDBData } from "@/libs/Loader";
 
 export function ChangeLanguage (lang: LocaleTypes): void {
 	setCookie("LO_LANG", lang);
@@ -41,39 +37,26 @@ const DefaultLang = ((): LocaleTypes => {
 			return "KR";
 	}
 })();
-export const CurrentLocale = signal<LocaleTypes>(LangValidation(getCookie("LO_LANG", DefaultLang)));
 
-const _localeLoader: Partial<Record<LocaleTypes, Record<string, () => void>>> = {};
+export const CurrentLocale = signal<LocaleTypes>(LangValidation(getCookie("LO_LANG", DefaultLang)));
+export const GlobalLocaleRequestId = signal<number>(0);
 export function useLocale (): [table: Record<string, string>, loaded: boolean] {
-	const update = useUpdate();
-	const key = useMemo(() => UniqueID("useLocale-"), []);
+	const [requestId, setRequestId] = useState(0);
 	const [currentLocale, setCurrentLocale] = useState<LocaleTypes>(CurrentLocale.peek());
 
 	useEffect(() => {
-		const unsub = CurrentLocale.subscribe(v => setCurrentLocale(v));
-		return () => unsub();
+		const unsub = [
+			CurrentLocale.subscribe(v => setCurrentLocale(v)),
+			GlobalLocaleRequestId.subscribe(() => setRequestId(v => v + 1)),
+		];
+		return () => unsub.forEach(fn => fn());
 	}, []);
 
-	const loc = GetJson<Record<string, string>>(StaticDB.Locale[currentLocale]);
-	useEffect(() => {
-		const locale = currentLocale;
-		if (!loc) {
-			_localeLoader[locale] ||= {};
-
-			if (!(key in _localeLoader[locale]!)) {
-				_localeLoader[locale]![key] = () => update();
-
-				JsonLoaderCore(CurrentDB, StaticDB.Locale[locale])
-					.then(() => {
-						const handlers = _localeLoader[locale];
-						if (handlers) {
-							Object.values(handlers).forEach(fn => fn());
-							delete _localeLoader[locale];
-						}
-					});
-			}
-		}
-	}, [currentLocale]);
-
+	const loc = useDBData<Record<string, string>>(StaticDB.Locale[currentLocale], undefined, requestId);
 	return [loc || {}, !!loc];
 };
+
+export function ReloadLocale (locale: string): void {
+	unsetDBData(StaticDB.Locale[locale]);
+	GlobalLocaleRequestId.value++; // call changed callbacks
+}

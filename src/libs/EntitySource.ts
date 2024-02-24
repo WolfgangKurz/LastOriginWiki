@@ -11,6 +11,9 @@ interface EntitySourceExchangePrice {
 	value: number;
 }
 
+const SideSuffix = ["B", "s"];
+const ExSuffix = ["Ex", "ep", "C", "Interlude"];
+
 export default class EntitySource {
 	public readonly source: string;
 
@@ -184,9 +187,10 @@ export default class EntitySource {
 		if (!this.IsMap) return false;
 		if (this.IsEvent) { // 이벤트 맵인 경우는 지역이 4번째에 위치
 			return this.Parts.length === 4
-				? this.Parts[3].includes("B") || this.Parts[3].includes("s")
-				: this.Parts[2].includes("B") || this.Parts[2].includes("s");
-		} return this.Parts[0].includes("B") || this.Parts[0].includes("s");
+				? SideSuffix.some(r => this.Parts[3].includes(r))
+				: SideSuffix.some(r => this.Parts[2].includes(r));
+		}
+		return SideSuffix.some(r => this.Parts[2].includes(r));
 	}
 
 	/** Ex 스테이지 여부 */
@@ -194,9 +198,10 @@ export default class EntitySource {
 		if (!this.IsMap) return false;
 		if (this.IsEvent) { // 이벤트 맵인 경우는 지역이 4번째에 위치
 			return this.Parts.length === 4
-				? this.Parts[3].includes("Ex")
-				: this.Parts[2].includes("Ex");
-		} return this.Parts[0].includes("Ex");
+				? ExSuffix.some(r => this.Parts[3].includes(r))
+				: ExSuffix.some(r => this.Parts[2].includes(r));
+		}
+		return ExSuffix.some(r => this.Parts[2].includes(r));
 	}
 
 	/** 맵 보상 (초회 클리어 or 드랍) 여부 */

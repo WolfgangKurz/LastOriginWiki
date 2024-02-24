@@ -8,7 +8,7 @@ import { SimulatorSlotType } from "../../types/Slot";
 import { objState } from "@/libs/State";
 import { CurrentDB } from "@/libs/DB";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import EquipIcon from "@/components/equip-icon";
 import EquipLevel from "@/components/equip-level";

@@ -17,6 +17,9 @@ import SkillTable from "../../components/skill-table";
 
 import { SubpageProps } from "..";
 
+import style from "./Skill.module.scss";
+import { cn } from "@/libs/Class";
+
 const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 	const CurrentResists = unit.stat[0].Resist;
 	// const ExLevel = objState<number>(9);
@@ -89,7 +92,7 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 
 	return <div style={ { display: display ? "" : "none" } }>
 		<div class="row justify-content-center">
-			<div class="col col-12 col-sm-10 col-md-8 col-lg-6 equip-grid">
+			<div class={ cn("col col-12 col-sm-10 col-md-8 col-lg-6", style.EquipGrid) }>
 				{ unit.slots.map((equip, i) => {
 					const type = {
 						[ITEM_TYPE.CHIP]: "CHIP",
@@ -97,9 +100,9 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 						[ITEM_TYPE.SUBEQ]: "ITEM",
 					}[equip] || "";
 
-					return <div class="equip-slot" data-type={ equip }>
+					return <div class={ style.EquipSlot } data-type={ equip }>
 						<div class="font-exo2">Lv. { (i + 1) * 20 }</div>
-						<div class="equip-slot-icon" />
+						<div class={ style.Icon } />
 						<div><Locale k={ `COMMON_EQUIP_TYPE_${type}` } /></div>
 					</div>;
 				}) }

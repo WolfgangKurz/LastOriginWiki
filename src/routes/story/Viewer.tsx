@@ -15,7 +15,7 @@ import { BuildClass, cn } from "@/libs/Class";
 import { parseVNode } from "@/libs/VNode";
 import { UpdateTitle } from "@/libs/Site";
 
-import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import UnitFace from "@/components/unit-face";
 import IconGlobe2 from "@/components/bootstrap-icon/icons/Globe2";

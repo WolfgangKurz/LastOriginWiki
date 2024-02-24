@@ -9,7 +9,7 @@ import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { FormatNumber } from "@/libs/Functions";
 
 import Locale, { LocaleGet } from "@/components/locale";
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import EquipIcon from "@/components/equip-icon";
 import BuffList from "@/components/buff-list";
 

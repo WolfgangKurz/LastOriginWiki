@@ -11,7 +11,7 @@ import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { FormatNumber } from "@/libs/Functions";
 
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
 import UnitBadge from "@/components/unit-badge";

@@ -1,16 +1,37 @@
 .Badge {
 	display: inline-block;
 	margin: 1px 2px;
-	padding: 3px 6px;
+	padding: 2px 5px;
 	border-radius: 4px;
+	border: 1px solid transparent;
 	line-height: 1.2;
 	font-weight: 600;
 	font-size: 13px;
 
+	background-color: $dark;
+	color: $light;
+
+	&.Pill {
+		padding-left: 7px;
+		padding-right: 8px;
+		border-radius: 100px;
+	}
+	&.Bordered {
+		border-color: $dark;
+		background-color: $light;
+	}
+
 	@each $key, $color in $theme-colors {
 		&.Variant-#{$key} {
+			$c: bw-contrast-color($color);
 			background-color: $color;
-			color: bw-contrast-color($color);
+			color: $c;
+
+			&.Bordered {
+				background-color: transparent;
+				border-color: $color;
+				color: $color;
+			}
 		}
 	}
 }

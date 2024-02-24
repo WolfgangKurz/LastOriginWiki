@@ -1,15 +1,19 @@
 import { FunctionalComponent } from "preact";
-import { Link, route } from "preact-router";
+import { Link } from "preact-router";
 
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import { CurrentEvent, CurrentDate } from "@/libs/Const";
 import EntitySource from "@/libs/EntitySource";
+import { cn } from "@/libs/Class";
 import { FormatNumber } from "@/libs/Functions";
+import { useLocale } from "@/libs/Locale";
+import { StaticDB, useDBData } from "@/libs/Loader";
 
-import Loader, { StaticDB, GetJson } from "@/components/loader";
-import Locale, { LocaleExists } from "@/components/locale";
-import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
+import Locale from "@/components/locale";
+import Badge from "@/components/Badge";
+
+import style from "./style.module.scss";
 
 interface SourceBadgeProps {
 	class?: string;
@@ -20,25 +24,28 @@ interface SourceBadgeProps {
 }
 
 const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
+	const [loc] = useLocale();
+	const FilterableUnit = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
+
 	const Source = typeof props.source === "string"
 		? new EntitySource(props.source)
 		: props.source;
 
 	const variant = ((): string => {
-		if (Source.IsUninstalled) return props.minimum ? "black" : "light text-dark";
-		if (Source.IsRoguelike) return "warning text-dark";
+		if (Source.IsUninstalled) return props.minimum ? "black" : "light";
+		if (Source.IsRoguelike) return "warning";
 		if (Source.IsChallenge) return "primary";
-		if (Source.IsPrivateItem) return "stat-acc text-dark";
+		if (Source.IsPrivateItem) return "stat-acc";
 		if (Source.IsLimited) return "secondary";
 
 		if (Source.IsEternalWarExchange || Source.IsNewEternalWarExchange || Source.IsNewEternalWar ||
 			Source.IsInfiniteWar || Source.IsAltiteExchange
 		)
-			return props.minimum ? "light text-dark" : "dark";
+			return props.minimum ? "light" : "dark";
 
 		if (Source.IsSideMap) return "success";
 		if (Source.IsExMap) return "danger";
-		if (Source.IsMap) return "warning text-dark";
+		if (Source.IsMap) return "warning";
 		if (Source.IsSubStory) return "substory";
 		if (Source.IsExchange) {
 			return Source.IsEvent
@@ -58,18 +65,17 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 		else if (Source.IsRoguelike)
 			return <Locale k="COMMON_SOURCE_ROGUELIKE" />;
 		else if (Source.IsPrivateItem) {
-			return <Loader json={ StaticDB.FilterableUnit } content={ ((): preact.VNode => {
-				const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
-
-				const unit = FilterableUnitDB.find(x => x.uid === Source.PrivateId);
+			if (FilterableUnit) {
+				const unit = FilterableUnit.find(x => x.uid === Source.PrivateId);
 				if (unit) return <Locale plain k={ `UNIT_${unit.uid}` } />;
 				return <>{ Source.PrivateId }</>;
-			}) } />;
+			} else
+				return <></>;
 		} else if (Source.IsLimited)
 			return <Locale k="COMMON_SOURCE_LIMITED" />;
 		else if (Source.IsChallenge) {
 			const key = `COMMON_CHALLENGE_${Source.ChallengeId}`;
-			const name = LocaleExists(key)
+			const name = key in loc
 				? <Locale k={ `COMMON_CHALLENGE_${Source.ChallengeId}` } />
 				: <>{ Source.ChallengeId }</>;
 
@@ -158,7 +164,7 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 		}
 		const text = Source.IsReward
 			? <Locale k="COMMON_SOURCE_CLEAR_REWARD" />
-			: <></>;
+			: undefined;
 
 		if (Source.IsEvent) {
 			const event = Source.FullEventName;
@@ -188,10 +194,18 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 		}
 		return <>{
 			(!props.minimum ? [Source.Map, text] : [Source.Map])
-				.filter(x => x)
+				.filter(x => !!x)
 				.gap(<>&nbsp;</>)
 		}</>;
 	})();
+
+	const template = <Badge
+		class={ cn(style.SourceBadge, Source.IsReward && style.Reward, props.class) }
+		pill
+		variant={ variant }
+	>
+		{ content }
+	</Badge>;
 
 	if (props.linked) {
 		if (Source.IsMap || Source.IsChallenge || Source.IsSubStory) {
@@ -217,42 +231,15 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 								return ls;
 							})(Source.Map)}/${Source.Map}`;
 
-			return <Link href={ link } target="_blank">
-				<span
-					class={ `badge bg-${variant} source-badge mx-1 ${props.class || ""}` }
-					data-source={ Source.toString() }
-				>
-					{ content }
-					<IconLink45deg class="ms-1" />
-				</span>
-			</Link>;
+			return <Link href={ link } target="_blank">{ template }</Link>;
 		} else if (Source.IsNewEternalWar) {
 			const link = `/eternalwar/${Source.NewEternalWar}`;
-			return <Link href={ link } target="_blank">
-				<span
-					class={ `badge bg-${variant} source-badge mx-1 ${props.class || ""}` }
-					data-source={ Source.toString() }
-				>
-					{ content }
-					<IconLink45deg class="ms-1" />
-				</span>
-			</Link>;
+			return <Link href={ link } target="_blank">{ template }</Link>;
 		} else if (Source.IsInfiniteWar) {
 			const link = `/infinitewar/${Source.InfiniteWar}`;
-			return <Link href={ link } target="_blank">
-				<span
-					class={ `badge bg-${variant} source-badge mx-1 ${props.class || ""}` }
-					data-source={ Source.toString() }
-				>
-					{ content }
-					<IconLink45deg class="ms-1" />
-				</span>
-			</Link>;
+			return <Link href={ link } target="_blank">{ template }</Link>;
 		}
 	}
-	return <span
-		class={ `badge bg-${variant} source-badge mx-1 ${props.class || ""}` }
-		data-source={ Source.toString() }
-	>{ content }</span>;
+	return template;
 };
 export default SourceBadge;

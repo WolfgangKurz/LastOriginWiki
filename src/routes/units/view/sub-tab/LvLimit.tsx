@@ -7,14 +7,14 @@ import { useUpdate } from "@/libs/hooks";
 import { CurrentDB } from "@/libs/DB";
 import { FormatNumber } from "@/libs/Functions";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import EquipIcon from "@/components/equip-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 
 import { SubpageProps } from "..";
 
-import style from "../style.module.scss";
+import style from "./style.module.scss";
 
 const LvLimitTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 	const update = useUpdate();

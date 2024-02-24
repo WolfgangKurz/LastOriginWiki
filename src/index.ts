@@ -9,7 +9,7 @@ import "@/themes/index.scss";
 import { Extend } from "@/libs/Functions";
 import { SetupLibraries } from "@/libs/Setup";
 
-import { GetJson, JsonLoaderCore } from "@/components/loader";
+import { GetJson, JsonLoaderCore } from "@/libs/Loader";
 import buildtime from "@/buildtime";
 import Store from "@/store";
 
