@@ -52,7 +52,6 @@ interface UnitsViewProps {
 
 const View: FunctionalComponent<UnitsViewProps> = (props) => {
 	const [loc] = useLocale();
-	const [router] = useRouter();
 
 	const [DisplayTab, setDisplayTab] = useState<TabTypes>(
 		props.sub && props.sub.startsWith("s")
@@ -62,7 +61,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 
 	const [skinIndex, setSkinIndex] = useState<number>(
 		props.sub && props.sub.startsWith("s")
-			? -parseInt(props.sub.substring(1), 10)
+			? parseInt(props.sub.substring(1), 10)
 			: 0
 	);
 

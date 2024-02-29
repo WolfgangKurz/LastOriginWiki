@@ -639,16 +639,17 @@ skills:
               desc:
                 desc: Effect_MP_Intruder_N_4_1
                 type: 1
-                value: "1"
+                value: "-0.250000"
                 level: "0"
               attr: 3
               erase:
                 rounds: 1
               value:
                 isBuff: true
-                type: 110
-                disperse:
-                  base: 100%
+                type: 138
+                wide:
+                  type: skill
+                  base: -25%
                   per: 0%
               overlap: 4
           maxStack: 0
@@ -678,16 +679,17 @@ skills:
               desc:
                 desc: Effect_MP_Intruder_N_41_1
                 type: 1
-                value: "0.850000"
+                value: "-0.200000"
                 level: "0"
               attr: 3
               erase:
                 rounds: 1
               value:
                 isBuff: true
-                type: 110
-                disperse:
-                  base: 85%
+                type: 138
+                wide:
+                  type: skill
+                  base: -20%
                   per: 0%
               overlap: 4
           maxStack: 0
@@ -696,7 +698,7 @@ skills:
           on: round
           if:
             - round:
-                operator: =
+                operator: ">="
                 round:
                   - 3
             - false
@@ -717,55 +719,17 @@ skills:
               desc:
                 desc: Effect_MP_Intruder_N_42_1
                 type: 1
-                value: "0.700000"
+                value: "-0.150000"
                 level: "0"
               attr: 3
               erase:
                 rounds: 1
               value:
                 isBuff: true
-                type: 110
-                disperse:
-                  base: 70%
-                  per: 0%
-              overlap: 4
-          maxStack: 0
-          overlapGroup: -1
-        - key: Effect_MP_Intruder_N_43
-          on: round
-          if:
-            - round:
-                operator: ">="
-                round:
-                  - 4
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 2
-          buffs:
-            - icon: BuffIcon_DEF_UP
-              desc:
-                desc: Effect_MP_Intruder_N_43_1
-                type: 1
-                value: "0.500000"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 1
-              value:
-                isBuff: true
-                type: 110
-                disperse:
-                  base: 50%
+                type: 138
+                wide:
+                  type: skill
+                  base: -15%
                   per: 0%
               overlap: 4
           maxStack: 0

@@ -121,7 +121,7 @@ const UnitStatChart: FunctionalComponent<UnitStatChartProps> = (props) => {
 			);
 
 			const tw1 = ctx.measureText(rating[data[i]]).width;
-			const tw2 = ctx.measureText("S").width;
+			const tw2 = ctx.measureText("S+").width;
 
 			ctx.font = "500 14px \"Pretendard JP Variable\",\"Pretendard Variable\"";
 			ctx.textAlign = "center";

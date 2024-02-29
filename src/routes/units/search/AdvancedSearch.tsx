@@ -1,5 +1,3 @@
-import { useCallback, useEffect, useRef, useState } from "preact/hooks";
-
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, BUFF_ATTR_TYPE, BUFF_OVERLAP_TYPE, ROLE_TYPE, TARGET_TYPE } from "@/types/Enums";
 import BuffCategory from "@/types/DB/BuffCategory";
 import { BUFFEFFECT_TYPE } from "@/types/BuffEffect";
@@ -7,12 +5,11 @@ import { BUFFEFFECT_TRIGGER_TYPE } from "@/types/BuffTrigger";
 import { BUFFEFFECT_ERASE_TYPE } from "@/types/BuffErase";
 
 import { AssetsRoot } from "@/libs/Const.1";
-import { CurrentDB } from "@/libs/DB";
-import { useUpdate } from "@/libs/hooks";
+import { useLocale } from "@/libs/Locale";
 import { BuildClass } from "@/libs/Class";
 
-import { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
-import Locale, { LocaleGet } from "@/components/locale";
+import { StaticDB, useDBData } from "@/libs/Loader";
+import Locale from "@/components/locale";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import IconPlusCircleFill from "@/components/bootstrap-icon/icons/PlusCircleFill";
 import IconXCircleFill from "@/components/bootstrap-icon/icons/XCircleFill";
@@ -217,6 +214,7 @@ const ExcludedBuffEffectTypes: BUFFEFFECT_TYPE[] = [ // 사용처가 없어 제�
 	BUFFEFFECT_TYPE.DAMAGE_RECOVER_THISROUND,
 	BUFFEFFECT_TYPE.SAME_SKILL_HIT_DAMAGE_REDUCE,
 	BUFFEFFECT_TYPE.ADD_ROLE_TYPE,
+	BUFFEFFECT_TYPE.WIDE_DAMAGE_RATIO,
 ];
 const CombinedBuffEffectTypes: Partial<Record<BUFFEFFECT_TYPE, BUFFEFFECT_TYPE[]>> = {
 	[BUFFEFFECT_TYPE.STAGE_CHARCHANGE_LIMITED]: [BUFFEFFECT_TYPE.STAGE_CHARCHANGE_PERMANENT],
@@ -239,11 +237,11 @@ interface AdvancedSearchProps {
 }
 
 const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
-	const update = useUpdate();
+	const [loc] = useLocale();
+
 	const conds = props.conds;
 
-	const BuffCategoryDB = GetJson<BuffCategory[] | null>(StaticDB.BuffCategory);
-	if (!BuffCategoryDB) JsonLoaderCore(CurrentDB, StaticDB.BuffCategory).then(() => update());
+	const BuffCategoryDB = useDBData<BuffCategory[]>(StaticDB.BuffCategory);
 
 	function GetEnumKeys<T extends {}> (e: T): number[] {
 		return Object.keys(e)
@@ -1006,7 +1004,7 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 													if (buffs.length === 0) return <></>;
 
 													return buffs.length > 1
-														? <optgroup label={ LocaleGet(r.groupName) }>
+														? <optgroup label={ loc[r.groupName] }>
 															{ buffs.map(b => <option value={ b } selected={ c.buff === b }>
 																<Locale k={ `SEARCH_CONF_BUFF_BUFF_.${b}` } />
 															</option>) }
@@ -1047,7 +1045,7 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 													if (buffs.length === 0) return <></>;
 
 													return buffs.length > 1
-														? <optgroup label={ LocaleGet(r.groupName) }>
+														? <optgroup label={ loc[r.groupName] }>
 															{ buffs.map(b => <option value={ b } selected={ c.targetBuffEnum === b }>
 																<Locale k={ `SEARCH_CONF_BUFF_BUFF_.${b}` } />
 															</option>) }

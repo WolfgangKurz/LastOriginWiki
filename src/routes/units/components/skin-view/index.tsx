@@ -107,7 +107,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			(ret.length > 0 ? "_" : "") + ret.join(""),
 		];
 	}, [hideBG, hideParts]);
-	const SkinVideoURL = useMemo((): string => {
+	const modelVideoId = useMemo((): string => {
 		if (!props.collapsed && !props.animate) return "";
 		if (isDamaged) return "";
 
@@ -120,6 +120,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		props.animate,
 		unit.uid,
 		skin,
+		isCensored,
 		isDamaged,
 		SkinVideoPostfix,
 	]);
@@ -212,18 +213,16 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					</div>
 				</div>
 				<div
-					class={ cn(
-						style.FullUnit,
-						(!props.collapsed || DisplaySpine || Display2DModel) && style.FullUnitMarginless,
-					) }
+					class={ cn(style.FullUnit, style.FullUnitMarginless) }
 					ref={ FullUnitEl }
 				>
-					{ DisplaySpine || Display2DModel
+					{ DisplaySpine || Display2DModel || modelVideoId
 						? <PixiView
-							spine={ DisplaySpine }
+							type={ DisplaySpine ? "spine" : Display2DModel ? "2dmodel" : modelVideoId ? "video" : "none" }
 							U2DModelMetadata={ skin.metadata }
 
 							uid={ modelId }
+							vid={ modelVideoId }
 							google={ isCensored }
 							damaged={ isDamaged }
 							displayTouchCollider={ displayTouchCollider }
@@ -306,14 +305,14 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 						// 			} }
 						// 		/>
 						// 	</Pinch>
-						: SkinVideoURL.length > 0
+						: modelVideoId.length > 0
 							? CanPlayWebM()
 								? <video
 									autoPlay muted loop
-									src={ `${AssetsRoot}/webm/HD/${SkinVideoURL}.webm` }
+									src={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` }
 								/>
 								: <MergedVideo
-									src={ `${AssetsRoot}/webm/HD.Legacy/${SkinVideoURL}.mp4` }
+									src={ `${AssetsRoot}/webm/HD.Legacy/${modelVideoId}.mp4` }
 									type="video/mp4"
 								/>
 							: !props.collapsed // && !AvailableAnim
@@ -327,7 +326,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					}
 				</div>
 
-				{ !DisplaySpine && !SkinVideoURL.length
+				{ !DisplaySpine && !modelVideoId.length
 					? <a
 						class={ `${style.SkinToggle} ${style.Download}` }
 						href={ SkinImageURL }

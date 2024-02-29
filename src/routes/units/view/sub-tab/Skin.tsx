@@ -29,7 +29,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 		return skin && skin.sid
 			? Math.floor(skin.sid / 10) === 2
 				? `S${skin.sid - 20}`
-				: skin.sid?.toString()
+				: skin.sid.toString()
 			: "";
 	}, [skin, skin?.sid]);
 
