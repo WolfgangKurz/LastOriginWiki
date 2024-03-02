@@ -203,7 +203,7 @@ export default class PixiSpineModel extends FadeContainer {
 											.then(_img => {
 												const t = new PIXI.BaseTexture(_img, {
 													anisotropicLevel: 4,
-													mipmap: PIXI.MIPMAP_MODES.ON,
+													mipmap: PIXI.MIPMAP_MODES.OFF,
 													multisample: PIXI.MSAA_QUALITY.HIGH,
 												});
 												return t;

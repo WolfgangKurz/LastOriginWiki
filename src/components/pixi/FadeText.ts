@@ -1,8 +1,88 @@
 import * as PIXI from "pixi.js";
+import opentype from "opentype.js";
+import woff2dec from "@/external/woff2/woff2dec";
 
+import { AssetsRoot } from "@/libs/Const";
+import { groupBy } from "@/libs/Functions";
+import FadeContainer from "@/components/pixi/FadeContainer";
 import { findSpans } from "unicode-default-word-boundary";
 
-export default class FadeText extends PIXI.Sprite {
+type FontParsedType = [family: string, weight: number, font: opentype.Font];
+
+const _font_priority = ["IBMPlexSansKR", "PretendardJPVariable", "PretendardVariable"];
+const _fonts: Record<string, Record<number, opentype.Font>> = {};
+const _fonts_array: FontParsedType[] = [];
+const fontCallbacks: Array<() => void> = [];
+let fontReady = false;
+
+(async () => {
+	const fontMap = {
+		IBMPlexSansKR: {
+			400: fetch(`${AssetsRoot}/story/fonts/IBMPlexSansKR-400.ttf`).then(r => r.arrayBuffer()),
+			500: fetch(`${AssetsRoot}/story/fonts/IBMPlexSansKR-500.ttf`).then(r => r.arrayBuffer()),
+		},
+		PretendardJPVariable: fetch("https://cdnjs.cloudflare.com/ajax/libs/pretendard-jp/1.3.9/variable/woff2/PretendardJPVariable.woff2")
+			.then(r => r.arrayBuffer())
+			.then(r => woff2dec(new Uint8Array(r))) // woff2 -> ttf
+			.then(r => r.buffer), // ArrayBufferLike
+		PretendardVariable: fetch("https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/variable/woff2/PretendardVariable.woff2")
+			.then(r => r.arrayBuffer())
+			.then(r => woff2dec(new Uint8Array(r))) // woff2 -> ttf
+			.then(r => r.buffer), // ArrayBufferLike
+	};
+
+	type FontFetchType = [family: string, weight: number, buffer: ArrayBuffer];
+
+	Promise.all(
+		Object.keys(fontMap)
+			.map(k => {
+				if (fontMap[k] instanceof Promise)
+					return fontMap[k].then(b => [k, 0, b]) as Promise<FontFetchType>;
+				else {
+					return Object.keys(fontMap[k])
+						.map(w => fontMap[k][w].then(b => [k, parseInt(w, 10), b]) as Promise<FontFetchType>)
+						.flat();
+				}
+			})
+			.flat()
+	)
+		.then(fonts => fonts.map(f => [f[0], f[1], opentype.parse(f[2])] as FontParsedType))
+		.then(fonts => {
+			_fonts_array.push(...fonts);
+
+			const grp = groupBy(fonts, f => f[0].toString());
+			Object.keys(grp).forEach(ff => {
+				_fonts[ff] = {};
+				grp[ff].forEach(f => _fonts[ff][f[1]] = f[2]);
+			});
+
+			fontReady = true;
+			fontCallbacks.forEach(fn => fn());
+		});
+})();
+
+const pathCache: {
+	[family_size_weight: string]: {
+		[char: string]: [opentype.Font, opentype.Path, number];
+	};
+} = {};
+
+interface TextStyle {
+	align?: "LT" | "CT" | "RT" | "LC" | "CC" | "RC" | "LB" | "CB" | "RB";
+
+	lineHeight?: number;
+	fontFamily?: string;
+	fontSize?: number;
+	fontWeight?: number;
+	fill?: string;
+
+	strokeWidth?: number;
+	stroke?: string;
+
+	wrapWidth?: number;
+}
+
+export default class FadeText extends FadeContainer {
 	private _text: string | undefined;
 	public get text () {
 		return this._text;
@@ -12,7 +92,7 @@ export default class FadeText extends PIXI.Sprite {
 		this.UpdateTexture();
 	}
 
-	private _style: PIXI.HTMLTextStyle | PIXI.TextStyle | Partial<PIXI.ITextStyle> | undefined;
+	private _style: Partial<TextStyle> | undefined;
 	public get style () {
 		return this._style;
 	}
@@ -21,353 +101,214 @@ export default class FadeText extends PIXI.Sprite {
 		this.UpdateTexture();
 	}
 
-	private canvas: HTMLCanvasElement | null = null;
-	private measurerContainer: HTMLDivElement | null = null;
+	private _cv: HTMLCanvasElement;
+	private _sprites: PIXI.Sprite[] = [];
 
-	private BindedFontLoadEvent = this.FontLoadEvent.bind(this);
-
-	constructor (text?: string, style?: PIXI.HTMLTextStyle | PIXI.TextStyle | Partial<PIXI.ITextStyle>) {
+	constructor (text?: string, style?: TextStyle) {
 		super();
 		this._text = text;
 		this._style = style;
-		this.roundPixels = true;
 
-		this.UpdateTexture();
+		this._cv = document.createElement("canvas");
+
+		if (!fontReady) {
+			fontCallbacks.push(() => this.UpdateTexture());
+		} else
+			this.UpdateTexture();
 	}
 
 	destroy (options?: boolean | PIXI.IDestroyOptions | undefined): void {
-		const _doc_fonts = document.fonts as FontFaceSet;
-		_doc_fonts.removeEventListener("loadingdone", this.BindedFontLoadEvent);
+		this._sprites.forEach(sp => {
+			this.removeChild(sp);
+			sp.destroy(true);
+		});
+		this._cv.remove();
 
 		super.destroy(options || true);
-		if (this.canvas) this.canvas.remove();
-		if (this.measurerContainer) this.measurerContainer.remove();
-	}
-
-	private FontLoadEvent (e: FontFaceSetLoadEvent) {
-		if (this.style && this.style.fontFamily) { // target font loaded
-			const parseFontFamily = (text: string | string[]): string[] => {
-				if (Array.isArray(text)) return text;
-
-				const list: string[] = [];
-				let buffer = "";
-				let quote = 0;
-				let require = "";
-				for (const c of text) {
-					if (quote === 0) {
-						if (require) {
-							if (c !== require && c !== " ")
-								throw new Error("'" + require + "' expected, but found '" + c + "'");
-							else
-								require = "";
-						}
-
-						if (c === "'") {
-							quote = 1;
-							continue;
-						} else if (c === "\"") {
-							quote = 2;
-							continue;
-						}
-
-						if (c === ",") {
-							list.push(buffer);
-							buffer = "";
-							continue;
-						}
-
-						buffer += c;
-						continue;
-					}
-
-					if ((quote === 1 && c === "'") || (quote === 2 && c === "\"")) {
-						quote = 0;
-						require = ",";
-					} else if (quote !== 0)
-						buffer += c;
-				}
-
-				if (quote !== 0)
-					throw new Error("Quote " + (quote === 1 ? "'" : "\"") + " expected, but reach end");
-
-				if (buffer.length > 0) list.push(buffer);
-
-				return list.map(r => r.trim());
-			};
-
-			const families = parseFontFamily(this.style!.fontFamily ?? "sans-serif");
-			if (e.fontfaces.some(r => families.includes(r.family)))
-				this.UpdateTexture();
-		}
-	}
-
-	private convertLineHeight (style: CSSStyleDeclaration): number {
-		let mul = 1;
-		if (style.lineHeight === "normal") mul = 1.2;
-
-		return parseFloat(style.fontSize) * mul;
 	}
 
 	private UpdateTexture (): void {
-		const _doc_fonts = document.fonts as FontFaceSet;
+		if (!fontReady) return;
 
-		if (this.texture) {
-			const tex = this.texture;
-			this.texture = null!;
-			tex.destroy();
-		}
-		_doc_fonts.removeEventListener("loadingdone", this.BindedFontLoadEvent);
+		this._sprites.forEach(sp => {
+			this.removeChild(sp);
+			sp.destroy(true);
+		});
+		this._sprites = [];
 
-		if (!this._text) {
-			this.texture = null!;
-			return;
-		}
+		if (!this._text) return;
 
-		if (!this.canvas) {
-			this.canvas = document.createElement("canvas");
-			this.canvas.width = this.canvas.height = 1;
-		}
-		if (!this.measurerContainer) {
-			this.measurerContainer = document.createElement("div");
-			this.measurerContainer.className = "TextMeasurer";
-			document.body.appendChild(this.measurerContainer);
+		const fontFamily = this._style?.fontFamily;
+		const fontSize = this._style?.fontSize ?? 14;
+		const fontWeight = this._style?.fontWeight ?? 400;
+		const lineHeight = this._style?.lineHeight ?? 1.2;
+		const strokeWidth = this._style?.strokeWidth ?? 0;
 
-			const midContainer = document.createElement("div");
-			this.measurerContainer.appendChild(midContainer);
+		function findFont (char: string, family: string | undefined, weight: number): opentype.Font | null {
+			if (family && family in _fonts && weight in _fonts[family])
+				return _fonts[family][weight];
 
-			const _measurer = document.createElement("div");
-			_measurer.className = "Measurer";
-			midContainer.appendChild(_measurer);
-		}
+			if (family) {
+				const _targets = Object.keys(_fonts[family])
+					.map(k => parseInt(k, 10))
+					.sort((a, b) => Math.abs(a - weight) - Math.abs(b - weight));
 
-		const measurer = this.measurerContainer.querySelector<HTMLDivElement>("div.Measurer")!;
-
-		let hasStroke = false;
-
-		const ctx = this.canvas.getContext("2d");
-		if (!ctx) {
-			console.warn("[FadeText] Cannot get 2d context from canvas");
-			return;
-		}
-
-		if (this._style) {
-			const s = this._style;
-
-			if (s.stroke !== undefined && s.strokeThickness !== undefined)
-				hasStroke = true;
-
-			const font = [
-				s.fontStyle,
-				s.fontVariant,
-				s.fontWeight,
-				typeof s.fontSize === "number" ? s.fontSize + "px" : s.fontSize,
-				s.lineHeight,
-				s.fontFamily
-			]
-				.filter(r => r)
-				.join(" ");
-
-			if (s.fontFamily) {
-				if (!Array.from(_doc_fonts).some(r => r.family === s.fontFamily))
-					_doc_fonts.addEventListener("loadingdone", this.BindedFontLoadEvent);
+				for (let k of _targets) {
+					const _font = _fonts[family][k];
+					if (_font.hasChar(char))
+						return _font;
+				}
 			}
 
-			//#region set measurer style
-			measurer.style.font = font;
-
-			if (s.wordWrap && s.wordWrapWidth)
-				measurer.style.width = s.wordWrapWidth + "px";
-			else
-				measurer.style.width = "";
-
-			measurer.style.whiteSpace = s.whiteSpace ?? "normal";
-			measurer.style.textAlign = s.align ?? "";
-			//#endregion
-		}
-
-		// resizing canvas will reset context styles
-		// so apply context style after change canvas size
-
-		measurer.innerHTML = this._text.replace(/\0[^\0]+\0([^\0]+)\0/gs, "$1");
-
-		const b = hasStroke ? this._style!.strokeThickness! : 0;
-		const w = measurer.clientWidth + b * 4; // padding 10px
-		const h = measurer.clientHeight + b * 4;
-		const _h = this.convertLineHeight(window.getComputedStyle(measurer));
-
-		this.canvas!.width = w;
-		this.canvas!.height = h;
-		ctx.translate(-0.5, -0.5);
-
-		if (this._style) {
-			const s = this._style;
-
-			//#region set canvas style
-			ctx.font = measurer.style.font;
-
-			if (typeof s.fill === "number") {
-				const r = s.fill & 0xFF;
-				const g = (s.fill >> 8) & 0xFF;
-				const b = (s.fill >> 16) & 0xFF;
-				const a = ((s.fill >> 24) & 0xFF) / 0xFF; // 0.0 ~ 1.0
-				if (a > 0)  // has alpha
-					ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
-				else
-					ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
-			} else if (Array.isArray(s.fill)) {
-				if (s.fill.length > 0) {
-					s.fill.map((f: string | number) => {
-						if (typeof f === "number") {
-							const r = f & 0xFF;
-							const g = (f >> 8) & 0xFF;
-							const b = (f >> 16) & 0xFF;
-							const a = ((f >> 24) & 0xFF) / 0xFF; // 0.0 ~ 1.0
-							if (a > 0) // has alpha
-								return `rgba(${r}, ${g}, ${b}, ${a})`;
-							else
-								return `rgb(${r}, ${g}, ${b})`;
-						} else
-							return f;
-					});
-				}
-			} else if (s.fill)
-				ctx.fillStyle = s.fill;
-
-			if (typeof s.stroke === "number") {
-				const r = s.stroke & 0xFF;
-				const g = (s.stroke >> 8) & 0xFF;
-				const b = (s.stroke >> 16) & 0xFF;
-				const a = ((s.stroke >> 24) & 0xFF) / 0xFF; // 0.0 ~ 1.0
-				if (a > 0)  // has alpha
-					ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${a})`;
-				else
-					ctx.strokeStyle = `rgb(${r}, ${g}, ${b})`;
-			} else if (s.stroke)
-				ctx.strokeStyle = s.stroke;
-
-			if (s.strokeThickness) ctx.lineWidth = s.strokeThickness;
-
-			if (s.align && s.align !== "justify") ctx.textAlign = s.align;
-			ctx.textBaseline = s.textBaseline ?? "ideographic";
-			//#endregion
-		}
-
-		this.width = w;
-		this.height = h;
-
-		ctx.imageSmoothingEnabled = true;
-		ctx.imageSmoothingQuality = "high";
-
-		ctx.clearRect(0, 0, w, h);
-
-		let x = b, y = b + _h;
-		// \0 type \0 param \0 content \0
-		this._text.split(/(\0[^\0]+\0[^\0]+\0[^\0]+\0)/gs)
-			.forEach(p => {
-				ctx.save();
-
-				let text = p;
-				if (p[0] === "\0") { // formatted
-					const r = (/\0([^\0]+)\0([^\0]+)\0([^\0]+)\0/gs).exec(p);
-					if (r) {
-						text = r[3];
-
-						switch (r[1]) {
-							case "color":
-								ctx.fillStyle = `#${r[2]}`;
-								break;
-						}
-					}
-				}
-
-				[...findSpans(text)]
-					.map(s => s.text)
-					.forEach(s => {
-						const _w = ctx.measureText(s).width;
-						if ((x + _w > w) || (s === "\n")) {
-							x = b;
-							y += _h * 1.2;
-						}
-
-						if (_w === 0) return;
-
-						ctx.save();
-						if (hasStroke) {
-							ctx.fillStyle = ctx.strokeStyle;
-
-							for (let i = -ctx.lineWidth; i <= ctx.lineWidth; i++) {
-								for (let j = -ctx.lineWidth; j <= ctx.lineWidth; j++) {
-									ctx.fillText(s, x + i, y + j);
-								}
-							}
-							// ctx.strokeText(s, x, y);
-						}
-						ctx.restore();
-
-						ctx.fillText(s, x, y);
-
-						if (x !== b || ![" ", "\t", "\n"].includes(s))
-							x += _w;
-					});
-
-				ctx.restore();
+			const _sorted = _fonts_array.sort((a, b) => {
+				const fa = _font_priority.indexOf(a[0]);
+				const fb = _font_priority.indexOf(b[0]);
+				if (fa !== fb) return fa - fb;
+				return Math.abs(a[1] - fontWeight) - Math.abs(b[1] - fontWeight);
 			});
 
-		this.texture = PIXI.Texture.from(this.canvas!);
-	}
-
-	//#region part of FadeSprite
-	private _fading: boolean = false;
-	public get fading () {
-		return this._fading;
-	}
-
-	public stopFade () {
-		this._fading = false;
-	}
-
-	/** `duration` in secs */
-	public fadeIn (duration: number = 3.0) {
-		if (this._fading) return; // no fading on same time
-
-		this.alpha = 0;
-
-		const ticker = PIXI.Ticker.shared;
-		const onTick = (dt: number) => {
-			const secs = dt / PIXI.Ticker.targetFPMS / 1000;
-			this.alpha += secs / duration;
-
-			if (this.alpha >= 1 || !this._fading || this.destroyed) {
-				this._fading = false;
-				ticker.remove(onTick);
-				this.alpha = 1;
+			for (let [_1, _2, _font] of _sorted) {
+				if (_font.hasChar(char))
+					return _font;
 			}
-		};
+			return null;
+		}
 
-		this._fading = true;
-		ticker.add(onTick);
+		const fallback = "?";
+		const _base_x = (this.style?.stroke && strokeWidth) || 0;
+		const _base_y = _base_x;
+		let x = _base_x, y = _base_y;
+
+		const _stroke = this._style?.stroke ?? "#000";
+
+		const wrapWidth = this._style?.wrapWidth ?? 0;
+
+		new Promise(() => {
+			// \0 type \0 param \0 content \0
+			this._text!
+				.split(/(\0[^\0]+\0[^\0]+\0[^\0]+\0)/gs)
+				.forEach(p => {
+					let _fill = this._style?.fill;
+					let text = p;
+					if (p[0] === "\0") { // formatted
+						const r = (/\0([^\0]+)\0([^\0]+)\0([^\0]+)\0/gs).exec(p);
+						if (r) {
+							text = r[3];
+
+							switch (r[1]) {
+								case "color":
+									_fill = `#${r[2]}`;
+									break;
+							}
+						}
+					}
+
+					const pathCacheKey = `${fontFamily || ""}_${fontSize}_${fontWeight}`;
+					pathCache[pathCacheKey] ||= {};
+
+					let _right = 0;
+					let _bottom = 0;
+
+					[...findSpans(text)]
+						.map(s => s.text)
+						.forEach(text => {
+							const __x = x;
+							const __y = y;
+
+							const _arr: Array<[c: string, font: opentype.Font]> = [];
+							let _w = 0;
+							let _h = 0;
+							let _bl = 0;
+							for (let c of text) {
+								const _font = findFont(c, fontFamily, fontWeight) || findFont(fallback, fontFamily, fontWeight) || _fonts_array[0][2];
+								_w += _font.getAdvanceWidth(c, fontSize);
+								_arr.push([c, _font]);
+
+								const h = (_font.ascender - _font.descender) / _font.unitsPerEm * fontSize;
+								_bl = Math.max(_bl, h + (_font.descender) / _font.unitsPerEm * fontSize);
+								_h = Math.max(_h, h);
+							}
+
+							this._cv.width = _w + _base_x * 2;
+							this._cv.height = _h + _base_y * 2;
+
+							if ((wrapWidth > 0 && x + _w > wrapWidth) || (text === "\n")) {
+								x = _base_x;
+								y += fontSize * lineHeight;
+							}
+
+							if (text === "\n") return;
+
+							const ctx = this._cv.getContext("2d")!;
+							ctx.fillStyle = _fill || "#fff";
+
+							for (let c of text) {
+								if (!(pathCacheKey in pathCache && c in pathCache[pathCacheKey])) {
+									const _font = findFont(c, fontFamily, fontWeight) || findFont(fallback, fontFamily, fontWeight) || _fonts_array[0][2];
+									const _path = _font.getPath(c, 0, 0, fontSize, {
+										kerning: true,
+										features: {
+											liga: true,
+											rlig: true,
+										},
+									});
+									const _cw = _font.getAdvanceWidth(c, fontSize);
+									pathCache[pathCacheKey][c] = [_font, _path, _cw];
+								}
+
+								const [_font, _path, _cw] = pathCache[pathCacheKey][c];
+								ctx.save();
+								ctx.translate(x - __x, _bl);
+
+								_path.fill = null;
+								_path.stroke = _stroke || null;
+								_path.strokeWidth = strokeWidth * 2;
+								_path.draw(ctx);
+
+								_path.stroke = null;
+								_path.fill = _fill || null;
+								_path.draw(ctx);
+								ctx.restore();
+
+								x += _cw;
+							}
+
+							const sp = new PIXI.Sprite(PIXI.Texture.from(this._cv.toDataURL()));
+							sp.roundPixels = true;
+							sp.name = text;
+							sp.position.set(__x, __y);
+							this.addChild(sp);
+							this._sprites.push(sp);
+
+							_right = Math.max(_right, __x + this._cv.width);
+							_bottom = Math.max(_bottom, __y + this._cv.height);
+						});
+
+					const _align = this._style?.align ?? "LT";
+					const [_g_w, _g_h] = [_right, _bottom];
+					switch (_align[0]) {
+						case "L":
+							this.pivot.x = 0;
+							break;
+						case "C":
+							this.pivot.x = _g_w / 2;
+							break;
+						case "R":
+							this.pivot.x = _g_w;
+							break;
+					}
+					switch (_align[1]) {
+						case "T":
+							this.pivot.y = 0;
+							break;
+						case "C":
+							this.pivot.y = _g_h / 2;
+							break;
+						case "B":
+							this.pivot.y = _g_h;
+							break;
+					}
+				});
+		});
 	}
-
-	/** `duration` in secs */
-	public fadeOut (duration: number = 3.0) {
-		if (this._fading) return; // no fading on same time
-
-		this.alpha = 1;
-
-		const ticker = PIXI.Ticker.shared;
-		const onTick = (dt: number) => {
-			const secs = dt / PIXI.Ticker.targetFPMS / 1000;
-			this.alpha -= secs / duration;
-
-			if (this.alpha <= 0 || !this._fading || this.destroyed) {
-				this._fading = false;
-				ticker.remove(onTick);
-				this.alpha = 0;
-			}
-		};
-
-		this._fading = true;
-		ticker.add(onTick);
-	}
-	//#endregion
 }

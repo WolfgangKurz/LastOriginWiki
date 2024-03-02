@@ -585,12 +585,13 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			// };
 
 			text = new FadeText(LText(bgName), {
-				fontFamily,
-				fontWeight: "500",
+				// fontFamily,
+				fontWeight: 500,
 				fontSize: 24,
-				fill: 0xffffff,
-				stroke: 0x000000,
-				strokeThickness: 1.5,
+				fill: "#fff",
+				stroke: "#000",
+				// strokeThickness: 1.5,
+				strokeWidth: 1.5,
 			});
 			text.name = "@bgName";
 			text.position.set(20, 20);
@@ -618,14 +619,16 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			// };
 
 			text = new FadeText(LText(bgDesc), {
-				fontFamily,
+				align: "CC",
+				// fontFamily,
 				fontSize: 48,
-				fill: 0xffffff,
-				stroke: 0x000000,
-				strokeThickness: 2,
+				fill: "#fff",
+				stroke: "#000",
+				// strokeThickness: 2,
+				strokeWidth: 2,
 			});
 			text.name = "@bgDesc";
-			text.anchor.set(0.5, 0.5);
+			// text.anchor.set(0.5, 0.5);
 			text.position.set(640, 360);
 			text.zIndex = 950;
 			screen.addChild(text);

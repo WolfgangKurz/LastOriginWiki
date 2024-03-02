@@ -122,29 +122,34 @@ export default class DialogObject extends PIXI.Container {
 		this.addChild(this.charDisp);
 
 		this.textObject = new FadeText("", {
-			fontFamily,
+			align: "LC",
+			// fontFamily,
 			fontSize: 28,
-			fill: 0xffffff,
-			stroke: 0x000000,
-			strokeThickness: 1.5,
-			whiteSpace: "pre-line",
-			wordWrap: true,
-			wordWrapWidth: this.WIDTH - 60,
-			breakWords: true,
+			fill: "#fff",
+			stroke: "#000",
+			// strokeThickness: 1.5,
+			strokeWidth: 1.5,
+			// whiteSpace: "pre-line",
+			// wordWrap: true,
+			// wordWrapWidth: this.WIDTH - 60,
+			// breakWords: true,
 		});
-		this.textObject.anchor.set(0, 0.5);
+		this.textObject.width = this.WIDTH - 60;
+		// this.textObject.anchor.set(0, 0.5);
 		this.textObject.position.set(30, 81);
 		this.dialogObject.addChild(this.textObject);
 
 		this.speakerObject = new FadeText("", {
-			fontFamily,
-			fontWeight: "500",
+			align: "CC",
+			// fontFamily,
+			fontWeight: 500,
 			fontSize: 20,
-			fill: 0xffffff,
-			stroke: 0x000000,
-			strokeThickness: 1,
+			fill: "#fff",
+			stroke: "#000",
+			// strokeThickness: 1,
+			strokeWidth: 1,
 		});
-		this.speakerObject.anchor.set(0.5, 0.5);
+		// this.speakerObject.anchor.set(0.5, 0.5);
 		this.speakerObject.position.set(170, 16);
 		this.charDisp.addChild(this.speakerObject);
 

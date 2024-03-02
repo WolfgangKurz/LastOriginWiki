@@ -176,7 +176,8 @@ export default ({ mode }) => {
 
                         if (
                             id.includes("/node_modules/pixi") ||
-                            id.includes("/node_modules/@pixi/")
+                            id.includes("/node_modules/@pixi/") ||
+                            id.includes("/node_modules/@turf/")
                         ) return "vendor.pixi";
                         if (
                             id.includes("/node_modules/@reactflow/") ||
