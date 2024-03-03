@@ -4,8 +4,6 @@ import { DIALOG_SPEAKER } from "@/types/Enums";
 
 import { AssetsRoot } from "@/libs/Const";
 
-import { fontFamily } from "../common";
-
 import FadeText from "@/components/pixi/FadeText";
 import FadeSprite from "@/components/pixi/FadeSprite";
 

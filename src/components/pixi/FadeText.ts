@@ -1,69 +1,15 @@
 import * as PIXI from "pixi.js";
 import opentype from "opentype.js";
-import woff2dec from "@/external/woff2/woff2dec";
 
-import { AssetsRoot } from "@/libs/Const";
-import { groupBy } from "@/libs/Functions";
-import FadeContainer from "@/components/pixi/FadeContainer";
 import { findSpans } from "unicode-default-word-boundary";
 
-type FontParsedType = [family: string, weight: number, font: opentype.Font];
+import { FontGet, FontPriority } from "@/libs/Font";
 
-const _font_priority = ["IBMPlexSansKR", "PretendardJPVariable", "PretendardVariable"];
-const _fonts: Record<string, Record<number, opentype.Font>> = {};
-const _fonts_array: FontParsedType[] = [];
-const fontCallbacks: Array<() => void> = [];
-let fontReady = false;
-
-(async () => {
-	const fontMap = {
-		IBMPlexSansKR: {
-			400: fetch(`${AssetsRoot}/story/fonts/IBMPlexSansKR-400.ttf`).then(r => r.arrayBuffer()),
-			500: fetch(`${AssetsRoot}/story/fonts/IBMPlexSansKR-500.ttf`).then(r => r.arrayBuffer()),
-		},
-		PretendardJPVariable: fetch("https://cdnjs.cloudflare.com/ajax/libs/pretendard-jp/1.3.9/variable/woff2/PretendardJPVariable.woff2")
-			.then(r => r.arrayBuffer())
-			.then(r => woff2dec(new Uint8Array(r))) // woff2 -> ttf
-			.then(r => r.buffer), // ArrayBufferLike
-		PretendardVariable: fetch("https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/variable/woff2/PretendardVariable.woff2")
-			.then(r => r.arrayBuffer())
-			.then(r => woff2dec(new Uint8Array(r))) // woff2 -> ttf
-			.then(r => r.buffer), // ArrayBufferLike
-	};
-
-	type FontFetchType = [family: string, weight: number, buffer: ArrayBuffer];
-
-	Promise.all(
-		Object.keys(fontMap)
-			.map(k => {
-				if (fontMap[k] instanceof Promise)
-					return fontMap[k].then(b => [k, 0, b]) as Promise<FontFetchType>;
-				else {
-					return Object.keys(fontMap[k])
-						.map(w => fontMap[k][w].then(b => [k, parseInt(w, 10), b]) as Promise<FontFetchType>)
-						.flat();
-				}
-			})
-			.flat()
-	)
-		.then(fonts => fonts.map(f => [f[0], f[1], opentype.parse(f[2])] as FontParsedType))
-		.then(fonts => {
-			_fonts_array.push(...fonts);
-
-			const grp = groupBy(fonts, f => f[0].toString());
-			Object.keys(grp).forEach(ff => {
-				_fonts[ff] = {};
-				grp[ff].forEach(f => _fonts[ff][f[1]] = f[2]);
-			});
-
-			fontReady = true;
-			fontCallbacks.forEach(fn => fn());
-		});
-})();
+import FadeContainer from "@/components/pixi/FadeContainer";
 
 const pathCache: {
 	[family_size_weight: string]: {
-		[char: string]: [opentype.Font, opentype.Path, number];
+		[char: string]: [opentype.Path, number];
 	};
 } = {};
 
@@ -110,11 +56,7 @@ export default class FadeText extends FadeContainer {
 		this._style = style;
 
 		this._cv = document.createElement("canvas");
-
-		if (!fontReady) {
-			fontCallbacks.push(() => this.UpdateTexture());
-		} else
-			this.UpdateTexture();
+		this.UpdateTexture();
 	}
 
 	destroy (options?: boolean | PIXI.IDestroyOptions | undefined): void {
@@ -127,9 +69,21 @@ export default class FadeText extends FadeContainer {
 		super.destroy(options || true);
 	}
 
-	private UpdateTexture (): void {
-		if (!fontReady) return;
+	private updateRequired = false;
+	private updateTickFn = this.updateTicker.bind(this);
+	private markUpdateRequire (): void {
+		if (!this.updateRequired) {
+			this.updateRequired = true;
+			PIXI.Ticker.shared.add(this.updateTickFn);
+		}
+	}
+	private updateTicker () {
+		this.updateRequired = false;
+		PIXI.Ticker.shared.remove(this.updateTickFn);
+		this.UpdateTexture();
+	}
 
+	private UpdateTexture (): void {
 		this._sprites.forEach(sp => {
 			this.removeChild(sp);
 			sp.destroy(true);
@@ -138,41 +92,12 @@ export default class FadeText extends FadeContainer {
 
 		if (!this._text) return;
 
-		const fontFamily = this._style?.fontFamily;
+		const firstFont = FontPriority[0];
+		const fontFamily = this._style?.fontFamily ?? firstFont;
 		const fontSize = this._style?.fontSize ?? 14;
 		const fontWeight = this._style?.fontWeight ?? 400;
 		const lineHeight = this._style?.lineHeight ?? 1.2;
 		const strokeWidth = this._style?.strokeWidth ?? 0;
-
-		function findFont (char: string, family: string | undefined, weight: number): opentype.Font | null {
-			if (family && family in _fonts && weight in _fonts[family])
-				return _fonts[family][weight];
-
-			if (family) {
-				const _targets = Object.keys(_fonts[family])
-					.map(k => parseInt(k, 10))
-					.sort((a, b) => Math.abs(a - weight) - Math.abs(b - weight));
-
-				for (let k of _targets) {
-					const _font = _fonts[family][k];
-					if (_font.hasChar(char))
-						return _font;
-				}
-			}
-
-			const _sorted = _fonts_array.sort((a, b) => {
-				const fa = _font_priority.indexOf(a[0]);
-				const fb = _font_priority.indexOf(b[0]);
-				if (fa !== fb) return fa - fb;
-				return Math.abs(a[1] - fontWeight) - Math.abs(b[1] - fontWeight);
-			});
-
-			for (let [_1, _2, _font] of _sorted) {
-				if (_font.hasChar(char))
-					return _font;
-			}
-			return null;
-		}
 
 		const fallback = "?";
 		const _base_x = (this.style?.stroke && strokeWidth) || 0;
@@ -215,18 +140,31 @@ export default class FadeText extends FadeContainer {
 							const __x = x;
 							const __y = y;
 
-							const _arr: Array<[c: string, font: opentype.Font]> = [];
+							const _arr: Array<[c: string, font: opentype.Font | null]> = [];
 							let _w = 0;
 							let _h = 0;
 							let _bl = 0;
 							for (let c of text) {
-								const _font = findFont(c, fontFamily, fontWeight) || findFont(fallback, fontFamily, fontWeight) || _fonts_array[0][2];
-								_w += _font.getAdvanceWidth(c, fontSize);
-								_arr.push([c, _font]);
+								const _font = FontGet(fontFamily, fontWeight, c) ||
+									FontGet(fontFamily, 400, c) || // try :400 font
+									FontGet(firstFont, 400, c) || // try default:400 font
+									FontGet(fontFamily, fontWeight, fallback) || // try fallback
+									FontGet(fontFamily, 400, fallback) || // try fallback :400 font
+									FontGet(firstFont, 400, fallback); // try fallback default:400 font
+								if (!_font) continue; // not drawable... skip
 
-								const h = (_font.ascender - _font.descender) / _font.unitsPerEm * fontSize;
-								_bl = Math.max(_bl, h + (_font.descender) / _font.unitsPerEm * fontSize);
-								_h = Math.max(_h, h);
+								if (_font instanceof opentype.Font) {
+									_w += _font.getAdvanceWidth(c, fontSize);
+									_arr.push([c, _font]);
+
+									const h = (_font.ascender - _font.descender) / _font.unitsPerEm * fontSize;
+									_bl = Math.max(_bl, h + (_font.descender) / _font.unitsPerEm * fontSize);
+									_h = Math.max(_h, h);
+								} else { // Promise
+									_font.then(() => this.markUpdateRequire());
+									_arr.push([c, null]); // font not loaded yet
+									_w += fontSize / 2;
+								}
 							}
 
 							this._cv.width = _w + _base_x * 2;
@@ -242,9 +180,13 @@ export default class FadeText extends FadeContainer {
 							const ctx = this._cv.getContext("2d")!;
 							ctx.fillStyle = _fill || "#fff";
 
-							for (let c of text) {
+							_arr.forEach(([c, _font]) => {
+								if (!_font) { // font not loaded yet
+									x += fontSize / 2;
+									return;
+								}
+
 								if (!(pathCacheKey in pathCache && c in pathCache[pathCacheKey])) {
-									const _font = findFont(c, fontFamily, fontWeight) || findFont(fallback, fontFamily, fontWeight) || _fonts_array[0][2];
 									const _path = _font.getPath(c, 0, 0, fontSize, {
 										kerning: true,
 										features: {
@@ -253,10 +195,10 @@ export default class FadeText extends FadeContainer {
 										},
 									});
 									const _cw = _font.getAdvanceWidth(c, fontSize);
-									pathCache[pathCacheKey][c] = [_font, _path, _cw];
+									pathCache[pathCacheKey][c] = [_path, _cw];
 								}
 
-								const [_font, _path, _cw] = pathCache[pathCacheKey][c];
+								const [_path, _cw] = pathCache[pathCacheKey][c];
 								ctx.save();
 								ctx.translate(x - __x, _bl);
 
@@ -271,7 +213,7 @@ export default class FadeText extends FadeContainer {
 								ctx.restore();
 
 								x += _cw;
-							}
+							});
 
 							const sp = new PIXI.Sprite(PIXI.Texture.from(this._cv.toDataURL()));
 							sp.roundPixels = true;
