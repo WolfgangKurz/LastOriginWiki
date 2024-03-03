@@ -4,6 +4,11 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12557" date="2024-03-03"
+		bugfix={ <>
+			<li>스토리 플레이어에서 텍스트가 줄바꿈되지 않는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12555" date="2024-03-03"
 		update={ <>
 			<li>스토리 플레이어의 폰트 렌더링을 개선했습니다.</li>

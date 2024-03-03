@@ -137,8 +137,8 @@ export default class FadeText extends FadeContainer {
 					[...findSpans(text)]
 						.map(s => s.text)
 						.forEach(text => {
-							const __x = x;
-							const __y = y;
+							let __x = x;
+							let __y = y;
 
 							const _arr: Array<[c: string, font: opentype.Font | null]> = [];
 							let _w = 0;
@@ -171,8 +171,9 @@ export default class FadeText extends FadeContainer {
 							this._cv.height = _h + _base_y * 2;
 
 							if ((wrapWidth > 0 && x + _w > wrapWidth) || (text === "\n")) {
-								x = _base_x;
-								y += fontSize * lineHeight;
+								x =__x = _base_x;
+								__x = _base_x;
+								__y = y += fontSize * lineHeight;
 							}
 
 							if (text === "\n") return;
@@ -201,6 +202,7 @@ export default class FadeText extends FadeContainer {
 								const [_path, _cw] = pathCache[pathCacheKey][c];
 								ctx.save();
 								ctx.translate(x - __x, _bl);
+								console.log(text, c, x, __x, x - __x, _bl);
 
 								_path.fill = null;
 								_path.stroke = _stroke || null;
