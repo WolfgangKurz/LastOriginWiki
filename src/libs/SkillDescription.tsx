@@ -3,11 +3,12 @@ import { FunctionalComponent } from "preact";
 import { CurrentLocale } from "@/libs/Locale";
 
 import SkillDescription, { SectionProps, SkillDescriptionValueData } from "@/components/skill-description";
-import { GetLocaleTable, LocaleGet } from "@/components/locale";
+import { GetLocaleTable } from "@/components/locale";
 
 interface SkillDescriptionMetadata {
 	lines: string[];
 	sections: Record<string, FunctionalComponent<SectionProps>[]>;
+	boxs: Array<[string, string]>;
 }
 
 type ValueTable = Record<string, SkillDescriptionValueData[]>;
@@ -27,7 +28,7 @@ function InitPrebuiltSections (): void {
 	const keys = Object.keys(locs).filter(x => x.startsWith("UNIT_SKILL_SECTION_"));
 	keys.forEach(k => {
 		const kk = k.replace(/^UNIT_SKILL_SECTION_(.+)$/, "$1");
-		const _p2 = LocaleGet(k)
+		const _p2 = locs[k]
 			.replace(/^\n+/gs, "")
 			.replace(/\n+$/gs, "")
 			.split("\n");
@@ -84,6 +85,7 @@ export function GetSkillDescription (content: string, slot: string, values: Valu
 
 	const orig = content;
 	const sections: Record<string, FunctionalComponent<SectionProps>[]> = {};
+	const boxs: Array<[string, string]> = [];
 
 	if (PrebuiltSections) {
 		Object.keys(PrebuiltSections)
@@ -137,11 +139,17 @@ export function GetSkillDescription (content: string, slot: string, values: Valu
 			});
 			return "";
 		})
+		.replace(/\r?\n?<box(?: t="([^"]+)")?>(.*?)<\/box>\r?\n?/gis, (p0, p1: string, p2: string) => {
+			const _content = p2.trim();
+
+			boxs.push([_content, p1 || ""]);
+			return `<BOX_${boxs.length} />`;
+		})
 		.replace(/^\n+/gs, "")
 		.replace(/\n+$/gs, "")
 		.split("\n");
 
-	return { lines, sections };
+	return { lines, sections, boxs };
 }
 
 export function parseParams (p: string): Array<number | undefined | ParamWithSlot> {

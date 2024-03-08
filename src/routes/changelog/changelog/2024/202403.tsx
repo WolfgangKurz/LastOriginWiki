@@ -4,6 +4,12 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12559" date="2024-03-09"
+		bugfix={ <>
+			<li>전투원 <BY>T-75 워울프</BY>의 스킬 정보가 잘못 입력된 문제를 수정했습니다.</li>
+			<li>이벤트 종료 시간을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12557" date="2024-03-03"
 		bugfix={ <>
 			<li>스토리 플레이어에서 텍스트가 줄바꿈되지 않는 문제를 수정했습니다.</li>
