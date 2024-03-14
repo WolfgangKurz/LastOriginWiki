@@ -166,7 +166,7 @@ const SourceTable: FunctionalComponent<SourceTableProps> = (props) => {
 
 		{ restMap.map(({ header, label, available, data }, i) => <>
 			{ spanList[i] > 0 && <div
-				class={ style.Header }
+				class={ cn(style.Header, (i + spanList[i]) === spanList.length && style.EndHeader) }
 				style={ {
 					gridRow: `${i + 1 + storyAvailable} / ${i + 1 + storyAvailable + spanList[i]}`
 				} }

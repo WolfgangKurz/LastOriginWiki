@@ -4,7 +4,7 @@ import * as LAYERS from "@pixi/layers";
 import { AssetsRoot, IsDev } from "@/libs/Const";
 
 import FadeContainer from "./FadeContainer";
-import Matrix3D from "@/components/u2dmodel-renderer/Matrix3D";
+import Matrix3D from "./Matrix3D";
 
 // Interfaces from `@/components/u2dmodel-renderer`
 interface RECT {
@@ -342,12 +342,13 @@ export default class Pixi2DModel extends FadeContainer {
 						const sY = Math.sqrt(mat[1] * mat[1] + mat[5] * mat[5]); // [4]^2 * [5]^2
 						const kX = Math.atan2(mat[4], mat[0]); // [1], [0]
 						const kY = Math.atan2(mat[1], mat[5]); // [4], [5]
-						const r_ = Math.atan2(mat[4], mat[0]); // [1], [0]
+						// const r_ = Math.atan2(mat[4], mat[0]); // [1], [0]
 
 						target.setTransform(
 							pX, pY,
 							sX, sY,
-							r_,
+							// r_,
+							0, // rotation applied by skew?
 							kX, kY,
 						);
 					};

@@ -1,10 +1,8 @@
 import * as PIXI from "pixi.js";
-import * as LAYERS from "@pixi/layers";
 
-import { AssetsRoot, IsDev } from "@/libs/Const";
+import { AssetsRoot } from "@/libs/Const";
 
 import FadeContainer from "./FadeContainer";
-import Matrix3D from "@/components/u2dmodel-renderer/Matrix3D";
 
 export default class PixiVideoModel extends FadeContainer {
 	private readonly _model: string;
