@@ -4,6 +4,12 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12565" date="2024-03-17"
+		bugfix={ <>
+			<li>전투원의 스킬 정보에서 풀링크 보너스가 스킬 설명에 반영되지 않는 점을 수정했습니다.</li>
+			<li>전투원의 스킨 뷰어에서 일부 항목의 회전이 잘못 적용된 점을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12562" date="2024-03-14"
 		update={ <>
 			<li>이벤트 <BY>우주에서 온 황금</BY>이 종료되었습니다.</li>
