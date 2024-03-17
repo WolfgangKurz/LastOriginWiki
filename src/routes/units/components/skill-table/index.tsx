@@ -351,7 +351,13 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				: <></>
 			}
 		</>;
-	}, [loc, displayFlavor, GetSkillDescriptions, skillLevel, favorBonus, displayBuffList, displayBuffDummy]);
+	}, [
+		loc,
+		displayFlavor, GetSkillDescriptions,
+		skillLevel, favorBonus,
+		props.buffBonus, props.skillBonus,
+		displayBuffList, displayBuffDummy,
+	]);
 
 	const endRarity = useMemo(() => unit.promotions
 		? Math.max(unit.rarity, ...unit.promotions.map(p => p.to))
