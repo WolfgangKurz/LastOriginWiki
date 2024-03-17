@@ -4,7 +4,6 @@ import * as LAYERS from "@pixi/layers";
 import { AssetsRoot, IsDev } from "@/libs/Const";
 
 import FadeContainer from "./FadeContainer";
-import Matrix3D from "./Matrix3D";
 
 // Interfaces from `@/components/u2dmodel-renderer`
 interface RECT {
@@ -320,36 +319,17 @@ export default class Pixi2DModel extends FadeContainer {
 							: 1;
 
 						const rot = quat2eul(obj.vector.slice(6, 10) as Tuple<number, 4>);
-						const mat = Matrix3D.compose(
-							Matrix3D.translate(obj.vector[0] * 100, -obj.vector[1] * 100, obj.vector[2] * 100),
-							Matrix3D.scale(
-								obj.vector[3] * scaleMultiplier,
-								obj.vector[4] * scaleMultiplier,
-								obj.vector[5] * scaleMultiplier,
-							),
-							Matrix3D.rotate(rot.x, rot.y, rot.z),
-						);
-						/*
-						   0   4   8  12       0   1   2   3
-						   1   5   9  13       4   5   6   7
-						   2   6  10  14       8   9  10  11
-						   3   7  11  15      12  13  14  15
-						*/
-
-						const pX = mat[12]; // 3
-						const pY = mat[13]; // 7
-						const sX = Math.sqrt(mat[0] * mat[0] + mat[4] * mat[4]); // [0]^2 * [1]^2
-						const sY = Math.sqrt(mat[1] * mat[1] + mat[5] * mat[5]); // [4]^2 * [5]^2
-						const kX = Math.atan2(mat[4], mat[0]); // [1], [0]
-						const kY = Math.atan2(mat[1], mat[5]); // [4], [5]
-						// const r_ = Math.atan2(mat[4], mat[0]); // [1], [0]
 
 						target.setTransform(
-							pX, pY,
-							sX, sY,
-							// r_,
-							0, // rotation applied by skew?
-							kX, kY,
+							obj.vector[0] * 100,
+							-obj.vector[1] * 100,
+
+							obj.vector[3] * scaleMultiplier,
+							obj.vector[4] * scaleMultiplier,
+
+							-rot.z, // Unity using inverted angle
+							rot.x,
+							rot.y,
 						);
 					};
 					const requireTreeNode = (node: MODEL_OBJECT): NodeTreeItem => {
