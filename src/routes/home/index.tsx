@@ -171,7 +171,7 @@ const Home: FunctionalComponent = () => {
 					p={ [
 						Math.floor(
 							new Date(Date.now() - new Date(2020, 5 - 1, 16).getTime())
-								.getTime() / 100 / 86400
+								.getTime() / 1000 / 86400
 						).toLocaleString(),
 					] }
 				/>
