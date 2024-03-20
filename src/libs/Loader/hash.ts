@@ -4,7 +4,7 @@ export default {
 	"korea": {
 		"bg": "e2465506",
 		"buffCategory": "986ff776",
-		"consumable": "4ea6ad0a",
+		"consumable": "0ead448e",
 		"enemy": {
 			"AMG11AA_Challenge1": "d0d5c5cb",
 			"AMG11AA_EV1": "674b2d68",
@@ -1701,7 +1701,7 @@ export default {
 		"filterable.enemy": "9ca89d30",
 		"filterable.equip": "cd406359",
 		"filterable.facility": "b3f0e54b",
-		"filterable.unit": "21a2ed71",
+		"filterable.unit": "51bce7a0",
 		"gacha": "f51b48a0",
 		"iw": {
 			"Colossus_01": "cdebeca4",
@@ -1716,7 +1716,8 @@ export default {
 			"Ravager_04": "22cf886d",
 			"Ravager_05": "277c68b6",
 			"Ravager_06": "2bc1c8f5",
-			"seasons": "4bbaae31"
+			"Ravager_07": "e6074dcf",
+			"seasons": "96b18c47"
 		},
 		"map": {
 			"1": "4c9b858e",
@@ -1763,7 +1764,7 @@ export default {
 		"mission": "f7a10bd2",
 		"research": "7fdfd71d",
 		"skill-from": "598e2207",
-		"sticker": "3cd20e55",
+		"sticker": "0b1a427f",
 		"story": {
 			"Ch01Ev10Stage01": "24b27ca4",
 			"Ch01Ev10Stage02": "a4f12cba",
@@ -4475,7 +4476,7 @@ export default {
 			"BR_RoyalArsenal": "76d380ed",
 			"BR_Salamander": "aee1c4d8",
 			"BR_SandMan": "0d26678f",
-			"BR_Scarabya": "df32f855",
+			"BR_Scarabya": "804135f0",
 			"BR_Scathy": "677d45c7",
 			"BR_Shirayuri": "c7ed5257",
 			"BR_Sirene": "575ba0c9",
@@ -4579,9 +4580,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "b176fc77",
-		"JP": "a71ef7c6",
-		"KR": "a5b45a67",
-		"TC": "f1539665"
+		"EN": "fe146fb5",
+		"JP": "d11ca1d1",
+		"KR": "f7e74177",
+		"TC": "906c2956"
 	}
 } as DBHashType;
