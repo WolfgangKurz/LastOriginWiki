@@ -4,6 +4,11 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12564" date="2024-03-24"
+		bugfix={ <>
+			<li>일부 이미지 및 오디오가 표시/재생되지 않는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12563" date="2024-03-20"
 		new={ <>
 			<li>신규 장식품의 정보가 추가되었습니다.</li>
