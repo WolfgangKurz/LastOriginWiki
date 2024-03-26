@@ -1,4 +1,5 @@
 import { FunctionalComponent } from "preact";
+import { useMemo } from "preact/hooks";
 import { Link } from "preact-router";
 
 import Store from "@/store";
@@ -26,7 +27,7 @@ const Artist: FunctionalComponent<UnitsListProps> = (props) => {
 
 	const unitCount: Record<string, number> = {};
 	const skinCount: Record<string, number> = {};
-	const skins = (() => {
+	const skins = useMemo(() => {
 		const skins: SkinData[] = [];
 		const list = props.list;
 
@@ -73,7 +74,7 @@ const Artist: FunctionalComponent<UnitsListProps> = (props) => {
 		});
 
 		return ret;
-	})();
+	}, [props.list, displayUnitRelease.value, displaySkinRelease.value]);
 
 	function CompileArtist (artist: string): preact.VNode {
 		const reg = /^(.+)\((.+)\)$/;

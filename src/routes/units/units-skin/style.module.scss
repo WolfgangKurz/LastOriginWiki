@@ -1,25 +1,165 @@
-.FilterButtons > button {
-	display: inline-block;
-	margin: 0 0.25em 0.25em;
-	padding: 0.25em 0.45em;
-	width: auto;
-}
-
-.FilterIcon {
-	margin-right: 0.5em;
-	padding: 2px;
-	width: 2em;
-	border-radius: 0.25em;
-	background: $dark;
-	vertical-align: middle;
-}
-
-.FilterCol {
+.SkinCategories,
+.SkinFilters {
 	display: grid;
-	margin-top: 0.25em;
-	margin-bottom: 0.25em;
-	grid-template-columns: auto 1fr auto;
-	text-align: start;
+	grid-template-columns: auto auto 1fr;
+
+	margin-bottom: 10px;
+	font-size: 14px;
+
+	> .Header {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		min-width: 100px;
+		padding: 10px 15px;
+		border-radius: 6px 0 0 6px;
+		background-color: $dark;
+		color: $light;
+	}
+	> .Action {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 4px;
+
+		padding: 5px;
+		border: 0 solid $dark;
+		border-top-width: 1px;
+		border-bottom-width: 1px;
+
+		> span {
+			user-select: none;
+			cursor: pointer;
+		}
+	}
+	> .Categories,
+	> .Filters {
+		padding: 8px;
+		border: 1px solid $dark;
+		border-radius: 0 6px 6px 0;
+		text-align: left;
+
+		.Category {
+			user-select: none;
+			cursor: pointer;
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		grid-template-columns: 1fr 1fr;
+
+		> .Header {
+			border-radius: 6px 0 0 0;
+		}
+		> .Action {
+			flex-direction: row;
+
+			border-radius: 0 6px 0 0;
+			border-right-width: 1px;
+			border-bottom-width: 0;
+		}
+		> .Categories {
+			grid-column: 1 / 3;
+			grid-row: 2;
+
+			border-radius: 0 0 6px 6px;
+		}
+	}
+}
+.SkinFilters {
+	grid-template-columns: auto 1fr;
+
+	> .Filters {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+		grid-auto-rows: auto;
+		column-gap: 20px;
+		row-gap: 5px;
+
+		> .Filter {
+			display: grid;
+			grid-template-columns: auto 1fr auto;
+			column-gap: 5px;
+
+			word-break: keep-all;
+			align-items: center;
+			text-align: start;
+
+			.FilterIcon {
+				padding: 2px;
+				width: 2em;
+				border-radius: 4px;
+				background: $dark;
+				vertical-align: middle;
+			}
+
+			button > svg {
+				font-size: 16px;
+			}
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		grid-template-columns: 1fr;
+
+		> .Header {
+			border-radius: 6px 6px 0 0;
+		}
+		> .Filters {
+			border-radius: 0 0 6px 6px;
+		}
+	}
+}
+
+.SkinView {
+	position: relative;
+
+	background-image: url($assetsRoot + "/bg/unit-bg-v2.jpg");
+	background-position: center;
+	background-size: cover;
+	aspect-ratio: 20 / 9;
+
+	.SkinNavigator {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, 0);
+		top: 10px;
+	}
+}
+.SkinTabs {
+	display: flex;
+	flex-wrap: nowrap;
+
+	padding-top: 10px;
+	overflow-x: auto;
+	overflow-y: hidden;
+
+	> ul {
+		font-weight: 500;
+		font-size: 14px;
+
+		flex-wrap: nowrap;
+		white-space: nowrap;
+	}
+
+	.SkinUnitName {
+		margin: 4px 0;
+		font-weight: 500;
+		font-size: 12px;
+	}
+	.SkinPrice {
+		display: inline-flex;
+		flex-direction: row;
+		align-items: center;
+		column-gap: 5px;
+
+		> img {
+			display: block;
+			height: 12px;
+		}
+	}
 }
 
 div.SkinCol {

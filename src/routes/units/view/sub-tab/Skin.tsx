@@ -183,7 +183,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 						{ categories.length > 0
 							? <div class="alert alert-secondary py-2">
 								<div class="mb-1">
-									<Locale k="UNIT_VIEW_SKIN_CATEGORY" />
+									<Locale k="UNIT_SKIN_CATEGORY" />
 								</div>
 								{ categories.length > 0
 									? <div class="mb-1">

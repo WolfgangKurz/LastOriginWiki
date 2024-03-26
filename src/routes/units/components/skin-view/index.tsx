@@ -18,6 +18,7 @@ import Pinch from "@/components/pinch";
 import PixiView from "./PixiView";
 
 import style from "./style.module.scss";
+import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 interface SkinItem extends UnitSkin {
 	isDef: boolean;
@@ -26,7 +27,7 @@ interface SkinItem extends UnitSkin {
 
 interface SkinViewProps {
 	skin: SkinItem;
-	unit: Unit;
+	unit: Unit | FilterableUnit;
 	black?: boolean;
 	hideGroup?: boolean;
 	collapsed?: boolean;
