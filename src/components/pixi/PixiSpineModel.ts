@@ -255,7 +255,6 @@ export default class PixiSpineModel extends FadeContainer {
 
 	Load (data: CacheType) {
 		// Spine model's BoxCollider will not be moved/changed
-		const cvTemp = document.createElement("canvas");
 		Object.keys(data.metadata.colliders)
 			.sort((a, b) => {
 				if (a == "specialTouch") return 1;
@@ -279,20 +278,23 @@ export default class PixiSpineModel extends FadeContainer {
 					alignment: 0,
 					native: true,
 				});
-				g.drawRect(-w / 2, -h / 2, w, h);
+				g.drawRect(0, 0, w, h);
+				// g.pivot.set(w / 2, h / 2);
 				g.eventMode = "none";
 
+				const cvTemp = document.createElement("canvas");
 				cvTemp.width = w;
 				cvTemp.height = h;
 
-				sp = new PIXI.Sprite(PIXI.Texture.from(cvTemp));
-				sp.addChild(g);
 				this.colliderGraphics.push(g);
 
-				const collider = sp;
+				const collider = new PIXI.Sprite(PIXI.Texture.from(cvTemp));
+				collider.addChild(g);
+				collider.pivot.set(w / 2, h / 2);
 				collider.zIndex = 3;
 				collider.name = "[Collider] " + c;
 				collider.eventMode = "static";
+				collider.interactive = true;
 				collider.on("pointertap", () => {
 					if (data.metadata.specialTouch.includes(c))
 						this.emit("special-touch", this);
@@ -300,11 +302,10 @@ export default class PixiSpineModel extends FadeContainer {
 						this.emit("normal-touch", this);
 				});
 				collider.position.set(x, y);
-				collider.anchor.set(0.5);
 
 				this.addChild(collider);
+				cvTemp.remove();
 			});
-		cvTemp.remove();
 
 		const atlasLoader = new spine.AtlasAttachmentLoader(data.atlas);
 		const skeletonJson = new spine.SkeletonJson(atlasLoader);
