@@ -250,62 +250,6 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								}
 							} }
 						/>
-						// ? <SpineRenderer
-						// 	uid={ modelId }
-						// 	google={ isCensored }
-						// 	specialTouch={ isSpecialTouchMode }
-
-						// 	// collider={ true }
-						// 	hidePart={ hideParts }
-						// 	// hideBg={ isBGCollapsed }
-						// 	// hideDialog={ false }
-
-						// 	face={ face }
-						// 	onFaceList={ (list) => {
-						// 		setFaceList(list);
-
-						// 		if (list.includes("Idle"))
-						// 			setFace("Idle");
-						// 		else {
-						// 			const listU = list.map(f => f.toUpperCase());
-						// 			for (const ft of Object.keys(FACETYPE)) {
-						// 				const index = listU.indexOf(ft);
-						// 				if (index >= 0) {
-						// 					setFace(list[index]);
-						// 					break;
-						// 				}
-						// 			}
-						// 		}
-						// 	} }
-						// />
-						// : Display2DModel
-						// 	? <Pinch
-						// 		minScale={ 0.5 }
-						// 		maxScale={ 3 }
-						// 	>
-						// 		<U2DModelRenderer
-						// 			root={ `${AssetsRoot}/2dmodel/${isCensored ? "G" : "O"}/` }
-						// 			target={ !isDamaged ? skin.metadata["2dmodel"]! : skin.metadata["2dmodel_dam"]! }
-
-						// 			scale={ 1.5 }
-
-						// 			width={ FullUnitSize[0] }
-						// 			height={ FullUnitSize[1] }
-
-						// 			hideParts={ hideParts }
-						// 			hideBG={ hideBG }
-
-						// 			face={ face }
-						// 			onFaceList={ (list) => {
-						// 				const _list = [...list];
-						// 				if (!_list.includes("Idle"))
-						// 					_list.splice(0, 0, "Idle"); // insert into 0
-
-						// 				setFaceList(_list);
-						// 				setFace("Idle");
-						// 			} }
-						// 		/>
-						// 	</Pinch>
 						: modelVideoId.length > 0
 							? CanPlayWebM()
 								? <video
@@ -327,11 +271,19 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					}
 				</div>
 
-				{ !DisplaySpine && !modelVideoId.length
+				{ !DisplaySpine
 					? <a
 						class={ `${style.SkinToggle} ${style.Download}` }
-						href={ SkinImageURL }
-						download={ SkinImageURL.substring(SkinImageURL.lastIndexOf("/") + 1) }
+						href={
+							modelVideoId
+								? `${AssetsRoot}/webm/HD/${modelVideoId}.webm`// download webm only...
+								: SkinImageURL
+						}
+						download={
+							modelVideoId
+								? `${modelVideoId}.webm`
+								: SkinImageURL.substring(SkinImageURL.lastIndexOf("/") + 1)
+						}
 						target="_blank"
 					>
 						<svg width="1em" height="1em" viewBox="0 0 24 24">
