@@ -260,6 +260,8 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 						</div>
 					</li>
 				</ul>
+
+				<div id="___TEST" style={ { textAlign: "left", whiteSpace: "pre-wrap" } } />
 			</div>
 			<div class="col">
 				{ skin

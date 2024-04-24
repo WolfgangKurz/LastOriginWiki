@@ -1,8 +1,12 @@
 import * as PIXI from "pixi.js";
+import * as LAYERS from "@pixi/layers";
 import * as spine from "@esotericsoftware/spine-pixi";
 import LZMADecompression from "@/external/lzma";
 
 import { AssetsRoot, IsDev } from "@/libs/Const";
+import { quat2eul } from "@/libs/Math";
+
+import ColliderBox from "@/components/pixi/ColliderBox";
 
 import FadeContainer from "./FadeContainer";
 
@@ -65,13 +69,30 @@ interface SpineAnim {
 	[layer: string]: SpineAnimLayer;
 }
 interface SpineTransform {
-	pos: [x: number, y: number];
+	position: [x: number, y: number];
+	scale: [x: number, y: number];
+}
+interface SpineCollider extends SpineTransform {
+	rotation: [x: number, y: number, z: number, w: number];
+	center: [x: number, y: number];
 	size: [x: number, y: number];
+	bind?: string;
 }
 interface SpineMetadata {
-	colliders: Record<string, SpineTransform>;
-	transform: SpineTransform;
+	colliders: Record<string, SpineCollider>;
+	// transform: SpineTransform;
+	transforms: SpineTransform[];
 	specialTouch: string[];
+}
+
+interface BindedCollider {
+	container: PIXI.DisplayObject;
+	target: ColliderBox;
+
+	info: SpineCollider;
+	rot: ReturnType<typeof quat2eul>;
+
+	bindTo: string;
 }
 //#endregion
 
@@ -99,8 +120,10 @@ export default class PixiSpineModel extends FadeContainer {
 	private selectedSkins: string[] = [];
 	private lastFace: string = "";
 
+	private spine: spine.Spine | undefined;
 	private skeleton: spine.Skeleton | undefined;
 	private skeletonData: spine.SkeletonData | undefined;
+	private metadata: SpineMetadata | undefined;
 
 	private animData: SpineAnim | undefined;
 	private animLayers: string[] = [];
@@ -108,7 +131,8 @@ export default class PixiSpineModel extends FadeContainer {
 
 	private state!: spine.AnimationState;
 
-	private colliderGraphics: PIXI.Graphics[] = [];
+	private colliderBoxs: ColliderBox[] = [];
+	private bindedColliders: BindedCollider[] = [];
 
 	constructor (image: string) {
 		super();
@@ -123,7 +147,7 @@ export default class PixiSpineModel extends FadeContainer {
 
 		this.scale.set(3); // base Scale
 
-		new Promise<spine.Spine>((resolve) => {
+		new Promise<[spine.Spine, PIXI.Container]>((resolve) => {
 			const cached = getCache(this._model);
 			if (cached)
 				resolve(this.Load(cached));
@@ -228,8 +252,9 @@ export default class PixiSpineModel extends FadeContainer {
 						resolve(this.Load(getCache(this._model)!));
 					});
 			}
-		}).then(s => {
-			this.addChild(s);
+		}).then(([s, sw]) => {
+			this.spine = s;
+			this.addChild(sw);
 
 			const names = this.skeletonData!.skins.map(r => r.name);
 			const faces = names.filter(x => x.startsWith("face/"));
@@ -253,63 +278,55 @@ export default class PixiSpineModel extends FadeContainer {
 		});
 	}
 
-	Load (data: CacheType) {
-		// Spine model's BoxCollider will not be moved/changed
-		Object.keys(data.metadata.colliders)
-			.sort((a, b) => {
-				if (a == "specialTouch") return 1;
-				if (b == "specialTouch") return -1;
-				return 0;
-			})
-			.forEach(c => {
-				const _c = data.metadata.colliders[c];
+	render (renderer: PIXI.Renderer): void {
+		const skeleton = this.skeleton;
+		if (!skeleton) return super.render(renderer);
 
-				const x = 100 * _c.pos[0];
-				const y = 100 * -_c.pos[1];
-				const w = Math.abs(100 * _c.size[0]);
-				const h = Math.abs(100 * _c.size[1]);
+		const metadata = this.metadata;
+		if (!metadata) return super.render(renderer);
 
-				let sp: PIXI.Sprite;
+		const model = this.spine;
+		if (!model) return super.render(renderer);
 
-				const g = new PIXI.Graphics();
-				g.lineStyle({
-					width: 1,
-					color: 0x00ff00,
-					alignment: 0,
-					native: true,
-				});
-				g.drawRect(0, 0, w, h);
-				// g.pivot.set(w / 2, h / 2);
-				g.eventMode = "none";
+		const root = skeleton.getRootBone();
+		if (!root) return super.render(renderer);
 
-				const cvTemp = document.createElement("canvas");
-				cvTemp.width = w;
-				cvTemp.height = h;
+		this.bindedColliders.forEach(c => {
+			const bone = skeleton.bones.find(r => r.data.name === c.bindTo);
+			if (!bone) return;
 
-				this.colliderGraphics.push(g);
+			const t = c.target;
 
-				const collider = new PIXI.Sprite(PIXI.Texture.from(cvTemp));
-				collider.addChild(g);
-				collider.pivot.set(w / 2, h / 2);
-				collider.zIndex = 3;
-				collider.name = "[Collider] " + c;
-				collider.eventMode = "static";
-				collider.interactive = true;
-				collider.on("pointertap", () => {
-					if (data.metadata.specialTouch.includes(c))
-						this.emit("special-touch", this);
-					else
-						this.emit("normal-touch", this);
-				});
-				collider.position.set(x, y);
+			// transform position
+			const [x, y] = c.info.position.map(r => r);
 
-				this.addChild(collider);
-				cvTemp.remove();
-			});
+			c.container.angle = bone.getWorldRotationX(); // degrees
+			c.container.position.set(
+				bone.worldX,
+				bone.worldY,
+			);
+			c.container.scale.set(
+				bone.getWorldScaleX(),
+				bone.getWorldScaleY(),
+			);
+
+			t.scale.set(
+				c.info.scale[0],
+				c.info.scale[1],
+			);
+			t.position.set(x, -y);
+			t.rotation = -c.rot.z; // radian
+		});
+
+		super.render(renderer);
+	}
+
+	Load (data: CacheType): [spine.Spine, PIXI.Container] {
+		this.metadata = data.metadata;
 
 		const atlasLoader = new spine.AtlasAttachmentLoader(data.atlas);
 		const skeletonJson = new spine.SkeletonJson(atlasLoader);
-		skeletonJson.scale = data.metadata.transform.size[0]; // x and y should be equal
+		skeletonJson.scale = 0.01;
 
 		const skeletonData = skeletonJson.readSkeletonData(data.skeleton);
 		this.skeletonData = skeletonData;
@@ -318,8 +335,26 @@ export default class PixiSpineModel extends FadeContainer {
 		this.animLayers = Object.keys(this.animData);
 
 		const s = new spine.Spine(skeletonData);
-		s.position.x = data.metadata.transform.pos[0] * 100;
-		s.position.y = -data.metadata.transform.pos[1] * 100;
+		s.eventMode = "none";
+
+		let root: PIXI.Container | null = null;
+		let current: PIXI.Container = this;
+		data.metadata.transforms.forEach(tf => {
+			const node = new PIXI.Container();
+			node.layerableChildren = true;
+			node.sortableChildren = true;
+
+			node.name = (tf as any).name;
+			node.position.set(tf.position[0], -tf.position[1]);
+			node.scale.set(...tf.scale);
+			current.addChild(node);
+
+			current = node;
+			if (!root) root = node;
+		});
+		root!.scale.set(100);
+		current.addChild(s);
+
 		// s.position.y = 720;
 
 		this.skeleton = s.skeleton;
@@ -366,7 +401,68 @@ export default class PixiSpineModel extends FadeContainer {
 		else
 			this.addSkin("breast/Censorship");
 
-		return s;
+		const collLayer = new LAYERS.Layer(new LAYERS.Group(3));
+		collLayer.name = "*Layer [Collider Layer]";
+		collLayer.zIndex = 3;
+		root!.addChild(collLayer);
+
+		// Static BoxCollider will not be moved/changed
+		// Binded to Spine model's Bone will be moved/changed, but will calculate at "render"
+		Object.keys(data.metadata.colliders)
+			.sort((a, b) => {
+				if (a == "specialTouch") return 1;
+				if (b == "specialTouch") return -1;
+				return 0;
+			})
+			.forEach(c => {
+				const _c = data.metadata.colliders[c];
+
+				// transform position
+				const [x, y] = _c.position;
+
+				const collider = new ColliderBox();
+				this.colliderBoxs.push(collider);
+
+				collider.position.set(x, -y);
+				collider.scale.set(..._c.scale);
+				collider.center = new PIXI.Point(..._c.center);
+				collider.size = new PIXI.Point(..._c.size);
+
+				const rot = quat2eul(_c.rotation);
+				collider.rotation = -rot.z;
+				collider.skew.set(rot.x, rot.y);
+
+				const colliderWrapper = new PIXI.Container();
+				colliderWrapper.name = "[Collider] " + c;
+				colliderWrapper.zIndex = -1;
+				colliderWrapper.zOrder = 3;
+				colliderWrapper.parentLayer = collLayer;
+				colliderWrapper.addChild(collider);
+
+				colliderWrapper.eventMode = "dynamic";
+				colliderWrapper.on("pointertap", e => {
+					if (data.metadata.specialTouch.includes(c))
+						this.emit("special-touch", this);
+					else
+						this.emit("normal-touch", this);
+				});
+
+				if (_c.bind) {
+					this.bindedColliders.push({
+						container: colliderWrapper,
+						target: collider,
+
+						info: _c,
+						rot,
+
+						bindTo: _c.bind,
+					});
+				}
+
+				(_c.bind ? current : root!).addChild(colliderWrapper);
+			});
+
+		return [s, root!];
 	}
 
 	addSkin (skinName: string) {
@@ -415,6 +511,20 @@ export default class PixiSpineModel extends FadeContainer {
 		if (!(layer in this.animState)) return;
 
 		return this.animData[layer].states[this.animState[layer]];
+	}
+
+	currentAnimationTime (): number | undefined {
+		if (!this.animData) return undefined;
+
+		let _t: number | undefined = undefined;
+		for (let i = 0; i < this.animLayers.length; i++) {
+			const track = this.state.getCurrent(i);
+			if (!track) continue;
+
+			_t = Math.max(_t || 0, track.trackTime);
+		}
+
+		return _t;
 	}
 
 	play (event: string): spine.Animation[] | false {
@@ -545,9 +655,9 @@ export default class PixiSpineModel extends FadeContainer {
 
 	setColliderVisible (visible: boolean) {
 		this._colliderVisible = visible;
-		if (!this.colliderGraphics) return;
+		if (!this.colliderBoxs) return;
 
-		this.colliderGraphics.forEach(g => g.visible = visible);
+		this.colliderBoxs.forEach(g => g.display = visible);
 	}
 
 	destroy (options?: boolean | PIXI.IDestroyOptions | undefined): void {

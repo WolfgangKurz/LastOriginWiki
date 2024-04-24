@@ -214,14 +214,21 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 		const fn = () => {
 			if (!animationIndicator || !animationIndicatorGraphics || !animInfo || animTime === 0) return;
 
-			const elapsed = (Date.now() - animTime) / 1000;
-			const progress = Math.min(1, elapsed / animInfo.map(r => r.duration).sort((a, b) => b - a)[0]);
+			const duration = animInfo.map(r => r.duration).reduce((p, c) => c > p ? c : p, 0);
+			// const progress = Math.min(1, elapsed / animInfo.map(r => r.duration).sort((a, b) => b - a)[0]);
+			const progress = Math.min(
+				(
+					char instanceof PixiSpineModel
+						? char.currentAnimationTime() ?? 0
+						: (/* elapsed by browser time */ (Date.now() - animTime) / 1000)
+				) / duration,
+				1,
+			);
 
 			const g = animationIndicatorGraphics;
-
-			g.clear();
-
 			if (animInfo) {
+				g.clear();
+
 				const points: Array<{ x: number; y: number; }> = [];
 				const deg = progress * 360;
 				for (let i = 0; i <= deg; i++) {

@@ -172,7 +172,6 @@ export default ({ mode }) => {
 
                         // not used anymore
                         if (id.includes("/node_modules/swiper/")) return "vendor.swiper";
-                        if (id.includes("/node_modules/chart.js/")) return "vendor.chart";
 
                         if (
                             id.includes("/node_modules/pixi") ||
