@@ -113,7 +113,7 @@ export default ({ mode }) => {
             ].join("\n");
 
             fs.writeFileSync(
-                path.resolve(__dirname, "src", "components", "loader", "hash.ts"),
+                path.resolve(__dirname, "src", "libs", "Loader", "hash.ts"),
                 output,
                 "utf-8",
             );
@@ -162,22 +162,21 @@ export default ({ mode }) => {
                             id.includes("/src/app/")
                         ) return undefined;
 
-                        // three.js vendor
-                        if (id.includes("/node_modules/three/")) return "vendor.three";
-
                         // vendor
-                        if (id.includes("/node_modules/preact-transition")) return "vendor.transition";
                         if (id.includes("/node_modules/bootstrap")) return "vendor.bootstrap";
                         if (id.includes("/node_modules/react")) return "vendor.react";
                         if (id.includes("/node_modules/@esotericsoftware/")) return "vendor.spine";
                         if (id.includes("/node_modules/@popperjs/")) return "vendor.popperjs";
                         if (id.includes("/node_modules/graphlib/")) return "vendor.graphlib";
                         if (id.includes("/node_modules/lodash/")) return "vendor.lodash";
+
+                        // not used anymore
                         if (id.includes("/node_modules/swiper/")) return "vendor.swiper";
-                        if (id.includes("/node_modules/chart.js/")) return "vendor.chart";
+
                         if (
                             id.includes("/node_modules/pixi") ||
-                            id.includes("/node_modules/@pixi/")
+                            id.includes("/node_modules/@pixi/") ||
+                            id.includes("/node_modules/@turf/")
                         ) return "vendor.pixi";
                         if (
                             id.includes("/node_modules/@reactflow/") ||
@@ -201,7 +200,6 @@ export default ({ mode }) => {
                         // types & libs & loader hash -> base
                         if (id.includes("/src/types/")) return "base";
                         if (id.includes("/src/libs/")) return "base";
-                        if (id.includes("/src/components/loader/hash")) return "base";
 
                         // external -> each file
                         if (id.includes("/src/external/")) {
@@ -217,7 +215,7 @@ export default ({ mode }) => {
                         // components
                         if (
                             id.includes("/src/components/locale/") ||
-                            id.includes("/src/components/loader/") ||
+                            id.includes("/src/components/Loader/") ||
                             id.includes("/src/components/redirect/")
                         ) return "components.base";
                         if (id.includes("/src/components/bootstrap-")) return "components.bootstrap";

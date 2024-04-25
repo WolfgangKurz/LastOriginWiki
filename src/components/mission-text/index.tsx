@@ -3,7 +3,7 @@ import { FunctionalComponent } from "preact";
 import { MISSION_OBJECT_TYPE, MISSION_TRIGGER_TYPE } from "@/types/Enums";
 import Mission from "@/types/DB/Mission";
 
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import { LocaleGet } from "@/components/locale";
 import Reference from "./Reference";
 import SkillFrom from "./SkillFrom";

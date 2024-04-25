@@ -16,7 +16,7 @@ import { DecomposeHangulSyllable, groupBy, isActive } from "@/libs/Functions";
 import EntitySource from "@/libs/EntitySource";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
-import { DBSourceConverter, GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import Loading from "@/components/loading";
 import EquipCard from "@/components/equip-card";
@@ -41,7 +41,12 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 	const FilterableUnitDB = GetJson<FilterableUnit[] | null>(StaticDB.FilterableUnit);
 	if (!FilterableUnitDB) JsonLoaderCore(CurrentDB, StaticDB.FilterableUnit).then(() => update());
 
-	const FilterableEquipDB = GetJson<FilterableEquip[] | null>(StaticDB.FilterableEquip, r => r ? DBSourceConverter(r) : null);
+	const FilterableEquipDB = GetJson<FilterableEquip[] | null>(StaticDB.FilterableEquip)
+		?.filter(r => !!r)
+		?.map(r => ({
+			...r,
+			source: r.source.map(a => a.map(b => new EntitySource(b as unknown as string))),
+		}));
 	if (!FilterableEquipDB) JsonLoaderCore(CurrentDB, StaticDB.FilterableEquip).then(() => update());
 
 	const selectedEquip = FilterableEquipDB && props.uid

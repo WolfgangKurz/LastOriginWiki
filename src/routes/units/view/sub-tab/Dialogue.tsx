@@ -1,25 +1,24 @@
 import { FunctionalComponent } from "preact";
+import { useMemo, useState } from "preact/hooks";
 
 import { UnitDialogueAudioType, UnitDialogueDataType } from "@/types/DB/Dialogue";
 
-import { objState } from "@/libs/State";
 import { AssetsRoot } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 
-
 import UnitDialogue, { VoiceItem } from "../../components/unit-dialogue";
-
-import { SubpageProps } from "..";
 import IconTranslate from "@/components/bootstrap-icon/icons/Translate";
 import IconMicFill from "@/components/bootstrap-icon/icons/MicFill";
 
+import { SubpageProps } from "..";
+
 const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinList }) => {
-	const dialogueLang = objState<keyof UnitDialogueDataType>("KR");
-	const dialogueAudio = objState<UnitDialogueAudioType>("ko");
+	const [dialogueLang, setDialogueLang] = useState<keyof UnitDialogueDataType>("KR");
+	const [dialogueAudio, setDialogueAudio] = useState<UnitDialogueAudioType>("ko");
 
 	const LangList: Array<keyof UnitDialogueDataType> = ["KR", "JP", "EN", "TC"];
 
-	const VoiceList: VoiceItem[] = [
+	const VoiceList: VoiceItem[] = useMemo(() => [
 		{
 			...SkinList[0],
 			isMarriage: false,
@@ -52,7 +51,7 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 
 				return r;
 			}),
-	];
+	], [unit, SkinList]);
 
 	return <div style={ { display: display ? "" : "none" } }>
 		<div class="input-group justify-content-center my-1">
@@ -61,8 +60,8 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 			</div>
 
 			{ LangList.map(lang => <button
-				class={ `btn btn-outline-primary ${isActive(dialogueLang.value === lang)}` }
-				onClick={ (): void => dialogueLang.set(lang) }
+				class={ `btn btn-outline-primary ${isActive(dialogueLang === lang)}` }
+				onClick={ (): void => setDialogueLang(lang) }
 			>
 				<img src={ `${AssetsRoot}/flags/${lang}.png` } alt={ lang } />
 			</button>) }
@@ -73,24 +72,25 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 			</div>
 
 			<button
-				class={ `btn btn-outline-primary ${isActive(dialogueAudio.value === "ko")}` }
-				onClick={ (): void => dialogueAudio.set("ko") }
+				class={ `btn btn-outline-primary ${isActive(dialogueAudio === "ko")}` }
+				onClick={ (): void => setDialogueAudio("ko") }
 			>한국어</button>
 			<button
-				class={ `btn btn-outline-primary ${isActive(dialogueAudio.value === "jp")}` }
-				onClick={ (): void => dialogueAudio.set("jp") }
+				class={ `btn btn-outline-primary ${isActive(dialogueAudio === "jp")}` }
+				onClick={ (): void => setDialogueAudio("jp") }
 			>日本語 N</button>
 			<button
-				class={ `btn btn-outline-primary ${isActive(dialogueAudio.value === "jpdmm")}` }
-				onClick={ (): void => dialogueAudio.set("jpdmm") }
+				class={ `btn btn-outline-primary ${isActive(dialogueAudio === "jpdmm")}` }
+				onClick={ (): void => setDialogueAudio("jpdmm") }
 			>日本語 R</button>
 		</div>
 
 		{ VoiceList.map(voice => <UnitDialogue
+			key={ `voice${voice.isMarriage ? "-M" : ""}-${voice.sid ?? 0}` }
 			unit={ unit }
 			voice={ voice }
-			lang={ dialogueLang.value }
-			audio={ dialogueAudio.value }
+			lang={ dialogueLang }
+			audio={ dialogueAudio }
 		/>) }
 	</div>;
 };

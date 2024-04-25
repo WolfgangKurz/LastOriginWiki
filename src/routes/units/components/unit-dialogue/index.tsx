@@ -1,4 +1,5 @@
 import { FunctionalComponent } from "preact";
+import { useMemo } from "preact/hooks";
 
 import { SKIN_IN_PARTS } from "@/types/Enums";
 import { RawUnitDialogueEntity, UnitDialogueAudioType, UnitDialogueDataType } from "@/types/DB/Dialogue";
@@ -27,13 +28,14 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 	const unit = props.unit;
 	const voice = props.voice;
 
-	const VoiceKey = ((v): string => {
+	const VoiceKey = useMemo(() => {
+		const v = voice;
 		if (v.isMarriage) return `${v.sid ?? ""}M`;
 		if (v.sid !== null) return v.sid.toString();
 		return "";
-	})(voice);
+	}, [voice]);
 
-	const TypeList = ((): Array<keyof RawUnitDialogueEntity> => {
+	const TypeList = useMemo((): Array<keyof RawUnitDialogueEntity> => {
 		const db = unit.dialogue[props.lang];
 		if (!db) return [];
 
@@ -89,9 +91,9 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 		}
 
 		return defaultTypes;
-	})();
+	}, [props.lang, unit, voice, VoiceKey]);
 
-	const Dialogue = ((): Partial<RawUnitDialogueEntity> => {
+	const Dialogue = useMemo((): Partial<RawUnitDialogueEntity> => {
 		const db = unit.dialogue[props.lang];
 		if (db && VoiceKey in db) return db[VoiceKey];
 
@@ -133,50 +135,53 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 			MVP: "",
 		};
 		/* eslint-enable camelcase */
-	})();
+	}, [props.lang, unit, VoiceKey]);
 
 	const IsVoiceAvailable = (voice.parts & (1 << SKIN_IN_PARTS.VOICE)) > 0 || voice.isDef;
 
-	const IsMissing = ((): boolean => {
+	const IsMissing = useMemo((): boolean => {
 		const db = unit.dialogue[props.lang];
 		if (!db) return true;
 		return Object.values(Dialogue).every(x => !x);
-	})();
+	}, [props.lang, unit, Dialogue]);
 
-	const IsPartial = ((): boolean => {
+	const IsPartial = useMemo((): boolean => {
 		const db = unit.dialogue[props.lang];
 		if (!db) return false;
 		return Object.values(Dialogue).some(x => !x);
-	})();
+	}, [props.lang, unit, Dialogue]);
 
-	const unitId = ((): string => {
+	const unitId = useMemo((): string => {
 		const uid = unit.uid || "";
 		const postfix = ((): string => {
 			if (voice.isMarriage) {
-				if (props.voice.metadata.voiceId !== undefined)
-					return `_NS${props.voice.metadata.voiceId}_Marriage`;
+				if (voice.metadata.voiceId !== undefined)
+					return `_NS${voice.metadata.voiceId}_Marriage`;
 				return "_Marriage";
 			}
 			if (voice.isPro) {
-				if (props.voice.metadata.voiceId !== undefined)
-					return `_NS${props.voice.metadata.voiceId}_PS1`;
+				if (voice.metadata.voiceId !== undefined)
+					return `_NS${voice.metadata.voiceId}_PS1`;
 				return "_PS1";
 			}
 			if (voice.isDef) return "";
 
-			if (props.voice.metadata.voiceId === undefined) return "";
-			return `_NS${props.voice.metadata.voiceId}`;
+			if (voice.metadata.voiceId === undefined) return "";
+			return `_NS${voice.metadata.voiceId}`;
 		})();
 		return `${uid}${postfix}`;
-	})();
+	}, [unit, voice]);
 
 	const collapseId = UniqueID("unit-dialogue-");
 
-	const cv: string | undefined = props.voice.sid === null
-		? voice.isMarriage
-			? unit.cv.M && unit.cv.M[props.audio]
-			: unit.cv[""] && unit.cv[""][props.audio]
-		: unit.cv[props.voice.sid] && unit.cv[props.voice.sid]![props.audio];
+	const cv: string | undefined = useMemo(() =>
+		voice.sid === null
+			? voice.isMarriage
+				? unit.cv.M && unit.cv.M[props.audio]
+				: unit.cv[""] && unit.cv[""][props.audio]
+			: unit.cv[voice.sid] && unit.cv[voice.sid]![props.audio],
+		[props.audio, unit, voice],
+	);
 
 	return IsVoiceAvailable
 		? <div class="card mt-2 text-start" lang={ props.lang }>
@@ -223,6 +228,7 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 			<div id={ collapseId } class="collapse">
 				<div class="card-body">
 					{ TypeList.map(type => <DialogueRow
+						key={ `dialogue-${unitId}-${type}` }
 						unitId={ unitId }
 						isSkin={ !voice.isDef }
 						type={ type }

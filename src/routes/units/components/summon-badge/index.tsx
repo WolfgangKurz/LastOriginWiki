@@ -9,7 +9,7 @@ import { objState } from "@/libs/State";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { UniqueID } from "@/libs/Functions";
 
-import Loader, { GetJson } from "@/components/loader";
+import Loader, { GetJson } from "@/libs/Loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import IconDot from "@/components/bootstrap-icon/icons/Dot";
 import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";

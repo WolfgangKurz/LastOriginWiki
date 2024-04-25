@@ -6,12 +6,12 @@ import StoryMap, { StoryMapSubstory } from "@/types/DB/StoryMap";
 import { STAGE_SUB_TYPE } from "@/types/Enums";
 
 import { useUpdate } from "@/libs/hooks";
+import { useLocale } from "@/libs/Locale";
+import { StaticDB, useDBData } from "@/libs/Loader";
 import { AssetsRoot } from "@/libs/Const";
 import { cn } from "@/libs/Class";
-import { CurrentDB } from "@/libs/DB";
 
-import Locale, { LocaleGet } from "@/components/locale";
-import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import Locale from "@/components/locale";
 import PopupBase from "@/components/popup/base";
 import PCIcon from "@/components/pc-icon";
 
@@ -28,6 +28,7 @@ interface StoryProps {
 
 const Story: FunctionalComponent<StoryProps> = (props) => {
 	const update = useUpdate();
+	const [loc] = useLocale();
 
 	const [selectedKey, setSelectedKey] = useState<[string | number, number] | null>(null);
 
@@ -49,14 +50,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 	const sKey = useMemo(() => selectedKey ? selectedKey[0] : null, [selectedKey]);
 	const sSub = useMemo(() => selectedKey ? selectedKey[1] : null, [selectedKey]);
 
-	const StoryMapDB = GetJson<StoryMap>(StaticDB.StoryMap);
-	useEffect(() => {
-		if (!StoryMapDB) {
-			JsonLoaderCore(CurrentDB, StaticDB.StoryMap)
-				.then(() => update());
-		}
-	}, [StoryMapDB]);
-
+	const StoryMapDB = useDBData<StoryMap>(StaticDB.StoryMap);
 	const StoryListSource: StoryKeySourceType[] = [
 		1, 2, 3, 4, 5, 6,
 		"Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6",
@@ -98,7 +92,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 	}
 	function GetWorldLocale (k: number | string, s: number): string {
 		const reg = /(( [0-9]+부)|( Part [0-9]+)|( 第[0-9]+部)|(第.+幕))$/;
-		const text = LocaleGet(`WORLD_WORLD_${k}_${s || 1}`);
+		const text = loc[`WORLD_WORLD_${k}_${s || 1}`] || `WORLD_WORLD_${k}_${s || 1}`;
 		return text.replace(reg, "").trim();
 	}
 

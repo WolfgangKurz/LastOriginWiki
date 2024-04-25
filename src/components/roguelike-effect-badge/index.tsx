@@ -8,7 +8,7 @@ import { ROGUE_LIMIT_EFFECT_TYPE } from "@/types/Enums";
 import RoguelikeLimitEffects from "@/types/DB/Roguelike.LimitEffects";
 
 import { objState } from "@/libs/State";
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import IconInfoCircleFill from "@/components/bootstrap-icon/icons/InfoCircleFill";
 import PopupBase from "@/components/popup/base";

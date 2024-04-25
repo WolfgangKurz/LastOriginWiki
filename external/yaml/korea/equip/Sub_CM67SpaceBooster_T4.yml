@@ -65,6 +65,57 @@ stats:
       turnSpeed:
         base: 0.1
         per: 0
+    - key: Effect_BUFF_CM67SpaceBooster_N_1
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_REMOVE_DEBUFF
+          desc:
+            desc: Effect_BUFF_CM67SpaceBooster_N_1_1
+            type: 1
+            value: "11"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 89
+            off:
+              type: 11
+              target: 1
+          overlap: 0
+        - icon: BuffIcon_CRITICAL_UP
+          desc:
+            desc: Effect_BUFF_CM67SpaceBooster_N_1_2
+            type: 1
+            value: "0.050000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 9
+            critical:
+              base: 5%
+              per: 0%
+          overlap: 4
+      maxStack: 0
   - - type: 0
       attack:
         base: 52.25

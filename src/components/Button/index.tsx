@@ -19,11 +19,14 @@ interface ButtonProps {
 }
 interface ButtonGroupProps {
 	class?: string;
-	ref?: Ref<HTMLButtonElement>;
+}
+interface ButtonTabProps {
+	class?: string;
 }
 
 const Button: FunctionalComponent<PropsWithoutRef<ButtonProps> & { ref?: Ref<HTMLButtonElement>; }> & {
 	Group: FunctionalComponent<ButtonGroupProps>,
+	Tab: FunctionalComponent<ButtonTabProps>,
 } = Object.assign(
 	forwardRef<HTMLButtonElement, ButtonProps>((props: RenderableProps<ButtonProps>, ref) => {
 		return <button
@@ -50,6 +53,7 @@ const Button: FunctionalComponent<PropsWithoutRef<ButtonProps> & { ref?: Ref<HTM
 	}),
 	{
 		Group: (props) => <div class={ cn(style.ButtonGroup, props.class) }>{ props.children }</div>,
+		Tab: (props) => <div class={ cn(style.ButtonTab, props.class) }>{ props.children }</div>,
 	},
 );
 

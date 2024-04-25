@@ -5,7 +5,7 @@ import RoguelikeItem from "@/types/DB/Roguelike.Item";
 
 import { objState } from "@/libs/State";
 
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import IconInfoCircleFill from "@/components/bootstrap-icon/icons/InfoCircleFill";
 import PopupBase from "@/components/popup/base";

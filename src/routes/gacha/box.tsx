@@ -13,7 +13,7 @@ import { FormatNumber, isActive, ToOrdinal } from "@/libs/Functions";
 import { AssetsRoot } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
 
-import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import IconBoxSeam from "@/components/bootstrap-icon/icons/BoxSeam";
 import IconArrowCounterclockwise from "@/components/bootstrap-icon/icons/ArrowCounterclockwise";

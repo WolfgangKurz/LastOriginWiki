@@ -2,9 +2,9 @@ import * as PIXI from "pixi.js";
 import * as LAYERS from "@pixi/layers";
 
 import { AssetsRoot, IsDev } from "@/libs/Const";
+import { quat2eul } from "@/libs/Math";
 
 import FadeContainer from "./FadeContainer";
-import Matrix3D from "@/components/u2dmodel-renderer/Matrix3D";
 
 // Interfaces from `@/components/u2dmodel-renderer`
 interface RECT {
@@ -251,7 +251,12 @@ export default class Pixi2DModel extends FadeContainer {
 							image.addEventListener("load", () => {
 								createClippedTexture(image, sp.vector, sp.v)
 									.then(tex => {
-										const _tex = PIXI.Texture.from(tex);
+										const _btex = PIXI.BaseTexture.from(tex, {
+											anisotropicLevel: 4,
+											mipmap: PIXI.MIPMAP_MODES.OFF,
+											multisample: PIXI.MSAA_QUALITY.HIGH,
+										});
+										const _tex = PIXI.Texture.from(_btex);
 										setCache(key, tex, _tex);
 
 										this.spMap[sp.name] = sp;
@@ -283,67 +288,22 @@ export default class Pixi2DModel extends FadeContainer {
 					const all = Object.values(r.object).flat();
 
 					const setNodeTransform = (obj: MODEL_OBJECT, target: PIXI.Container) => {
-						function quat2eul (quat: Tuple<number, 4>) { // quat2eul (radian)
-							const q = {
-								x: quat[0],
-								y: quat[1],
-								z: quat[2],
-								w: quat[3],
-							};
-							const ret = { x: 0, y: 0, z: 0 };
-
-							// roll (x-axis rotation)
-							const sinr_cosp = 2 * (q.w * q.x + q.y * q.z);
-							const cosr_cosp = 1 - 2 * (q.x * q.x + q.y * q.y);
-							ret.x = Math.atan2(sinr_cosp, cosr_cosp);
-
-							// pitch (y-axis rotation)
-							const sinp = Math.sqrt(1 + 2 * (q.w * q.x - q.y * q.z));
-							const cosp = Math.sqrt(1 - 2 * (q.w * q.x - q.y * q.z));
-							ret.y = 2 * Math.atan2(sinp, cosp) - Math.PI / 2;
-
-							// yaw (z-axis rotation)
-							const siny_cosp = 2 * (q.w * q.z + q.x * q.y);
-							const cosy_cosp = 1 - 2 * (q.y * q.y + q.z * q.z);
-							ret.z = Math.atan2(siny_cosp, cosy_cosp);
-
-							return ret;
-						}
-
 						const scaleMultiplier = obj.id === 1 // root
 							? 3.5
 							: 1;
 
 						const rot = quat2eul(obj.vector.slice(6, 10) as Tuple<number, 4>);
-						const mat = Matrix3D.compose(
-							Matrix3D.translate(obj.vector[0] * 100, -obj.vector[1] * 100, obj.vector[2] * 100),
-							Matrix3D.scale(
-								obj.vector[3] * scaleMultiplier,
-								obj.vector[4] * scaleMultiplier,
-								obj.vector[5] * scaleMultiplier,
-							),
-							Matrix3D.rotate(rot.x, rot.y, rot.z),
-						);
-						/*
-						   0   4   8  12       0   1   2   3
-						   1   5   9  13       4   5   6   7
-						   2   6  10  14       8   9  10  11
-						   3   7  11  15      12  13  14  15
-						*/
-
-						const pX = mat[12]; // 3
-						const pY = mat[13]; // 7
-						const sX = Math.sqrt(mat[0] * mat[0] + mat[4] * mat[4]); // [0]^2 * [1]^2
-						const sY = Math.sqrt(mat[1] * mat[1] + mat[5] * mat[5]); // [4]^2 * [5]^2
-						const kX = Math.atan2(mat[4], mat[0]); // [1], [0]
-						const kY = Math.atan2(mat[1], mat[5]); // [4], [5]
-						const r_ = Math.atan2(mat[4], mat[0]); // [1], [0]
 
 						target.setTransform(
-							pX, pY,
-							sX, sY,
-							r_,
-							kX, kY,
+							obj.vector[0] * 100,
+							-obj.vector[1] * 100,
+
+							obj.vector[3] * scaleMultiplier,
+							obj.vector[4] * scaleMultiplier,
+
+							-rot.z, // Unity using inverted angle
+							rot.x,
+							rot.y,
 						);
 					};
 					const requireTreeNode = (node: MODEL_OBJECT): NodeTreeItem => {

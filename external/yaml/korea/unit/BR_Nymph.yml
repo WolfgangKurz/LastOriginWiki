@@ -2051,7 +2051,7 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 4
+              target: 3
               buffs:
                 - icon: BuffIcon_ACCURACY_DOWN
                   desc:
@@ -2215,7 +2215,7 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 4
+              target: 3
               buffs:
                 - icon: BuffIcon_ACCURACY_DOWN
                   desc:
@@ -2379,7 +2379,7 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 4
+              target: 3
               buffs:
                 - icon: BuffIcon_ACCURACY_DOWN
                   desc:
@@ -2543,7 +2543,7 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 4
+              target: 3
               buffs:
                 - icon: BuffIcon_ACCURACY_DOWN
                   desc:
@@ -2707,7 +2707,7 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 4
+              target: 3
               buffs:
                 - icon: BuffIcon_ACCURACY_DOWN
                   desc:
@@ -2871,7 +2871,7 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 4
+              target: 3
               buffs:
                 - icon: BuffIcon_ACCURACY_DOWN
                   desc:
@@ -3035,7 +3035,7 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 4
+              target: 3
               buffs:
                 - icon: BuffIcon_ACCURACY_DOWN
                   desc:
@@ -3199,7 +3199,7 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 4
+              target: 3
               buffs:
                 - icon: BuffIcon_ACCURACY_DOWN
                   desc:
@@ -3363,7 +3363,7 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 4
+              target: 3
               buffs:
                 - icon: BuffIcon_ACCURACY_DOWN
                   desc:
@@ -3527,7 +3527,7 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 4
+              target: 3
               buffs:
                 - icon: BuffIcon_ACCURACY_DOWN
                   desc:
@@ -4239,6 +4239,42 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_BR_Nymph_N_43
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_COUNTER
+                  desc:
+                    desc: Effect_BR_Nymph_N_43_1
+                    type: 1
+                    value: "0.300000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 29
+                    counter:
+                      base: 30%
+                      per: 5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 15
             - key: Effect_BR_Nymph_N_42
               on: round
               if:
@@ -4271,7 +4307,7 @@ skills:
                     level: "0.075000"
                   attr: 0
                   erase:
-                    rounds: 1
+                    rounds: 2
                   value:
                     isBuff: true
                     type: 29
@@ -4279,50 +4315,8 @@ skills:
                       base: 45%
                       per: 7.5%
                   overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_Nymph_N_43
-              on: round
-              if:
-                - on:
-                    target: target
-                    select:
-                      - Effect_BR_Nymph_N_42
-                    stack: 0
-                    func: UNFILLED
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 2
-              buffs:
-                - icon: BuffIcon_COUNTER
-                  desc:
-                    desc: Effect_BR_Nymph_N_43_1
-                    type: 1
-                    value: "0.300000"
-                    level: "0.050000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 29
-                    counter:
-                      base: 30%
-                      per: 5%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
+              maxStack: 1
+              overlapGroup: 15
     values:
       index:
         - 0
@@ -4392,21 +4386,21 @@ skills:
             chance: 1
           - icon: BuffIcon_COUNTER
             desc:
-              desc: Effect_BR_Nymph_N_42_1
-              type: 1
-              value: "0.450000"
-              level: "0.075000"
-            base: 0.45
-            per: 0.075
-            chance: 1
-          - icon: BuffIcon_COUNTER
-            desc:
               desc: Effect_BR_Nymph_N_43_1
               type: 1
               value: "0.300000"
               level: "0.050000"
             base: 0.3
             per: 0.05
+            chance: 1
+          - icon: BuffIcon_COUNTER
+            desc:
+              desc: Effect_BR_Nymph_N_42_1
+              type: 1
+              value: "0.450000"
+              level: "0.075000"
+            base: 0.45
+            per: 0.075
             chance: 1
   "5":
     key: "5"

@@ -5521,6 +5521,91 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_BR_Alvis_N_526
+              on: round
+              if:
+                - in_battle:
+                    - Char_BR_Pixie_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_BR_Alvis_N_526_1
+                    type: 0
+                    value: "40"
+                    level: "4"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 0
+                    attack:
+                      base: 40
+                      per: 4
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_Alvis_N_526_2
+                    type: 0
+                    value: "0.100000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 0.1
+                      per: 0.02
+                  overlap: 4
+                - icon: BuffIcon_DEF_UP
+                  desc:
+                    desc: Effect_BR_Alvis_N_526_3
+                    type: 0
+                    value: "20"
+                    level: "2"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 2
+                    defense:
+                      base: 20
+                      per: 2
+                  overlap: 4
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_BR_Alvis_N_526_4
+                    type: 1
+                    value: "0.075000"
+                    level: "0.007500"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: 7.5%
+                      per: 0.75%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -6479,6 +6564,42 @@ skills:
             base: 0.075
             per: 0.0075
             chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_BR_Alvis_N_526_1
+              type: 0
+              value: "40"
+              level: "4"
+            base: 40
+            per: 4
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_Alvis_N_526_2
+              type: 0
+              value: "0.100000"
+              level: "0.020000"
+            base: 0.1
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_DEF_UP
+            desc:
+              desc: Effect_BR_Alvis_N_526_3
+              type: 0
+              value: "20"
+              level: "2"
+            base: 20
+            per: 2
+            chance: 1
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_BR_Alvis_N_526_4
+              type: 1
+              value: "0.075000"
+              level: "0.007500"
+            base: 0.075
+            per: 0.0075
+            chance: 1
 dialogue:
   KR:
     "1":
@@ -7305,10 +7426,10 @@ skins:
         consumableKey: Skin_BR_Alvis_1
     - sid: 2
       artist: Sol
-      price: 114
+      price: 134
       G: false
-      Spine: false
-      parts: 20
+      Spine: true
+      parts: 22
       stage: false
       subset:
         - true

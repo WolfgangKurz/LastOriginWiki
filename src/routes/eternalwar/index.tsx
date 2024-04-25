@@ -19,7 +19,7 @@ import { ParseDescriptionText } from "@/libs/FunctionsX";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Locale, { LocaleGet } from "@/components/locale";
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import IconDot from "@/components/bootstrap-icon/icons/Dot";
 import IconChevronLeft from "@/components/bootstrap-icon/icons/ChevronLeft";
 import IconChevronRight from "@/components/bootstrap-icon/icons/ChevronRight";

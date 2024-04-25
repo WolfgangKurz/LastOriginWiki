@@ -3,7 +3,7 @@ import { FunctionalComponent } from "preact";
 import { Consumable } from "@/types/DB/Consumable";
 import { MapSearch } from "@/types/DB/Map";
 
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import DropItem from "@/components/drop-item";
 import DropRes from "@/components/drop-res";
 import Locale from "@/components/locale";

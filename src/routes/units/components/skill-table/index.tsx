@@ -1,11 +1,13 @@
 import { FunctionalComponent } from "preact";
+import { useCallback, useMemo, useState } from "preact/hooks";
 import Decimal from "decimal.js";
 
 import { Unit } from "@/types/DB/Unit";
-import { SkillEntity, SkillGroup, SkillValueData } from "@/types/DB/Skill";
+import { SkillEntity, SkillGroup } from "@/types/DB/Skill";
 import { ACTOR_GRADE } from "@/types/Enums";
 import { BuffStat } from "@/types/Buffs";
 
+import { useLocale } from "@/libs/Locale";
 import Session from "@/libs/Session";
 import { isActive } from "@/libs/Functions";
 import { objState } from "@/libs/State";
@@ -13,7 +15,7 @@ import { ImageExtension, RarityDisplay } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
 import { GetSkillDescription } from "@/libs/SkillDescription";
 
-import Locale, { LocaleExists, LocaleGet } from "@/components/locale";
+import Locale from "@/components/locale";
 import ElemIcon from "@/components/elem-icon";
 import RarityBadge from "@/components/rarity-badge";
 import SkillBound from "@/components/skill-bound";
@@ -41,10 +43,10 @@ interface SkillTableProps {
 }
 
 const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
-	const imageExt = ImageExtension();
+	const [loc] = useLocale();
 
 	const unit = props.unit;
-	const skills = ((): Record<string, SkillItem> => {
+	const skills = useMemo((): Record<string, SkillItem> => {
 		const table: SkillTableType = {};
 
 		const db = unit.skills;
@@ -65,39 +67,42 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				};
 			});
 		return table;
-	})();
+	}, [unit]);
 	if (!skills) return <></>;
 
-	const formState = objState<"normal" | "change">("normal");
-	const skillLevel = objState<LevelType>(9);
+	const [formState, setFormState] = useState<"normal" | "change">("normal");
+	const [skillLevel, setSkillLevel] = useState<LevelType>(9);
 
-	const favorBonus = objState<boolean>(Session.get("unit.skill-table.favorBonus", "0") === "1");
-	const displayBuffList = objState<boolean>(Session.get("unit.skill-table.displayBuffList", "0") === "1");
-	const displayBuffDummy = objState<boolean>(Session.get("unit.skill-table.displayBuffDummy", "0") === "1");
-	const displayFlavor = objState<boolean>(Session.get("unit.skill-table.displayFlavor", "1") === "1");
+	const [favorBonus, setFavorBonus] = useState<boolean>(Session.get("unit.skill-table.favorBonus", "0") === "1");
+	const [displayBuffList, setDisplayBuffList] = useState<boolean>(Session.get("unit.skill-table.displayBuffList", "0") === "1");
+	const [displayBuffDummy, setDisplayBuffDummy] = useState<boolean>(Session.get("unit.skill-table.displayBuffDummy", "0") === "1");
+	const [displayFlavor, setDisplayFlavor] = useState<boolean>(Session.get("unit.skill-table.displayFlavor", "1") === "1");
 
-	const HasFormChange = ((): boolean => {
+	const HasFormChange = useMemo(() => {
 		const raw = skills;
 		if (!raw) return false;
 
 		return Object.keys(raw).some(x => x.startsWith("F"));
-	})();
+	}, [skills]);
 
-	const Skills = ((): SkillItem[] => {
+	const Skills = useMemo((): SkillItem[] => {
 		const keys = Object.keys(skills);
 		return keys
 			.filter(x => !x.startsWith("F"))
 			.map(x => {
 				const keyf = `F${x}`;
-				if (formState.value === "change" && keys.includes(keyf))
+				if (formState === "change" && keys.includes(keyf))
 					return skills[keyf];
 				return skills[x];
 			});
-	})();
+	}, [skills, formState]);
 
-	const finalSkillLevel = skillLevel.value + (favorBonus.value ? 1 : 0) + (props.buffBonus ? 2 : 0);
+	const finalSkillLevel = useMemo(
+		() => skillLevel + (favorBonus ? 1 : 0) + (props.buffBonus ? 2 : 0),
+		[skillLevel, favorBonus, props.buffBonus],
+	);
 
-	const buffList = ((): Record<string, BuffStat[]> => {
+	const buffList = useMemo((): Record<string, BuffStat[]> => {
 		const output: Record<string, BuffStat[]> = {};
 
 		Object.keys(skills)
@@ -105,14 +110,14 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				const skill = skills[key];
 				if (!skill) return null;
 
-				const stat = skill.buffs.data[skill.buffs.index[skillLevel.value]].buffs;
+				const stat = skill.buffs.data[skill.buffs.index[skillLevel]].buffs;
 				output[key] = stat;
 			});
 
 		return output;
-	})();
+	}, [skills, skillLevel]);
 
-	const BuffRates = ((): Record<string, number[]> => {
+	const BuffRates = useMemo((): Record<string, number[]> => {
 		const output: Record<string, number[]> = {};
 		Object.keys(skills)
 			.forEach(key => {
@@ -121,42 +126,46 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				output[key] = skill.buffs.index.map(x => skill.buffs.data[x].buff_rate);
 			});
 		return output;
-	})();
+	}, [skills]);
 
-	function GetSkillDescriptions (skill: SkillItem, values: Record<string, SkillDescriptionValueData[]>) {
+	const GetSkillDescriptions = useCallback((skill: SkillItem, values: Record<string, SkillDescriptionValueData[]>) => {
 		const key = `UNIT_SKILL_DESC_${unit.uid}_${skill.key}`;
-		const orig = LocaleExists(key) ? LocaleGet(key) : "";
+		const orig = loc[key] || "";
 
 		return GetSkillDescription(orig, skill.slot, values);
-	}
+	}, [loc, unit]);
 	function GetRates (skill: SkillItem): number[] {
 		return skill.buffs.index
 			.map(x => skill.buffs.data[x].rate);
 	}
 
-	const Values: Record<string, SkillDescriptionValueData[]> = {};
-	Object.keys(skills)
-		.forEach(_ => {
-			const rkey = _.startsWith("F")
-				? `CH_${_.substr(1)}`
-				: _;
+	const Values = useMemo((): Record<string, SkillDescriptionValueData[]> => {
+		const Values: Record<string, SkillDescriptionValueData[]> = {};
+		Object.keys(skills)
+			.forEach(_ => {
+				const rkey = _.startsWith("F")
+					? `CH_${_.substring(1)}`
+					: _;
 
-			const src = skills[_].values.data[skills[_].values.index[skillLevel.value]];
-			Values[rkey] = src
-				.map(v => ({
-					base: v.base,
-					per: v.per,
-					chance: parseFloat(v.chance),
-				}) as SkillDescriptionValueData);
-		});
+				const src = skills[_].values.data[skills[_].values.index[skillLevel]];
+				Values[rkey] = src
+					.map(v => ({
+						base: v.base,
+						per: v.per,
+						chance: parseFloat(v.chance),
+					}) as SkillDescriptionValueData);
+			});
 
-	const skillHeader = <>
+		return Values;
+	}, [skills, skillLevel]);
+
+	const skillHeader = useMemo(() => <>
 		<Locale k="UNIT_SKILL_DESCRIPTION" />
 		<select
 			class="form-select form-select-sm table-unit-level-select font-exo2"
-			value={ skillLevel.value }
+			value={ skillLevel }
 			onChange={ (e): void => {
-				skillLevel.set(
+				setSkillLevel(
 					parseInt((e.target as HTMLSelectElement).value, 10) as LevelType,
 				);
 			} }
@@ -173,10 +182,10 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 					<input
 						class="form-check-input"
 						type="checkbox"
-						checked={ favorBonus.value }
+						checked={ favorBonus }
 						onChange={ (): void => {
-							const v = !favorBonus.value;
-							favorBonus.set(v);
+							const v = !favorBonus;
+							setFavorBonus(v);
 							Session.set("unit.skill-table.favorBonus", v ? "1" : "0");
 						} }
 					/>
@@ -189,10 +198,10 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 					<input
 						class="form-check-input"
 						type="checkbox"
-						checked={ displayBuffList.value }
+						checked={ displayBuffList }
 						onChange={ (): void => {
-							const v = !displayBuffList.value;
-							displayBuffList.set(v);
+							const v = !displayBuffList;
+							setDisplayBuffList(v);
 							Session.set("unit.skill-table.displayBuffList", v ? "1" : "0");
 						} }
 					/>
@@ -205,11 +214,11 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 					<input
 						class="form-check-input"
 						type="checkbox"
-						disabled={ !displayBuffList.value }
-						checked={ displayBuffDummy.value }
+						disabled={ !displayBuffList }
+						checked={ displayBuffDummy }
 						onChange={ (): void => {
-							const v = !displayBuffDummy.value;
-							displayBuffDummy.set(v);
+							const v = !displayBuffDummy;
+							setDisplayBuffDummy(v);
 							Session.set("unit.skill-table.displayBuffDummy", v ? "1" : "0");
 						} }
 					/>
@@ -222,10 +231,10 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 					<input
 						class="form-check-input"
 						type="checkbox"
-						checked={ displayFlavor.value }
+						checked={ displayFlavor }
 						onChange={ (): void => {
-							const v = !displayFlavor.value;
-							displayFlavor.set(v);
+							const v = !displayFlavor;
+							setDisplayFlavor(v);
 							Session.set("unit.skill-table.displayFlavor", v ? "1" : "0");
 						} }
 					/>
@@ -233,12 +242,12 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				</label>
 			</div>
 		</div>
-	</>;
+	</>, [skillLevel, favorBonus, displayBuffList, displayBuffList, displayBuffDummy, displayFlavor]);
 
-	const tableContent = (skill: SkillItem): preact.VNode => {
+	const tableContent = useCallback((skill: SkillItem): preact.VNode => {
 		const flavorKey = `UNIT_SKILL_FLAVOR_${props.unit.uid}_${skill.key}`;
-		const flavorStr = LocaleGet(flavorKey);
-		const flavor = !displayFlavor.value || (flavorStr === flavorKey)
+		const flavorStr = loc[flavorKey] || "";
+		const flavor = !displayFlavor || (flavorStr === flavorKey)
 			? <></>
 			: <div class={ style.SkillFlavor }>
 				{ flavorStr.startsWith("<div>")
@@ -251,7 +260,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 
 		return <>
 			<div class="unit-modal-skill mb-2">
-				{ skill.buffs.data[skill.buffs.index[skillLevel.value]].dismiss_guard
+				{ skill.buffs.data[skill.buffs.index[skillLevel]].dismiss_guard
 					? <span class="badge bg-warning text-bg-warning me-1">
 						<Locale k="UNIT_SKILL_DISMISS_GUARD" />
 					</span>
@@ -260,19 +269,19 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 
 				{ skill.target_ground && !skill.isPassive
 					? <span class="badge bg-danger text-bg-danger me-1"
-						title={ LocaleGet("UNIT_SKILL_GRID_TARGET_TIP") }
+						title={ loc["UNIT_SKILL_GRID_TARGET_TIP"] || "" }
 					>
 						<Locale k="UNIT_SKILL_GRID_TARGET" />
 					</span>
 					: <></>
 				}
 
-				{ skill.buffs.data[skill.buffs.index[skillLevel.value]].acc_bonus
+				{ skill.buffs.data[skill.buffs.index[skillLevel]].acc_bonus
 					? <span class="badge bg-success text-bg-success me-1">
 						<Locale k="UNIT_SKILL_ACC_BONUS" />
 						{
-							(skill.buffs.data[skill.buffs.index[skillLevel.value]].acc_bonus > 0 ? "+" : "") +
-							skill.buffs.data[skill.buffs.index[skillLevel.value]].acc_bonus
+							(skill.buffs.data[skill.buffs.index[skillLevel]].acc_bonus > 0 ? "+" : "") +
+							skill.buffs.data[skill.buffs.index[skillLevel]].acc_bonus
 						}%
 					</span>
 					: <></>
@@ -284,17 +293,19 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 					</span>
 					: <></>
 				}
-				{ !skill.buffs.data[skill.buffs.index[skillLevel.value]].enabled
+				{ !skill.buffs.data[skill.buffs.index[skillLevel]].enabled
 					? <span class="badge bg-secondary text-bg-secondary me-1">
 						<Locale k="UNIT_SKILL_DISABLED" />
 					</span>
 					: <></>
 				}
 
-				<SummonBadge summon={ skill.buffs.data[skill.buffs.index[skillLevel.value]].summon } class="me-1" />
+				<SummonBadge summon={ skill.buffs.data[skill.buffs.index[skillLevel]].summon } class="me-1" />
 			</div>
 
 			<div>
+				{ flavor }
+
 				{ descList.lines.map((line) => <div class="unit-modal-skill">
 					{ !line
 						? descList.lines.length === 1
@@ -305,24 +316,23 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 						: <SkillDescription
 							text={ line }
 							sections={ descList.sections }
+							boxs={ descList.boxs }
 							rates={ GetRates(skill) }
-							level={ skillLevel.value }
+							level={ skillLevel }
 							values={ Values }
 							slot={ skill.slot }
 							buffBonus={ props.buffBonus }
 							skillBonus={ props.skillBonus }
-							favorBonus={ favorBonus.value }
+							favorBonus={ favorBonus }
 						/>
 					}
 				</div>) }
-
-				{ flavor }
 			</div>
 
 			{ BuffRates[skill.key].some((x) => x !== 100)
 				? <div>
 					<span class="badge bg-danger text-bg-danger">
-						<Locale k="UNIT_SKILL_BUFF_RATE" p={ [BuffRates[skill.key][skillLevel.value]] } />
+						<Locale k="UNIT_SKILL_BUFF_RATE" p={ [BuffRates[skill.key][skillLevel]] } />
 					</span>
 					<small class="text-secondary ms-1">
 						<Locale k="UNIT_SKILL_BUFF_RATE_DESC" />
@@ -331,28 +341,38 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				: <></>
 			}
 
-			{ displayBuffList.value && buffList[skill.key].length > 0
+			{ displayBuffList && buffList[skill.key].length > 0
 				? <BuffList
 					uid={ unit.uid }
 					list={ buffList[skill.key] }
 					level={ finalSkillLevel }
-					dummy={ displayBuffDummy.value }
+					dummy={ displayBuffDummy }
 				/>
 				: <></>
 			}
 		</>;
-	};
+	}, [
+		loc,
+		displayFlavor, GetSkillDescriptions,
+		skillLevel, favorBonus,
+		props.buffBonus, props.skillBonus,
+		displayBuffList, displayBuffDummy,
+	]);
 
-	const endRarity = unit.promotions
+	const endRarity = useMemo(() => unit.promotions
 		? Math.max(unit.rarity, ...unit.promotions.map(p => p.to))
-		: unit.rarity;
+		: unit.rarity,
+		[unit],
+	);
 
-	const bonus = Decimal.div(props.skillBonus || 0, 100);
-	const valueHelp = !bonus.isZero()
+	const bonus = useMemo(() => Decimal.div(props.skillBonus || 0, 100), [props.skillBonus]);
+	const valueHelp = useMemo(() => !bonus.isZero()
 		? <span class="badge bg-success ms-1">
 			▲ { bonus.toNumber() }
 		</span>
-		: undefined;
+		: undefined,
+		[bonus],
+	);
 
 	const elDisp = {
 		physics: <Locale k="COMMON_ELEM_PHYSICS" />,
@@ -366,19 +386,16 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 			<tr>
 				<th colSpan={ 3 }>
 					<Locale k="UNIT_SKILL" />
-					{ HasFormChange
-						? <div class="btn-group ms-2">
-							<button
-								class={ `btn btn-sm btn-outline-warning ${isActive(formState.value === "normal")}` }
-								onClick={ (): void => formState.set("normal") }
-							>Normal</button>
-							<button
-								class={ `btn btn-sm btn-outline-warning ${isActive(formState.value === "change")}` }
-								onClick={ (): void => formState.set("change") }
-							>F.Change</button>
-						</div>
-						: <></>
-					}
+					{ HasFormChange && <div class="btn-group ms-2">
+						<button
+							class={ `btn btn-sm btn-outline-warning ${isActive(formState === "normal")}` }
+							onClick={ (): void => setFormState("normal") }
+						>Normal</button>
+						<button
+							class={ `btn btn-sm btn-outline-warning ${isActive(formState === "change")}` }
+							onClick={ (): void => setFormState("change") }
+						>F.Change</button>
+					</div> }
 				</th>
 			</tr>
 			<tr>
@@ -393,8 +410,8 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 		<tbody>
 			{ Skills.map(skill => {
 				const rates = GetRates(skill);
-				const el = skill.buffs.data[skill.buffs.index[skillLevel.value]].type;
-				const v = Decimal.add(rates[skillLevel.value], bonus)
+				const el = skill.buffs.data[skill.buffs.index[skillLevel]].type;
+				const v = Decimal.add(rates[skillLevel], bonus)
 					.toFixed(10)
 					.replace(/\.?0+$/, "");
 
@@ -438,7 +455,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 								passive={ skill.isPassive }
 								buffs={ skill.buffs }
 								target={ skill.target }
-								level={ skillLevel.value + 1 }
+								level={ skillLevel + 1 }
 								rangeBonus={ props.rangeBonus }
 							/>
 						</th>

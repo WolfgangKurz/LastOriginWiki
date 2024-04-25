@@ -12,7 +12,7 @@ import { parseVNode } from "@/libs/VNode";
 import { TravelVDOM } from "@/libs/VDomParser";
 import { FormatNumber } from "@/libs/Functions";
 
-import Loader, { StaticDB, GetJson, JsonLoaderCore } from "@/components/loader";
+import Loader, { StaticDB, GetJson, JsonLoaderCore } from "@/libs/Loader";
 import { GetUnitFaceURL } from "@/components/unit-face";
 
 import Locale from "@/components/locale";

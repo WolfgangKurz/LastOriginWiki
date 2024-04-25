@@ -1,0 +1,126 @@
+.EquipGrid {
+	display: grid;
+	margin-bottom: 1em;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 0.125em;
+
+	> .EquipSlot {
+		margin: 0.125em;
+		padding: 0.5em;
+		border-radius: 0.25em;
+		background-color: $dark;
+		text-align: center;
+		font-weight: bold;
+		font-size: 80%;
+		color: transparentize($light, 0.15);
+
+		:first-child {
+			color: $light;
+		}
+
+		> :nth-child(2) {
+			margin-top: 0.25em;
+			margin-bottom: 0.25em;
+		}
+
+		> .Icon {
+			min-height: calc(40px);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: 40px 40px;
+		}
+
+		$types: 0, 1, 2;
+
+		@each $type in $types {
+			&[data-type="#{$type}"] > .Icon {
+				background-image: url($assetsRoot + "/simulation/Item#{$type}.png");
+			}
+		}
+	}
+}
+
+:global {
+	.tab-box {
+		padding: 10px;
+		border: 1px solid #dee2e6;
+	}
+
+	// .fulllink-table {
+	//	padding-top: 0.55em;
+	// }
+	.table-unit-modal.container {
+		.col {
+			margin-bottom: -1px;
+			padding: 0.75rem;
+			border: 1px solid #dee2e6;
+
+			&.bg-dark {
+				border-color: #454d55;
+				font-weight: bold;
+			}
+		}
+	}
+
+	.table-unit-modal.table-bordered {
+		td,
+		th {
+			vertical-align: middle;
+			word-break: keep-all;
+		}
+
+		th.table-dark {
+			border-color: #454d55;
+		}
+
+		.rarity-badge {
+			border: 1px solid rgba(0, 0, 0, 0.33);
+			box-shadow: 0 0 1px #000;
+		}
+	}
+
+	.table-unit-link-select {
+		display: inline-block;
+		margin-left: 1em;
+		width: 8em;
+		vertical-align: baseline;
+	}
+
+	.unit-modal-skill {
+		padding: 3px 0;
+		border-bottom: 1px solid #dee2e6;
+
+		&:last-child {
+			border-bottom: 0;
+		}
+
+		&:empty {
+			display: none;
+		}
+	}
+
+	.table-unit-level-select,
+	.table-unit-rarity-select {
+		display: inline-block;
+		margin-left: 1em;
+		width: 8em;
+		vertical-align: baseline;
+	}
+
+	.skill-icon {
+		height: 64px;
+	}
+	.badge.skill-info-badge {
+		margin-top: 0.35rem;
+
+		> .elem-icon {
+			vertical-align: text-bottom;
+		}
+	}
+
+	.limited-item-card {
+		display: inline-block;
+		width: 100%;
+		max-width: 20rem;
+	}
+}

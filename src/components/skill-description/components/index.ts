@@ -7,3 +7,4 @@ export * from "./Char";
 export * from "./Equip";
 export * from "./Elem";
 export * from "./Comment";
+export * from "./Box";

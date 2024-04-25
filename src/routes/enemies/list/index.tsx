@@ -10,7 +10,7 @@ import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { DecomposeHangulSyllable, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import Loading from "@/components/loading";
 import EnemyCard from "@/routes/enemies/components/enemy-card";

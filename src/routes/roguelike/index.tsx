@@ -4,7 +4,7 @@ import { objState } from "@/libs/State";
 import { isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
-import Loader, { StaticDB } from "@/components/loader";
+import Loader, { StaticDB } from "@/libs/Loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import IconCardChecklist from "@/components/bootstrap-icon/icons/CardChecklist";
 import IconGeoFill from "@/components/bootstrap-icon/icons/GeoFill";

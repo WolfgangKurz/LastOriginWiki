@@ -4,7 +4,10 @@ import { ACTOR_GRADE } from "@/types/Enums";
 
 import { RarityDisplay } from "@/libs/Const";
 
+import Badge from "@/components/Badge";
+
 import style from "./style.module.scss";
+import { cn } from "@/libs/Class";
 
 interface RarityBadgeProps {
 	class?: string;
@@ -18,24 +21,18 @@ const RarityBadge: FunctionalComponent<RarityBadgeProps> = (props) => {
 		? props.rarity
 		: RarityDisplay[props.rarity];
 
-	const className = [
-		"badge",
-		"bg-light",
-		"rarity-badge",
-		props.border ? style["bordered"] : "",
-		props.class || "",
-		style["rarity-badge"],
-		`rarity-${rarity}-force`,
-	]
-		.filter(x => x)
-		.join(" ");
-
-	return <span
-		class={ className }
+	return <Badge
+		class={ cn(
+			"rarity-badge",
+			props.border && style.bordered,
+			props.class,
+			style["rarity-badge"],
+		) }
+		variant={ `rarity-${rarity}` }
 		data-rarity={ rarity }
 		data-size={ props.size }
 	>
 		{ props.children || rarity }
-	</span>;
+	</Badge>;
 };
 export default RarityBadge;

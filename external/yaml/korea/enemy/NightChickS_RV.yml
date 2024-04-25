@@ -723,6 +723,26 @@ skills:
               overlap: 4
           maxStack: 0
           overlapGroup: -1
+  - key: Skill_MP_NightChickS_RV_5
+    icon: P.ShieldWall
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
         - key: Effect_MP_NightChickS_RV_5
           on: round
           if:
@@ -771,64 +791,6 @@ skills:
               overlap: 4
           maxStack: 0
           overlapGroup: -1
-  - key: Skill_MP_NightChickS_RV_5
-    icon: P.ShieldWall
-    passive: true
-    type: 0
-    target: team
-    delayed: false
-    target_ground: false
-    leastGrade: 5
-    buff:
-      rate: 0
-      range: 0
-      ap: 0
-      grid: F>1,1,1,1,1,1,1,1,1
-      summon: null
-      use: null
-      enabled: true
-      dismiss_guard: false
-      acc_bonus: 0
-      buff_rate: 100
-      buffs:
-        - key: Effect_MP_NightChickS_RV_51
-          on: round
-          if:
-            - hp<=:
-                target: target
-                value:
-                  - 50%
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 2
-          buffs:
-            - icon: BuffIcon_DEF_UP
-              desc:
-                desc: Effect_MP_NightChickS_RV_51_1
-                type: 1
-                value: "0.250000"
-                level: "0"
-              attr: 3
-              erase: {}
-              value:
-                isBuff: true
-                type: 110
-                disperse:
-                  base: 25%
-                  per: 0%
-              overlap: 4
-          maxStack: 0
-          overlapGroup: -1
         - key: Effect_MP_NightChickS_RV_52
           on: team_dead
           if:
@@ -851,18 +813,19 @@ skills:
               desc:
                 desc: Effect_MP_NightChickS_RV_52_1
                 type: 1
-                value: "0.250000"
+                value: "-0.150000"
                 level: "0"
               attr: 3
               erase:
                 rounds: 2
               value:
                 isBuff: true
-                type: 110
-                disperse:
-                  base: 25%
+                type: 138
+                wide:
+                  type: skill
+                  base: -15%
                   per: 0%
               overlap: 4
-          maxStack: 0
+          maxStack: 1
           overlapGroup: -1
 ai: AI_MP_NightChickS_RV_01

@@ -19,7 +19,7 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 import MapPosition from "@/libs/MapPosition";
 import { CurrentDB } from "@/libs/DB";
 
-import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import Loading from "@/components/loading";
 import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";

@@ -14,7 +14,7 @@ import { objState } from "@/libs/State";
 import { ImageExtension, AssetsRoot, TroopNameTable, IsDev } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale, { LocaleExists, LocaleGet } from "@/components/locale";
 import IconDash from "@/components/bootstrap-icon/icons/Dash";
 import IconPlus from "@/components/bootstrap-icon/icons/Plus";

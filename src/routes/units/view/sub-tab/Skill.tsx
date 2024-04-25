@@ -1,14 +1,15 @@
 import { FunctionalComponent } from "preact";
+import { useCallback, useMemo, useState } from "preact/hooks";
 import Decimal from "decimal.js";
 
 import { SelectOption } from "@/types/Helper";
 import { ACTOR_GRADE, ITEM_TYPE } from "@/types/Enums";
 import { LinkBonusType } from "@/types/DB/Unit";
 
-import { objState } from "@/libs/State";
 import { RarityDisplay } from "@/libs/Const";
 import { GetRequireResource } from "@/libs/Cost";
 import { GetLinkBonus } from "@/libs/LinkBonus";
+import { cn } from "@/libs/Class";
 
 import Locale from "@/components/locale";
 import ElemIcon from "@/components/elem-icon";
@@ -17,19 +18,24 @@ import SkillTable from "../../components/skill-table";
 
 import { SubpageProps } from "..";
 
+import style from "./Skill.module.scss";
+
 const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 	const CurrentResists = unit.stat[0].Resist;
 	// const ExLevel = objState<number>(9);
 
-	const linkCount = objState<number>(5);
-	const LinkBonus = unit.linkBonus
-		.filter(x => x)
-		.map(x => GetLinkBonus(x, linkCount.value));
+	const [linkCount, setLinkCount] = useState<number>(5);
+	const LinkBonus = useMemo(
+		() => unit.linkBonus
+			.filter(x => x)
+			.map(x => GetLinkBonus(x, linkCount)),
+		[unit, linkCount],
+	);
 
-	const FullLinkBonus = unit.fullLinkBonus.map(x => GetLinkBonus(x, 1));
-	const fullLinkBonus = objState<LinkBonusType>("");
+	const FullLinkBonusList = useMemo(() => unit.fullLinkBonus.map(x => GetLinkBonus(x, 1)), [unit]);
+	const [fullLinkBonus, setFullLinkBonus] = useState<LinkBonusType>("");
 
-	const CostRarityList = ((): SelectOption<ACTOR_GRADE>[] => {
+	const CostRarityList = useMemo((): SelectOption<ACTOR_GRADE>[] => {
 		const list = [{
 			text: <Locale k="COMMON_UNIT_GRADE_FORMAT" p={ [RarityDisplay[unit.rarity]] } />,
 			value: unit.rarity,
@@ -43,53 +49,53 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 		}
 
 		return list;
-	})();
-	const costRarity = objState<ACTOR_GRADE>(unit.rarity);
+	}, [unit]);
+	const [costRarity, setCostRarity] = useState<ACTOR_GRADE>(unit.rarity);
 
-	function CostClass (level: number, value: number): string {
+	const CostClass = useCallback((level: number, value: number): string => {
 		if (value === 0) return "text-secondary";
-		if (fullLinkBonus.value.startsWith("Cost_") && level === 5)
+		if (fullLinkBonus.startsWith("Cost_") && level === 5)
 			return "text-primary";
 		return "";
-	}
+	}, [fullLinkBonus]);
 
-	const CostTable = GetRequireResource(
-		costRarity.value,
+	const CostTable = useMemo(() => GetRequireResource(
+		costRarity,
 		unit.type,
 		unit.role,
 		unit.body,
-		fullLinkBonus.value,
-	);
+		fullLinkBonus,
+	), [unit, costRarity, fullLinkBonus]);
 
-	const SkillPowerBonus = ((): number => {
+	const SkillPowerBonus = useMemo((): number => {
 		let bonus = new Decimal(0);
 
-		if (linkCount.value === 5) {
-			if (fullLinkBonus.value === "Skill_2") bonus = bonus.add(2);
-			if (fullLinkBonus.value === "Skill_5") bonus = bonus.add(5);
-			if (fullLinkBonus.value === "Skill_10") bonus = bonus.add(10);
-			if (fullLinkBonus.value === "Skill_15") bonus = bonus.add(15);
-			if (fullLinkBonus.value === "Skill_20") bonus = bonus.add(20);
-			if (fullLinkBonus.value === "Skill_25") bonus = bonus.add(25);
-			if (fullLinkBonus.value === "Skill_30") bonus = bonus.add(30);
-			if (fullLinkBonus.value === "Skill_35") bonus = bonus.add(35);
+		if (linkCount === 5) {
+			if (fullLinkBonus === "Skill_2") bonus = bonus.add(2);
+			if (fullLinkBonus === "Skill_5") bonus = bonus.add(5);
+			if (fullLinkBonus === "Skill_10") bonus = bonus.add(10);
+			if (fullLinkBonus === "Skill_15") bonus = bonus.add(15);
+			if (fullLinkBonus === "Skill_20") bonus = bonus.add(20);
+			if (fullLinkBonus === "Skill_25") bonus = bonus.add(25);
+			if (fullLinkBonus === "Skill_30") bonus = bonus.add(30);
+			if (fullLinkBonus === "Skill_35") bonus = bonus.add(35);
 		}
 
-		if (unit.linkBonus.includes("Skill_2")) bonus = bonus.add(Decimal.mul(2, linkCount.value));
-		if (unit.linkBonus.includes("Skill_5")) bonus = bonus.add(Decimal.mul(5, linkCount.value));
-		if (unit.linkBonus.includes("Skill_10")) bonus = bonus.add(Decimal.mul(10, linkCount.value));
-		if (unit.linkBonus.includes("Skill_15")) bonus = bonus.add(Decimal.mul(15, linkCount.value));
-		if (unit.linkBonus.includes("Skill_20")) bonus = bonus.add(Decimal.mul(20, linkCount.value));
-		if (unit.linkBonus.includes("Skill_25")) bonus = bonus.add(Decimal.mul(25, linkCount.value));
-		if (unit.linkBonus.includes("Skill_30")) bonus = bonus.add(Decimal.mul(30, linkCount.value));
-		if (unit.linkBonus.includes("Skill_35")) bonus = bonus.add(Decimal.mul(35, linkCount.value));
+		if (unit.linkBonus.includes("Skill_2")) bonus = bonus.add(Decimal.mul(2, linkCount));
+		if (unit.linkBonus.includes("Skill_5")) bonus = bonus.add(Decimal.mul(5, linkCount));
+		if (unit.linkBonus.includes("Skill_10")) bonus = bonus.add(Decimal.mul(10, linkCount));
+		if (unit.linkBonus.includes("Skill_15")) bonus = bonus.add(Decimal.mul(15, linkCount));
+		if (unit.linkBonus.includes("Skill_20")) bonus = bonus.add(Decimal.mul(20, linkCount));
+		if (unit.linkBonus.includes("Skill_25")) bonus = bonus.add(Decimal.mul(25, linkCount));
+		if (unit.linkBonus.includes("Skill_30")) bonus = bonus.add(Decimal.mul(30, linkCount));
+		if (unit.linkBonus.includes("Skill_35")) bonus = bonus.add(Decimal.mul(35, linkCount));
 
 		return bonus.toNumber();
-	})();
+	}, [unit, linkCount, fullLinkBonus]);
 
 	return <div style={ { display: display ? "" : "none" } }>
 		<div class="row justify-content-center">
-			<div class="col col-12 col-sm-10 col-md-8 col-lg-6 equip-grid">
+			<div class={ cn("col col-12 col-sm-10 col-md-8 col-lg-6", style.EquipGrid) }>
 				{ unit.slots.map((equip, i) => {
 					const type = {
 						[ITEM_TYPE.CHIP]: "CHIP",
@@ -97,9 +103,9 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 						[ITEM_TYPE.SUBEQ]: "ITEM",
 					}[equip] || "";
 
-					return <div class="equip-slot" data-type={ equip }>
+					return <div class={ style.EquipSlot } data-type={ equip }>
 						<div class="font-exo2">Lv. { (i + 1) * 20 }</div>
-						<div class="equip-slot-icon" />
+						<div class={ style.Icon } />
 						<div><Locale k={ `COMMON_EQUIP_TYPE_${type}` } /></div>
 					</div>;
 				}) }
@@ -131,8 +137,8 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 									{ new Array(6)
 										.fill(0)
 										.map((_, i) => <button
-											class={ `btn btn-${linkCount.value === i ? "primary" : "light"}` }
-											onClick={ (): void => linkCount.set(i) }
+											class={ `btn btn-${linkCount === i ? "primary" : "light"}` }
+											onClick={ (): void => setLinkCount(i) }
 										>
 											<strong class="px-1">{ i }</strong>
 										</button>) }
@@ -170,13 +176,13 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 									<input
 										class="form-check-input"
 										type="radio"
-										checked={ fullLinkBonus.value === "" }
-										onChange={ (): void => fullLinkBonus.set("") }
+										checked={ fullLinkBonus === "" }
+										onChange={ (): void => setFullLinkBonus("") }
 									/>
 								</div>
 							</td>
 						</tr>
-						{ FullLinkBonus.map((fl) => <tr>
+						{ FullLinkBonusList.map((fl) => <tr>
 							<td>
 								<Locale k={ fl.Name } />
 								<span class="d-inline-block ps-1">
@@ -189,8 +195,8 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 									<input
 										class="form-check-input"
 										type="radio"
-										checked={ fullLinkBonus.value === fl.Key }
-										onChange={ (): void => fullLinkBonus.set(fl.Key) }
+										checked={ fullLinkBonus === fl.Key }
+										onChange={ (): void => setFullLinkBonus(fl.Key) }
 									/>
 								</div>
 							</td>
@@ -208,10 +214,10 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 								{ CostRarityList.length > 1
 									? <select
 										class="form-select form-select-sm table-unit-rarity-select"
-										value={ costRarity.value }
+										value={ costRarity }
 										onChange={ (e): void => {
-											costRarity.set(
-												parseInt((e.target as HTMLSelectElement).value, 10) as ACTOR_GRADE,
+											setCostRarity(
+												parseInt(e.currentTarget.value, 10) as ACTOR_GRADE,
 											);
 										} }
 									>
@@ -247,9 +253,9 @@ const SkillTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 
 		<SkillTable
 			unit={ unit }
-			buffBonus={ linkCount.value === 5 && fullLinkBonus.value.startsWith("Buff_") }
+			buffBonus={ linkCount === 5 && fullLinkBonus.startsWith("Buff_") }
 			skillBonus={ SkillPowerBonus }
-			rangeBonus={ linkCount.value === 5 && fullLinkBonus.value.startsWith("Range_") }
+			rangeBonus={ linkCount === 5 && fullLinkBonus.startsWith("Range_") }
 		/>
 	</div>;
 };

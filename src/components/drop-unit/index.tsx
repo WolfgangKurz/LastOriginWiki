@@ -5,7 +5,7 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import { RarityDisplay } from "@/libs/Const";
 
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import UnitFace from "@/components/unit-face";
 

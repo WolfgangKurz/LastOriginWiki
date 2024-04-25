@@ -9,7 +9,7 @@ import { AssetsRoot, RarityDisplay } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
 import { FormatNumber } from "@/libs/Functions";
 
-import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import IconCoolFace from "@/components/bootstrap-icon/icons/CoolFace";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
@@ -20,7 +20,9 @@ import EquipIcon from "@/components/equip-icon";
 
 import { SubpageProps } from "..";
 
-import style from "../style.module.scss";
+import style1 from "./style.module.scss";
+import style2 from "../style.module.scss";
+const style = Object.assign(style1, style2);
 
 const PromoTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 	const update = useUpdate();

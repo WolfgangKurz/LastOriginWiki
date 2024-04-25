@@ -1,0 +1,527 @@
+.UnitHeader {
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	margin-bottom: 20px;
+
+	.BasicInfo {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-template-rows: 1fr auto auto auto 1fr;
+		justify-items: start;
+		justify-content: center;
+		align-items: start;
+		column-gap: 30px;
+		row-gap: 10px;
+
+		margin: 10px;
+		line-height: 1.2;
+
+		@media (max-width: 992px) {
+			grid-template-rows: 1fr auto auto 1fr auto;
+		}
+
+		.UnitFace {
+			--size: 120px;
+
+			display: block;
+			width: var(--size);
+			height: var(--size);
+			grid-column: 1;
+			grid-row: 1 / 6;
+
+			@media (max-width: 992px) {
+				--size: 88px;
+				grid-row: 1 / 5;
+			}
+		}
+
+		.UnitNumber {
+			grid-row: 2;
+			@include font-exo2;
+			font-weight: 500;
+			font-size: 20px;
+		}
+		.UnitName {
+			grid-row: 3;
+
+			@include font-ibm;
+			font-weight: 600;
+			font-size: 28px;
+		}
+		.UnitType {
+			grid-row: 4;
+
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			column-gap: 4px;
+
+			margin-bottom: 4px;
+			@include font-exo2;
+			font-weight: 500;
+			font-size: 18px;
+
+			i::before {
+				content: "・";
+				font-style: normal;
+			}
+
+			@media (max-width: 992px) {
+				grid-column: 1 / 3;
+				grid-row: 5;
+			}
+		}
+	}
+	.AdditionalInfo {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 30px;
+
+		margin: 10px 0;
+
+		.UnitReleaseDate,
+		.UnitAlias {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: center;
+
+			> span:first-child {
+				padding-right: 4px;
+			}
+		}
+	}
+}
+
+.IntroChart {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	margin-bottom: 20px;
+	border: 1px solid $secondary;
+	border-radius: 6px;
+	background: radial-gradient($dark, color.mix($black, $dark, 50%));
+	color: $light;
+	overflow: hidden;
+
+	> .Intro {
+		flex: 1;
+		align-self: start;
+
+		padding: 10px;
+		white-space: pre-wrap;
+		word-break: keep-all;
+
+		.Controls {
+			margin-bottom: 20px;
+
+			.IntroduceVoice {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+				column-gap: 10px;
+				row-gap: 5px;
+
+				padding: 5px;
+				border-radius: 6px;
+				background-color: #00000080;
+
+				> svg {
+					flex: 0 0 auto;
+					margin: 0 5px 0 15px;
+				}
+
+				button {
+					> svg {
+						display: none;
+					}
+
+					&.Active > svg {
+						display: inline-block;
+						margin-right: 0;
+					}
+				}
+
+				> audio {
+					flex: 1;
+					border-radius: 6px;
+
+					&::-webkit-media-controls-enclosure {
+						border-radius: 0;
+					}
+				}
+			}
+		}
+		.IntroText {
+			padding: 5px 15px;
+			text-align: left;
+		}
+	}
+	> .Chart {
+		padding: 10px 20px;
+	}
+
+	> i {
+		display: block;
+		width: 1px;
+		height: auto;
+		background: linear-gradient(to bottom, transparent 10%, $secondary, transparent 90%);
+		align-self: stretch;
+	}
+
+	@media (max-width: 992px) {
+		flex-direction: column;
+
+		> i {
+			width: auto;
+			height: 1px;
+			background: linear-gradient(to right, transparent 10%, $secondary, transparent 90%);
+		}
+	}
+}
+
+.Card {
+	display: grid;
+	grid-template-columns: auto auto 1fr;
+	grid-auto-rows: 1fr;
+	justify-content: center;
+	// align-self: stretch;
+
+	$border-color: rgba($secondary, 0.333);
+	border: 1px solid $border-color;
+	border-radius: 6px;
+	overflow: hidden;
+
+	@media (max-width: 768px) {
+		flex: 1;
+		grid-template-columns: auto 1fr;
+		grid-auto-rows: auto;
+		border-top: 1px solid $border-color;
+	}
+
+	> .Summary {
+		grid-column: 1;
+		// grid-row: 1 / calc(var(--rows, 3) + 1);
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		position: relative;
+		padding: 15px 15px 15px 30px;
+		max-width: 140px;
+		background-color: $dark;
+
+		// keep word if available, break if not
+		overflow-wrap: anywhere;
+		word-break: keep-all;
+
+		line-height: 1.2;
+		@include font-ibm;
+		font-weight: 600;
+		font-size: 18px;
+		color: $light;
+
+		> img,
+		> svg {
+			display: block;
+			margin-bottom: 10px;
+			max-height: 100px;
+			font-size: 60px;
+			filter: drop-shadow(0 0 3px #0008);
+			object-fit: scale-down;
+			object-position: center;
+		}
+
+		@media (max-width: 768px) {
+			grid-column: 1 / 3;
+			grid-row: auto !important;
+			// grid-row: 1;
+			padding: 15px 30px;
+			max-width: unset;
+
+			&:not(:first-child) {
+				border-top: 1px solid $border-color;
+			}
+		}
+	}
+
+	> .Header,
+	> .Body {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+
+		padding: 5px 15px;
+		font-size: 16px;
+	}
+	> .Header {
+		position: relative;
+
+		background-color: $dark;
+		font-weight: 600;
+		color: $light;
+
+		&::before {
+			content: "";
+			position: absolute;
+			height: 70.7107%; // 2a^2 = 1 (100%)
+			aspect-ratio: 1;
+			right: 0;
+			top: 50%;
+			background-color: $dark;
+			z-index: -1;
+
+			transform: translate(50%, -50%) scale(0.5, 1) rotate(45deg);
+			transform-origin: center;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			height: 1px;
+			background: linear-gradient(to right, transparent, $border-color);
+		}
+
+		img {
+			margin-right: 5px;
+			width: auto;
+			height: 1.4em;
+		}
+	}
+	> .Body {
+		padding-left: 30px;
+		min-width: 120px;
+		border-top: 1px solid $border-color;
+	}
+
+	@media (min-width: 769px) {
+		> .Summary:first-child + .Header {
+			&::after {
+				display: none;
+			}
+
+			& + .Body {
+				border-top: 0;
+			}
+		}
+		> .Summary:not(:first-child) {
+			&::after {
+				content: "";
+				position: absolute;
+				left: 10px;
+				right: 0;
+				top: 0;
+				height: 1px;
+				background: linear-gradient(to right, transparent, $border-color);
+			}
+
+			& + .Header {
+				&::after {
+					background: $border-color;
+				}
+
+				& + .Body {
+					border-top-color: $secondary;
+				}
+			}
+		}
+	}
+
+	.Numeric {
+		@include font-exo2;
+	}
+	.Weapon {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: 5px;
+
+		line-height: 1;
+
+		> .WeaponSeparator {
+			align-self: stretch;
+			height: 1px;
+			background: linear-gradient(to right, transparent, $secondary, transparent);
+		}
+	}
+}
+
+.Window {
+	border: 1px solid rgba($secondary, 0.333);
+	border-radius: 6px;
+	overflow: hidden;
+
+	> .Header {
+		padding: 8px 15px;
+		background-color: $dark;
+		font-weight: 600;
+		font-size: 16px;
+		color: $light;
+	}
+
+	> .Empty {
+		padding: 30px 15px;
+		color: $secondary;
+	}
+
+	&.ExclusiveEquips {
+		> .Equips {
+			padding: 10px;
+
+			display: grid;
+			grid-template-columns: repeat(auto-fit, 144px);
+			grid-auto-rows: auto;
+			grid-auto-flow: row;
+			justify-content: space-around;
+			align-content: start;
+			align-items: start;
+			gap: 10px;
+
+			> a {
+				padding: 5px;
+				border-radius: 6px;
+
+				// keep word if available, break if not
+				overflow-wrap: anywhere;
+				word-break: keep-all;
+
+				text-decoration: none;
+				font-weight: 600;
+				font-size: 14px;
+				color: $dark;
+
+				&:hover {
+					background-color: $gray-400;
+				}
+
+				.Icon {
+					display: block;
+					margin: 0 auto 5px !important;
+					width: 68px;
+					height: auto;
+				}
+				.Name {
+					margin-top: 5px;
+					line-height: 1.2;
+				}
+			}
+		}
+	}
+	&.Drops {
+		.CostInfo {
+			margin: 10px;
+			padding: 5px;
+			border: 1px solid $border-color;
+			border-radius: 10px;
+			text-align: center;
+
+			.AGSCost {
+				display: inline-grid;
+				grid-template-columns: 1fr 1fr 1fr auto;
+				justify-content: center;
+				justify-items: center;
+				column-gap: 10px;
+
+				@include font-exo2;
+
+				> span {
+					display: inline-flex;
+					flex-direction: row;
+					align-items: center;
+					gap: 5px;
+
+					line-height: 1;
+					font-weight: 600;
+
+					img {
+						height: 16px;
+					}
+
+					> button {
+						margin-left: 20px;
+						padding: 5px 10px;
+						line-height: 1;
+						font-size: 14px;
+					}
+				}
+			}
+			.AGSCostItems {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 5px;
+
+				margin-top: 10px;
+
+				> span {
+					line-height: 1;
+				}
+
+				.CostItemCount {
+					padding-left: 3px;
+					line-height: 1;
+					font-size: 12px;
+
+					> svg {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+		.Craftable {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+
+			margin: 10px;
+			padding: 2px;
+			font-weight: 600;
+
+			> svg {
+				&:first-child {
+					margin-right: 5px;
+					font-size: 20px;
+				}
+
+				&.Dots {
+					margin: 0 8px;
+					font-size: 14px;
+					color: $secondary;
+				}
+			}
+		}
+	}
+}
+
+.InfoTable {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: auto auto 1fr;
+	align-items: start;
+	gap: 20px;
+
+	> .Card {
+		grid-row: 1 / 4;
+	}
+
+	@media (max-width: 992px) {
+		grid-template-columns: 1fr;
+	}
+}

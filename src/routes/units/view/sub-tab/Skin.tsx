@@ -19,7 +19,7 @@ import UnitFace2 from "../../components/unit-face2";
 
 import { SubpageProps } from "..";
 
-import style from "../style.module.scss";
+import style from "./style.module.scss";
 
 const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList, onSkinIndexChange }) => {
 	if (!display) return <></>;
@@ -29,7 +29,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 		return skin && skin.sid
 			? Math.floor(skin.sid / 10) === 2
 				? `S${skin.sid - 20}`
-				: skin.sid?.toString()
+				: skin.sid.toString()
 			: "";
 	}, [skin, skin?.sid]);
 
@@ -183,7 +183,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 						{ categories.length > 0
 							? <div class="alert alert-secondary py-2">
 								<div class="mb-1">
-									<Locale k="UNIT_VIEW_SKIN_CATEGORY" />
+									<Locale k="UNIT_SKIN_CATEGORY" />
 								</div>
 								{ categories.length > 0
 									? <div class="mb-1">
@@ -260,6 +260,8 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 						</div>
 					</li>
 				</ul>
+
+				<div id="___TEST" style={ { textAlign: "left", whiteSpace: "pre-wrap" } } />
 			</div>
 			<div class="col">
 				{ skin

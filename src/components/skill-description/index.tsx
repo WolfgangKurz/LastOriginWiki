@@ -1,8 +1,9 @@
 import { createElement, FunctionalComponent, FunctionComponent } from "preact";
+import { useMemo, useState } from "preact/hooks";
 
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
-import { objState } from "@/libs/State";
+import { cn } from "@/libs/Class";
 import { ComponentTable, parseVNode } from "@/libs/VNode";
 import { ParamWithSlot, parseParams } from "@/libs/SkillDescription";
 
@@ -28,6 +29,7 @@ interface SkillDescriptionProps {
 
 	text: string;
 	sections?: Record<string, FunctionalComponent<SectionProps>[]>;
+	boxs?: Array<[string, string]>;
 	rates?: number[];
 
 	slot?: string;
@@ -44,13 +46,16 @@ interface SkillDescriptionProps {
 const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => {
 	const rates = props.rates || [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-	const displayEquip = objState(false);
-	const selectedEquip = objState<FilterableEquip | null>(null);
+	const [displayEquip, setDisplayEquip] = useState(false);
+	const [selectedEquip, setSelectedEquip] = useState<FilterableEquip | null>(null);
 
-	function compile (text: string): Array<preact.VNode[] | preact.VNode | string> {
+	const content = useMemo(() => {
+		let text = props.text;
+
 		if (!text) return [];
 
 		const _sections = props.sections || {};
+		const _boxs = props.boxs || [];
 		if (props.experimentalBuffName) {
 			const $ret = experimental.BuffName(text);
 			text = $ret.text;
@@ -68,6 +73,32 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 					>{ createElement(r, { params: parseParams(p4) }) }</div>)
 			}</>;
 			return `<SECTION_${p1} />`;
+		});
+		_boxs.forEach((b, i) => {
+			tags[`BOX_${i + 1}`] = () => {
+				const _list = b[0]
+					.replace(/^\n+/gs, "")
+					.replace(/\n+$/gs, "")
+					.split("\n");
+
+				return createElement(
+					Components.Box,
+					{ title: b[1] },
+					_list.map(bc => <SkillDescription
+						text={ bc }
+						sections={ props.sections }
+
+						rates={ props.rates }
+						slot={ props.slot }
+						values={ props.values }
+
+						level={ props.level }
+						buffBonus={ props.buffBonus }
+						skillBonus={ props.skillBonus }
+						favorBonus={ props.favorBonus }
+					/>).gap(<hr class="my-1" />),
+				);
+			};
 		});
 
 		const placeholder: FunctionalComponent<unknown> =
@@ -186,8 +217,8 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 					{
 						...p,
 						onEquip: (eq) => {
-							selectedEquip.set(eq);
-							displayEquip.set(true);
+							setSelectedEquip(eq);
+							setDisplayEquip(true);
 						},
 					}),
 
@@ -195,22 +226,28 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 
 				comment: Components.Comment,
 				cmt: Components.Comment,
+
+				box: Components.Box,
 			} as unknown as ComponentTable<any>);
 		} catch (e) {
 			// eslint-disable-next-line react/jsx-key
 			return [<>_</>];
 		}
-	}
+	}, [
+		props.text, props.sections, props.boxs,
+		props.rates, props.slot, props.values, props.level,
+		props.buffBonus, props.skillBonus, props.favorBonus,
+	]);
 
-	return <span id={ props.id } class={ `skill-description ${props.class || ""}` }>
+	return <span id={ props.id } class={ cn("skill-description", props.class) }>
 		<EquipPopup
 			asSub
 			fullGroup
-			display={ displayEquip.value }
-			equip={ selectedEquip.value }
-			onHidden={ (): void => displayEquip.set(false) }
+			display={ displayEquip }
+			equip={ selectedEquip }
+			onHidden={ (): void => setDisplayEquip(false) }
 		/>
-		{ compile(props.text) }
+		{ content }
 	</span>;
 };
 export default SkillDescription;

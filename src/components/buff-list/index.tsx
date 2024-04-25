@@ -17,7 +17,7 @@ import { CurrentDB } from "@/libs/DB";
 import { BuildClass } from "@/libs/Class";
 import { diff2 } from "@/libs/Functions";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import LocaleBase, { LocaleExists, LocaleGet, LocaleProps, LocalePropsLegacy } from "@/components/locale";
 import IconQuestionCircleFill from "@/components/bootstrap-icon/icons/QuestionCircleFill";
 import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
@@ -573,6 +573,10 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						return <Locale plain k="BUFFTYPE_SEAL_PASSIVE" />;
 					case BUFFEFFECT_TYPE.ADD_ROLE_TYPE: // 137
 						return <Locale plain k="ADD_ROLE_TYPE" />; // 사용처 없음, 알 수 없음... ~ 타입으로 간주하도록 추가?
+					case BUFFEFFECT_TYPE.WIDE_SKILL_RATIO: // 138
+						return <Locale plain k="BUFFTYPE_WIDE_SKILL_RATIO" />; // 광역 스킬 위력 증감
+					case BUFFEFFECT_TYPE.WIDE_DAMAGE_RATIO: // 139
+						return <Locale plain k="BUFFTYPE_WIDE_DAMAGE_RATIO" />; // 사용처 없음, 광역 피해량 증감?
 				}
 				return <>{ type }</>;
 			})() }
@@ -1323,6 +1327,13 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		}
 		else if ("buff_disallow" in stat)
 			return <Locale plain k="BUFFEFFECT_BUFF_DISALLOW" />;
+		else if ("wide" in stat) {
+			return <Locale
+				plain
+				k={ `BUFFEFFECT_WIDE_${stat.wide.type.toUpperCase()}_RATIO` }
+				p={ [signedValue(stat.wide, level)] }
+			/>;
+		}
 
 		return <>{ JSON.stringify(stat) }</>; // "???";
 	}

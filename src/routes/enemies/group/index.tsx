@@ -8,7 +8,7 @@ import { groupBy, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Locale, { LocaleGet } from "@/components/locale";
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import EnemyGroupCard from "../components/enemy-group-card";
 
 interface EnemiesGroupProps {

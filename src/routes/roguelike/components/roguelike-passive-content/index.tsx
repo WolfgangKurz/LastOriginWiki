@@ -8,7 +8,7 @@ import { objState } from "@/libs/State";
 import { isActive } from "@/libs/Functions";
 import { ImageExtension, AssetsRoot, RarityDisplay } from "@/libs/Const";
 
-import Loader, { StaticDB, GetJson } from "@/components/loader";
+import Loader, { StaticDB, GetJson } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import RarityBadge from "@/components/rarity-badge";
 import BuffList from "@/components/buff-list";

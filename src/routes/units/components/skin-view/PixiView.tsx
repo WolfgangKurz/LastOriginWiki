@@ -15,12 +15,14 @@ import Pixi2DModel from "@/components/pixi/Pixi2DModel";
 import FadeContainer from "@/components/pixi/FadeContainer";
 
 import style from "./style.module.scss";
+import PixiVideoModel from "@/components/pixi/PixiVideoModel";
 
 interface PixiViewProps {
-	spine: boolean;
+	type: "spine" | "2dmodel" | "video" | "none";
 	U2DModelMetadata: UnitSkinEntity["metadata"];
 
 	uid: string;
+	vid: string;
 	google: boolean;
 	damaged: boolean;
 
@@ -36,7 +38,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 	const [app, setApp] = useState<PIXI.Application<HTMLCanvasElement> | null>(null);
 	const [surface, setSurface] = useState<PIXI.Container | null>(null);
 
-	const [char, setChar] = useState<PixiSpineModel | Pixi2DModel | null>(null);
+	const [char, setChar] = useState<PixiSpineModel | Pixi2DModel | PixiVideoModel | null>(null);
 	const playerRef = useRef<HTMLDivElement>(null);
 
 	const [animInfo, setAnimInfo] = useState<Animation[] | false>(false);
@@ -45,8 +47,8 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 	const [animationIndicatorGraphics, setAnimationIndicatorGraphics] = useState<PIXI.Graphics | null>(null);
 
 	const uid = useMemo(
-		() => props.spine ? props.uid : `2DModel_${props.uid}`,
-		[props.spine, props.uid],
+		() => (props.type === "spine" || props.type === "video") ? props.uid : `2DModel_${props.uid}`,
+		[props.type, props.uid],
 	);
 
 	useEffect(() => { // initialize
@@ -88,8 +90,8 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 			const animIndi = new FadeContainer();
 			animIndi.name = "[Animation Indicator]";
-			animIndi.x = 94 + 30;
-			animIndi.y = 0;
+			animIndi.x = 30;
+			animIndi.y = 30;
 			app.stage.addChild(animIndi);
 			setAnimationIndicator(animIndi);
 
@@ -133,7 +135,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 				surface.position.set(rc.width / 2, rc.height / 2);
 				surface.scale.set(rc.height / 720);
 
-				animationIndicator?.position.set(94 + 15, rc.height - 14 - 15);
+				animationIndicator?.position.set(30, 30);
 			});
 			ob.observe(playerRef.current);
 		}
@@ -143,18 +145,20 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 	useEffect(() => {
 		if (surface) {
-			const _uid = props.spine
+			const _uid = props.type === "spine"
 				? uid
-				: (props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!;
+				: props.type === "video"
+					? props.vid
+					: (props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!;
 
-			let _char: PixiSpineModel | Pixi2DModel | null = char as typeof _char;
+			let _char: PixiSpineModel | Pixi2DModel | PixiVideoModel | null = char as typeof _char;
 			if (_char && _char.model !== _uid) {
 				_char.destroy();
 				_char = null;
 			}
 
 			if (_char === null) {
-				if (props.spine) {
+				if (props.type === "spine") {
 					_char = new PixiSpineModel(_uid);
 					_char.on("normal-touch", (m) => {
 						const r = (m as PixiSpineModel).play("Tep_1");
@@ -170,28 +174,33 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 							setAnimInfo(r);
 						}
 					});
-				} else
+				} else if (props.type === "2dmodel")
 					_char = new Pixi2DModel(_uid);
+				else if (props.type === "video")
+					_char = new PixiVideoModel(_uid);
 
-				_char.on("facelist", (list, prefix) => {
-					if (props.onFaceList)
-						props.onFaceList(list, prefix);
-				});
+				if (_char) {
+					_char.on("facelist", (list, prefix) => {
+						if (props.onFaceList)
+							props.onFaceList(list, prefix);
+					});
 
-				setChar(_char);
+					setChar(_char);
+				}
 			}
 
-			if (props.spine && _char instanceof PixiSpineModel) {
+			if (_char instanceof PixiSpineModel)
 				_char.setGoogle(props.google);
-			}
 
-			_char.position.set(0, 0);//props.spine ? 0 : 360);
-			surface.addChild(_char);
+			if (_char) {
+				_char.position.set(0, 0);//props.spine ? 0 : 360);
+				surface.addChild(_char);
+			}
 		}
-	}, [props.spine, props.uid, props.google, props.damaged, surface]);
+	}, [props.type, props.uid, props.vid, props.google, props.damaged, surface]);
 
 	useEffect(() => {
-		if (char) {
+		if (char && ("setFace" in char)) { // type-guard not work with instanceof
 			if (props.face)
 				char.setFace(props.face);
 
@@ -205,14 +214,21 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 		const fn = () => {
 			if (!animationIndicator || !animationIndicatorGraphics || !animInfo || animTime === 0) return;
 
-			const elapsed = (Date.now() - animTime) / 1000;
-			const progress = Math.min(1, elapsed / animInfo.map(r => r.duration).sort((a, b) => b - a)[0]);
+			const duration = animInfo.map(r => r.duration).reduce((p, c) => c > p ? c : p, 0);
+			// const progress = Math.min(1, elapsed / animInfo.map(r => r.duration).sort((a, b) => b - a)[0]);
+			const progress = Math.min(
+				(
+					char instanceof PixiSpineModel
+						? char.currentAnimationTime() ?? 0
+						: (/* elapsed by browser time */ (Date.now() - animTime) / 1000)
+				) / duration,
+				1,
+			);
 
 			const g = animationIndicatorGraphics;
-
-			g.clear();
-
 			if (animInfo) {
+				g.clear();
+
 				const points: Array<{ x: number; y: number; }> = [];
 				const deg = progress * 360;
 				for (let i = 0; i <= deg; i++) {
@@ -250,7 +266,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 		if (app && animInfo) app.ticker.add(fn);
 		return () => {
-			if (app && animInfo) app.ticker.remove(fn);
+			if (app && animInfo) app?.ticker?.remove(fn);
 		};
 	}, [app, animInfo]);
 

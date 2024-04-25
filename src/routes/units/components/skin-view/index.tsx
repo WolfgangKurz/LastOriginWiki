@@ -18,6 +18,7 @@ import Pinch from "@/components/pinch";
 import PixiView from "./PixiView";
 
 import style from "./style.module.scss";
+import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 interface SkinItem extends UnitSkin {
 	isDef: boolean;
@@ -26,7 +27,7 @@ interface SkinItem extends UnitSkin {
 
 interface SkinViewProps {
 	skin: SkinItem;
-	unit: Unit;
+	unit: Unit | FilterableUnit;
 	black?: boolean;
 	hideGroup?: boolean;
 	collapsed?: boolean;
@@ -107,7 +108,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			(ret.length > 0 ? "_" : "") + ret.join(""),
 		];
 	}, [hideBG, hideParts]);
-	const SkinVideoURL = useMemo((): string => {
+	const modelVideoId = useMemo((): string => {
 		if (!props.collapsed && !props.animate) return "";
 		if (isDamaged) return "";
 
@@ -120,6 +121,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		props.animate,
 		unit.uid,
 		skin,
+		isCensored,
 		isDamaged,
 		SkinVideoPostfix,
 	]);
@@ -212,18 +214,16 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					</div>
 				</div>
 				<div
-					class={ cn(
-						style.FullUnit,
-						(!props.collapsed || DisplaySpine || Display2DModel) && style.FullUnitMarginless,
-					) }
+					class={ cn(style.FullUnit, style.FullUnitMarginless) }
 					ref={ FullUnitEl }
 				>
-					{ DisplaySpine || Display2DModel
+					{ DisplaySpine || Display2DModel || modelVideoId
 						? <PixiView
-							spine={ DisplaySpine }
+							type={ DisplaySpine ? "spine" : Display2DModel ? "2dmodel" : modelVideoId ? "video" : "none" }
 							U2DModelMetadata={ skin.metadata }
 
 							uid={ modelId }
+							vid={ modelVideoId }
 							google={ isCensored }
 							damaged={ isDamaged }
 							displayTouchCollider={ displayTouchCollider }
@@ -250,70 +250,14 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								}
 							} }
 						/>
-						// ? <SpineRenderer
-						// 	uid={ modelId }
-						// 	google={ isCensored }
-						// 	specialTouch={ isSpecialTouchMode }
-
-						// 	// collider={ true }
-						// 	hidePart={ hideParts }
-						// 	// hideBg={ isBGCollapsed }
-						// 	// hideDialog={ false }
-
-						// 	face={ face }
-						// 	onFaceList={ (list) => {
-						// 		setFaceList(list);
-
-						// 		if (list.includes("Idle"))
-						// 			setFace("Idle");
-						// 		else {
-						// 			const listU = list.map(f => f.toUpperCase());
-						// 			for (const ft of Object.keys(FACETYPE)) {
-						// 				const index = listU.indexOf(ft);
-						// 				if (index >= 0) {
-						// 					setFace(list[index]);
-						// 					break;
-						// 				}
-						// 			}
-						// 		}
-						// 	} }
-						// />
-						// : Display2DModel
-						// 	? <Pinch
-						// 		minScale={ 0.5 }
-						// 		maxScale={ 3 }
-						// 	>
-						// 		<U2DModelRenderer
-						// 			root={ `${AssetsRoot}/2dmodel/${isCensored ? "G" : "O"}/` }
-						// 			target={ !isDamaged ? skin.metadata["2dmodel"]! : skin.metadata["2dmodel_dam"]! }
-
-						// 			scale={ 1.5 }
-
-						// 			width={ FullUnitSize[0] }
-						// 			height={ FullUnitSize[1] }
-
-						// 			hideParts={ hideParts }
-						// 			hideBG={ hideBG }
-
-						// 			face={ face }
-						// 			onFaceList={ (list) => {
-						// 				const _list = [...list];
-						// 				if (!_list.includes("Idle"))
-						// 					_list.splice(0, 0, "Idle"); // insert into 0
-
-						// 				setFaceList(_list);
-						// 				setFace("Idle");
-						// 			} }
-						// 		/>
-						// 	</Pinch>
-						: SkinVideoURL.length > 0
+						: modelVideoId.length > 0
 							? CanPlayWebM()
 								? <video
 									autoPlay muted loop
-									src={ `${AssetsRoot}/webm/HD/${SkinVideoURL}.webm` }
+									src={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` }
 								/>
 								: <MergedVideo
-									src={ `${AssetsRoot}/webm/HD.Legacy/${SkinVideoURL}.mp4` }
+									src={ `${AssetsRoot}/webm/HD.Legacy/${modelVideoId}.mp4` }
 									type="video/mp4"
 								/>
 							: !props.collapsed // && !AvailableAnim
@@ -327,11 +271,19 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					}
 				</div>
 
-				{ !DisplaySpine && !SkinVideoURL.length
+				{ !DisplaySpine
 					? <a
 						class={ `${style.SkinToggle} ${style.Download}` }
-						href={ SkinImageURL }
-						download={ SkinImageURL.substring(SkinImageURL.lastIndexOf("/") + 1) }
+						href={
+							modelVideoId
+								? `${AssetsRoot}/webm/HD/${modelVideoId}.webm`// download webm only...
+								: SkinImageURL
+						}
+						download={
+							modelVideoId
+								? `${modelVideoId}.webm`
+								: SkinImageURL.substring(SkinImageURL.lastIndexOf("/") + 1)
+						}
 						target="_blank"
 					>
 						<svg width="1em" height="1em" viewBox="0 0 24 24">

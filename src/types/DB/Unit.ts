@@ -108,7 +108,7 @@ export interface UnitSkinEntity {
 	// desc: string;
 
 	/** timestamp */
-	releaseDate: number;
+	releaseDate: number | null;
 
 	category: string[];
 

@@ -142,6 +142,8 @@ export enum BUFFEFFECT_TYPE {
 	STAGE_SEAL_SKILL_ACTIVE_2 = 135,
 	STAGE_SEAL_SKILL_PASSIVE = 136,
 	ADD_ROLE_TYPE = 137,
+	WIDE_SKILL_RATIO = 138,
+	WIDE_DAMAGE_RATIO = 139,
 }
 
 export type BuffEffect = BuffEffect_Base & {
@@ -165,7 +167,7 @@ type BuffEffect_Body = BuffEffect_Unknown | BuffEffect_Off | BuffEffect_Attack |
 	BuffEffect_Immovable | BuffEffect_SkillDisable | BuffEffect_Revive | BuffEffect_AttackTarget | BuffEffect_InvokeChance |
 	BuffEffect_SummonRemove | BuffEffect_PenetrationForce | BuffEffect_Exp | BuffEffect_DebuffImmune | BuffEffect_Collaborate |
 	BuffEffect_MaxHP | BuffEffect_SkillRatio | BuffEffect_SkillRange | BuffEffect_Disperse | BuffEffect_ValueBy | BuffEffect_LessTarget |
-	BuffEffect_ActCount | BuffEffect_GuardPierceApply | BuffEffect_BuffDisallow;
+	BuffEffect_ActCount | BuffEffect_GuardPierceApply | BuffEffect_BuffDisallow | BuffEffect_Wide;
 
 // #region BuffEffect
 interface BuffEffect_Unknown {
@@ -481,6 +483,12 @@ interface BuffEffect_GuardPierceApply {
 interface BuffEffect_BuffDisallow {
 	buff_disallow: true;
 }
+
+interface BuffEffect_Wide {
+	wide: {
+		type: "skill" | "damage";
+	} & BuffEffectValue_Percent;
+}
 // #endregion
 
 export interface BuffEffectInfo {
@@ -619,6 +627,8 @@ export const BuffEffectList = {
 				BUFFEFFECT_TYPE.STAGE_TOGETHER_ATTACK_ACTIVE_SKILL_2,
 			],
 		},
+		{ pm: true, text: "BUFF_WIDE_SKILL_RATIO", type: [BUFFEFFECT_TYPE.WIDE_SKILL_RATIO] },
+		{ pm: true, text: "BUFF_WIDE_DAMAGE_RATIO", type: [BUFFEFFECT_TYPE.WIDE_DAMAGE_RATIO] },
 	],
 	etcDebuff: [
 		{ pm: false, text: "BUFF_MARKING", type: [BUFFEFFECT_TYPE.STAGE_MARKING] },

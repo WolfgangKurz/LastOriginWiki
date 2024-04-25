@@ -72,6 +72,7 @@ export interface FilterableUnit {
 	releaseDate: number;
 
 	secretRoomType: CHARTYPE_GIFTITEM_DAMAGE_TYPE;
+	marriageVoice: boolean;
 
 	craft: false | number;
 

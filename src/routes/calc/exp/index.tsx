@@ -14,7 +14,7 @@ import { RarityDisplay, TroopNameTable, WorldIds } from "@/libs/Const";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
-import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Loading from "@/components/loading";
 import Locale, { LocaleGet } from "@/components/locale";
 import IconX from "@/components/bootstrap-icon/icons/X";

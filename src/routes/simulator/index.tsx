@@ -12,7 +12,7 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { GetRequireResource } from "@/libs/Cost";
 import { CurrentDB } from "@/libs/DB";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import IconBugFill from "@/components/bootstrap-icon/icons/BugFill";
 import SimulatorSlot from "./components/simulator-slot";

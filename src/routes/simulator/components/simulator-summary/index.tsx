@@ -16,7 +16,7 @@ import { GetLinkBonus } from "@/libs/LinkBonus";
 import { GetRequireResource } from "@/libs/Cost";
 import { objState } from "@/libs/State";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import StatIcon from "@/components/stat-icon";
 import ElemIcon from "@/components/elem-icon";

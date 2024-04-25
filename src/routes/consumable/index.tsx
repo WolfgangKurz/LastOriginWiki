@@ -7,7 +7,7 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { isActive } from "@/libs/Functions";
 
 import Locale, { LocaleGet } from "@/components/locale";
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import DropItem from "@/components/drop-item";
 import { BuildClass } from "@/libs/Class";
 

@@ -41,6 +41,57 @@ stats:
       attack:
         base: 30
         per: 0
+    - key: Effect_BUFF_STEROID_N_1
+      on: wave
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_ARMORED_DMG_UP
+          desc:
+            desc: Effect_BUFF_STEROID_N_1_1
+            type: 1
+            value: "0.150000"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 61
+            damage_multiply:
+              target: heavy
+              value:
+                base: 15%
+                per: 0%
+          overlap: 4
+        - icon: BuffIcon_RANGE_UP
+          desc:
+            desc: Effect_BUFF_STEROID_N_1_2
+            type: 0
+            value: "1"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 55
+            range:
+              base: 1
+              per: 0
+          overlap: 4
+      maxStack: 0
   - - type: 12
       turnSpeed:
         base: 0.132

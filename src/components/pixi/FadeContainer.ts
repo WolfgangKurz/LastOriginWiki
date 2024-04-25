@@ -28,6 +28,7 @@ export default class FadeContainer extends PIXI.Container {
 			}
 		};
 
+		this._fading = true;
 		ticker.add(onTick);
 	}
 
@@ -49,6 +50,7 @@ export default class FadeContainer extends PIXI.Container {
 			}
 		};
 
+		this._fading = true;
 		ticker.add(onTick);
 	}
 }

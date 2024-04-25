@@ -11,15 +11,13 @@ import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { Consumable } from "@/types/DB/Consumable";
 import { Equip } from "@/types/DB/Equip";
 
-import { useUpdate } from "@/libs/hooks";
-import { BuildClass } from "@/libs/Class";
-import { AssetsRoot, CurrentEvent, PermanentEvents, RarityDisplay } from "@/libs/Const";
+import { AssetsRoot, RarityDisplay } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 import EntitySource from "@/libs/EntitySource";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import { GetJson, JsonLoaderCore, StaticDB, useDBData } from "@/libs/Loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import IconHammer from "@/components/bootstrap-icon/icons/Hammer";
 import IconArrowRightCircleFill from "@/components/bootstrap-icon/icons/ArrowRightCircleFill";
@@ -34,12 +32,12 @@ import EquipLevel from "@/components/equip-level";
 import EquipCard from "@/components/equip-card";
 import ItemIcon from "@/components/item-icon";
 import UnitBadge from "@/components/unit-badge";
-import SourceBadge from "@/components/source-badge";
 import BuffList from "@/components/buff-list";
 import RarityBadge from "@/components/rarity-badge";
 import UnitLink from "@/components/unit-link";
 
 import "./style.scss";
+import SourceTable from "@/components/SourceTable";
 
 type EquipLevelType = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
@@ -59,8 +57,6 @@ interface EquipPopupProps {
 }
 
 const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
-	const update = useUpdate();
-
 	const [latestUid, setLatestUid] = useState<string>("");
 
 	const [level, setLevel] = useState<EquipLevelType>(10);
@@ -83,14 +79,17 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 			setLatestUid("");
 	}
 
-	const FilterableUnitDB = GetJson<FilterableUnit[] | null>(StaticDB.FilterableUnit);
-	if (!FilterableUnitDB) JsonLoaderCore(CurrentDB, StaticDB.FilterableUnit).then(() => update());
+	const ConsumableDB = useDBData<Consumable[]>(StaticDB.Consumable);
+	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 
-	const FilterableEquipDB = GetJson<FilterableEquip[] | null>(StaticDB.FilterableEquip);
-	if (!FilterableEquipDB) JsonLoaderCore(CurrentDB, StaticDB.FilterableEquip).then(() => update());
-
-	const ConsumableDB = GetJson<Consumable[] | null>(StaticDB.Consumable);
-	if (!ConsumableDB) JsonLoaderCore(CurrentDB, StaticDB.Consumable).then(() => update());
+	const _FilterableEquipDB = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip);
+	const FilterableEquipDB = _FilterableEquipDB?.map(r => ({
+		...r,
+		source: r.source.map(t => t.map(s => new EntitySource(
+			// @ts-expect-error
+			s
+		))),
+	}));
 
 	const target = ((): FilterableEquip | null => {
 		if (!FilterableEquipDB) return null;
@@ -99,7 +98,6 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 		if (!equip) return null;
 
 		const specific = FilterableEquipDB.find(x => x.type === equip.type && x.key === equip.key && x.rarity === rarity);
-		console.log(!!specific, equip.type, equip.key, equip.rarity, rarity);
 		if (specific) return specific;
 
 		const found = FilterableEquipDB.filter(x => x.type === equip.type && x.key === equip.key);
@@ -178,18 +176,14 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 		return list.includes(limit) || (limit.includes("+") && limit.split("+").some(x => list.includes(x)));
 	}
 
-	if (target) {
-		const equipKey = `equip/${target.fullKey}`;
-		JsonLoaderCore(CurrentDB, equipKey)
-			.then(() => {
-				const detail = GetJson<Equip>(equipKey);
-				if (!detail) return;
-
-				const stat = detail.stats[level];
-				setStatusList(stat);
-			});
-	} else if (StatusList.length > 0)
-		setStatusList([]);
+	const detail = useDBData<Equip>(target ? `equip/${target.fullKey}` : null);
+	useEffect(() => {
+		if (detail) {
+			const stat = detail.stats[level];
+			setStatusList(stat);
+		} else
+			setStatusList([]);
+	}, [detail, level]);
 
 	const CraftTime = ((): string => {
 		const duration = target?.craft;
@@ -323,84 +317,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 					: <></>
 				}
 
-				<div class="drop-list">
-					{ target.source
-						.filter(r => r.length > 0)
-						.reduce<EntitySource[][]>((p, c) => {
-							if (c[0].IsStory) {
-								const pi = p.findIndex(r => r[0].IsStory);
-								if (pi >= 0)
-									return p.map((v, i) => i === pi ? [...v, ...c] : v);
-							}
-							return [...p, c];
-						}, [])
-						.map((area, aindex) => {
-							let [header, text, perma] = (() => {
-								if (area[0].IsEvent) {
-									if (PermanentEvents.includes(area[0].EventId)) {
-										return [
-											<span class="text-warning">
-												<Locale k="UNIT_VIEW_DROPS_PERMANENT" />
-											</span>,
-											<Locale k={ area[0].EventName } />,
-											true,
-										];
-									} else if (CurrentEvent === area[0].EventId) {
-										return [
-											<span class="text-stat-hp">
-												<Locale k="COMMON_SOURCE_EVENT_CURRENT" />
-											</span>,
-											<Locale k={ area[0].EventName } />,
-											true,
-										];
-									}
-
-									return [
-										<span class="text-info">
-											<Locale k="COMMON_SOURCE_EVENT" />
-										</span>,
-										<Locale k={ area[0].EventName } />,
-									];
-								}
-								else if (area[0].IsDaily)
-									return [<Locale k="WORLD_Daily" />];
-								else if (area[0].IsChallenge)
-									return [<Locale k={ `COMMON_CHALLENGE_${area[0].ChallengeName}` } />];
-								else if (area[0].IsSubStory)
-									return [<Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />];
-								else if (area[0].IsNewEternalWar)
-									return [<Locale k="COMMON_SOURCE_NEW" />];
-
-								if (area[0].IsExchange)
-									return [];
-								return [<Locale k="COMMON_SOURCE_MAINSTORY" />, undefined, true];
-							})();
-							text ||= header;
-
-							return <>
-								{ header && <div class="drop-header">
-									{ header }
-								</div> }
-								<div class={ BuildClass(!header && "headerless", perma && "perma") }>
-									<h6>{ text }</h6>
-
-									{ (() => {
-										const _area: Record<string, EntitySource[]> = {};
-										area.forEach(s => {
-											const k = s.IsEvent ? `${s.World}:${s.Chapter}` : s.World;
-											if (!(k in _area)) _area[k] = [];
-											_area[k].push(s);
-										});
-										return Object.keys(_area).map((k, i) => <span>
-											{ i > 0 && <span class="border-start mx-1" /> }
-											{ _area[k].map(source => <SourceBadge class="my-1" source={ source } linked />) }
-										</span>);
-									})() }
-								</div>
-							</>;
-						})
-					}
-				</div>
+				<SourceTable source={ target.source } />
 			</>;
 	};
 

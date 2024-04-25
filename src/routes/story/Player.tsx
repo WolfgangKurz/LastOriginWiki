@@ -10,15 +10,15 @@ import { StoryModelMeta } from "@/types/Story/Model";
 import { LocaleTypes } from "@/types/Locale";
 
 import { useUpdate } from "@/libs/hooks";
-import { CurrentDB } from "@/libs/DB";
+import { useLocale } from "@/libs/Locale";
+import { StaticDB, useDBData } from "@/libs/Loader";
 import { AssetsRoot, IsDev } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
 import BGMAlbums from "@/libs/BGM";
 
-import Locale, { LocaleGet } from "@/components/locale";
-import { GetJson, JsonLoaderCore, StaticDB } from "@/components/loader";
+import Locale from "@/components/locale";
 
-import { fontFamily, Nn } from "./common";
+import { Nn } from "./common";
 import EffectBase from "./Effects/EffectBase";
 import VideoEffect from "./Effects/VideoEffect";
 import ShakeAndSoundEffect from "./Effects/ShakeAndSoundEffect";
@@ -75,6 +75,7 @@ interface PlayerProps {
 
 const Player: FunctionalComponent<PlayerProps> = (props) => {
 	const update = useUpdate();
+	const [loc] = useLocale();
 
 	const [app, setApp] = useState<PIXI.Application<HTMLCanvasElement> | null>(null);
 	const [cover, setCover] = useState<PIXI.Sprite | null>(null);
@@ -110,11 +111,10 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 
 	const [ignore2DModel, setIgnore2DModel] = useState(false);
 
-	const modelList = GetJson<Record<string, CharModelType>>(StaticDB.Story2DModel);
+	const modelList = useDBData<Record<string, CharModelType>>(StaticDB.Story2DModel);
 	if (!modelList && !ignore2DModel) {
-		JsonLoaderCore(CurrentDB, StaticDB.Story2DModel)
-			.catch(() => setIgnore2DModel(true))
-			.finally(() => update());
+		if (modelList === null) // was error
+			setIgnore2DModel(true);
 
 		return <></>;
 	}
@@ -326,7 +326,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 	function getSpeakerByImage (image: string): string {
 		const reg = /^2DModel_(.+)_[PSN](?:S[0-9]+)?$/;
 		const ret = reg.exec(image);
-		if (ret) return LocaleGet(`UNIT_${ret[1]}`);
+		if (ret) return loc[`UNIT_${ret[1]}`] || ret[1];
 		return "";
 	}
 
@@ -585,12 +585,13 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			// };
 
 			text = new FadeText(LText(bgName), {
-				fontFamily,
-				fontWeight: "500",
+				// fontFamily,
+				fontWeight: 500,
 				fontSize: 24,
-				fill: 0xffffff,
-				stroke: 0x000000,
-				strokeThickness: 1.5,
+				fill: "#fff",
+				stroke: "#000",
+				// strokeThickness: 1.5,
+				strokeWidth: 1.5,
 			});
 			text.name = "@bgName";
 			text.position.set(20, 20);
@@ -618,14 +619,16 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			// };
 
 			text = new FadeText(LText(bgDesc), {
-				fontFamily,
+				align: "CC",
+				// fontFamily,
 				fontSize: 48,
-				fill: 0xffffff,
-				stroke: 0x000000,
-				strokeThickness: 2,
+				fill: "#fff",
+				stroke: "#000",
+				// strokeThickness: 2,
+				strokeWidth: 2,
 			});
 			text.name = "@bgDesc";
-			text.anchor.set(0.5, 0.5);
+			// text.anchor.set(0.5, 0.5);
 			text.position.set(640, 360);
 			text.zIndex = 950;
 			screen.addChild(text);
@@ -736,7 +739,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				if (screen && target && target.image) {
 					const c = ConvertChar(target.image);
 					const modelType = target.image in (modelList || {})
-						? modelList[target.image]
+						? modelList![target.image]
 						: CharModelType.None;
 					const forCommu = isCommu(target.image);
 

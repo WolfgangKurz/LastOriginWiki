@@ -6,7 +6,7 @@ import { objState } from "@/libs/State";
 import { isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import FacilityCard from "./components/facility-card";
 import Locale, { LocaleGet } from "@/components/locale";
 

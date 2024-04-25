@@ -7,7 +7,7 @@ import { BuildClass } from "@/libs/Class";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
 import Locale from "@/components/locale";
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 
 import style from "./style.module.scss";
 

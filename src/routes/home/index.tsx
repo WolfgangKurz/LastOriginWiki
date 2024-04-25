@@ -151,97 +151,11 @@ const Home: FunctionalComponent = () => {
 
 		<hr />
 
-		{/*
-		<div class={ style.MenuBox }>
-			<div class={ style["home-nav"] }>
-				<div class="btn-group">
-					<NavItem href="/units" text="MENU_UNITS" />
-					<NavItem href="/equips" text="MENU_EQUIPS" />
-					<NavItem href="/facilities" text="MENU_FACILITIES" />
-
-					<NavItem href="/enemies" text="MENU_ENEMIES" />
-					<NavItem href="/worlds" text="MENU_WORLDS" />
-					<NavItem href="/story" text="MENU_STORY" />
-
-					<NavItem href="/simulator" text="MENU_SIMULATOR" />
-				</div>
-			</div>
-
-			<div class={ style.GroupName }>
-				<Locale k="MENU_ETC" />
-			</div>
-
-			<div class={ style["home-nav"] }>
-				<NavItem href="/changelog">
-					<Locale k="MENU_CHANGELOG" />
-				</NavItem>
-
-				<span class={ style.divider } />
-
-				<NavItem href="/calc/exp">
-					<Locale k="MENU_ETC_EXPCALC" />
-				</NavItem>
-
-
-				<span class={ style.divider } />
-
-				<div class="btn-group">
-					<NavItem href="/bg">
-						<Locale k="MENU_ETC_BG" />
-					</NavItem>
-					<NavItem href="/bgm">
-						<Locale k="MENU_ETC_BGM" />
-					</NavItem>
-					<NavItem href="/consumable">
-						<Locale k="MENU_ETC_CONSUMABLE" />
-					</NavItem>
-					<NavItem href="/sticker">
-						<Locale k="MENU_ETC_STICKER" />
-					</NavItem>
-				</div>
-
-				<span class={ style.divider } />
-
-				<NavItem href="/gacha">
-					<Locale k="MENU_ETC_GACHA" />
-				</NavItem>
-
-				<span class={ style.divider } />
-
-				<NavItemExternal href="https://loeq.swaytwig.com/">
-					<Locale k="MENU_ETC_LOEQ" />
-				</NavItemExternal>
-
-				<span class={ style.divider } />
-
-				<div class="btn-group">
-					<NavItemExternal href="https://arca.live/b/lastorigin/4474753">
-						<Locale k="MENU_ETC_EX01" />
-					</NavItemExternal>
-					<NavItemExternal href="https://arca.live/b/lastorigin/10674899">
-						<Locale k="MENU_ETC_EX03" />
-					</NavItemExternal>
-					<NavItemExternal href="https://wolfgangkurz.github.io/lo-grid/">
-						<Locale k="MENU_ETC_EX04" />
-					</NavItemExternal>
-				</div>
-			</div>
-
-			<hr />
-		</div> */}
-
 		<Changelog />
 
 		<p class="mt-4">
 			<Locale k="HOME_DESCRIPTION" />
 		</p>
-		{/* <p>
-			<a href="https://docs.google.com/spreadsheets/d/1cKeoYE0gvY5o5g2SzEkMZi1bUKiVHHc27ctAPFjPbL4" target="_blank" rel="noreferrer">
-				<IconLink45deg class="me-1" />
-				<span>Database SpreadSheet</span>
-			</a>
-		</p> */}
-		<hr />
 
 		{ ext === "png" && <div class="alert alert-danger">
 			<Locale k="HOME_WEBP_UNAVAILABLE" />
@@ -257,7 +171,7 @@ const Home: FunctionalComponent = () => {
 					p={ [
 						Math.floor(
 							new Date(Date.now() - new Date(2020, 5 - 1, 16).getTime())
-								.getTime() / 100 / 86400
+								.getTime() / 1000 / 86400
 						).toLocaleString(),
 					] }
 				/>

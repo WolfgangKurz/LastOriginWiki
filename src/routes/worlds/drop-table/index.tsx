@@ -15,7 +15,7 @@ import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { groupBy, isActive } from "@/libs/Functions";
 import { objState } from "@/libs/State";
 
-import Loader, { GetJson, StaticDB } from "@/components/loader";
+import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
 import UnitFace from "@/components/unit-face";

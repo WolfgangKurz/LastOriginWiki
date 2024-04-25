@@ -1,5 +1,4 @@
-// TODO : Remove <Loader> component and move file to `libs`
-
+// TODO : Remove <Loader> component
 import { FunctionalComponent, createElement } from "preact";
 import { useCallback, useEffect, useState } from "preact/hooks";
 
@@ -9,8 +8,7 @@ import { DataRoot } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 import EntitySource from "@/libs/EntitySource";
 
-import DBHash, { DBHashType } from "@/components/loader/hash";
-import Loading from "@/components/loading";
+import DBHash, { DBHashType } from "@/libs/Loader/hash";
 
 export * from "./static";
 
@@ -93,29 +91,51 @@ function normalize (list: string | string[] | undefined): string[] {
 	return list;
 }
 
-export type JsonDataConverter<T> = (data: T) => T;
-export function DBSourceConverter<T extends {}> (data: T): T {
-	if (Array.isArray(data)) {
-		return data.map(data => {
-			if (!("source" in data)) return data;
+/**
+ * Get data from `db/json`.
+ *
+ * This method will fetch from server, parse to `T` and cache automatically.
+ *
+ * To remove cache and re-fetch, use `{@link unsetDBData}` method.
+ * @param path Target path of data, after `db` directory. If set `null`, will not fetch and always returns `undefined`.
+ * @param db Dataset to get. `"korea"` only available currently.
+ * @param requestId Id of request. Used for re-fetch already fetched same path, same db data.
+ * @returns `T` if data ready, `undefined` if not ready yet, `null` if failed to get.
+ */
+export function useDBData<T extends {}> (path: string | null, db: "korea" = CurrentDB, requestId?: number): T | null | undefined {
+	const inCache = !!path && (path in Cache);
+	const [state, setState] = useState(-1); // uninitialized
+	const [result, setResult] = useState<T | undefined>(inCache ? Cache[path!] : undefined);
 
-			const _ = data as T & {
-				source: EntitySource[][];
-			};
-			_.source = (_.source as unknown as string[][])
-				.map(x => x.map(y => typeof y === "string" ? new EntitySource(y) : y));
-			return _;
-		}) as unknown as T;
-	}
+	useEffect(() => {
+		if (state === -1 && inCache) return;
 
-	if (!("source" in data)) return data;
+		setResult(undefined);
+		setState(path === null ? -1 : 0);
+	}, [path, db, requestId]);
 
-	const _ = data as T & {
-		source: EntitySource[][];
-	};
-	_.source = (_.source as unknown as string[][])
-		.map(x => x.map(y => typeof y === "string" ? new EntitySource(y) : y));
-	return _;
+	useEffect(() => {
+		if (state === 0) {
+			const _path = path!;
+			if (_path in Cache) {
+				setState(2);
+				setResult(Cache[_path]);
+			} else {
+				setState(1);
+				Load(db, _path)
+					.then(() => {
+						setState(2);
+						setResult(Cache[_path]);
+					})
+					.catch(() => {
+						setState(3);
+					});
+			}
+		}
+	}, [state]);
+
+	if (state === 3) return null;
+	return result;
 }
 
 /**
@@ -124,8 +144,7 @@ export function DBSourceConverter<T extends {}> (data: T): T {
  * @param converter Preprocess function before return data
  * @returns Data to get. `undefined` if not loaded yet or not exists.
  */
-export function GetJson<T> (json: string, converter?: JsonDataConverter<T>): T {
-	if (converter) return converter(Cache[json] as T);
+export function GetJson<T> (json: string): T {
 	return Cache[json] as T;
 }
 
@@ -144,7 +163,7 @@ export function JsonLoaderCore (db: string, json: string | string[] | undefined)
 	return Promise.all(list.map(x => Load(db, x)));
 }
 
-export function UnsetDBData (dataname: string): void {
+export function unsetDBData (dataname: string): void {
 	if (dataname in Cache)
 		delete Cache[dataname];
 }
@@ -153,21 +172,6 @@ function comp (a: string[] | readonly string[], b: string[] | readonly string[])
 	if (a.length !== b.length) return false;
 	return a.every((v, i) => v === b[i]);
 }
-
-interface DefaultFailedBadgeProps {
-	db: string;
-	list: string[];
-}
-
-/**
- * @deprecated This component should not be used.
- */
-const DefaultFailedBadge: FunctionalComponent<DefaultFailedBadgeProps> = ({ db, list }) =>
-	<span class="d-inline-block badge bg-danger">
-		Failed to load data { list.map(x => <strong>"{ db }/{ x }"</strong>).gap(", ") }.<br />
-		Please retry or report to developer.
-	</span>;
-const DefaultLoadingBadge: FunctionalComponent = () => <Loading.Data />;
 
 /**
  * @deprecated This component should not be used. Use `useDBData` instead.
@@ -195,25 +199,29 @@ const Loader: FunctionalComponent<LoaderProps> = (props) => {
 		}
 	}, [list, target]);
 
-	if (state === LoaderState.EMPTY) {
-		if (target.length === 0 || target.every(x => x in Cache)) {
-			setState(LoaderState.DONE);
-			return response();
+	useEffect(() => {
+		if (state === LoaderState.EMPTY) {
+			if (target.length === 0 || target.every(x => x in Cache)) {
+				setState(LoaderState.DONE);
+			} else {
+				setState(LoaderState.REQUEST);
+				JsonLoaderCore(db, target)
+					.then(() => setState(LoaderState.DONE))
+					.catch(() => setState(LoaderState.ERROR));
+			}
 		}
-
-		setState(LoaderState.REQUEST);
-		JsonLoaderCore(db, target)
-			.then(() => setState(LoaderState.DONE))
-			.catch(() => setState(LoaderState.ERROR));
-	}
+	}, [state]);
 
 	switch (state) {
 		case LoaderState.DONE:
 			return response();
 		case LoaderState.REQUEST:
-			return props.loading || <DefaultLoadingBadge />;
+			return props.loading || <></>;
 		case LoaderState.ERROR:
-			return props.error || <DefaultFailedBadge db={ db } list={ target } />;
+			return props.error || <span class="d-inline-block badge bg-danger">
+				Failed to load data { target.map(x => <strong>"{ db }/{ x }"</strong>).gap(", ") }.<br />
+				Please retry or report to developer.
+			</span>;
 		default:
 			return <></>;
 	}
