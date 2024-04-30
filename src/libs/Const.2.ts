@@ -110,10 +110,15 @@ export const SkinBanners: string[] = [
 	"BR_Janghwa_3", "BR_Cheona_2",
 	"BR_Scarabya_2",
 	"BR_Hyena_2", "BR_WarWolf_3", "PECS_Merlin_2",
+	"DS_Koyori_1",
 ];
 
-export const SkillVideo: Record<string, number[]> = {
-	DS_Koyori: [2],
-	DS_Sarena: [2],
-	BR_Fafnir: [2],
+export const SkillVideo: Record<string, string[]> = {
+	DS_Koyori_0: ["DS_Koyori.Skill2"],
+	DS_Koyori_20: ["DS_Koyori.Skill2"],
+
+	DS_Koyori_1: ["DS_Koyori_1.Skill2"],
+
+	DS_Sarena_0: ["DS_Sarena.Skill2"],
+	BR_Fafnir_0: ["BR_Fafnir.Skill2"],
 };
