@@ -287,11 +287,11 @@ const BGMAlbums: BGMAlbum[] = [
 			},
 			{
 				type: "audio",
-				id: "track_medical_start",
+				id: "track_medical_sound",
 				title: "Medical Start",
 				duration: 30,
-				filename: "Album01/Medical_Start.mp3",
-				lyrics: [{ time: 0, text: "Medical Start" }],
+				filename: "Album01/Medical_Sound.mp3",
+				lyrics: [{ time: 0, text: "Medical Sound" }],
 			},
 			{
 				type: "audio",
