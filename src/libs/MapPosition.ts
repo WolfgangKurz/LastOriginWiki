@@ -1,14 +1,10 @@
-interface MapPositionType {
-	[wid: string]: {
-		[mid: string]: {
-			[node: string]:
-			[x: number, y: number] |
-			[x: number, y: number, displayPrevLine: boolean | [x: number, y: number]] |
-			[x: number, y: number, displayPrevLine: boolean | [x: number, y: number], nodeType: number] |
-			[x: number, y: number, displayPrevLine: boolean | [x: number, y: number], nodeType: number, icon: string];
-		};
-	};
-}
+type MapPositionNodeValue = [x: number, y: number] |
+[x: number, y: number, displayPrevLine: boolean | [x: number, y: number]] |
+[x: number, y: number, displayPrevLine: boolean | [x: number, y: number], nodeType: number] |
+[x: number, y: number, displayPrevLine: boolean | [x: number, y: number], nodeType: number, icon: string];
+type MapPositionMap = Record<string, MapPositionNodeValue>;
+type MapPositionWorld = Record<string, MapPositionMap>;
+type MapPositionType = Record<string, MapPositionWorld>;
 
 const MapPosition: MapPositionType = {
 	12: {
@@ -548,6 +544,25 @@ const MapPosition: MapPositionType = {
 			"EV3-1Ex": [0.4, 2],
 			"EV3-2Ex": [1.2, 2],
 			"EV3-3Ex": [2, 2],
+		},
+	},
+	Ev25: {
+		1: { // based on Ev18-2
+			"EV1-1": [0, 1],
+			"EV1-2": [0.8, 1],
+			"EV1-3": [1.6, 1],
+			"EV1-4": [2.4, 1],
+			"EV1-5": [3.2, 1],
+			"EV1-6": [4, 1],
+			"EV1-7": [4.8, 1],
+
+			"EV1-1B": [2.4, 0],
+			"EV1-2B": [3.2, 0],
+			"EV1-3B": [4, 0],
+
+			"EV1-1Ex": [0, 2, false],
+			"EV1-2Ex": [0.8, 2],
+			"EV1-3Ex": [1.6, 2],
 		},
 	},
 };

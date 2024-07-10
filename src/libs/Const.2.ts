@@ -111,6 +111,7 @@ export const SkinBanners: string[] = [
 	"BR_Scarabya_2",
 	"BR_Hyena_2", "BR_WarWolf_3", "PECS_Merlin_2",
 	"DS_Koyori_1",
+	"PECS_Erato_2",
 ];
 
 export const SkillVideo: Record<string, string[]> = {

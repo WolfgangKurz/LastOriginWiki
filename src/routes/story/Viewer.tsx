@@ -8,15 +8,15 @@ import SubStoryDB from "@/types/DB/SubStory";
 import { LocaleList, LocaleTypes } from "@/types/Locale";
 
 import { useUpdate } from "@/libs/hooks";
+import { useLocale } from "@/libs/Locale";
 import { AssetsRoot, ImageExtension, SubStoryUnit } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
-import { CurrentDB } from "@/libs/DB";
 import { BuildClass, cn } from "@/libs/Class";
 import { parseVNode } from "@/libs/VNode";
 import { UpdateTitle } from "@/libs/Site";
 
-import { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
-import Locale, { LocaleGet } from "@/components/locale";
+import { StaticDB, useDBData } from "@/libs/Loader";
+import Locale from "@/components/locale";
 import UnitFace from "@/components/unit-face";
 import IconGlobe2 from "@/components/bootstrap-icon/icons/Globe2";
 import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
@@ -45,13 +45,11 @@ const FaceAlias: Record<string, string> = {
 
 const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	const update = useUpdate();
+	const [loc] = useLocale();
 
 	const [isBackMode] = useState(Store.Story.back.value);
 
 	const [error, setError] = useState(false);
-
-	const [storyMetadata, setStoryMetadata] = useState<StoryMetadata | null>(null);
-	const [storyData, setStoryData] = useState<StoryData[] | null>(null);
 
 	const [voicePreview, setVoicePreview] = useState<string>("");
 	const [bgm, setBGM] = useState("");
@@ -241,64 +239,29 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 		return { wid: "", mid: 0, nid: 0, storyType: props.type };
 	}, [props.id, props.type]);
 
-	const SubStoryDB = storyType === "Sub3" ? GetJson<SubStoryDB>(StaticDB.SubStory) : null;
-	useEffect(() => {
-		if (storyType === "Sub3" && !SubStoryDB)
-			JsonLoaderCore(CurrentDB, StaticDB.SubStory).then(() => update());
-	}, [storyType, SubStoryDB]);
-
+	const SubStoryDB = useDBData<SubStoryDB>(storyType === "Sub3" ? StaticDB.SubStory : null);
 	const subGroup = useMemo(() => {
 		if (!SubStoryDB) return null;
-
 		return SubStoryDB.story.find(r => r.key === wid) || null;
 	}, [SubStoryDB]);
 
 	const world = useMemo(() => {
 		if (storyType === "Sub3") {
 			if (!subGroup) return "...";
-			return LocaleGet(subGroup.group);
+			return loc[subGroup.group];
 		}
-		return LocaleGet(`WORLD_WORLD_${wid}_${mid}`);
+		return loc[`WORLD_WORLD_${wid}_${mid}`];
 	}, [lang, storyType, wid, mid, nid]);
 
+	const storyMetadata = useDBData<StoryMetadata>(`story/${props.id}`);
 	useEffect(() => {
-		setStoryMetadata(null);
+		if (storyMetadata)
+			setBGM(storyMetadata.bgm[props.type]);
+		else if (storyMetadata === null)  // Error
+			setError(true);
+	}, [storyMetadata, props.type]);
 
-		const cached = GetJson<StoryMetadata>(`story/${props.id}`);
-		if (cached) {
-			setStoryMetadata(cached);
-			setBGM(cached.bgm[props.type]);
-		} else {
-			JsonLoaderCore(CurrentDB, `story/${props.id}`)
-				.then(() => {
-					const data = GetJson<StoryMetadata>(`story/${props.id}`);
-					setStoryMetadata(data);
-					setBGM(data.bgm[props.type]);
-				})
-				.catch(() => {
-					setError(true);
-				});
-		}
-	}, [props.id, props.type]);
-
-	useEffect(() => {
-		setStoryData(null);
-
-		if (storyMetadata) {
-			const target = storyMetadata.index[props.type];
-			const cached = GetJson<StoryData[]>(`story/script/${target}`);
-			if (cached) {
-				setStoryData(cached);
-			} else {
-				JsonLoaderCore(CurrentDB, `story/script/${target}`)
-					.then(() => {
-						const data = GetJson<StoryData[]>(`story/script/${target}`);
-						setStoryData(data);
-					});
-			}
-		}
-	}, [storyMetadata]);
-
+	const storyData = useDBData<StoryData[]>(storyMetadata ? `story/script/${storyMetadata.index[props.type]}` : null);
 	useEffect(() => {
 		if (!world || !storyMetadata) {
 			UpdateTitle("Story Viewer");
@@ -309,13 +272,20 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 
 	const faces = useMemo(() => {
 		if (!storyData) return [];
+		interface FaceMetadata {
+			uid: string;
+			skin: number;
+			fallback: string;
+		}
 		return storyData
 			.flatMap(r => Object.values(r.char))
 			.filter(r => r.image && !r.image.includes("_Cut"))
 			.map(r => ImageToFace(r.image))
-			.reduce((p, c) => p.some(r => r.uid === c.uid && r.skin === c.skin)
-				? p
-				: [...p, c], [] as Array<{ uid: string, skin: number, fallback: string; }>,
+			.reduce<FaceMetadata[]>(
+				(p, c) => p.some(r => r.uid === c.uid && r.skin === c.skin)
+					? p
+					: [...p, c],
+				[],
 			);
 	}, [storyData]);
 

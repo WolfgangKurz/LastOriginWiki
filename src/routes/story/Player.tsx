@@ -530,7 +530,20 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 
 			if (isValidLText(curData.bg.name)) setBGName(curData.bg.name);
 			if (isValidLText(curData.bg.desc)) setBGDesc(curData.bg.desc);
-			if (curData.bg.image) setBGImage(curData.bg.image);
+
+			if (curData.bg.image)
+				setBGImage(curData.bg.image);
+			else { // track previous bg
+				let cursor = props.cursor - 1;
+				while (cursor >= 0) {
+					const d = props.data[cursor--];
+					if (d.bg.image) {
+						if (bgImage !== d.bg.image)
+							setBGImage(d.bg.image);
+						break;
+					}
+				}
+			}
 
 			if (curData.voice) {
 				if (props.onVoice)
@@ -917,7 +930,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				speakerFilter[2].tint(curData.char.C?.SCG === SCG_ACTIVATION.ACTIVATION ? 0xffffff : 0x808080, false);
 
 				dialog.setText(Nn(LText(curData.text)) || "~");
-				if (speaker) {
+				if (speaker && LText(speaker.name).trim()) {
 					dialog.setSpeaker(LText(speaker.name) || getSpeakerByImage(speaker.image), curData.speaker);
 				} else
 					dialog.setSpeaker("", DIALOG_SPEAKER.NONE);

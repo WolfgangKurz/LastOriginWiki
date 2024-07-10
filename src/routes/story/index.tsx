@@ -70,7 +70,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		11,
 		"Ev20", "Ev21", "Ev23",
 		12,
-		"Ev24",
+		"Ev24", "Ev25",
 	];
 	const StoryList: StoryKeyType[] = StoryListSource.map(r => {
 		if (Array.isArray(r)) {
