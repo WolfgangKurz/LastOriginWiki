@@ -92,8 +92,13 @@ export default class FadeText extends FadeContainer {
 
 		if (!this._text) return;
 
-		const firstFont = FontPriority[0];
-		const fontFamily = this._style?.fontFamily ?? firstFont;
+		const fontFamilies = [
+			this._style?.fontFamily,
+			...FontPriority,
+		]
+			.filter(r => !!r)
+			.reduce<string[]>((p, c) => p.includes(c) ? p : [...p, c], []);
+
 		const fontSize = this._style?.fontSize ?? 14;
 		const fontWeight = this._style?.fontWeight ?? 400;
 		const lineHeight = this._style?.lineHeight ?? 1.2;
@@ -128,9 +133,6 @@ export default class FadeText extends FadeContainer {
 						}
 					}
 
-					const pathCacheKey = `${fontFamily || ""}_${fontSize}_${fontWeight}`;
-					pathCache[pathCacheKey] ||= {};
-
 					let _right = 0;
 					let _bottom = 0;
 
@@ -140,20 +142,33 @@ export default class FadeText extends FadeContainer {
 							let __x = x;
 							let __y = y;
 
+							let pathCacheKey: string = "";
+
 							const _arr: Array<[c: string, font: opentype.Font | null]> = [];
 							let _w = 0;
 							let _h = 0;
 							let _bl = 0;
 							for (let c of text) {
-								const _font = FontGet(fontFamily, fontWeight, c) ||
-									FontGet(fontFamily, 400, c) || // try :400 font
-									FontGet(firstFont, 400, c) || // try default:400 font
-									FontGet(fontFamily, fontWeight, fallback) || // try fallback
-									FontGet(fontFamily, 400, fallback) || // try fallback :400 font
-									FontGet(firstFont, 400, fallback); // try fallback default:400 font
+								let _font: ReturnType<typeof FontGet> = null;
+
+								for (const f of fontFamilies) {
+									_font = FontGet(f, fontWeight, c) ||
+										FontGet(f, 400, c); // try :400 font
+									if (_font) break;
+								}
+								if (!_font) {
+									for (const f of fontFamilies) {
+										_font = FontGet(f, fontWeight, fallback) || // try fallback
+											FontGet(f, 400, fallback); // try fallback :400 font
+										if (_font) break;
+									}
+								}
 								if (!_font) continue; // not drawable... skip
 
 								if (_font instanceof opentype.Font) {
+									pathCacheKey = `${_font.names.fontFamily}_${fontSize}_${fontWeight}`;
+									pathCache[pathCacheKey] ||= {};
+
 									_w += _font.getAdvanceWidth(c, fontSize);
 									_arr.push([c, _font]);
 
@@ -171,7 +186,7 @@ export default class FadeText extends FadeContainer {
 							this._cv.height = _h + _base_y * 2;
 
 							if ((wrapWidth > 0 && x + _w > wrapWidth) || (text === "\n")) {
-								x =__x = _base_x;
+								x = __x = _base_x;
 								__x = _base_x;
 								__y = y += fontSize * lineHeight;
 							}
@@ -202,7 +217,7 @@ export default class FadeText extends FadeContainer {
 								const [_path, _cw] = pathCache[pathCacheKey][c];
 								ctx.save();
 								ctx.translate(x - __x, _bl);
-								console.log(text, c, x, __x, x - __x, _bl);
+								// console.log(text, c, x, __x, x - __x, _bl);
 
 								_path.fill = null;
 								_path.stroke = _stroke || null;
