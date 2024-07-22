@@ -135,7 +135,7 @@ export default class Pixi2DModel extends FadeContainer {
 	private ready = false;
 
 	private spMap: Record<string, SPRITE_DATA> = {};
-	private texMap: Record<number, PIXI.Texture> = {};
+	private texMap: Record<string, PIXI.Texture> = {};
 
 	private faceList: SPRITE_DATA[] = [];
 	private hidePartList: string[] = [];
@@ -391,7 +391,17 @@ export default class Pixi2DModel extends FadeContainer {
 
 						if ("sprite" in o && o.sprite !== undefined) {
 							const sp = this.spMap[o.sprite];
-							sprite.texture = this.texMap[sp.name];
+							let tex = this.texMap[sp.name];
+							if (o.flip && (o.flip[0] || o.flip[1])) {
+								tex = tex.clone();
+								if (o.flip[0] && o.flip[1]) // same with 180
+									tex.rotate = PIXI.groupD8.W;
+								else if (o.flip[0])
+									tex.rotate = PIXI.groupD8.MIRROR_HORIZONTAL;
+								else
+									tex.rotate = PIXI.groupD8.MIRROR_VERTICAL;
+							}
+							sprite.texture = tex;
 
 							const ppu = sp.vector.u;
 							const ppum = 100 / ppu; // ppu multiply

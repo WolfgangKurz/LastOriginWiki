@@ -4,6 +4,11 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12612" date="2024-07-22"
+		bugfix={ <>
+			<li>일부 스킨이 올바르지 않게 표시되던 문제를 수정했습니다. (예: 레모네이드 베타 기본 스킨 중파)</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12609" date="2024-07-11"
 		new={ <>
 			<li>신규 이벤트 <BY>제로 베이스</BY>의 정보가 추가되었습니다.</li>
