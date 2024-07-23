@@ -129,6 +129,10 @@ export default class FadeText extends FadeContainer {
 								case "color":
 									_fill = `#${r[2]}`;
 									break;
+
+								case "spchar":
+									text = r[2];
+									break;
 							}
 						}
 					}

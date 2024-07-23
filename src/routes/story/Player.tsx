@@ -31,7 +31,7 @@ import PixiSpineModel from "@/components/pixi/PixiSpineModel";
 
 import DialogObject from "./Objects/DialogObject";
 import SelectionObject from "./Objects/SelectionObject";
-import CommuSprite from "./Objects/CommuSprite";
+import CommuSprite from "../../components/pixi/CommuSprite/CommuSprite";
 
 import style from "./style.module.scss";
 
@@ -62,6 +62,7 @@ enum CharModelType {
 
 interface PlayerProps {
 	display?: boolean;
+	bgStyle?: number;
 
 	data: StoryData[];
 	bgm: string;
@@ -688,7 +689,12 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 					bg = new FadeSprite(tex);
 					bg.name = "@bg";
 					bg.width = 1280;
-					bg.height = 720;
+					if ((props.bgStyle ?? 0) === 0) {
+						bg.height = 720;
+					} else {
+						bg.height = Math.min(720, 1280 / tex.width * tex.height);
+						bg.y = 360 - bg.height / 2;
+					}
 					bg.zIndex = 50 + z;
 					screen.addChild(bg);
 				});
@@ -701,7 +707,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				setTimeout(() => bg!.destroy(), 1000);
 			}
 		};
-	}, [screen, bgImage]);
+	}, [screen, bgImage, props.bgStyle]);
 
 	useEffect(() => { // SCG Activation
 		if (curData) {

@@ -3,12 +3,12 @@ import * as PIXI from "pixi.js";
 import { AssetsRoot } from "@/libs/Const";
 import { groupBy } from "@/libs/Functions";
 
-import { AnimationFrame, AnimationValue } from "../Effects/AnimationEffect";
+import { AnimationFrame, AnimationValue } from "../../../routes/story/Effects/AnimationEffect";
 
 import FadeContainer from "@/components/pixi/FadeContainer";
 
-import vert from "./shader/vert.glsl?raw";
-import frag from "./shader/commu.frag.glsl?raw";
+import vert from "../vert.glsl?raw";
+import frag from "./frag.glsl?raw";
 
 export default class CommuSprite extends FadeContainer {
 	private FX_hologram: PIXI.Texture | null = null;

@@ -6,6 +6,8 @@ import { quat2eul } from "@/libs/Math";
 
 import FadeContainer from "./FadeContainer";
 
+import HologramNoiseAlpha from "./HologramNoiseAlpha/HologramNoiseAlpha";
+
 // Interfaces from `@/components/u2dmodel-renderer`
 interface RECT {
 	x: number;
@@ -385,6 +387,9 @@ export default class Pixi2DModel extends FadeContainer {
 								case "additive-soft":
 									sprite.blendMode = PIXI.BLEND_MODES.ADD;
 									sprite.alpha = 0.5;
+									break;
+								case "hologram-noise-alpha":
+									sprite.filters!.push(new HologramNoiseAlpha());
 									break;
 							}
 						}

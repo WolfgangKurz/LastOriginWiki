@@ -21,6 +21,7 @@ import UnitFace from "@/components/unit-face";
 import IconGlobe2 from "@/components/bootstrap-icon/icons/Globe2";
 import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
 import IconVolumeUpFill from "@/components/bootstrap-icon/icons/VolumeUpFill";
+import IconImageFill from "@/components/bootstrap-icon/icons/ImageFill";
 
 import Notfound from "@/routes/notfound";
 
@@ -44,16 +45,36 @@ const FaceAlias: Record<string, string> = {
 };
 
 const Viewer: FunctionalComponent<StoryProps> = (props) => {
-	const update = useUpdate();
 	const [loc] = useLocale();
 
 	const [isBackMode] = useState(Store.Story.back.value);
 
 	const [error, setError] = useState(false);
 
+	const [type, initCursor] = useMemo(() => {
+		const reg = /^(.+?)(?:([0-9]+))?$/;
+		const r = reg.exec(props.type.toUpperCase());
+		if (r) return [
+			r[1].endsWith(":") ? r[1].substring(0, r[1].length - 1) : r[1],
+			parseInt(r[2] ?? "0", 10),
+		];
+		return [props.type.toUpperCase(), 0];
+	}, [props.type]);
+
 	const [voicePreview, setVoicePreview] = useState<string>("");
 	const [bgm, setBGM] = useState("");
-	const [cursor, setCursor] = useState(0);
+	const [cursor, setCursor] = useState(initCursor);
+
+	useEffect(() => {
+		if (cursor === 0) return;
+
+		const reg = /^(.+?)(?:[0-9]+)?$/;
+		const r = reg.exec(window.location.pathname);
+		if (r) {
+			const path = r[1].endsWith(":") ? r[1].substring(0, r[1].length - 1) : r[1];
+			window.history.replaceState(null, "", `${path}:${cursor}`);
+		}
+	}, [cursor]);
 
 	const [tab, setTab] = useState<"player" | "transcription">("player");
 	const [run, setRun] = useState(false);
@@ -136,11 +157,17 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			.split(/(\0[^\0]+\0[^\0]+\0[^\0]+\0)/gs)
 			.map(p => {
 				if (p[0] === "\0") { // formatted
-					const r = (/\0([^\0]+)\0([^\0]+)\0([^\0]+)\0/gs).exec(p);
+					const r = (/\0([^\0]+)\0([^\0]*)\0([^\0]*)\0/gs).exec(p);
 					if (r) {
 						switch (r[1]) {
 							case "color":
 								return `<span data-color="${r[2]}" style="color:#${r[2]}">${r[3]}</span>`;
+
+							case "spchar":
+								return {
+									"<": "&lt;",
+									">": "&gt;",
+								}[r[2]] || "";
 
 							default:
 								return r[3];
@@ -174,8 +201,6 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 						? "ep"
 						: "s"
 					: (r[5] || "");
-
-			const type = props.type.toUpperCase();
 
 			if (r[2]) { // EvXX or 12 chapter...
 				return {
@@ -226,18 +251,18 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 				};
 			} else if (props.id.startsWith("Story_")) { // separated substory
 				const reg = /^Story_Char_(.+)_N_.+_([0-9]+)-(START|END)$/;
-				const r = reg.exec(props.type)!;
+				const r = reg.exec(type)!;
 
 				return {
-					wid: props.type.substring(0, props.type.lastIndexOf("-")),
+					wid: type.substring(0, type.lastIndexOf("-")),
 					mid: parseInt(r[2], 10),
 					nid: r[1],
 					storyType: "Sub3",
 				};
 			}
 		}
-		return { wid: "", mid: 0, nid: 0, storyType: props.type };
-	}, [props.id, props.type]);
+		return { wid: "", mid: 0, nid: 0, storyType: type };
+	}, [props.id, type]);
 
 	const SubStoryDB = useDBData<SubStoryDB>(storyType === "Sub3" ? StaticDB.SubStory : null);
 	const subGroup = useMemo(() => {
@@ -256,12 +281,12 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	const storyMetadata = useDBData<StoryMetadata>(`story/${props.id}`);
 	useEffect(() => {
 		if (storyMetadata)
-			setBGM(storyMetadata.bgm[props.type]);
+			setBGM(storyMetadata.bgm[type]);
 		else if (storyMetadata === null)  // Error
 			setError(true);
-	}, [storyMetadata, props.type]);
+	}, [storyMetadata, type]);
 
-	const storyData = useDBData<StoryData[]>(storyMetadata ? `story/script/${storyMetadata.index[props.type]}` : null);
+	const storyData = useDBData<StoryData[]>(storyMetadata ? `story/script/${storyMetadata.index[type]}` : null);
 	useEffect(() => {
 		if (!world || !storyMetadata) {
 			UpdateTitle("Story Viewer");
@@ -333,6 +358,25 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			</button>) }
 		</div>
 
+		<div class="input-group justify-content-center my-2">
+			<div class="input-group-text">
+				<IconImageFill class="me-1" />
+			</div>
+
+			<button
+				class={ `btn btn-primary ${isActive(Store.Story.bgStyle.value === 0)}` }
+				onClick={ () => (Store.Story.bgStyle.value = 0) }
+			>
+				<Locale k="STORY_PLAYER_BGSTYLE_STRETCH" />
+			</button>
+			<button
+				class={ `btn btn-primary ${isActive(Store.Story.bgStyle.value === 1)}` }
+				onClick={ () => (Store.Story.bgStyle.value = 1) }
+			>
+				<Locale k="STORY_PLAYER_BGSTYLE_KEEP_RATIO" />
+			</button>
+		</div>
+
 		<h5 class="font-ibm mt-3">
 			{ world }
 
@@ -361,7 +405,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 		<h1 class={ BuildClass("font-ibm", storyType === "Sub3" ? "mb-1" : "mb-4") }>
 			{ storyMetadata
 				? storyType === "Sub2"
-					? <Locale plain k={ props.type } />
+					? <Locale plain k={ type } />
 					: storyType === "Sub3"
 						? <Locale plain k={ wid } />
 						: LText(storyMetadata.title)
@@ -427,6 +471,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			</> }
 			{ storyData && run && <Player
 				display={ tab === "player" }
+				bgStyle={ Store.Story.bgStyle.value }
 				cursor={ cursor }
 				bgm={ bgm }
 				data={ storyData as StoryData[] }
@@ -518,7 +563,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 													}
 												} }
 											>
-												{ Nn(LText(s.text)) }
+												{ parseVNode(convTokens(Nn(LText(s.text))), [], {}) }
 											</button>
 										</div>) }
 									</div>

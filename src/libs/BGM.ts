@@ -301,6 +301,14 @@ const BGMAlbums: BGMAlbum[] = [
 				filename: "Album01/Medical_Stop.mp3",
 				lyrics: [{ time: 0, text: "Medical Stop" }],
 			},
+			{
+				type: "audio",
+				id: "track_horror2",
+				title: "Horror2",
+				duration: 138,
+				filename: "Album01/Horror2.mp3",
+				lyrics: [{ time: 0, text: "Horror2" }],
+			},
 		],
 	},
 	{
