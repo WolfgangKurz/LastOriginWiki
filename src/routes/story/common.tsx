@@ -22,7 +22,8 @@ export function Nn (text: string) {
 		.replace(/\{0\}/g, `[c][66bbff]${LocaleGet("STORY_PLAYER_GAMEPLAYER")}[-][/c]`)
 		.replace(/&n/g, "\n")
 		.replace(/\[c\]\[([^\]]+)\]/g, (_, p1) => `\0color\0${p1}\0`)
-		.replace(/\[-\]\[\/c\]/g, "\0");
+		.replace(/\[-\]\[\/c\]/g, "\0")
+		.replace(/[<>]/g, (_) => `\0spchar\0${_}\0.\0`);
 }
 export const fontFamily = ["IBM Plex Sans KR", "IBM Plex Sans", "Pretendard JP Variable", "Pretendard Variable", "sans-serif"]
 	.map(r => r.includes(" ") ? `"${r}"` : r)

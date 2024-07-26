@@ -2,8 +2,6 @@ import opentype from "opentype.js";
 
 import woff2dec from "@/external/woff2/woff2dec";
 
-import { groupBy } from "@/libs/Functions";
-
 type FontUnicodeRange = number | [from: number, to: number];
 
 type FontNonWeighted = string | opentype.Font;
@@ -33,8 +31,11 @@ let _font_ready = false;
 
 const _font_source = {
 	"IBM Plex Sans KR": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap",
-	"Pretendard Variable": "https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/variable/pretendardvariable-dynamic-subset.min.css",
-	"Pretendard JP Varaible": "https://cdnjs.cloudflare.com/ajax/libs/pretendard-jp/1.3.9/variable/pretendardvariable-jp-dynamic-subset.min.css",
+	"Pretendard Variable": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css",
+	"Pretendard JP Variable": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css",
+};
+const _font_except_chars: Record<string, string[]> = {
+	"IBM Plex Sans KR": ["中"],
 };
 const _font_list = ["IBM Plex Sans KR", "Pretendard Variable", "Pretendard JP Variable"];
 Promise.all(
@@ -118,6 +119,11 @@ Promise.all(
 	_font_ready_promise.splice(0, _font_ready_promise.length);
 });
 
+function charAvailableForFont (family: string, font: opentype.Font, char: string): boolean {
+	if (family in _font_except_chars && _font_except_chars[family].includes(char)) return false;
+	return font.hasChar(char);
+}
+
 export function FontGet (family: string, weight: number, char: string): opentype.Font | null | Promise<opentype.Font | null> {
 	if (!_font_ready) {
 		return new Promise<opentype.Font | null>(resolve => {
@@ -129,12 +135,17 @@ export function FontGet (family: string, weight: number, char: string): opentype
 
 	const _font = _font_map[family];
 
-	if (_font instanceof opentype.Font) // already loaded, variable weight, static-subset
-		return _font;
-	else if (typeof _font === "string") { // need to load, variable weight, static-subset
+	if (_font instanceof opentype.Font) { // already loaded, variable weight, static-subset
+		if (charAvailableForFont(family, _font, char)) return _font;
+		return null;
+	} else if (typeof _font === "string") { // need to load, variable weight, static-subset
 		if (family in _font_callbacks) {
 			return new Promise(resolve => {
-				_font_callbacks[family].push(() => resolve(_font_map[family] as opentype.Font));
+				_font_callbacks[family].push(() => {
+					const font = _font_map[family] as opentype.Font;
+					if (charAvailableForFont(family, font, char)) resolve(font);
+					else resolve(null);
+				});
 			});
 		}
 
@@ -152,7 +163,8 @@ export function FontGet (family: string, weight: number, char: string): opentype
 				_font_callbacks[family].forEach(fn => fn());
 				delete _font_callbacks[family];
 
-				return font;
+				if (charAvailableForFont(family, font, char)) return font;
+				return null;
 			})
 			.catch(e => null);
 	}
@@ -175,14 +187,17 @@ export function FontGet (family: string, weight: number, char: string): opentype
 		const _subset = _font[_subset_index];
 		const __font = _subset.font;
 
-		if (__font instanceof opentype.Font) // already loaded, not variable, single font
-			return __font;
-		else { // need to load, variable weight, static-subset
+		if (__font instanceof opentype.Font) { // already loaded, not variable, single font
+			if (charAvailableForFont(family, __font, char)) return __font;
+			return null;
+		} else { // need to load, variable weight, static-subset
 			if (_key in _font_callbacks) {
 				return new Promise(resolve => {
 					_font_callbacks[_key].push(() => {
 						const subsets = _font_map[family] as FontNonWeightedSubset[];
-						resolve(subsets[_subset_index].font as opentype.Font);
+						const font = subsets[_subset_index].font as opentype.Font;
+						if (charAvailableForFont(family, font, char)) resolve(font);
+						else resolve(null);
 					});
 				});
 			}
@@ -204,7 +219,8 @@ export function FontGet (family: string, weight: number, char: string): opentype
 					_font_callbacks[_key].forEach(fn => fn());
 					delete _font_callbacks[_key];
 
-					return font;
+					if (charAvailableForFont(family, font, char)) return font;
+					return null;
 				})
 				.catch(e => null);
 		}
@@ -214,13 +230,18 @@ export function FontGet (family: string, weight: number, char: string): opentype
 		const subsets = _font[weight];
 		if (!Array.isArray(subsets)) { // static-subset
 			const __font = subsets;
-			if (__font instanceof opentype.Font)
+			if (__font instanceof opentype.Font) {
+				if (charAvailableForFont(family, __font, char)) return __font;
 				return __font;
-			else {
+			} else {
 				const _key = `${family}:${weight}`;
 				if (_key in _font_callbacks) {
 					return new Promise(resolve => {
-						_font_callbacks[_key].push(() => resolve(_font[weight] as opentype.Font));
+						_font_callbacks[_key].push(() => {
+							const font = _font[weight] as opentype.Font;
+							if (charAvailableForFont(family, font, char)) resolve(font);
+							else resolve(null);
+						});
 					});
 				}
 
@@ -239,6 +260,7 @@ export function FontGet (family: string, weight: number, char: string): opentype
 						_font_callbacks[_key].forEach(fn => fn());
 						delete _font_callbacks[_key];
 
+						if (charAvailableForFont(family, font, char)) return font;
 						return font;
 					})
 					.catch(e => null);
@@ -261,14 +283,17 @@ export function FontGet (family: string, weight: number, char: string): opentype
 			const _subset = subsets[_subset_index];
 			const __font = _subset.font;
 
-			if (__font instanceof opentype.Font) // already loaded, not variable, single font
-				return __font;
-			else { // need to load, variable weight, static-subset
+			if (__font instanceof opentype.Font) { // already loaded, not variable, single font
+				if (charAvailableForFont(family, __font, char)) return __font;
+				return null;
+			} else { // need to load, variable weight, static-subset
 				if (_key in _font_callbacks) {
 					return new Promise(resolve => {
 						_font_callbacks[_key].push(() => {
 							const subsets = _font_map[family][weight] as FontNonWeightedSubset[];
-							resolve(subsets[_subset_index].font as opentype.Font);
+							const font = subsets[_subset_index].font as opentype.Font;
+							if (charAvailableForFont(family, font, char)) resolve(font);
+							else resolve(null);
 						});
 					});
 				}
@@ -290,6 +315,7 @@ export function FontGet (family: string, weight: number, char: string): opentype
 						_font_callbacks[_key].forEach(fn => fn());
 						delete _font_callbacks[_key];
 
+						if (charAvailableForFont(family, font, char)) return font;
 						return font;
 					})
 					.catch(e => null);

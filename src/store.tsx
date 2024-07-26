@@ -167,6 +167,7 @@ const Store = {
 	Story: {
 		lang: signal<LocaleTypes>(CurrentLocale.peek()),
 		back: signal<boolean>(false),
+		bgStyle: signal<number>(0),
 	},
 };
 export default Store;

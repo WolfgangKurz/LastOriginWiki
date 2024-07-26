@@ -31,7 +31,7 @@ import PixiSpineModel from "@/components/pixi/PixiSpineModel";
 
 import DialogObject from "./Objects/DialogObject";
 import SelectionObject from "./Objects/SelectionObject";
-import CommuSprite from "./Objects/CommuSprite";
+import CommuSprite from "../../components/pixi/CommuSprite/CommuSprite";
 
 import style from "./style.module.scss";
 
@@ -62,6 +62,7 @@ enum CharModelType {
 
 interface PlayerProps {
 	display?: boolean;
+	bgStyle?: number;
 
 	data: StoryData[];
 	bgm: string;
@@ -530,7 +531,20 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 
 			if (isValidLText(curData.bg.name)) setBGName(curData.bg.name);
 			if (isValidLText(curData.bg.desc)) setBGDesc(curData.bg.desc);
-			if (curData.bg.image) setBGImage(curData.bg.image);
+
+			if (curData.bg.image)
+				setBGImage(curData.bg.image);
+			else { // track previous bg
+				let cursor = props.cursor - 1;
+				while (cursor >= 0) {
+					const d = props.data[cursor--];
+					if (d.bg.image) {
+						if (bgImage !== d.bg.image)
+							setBGImage(d.bg.image);
+						break;
+					}
+				}
+			}
 
 			if (curData.voice) {
 				if (props.onVoice)
@@ -675,7 +689,12 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 					bg = new FadeSprite(tex);
 					bg.name = "@bg";
 					bg.width = 1280;
-					bg.height = 720;
+					if ((props.bgStyle ?? 0) === 0) {
+						bg.height = 720;
+					} else {
+						bg.height = Math.min(720, 1280 / tex.width * tex.height);
+						bg.y = 360 - bg.height / 2;
+					}
 					bg.zIndex = 50 + z;
 					screen.addChild(bg);
 				});
@@ -688,7 +707,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				setTimeout(() => bg!.destroy(), 1000);
 			}
 		};
-	}, [screen, bgImage]);
+	}, [screen, bgImage, props.bgStyle]);
 
 	useEffect(() => { // SCG Activation
 		if (curData) {
@@ -917,7 +936,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				speakerFilter[2].tint(curData.char.C?.SCG === SCG_ACTIVATION.ACTIVATION ? 0xffffff : 0x808080, false);
 
 				dialog.setText(Nn(LText(curData.text)) || "~");
-				if (speaker) {
+				if (speaker && LText(speaker.name).trim()) {
 					dialog.setSpeaker(LText(speaker.name) || getSpeakerByImage(speaker.image), curData.speaker);
 				} else
 					dialog.setSpeaker("", DIALOG_SPEAKER.NONE);

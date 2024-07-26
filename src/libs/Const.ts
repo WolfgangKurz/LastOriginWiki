@@ -4,7 +4,7 @@ export const WorldIds: string[] = [
 	"Story", "Sub", "Cha",
 	"Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "EvA0", "Ev7", "Ev8", "Ev9", "Ev10",
 	"Ev11", "Ev12", "Ev13", "Ev14", "Ev15", "Ev16", "Ev17", "Ev18", "Ev19", "Ev20",
-	"Ev21", "Ev22", "Ev23", "Ev24",
+	"Ev21", "Ev22", "Ev23", "Ev24", "Ev25",
 ];
 export const SubStoryUnit: Record<string, string> = {
 	"S1-1": "AGS_Rampart",
@@ -26,6 +26,6 @@ export const SubStoryUnit: Record<string, string> = {
 
 export const PermanentEvents: string[] = ["Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "Ev7", "Ev8", "Ev9"];
 export const NewMapList: string[] = [];
-export const CurrentEvent = "Ev17";
-export const EventFrom = new Date(2024, 3 - 1, 12);
-export const EventTo = new Date(2024, 4 - 1, 2);
+export const CurrentEvent = "Ev25";
+export const EventFrom = new Date(2024, 7 - 1, 9);
+export const EventTo = new Date(2024, 8 - 1, 6);

@@ -70,7 +70,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		11,
 		"Ev20", "Ev21", "Ev23",
 		12,
-		"Ev24",
+		"Ev24", "Ev25",
 	];
 	const StoryList: StoryKeyType[] = StoryListSource.map(r => {
 		if (Array.isArray(r)) {
@@ -341,7 +341,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 								<strong>
 									<PCIcon class={ style.SubstoryIcon } item={ r.icon } size={ 48 } />
 
-									<Locale k={ r.char } />
+									<Locale raw={ false } k={ r.char } />
 								</strong>
 
 								<div class={ style.SubstoryList }>
@@ -349,7 +349,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 										<PCIcon class={ cn("me-2", style.SubstoryIcon) } item={ s.icon } size={ 32 } />
 
 										<span>
-											<Locale k={ s.key } />
+											<Locale raw={ false } k={ s.key } />
 										</span>
 
 										<button

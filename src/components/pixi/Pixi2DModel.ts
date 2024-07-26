@@ -6,6 +6,8 @@ import { quat2eul } from "@/libs/Math";
 
 import FadeContainer from "./FadeContainer";
 
+import HologramNoiseAlpha from "./HologramNoiseAlpha/HologramNoiseAlpha";
+
 // Interfaces from `@/components/u2dmodel-renderer`
 interface RECT {
 	x: number;
@@ -135,7 +137,7 @@ export default class Pixi2DModel extends FadeContainer {
 	private ready = false;
 
 	private spMap: Record<string, SPRITE_DATA> = {};
-	private texMap: Record<number, PIXI.Texture> = {};
+	private texMap: Record<string, PIXI.Texture> = {};
 
 	private faceList: SPRITE_DATA[] = [];
 	private hidePartList: string[] = [];
@@ -386,12 +388,25 @@ export default class Pixi2DModel extends FadeContainer {
 									sprite.blendMode = PIXI.BLEND_MODES.ADD;
 									sprite.alpha = 0.5;
 									break;
+								case "hologram-noise-alpha":
+									sprite.filters!.push(new HologramNoiseAlpha());
+									break;
 							}
 						}
 
 						if ("sprite" in o && o.sprite !== undefined) {
 							const sp = this.spMap[o.sprite];
-							sprite.texture = this.texMap[sp.name];
+							let tex = this.texMap[sp.name];
+							if (o.flip && (o.flip[0] || o.flip[1])) {
+								tex = tex.clone();
+								if (o.flip[0] && o.flip[1]) // same with 180
+									tex.rotate = PIXI.groupD8.W;
+								else if (o.flip[0])
+									tex.rotate = PIXI.groupD8.MIRROR_HORIZONTAL;
+								else
+									tex.rotate = PIXI.groupD8.MIRROR_VERTICAL;
+							}
+							sprite.texture = tex;
 
 							const ppu = sp.vector.u;
 							const ppum = 100 / ppu; // ppu multiply

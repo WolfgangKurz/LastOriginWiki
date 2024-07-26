@@ -22,10 +22,9 @@ uniform vec4 uFX_ST;
 void main() {
 	vec3 v1, v2, v3;
 	vec4 v4;
-	float f1 = uScreenPosterize - 1.0;
 
 	v1.x = exp2(log2(fract((uTime.y * uWaveSpeed + vUV.y) * uSegments)) * uWavePower);
-	v2.x = floor(fract(vUV.y * uScreenSegments) * uScreenPosterize) / f1 + 0.899999976;
+	v2.x = floor(fract(vUV.y * uScreenSegments) * uScreenPosterize) / (uScreenPosterize - 1.0) + 0.899999976;
 	v1.x = v2.x * 0.100000001 + v1.x + 0.899999976;
 
 	v2.xy = vUV.xy * uFX_ST.xy + uFX_ST.zw;

@@ -37,20 +37,27 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 	const SkinKey = useMemo(() => `${unit.uid}_${skin?.sid || 0}`, [unit, skin]);
 
 	const [shopPopupType, setShopPopupType] = useState<"O" | "G">("O");
-	const [currentSkillVideo, setCurrentSkillVideo] = useState(1);
+	const [currentSkillVideo, setCurrentSkillVideo] = useState("");
 
 	const [IsBlackBG, setIsBlackBG] = useState<boolean>(false);
 	const [HideGroup, setHideGroup] = useState<boolean>(false);
+
+	function convertVideoName (sid: string): string {
+		const offset = sid.indexOf(".Skill");
+		if (offset >= 0) return sid.substring(offset + 6);
+		return sid;
+	}
 
 	const SkinLink = useMemo((): string => {
 		const loc = window.location;
 		return `${loc.origin}/units/${unit.uid}/s${skin?.sid || 0}`;
 	}, [skin?.sid]);
 
+	const skillVideoKey = useMemo(() => `${unit.uid}_${skin && skin.sid || 0}`, [unit.uid, skin]);
 	useLayoutEffect(() => {
-		if ((unit.uid in SkillVideo) && !SkillVideo[unit.uid].includes(currentSkillVideo))
-			setCurrentSkillVideo(SkillVideo[unit.uid][0]);
-	}, [unit.uid]);
+		if ((skillVideoKey in SkillVideo) && !SkillVideo[skillVideoKey].includes(currentSkillVideo))
+			setCurrentSkillVideo(SkillVideo[skillVideoKey][0]);
+	}, [skillVideoKey]);
 
 	function compileArtist (artist: string): preact.ComponentChildren {
 		return artist.split("\n")
@@ -316,24 +323,24 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 					</div>
 				</> }
 
-				{ (unit.uid in SkillVideo) && <>
-					<div class="d-flex align-items-start">
+				{ (skillVideoKey in SkillVideo) && <>
+					<div class="d-flex align-items-start mt-2">
 						<div class={ BuildClass("nav", "flex-column", "nav-tabs", style.VerticalTabs) }>
-							{ SkillVideo[unit.uid].map(sid => <button
+							{ SkillVideo[skillVideoKey].map(sid => <button
 								class={ BuildClass("nav-link", isActive(currentSkillVideo === sid)) }
 								onClick={ e => {
 									e.preventDefault();
 									setCurrentSkillVideo(sid);
 								} }
 							>
-								Active { sid }
+								Active { convertVideoName(sid) }
 							</button>) }
 						</div>
 						<div class="tab-content">
 							<video
 								class="w-100"
 								controls
-								src={ `${AssetsRoot}/videos/${unit.uid}.Skill${currentSkillVideo}.mp4` }
+								src={ `${AssetsRoot}/videos/${currentSkillVideo}.mp4` }
 							/>
 						</div>
 					</div>
