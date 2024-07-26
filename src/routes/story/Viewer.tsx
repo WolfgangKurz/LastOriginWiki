@@ -52,13 +52,10 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	const [error, setError] = useState(false);
 
 	const [type, initCursor] = useMemo(() => {
-		const reg = /^(.+?)(?:([0-9]+))?$/;
-		const r = reg.exec(props.type.toUpperCase());
-		if (r) return [
-			r[1].endsWith(":") ? r[1].substring(0, r[1].length - 1) : r[1],
-			parseInt(r[2] ?? "0", 10),
-		];
-		return [props.type.toUpperCase(), 0];
+		const reg = /^(.+?)(?::([0-9]+))?$/;
+		const r = reg.exec(props.type);
+		if (r) return [r[1], parseInt(r[2] ?? "0", 10)];
+		return [props.type, 0];
 	}, [props.type]);
 
 	const [voicePreview, setVoicePreview] = useState<string>("");

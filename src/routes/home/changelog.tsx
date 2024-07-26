@@ -4,6 +4,18 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12617" date="2024-07-27"
+		bugfix={ <>
+			<li>일부 누락된 AGS 전투원의 연구 트리 그래프를 추가했습니다.</li>
+			<li>일부 스토리가 동작하지 않는 문제를 수정했습니다.</li>
+			<li>일부 누락된 스토리 배경 및 CG를 추가했습니다.</li>
+		</> }
+		update={ <>
+			<li>스토리 페이지에 외전 페이지로 이동하는 링크를 추가했습니다.</li>
+			<li>일부 누락된 BGM이 추가되었습니다.</li>
+			<li>일부 BGM을 적당한 앨범으로 분류했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12615" date="2024-07-24"
 		new={ <>
 			<li>이벤트 <BY>제로 베이스</BY>의 2부 정보가 추가되었습니다.</li>
