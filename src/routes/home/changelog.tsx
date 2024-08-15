@@ -4,6 +4,13 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12624" date="2024-08-15"
+		bugfix={ <>
+			<li>
+				버프 보기에서 일부 복합 조건이 표시되지 않던 문제를 수정했습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12622" date="2024-08-15"
 		bugfix={ <>
 			<li>
