@@ -4,6 +4,13 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12622" date="2024-08-15"
+		bugfix={ <>
+			<li>
+				버프 보기에서 일부 복합 조건이 표시되지 않던 문제를 수정했습니다. (예: <BY>무적의 용</BY>의 <BR>포격 좌표 송신</BR> 버프)
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12619" date="2024-08-07"
 		new={ <>
 			<li>신규 장식품 정보가 추가되었습니다.</li>
