@@ -10,15 +10,17 @@ import { UnitSkinEntity } from "@/types/DB/Unit";
 
 import { IsDev } from "@/libs/Const.1";
 
+import FadeContainer from "@/components/pixi/FadeContainer";
 import PixiSpineModel from "@/components/pixi/PixiSpineModel";
 import Pixi2DModel from "@/components/pixi/Pixi2DModel";
-import FadeContainer from "@/components/pixi/FadeContainer";
-
-import style from "./style.module.scss";
 import PixiVideoModel from "@/components/pixi/PixiVideoModel";
 
+import MixedModel from "./MixedModel";
+
+import style from "./style.module.scss";
+
 interface PixiViewProps {
-	type: "spine" | "2dmodel" | "video" | "none";
+	type: "mixed" | "spine" | "2dmodel" | "video" | "none";
 	U2DModelMetadata: UnitSkinEntity["metadata"];
 
 	uid: string;
@@ -38,7 +40,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 	const [app, setApp] = useState<PIXI.Application<HTMLCanvasElement> | null>(null);
 	const [surface, setSurface] = useState<PIXI.Container | null>(null);
 
-	const [char, setChar] = useState<PixiSpineModel | Pixi2DModel | PixiVideoModel | null>(null);
+	const [char, setChar] = useState<PixiSpineModel | Pixi2DModel | MixedModel | PixiVideoModel | null>(null);
 	const playerRef = useRef<HTMLDivElement>(null);
 
 	const [animInfo, setAnimInfo] = useState<Animation[] | false>(false);
@@ -145,30 +147,37 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 	useEffect(() => {
 		if (surface) {
-			const _uid = props.type === "spine"
+			const _uid = props.type === "spine" || props.type === "mixed"
 				? uid
 				: props.type === "video"
 					? props.vid
 					: (props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!;
 
-			let _char: PixiSpineModel | Pixi2DModel | PixiVideoModel | null = char as typeof _char;
+			let _char: PixiSpineModel | Pixi2DModel | MixedModel | PixiVideoModel | null = char as typeof _char;
 			if (_char && _char.model !== _uid) {
 				_char.destroy();
 				_char = null;
 			}
 
 			if (_char === null) {
-				if (props.type === "spine") {
-					_char = new PixiSpineModel(_uid);
+				if (props.type === "mixed" || props.type === "spine") {
+					if (props.type === "mixed")
+						_char = new MixedModel(
+							uid,
+							(props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!,
+						);
+					else
+						_char = new PixiSpineModel(_uid);
+
 					_char.on("normal-touch", (m) => {
-						const r = (m as PixiSpineModel).play("Tep_1");
+						const r = (m as PixiSpineModel | MixedModel).play("Tep_1");
 						if (r) {
 							setAnimTime(Date.now());
 							setAnimInfo(r);
 						}
 					});
 					_char.on("special-touch", (m) => {
-						const r = (m as PixiSpineModel).play("breast");
+						const r = (m as PixiSpineModel | MixedModel).play("breast");
 						if (r) {
 							setAnimTime(Date.now());
 							setAnimInfo(r);
@@ -189,7 +198,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 				}
 			}
 
-			if (_char instanceof PixiSpineModel)
+			if (_char instanceof PixiSpineModel || _char instanceof MixedModel)
 				_char.setGoogle(props.google);
 
 			if (_char) {
@@ -218,7 +227,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 			// const progress = Math.min(1, elapsed / animInfo.map(r => r.duration).sort((a, b) => b - a)[0]);
 			const progress = Math.min(
 				(
-					char instanceof PixiSpineModel
+					char instanceof PixiSpineModel || char instanceof MixedModel
 						? char.currentAnimationTime() ?? 0
 						: (/* elapsed by browser time */ (Date.now() - animTime) / 1000)
 				) / duration,

@@ -200,6 +200,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	}, [skin.Spine, skin.anim, hideParts, hideBG]);
 
 	const modelId = `${unit.uid}_N${skin.isDef ? "" : `S${skin.metadata.imageId}`}`;
+	const DisplayMixed = !!skin.metadata.mixedSpine;
 	const DisplaySpine = skin.Spine && (!!props.animate || !!props.collapsed) && !isDamaged;
 	const Display2DModel = (!isDamaged && !!skin.metadata["2dmodel"]) ||
 		(isDamaged && !!skin.metadata["2dmodel_dam"]);
@@ -219,7 +220,16 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 				>
 					{ DisplaySpine || Display2DModel || modelVideoId
 						? <PixiView
-							type={ DisplaySpine ? "spine" : Display2DModel ? "2dmodel" : modelVideoId ? "video" : "none" }
+							type={ DisplayMixed
+								? "mixed"
+								: DisplaySpine
+									? "spine"
+									: Display2DModel
+										? "2dmodel"
+										: modelVideoId
+											? "video"
+											: "none"
+							}
 							U2DModelMetadata={ skin.metadata }
 
 							uid={ modelId }

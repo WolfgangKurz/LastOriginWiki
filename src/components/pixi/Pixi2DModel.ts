@@ -496,6 +496,7 @@ export default class Pixi2DModel extends FadeContainer {
 			...(this.dialogDeactive ? this.dialogDeactiveList : []),
 		].unique();
 
+		console.log(items, namesToHide);
 		this.treeItems
 			.filter(r => items.includes(r.name))
 			.forEach(r => r.sprite.visible = !namesToHide.includes(r.name));

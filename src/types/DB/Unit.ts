@@ -113,11 +113,12 @@ export interface UnitSkinEntity {
 	category: string[];
 
 	metadata: {
+		consumableKey?: string;
 		imageId: number;
 		iconId?: number;
 		tbarId?: number;
 		voiceId?: number;
-		consumableKey?: string;
+		mixedSpine?: true;
 		"2dmodel"?: string;
 		"2dmodel_dam"?: string;
 	};

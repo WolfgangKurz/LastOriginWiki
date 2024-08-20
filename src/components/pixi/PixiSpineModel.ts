@@ -107,6 +107,11 @@ export default class PixiSpineModel extends FadeContainer {
 		return this._face;
 	}
 
+	private _hideBG: boolean = false;
+	public get hideBG (): boolean {
+		return this._hideBG;
+	}
+
 	private _hidePart: boolean = false;
 	public get hidePart (): boolean {
 		return this._hidePart;
@@ -635,7 +640,19 @@ export default class PixiSpineModel extends FadeContainer {
 	}
 
 	setHideBG (hide: boolean) {
-		// Nothing to do yet
+		this._hideBG = hide;
+		if (!this.skeletonData) return;
+
+		const names = this.skeletonData.skins.map(r => r.name);
+		if (!names) return;
+
+		const targets = names.filter(x => x.startsWith("decoration") && (
+			/Background/i.test(x) || /Bcakground/i.test(x)
+		));
+		if (hide)
+			targets.forEach(skin => this.removeSkin(skin));
+		else
+			targets.forEach(skin => this.addSkin(skin));
 	}
 
 	setHidePart (hide: boolean) {
@@ -645,12 +662,13 @@ export default class PixiSpineModel extends FadeContainer {
 		const names = this.skeletonData.skins.map(r => r.name);
 		if (!names) return;
 
+		const targets = names.filter(x => x.startsWith("decoration") && !(
+			/Background/i.test(x) || /Bcakground/i.test(x)
+		));
 		if (hide)
-			names.filter(x => x.startsWith("decoration"))
-				.forEach(skin => this.removeSkin(skin));
+			targets.forEach(skin => this.removeSkin(skin));
 		else
-			names.filter(x => x.startsWith("decoration"))
-				.forEach(skin => this.addSkin(skin));
+			targets.forEach(skin => this.addSkin(skin));
 	}
 
 	setColliderVisible (visible: boolean) {

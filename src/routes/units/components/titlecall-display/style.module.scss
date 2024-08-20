@@ -1,0 +1,38 @@
+.TitleCallDisplay {
+	$sm: map-get($grid-breakpoints, "sm");
+
+	display: inline-grid;
+	grid-template-columns: auto auto;
+	margin: 0 0.25rem;
+
+	.TypeColumn {
+		display: flex;
+		align-items: center;
+		padding-top: 0.25rem;
+		padding-bottom: 0.25rem;
+		width: 100%;
+		height: 100%;
+
+		@media (min-width: $sm) {
+			border-right: 0 !important;
+		}
+	}
+
+	.AudioColumn {
+		display: flex;
+		flex-direction: column;
+		padding: 0.5rem;
+		align-items: center;
+		gap: 0.5rem;
+
+		> audio {
+			width: 100%;
+			vertical-align: middle;
+
+			@media (min-width: $sm) {
+				width: auto;
+				min-width: 300px;
+			}
+		}
+	}
+}

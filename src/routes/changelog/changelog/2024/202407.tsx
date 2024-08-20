@@ -28,7 +28,7 @@ const Changelog: FunctionalComponent = () => <>
 			<li>스토리 플레이어에 배경의 종횡비 설정이 추가되었습니다.</li>
 		</> }
 		skin={ <>
-			<BY>쿠노이치 제로</BY>의 스킨 <BY>오르카 바니 : 망사 바니걸</BY>의 정보가 추가되었습니다.
+			<li><BY>쿠노이치 제로</BY>의 스킨 <BY>오르카 바니 : 망사 바니걸</BY>의 정보가 추가되었습니다.</li>
 		</> }
 	/>
 	<ChangelogItem title="Build 12612" date="2024-07-22"
@@ -48,7 +48,7 @@ const Changelog: FunctionalComponent = () => <>
 			<li>스토리 플레이어에서 일부 문자가 표시되지 않는 문제를 수정했습니다.</li>
 		</> }
 		skin={ <>
-			<BY>에라토</BY>의 스킨 <BY>오르카 바니 : onlyfanz♡</BY>의 정보가 추가되었습니다.
+			<li><BY>에라토</BY>의 스킨 <BY>오르카 바니 : onlyfanz♡</BY>의 정보가 추가되었습니다.</li>
 		</> }
 		dialogue={ <>
 			<li><span class="badge bg-light text-dark">KST 2024-07-10 21:33:19</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
