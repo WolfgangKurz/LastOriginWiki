@@ -1,9 +1,40 @@
 import { FunctionalComponent } from "preact";
 
+import { AssetsRoot } from "@/libs/Const";
+
 import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12628" date="2024-08-22"
+		bugfix={ <>
+			<li>전투원의 누락된 타이틀 콜이 추가되었습니다.</li>
+			<li>일부 스킨이 상세 보기에서 로비 애니메이션 여부를 변경할 수 없던 점을 수정했습니다.</li>
+		</> }
+		knownissue={ <>
+			<li>
+				다음 타이틀 콜은 명확하게 공개된 전투원 정보가 없어 추가되지 않았습니다.
+				<ul>
+					<li>
+						<div>Title-2</div>
+						<audio src={ `${AssetsRoot}/audio/titlecall/Title-2.mp3` } type="audio/mp3" controls preload="none" volume="0.5" />
+					</li>
+					<li>
+						<div>Title-4</div>
+						<audio src={ `${AssetsRoot}/audio/titlecall/Title-4.mp3` } type="audio/mp3" controls preload="none" volume="0.5" />
+					</li>
+					<li>
+						<div>Title-6</div>
+						<audio src={ `${AssetsRoot}/audio/titlecall/Title-6.mp3` } type="audio/mp3" controls preload="none" volume="0.5" />
+					</li>
+					<li>
+						<div>Title-8</div>
+						<audio src={ `${AssetsRoot}/audio/titlecall/Title-8.mp3` } type="audio/mp3" controls preload="none" volume="0.5" />
+					</li>
+				</ul>
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12626" date="2024-08-21"
 		new={ <>
 			<li>신규 전투원 <BY>디오네</BY>의 정보가 추가되었습니다.</li>

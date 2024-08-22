@@ -1,5 +1,3 @@
-import { GameTitleVoiceType } from "@/types/Enums";
-
 export const SkinBanners: string[] = [
 	"3P_Ajax_1",
 	"3P_Amphitrite_1",
@@ -124,27 +122,4 @@ export const SkillVideo: Record<string, string[]> = {
 
 	DS_Sarena_0: ["DS_Sarena.Skill2"],
 	BR_Fafnir_0: ["BR_Fafnir.Skill2"],
-};
-
-export const TitleCalls: Record<string, Partial<Record<GameTitleVoiceType, string[]>>> = {
-	BR_Fafnir: {
-		LastOrigin: ["BR_Fafnir_Titlecall"],
-	},
-	PECS_Dione: {
-		VALOFE: [
-			"PECS_Dione_goodValofe3",
-			"PECS_Dione_goodValofe5",
-			"PECS_Dione_Valofe1",
-			"PECS_Dione_Valofe5",
-			"PECS_Dione_Valofe7",
-		],
-		LastOrigin: [
-			"PECS_Dione_sico1",
-			"PECS_Dione_sico4",
-			"PECS_DioneLaoigin_2",
-			"PECS_DioneLaoigin_2_1",
-			"PECS_DioneLaoigin_3",
-			"PECS_DioneLaoigin_7",
-		],
-	},
 };

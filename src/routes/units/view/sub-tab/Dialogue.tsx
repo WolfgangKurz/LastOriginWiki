@@ -4,8 +4,8 @@ import { useMemo, useState } from "preact/hooks";
 import { UnitDialogueAudioType, UnitDialogueDataType } from "@/types/DB/Dialogue";
 
 import { AssetsRoot } from "@/libs/Const";
+import { TitleCalls } from "@/libs/Const.3";
 import { isActive } from "@/libs/Functions";
-import { TitleCalls } from "@/libs/Const.2";
 
 import UnitDialogue, { VoiceItem } from "../../components/unit-dialogue";
 import TitleCallDisplay from "../../components/titlecall-display";
@@ -97,6 +97,7 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 
 		{ unit.uid in TitleCalls && <TitleCallDisplay
 			unitId={ unit.uid }
+			voiceList={ VoiceList }
 		/> }
 	</div>;
 };
