@@ -4631,9 +4631,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "fbeb6b75",
-		"JP": "95f4fd47",
-		"KR": "b15c0502",
-		"TC": "49f0323d"
+		"EN": "a6b50f84",
+		"JP": "05356590",
+		"KR": "7cc0a83b",
+		"TC": "e87b49bd"
 	}
 } as DBHashType;

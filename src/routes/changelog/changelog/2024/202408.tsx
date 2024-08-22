@@ -6,6 +6,11 @@ import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12629" date="2024-08-22"
+		site={ <>
+			<li>저작권자 표기를 변경했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12628" date="2024-08-22"
 		bugfix={ <>
 			<li>전투원의 누락된 타이틀 콜이 추가되었습니다.</li>
