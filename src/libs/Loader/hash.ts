@@ -1701,7 +1701,7 @@ export default {
 		"filterable.enemy": "dabbf22e",
 		"filterable.equip": "cd406359",
 		"filterable.facility": "b3f0e54b",
-		"filterable.unit": "536f8f3f",
+		"filterable.unit": "e0ae2954",
 		"gacha": "f51b48a0",
 		"iw": {
 			"Colossus_01": "cdebeca4",
@@ -4574,7 +4574,7 @@ export default {
 			"PECS_CoCoWhiteShell": "53f84d26",
 			"PECS_CyclopsePrincess": "d090015f",
 			"PECS_DarkElf": "d316c82a",
-			"PECS_Dione": "efe580e9",
+			"PECS_Dione": "8a989e2a",
 			"PECS_Draculina": "66cae065",
 			"PECS_Drone": "2c0b0914",
 			"PECS_DutchGirl": "2b22eca5",
@@ -4631,9 +4631,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "a6b50f84",
-		"JP": "05356590",
-		"KR": "7cc0a83b",
-		"TC": "e87b49bd"
+		"EN": "2382ad19",
+		"JP": "e2f5eeba",
+		"KR": "f484be8c",
+		"TC": "7cd0394b"
 	}
 } as DBHashType;

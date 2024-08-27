@@ -21,7 +21,6 @@ import Button from "@/components/Button";
 import Loading from "@/components/loading";
 import IconTable from "@/components/bootstrap-icon/icons/Table";
 import IconGrid3x3GapFill from "@/components/bootstrap-icon/icons/Grid3x3GapFill";
-import IconHammer from "@/components/bootstrap-icon/icons/Hammer";
 import IconSearch from "@/components/bootstrap-icon/icons/Search";
 import IconListCheck from "@/components/bootstrap-icon/icons/ListCheck";
 import IconHanger from "@/components/Icons/IconHanger";
@@ -246,6 +245,8 @@ const Units: FunctionalComponent = () => {
 							}
 
 							if (c.trigger !== undefined && c.trigger !== r.on.type) return false;
+
+							if (!("buffs" in r)) return false; // unknown buff
 
 							return r.buffs.some(v => {
 								if (c.attr !== undefined && c.attr !== v.attr) return false;

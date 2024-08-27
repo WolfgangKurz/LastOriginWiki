@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useMemo } from "preact/hooks";
-import { route } from "preact-router";
+import { Link, route } from "preact-router";
 import Store from "@/store";
 
 import { ACTOR_GRADE } from "@/types/Enums";
@@ -205,40 +205,48 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 					}
 
 					<div class={ style.UnitList }>
-						{ list.map((unit, i) => <div
-							class={ cn(style.UnitItem, !unit && style.Placeholder) }
-							onClick={ e => {
-								e.preventDefault();
-								if (unit) route(`/units/${unit.uid}`);
-							} }
-						>
-							<UnitFace uid={ unit?.uid ?? "" } />
+						{ list.map((unit, i) => {
+							const content = <>
+								<UnitFace uid={ unit?.uid ?? "" } />
 
-							<div class={ style.Info }>
-								No.{ unit?.id ?? (i + 1) }
+								<div class={ style.Info }>
+									No.{ unit?.id ?? (i + 1) }
 
-								{ unit && <Badge variant={ `rarity-${ACTOR_GRADE[unit.rarity]}` }>
-									{ ACTOR_GRADE[unit.rarity] }
-								</Badge> }
-							</div>
+									{ unit && <Badge variant={ `rarity-${ACTOR_GRADE[unit.rarity]}` }>
+										{ ACTOR_GRADE[unit.rarity] }
+									</Badge> }
+								</div>
 
-							<div>
-								{ unit
-									? groupByMethod === "none" && listOrder !== "dict" && withShort
-										? <span class="text-secondary">
-											{ empShortName(
-												loc[`UNIT_${unit.uid}`],
-												loc[`UNIT_SHORT_${unit.uid}`],
-											) }
-										</span>
-										: <Locale
-											raw={ false }
-											k={ `UNIT_${unit.uid}` }
-										/>
-									: <></>
-								}
-							</div>
-						</div>) }
+								<div>
+									{ unit
+										? groupByMethod === "none" && listOrder !== "dict" && withShort
+											? <span class="text-secondary">
+												{ empShortName(
+													loc[`UNIT_${unit.uid}`],
+													loc[`UNIT_SHORT_${unit.uid}`],
+												) }
+											</span>
+											: <Locale
+												raw={ false }
+												k={ `UNIT_${unit.uid}` }
+											/>
+										: <></>
+									}
+								</div>
+							</>;
+
+							if (!!unit) {
+								return <Link
+									class={ cn(style.UnitItem, !unit && style.Placeholder) }
+									href={ `/units/${unit.uid}` }
+								>
+									{ content }
+								</Link>;
+							}
+							return <div class={ cn(style.UnitItem, !unit && style.Placeholder) }>
+								{ content }
+							</div>;
+						}) }
 					</div>
 				</div>)
 				.gap(<Separator />)

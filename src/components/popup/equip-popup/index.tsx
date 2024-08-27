@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "preact";
-import { useEffect, useState } from "preact/hooks";
+import { useEffect, useMemo, useState } from "preact/hooks";
 import { route } from "preact-router";
 import Decimal from "decimal.js";
 
@@ -11,14 +11,14 @@ import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { Consumable } from "@/types/DB/Consumable";
 import { Equip } from "@/types/DB/Equip";
 
+import { CurrentLocale, useLocale } from "@/libs/Locale";
 import { AssetsRoot, RarityDisplay } from "@/libs/Const";
-import { CurrentDB } from "@/libs/DB";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 import EntitySource from "@/libs/EntitySource";
 
-import { GetJson, JsonLoaderCore, StaticDB, useDBData } from "@/libs/Loader";
-import Locale, { LocaleGet } from "@/components/locale";
+import { StaticDB, useDBData } from "@/libs/Loader";
+import Locale from "@/components/locale";
 import IconHammer from "@/components/bootstrap-icon/icons/Hammer";
 import IconArrowRightCircleFill from "@/components/bootstrap-icon/icons/ArrowRightCircleFill";
 import IconReceipt from "@/components/bootstrap-icon/icons/Receipt";
@@ -35,9 +35,10 @@ import UnitBadge from "@/components/unit-badge";
 import BuffList from "@/components/buff-list";
 import RarityBadge from "@/components/rarity-badge";
 import UnitLink from "@/components/unit-link";
-
-import "./style.scss";
 import SourceTable from "@/components/SourceTable";
+import Badge from "@/components/Badge";
+
+import style from "./style.module.scss";
 
 type EquipLevelType = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
@@ -57,6 +58,8 @@ interface EquipPopupProps {
 }
 
 const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
+	const [loc] = useLocale();
+
 	const [latestUid, setLatestUid] = useState<string>("");
 
 	const [level, setLevel] = useState<EquipLevelType>(10);
@@ -83,15 +86,15 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 
 	const _FilterableEquipDB = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip);
-	const FilterableEquipDB = _FilterableEquipDB?.map(r => ({
+	const FilterableEquipDB = useMemo(() => _FilterableEquipDB?.map(r => ({
 		...r,
 		source: r.source.map(t => t.map(s => new EntitySource(
 			// @ts-expect-error
 			s
 		))),
-	}));
+	})), [_FilterableEquipDB]);
 
-	const target = ((): FilterableEquip | null => {
+	const target = useMemo((): FilterableEquip | null => {
 		if (!FilterableEquipDB) return null;
 
 		const equip = props.equip;
@@ -106,14 +109,14 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 		const eq = found.sort((a, b) => (b.rarity - a.rarity))[0];
 		setRarity(eq.rarity);
 		return eq;
-	})();
-	const targetT4 = ((): FilterableEquip | null => {
+	}, [props.equip, FilterableEquipDB]);
+	const targetT4 = useMemo((): FilterableEquip | null => {
 		if (!target) return null;
 		if (target.rarity !== ACTOR_GRADE.SSS) return null;
 		if (!FilterableEquipDB) return null; // unexpected
 
 		return FilterableEquipDB.find(x => x.type === target.type && x.key === target.key && x.rarity === ACTOR_GRADE.SS) || null;
-	})();
+	}, [target?.rarity, FilterableEquipDB]);
 
 	useEffect(() => {
 		if (!props.asSub && target) {
@@ -123,11 +126,16 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 		}
 	}, [props.asSub, target?.fullKey]);
 
-	const isUninstalled: boolean = target !== null && !target.available;
-	const isRoguelike: boolean = target !== null && target.roguelike;
-	const isExclusive: boolean = target !== null && target.limit !== null && target.limit.every(y => typeof y === "number");
+	const isUninstalled: boolean = useMemo(() => target !== null && !target.available, [target?.available]);
+	const isRoguelike: boolean = useMemo(() => target !== null && target.roguelike, [target?.roguelike]);
+	const isExclusive: boolean = useMemo(() =>
+		target !== null &&
+		target.limit !== null &&
+		target.limit.every(y => typeof y === "number"),
+		[target?.limit],
+	);
 
-	const family = (() => {
+	const family = useMemo(() => {
 		const equip = props.equip;
 		if (!equip) return [];
 
@@ -135,9 +143,9 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 			? FilterableEquipDB
 				.filter(x => x.key === equip.key && x.type === equip.type)
 			: [];
-	})();
+	}, [props.equip, FilterableEquipDB]);
 
-	const EquipType = ((): preact.VNode => {
+	const EquipType = useMemo((): preact.VNode => {
 		if (!props.equip) return <>???</>;
 
 		const table: Record<ITEM_TYPE, string> = {
@@ -151,22 +159,29 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 
 		const type = props.equip.type;
 		return <Locale k={ table[type] } fallback="???" />;
-	})();
+	}, [props.equip?.type]);
 
-	const RarityList: SelectOption<ITEM_GRADE>[] = family.map(x => ({
+	const RarityList: SelectOption<ITEM_GRADE>[] = useMemo(() => family.map(x => ({
 		value: x.rarity,
 		text: RarityDisplay[x.rarity],
-	}));
+	})), [family]);
 
-	const Limits = target
-		? target.limit
-			? target.limit.map(x => {
-				const unit = FilterableUnitDB && FilterableUnitDB.find(y => y.uid === x);
-				if (unit) return { id: x, unit };
-				return { id: x };
-			})
-			: []
-		: [{ id: "???" }];
+	const Limits = useMemo(
+		() => {
+			if (target) {
+				if (target.limit) {
+					return target.limit.map(x => {
+						const unit = FilterableUnitDB && FilterableUnitDB.find(y => y.uid === x);
+						if (unit) return { id: x, unit };
+						return { id: x };
+					});
+				}
+				return [];
+			}
+			return [{ id: "???" }];
+		},
+		[target?.limit],
+	);
 
 	function ReservedLimit (limit: string): boolean {
 		const list = [
@@ -185,7 +200,13 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 			setStatusList([]);
 	}, [detail, level]);
 
-	const CraftTime = ((): string => {
+	const aliasNames = useMemo(() => {
+		return (loc[`EQUIP_ALIAS_${target?.fullKey}`] || "")
+			.split(",")
+			.filter(x => !!x);
+	}, [CurrentLocale.value, loc, target]);
+
+	const CraftTime = useMemo((): string => {
 		const duration = target?.craft;
 		if (!duration) return "-";
 
@@ -193,9 +214,9 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 		const m = Math.floor(duration / 60) % 60;
 		const s = duration % 60;
 		return `${(`0${h}`).slice(-2)}:${(`0${m}`).slice(-2)}:${(`0${s}`).slice(-2)}`;
-	})();
+	}, [target?.craft]);
 
-	const UpgradeCostTable = ((): preact.VNode[][] => {
+	const UpgradeCostTable = useMemo((): preact.VNode[][] => {
 		if (!target) return [];
 
 		const cols = target.upgrade.enchant
@@ -259,7 +280,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 			...row,
 		];
 		return ret;
-	})();
+	}, [target?.upgrade.enchant, costChecks]);
 
 	const iconType: Record<ITEM_TYPE, string> = {
 		[ITEM_TYPE.CHIP]: "Chip",
@@ -321,46 +342,49 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 			</>;
 	};
 
-	const upgrades: preact.VNode[] = [];
-	if (family.length > 0) {
-		family.forEach(f => {
-			if (!f.upgrade.upgrade) return;
+	const upgrades = useMemo(() => {
+		const ret: preact.VNode[] = [];
+		if (family.length > 0) {
+			family.forEach(f => {
+				if (!f.upgrade.upgrade) return;
 
-			const next = FilterableEquipDB && FilterableEquipDB.find(x => x.fullKey === f.upgrade.upgrade!.to);
+				const next = FilterableEquipDB && FilterableEquipDB.find(x => x.fullKey === f.upgrade.upgrade!.to);
 
-			if (upgrades.length > 0)
-				upgrades.splice(upgrades.length - 1, 1); // remove last
+				if (ret.length > 0)
+					ret.splice(ret.length - 1, 1); // remove last
 
-			upgrades.push(
-				<div>
+				ret.push(
 					<div>
-						<EquipCard class="d-inline-block" equip={ f } />
-					</div>
-					<div>
-						{ f.upgrade.upgrade.cost.map(e => {
-							const item = ConsumableDB && ConsumableDB.find(c => c.key === e.item);
-							if (!item) return <>-</>;
+						<div>
+							<EquipCard class="d-inline-block" equip={ f } />
+						</div>
+						<div>
+							{ f.upgrade.upgrade.cost.map(e => {
+								const item = ConsumableDB && ConsumableDB.find(c => c.key === e.item);
+								if (!item) return <>-</>;
 
-							return <span class="badge bg-dark me-1 mb-1">
-								<EquipIcon class="me-2 vertical-align-middle" image={ item.icon } size="24" />
-								<Locale k={ `CONSUMABLE_${item.key}` } />
-								<span class="ps-1"> x{ FormatNumber(e.count) }</span>
-							</span>;
-						}) }
-					</div>
-				</div>,
-				<div>
-					<IconArrowRightCircleFill />
-				</div>,
-				<div>
-					{ next
-						? <EquipCard class="d-inline-block" equip={ next } />
-						: <>???</>
-					}
-				</div>,
-			);
-		});
-	}
+								return <span class="badge bg-dark me-1 mb-1">
+									<EquipIcon class="me-2 vertical-align-middle" image={ item.icon } size="24" />
+									<Locale k={ `CONSUMABLE_${item.key}` } />
+									<span class="ps-1"> x{ FormatNumber(e.count) }</span>
+								</span>;
+							}) }
+						</div>
+					</div>,
+					<div>
+						<IconArrowRightCircleFill />
+					</div>,
+					<div>
+						{ next
+							? <EquipCard class="d-inline-block" equip={ next } />
+							: <>???</>
+						}
+					</div>,
+				);
+			});
+		}
+		return ret;
+	}, [family]);
 
 	return <PopupBase
 		class="equip-modal"
@@ -378,7 +402,13 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 					</div>
 					<div class="col text-start">
 						<Locale plain k={ `EQUIP_${target.fullKey}` } />
-						<div style="font-size: 60%">{ target.fullKey }</div>
+						<div style="font-size: 60%">
+							{ aliasNames.length > 0 && <div class={ style.EquipAliasNames }>
+								{ aliasNames.map(r => <Badge variant="primary">{ r }</Badge>) }
+							</div> }
+
+							{ target.fullKey }
+						</div>
 					</div>
 				</div>
 			</>
@@ -403,7 +433,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 							</div>
 						</div>
 						<div class="col nested">
-							<div class="row row-cols-2">
+							<div class="row row-cols-2 w-100">
 								<div class="col bg-dark text-light"><Locale k="EQUIP_VIEW_TYPE" /></div>
 								<div class="col badge-container">
 									{ isUninstalled
@@ -454,7 +484,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 					</div>
 					<div class="row">
 						<div class="col bg-dark text-light white-pre-line" style={ { wordBreak: "keep-all" } }>
-							{ ParseDescriptionText(LocaleGet(`EQUIP_DESC_${target.fullKey}`)) }
+							{ ParseDescriptionText(loc[`EQUIP_DESC_${target.fullKey}`] ?? "???") }
 						</div>
 					</div>
 				</div>
@@ -559,7 +589,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 													k="EQUIP_VIEW_SOURCE_T4"
 													p={ [
 														<span style="text-decoration:underline">{
-															LocaleGet(`EQUIP_${GetFullKey(target.type, target.key, ACTOR_GRADE.SSS)}`)
+															(loc[`EQUIP_${GetFullKey(target.type, target.key, ACTOR_GRADE.SSS)}`] ?? "???")
 																.replace(/ SSS$/, "")
 														}</span>
 													] }
