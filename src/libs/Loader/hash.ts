@@ -1701,7 +1701,7 @@ export default {
 		"filterable.enemy": "dabbf22e",
 		"filterable.equip": "cd406359",
 		"filterable.facility": "b3f0e54b",
-		"filterable.unit": "e0ae2954",
+		"filterable.unit": "dbbf6a1e",
 		"gacha": "f51b48a0",
 		"iw": {
 			"Colossus_01": "cdebeca4",
@@ -4574,7 +4574,7 @@ export default {
 			"PECS_CoCoWhiteShell": "53f84d26",
 			"PECS_CyclopsePrincess": "d090015f",
 			"PECS_DarkElf": "d316c82a",
-			"PECS_Dione": "8a989e2a",
+			"PECS_Dione": "bcee04b0",
 			"PECS_Draculina": "66cae065",
 			"PECS_Drone": "2c0b0914",
 			"PECS_DutchGirl": "2b22eca5",
