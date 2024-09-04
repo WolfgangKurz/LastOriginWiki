@@ -65,10 +65,11 @@ export default class SelectionObject extends PIXI.Container {
 
 		const gap = 28;
 		const baseY = -(66 * (this.text.length - 1) + gap * (this.text.length - 1)) / 2;
+		const BUTTON_WIDTH = 710;
 
 		this.text.forEach((txt, i) => {
 			const btn = new FadeSprite(this.texButton!, 10, 10, 10, 10);
-			btn.width = 710;
+			btn.width = BUTTON_WIDTH;
 			btn.height = 66;
 
 			btn.cursor = "pointer";
@@ -87,12 +88,15 @@ export default class SelectionObject extends PIXI.Container {
 				fontWeight: 500,
 				fontSize: 32,
 			});
-			text.position.set(btn.width / 2, btn.height / 2);
+			text.position.set(BUTTON_WIDTH / 2, btn.height / 2);
 
-			if (text.width > btn.width - 40) {
-				const r = (btn.width - 40) / text.width;
-				text.scale.set(r);
-			}
+			text.on("update", () => {
+				const tw = text.width / text.scale.x;
+				if (tw > BUTTON_WIDTH - 40) {
+					const r = (BUTTON_WIDTH - 40) / tw;
+					text.scale.set(r);
+				}
+			});
 			btn.addChild(text);
 
 			this.buttons.push(btn);

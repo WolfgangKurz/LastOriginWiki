@@ -69,7 +69,10 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 		const r = reg.exec(window.location.pathname);
 		if (r) {
 			const path = r[1].endsWith(":") ? r[1].substring(0, r[1].length - 1) : r[1];
-			window.history.replaceState(null, "", `${path}:${cursor}`);
+			if (cursor < 0)
+				window.history.replaceState(null, "", path);
+			else
+				window.history.replaceState(null, "", `${path}:${cursor}`);
 		}
 	}, [cursor]);
 

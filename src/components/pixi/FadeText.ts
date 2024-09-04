@@ -81,6 +81,7 @@ export default class FadeText extends FadeContainer {
 		this.updateRequired = false;
 		PIXI.Ticker.shared.remove(this.updateTickFn);
 		this.UpdateTexture();
+		this.emit("update");
 	}
 
 	private UpdateTexture (): void {

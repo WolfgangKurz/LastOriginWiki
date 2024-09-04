@@ -330,6 +330,8 @@ export default class Pixi2DModel extends FadeContainer {
 						entity.sprite.layerableChildren = true;
 
 						setNodeTransform(node, entity.sprite);
+						if (node.id === 1) // Adjust root element position
+							entity.sprite.position.set(0, 0);
 
 						let parent = treeItems.find(r => r.id === node.parent);
 						if (!parent) {
@@ -441,7 +443,7 @@ export default class Pixi2DModel extends FadeContainer {
 		if (!this.ready) return;
 
 		const faceName = (() => {
-			const charName = this.model.replace(/^2DModel_/, "");
+			const charName = this.model.replace(/^([OG]\/)?2DModel_/, "");
 			return imageVar.substring(charName.length + 1/* underbar character */);
 		})();
 

@@ -1,9 +1,10 @@
 import { FunctionalComponent } from "preact";
+import { useEffect, useMemo, useState } from "preact/hooks";
 
-import { objState } from "@/libs/State";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Locale from "@/components/locale";
+import Loading from "@/components/loading";
 
 interface DateData {
 	value: number;
@@ -11,10 +12,10 @@ interface DateData {
 }
 
 const Changelog: FunctionalComponent = () => {
-	const loading = objState<number>(0);
-	const content = objState<preact.VNode | undefined>(undefined);
+	const [loading, setLoading] = useState<number>(0);
+	const [content, setContent] = useState<preact.VNode | undefined>(undefined);
 
-	const Dates: DateData[] = (() => {
+	const Dates: DateData[] = useMemo(() => {
 		const now = new Date();
 		const nYear = now.getFullYear();
 		const nMonth = now.getMonth() + 1;
@@ -37,23 +38,27 @@ const Changelog: FunctionalComponent = () => {
 		}
 
 		return output.reverse();
-	})();
-	const currentDate = objState<number>(Dates[0].value);
+	}, []);
+	const [currentDate, setCurrentDate] = useState<number>(Dates[0].value);
 
-	if (loading.value !== currentDate.value) {
-		loading.set(currentDate.value);
+	useEffect(() => {
+		if (loading !== currentDate) {
+			setLoading(currentDate);
 
-		const _year = Math.floor(currentDate.value / 100);
+			const _year = Math.floor(currentDate / 100);
 
-		content.set(undefined);
-		import(`./changelog/${_year}/${currentDate.value}.tsx`)
-			.then(x => content.set(x.default))
-			.catch(() => content.set(<h5 class="text-secondary text-center m-4">No data</h5>));
-	}
+			setContent(undefined);
+			import(`./changelog/${_year}/${currentDate}.tsx`)
+				.then(x => setContent(x.default))
+				.catch(() => setContent(<h5 class="text-secondary text-center m-4">No data</h5>));
+		}
+	}, [loading, currentDate]);
 
-	SetMeta(["description", "twitter:description"], "멸망 전의 전술 교본 사이트의 변경 내역입니다.");
-	SetMeta(["twitter:image", "og:image"], null);
-	UpdateTitle("Changelog");
+	useEffect(() => {
+		SetMeta(["description", "twitter:description"], "멸망 전의 전술 교본 사이트의 변경 내역입니다.");
+		SetMeta(["twitter:image", "og:image"], null);
+		UpdateTitle("Changelog");
+	}, []);
 
 	return <div class="changelog text-start">
 		<h2>
@@ -65,14 +70,14 @@ const Changelog: FunctionalComponent = () => {
 
 		<select
 			class="form-select form-select-sm"
-			value={ currentDate.value }
-			onChange={ (e): void => currentDate.set(parseInt((e.target as HTMLSelectElement).value, 10)) }
+			value={ currentDate }
+			onChange={ (e): void => setCurrentDate(parseInt((e.target as HTMLSelectElement).value, 10)) }
 		>
 			{ Dates.map(x => <option value={ x.value }>{ x.text }</option>) }
 		</select>
 		<hr />
 
-		{ content.value }
+		{ content || <Loading.Data /> }
 	</div>;
 };
 export default Changelog;
