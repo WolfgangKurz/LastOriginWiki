@@ -156,7 +156,10 @@ const UnitsBuffGrouped: FunctionalComponent<UnitsListProps> = (props) => {
 					<span>
 						<Locale
 							k={ `SEARCH_CONF_BUFF_BUFF_.${g}` }
-							fallback={ <Locale k={ TabledBuffCategory[g].groupName } /> }
+							fallback={ <Locale
+								k={ TabledBuffCategory[g]?.groupName ?? "___" }
+								fallback={ g }
+							/> }
 						/>
 					</span>
 					<Button
