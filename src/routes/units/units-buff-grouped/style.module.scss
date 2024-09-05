@@ -1,0 +1,108 @@
+.Index {
+	margin-bottom: 10px;
+	padding: 6px 10px;
+	border: 1px solid rgba($secondary, 0.33);
+	border-radius: 4px;
+
+	text-align: left;
+
+	> .Header {
+		margin-bottom: 10px;
+		font-weight: 600;
+		font-size: 20px;
+	}
+
+	> .List {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(80px, 160px));
+		grid-auto-rows: auto;
+		grid-auto-flow: row;
+		gap: 4px 10px;
+
+		> div {
+			overflow-wrap: anywhere;
+			word-break: keep-all;
+		}
+	}
+}
+.Group {
+	> .GroupHeader {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		position: sticky;
+		top: -1px;
+
+		padding: 6px;
+		border-top: 1px solid $light;
+		border-radius: 4px 4px 0 0;
+		background-color: $dark;
+		font-weight: 600;
+		font-size: 14px;
+		color: $light;
+
+		> span {
+			flex: 1;
+		}
+	}
+}
+
+.UnitList {
+	flex: 1 1 auto;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 80px);
+	grid-auto-rows: auto;
+	grid-auto-flow: row;
+	justify-content: space-around;
+	align-items: start;
+	gap: 10px;
+
+	font-size: 12px;
+
+	.UnitItem {
+		display: inline-block;
+		padding: 4px;
+		border-radius: 4px;
+		line-height: 1.2;
+		text-decoration: none;
+		font-weight: 500;
+		color: inherit;
+		cursor: pointer;
+
+		// keep word if available, break if not
+		overflow-wrap: break-word;
+		word-break: keep-all;
+
+		&:not(.Placeholder):hover {
+			background-color: transparentize($dark, 0.675);
+		}
+
+		> img {
+			display: block;
+			margin: 0 auto 2px;
+			width: 72px;
+			height: 72px;
+		}
+		> .Info {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			column-gap: 2px;
+
+			margin-bottom: 5px;
+			padding: 2px 1px 2px 6px;
+			border-radius: 4px;
+			background-color: $dark;
+			font-size: 10px;
+			color: $light;
+
+			> span {
+				padding: 1px 4px;
+				font-size: 11px;
+			}
+		}
+	}
+}

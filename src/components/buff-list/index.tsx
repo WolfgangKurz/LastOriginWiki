@@ -374,13 +374,13 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					case BUFFEFFECT_TYPE.STAGE_REFLECTLIGHTNIG_VALUE: // 28
 						return <>STAGE_REFLECTLIGHTNIG_VALUE</>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 전기 속성으로)
 					case BUFFEFFECT_TYPE.STAGE_REFLECTPHYSICS_RATIO_DEFENDER: // 29
-						return <Locale plain k="BUFFTYPE_COUNT" />; // 피격자가 물리 반격
+						return <Locale plain k="BUFFTYPE_COUNTER_PHYSICS" />; // 피격자가 물리 반격
 					case BUFFEFFECT_TYPE.STAGE_REFLECTFIRE_RATIO_DEFENDER: // 30
-						return <>STAGE_REFLECTFIRE_RATIO_DEFENDER</>; // 사용처 없음, 알 수 없음
+						return <Locale plain k="BUFFTYPE_COUNTER_FIRE" />; // 피격자가 화염 반격
 					case BUFFEFFECT_TYPE.STAGE_REFLECTICE_RATIO_DEFENDER: // 31
-						return <>STAGE_REFLECTICE_RATIO_DEFENDER</>; // 사용처 없음, 알 수 없음
+						return <Locale plain k="BUFFTYPE_COUNTER_ICE" />; // 피격자가 냉기 반격
 					case BUFFEFFECT_TYPE.STAGE_REFLECTLIGHTNIG_RATIO_DEFENDER: // 32
-						return <>STAGE_REFLECTLIGHTNIG_RATIO_DEFENDER</>; // 사용처 없음, 알 수 없음
+						return <Locale plain k="BUFFTYPE_COUNTER_LIGHTNING" />; // 피격자가 전기 반격
 					case BUFFEFFECT_TYPE.STAGE_IMMUNESHIELD_TIME: // 33
 						return <Locale plain k="BUFFTYPE_DMG_IMMUNE" />; // 피해 무효화
 					case BUFFEFFECT_TYPE.STAGE_SHIELD_VALUE: // 34

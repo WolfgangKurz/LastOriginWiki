@@ -4,8 +4,22 @@ import { AssetsRoot } from "@/libs/Const";
 
 import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
+import IconFilter from "@/components/bootstrap-icon/icons/Filter";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12640" date="2024-09-06"
+		new={ <>
+			<li>
+				<BY>전투원정보</BY> 페이지에 <BP><IconFilter /> 버프별 보기</BP> 표시 방식이 추가되었습니다.<br />
+				전투원을 특정 버프 타입으로 묶어서 표시합니다.<br />
+				표시될 내용이 매우 많아 브라우저 성능 문제가 있을 수 있습니다.
+			</li>
+		</> }
+		bugfix={ <>
+			<li>일부 스킨의 표정이 표시되지 않던 문제를 수정했습니다.</li>
+			<li>버프 정보에서 모든 반격 종류가 <BR>반격</BR> 하나로 표시되던 점을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12636" date="2024-09-05"
 		new={ <>
 			<li>신규 이벤트 <BY>다시 시작하는 바다 모험</BY>의 정보가 추가되었습니다.</li>

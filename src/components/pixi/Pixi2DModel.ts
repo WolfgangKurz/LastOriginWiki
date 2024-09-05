@@ -442,23 +442,26 @@ export default class Pixi2DModel extends FadeContainer {
 
 		if (!this.ready) return;
 
-		const faceName = (() => {
+		const faceNames = (() => {
 			const charName = this.model.replace(/^([OG]\/)?2DModel_/, "");
-			return imageVar.substring(charName.length + 1/* underbar character */);
+			return [
+				imageVar,
+				imageVar.substring(imageVar.indexOf(charName) + charName.length + 1/* underscore character */),
+			];
 		})();
 
 		const faceNode = this.treeItems.find(r => r.name === "face");
 		if (faceNode) {
-			const face = this.faceList.find(c => c.name === faceName);
+			const face = this.faceList.find(c => faceNames.includes(c.name));
 			if (face)
 				faceNode.sprite.texture = this.texMap[face.name];
-			else if (faceName === "Idle")
+			else if (faceNames.includes("Idle"))
 				faceNode.sprite.texture = PIXI.Texture.EMPTY;
 			else
-				console.warn("[Pixi2DModel] no face sprite for " + faceName);
+				console.warn("[Pixi2DModel] no face sprite for " + imageVar + ", from " + this.model);
 
 		} else
-			console.warn("[Pixi2DModel] no face element (" + faceName + ")");
+			console.warn("[Pixi2DModel] no face element (" + imageVar + "), from " + this.model);
 	}
 
 	setDialogDeactive (deactive: boolean) {

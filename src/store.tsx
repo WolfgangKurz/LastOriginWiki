@@ -34,7 +34,7 @@ const Store = {
 	requireReload: signal(false),
 
 	Units: {
-		DisplayType: signal<"table" | "list" | "skin">("table"),
+		DisplayType: signal<"table" | "list" | "skin" | "buff_grouped">("table"),
 
 		Skins: {
 			Tab: signal<"" | "artist" | "releaseDate">(""),
