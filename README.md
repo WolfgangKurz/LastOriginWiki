@@ -40,11 +40,11 @@ Provides the following information:
 
 
 ## 사용 허가 / Permission of using
-본 사이트 및 리포지터리에서 사용중인 정보는 `라스트오리진`의 개발/운영사인 `Studio Valkyrie`의 허가를 받아 제공되고 있습니다.\
-The informations that using in this website and repository has permissioned by `Studio Valkyrie`, Development/Operating company of `LastOrigin`.
+본 사이트 및 리포지터리에서 사용중인 정보는 `라스트오리진`의 개발/운영사인 `Valofe`의 허가를 받아 제공되고 있습니다.\
+The informations that using in this website and repository has permissioned by `Valofe`, Development/Operating company of `LastOrigin`.
 
-데이터의 사용은 직접 `Studio Valkyrie`에게 허가를 받아야합니다.\
-Need to get permission from `Studio Valkyrie` yourself to use data.
+데이터의 사용은 직접 `Valofe`에게 허가를 받아야합니다.\
+Need to get permission from `Valofe` yourself to use data.
 
 
 ## 데이터 출처 / Data Source

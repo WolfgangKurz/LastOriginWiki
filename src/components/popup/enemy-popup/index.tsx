@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "preact";
-import { useState } from "preact/hooks";
+import { useEffect, useMemo, useState } from "preact/hooks";
 import { route } from "preact-router";
 import Decimal from "decimal.js";
 
@@ -9,14 +9,14 @@ import { SKILL_ATTR } from "@/types/Enums";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 import { Enemy, EnemySkill } from "@/types/DB/Enemy";
 
-import { useUpdate } from "@/libs/hooks";
+import { useLocale } from "@/libs/Locale";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
 import { CurrentDB } from "@/libs/DB";
 import EntitySource from "@/libs/EntitySource";
 import { FormatNumber, isActive } from "@/libs/Functions";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
+import { GetJson, JsonLoaderCore, StaticDB, useDBData } from "@/libs/Loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import IconChevronDoubleDown from "@/components/bootstrap-icon/icons/ChevronDoubleDown";
 import IconChevronDown from "@/components/bootstrap-icon/icons/ChevronDown";
@@ -76,16 +76,21 @@ interface EnemyPopupProps {
 }
 
 const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
+	const [loc] = useLocale();
 	const imageExt = ImageExtension();
-
-	const update = useUpdate();
 
 	const [propLevel, setPropLevel] = useState<number>(0);
 	const [level, setLevel] = useState<number>(0);
 	const [displayTab, setDisplayTab] = useState<string>("skill1");
 
 	const [targetId, setTargetId] = useState<string>("");
-	const [targetEnemy, setTargetEnemy] = useState<Enemy | null>(null);
+
+	const FilterableEnemyDB = useDBData<FilterableEnemy[]>(StaticDB.FilterableEnemy);
+
+	const target = props.enemy && FilterableEnemyDB && FilterableEnemyDB.find(x => x.id === targetId) || null;
+	// const [targetEnemy, setTargetEnemy] = useState<Enemy | null>(null);
+	const targetEnemyKey = useMemo(() => target ? `enemy/${target.id}` : null, [target]);
+	const targetEnemy = useDBData<Enemy>(targetEnemyKey);
 
 	const skillIconBase = `${AssetsRoot}/${imageExt}/skill`;
 
@@ -100,13 +105,6 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 	} else if (targetId && !props.enemy)
 		setTargetId("");
 
-	const FilterableEnemyDB = GetJson<FilterableEnemy[] | null>(StaticDB.FilterableEnemy);
-	if (!FilterableEnemyDB) {
-		JsonLoaderCore(CurrentDB, StaticDB.FilterableEnemy)
-			.then(() => update());
-	}
-
-	const target = props.enemy && FilterableEnemyDB && FilterableEnemyDB.find(x => x.id === targetId) || null;
 	// const isEWEnemy = target && /_EW[0-9]*$/.test(target.id);
 	const isNEWEnemy = target && "NEW" in target.used;
 	const isIW = targetEnemy && targetEnemy.category & 2;
@@ -119,31 +117,32 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 		}
 	}
 
-	const FamilyList = ((): SelectOption<string>[] => {
+	const FamilyList = useMemo((): SelectOption<string>[] => {
 		if (!props.enemy) return [];
+		if (!FilterableEnemyDB) return [];
 
-		const name = LocaleGet(`ENEMY_${props.enemy.id}`);
+		const name = loc[`ENEMY_${props.enemy.id}`] ?? "";
 		return FilterableEnemyDB
-			? FilterableEnemyDB
-				.filter(x => (LocaleGet(`ENEMY_${x.id}`) === name))
-				.map((x, i) => ({
-					value: x.id,
-					// text: `${LocaleGet(`ENEMY_${x.id}`)} ${i + 1}`,
-					text: `#${i + 1}`,
-				}))
-			: [];
-	})();
-	const EnemyLink = ((): string => {
+			.filter(x => loc[`ENEMY_${x.id}`] === name)
+			.map((x, i) => ({
+				value: x.id,
+				// text: `${LocaleGet(`ENEMY_${x.id}`)} ${i + 1}`,
+				text: `#${i + 1}`,
+			}));
+	}, [FilterableEnemyDB, props.enemy, loc]);
+	const EnemyLink = useMemo((): string => {
 		if (!target) return "";
 
 		const loc = window.location;
 		return `${loc.origin}/enemies/${target.id}/${level}`;
-	})();
+	}, [target?.id, level]);
 
-	if (props.enemy && !FamilyList.some(x => x.value === targetId)) {
-		setTargetId(props.enemy.id);
-		setDisplayTab("skill1");
-	}
+	useEffect(() => {
+		if (props.enemy && !FamilyList.some(x => x.value === targetId)) {
+			setTargetId(props.enemy.id);
+			setDisplayTab("skill1");
+		}
+	}, [props.enemy, FamilyList, targetId]);
 
 	function StatValue (stat: [number, number], format: false, floorPer?: boolean): number;
 	function StatValue (stat: [number, number], format: true, floorPer?: boolean): string;
@@ -169,19 +168,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 		return v;
 	}
 
-	if (target) {
-		const enemyKey = `enemy/${target.id}`;
-		JsonLoaderCore(CurrentDB, enemyKey)
-			.then(() => {
-				const detail = GetJson<Enemy>(enemyKey);
-				if (!detail) return;
-
-				setTargetEnemy(detail);
-			});
-	} else if (targetEnemy)
-		setTargetEnemy(null);
-
-	const Skills = ((): Array<EnemySkill | undefined> => {
+	const Skills = useMemo((): Array<EnemySkill | undefined> => {
 		if (!targetEnemy) return [];
 		const enemy = targetEnemy;
 		const list = enemy.skills
@@ -191,7 +178,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 			});
 
 		return list.least(6);
-	})();
+	}, [targetEnemy]);
 
 	function Description (skill: EnemySkill): string {
 		if (!targetEnemy) return "";
@@ -221,7 +208,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 			: 0,
 	);
 
-	const buffList = ((): Record<string, BuffStat[]> => {
+	const buffList = useMemo((): Record<string, BuffStat[]> => {
 		const output: Record<string, BuffStat[]> = {};
 		Skills.forEach(skill => {
 			if (!skill) return null;
@@ -231,23 +218,8 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 		});
 
 		return output;
-	})();
-
-	const Sources = !props.noStages
-		? ((): EntitySource[][] => {
-			if (!target) return [];
-
-			const ret: string[][] = [];
-
-			Object.keys(target.used)
-				.forEach(x => ret.push(target.used[x]));
-
-			ret.forEach((x, i) => (ret[i] = x.unique()));
-			return ret.map(x => x.map(y => new EntitySource(y)));
-		})()
-		: null;
-
-	const BuffRates = ((): Record<string, number> => {
+	}, [Skills]);
+	const BuffRates = useMemo((): Record<string, number> => {
 		const output: Record<string, number> = {};
 		Skills.forEach(skill => {
 			if (!skill) return null;
@@ -255,7 +227,20 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 			output[key] = skill.buff.buff_rate;
 		});
 		return output;
-	})();
+	}, [Skills]);
+
+	const Sources = useMemo(() => {
+		if (props.noStages) return null;
+		if (!target) return [];
+
+		const ret: string[][] = [];
+
+		Object.keys(target.used)
+			.forEach(x => ret.push(target.used[x]));
+
+		ret.forEach((x, i) => (ret[i] = x.unique()));
+		return ret.map(x => x.map(y => new EntitySource(y)));
+	}, [props.noStages, target]);
 
 	const popupContent = target
 		? <>
