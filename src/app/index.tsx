@@ -123,7 +123,7 @@ const App: FunctionalComponent = () => {
 				<AsyncRoute path="/story/:chapter?" { ...pRoute(() => import("@/routes/story")) } />
 				<AsyncRoute path="/story/:id/:type" { ...pRoute(() => import("@/routes/story/Viewer")) } />
 
-				{/* <AsyncRoute path="/test/:uid?" { ...pRoute(() => import("@/routes/test")) } /> */ }
+				{ import.meta.env.DEV && <AsyncRoute path="/test/:uid?" { ...pRoute(() => import("@/routes/test")) } /> }
 
 				<NotFoundPage default />
 			</Router>

@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "preact";
-import { useEffect, useMemo, useState } from "preact/hooks";
+import { useEffect, useMemo } from "preact/hooks";
 
 import Store from "@/store";
 
@@ -10,20 +10,18 @@ import { SKILL_ATTR, TARGET_TYPE } from "@/types/Enums";
 import { FilterableUnit, FilterableUnitSkill } from "@/types/DB/Unit.Filterable";
 import { BUFFEFFECT_TYPE } from "@/types/BuffEffect";
 
-import { useUpdate } from "@/libs/hooks";
 import { useLocale } from "@/libs/Locale";
-import { CurrentDB } from "@/libs/DB";
 import { BuildClass } from "@/libs/Class";
 
-import { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
+import { StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Button from "@/components/Button";
 import Loading from "@/components/loading";
 import IconTable from "@/components/bootstrap-icon/icons/Table";
 import IconGrid3x3GapFill from "@/components/bootstrap-icon/icons/Grid3x3GapFill";
-import IconHammer from "@/components/bootstrap-icon/icons/Hammer";
 import IconSearch from "@/components/bootstrap-icon/icons/Search";
 import IconListCheck from "@/components/bootstrap-icon/icons/ListCheck";
+import IconFilter from "@/components/bootstrap-icon/icons/Filter";
 import IconHanger from "@/components/Icons/IconHanger";
 
 import SimpleSearch from "./search/SimpleSearch";
@@ -32,6 +30,7 @@ import AdvancedSearch, { Condition, ConditionActiveTarget, ConditionBuffSlot, Co
 import UnitsTable from "./units-table";
 import UnitsList from "./units-list";
 import UnitsSkin from "./units-skin";
+import UnitsBuffGrouped from "./units-buff-grouped";
 
 import style from "./style.module.scss";
 
@@ -48,16 +47,12 @@ const Units: FunctionalComponent = () => {
 		UpdateTitle(loc["MENU_UNITS"]);
 	}, [loc]);
 
-	const update = useUpdate();
-
-	const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
-	if (!FilterableUnitDB) JsonLoaderCore(CurrentDB, StaticDB.FilterableUnit).then(() => update());
+	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 
 	const UnitList = useMemo((): FilterableUnit[] => {
-		const conds = Store.Units.AdvSearchConds.value;
-
-		const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
 		if (!FilterableUnitDB) return [];
+
+		const conds = Store.Units.AdvSearchConds.value;
 
 		if (Store.Units.DisplayType.value === "skin") return FilterableUnitDB;
 
@@ -247,6 +242,8 @@ const Units: FunctionalComponent = () => {
 
 							if (c.trigger !== undefined && c.trigger !== r.on.type) return false;
 
+							if (!("buffs" in r)) return false; // unknown buff
+
 							return r.buffs.some(v => {
 								if (c.attr !== undefined && c.attr !== v.attr) return false;
 								if (c.buff !== undefined && IsInvalidBuffType(c.buff, v.type)) return false;
@@ -308,6 +305,15 @@ const Units: FunctionalComponent = () => {
 					<IconHanger class="mx-1" />
 					<Locale k="UNITS_VIEW_SKIN" />
 				</Button>
+				<Button
+					class={ style.DisplayTab }
+					variant="primary"
+					outline={ Store.Units.DisplayType.value !== "buff_grouped" }
+					onClick={ () => Store.Units.DisplayType.value = "buff_grouped" }
+				>
+					<IconFilter class="mx-1" />
+					<Locale k="UNITS_VIEW_BUFF_GROUPED" />
+				</Button>
 			</Button.Group>
 		</div>
 
@@ -366,6 +372,7 @@ const Units: FunctionalComponent = () => {
 				Store.Units.DisplayType.value === "table" && <UnitsTable list={ UnitList } />,
 				Store.Units.DisplayType.value === "list" && <UnitsList list={ UnitList } />,
 				Store.Units.DisplayType.value === "skin" && <UnitsSkin list={ UnitList } />,
+				Store.Units.DisplayType.value === "buff_grouped" && <UnitsBuffGrouped list={ UnitList } />,
 			]
 		}
 	</div >;

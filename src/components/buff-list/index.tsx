@@ -14,11 +14,12 @@ import { Enemy } from "@/types/DB/Enemy";
 
 import { ImageExtension, AssetsRoot, TroopNameTable, IsDev } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
+import { formatString, useLocale } from "@/libs/Locale";
 import { BuildClass } from "@/libs/Class";
 import { diff2 } from "@/libs/Functions";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
-import LocaleBase, { LocaleExists, LocaleGet, LocaleProps, LocalePropsLegacy } from "@/components/locale";
+import Loader, { GetJson, JsonLoaderCore, StaticDB, useDBData } from "@/libs/Loader";
+import LocaleBase, { LocaleProps, LocalePropsLegacy } from "@/components/locale";
 import IconQuestionCircleFill from "@/components/bootstrap-icon/icons/QuestionCircleFill";
 import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
@@ -51,13 +52,19 @@ interface BuffRendererProps {
 }
 
 export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
-	const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
+	const _FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
+	if (!_FilterableUnitDB) return <></>;
+	const FilterableUnitDB = _FilterableUnitDB;
+
+	const [loc] = useLocale();
+
 	const [ReferencedEnemy, setReferencedEnemy] = useState<Enemy | null>(null);
 
 	const VNodeRender = (entity: preact.VNode): string => render(entity);
 	const VNodeReduce = (() => { // collapse 'same target type, same name` buffs into one
+		type P = { children: unknown; } & LocaleProps<any>;
 		type BuffUidInfo = {
-			type: preact.ComponentChild;
+			attr: string;
 			uid: string | number;
 			name: preact.ComponentChild;
 		};
@@ -74,8 +81,18 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			if (c.props["data-type"] !== "buff-uid") return false;
 			if (typeof c.props.children !== "string" && typeof c.props.children !== "number") return false;
 
+			if (!isValidElement(node.props.children[0])) return false; // should <u>
+			if (node.props.children[0].type !== "u") return false;
+			if (
+				!node.props.children[0].props.children ||
+				Array.isArray(node.props.children[0].props.children) ||
+				!isValidElement(node.props.children[0].props.children)
+			) return false; // should single <Locale>
+			if (node.props.children[0].props.children.type !== Locale) return false;
+			const attr = (node.props.children[0].props.children.props as P).k;
+
 			return {
-				type: node.props.children[0],
+				attr,
 				uid: c.props.children,
 				name: node.props.children[2],
 			};
@@ -89,23 +106,39 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			const [foundIndex, found] = (() => {
 				for (let j = 0; j < list.length; j++) {
 					const info = getBuffUidInfo(list[j]);
-					if (info && diff2(currentInfo.type, info.type) && diff2(currentInfo.name, info.name))
-						return [j, info];
+					if (!info) continue;
+
+					if (currentInfo.attr !== info.attr)  // different attr type
+						continue;
+
+					const a_name = currentInfo.name;
+					const b_name = info.name;
+
+					const a_locale = isValidElement(a_name) && a_name.type === Locale;
+					const b_locale = isValidElement(b_name) && b_name.type === Locale;
+					if (a_locale !== b_locale) continue; // not match
+					else if (a_locale && b_locale) {
+						if (loc[(a_name.props as P).k] === loc[(b_name.props as P).k])
+							return [j, info];
+					} else {
+						if (diff2(a_name, b_name))
+							return [j, info];
+					}
 				}
 				return [-1, null];
 			})();
-			if (foundIndex === -1) {
+			if (foundIndex === -1 || !found) {
 				list.push(current);
 				return list;
 			}
 
 			const uidSpan = list[foundIndex].props.children![1] as preact.VNode;
 			if (typeof uidSpan.props.children === "number") {
-				if (uidSpan.props.children !== found!.uid)
-					uidSpan.props.children = `${uidSpan.props.children},${found!.uid}`;
+				if (uidSpan.props.children !== currentInfo.uid)
+					uidSpan.props.children = `${uidSpan.props.children}・${currentInfo.uid}`;
 			} else if (typeof uidSpan.props.children === "string") {
-				if (!uidSpan.props.children.split(",").includes(found!.uid.toString()))
-					uidSpan.props.children = `${uidSpan.props.children},${found!.uid}`;
+				if (!uidSpan.props.children.split("・").includes(currentInfo.uid.toString()))
+					uidSpan.props.children = `${uidSpan.props.children}・${currentInfo.uid}`;
 			}
 			return list;
 		};
@@ -235,10 +268,9 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		}
 		return <span class={ `SubBadge ${style.SubBadge} ${color ? `text-${color}` : ""}` }>
 			{ attr !== undefined
-				? <>
-					<u><Locale plain k={ `BUFFEFFECT_ATTR_PREFIX_${attr}` } /></u>
-					<> </>
-				</>
+				? <u>
+					<Locale plain k={ `BUFFEFFECT_ATTR_PREFIX_${attr}` } />
+				</u>
 				: <></>
 			}
 			<span data-type="buff-uid" class="badge bg-dark ms-1">
@@ -268,7 +300,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		if (chance === "100%") return <></>;
 
 		if (chance === "0%") {
-			return <span class="badge bg-success-dark ms-3" title={ LocaleGet("BUFFCHANCE", "0%") }>
+			return <span class="badge bg-success-dark ms-3" title={ formatString(loc["BUFFCHANCE"], "0%") }>
 				<Locale plain k="BUFFCHANCE_0" />
 			</span>;
 		}
@@ -282,7 +314,6 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			<u>
 				<Locale plain k={ `BUFFEFFECT_ATTR_PREFIX_${target}` } />
 			</u>
-			<> </>
 
 			{ ((): preact.VNode => {
 				switch (type) {
@@ -343,13 +374,13 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					case BUFFEFFECT_TYPE.STAGE_REFLECTLIGHTNIG_VALUE: // 28
 						return <>STAGE_REFLECTLIGHTNIG_VALUE</>; // 사용처 없음, 알 수 없음 (위와 동일하게 반사되는 것으로 보임, 전기 속성으로)
 					case BUFFEFFECT_TYPE.STAGE_REFLECTPHYSICS_RATIO_DEFENDER: // 29
-						return <Locale plain k="BUFFTYPE_COUNT" />; // 피격자가 물리 반격
+						return <Locale plain k="BUFFTYPE_COUNTER_PHYSICS" />; // 피격자가 물리 반격
 					case BUFFEFFECT_TYPE.STAGE_REFLECTFIRE_RATIO_DEFENDER: // 30
-						return <>STAGE_REFLECTFIRE_RATIO_DEFENDER</>; // 사용처 없음, 알 수 없음
+						return <Locale plain k="BUFFTYPE_COUNTER_FIRE" />; // 피격자가 화염 반격
 					case BUFFEFFECT_TYPE.STAGE_REFLECTICE_RATIO_DEFENDER: // 31
-						return <>STAGE_REFLECTICE_RATIO_DEFENDER</>; // 사용처 없음, 알 수 없음
+						return <Locale plain k="BUFFTYPE_COUNTER_ICE" />; // 피격자가 냉기 반격
 					case BUFFEFFECT_TYPE.STAGE_REFLECTLIGHTNIG_RATIO_DEFENDER: // 32
-						return <>STAGE_REFLECTLIGHTNIG_RATIO_DEFENDER</>; // 사용처 없음, 알 수 없음
+						return <Locale plain k="BUFFTYPE_COUNTER_LIGHTNING" />; // 피격자가 전기 반격
 					case BUFFEFFECT_TYPE.STAGE_IMMUNESHIELD_TIME: // 33
 						return <Locale plain k="BUFFTYPE_DMG_IMMUNE" />; // 피해 무효화
 					case BUFFEFFECT_TYPE.STAGE_SHIELD_VALUE: // 34
@@ -752,7 +783,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							.unique(VNodeRender)
 						// BuffTrigger_On_BuffEffectType
 						: (trigger.on.select as BUFFEFFECT_TYPE[])
-							.map(x => <span class={ `SubBadge ${style["SubBadge"]}` }>
+							.map(x => <span class={ `SubBadge ${style.SubBadge}` }>
 								{ getBuffEffectTypeText(x, trigger.on.attr) }
 							</span>)
 							.reduce(VNodeReduce, [])
@@ -797,7 +828,9 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						? (trigger.on.select as string[])
 							.map(convertBuff)
 							.map(x => <>
-								<u><Locale plain k={ `BUFFEFFECT_ATTR_PREFIX_${trigger.on.attr}` } /></u>
+								<u>
+									<Locale plain k={ `BUFFEFFECT_ATTR_PREFIX_${trigger.on.attr}` } />
+								</u>
 								{ x }
 							</>)
 							.reduce(VNodeReduce, [])
@@ -939,7 +972,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			} else if ("troop" in trigger) {
 				return <Locale plain k="BUFFTRIGGER_TROOP" p={ [<>{
 					trigger.troop
-						.map(x => <span class={ `SubBadge ${style["SubBadge"]}` }>
+						.map(x => <span class={ `SubBadge ${style.SubBadge}` }>
 							<Locale plain k={ TroopNameTable[x] } />
 						</span>)
 						.gap(<Locale plain k="BUFFTRIGGER_OR" />)
@@ -1293,7 +1326,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				<span class="text-danger">
 					{ [
 						<Locale plain k={ `UNIT_SKILL_${uid}_${stat.collaborate.skill}` } />,
-						LocaleGet(`UNIT_SKILL_${uid}_F${stat.collaborate.skill}`).startsWith("UNIT_SKILL_")
+						!(`UNIT_SKILL_${uid}_F${stat.collaborate.skill}` in loc)
 							? <></>
 							: [" / ", <Locale plain k={ `UNIT_SKILL_${uid}_F${stat.collaborate.skill}` } />],
 					] }
@@ -1417,7 +1450,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			const unit = FilterableUnitDB.find(x => x.uid === key);
 			if (!unit) return `${template} - ${key}`;
 
-			return `${template} - ${LocaleGet(`UNIT_${unit.uid}`)}`;
+			return `${template} - ${loc[`UNIT_${unit.uid}`]}`;
 		}
 
 		if (type === NUM_OUTPUTTYPE.INTEGER) {
@@ -1596,8 +1629,8 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				};
 
 				const buffName = (() => {
-					const _template = LocaleExists(buff.desc.desc)
-						? LocaleGet(buff.desc.desc, "{0}")
+					const _template = buff.desc.desc in loc
+						? formatString(loc[buff.desc.desc], "{0}")
 						: "";
 					const separated = /[：:]/.test(_template);
 

@@ -200,9 +200,13 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	}, [skin.Spine, skin.anim, hideParts, hideBG]);
 
 	const modelId = `${unit.uid}_N${skin.isDef ? "" : `S${skin.metadata.imageId}`}`;
-	const DisplaySpine = skin.Spine && (!!props.animate || !!props.collapsed) && !isDamaged;
-	const Display2DModel = (!isDamaged && !!skin.metadata["2dmodel"]) ||
-		(isDamaged && !!skin.metadata["2dmodel_dam"]);
+	const DisplayMixed = !!skin.metadata.mixedSpine && !!props.animate;
+	const DisplaySpine = !skin.metadata.mixedSpine && skin.Spine && (!!props.animate || !!props.collapsed) && !isDamaged;
+	const Display2DModel = !skin.metadata.mixedSpine &&
+		(
+			(!isDamaged && !!skin.metadata["2dmodel"]) ||
+			(isDamaged && !!skin.metadata["2dmodel_dam"])
+		);
 
 	return <div class={ style.SkinView }>
 		<div class={ `ratio ${Aspect} ${style.SkinFull} ${props.collapsed ? style.Collapsed : ""}` }>
@@ -217,9 +221,18 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					class={ cn(style.FullUnit, style.FullUnitMarginless) }
 					ref={ FullUnitEl }
 				>
-					{ DisplaySpine || Display2DModel || modelVideoId
+					{ DisplayMixed || DisplaySpine || Display2DModel || modelVideoId
 						? <PixiView
-							type={ DisplaySpine ? "spine" : Display2DModel ? "2dmodel" : modelVideoId ? "video" : "none" }
+							type={ DisplayMixed
+								? "mixed"
+								: DisplaySpine
+									? "spine"
+									: Display2DModel
+										? "2dmodel"
+										: modelVideoId
+											? "video"
+											: "none"
+							}
 							U2DModelMetadata={ skin.metadata }
 
 							uid={ modelId }
@@ -302,14 +315,15 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 				}
 
 				<div class={ style.SkinPropMarriage }>
-					{ unit.marriageVoice ? <BootstrapTooltip
-						placement="top"
-						content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_MARRIAGE" /></span> }
-					>
-						<div class="position-relative alert">
-							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/marriage.png` } />
-						</div>
-					</BootstrapTooltip>
+					{ unit.marriageVoice
+						? <BootstrapTooltip
+							placement="top"
+							content={ <span class="word-keep"><Locale k="UNIT_VIEW_SKIN_MARRIAGE" /></span> }
+						>
+							<div class="position-relative alert">
+								<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/marriage.png` } />
+							</div>
+						</BootstrapTooltip>
 						: <div class={ `position-relative alert ${style.Invalid}` }>
 							<img class={ style.SkinAttrIcon } src={ `${AssetsRoot}/skin/marriage.png` } />
 						</div>
@@ -436,7 +450,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					data-platform={ isCensored ? 1 : 0 }
 					onClick={ (): void => setIsCensored(!isCensored) }
 				/> }
-				{ DisplaySpine && <div
+				{ (DisplayMixed || DisplaySpine) && <div
 					class={ `${style.SkinToggle} ${style.Touch}` }
 					data-touch={ displayTouchCollider ? 1 : 0 }
 					onClick={ (): void => setDisplayTouchCollider(!displayTouchCollider) }

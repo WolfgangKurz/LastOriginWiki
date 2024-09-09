@@ -330,6 +330,8 @@ export default class Pixi2DModel extends FadeContainer {
 						entity.sprite.layerableChildren = true;
 
 						setNodeTransform(node, entity.sprite);
+						if (node.id === 1) // Adjust root element position
+							entity.sprite.position.set(0, 0);
 
 						let parent = treeItems.find(r => r.id === node.parent);
 						if (!parent) {
@@ -440,23 +442,26 @@ export default class Pixi2DModel extends FadeContainer {
 
 		if (!this.ready) return;
 
-		const faceName = (() => {
-			const charName = this.model.replace(/^2DModel_/, "");
-			return imageVar.substring(charName.length + 1/* underbar character */);
+		const faceNames = (() => {
+			const charName = this.model.replace(/^([OG]\/)?2DModel_/, "");
+			return [
+				imageVar,
+				imageVar.substring(imageVar.indexOf(charName) + charName.length + 1/* underscore character */),
+			];
 		})();
 
 		const faceNode = this.treeItems.find(r => r.name === "face");
 		if (faceNode) {
-			const face = this.faceList.find(c => c.name === faceName);
+			const face = this.faceList.find(c => faceNames.includes(c.name));
 			if (face)
 				faceNode.sprite.texture = this.texMap[face.name];
-			else if (faceName === "Idle")
+			else if (faceNames.includes("Idle"))
 				faceNode.sprite.texture = PIXI.Texture.EMPTY;
 			else
-				console.warn("[Pixi2DModel] no face sprite for " + faceName);
+				console.warn("[Pixi2DModel] no face sprite for " + imageVar + ", from " + this.model);
 
 		} else
-			console.warn("[Pixi2DModel] no face element (" + faceName + ")");
+			console.warn("[Pixi2DModel] no face element (" + imageVar + "), from " + this.model);
 	}
 
 	setDialogDeactive (deactive: boolean) {
@@ -496,6 +501,7 @@ export default class Pixi2DModel extends FadeContainer {
 			...(this.dialogDeactive ? this.dialogDeactiveList : []),
 		].unique();
 
+		console.log(items, namesToHide);
 		this.treeItems
 			.filter(r => items.includes(r.name))
 			.forEach(r => r.sprite.visible = !namesToHide.includes(r.name));

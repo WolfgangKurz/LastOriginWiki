@@ -4,9 +4,11 @@ import { useMemo, useState } from "preact/hooks";
 import { UnitDialogueAudioType, UnitDialogueDataType } from "@/types/DB/Dialogue";
 
 import { AssetsRoot } from "@/libs/Const";
+import { TitleCalls } from "@/libs/Const.3";
 import { isActive } from "@/libs/Functions";
 
 import UnitDialogue, { VoiceItem } from "../../components/unit-dialogue";
+import TitleCallDisplay from "../../components/titlecall-display";
 import IconTranslate from "@/components/bootstrap-icon/icons/Translate";
 import IconMicFill from "@/components/bootstrap-icon/icons/MicFill";
 
@@ -92,6 +94,11 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 			lang={ dialogueLang }
 			audio={ dialogueAudio }
 		/>) }
+
+		{ unit.uid in TitleCalls && <TitleCallDisplay
+			unitId={ unit.uid }
+			voiceList={ VoiceList }
+		/> }
 	</div>;
 };
 export default DialogueTab;

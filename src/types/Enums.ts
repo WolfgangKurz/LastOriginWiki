@@ -1126,3 +1126,8 @@ export enum DGTRIGGERTYPE {
 	AND = 0,
 	OR,
 }
+
+export enum GameTitleVoiceType {
+	VALOFE = "VALOFE",
+	LastOrigin = "LastOrigin",
+}

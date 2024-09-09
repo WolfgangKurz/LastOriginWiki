@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useCallback, useEffect, useMemo, useState } from "preact/hooks";
-import { Link, route } from "preact-router";
+import { route } from "preact-router";
 
 import { SKIN_SUBSET_ENUM, UnitSkinEntity } from "@/types/DB/Unit";
 import { SKIN_IN_PARTS } from "@/types/Enums";
@@ -108,9 +108,7 @@ const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 
 				return true;
 			})
-			.sort((a, b) => {
-				return a.releaseDate! - b.releaseDate!;
-			}),
+			.sort((a, b) => b.releaseDate! - a.releaseDate!),
 		[skins, selectedCategories, filterPart],
 	);
 
@@ -239,7 +237,7 @@ const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 		</div>
 
 		<div class={ style.SkinTabs }>
-			<ul class="nav nav-tabs justify-content-start">
+			<ul class="nav nav-tabs justify-content-start align-items-end">
 				{ filtered.map(skin => <li class="nav-item" key={ `skin-${skin.uid}-${skin.sid}` }>
 					<a
 						href="#"

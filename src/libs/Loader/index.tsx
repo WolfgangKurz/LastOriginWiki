@@ -108,7 +108,7 @@ export function useDBData<T extends {}> (path: string | null, db: "korea" = Curr
 	const [result, setResult] = useState<T | undefined>(inCache ? Cache[path!] : undefined);
 
 	useEffect(() => {
-		if (state === -1 && inCache) return;
+		// if (state === -1 && inCache) return;
 
 		setResult(undefined);
 		setState(path === null ? -1 : 0);

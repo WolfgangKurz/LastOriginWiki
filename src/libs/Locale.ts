@@ -56,6 +56,15 @@ export function useLocale (): [table: Record<string, string>, loaded: boolean] {
 	return [loc || {}, !!loc];
 };
 
+export function formatString (template: string, ...p: any[]): string {
+	return template.replace(/\{([0-9]+)\}/g, (_p, p1) => {
+		const i = parseInt(p1, 10);
+		if (i >= p.length) return "";
+		if (!p[i]) return "";
+		return p[i].toString();
+	});
+}
+
 export function ReloadLocale (locale: string): void {
 	unsetDBData(StaticDB.Locale[locale]);
 	GlobalLocaleRequestId.value++; // call changed callbacks

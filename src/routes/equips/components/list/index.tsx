@@ -10,6 +10,7 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
 import { useUpdate } from "@/libs/hooks";
+import { useLocale } from "@/libs/Locale";
 import { CurrentDB } from "@/libs/DB";
 import { AssetsRoot, CurrentDate, CurrentEvent, EquipTypeDisplay, ImageExtension, RarityDisplay } from "@/libs/Const";
 import { DecomposeHangulSyllable, groupBy, isActive } from "@/libs/Functions";
@@ -36,6 +37,7 @@ interface EquipsProps {
 }
 
 const EquipList: FunctionalComponent<EquipsProps> = (props) => {
+	const [loc] = useLocale();
 	const update = useUpdate();
 
 	const FilterableUnitDB = GetJson<FilterableUnit[] | null>(StaticDB.FilterableUnit);
@@ -86,17 +88,17 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 
 			SetMeta(
 				["description", "twitter:description"],
-				`${RarityDisplay[eq.rarity]}급 ${EquipTypeDisplay()[eq.type]} ${LocaleGet(`EQUIP_${eq.fullKey}`)}의 정보입니다. ` +
+				`${RarityDisplay[eq.rarity]}급 ${EquipTypeDisplay()[eq.type]} ${loc[`EQUIP_${eq.fullKey}`] || "???"}의 정보입니다. ` +
 				"레벨별 효과, 획득처, 강화 비용을 확인할 수 있습니다.",
 			);
-			SetMeta("keywords", `,${LocaleGet(`EQUIP_${eq.fullKey}`)}`, true);
+			SetMeta("keywords", `,${loc[`EQUIP_${eq.fullKey}`] || "???"}`, true);
 			SetMeta(
 				["twitter:image", "og:image"],
 				`${AssetsRoot}/${ImageExtension()}/item/${eq.icon}.${ImageExtension()}`,
 			);
 		}
 
-		UpdateTitle(LocaleGet("MENU_EQUIPS"), selectedEquip ? LocaleGet(`EQUIP_${selectedEquip.fullKey}`) : "???");
+		UpdateTitle(loc["MENU_EQUIPS"], selectedEquip ? loc[`EQUIP_${selectedEquip.fullKey}`] : "???");
 	}
 
 	useEffect(() => {
@@ -167,6 +169,8 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 
 	const EquipGroups = ((): EquipGroupEntity[] | undefined => {
 		if (!FilterableUnitDB || !FilterableEquipDB) return undefined;
+
+		const input = Filters.SearchText.value;
 
 		const group = groupBy(FilterableEquipDB, (x) => `${x.type}_${x.key}` as string);
 		return Object.keys(group)
@@ -249,17 +253,23 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 			.filter(x => {
 				try {
 					const equip = x.equips[0];
-					const Name = LocaleGet(`EQUIP_${equip.fullKey}`)
-						.replace(/ (RE|MP|SP|EX)$/, "");
 
+					const Name = (loc[`EQUIP_${equip.fullKey}`] ?? "???").replace(/ (RE|MP|SP|EX)$/, "");
 					const firstName = Name
 						.split("")
 						.map(x => DecomposeHangulSyllable(x) || x)
 						.map(x => typeof x === "object" ? x.initial || "" : x)
 						.join("");
 
-					return new RegExp(Filters.SearchText.value, "i").test(Name) ||
-						new RegExp(Filters.SearchText.value, "i").test(firstName);
+					const Alias = (loc[`EQUIP_ALIAS_${equip.fullKey}`] ?? "???").replace(/ (RE|MP|SP|EX)$/, "");
+					const aliasFirstName = Alias
+						.split("")
+						.map(x => DecomposeHangulSyllable(x) || x)
+						.map(x => typeof x === "object" ? x.initial || "" : x)
+						.join("");
+
+					return new RegExp(input, "i").test(Name) || new RegExp(input, "i").test(firstName) ||
+						new RegExp(input, "i").test(Alias) || new RegExp(input, "i").test(aliasFirstName);
 				} catch {
 					return false;
 				}

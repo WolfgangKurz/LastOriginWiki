@@ -407,7 +407,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 		return () => {
 			if (app) app.destroy(true);
 		};
-	}, []);
+	}, [playerRef.current]);
 
 	useEffect(() => { // click event handler
 		let func: (() => void) | undefined = undefined;
@@ -741,7 +741,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 					if (
 						(screen && target && target.image) && // new char exists
 						(char instanceof Pixi2DModel || char instanceof PixiSpineModel) && // U2DModel based (face changeable)
-						target.image === char.model // same model image
+						target.image === char.model.replace(/^[OG]\//, "") // same model image
 					) {
 						// reusable (only face changed)
 						char.setFace(target.imageVar);

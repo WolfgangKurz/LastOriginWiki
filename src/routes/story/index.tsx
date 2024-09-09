@@ -70,16 +70,19 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		11,
 		"Ev20", "Ev21", "Ev23",
 		12,
-		"Ev24", "Ev25",
+		"Ev24", "Ev25", "Ev26",
 	];
-	const StoryList: StoryKeyType[] = StoryListSource.map(r => {
-		if (Array.isArray(r)) {
-			const s = r[1];
-			if (Array.isArray(s)) return [r[0], s];
-			return [r[0], [s]];
-		}
-		return [r, [0]];
-	});
+	const StoryList: StoryKeyType[] = useMemo(
+		() => StoryListSource.map(r => {
+			if (Array.isArray(r)) {
+				const s = r[1];
+				if (Array.isArray(s)) return [r[0], s];
+				return [r[0], [s]];
+			}
+			return [r, [0]];
+		}),
+		[StoryListSource],
+	);
 
 	function GetWorldIcon (k: number | string, s: number): string {
 		if (typeof k === "number") {
