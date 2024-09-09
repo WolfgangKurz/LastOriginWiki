@@ -300,7 +300,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		if (chance === "100%") return <></>;
 
 		if (chance === "0%") {
-			return <span class="badge bg-success-dark ms-3" title={ formatString(loc["BUFFCHANCE"], "0%") }>
+			return <span class="badge bg-success-dark ms-3" title={ formatString(loc["BUFFCHANCE"] ?? "", "0%") }>
 				<Locale plain k="BUFFCHANCE_0" />
 			</span>;
 		}
@@ -1630,7 +1630,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 
 				const buffName = (() => {
 					const _template = buff.desc.desc in loc
-						? formatString(loc[buff.desc.desc], "{0}")
+						? formatString(loc[buff.desc.desc] ?? "", "{0}")
 						: "";
 					const separated = /[：:]/.test(_template);
 

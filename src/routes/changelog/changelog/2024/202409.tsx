@@ -7,6 +7,11 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import IconFilter from "@/components/bootstrap-icon/icons/Filter";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12643" date="2024-09-09"
+		bugfix={ <>
+			<li>일부 버프 목록을 포함하는 페이지가 동작하지 않는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12640" date="2024-09-06"
 		new={ <>
 			<li>
