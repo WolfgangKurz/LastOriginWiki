@@ -7,6 +7,11 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import IconFilter from "@/components/bootstrap-icon/icons/Filter";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12644" date="2024-09-18"
+		bugfix={ <>
+			<li>전투원 <BY>포이</BY>의 스킨 <BR>수영복 콘테스트 : 포이는 물이 싫어</BR>가 잘못 표시되는 문제가 수정되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12643" date="2024-09-09"
 		bugfix={ <>
 			<li>일부 버프 목록을 포함하는 페이지가 동작하지 않는 문제를 수정했습니다.</li>

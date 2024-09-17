@@ -1701,7 +1701,7 @@ export default {
 		"filterable.enemy": "917bfdc6",
 		"filterable.equip": "cd406359",
 		"filterable.facility": "b3f0e54b",
-		"filterable.unit": "d22b4034",
+		"filterable.unit": "07bb67c9",
 		"gacha": "f51b48a0",
 		"iw": {
 			"Colossus_01": "cdebeca4",
@@ -4475,7 +4475,7 @@ export default {
 			"3P_Labiata": "99cae905",
 			"3P_Maria": "85039968",
 			"3P_Melite": "402e7585",
-			"3P_Poi": "c50bf406",
+			"3P_Poi": "46e7c744",
 			"3P_Ran": "05d0eb12",
 			"3P_Rhea": "ab340061",
 			"3P_Salacia": "f0f974dd",
