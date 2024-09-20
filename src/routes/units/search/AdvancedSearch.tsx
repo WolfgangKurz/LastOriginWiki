@@ -9,10 +9,12 @@ import { CombinedBuffEffectTypes, ExcludedBuffEffectTypes } from "../common";
 import { AssetsRoot } from "@/libs/Const.1";
 import { useLocale } from "@/libs/Locale";
 import { BuildClass } from "@/libs/Class";
+import { clamp } from "@/libs/Functions";
 
 import { StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
+import Input from "@/components/Input";
 import IconPlusCircleFill from "@/components/bootstrap-icon/icons/PlusCircleFill";
 import IconXCircleFill from "@/components/bootstrap-icon/icons/XCircleFill";
 import IconQuestionCircleFill from "@/components/bootstrap-icon/icons/QuestionCircleFill";
@@ -25,6 +27,7 @@ export enum ConditionCategory {
 	Class,
 	Role,
 	Body,
+	Stat,
 	Active_Target,
 	Active_NoGuard,
 	Active_Grid,
@@ -44,6 +47,7 @@ export enum ConditionCompare {
 	LessEqual = 3,
 	BiggerEqual = 4,
 	Bigger = 5,
+	FromTo = 6, // A ... B (A ~ B, includes A and B)
 }
 export enum ConditionCompareYN {
 	Equal = 0,
@@ -65,18 +69,47 @@ export enum ConditionActiveTarget {
 	Team,
 	Enemy,
 }
+export enum ConditionStatType {
+	ATK,			// 공격력
+	DEF,			// 방어력
+	HP,				// 체력
+	ACC,			// 적중률
+	EVA,			// 회피율
+	CRI,			// 치명타
+	SPD,			// 행동력
+	Res_Fire,		// 화염 저항
+	Res_Ice,		// 냉기 저항
+	Res_Lightning,	// 전기 저항
+}
+export enum ConditionStatRarity {
+	Base = -1,
+	Last = -2,
+
+	B = ACTOR_GRADE.B,
+	A = ACTOR_GRADE.A,
+	S = ACTOR_GRADE.S,
+	SS = ACTOR_GRADE.SS,
+}
+const LevelBasedStatTypes: ConditionStatType[] = [
+	ConditionStatType.ATK,
+	ConditionStatType.DEF,
+	ConditionStatType.HP,
+];
 
 interface Condition_Base {
 	logicType: ConditionLogical;
 
 	category: ConditionCategory;
 }
-interface Condition_Rarity extends Condition_Base {
+type Condition_Rarity = Condition_Base & {
 	category: ConditionCategory.Rarity;
-	compare: ConditionCompare;
-
+} & ({
+	compare: Exclude<ConditionCompare, ConditionCompare.FromTo>;
 	rarity: ACTOR_GRADE;
-}
+} | {
+	compare: ConditionCompare.FromTo;
+	rarity: [from: ACTOR_GRADE, to: ACTOR_GRADE];
+});
 interface Condition_Class extends Condition_Base {
 	category: ConditionCategory.Class;
 	compare: ConditionCompareYN;
@@ -95,6 +128,18 @@ interface Condition_Body extends Condition_Base {
 
 	body: ACTOR_BODY_TYPE;
 }
+type Condition_Stat = Condition_Base & {
+	category: ConditionCategory.Stat;
+	stat: ConditionStatType;
+	cond_rarity: ConditionStatRarity;
+	level: number;
+} & ({
+	compare: Exclude<ConditionCompare, ConditionCompare.FromTo>;
+	value: number;
+} | {
+	compare: ConditionCompare.FromTo;
+	value: [from: number, to: number];
+});
 interface Condition_ActiveTarget extends Condition_Base {
 	category: ConditionCategory.Active_Target;
 
@@ -138,7 +183,8 @@ interface Condition_Buff extends Condition_Base {
 	targetBuffEnum: undefined | BUFFEFFECT_TYPE; // `undefined` is "Any"
 	targetBuffType: undefined | BUFF_ATTR_TYPE;
 }
-export type Condition = Condition_Rarity | Condition_Class | Condition_Role | Condition_Body |
+export type Condition =
+	Condition_Rarity | Condition_Class | Condition_Role | Condition_Body | Condition_Stat |
 	Condition_ActiveTarget | Condition_ActiveNoGuard | Condition_ActiveGrid | Condition_Elem |
 	Condition_Buff;
 
@@ -149,6 +195,11 @@ const CompareTable: Record<ConditionCompare, string> = {
 	[ConditionCompare.LessEqual]: "≤",
 	[ConditionCompare.Bigger]: ">",
 	[ConditionCompare.BiggerEqual]: "≥",
+	[ConditionCompare.FromTo]: "A ~ B",
+};
+const CompareTable_Current: typeof CompareTable = {
+	...CompareTable,
+	[ConditionCompare.FromTo]: "~",
 };
 const CompareExistsTable: Record<ConditionCompareEN, string> = {
 	[ConditionCompareEN.Exists]: "EXISTS",
@@ -223,6 +274,12 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 			.filter(r => /^[0-9]+$/.test(r))
 			.map(r => parseInt(r, 10));
 	}
+	function inputFloat (input: string): number {
+		const reg = /^[^0-9]*([0-9]+(:?\.[0-9]*)?)[^0-9]*$/;
+		const converted = input.replace(reg, "$1");
+		// return [converted, parseFloat(converted)];
+		return parseFloat(converted);
+	}
 
 	function updateCond (idx: number, cond: Condition): void {
 		if ("compare" in cond) {
@@ -232,6 +289,15 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 
 		switch (cond.category) {
 			case ConditionCategory.Rarity:
+				{
+					const _cond = cond as Condition_Rarity;
+					if (!("rarity" in cond)) _cond.rarity = ACTOR_GRADE.SS;
+
+					if (cond.compare === ConditionCompare.FromTo && !Array.isArray(cond.rarity))
+						_cond.rarity = [cond.rarity, ACTOR_GRADE.SS];
+					else if (cond.compare !== ConditionCompare.FromTo && Array.isArray(cond.rarity))
+						_cond.rarity = (cond.rarity as ACTOR_GRADE[])[0];
+				}
 				break;
 			case ConditionCategory.Class:
 				if (!("class" in cond))
@@ -244,6 +310,20 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 			case ConditionCategory.Body:
 				if (!("body" in cond))
 					(cond as Condition_Body).body = ACTOR_BODY_TYPE.BIOROID;
+				break;
+			case ConditionCategory.Stat:
+				{
+					const _cond = cond as Condition_Stat;
+					if (!("stat" in cond)) _cond.stat = ConditionStatType.ATK;
+					if (!("cond_rarity" in cond)) _cond.cond_rarity = ConditionStatRarity.Base;
+					if (!("level" in cond)) _cond.level = 100;
+					if (!("value" in cond)) _cond.value = 100;
+
+					if (cond.compare === ConditionCompare.FromTo && !Array.isArray(cond.value))
+						_cond.value = [cond.value, 100];
+					else if (cond.compare !== ConditionCompare.FromTo && Array.isArray(cond.value))
+						_cond.value = (cond.value as number[])[0];
+				}
 				break;
 			case ConditionCategory.Active_Target:
 				if (!("slot" in cond))
@@ -292,7 +372,8 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 	function GetCategoryCompareCount (type: ConditionCategory): number {
 		switch (type) {
 			case ConditionCategory.Rarity:
-				return 6; // full
+			case ConditionCategory.Stat:
+				return GetEnumKeys(ConditionCompare).length; // full
 			case ConditionCategory.Class:
 			case ConditionCategory.Role:
 			case ConditionCategory.Body:
@@ -310,6 +391,7 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 	function GetCategoryCompareType (type: ConditionCategory): ConditionCompareType {
 		switch (type) {
 			case ConditionCategory.Rarity:
+			case ConditionCategory.Stat:
 				return ConditionCompareType.Full; // full
 			case ConditionCategory.Class:
 			case ConditionCategory.Role:
@@ -351,7 +433,7 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 		].includes(cond.buff);
 	}
 
-	function RenderCompareOption (c: Condition): preact.VNode[] {
+	function RenderCompareOption (c: Condition, current: ConditionCompare | ConditionCompareYN): preact.VNode[] {
 		if (!IsComparableCondition(c)) return [];
 
 		const type = GetCategoryCompareType(c.category);
@@ -362,7 +444,7 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 			case ConditionCompareType.EqualNotEqual: // equal & not equal
 				return new Array(GetCategoryCompareCount(c.category)).fill(0).map((_, k) =>
 					<option value={ k } selected={ c.compare === k }>
-						{ CompareTable[k] }
+						{ k === current ? CompareTable_Current[k] : CompareTable[k] }
 					</option>
 				);
 			case ConditionCompareType.ExistsNotExists: // exists & not exists
@@ -379,9 +461,11 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 			case BUFFEFFECT_TRIGGER_TYPE.USE_SKILL:
 				return "BUFFTRIGGER_AFTER_SKILL";
 			case BUFFEFFECT_TRIGGER_TYPE.BEATEN:
-			case BUFFEFFECT_TRIGGER_TYPE.AFTER_ATTACKED:
-			case BUFFEFFECT_TRIGGER_TYPE.BEATEN_ACTIVESKILL:
 				return "BUFFTRIGGER_DAMAGED";
+			case BUFFEFFECT_TRIGGER_TYPE.AFTER_ATTACKED:
+				return "BUFFTRIGGER_AFTER_DAMAGED";
+			case BUFFEFFECT_TRIGGER_TYPE.BEATEN_ACTIVESKILL:
+				return "BUFFTRIGGER_DAMAGED_ACTIVE";
 			case BUFFEFFECT_TRIGGER_TYPE.ATTACK_SUCCESS:
 			case BUFFEFFECT_TRIGGER_TYPE.ATTACK_SUCCESS_PASSIVE:
 			case BUFFEFFECT_TRIGGER_TYPE.ATTACK_SUCCESS_ACTIVESKILL:
@@ -521,6 +605,84 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 							</select>
 						</div>
 
+						{ c.category === ConditionCategory.Stat && <>
+							<div class={ style.InlineColumn }>
+								<Locale k="SEARCH_COND_STAT_RARITY" />
+
+								<select
+									class="form-select form-select-sm"
+									value={ c.cond_rarity }
+									onChange={ e => {
+										e.preventDefault();
+										updateCond(idx, { ...c, cond_rarity: parseInt(e.currentTarget.value, 10) });
+									} }
+								>
+									<option
+										value={ ConditionStatRarity.Base }
+										selected={ c.cond_rarity === ConditionStatRarity.Base }
+									>
+										<Locale k="SEARCH_COND_STAT_RARITY_BASE" />
+									</option>
+									<option
+										value={ ConditionStatRarity.Last }
+										selected={ c.cond_rarity === ConditionStatRarity.Last }
+										style={ { borderBottom: "1px solid var(--bs-secondary)" } }
+									>
+										<Locale k="SEARCH_COND_STAT_RARITY_LAST" />
+									</option>
+
+									{ [
+										ConditionStatRarity.B,
+										ConditionStatRarity.A,
+										ConditionStatRarity.S,
+										ConditionStatRarity.SS,
+									]
+										.map(r =>
+											<option value={ r } selected={ c.cond_rarity === r }>
+												{ ConditionStatRarity[r] }
+											</option>
+										)
+									}
+								</select>
+							</div>
+
+							{ LevelBasedStatTypes.includes(c.stat) && <div class={ style.InlineColumn }>
+								Lv.
+								<select
+									class="form-select form-select-sm"
+									value={ c.level }
+									onChange={ e => {
+										e.preventDefault();
+										updateCond(idx, { ...c, level: clamp(parseInt(e.currentTarget.value, 10), 1, 120) });
+									} }
+								>
+									{ Array(120).fill(0)
+										.map(i => 120 - i)
+										.map((_, i) =>
+											<option value={ 120 - i } selected={ c.level === 120 - i }>
+												{ 120 - i }
+											</option>
+										)
+									}
+								</select>
+							</div> }
+							<div>
+								<select
+									class="form-select form-select-sm"
+									value={ c.stat }
+									onChange={ e => {
+										e.preventDefault();
+										updateCond(idx, { ...c, stat: parseInt(e.currentTarget.value, 10) });
+									} }
+								>
+									{ GetEnumKeys(ConditionStatType).map(type =>
+										<option value={ type } selected={ c.stat === type }>
+											<Locale k={ `SEARCH_COND_STAT_${ConditionStatType[type].toUpperCase()}` } />
+										</option>
+									) }
+								</select>
+							</div>
+						</> }
 						{ (
 							c.category === ConditionCategory.Active_Target ||
 							c.category === ConditionCategory.Active_NoGuard ||
@@ -548,6 +710,39 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 							</div>
 						}
 
+						{ c.category === ConditionCategory.Rarity && c.compare === ConditionCompare.FromTo && <div>
+							<select
+								class="form-select form-select-sm"
+								value={ c.rarity[0] }
+								onChange={ e => {
+									e.preventDefault();
+									updateCond(idx, {
+										...c,
+										compare: c.compare,
+										rarity: c.rarity.pickUpdate(0, parseInt(e.currentTarget.value, 10)),
+									});
+								} }
+							>
+								{ new Array(4).fill(0).map((_, k) =>
+									<option value={ k + 2 } selected={ c.rarity[0] === k }>
+										{ ACTOR_GRADE[k + 2] }
+									</option>
+								) }
+							</select>
+						</div> }
+						{ c.category === ConditionCategory.Stat && c.compare === ConditionCompare.FromTo && <div>
+							<Input
+								sm
+								class={ style.ValueInput }
+								value={ c.value[0] }
+								onChangeCapture={ e => {
+									e.preventDefault();
+									e.stopImmediatePropagation();
+									updateCond(idx, { ...c, value: c.value.pickUpdate(0, inputFloat(e.currentTarget.value)) });
+								} }
+							/>
+						</div> }
+
 						{ IsComparableCondition(c)
 							? <div>
 								<select
@@ -558,27 +753,47 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 										updateCond(idx, { ...c, compare: parseInt(e.currentTarget.value, 10) });
 									} }
 								>
-									{ RenderCompareOption(c) }
+									{ RenderCompareOption(c, c.compare) }
 								</select>
 							</div>
 							: <></>
 						}
 
 						{ c.category === ConditionCategory.Rarity && <div>
-							<select
-								class="form-select form-select-sm"
-								value={ c.rarity }
-								onChange={ e => {
-									e.preventDefault();
-									updateCond(idx, { ...c, rarity: parseInt(e.currentTarget.value, 10) });
-								} }
-							>
-								{ new Array(4).fill(0).map((_, k) =>
-									<option value={ k + 2 } selected={ c.rarity === k }>
-										{ ACTOR_GRADE[k + 2] }
-									</option>
-								) }
-							</select>
+							{ c.compare === ConditionCompare.FromTo
+								? <select
+									class="form-select form-select-sm"
+									value={ c.rarity[1] }
+									onChange={ e => {
+										e.preventDefault();
+										updateCond(idx, {
+											...c,
+											compare: c.compare,
+											rarity: c.rarity.pickUpdate(1, parseInt(e.currentTarget.value, 10)),
+										});
+									} }
+								>
+									{ new Array(4).fill(0).map((_, k) =>
+										<option value={ k + 2 } selected={ c.rarity[1] === k }>
+											{ ACTOR_GRADE[k + 2] }
+										</option>
+									) }
+								</select>
+								: <select
+									class="form-select form-select-sm"
+									value={ c.rarity }
+									onChange={ e => {
+										e.preventDefault();
+										updateCond(idx, { ...c, rarity: parseInt(e.currentTarget.value, 10) });
+									} }
+								>
+									{ new Array(4).fill(0).map((_, k) =>
+										<option value={ k + 2 } selected={ c.rarity === k }>
+											{ ACTOR_GRADE[k + 2] }
+										</option>
+									) }
+								</select>
+							}
 						</div> }
 						{ c.category === ConditionCategory.Class && <div>
 							<select
@@ -627,6 +842,30 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 									</option>
 								) }
 							</select>
+						</div> }
+						{ c.category === ConditionCategory.Stat && <div>
+							{ c.compare === ConditionCompare.FromTo
+								? <Input
+									sm
+									class={ style.ValueInput }
+									value={ c.value[1] }
+									onChangeCapture={ e => {
+										e.preventDefault();
+										e.stopImmediatePropagation();
+										updateCond(idx, { ...c, value: c.value.pickUpdate(1, inputFloat(e.currentTarget.value)) });
+									} }
+								/>
+								: <Input
+									sm
+									class={ style.ValueInput }
+									value={ c.value }
+									onChangeCapture={ e => {
+										e.preventDefault();
+										e.stopImmediatePropagation();
+										updateCond(idx, { ...c, value: inputFloat(e.currentTarget.value) });
+									} }
+								/>
+							}
 						</div> }
 						{ c.category === ConditionCategory.Active_Target && <>
 							<div>

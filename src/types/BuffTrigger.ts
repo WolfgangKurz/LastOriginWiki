@@ -83,7 +83,7 @@ interface BuffTrigger_After {
 }
 
 /** 본인 회피 제외 */
-type BuffTrigger_Damaged = "damaged" | {
+type BuffTrigger_Damaged = "damaged" | "damaged_active" | "after_damaged" | {
 	damaged: "fire" | "ice" | "lightning";
 } | {
 	damaged: "skill";

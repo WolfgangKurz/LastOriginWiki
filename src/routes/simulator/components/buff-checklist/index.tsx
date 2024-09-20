@@ -479,6 +479,10 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			switch (trigger) {
 				case "damaged":
 					return <Locale plain k="BUFFTRIGGER_DAMAGED" />;
+				case "damaged_active":
+					return <Locale plain k="BUFFTRIGGER_DAMAGED_ACTIVE" />;
+				case "after_damaged":
+					return <Locale plain k="BUFFTRIGGER_AFTER_DAMAGED" />;
 				case "attack_success":
 					return <Locale plain k="BUFFTRIGGER_ATTACK_SUCCESS" />;
 				case "team_dead":

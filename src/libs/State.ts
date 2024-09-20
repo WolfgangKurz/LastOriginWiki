@@ -1,15 +1,15 @@
-import { StateUpdater, useState } from "preact/hooks";
+import { Dispatch, StateUpdater, useState } from "preact/hooks";
 
 export interface ObjectState<T> {
 	readonly value: T;
-	set: StateUpdater<T>;
+	set: Dispatch<StateUpdater<T>>;
 }
 type Updater<T> = (prevState: T) => T;
 
 /**
  * @deprecated This method should not be used. Use `useState` instead.
  */
-export function objStated<T> (state: [T, StateUpdater<T>]): ObjectState<T> {
+export function objStated<T> (state: [T, Dispatch<StateUpdater<T>>]): ObjectState<T> {
 	const [value, updator] = state;
 	return {
 		value,
