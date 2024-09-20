@@ -109,7 +109,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 		const eq = found.sort((a, b) => (b.rarity - a.rarity))[0];
 		setRarity(eq.rarity);
 		return eq;
-	}, [props.equip, FilterableEquipDB]);
+	}, [props.equip, rarity, FilterableEquipDB]);
 	const targetT4 = useMemo((): FilterableEquip | null => {
 		if (!target) return null;
 		if (target.rarity !== ACTOR_GRADE.SSS) return null;
@@ -206,15 +206,15 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 			.filter(x => !!x);
 	}, [CurrentLocale.value, loc, target]);
 
-	const CraftTime = useMemo((): string => {
-		const duration = target?.craft;
-		if (!duration) return "-";
+	// const CraftTime = useMemo((): string => {
+	// 	const duration = target?.craft;
+	// 	if (!duration) return "-";
 
-		const h = Math.floor(duration / 3600);
-		const m = Math.floor(duration / 60) % 60;
-		const s = duration % 60;
-		return `${(`0${h}`).slice(-2)}:${(`0${m}`).slice(-2)}:${(`0${s}`).slice(-2)}`;
-	}, [target?.craft]);
+	// 	const h = Math.floor(duration / 3600);
+	// 	const m = Math.floor(duration / 60) % 60;
+	// 	const s = duration % 60;
+	// 	return `${(`0${h}`).slice(-2)}:${(`0${m}`).slice(-2)}:${(`0${s}`).slice(-2)}`;
+	// }, [target?.craft]);
 
 	const UpgradeCostTable = useMemo((): preact.VNode[][] => {
 		if (!target) return [];
