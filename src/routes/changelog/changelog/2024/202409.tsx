@@ -7,7 +7,7 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import IconFilter from "@/components/bootstrap-icon/icons/Filter";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12646" date="2024-09-21"
+	<ChangelogItem title="Build 12649" date="2024-09-21"
 		new={ <>
 			<li><BY>전투원정보</BY>의 상세 검색에 <BP>스탯</BP> 조건이 추가되었습니다.</li>
 			<li><BY>전투원정보</BY>의 상세 검색의 <BP>등급</BP> 및 <BP>스탯</BP> 조건에 <BG>A ~ B</BG> 연산자가 추가되었습니다.</li>
