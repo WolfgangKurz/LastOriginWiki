@@ -68,9 +68,10 @@ export enum BUFFEFFECT_TRIGGER_TYPE {
 export type BuffTrigger = BuffTrigger_Unknown | BuffTrigger_Always | BuffTrigger_After | BuffTrigger_Damaged | BuffTrigger_AttackSuccess |
 	BuffTrigger_HPDown | BuffTrigger_HPUp | BuffTrigger_HPLess | BuffTrigger_HPMore | BuffTrigger_HPRange | BuffTrigger_UnitIn | BuffTrigger_UnitDead |
 	BuffTrigger_Always | BuffTrigger_EveryWave | BuffTrigger_EveryRound | BuffTrigger_Attack | BuffTrigger_Attacked | BuffTrigger_Wait |
-	BuffTrigger_Move | BuffTrigger_Evade | BuffTrigger_WaveEnd | BuffTrigger_EnemyKilled | BuffTrigger_Position | BuffTrigger_Criticaled |
-	BuffTrigger_Revive | BuffTrigger_On | BuffTrigger_Target | BuffTrigger_UnitCount | BuffTrigger_Round | BuffTrigger_NotInBattle |
-	BuffTrigger_TroopCategory | BuffTrigger_UseSkill | BuffTrigger_Test | BuffTrigger_AttackBy | BuffTrigger_Fail | BuffTrigger_Near;
+	BuffTrigger_Move | BuffTrigger_Evade | BuffTrigger_WaveEnd | BuffTrigger_EnemyKilled | BuffTrigger_EnemyKilledPassive | BuffTrigger_Position |
+	BuffTrigger_Criticaled | BuffTrigger_Revive | BuffTrigger_On | BuffTrigger_Target | BuffTrigger_UnitCount | BuffTrigger_Round |
+	BuffTrigger_NotInBattle | BuffTrigger_TroopCategory | BuffTrigger_UseSkill | BuffTrigger_Test | BuffTrigger_AttackBy | BuffTrigger_Fail |
+	BuffTrigger_Near;
 
 /** 구현을 알 수 없는 발동 조건 */
 interface BuffTrigger_Unknown {
@@ -176,6 +177,7 @@ type BuffTrigger_WaveEnd = "wave_end";
 
 /** 본인이 처치했을 때에만 */
 type BuffTrigger_EnemyKilled = "enemy_killed";
+type BuffTrigger_EnemyKilledPassive = "enemy_killed_passive";
 
 type BuffTrigger_Position = BuffTrigger_Position_Self | BuffTrigger_Position_Target;
 interface BuffTrigger_Position_Self {

@@ -27,7 +27,7 @@ import IconFilter from "@/components/bootstrap-icon/icons/Filter";
 import IconHanger from "@/components/Icons/IconHanger";
 
 import SimpleSearch from "./search/SimpleSearch";
-import AdvancedSearch, { Condition, ConditionActiveTarget, ConditionBuffSlot, ConditionCategory, ConditionCompare, ConditionCompareYN, ConditionStatRarity, ConditionStatType, IsInvalidBuffType } from "./search/AdvancedSearch";
+import AdvancedSearch, { Condition, ConditionActiveTarget, ConditionBuffSlot, ConditionCategory, ConditionCompare, ConditionCompareENYN, ConditionCompareYN, ConditionStatRarity, ConditionStatType, IsInvalidBuffType } from "./search/AdvancedSearch";
 
 import UnitsTable from "./units-table";
 import UnitsList from "./units-list";
@@ -321,6 +321,46 @@ const Units: FunctionalComponent = () => {
 
 								return true;
 							});
+						}));
+				case ConditionCategory.BuffName:
+					return GetSkills(x.skills, GetFlags(c.slot))
+						.some(s => s.buffs.some(r => {
+							const nameRegex = /^(.+)([：:].+)$/;
+
+							if (c.target !== undefined) {
+								if (c.target === TARGET_TYPE.SELF && r.target !== TARGET_TYPE.SELF)
+									return false;
+								else if (c.target === TARGET_TYPE.OUR && (r.target !== TARGET_TYPE.OUR && r.target !== TARGET_TYPE.OUR_GRID))
+									return false;
+								else if (c.target === TARGET_TYPE.ENEMY && (r.target !== TARGET_TYPE.ENEMY && r.target !== TARGET_TYPE.ENEMY_GRID))
+									return false;
+							}
+
+							const shortName = (
+								nameRegex.test(loc[r.key])
+									? loc[r.key].replace(nameRegex, "$1")
+									: loc[r.key]
+							) ?? "";
+
+							if (!c.name) return true;
+							switch (c.compare) {
+								case ConditionCompareENYN.Equal:
+									if (shortName !== c.name) return false;
+									break;
+								case ConditionCompareENYN.NotEqual:
+									if (shortName === c.name) return false;
+									break;
+								case ConditionCompareENYN.Exists:
+									if (!shortName.includes(c.name)) return false;
+									break;
+								case ConditionCompareENYN.NotExists:
+									if (shortName.includes(c.name)) return false;
+									break;
+								default:
+									return false;
+							}
+
+							return true;
 						}));
 			}
 		})));

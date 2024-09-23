@@ -7,6 +7,18 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import IconFilter from "@/components/bootstrap-icon/icons/Filter";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12651" date="2024-09-24"
+		new={ <>
+			<li><BY>전투원정보</BY>의 상세 검색에 <BP>버프 보유 (이름)</BP> 조건이 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>
+				버프 보기 및 필터에서 <BB>적 처치 시</BB> 조건을
+				<BB>적 처치 시</BB>, <BB>적 처치 시 (패시브)</BB>로
+				세분화 했습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12649" date="2024-09-21"
 		new={ <>
 			<li><BY>전투원정보</BY>의 상세 검색에 <BP>스탯</BP> 조건이 추가되었습니다.</li>

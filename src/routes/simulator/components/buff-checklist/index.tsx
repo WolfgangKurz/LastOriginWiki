@@ -509,6 +509,8 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 					return <Locale plain k="BUFFTRIGGER_END_WAVE" />;
 				case "enemy_killed":
 					return <Locale plain k="BUFFTRIGGER_KILL" />;
+				case "enemy_killed_passive":
+					return <Locale plain k="BUFFTRIGGER_KILL_PASSIVE" />;
 				case "criticaled":
 					return <Locale plain k="BUFFTRIGGER_CRITICALED" />;
 				case "revive":

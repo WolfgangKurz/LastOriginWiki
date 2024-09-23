@@ -32,6 +32,7 @@ export interface FilterableUnitSkillBuffTrigger {
 }
 
 export interface FilterableUnitSkillBuff {
+	key: string;
 	on: FilterableUnitSkillBuffTrigger;
 	body: ACTOR_BODY_TYPE[];
 	class: ACTOR_CLASS[];
