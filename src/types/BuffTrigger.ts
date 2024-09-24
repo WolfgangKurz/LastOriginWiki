@@ -62,6 +62,7 @@ export enum BUFFEFFECT_TRIGGER_TYPE {
 	AFTER_TOGETHER_ATTACK_PASSIVE = 53,
 	ATTACK_FAIL = 54,
 	ATTACK_FAIL_PASSIVE = 55,
+	IF_ENEMYKILL_AND_IF_COUNTERKILL = 56,
 }
 
 /** 계산된 발동 조건 */
@@ -71,7 +72,7 @@ export type BuffTrigger = BuffTrigger_Unknown | BuffTrigger_Always | BuffTrigger
 	BuffTrigger_Move | BuffTrigger_Evade | BuffTrigger_WaveEnd | BuffTrigger_EnemyKilled | BuffTrigger_EnemyKilledPassive | BuffTrigger_Position |
 	BuffTrigger_Criticaled | BuffTrigger_Revive | BuffTrigger_On | BuffTrigger_Target | BuffTrigger_UnitCount | BuffTrigger_Round |
 	BuffTrigger_NotInBattle | BuffTrigger_TroopCategory | BuffTrigger_UseSkill | BuffTrigger_Test | BuffTrigger_AttackBy | BuffTrigger_Fail |
-	BuffTrigger_Near;
+	BuffTrigger_Near | BuffTrigger_EnemyKilledCounter;
 
 /** 구현을 알 수 없는 발동 조건 */
 interface BuffTrigger_Unknown {
@@ -178,6 +179,7 @@ type BuffTrigger_WaveEnd = "wave_end";
 /** 본인이 처치했을 때에만 */
 type BuffTrigger_EnemyKilled = "enemy_killed";
 type BuffTrigger_EnemyKilledPassive = "enemy_killed_passive";
+type BuffTrigger_EnemyKilledCounter = "enemy_killed_counter";
 
 type BuffTrigger_Position = BuffTrigger_Position_Self | BuffTrigger_Position_Target;
 interface BuffTrigger_Position_Self {

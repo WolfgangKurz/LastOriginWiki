@@ -368,6 +368,7 @@ export default class Pixi2DModel extends FadeContainer {
 
 						if ("color" in o && o.color) { // has SpriteRenderer (even if sprite has not set)
 							const filter = new PIXI.ColorMatrixFilter();
+							// @ts-ignore pickUpdate extend
 							filter.matrix = [
 								o.color[0], 0, 0, 0, 0,
 								0, o.color[1], 0, 0, 0,

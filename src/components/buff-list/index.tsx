@@ -650,6 +650,8 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					return <Locale plain k="BUFFTRIGGER_KILL" />;
 				case "enemy_killed_passive":
 					return <Locale plain k="BUFFTRIGGER_KILL_PASSIVE" />;
+				case "enemy_killed_counter":
+					return <Locale plain k="BUFFTRIGGER_KILL_COUNTER" />;
 				case "criticaled":
 					return <Locale plain k="BUFFTRIGGER_CRITICALED" />;
 				case "revive":
