@@ -1718,7 +1718,7 @@ export default {
 			"Ravager_05": "277c68b6",
 			"Ravager_06": "2bc1c8f5",
 			"Ravager_07": "e6074dcf",
-			"seasons": "96b18c47"
+			"seasons": "c6460f3b"
 		},
 		"map": {
 			"1": "4c9b858e",
