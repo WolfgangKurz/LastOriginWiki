@@ -1518,7 +1518,7 @@ export default {
 			"Sub_UnevenTerrain_T4": "4d660f99",
 			"Sub_VerminEliminator_T4": "da45b3d6",
 			"Sub_WaterPipe_T4": "04628a28",
-			"Sub_Whistle_T4": "aeb6a059",
+			"Sub_Whistle_T4": "ac975fb5",
 			"Sub_Wyatt_T4": "a5b69051",
 			"Sub_ZoweOrellia_T4": "15258be4",
 			"System_Advanced_T4": "9659f688",
@@ -1700,7 +1700,7 @@ export default {
 			"WoodMaking3": "6dcdaae0"
 		},
 		"filterable.enemy": "917bfdc6",
-		"filterable.equip": "6752e43e",
+		"filterable.equip": "d7f2fba2",
 		"filterable.facility": "b3f0e54b",
 		"filterable.unit": "cf1e5496",
 		"gacha": "f51b48a0",

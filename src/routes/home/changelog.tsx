@@ -8,7 +8,7 @@ import IconFilter from "@/components/bootstrap-icon/icons/Filter";
 import IconArrowRight from "@/components/bootstrap-icon/icons/ArrowRight";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12654" date="2024-09-25"
+	<ChangelogItem title="Build 12655" date="2024-09-25"
 		new={ <>
 			<li>신규 전투원 <BY>메로페</BY>의 정보가 추가되었습니다.</li>
 			<li>신규 장비 <BY>경고용 호루라기</BY>의 정보가 추가되었습니다.</li>
