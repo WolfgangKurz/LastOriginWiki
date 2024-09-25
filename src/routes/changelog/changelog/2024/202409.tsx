@@ -7,6 +7,10 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import IconFilter from "@/components/bootstrap-icon/icons/Filter";
 import IconArrowRight from "@/components/bootstrap-icon/icons/ArrowRight";
 
+import Locale from "@/components/locale";
+import IconCheck from "@/components/bootstrap-icon/icons/Check";
+import IconX from "@/components/bootstrap-icon/icons/X";
+
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 12659" date="2024-09-26"
 		update={ <>
