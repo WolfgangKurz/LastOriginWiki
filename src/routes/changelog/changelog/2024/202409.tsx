@@ -8,6 +8,82 @@ import IconFilter from "@/components/bootstrap-icon/icons/Filter";
 import IconArrowRight from "@/components/bootstrap-icon/icons/ArrowRight";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12659" date="2024-09-26"
+		update={ <>
+			<li>
+				버프 조건 <BB>적 처치 시</BB> 계열이 수정되었습니다.
+				<ul>
+					<li class="mb-2">
+						<BB>적 처치 시</BB>
+						<IconArrowRight class="mx-1" />
+						<BB>적 직접 처치 시</BB>
+						<br />
+						<div
+							class="d-inline-block bg-dark text-bg-dark p-2 pe-3"
+							style={ { borderRadius: "0.5rem", whiteSpace: "pre-line" } }
+						>
+							<Locale
+								k="BUFFTRIGGERDESC_KILL"
+								p={ [
+									<span class="text-danger"><IconX /></span>,
+									<span class="text-danger"><IconX /></span>,
+									<span class="text-danger"><IconX /></span>,
+									<span class="text-success"><IconCheck /></span>,
+									<span class="text-danger"><IconX /></span>,
+								] }
+							/>
+						</div>
+					</li>
+					<li class="mb-2">
+						<BB>적 처치 시 (패시브)</BB>
+						<IconArrowRight class="mx-1" />
+						<BB>적 처치 시</BB>
+						<br />
+						<div
+							class="d-inline-block bg-dark text-bg-dark p-2 pe-3"
+							style={ { borderRadius: "0.5rem", whiteSpace: "pre-line" } }
+						>
+							<Locale
+								k="BUFFTRIGGERDESC_KILL"
+								p={ [
+									<span class="text-success"><IconCheck /></span>,
+									<span class="text-success"><IconCheck /></span>,
+									<span class="text-danger"><IconX /></span>,
+									<span class="text-success"><IconCheck /></span>,
+									<span class="text-success"><IconCheck /></span>,
+								] }
+							/>
+						</div>
+					</li>
+					<li class="mb-2">
+						<BB>반격으로 적 처치 시</BB>
+						<IconArrowRight class="mx-1" />
+						<BB>적 처치 기여 시</BB>
+						<br />
+						<div
+							class="d-inline-block bg-dark text-bg-dark p-2 pe-3"
+							style={ { borderRadius: "0.5rem", whiteSpace: "pre-line" } }
+						>
+							<Locale
+								k="BUFFTRIGGERDESC_KILL"
+								p={ [
+									<span class="text-success"><IconCheck /></span>,
+									<span class="text-success"><IconCheck /></span>,
+									<span class="text-success"><IconCheck /></span>,
+									<span class="text-success"><IconCheck /></span>,
+									<span class="text-danger"><IconX /></span>,
+								] }
+							/>
+						</div>
+					</li>
+				</ul>
+				자세한 내용은 버프 목록의 조건 뱃지에 추가된 툴팁에서도 확인 가능합니다.
+			</li>
+		</> }
+		bugfix={ <>
+			<li>일부 모바일 환경에서 플레이어가 표시되지 않아 전투원의 소개 보이스를 재생할 수 없던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12657" date="2024-09-25"
 		new={ <>
 			<li>신규 총력전 정보가 추가되었습니다.</li>
