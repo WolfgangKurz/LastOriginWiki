@@ -2,19 +2,20 @@ import { FunctionalComponent } from "preact";
 import { useEffect, useRef, useState } from "preact/hooks";
 import renderToString from "preact-render-to-string";
 
-import html2canvas from "@/external/html2canvas";
+import { toJpeg } from "html-to-image";
 
-import { ReactFlow, Edge, MarkerType, Node, useEdgesState, useNodesState } from "@reactflow/core";
+import { ReactFlow, Edge, MarkerType, Node, useEdgesState, useNodesState, useReactFlow, getNodesBounds, getViewportForBounds } from "@reactflow/core";
 import { Background as FlowBackground, BackgroundVariant } from "@reactflow/background";
 import { Controls as FlowControls, ControlButton as FlowControlButton } from "@reactflow/controls";
 import "reactflow/dist/style.css";
 
 import dagre from "@dagrejs/dagre";
 
+import { useLocale } from "@/libs/Locale";
 import { FlowRoot } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
 
-import Locale, { LocaleGet } from "@/components/locale";
+import Locale from "@/components/locale";
 import IconDownload from "@/components/bootstrap-icon/icons/Download";
 import IconConfusedFace from "@/components/bootstrap-icon/icons/ConfusedFace";
 
@@ -44,6 +45,7 @@ interface AIListProps {
 const edgeType = { smart: CustomEdge };
 
 const AIList: FunctionalComponent<AIListProps> = (props) => {
+	const [loc] = useLocale();
 	const [graph, setGraph] = useState<boolean>(false);
 
 	const [error, setError] = useState("");
@@ -53,6 +55,8 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const captureRef = useRef<HTMLDivElement>(null);
 	const canvasRef = useRef<HTMLDivElement>(null);
+
+	const { getNodes } = useReactFlow();
 
 	useEffect(() => { // resetter
 		setGraph(false);
@@ -103,8 +107,8 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 
 					function getBuff (buff: string): preact.VNode {
 						const key = `${buff}_1`;
-						let r = LocaleGet(`${buff}_1`);
-						if (r === key) r = LocaleGet(buff);
+						let r = loc[`${buff}_1`] || `${buff}_1`;
+						if (r === key) r = loc[buff] || buff;
 
 						const uid = <span class="badge bg-dark text-bg-dark">
 							{ getBuffUid(props.uid, buff) }
@@ -760,15 +764,26 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 		el.style.width = `${b_right + 10}px`;
 		el.style.height = `${b_bottom + 10}px`;
 
-		html2canvas(captureRef.current, {
-			useCORS: true,
-		}).then(canvas => {
-			const url = canvas.toDataURL("image/jpeg", 1.0);
-			const anchor = document.createElement("a");
-			anchor.download = `${safeName(props.name || "ai")}.jpg`;
-			anchor.href = url;
-			anchor.click();
-		});
+		toJpeg(captureRef.current, {
+			quality: 1.0,
+			skipFonts: true,
+			backgroundColor: "#fff",
+		})
+			.then(url => {
+				const anchor = document.createElement("a");
+				anchor.download = `${safeName(props.name || "ai")}.jpg`;
+				anchor.href = url;
+				anchor.click();
+			});
+		// html2canvas(captureRef.current, {
+		// 	useCORS: true,
+		// }).then(canvas => {
+		// 	const url = canvas.toDataURL("image/jpeg", 1.0);
+		// 	const anchor = document.createElement("a");
+		// 	anchor.download = `${safeName(props.name || "ai")}.jpg`;
+		// 	anchor.href = url;
+		// 	anchor.click();
+		// });
 	}
 
 	return <div class={ BuildClass("text-center", style.AIList) } ref={ wrapperRef }>

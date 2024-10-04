@@ -2,7 +2,8 @@ import { FunctionalComponent } from "preact";
 import { useRef } from "preact/hooks";
 import { Link, route } from "preact-router";
 
-import html2canvas from "@/external/html2canvas";
+// import html2canvas from "@/external/html2canvas";
+import { toJpeg } from "html-to-image";
 
 import { AssetsRoot } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
@@ -186,14 +187,25 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 							const el = tableRef.current;
 
 							const table = tableRef.current;
-							html2canvas(table, { useCORS: true })
-								.then(canvas => {
-									const url = canvas.toDataURL("image/jpeg", 1.0);
+							toJpeg(table, {
+								quality: 1.0,
+								skipFonts: true,
+								backgroundColor: "#fff",
+							})
+								.then(url => {
 									const anchor = document.createElement("a");
 									anchor.download = `${props.wid}-${props.mid}.jpg`;
 									anchor.href = url;
 									anchor.click();
 								});
+							// html2canvas(table, { useCORS: true })
+							// 	.then(canvas => {
+							// 		const url = canvas.toDataURL("image/jpeg", 1.0);
+							// 		const anchor = document.createElement("a");
+							// 		anchor.download = `${props.wid}-${props.mid}.jpg`;
+							// 		anchor.href = url;
+							// 		anchor.click();
+							// 	});
 						}
 					}
 					}>
