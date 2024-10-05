@@ -3,10 +3,13 @@ import { useEffect, useMemo, useRef, useState } from "preact/hooks";
 
 import { FACETYPE, SKIN_IN_PARTS } from "@/types/Enums";
 import { SKIN_ANIM_SUBSET_ENUM, SKIN_SUBSET_ENUM, Unit, UnitSkin } from "@/types/DB/Unit";
+import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import { useImageExtension } from "@/libs/ImageExtension";
 import { AssetsRoot, CanPlayWebM } from "@/libs/Const";
 import { cn } from "@/libs/Class";
+
+import { render2DModel } from "./2DModelRenderer";
 
 import Locale from "@/components/locale";
 import PopupBase from "@/components/popup/base";
@@ -18,7 +21,6 @@ import Pinch from "@/components/pinch";
 import PixiView from "./PixiView";
 
 import style from "./style.module.scss";
-import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 interface SkinItem extends UnitSkin {
 	isDef: boolean;
@@ -91,6 +93,21 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			].join(""),
 		].join("/");
 	}, [unit.uid, skin, isCensored, SkinPostfix, imageExt]);
+	const SkinImageDownloadFilename = useMemo(() => {
+		const skinId = skin.isDef ? 0 : skin.metadata.imageId;
+		return [
+			unit.uid,
+			"_",
+			skinId,
+			"_",
+			skin.G && isCensored ? "G" : "O",
+			SkinPostfix,
+			"_",
+			face,
+			".",
+			imageExt,
+		].join("");
+	}, [unit.uid, skin, face, isCensored, SkinPostfix, imageExt]);
 
 	const SkinVideoPostfix = useMemo(() => {
 		let flag: SKIN_ANIM_SUBSET_ENUM = 0;
@@ -208,6 +225,27 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			(isDamaged && !!skin.metadata["2dmodel_dam"])
 		);
 
+	function download2DModel (filename: string) {
+		render2DModel({
+			root: `${AssetsRoot}/2dmodel/${isCensored ? "G" : "O"}/`,
+			target: !isDamaged ? skin.metadata["2dmodel"]! : skin.metadata["2dmodel_dam"]!,
+
+			hideParts,
+			hideBG,
+			face,
+		}).then(canvas => {
+			canvas.toBlob(blob => {
+				const uri = URL.createObjectURL(blob!);
+
+				const anchor = document.createElement("a");
+				anchor.href = uri;
+				anchor.target = "_blank";
+				// anchor.download = filename;
+				anchor.click();
+			}, "image/png", 100);
+		});
+	}
+
 	return <div class={ style.SkinView }>
 		<div class={ `ratio ${Aspect} ${style.SkinFull} ${props.collapsed ? style.Collapsed : ""}` }>
 			<div>
@@ -285,24 +323,30 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 				</div>
 
 				{ !DisplaySpine
-					? <a
-						class={ `${style.SkinToggle} ${style.Download}` }
-						href={
-							modelVideoId
-								? `${AssetsRoot}/webm/HD/${modelVideoId}.webm`// download webm only...
-								: SkinImageURL
-						}
-						download={
-							modelVideoId
-								? `${modelVideoId}.webm`
-								: SkinImageURL.substring(SkinImageURL.lastIndexOf("/") + 1)
-						}
-						target="_blank"
-					>
-						<svg width="1em" height="1em" viewBox="0 0 24 24">
-							<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
-						</svg>
-					</a>
+					? modelVideoId
+						? <a
+							class={ `${style.SkinToggle} ${style.Download}` }
+							href={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` } // download webm only
+							download={ `${modelVideoId}.webm` }
+							target="_blank"
+						>
+							<svg width="1em" height="1em" viewBox="0 0 24 24">
+								<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+							</svg>
+						</a>
+						: <a
+							class={ `${style.SkinToggle} ${style.Download}` }
+							href="#"
+							onClick={ e => {
+								e.preventDefault();
+								e.stopImmediatePropagation();
+								download2DModel(SkinImageDownloadFilename);
+							} }
+						>
+							<svg width="1em" height="1em" viewBox="0 0 24 24">
+								<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+							</svg>
+						</a>
 					: <></>
 				}
 

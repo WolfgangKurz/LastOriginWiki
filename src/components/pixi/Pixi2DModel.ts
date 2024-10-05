@@ -294,11 +294,12 @@ export default class Pixi2DModel extends FadeContainer {
 							? 3.5
 							: 1;
 
-						const rot = quat2eul(obj.vector.slice(6, 10) as Tuple<number, 4>);
+						const ppu = obj.sprite ? this.spMap[obj.sprite].vector.u : 100;
 
+						const rot = quat2eul(obj.vector.slice(6, 10) as Tuple<number, 4>);
 						target.setTransform(
-							obj.vector[0] * 100,
-							-obj.vector[1] * 100,
+							obj.vector[0] * ppu,
+							-obj.vector[1] * ppu,
 
 							obj.vector[3] * scaleMultiplier,
 							obj.vector[4] * scaleMultiplier,
