@@ -93,6 +93,61 @@
 			margin-right: 0 !important;
 			border-bottom: 1px solid transparentize($secondary, 0.5);
 		}
+
+		.ValueInput {
+			max-width: 4.5rem;
+		}
+
+		.InlineColumn {
+			margin-right: 0.8rem;
+
+			> select {
+				display: inline-block;
+				margin-left: 0.2rem;
+				width: auto;
+				text-align: right;
+			}
+		}
+
+		.BuffNameText {
+			padding-left: 0.5rem;
+			font-weight: 500;
+			font-size: 14px;
+		}
+		.DropdownInput {
+			position: relative;
+
+			.BuffNameInput {
+				+ ul {
+					position: absolute;
+					margin-top: 0.25rem;
+					left: 0;
+					top: 100%;
+					min-width: 100%;
+					max-height: 20rem;
+					font-size: 14px;
+					overflow: auto;
+
+					> li {
+						border-bottom: 1px solid rgba($secondary, 0.125);
+					}
+				}
+
+				&.InvalidBuffName {
+					border-color: $danger;
+				}
+			}
+
+			&:focus-within ul {
+				display: block;
+			}
+
+			+ .InvalidBuffName {
+				margin-left: 0.5rem;
+				font-size: 14px;
+				color: $danger;
+			}
+		}
 	}
 	> .ConditionANDLine {
 		grid-column: 1;

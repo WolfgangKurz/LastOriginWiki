@@ -186,12 +186,6 @@ export default ({ mode }) => {
                             id.includes("/node_modules/pathfinding/")
                         ) return "vendor.flow";
 
-                        if (
-                            id.includes("/html2canvas/") ||
-                            id.includes("/node_modules/css-line-break/") ||
-                            id.includes("/node_modules/text-segmentation/")
-                        ) return "vendor.html2canvas";
-
                         if (id.includes("/node_modules/")) return "vendor";
 
                         // components/bootstrap-icon/

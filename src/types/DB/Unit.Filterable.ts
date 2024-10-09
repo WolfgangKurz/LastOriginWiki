@@ -3,6 +3,7 @@ import { SKILL_ATTR, ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE, ACTOR_BODY_TYPE, ROGUE
 import { BUFFEFFECT_TRIGGER_TYPE } from "../BuffTrigger";
 import { BUFFEFFECT_TYPE } from "../BuffEffect";
 import { BUFFEFFECT_ERASE_TYPE } from "@/types/BuffErase";
+import { UnitStats } from "@/types/DB/UnitStats";
 
 interface SkillBuffItemBase<T extends BUFFEFFECT_TYPE> {
 	type: T;
@@ -31,6 +32,7 @@ export interface FilterableUnitSkillBuffTrigger {
 }
 
 export interface FilterableUnitSkillBuff {
+	key: string;
 	on: FilterableUnitSkillBuffTrigger;
 	body: ACTOR_BODY_TYPE[];
 	class: ACTOR_CLASS[];
@@ -90,5 +92,7 @@ export interface FilterableUnit {
 	};
 	skins: UnitSkin;
 
-	roguelike: ROGUE_SKILL_TYPE[];
+	stat: UnitStats[];
+
+	// roguelike: ROGUE_SKILL_TYPE[];
 }

@@ -10,6 +10,8 @@ declare global {
 		least (this: T[], length: number): Array<T | undefined>;
 
 		filter (predicate: (value: T, index: number, array: T[]) => boolean, thisArg?: any): NonNullable<T>[];
+
+		pickUpdate (this: T[], index: number, value: T): { [K in keyof this]: T };
 	}
 
 	// export interface Object {

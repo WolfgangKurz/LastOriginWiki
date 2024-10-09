@@ -82,6 +82,14 @@ export function Extend (): void {
 			return t;
 		};
 	}
+
+	if (!Array.prototype.pickUpdate) {
+		Array.prototype.pickUpdate = function <T> (this: T[], index: number, value: T): Array<T> {
+			const arr = [...this];
+			arr[index] = value;
+			return arr;
+		};
+	}
 }
 
 export function map<T, K extends string, U> (object: object, callbackfn: (value: T, index: K, object: any) => U, thisArg?: any): U[] {
@@ -256,4 +264,10 @@ export function minMax (...items: number[]): [min: number, max: number] {
 	});
 
 	return [min ?? 0, max ?? 0];
+}
+
+export function clamp (value: number, min: number = 0.0, max: number = 1.0): number {
+	if (value < min) return min;
+	if (value > max) return max;
+	return value;
 }

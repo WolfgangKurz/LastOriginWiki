@@ -3,10 +3,14 @@ import { useEffect, useMemo, useRef, useState } from "preact/hooks";
 
 import { FACETYPE, SKIN_IN_PARTS } from "@/types/Enums";
 import { SKIN_ANIM_SUBSET_ENUM, SKIN_SUBSET_ENUM, Unit, UnitSkin } from "@/types/DB/Unit";
+import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
+import { useLocale } from "@/libs/Locale";
 import { useImageExtension } from "@/libs/ImageExtension";
 import { AssetsRoot, CanPlayWebM } from "@/libs/Const";
 import { cn } from "@/libs/Class";
+
+import { render2DModel } from "./2DModelRenderer";
 
 import Locale from "@/components/locale";
 import PopupBase from "@/components/popup/base";
@@ -18,7 +22,21 @@ import Pinch from "@/components/pinch";
 import PixiView from "./PixiView";
 
 import style from "./style.module.scss";
-import { FilterableUnit } from "@/types/DB/Unit.Filterable";
+
+const Spinner: FunctionalComponent = () => {
+	return <svg width="1em" height="1em" viewBox="0 0 24 24">
+		<g>
+			<circle cx="12" cy="2.5" r="1.5" fill="currentColor" opacity="0.14" />
+			<circle cx="16.75" cy="3.77" r="1.5" fill="currentColor" opacity="0.29" />
+			<circle cx="20.23" cy="7.25" r="1.5" fill="currentColor" opacity="0.43" />
+			<circle cx="21.5" cy="12" r="1.5" fill="currentColor" opacity="0.57" />
+			<circle cx="20.23" cy="16.75" r="1.5" fill="currentColor" opacity="0.71" />
+			<circle cx="16.75" cy="20.23" r="1.5" fill="currentColor" opacity="0.86" />
+			<circle cx="12" cy="21.5" r="1.5" fill="currentColor" />
+			<animateTransform attributeName="transform" calcMode="discrete" dur="0.75s" repeatCount="indefinite" type="rotate" values="0 12 12;30 12 12;60 12 12;90 12 12;120 12 12;150 12 12;180 12 12;210 12 12;240 12 12;270 12 12;300 12 12;330 12 12;360 12 12" />
+		</g>
+	</svg>;
+};
 
 interface SkinItem extends UnitSkin {
 	isDef: boolean;
@@ -36,6 +54,7 @@ interface SkinViewProps {
 }
 
 const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
+	const [loc] = useLocale();
 	const imageExt = useImageExtension();
 
 	const unit = props.unit;
@@ -44,6 +63,8 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	// const skinDirection = objState<"" | "horz" | "vert">("");
 
 	const FullUnitEl = useRef<HTMLDivElement>(null);
+
+	const [inPlusDownload, setInPlusDownload] = useState(false);
 
 	const [face, setFace] = useState<string>("");
 	const [facePrefix, setFacePrefix] = useState("");
@@ -91,6 +112,36 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			].join(""),
 		].join("/");
 	}, [unit.uid, skin, isCensored, SkinPostfix, imageExt]);
+	const SkinImageDownloadFilename = useMemo(() => {
+		const skinId = skin.isDef ? 0 : skin.metadata.imageId;
+		return [
+			AssetsRoot,
+			"png/full",
+			[
+				unit.uid,
+				"_",
+				skinId,
+				"_",
+				skin.G && isCensored ? "G" : "O",
+				SkinPostfix,
+				".png",
+			].join(""),
+		].join("/");
+	}, [unit.uid, skin, isCensored, SkinPostfix]);
+	const SkinImageDownloadPlusFilename = useMemo(() => {
+		const skinId = skin.isDef ? 0 : skin.metadata.imageId;
+		return [
+			unit.uid,
+			"_",
+			skinId,
+			"_",
+			skin.G && isCensored ? "G" : "O",
+			SkinPostfix,
+			"_",
+			face,
+			".png",
+		].join("");
+	}, [unit.uid, skin, face, isCensored, SkinPostfix]);
 
 	const SkinVideoPostfix = useMemo(() => {
 		let flag: SKIN_ANIM_SUBSET_ENUM = 0;
@@ -208,7 +259,35 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			(isDamaged && !!skin.metadata["2dmodel_dam"])
 		);
 
-	return <div class={ style.SkinView }>
+	function download2DModel (filename: string) {
+		if (inPlusDownload) return;
+		setInPlusDownload(true);
+
+		render2DModel()
+			.then(canvas => {
+				if (!canvas) {
+					alert(
+						loc["UNIT_VIEW_SKIN_DOWNLOADPLUS_FAILED"] ||
+						"Failed to create the image.\nPlease try again, or use the regular download option."
+					);
+					setInPlusDownload(false);
+					return;
+				}
+				canvas.toBlob(blob => {
+					const uri = URL.createObjectURL(blob!);
+
+					const anchor = document.createElement("a");
+					anchor.href = uri;
+					anchor.target = "_blank";
+					anchor.download = filename;
+					anchor.click();
+
+					setInPlusDownload(false);
+				}, "image/png", 100);
+			});
+	}
+
+	return <div class={ cn(style.SkinView, inPlusDownload && style.InPlusDownload) }>
 		<div class={ `ratio ${Aspect} ${style.SkinFull} ${props.collapsed ? style.Collapsed : ""}` }>
 			<div>
 				<div class={ `${style.FullBG} ${props.black ? style.Black : ""}` } />
@@ -285,24 +364,62 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 				</div>
 
 				{ !DisplaySpine
-					? <a
-						class={ `${style.SkinToggle} ${style.Download}` }
-						href={
-							modelVideoId
-								? `${AssetsRoot}/webm/HD/${modelVideoId}.webm`// download webm only...
-								: SkinImageURL
-						}
-						download={
-							modelVideoId
-								? `${modelVideoId}.webm`
-								: SkinImageURL.substring(SkinImageURL.lastIndexOf("/") + 1)
-						}
-						target="_blank"
-					>
-						<svg width="1em" height="1em" viewBox="0 0 24 24">
-							<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
-						</svg>
-					</a>
+					? modelVideoId
+						? <a
+							class={ `${style.SkinToggle} ${style.Download}` }
+							href={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` } // download webm only
+							download={ `${modelVideoId}.webm` }
+							target="_blank"
+						>
+							<svg width="1em" height="1em" viewBox="0 0 24 24">
+								<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+							</svg>
+						</a>
+						: <>
+							<BootstrapTooltip
+								class={ `${style.SkinToggle} ${style.DownloadPlus}` }
+								tooltipClass={ style.DownloadTooltipContainer }
+								placement="left"
+								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
+									<Locale k="UNIT_VIEW_SKIN_DOWNLOADPLUS" />
+								</span> }
+							>
+								<a
+									class={ cn(style.DownloadContent, style.DownloadPlusContent) }
+									href="#"
+									onClick={ e => {
+										e.preventDefault();
+										e.stopImmediatePropagation();
+										download2DModel(SkinImageDownloadPlusFilename);
+									} }
+								>
+									<Spinner />
+									<svg width="1em" height="1em" viewBox="0 0 24 24">
+										<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+										<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M 16 6 L 20 6 M 18 4 L 18 8" />
+									</svg>
+								</a>
+							</BootstrapTooltip>
+							<BootstrapTooltip
+								class={ `${style.SkinToggle} ${style.Download}` }
+								tooltipClass={ style.DownloadTooltipContainer }
+								placement="left"
+								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
+									<Locale k="UNIT_VIEW_SKIN_DOWNLOAD" />
+								</span> }
+							>
+								<a
+									class={ style.DownloadContent }
+									href={ SkinImageDownloadFilename }
+									download={ SkinImageDownloadFilename.substring(SkinImageDownloadFilename.lastIndexOf("/") + 1) }
+									target="_blank"
+								>
+									<svg width="1em" height="1em" viewBox="0 0 24 24">
+										<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+									</svg>
+								</a>
+							</BootstrapTooltip>
+						</>
 					: <></>
 				}
 

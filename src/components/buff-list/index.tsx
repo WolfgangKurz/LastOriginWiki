@@ -22,6 +22,8 @@ import Loader, { GetJson, JsonLoaderCore, StaticDB, useDBData } from "@/libs/Loa
 import LocaleBase, { LocaleProps, LocalePropsLegacy } from "@/components/locale";
 import IconQuestionCircleFill from "@/components/bootstrap-icon/icons/QuestionCircleFill";
 import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
+import IconCheck from "@/components/bootstrap-icon/icons/Check";
+import IconX from "@/components/bootstrap-icon/icons/X";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import StatIcon from "@/components/stat-icon";
 import ElemIcon from "@/components/elem-icon";
@@ -618,6 +620,10 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			switch (trigger) {
 				case "damaged":
 					return <Locale plain k="BUFFTRIGGER_DAMAGED" />;
+				case "damaged_active":
+					return <Locale plain k="BUFFTRIGGER_DAMAGED_ACTIVE" />;
+				case "after_damaged":
+					return <Locale plain k="BUFFTRIGGER_AFTER_DAMAGED" />;
 				case "attack_success":
 					return <Locale plain k="BUFFTRIGGER_ATTACK_SUCCESS" />;
 				case "team_dead":
@@ -643,7 +649,71 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				case "wave_end":
 					return <Locale plain k="BUFFTRIGGER_END_WAVE" />;
 				case "enemy_killed":
-					return <Locale plain k="BUFFTRIGGER_KILL" />;
+					return <>
+						<Locale plain k="BUFFTRIGGER_KILL" />
+
+						<BootstrapTooltip
+							class={ style.BadgeIcon }
+							content={ <div class={ style.BuffTriggerDesc }>
+								<Locale
+									k="BUFFTRIGGERDESC_KILL"
+									p={ [
+										<span class="text-danger"><IconX /></span>,
+										<span class="text-danger"><IconX /></span>,
+										<span class="text-danger"><IconX /></span>,
+										<span class="text-success"><IconCheck /></span>,
+										<span class="text-danger"><IconX /></span>,
+									] }
+								/>
+							</div> }
+						>
+							<IconQuestionCircleFill class="ms-1" />
+						</BootstrapTooltip>
+					</>;
+				case "enemy_killed_passive":
+					return <>
+						<Locale plain k="BUFFTRIGGER_KILL_PASSIVE" />
+
+						<BootstrapTooltip
+							class={ style.BadgeIcon }
+							content={ <div class={ style.BuffTriggerDesc }>
+								<Locale
+									k="BUFFTRIGGERDESC_KILL"
+									p={ [
+										<span class="text-success"><IconCheck /></span>,
+										<span class="text-success"><IconCheck /></span>,
+										<span class="text-danger"><IconX /></span>,
+										<span class="text-success"><IconCheck /></span>,
+										<span class="text-success"><IconCheck /></span>,
+									] }
+								/>
+							</div> }
+						>
+							<IconQuestionCircleFill class="ms-1" />
+						</BootstrapTooltip>
+					</>;
+				case "enemy_killed_counter":
+					return <>
+						<Locale plain k="BUFFTRIGGER_KILL_COUNTER" />
+
+						<BootstrapTooltip
+							class={ style.BadgeIcon }
+							content={ <div class={ style.BuffTriggerDesc }>
+								<Locale
+									k="BUFFTRIGGERDESC_KILL"
+									p={ [
+										<span class="text-success"><IconCheck /></span>,
+										<span class="text-success"><IconCheck /></span>,
+										<span class="text-success"><IconCheck /></span>,
+										<span class="text-success"><IconCheck /></span>,
+										<span class="text-danger"><IconX /></span>,
+									] }
+								/>
+							</div> }
+						>
+							<IconQuestionCircleFill class="ms-1" />
+						</BootstrapTooltip>
+					</>;
 				case "criticaled":
 					return <Locale plain k="BUFFTRIGGER_CRITICALED" />;
 				case "revive":

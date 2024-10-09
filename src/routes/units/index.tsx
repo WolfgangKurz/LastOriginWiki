@@ -1,14 +1,16 @@
 import { FunctionalComponent } from "preact";
 import { useEffect, useMemo } from "preact/hooks";
+import Decimal from "decimal.js";
 
 import Store from "@/store";
 
 import { DecomposeHangulSyllable, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
-import { SKILL_ATTR, TARGET_TYPE } from "@/types/Enums";
+import { ACTOR_GRADE, SKILL_ATTR, TARGET_TYPE } from "@/types/Enums";
 import { FilterableUnit, FilterableUnitSkill } from "@/types/DB/Unit.Filterable";
 import { BUFFEFFECT_TYPE } from "@/types/BuffEffect";
+import { StatType } from "@/types/Stat";
 
 import { useLocale } from "@/libs/Locale";
 import { BuildClass } from "@/libs/Class";
@@ -25,7 +27,7 @@ import IconFilter from "@/components/bootstrap-icon/icons/Filter";
 import IconHanger from "@/components/Icons/IconHanger";
 
 import SimpleSearch from "./search/SimpleSearch";
-import AdvancedSearch, { Condition, ConditionActiveTarget, ConditionBuffSlot, ConditionCategory, ConditionCompare, ConditionCompareYN, IsInvalidBuffType } from "./search/AdvancedSearch";
+import AdvancedSearch, { Condition, ConditionActiveTarget, ConditionBuffSlot, ConditionCategory, ConditionCompare, ConditionCompareENYN, ConditionCompareYN, ConditionStatRarity, ConditionStatType, IsInvalidBuffType } from "./search/AdvancedSearch";
 
 import UnitsTable from "./units-table";
 import UnitsList from "./units-list";
@@ -156,6 +158,24 @@ const Units: FunctionalComponent = () => {
 			}
 			return SkillsFlag.None;
 		}
+		function StatToKey (stat: ConditionStatType): StatType {
+			switch (stat) {
+				case ConditionStatType.ATK: return "ATK";
+				case ConditionStatType.DEF: return "DEF";
+				case ConditionStatType.HP: return "HP";
+				case ConditionStatType.ACC: return "ACC";
+				case ConditionStatType.CRI: return "CRI";
+				case ConditionStatType.EVA: return "EVA";
+				case ConditionStatType.SPD: return "SPD";
+				case ConditionStatType.Res_Fire: return "ResistFire";
+				case ConditionStatType.Res_Ice: return "ResistIce";
+				case ConditionStatType.Res_Lightning: return "ResistLightning";
+			}
+		}
+		function LevelStat (stat: [number, number], level: number): number {
+			const diff = new Decimal(stat[1] - stat[0]).div(99); // 1 ~ 100
+			return new Decimal(stat[0]).add(diff.mul(level - 1)).toNumber();
+		}
 
 		return FilterableUnitDB.filter(x => condList.some(cs => cs.every(c => {
 			switch (c.category) {
@@ -167,6 +187,7 @@ const Units: FunctionalComponent = () => {
 						case ConditionCompare.LessEqual: return x.rarity <= c.rarity;
 						case ConditionCompare.Bigger: return x.rarity > c.rarity;
 						case ConditionCompare.BiggerEqual: return x.rarity >= c.rarity;
+						case ConditionCompare.FromTo: return c.rarity[0] <= x.rarity && x.rarity <= c.rarity[1];
 					}
 					return false;
 				case ConditionCategory.Class:
@@ -185,6 +206,47 @@ const Units: FunctionalComponent = () => {
 					switch (c.compare) {
 						case ConditionCompareYN.Equal: return x.body === c.body;
 						case ConditionCompareYN.NotEqual: return x.body !== c.body;
+					}
+					return false;
+				case ConditionCategory.Stat:
+					{
+						const _rarityTable: Record<
+							Exclude<ConditionStatRarity, ConditionStatRarity.Base | ConditionStatRarity.Last>,
+							ACTOR_GRADE
+						> = {
+							[ConditionStatRarity.B]: ACTOR_GRADE.B,
+							[ConditionStatRarity.A]: ACTOR_GRADE.A,
+							[ConditionStatRarity.S]: ACTOR_GRADE.S,
+							[ConditionStatRarity.SS]: ACTOR_GRADE.SS,
+						};
+						const _rarity = (
+							c.cond_rarity === ConditionStatRarity.Base
+								? x.rarity
+								: c.cond_rarity === ConditionStatRarity.Last
+									? x.promo ? x.promo[x.promo.length - 1] : x.rarity
+									: _rarityTable[c.cond_rarity]
+						) - x.rarity;
+						if (_rarity < 0) return false;
+						if (_rarity >= x.stat.length) return false;
+						const _stat = StatToKey(c.stat);
+						const _value = ["ATK", "DEF", "HP"].includes(_stat)
+							? LevelStat(x.stat[_rarity][_stat], c.level)
+							: _stat.startsWith("Resist")
+								? {
+									ResistFire: x.stat[_rarity].Resist.fire,
+									ResistIce: x.stat[_rarity].Resist.ice,
+									ResistLightning: x.stat[_rarity].Resist.lightning,
+								}[_stat]
+								: x.stat[_rarity][_stat];
+						switch (c.compare) {
+							case ConditionCompare.Equal: return _value === c.value;
+							case ConditionCompare.NotEqual: return _value !== c.value;
+							case ConditionCompare.Less: return _value < c.value;
+							case ConditionCompare.LessEqual: return _value <= c.value;
+							case ConditionCompare.Bigger: return _value > c.value;
+							case ConditionCompare.BiggerEqual: return _value >= c.value;
+							case ConditionCompare.FromTo: return c.value[0] <= _value && _value <= c.value[1];
+						}
 					}
 					return false;
 				case ConditionCategory.Active_Target:
@@ -259,6 +321,46 @@ const Units: FunctionalComponent = () => {
 
 								return true;
 							});
+						}));
+				case ConditionCategory.BuffName:
+					return GetSkills(x.skills, GetFlags(c.slot))
+						.some(s => s.buffs.some(r => {
+							const nameRegex = /^(.+)([：:].+)$/;
+
+							if (c.target !== undefined) {
+								if (c.target === TARGET_TYPE.SELF && r.target !== TARGET_TYPE.SELF)
+									return false;
+								else if (c.target === TARGET_TYPE.OUR && (r.target !== TARGET_TYPE.OUR && r.target !== TARGET_TYPE.OUR_GRID))
+									return false;
+								else if (c.target === TARGET_TYPE.ENEMY && (r.target !== TARGET_TYPE.ENEMY && r.target !== TARGET_TYPE.ENEMY_GRID))
+									return false;
+							}
+
+							const shortName = (
+								nameRegex.test(loc[r.key])
+									? loc[r.key].replace(nameRegex, "$1")
+									: loc[r.key]
+							) ?? "";
+
+							if (!c.name) return true;
+							switch (c.compare) {
+								case ConditionCompareENYN.Equal:
+									if (shortName !== c.name) return false;
+									break;
+								case ConditionCompareENYN.NotEqual:
+									if (shortName === c.name) return false;
+									break;
+								case ConditionCompareENYN.Exists:
+									if (!shortName.includes(c.name)) return false;
+									break;
+								case ConditionCompareENYN.NotExists:
+									if (shortName.includes(c.name)) return false;
+									break;
+								default:
+									return false;
+							}
+
+							return true;
 						}));
 			}
 		})));

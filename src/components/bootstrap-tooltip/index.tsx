@@ -1,4 +1,4 @@
-import { Component, createRef, RefObject } from "preact";
+import { Component, createRef, RefObject, RenderableProps } from "preact";
 import render from "preact-render-to-string";
 
 import { Tooltip } from "bootstrap";
@@ -6,6 +6,8 @@ import { Tooltip } from "bootstrap";
 import "./style.scss";
 
 interface BootstrapTooltipProps {
+	class?: string;
+	tooltipClass?: string;
 	placement?: "top" | "left" | "right" | "bottom";
 	content?: preact.VNode;
 }
@@ -32,6 +34,7 @@ class BootstrapTooltip extends Component<BootstrapTooltipProps> {
 			new Tooltip(el, {
 				// container: "body",
 				// boundary: "window",
+				customClass: this.props.tooltipClass ?? "",
 				delay: 10,
 				html: true,
 				placement: this.props.placement || "bottom",
@@ -59,8 +62,8 @@ class BootstrapTooltip extends Component<BootstrapTooltipProps> {
 		}
 	}
 
-	render (): preact.VNode {
-		return <span ref={ this.el }>{ this.props.children }</span>;
+	render (props?: RenderableProps<BootstrapTooltipProps>): preact.VNode {
+		return <span class={ props?.class } ref={ this.el }>{ props?.children }</span>;
 	}
 }
 export default BootstrapTooltip;

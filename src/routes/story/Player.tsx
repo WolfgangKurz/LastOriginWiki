@@ -31,7 +31,7 @@ import PixiSpineModel from "@/components/pixi/PixiSpineModel";
 
 import DialogObject from "./Objects/DialogObject";
 import SelectionObject from "./Objects/SelectionObject";
-import CommuSprite from "../../components/pixi/CommuSprite/CommuSprite";
+import CommuSprite from "../../components/pixi/shaders/CommuSprite/CommuSprite";
 
 import style from "./style.module.scss";
 
