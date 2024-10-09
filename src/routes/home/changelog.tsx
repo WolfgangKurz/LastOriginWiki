@@ -6,6 +6,18 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12688" date="2024-10-10"
+		update={ <>
+			<li>
+				<BG>다운로드<sup>+</sup></BG> 기능의 결과품의 해상도를 2배로 개선했습니다.
+			</li>
+		</> }
+		bugfix={ <>
+			<li>
+				<BG>다운로드<sup>+</sup></BG> 기능이 일부 효과를 그리지 못하던 점을 수정했습니다.<br />
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12686" date="2024-10-10"
 		bugfix={ <>
 			<li>

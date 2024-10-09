@@ -30,8 +30,8 @@ export default class Shared {
 		this._renderTexture2.resize(width, height, true);
 	}
 
-	public apply (renderer: PIXI.Renderer): void {
-		const sp = PIXI.Sprite.from(this._renderTexture1);
+	public apply (renderer: PIXI.Renderer, targetRenderTexture?: PIXI.RenderTexture): void {
+		const sp = PIXI.Sprite.from(targetRenderTexture || this._renderTexture1);
 		renderer.render(sp, { renderTexture: this.renderTexture2 });
 	}
 

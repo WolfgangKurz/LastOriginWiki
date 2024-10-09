@@ -7,20 +7,16 @@ import vert from "../vert.glsl?raw";
 import frag from "./frag.glsl?raw";
 
 export default class Additive extends BaseScreenInputFilter {
-	private _fn: (delta: number) => void;
 	constructor () {
 		super(vert, frag, {
 			uTexture_ST: [1, 1, 0, 0],
 			uTintColor: [0.5, 0.5, 0.5, 0.5],
 
 			uReference: Shared.instance.renderTexture2,
-			uScreenSize: [1, 1],
+			uScreenTextureSize: [1, 1],
 		});
 
 		this.autoFit = false; // do not crop & adjust uv
-
-		this._fn = this.fn.bind(this);
-		PIXI.Ticker.shared.add(this._fn);
 	}
 
 	apply (
@@ -49,15 +45,7 @@ export default class Additive extends BaseScreenInputFilter {
 		gl.blendFuncSeparate(_s_rgb, _d_rgb, _s_a, _d_a);
 	}
 
-	private fn (delta: number) {
-		if (this.uniforms) {
-			this.uniforms.uScreenSize[0] = Shared.instance.renderTexture2.width;
-			this.uniforms.uScreenSize[1] = Shared.instance.renderTexture2.height;
-		}
-	}
-
 	destroy (): void {
-		PIXI.Ticker.shared.remove(this._fn);
 		super.destroy();
 	}
 }

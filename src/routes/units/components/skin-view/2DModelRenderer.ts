@@ -25,6 +25,12 @@ export async function render2DModel (): Promise<HTMLCanvasElement | null> {
 		return null;
 	})();
 
+	// current back RenderTexture size
+	const rtSize: Tuple<number, 2> = [
+		Shared.instance.renderTexture1.width,
+		Shared.instance.renderTexture1.height,
+	];
+
 	// save original viewport scale
 	const vpOriginalMatrix = vp ? vp.transform.localTransform.clone() : new PIXI.Matrix().identity();
 
@@ -44,6 +50,7 @@ export async function render2DModel (): Promise<HTMLCanvasElement | null> {
 
 		const vpMatrix = (vp ? new PIXI.Matrix().copyFrom(vp.localTransform) : new PIXI.Matrix().identity())
 			.invert();
+		vpMatrix.scale(2, 2); // for more good quality
 
 		const bounds = (() => {
 			const _b = host.getBounds(false);
@@ -73,16 +80,20 @@ export async function render2DModel (): Promise<HTMLCanvasElement | null> {
 			width: 1,
 			height: 1,
 		});
-		const rt = PIXI.RenderTexture.create({ width: w, height: h });
+
+		Shared.instance.resize(w, h); // for shader render-texture
 
 		const _sep = new PIXI.Container();
 		_sep.transform.setFromMatrix(vpMatrix);
+
+		const _empty = new PIXI.Container();
+		const rt = Shared.instance.renderTexture1;
+		renderer.render(_empty, { renderTexture: Shared.instance.renderTexture1 });
 
 		// TODO: Optimize draw call
 		// * [obj1] - [obj2] - [obj3] - [filter,obj4] - [obj5] - [obj6]
 		// *   into
 		// * [obj1, obj2, obj3] - [filter,obj4] - [obj5, obj6]
-		const _cont = new PIXI.Container();
 		Shared.RenderableObjects(host)
 			.sort((a, b) => a.zIndex - b.zIndex)
 			.forEach(o => {
@@ -93,15 +104,15 @@ export async function render2DModel (): Promise<HTMLCanvasElement | null> {
 							c.renderable = false;
 				}
 
+				if (o.filters?.some(r => r instanceof BaseScreenInputFilter))
+					Shared.instance.apply(renderer!);
+
 				renderer!.render(o, {
 					clear: false,
 					renderTexture: rt,
 					skipUpdateTransform: true,
 					transform: vpMatrix
 				});
-
-				if (o.filters?.some(r => r instanceof BaseScreenInputFilter))
-					Shared.instance.apply(renderer!);
 
 				if (o.children) {
 					for (const c of o.children)
@@ -116,6 +127,7 @@ export async function render2DModel (): Promise<HTMLCanvasElement | null> {
 		return canvas;
 	} finally {
 		vp?.transform.setFromMatrix(vpOriginalMatrix);
+		Shared.instance.resize(...rtSize);
 		Shared.instance.inRendering = false;
 	}
 };

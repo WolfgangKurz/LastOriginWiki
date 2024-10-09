@@ -139,13 +139,14 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 									c.renderable = false;
 						}
 
+						if (o.filters?.some(r => r instanceof BaseScreenInputFilter))
+							Shared.instance.apply(renderer!);
+
 						renderer!.render(o, {
 							clear: false,
 							renderTexture: rt,
 							skipUpdateTransform: true,
 						});
-						if (o.filters?.some(r => r instanceof BaseScreenInputFilter))
-							Shared.instance.apply(renderer!);
 
 						if (o.children) {
 							for (const c of o.children)

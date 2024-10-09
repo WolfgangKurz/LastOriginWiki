@@ -7,10 +7,10 @@ uniform vec4 uTexture_ST;
 uniform vec4 uTintColor;
 
 uniform sampler2D uReference;
-uniform vec2 uScreenSize;
+uniform vec2 uScreenTextureSize;
 
 void main() {
-	vec2 uvBack = gl_FragCoord.xy / uScreenSize;
+	vec2 uvBack = gl_FragCoord.xy / uScreenTextureSize;
 	vec4 color_Back = texture2D(uReference, uvBack);
 
 	vec2 uvMain = vUV * uTexture_ST.xy + uTexture_ST.zw;
