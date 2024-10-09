@@ -152,6 +152,9 @@ export default class Pixi2DModel extends FadeContainer {
 	private dialogDeactiveList: string[] = [];
 	private treeItems: NodeTreeItem[] = [];
 
+	private roots: PIXI.Sprite[] = [];
+	public get Roots () { return this.roots; }
+
 	constructor (image: string) {
 		super();
 		this.sortableChildren = true;
@@ -338,6 +341,9 @@ export default class Pixi2DModel extends FadeContainer {
 						entity.sprite.zIndex = (_z[entity.id] ?? 0);
 						entity.sprite.parentLayer = _layers[entity.sprite.zIndex];
 						entity.sprite.layerableChildren = true;
+
+						if (node.id <= 2) // root of GameObject, ~~_root GameObject
+							this.roots.push(entity.sprite);
 
 						setNodeTransform(node, entity.sprite);
 						if (node.id === 1) // Adjust root element position

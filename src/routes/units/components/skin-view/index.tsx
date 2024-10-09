@@ -23,6 +23,21 @@ import PixiView from "./PixiView";
 
 import style from "./style.module.scss";
 
+const Spinner: FunctionalComponent = () => {
+	return <svg width="1em" height="1em" viewBox="0 0 24 24">
+		<g>
+			<circle cx="12" cy="2.5" r="1.5" fill="currentColor" opacity="0.14" />
+			<circle cx="16.75" cy="3.77" r="1.5" fill="currentColor" opacity="0.29" />
+			<circle cx="20.23" cy="7.25" r="1.5" fill="currentColor" opacity="0.43" />
+			<circle cx="21.5" cy="12" r="1.5" fill="currentColor" opacity="0.57" />
+			<circle cx="20.23" cy="16.75" r="1.5" fill="currentColor" opacity="0.71" />
+			<circle cx="16.75" cy="20.23" r="1.5" fill="currentColor" opacity="0.86" />
+			<circle cx="12" cy="21.5" r="1.5" fill="currentColor" />
+			<animateTransform attributeName="transform" calcMode="discrete" dur="0.75s" repeatCount="indefinite" type="rotate" values="0 12 12;30 12 12;60 12 12;90 12 12;120 12 12;150 12 12;180 12 12;210 12 12;240 12 12;270 12 12;300 12 12;330 12 12;360 12 12" />
+		</g>
+	</svg>;
+};
+
 interface SkinItem extends UnitSkin {
 	isDef: boolean;
 	isPro: boolean;
@@ -248,13 +263,14 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		if (inPlusDownload) return;
 		setInPlusDownload(true);
 
-		render2DModel().then(canvas => {
-			try {
+		render2DModel()
+			.then(canvas => {
 				if (!canvas) {
 					alert(
 						loc["UNIT_VIEW_SKIN_DOWNLOADPLUS_FAILED"] ||
 						"Failed to create the image.\nPlease try again, or use the regular download option."
 					);
+					setInPlusDownload(false);
 					return;
 				}
 				canvas.toBlob(blob => {
@@ -265,14 +281,13 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					anchor.target = "_blank";
 					anchor.download = filename;
 					anchor.click();
+
+					setInPlusDownload(false);
 				}, "image/png", 100);
-			} finally {
-				setInPlusDownload(false);
-			}
-		});
+			});
 	}
 
-	return <div class={ style.SkinView }>
+	return <div class={ cn(style.SkinView, inPlusDownload && style.InPlusDownload) }>
 		<div class={ `ratio ${Aspect} ${style.SkinFull} ${props.collapsed ? style.Collapsed : ""}` }>
 			<div>
 				<div class={ `${style.FullBG} ${props.black ? style.Black : ""}` } />
@@ -370,7 +385,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								</span> }
 							>
 								<a
-									class={ style.DownloadContent }
+									class={ cn(style.DownloadContent, style.DownloadPlusContent) }
 									href="#"
 									onClick={ e => {
 										e.preventDefault();
@@ -378,6 +393,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 										download2DModel(SkinImageDownloadPlusFilename);
 									} }
 								>
+									<Spinner />
 									<svg width="1em" height="1em" viewBox="0 0 24 24">
 										<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
 										<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M 16 6 L 20 6 M 18 4 L 18 8" />

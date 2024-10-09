@@ -34,7 +34,7 @@ class BootstrapTooltip extends Component<BootstrapTooltipProps> {
 			new Tooltip(el, {
 				// container: "body",
 				// boundary: "window",
-				customClass: this.props.tooltipClass,
+				customClass: this.props.tooltipClass ?? "",
 				delay: 10,
 				html: true,
 				placement: this.props.placement || "bottom",

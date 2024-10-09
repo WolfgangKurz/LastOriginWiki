@@ -67,6 +67,20 @@
 	display: block;
 	color: $light;
 }
+.DownloadPlusContent {
+	> svg:first-child {
+		display: none;
+	}
+
+	@at-root .InPlusDownload & {
+		> svg:first-child {
+			display: block;
+		}
+		> svg:last-child {
+			display: none;
+		}
+	}
+}
 .DownloadTooltipContainer {
 	--bs-tooltip-max-width: 400px;
 }

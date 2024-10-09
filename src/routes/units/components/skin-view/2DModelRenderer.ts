@@ -29,10 +29,16 @@ export async function render2DModel (): Promise<HTMLCanvasElement | null> {
 	let vpScale = vp ? [vp.transform.scale.x, vp.transform.scale.y] : [1, 1];
 
 	try {
-		// make x2 to do super-sampling (seems x2 is best quality)
+		// make original scale
 		if (vp) {
-			vp.transform.scale.set(2, 2);
-			vp.updateTransform();
+			const tf = new PIXI.Matrix().identity();
+			host.Roots.forEach(root => {
+				// extract scale only
+				tf.scale(root.transform.scale.x, root.transform.scale.y);
+			});
+			tf.invert();
+
+			vp.transform.setFromMatrix(tf);
 		}
 
 		const vpMatrix = (vp ? new PIXI.Matrix().copyFrom(vp.localTransform) : new PIXI.Matrix().identity())
