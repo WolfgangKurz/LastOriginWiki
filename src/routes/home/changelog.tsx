@@ -6,6 +6,13 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12686" date="2024-10-10"
+		bugfix={ <>
+			<li>
+				<BG>다운로드<sup>+</sup></BG> 기능을 이용한 후, 스킨의 위치가 이동하던 점을 수정했습니다.<br />
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12681" date="2024-10-10"
 		bugfix={ <>
 			<li>

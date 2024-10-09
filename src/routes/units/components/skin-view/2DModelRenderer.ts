@@ -26,7 +26,7 @@ export async function render2DModel (): Promise<HTMLCanvasElement | null> {
 	})();
 
 	// save original viewport scale
-	let vpScale = vp ? [vp.transform.scale.x, vp.transform.scale.y] : [1, 1];
+	const vpOriginalMatrix = vp ? vp.transform.localTransform.clone() : new PIXI.Matrix().identity();
 
 	try {
 		// make original scale
@@ -39,6 +39,7 @@ export async function render2DModel (): Promise<HTMLCanvasElement | null> {
 			tf.invert();
 
 			vp.transform.setFromMatrix(tf);
+			vp.updateTransform();
 		}
 
 		const vpMatrix = (vp ? new PIXI.Matrix().copyFrom(vp.localTransform) : new PIXI.Matrix().identity())
@@ -114,7 +115,7 @@ export async function render2DModel (): Promise<HTMLCanvasElement | null> {
 
 		return canvas;
 	} finally {
-		vp?.transform.scale.set(...vpScale);
+		vp?.transform.setFromMatrix(vpOriginalMatrix);
 		Shared.instance.inRendering = false;
 	}
 };
