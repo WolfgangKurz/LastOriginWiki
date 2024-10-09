@@ -1,10 +1,10 @@
 import { FunctionalComponent } from "preact";
-import { useCallback, useMemo, useState } from "preact/hooks";
+import { useCallback, useEffect, useMemo, useState } from "preact/hooks";
 import Decimal from "decimal.js";
 
 import { Unit } from "@/types/DB/Unit";
 import { SkillEntity, SkillGroup } from "@/types/DB/Skill";
-import { ACTOR_GRADE } from "@/types/Enums";
+import { ACTOR_BODY_TYPE, ACTOR_GRADE } from "@/types/Enums";
 import { BuffStat } from "@/types/Buffs";
 
 import { useLocale } from "@/libs/Locale";
@@ -12,7 +12,7 @@ import Session from "@/libs/Session";
 import { isActive } from "@/libs/Functions";
 import { objState } from "@/libs/State";
 import { ImageExtension, RarityDisplay } from "@/libs/Const";
-import { BuildClass } from "@/libs/Class";
+import { BuildClass, cn } from "@/libs/Class";
 import { GetSkillDescription } from "@/libs/SkillDescription";
 
 import Locale from "@/components/locale";
@@ -25,6 +25,8 @@ import BuffList from "@/components/buff-list";
 import SkillIcon from "@/components/skill-icon";
 
 import style from "./style.module.scss";
+import Button from "@/components/Button";
+import Badge from "@/components/Badge";
 
 interface SkillItem extends SkillEntity {
 	slot: string;
@@ -77,6 +79,11 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 	const [displayBuffList, setDisplayBuffList] = useState<boolean>(Session.get("unit.skill-table.displayBuffList", "0") === "1");
 	const [displayBuffDummy, setDisplayBuffDummy] = useState<boolean>(Session.get("unit.skill-table.displayBuffDummy", "0") === "1");
 	const [displayFlavor, setDisplayFlavor] = useState<boolean>(Session.get("unit.skill-table.displayFlavor", "1") === "1");
+
+	useEffect(() => {
+		if (favorBonus && unit.body === ACTOR_BODY_TYPE.AGS)
+			setFavorBonus(false);
+	}, [unit, favorBonus]);
 
 	const HasFormChange = useMemo(() => {
 		const raw = skills;
@@ -177,12 +184,13 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 		</select>
 		<span class="text-secondary ps-2">|</span>
 		<div class="d-inline-block ms-2">
-			<div class="form-check d-inline-block me-2">
+			<div class={ cn("form-check d-inline-block me-2", unit.body === ACTOR_BODY_TYPE.AGS && "text-secondary") }>
 				<label>
 					<input
 						class="form-check-input"
 						type="checkbox"
 						checked={ favorBonus }
+						disabled={ unit.body === ACTOR_BODY_TYPE.AGS }
 						onChange={ (): void => {
 							const v = !favorBonus;
 							setFavorBonus(v);
@@ -246,16 +254,6 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 
 	const tableContent = useCallback((skill: SkillItem): preact.VNode => {
 		const flavorKey = `UNIT_SKILL_FLAVOR_${props.unit.uid}_${skill.key}`;
-		const flavorStr = loc[flavorKey] || "";
-		const flavor = !displayFlavor || (flavorStr === flavorKey)
-			? <></>
-			: <div class={ style.SkillFlavor }>
-				{ flavorStr.startsWith("<div>")
-					? <Locale k={ flavorKey } />
-					: <Locale k={ flavorKey } plain />
-				}
-			</div>;
-
 		const descList = GetSkillDescriptions(skill, Values);
 
 		return <>
@@ -304,7 +302,14 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 			</div>
 
 			<div>
-				{ flavor }
+				<div class={ cn(style.SkillFlavor, !(displayFlavor && flavorKey in loc) && "d-none") }>
+					{ flavorKey in loc
+						? loc[flavorKey].startsWith("<div>")
+							? <Locale k={ flavorKey } raw />
+							: <Locale k={ flavorKey } raw={ false } />
+						: <></>
+					}
+				</div>
 
 				{ descList.lines.map((line) => <div class="unit-modal-skill">
 					{ !line
@@ -341,15 +346,14 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				: <></>
 			}
 
-			{ displayBuffList && buffList[skill.key].length > 0
-				? <BuffList
+			<div class={ cn(!(displayBuffList && buffList[skill.key].length > 0) && "d-none") }>
+				<BuffList
 					uid={ unit.uid }
 					list={ buffList[skill.key] }
 					level={ finalSkillLevel }
 					dummy={ displayBuffDummy }
 				/>
-				: <></>
-			}
+			</div>
 		</>;
 	}, [
 		loc,
@@ -381,76 +385,91 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 		lightning: <Locale k="COMMON_ELEM_ELECTRIC" />,
 	};
 
-	return <table class="table table-bordered table-unit-modal">
-		<thead class="thead-dark">
-			<tr>
-				<th colSpan={ 3 }>
-					<Locale k="UNIT_SKILL" />
-					{ HasFormChange && <div class="btn-group ms-2">
-						<button
-							class={ `btn btn-sm btn-outline-warning ${isActive(formState === "normal")}` }
-							onClick={ (): void => setFormState("normal") }
-						>Normal</button>
-						<button
-							class={ `btn btn-sm btn-outline-warning ${isActive(formState === "change")}` }
-							onClick={ (): void => setFormState("change") }
-						>F.Change</button>
-					</div> }
-				</th>
-			</tr>
-			<tr>
-				<th><Locale k="UNIT_SKILL_NAME" /></th>
-				<th class="d-md-table-cell d-none">{ skillHeader }</th>
-				<th><Locale k="UNIT_SKILL_RANGE" /></th>
-			</tr>
-			<tr class="d-md-none d-table-row">
-				<th colSpan={ 2 }>{ skillHeader }</th>
-			</tr>
-		</thead>
-		<tbody>
-			{ Skills.map(skill => {
-				const rates = GetRates(skill);
-				const el = skill.buffs.data[skill.buffs.index[skillLevel]].type;
-				const v = Decimal.add(rates[skillLevel], bonus)
-					.toFixed(10)
-					.replace(/\.?0+$/, "");
+	return <>
+		<div class={ style.SkillTable }>
+			<div class={ style.Title }>
+				<Locale k="UNIT_SKILL" />
 
-				return <>
-					<tr class={ skill.key.startsWith("F") ? style.SkillTableFChange : "" }>
-						<td>
+				{ HasFormChange && <Button.Group>
+					<Button
+						active={ formState === "normal" }
+						variant="warning"
+						outline
+						onClick={ () => setFormState("normal") }
+					>
+						Normal
+					</Button>
+					<Button
+						active={ formState === "change" }
+						variant="warning"
+						outline
+						onClick={ () => setFormState("change") }
+					>
+						F.Change
+					</Button>
+				</Button.Group> }
+			</div>
+			<div class={ style.Table }>
+				<div class={ style.Header }>
+					<Locale k="UNIT_SKILL_NAME" />
+				</div>
+				<div class={ cn(style.Header, style.SkillController) }>
+					{ skillHeader }
+				</div>
+				<div class={ style.Header }>
+					<Locale k="UNIT_SKILL_RANGE" />
+				</div>
+
+				{ Skills.map(skill => {
+					const rates = GetRates(skill);
+					const el = skill.buffs.data[skill.buffs.index[skillLevel]].type;
+					const v = Decimal.add(rates[skillLevel], bonus)
+						.toFixed(10)
+						.replace(/\.?0+$/, "");
+
+					const isFChange = skill.key[0] === "F";
+
+					return <>
+						<div class={ cn(style.LeftSide, isFChange && style.SkillTableFChange) }>
 							<SkillIcon icon={ skill.icon } passive={ skill.isPassive } />
 							<div class="text-bold">
 								<Locale plain k={ `UNIT_SKILL_${unit.uid}_${skill.key}` } />
 							</div>
 
-							<span class="skill-info-badge badge bg-light text-bg-light border border-secondary">
-								<ElemIcon elem={ el } class={ BuildClass("mb-0", skill.isPassive && "mx-0") } />
+							<div>
+								<span class="skill-info-badge badge bg-light text-bg-light border border-secondary">
+									<ElemIcon elem={ el } class={ BuildClass("mb-0", skill.isPassive && "mx-0") } />
 
-								{ !skill.isPassive && <Locale
-									k="skill_description_damage"
-									p={ [
-										<span class={ style.Damage }>
-											<span data-bonus={ bonus.toNumber() }>{ v }</span>
-											{ valueHelp }
-										</span>,
-										elDisp[el],
-									] }
-								/> }
-							</span>
+									{ !skill.isPassive && <Locale
+										k="skill_description_damage"
+										p={ [
+											<span class={ style.Damage }>
+												<span data-bonus={ bonus.toNumber() }>{ v }</span>
+												{ valueHelp }
+											</span>,
+											elDisp[el],
+										] }
+									/> }
+								</span>
 
-							{ skill.index > endRarity
-								? <span class="ms-2 badge bg-substory text-bg-substory"><Locale k="UNIT_SKILL_DUMMY" /></span>
-								: skill.isPassive && skill.index > unit.rarity
-									? <RarityBadge class="ms-2" rarity={ skill.index }>
-										{ RarityDisplay[skill.index as ACTOR_GRADE] }
-										&nbsp;
-										<Locale k="UNIT_SKILL_PROMOTION_SKILL" />
-									</RarityBadge>
-									: <></>
-							}
-						</td>
-						<td class="text-start d-none d-md-table-cell">{ tableContent(skill) }</td>
-						<th class="bg-dark text-bg-dark text-center">
+								{ skill.index > endRarity
+									? <Badge class={ cn("ms-2", style.DummyBadge) } variant="substory">
+										<Locale k="UNIT_SKILL_DUMMY" />
+									</Badge>
+									: skill.isPassive && skill.index > unit.rarity
+										? <RarityBadge class="ms-2" rarity={ skill.index }>
+											{ RarityDisplay[skill.index as ACTOR_GRADE] }
+											&nbsp;
+											<Locale k="UNIT_SKILL_PROMOTION_SKILL" />
+										</RarityBadge>
+										: <></>
+								}
+							</div>
+						</div>
+						<div class={ cn(style.Content, isFChange && style.SkillTableFChange) }>
+							{ tableContent(skill) }
+						</div>
+						<div class={ cn(style.Bound) }>
 							<SkillBound
 								passive={ skill.isPassive }
 								buffs={ skill.buffs }
@@ -458,14 +477,11 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 								level={ skillLevel + 1 }
 								rangeBonus={ props.rangeBonus }
 							/>
-						</th>
-					</tr>
-					<tr class="d-table-row d-md-none">
-						<td class="text-start" colSpan={ 2 }>{ tableContent(skill) }</td>
-					</tr>
-				</>;
-			}) }
-		</tbody>
-	</table>;
+						</div>
+					</>;
+				}) }
+			</div>
+		</div >
+	</>;
 };
 export default SkillTable;

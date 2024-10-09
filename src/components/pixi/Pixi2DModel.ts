@@ -4,9 +4,14 @@ import * as LAYERS from "@pixi/layers";
 import { AssetsRoot, IsDev } from "@/libs/Const";
 import { quat2eul } from "@/libs/Math";
 
+import Shared from "@/components/pixi/Shared";
+
 import FadeContainer from "./FadeContainer";
 
-import HologramNoiseAlpha from "./HologramNoiseAlpha/HologramNoiseAlpha";
+import Shader_Multiply from "./shaders/multiply";
+import Shader_Additive from "./shaders/additive";
+import Shader_AdditiveSoft from "./shaders/additive_soft";
+import HologramNoiseAlpha from "./shaders/HologramNoiseAlpha";
 
 // Interfaces from `@/components/u2dmodel-renderer`
 interface RECT {
@@ -158,6 +163,9 @@ export default class Pixi2DModel extends FadeContainer {
 		this.layerableChildren = true;
 
 		const canvas = document.createElement("canvas");
+
+		Shared.instance.host = this;
+
 		// make sprites with clip path
 		const createClippedTexture = (
 			image: HTMLImageElement,
@@ -169,17 +177,19 @@ export default class Pixi2DModel extends FadeContainer {
 			const w = Math.ceil(vector.rc.w);
 			const h = Math.ceil(vector.rc.h);
 
+			const ppur = 100 / vector.u; // Pixels per Unit Ratio (100 for camera)
+
 			const cv = canvas;
-			cv.width = w;
-			cv.height = h;
+			cv.width = w * ppur;
+			cv.height = h * ppur;
 
 			const ctx = cv.getContext("2d");
 			if (!ctx) return reject();
 
 			ctx.beginPath();
 			clipPt.forEach((p, i) => {
-				const _x = x + p[0];
-				const _y = y + vector.h - p[1];
+				const _x = (x + p[0]) * ppur;
+				const _y = (y + vector.h - p[1]) * ppur;
 				if (i % 3 === 0)
 					ctx.moveTo(_x, _y);
 				else
@@ -191,8 +201,8 @@ export default class Pixi2DModel extends FadeContainer {
 				image,
 				vector.x, (image.height - vector.h - vector.y), // bottom y is zero
 				vector.w, vector.h,
-				x, y,
-				vector.w, vector.h,
+				x * ppur, y * ppur,
+				vector.w * ppur, vector.h * ppur,
 			);
 
 			cv.toBlob(b => {
@@ -281,7 +291,8 @@ export default class Pixi2DModel extends FadeContainer {
 					id: 0,
 					name: "#",
 					data: null as unknown as NodeTreeItem["data"],
-					sprite: this as unknown as PIXI.Sprite, // for root as container
+					// @ts-expect-error : same with PIXI.Sprite without constructor
+					sprite: this, // for root as container
 					child: [],
 				};
 				const treeItems = this.treeItems;
@@ -294,12 +305,10 @@ export default class Pixi2DModel extends FadeContainer {
 							? 3.5
 							: 1;
 
-						const ppu = obj.sprite ? this.spMap[obj.sprite].vector.u : 100;
-
 						const rot = quat2eul(obj.vector.slice(6, 10) as Tuple<number, 4>);
 						target.setTransform(
-							obj.vector[0] * ppu,
-							-obj.vector[1] * ppu,
+							obj.vector[0] * 100,
+							-obj.vector[1] * 100,
 
 							obj.vector[3] * scaleMultiplier,
 							obj.vector[4] * scaleMultiplier,
@@ -383,14 +392,16 @@ export default class Pixi2DModel extends FadeContainer {
 							const shader = o.shader[0];
 							switch (shader) {
 								case "multiply":
-									sprite.blendMode = PIXI.BLEND_MODES.MULTIPLY;
+									// sprite.blendMode = PIXI.BLEND_MODES.MULTIPLY;
+									sprite.filters!.push(new Shader_Multiply());
 									break;
 								case "additive":
-									sprite.blendMode = PIXI.BLEND_MODES.ADD;
+									// sprite.blendMode = PIXI.BLEND_MODES.ADD;
+									sprite.filters!.push(new Shader_Additive());
 									break;
 								case "additive-soft":
-									sprite.blendMode = PIXI.BLEND_MODES.ADD;
-									sprite.alpha = 0.5;
+									// sprite.blendMode = PIXI.BLEND_MODES.ADD;
+									sprite.filters!.push(new Shader_AdditiveSoft());
 									break;
 								case "hologram-noise-alpha":
 									sprite.filters!.push(new HologramNoiseAlpha());
@@ -411,13 +422,6 @@ export default class Pixi2DModel extends FadeContainer {
 									tex.rotate = PIXI.groupD8.MIRROR_VERTICAL;
 							}
 							sprite.texture = tex;
-
-							const ppu = sp.vector.u;
-							const ppum = 100 / ppu; // ppu multiply
-							sprite.scale.set(
-								sprite.scale.x * ppum,
-								sprite.scale.y * ppum,
-							);
 						}
 					});
 
@@ -510,6 +514,9 @@ export default class Pixi2DModel extends FadeContainer {
 	}
 
 	destroy (options?: boolean | PIXI.IDestroyOptions | undefined): void {
+		if (Shared.instance.host === this)
+			Shared.instance.host = null;
+
 		// texture destroying controlled by component
 		if (options === undefined)
 			super.destroy({ texture: true });

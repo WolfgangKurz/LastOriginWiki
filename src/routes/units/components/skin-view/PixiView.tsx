@@ -10,6 +10,9 @@ import { UnitSkinEntity } from "@/types/DB/Unit";
 
 import { IsDev } from "@/libs/Const.1";
 
+import Shared from "@/components/pixi/Shared";
+import BaseScreenInputFilter from "@/components/pixi/shaders/base";
+
 import FadeContainer from "@/components/pixi/FadeContainer";
 import PixiSpineModel from "@/components/pixi/PixiSpineModel";
 import Pixi2DModel from "@/components/pixi/Pixi2DModel";
@@ -18,6 +21,11 @@ import PixiVideoModel from "@/components/pixi/PixiVideoModel";
 import MixedModel from "./MixedModel";
 
 import style from "./style.module.scss";
+
+interface PixiState {
+	renderer: PIXI.Renderer;
+	ticker: PIXI.Ticker;
+}
 
 interface PixiViewProps {
 	type: "mixed" | "spine" | "2dmodel" | "video" | "none";
@@ -37,7 +45,7 @@ interface PixiViewProps {
 }
 
 const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
-	const [app, setApp] = useState<PIXI.Application<HTMLCanvasElement> | null>(null);
+	const [pixi, setPixi] = useState<PixiState | null>(null);
 	const [surface, setSurface] = useState<PIXI.Container | null>(null);
 
 	const [char, setChar] = useState<PixiSpineModel | Pixi2DModel | MixedModel | PixiVideoModel | null>(null);
@@ -54,10 +62,12 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 	);
 
 	useEffect(() => { // initialize
-		let app: PIXI.Application<HTMLCanvasElement> | null = null;
+		let renderer: PIXI.Renderer | null = null;
+		let ticker: PIXI.Ticker | null = null;
+		let _alive: boolean = true;
 
 		if (playerRef.current) {
-			app = new PIXI.Application({
+			renderer = new PIXI.Renderer({
 				antialias: true,
 				backgroundColor: 0x000000,
 				backgroundAlpha: 0,
@@ -68,7 +78,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 				autoDensity: true,
 				powerPreference: "low-power",
 
-				// eventMode: "passive",
+				eventMode: "passive",
 				eventFeatures: {
 					globalMove: false,
 					move: true,
@@ -76,50 +86,113 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 					wheel: true,
 				},
 			});
-			app.ticker.maxFPS = 60;
+			ticker = new PIXI.Ticker();
+			ticker.maxFPS = 60;
 
-			if (IsDev)
-				globalThis.__PIXI_APP__ = app;
-			setApp(app);
+			const screen = new PIXI.Sprite(Shared.instance.renderTexture1);
+			screen.eventMode = "none";
 
-			app.stage = new LAYERS.Stage();
+			const stage = new LAYERS.Stage();
+
+			if (IsDev) {
+				globalThis.__PIXI_STAGE__ = stage;
+				globalThis.__PIXI_RENDERER__ = renderer;
+			}
+
+			const state: PixiState = {
+				renderer,
+				ticker,
+			};
+			setPixi(state);
 
 			const vp = new Viewport({
-				ticker: app.ticker,
-				events: app.renderer.events,
+				ticker,
+				events: renderer.events,
 			});
-			app.stage.addChild(vp);
+			vp.drag().pinch().wheel().clampZoom({
+				minScale: 0.5,
+				maxScale: 4,
+			});
+			stage.addChild(vp);
+
+			const _empty = new PIXI.Container();
+
+			ticker.add(() => {
+				if (!renderer) return;
+				if (Shared.instance.inRendering) return;
+
+				const rt = Shared.instance.renderTexture1;
+				renderer.render(_empty, { renderTexture: Shared.instance.renderTexture1 });
+
+				// TODO: Optimize draw call
+				// * [obj1] - [obj2] - [obj3] - [filter,obj4] - [obj5] - [obj6]
+				// *   into
+				// * [obj1, obj2, obj3] - [filter,obj4] - [obj5, obj6]
+				Shared.RenderableObjects(stage)
+					.sort((a, b) => a.zIndex - b.zIndex)
+					.forEach(o => {
+						if (o.parent) o.updateTransform();
+
+						if (o.children) {
+							for (const c of o.children)
+								if (c instanceof PIXI.DisplayObject)
+									c.renderable = false;
+						}
+
+						renderer!.render(o, {
+							clear: false,
+							renderTexture: rt,
+							skipUpdateTransform: true,
+						});
+						if (o.filters?.some(r => r instanceof BaseScreenInputFilter))
+							Shared.instance.apply(renderer!);
+
+						if (o.children) {
+							for (const c of o.children)
+								if (c instanceof PIXI.DisplayObject)
+									c.renderable = true;
+						}
+					});
+
+				renderer.render(screen);
+
+				surface.renderable = false;
+				renderer.render(stage, {
+					clear: false, // keep renderTexture to screen rendered result
+					skipUpdateTransform: true, // already updated at first-pass
+				});
+			}, PIXI.UPDATE_PRIORITY.LOW);
+			ticker.start();
 
 			const animIndi = new FadeContainer();
 			animIndi.name = "[Animation Indicator]";
 			animIndi.x = 30;
 			animIndi.y = 30;
-			app.stage.addChild(animIndi);
+			stage.addChild(animIndi);
 			setAnimationIndicator(animIndi);
 
 			const animIndiG = new PIXI.Graphics();
 			animIndi.addChild(animIndiG);
 			setAnimationIndicatorGraphics(animIndiG);
 
-			vp.drag().pinch().wheel().clampZoom({
-				minScale: 0.5,
-				maxScale: 4,
-			});
-
 			const surface = new PIXI.Container();
 			vp.addChild(surface);
 			setSurface(surface);
 
-			playerRef.current.appendChild(app.view);
+			playerRef.current.appendChild(renderer.view as HTMLCanvasElement);
 		}
 
 		return () => {
+			_alive = false;
+
 			if (char) {
 				char.destroy();
 				setChar(null);
 			}
 
-			if (app) app.destroy(true);
+			if (ticker) ticker.destroy();
+			if (renderer) renderer.destroy(true);
+			setPixi(null);
 		};
 	}, []);
 
@@ -130,9 +203,11 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 			ob = new ResizeObserver(e => {
 				const rc = (e[0].contentRect as DOMRectReadOnly);
 
-				if (app) {
-					app.renderer.resolution = window.devicePixelRatio || 1;
-					app.renderer.resize(rc.width, rc.height);
+				Shared.instance.resize(rc.width, rc.height);
+
+				if (pixi) {
+					pixi.renderer.resolution = window.devicePixelRatio || 1;
+					pixi.renderer.resize(rc.width, rc.height);
 				}
 				surface.position.set(rc.width / 2, rc.height / 2);
 				surface.scale.set(rc.height / 720);
@@ -143,7 +218,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 		}
 
 		return () => ob?.disconnect();
-	}, [playerRef.current, surface]);
+	}, [playerRef.current, pixi, surface]);
 
 	useEffect(() => {
 		if (surface) {
@@ -273,11 +348,11 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 				animationIndicator.fadeOut(.5);
 		}
 
-		if (app && animInfo) app.ticker.add(fn);
+		if (pixi && animInfo) pixi.ticker.add(fn);
 		return () => {
-			if (app && animInfo) app?.ticker?.remove(fn);
+			if (pixi && animInfo) pixi.ticker?.remove(fn);
 		};
-	}, [app, animInfo]);
+	}, [pixi, animInfo]);
 
 	return <div
 		class={ style.PixiView }

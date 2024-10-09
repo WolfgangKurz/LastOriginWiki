@@ -7,6 +7,7 @@ import "./style.scss";
 
 interface BootstrapTooltipProps {
 	class?: string;
+	tooltipClass?: string;
 	placement?: "top" | "left" | "right" | "bottom";
 	content?: preact.VNode;
 }
@@ -33,6 +34,7 @@ class BootstrapTooltip extends Component<BootstrapTooltipProps> {
 			new Tooltip(el, {
 				// container: "body",
 				// boundary: "window",
+				customClass: this.props.tooltipClass,
 				delay: 10,
 				html: true,
 				placement: this.props.placement || "bottom",

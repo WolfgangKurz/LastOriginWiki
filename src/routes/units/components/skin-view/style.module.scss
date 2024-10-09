@@ -63,6 +63,21 @@
 	left: 10px;
 }
 
+.DownloadContent > svg {
+	display: block;
+	color: $light;
+}
+.DownloadTooltipContainer {
+	--bs-tooltip-max-width: 400px;
+}
+.DownloadTooltip {
+	display: block;
+	width: auto;
+	white-space: pre-wrap;
+	text-align: left;
+	font-size: 90%;
+}
+
 .SkinToggle {
 	position: absolute;
 	display: block;
@@ -140,7 +155,16 @@
 		}
 	}
 	&.Download {
-		bottom: 64px;
+		bottom: 56px;
+		right: 12px;
+		width: 32px;
+		height: 32px;
+		filter: drop-shadow(0 0 5px #000) drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
+		font-size: 32px;
+		color: $light;
+	}
+	&.DownloadPlus {
+		bottom: 96px;
 		right: 12px;
 		width: 32px;
 		height: 32px;
