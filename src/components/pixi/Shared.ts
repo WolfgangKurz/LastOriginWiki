@@ -35,23 +35,84 @@ export default class Shared {
 		renderer.render(sp, { renderTexture: this.renderTexture2 });
 	}
 
-	public static RenderableObjects (root: PIXI.Container): PIXI.DisplayObject[] {
-		const ret: PIXI.DisplayObject[] = [];
+	public static RenderableObjects (root: PIXI.DisplayObject): PIXI.DisplayObject[] {
+		interface RenderTree {
+			target: PIXI.DisplayObject;
+			parent: RenderTree | null;
+			childs: RenderTree[];
+		}
 
-		function trav (o: PIXI.DisplayObject) {
-			if (o instanceof PIXI.DisplayObject && o.renderable && o.worldVisible) {
-				ret.push(o);
-			}
+		const tree: RenderTree = {
+			target: root,
+			parent: null,
+			childs: [],
+		};
+		const allNodes: RenderTree[] = [tree];
 
-			if (o.children) {
-				for (const c of o.children) {
-					if (c instanceof PIXI.Container)
-						trav(c);
-				}
+		// Make tree first
+		function recursiveTree (tree: RenderTree) {
+			const { target } = tree;
+
+			if (target instanceof PIXI.Container) {
+				target.children.forEach((c: PIXI.DisplayObject) => {
+					const node: RenderTree = {
+						target: c,
+						parent: tree,
+						childs: [],
+					};
+
+					if (c.visible) {
+						tree.childs.push(node);
+						allNodes.push(node);
+
+						recursiveTree(node);
+					}
+				});
 			}
 		}
-		trav(root);
+		recursiveTree(tree);
 
-		return ret;
+		// move parent based on layer
+		allNodes.forEach(n => {
+			if (!n.target.parentLayer) return;
+
+			if (n.parent) {
+				const oParent = n.parent;
+				const idx = oParent.childs.indexOf(n);
+				oParent.childs.splice(idx, 1); // remove from previous parent
+			}
+
+			const parent = allNodes.find(p => p.target === n.target.parentLayer);
+			if (!parent) return; // parent not found
+
+			parent.childs.push(n);
+		});
+
+		if (false) { // tree print
+			function recursiveDebug (current: RenderTree, depth: number = 0) {
+				console.log(
+					"  ".repeat(depth) +
+					(current.target.name || "...") + " : " + current.target.constructor.name
+				);
+				current.childs.forEach(c => recursiveDebug(c, depth + 1));
+			}
+			recursiveDebug(tree);
+		}
+
+		const renderList: PIXI.DisplayObject[] = [];
+		function recursiveResult (cur: RenderTree) {
+			if (cur.target.renderable) // visible==false already excluded
+				renderList.push(cur.target);
+
+			cur.childs
+				.sort((a, b) => {
+					if (a.target.zIndex !== b.target.zIndex) return a.target.zIndex - b.target.zIndex;
+					return (a.target.zOrder || 0) - (b.target.zOrder || 0);
+				})
+				.forEach(c => recursiveResult(c));
+		}
+		recursiveResult(tree);
+
+		return renderList;
 	}
 }

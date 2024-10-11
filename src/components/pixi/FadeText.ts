@@ -91,7 +91,10 @@ export default class FadeText extends FadeContainer {
 		});
 		this._sprites = [];
 
-		if (!this._text) return;
+		if (!this._text) {
+			this.emit("update");
+			return;
+		}
 
 		const fontFamilies = [
 			this._style?.fontFamily,
@@ -273,6 +276,8 @@ export default class FadeText extends FadeContainer {
 							break;
 					}
 				});
+
+			this.emit("update");
 		});
 	}
 }

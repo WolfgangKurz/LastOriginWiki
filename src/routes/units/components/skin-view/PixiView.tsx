@@ -64,7 +64,6 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 	useEffect(() => { // initialize
 		let renderer: PIXI.Renderer | null = null;
 		let ticker: PIXI.Ticker | null = null;
-		let _alive: boolean = true;
 
 		if (playerRef.current) {
 			renderer = new PIXI.Renderer({
@@ -78,7 +77,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 				autoDensity: true,
 				powerPreference: "low-power",
 
-				eventMode: "passive",
+				// eventMode: "passive",
 				eventFeatures: {
 					globalMove: false,
 					move: true,
@@ -129,14 +128,17 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 				// *   into
 				// * [obj1, obj2, obj3] - [filter,obj4] - [obj5, obj6]
 				Shared.RenderableObjects(stage)
-					.sort((a, b) => a.zIndex - b.zIndex)
 					.forEach(o => {
 						if (o.parent) o.updateTransform();
 
+						const _visibles: PIXI.DisplayObject[] = [];
 						if (o.children) {
-							for (const c of o.children)
-								if (c instanceof PIXI.DisplayObject)
-									c.renderable = false;
+							for (const c of o.children) {
+								if (c instanceof PIXI.DisplayObject && c.visible) {
+									c.visible = false;
+									_visibles.push(c);
+								}
+							}
 						}
 
 						if (o.filters?.some(r => r instanceof BaseScreenInputFilter))
@@ -148,12 +150,10 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 							skipUpdateTransform: true,
 						});
 
-						if (o.children) {
-							for (const c of o.children)
-								if (c instanceof PIXI.DisplayObject)
-									c.renderable = true;
-						}
+						_visibles.forEach(c => c.visible = true);
 					});
+
+				renderer.render(stage, { renderTexture: rt });
 
 				renderer.render(screen);
 
@@ -162,6 +162,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 					clear: false, // keep renderTexture to screen rendered result
 					skipUpdateTransform: true, // already updated at first-pass
 				});
+				surface.renderable = true;
 			}, PIXI.UPDATE_PRIORITY.LOW);
 			ticker.start();
 
@@ -178,14 +179,13 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 			const surface = new PIXI.Container();
 			vp.addChild(surface);
+			// stage.addChild(surface);
 			setSurface(surface);
 
 			playerRef.current.appendChild(renderer.view as HTMLCanvasElement);
 		}
 
 		return () => {
-			_alive = false;
-
 			if (char) {
 				char.destroy();
 				setChar(null);

@@ -388,7 +388,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			app.stage.addChild(selection);
 
 			// 1x1 white gif dataURI
-			const screenEffect = new FadeSprite(PIXI.Texture.from("data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs="));
+			const screenEffect = new FadeSprite(PIXI.Texture.WHITE);
 			screenEffect.name = "@screenEffect";
 			screenEffect.zIndex = 590;
 			screenEffect.alpha = 0;
@@ -669,11 +669,12 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				[/^Cut_/, 500], // over Char
 				["Eva_Cut", 500],
 				[/^BG_11_[1-7]$/, 500], // cut-scene
+				[/^Cuy_DreamMermaid_1_[12]$/, 500], // cut-scene
 			];
 
 			PIXI.Texture.fromURL(`${AssetsRoot}/story/bg/${bgImage}.jpg`)
 				.then(tex => {
-					if (disposed) {
+					if (disposed || !tex.valid) {
 						tex.destroy();
 						return;
 					}
@@ -686,15 +687,23 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 						return f ? f[1] : 0;
 					})();
 
-					bg = new FadeSprite(tex);
+					bg = new FadeSprite(PIXI.Texture.WHITE);
+					bg.tint = 0x000000;
 					bg.name = "@bg";
 					bg.width = 1280;
+					bg.height = 720;
+
+					const bgC = new FadeSprite(tex);
+					bgC.name = "@bg image";
+					bgC.width = 1280;
 					if ((props.bgStyle ?? 0) === 0) {
-						bg.height = 720;
+						bgC.height = 720;
 					} else {
-						bg.height = Math.min(720, 1280 / tex.width * tex.height);
-						bg.y = 360 - bg.height / 2;
+						bgC.height = Math.min(720, 1280 / tex.width * tex.height);
+						bgC.y = 360 - bgC.height / 2;
 					}
+
+					bg.addChild(bgC);
 					bg.zIndex = 50 + z;
 					screen.addChild(bg);
 				});

@@ -83,25 +83,27 @@ export async function render2DModel (): Promise<HTMLCanvasElement | null> {
 
 		Shared.instance.resize(w, h); // for shader render-texture
 
-		const _sep = new PIXI.Container();
-		_sep.transform.setFromMatrix(vpMatrix);
+		const rt = Shared.instance.renderTexture1;
 
 		const _empty = new PIXI.Container();
-		const rt = Shared.instance.renderTexture1;
-		renderer.render(_empty, { renderTexture: Shared.instance.renderTexture1 });
+		renderer.render(_empty, { renderTexture: rt });
 
 		// TODO: Optimize draw call
 		// * [obj1] - [obj2] - [obj3] - [filter,obj4] - [obj5] - [obj6]
 		// *   into
 		// * [obj1, obj2, obj3] - [filter,obj4] - [obj5, obj6]
 		Shared.RenderableObjects(host)
-			.sort((a, b) => a.zIndex - b.zIndex)
 			.forEach(o => {
 				if (o.parent) o.updateTransform();
+
+				const _visibles: PIXI.DisplayObject[] = [];
 				if (o.children) {
-					for (const c of o.children)
-						if (c instanceof PIXI.DisplayObject)
-							c.renderable = false;
+					for (const c of o.children) {
+						if (c instanceof PIXI.DisplayObject && c.visible) {
+							c.visible = false;
+							_visibles.push(c);
+						}
+					}
 				}
 
 				if (o.filters?.some(r => r instanceof BaseScreenInputFilter))
@@ -111,14 +113,9 @@ export async function render2DModel (): Promise<HTMLCanvasElement | null> {
 					clear: false,
 					renderTexture: rt,
 					skipUpdateTransform: true,
-					transform: vpMatrix
 				});
 
-				if (o.children) {
-					for (const c of o.children)
-						if (c instanceof PIXI.DisplayObject)
-							c.renderable = true;
-				}
+				_visibles.forEach(c => c.visible = true);
 			});
 
 		const canvas = renderer.extract.canvas(rt) as HTMLCanvasElement;

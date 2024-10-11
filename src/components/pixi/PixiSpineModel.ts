@@ -408,7 +408,7 @@ export default class PixiSpineModel extends FadeContainer {
 
 		const collLayer = new LAYERS.Layer(new LAYERS.Group(3));
 		collLayer.name = "*Layer [Collider Layer]";
-		collLayer.zIndex = 3;
+		collLayer.zIndex = 99;
 		root!.addChild(collLayer);
 
 		// Static BoxCollider will not be moved/changed
