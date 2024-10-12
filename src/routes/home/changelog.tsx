@@ -6,6 +6,12 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12693" date="2024-10-12"
+		bugfix={ <>
+			<li><BY>적 정보</BY>의 <BR>행동패턴</BR>이 작동하지 않는 문제를 수정했습니다.</li>
+			<li>전투원 <BY>아이언 애니</BY>의 스킨 <BR>돌격대장! 정열의 특공복​</BR>의 검열판이 표시되지 않던 문제가 수정되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12690" date="2024-10-12"
 		new={ <>
 			<li>

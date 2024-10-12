@@ -4,7 +4,7 @@ import renderToString from "preact-render-to-string";
 
 import { toJpeg } from "html-to-image";
 
-import { ReactFlow, Edge, MarkerType, Node, useEdgesState, useNodesState, useReactFlow, getNodesBounds, getViewportForBounds } from "@reactflow/core";
+import { ReactFlow, Edge, MarkerType, Node, useEdgesState, useNodesState } from "@reactflow/core";
 import { Background as FlowBackground, BackgroundVariant } from "@reactflow/background";
 import { Controls as FlowControls, ControlButton as FlowControlButton } from "@reactflow/controls";
 import "reactflow/dist/style.css";
@@ -55,8 +55,6 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const captureRef = useRef<HTMLDivElement>(null);
 	const canvasRef = useRef<HTMLDivElement>(null);
-
-	const { getNodes } = useReactFlow();
 
 	useEffect(() => { // resetter
 		setGraph(false);
@@ -745,7 +743,8 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 		const el = captureRef.current;
 		el.innerHTML = srcEl.outerHTML;
 
-		el.querySelector<HTMLDivElement>(".react-flow__viewport")!.style.transform = "translate(5px, 5px)";
+		const elC = el.querySelector<HTMLDivElement>(".react-flow__viewport")!;
+		elC.style.transform = "translate(5px, 5px)";
 
 		let b_right = 0;
 		let b_bottom = 0;
@@ -763,27 +762,21 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 
 		el.style.width = `${b_right + 10}px`;
 		el.style.height = `${b_bottom + 10}px`;
+		// el.style.top = "0px";
 
-		toJpeg(captureRef.current, {
+		toJpeg(elC, {
 			quality: 1.0,
 			skipFonts: true,
 			backgroundColor: "#fff",
 		})
 			.then(url => {
+				el.style.top = "";
+
 				const anchor = document.createElement("a");
 				anchor.download = `${safeName(props.name || "ai")}.jpg`;
 				anchor.href = url;
 				anchor.click();
 			});
-		// html2canvas(captureRef.current, {
-		// 	useCORS: true,
-		// }).then(canvas => {
-		// 	const url = canvas.toDataURL("image/jpeg", 1.0);
-		// 	const anchor = document.createElement("a");
-		// 	anchor.download = `${safeName(props.name || "ai")}.jpg`;
-		// 	anchor.href = url;
-		// 	anchor.click();
-		// });
 	}
 
 	return <div class={ BuildClass("text-center", style.AIList) } ref={ wrapperRef }>
