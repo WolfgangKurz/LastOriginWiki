@@ -79,7 +79,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const [displayTouchCollider, setDisplayTouchCollider] = useState(false);
 
 	const [cameraBoundaryAvailable, setCameraBoundaryAvailable] = useState(false);
-	const [downloadPlusCameraBoundary, setDownloadPlusCameraBoundary] = useState(false);
+	const [downloadPlusCameraBoundary, setDownloadPlusCameraBoundary] = useState(true);
 
 	const [enableAnimation, setEnableAnimation] = useState(false);
 	const [asBlackBG, setAsBlackBG] = useState(false);
@@ -391,7 +391,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								tooltipClass={ style.DownloadTooltipContainer }
 								placement="left"
 								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-									<Locale k="UNIT_VIEW_SKIN_DOWNLOADPLUS_CAMERABOUNDARY" />
+									<Locale raw k="UNIT_VIEW_SKIN_DOWNLOADPLUS_CAMERABOUNDARY" />
 								</span> }
 							>
 								<a
@@ -416,7 +416,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								tooltipClass={ style.DownloadTooltipContainer }
 								placement="left"
 								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-									<Locale k="UNIT_VIEW_SKIN_DOWNLOADPLUS" />
+									<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOADPLUS" />
 								</span> }
 							>
 								<a
@@ -440,7 +440,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								tooltipClass={ style.DownloadTooltipContainer }
 								placement="left"
 								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-									<Locale k="UNIT_VIEW_SKIN_DOWNLOAD" />
+									<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOAD" />
 								</span> }
 							>
 								<a

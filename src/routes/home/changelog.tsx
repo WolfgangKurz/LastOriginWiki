@@ -6,29 +6,17 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12693" date="2024-10-12"
-		bugfix={ <>
-			<li><BY>적 정보</BY>의 <BR>행동패턴</BR>이 작동하지 않는 문제를 수정했습니다.</li>
-			<li>전투원 <BY>아이언 애니</BY>의 스킨 <BR>돌격대장! 정열의 특공복​</BR>의 검열판이 표시되지 않던 문제가 수정되었습니다.</li>
-		</> }
-	/>
-	<ChangelogItem title="Build 12690" date="2024-10-12"
+	<ChangelogItem title="Build 12696" date="2024-10-24"
 		new={ <>
 			<li>
-				신규 이벤트 <BY>꿈꾸지 않는 인어를 위해</BY> 정보가 추가되었습니다.
+				카메라 영역 한계가 있는 스킨의 경우,
+				<BG>다운로드<sup>+</sup></BG>에서 저장할 때 카메라 한계 영역에 맞춰 자르는 옵션이 추가되었습니다.<br />
+				기본 ON 입니다.
 			</li>
 		</> }
-		update={ <>
-			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
-		</> }
 		bugfix={ <>
-			<li>스토리 플레이어에서 폰트가 로드된 후의 선택지 텍스트의 크기가 조절되지 않던 문제를 수정했습니다.</li>
-			<li>스토리 플레이어에서 배경을 <BP>종횡비 유지</BP>로 설정했을 때, 배경 너머로 캐릭터 등의 다른 이미지가 표시되던 점을 개선했습니다.</li>
-			<li><BO>Build 12678</BO> 이후 Spine 로비 애니메이션 스킨의 터치 영역 표시가 스킨에 가려지고 작동하지 않는 문제를 수정했습니다.</li>
-		</> }
-		skin={ <>
-			<li>전투원 <BY>아이언 애니</BY>의 스킨 <BR>돌격대장! 정열의 특공복​</BR>의 정보가 추가되었습니다.</li>
-			<li>누락된 스킨 배너를 추가했습니다.</li>
+			<li>스킨 뷰어에서 일부 전투원의 회전/왜곡이 잘못 적용되어 표시되는 문제를 수정했습니다.</li>
+			<li><BG>다운로드<sup>+</sup></BG>에서 일부 전투원이 잘린 상태로 다운로드 되는 문제를 수정했습니다.</li>
 		</> }
 	/>
 </>;
