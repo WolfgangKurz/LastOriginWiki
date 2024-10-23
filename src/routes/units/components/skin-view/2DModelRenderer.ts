@@ -4,7 +4,7 @@ import { Viewport } from "pixi-viewport";
 import Shared from "@/components/pixi/Shared";
 import BaseScreenInputFilter from "@/components/pixi/shaders/base";
 
-export async function render2DModel (): Promise<HTMLCanvasElement | null> {
+export async function render2DModel (cropByCameraBoundary: boolean = false): Promise<HTMLCanvasElement | null> {
 	Shared.instance.inRendering = true;
 
 	const host = Shared.instance.host;
@@ -53,20 +53,10 @@ export async function render2DModel (): Promise<HTMLCanvasElement | null> {
 		vpMatrix.scale(2, 2); // for more good quality
 
 		const bounds = (() => {
-			const _b = host.getBounds(false);
+			const host_target = (cropByCameraBoundary && host.getChildByName("Camera_Boundary", true)) || host;
+
+			const _b = host_target.getBounds(false);
 			let [l, t, r, b] = [_b.left, _b.top, _b.right, _b.bottom];
-
-			// viewport never rotates
-			l *= vpMatrix.a;
-			t *= vpMatrix.d;
-			r *= vpMatrix.a;
-			b *= vpMatrix.d;
-
-			l -= vpMatrix.tx;
-			t -= vpMatrix.ty;
-			r -= vpMatrix.tx;
-			b -= vpMatrix.ty;
-
 			return new PIXI.Rectangle(l, t, r - l, b - t);
 		})();
 		const w = bounds.width;
@@ -88,13 +78,16 @@ export async function render2DModel (): Promise<HTMLCanvasElement | null> {
 		const _empty = new PIXI.Container();
 		renderer.render(_empty, { renderTexture: rt });
 
+		const offsetMat = new PIXI.Matrix();
+		offsetMat.translate(-bounds.left, -bounds.top);
+
 		// TODO: Optimize draw call
 		// * [obj1] - [obj2] - [obj3] - [filter,obj4] - [obj5] - [obj6]
 		// *   into
 		// * [obj1, obj2, obj3] - [filter,obj4] - [obj5, obj6]
 		Shared.RenderableObjects(host)
 			.forEach(o => {
-				if (o.parent) o.updateTransform();
+				// if (o.parent) o.updateTransform();
 
 				const _visibles: PIXI.DisplayObject[] = [];
 				if (o.children) {
@@ -112,6 +105,7 @@ export async function render2DModel (): Promise<HTMLCanvasElement | null> {
 				renderer!.render(o, {
 					clear: false,
 					renderTexture: rt,
+					transform: offsetMat,
 					skipUpdateTransform: true,
 				});
 

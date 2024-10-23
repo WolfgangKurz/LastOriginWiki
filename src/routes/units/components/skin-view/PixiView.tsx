@@ -42,6 +42,8 @@ interface PixiViewProps {
 
 	face: string;
 	onFaceList?: (list: string[], prefix: string) => void;
+
+	onCameraBoundary?: (available: boolean) => void;
 }
 
 const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
@@ -268,6 +270,10 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 					_char.on("facelist", (list, prefix) => {
 						if (props.onFaceList)
 							props.onFaceList(list, prefix);
+					});
+					_char.on("cameraBoundary", v => {
+						if (props.onCameraBoundary)
+							props.onCameraBoundary(v);
 					});
 
 					setChar(_char);

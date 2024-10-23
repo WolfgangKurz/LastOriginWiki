@@ -439,6 +439,8 @@ export default class Pixi2DModel extends FadeContainer {
 
 				const facePrefix = image.replace(/^2DModel_/, "") + "_";
 				this.emit("facelist", polyfillFaces(r.face.map(r => r.name)), facePrefix);
+
+				this.emit("cameraBoundary", !!this.getChildByName("Camera_Boundary", true));
 			})
 			.finally(() => {
 				canvas.remove();
