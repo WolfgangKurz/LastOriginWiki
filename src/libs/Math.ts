@@ -1,3 +1,5 @@
+import * as PIXI from "pixi.js";
+
 export function quat2eul (quat: Tuple<number, 4>) { // quat2eul (radian)
 	const q = {
 		x: quat[0],
@@ -23,4 +25,47 @@ export function quat2eul (quat: Tuple<number, 4>) { // quat2eul (radian)
 	ret.z = Math.atan2(siny_cosp, cosy_cosp);
 
 	return ret;
+}
+
+export function quat2tf (q: Tuple<number, 4>): PIXI.Transform {
+	const x = q[0], y = q[1], z = q[2], w = q[3];
+	const rm = [ // rotation matrix
+		1 - 2 * (y * y + z * z), 2 * (x * y - w * z), 0,
+		2 * (x * y + w * z), 1 - 2 * (x * x + z * z), 0,
+		0, 0, 1
+	];
+
+	// axes
+	const xp = { x: rm[0], y: rm[3] };
+	const yp = { x: rm[1], y: rm[4] };
+
+	// 2d matrix
+	const a = xp.x, b = xp.y, c = yp.x, d = yp.y;
+
+	// scale
+	const scaleX = Math.hypot(a, b);
+	const scaleY = Math.hypot(c, d);
+
+	// scale removed
+	const aN = a / scaleX;
+	const bN = b / scaleX;
+	const cN = c / scaleY;
+	const dN = d / scaleY;
+
+	// Compute rotation
+	const rotation = Math.atan2(bN, aN);
+
+	// Compute skew
+	const skewX = Math.atan2(-cN, dN) - rotation;
+	const skewY = 0; // rotation - Math.atan2(b, a);
+
+	// Set to PixiJS Transform
+	const transform = new PIXI.Transform();
+	transform.scale.x = scaleX;
+	transform.scale.y = scaleY;
+	transform.rotation = rotation;
+	transform.skew.x = skewX;
+	transform.skew.y = skewY;
+
+	return transform;
 }
