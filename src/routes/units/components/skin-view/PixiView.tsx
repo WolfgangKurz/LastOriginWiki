@@ -357,7 +357,11 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 		if (pixi && animInfo) pixi.ticker.add(fn);
 		return () => {
-			if (pixi && animInfo) pixi.ticker?.remove(fn);
+			if (pixi && animInfo) {
+				try {
+					pixi.ticker?.remove(fn);
+				} catch { }
+			}
 		};
 	}, [pixi, animInfo]);
 
