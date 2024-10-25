@@ -8,6 +8,11 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12701" date="2024-10-26"
+		bugfix={ <>
+			<li><BY>획득처</BY>와 같은 일부 뱃지의 링크가 작동하지 않는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12698" date="2024-10-25"
 		new={ <>
 			<li>신규 전투원 <BY>멜트</BY>의 정보가 추가되었습니다.</li>
