@@ -8,6 +8,11 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12702" date="2024-10-27"
+		bugfix={ <>
+			<li>스킨 뷰어에서 일부 애니메이션을 포함한 스킨이 다운로드 버튼이 표시되지 않는 문제가 수정되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12701" date="2024-10-26"
 		bugfix={ <>
 			<li><BY>획득처</BY>와 같은 일부 뱃지의 링크가 작동하지 않는 문제를 수정했습니다.</li>

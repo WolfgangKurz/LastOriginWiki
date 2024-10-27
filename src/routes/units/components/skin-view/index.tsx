@@ -373,89 +373,87 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					}
 				</div>
 
-				{ !DisplaySpine
-					? modelVideoId
-						? <a
-							class={ `${style.SkinToggle} ${style.Download}` }
-							href={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` } // download webm only
-							download={ `${modelVideoId}.webm` }
-							target="_blank"
+				{ !DisplaySpine && modelVideoId
+					? <a
+						class={ `${style.SkinToggle} ${style.Download}` }
+						href={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` } // download webm only
+						download={ `${modelVideoId}.webm` }
+						target="_blank"
+					>
+						<svg width="1em" height="1em" viewBox="0 0 24 24">
+							<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+						</svg>
+					</a>
+					: <>
+						{ cameraBoundaryAvailable && <BootstrapTooltip
+							class={ `${style.SkinToggle} ${style.DownloadPlusCameraBoundary}` }
+							tooltipClass={ style.DownloadTooltipContainer }
+							placement="left"
+							content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
+								<Locale raw k="UNIT_VIEW_SKIN_DOWNLOADPLUS_CAMERABOUNDARY" />
+							</span> }
 						>
-							<svg width="1em" height="1em" viewBox="0 0 24 24">
-								<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
-							</svg>
-						</a>
-						: <>
-							{ cameraBoundaryAvailable && <BootstrapTooltip
-								class={ `${style.SkinToggle} ${style.DownloadPlusCameraBoundary}` }
-								tooltipClass={ style.DownloadTooltipContainer }
-								placement="left"
-								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-									<Locale raw k="UNIT_VIEW_SKIN_DOWNLOADPLUS_CAMERABOUNDARY" />
-								</span> }
+							<a
+								class={ cn(
+									style.DownloadContent,
+									style.ToggleButton,
+									downloadPlusCameraBoundary && style.Active,
+								) }
+								href="#"
+								onClick={ e => {
+									e.preventDefault();
+									e.stopImmediatePropagation();
+									setDownloadPlusCameraBoundary(v => !v);
+								} }
 							>
-								<a
-									class={ cn(
-										style.DownloadContent,
-										style.ToggleButton,
-										downloadPlusCameraBoundary && style.Active,
-									) }
-									href="#"
-									onClick={ e => {
-										e.preventDefault();
-										e.stopImmediatePropagation();
-										setDownloadPlusCameraBoundary(v => !v);
-									} }
-								>
-									{/* <IconCrop /> */ }
-									<IconAspectRatioFill />
-								</a>
-							</BootstrapTooltip> }
-							<BootstrapTooltip
-								class={ `${style.SkinToggle} ${style.DownloadPlus}` }
-								tooltipClass={ style.DownloadTooltipContainer }
-								placement="left"
-								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-									<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOADPLUS" />
-								</span> }
+								{/* <IconCrop /> */ }
+								<IconAspectRatioFill />
+							</a>
+						</BootstrapTooltip> }
+						<BootstrapTooltip
+							class={ `${style.SkinToggle} ${style.DownloadPlus}` }
+							tooltipClass={ style.DownloadTooltipContainer }
+							placement="left"
+							content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
+								<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOADPLUS" />
+							</span> }
+						>
+							<a
+								class={ cn(style.DownloadContent, style.DownloadPlusContent) }
+								href="#"
+								onClick={ e => {
+									e.preventDefault();
+									e.stopImmediatePropagation();
+									download2DModel(SkinImageDownloadPlusFilename, downloadPlusCameraBoundary);
+								} }
 							>
-								<a
-									class={ cn(style.DownloadContent, style.DownloadPlusContent) }
-									href="#"
-									onClick={ e => {
-										e.preventDefault();
-										e.stopImmediatePropagation();
-										download2DModel(SkinImageDownloadPlusFilename, downloadPlusCameraBoundary);
-									} }
-								>
-									<Spinner />
-									<svg width="1em" height="1em" viewBox="0 0 24 24">
-										<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
-										<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M 16 6 L 20 6 M 18 4 L 18 8" />
-									</svg>
-								</a>
-							</BootstrapTooltip>
-							<BootstrapTooltip
-								class={ `${style.SkinToggle} ${style.Download}` }
-								tooltipClass={ style.DownloadTooltipContainer }
-								placement="left"
-								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-									<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOAD" />
-								</span> }
+								<Spinner />
+								<svg width="1em" height="1em" viewBox="0 0 24 24">
+									<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+									<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M 16 6 L 20 6 M 18 4 L 18 8" />
+								</svg>
+							</a>
+						</BootstrapTooltip>
+						<BootstrapTooltip
+							class={ `${style.SkinToggle} ${style.Download}` }
+							tooltipClass={ style.DownloadTooltipContainer }
+							placement="left"
+							content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
+								<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOAD" />
+							</span> }
+						>
+							<a
+								class={ style.DownloadContent }
+								href={ SkinImageDownloadFilename }
+								download={ SkinImageDownloadFilename.substring(SkinImageDownloadFilename.lastIndexOf("/") + 1) }
+								target="_blank"
 							>
-								<a
-									class={ style.DownloadContent }
-									href={ SkinImageDownloadFilename }
-									download={ SkinImageDownloadFilename.substring(SkinImageDownloadFilename.lastIndexOf("/") + 1) }
-									target="_blank"
-								>
-									<svg width="1em" height="1em" viewBox="0 0 24 24">
-										<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
-									</svg>
-								</a>
-							</BootstrapTooltip>
-						</>
-					: <></>
+								<svg width="1em" height="1em" viewBox="0 0 24 24">
+									<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+								</svg>
+							</a>
+						</BootstrapTooltip>
+					</>
 				}
 
 				{ !(skin.isPro || skin.isDef) && skin.price
