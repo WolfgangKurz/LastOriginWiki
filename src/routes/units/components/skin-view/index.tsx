@@ -385,55 +385,57 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 						</svg>
 					</a>
 					: <>
-						{ cameraBoundaryAvailable && <BootstrapTooltip
-							class={ `${style.SkinToggle} ${style.DownloadPlusCameraBoundary}` }
-							tooltipClass={ style.DownloadTooltipContainer }
-							placement="left"
-							content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-								<Locale raw k="UNIT_VIEW_SKIN_DOWNLOADPLUS_CAMERABOUNDARY" />
-							</span> }
-						>
-							<a
-								class={ cn(
-									style.DownloadContent,
-									style.ToggleButton,
-									downloadPlusCameraBoundary && style.Active,
-								) }
-								href="#"
-								onClick={ e => {
-									e.preventDefault();
-									e.stopImmediatePropagation();
-									setDownloadPlusCameraBoundary(v => !v);
-								} }
+						{ !DisplaySpine && <>
+							{ cameraBoundaryAvailable && <BootstrapTooltip
+								class={ `${style.SkinToggle} ${style.DownloadPlusCameraBoundary}` }
+								tooltipClass={ style.DownloadTooltipContainer }
+								placement="left"
+								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
+									<Locale raw k="UNIT_VIEW_SKIN_DOWNLOADPLUS_CAMERABOUNDARY" />
+								</span> }
 							>
-								{/* <IconCrop /> */ }
-								<IconAspectRatioFill />
-							</a>
-						</BootstrapTooltip> }
-						<BootstrapTooltip
-							class={ `${style.SkinToggle} ${style.DownloadPlus}` }
-							tooltipClass={ style.DownloadTooltipContainer }
-							placement="left"
-							content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-								<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOADPLUS" />
-							</span> }
-						>
-							<a
-								class={ cn(style.DownloadContent, style.DownloadPlusContent) }
-								href="#"
-								onClick={ e => {
-									e.preventDefault();
-									e.stopImmediatePropagation();
-									download2DModel(SkinImageDownloadPlusFilename, downloadPlusCameraBoundary);
-								} }
+								<a
+									class={ cn(
+										style.DownloadContent,
+										style.ToggleButton,
+										downloadPlusCameraBoundary && style.Active,
+									) }
+									href="#"
+									onClick={ e => {
+										e.preventDefault();
+										e.stopImmediatePropagation();
+										setDownloadPlusCameraBoundary(v => !v);
+									} }
+								>
+									{/* <IconCrop /> */ }
+									<IconAspectRatioFill />
+								</a>
+							</BootstrapTooltip> }
+							<BootstrapTooltip
+								class={ `${style.SkinToggle} ${style.DownloadPlus}` }
+								tooltipClass={ style.DownloadTooltipContainer }
+								placement="left"
+								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
+									<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOADPLUS" />
+								</span> }
 							>
-								<Spinner />
-								<svg width="1em" height="1em" viewBox="0 0 24 24">
-									<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
-									<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M 16 6 L 20 6 M 18 4 L 18 8" />
-								</svg>
-							</a>
-						</BootstrapTooltip>
+								<a
+									class={ cn(style.DownloadContent, style.DownloadPlusContent) }
+									href="#"
+									onClick={ e => {
+										e.preventDefault();
+										e.stopImmediatePropagation();
+										download2DModel(SkinImageDownloadPlusFilename, downloadPlusCameraBoundary);
+									} }
+								>
+									<Spinner />
+									<svg width="1em" height="1em" viewBox="0 0 24 24">
+										<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+										<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M 16 6 L 20 6 M 18 4 L 18 8" />
+									</svg>
+								</a>
+							</BootstrapTooltip>
+						</> }
 						<BootstrapTooltip
 							class={ `${style.SkinToggle} ${style.Download}` }
 							tooltipClass={ style.DownloadTooltipContainer }
