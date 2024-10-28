@@ -5,7 +5,6 @@ import { groupBy } from "@/libs/Functions";
 
 import { AnimationFrame, AnimationValue } from "@/routes/story/Effects/AnimationEffect";
 
-import vert from "../vert.glsl?raw";
 import frag from "./frag.glsl?raw";
 
 export default class HologramNoiseAlpha extends PIXI.Filter {
@@ -64,7 +63,7 @@ export default class HologramNoiseAlpha extends PIXI.Filter {
 	}
 
 	constructor () {
-		super(vert, frag, {
+		super(undefined, frag, {
 			uTime: [0, 0, 0, 0],
 
 			uTexture_ST: [1, 1, 0, 0],

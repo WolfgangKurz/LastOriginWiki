@@ -3,12 +3,11 @@ import * as PIXI from "pixi.js";
 import BaseScreenInputFilter from "../base";
 import Shared from "../../Shared";
 
-import vert from "../vert.glsl?raw";
 import frag from "./frag.glsl?raw";
 
 export default class Additive extends BaseScreenInputFilter {
 	constructor () {
-		super(vert, frag, {
+		super(undefined, frag, {
 			uTexture_ST: [1, 1, 0, 0],
 			uTintColor: [0.5, 0.5, 0.5, 0.5],
 

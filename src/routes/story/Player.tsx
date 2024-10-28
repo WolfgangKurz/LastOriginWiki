@@ -31,7 +31,7 @@ import PixiSpineModel from "@/components/pixi/PixiSpineModel";
 
 import DialogObject from "./Objects/DialogObject";
 import SelectionObject from "./Objects/SelectionObject";
-import CommuSprite from "../../components/pixi/shaders/CommuSprite/CommuSprite";
+import CommuSprite from "./Objects/CommuSprite/CommuSprite";
 
 import style from "./style.module.scss";
 
@@ -336,7 +336,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 
 		if (playerRef.current) {
 			app = new PIXI.Application({
-				antialias: true,
+				antialias: false,
 				backgroundColor: 0x000000,
 
 				width: 1280,

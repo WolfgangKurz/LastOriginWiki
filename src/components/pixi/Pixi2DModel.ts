@@ -268,7 +268,7 @@ export default class Pixi2DModel extends FadeContainer {
 									.then(tex => {
 										const _btex = PIXI.BaseTexture.from(tex, {
 											anisotropicLevel: 4,
-											mipmap: PIXI.MIPMAP_MODES.OFF,
+											mipmap: PIXI.MIPMAP_MODES.ON,
 											multisample: PIXI.MSAA_QUALITY.HIGH,
 										});
 										const _tex = PIXI.Texture.from(_btex);

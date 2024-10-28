@@ -1,13 +1,8 @@
 import * as PIXI from "pixi.js";
 
-import frag from "./frag.glsl?raw";
-
-export default class AdditiveSoft extends PIXI.Filter {
+export default class Additive extends PIXI.Filter {
 	constructor () {
-		super(undefined, frag, {
-			uTexture_ST: [1, 1, 0, 0],
-			uTintColor: [1, 1, 1, 1],
-		});
+		super(undefined, undefined, {});
 	}
 
 	apply (
@@ -27,12 +22,16 @@ export default class AdditiveSoft extends PIXI.Filter {
 		const _d_a = gl.getParameter(gl.BLEND_DST_ALPHA);
 
 		gl.enable(gl.BLEND);
-		gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_COLOR);
+		gl.blendFuncSeparate(gl.SRC_ALPHA, gl.ONE, gl.ZERO, gl.ONE);
 
 		super.apply(filterManager, input, output, clearMode);
 
 		// Restore previous values
 		if (!_blend) gl.disable(gl.BLEND);
 		gl.blendFuncSeparate(_s_rgb, _d_rgb, _s_a, _d_a);
+	}
+
+	destroy (): void {
+		super.destroy();
 	}
 }
