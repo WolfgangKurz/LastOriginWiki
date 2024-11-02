@@ -25,6 +25,7 @@ import style from "./style.module.scss";
 interface PixiState {
 	renderer: PIXI.Renderer;
 	ticker: PIXI.Ticker;
+	vp: Viewport;
 }
 
 interface PixiViewProps {
@@ -75,7 +76,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 				width: 1,
 				height: 1,
-				resolution: window.devicePixelRatio || 1,
+				// resolution: window.devicePixelRatio || 1,
 				autoDensity: true,
 				powerPreference: "low-power",
 
@@ -90,7 +91,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 			ticker = new PIXI.Ticker();
 			ticker.maxFPS = 60;
 
-			const screen = new PIXI.Sprite(Shared.instance.renderTexture1);
+			const screen = new PIXI.Sprite(Shared.instance.renderTexture);
 			screen.eventMode = "none";
 
 			const stage = new LAYERS.Stage();
@@ -100,21 +101,33 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 				globalThis.__PIXI_RENDERER__ = renderer;
 			}
 
-			const state: PixiState = {
-				renderer,
-				ticker,
-			};
-			setPixi(state);
-
 			const vp = new Viewport({
 				ticker,
 				events: renderer.events,
+				forceHitArea: new PIXI.Rectangle(
+					-100000,
+					-100000,
+					200000,
+					200000
+				),
 			});
-			vp.drag().pinch().wheel().clampZoom({
-				minScale: 0.5,
-				maxScale: 4,
-			});
+			vp
+				.drag()
+				.pinch().wheel()
+				.clampZoom({
+					minScale: 0.5,
+					maxScale: 4,
+				});
 			stage.addChild(vp);
+
+			const state: PixiState = {
+				renderer,
+				ticker,
+				vp,
+			};
+			setPixi(state);
+
+			Shared.instance.renderer = renderer;
 
 			const _empty = new PIXI.Container();
 
@@ -122,8 +135,8 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 				if (!renderer) return;
 				if (Shared.instance.inRendering) return;
 
-				const rt = Shared.instance.renderTexture1;
-				renderer.render(_empty, { renderTexture: Shared.instance.renderTexture1 });
+				const rt = Shared.instance.renderTexture;
+				renderer.render(_empty, { renderTexture: Shared.instance.renderTexture });
 
 				// TODO: Optimize draw call
 				// * [obj1] - [obj2] - [obj3] - [filter,obj4] - [obj5] - [obj6]
@@ -143,9 +156,6 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 							}
 						}
 
-						if (o.filters?.some(r => r instanceof BaseScreenInputFilter))
-							Shared.instance.apply(renderer!);
-
 						renderer!.render(o, {
 							clear: false,
 							renderTexture: rt,
@@ -157,6 +167,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 				renderer.render(stage, { renderTexture: rt });
 
+				// screen.scale.set(1 / window.devicePixelRatio, 1 / window.devicePixelRatio);
 				renderer.render(screen);
 
 				surface.renderable = false;
@@ -195,6 +206,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 			if (ticker) ticker.destroy();
 			if (renderer) renderer.destroy(true);
+			Shared.instance.renderer = null;
 			setPixi(null);
 		};
 	}, []);
@@ -206,14 +218,12 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 			ob = new ResizeObserver(e => {
 				const rc = (e[0].contentRect as DOMRectReadOnly);
 
-				Shared.instance.resize(rc.width, rc.height);
+				const r = window.devicePixelRatio || 1;
+				Shared.instance.resize(rc.width * r, rc.height * r);
 
-				if (pixi) {
-					pixi.renderer.resolution = window.devicePixelRatio || 1;
-					pixi.renderer.resize(rc.width, rc.height);
-				}
-				surface.position.set(rc.width / 2, rc.height / 2);
-				surface.scale.set(rc.height / 720);
+				if (pixi) pixi.renderer.resize(rc.width * r, rc.height * r);
+				surface.position.set(rc.width * r / 2, rc.height * r / 2);
+				surface.scale.set(rc.height * r / 720);
 
 				animationIndicator?.position.set(30, 30);
 			});
@@ -367,9 +377,10 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 	return <div
 		class={ style.PixiView }
-		onWheel={ e => {
-			e.preventDefault();
-		} }
+		style={ { transform: `scale(${1 / (window.devicePixelRatio || 1)})` } }
+
+		onWheel={ e => e.preventDefault() }
+
 		ref={ playerRef }
 	/>;
 };

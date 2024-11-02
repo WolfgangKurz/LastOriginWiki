@@ -7,8 +7,9 @@ import { SkillVideo, SkinBanners } from "@/libs/Const.2";
 import { BuildClass } from "@/libs/Class";
 import { FormatDate, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
+import { useLocale } from "@/libs/Locale";
 
-import Locale, { LocaleGet } from "@/components/locale";
+import Locale from "@/components/locale";
 import IconQuestionCircleFill from "@/components/bootstrap-icon/icons/QuestionCircleFill";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import RarityBadge from "@/components/rarity-badge";
@@ -23,6 +24,8 @@ import style from "./style.module.scss";
 
 const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList, onSkinIndexChange }) => {
 	if (!display) return <></>;
+
+	const [loc] = useLocale();
 
 	const skin = useMemo<typeof SkinList[0] | undefined>(() => SkinList[skinIndex], [SkinList, skinIndex]);
 	const ssid = useMemo(() => {
@@ -76,12 +79,11 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 
 	function ParseDesc (key: string): preact.VNode[] {
 		const locKey = `CONSUMABLE_DESC_${key}`;
-		const desc = LocaleGet(locKey);
+		const desc = loc[locKey] || "";
 
+		if (desc.length === 0) return [];
 		return ParseDescriptionText(
-			(desc === locKey ? "" : desc)
-				.toString()
-				.replace(/&([lg]t);/g, (p0, p1) => p1 === "lt" ? "<" : ">")
+			desc.replace(/&([lg]t);/g, (_, p1) => p1 === "lt" ? "<" : ">")
 		);
 	}
 

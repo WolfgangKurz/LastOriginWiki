@@ -2,7 +2,7 @@ import * as PIXI from "pixi.js";
 import * as LAYERS from "@pixi/layers";
 
 import { AssetsRoot, IsDev } from "@/libs/Const";
-import { quat2eul, quat2tf } from "@/libs/Math";
+import { quat2tf } from "@/libs/Math";
 
 import Shared from "@/components/pixi/Shared";
 
@@ -268,7 +268,7 @@ export default class Pixi2DModel extends FadeContainer {
 									.then(tex => {
 										const _btex = PIXI.BaseTexture.from(tex, {
 											anisotropicLevel: 4,
-											mipmap: PIXI.MIPMAP_MODES.ON,
+											mipmap: PIXI.MIPMAP_MODES.OFF,
 											multisample: PIXI.MSAA_QUALITY.HIGH,
 										});
 										const _tex = PIXI.Texture.from(_btex);

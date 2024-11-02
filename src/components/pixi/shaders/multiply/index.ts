@@ -9,12 +9,17 @@ export default class Multiply extends BaseScreenInputFilter {
 	constructor () {
 		super(undefined, frag, {
 			uTexture_ST: [1, 1, 0, 0],
-
-			uReference: Shared.instance.renderTexture2,
-			uScreenTextureSize: [1, 1],
 		});
+	}
 
-		this.autoFit = false; // do not crop & adjust uv
+	apply (
+		filterManager: PIXI.FilterSystem,
+		input: PIXI.RenderTexture,
+		output: PIXI.RenderTexture,
+		clearMode?: PIXI.CLEAR_MODES,
+		_currentState?: PIXI.FilterState
+	): void {
+		super.apply(filterManager, input, output, clearMode);
 	}
 
 	destroy (): void {

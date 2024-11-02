@@ -6,7 +6,7 @@ import { Unit, UnitSkin } from "@/types/DB/Unit";
 
 import { useDBData } from "@/libs/Loader";
 import { useLocale } from "@/libs/Locale";
-import { AssetsRoot, ImageExtension, IsDev, RarityDisplay, UnitClassDisplay, UnitRoleDisplay } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, RarityDisplay, UnitClassDisplay, UnitRoleDisplay } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import { cn } from "@/libs/Class";
 import EntitySource from "@/libs/EntitySource";
@@ -64,11 +64,6 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 			? parseInt(props.sub.substring(1), 10)
 			: 0
 	);
-
-	if (!IsDev) {
-		if (props.sub)
-			route(`/units/${props.uid}`, true);
-	}
 
 	const _unit = useDBData<Unit>(`unit/${props.uid}`);
 

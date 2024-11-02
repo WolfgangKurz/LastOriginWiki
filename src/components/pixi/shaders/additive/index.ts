@@ -1,7 +1,6 @@
 import * as PIXI from "pixi.js";
 
 import BaseScreenInputFilter from "../base";
-import Shared from "../../Shared";
 
 import frag from "./frag.glsl?raw";
 
@@ -10,12 +9,7 @@ export default class Additive extends BaseScreenInputFilter {
 		super(undefined, frag, {
 			uTexture_ST: [1, 1, 0, 0],
 			uTintColor: [0.5, 0.5, 0.5, 0.5],
-
-			uReference: Shared.instance.renderTexture2,
-			uScreenTextureSize: [1, 1],
 		});
-
-		this.autoFit = false; // do not crop & adjust uv
 	}
 
 	apply (

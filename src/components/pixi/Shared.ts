@@ -8,31 +8,19 @@ export default class Shared {
 		return Shared._shared;
 	}
 
-	private _renderTexture1: PIXI.RenderTexture;
-	private _renderTexture2: PIXI.RenderTexture;
+	private _renderTexture: PIXI.RenderTexture;
+	public get renderTexture (): PIXI.RenderTexture { return this._renderTexture; }
 
-	/** for renderer */
-	public get renderTexture1 (): PIXI.RenderTexture { return this._renderTexture1; }
-
-	/** for shader */
-	public get renderTexture2 (): PIXI.RenderTexture { return this._renderTexture2; }
-
+	public renderer: PIXI.Renderer | null = null;
 	public host: Pixi2DModel | null = null;
 	public inRendering: boolean = false;
 
 	private constructor () { // new guard
-		this._renderTexture1 = PIXI.RenderTexture.create({ width: 1, height: 1 });
-		this._renderTexture2 = PIXI.RenderTexture.create({ width: 1, height: 1 });
+		this._renderTexture = PIXI.RenderTexture.create({ width: 1, height: 1 });
 	}
 
 	public resize (width: number, height: number): void {
-		this._renderTexture1.resize(width, height, true);
-		this._renderTexture2.resize(width, height, true);
-	}
-
-	public apply (renderer: PIXI.Renderer, targetRenderTexture?: PIXI.RenderTexture): void {
-		const sp = PIXI.Sprite.from(targetRenderTexture || this._renderTexture1);
-		renderer.render(sp, { renderTexture: this.renderTexture2 });
+		this._renderTexture.resize(width, height, true);
 	}
 
 	public static RenderableObjects (root: PIXI.DisplayObject): PIXI.DisplayObject[] {
