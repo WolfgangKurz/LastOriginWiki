@@ -271,6 +271,10 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 							setAnimInfo(r);
 						}
 					});
+					_char.on("animation-end", () => {
+						setAnimInfo(false);
+						setAnimTime(0);
+					});
 				} else if (props.type === "2dmodel")
 					_char = new Pixi2DModel(_uid);
 				else if (props.type === "video")
@@ -351,11 +355,6 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 				g.drawPolygon(points);
 				g.endFill();
 			}
-
-			if (progress >= 1) {
-				setAnimInfo(false);
-				setAnimTime(0);
-			}
 		};
 
 		if (animationIndicator) {
@@ -369,7 +368,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 		return () => {
 			if (pixi && animInfo) {
 				try {
-					pixi.ticker?.remove(fn);
+					pixi.ticker.remove(fn);
 				} catch { }
 			}
 		};

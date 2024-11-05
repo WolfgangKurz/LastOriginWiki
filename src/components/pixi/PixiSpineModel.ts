@@ -60,6 +60,7 @@ interface SpineAnimState {
 	transitions: SpineAnimTransitions[];
 }
 interface SpineAnimLayer {
+	weight?: number;
 	start: string;
 	states: {
 		[state: string]: SpineAnimState;
@@ -152,7 +153,7 @@ export default class PixiSpineModel extends FadeContainer {
 
 		this.scale.set(3); // base Scale
 
-		new Promise<[spine.Spine, PIXI.Container]>((resolve) => {
+		new Promise<[spine.Spine, PIXI.Container]>(async (resolve) => {
 			const cached = getCache(this._model);
 			if (cached)
 				resolve(this.Load(cached));
@@ -161,7 +162,7 @@ export default class PixiSpineModel extends FadeContainer {
 
 				fetch(`${baseURL}/${fname}.json.lzma`)
 					.then(r => r.arrayBuffer())
-					.then(r => LZMADecompression(r, "json.lzma"))
+					.then(r => LZMADecompression(r, "json"))
 					.then(r => new TextDecoder().decode(r))
 					.then(r => Promise.all([
 						r,
@@ -179,29 +180,14 @@ export default class PixiSpineModel extends FadeContainer {
 							metadata,
 
 							...atlas.pages.map(page => {
-								// make alpha-merged image
-								return Promise
-									.all([
-										fetch(changeExt(`${baseURL}/${page.name}`, "alpha"))
-											.then(r => r.arrayBuffer())
-											.then(r => new Uint8Array(r))
-											.then(r => LZMADecompression(r, "alpha"))
-											.then(r => r.map(v => v < 0 ? v + 256 : v)),
-
-										fetch(changeExt(`${baseURL}/${page.name}`, "jpg"))
-											.then(r => r.blob())
-											.then(r => new Promise<{ img: HTMLImageElement; url: string; }>(
-												(imageResolve, imageReject) => {
-													const img = new Image();
-													img.onload = () => imageResolve({ img, url });
-													img.onerror = (e) => imageReject(e);
-
-													const url = URL.createObjectURL(r);
-													img.src = url;
-												})
-											),
-									])
-									.then(([alpha, { img, url }]) => {
+								const url = changeExt(`${baseURL}/${page.name}`, "webp");
+								return new Promise<HTMLImageElement>(r => {
+									const img = new Image();
+									img.addEventListener("load", () => r(img));
+									img.crossOrigin = "anonymous";
+									img.src = url;
+								})
+									.then(async (img) => {
 										const cv = document.createElement("canvas");
 										cv.width = img.naturalWidth;
 										cv.height = img.naturalHeight;
@@ -213,40 +199,32 @@ export default class PixiSpineModel extends FadeContainer {
 
 										const imgData = ctx.getImageData(0, 0, cv.width, cv.height);
 										const arr = imgData.data.slice();
-										alpha.forEach((a, i) => {
-											// apply alpha, reverse premultiplied-alpha (rough, but works)
-											const af = a / 255;
-											arr[i * 4 + 0] /= af;
-											arr[i * 4 + 1] /= af;
-											arr[i * 4 + 2] /= af;
-											arr[i * 4 + 3] = a;
-										});
-
+										for (let i = 0; i < arr.length; i += 4) {
+											const af = arr[i + 3] / 255;
+											arr[i + 0] /= af;
+											arr[i + 1] /= af;
+											arr[i + 2] /= af;
+										}
 										cv.remove();
 
-										// ctx.putImageData(imgData, 0, 0);
 										return createImageBitmap(
 											new ImageData(arr, img.naturalWidth, img.naturalHeight),
 											{ premultiplyAlpha: "premultiply", colorSpaceConversion: "none" },
-										)
-											.then(_img => {
-												const t = new PIXI.BaseTexture(_img, {
-													anisotropicLevel: 4,
-													mipmap: PIXI.MIPMAP_MODES.OFF,
-													multisample: PIXI.MSAA_QUALITY.HIGH,
-												});
-												return t;
-											})
-											.then(tex => ({ url, tex: spine.SpineTexture.from(tex) }));
+										);
 									})
-									.then(({ url, tex }) => {
-										page.setTexture(tex);
+									.then(_img => new PIXI.BaseTexture(_img, {
+										anisotropicLevel: 1,
+										mipmap: PIXI.MIPMAP_MODES.OFF,
+										multisample: PIXI.MSAA_QUALITY.LOW,
+									}))
+									.then(r => {
+										page.setTexture(spine.SpineTexture.from(r));
 										return url;
 									});
 							}),
 						]);
 					})
-					.then(([skelData, atlas, anim, metadata, ...urls]) => {
+					.then(async ([skelData, atlas, anim, metadata, ...urls]) => {
 						setCache(this._model, {
 							skeleton: skelData,
 							urls,
@@ -372,6 +350,8 @@ export default class PixiSpineModel extends FadeContainer {
 					const state = this.animData[layer].states[this.animState[layer]];
 					const next = state.transitions.find(x => x.cond === "");
 
+					this.emit("animation-end");
+
 					if (IsDev)
 						console.debug(`[Spine] Animation done, layer: "${layer}", state: "${this.animState[layer]}"`);
 
@@ -495,7 +475,13 @@ export default class PixiSpineModel extends FadeContainer {
 
 		this.skeleton.setSkin(newSkin);
 		this.skeleton.setToSetupPose();
-		this.skeleton.updateWorldTransform(spine.Physics.update);
+		if ("Physics" in spine) { // for newer version... temporary
+			// @ts-ignore
+			this.skeleton.updateWorldTransform(spine.Physics.update);
+		} else {
+			// @ts-ignore
+			this.skeleton.updateWorldTransform();
+		}
 	}
 
 	isLoopAnimation (layer: string, state: string): boolean {
@@ -596,6 +582,7 @@ export default class PixiSpineModel extends FadeContainer {
 		if (!this.playableState(layer, _state, force)) return false;
 
 		const layerIdx = this.animLayers.indexOf(layer);
+		const weight = this.animData![layer].weight;
 		const animState = this.animData![layer].states[_state];
 
 		const state = this.state;
@@ -613,6 +600,7 @@ export default class PixiSpineModel extends FadeContainer {
 			console.debug(`[Spine.playState] state "${_state}" in layer "${layer}" playing`);
 
 		const entry = state.setAnimationWith(layerIdx, anim, this.isLoopAnimation(layer, _state));
+		if (weight !== undefined) entry.alpha = weight;
 		entry.mixDuration = 0.2;
 		return anim;
 	}
