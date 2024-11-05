@@ -6,6 +6,15 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12827" date="2024-11-06"
+		bugfix={ <>
+			<li>일부 스킨의 배경에 스킨의 정적 이미지가 같이 표시되는 문제를 수정했습니다.</li>
+			<li>일부 스킨의 로비 애니메이션이 잘못된 움직임으로 표현되는 문제을 수정했습니다.</li>
+		</> }
+		site={ <>
+			<li>전투원 얼굴 이미지에 최적화 처리가 추가되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12799" date="2024-11-04"
 		bugfix={ <>
 			<li>일부 장비의 획득처가 누락된 점을 수정했습니다.</li>
@@ -19,7 +28,7 @@ const Changelog: FunctionalComponent = () => <>
 		knownissue={ <>
 			<li>일부 iOS 기기에서 <BG>다운로드<sup>+</sup></BG> 기능이 작동하지 않습니다.</li>
 		</> }
-		update={ <>
+		site={ <>
 			<li>스킨 뷰어 작동을 최적화했습니다.</li>
 			<li>이제 전투원 스킨 URL 주소가 페이지가 열린 후에도 유지됩니다.</li>
 		</> }
