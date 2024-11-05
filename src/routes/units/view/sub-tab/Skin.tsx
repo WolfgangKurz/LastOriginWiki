@@ -176,6 +176,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 								uid={ unit.uid }
 								skin={ skin?.metadata.iconId ?? skin?.metadata.imageId ?? 0 }
 								size="88"
+								raw
 							/>
 						</div>
 						<div class="pb-2">
@@ -184,6 +185,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 								skin={ skin?.metadata.tbarId ?? skin?.metadata.imageId ?? 0 }
 								sd
 								size="88"
+								raw
 							/>
 						</div>
 					</div>
