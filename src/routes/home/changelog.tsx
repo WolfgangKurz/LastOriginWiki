@@ -6,9 +6,10 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12829" date="2024-11-08"
+	<ChangelogItem title="Build 12832" date="2024-11-08"
 		new={ <>
 			<li>신규 이벤트 <BY>밤을 걷는 소녀</BY>의 정보가 추가되었습니다.</li>
+			<li>신규 장식품 정보가 추가되었습니다.</li>
 		</> }
 		bugfix={ <>
 			<li>일부 스킨의 로비 애니메이션이 재생되지 않는 문제를 수정했습니다.</li>
