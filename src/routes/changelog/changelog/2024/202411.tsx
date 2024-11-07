@@ -8,9 +8,12 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12828" date="2024-11-08"
+	<ChangelogItem title="Build 12829" date="2024-11-08"
 		new={ <>
 			<li>신규 이벤트 <BY>밤을 걷는 소녀</BY>의 정보가 추가되었습니다.</li>
+		</> }
+		bugfix={ <>
+			<li>일부 스킨의 로비 애니메이션이 재생되지 않는 문제를 수정했습니다.</li>
 		</> }
 		skin={ <>
 			<li>전투원 <BY>레모네이드 알파</BY>의 스킨 <BR>레모네이드 델?타 : 연극을 위한 드레스</BR>의 정보가 추가되었습니다.</li>
@@ -19,7 +22,7 @@ const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 12827" date="2024-11-06"
 		bugfix={ <>
 			<li>일부 스킨의 배경에 스킨의 정적 이미지가 같이 표시되는 문제를 수정했습니다.</li>
-			<li>일부 스킨의 로비 애니메이션이 잘못된 움직임으로 표현되는 문제을 수정했습니다.</li>
+			<li>일부 스킨의 로비 애니메이션이 잘못된 움직임으로 표현되는 문제를 수정했습니다.</li>
 		</> }
 		site={ <>
 			<li>전투원 얼굴 이미지에 최적화 처리가 추가되었습니다.</li>
