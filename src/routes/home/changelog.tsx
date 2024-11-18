@@ -6,43 +6,43 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12686" date="2024-10-10"
-		bugfix={ <>
-			<li>
-				<BG>다운로드<sup>+</sup></BG> 기능을 이용한 후, 스킨의 위치가 이동하던 점을 수정했습니다.<br />
-			</li>
-		</> }
-	/>
-	<ChangelogItem title="Build 12681" date="2024-10-10"
-		bugfix={ <>
-			<li>
-				<BG>다운로드<sup>+</sup></BG> 기능을 이용할 때, 이미지의 크기가 올바르지 않던 점을 수정했습니다.<br />
-			</li>
-		</> }
-	/>
-	<ChangelogItem title="Build 12678" date="2024-10-10"
+	<ChangelogItem title="Build 12832" date="2024-11-08"
 		new={ <>
-			<li>
-				<BY>스킨 뷰어</BY>에 <BG>다운로드<sup>+</sup></BG> 기능이 추가되었습니다.<br />
-				일부 로비 애니메이션 스킨 등에서는 이용할 수 없습니다.<br />
-				스킨 뷰어에서 설정한 표정도 같이 저장할 수 있지만 시간이 걸릴 수 있고, 실패할 수도 있습니다.<br />
-				잘못된 이미지가 다운로드되는 경우, 보고해주시기 바랍니다.
-			</li>
+			<li>신규 이벤트 <BY>밤을 걷는 소녀</BY>의 정보가 추가되었습니다.</li>
+			<li>신규 장식품 정보가 추가되었습니다.</li>
 		</> }
-		update={ <>
-			<li>
-				<BY>스킨 뷰어</BY>의 일반 다운로드가 항상 png 파일로 저장되도록 변경했습니다.
-			</li>
+		bugfix={ <>
+			<li>일부 스킨의 로비 애니메이션이 재생되지 않는 문제를 수정했습니다.</li>
+		</> }
+		skin={ <>
+			<li>전투원 <BY>레모네이드 알파</BY>의 스킨 <BR>레모네이드 델?타 : 연극을 위한 드레스</BR>의 정보가 추가되었습니다.</li>
+		</> }
+	/>
+	<ChangelogItem title="Build 12827" date="2024-11-06"
+		bugfix={ <>
+			<li>일부 스킨의 배경에 스킨의 정적 이미지가 같이 표시되는 문제를 수정했습니다.</li>
+			<li>일부 스킨의 로비 애니메이션이 잘못된 움직임으로 표현되는 문제를 수정했습니다.</li>
 		</> }
 		site={ <>
-			<li>
-				<BB>html2cavnas</BB> 라이브러리를 <BB>html-to-image</BB> 라이브러리로 변경했습니다. (경량화)
-			</li>
+			<li>전투원 얼굴 이미지에 최적화 처리가 추가되었습니다.</li>
 		</> }
+	/>
+	<ChangelogItem title="Build 12799" date="2024-11-04"
 		bugfix={ <>
-			<li>AGS 전투원의 스킬 정보에서 호감도 보너스를 지정할 수 있던 점을 수정했습니다.</li>
-			<li>일부 스킨의 요소가 올바르지 않은 위치에 표시되던 문제를 수정했습니다.</li>
-			<li>일부 스킨의 요소가 올바르지 않은 색상으로 표시되던 문제를 수정했습니다.</li>
+			<li>일부 장비의 획득처가 누락된 점을 수정했습니다.</li>
+			<li>
+				스킨 뷰어가 디스플레이 장치의 픽셀비를 참조하지 않던 문제를 수정했습니다.<br />
+				이제 (주로) 모바일 환경에서 스킨 뷰어가 선명해집니다.
+			</li>
+			<li>일부 모바일 환경에서 <BG>다운로드<sup>+</sup></BG> 기능이 올바르지 않게 작동하는 문제를 수정했습니다.</li>
+			<li>iOS 17.2 미만 환경에서 <BY>전투원정보</BY>의 전투원 페이지를 열면 사이트가 작동하지 않는 문제를 수정했습니다.</li>
+		</> }
+		knownissue={ <>
+			<li>일부 iOS 기기에서 <BG>다운로드<sup>+</sup></BG> 기능이 작동하지 않습니다.</li>
+		</> }
+		site={ <>
+			<li>스킨 뷰어 작동을 최적화했습니다.</li>
+			<li>이제 전투원 스킨 URL 주소가 페이지가 열린 후에도 유지됩니다.</li>
 		</> }
 	/>
 </>;

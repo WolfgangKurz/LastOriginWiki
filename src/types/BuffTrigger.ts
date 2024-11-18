@@ -72,7 +72,7 @@ export type BuffTrigger = BuffTrigger_Unknown | BuffTrigger_Always | BuffTrigger
 	BuffTrigger_Move | BuffTrigger_Evade | BuffTrigger_WaveEnd | BuffTrigger_EnemyKilled | BuffTrigger_EnemyKilledPassive | BuffTrigger_Position |
 	BuffTrigger_Criticaled | BuffTrigger_Revive | BuffTrigger_On | BuffTrigger_Target | BuffTrigger_UnitCount | BuffTrigger_Round |
 	BuffTrigger_NotInBattle | BuffTrigger_TroopCategory | BuffTrigger_UseSkill | BuffTrigger_Test | BuffTrigger_AttackBy | BuffTrigger_Fail |
-	BuffTrigger_Near | BuffTrigger_EnemyKilledCounter;
+	BuffTrigger_Near | BuffTrigger_EnemyKilledCounter | BuffTrigger_ApplyOneOf;
 
 /** 구현을 알 수 없는 발동 조건 */
 interface BuffTrigger_Unknown {
@@ -303,4 +303,8 @@ interface BuffTrigger_Fail {
 
 interface BuffTrigger_Near {
 	near: false | number;
+}
+
+interface BuffTrigger_ApplyOneOf {
+	apply_one_of: string[];
 }

@@ -49,7 +49,7 @@ const UnitStatChart: FunctionalComponent<UnitStatChartProps> = (props) => {
 		const h = el.height;
 		ctx.clearRect(0, 0, w, h);
 
-		ctx.reset();
+		ctx.restore();
 		ctx.save();
 
 		ctx.imageSmoothingEnabled = true;

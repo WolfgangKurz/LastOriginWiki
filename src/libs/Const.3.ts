@@ -528,6 +528,12 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 			LastOrigin: ["PECS_Lumberjane_Title-2", "PECS_Lumberjane_Title-4"]
 		}
 	},
+	PECS_Melt: {
+		0: {
+			LastOrigin: ["PECS_Melt_N_Title_2", "PECS_Melt_N_Title-1", "PECS_Melt_N_Title-6"],
+			VALOFE: ["PECS_Melt_N_Valofe1", "PECS_Melt_N_Valofe2"],
+		}
+	},
 	PECS_Merlin: {
 		0: {
 			LastOrigin: ["PECS_Merlin_N_Title-3", "PECS_Merlin_N_Title-8"]

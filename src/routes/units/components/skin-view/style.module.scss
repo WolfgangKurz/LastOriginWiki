@@ -67,6 +67,13 @@
 	display: block;
 	color: $light;
 }
+.ToggleButton {
+	opacity: 0.5;
+
+	&.Active {
+		opacity: 1;
+	}
+}
 .DownloadPlusContent {
 	> svg:first-child {
 		display: none;
@@ -168,23 +175,30 @@
 			opacity: 1;
 		}
 	}
-	&.Download {
-		bottom: 56px;
-		right: 12px;
+
+	&.Download,
+	&.DownloadPlus,
+	&.DownloadPlusCameraBoundary {
 		width: 32px;
 		height: 32px;
 		filter: drop-shadow(0 0 5px #000) drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
 		font-size: 32px;
 		color: $light;
 	}
+
+	&.Download {
+		bottom: 56px;
+		right: 12px;
+	}
 	&.DownloadPlus {
 		bottom: 96px;
 		right: 12px;
-		width: 32px;
-		height: 32px;
-		filter: drop-shadow(0 0 5px #000) drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
-		font-size: 32px;
-		color: $light;
+	}
+	&.DownloadPlusCameraBoundary {
+		bottom: 96px;
+		right: 56px;
+		padding: 4px;
+		font-size: 24px;
 	}
 }
 div.FaceList {
@@ -279,7 +293,7 @@ div.FaceList {
 				opacity: 0;
 
 				> div > img {
-					pointer-events: all;
+					pointer-events: none !important;
 				}
 			}
 
@@ -399,4 +413,6 @@ div.FaceList {
 .PixiView {
 	width: 100%;
 	height: 100%;
+
+	transform-origin: left top;
 }

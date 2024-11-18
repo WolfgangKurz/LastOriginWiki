@@ -1,11 +1,10 @@
 import * as PIXI from "pixi.js";
 
-import vert from "../vert.glsl?raw";
 import frag from "./frag.glsl?raw";
 
 export default class AdditiveSoft extends PIXI.Filter {
 	constructor () {
-		super(vert, frag, {
+		super(undefined, frag, {
 			uTexture_ST: [1, 1, 0, 0],
 			uTintColor: [1, 1, 1, 1],
 		});

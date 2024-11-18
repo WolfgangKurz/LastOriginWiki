@@ -2,13 +2,15 @@ import * as PIXI from "pixi.js";
 import { Viewport } from "pixi-viewport";
 
 import Shared from "@/components/pixi/Shared";
-import BaseScreenInputFilter from "@/components/pixi/shaders/base";
 
-export async function render2DModel (): Promise<HTMLCanvasElement | null> {
-	Shared.instance.inRendering = true;
-
+export async function render2DModel (cropByCameraBoundary: boolean = false): Promise<HTMLCanvasElement | null> {
 	const host = Shared.instance.host;
 	if (!host) return null;
+
+	const renderer = Shared.instance.renderer;
+	if (!renderer) return null;
+
+	Shared.instance.inRendering = true;
 
 	// find pixi-viewport layer
 	const vp = (() => {
@@ -28,6 +30,9 @@ export async function render2DModel (): Promise<HTMLCanvasElement | null> {
 	// save original viewport scale
 	const vpOriginalMatrix = vp ? vp.transform.localTransform.clone() : new PIXI.Matrix().identity();
 
+	const rW = renderer.width;
+	const rH = renderer.height;
+
 	try {
 		// make original scale
 		if (vp) {
@@ -42,80 +47,96 @@ export async function render2DModel (): Promise<HTMLCanvasElement | null> {
 			vp.updateTransform();
 		}
 
-		const vpMatrix = (vp ? new PIXI.Matrix().copyFrom(vp.localTransform) : new PIXI.Matrix().identity())
-			.invert();
-
 		const bounds = (() => {
-			const _b = host.getBounds(false);
+			const host_target = (cropByCameraBoundary && host.getChildByName("Camera_Boundary", true)) || host;
+
+			const _b = host_target.getBounds(false);
 			let [l, t, r, b] = [_b.left, _b.top, _b.right, _b.bottom];
-
-			// viewport never rotates
-			l *= vpMatrix.a;
-			t *= vpMatrix.d;
-			r *= vpMatrix.a;
-			b *= vpMatrix.d;
-
-			l -= vpMatrix.tx;
-			t -= vpMatrix.ty;
-			r -= vpMatrix.tx;
-			b -= vpMatrix.ty;
-
 			return new PIXI.Rectangle(l, t, r - l, b - t);
 		})();
-		const w = bounds.width;
-		const h = bounds.height;
 
-		const renderer = new PIXI.Renderer({
-			antialias: true,
-			backgroundColor: 0x000000,
-			backgroundAlpha: 0,
+		const objects = Shared.RenderableObjects(host);
+		function _render (rt: PIXI.RenderTexture, offsetX: number = 0, offsetY: number = 0) {
+			const offsetMat = new PIXI.Matrix();
+			offsetMat.translate(-bounds.left + offsetX, -bounds.top + offsetY);
 
-			width: 1,
-			height: 1,
-		});
-		const rt = PIXI.RenderTexture.create({ width: w, height: h });
+			// TODO: Optimize draw call
+			// * [obj1] - [obj2] - [obj3] - [filter,obj4] - [obj5] - [obj6]
+			// *   into
+			// * [obj1, obj2, obj3] - [filter,obj4] - [obj5, obj6]
+			objects.forEach(o => {
+				// if (o.parent) o.updateTransform();
 
-		const _sep = new PIXI.Container();
-		_sep.transform.setFromMatrix(vpMatrix);
-
-		// TODO: Optimize draw call
-		// * [obj1] - [obj2] - [obj3] - [filter,obj4] - [obj5] - [obj6]
-		// *   into
-		// * [obj1, obj2, obj3] - [filter,obj4] - [obj5, obj6]
-		const _cont = new PIXI.Container();
-		Shared.RenderableObjects(host)
-			.sort((a, b) => a.zIndex - b.zIndex)
-			.forEach(o => {
-				if (o.parent) o.updateTransform();
+				const _visibles: PIXI.DisplayObject[] = [];
 				if (o.children) {
-					for (const c of o.children)
-						if (c instanceof PIXI.DisplayObject)
-							c.renderable = false;
+					for (const c of o.children) {
+						if (c instanceof PIXI.DisplayObject && c.visible) {
+							c.visible = false;
+							_visibles.push(c);
+						}
+					}
 				}
 
 				renderer!.render(o, {
 					clear: false,
 					renderTexture: rt,
+					transform: offsetMat,
 					skipUpdateTransform: true,
-					transform: vpMatrix
 				});
 
-				if (o.filters?.some(r => r instanceof BaseScreenInputFilter))
-					Shared.instance.apply(renderer!);
-
-				if (o.children) {
-					for (const c of o.children)
-						if (c instanceof PIXI.DisplayObject)
-							c.renderable = true;
-				}
+				_visibles.forEach(c => c.visible = true);
 			});
+		}
 
-		const canvas = renderer.extract.canvas(rt) as HTMLCanvasElement;
-		renderer.destroy();
+		// maximum texture size that WebGL handleable
+		const MAX_TEX_SIZE = renderer.gl.getParameter(renderer.gl.MAX_TEXTURE_SIZE);
 
-		return canvas;
+		const _w = Math.round(bounds.width), _h = Math.round(bounds.height);
+
+		if (_w > MAX_TEX_SIZE || _h > MAX_TEX_SIZE) { // should conbine render-textures
+			const rt = PIXI.RenderTexture.create({ width: 1, height: 1 });
+			const empty = new PIXI.Container();
+
+			const cv = document.createElement("canvas");
+			cv.width = _w;
+			cv.height = _h;
+
+			const ctx = cv.getContext("2d")!;
+
+			debugger;
+			for (let x = 0; x < _w; x += MAX_TEX_SIZE) {
+				for (let y = 0; y < _h; y += MAX_TEX_SIZE) {
+					const w = Math.min(MAX_TEX_SIZE, _w - x);
+					const h = Math.min(MAX_TEX_SIZE, _h - y);
+
+					// resize when only should resized
+					if (rt.width !== w || rt.height !== h) rt.resize(w, h);
+
+					// clear renderTexture
+					renderer.render(empty, { renderTexture: rt });
+					_render(rt, -x, -y);
+
+					// copy to back buffer
+					const _cv = renderer.extract.canvas(rt) as HTMLCanvasElement;
+					ctx.drawImage(_cv, x, y);
+					_cv.remove();
+				}
+			}
+
+			return cv;
+		} else {
+			const w = _w, h = _h;
+
+			renderer.resize(w, h);
+			const rt = PIXI.RenderTexture.create({ width: w, height: h });
+
+			_render(rt);
+
+			return renderer.extract.canvas(rt) as HTMLCanvasElement;
+		}
 	} finally {
 		vp?.transform.setFromMatrix(vpOriginalMatrix);
+		renderer.resize(rW, rH);
 		Shared.instance.inRendering = false;
 	}
 };

@@ -20,8 +20,10 @@ const Badge: FunctionalComponent<BadgeProps> = (props) => {
 			props.class,
 		) }
 		onClick={ e => {
-			e.preventDefault();
-			if (props.onClick) props.onClick();
+			if (props.onClick) {
+				e.preventDefault();
+				props.onClick();
+			}
 		} }
 	>
 		{ props.children }

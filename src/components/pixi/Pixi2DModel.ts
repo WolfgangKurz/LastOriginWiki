@@ -2,7 +2,7 @@ import * as PIXI from "pixi.js";
 import * as LAYERS from "@pixi/layers";
 
 import { AssetsRoot, IsDev } from "@/libs/Const";
-import { quat2eul } from "@/libs/Math";
+import { quat2tf } from "@/libs/Math";
 
 import Shared from "@/components/pixi/Shared";
 
@@ -267,9 +267,9 @@ export default class Pixi2DModel extends FadeContainer {
 								createClippedTexture(image, sp.vector, sp.v)
 									.then(tex => {
 										const _btex = PIXI.BaseTexture.from(tex, {
-											anisotropicLevel: 4,
+											anisotropicLevel: 1,
 											mipmap: PIXI.MIPMAP_MODES.OFF,
-											multisample: PIXI.MSAA_QUALITY.HIGH,
+											multisample: PIXI.MSAA_QUALITY.LOW,
 										});
 										const _tex = PIXI.Texture.from(_btex);
 										setCache(key, tex, _tex);
@@ -308,17 +308,17 @@ export default class Pixi2DModel extends FadeContainer {
 							? 3.5
 							: 1;
 
-						const rot = quat2eul(obj.vector.slice(6, 10) as Tuple<number, 4>);
+						const mat = quat2tf(obj.vector.slice(6, 10) as Tuple<number, 4>);
 						target.setTransform(
-							obj.vector[0] * 100,
-							-obj.vector[1] * 100,
+							mat.position.x + obj.vector[0] * 100,
+							mat.position.y - obj.vector[1] * 100,
 
-							obj.vector[3] * scaleMultiplier,
-							obj.vector[4] * scaleMultiplier,
+							mat.scale.x * obj.vector[3] * scaleMultiplier,
+							mat.scale.y * obj.vector[4] * scaleMultiplier,
 
-							-rot.z, // Unity using inverted angle
-							rot.x,
-							rot.y,
+							-mat.rotation, // Unity using inverted angle
+							mat.skew.x,
+							mat.skew.y,
 						);
 					};
 					const requireTreeNode = (node: MODEL_OBJECT): NodeTreeItem => {
@@ -439,6 +439,8 @@ export default class Pixi2DModel extends FadeContainer {
 
 				const facePrefix = image.replace(/^2DModel_/, "") + "_";
 				this.emit("facelist", polyfillFaces(r.face.map(r => r.name)), facePrefix);
+
+				this.emit("cameraBoundary", !!this.getChildByName("Camera_Boundary", true));
 			})
 			.finally(() => {
 				canvas.remove();

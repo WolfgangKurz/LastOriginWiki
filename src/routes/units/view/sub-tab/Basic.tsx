@@ -183,7 +183,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 		<div>
 			<div class={ style.UnitHeader }>
 				<div class={ style.BasicInfo }>
-					<UnitFace class={ style.UnitFace } uid={ unit.uid } />
+					<UnitFace class={ style.UnitFace } uid={ unit.uid } raw />
 
 					<span class={ style.UnitNumber }>
 						No. <span>{ unit.id }</span>

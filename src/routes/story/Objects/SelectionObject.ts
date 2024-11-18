@@ -82,7 +82,7 @@ export default class SelectionObject extends PIXI.Container {
 			btn.addEventListener("click", () => this.emit("select", i));
 			btn.addEventListener("tap", () => this.emit("select", i));
 
-			const text = new FadeText(txt, {
+			const text = new FadeText("", {
 				align: "CC",
 				fill: "#000",
 				fontWeight: 500,
@@ -92,11 +92,13 @@ export default class SelectionObject extends PIXI.Container {
 
 			text.on("update", () => {
 				const tw = text.width / text.scale.x;
+				console.log(text.text, tw);
 				if (tw > BUTTON_WIDTH - 40) {
 					const r = (BUTTON_WIDTH - 40) / tw;
 					text.scale.set(r);
 				}
 			});
+			text.text = txt;
 			btn.addChild(text);
 
 			this.buttons.push(btn);

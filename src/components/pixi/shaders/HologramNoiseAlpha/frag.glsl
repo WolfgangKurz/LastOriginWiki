@@ -1,6 +1,6 @@
 precision mediump float;
 
-varying vec2 vUV;
+varying vec2 vTextureCoord;
 
 uniform vec4 uTime;
 
@@ -23,14 +23,14 @@ void main() {
 	vec3 v1, v2, v3;
 	vec4 v4;
 
-	v1.x = exp2(log2(fract((uTime.y * uWaveSpeed + vUV.y) * uSegments)) * uWavePower);
-	v2.x = floor(fract(vUV.y * uScreenSegments) * uScreenPosterize) / (uScreenPosterize - 1.0) + 0.899999976;
+	v1.x = exp2(log2(fract((uTime.y * uWaveSpeed + vTextureCoord.y) * uSegments)) * uWavePower);
+	v2.x = floor(fract(vTextureCoord.y * uScreenSegments) * uScreenPosterize) / (uScreenPosterize - 1.0) + 0.899999976;
 	v1.x = v2.x * 0.100000001 + v1.x + 0.899999976;
 
-	v2.xy = vUV.xy * uFX_ST.xy + uFX_ST.zw;
+	v2.xy = vTextureCoord.xy * uFX_ST.xy + uFX_ST.zw;
 	v3.xy = texture2D(uFX, v2.xy).xy;
 
-	v2.xy = vec2(uScreenNoise) * v3.xy + vUV.xy;
+	v2.xy = vec2(uScreenNoise) * v3.xy + vTextureCoord.xy;
 	v2.xy = v2.xy * uTexture_ST.xy + uTexture_ST.zw;
 
 	v4 = texture2D(uSampler, v2.xy);

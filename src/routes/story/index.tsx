@@ -70,7 +70,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		11,
 		"Ev20", "Ev21", "Ev23",
 		12,
-		"Ev24", "Ev25", "Ev26",
+		"Ev24", "Ev25", "Ev26", "Ev27",
 	];
 	const StoryList: StoryKeyType[] = useMemo(
 		() => StoryListSource.map(r => {

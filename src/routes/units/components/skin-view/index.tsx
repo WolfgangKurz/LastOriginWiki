@@ -7,7 +7,7 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import { useLocale } from "@/libs/Locale";
 import { useImageExtension } from "@/libs/ImageExtension";
-import { AssetsRoot, CanPlayWebM } from "@/libs/Const";
+import { AssetsRoot, CanPlayWebM, IsDev } from "@/libs/Const";
 import { cn } from "@/libs/Class";
 
 import { render2DModel } from "./2DModelRenderer";
@@ -15,6 +15,7 @@ import { render2DModel } from "./2DModelRenderer";
 import Locale from "@/components/locale";
 import PopupBase from "@/components/popup/base";
 import IconEmojiSmileFill from "@/components/bootstrap-icon/icons/EmojiSmileFill";
+import IconAspectRatioFill from "@/components/bootstrap-icon/icons/AspectRatioFill";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import MergedVideo from "@/components/merged-video";
 import Pinch from "@/components/pinch";
@@ -66,20 +67,23 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 	const [inPlusDownload, setInPlusDownload] = useState(false);
 
-	const [face, setFace] = useState<string>("");
+	const [face, setFace] = useState("");
 	const [facePrefix, setFacePrefix] = useState("");
 	const [faceList, setFaceList] = useState<string[]>([]);
 
-	const [isCensored, setIsCensored] = useState<boolean>(false);
-	const [isDamaged, setIsDamaged] = useState<boolean>(false);
-	const [hideParts, setHideParts] = useState<boolean>(false);
-	const [hideBG, setHideBG] = useState<boolean>(false);
+	const [isCensored, setIsCensored] = useState(false);
+	const [isDamaged, setIsDamaged] = useState(false);
+	const [hideParts, setHideParts] = useState(false);
+	const [hideBG, setHideBG] = useState(false);
 
-	const [displayTouchCollider, setDisplayTouchCollider] = useState<boolean>(false);
+	const [displayTouchCollider, setDisplayTouchCollider] = useState(false);
 
-	const [enableAnimation, setEnableAnimation] = useState<boolean>(false);
-	const [asBlackBG, setAsBlackBG] = useState<boolean>(false);
-	const [hideGroupLogo, setHideGroupLogo] = useState<boolean>(false);
+	const [cameraBoundaryAvailable, setCameraBoundaryAvailable] = useState(false);
+	const [downloadPlusCameraBoundary, setDownloadPlusCameraBoundary] = useState(true);
+
+	const [enableAnimation, setEnableAnimation] = useState(false);
+	const [asBlackBG, setAsBlackBG] = useState(false);
+	const [hideGroupLogo, setHideGroupLogo] = useState(false);
 
 	const [detailView, setDetailView] = useState(false);
 
@@ -259,11 +263,11 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			(isDamaged && !!skin.metadata["2dmodel_dam"])
 		);
 
-	function download2DModel (filename: string) {
+	function download2DModel (filename: string, cropByCameraBoundary: boolean = false) {
 		if (inPlusDownload) return;
 		setInPlusDownload(true);
 
-		render2DModel()
+		render2DModel(cropByCameraBoundary)
 			.then(canvas => {
 				if (!canvas) {
 					alert(
@@ -276,11 +280,15 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 				canvas.toBlob(blob => {
 					const uri = URL.createObjectURL(blob!);
 
-					const anchor = document.createElement("a");
-					anchor.href = uri;
-					anchor.target = "_blank";
-					anchor.download = filename;
-					anchor.click();
+					if (IsDev) {
+						window.open(uri);
+					} else {
+						const anchor = document.createElement("a");
+						anchor.href = uri;
+						anchor.target = "_blank";
+						anchor.download = filename;
+						anchor.click();
+					}
 
 					setInPlusDownload(false);
 				}, "image/png", 100);
@@ -341,6 +349,8 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 									}
 								}
 							} }
+
+							onCameraBoundary={ v => setCameraBoundaryAvailable(v) }
 						/>
 						: modelVideoId.length > 0
 							? CanPlayWebM()
@@ -363,25 +373,50 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					}
 				</div>
 
-				{ !DisplaySpine
-					? modelVideoId
-						? <a
-							class={ `${style.SkinToggle} ${style.Download}` }
-							href={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` } // download webm only
-							download={ `${modelVideoId}.webm` }
-							target="_blank"
-						>
-							<svg width="1em" height="1em" viewBox="0 0 24 24">
-								<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
-							</svg>
-						</a>
-						: <>
+				{ !DisplaySpine && modelVideoId
+					? <a
+						class={ `${style.SkinToggle} ${style.Download}` }
+						href={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` } // download webm only
+						download={ `${modelVideoId}.webm` }
+						target="_blank"
+					>
+						<svg width="1em" height="1em" viewBox="0 0 24 24">
+							<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+						</svg>
+					</a>
+					: <>
+						{ !DisplaySpine && <>
+							{ cameraBoundaryAvailable && <BootstrapTooltip
+								class={ `${style.SkinToggle} ${style.DownloadPlusCameraBoundary}` }
+								tooltipClass={ style.DownloadTooltipContainer }
+								placement="left"
+								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
+									<Locale raw k="UNIT_VIEW_SKIN_DOWNLOADPLUS_CAMERABOUNDARY" />
+								</span> }
+							>
+								<a
+									class={ cn(
+										style.DownloadContent,
+										style.ToggleButton,
+										downloadPlusCameraBoundary && style.Active,
+									) }
+									href="#"
+									onClick={ e => {
+										e.preventDefault();
+										e.stopImmediatePropagation();
+										setDownloadPlusCameraBoundary(v => !v);
+									} }
+								>
+									{/* <IconCrop /> */ }
+									<IconAspectRatioFill />
+								</a>
+							</BootstrapTooltip> }
 							<BootstrapTooltip
 								class={ `${style.SkinToggle} ${style.DownloadPlus}` }
 								tooltipClass={ style.DownloadTooltipContainer }
 								placement="left"
 								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-									<Locale k="UNIT_VIEW_SKIN_DOWNLOADPLUS" />
+									<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOADPLUS" />
 								</span> }
 							>
 								<a
@@ -390,7 +425,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 									onClick={ e => {
 										e.preventDefault();
 										e.stopImmediatePropagation();
-										download2DModel(SkinImageDownloadPlusFilename);
+										download2DModel(SkinImageDownloadPlusFilename, downloadPlusCameraBoundary);
 									} }
 								>
 									<Spinner />
@@ -400,27 +435,27 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 									</svg>
 								</a>
 							</BootstrapTooltip>
-							<BootstrapTooltip
-								class={ `${style.SkinToggle} ${style.Download}` }
-								tooltipClass={ style.DownloadTooltipContainer }
-								placement="left"
-								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-									<Locale k="UNIT_VIEW_SKIN_DOWNLOAD" />
-								</span> }
+						</> }
+						<BootstrapTooltip
+							class={ `${style.SkinToggle} ${style.Download}` }
+							tooltipClass={ style.DownloadTooltipContainer }
+							placement="left"
+							content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
+								<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOAD" />
+							</span> }
+						>
+							<a
+								class={ style.DownloadContent }
+								href={ SkinImageDownloadFilename }
+								download={ SkinImageDownloadFilename.substring(SkinImageDownloadFilename.lastIndexOf("/") + 1) }
+								target="_blank"
 							>
-								<a
-									class={ style.DownloadContent }
-									href={ SkinImageDownloadFilename }
-									download={ SkinImageDownloadFilename.substring(SkinImageDownloadFilename.lastIndexOf("/") + 1) }
-									target="_blank"
-								>
-									<svg width="1em" height="1em" viewBox="0 0 24 24">
-										<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
-									</svg>
-								</a>
-							</BootstrapTooltip>
-						</>
-					: <></>
+								<svg width="1em" height="1em" viewBox="0 0 24 24">
+									<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+								</svg>
+							</a>
+						</BootstrapTooltip>
+					</>
 				}
 
 				{ !(skin.isPro || skin.isDef) && skin.price
