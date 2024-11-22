@@ -577,6 +577,7 @@ source:
     - Ev:Ev24:EV3-3Ex
   - - Ev:Ev25:EV1-4
     - Ev:Ev25:EV1-1B
+  - - Ev:Ev28:EV1-2Ex
 cost:
   res:
     - 125
@@ -4230,6 +4231,59 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_AGS_Rampart_N_511
+              on: round
+              if:
+                - in_battle:
+                    - Char_PECS_Shepherd_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DEF_UP
+                  desc:
+                    desc: Effect_AGS_Rampart_N_511_1
+                    type: 1
+                    value: "0.032000"
+                    level: "0.002000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: 3.2%
+                      per: 0.2%
+                  overlap: 4
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_AGS_Rampart_N_511_2
+                    type: 1
+                    value: "0.032000"
+                    level: "0.002000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: 3.2%
+                      per: 0.2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -4453,6 +4507,24 @@ skills:
           - icon: BuffIcon_DEF_PIERCE_UP
             desc:
               desc: Effect_AGS_Rampart_N_510_2
+              type: 1
+              value: "0.032000"
+              level: "0.002000"
+            base: 0.032
+            per: 0.002
+            chance: 1
+          - icon: BuffIcon_DEF_UP
+            desc:
+              desc: Effect_AGS_Rampart_N_511_1
+              type: 1
+              value: "0.032000"
+              level: "0.002000"
+            base: 0.032
+            per: 0.002
+            chance: 1
+          - icon: BuffIcon_DEF_PIERCE_UP
+            desc:
+              desc: Effect_AGS_Rampart_N_511_2
               type: 1
               value: "0.032000"
               level: "0.002000"
