@@ -26,7 +26,7 @@ const Changelog: FunctionalComponent = () => <>
 			<li>전투원 <BY>T-50 PX 실키</BY>의 스킨 <BR>휴가지의 실키​</BR>의 정보가 추가되었습니다.</li>
 		</> }
 		dialogue={ <>
-			<li><span class="badge bg-light text-dark">KST 2024-12-05 01:22:13</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2024-12-06 01:22:13</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
 		</> }
 	/>
 </>;
