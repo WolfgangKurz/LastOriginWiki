@@ -7,6 +7,9 @@ import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 12844" date="2024-12-20"
+		knownissue={ <>
+			<li>전투원 <BY>T-19 픽시</BY>의 스킨 <BR>Merry Christmas? Marry Christmas!</BR>의 특수 터치 영역이 표시되지 않습니다.</li>
+		</> }
 		new={ <>
 			<li>신규 전투원 <BY>레모네이드 감마</BY>의 정보가 추가되었습니다.</li>
 			<li>신규 장비 <BY>BR 최적화 회로</BY>의 정보가 추가되었습니다.</li>
@@ -14,9 +17,16 @@ const Changelog: FunctionalComponent = () => <>
 			<li>신규 적 정보가 추가되었습니다.</li>
 			<li>신규 장식품 정보가 추가되었습니다.</li>
 		</> }
+		bugfix={ <>
+			<li>
+				적 행동의 <BG>스킬을 <BR>N</BR>회 <BY>비교</BY> 사용했는가?</BG>가
+				<BG>이 라운드에 스킬을 <BR>N</BR>회 <BY>비교</BY> 사용했는가?</BG>로 변경되었습니다.
+			</li>
+		</> }
 		skin={ <>
 			<li>전투원 <BY>T-19 픽시</BY>의 스킨 <BR>Merry Christmas? Marry Christmas!</BR>의 정보가 추가되었습니다.</li>
 			<li>전투원 <BY>레모네이드 감마</BY>의 스킨 <BR>성난 그녀를 달래는 방법: 슬립 가운</BR>의 정보가 추가되었습니다.</li>
+			<li>전투원 <BY>잉글리쉬 셰퍼드</BY>의 스킨 <BR>파이팅! 아이언 메이든</BR>의 배경 숨기기가 표시되지 않던 문제가 수정되었습니다.</li>
 		</> }
 		dialogue={ <>
 			<li><span class="badge bg-light text-dark">KST 2024-12-20 05:49:43</span>까지 추가/수정된 대사들이 반영되었습니다.</li>

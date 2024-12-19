@@ -142,6 +142,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 		return FilterableEquipDB
 			? FilterableEquipDB
 				.filter(x => x.key === equip.key && x.type === equip.type)
+				.sort((a, b) => a.rarity - b.rarity)
 			: [];
 	}, [props.equip, FilterableEquipDB]);
 
@@ -582,7 +583,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 								<div class="col text-center pt-2">
 									{ RenderDrops(target) }
 
-									{ target.rarity === ACTOR_GRADE.SSS
+									{ target.rarity === ACTOR_GRADE.SSS && family.some(r => r.rarity === ACTOR_GRADE.SS)
 										? <div class="alert alert-danger mt-3 p-1 pb-2">
 											<div class="alert alert-light mb-3 p-1">
 												<Locale
@@ -590,7 +591,8 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 													p={ [
 														<span style="text-decoration:underline">{
 															(loc[`EQUIP_${GetFullKey(target.type, target.key, ACTOR_GRADE.SSS)}`] ?? "???")
-																.replace(/ SSS$/, "")
+																.replace(/SSS$/, "")
+																.trim()
 														}</span>
 													] }
 												/>
