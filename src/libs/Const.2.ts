@@ -121,6 +121,7 @@ export const SkinBanners: string[] = [
 	"PECS_Melt_1", "PECS_LemonadeAlpha_3",
 	"PECS_HighElven_2", "PECS_Shepherd_1",
 	"BR_PXSilky_2",
+	"PECS_LemonadeGamma_1", "BR_Pixie_1",
 ];
 
 export const SkillVideo: Record<string, string[]> = {
@@ -131,4 +132,6 @@ export const SkillVideo: Record<string, string[]> = {
 
 	DS_Sarena_0: ["DS_Sarena.Skill2"],
 	BR_Fafnir_0: ["BR_Fafnir.Skill2"],
+
+	PECS_LemonadeGamma: ["PECS_LemonadeGamma.Skill2"],
 };

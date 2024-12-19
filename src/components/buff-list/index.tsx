@@ -792,16 +792,34 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			} else if ("hpRange" in trigger) {
 				return <Locale raw={ false } k="BUFFTRIGGER_HP_RANGE" p={ [...trigger.hpRange] } />;
 			} else if ("in_battle" in trigger) {
-				if (typeof trigger.in_battle === "string")
-					return <Locale raw={ false } k="BUFFTRIGGER_IN_BATTLE" p={ [convertBuff(trigger.in_battle)] } />;
+				if (trigger.more) {
+					if (typeof trigger.in_battle === "string") {
+						return <Locale raw={ false } k="BUFFTRIGGER_IN_BATTLE_MORE" p={ [
+							convertBuff(trigger.in_battle),
+							trigger.more[0],
+						] } />;
+					}
 
-				const src = trigger.in_battle
-					.map(convertBuff)
-					.reduce(VNodeReduce, [])
-					.unique(VNodeRender);
-				return <Locale raw={ false } k="BUFFTRIGGER_IN_BATTLE" p={ [
-					<>{ src.gap(<Locale raw={ false } k="BUFFTRIGGER_OR" />) }</>,
-				] } />;
+					const src = trigger.in_battle
+						.map(convertBuff)
+						.reduce(VNodeReduce, [])
+						.unique(VNodeRender);
+					return <Locale raw={ false } k="BUFFTRIGGER_IN_BATTLE_MORE" p={ [
+						<>{ src.gap(<Locale raw={ false } k="BUFFTRIGGER_OR" />) }</>,
+						trigger.more[0],
+					] } />;
+				} else {
+					if (typeof trigger.in_battle === "string")
+						return <Locale raw={ false } k="BUFFTRIGGER_IN_BATTLE" p={ [convertBuff(trigger.in_battle)] } />;
+
+					const src = trigger.in_battle
+						.map(convertBuff)
+						.reduce(VNodeReduce, [])
+						.unique(VNodeRender);
+					return <Locale raw={ false } k="BUFFTRIGGER_IN_BATTLE" p={ [
+						<>{ src.gap(<Locale raw={ false } k="BUFFTRIGGER_OR" />) }</>,
+					] } />;
+				}
 			} else if ("in_squad" in trigger) {
 				if (typeof trigger.in_squad === "string")
 					return <Locale raw={ false } k="BUFFTRIGGER_IN_SQUAD" p={ [convertBuff(trigger.in_squad)] } />;

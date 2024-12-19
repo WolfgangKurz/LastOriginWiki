@@ -232,6 +232,12 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 			LastOrigin: ["BR_Hyena_Title-3", "BR_Hyena_Title-9"]
 		}
 	},
+	PECS_LemonadeGamma: {
+		0: {
+			VALOFE: ["PECS_LemonadeGamma_logo", "PECS_LemonadeGamma_logo2"],
+			LastOrigin: ["PECS_LemonadeGamma_title", "PECS_LemonadeGamma_Title-2", "PECS_LemonadeGamma_Title-12"]
+		}
+	},
 	BR_InvDragon: {
 		0: {
 			LastOrigin: ["BR_InvDragon_Title-6", "BR_InvDragon_Title-7"]

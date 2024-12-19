@@ -6,6 +6,22 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12844" date="2024-12-20"
+		new={ <>
+			<li>신규 전투원 <BY>레모네이드 감마</BY>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <BY>BR 최적화 회로</BY>의 정보가 추가되었습니다.</li>
+			<li>메인스토리 13지역 정보가 추가되었습니다.</li>
+			<li>신규 적 정보가 추가되었습니다.</li>
+			<li>신규 장식품 정보가 추가되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>전투원 <BY>T-19 픽시</BY>의 스킨 <BR>Merry Christmas? Marry Christmas!</BR>의 정보가 추가되었습니다.</li>
+			<li>전투원 <BY>레모네이드 감마</BY>의 스킨 <BR>성난 그녀를 달래는 방법: 슬립 가운</BR>의 정보가 추가되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2024-12-20 05:49:43</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12838" date="2024-12-06"
 		new={ <>
 			<li>
