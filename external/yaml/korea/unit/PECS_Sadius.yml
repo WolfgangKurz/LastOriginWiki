@@ -509,6 +509,8 @@ source:
   - - Ev:Ev14:EV2-2Ex
   - - Ev:Ev16:EV1-4Ex
   - - Ev:Ev19:EV2-4B
+oneoff: false
+entryReqMap: []
 research: false
 skills:
   "1":
@@ -3571,6 +3573,7 @@ skills:
                     - Char_PECS_Leanne_N
                     - Char_PECS_Sadius_N
                     - Char_PECS_Sonia_N
+                    - Char_PECS_Shepherd_N
                 - false
               body:
                 - 0
@@ -4540,6 +4543,59 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_PECS_Sadius_N_59
+              on: round
+              if:
+                - in_battle:
+                    - Char_PECS_Shepherd_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_PECS_Sadius_N_59_1
+                    type: 1
+                    value: "0.060000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 6%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_PECS_Sadius_N_59_2
+                    type: 1
+                    value: "0.060000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 6%
+                      per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -4718,6 +4774,24 @@ skills:
           - icon: BuffIcon_CRITICAL_UP
             desc:
               desc: Effect_PECS_Sadius_N_58_2
+              type: 1
+              value: "0.060000"
+              level: "0.010000"
+            base: 0.06
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_PECS_Sadius_N_59_1
+              type: 1
+              value: "0.060000"
+              level: "0.010000"
+            base: 0.06
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_PECS_Sadius_N_59_2
               type: 1
               value: "0.060000"
               level: "0.010000"

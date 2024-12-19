@@ -217,6 +217,8 @@ export interface Unit {
 	dialogue: UnitDialogueDataType;
 	skins: UnitSkin;
 
+	oneoff: boolean;
+	entryReqMap: string[];
 	// roguelike: RoguelikeSkill[];
 }
 

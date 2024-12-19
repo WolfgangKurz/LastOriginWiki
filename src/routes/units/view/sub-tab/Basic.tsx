@@ -451,6 +451,26 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 				</div>
 			</div>
 
+			{ unit.oneoff && <div class={ style.Window }>
+				<div class={ cn(style.Header, "bg-primary") }>
+					<Locale k="UNIT_VIEW_ONEOFF" />
+				</div>
+
+				<div class={ style.OneOff }>
+					<Locale k="UNIT_VIEW_ONEOFF_DESCRIPTION" />
+				</div>
+			</div> }
+
+			{ unit.entryReqMap.length > 0 && <div class={ style.Window }>
+				<div class={ style.Header }>
+					<Locale k="UNIT_VIEW_ENTRY_REQMAP" />
+				</div>
+
+				<div class={ style.EntryReqMap }>
+					<SourceTable source={ [unit.entryReqMap.map(r => new EntitySource(r))] } />
+				</div>
+			</div> }
+
 			<div class={ cn(style.Window, style.ExclusiveEquips) }>
 				<div class={ style.Header }>
 					<Locale k="UNIT_VIEW_EXCLUSIVE_EQUIP" />

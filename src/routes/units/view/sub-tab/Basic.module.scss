@@ -380,6 +380,12 @@
 		color: $secondary;
 	}
 
+	> .OneOff {
+		padding: 10px;
+		white-space: pre-line;
+		font-size: 92%;
+	}
+
 	&.ExclusiveEquips {
 		> .Equips {
 			padding: 10px;
@@ -514,12 +520,12 @@
 .InfoTable {
 	display: grid;
 	grid-template-columns: auto 1fr;
-	grid-template-rows: auto auto 1fr;
+	grid-template-rows: auto auto auto auto 1fr;
 	align-items: start;
 	gap: 20px;
 
 	> .Card {
-		grid-row: 1 / 4;
+		grid-row: 1 / 6;
 	}
 
 	@media (max-width: 992px) {

@@ -608,7 +608,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					onClick={ (): void => setDisplayTouchCollider(!displayTouchCollider) }
 				/> }
 
-				{ (DisplaySpine || Display2DModel) && faceList.length > 0
+				{ (DisplayMixed || DisplaySpine || Display2DModel) && faceList.length > 0
 					? <div class={ `${style.FaceList} ${props.collapsed ? style.FaceListMargin : ""}` }>
 						<select
 							class={ `form-select form-select-sm ${style.FaceList}` }

@@ -422,6 +422,12 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 			LastOrigin: ["DS_KunouchiEnrai_Title-1", "DS_KunouchiEnrai_Title-9"]
 		}
 	},
+	PECS_Shepherd: {
+		0: {
+			LastOrigin: ["PECS_Shepherd_N_Title_Ciko", "PECS_Shepherd_N_Title-3", "PECS_Shepherd_N_Title-6"],
+			VALOFE: ["PECS_Shepherd_N_Valofe", "PECS_Shepherd_N_Valofe_pritty"]
+		}
+	},
 	DS_MoMo: {
 		3: {
 			LastOrigin: ["MoMo_NS3_Title-3", "MoMo_NS3_Title-6"]
