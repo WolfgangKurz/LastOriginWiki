@@ -1,0 +1,252 @@
+uid: LemonadeGamma13_N
+rarity: 5
+type: 1
+role: 1
+category: 0
+stat:
+  hp:
+    - 130000
+    - 1170
+  atk:
+    - 2050
+    - 6.15
+  def:
+    - 3500
+    - 17.5
+  spd: 4.4
+  cri: 40
+  acc: 230
+  eva: 150
+  res:
+    fire: 30
+    chill: 30
+    thunder: 30
+skills:
+  - key: Skill_MP_LemonadeGamma13_N_1
+    icon: MeleeAttack
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 1.35
+      range: 3
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LemonadeGamma13_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_LemonadeGamma13_N_1_1
+                type: 1
+                value: "-0.200000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -20%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_VULNERABLE
+              desc:
+                desc: Effect_MP_LemonadeGamma13_N_1_2
+                type: 1
+                value: "0.200000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 48
+                damage_increase:
+                  base: 20%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_LemonadeGamma13_N_2
+    icon: AssaultAttack
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 1
+      range: 5
+      ap: 8
+      grid: 1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LemonadeGamma13_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_LemonadeGamma13_N_2_1
+                type: 1
+                value: "29"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 29
+                  target: 0
+              overlap: 4
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_LemonadeGamma13_N_2_2
+                type: 1
+                value: "-0.250000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: -25%
+                  per: 0%
+              overlap: 4
+          maxStack: 3
+          overlapGroup: -1
+  - key: Skill_MP_LemonadeGamma13_N_3
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LemonadeGamma13_N_3
+          on: wave
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_LemonadeGamma13_N_3_1
+                type: 1
+                value: "0.400000"
+                level: "0"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 40%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_LemonadeGamma13_N_3_2
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 30%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_LemonadeGamma13_N_3_3
+                type: 1
+                value: "0.400000"
+                level: "0"
+              attr: 0
+              erase: {}
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 40%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+ai: AI_MP_Lemonadegamma_c

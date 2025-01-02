@@ -60,10 +60,10 @@ export default class MixedModel extends FadeContainer {
 			this.emit("facelist", ...args);
 		});
 		this._SpineModel.on("normal-touch", (...args) => {
-			this.emit("special-touch", ...args);
+			this.emit("normal-touch", ...args);
 		});
 		this._SpineModel.on("special-touch", (...args) => {
-			this.emit("normal-touch", ...args);
+			this.emit("special-touch", ...args);
 		});
 	}
 

@@ -6,39 +6,26 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12847" date="2024-12-20"
+	<ChangelogItem title="Build 12851" date="2025-01-03"
 		bugfix={ <>
-			<li><BY>스토리</BY>에서 이벤트 <BY>밤을 걷는 소녀</BY>가 누락된 점이 수정되었습니다.</li>
-			<li>일부 전투원의 획득처에 <BY>스토리</BY> 지역이 표시되던 점이 수정되었습니다.</li>
-		</> }
-		dialogue={ <>
-			<li><span class="badge bg-light text-dark">KST 2024-12-20 05:49:43</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
-		</> }
-	/>
-	<ChangelogItem title="Build 12844" date="2024-12-20"
-		knownissue={ <>
-			<li>전투원 <BY>T-19 픽시</BY>의 스킨 <BR>Merry Christmas? Marry Christmas!</BR>의 특수 터치 영역이 표시되지 않습니다.</li>
+			<li>Spine 로비 애니메이션 스킨의 <BR>특수 터치</BR>와 <BR>일반 터치</BR> 동작이 뒤바뀐 점이 수정되었습니다.</li>
+			<li>전투원 <BY>T-19 픽시</BY>의 스킨 <BR>Merry Christmas? Marry Christmas!</BR>의 특수 터치 영역이 표시되지 않던 점이 수정되었습니다.</li>
+			<li>일부 스킨의 중파 이미지가 표시되지 않던 점이 수정되었습니다.</li>
 		</> }
 		new={ <>
-			<li>신규 전투원 <BY>레모네이드 감마</BY>의 정보가 추가되었습니다.</li>
-			<li>신규 장비 <BY>BR 최적화 회로</BY>의 정보가 추가되었습니다.</li>
-			<li>메인스토리 13지역 정보가 추가되었습니다.</li>
-			<li>신규 적 정보가 추가되었습니다.</li>
-			<li>신규 장식품 정보가 추가되었습니다.</li>
+			<li>신규 장비 <BY>Hasta la Vista Baby!</BY>의 정보가 추가되었습니다.</li>
+			<li>신규 배경 정보가 추가되었습니다.</li>
 		</> }
-		bugfix={ <>
-			<li>
-				적 행동의 <BG>스킬을 <BR>N</BR>회 <BY>비교</BY> 사용했는가?</BG>가
-				<BG>이 라운드에 스킬을 <BR>N</BR>회 <BY>비교</BY> 사용했는가?</BG>로 변경되었습니다.
-			</li>
+		update={ <>
+			<li>일부 적 정보가 갱신되었습니다.</li>
 		</> }
 		skin={ <>
-			<li>전투원 <BY>T-19 픽시</BY>의 스킨 <BR>Merry Christmas? Marry Christmas!</BR>의 정보가 추가되었습니다.</li>
-			<li>전투원 <BY>레모네이드 감마</BY>의 스킨 <BR>성난 그녀를 달래는 방법: 슬립 가운</BR>의 정보가 추가되었습니다.</li>
-			<li>전투원 <BY>잉글리쉬 셰퍼드</BY>의 스킨 <BR>파이팅! 아이언 메이든</BR>의 배경 숨기기가 표시되지 않던 문제가 수정되었습니다.</li>
+			<li>전투원 <BY>천아</BY>의 스킨 <BR>미스 오르카 : 정기 핫팩 쇼핑</BR>의 정보가 추가되었습니다.</li>
+			<li>전투원 <BY>파프니르</BY>의 스킨 <BR>미스 오르카 : 럭키, 언럭키! 도박사의 올인 갬블러 드레스</BR>의 배경 숨기기가 표시되지 않던 문제가 수정되었습니다.</li>
+			<li>전투원 <BY>레모네이드 베타</BY>의 스킨 <BR>미스 오르카 : 자기 위로와 하얀 거짓말</BR>의 정보가 추가되었습니다.</li>
 		</> }
 		dialogue={ <>
-			<li><span class="badge bg-light text-dark">KST 2024-12-20 05:49:43</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2025-01-03 06:35:17</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
 		</> }
 	/>
 </>;

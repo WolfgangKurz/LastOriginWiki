@@ -66,10 +66,12 @@ export default class ColliderBox extends PIXI.Container {
 			native: true,
 		});
 
-		const x = this.center.x;
-		const y = this.center.y;
-		const w = this.size.x;
-		const h = this.size.y;
+		const [x, y, w, h] = [
+			this.center.x,
+			this.center.y,
+			Math.abs(this.size.x),
+			Math.abs(this.size.y),
+		];
 
 		this.placeholder.position.set(-w / 2 + x, -h / 2 - y);
 		this.placeholder.scale.set(w / 16, h / 16);

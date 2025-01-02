@@ -345,7 +345,7 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 				</div>
 				: <div class="mt-2 row">
 					<div class="col-12 col-lg-5 col-xl-6 order-2 order-lg-1">
-						<div class="row row-cols-4 row-cols-lg-2 row-cols-xl-4">
+						<div class="row row-cols-4 row-cols-md-5 row-cols-lg-3 row-cols-xl-5">
 							{ storyGroups.map(g => {
 								return <div class={ BuildClass(style.SubStoryGroupItem, isActive(g.key === selectedGroup), "p-2") }>
 									<div class="p-2">
