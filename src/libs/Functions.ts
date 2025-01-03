@@ -41,19 +41,28 @@ export function ChangeImage (ext: string): void {
 }
 
 export function Extend (): void {
+	function define (proto: Function /*Constructor type*/, name: string, func: Function): void {
+		Object.defineProperty(proto.prototype, name, {
+			value: func,
+			configurable: false,
+			enumerable: false,
+			writable: false,
+		});
+	}
+
 	if (!Array.prototype.gap) {
-		Array.prototype.gap = function <T> (this: T[], e: T): T[] {
+		define(Array, "gap", function <T> (this: T[], e: T): T[] {
 			const ret: T[] = [];
 			this.forEach((x, i) => {
 				if (i > 0) ret.push(e);
 				ret.push(x);
 			});
 			return ret;
-		};
+		});
 	}
 
 	if (!Array.prototype.unique) {
-		Array.prototype.unique = function <T, K> (this: T[], comparer?: (entity: T) => K): T[] {
+		define(Array, "unique", function <T, K> (this: T[], comparer?: (entity: T) => K): T[] {
 			if (comparer) {
 				interface KeyValuePair {
 					key: K;
@@ -72,23 +81,23 @@ export function Extend (): void {
 				if (!acc.includes(cur)) acc.push(cur);
 				return acc;
 			}, [] as T[]);
-		};
+		});
 	}
 
 	if (!Array.prototype.least) {
-		Array.prototype.least = function <T> (this: T[], length: number): Array<T | undefined> {
+		define(Array, "least", function <T> (this: T[], length: number): Array<T | undefined> {
 			const t: Array<T | undefined> = [...this];
 			while (t.length < length) t.push(undefined);
 			return t;
-		};
+		});
 	}
 
 	if (!Array.prototype.pickUpdate) {
-		Array.prototype.pickUpdate = function <T> (this: T[], index: number, value: T): Array<T> {
+		define(Array, "pickUpdate", function <T> (this: T[], index: number, value: T): Array<T> {
 			const arr = [...this];
 			arr[index] = value;
 			return arr;
-		};
+		});
 	}
 }
 

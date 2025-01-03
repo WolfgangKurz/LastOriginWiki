@@ -1,4 +1,4 @@
-import * as PIXI from "pixi.js";
+import { Container, Matrix, Rectangle, RenderTexture } from "pixi.js";
 import { Viewport } from "pixi-viewport";
 
 import Shared from "@/components/pixi/Shared";
@@ -14,12 +14,12 @@ export async function render2DModel (cropByCameraBoundary: boolean = false): Pro
 
 	// find pixi-viewport layer
 	const vp = (() => {
-		let current: PIXI.Container | undefined = host;
+		let current: Container | undefined = host;
 		while (current && !(current instanceof Viewport))
 			current = current.parent;
 
 		if (current instanceof Viewport) {
-			if (current.parent) current.updateTransform();
+			if (current.parent) current.updateTransform({});
 
 			return current;
 		}
@@ -28,7 +28,7 @@ export async function render2DModel (cropByCameraBoundary: boolean = false): Pro
 	})();
 
 	// save original viewport scale
-	const vpOriginalMatrix = vp ? vp.transform.localTransform.clone() : new PIXI.Matrix().identity();
+	const vpOriginalMatrix = vp ? vp.localTransform.clone() : new Matrix().identity();
 
 	const rW = renderer.width;
 	const rH = renderer.height;
@@ -36,15 +36,15 @@ export async function render2DModel (cropByCameraBoundary: boolean = false): Pro
 	try {
 		// make original scale
 		if (vp) {
-			const tf = new PIXI.Matrix().identity();
+			const tf = new Matrix().identity();
 			host.Roots.forEach(root => {
 				// extract scale only
-				tf.scale(root.transform.scale.x, root.transform.scale.y);
+				tf.scale(root.scale.x, root.scale.y);
 			});
 			tf.invert();
 
-			vp.transform.setFromMatrix(tf);
-			vp.updateTransform();
+			vp.setFromMatrix(tf);
+			vp.updateTransform({});
 		}
 
 		const bounds = (() => {
@@ -52,12 +52,12 @@ export async function render2DModel (cropByCameraBoundary: boolean = false): Pro
 
 			const _b = host_target.getBounds(false);
 			let [l, t, r, b] = [_b.left, _b.top, _b.right, _b.bottom];
-			return new PIXI.Rectangle(l, t, r - l, b - t);
+			return new Rectangle(l, t, r - l, b - t);
 		})();
 
 		const objects = Shared.RenderableObjects(host);
-		function _render (rt: PIXI.RenderTexture, offsetX: number = 0, offsetY: number = 0) {
-			const offsetMat = new PIXI.Matrix();
+		function _render (rt: RenderTexture, offsetX: number = 0, offsetY: number = 0) {
+			const offsetMat = new Matrix();
 			offsetMat.translate(-bounds.left + offsetX, -bounds.top + offsetY);
 
 			// TODO: Optimize draw call
@@ -67,21 +67,23 @@ export async function render2DModel (cropByCameraBoundary: boolean = false): Pro
 			objects.forEach(o => {
 				// if (o.parent) o.updateTransform();
 
-				const _visibles: PIXI.DisplayObject[] = [];
+				const _visibles: Container[] = [];
 				if (o.children) {
 					for (const c of o.children) {
-						if (c instanceof PIXI.DisplayObject && c.visible) {
+						if (c instanceof Container && c.visible) {
 							c.visible = false;
 							_visibles.push(c);
 						}
 					}
 				}
 
-				renderer!.render(o, {
+				renderer!.render({
+					container: o,
+
 					clear: false,
-					renderTexture: rt,
+					target: rt,
 					transform: offsetMat,
-					skipUpdateTransform: true,
+					// skipUpdateTransform: true,
 				});
 
 				_visibles.forEach(c => c.visible = true);
@@ -89,13 +91,14 @@ export async function render2DModel (cropByCameraBoundary: boolean = false): Pro
 		}
 
 		// maximum texture size that WebGL handleable
-		const MAX_TEX_SIZE = renderer.gl.getParameter(renderer.gl.MAX_TEXTURE_SIZE);
+		// const MAX_TEX_SIZE = renderer.gl.getParameter(renderer.gl.MAX_TEXTURE_SIZE);
+		const MAX_TEX_SIZE = 99999;
 
 		const _w = Math.round(bounds.width), _h = Math.round(bounds.height);
 
 		if (_w > MAX_TEX_SIZE || _h > MAX_TEX_SIZE) { // should conbine render-textures
-			const rt = PIXI.RenderTexture.create({ width: 1, height: 1 });
-			const empty = new PIXI.Container();
+			const rt = RenderTexture.create({ width: 1, height: 1 });
+			const empty = new Container();
 
 			const cv = document.createElement("canvas");
 			cv.width = _w;
@@ -128,14 +131,14 @@ export async function render2DModel (cropByCameraBoundary: boolean = false): Pro
 			const w = _w, h = _h;
 
 			renderer.resize(w, h);
-			const rt = PIXI.RenderTexture.create({ width: w, height: h });
+			const rt = RenderTexture.create({ width: w, height: h });
 
 			_render(rt);
 
 			return renderer.extract.canvas(rt) as HTMLCanvasElement;
 		}
 	} finally {
-		vp?.transform.setFromMatrix(vpOriginalMatrix);
+		vp?.setFromMatrix(vpOriginalMatrix);
 		renderer.resize(rW, rH);
 		Shared.instance.inRendering = false;
 	}

@@ -1,5 +1,4 @@
-import * as PIXI from "pixi.js";
-import * as LAYERS from "@pixi/layers";
+import { ColorMatrixFilter, Container, DestroyOptions, groupD8, ImageSource, IRenderLayer, RenderLayer, Sprite, Texture } from "pixi.js";
 
 import { AssetsRoot, IsDev } from "@/libs/Const";
 import { quat2tf } from "@/libs/Math";
@@ -71,13 +70,13 @@ interface NodeTreeItem {
 	id: number;
 	name: string;
 	data: MODEL_OBJECT;
-	sprite: PIXI.Sprite;
+	sprite: Sprite;
 	child: NodeTreeItem[];
 }
 
-const U2DCache: Record<string, [texture: PIXI.Texture, url: string, timer: number | null]> = {};
+const U2DCache: Record<string, [texture: Texture, url: string, timer: number | null]> = {};
 const U2DCacheDuration = 60 * 1000;
-function getCache (key: string): PIXI.Texture | null {
+function getCache (key: string): Texture | null {
 	if (key in U2DCache) {
 		const target = U2DCache[key];
 		if (target[2] !== null) {
@@ -88,7 +87,7 @@ function getCache (key: string): PIXI.Texture | null {
 	}
 	return null;
 }
-function setCache (key: string, url: string, value: PIXI.Texture) {
+function setCache (key: string, url: string, value: Texture) {
 	removeCache(key, true);
 	U2DCache[key] = [value, url, null];
 }
@@ -142,7 +141,7 @@ export default class Pixi2DModel extends FadeContainer {
 	private ready = false;
 
 	private spMap: Record<string, SPRITE_DATA> = {};
-	private texMap: Record<string, PIXI.Texture> = {};
+	private texMap: Record<string, Texture> = {};
 
 	private faceList: SPRITE_DATA[] = [];
 	private hidePartList: string[] = [];
@@ -152,7 +151,7 @@ export default class Pixi2DModel extends FadeContainer {
 	private dialogDeactiveList: string[] = [];
 	private treeItems: NodeTreeItem[] = [];
 
-	private roots: PIXI.Sprite[] = [];
+	private roots: Sprite[] = [];
 	public get Roots () { return this.roots; }
 
 	constructor (image: string) {
@@ -163,8 +162,6 @@ export default class Pixi2DModel extends FadeContainer {
 
 		const baseURL = `${AssetsRoot}/2dmodel/${image}`;
 
-		this.layerableChildren = true;
-
 		const canvas = document.createElement("canvas");
 
 		Shared.instance.host = this;
@@ -174,7 +171,7 @@ export default class Pixi2DModel extends FadeContainer {
 			image: HTMLImageElement,
 			vector: SPRITE_VECTOR,
 			clipPt: CLIP_PATH
-		): Promise<string> => new Promise((resolve, reject) => {
+		): Promise<[HTMLImageElement, string]> => new Promise((resolve, reject) => {
 			const x = vector.rc.w / 2 - (vector.w * vector.px);
 			const y = vector.rc.h / 2 - (vector.h * (1 - vector.py));
 			const w = Math.ceil(vector.rc.w);
@@ -213,7 +210,15 @@ export default class Pixi2DModel extends FadeContainer {
 
 				const url = URL.createObjectURL(b);
 				this._objectURLs.push(url);
-				resolve(url);
+
+				const img = new Image();
+				const cb = () => {
+					img.removeEventListener("load", cb);
+					resolve([img, url]);
+				};
+
+				img.addEventListener("load", cb);
+				img.src = url;
 			});
 		});
 
@@ -237,15 +242,14 @@ export default class Pixi2DModel extends FadeContainer {
 					.forEach(node => (_nodes[node.id] = node));
 
 				const _z: Record<number, number> = {};
-				const _layers: Record<number, LAYERS.Layer> = {};
+				const _layers: Record<number, IRenderLayer> = {};
 				Object.keys(r.object) // Make z-index table (id -> z)
 					.forEach(z => {
 						const __z = parseInt(z);
 						r.object[__z].forEach(e => (_z[e.id] = __z));
 
-						const group = new LAYERS.Group(__z, true);
-						_layers[__z] = new LAYERS.Layer(group);
-						_layers[__z].name = `*Layer [z=${__z}]`;
+						_layers[__z] = new RenderLayer();
+						// _layers[__z].name = `*Layer [z=${__z}]`;
 						this.addChild(_layers[__z]);
 					});
 
@@ -258,24 +262,24 @@ export default class Pixi2DModel extends FadeContainer {
 							const cached = getCache(key);
 							if (cached) {
 								this.spMap[sp.name] = sp;
-								this.texMap[sp.name] = cached.clone();
+								this.texMap[sp.name] = Texture.from(cached.source);
 								return resolve();
 							}
 
 							const image = new Image();
 							image.addEventListener("load", () => {
 								createClippedTexture(image, sp.vector, sp.v)
-									.then(tex => {
-										const _btex = PIXI.BaseTexture.from(tex, {
-											anisotropicLevel: 1,
-											mipmap: PIXI.MIPMAP_MODES.OFF,
-											multisample: PIXI.MSAA_QUALITY.LOW,
+									.then(([tex, texUrl]) => {
+										const _isrc = new ImageSource({
+											resource: tex,
+											maxAnisotropy: 1,
+											autoGenerateMipmaps: false,
 										});
-										const _tex = PIXI.Texture.from(_btex);
-										setCache(key, tex, _tex);
+										const _tex = Texture.from(_isrc);
+										setCache(key, texUrl, _tex);
 
 										this.spMap[sp.name] = sp;
-										this.texMap[sp.name] = _tex.clone();
+										this.texMap[sp.name] = _tex;
 										this._sprites.push(key);
 										resolve();
 									});
@@ -294,7 +298,7 @@ export default class Pixi2DModel extends FadeContainer {
 					id: 0,
 					name: "#",
 					data: null as unknown as NodeTreeItem["data"],
-					// @ts-expect-error : same with PIXI.Sprite without constructor
+					// @ts-expect-error : same with Sprite without constructor
 					sprite: this, // for root as container
 					child: [],
 				};
@@ -303,23 +307,23 @@ export default class Pixi2DModel extends FadeContainer {
 				(() => {
 					const all = Object.values(r.object).flat();
 
-					const setNodeTransform = (obj: MODEL_OBJECT, target: PIXI.Container) => {
+					const setNodeTransform = (obj: MODEL_OBJECT, target: Container) => {
 						const scaleMultiplier = obj.id === 1 // root
 							? 3.5
 							: 1;
 
 						const mat = quat2tf(obj.vector.slice(6, 10) as Tuple<number, 4>);
-						target.setTransform(
-							mat.position.x + obj.vector[0] * 100,
-							mat.position.y - obj.vector[1] * 100,
+						target.updateTransform({
+							x: mat.position.x + obj.vector[0] * 100,
+							y: mat.position.y - obj.vector[1] * 100,
 
-							mat.scale.x * obj.vector[3] * scaleMultiplier,
-							mat.scale.y * obj.vector[4] * scaleMultiplier,
+							scaleX: mat.scale.x * obj.vector[3] * scaleMultiplier,
+							scaleY: mat.scale.y * obj.vector[4] * scaleMultiplier,
 
-							-mat.rotation, // Unity using inverted angle
-							mat.skew.x,
-							mat.skew.y,
-						);
+							rotation: -mat.rotation, // Unity using inverted angle
+							skewX: mat.skew.x,
+							skewY: mat.skew.y,
+						});
 					};
 					const requireTreeNode = (node: MODEL_OBJECT): NodeTreeItem => {
 						const cached = treeItems.find(r => r.id === node.id);
@@ -329,18 +333,20 @@ export default class Pixi2DModel extends FadeContainer {
 							id: node.id,
 							name: node.name,
 							data: node,
-							sprite: new PIXI.Sprite(PIXI.Texture.EMPTY),
+							sprite: new Sprite(Texture.EMPTY),
 							child: [],
 						};
 
 						entity.sprite.filters = [];
 						entity.sprite.anchor.set(.5, .5);
 						entity.sprite.sortableChildren = true;
-						entity.sprite.name = entity.name;
+						entity.sprite.label = entity.name;
 
 						entity.sprite.zIndex = (_z[entity.id] ?? 0);
-						entity.sprite.parentLayer = _layers[entity.sprite.zIndex];
-						entity.sprite.layerableChildren = true;
+						// entity.sprite.parentLayer = _layers[entity.sprite.zIndex];
+						// entity.sprite.layerableChildren = true;
+
+						_layers[entity.sprite.zIndex].attach(entity.sprite);
 
 						if (node.id <= 2) // root of GameObject, ~~_root GameObject
 							this.roots.push(entity.sprite);
@@ -381,9 +387,13 @@ export default class Pixi2DModel extends FadeContainer {
 						const o = node.data;
 
 						const sprite = node.sprite;
+						if (!sprite.filters)
+							sprite.filters = [];
+						else if (!Array.isArray(sprite.filters))
+							sprite.filters = [sprite.filters];
 
 						if ("color" in o && o.color) { // has SpriteRenderer (even if sprite has not set)
-							const filter = new PIXI.ColorMatrixFilter();
+							const filter = new ColorMatrixFilter();
 							// @ts-ignore pickUpdate extend
 							filter.matrix = [
 								o.color[0], 0, 0, 0, 0,
@@ -391,26 +401,27 @@ export default class Pixi2DModel extends FadeContainer {
 								0, 0, o.color[2], 0, 0,
 								0, 0, 0, o.color[3], 0,
 							];
-							sprite.filters!.push(filter);
+
+							sprite.filters = [...sprite.filters, filter];
 						}
 
 						if ("shader" in o && o.shader) {
 							const shader = o.shader[0];
 							switch (shader) {
 								case "multiply":
-									// sprite.blendMode = PIXI.BLEND_MODES.MULTIPLY;
-									sprite.filters!.push(new Shader_Multiply());
+									// sprite.blendMode = BLEND_MODES.MULTIPLY;
+									sprite.filters = [...sprite.filters, new Shader_Multiply()];
 									break;
 								case "additive":
-									// sprite.blendMode = PIXI.BLEND_MODES.ADD;
-									sprite.filters!.push(new Shader_Additive());
+									// sprite.blendMode = BLEND_MODES.ADD;
+									sprite.filters = [...sprite.filters, new Shader_Additive()];
 									break;
 								case "additive-soft":
-									// sprite.blendMode = PIXI.BLEND_MODES.ADD;
-									sprite.filters!.push(new Shader_AdditiveSoft());
+									// sprite.blendMode = BLEND_MODES.ADD;
+									sprite.filters = [...sprite.filters, new Shader_AdditiveSoft()];
 									break;
 								case "hologram-noise-alpha":
-									sprite.filters!.push(new HologramNoiseAlpha());
+									sprite.filters = [...sprite.filters, new HologramNoiseAlpha()];
 									break;
 							}
 						}
@@ -419,13 +430,17 @@ export default class Pixi2DModel extends FadeContainer {
 							const sp = this.spMap[o.sprite];
 							let tex = this.texMap[sp.name];
 							if (o.flip && (o.flip[0] || o.flip[1])) {
-								tex = tex.clone();
-								if (o.flip[0] && o.flip[1]) // same with 180
-									tex.rotate = PIXI.groupD8.W;
-								else if (o.flip[0])
-									tex.rotate = PIXI.groupD8.MIRROR_HORIZONTAL;
-								else
-									tex.rotate = PIXI.groupD8.MIRROR_VERTICAL;
+								tex = new Texture({
+									source: tex.source,
+									rotate: (() => {
+										if (o.flip[0] && o.flip[1]) // same with 180
+											return groupD8.W;
+										else if (o.flip[0])
+											return groupD8.MIRROR_HORIZONTAL;
+										else
+											return groupD8.MIRROR_VERTICAL;
+									})(),
+								});
 							}
 							sprite.texture = tex;
 						}
@@ -470,7 +485,7 @@ export default class Pixi2DModel extends FadeContainer {
 			if (face)
 				faceNode.sprite.texture = this.texMap[face.name];
 			else if (faceNames.includes("Idle"))
-				faceNode.sprite.texture = PIXI.Texture.EMPTY;
+				faceNode.sprite.texture = Texture.EMPTY;
 			else
 				console.warn("[Pixi2DModel] no face sprite for " + imageVar + ", from " + this.model);
 
@@ -519,9 +534,10 @@ export default class Pixi2DModel extends FadeContainer {
 		this.treeItems
 			.filter(r => items.includes(r.name))
 			.forEach(r => r.sprite.visible = !namesToHide.includes(r.name));
+
 	}
 
-	destroy (options?: boolean | PIXI.IDestroyOptions | undefined): void {
+	destroy (options?: DestroyOptions): void {
 		if (Shared.instance.host === this)
 			Shared.instance.host = null;
 
@@ -535,6 +551,6 @@ export default class Pixi2DModel extends FadeContainer {
 
 		// this._objectURLs.forEach(url => URL.revokeObjectURL(url));
 		this._sprites.forEach(key => removeCache(key));
-		// PIXI.Ticker.shared.remove(this.ticker);
+		// Ticker.shared.remove(this.ticker);
 	}
 }

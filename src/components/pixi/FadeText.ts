@@ -1,4 +1,4 @@
-import * as PIXI from "pixi.js";
+import { DestroyOptions, Sprite, Texture, Ticker } from "pixi.js";
 import opentype from "opentype.js";
 
 import { findSpans } from "unicode-default-word-boundary";
@@ -48,7 +48,7 @@ export default class FadeText extends FadeContainer {
 	}
 
 	private _cv: HTMLCanvasElement;
-	private _sprites: PIXI.Sprite[] = [];
+	private _sprites: Sprite[] = [];
 
 	constructor (text?: string, style?: TextStyle) {
 		super();
@@ -59,7 +59,7 @@ export default class FadeText extends FadeContainer {
 		this.UpdateTexture();
 	}
 
-	destroy (options?: boolean | PIXI.IDestroyOptions | undefined): void {
+	destroy (options?: DestroyOptions): void {
 		this._sprites.forEach(sp => {
 			this.removeChild(sp);
 			sp.destroy(true);
@@ -74,12 +74,12 @@ export default class FadeText extends FadeContainer {
 	private markUpdateRequire (): void {
 		if (!this.updateRequired) {
 			this.updateRequired = true;
-			PIXI.Ticker.shared.add(this.updateTickFn);
+			Ticker.shared.add(this.updateTickFn);
 		}
 	}
 	private updateTicker () {
 		this.updateRequired = false;
-		PIXI.Ticker.shared.remove(this.updateTickFn);
+		Ticker.shared.remove(this.updateTickFn);
 		this.UpdateTexture();
 		this.emit("update");
 	}
@@ -240,7 +240,7 @@ export default class FadeText extends FadeContainer {
 								x += _cw;
 							});
 
-							const sp = new PIXI.Sprite(PIXI.Texture.from(this._cv.toDataURL()));
+							const sp = new Sprite(Texture.from(this._cv.toDataURL()));
 							sp.roundPixels = true;
 							sp.name = text;
 							sp.position.set(__x, __y);

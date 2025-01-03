@@ -1,13 +1,16 @@
-import * as PIXI from "pixi.js";
+import { NineSliceSprite, Texture, Ticker } from "pixi.js";
 
-export default class FadeSprite extends PIXI.NineSlicePlane {
+export default class FadeSprite extends NineSliceSprite {
 	private _fading: boolean = false;
 	public get fading () {
 		return this._fading;
 	}
 
-	constructor (texture: PIXI.Texture<PIXI.Resource>, leftWidth: number = 0, topHeight: number = 0, rightWidth: number = 0, bottomHeight: number = 0) {
-		super(texture, leftWidth, topHeight, rightWidth, bottomHeight);
+	constructor (texture: Texture, leftWidth: number = 0, topHeight: number = 0, rightWidth: number = 0, bottomHeight: number = 0) {
+		super({
+			texture,
+			leftWidth, topHeight, rightWidth, bottomHeight,
+		});
 	}
 
 	public stopFade () {
@@ -20,9 +23,10 @@ export default class FadeSprite extends PIXI.NineSlicePlane {
 
 		this.alpha = 0;
 
-		const ticker = PIXI.Ticker.shared;
-		const onTick = (dt: number) => {
-			const secs = dt / PIXI.Ticker.targetFPMS / 1000;
+		const ticker = Ticker.shared;
+		const onTick = (ticker: Ticker) => {
+			const dt = ticker.deltaTime;
+			const secs = dt / Ticker.targetFPMS / 1000;
 			this.alpha += secs / duration;
 
 			if (this.alpha >= 1 || !this._fading || this.destroyed) {
@@ -42,9 +46,10 @@ export default class FadeSprite extends PIXI.NineSlicePlane {
 
 		this.alpha = 1;
 
-		const ticker = PIXI.Ticker.shared;
-		const onTick = (dt: number) => {
-			const secs = dt / PIXI.Ticker.targetFPMS / 1000;
+		const ticker = Ticker.shared;
+		const onTick = (ticker: Ticker) => {
+			const dt = ticker.deltaTime;
+			const secs = dt / Ticker.targetFPMS / 1000;
 			this.alpha -= secs / duration;
 
 			if (this.alpha <= 0 || !this._fading || this.destroyed) {

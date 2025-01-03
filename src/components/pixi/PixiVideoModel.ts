@@ -1,4 +1,4 @@
-import * as PIXI from "pixi.js";
+import { Assets, DestroyOptions, Sprite, Texture, VideoSource } from "pixi.js";
 
 import { AssetsRoot } from "@/libs/Const";
 
@@ -16,24 +16,19 @@ export default class PixiVideoModel extends FadeContainer {
 
 		this._model = video;
 
-		const videoURL = `${AssetsRoot}/webm/HD/${video}.webm`;
+		Assets.load(`${AssetsRoot}/webm/HD/${video}.webm`)
+			.then((tex: Texture<VideoSource>) => {
+				tex.source.resource.loop = true;
+				tex.source.resource.muted = true;
 
-		this.layerableChildren = true;
-
-		PIXI.Texture.fromURL(videoURL)
-			.then(tex => {
-				const res = tex.baseTexture.resource as PIXI.VideoResource;
-				res.source.loop = true;
-				res.source.muted = true;
-
-				const sp = new PIXI.Sprite(tex);
+				const sp = new Sprite(tex);
 				sp.anchor.set(.5, .5);
 				sp.scale.set(.5, .5);
 				this.addChild(sp);
 			});
 	}
 
-	destroy (options?: boolean | PIXI.IDestroyOptions | undefined): void {
+	destroy (options?: DestroyOptions): void {
 		super.destroy(options);
 	}
 }

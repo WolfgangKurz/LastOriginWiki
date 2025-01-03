@@ -1,6 +1,6 @@
-import * as PIXI from "pixi.js";
+import { Container, Ticker } from "pixi.js";
 
-export default class FadeContainer extends PIXI.Container {
+export default class FadeContainer extends Container {
 	private _fading: boolean = false;
 	public get fading () {
 		return this._fading;
@@ -16,9 +16,10 @@ export default class FadeContainer extends PIXI.Container {
 
 		this.alpha = 0;
 
-		const ticker = PIXI.Ticker.shared;
-		const onTick = (dt: number) => {
-			const secs = dt / PIXI.Ticker.targetFPMS / 1000;
+		const ticker = Ticker.shared;
+		const onTick = (ticker: Ticker) => {
+			const dt = ticker.deltaTime;
+			const secs = dt / Ticker.targetFPMS / 1000;
 			this.alpha += secs / duration;
 
 			if (this.alpha >= 1 || !this._fading || this.destroyed) {
@@ -38,9 +39,10 @@ export default class FadeContainer extends PIXI.Container {
 
 		this.alpha = 1;
 
-		const ticker = PIXI.Ticker.shared;
-		const onTick = (dt: number) => {
-			const secs = dt / PIXI.Ticker.targetFPMS / 1000;
+		const ticker = Ticker.shared;
+		const onTick = (ticker: Ticker) => {
+			const dt = ticker.deltaTime;
+			const secs = dt / Ticker.targetFPMS / 1000;
 			this.alpha -= secs / duration;
 
 			if (this.alpha <= 0 || !this._fading || this.destroyed) {
