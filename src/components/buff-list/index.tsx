@@ -1,5 +1,5 @@
 import preact, { Fragment, FunctionalComponent, isValidElement } from "preact";
-import { useState } from "preact/hooks";
+import { useCallback, useState } from "preact/hooks";
 import render from "preact-render-to-string";
 import Decimal from "decimal.js";
 
@@ -11,12 +11,13 @@ import { UNIT_POSITION, BUFF_ATTR_TYPE, SKILL_ATTR, ACTOR_BODY_TYPE, ACTOR_CLASS
 import { StatPointValue } from "@/types/Stat";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { Enemy } from "@/types/DB/Enemy";
+import BuffFrom, { BuffFrom_Equip } from "@/types/DB/BuffFrom";
 
 import { ImageExtension, AssetsRoot, TroopNameTable, IsDev } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 import { formatString, useLocale } from "@/libs/Locale";
 import { BuildClass, cn } from "@/libs/Class";
-import { diff2 } from "@/libs/Functions";
+import { diff2, groupBy } from "@/libs/Functions";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB, useDBData } from "@/libs/Loader";
 import LocaleBase, { LocaleProps, LocalePropsLegacy } from "@/components/locale";
@@ -24,12 +25,18 @@ import IconQuestionCircleFill from "@/components/bootstrap-icon/icons/QuestionCi
 import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
 import IconCheck from "@/components/bootstrap-icon/icons/Check";
 import IconX from "@/components/bootstrap-icon/icons/X";
+import IconThreeDots from "@/components/bootstrap-icon/icons/ThreeDots";
+import IconDot from "@/components/bootstrap-icon/icons/Dot";
+import IconDash from "@/components/bootstrap-icon/icons/Dash";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
+import PopupButton from "@/components/PopupButton";
+import RarityBadge from "@/components/rarity-badge";
 import StatIcon from "@/components/stat-icon";
 import ElemIcon from "@/components/elem-icon";
 import UnitLink from "@/components/unit-link";
+import Badge from "@/components/Badge";
 
-import { getBuffUid } from "./cache";
+// import { getBuffUid } from "./cache";
 
 import style from "./style.module.scss";
 
@@ -55,12 +62,20 @@ interface BuffRendererProps {
 
 export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 	const _FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
-	if (!_FilterableUnitDB) return <></>;
+	const _BuffFromDB = useDBData<Record<string, BuffFrom[]>>(StaticDB.BuffFrom);
+	if (!_FilterableUnitDB || !_BuffFromDB) return <></>;
 	const FilterableUnitDB = _FilterableUnitDB;
+	const BuffFromDB = _BuffFromDB;
 
 	const [loc] = useLocale();
 
 	const [ReferencedEnemy, setReferencedEnemy] = useState<Enemy | null>(null);
+
+	const getBuffUidFactory = useCallback(() => {
+		const keys = Object.keys(BuffFromDB);
+		return (_: string, buff: string): number => keys.indexOf(buff) + 1;
+	}, [BuffFromDB]);
+	const getBuffUid = useCallback(getBuffUidFactory(), [getBuffUidFactory]);
 
 	const VNodeRender = (entity: preact.VNode): string => render(entity);
 	const VNodeReduce = (() => { // collapse 'same target type, same name` buffs into one
@@ -213,11 +228,21 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		return p ? ifTrue : ifFalse;
 	}
 
-	function convertBuff (name: string): preact.VNode;
-	function convertBuff (name: string, color: BuffColors): preact.VNode;
-	function convertBuff (name: string, attr: BUFF_ATTR_TYPE): preact.VNode;
-	function convertBuff (name: string, attr: BUFF_ATTR_TYPE, color: BuffColors): preact.VNode;
-	function convertBuff (name: string, p2?: BuffColors | BUFF_ATTR_TYPE, p3?: BuffColors): preact.VNode {
+	interface BuffBadge {
+		/** buff key */
+		key: string;
+		/** buff uid (number badge) */
+		uid: number;
+
+		attr?: BUFF_ATTR_TYPE;
+		color?: BuffColors;
+	}
+
+	function convertBuff (name: string): preact.VNode | BuffBadge;
+	function convertBuff (name: string, color: BuffColors): preact.VNode | BuffBadge;
+	function convertBuff (name: string, attr: BUFF_ATTR_TYPE): preact.VNode | BuffBadge;
+	function convertBuff (name: string, attr: BUFF_ATTR_TYPE, color: BuffColors): preact.VNode | BuffBadge;
+	function convertBuff (key: string, p2?: BuffColors | BUFF_ATTR_TYPE, p3?: BuffColors): preact.VNode | BuffBadge {
 		let attr: BUFF_ATTR_TYPE | undefined;
 		let color: BuffColors | undefined;
 
@@ -229,10 +254,10 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		if (![undefined, "primary", "secondary", "danger", "warning", "info", "dark", "light"].includes(color))
 			color = undefined;
 
-		if (name.startsWith("Char_")) {
-			const key = name.replace(/Char_(.+)_N/, "$1");
-			const unit = FilterableUnitDB.find(x => x.uid === key);
-			if (!unit) return <>{ key }</>;
+		if (key.startsWith("Char_")) {
+			const ukey = key.replace(/Char_(.+)_N/, "$1");
+			const unit = FilterableUnitDB.find(x => x.uid === ukey);
+			if (!unit) return <>{ ukey }</>;
 
 			return <span class={ `SubBadge ${style.SubBadge} ${color ? `text-${color}` : ""}` }>
 				<span class={ style.SubBadgeBadge }>
@@ -240,24 +265,24 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				</span>
 				<Locale raw={ false } k={ `UNIT_${unit.uid}` } />
 			</span>;
-		} else if (name.startsWith("MOB_")) {
-			const key = name.replace(/MOB_MP_(.+)/, "$1");
+		} else if (key.startsWith("MOB_")) {
+			const ekey = key.replace(/MOB_MP_(.+)/, "$1");
 			return <span
 				class={ `SubBadge ${style.SubBadge} ${color ? `text-${color}` : ""}` }
-				data-key={ key }
+				data-key={ ekey }
 			>
 				<span class={ style.SubBadgeBadge }>
 					<Locale raw={ false } k="BUFF_UNIT_SIDE_ENEMY" />
 				</span>
-				<a class={ style.SubBadgeLink } href={ `/enemies/${key}` } target="_blank">
+				<a class={ style.SubBadgeLink } href={ `/enemies/${ekey}` } target="_blank">
 					<IconLink45deg />
-					<Locale raw={ false } k={ `ENEMY_${key}` } />
+					<Locale raw={ false } k={ `ENEMY_${ekey}` } />
 				</a>
 			</span>;
-		} else if (name.startsWith("Skill_")) {
-			const char = name.replace(/^Skill_(.+)_(N|CH)_[a-zA-Z0-9]+$/, "$1");
-			const fc = name.replace(/^.+_(N|CH)_([a-zA-Z0-9]+)$/, "$1") === "CH";
-			const idx = name.replace(/^.+_(N|CH)_([a-zA-Z0-9]+)$/, "$2");
+		} else if (key.startsWith("Skill_")) {
+			const char = key.replace(/^Skill_(.+)_(N|CH)_[a-zA-Z0-9]+$/, "$1");
+			const fc = key.replace(/^.+_(N|CH)_([a-zA-Z0-9]+)$/, "$1") === "CH";
+			const idx = key.replace(/^.+_(N|CH)_([a-zA-Z0-9]+)$/, "$2");
 
 			return <Locale raw={ false } k="BUFF_BADGE_A_OF_B" p={ [
 				<span class={ `SubBadge ${style.SubBadge} ${color ? `text-${color}` : ""}` }>
@@ -267,19 +292,178 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					<Locale raw={ false } k={ `UNIT_SKILL_${char}_${fc ? "F" : ""}${idx}` } />
 				</span>,
 			] } />;
+		} else if (key.startsWith("SUMMON_")) {
+			return <span
+				class={ `SubBadge ${style.SubBadge} ${color ? `text-${color}` : ""}` }
+				data-key={ key }
+			>
+				<span class={ style.SubBadgeBadge }>
+					<Locale raw={ false } k="BUFF_UNIT_SIDE_SUMMON" />
+				</span>
+				<Locale raw={ false } k={ key } />
+			</span>;
 		}
-		return <span class={ `SubBadge ${style.SubBadge} ${color ? `text-${color}` : ""}` }>
-			{ attr !== undefined
+
+		const uid = getBuffUid(props.uid, key);
+		return { key, uid, color, attr };
+	}
+	function singleBuff (node: preact.VNode | BuffBadge): preact.VNode {
+		if ("uid" in node) return computeBuff([node])[0];
+		return node;
+	}
+	function computeBuff (nodes: Array<preact.VNode | BuffBadge>): preact.VNode[] {
+		const ret: preact.VNode[] = [];
+		const buffs: BuffBadge[] = [];
+		nodes.forEach(node => {
+			if ("uid" in node) buffs.push(node);
+			else ret.push(node);
+		});
+
+		const groups: Record<string, BuffBadge[]> = groupBy(buffs, x => `${loc[x.key]}_${x.color || ""}_${x.attr || ""}`);
+
+		Object.keys(groups).forEach(g => {
+			const name = loc[groups[g][0].key];
+			const color = groups[g][0].color;
+
+			const uids = groups[g].length > 1
+				? <IconThreeDots />
+				: <>{ groups[g][0].uid }</>;
+
+			const attr = groups[g][0].attr !== undefined
 				? <u>
-					<Locale raw={ false } k={ `BUFFEFFECT_ATTR_PREFIX_${attr}` } />
+					<Locale raw={ false } k={ `BUFFEFFECT_ATTR_PREFIX_${groups[g][0].attr}` } />
 				</u>
-				: <></>
+				: <></>;
+
+			function renderFrom (from: BuffFrom): preact.VNode {
+				switch (from.type) {
+					case "unit": {
+						const isP = /[3-9][0-9]*$/.test(from.index);
+						const isFC = from.index.endsWith("F");
+
+						const ridx = Number(/([0-9]+)$/.exec(from.index)![1]);
+						const idx = ridx >= 3 ? ridx - 2 : ridx;
+						const pp = ["st", "nd", "rd", "th"][idx > 3 ? 3 : idx - 1];
+						return <>
+							{ from.key !== props.uid
+								? <a href={ `/units/${from.key}` } target="_blank">
+									<RarityBadge border rarity="A">
+										<Locale plain k={ `UNIT_${from.key}` } fallback={ from.key } />
+										<IconLink45deg />
+									</RarityBadge>
+								</a>
+								: <RarityBadge border rarity="A">
+									<Locale plain k={ `UNIT_${from.key}` } fallback={ from.key } />
+								</RarityBadge>
+							}
+
+							<IconDash />
+
+							<Locale
+								raw={ false }
+								k={ `BUFFFROM_${isP ? "PASSIVE" : "ACTIVE"}${isFC ? "_F" : ""}` }
+								p={ [idx, pp] }
+							/>
+							<Badge class="ms-1" variant="primary">
+								<Locale raw={ false } k={ `UNIT_SKILL_${from.key}_${from.index}` } />
+							</Badge>
+						</>;
+					}
+					case "equip":
+						return <>
+							<a href={ `/equips/${from.key}` } target="_blank">
+								<RarityBadge border rarity="A">
+									<Locale plain k={ `EQUIP_${from.key}` } />
+									<IconLink45deg />
+								</RarityBadge>
+							</a>
+
+							<IconDash />
+
+							<strong class={ style.EquipLevel }>
+								<Locale raw={ false } k={ "BUFFFROM_EQUIP_LEVEL" } p={ [from.level] } />
+							</strong>
+						</>;
+					case "enemy": {
+						const isP = /[3-9][0-9]*$/.test(from.index);
+						const isFC = from.index.endsWith("F");
+
+						const ridx = Number(/([0-9]+)$/.exec(from.index)![1]);
+						const idx = ridx >= 3 ? ridx - 2 : ridx;
+						const pp = ["st", "nd", "rd", "th"][idx > 3 ? 3 : idx - 1];
+						return <>
+							<a href={ `/enemies/${from.key}` } target="_blank">
+								<RarityBadge border rarity="SSS">
+									<Locale plain k={ `ENEMY_${from.key}` } />
+									<IconLink45deg />
+								</RarityBadge>
+							</a>
+
+							<IconDash />
+
+							<Locale
+								raw={ false }
+								k={ `BUFFFROM_${isP ? "PASSIVE" : "ACTIVE"}${isFC ? "_F" : ""}` }
+								p={ [idx, pp] }
+							/>
+							<Badge class="ms-1" variant="primary">
+								<Locale raw={ false } k={ from.index } />
+							</Badge>
+						</>;
+					}
+					case "summon": {
+						const isP = /[3-9][0-9]*$/.test(from.index);
+						const isFC = from.index.endsWith("F");
+
+						const ridx = Number(/([0-9]+)$/.exec(from.index)![1]);
+						const idx = ridx >= 3 ? ridx - 2 : ridx;
+						const pp = ["st", "nd", "rd", "th"][idx > 3 ? 3 : idx - 1];
+						return <>
+							<RarityBadge border rarity="S">
+								<Locale plain k={ from.key } />
+							</RarityBadge>
+
+							<IconDash />
+
+							<Locale
+								raw={ false }
+								k={ `BUFFFROM_${isP ? "PASSIVE" : "ACTIVE"}${isFC ? "_F" : ""}` }
+								p={ [idx, pp] }
+							/>
+							<Badge class="ms-1" variant="primary">
+								<Locale raw={ false } k={ from.index } />
+							</Badge>
+						</>;
+					}
+				}
+				return <>???</>;
 			}
-			<span data-type="buff-uid" class="badge bg-dark ms-1">
-				{ getBuffUid(props.uid, name) }
-			</span>
-			<Locale raw={ false } k={ name } />
-		</span>;
+
+			ret.push(<div class={ style.BuffFrom }>
+				<PopupButton content={ <div class={ style.BuffFromPopup }>
+					{ groups[g].map(b => <div>
+						<span class={ cn("SubBadge", style.SubBadge, style.Detailed, color && `text-${color}`) }>
+							<span class="badge bg-dark ms-1" data-type="buff-uid">{ b.uid }</span>
+							{ name || "???" }
+						</span>
+
+						{ (BuffFromDB[b.key] || []).map(from => <div class={ style.FromLine }>
+							<IconDot />
+							{ renderFrom(from) }
+						</div>) }
+					</div>) }
+				</div> }>
+					<span class={ cn("SubBadge", style.SubBadge, style.DetailedBadge, color && `text-${color}`) }>
+						{ attr }
+						<span class="badge bg-dark ms-1" data-type="buff-uid">
+							{ uids }
+						</span>
+						{ name || "???" }
+					</span>
+				</PopupButton>
+			</div>);
+		});
+		return ret;
 	}
 	function convertBuffToUid (name: string): string {
 		if (name.startsWith("Char_")) {
@@ -751,7 +935,9 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							<Locale raw={ false } k="BUFFTRIGGER_DAMAGED_THUNDER" />
 						</>;
 					case "skill":
-						return <Locale raw={ false } k="BUFFTRIGGER_DAMAGED_SKILL" p={ [convertBuff(trigger.key)] } />;
+						return <Locale raw={ false } k="BUFFTRIGGER_DAMAGED_SKILL" p={ [
+							singleBuff(convertBuff(trigger.key))
+						] } />;
 				}
 			} else if ("hp>=" in trigger) {
 				if (Array.isArray(trigger["hp>="]))
@@ -795,50 +981,38 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				if (trigger.more) {
 					if (typeof trigger.in_battle === "string") {
 						return <Locale raw={ false } k="BUFFTRIGGER_IN_BATTLE_MORE" p={ [
-							convertBuff(trigger.in_battle),
+							singleBuff(convertBuff(trigger.in_battle)),
 							trigger.more[0],
 						] } />;
 					}
 
-					const src = trigger.in_battle
-						.map(convertBuff)
-						.reduce(VNodeReduce, [])
-						.unique(VNodeRender);
+					const src = computeBuff(trigger.in_battle.map(convertBuff));
 					return <Locale raw={ false } k="BUFFTRIGGER_IN_BATTLE_MORE" p={ [
 						<>{ src.gap(<Locale raw={ false } k="BUFFTRIGGER_OR" />) }</>,
 						trigger.more[0],
 					] } />;
 				} else {
 					if (typeof trigger.in_battle === "string")
-						return <Locale raw={ false } k="BUFFTRIGGER_IN_BATTLE" p={ [convertBuff(trigger.in_battle)] } />;
+						return <Locale raw={ false } k="BUFFTRIGGER_IN_BATTLE" p={ [singleBuff(convertBuff(trigger.in_battle))] } />;
 
-					const src = trigger.in_battle
-						.map(convertBuff)
-						.reduce(VNodeReduce, [])
-						.unique(VNodeRender);
+					const src = computeBuff(trigger.in_battle.map(convertBuff));
 					return <Locale raw={ false } k="BUFFTRIGGER_IN_BATTLE" p={ [
 						<>{ src.gap(<Locale raw={ false } k="BUFFTRIGGER_OR" />) }</>,
 					] } />;
 				}
 			} else if ("in_squad" in trigger) {
 				if (typeof trigger.in_squad === "string")
-					return <Locale raw={ false } k="BUFFTRIGGER_IN_SQUAD" p={ [convertBuff(trigger.in_squad)] } />;
+					return <Locale raw={ false } k="BUFFTRIGGER_IN_SQUAD" p={ [singleBuff(convertBuff(trigger.in_squad))] } />;
 
-				const src = trigger.in_squad
-					.map(convertBuff)
-					.reduce(VNodeReduce, [])
-					.unique(VNodeRender);
+				const src = computeBuff(trigger.in_squad.map(convertBuff));
 				return <Locale raw={ false } k="BUFFTRIGGER_IN_SQUAD" p={ [
 					<>{ src.gap(<Locale raw={ false } k="BUFFTRIGGER_OR" />) }</>,
 				] } />;
 			} else if ("in_enemy" in trigger) {
 				if (typeof trigger.in_enemy === "string")
-					return <Locale raw={ false } k="BUFFTRIGGER_IN_ENEMY" p={ [convertBuff(trigger.in_enemy)] } />;
+					return <Locale raw={ false } k="BUFFTRIGGER_IN_ENEMY" p={ [singleBuff(convertBuff(trigger.in_enemy))] } />;
 
-				const src = trigger.in_enemy
-					.map(convertBuff)
-					.reduce(VNodeReduce, [])
-					.unique(VNodeRender);
+				const src = computeBuff(trigger.in_enemy.map(convertBuff));
 				return <Locale raw={ false } k="BUFFTRIGGER_IN_ENEMY" p={ [
 					<>{ src.gap(<Locale raw={ false } k="BUFFTRIGGER_OR" />) }</>,
 				] } />;
@@ -865,10 +1039,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				if ("func" in trigger.on && Array.isArray(trigger.on.select)) {
 					const select: preact.VNode[] = typeof trigger.on.select[0] === "string"
 						// BuffTrigger_On_BuffKey
-						? (trigger.on.select as string[])
-							.map(x => convertBuff(x, trigger.on.attr))
-							.reduce(VNodeReduce, [])
-							.unique(VNodeRender)
+						? computeBuff((trigger.on.select as string[]).map(x => convertBuff(x, trigger.on.attr)))
 						// BuffTrigger_On_BuffEffectType
 						: (trigger.on.select as BUFFEFFECT_TYPE[])
 							.map(x => <span class={ `SubBadge ${style.SubBadge}` }>
@@ -884,10 +1055,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						<>{ select.gap(", ") }</>,
 					] } />;
 				} else if ("target" in trigger.on && "stack" in trigger.on) {
-					const select = (trigger.on.select as string[])
-						.map(convertBuff)
-						.reduce(VNodeReduce, [])
-						.unique(VNodeRender);
+					const select = computeBuff((trigger.on.select as string[]).map(convertBuff));
 
 					// BuffTrigger_On_BuffStack
 					const target = <Locale raw={ false } k={ `BUFFTARGET_${trigger.on.target.toUpperCase()}` } />;
@@ -984,12 +1152,9 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				/>;
 			} else if ("target" in trigger) {
 				if (trigger.target.length === 1)
-					return <Locale raw={ false } k="BUFFTRIGGER_ON_TARGET_SINGLE_OR" p={ [convertBuff(trigger.target[0])] } />;
+					return <Locale raw={ false } k="BUFFTRIGGER_ON_TARGET_SINGLE_OR" p={ [singleBuff(convertBuff(trigger.target[0]))] } />;
 
-				const list = (typeof trigger.target === "string" ? [trigger.target] : trigger.target)
-					.map(convertBuff)
-					.reduce(VNodeReduce, [])
-					.unique(VNodeRender);
+				const list = computeBuff((typeof trigger.target === "string" ? [trigger.target] : trigger.target).map(convertBuff));
 				return <Locale raw={ false } k="BUFFTRIGGER_ON_TARGET_SINGLE_OR" p={ [
 					<>{ list.gap(", ") }</>,
 				] } />;

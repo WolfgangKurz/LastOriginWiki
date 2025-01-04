@@ -3,6 +3,7 @@ export interface DBHashType { [K: string]: string | DBHashType; }
 export default {
 	"korea": {
 		"bg": "6b1aa251",
+		"buff-from": "2d5937fb",
 		"buffCategory": "2ee76445",
 		"consumable": "6b65e0c5",
 		"enemy": {
@@ -1237,7 +1238,7 @@ export default {
 			"Zapper_TU5": "a1453e8d",
 			"Zapper_TU6": "b582cc0f"
 		},
-		"enemygroup": "de22266e",
+		"enemygroup": "117acab4",
 		"equip": {
 			"Chip_ATFLIR_T4": "5d2ccba8",
 			"Chip_AccTypeB_T1": "55e81e26",
@@ -1794,7 +1795,7 @@ export default {
 		"maps": "d14ead21",
 		"mission": "33231beb",
 		"research": "7fdfd71d",
-		"skill-from": "75537bd8",
+		"skill-from": "0de17b67",
 		"sticker": "25867b64",
 		"story": {
 			"Ch01Ev10Stage01": "24b27ca4",
@@ -4836,9 +4837,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "84511bf7",
-		"JP": "af013424",
-		"KR": "c2b95196",
-		"TC": "a7f95a48"
+		"EN": "d8c8a90b",
+		"JP": "61911425",
+		"KR": "0e3d01fb",
+		"TC": "61f2bb16"
 	}
 } as DBHashType;

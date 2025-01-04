@@ -6,6 +6,7 @@ export const StaticDB = {
 	EnemyGroup: "enemygroup",
 	BG: "bg",
 	BuffCategory: "buffCategory",
+	BuffFrom: "buff-from",
 	Consumable: "consumable",
 	Gacha: "gacha",
 	Sticker: "sticker",

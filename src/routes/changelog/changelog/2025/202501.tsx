@@ -8,6 +8,18 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12865" date="2025-01-05"
+		update={ <>
+			<li>
+				<BY>버프 보기</BY>에서 표시되는 <BB>버프 번호</BB> 기준을 변경했습니다.
+			</li>
+			<li>
+				<BY>버프 보기</BY> 기능의 <BB>특정 버프 조건</BB>의 표기가 개선되었습니다.<br />
+				이제 조건을 클릭하면 해당 버프가 어디에서 유래됐는지 표시됩니다.
+			</li>
+			<li>데스크탑 환경에서 전투원 스킬 정보 테이블의 스킬명 표기가 개선되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12863" date="2025-01-04"
 		bugfix={ <>
 			<li>전투원 <BY>레모네이드 베타</BY>의 스킨 <BR>미스 오르카 : 자기 위로와 하얀 거짓말</BR>이 잘못 표시되던 점을 수정했습니다.</li>
@@ -16,7 +28,7 @@ const Changelog: FunctionalComponent = () => <>
 			<li>전투원 <BY>레모네이드 베타</BY>의 타이틀 콜 정보가 추가되었습니다.</li>
 		</> }
 		site={ <>
-			<li>전투원 타이틀 콜 레이아웃을 갱신신했습니다.</li>
+			<li>전투원 타이틀 콜 레이아웃을 갱신했습니다.</li>
 		</> }
 	/>
 	<ChangelogItem title="Build 12851" date="2025-01-03"
