@@ -530,6 +530,13 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 			LastOrigin: ["PECS_Leanne_Title-2", "PECS_Leanne_Title-5"]
 		}
 	},
+	PECS_LemonadeBeta: {
+		0: {
+			LastOrigin: ["beta_s8"],
+			VALOFE: ["beta_Valofe1", "beta_Valofe2"],
+			Uncategorized: ["beta_s1", "beta_s2", "beta_s3", "beta_s4", "beta_s5", "beta_s6", "beta_s7", "beta_s9", "beta_s10", "beta_s11"]
+		}
+	},
 	PECS_LRL: {
 		0: {
 			LastOrigin: ["PECS_LRL_N_Title-1", "PECS_LRL_N_Title-4"]

@@ -8,6 +8,17 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12863" date="2025-01-04"
+		bugfix={ <>
+			<li>전투원 <BY>레모네이드 베타</BY>의 스킨 <BR>미스 오르카 : 자기 위로와 하얀 거짓말</BR>이 잘못 표시되던 점을 수정했습니다.</li>
+		</> }
+		new={ <>
+			<li>전투원 <BY>레모네이드 베타</BY>의 타이틀 콜 정보가 추가되었습니다.</li>
+		</> }
+		site={ <>
+			<li>전투원 타이틀 콜 레이아웃을 갱신신했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12851" date="2025-01-03"
 		bugfix={ <>
 			<li>Spine 로비 애니메이션 스킨의 <BR>특수 터치</BR>와 <BR>일반 터치</BR> 동작이 뒤바뀐 점이 수정되었습니다.</li>
