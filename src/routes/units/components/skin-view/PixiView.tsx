@@ -249,6 +249,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 			if (_char === null) {
 				if (props.type === "mixed" || props.type === "spine") {
+					console.log((props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!);
 					if (props.type === "mixed")
 						_char = new MixedModel(
 							uid,

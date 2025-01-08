@@ -2656,6 +2656,7 @@ export default {
 			"Story_Troop_Group_Squad_TeamMongus": "2cf96eac",
 			"Story_Troop_Group_Squad_TheSistersOfWalhalla": "187cde68",
 			"Story_Troop_Group_Squad_WatcherOfNature": "3b28342b",
+			"Story_Uncategorized": "ff531633",
 			"SubStory_Chapter_01Ev11_3P_Aurora": "62ed6796",
 			"SubStory_Chapter_01Ev11_BR_Phantom": "bf5eade5",
 			"SubStory_Chapter_01Ev11_PECS_ElvenForestmaker": "488035c7",
@@ -4249,6 +4250,21 @@ export default {
 				"DG_ChCS-57Stage03_1": "3ffbf56e",
 				"DG_ChCS-57Stage04_1": "455f258a",
 				"DG_ChCS-57Stage05_1": "7e8f17a1",
+				"DG_ChCS-58Stage01_1": "8cddb49f",
+				"DG_ChCS-58Stage02_1": "02776f72",
+				"DG_ChCS-58Stage03_1": "82875f79",
+				"DG_ChCS-58Stage04_1": "c01a9597",
+				"DG_ChCS-58Stage05_1": "58ee902b",
+				"DG_ChCS-59Stage01_1": "594f9a4c",
+				"DG_ChCS-59Stage02_1": "bdd06880",
+				"DG_ChCS-59Stage03_1": "42ec722e",
+				"DG_ChCS-59Stage04_1": "ab611ded",
+				"DG_ChCS-59Stage05_1": "57c00b54",
+				"DG_ChCS-60Stage01_1": "7089aa6c",
+				"DG_ChCS-60Stage02_1": "59bcbb95",
+				"DG_ChCS-60Stage03_1": "91e798a6",
+				"DG_ChCS-60Stage04_1": "c795f753",
+				"DG_ChCS-60Stage05_1": "f80693ff",
 				"DG_Ev24StageAngel_1": "7f19653f",
 				"DG_Ev24StageAngel_2": "60d2d079",
 				"DG_Ev24StageBS_1": "9e3665e4",
@@ -4593,7 +4609,7 @@ export default {
 		},
 		"story.2dmodel": "ceec8431",
 		"story.map": "b816b987",
-		"substory": "34fa2df4",
+		"substory": "4fc89602",
 		"summon": {
 			"SUMMON_SU_AMG11_N": "3e4b3771",
 			"SUMMON_SU_AMG11_N2": "be3e312c",
@@ -4837,9 +4853,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "d8c8a90b",
-		"JP": "61911425",
-		"KR": "0e3d01fb",
-		"TC": "61f2bb16"
+		"EN": "70a7b53d",
+		"JP": "99d8445c",
+		"KR": "8c677a49",
+		"TC": "2630c364"
 	}
 } as DBHashType;

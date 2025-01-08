@@ -28,6 +28,7 @@ import FadeText from "@/components/pixi/FadeText";
 import FadeSprite from "@/components/pixi/FadeSprite";
 import Pixi2DModel from "@/components/pixi/Pixi2DModel";
 import PixiSpineModel from "@/components/pixi/PixiSpineModel";
+import MixedModel from "@/routes/units/components/skin-view/MixedModel";
 
 import DialogObject from "./Objects/DialogObject";
 import SelectionObject from "./Objects/SelectionObject";
@@ -35,7 +36,7 @@ import CommuSprite from "./Objects/CommuSprite/CommuSprite";
 
 import style from "./style.module.scss";
 
-type CharSpriteType = FadeSprite | CommuSprite | Pixi2DModel | PixiSpineModel;
+type CharSpriteType = FadeSprite | CommuSprite | Pixi2DModel | PixiSpineModel | MixedModel;
 
 enum CharModelType {
 	None = 0,
@@ -665,6 +666,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				["Cut_SubmarineMaintenance", 0], // except
 				["Cut_ArkofMemory_01", 0],
 				["Cut_ArkofMemory_02", 0],
+				[/^Cut_Stage/, 0],
 
 				[/^Cut_/, 500], // over Char
 				["Eva_Cut", 500],
@@ -749,7 +751,10 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 					const char = charRef.current[index]!;
 					if (
 						(screen && target && target.image) && // new char exists
-						(char instanceof Pixi2DModel || char instanceof PixiSpineModel) && // U2DModel based (face changeable)
+
+						// U2DModel based (face changeable)
+						(char instanceof Pixi2DModel || char instanceof PixiSpineModel || char instanceof MixedModel) &&
+
 						target.image === char.model.replace(/^[OG]\//, "") // same model image
 					) {
 						// reusable (only face changed)
@@ -803,9 +808,10 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 							// p[1] = 720 / 7 * 5;
 							p[1] = 360;
 						} else if (modelType === CharModelType.Spine) {
-							char = new PixiSpineModel(target.image);
+							char = new MixedModel(target.image, `O/${target.image}`);
 							char.setFace(target.imageVar);
-							p[1] = 1040;
+							char.setDialogDeactive(true);
+							p[1] = 360;
 						} else {
 							char = new (forCommu ? CommuSprite : FadeSprite)(tex);
 							char.pivot.set(tex.width / 2, tex.height / 4 * 3);

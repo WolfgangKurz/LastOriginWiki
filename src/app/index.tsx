@@ -98,6 +98,8 @@ const App: FunctionalComponent = () => {
 				<Redirect path="/enemies/group" to="/enemies" />
 
 				<AsyncRoute path="/worlds" { ...pRoute(() => import("@/routes/worlds")) } />
+				<AsyncRoute path="/worlds/Story" { ...pRoute(() => import("@/routes/worlds/MainStoryView")) } />
+				<AsyncRoute path="/worlds/Sub" { ...pRoute(() => import("@/routes/worlds/SubStoryView")) } />
 				<AsyncRoute path="/worlds/:wid" { ...pRoute(() => import("@/routes/worlds/world-view")) } />
 				<AsyncRoute path="/worlds/:wid/:mid/drop" { ...pRoute(() => import("@/routes/worlds/drop-table")) } />
 				<AsyncRoute path="/worlds/:wid/:mid/:node?" { ...pRoute(() => import("@/routes/worlds/map-view")) } />
