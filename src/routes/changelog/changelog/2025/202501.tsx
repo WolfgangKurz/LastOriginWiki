@@ -8,6 +8,13 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12872" date="2025-01-16"
+		bugfix={ <>
+			<li>
+				미검열 일러스트가 <BR>2.5.46</BR> 클라이언트부터 적용된 추가 검열판으로 표시되던 점을 수정했습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12870" date="2025-01-08"
 		bugfix={ <>
 			<li>누락된 "소속 부대 정보가 없는" 외전 정보가 추가되었습니다.</li>
