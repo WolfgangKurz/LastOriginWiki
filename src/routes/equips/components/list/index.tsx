@@ -312,8 +312,8 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 				if (Filters.Source.EventMap.value && sources.some(y => y.IsEvent && !y.IsExchange && y.EventId === CurrentEvent)) return true;
 				if (Filters.Source.OldEventMap.value && sources.some(y => y.IsEvent && !y.IsExchange && y.EventId !== CurrentEvent)) return true;
 
-				if (Filters.Source.ExMap.value && sources.some(y => y.IsMap && y.IsExMap && !y.IsEvent && !y.IsExchange)) return true;
-				if (Filters.Source.SideMap.value && sources.some(y => y.IsMap && y.IsSideMap && !y.IsEvent && !y.IsExchange)) return true;
+				if (Filters.Source.ExMap.value && sources.some(y => !y.IsExchange && y.IsMap && y.IsExMap && !y.IsEvent)) return true;
+				if (Filters.Source.SideMap.value && sources.some(y => !y.IsExchange && y.IsMap && y.IsSideMap && !y.IsEvent)) return true;
 				if (Filters.Source.Map.value && sources.some(y => y.IsMap && !y.IsExMap && !y.IsSideMap && !y.IsEvent)) return true;
 
 				if (Filters.Source.Limited.value && sources.some(y => y.IsLimited)) return true;

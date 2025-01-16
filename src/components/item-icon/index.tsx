@@ -6,7 +6,7 @@ import { BuildClass } from "@/libs/Class";
 interface ItemIconProps {
 	class?: string;
 	item: string;
-	size?: number;
+	size?: number | string;
 }
 
 const ItemIcon: FunctionalComponent<ItemIconProps> = (props) => {

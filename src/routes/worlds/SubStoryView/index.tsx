@@ -12,6 +12,7 @@ import { BuildClass, cn } from "@/libs/Class";
 import { isActive } from "@/libs/Functions";
 
 import Locale from "@/components/locale";
+import Button from "@/components/Button";
 import UnitFace from "@/components/unit-face";
 import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
 import IconBook from "@/components/bootstrap-icon/icons/Book";
@@ -116,10 +117,19 @@ const SubStoryView: FunctionalComponent = () => {
 	return <div class="worlds-world text-start">
 		<div class="row">
 			<div class="col-auto">
-				<button class="btn btn-dark" onClick={ (): void => void (route("/worlds")) }>
+				<Button variant="dark" onClick={ () => route("/worlds") }>
 					<IconArrowLeft class="me-1" />
 					<Locale k="WORLDS_BACK_TO_WORLDS" />
-				</button>
+				</Button>
+			</div>
+			<div class="col"></div>
+			<div class="col-auto">
+
+				<div class="text-end">
+					<Button variant="dark" onClick={ () => route("/story") }>
+						<Locale k="STORY_GOTO_STORY" />
+					</Button>
+				</div>
 			</div>
 		</div>
 		<hr />

@@ -93,6 +93,9 @@ const SourceTable: FunctionalComponent<SourceTableProps> = (props) => {
 				else if (f.IsNewEternalWar)
 					return <Locale k="COMMON_SOURCE_NEW" />;
 
+				else if (f.IsExchange)
+					return <Locale k="COMMON_SOURCE_EXCHANGE" />;
+
 				return <Locale k="???" fallback="???" />;
 			})();
 			const label = f.IsEvent

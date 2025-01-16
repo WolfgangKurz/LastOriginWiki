@@ -12,6 +12,7 @@ import { AssetsRoot } from "@/libs/Const";
 import { cn } from "@/libs/Class";
 
 import Locale from "@/components/locale";
+import Button from "@/components/Button";
 import PopupBase from "@/components/popup/base";
 import PCIcon from "@/components/pc-icon";
 
@@ -72,6 +73,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		12,
 		"Ev24", "Ev25", "Ev26", "Ev27", "Ev28",
 		13,
+		"Ev29",
 	];
 	const StoryList: Array<StoryKeyType | null> = useMemo(
 		() => {
@@ -197,6 +199,14 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		<h2>
 			<Locale k="STORY" />
 		</h2>
+		<div class="text-end">
+			<Button
+				variant="dark"
+				onClick={ () => route("/worlds/Sub") }
+			>
+				<Locale k="STORY_GOTO_UNIT_SUBSTORY" />
+			</Button>
+		</div>
 
 		<hr />
 

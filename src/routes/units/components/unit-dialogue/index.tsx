@@ -175,11 +175,13 @@ const UnitDialogue: FunctionalComponent<UnitDialogueProps> = (props) => {
 	const collapseId = UniqueID("unit-dialogue-");
 
 	const cv: string | undefined = useMemo(() =>
-		voice.sid === null
-			? voice.isMarriage
-				? unit.cv.M && unit.cv.M[props.audio]
-				: unit.cv[""] && unit.cv[""][props.audio]
-			: unit.cv[voice.sid] && unit.cv[voice.sid]![props.audio],
+		unit.cv
+			? voice.sid === null
+				? voice.isMarriage
+					? unit.cv.M && unit.cv.M[props.audio]
+					: unit.cv[""] && unit.cv[""][props.audio]
+				: unit.cv[voice.sid] && unit.cv[voice.sid]![props.audio]
+			: undefined,
 		[props.audio, unit, voice],
 	);
 

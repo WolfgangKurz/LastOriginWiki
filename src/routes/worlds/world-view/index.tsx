@@ -66,8 +66,8 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 					<div class="card worlds-world text-center mb-2">
 						<div class="card-body">
 							<div class="row gx-0">
-								<div class="col-auto me-3">
-									<img src={ `${AssetsRoot}/world/icons/${wid}_${world}.png` } />
+								<div class="col-12">
+									<img class={ style.WorldIcon } src={ `${AssetsRoot}/world/icons/${wid}_${world}.png` } />
 								</div>
 								<div class="col">
 									<div>
