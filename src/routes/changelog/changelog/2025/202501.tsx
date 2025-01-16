@@ -15,9 +15,6 @@ const Changelog: FunctionalComponent = () => <>
 			<li>신규 장비 <BY>BR 돌격 회로</BY>의 정보가 추가되었습니다.</li>
 		</> }
 		bugfix={ <>
-			<li>
-				미검열 일러스트가 <BR>2.5.46</BR> 클라이언트부터 적용된 추가 검열판으로 표시되던 점을 수정했습니다.
-			</li>
 			<li><BY>세계정보</BY>의 지역 목록의 UI 문제를 수정했습니다.</li>
 		</> }
 		update={ <>
