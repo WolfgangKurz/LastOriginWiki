@@ -8,6 +8,11 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12876" date="2025-01-17"
+		bugfix={ <>
+			<li><BY>세계정보</BY>에서 메인스토리 13지역이 표시되지 않던 점을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12873" date="2025-01-17"
 		new={ <>
 			<li>신규 이벤트 <BY>오르카 AGS여 단결하라!</BY>의 정보가 추가되었습니다.</li>
