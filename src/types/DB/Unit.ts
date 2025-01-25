@@ -67,6 +67,13 @@ export interface UnitSkin extends UnitSkinEntity {
 	P?: UnitSkinEntity;
 }
 
+export enum SKIN_METADATA_FLAGS {
+	NONE = 0,
+	"2DMODEL" = 1,
+	SPINE = 2,
+	/** Should be displayed at Gamma Viewer */
+	GAMMA = 4,
+}
 export interface UnitSkinEntity {
 	/** Skin ID */
 	sid: null | number;
@@ -118,7 +125,7 @@ export interface UnitSkinEntity {
 		iconId?: number;
 		tbarId?: number;
 		voiceId?: number;
-		mixedSpine?: true;
+		flags: SKIN_METADATA_FLAGS;
 		"2dmodel"?: string;
 		"2dmodel_dam"?: string;
 	};

@@ -3507,7 +3507,11 @@ skills:
             - key: Effect_PECS_Rhode_N_5
               on: round
               if:
-                - false
+                - target:
+                    - Char_PECS_LemonadeGamma_N
+                    - Char_PECS_Triton_N
+                    - Char_PECS_Merlin_N
+                    - Char_3P_Merope_N
                 - false
               body:
                 - 0
@@ -7979,6 +7983,7 @@ skins:
     imageId: 0
     iconId: 0
     tbarId: 0
+    flags: 1
     2dmodel: 2DModel_PECS_Rhode_N
   skins:
     - sid: 1
@@ -8012,5 +8017,6 @@ skins:
         iconId: 1
         tbarId: 1
         voiceId: 1
+        flags: 2
         2dmodel_dam: 2DModel_PECS_Rhode_NS1_Dam
         consumableKey: Skin_PECS_Rhode_1

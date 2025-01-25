@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 import { useEffect, useMemo, useRef, useState } from "preact/hooks";
 
 import { FACETYPE, SKIN_IN_PARTS } from "@/types/Enums";
-import { SKIN_ANIM_SUBSET_ENUM, SKIN_SUBSET_ENUM, Unit, UnitSkin } from "@/types/DB/Unit";
+import { SKIN_ANIM_SUBSET_ENUM, SKIN_METADATA_FLAGS, SKIN_SUBSET_ENUM, Unit, UnitSkin } from "@/types/DB/Unit";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import { useLocale } from "@/libs/Locale";
@@ -21,6 +21,7 @@ import MergedVideo from "@/components/merged-video";
 import Pinch from "@/components/pinch";
 
 import PixiView from "./PixiView";
+import GammaViewer from "./GammaViewer";
 
 import style from "./style.module.scss";
 
@@ -76,10 +77,17 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const [hideParts, setHideParts] = useState(false);
 	const [hideBG, setHideBG] = useState(false);
 
+	const [gammaPartAvailable, setGammaPartAvailable] = useState(false);
+	const [gammaBGAvailable, setGammaBGAvailable] = useState(false);
+
 	const [displayTouchCollider, setDisplayTouchCollider] = useState(false);
 
 	const [cameraBoundaryAvailable, setCameraBoundaryAvailable] = useState(false);
 	const [downloadPlusCameraBoundary, setDownloadPlusCameraBoundary] = useState(true);
+	const downloadPlusAble = useMemo(() => {
+		return !((skin.metadata.flags & SKIN_METADATA_FLAGS.GAMMA) != 0 && !isDamaged) &&
+			cameraBoundaryAvailable;
+	}, [skin.metadata.flags, isDamaged, cameraBoundaryAvailable]);
 
 	const [enableAnimation, setEnableAnimation] = useState(false);
 	const [asBlackBG, setAsBlackBG] = useState(false);
@@ -181,6 +189,11 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		SkinVideoPostfix,
 	]);
 
+	useEffect(() => { // Reset gamma hiding available
+		setGammaPartAvailable(false);
+		setGammaBGAvailable(false);
+	}, [props.unit.uid, props.skin.sid]);
+
 	useEffect(() => {
 		if (!skin.G && isCensored) // not have google
 			setIsCensored(false);
@@ -208,18 +221,18 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			} else if (!hideBG && !hideParts && !skin.subset[SKIN_SUBSET_ENUM.D__])
 				setIsDamaged(false);
 		} else {
-			if (hideParts && hideBG && !skin.subset[SKIN_SUBSET_ENUM._BS]) {
-				if (skin.subset[SKIN_SUBSET_ENUM._B_])
+			if (hideParts && hideBG && !(skin.subset[SKIN_SUBSET_ENUM._BS] || (gammaPartAvailable && gammaBGAvailable))) {
+				if (skin.subset[SKIN_SUBSET_ENUM._B_] || gammaBGAvailable)
 					setHideBG(false);
-				else if (skin.subset[SKIN_SUBSET_ENUM.__S])
+				else if (skin.subset[SKIN_SUBSET_ENUM.__S] || gammaPartAvailable)
 					setHideParts(false);
 				else {
 					setHideBG(false);
 					setHideParts(false);
 				}
-			} else if (hideParts && !hideBG && !skin.subset[SKIN_SUBSET_ENUM.__S])
+			} else if (hideParts && !hideBG && !(skin.subset[SKIN_SUBSET_ENUM.__S] || gammaPartAvailable))
 				setHideParts(false);
-			else if (hideBG && !hideParts && !skin.subset[SKIN_SUBSET_ENUM._B_])
+			else if (hideBG && !hideParts && !(skin.subset[SKIN_SUBSET_ENUM._B_] || gammaBGAvailable))
 				setHideBG(false);
 		}
 	}, [
@@ -227,18 +240,25 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		isDamaged,
 		hideParts,
 		hideBG,
+		gammaPartAvailable,
+		gammaBGAvailable,
 	]);
 
+	const DisplayGamma = useMemo( // NOTE: No animated damaged yet
+		() => (skin.metadata.flags & SKIN_METADATA_FLAGS.GAMMA) != 0 && !isDamaged,
+		[skin.metadata.flags, isDamaged],
+	);
+
 	const AvailableS = useMemo(() => !isDamaged
-		? skin.subset[SKIN_SUBSET_ENUM.__S] || (skin.subset[SKIN_SUBSET_ENUM._BS] && hideBG)
+		? skin.subset[SKIN_SUBSET_ENUM.__S] || (skin.subset[SKIN_SUBSET_ENUM._BS] && hideBG) || (DisplayGamma && gammaPartAvailable)
 		: skin.subset[SKIN_SUBSET_ENUM.D_S] || (skin.subset[SKIN_SUBSET_ENUM.DBS] && hideBG),
-		[skin.subset, isDamaged, hideBG],
+		[skin.subset, isDamaged, hideBG, DisplayGamma, gammaPartAvailable],
 	);
 
 	const AvailableBG = useMemo(() => !isDamaged
-		? skin.subset[SKIN_SUBSET_ENUM._B_] || (skin.subset[SKIN_SUBSET_ENUM._BS] && hideParts)
+		? skin.subset[SKIN_SUBSET_ENUM._B_] || (skin.subset[SKIN_SUBSET_ENUM._BS] && hideParts) || (DisplayGamma && gammaBGAvailable)
 		: skin.subset[SKIN_SUBSET_ENUM.DB_] || (skin.subset[SKIN_SUBSET_ENUM.DBS] && hideParts),
-		[skin.subset, isDamaged, hideParts],
+		[skin.subset, isDamaged, hideParts, DisplayGamma, gammaBGAvailable],
 	);
 
 	const AvailableAnim = useMemo(() => {
@@ -255,13 +275,22 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	}, [skin.Spine, skin.anim, hideParts, hideBG]);
 
 	const modelId = `${unit.uid}_N${skin.isDef ? "" : `S${skin.metadata.imageId}`}`;
-	const DisplayMixed = !!skin.metadata.mixedSpine && !!props.animate && !isDamaged;
-	const DisplaySpine = !skin.metadata.mixedSpine && skin.Spine && (!!props.animate || !!props.collapsed) && !isDamaged;
-	const Display2DModel = (isDamaged || !skin.metadata.mixedSpine) &&
-		(
+
+	const DisplayMixed = useMemo(
+		() => (skin.metadata.flags === (SKIN_METADATA_FLAGS["2DMODEL"] | SKIN_METADATA_FLAGS.SPINE)) && !!props.animate && !isDamaged,
+		[skin.metadata.flags, props.animate, isDamaged],
+	);
+	const DisplaySpine = useMemo(
+		() => (skin.metadata.flags === SKIN_METADATA_FLAGS.SPINE) && skin.Spine && (!!props.animate || !!props.collapsed) && !isDamaged,
+		[skin.metadata.flags, props.animate, props.collapsed, isDamaged],
+	);
+	const Display2DModel = useMemo(
+		() => (isDamaged || skin.metadata.flags == SKIN_METADATA_FLAGS["2DMODEL"]) && (
 			(!isDamaged && !!skin.metadata["2dmodel"]) ||
 			(isDamaged && !!skin.metadata["2dmodel_dam"])
-		);
+		),
+		[skin.metadata.flags, skin.metadata["2dmodel"], skin.metadata["2dmodel_dam"]],
+	);
 
 	function download2DModel (filename: string, cropByCameraBoundary: boolean = false) {
 		if (inPlusDownload) return;
@@ -308,26 +337,12 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					class={ cn(style.FullUnit, style.FullUnitMarginless) }
 					ref={ FullUnitEl }
 				>
-					{ DisplayMixed || DisplaySpine || Display2DModel || modelVideoId
-						? <PixiView
-							type={ DisplayMixed
-								? "mixed"
-								: DisplaySpine
-									? "spine"
-									: Display2DModel
-										? "2dmodel"
-										: modelVideoId
-											? "video"
-											: "none"
-							}
-							U2DModelMetadata={ skin.metadata }
+					{ DisplayGamma
+						? <GammaViewer
+							key="skin-gamma-viewer"
 
-							uid={ modelId }
-							vid={ modelVideoId }
-							google={ isCensored }
-							damaged={ isDamaged }
+							model={ `${isCensored ? "G" : "O"}/2dmodel_${modelId}` }
 							displayTouchCollider={ displayTouchCollider }
-
 							hidePart={ hideParts }
 							hideBG={ hideBG }
 
@@ -336,8 +351,8 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								setFaceList(list);
 								setFacePrefix(prefix);
 
-								if (list.includes("Idle"))
-									setFace("Idle");
+								if (list.includes("idle"))
+									setFace("idle");
 								else {
 									const listU = list.map(f => f.toUpperCase());
 									for (const ft of Object.keys(FACETYPE)) {
@@ -349,44 +364,88 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 									}
 								}
 							} }
-
-							onCameraBoundary={ v => setCameraBoundaryAvailable(v) }
+							onPartAvailable={ v => setGammaPartAvailable(v) }
+							onBGAvailable={ v => setGammaBGAvailable(v) }
 						/>
-						: modelVideoId.length > 0
-							? CanPlayWebM()
-								? <video
-									autoPlay muted loop
-									src={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` }
-								/>
-								: <MergedVideo
-									src={ `${AssetsRoot}/webm/HD.Legacy/${modelVideoId}.mp4` }
-									type="video/mp4"
-								/>
-							: !props.collapsed // && !AvailableAnim
-								? <Pinch
-									minScale={ 0.5 }
-									maxScale={ 3 }
-								>
-									<img src={ SkinImageURL } />
-								</Pinch>
-								: <img src={ SkinImageURL } />
+						: DisplayMixed || DisplaySpine || Display2DModel || modelVideoId
+							? <PixiView
+								type={ DisplayMixed
+									? "mixed"
+									: DisplaySpine
+										? "spine"
+										: Display2DModel
+											? "2dmodel"
+											: modelVideoId
+												? "video"
+												: "none"
+								}
+								U2DModelMetadata={ skin.metadata }
+
+								uid={ modelId }
+								vid={ modelVideoId }
+								google={ isCensored }
+								damaged={ isDamaged }
+
+								displayTouchCollider={ displayTouchCollider }
+								hidePart={ hideParts }
+								hideBG={ hideBG }
+
+								face={ facePrefix + face }
+								onFaceList={ (list, prefix) => {
+									setFaceList(list);
+									setFacePrefix(prefix);
+
+									if (list.includes("Idle"))
+										setFace("Idle");
+									else {
+										const listU = list.map(f => f.toUpperCase());
+										for (const ft of Object.keys(FACETYPE)) {
+											const index = listU.indexOf(ft);
+											if (index >= 0) {
+												setFace(list[index]);
+												break;
+											}
+										}
+									}
+								} }
+
+								onCameraBoundary={ v => setCameraBoundaryAvailable(v) }
+							/>
+							: modelVideoId.length > 0
+								? CanPlayWebM()
+									? <video
+										autoPlay muted loop
+										src={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` }
+									/>
+									: <MergedVideo
+										src={ `${AssetsRoot}/webm/HD.Legacy/${modelVideoId}.mp4` }
+										type="video/mp4"
+									/>
+								: !props.collapsed // && !AvailableAnim
+									? <Pinch
+										minScale={ 0.5 }
+										maxScale={ 3 }
+									>
+										<img src={ SkinImageURL } />
+									</Pinch>
+									: <img src={ SkinImageURL } />
 					}
 				</div>
 
-				{ !DisplaySpine && modelVideoId
-					? <a
-						class={ `${style.SkinToggle} ${style.Download}` }
-						href={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` } // download webm only
-						download={ `${modelVideoId}.webm` }
-						target="_blank"
-					>
-						<svg width="1em" height="1em" viewBox="0 0 24 24">
-							<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
-						</svg>
-					</a>
-					: <>
-						{ !DisplaySpine && <>
-							{ cameraBoundaryAvailable && <BootstrapTooltip
+				{ !(DisplaySpine || DisplayGamma) && (
+					modelVideoId
+						? <a
+							class={ `${style.SkinToggle} ${style.Download}` }
+							href={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` } // download webm only
+							download={ `${modelVideoId}.webm` }
+							target="_blank"
+						>
+							<svg width="1em" height="1em" viewBox="0 0 24 24">
+								<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+							</svg>
+						</a>
+						: <>
+							{ downloadPlusAble && <BootstrapTooltip
 								class={ `${style.SkinToggle} ${style.DownloadPlusCameraBoundary}` }
 								tooltipClass={ style.DownloadTooltipContainer }
 								placement="left"
@@ -435,28 +494,27 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 									</svg>
 								</a>
 							</BootstrapTooltip>
-						</> }
-						<BootstrapTooltip
-							class={ `${style.SkinToggle} ${style.Download}` }
-							tooltipClass={ style.DownloadTooltipContainer }
-							placement="left"
-							content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-								<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOAD" />
-							</span> }
-						>
-							<a
-								class={ style.DownloadContent }
-								href={ SkinImageDownloadFilename }
-								download={ SkinImageDownloadFilename.substring(SkinImageDownloadFilename.lastIndexOf("/") + 1) }
-								target="_blank"
+							<BootstrapTooltip
+								class={ `${style.SkinToggle} ${style.Download}` }
+								tooltipClass={ style.DownloadTooltipContainer }
+								placement="left"
+								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
+									<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOAD" />
+								</span> }
 							>
-								<svg width="1em" height="1em" viewBox="0 0 24 24">
-									<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
-								</svg>
-							</a>
-						</BootstrapTooltip>
-					</>
-				}
+								<a
+									class={ style.DownloadContent }
+									href={ SkinImageDownloadFilename }
+									download={ SkinImageDownloadFilename.substring(SkinImageDownloadFilename.lastIndexOf("/") + 1) }
+									target="_blank"
+								>
+									<svg width="1em" height="1em" viewBox="0 0 24 24">
+										<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+									</svg>
+								</a>
+							</BootstrapTooltip>
+						</>
+				) }
 
 				{ !(skin.isPro || skin.isDef) && skin.price
 					? <div class={ style.Price }>
@@ -602,13 +660,13 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					data-platform={ isCensored ? 1 : 0 }
 					onClick={ (): void => setIsCensored(!isCensored) }
 				/> }
-				{ (DisplayMixed || DisplaySpine) && <div
+				{ (DisplayMixed || DisplaySpine || DisplayGamma) && <div
 					class={ `${style.SkinToggle} ${style.Touch}` }
 					data-touch={ displayTouchCollider ? 1 : 0 }
 					onClick={ (): void => setDisplayTouchCollider(!displayTouchCollider) }
 				/> }
 
-				{ (DisplayMixed || DisplaySpine || Display2DModel) && faceList.length > 0
+				{ faceList.length > 0
 					? <div class={ `${style.FaceList} ${props.collapsed ? style.FaceListMargin : ""}` }>
 						<select
 							class={ `form-select form-select-sm ${style.FaceList}` }

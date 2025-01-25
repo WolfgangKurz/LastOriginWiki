@@ -13,6 +13,9 @@ export const IsDev = import.meta.env.DEV;
 export const Host = IsDev
 	? `http://${import.meta.env.VITE_LOCALHOST}:${import.meta.env.VITE_ASSET_PORT}`
 	: "https://lo.swaytwig.com";
+export const GammaHost = IsDev
+	? `http://${import.meta.env.VITE_LOCALHOST}:${import.meta.env.VITE_GAMMA_PORT}`
+	: "https://loskin.swaytwig.com";
 
 export const AssetsRoot = `${Host}/assets`;
 export const FlowRoot = `${Host}/flow`;
