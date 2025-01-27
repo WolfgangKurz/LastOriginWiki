@@ -1733,7 +1733,7 @@ export default {
 		"filterable.enemy": "27a55bfc",
 		"filterable.equip": "69d619ca",
 		"filterable.facility": "b3f0e54b",
-		"filterable.unit": "a5c86433",
+		"filterable.unit": "dd42aafe",
 		"gacha": "9591957f",
 		"iw": {
 			"Colossus_01": "cdebeca4",
@@ -4720,7 +4720,7 @@ export default {
 			"3P_SnowFeather": "6a46f460",
 			"3P_Sowan": "67259395",
 			"3P_Titania": "14364b85",
-			"3P_Vanilla": "bb41bbbb",
+			"3P_Vanilla": "6e28eb43",
 			"AGS_Aeda": "51ca7820",
 			"AGS_Albatross": "5889fd34",
 			"AGS_Arachne": "523768eb",
