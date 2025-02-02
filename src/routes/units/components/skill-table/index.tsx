@@ -431,39 +431,41 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 
 					return <>
 						<div class={ cn(style.LeftSide, isFChange && style.SkillTableFChange) }>
-							<SkillIcon icon={ skill.icon } passive={ skill.isPassive } />
-							<div class="text-bold">
-								<Locale plain k={ `UNIT_SKILL_${unit.uid}_${skill.key}` } />
-							</div>
+							<div class={ style.SkillNameCard }>
+								<SkillIcon icon={ skill.icon } passive={ skill.isPassive } />
+								<div class="text-bold">
+									<Locale plain k={ `UNIT_SKILL_${unit.uid}_${skill.key}` } />
+								</div>
 
-							<div>
-								<span class="skill-info-badge badge bg-light text-bg-light border border-secondary">
-									<ElemIcon elem={ el } class={ BuildClass("mb-0", skill.isPassive && "mx-0") } />
+								<div>
+									<span class="skill-info-badge badge bg-light text-bg-light border border-secondary">
+										<ElemIcon elem={ el } class={ BuildClass("mb-0", skill.isPassive && "mx-0") } />
 
-									{ !skill.isPassive && <Locale
-										k="skill_description_damage"
-										p={ [
-											<span class={ style.Damage }>
-												<span data-bonus={ bonus.toNumber() }>{ v }</span>
-												{ valueHelp }
-											</span>,
-											elDisp[el],
-										] }
-									/> }
-								</span>
+										{ !skill.isPassive && <Locale
+											k="skill_description_damage"
+											p={ [
+												<span class={ style.Damage }>
+													<span data-bonus={ bonus.toNumber() }>{ v }</span>
+													{ valueHelp }
+												</span>,
+												elDisp[el],
+											] }
+										/> }
+									</span>
 
-								{ skill.index > endRarity
-									? <Badge class={ cn("ms-2", style.DummyBadge) } variant="substory">
-										<Locale k="UNIT_SKILL_DUMMY" />
-									</Badge>
-									: skill.isPassive && skill.index > unit.rarity
-										? <RarityBadge class="ms-2" rarity={ skill.index }>
-											{ RarityDisplay[skill.index as ACTOR_GRADE] }
-											&nbsp;
-											<Locale k="UNIT_SKILL_PROMOTION_SKILL" />
-										</RarityBadge>
-										: <></>
-								}
+									{ skill.index > endRarity
+										? <Badge class={ cn("ms-2", style.DummyBadge) } variant="substory">
+											<Locale k="UNIT_SKILL_DUMMY" />
+										</Badge>
+										: skill.isPassive && skill.index > unit.rarity
+											? <RarityBadge class="ms-2" rarity={ skill.index }>
+												{ RarityDisplay[skill.index as ACTOR_GRADE] }
+												&nbsp;
+												<Locale k="UNIT_SKILL_PROMOTION_SKILL" />
+											</RarityBadge>
+											: <></>
+									}
+								</div>
 							</div>
 						</div>
 						<div class={ cn(style.Content, isFChange && style.SkillTableFChange) }>

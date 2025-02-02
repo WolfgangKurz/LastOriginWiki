@@ -19,12 +19,7 @@ import EntitySource from "@/libs/EntitySource";
 
 import { StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
-import IconHammer from "@/components/bootstrap-icon/icons/Hammer";
-import IconArrowRightCircleFill from "@/components/bootstrap-icon/icons/ArrowRightCircleFill";
-import IconReceipt from "@/components/bootstrap-icon/icons/Receipt";
-import IconBasketFill from "@/components/bootstrap-icon/icons/BasketFill";
-import IconCpuFill from "@/components/bootstrap-icon/icons/CpuFill";
-import IconCapslockFill from "@/components/bootstrap-icon/icons/CapslockFill";
+import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import PopupBase from "@/components/popup/base";
 import EquipIcon from "@/components/equip-icon";
@@ -142,6 +137,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 		return FilterableEquipDB
 			? FilterableEquipDB
 				.filter(x => x.key === equip.key && x.type === equip.type)
+				.sort((a, b) => a.rarity - b.rarity)
 			: [];
 	}, [props.equip, FilterableEquipDB]);
 
@@ -325,7 +321,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 				{ target.craft
 					? <span class="badge bg-dark my-1">
 						<h6 class="m-0 p-0">
-							<IconHammer class="me-1" />
+							<Icons.Hammer class="me-1" />
 
 							<strong>
 								<span class="ps-1 pe-3">
@@ -372,7 +368,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 						</div>
 					</div>,
 					<div>
-						<IconArrowRightCircleFill />
+						<Icons.ArrowRightCircleFill />
 					</div>,
 					<div>
 						{ next
@@ -499,7 +495,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 								setDisplayTab("info");
 							} }
 						>
-							<IconReceipt class="me-1" />
+							<Icons.Receipt class="me-1" />
 							<Locale k="EQUIP_VIEW_EFFECT" />
 						</a>
 					</li>
@@ -512,7 +508,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 								setDisplayTab("drop");
 							} }
 						>
-							<IconBasketFill class="me-1" />
+							<Icons.BasketFill class="me-1" />
 							<Locale k="EQUIP_VIEW_SOURCE" />
 						</a>
 					</li>
@@ -525,7 +521,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 								setDisplayTab("enchant");
 							} }
 						>
-							<IconCpuFill class="me-1" />
+							<Icons.CpuFill class="me-1" />
 							<Locale k="EQUIP_VIEW_COST" />
 						</a>
 					</li>
@@ -538,7 +534,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 								setDisplayTab("upgrade");
 							} }
 						>
-							<IconCapslockFill class="me-1" />
+							<Icons.CapslockFill class="me-1" />
 							<Locale k="EQUIP_VIEW_PROMOTION" />
 						</a>
 					</li>
@@ -582,7 +578,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 								<div class="col text-center pt-2">
 									{ RenderDrops(target) }
 
-									{ target.rarity === ACTOR_GRADE.SSS
+									{ target.rarity === ACTOR_GRADE.SSS && family.some(r => r.rarity === ACTOR_GRADE.SS)
 										? <div class="alert alert-danger mt-3 p-1 pb-2">
 											<div class="alert alert-light mb-3 p-1">
 												<Locale
@@ -590,7 +586,8 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 													p={ [
 														<span style="text-decoration:underline">{
 															(loc[`EQUIP_${GetFullKey(target.type, target.key, ACTOR_GRADE.SSS)}`] ?? "???")
-																.replace(/ SSS$/, "")
+																.replace(/SSS$/, "")
+																.trim()
 														}</span>
 													] }
 												/>

@@ -6,8 +6,7 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { isActive } from "@/libs/Functions";
 
 import Locale, { LocaleGet } from "@/components/locale";
-import IconGrid3x3GapFill from "@/components/bootstrap-icon/icons/Grid3x3GapFill";
-import IconHammer from "@/components/bootstrap-icon/icons/Hammer";
+import Icons from "@/components/bootstrap-icon";
 
 import EquipList from "./components/list";
 import EquipTimetable from "./components/timetable";
@@ -33,7 +32,7 @@ const Equips: FunctionalComponent<EquipsProps> = (props) => {
 					class={ `btn btn-outline-primary ${isActive(DisplayType === "list")}` }
 					onClick={ (): void => setDisplayType("list") }
 				>
-					<IconGrid3x3GapFill class="me-1" />
+					<Icons.Grid_3x3GapFill class="me-1" />
 					<Locale k="EQUIP_VIEW_LIST" />
 				</button>
 				<button
@@ -41,7 +40,7 @@ const Equips: FunctionalComponent<EquipsProps> = (props) => {
 					class={ `btn btn-outline-primary ${isActive(DisplayType === "time")}` }
 					onClick={ (): void => setDisplayType("time") }
 				>
-					<IconHammer class="me-1" />
+					<Icons.Hammer class="me-1" />
 					<Locale k="EQUIP_VIEW_CREATIONTIME" />
 				</button>
 			</div>

@@ -60,10 +60,10 @@ export default class MixedModel extends FadeContainer {
 			this.emit("facelist", ...args);
 		});
 		this._SpineModel.on("normal-touch", (...args) => {
-			this.emit("special-touch", ...args);
+			this.emit("normal-touch", ...args);
 		});
 		this._SpineModel.on("special-touch", (...args) => {
-			this.emit("normal-touch", ...args);
+			this.emit("special-touch", ...args);
 		});
 	}
 
@@ -71,7 +71,10 @@ export default class MixedModel extends FadeContainer {
 		this._face = imageVar;
 
 		this._2DModel.setFace(imageVar);
-		this._SpineModel.setFace(imageVar);
+		if (!this._SpineModel.setFace(imageVar)) {
+			if (imageVar.endsWith("_BigSmile"))
+				this._SpineModel.setFace(imageVar.replace(/_BigSmile$/, "_Smile"));
+		}
 	}
 
 	setDialogDeactive (deactive: boolean) {

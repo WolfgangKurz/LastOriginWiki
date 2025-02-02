@@ -11,11 +11,8 @@ import { FormatNumber } from "@/libs/Functions";
 
 import { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
-import IconCoolFace from "@/components/bootstrap-icon/icons/CoolFace";
+import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
-import IconHeartFill from "@/components/bootstrap-icon/icons/HeartFill";
-import IconCaretRightFill from "@/components/bootstrap-icon/icons/CaretRightFill";
-import IconCaretDownFill from "@/components/bootstrap-icon/icons/CaretDownFill";
 import EquipIcon from "@/components/equip-icon";
 
 import { SubpageProps } from "..";
@@ -60,7 +57,7 @@ const PromoTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 					</span>
 					<span class="d-none d-md-inline">|</span>
 					<span class="d-block d-md-inline ms-0 ms-md-3">
-						<IconHeartFill class="text-danger" />
+						<Icons.HeartFill class="text-danger" />
 						<strong class="ms-2">{ p.favor }</strong>
 					</span>
 				</div>
@@ -100,8 +97,8 @@ const PromoTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 				}
 			</div >
 			<div class={ style.Arrow }>
-				<IconCaretRightFill class="d-none d-md-inline" />
-				<IconCaretDownFill class="d-inline d-md-none" />
+				<Icons.CaretRightFill class="d-none d-md-inline" />
+				<Icons.CaretDownFill class="d-inline d-md-none" />
 			</div>
 		</>) }
 
@@ -109,7 +106,7 @@ const PromoTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 			<img src={ `${AssetsRoot}/icons/CHA_${RoleIconId}${RarityDisplay[last]}.png` } />
 
 			<div class={ style.PromoEnd }>
-				<IconCoolFace />
+				<Icons.CoolFace />
 			</div>
 		</div>
 	</div>;

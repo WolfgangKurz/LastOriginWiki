@@ -14,11 +14,7 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Locale from "@/components/locale";
 import Button from "@/components/Button";
-import IconPersonSquare from "@/components/bootstrap-icon/icons/PersonSquare";
-import IconLightningFill from "@/components/bootstrap-icon/icons/LightningFill";
-import IconCapslockFill from "@/components/bootstrap-icon/icons/CapslockFill";
-import IconHandThumbsUpFill from "@/components/bootstrap-icon/icons/HandThumbsUpFill";
-import IconChatTextFill from "@/components/bootstrap-icon/icons/ChatTextFill";
+import Icons from "@/components/bootstrap-icon";
 import IconHanger from "@/components/Icons/IconHanger";
 
 import BasicTab from "./sub-tab/Basic";
@@ -176,7 +172,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 							setDisplayTab("basic");
 						} }
 					>
-						<IconPersonSquare class="me-1" />
+						<Icons.PersonSquare class="me-1" />
 						<Locale k="UNIT_VIEW_TAB_BASICINFO" />
 					</a>
 				</li>
@@ -202,7 +198,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 							setDisplayTab("skills");
 						} }
 					>
-						<IconLightningFill class="me-1" />
+						<Icons.LightningFill class="me-1" />
 						<Locale k="UNIT_VIEW_TAB_SKILLS" />
 					</a>
 				</li>
@@ -215,7 +211,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 							setDisplayTab("lvlimit");
 						} }
 					>
-						<IconCapslockFill class="me-1" />
+						<Icons.CapslockFill class="me-1" />
 						<Locale k="UNIT_VIEW_TAB_LVLIMIT" />
 					</a>
 				</li>
@@ -228,7 +224,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 							setDisplayTab("promo");
 						} }
 					>
-						<IconHandThumbsUpFill class="me-1" />
+						<Icons.HandThumbsUpFill class="me-1" />
 						<Locale k="UNIT_VIEW_TAB_PROMOTION" />
 					</a>
 				</li>
@@ -241,7 +237,7 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 							setDisplayTab("dialogue");
 						} }
 					>
-						<IconChatTextFill class="me-1" />
+						<Icons.ChatTextFill class="me-1" />
 						<Locale k="UNIT_VIEW_TAB_DIALOGUE" />
 					</a>
 				</li>

@@ -450,10 +450,12 @@ export default class PixiSpineModel extends FadeContainer {
 		return [s, root!];
 	}
 
-	addSkin (skinName: string) {
-		if (this.selectedSkins.indexOf(skinName) != -1) return;
+	addSkin (skinName: string): boolean {
+		if (this.selectedSkins.indexOf(skinName) != -1) return true;
+		if (!this.skeletonData?.findSkin(skinName)) return false;
 		this.selectedSkins.push(skinName);
 		this.updateSkin();
+		return true;
 	}
 
 	removeSkin (skinName: string) {
@@ -605,10 +607,11 @@ export default class PixiSpineModel extends FadeContainer {
 		return anim;
 	}
 
-	setFace (face: string) {
+	setFace (face: string): boolean {
 		if (this.lastFace) this.removeSkin("face/" + this.lastFace);
-		this.addSkin("face/" + face);
+		const ret = this.addSkin("face/" + face);
 		this.lastFace = face || "";
+		return ret;
 	}
 
 	setGoogle (google: boolean) {

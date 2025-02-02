@@ -1,24 +1,22 @@
 import { FunctionalComponent } from "preact";
-import { useRef } from "preact/hooks";
+import { useMemo, useRef, useState } from "preact/hooks";
 import { Link, route } from "preact-router";
 
-// import html2canvas from "@/external/html2canvas";
 import { toJpeg } from "html-to-image";
-
-import { AssetsRoot } from "@/libs/Const";
-import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import { ACTOR_GRADE, ITEM_GRADE, STAGE_SUB_TYPE } from "@/types/Enums";
 import { MapNodeEntity, World } from "@/types/DB/Map";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
+import { AssetsRoot } from "@/libs/Const";
+import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { useLocale } from "@/libs/Locale";
 import { groupBy, isActive } from "@/libs/Functions";
-import { objState } from "@/libs/State";
+import { StaticDB, useDBData } from "@/libs/Loader";
 
-import Loader, { GetJson, StaticDB } from "@/libs/Loader";
-import Locale, { LocaleGet } from "@/components/locale";
-import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
+import Locale from "@/components/locale";
+import Icons from "@/components/bootstrap-icon";
 import UnitFace from "@/components/unit-face";
 import EquipIcon from "@/components/equip-icon";
 import EquipPopup from "@/components/popup/equip-popup";
@@ -37,6 +35,11 @@ function GetTypeIdx (node: MapNodeEntity, byOffset: boolean = false): 0 | 1 | 2 
 			? 2
 			: 0;
 }
+const typeTable = {
+	0: "SIDE",
+	1: "MAIN",
+	2: "EX",
+};
 
 interface DropTableProps {
 	wid: string;
@@ -44,26 +47,28 @@ interface DropTableProps {
 }
 
 const DropTable: FunctionalComponent<DropTableProps> = (props) => {
+	const [loc] = useLocale();
+
 	const tableRef = useRef<HTMLTableElement>(null);
 
-	const unitRarities = objState<ACTOR_GRADE[]>([ACTOR_GRADE.SS, ACTOR_GRADE.S]);
-	const equipRarities = objState<ITEM_GRADE[]>([ACTOR_GRADE.SS]);
-	const selectedEquip = objState<FilterableEquip | null>(null);
+	const [unitRarities, setUnitRarities] = useState<ACTOR_GRADE[]>([ACTOR_GRADE.SS, ACTOR_GRADE.S]);
+	const [equipRarities, setEquipRarities] = useState<ITEM_GRADE[]>([ACTOR_GRADE.SS]);
+	const [selectedEquip, setSelectedEquip] = useState<FilterableEquip | null>(null);
 
-	const HTMLDisplay = objState(false);
-	const HTMLContent = objState("");
+	const [HTMLDisplay, setHTMLDisplay] = useState(false);
+	const [HTMLContent, setHTMLContent] = useState("");
 
 	SetMeta(
 		["description", "twitter:description"],
-		`${LocaleGet(`WORLD_${props.wid}`)}의 제 ${props.mid}구역의 드랍 테이블을 표시합니다.`,
+		`${loc[`WORLD_${props.wid}`]}의 제 ${props.mid}구역의 드랍 테이블을 표시합니다.`,
 	);
-	SetMeta("keywords", `,${LocaleGet(`WORLD_${props.wid}`)}`, true);
+	SetMeta("keywords", `,${loc[`WORLD_${props.wid}`]}`, true);
 	SetMeta(["twitter:image", "og:image"], `${AssetsRoot}/world/icons/${props.wid}_${props.mid}.png`);
 
 	if (props.wid === "Sub")
-		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${props.wid}`));
+		UpdateTitle(loc["MENU_WORLDS"], loc[`WORLD_${props.wid}`]);
 	else
-		UpdateTitle(LocaleGet("MENU_WORLDS"), LocaleGet(`WORLD_${props.wid}`), LocaleGet("WORLDS_WORLD_TITLE", props.mid));
+		UpdateTitle(loc["MENU_WORLDS"], loc[`WORLD_${props.wid}`], loc["WORLDS_WORLD_TITLE"].replace(/\{0\}/g, props.mid));
 
 	function toggleArray<T> (list: T[], value: T): T[] {
 		if (list.includes(value)) {
@@ -145,6 +150,27 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 		}
 	}
 
+	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
+	const FilterableEquipDB = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip);
+	const MapDB = useDBData<World>(`map/${props.wid}`);
+
+	const Maps = useMemo(() => {
+		if (!MapDB) return null;
+		if (props.wid === "13") {
+			const w: World[""] = {
+				list: Object.values(MapDB).flatMap(r => r.list),
+				substory: Object.values(MapDB).flatMap(r => r.substory),
+			};
+			return w;
+		}
+		return MapDB[props.mid];
+
+	}, [MapDB, props.wid, props.mid]);
+	const groups = useMemo(() => Maps && groupBy(Maps.list, m => {
+		const byOffset = !(props.wid || "").startsWith("Ev") || parseInt((props.wid || "Ev0").substring(2), 10) < 14;
+		return GetTypeIdx(m, byOffset);
+	}), [Maps, props.wid]);
+
 	return <>
 		<div class="row">
 			<div class="col-auto">
@@ -154,7 +180,7 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 					else
 						route(`/worlds/${props.wid}`);
 				} }>
-					<IconArrowLeft class="me-1" />
+					<Icons.ArrowLeft class="me-1" />
 					{ props.wid === "Sub"
 						? <Locale k="WORLDS_BACK_TO_WORLDS" />
 						: <Locale k="WORLDS_BACK_TO_AREAS" />
@@ -174,8 +200,8 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 						e.preventDefault();
 						if (tableRef.current) {
 							const table = tableRef.current;
-							HTMLContent.set(exportToHtml(table) || "");
-							HTMLDisplay.set(true);
+							setHTMLContent(exportToHtml(table) || "");
+							setHTMLDisplay(true);
 						}
 					} }>
 						<Locale k="WORLDS_DROP_EXPORT_HTML" />
@@ -231,20 +257,20 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 								</div>
 								<div class="btn-group mx-2 mb-2">
 									<button
-										class={ `btn btn-sm btn-outline-danger ${isActive(unitRarities.value.includes(ACTOR_GRADE.SS))}` }
-										onClick={ () => unitRarities.set(toggleArray(unitRarities.value, ACTOR_GRADE.SS)) }
+										class={ `btn btn-sm btn-outline-danger ${isActive(unitRarities.includes(ACTOR_GRADE.SS))}` }
+										onClick={ () => setUnitRarities(toggleArray(unitRarities, ACTOR_GRADE.SS)) }
 									>SS</button>
 									<button
-										class={ `btn btn-sm btn-outline-danger ${isActive(unitRarities.value.includes(ACTOR_GRADE.S))}` }
-										onClick={ () => unitRarities.set(toggleArray(unitRarities.value, ACTOR_GRADE.S)) }
+										class={ `btn btn-sm btn-outline-danger ${isActive(unitRarities.includes(ACTOR_GRADE.S))}` }
+										onClick={ () => setUnitRarities(toggleArray(unitRarities, ACTOR_GRADE.S)) }
 									>S</button>
 									<button
-										class={ `btn btn-sm btn-outline-danger ${isActive(unitRarities.value.includes(ACTOR_GRADE.A))}` }
-										onClick={ () => unitRarities.set(toggleArray(unitRarities.value, ACTOR_GRADE.A)) }
+										class={ `btn btn-sm btn-outline-danger ${isActive(unitRarities.includes(ACTOR_GRADE.A))}` }
+										onClick={ () => setUnitRarities(toggleArray(unitRarities, ACTOR_GRADE.A)) }
 									>A</button>
 									<button
-										class={ `btn btn-sm btn-outline-danger ${isActive(unitRarities.value.includes(ACTOR_GRADE.B))}` }
-										onClick={ () => unitRarities.set(toggleArray(unitRarities.value, ACTOR_GRADE.B)) }
+										class={ `btn btn-sm btn-outline-danger ${isActive(unitRarities.includes(ACTOR_GRADE.B))}` }
+										onClick={ () => setUnitRarities(toggleArray(unitRarities, ACTOR_GRADE.B)) }
 									>B</button>
 								</div>
 							</div>
@@ -254,20 +280,20 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 								</div>
 								<div class="btn-group mx-2 mb-2">
 									<button
-										class={ `btn btn-sm btn-outline-success ${isActive(equipRarities.value.includes(ACTOR_GRADE.SS))}` }
-										onClick={ () => equipRarities.set(toggleArray(equipRarities.value, ACTOR_GRADE.SS)) }
+										class={ `btn btn-sm btn-outline-success ${isActive(equipRarities.includes(ACTOR_GRADE.SS))}` }
+										onClick={ () => setEquipRarities(toggleArray(equipRarities, ACTOR_GRADE.SS)) }
 									>SS</button>
 									<button
-										class={ `btn btn-sm btn-outline-success ${isActive(equipRarities.value.includes(ACTOR_GRADE.S))}` }
-										onClick={ () => equipRarities.set(toggleArray(equipRarities.value, ACTOR_GRADE.S)) }
+										class={ `btn btn-sm btn-outline-success ${isActive(equipRarities.includes(ACTOR_GRADE.S))}` }
+										onClick={ () => setEquipRarities(toggleArray(equipRarities, ACTOR_GRADE.S)) }
 									>S</button>
 									<button
-										class={ `btn btn-sm btn-outline-success ${isActive(equipRarities.value.includes(ACTOR_GRADE.A))}` }
-										onClick={ () => equipRarities.set(toggleArray(equipRarities.value, ACTOR_GRADE.A)) }
+										class={ `btn btn-sm btn-outline-success ${isActive(equipRarities.includes(ACTOR_GRADE.A))}` }
+										onClick={ () => setEquipRarities(toggleArray(equipRarities, ACTOR_GRADE.A)) }
 									>A</button>
 									<button
-										class={ `btn btn-sm btn-outline-success ${isActive(equipRarities.value.includes(ACTOR_GRADE.B))}` }
-										onClick={ () => equipRarities.set(toggleArray(equipRarities.value, ACTOR_GRADE.B)) }
+										class={ `btn btn-sm btn-outline-success ${isActive(equipRarities.includes(ACTOR_GRADE.B))}` }
+										onClick={ () => setEquipRarities(toggleArray(equipRarities, ACTOR_GRADE.B)) }
 									>B</button>
 								</div>
 							</div>
@@ -288,120 +314,100 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 				</tr>
 			</thead>
 			<tbody>
-				<Loader
-					json={ [StaticDB.FilterableUnit, StaticDB.FilterableEquip, `map/${props.wid}`] }
-					content={ ((): preact.VNode => {
-						const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
-						const FilterableEquipDB = GetJson<FilterableEquip[]>(StaticDB.FilterableEquip);
-						const MapDB = GetJson<World>(`map/${props.wid}`);
-						const Maps = MapDB[props.mid];
+				{ (!FilterableUnitDB || !FilterableEquipDB || !MapDB || !groups)
+					? <></>
+					: Object.keys(groups)
+						.sort((a, b) => {
+							if (a === b) return 0;
+							if (a === "1") return -1;
+							if (b === "1") return 1;
+							if (a === "0") return -1;
+							if (b === "0") return -1;
+							return 0;
+						})
+						.map(k => [k as unknown, groups[k]] as [keyof typeof groups, MapNodeEntity[]])
+						.map(([k, g]) => {
+							const targets = g.filter(n => n.type !== STAGE_SUB_TYPE.STORY && n.wave);
+							return targets.map((n, i) => {
+								const drops = n.wave!
+									.reduce((p, c) => {
+										return [
+											...p,
+											...c.map(c => c.e.drops.flatMap(d => d.id))
+												.flat()
+												.reduce((p, c) => p.includes(c) ? p : [...p, c], [] as string[]),
+										];
+									}, [] as string[])
+									.reduce((p, c) => p.includes(c) ? p : [...p, c], [] as string[]);
 
-						const typeTable = {
-							0: "SIDE",
-							1: "MAIN",
-							2: "EX",
-						};
-						const groups = groupBy(Maps.list, m => {
-							const byOffset = !(props.wid || "").startsWith("Ev") || parseInt((props.wid || "Ev0").substring(2), 10) < 14;
-							return GetTypeIdx(m, byOffset);
-						});
-
-						return <>
-							{ Object.keys(groups)
-								.sort((a, b) => {
-									if (a === b) return 0;
-									if (a === "1") return -1;
-									if (b === "1") return 1;
-									if (a === "0") return -1;
-									if (b === "0") return -1;
-									return 0;
-								})
-								.map(k => [k as unknown, groups[k]] as [keyof typeof groups, MapNodeEntity[]])
-								.map(([k, g]) => {
-									const targets = g.filter(n => n.type !== STAGE_SUB_TYPE.STORY && n.wave);
-									return targets.map((n, i) => {
-										const drops = n.wave!
-											.reduce((p, c) => {
-												return [
-													...p,
-													...c.map(c => c.e.drops.flatMap(d => d.id))
-														.flat()
-														.reduce((p, c) => p.includes(c) ? p : [...p, c], [] as string[]),
-												];
-											}, [] as string[])
-											.reduce((p, c) => p.includes(c) ? p : [...p, c], [] as string[]);
-
-										const units = drops
-											.filter(x => x.startsWith("Char_"))
-											.map(x => {
-												const uid = x.replace(/^Char_(.+)_N$/, "$1");
-												return FilterableUnitDB.find(x => x.uid === uid)!;
-											})
-											.filter(x => unitRarities.value.includes(x.rarity))
-											.sort((a, b) => {
-												const rd = b.rarity - a.rarity;
-												if (rd === 0) return b.id - a.id;
-												return rd;
-											});
-
-										const equips = drops.filter(x => x.startsWith("Equip_"))
-											.map(x => x.replace(/^Equip_/, ""))
-											.map(x => FilterableEquipDB.find(y => y.fullKey === x)!)
-											.filter(x => equipRarities.value.includes(x.rarity))
-											.sort((a, b) => b.rarity - a.rarity);
-
-										return <tr data-type={ k }>
-											{ i === 0 && <th rowSpan={ targets.length } class={ style.NodeType }>
-												<span>{ typeTable[k] }</span>
-											</th> }
-											<th>{ n.text.replace(/^EV/, "") }</th>
-
-											<td>
-												{ units.length === 0
-													? <span class="text-secondary">
-														<Locale k="WORLDS_DROP_NO_RESULT" />
-													</span>
-													: units.map(u => <Link href={ `/units/${u.uid}` }>
-														<UnitFace class="m-1" uid={ u.uid } size={ 64 } />
-													</Link>)
-												}
-											</td>
-											<td>
-												{ equips.length === 0
-													? <span class="text-secondary">
-														<Locale k="WORLDS_DROP_NO_RESULT" />
-													</span>
-													: equips.map(e => <Link href={ `/equips/${e.fullKey}` } onClick={ (ev) => {
-														ev.preventDefault();
-														ev.stopPropagation();
-														selectedEquip.set(e);
-													} }>
-														<EquipIcon class="m-1" image={ e.icon } size={ 64 } />
-													</Link>)
-												}
-											</td>
-										</tr>;
+								const units = drops
+									.filter(x => x.startsWith("Char_"))
+									.map(x => {
+										const uid = x.replace(/^Char_(.+)_N$/, "$1");
+										return FilterableUnitDB.find(x => x.uid === uid)!;
+									})
+									.filter(x => unitRarities.includes(x.rarity))
+									.sort((a, b) => {
+										const rd = b.rarity - a.rarity;
+										if (rd === 0) return b.id - a.id;
+										return rd;
 									});
-								})
-							}
-						</>;
-					}) }
-				/>
+
+								const equips = drops.filter(x => x.startsWith("Equip_"))
+									.map(x => x.replace(/^Equip_/, ""))
+									.map(x => FilterableEquipDB.find(y => y.fullKey === x)!)
+									.filter(x => equipRarities.includes(x.rarity))
+									.sort((a, b) => b.rarity - a.rarity);
+
+								return <tr data-type={ k }>
+									{ i === 0 && <th rowSpan={ targets.length } class={ style.NodeType }>
+										<span>{ typeTable[k] }</span>
+									</th> }
+									<th>{ n.text.replace(/^EV/, "") }</th>
+
+									<td>
+										{ units.length === 0
+											? <span class="text-secondary">
+												<Locale k="WORLDS_DROP_NO_RESULT" />
+											</span>
+											: units.map(u => <Link href={ `/units/${u.uid}` }>
+												<UnitFace class="m-1" uid={ u.uid } size={ 64 } />
+											</Link>)
+										}
+									</td>
+									<td>
+										{ equips.length === 0
+											? <span class="text-secondary">
+												<Locale k="WORLDS_DROP_NO_RESULT" />
+											</span>
+											: equips.map(e => <Link href={ `/equips/${e.fullKey}` } onClick={ (ev) => {
+												ev.preventDefault();
+												ev.stopPropagation();
+												setSelectedEquip(e);
+											} }>
+												<EquipIcon class="m-1" image={ e.icon } size={ 64 } />
+											</Link>)
+										}
+									</td>
+								</tr>;
+							});
+						})
+				}
 			</tbody>
 		</table>
 
 		<EquipPopup
-			equip={ selectedEquip.value }
+			equip={ selectedEquip }
 			display
 			asSub
-			onHidden={ () => selectedEquip.set(null) }
+			onHidden={ () => setSelectedEquip(null) }
 		/>
 		<PopupBase
 			size="lg"
-			display={ HTMLDisplay.value }
-			onHidden={ () => HTMLDisplay.set(false) }
+			display={ HTMLDisplay }
+			onHidden={ () => setHTMLDisplay(false) }
 		>
-			<small>{ HTMLContent.value }</small>
+			<small>{ HTMLContent }</small>
 		</PopupBase>
 	</>;
 };

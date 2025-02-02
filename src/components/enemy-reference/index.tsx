@@ -7,7 +7,7 @@ import { AssetsRoot, ImageExtension } from "@/libs/Const";
 
 import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
-import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
+import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 
 interface EnemyReferenceProps {
@@ -27,7 +27,7 @@ const EnemyReference: FunctionalComponent<EnemyReferenceProps> = (props) => {
 				return <Link href={ `/enemies/${enemy}` }>
 					<span class="badge bg-danger">
 						<Locale plain k={ `ENEMY_${enemy}` } />
-						<IconLink45deg class="ms-1" />
+						<Icons.Link45deg class="ms-1" />
 					</span>
 				</Link>;
 			}
@@ -49,7 +49,7 @@ const EnemyReference: FunctionalComponent<EnemyReferenceProps> = (props) => {
 				>
 					<span class="badge bg-danger mx-1">
 						<Locale plain k={ `ENEMY_${enemy}` } />
-						<IconLink45deg class="ms-1" />
+						<Icons.Link45deg class="ms-1" />
 					</span>
 				</BootstrapTooltip>
 				<div class="preload-area">
@@ -60,7 +60,7 @@ const EnemyReference: FunctionalComponent<EnemyReferenceProps> = (props) => {
 		loading={ <Link href={ `/enemies/${enemy}` }>
 			<span class="badge bg-danger">
 				<Locale plain k={ `ENEMY_${enemy}` } />
-				<IconLink45deg class="ms-1" />
+				<Icons.Link45deg class="ms-1" />
 			</span>
 		</Link> }
 	/>;

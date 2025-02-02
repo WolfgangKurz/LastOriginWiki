@@ -6,7 +6,6 @@ import * as YAML from "@/external/yaml";
 
 import { DataRoot } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
-import EntitySource from "@/libs/EntitySource";
 
 import DBHash, { DBHashType } from "@/libs/Loader/hash";
 

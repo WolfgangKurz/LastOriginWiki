@@ -12,10 +12,11 @@ import { AssetsRoot } from "@/libs/Const";
 import { cn } from "@/libs/Class";
 
 import Locale from "@/components/locale";
+import Button from "@/components/Button";
 import PopupBase from "@/components/popup/base";
 import PCIcon from "@/components/pc-icon";
 
-import IconBook from "@/components/bootstrap-icon/icons/Book";
+import Icons from "@/components/bootstrap-icon";
 
 import style from "./style.module.scss";
 
@@ -70,18 +71,37 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		11,
 		"Ev20", "Ev21", "Ev23",
 		12,
-		"Ev24", "Ev25", "Ev26", "Ev27",
+		"Ev24", "Ev25", "Ev26", "Ev27", "Ev28",
+		13,
+		"Ev29",
 	];
-	const StoryList: StoryKeyType[] = useMemo(
-		() => StoryListSource.map(r => {
-			if (Array.isArray(r)) {
-				const s = r[1];
-				if (Array.isArray(s)) return [r[0], s];
-				return [r[0], [s]];
+	const StoryList: Array<StoryKeyType | null> = useMemo(
+		() => {
+			const arr: StoryKeyType[] = StoryListSource.map(r => {
+				if (Array.isArray(r)) {
+					const s = r[1];
+					if (Array.isArray(s)) return [r[0], s];
+					return [r[0], [s]];
+				}
+				return [r, [0]];
+			});
+
+			if (StoryMapDB) {
+				const unordered: StoryKeyType[] = Object.keys(StoryMapDB)
+					.filter(k => !arr.some(r => r[0] == k))
+					.map(k => [k, [0]]);
+
+				if (unordered.length > 0) {
+					return [
+						...arr,
+						null,
+						...unordered,
+					];
+				}
 			}
-			return [r, [0]];
-		}),
-		[StoryListSource],
+			return arr;
+		},
+		[StoryMapDB, StoryListSource],
 	);
 
 	function GetWorldIcon (k: number | string, s: number): string {
@@ -127,51 +147,78 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		return onInvalid();
 	}
 
+	function StoryTimeline (k: StoryKeyType): preact.VNode[] {
+		return k[1].map(s => <div class={ style.StoryMapItem }>
+			<Link
+				class={ style.Box }
+				href={ `/story/${k[0]}_${s}` }
+			>
+				<img src={ `${AssetsRoot}/world/icons/${GetWorldIcon(k[0], s)}.png` } />
+
+				<div class={ style.StoryType }>
+					{ typeof k[0] === "number"
+						? <>
+							<span class="badge bg-warning text-bg-warning mx-1">
+								<Locale k="STORY_TYPE_MAINSTORY" />
+							</span>
+
+							<span class="badge bg-dark text-bg-dark mx-1">
+								<Locale k="WORLDS_WORLD_TITLE" p={ [k[0]] } />
+							</span>
+						</>
+						: <>
+							<span class="badge bg-danger text-bg-danger mx-1">
+								<Locale k="STORY_TYPE_EVENT" />
+							</span>
+
+							{ s !== 0 && <span class="badge bg-dark text-bg-dark mx-1">
+								<Locale k="WORLDS_WORLD_TITLE" p={ [s] } />
+							</span> }
+						</>
+					}
+				</div>
+				<div class={ style.StoryName }>
+					{ GetWorldLocale(k[0], s) }
+				</div>
+			</Link>
+		</div>);
+	}
+
+	const StoryListA = useMemo((): StoryKeyType[] => {
+		const idx = StoryList.indexOf(null);
+		if (idx >= 0) return StoryList.slice(0, idx) as StoryKeyType[];
+		return StoryList as StoryKeyType[];
+	}, [StoryList]);
+	const StoryListB = useMemo((): StoryKeyType[] => {
+		const idx = StoryList.indexOf(null);
+		if (idx >= 0) return StoryList.slice(idx + 1) as StoryKeyType[];
+		return [];
+	}, [StoryList]);
+
 	return <div class={ style.Story }>
 		<h2>
 			<Locale k="STORY" />
 		</h2>
+		<div class="text-end">
+			<Button
+				variant="dark"
+				onClick={ () => route("/worlds/Sub") }
+			>
+				<Locale k="STORY_GOTO_UNIT_SUBSTORY" />
+			</Button>
+		</div>
 
 		<hr />
 
 		<div class={ style.Timeline }>
-			{ StoryList.map(k =>
-				k[1].map(s => <div class={ style.StoryMapItem }>
-					<Link
-						class={ style.Box }
-						href={ `/story/${k[0]}_${s}` }
-					>
-						<img src={ `${AssetsRoot}/world/icons/${GetWorldIcon(k[0], s)}.png` } />
-
-						<div class={ style.StoryType }>
-							{ typeof k[0] === "number"
-								? <>
-									<span class="badge bg-warning text-bg-warning mx-1">
-										<Locale k="STORY_TYPE_MAINSTORY" />
-									</span>
-
-									<span class="badge bg-dark text-bg-dark mx-1">
-										<Locale k="WORLDS_WORLD_TITLE" p={ [k[0]] } />
-									</span>
-								</>
-								: <>
-									<span class="badge bg-danger text-bg-danger mx-1">
-										<Locale k="STORY_TYPE_EVENT" />
-									</span>
-
-									{ s !== 0 && <span class="badge bg-dark text-bg-dark mx-1">
-										<Locale k="WORLDS_WORLD_TITLE" p={ [s] } />
-									</span> }
-								</>
-							}
-						</div>
-						<div class={ style.StoryName }>
-							{ GetWorldLocale(k[0], s) }
-						</div>
-					</Link>
-				</div>)
-			) }
+			{ StoryListA.map(k => StoryTimeline(k!)) }
 		</div>
+		{ StoryListB.length > 0 && <>
+			<hr />
+			<div class={ style.Timeline }>
+				{ StoryListB.map(k => StoryTimeline(k!)) }
+			</div>
+		</> }
 
 		<PopupBase
 			display={ !!selectedKey }
@@ -243,7 +290,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 												route(`/story/${r.key}/ED`);
 											} }
 										>
-											<IconBook class="me-1" />
+											<Icons.Book class="me-1" />
 											Story
 										</button>
 										: <div class={ cn("btn-group", style.Buttons) }>
@@ -257,7 +304,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 														route(`/story/${r.key}/OP`);
 													} }
 												>
-													<IconBook class="me-1" />
+													<Icons.Book class="me-1" />
 													OP
 												</button>
 												: <button
@@ -265,7 +312,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 													class="btn btn-sm"
 													disabled
 												>
-													<IconBook class="me-1" />
+													<Icons.Book class="me-1" />
 													OP
 												</button>
 											}
@@ -281,7 +328,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 														route(`/story/${r.key}/${v}`);
 													} }
 												>
-													<IconBook class="me-1" />
+													<Icons.Book class="me-1" />
 													MID
 												</button>),
 												() => <button
@@ -289,7 +336,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 													class="btn btn-sm"
 													disabled
 												>
-													<IconBook class="me-1" />
+													<Icons.Book class="me-1" />
 													MID
 												</button>,
 											) }
@@ -304,7 +351,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 														route(`/story/${r.key}/ED`);
 													} }
 												>
-													<IconBook class="me-1" />
+													<Icons.Book class="me-1" />
 													ED
 												</button>
 												: <button
@@ -312,7 +359,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 													class="btn btn-sm"
 													disabled
 												>
-													<IconBook class="me-1" />
+													<Icons.Book class="me-1" />
 													ED
 												</button>
 											}
@@ -364,7 +411,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 												route(`/story/${r.key}/${s.key}`);
 											} }
 										>
-											<IconBook class="me-1" />
+											<Icons.Book class="me-1" />
 											Story
 										</button>
 									</div>) }

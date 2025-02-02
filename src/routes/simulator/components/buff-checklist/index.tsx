@@ -16,9 +16,7 @@ import { CurrentDB } from "@/libs/DB";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale, { LocaleExists, LocaleGet } from "@/components/locale";
-import IconDash from "@/components/bootstrap-icon/icons/Dash";
-import IconPlus from "@/components/bootstrap-icon/icons/Plus";
-import IconQuestionCircleFill from "@/components/bootstrap-icon/icons/QuestionCircleFill";
+import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import ElemIcon from "@/components/elem-icon";
 import UnitLink from "@/components/unit-link";
@@ -1395,7 +1393,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 										if (props.onStack)
 											props.onStack(key, v);
 									} }>
-										<IconDash />
+										<Icons.Dash />
 									</button>
 									<input
 										class="form-control buff-stack-input"
@@ -1415,7 +1413,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 										if (props.onStack)
 											props.onStack(key, v);
 									} }>
-										<IconPlus />
+										<Icons.Plus />
 									</button>
 								</div>,
 								<div class="input-group d-inline-flex w-auto me-2">
@@ -1452,7 +1450,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 								</span> }>
 									<span class={ `badge bg-orange ms-2 ${style.OverlapBadge}` }>
 										<Locale plain k={ `BUFFOVERLAP_${StackTable[overlap]}` } />
-										<IconQuestionCircleFill class={ `ms-1 ${style.QuestionIcon}` } />
+										<Icons.QuestionCircleFill class={ `ms-1 ${style.QuestionIcon}` } />
 									</span>
 								</BootstrapTooltip>
 								: <></>

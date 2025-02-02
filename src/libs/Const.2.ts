@@ -121,14 +121,22 @@ export const SkinBanners: string[] = [
 	"PECS_Melt_1", "PECS_LemonadeAlpha_3",
 	"PECS_HighElven_2", "PECS_Shepherd_1",
 	"BR_PXSilky_2",
+	"PECS_LemonadeGamma_1", "BR_Pixie_1",
+	"BR_Cheona_3", "BR_Fafnir_1", "PECS_LemonadeBeta_2",
+	"PECS_Rhode_1",
 ];
 
-export const SkillVideo: Record<string, string[]> = {
+type SkillVideo_Plain = string[];
+type SkillVideo_Platform = [true, ...string[]];
+export const SkillVideo: Record<string, SkillVideo_Plain | SkillVideo_Platform> = {
 	DS_Koyori_0: ["DS_Koyori.Skill2"],
 	DS_Koyori_20: ["DS_Koyori.Skill2"],
-
 	DS_Koyori_1: ["DS_Koyori_1.Skill2"],
 
 	DS_Sarena_0: ["DS_Sarena.Skill2"],
-	BR_Fafnir_0: ["BR_Fafnir.Skill2"],
+
+	BR_Fafnir_0: [true, "BR_Fafnir.Skill2"],
+	BR_Fafnir_1: [true, "BR_Fafnir_1.Skill2"],
+
+	PECS_LemonadeGamma_0: ["PECS_LemonadeGamma.Skill2"],
 };

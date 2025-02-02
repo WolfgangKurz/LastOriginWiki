@@ -16,6 +16,7 @@ const pathCache: {
 interface TextStyle {
 	align?: "LT" | "CT" | "RT" | "LC" | "CC" | "RC" | "LB" | "CB" | "RB";
 
+	letterSpacing?: number;
 	lineHeight?: number;
 	fontFamily?: string;
 	fontSize?: number;
@@ -105,6 +106,7 @@ export default class FadeText extends FadeContainer {
 
 		const fontSize = this._style?.fontSize ?? 14;
 		const fontWeight = this._style?.fontWeight ?? 400;
+		const letterSpacing = this._style?.letterSpacing ?? 1.0;
 		const lineHeight = this._style?.lineHeight ?? 1.2;
 		const strokeWidth = this._style?.strokeWidth ?? 0;
 
@@ -177,7 +179,7 @@ export default class FadeText extends FadeContainer {
 									pathCacheKey = `${_font.names.fontFamily}_${fontSize}_${fontWeight}`;
 									pathCache[pathCacheKey] ||= {};
 
-									_w += _font.getAdvanceWidth(c, fontSize);
+									_w += _font.getAdvanceWidth(c, fontSize) + letterSpacing;
 									_arr.push([c, _font]);
 
 									const h = (_font.ascender - _font.descender) / _font.unitsPerEm * fontSize;
@@ -222,7 +224,8 @@ export default class FadeText extends FadeContainer {
 									pathCache[pathCacheKey][c] = [_path, _cw];
 								}
 
-								const [_path, _cw] = pathCache[pathCacheKey][c];
+								const [_path, __cw] = pathCache[pathCacheKey][c];
+								const _cw = __cw + letterSpacing;
 								ctx.save();
 								ctx.translate(x - __x, _bl);
 								// console.log(text, c, x, __x, x - __x, _bl);

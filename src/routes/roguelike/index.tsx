@@ -6,10 +6,7 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Loader, { StaticDB } from "@/libs/Loader";
 import Locale, { LocaleGet } from "@/components/locale";
-import IconCardChecklist from "@/components/bootstrap-icon/icons/CardChecklist";
-import IconGeoFill from "@/components/bootstrap-icon/icons/GeoFill";
-import IconBuilding from "@/components/bootstrap-icon/icons/Building";
-import IconCompass from "@/components/bootstrap-icon/icons/Compass";
+import Icons from "@/components/bootstrap-icon";
 
 import RoguelikeQuestContent from "./components/roguelike-quest-content";
 import RoguelikeNodeContent from "./components/roguelike-node-content";
@@ -50,7 +47,7 @@ const Roguelike: FunctionalComponent = () => {
 								tabIndex.set(0);
 							} }
 						>
-							<IconCardChecklist class="me-2" />
+							<Icons.CardChecklist class="me-2" />
 							<Locale k="ROGUELIKE_QUEST" />
 						</a>
 					</li>
@@ -63,7 +60,7 @@ const Roguelike: FunctionalComponent = () => {
 								tabIndex.set(1);
 							} }
 						>
-							<IconGeoFill class="me-2" />
+							<Icons.GeoFill class="me-2" />
 							<Locale k="ROGUELIKE_NODE" />
 						</a>
 					</li>
@@ -76,7 +73,7 @@ const Roguelike: FunctionalComponent = () => {
 								tabIndex.set(2);
 							} }
 						>
-							<IconBuilding class="me-2" />
+							<Icons.Building class="me-2" />
 							<Locale k="ROGUELIKE_PASSIVE" />
 						</a>
 					</li>
@@ -87,7 +84,7 @@ const Roguelike: FunctionalComponent = () => {
 							target="_blank"
 							rel="noreferrer"
 						>
-							<IconCompass class="me-2" />
+							<Icons.Compass class="me-2" />
 							<Locale k="ROGUELIKE_MAP" />
 							<span class="badge bg-secondary ms-1" style="font-size: 0.7em;">KR only</span>
 						</a>

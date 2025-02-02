@@ -12,13 +12,7 @@ import { FormatNumber, isActive } from "@/libs/Functions";
 
 import Locale from "@/components/locale";
 import Loader, { GetJson, StaticDB } from "@/libs/Loader";
-import IconMap from "@/components/bootstrap-icon/icons/Map";
-import IconAwardFill from "@/components/bootstrap-icon/icons/AwardFill";
-import IconChevronDoubleDown from "@/components/bootstrap-icon/icons/ChevronDoubleDown";
-import IconChevronDown from "@/components/bootstrap-icon/icons/ChevronDown";
-import IconChevronUp from "@/components/bootstrap-icon/icons/ChevronUp";
-import IconChevronDoubleUp from "@/components/bootstrap-icon/icons/ChevronDoubleUp";
-import IconCaretRightFill from "@/components/bootstrap-icon/icons/CaretRightFill";
+import Icons from "@/components/bootstrap-icon";
 import UnitFace from "@/components/unit-face";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 
@@ -202,7 +196,7 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 								setCurrentTab("stage");
 							} }
 						>
-							<IconMap class="me-1" />
+							<Icons.Map class="me-1" />
 							<Locale k="IW_Tab_Stage" />
 						</a>
 					</li>
@@ -215,7 +209,7 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 								setCurrentTab("reward");
 							} }
 						>
-							<IconAwardFill class="me-1" />
+							<Icons.AwardFill class="me-1" />
 							<Locale k="IW_Tab_Reward" />
 						</a>
 					</li>
@@ -276,13 +270,13 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 									class="btn btn-secondary"
 									onClick={ (): void => setSelectedStageIdx(1) }
 								>
-									<IconChevronDoubleDown />
+									<Icons.ChevronDoubleDown />
 								</button>
 								<button
 									class="btn btn-secondary"
 									onClick={ (): void => setSelectedStageIdx(Math.max(1, selectedStageIdx - 1)) }
 								>
-									<IconChevronDown />
+									<Icons.ChevronDown />
 								</button>
 
 								<div class="input-group-text">
@@ -305,13 +299,13 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 									class="btn btn-secondary"
 									onClick={ (): void => setSelectedStageIdx(Math.min(maxStageIdx, selectedStageIdx + 1)) }
 								>
-									<IconChevronUp />
+									<Icons.ChevronUp />
 								</button>
 								<button
 									class="btn btn-secondary"
 									onClick={ (): void => setSelectedStageIdx(maxStageIdx) }
 								>
-									<IconChevronDoubleUp />
+									<Icons.ChevronDoubleUp />
 								</button>
 							</div>
 
@@ -412,7 +406,7 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 											setRewardTab("stage");
 										} }
 									>
-										{/* <IconAwardFill class="me-1" /> */ }
+										{/* <Icons.AwardFill class="me-1" /> */ }
 										<Locale k="IW_Reward_Stage" />
 									</a>
 								</li>
@@ -425,7 +419,7 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 											setRewardTab("battle");
 										} }
 									>
-										{/* <IconAwardFill class="me-1" /> */ }
+										{/* <Icons.AwardFill class="me-1" /> */ }
 										<Locale k="IW_Reward_Battle" />
 									</a>
 								</li>
@@ -438,7 +432,7 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 											setRewardTab("total");
 										} }
 									>
-										{/* <IconAwardFill class="me-1" /> */ }
+										{/* <Icons.AwardFill class="me-1" /> */ }
 										<Locale k="IW_Reward_Total" />
 									</a>
 								</li>
@@ -479,7 +473,7 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 														{ FormatNumber(i + 1) }
 													</td>
 													<td class="align-middle">
-														<IconCaretRightFill />
+														<Icons.CaretRightFill />
 													</td>
 													<td>
 														<ItemReward item={ item } />
@@ -519,7 +513,7 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 												{ FormatNumber(r.score) }
 											</td>
 											<td class="align-middle">
-												<IconCaretRightFill />
+												<Icons.CaretRightFill />
 											</td>
 											<td>
 												{ r.items.map(c => {
@@ -561,7 +555,7 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 												{ FormatNumber(r.score) }
 											</td>
 											<td class="align-middle">
-												<IconCaretRightFill />
+												<Icons.CaretRightFill />
 											</td>
 											<td>
 												{ r.items.map(c => {

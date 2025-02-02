@@ -232,6 +232,12 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 			LastOrigin: ["BR_Hyena_Title-3", "BR_Hyena_Title-9"]
 		}
 	},
+	PECS_LemonadeGamma: {
+		0: {
+			VALOFE: ["PECS_LemonadeGamma_logo", "PECS_LemonadeGamma_logo2"],
+			LastOrigin: ["PECS_LemonadeGamma_title", "PECS_LemonadeGamma_Title-2", "PECS_LemonadeGamma_Title-12"]
+		}
+	},
 	BR_InvDragon: {
 		0: {
 			LastOrigin: ["BR_InvDragon_Title-6", "BR_InvDragon_Title-7"]
@@ -522,6 +528,13 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 	PECS_Leanne: {
 		0: {
 			LastOrigin: ["PECS_Leanne_Title-2", "PECS_Leanne_Title-5"]
+		}
+	},
+	PECS_LemonadeBeta: {
+		0: {
+			LastOrigin: ["beta_s8"],
+			VALOFE: ["beta_Valofe1", "beta_Valofe2"],
+			Uncategorized: ["beta_s1", "beta_s2", "beta_s3", "beta_s4", "beta_s5", "beta_s6", "beta_s7", "beta_s9", "beta_s10", "beta_s11"]
 		}
 	},
 	PECS_LRL: {

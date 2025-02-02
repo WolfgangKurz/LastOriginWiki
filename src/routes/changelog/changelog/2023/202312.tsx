@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 
-import IconArrowRight from "@/components/bootstrap-icon/icons/ArrowRight";
+import Icons from "@/components/bootstrap-icon";
 import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 

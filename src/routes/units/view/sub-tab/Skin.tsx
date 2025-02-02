@@ -4,13 +4,13 @@ import { Link } from "preact-router";
 
 import { AssetsRoot } from "@/libs/Const.1";
 import { SkillVideo, SkinBanners } from "@/libs/Const.2";
-import { BuildClass } from "@/libs/Class";
+import { BuildClass, cn } from "@/libs/Class";
 import { FormatDate, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 import { useLocale } from "@/libs/Locale";
 
 import Locale from "@/components/locale";
-import IconQuestionCircleFill from "@/components/bootstrap-icon/icons/QuestionCircleFill";
+import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import RarityBadge from "@/components/rarity-badge";
 import UnitFace from "@/components/unit-face";
@@ -41,9 +41,11 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 
 	const [shopPopupType, setShopPopupType] = useState<"O" | "G">("O");
 	const [currentSkillVideo, setCurrentSkillVideo] = useState("");
+	const [currentSkillVideoPlatform, setCurrentSkillVideoPlatform] = useState<"" | "O" | "G">("");
 
 	const [IsBlackBG, setIsBlackBG] = useState<boolean>(false);
 	const [HideGroup, setHideGroup] = useState<boolean>(false);
+	const [EnableAnimation, setEnableAnimation] = useState<boolean>(true);
 
 	function convertVideoName (sid: string): string {
 		const offset = sid.indexOf(".Skill");
@@ -58,8 +60,15 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 
 	const skillVideoKey = useMemo(() => `${unit.uid}_${skin && skin.sid || 0}`, [unit.uid, skin]);
 	useLayoutEffect(() => {
-		if ((skillVideoKey in SkillVideo) && !SkillVideo[skillVideoKey].includes(currentSkillVideo))
-			setCurrentSkillVideo(SkillVideo[skillVideoKey][0]);
+		if ((skillVideoKey in SkillVideo) && !SkillVideo[skillVideoKey].includes(currentSkillVideo)) {
+			if (SkillVideo[skillVideoKey][0] === true) {
+				setCurrentSkillVideoPlatform("O");
+				setCurrentSkillVideo(SkillVideo[skillVideoKey][1] as string);
+			} else {
+				setCurrentSkillVideoPlatform("");
+				setCurrentSkillVideo(SkillVideo[skillVideoKey][0]);
+			}
+		}
 	}, [skillVideoKey]);
 
 	function compileArtist (artist: string): preact.ComponentChildren {
@@ -218,7 +227,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 										<span class={ `badge ${style.IllustratorHidden}` }>
 											<Locale k="UNIT_VIEW_ILLUSTRATOR_HIDDEN" />
 
-											<IconQuestionCircleFill class="ms-1" />
+											<Icons.QuestionCircleFill class="ms-1" />
 										</span>
 									</BootstrapTooltip>
 									: compileArtist(skin.artist)
@@ -253,6 +262,8 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 									checked={ IsBlackBG }
 									onClick={ (): void => setIsBlackBG(!IsBlackBG) }
 								/>
+
+								<Icons.PaintBucket class={ cn(style.SkinViewerOptionIcon, "me-1") } />
 								<Locale k="UNIT_VIEW_SKIN_BLACKBG_SWITCH" />
 							</label>
 						</div>
@@ -266,7 +277,24 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 									checked={ HideGroup }
 									onClick={ (): void => setHideGroup(!HideGroup) }
 								/>
+
+								<Icons.Transparency class={ cn(style.SkinViewerOptionIcon, "me-1") } />
 								<Locale k="UNIT_VIEW_SKIN_HIDEGROUP_SWITCH" />
+							</label>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="form-check form-switch">
+							<label class="form-check-label">
+								<input
+									class="form-check-input"
+									type="checkbox"
+									checked={ EnableAnimation }
+									onClick={ (): void => setEnableAnimation(!EnableAnimation) }
+								/>
+
+								<Icons.PlayCircleFill class={ cn(style.SkinViewerOptionIcon, "me-1") } />
+								<Locale k="UNIT_VIEW_SKIN_ANIMATION_SWITCH" />
 							</label>
 						</div>
 					</li>
@@ -281,9 +309,8 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 						skin={ skin }
 						black={ IsBlackBG }
 						hideGroup={ HideGroup }
-						animate
+						animate={ EnableAnimation }
 						collapsed
-						detailable
 					/>
 					: <></> }
 
@@ -328,23 +355,73 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 				</> }
 
 				{ (skillVideoKey in SkillVideo) && <>
-					<div class="d-flex align-items-start mt-2">
-						<div class={ BuildClass("nav", "flex-column", "nav-tabs", style.VerticalTabs) }>
-							{ SkillVideo[skillVideoKey].map(sid => <button
-								class={ BuildClass("nav-link", isActive(currentSkillVideo === sid)) }
-								onClick={ e => {
-									e.preventDefault();
-									setCurrentSkillVideo(sid);
-								} }
-							>
-								Active { convertVideoName(sid) }
-							</button>) }
+					<div class="mt-2">
+						<div class={ BuildClass("nav", "nav-tabs") }>
+							{ SkillVideo[skillVideoKey][0] === true
+								? (SkillVideo[skillVideoKey].slice(1) as string[])
+									.flatMap(sid => [
+										<button
+											class={ BuildClass(
+												"nav-link",
+												"text-dark",
+												isActive(
+													currentSkillVideo === sid && currentSkillVideoPlatform === "O",
+													"active",
+													"opacity-75",
+												)
+											) }
+											onClick={ e => {
+												e.preventDefault();
+												setCurrentSkillVideo(sid);
+												setCurrentSkillVideoPlatform("O");
+											} }
+										>
+											<span class={ BuildClass("align-bottom", "me-1", style.OneStoreIcon) } />
+											Active { convertVideoName(sid) }
+										</button>,
+										<button
+											class={ BuildClass(
+												"nav-link",
+												"text-dark",
+												isActive(
+													currentSkillVideo === sid && currentSkillVideoPlatform === "G",
+													"active",
+													"opacity-75",
+												)
+											) }
+											onClick={ e => {
+												e.preventDefault();
+												setCurrentSkillVideo(sid);
+												setCurrentSkillVideoPlatform("G");
+											} }
+										>
+											<span class={ BuildClass("align-bottom", "me-1", style.PlayStoreIcon) } />
+											Active { convertVideoName(sid) }
+										</button>
+									])
+								: SkillVideo[skillVideoKey].map(sid => <button
+									class={ BuildClass("nav-link", isActive(currentSkillVideo === sid)) }
+									onClick={ e => {
+										e.preventDefault();
+										setCurrentSkillVideo(sid);
+										setCurrentSkillVideoPlatform("");
+									} }
+								>
+									Active { convertVideoName(sid) }
+								</button>)
+							}
 						</div>
 						<div class="tab-content">
 							<video
 								class="w-100"
 								controls
-								src={ `${AssetsRoot}/videos/${currentSkillVideo}.mp4` }
+								src={ [
+									AssetsRoot,
+									"videos",
+									currentSkillVideo +
+									(currentSkillVideoPlatform.length > 0 ? `.${currentSkillVideoPlatform}` : "") +
+									".mp4"
+								].join("/") }
 							/>
 						</div>
 					</div>

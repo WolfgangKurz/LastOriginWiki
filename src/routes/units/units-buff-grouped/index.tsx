@@ -20,7 +20,7 @@ import Badge from "@/components/Badge";
 import Separator from "@/components/Separator";
 import UnitFace from "@/components/unit-face";
 import Button from "@/components/Button";
-import IconCaretUpFill from "@/components/bootstrap-icon/icons/CaretUpFill";
+import Icons from "@/components/bootstrap-icon";
 
 import style from "./style.module.scss";
 import { CombinedBuffEffectTypes } from "@/routes/units/common";
@@ -172,7 +172,7 @@ const UnitsBuffGrouped: FunctionalComponent<UnitsListProps> = (props) => {
 							});
 						} }
 					>
-						<IconCaretUpFill />
+						<Icons.CaretUpFill />
 					</Button>
 				</div>
 				<div class={ style.UnitList }>

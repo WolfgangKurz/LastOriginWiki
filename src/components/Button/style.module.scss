@@ -61,7 +61,7 @@
 
 			&.Outline {
 				border-color: $color;
-				background-color: $light;
+				background-color: transparent;
 				color: $color;
 
 				&:not(:disabled) {
@@ -89,7 +89,7 @@
 			}
 		}
 	}
-	@each $key, $color in $colors {
+	@each $key, $color in $theme-colors {
 		&.TextVariant-#{$key} {
 			&,
 			&.Outline {

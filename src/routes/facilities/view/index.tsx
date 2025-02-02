@@ -13,7 +13,7 @@ import { FormatNumber } from "@/libs/Functions";
 
 import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import Locale, { LocaleGet } from "@/components/locale";
-import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
+import Icons from "@/components/bootstrap-icon";
 import UnitBadge from "@/components/unit-badge";
 import RarityBadge from "@/components/rarity-badge";
 import ItemIcon from "@/components/item-icon";
@@ -288,7 +288,7 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 				<div class="row">
 					<div class="col-auto">
 						<button class="btn btn-dark" onClick={ (): void => void (route("/facilities/")) }>
-							<IconArrowLeft class="me-1" />
+							<Icons.ArrowLeft class="me-1" />
 							<Locale k="FACILITY_BACK_TO_LIST" />
 						</button>
 					</div>

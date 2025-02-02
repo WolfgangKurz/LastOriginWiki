@@ -14,7 +14,7 @@ import { CurrentDB } from "@/libs/DB";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
-import IconBugFill from "@/components/bootstrap-icon/icons/BugFill";
+import Icons from "@/components/bootstrap-icon";
 import SimulatorSlot from "./components/simulator-slot";
 import SimulatorSummary from "./components/simulator-summary";
 import SimulatorUpgrade from "./components/simulator-upgrade";
@@ -146,7 +146,7 @@ const Simulator: FunctionalComponent = () => {
 			</h2>
 			{ IsDev
 				? <span class="badge bg-danger">
-					<IconBugFill class="me-1" />
+					<Icons.BugFill class="me-1" />
 					<span>DevMode</span>
 				</span>
 				: <></>

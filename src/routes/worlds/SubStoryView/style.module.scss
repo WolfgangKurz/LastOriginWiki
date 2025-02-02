@@ -1,0 +1,131 @@
+.SubStoryTroopTabs {
+	overflow-x: auto;
+	overflow-y: hidden;
+
+	> ul {
+		flex-wrap: nowrap;
+		word-break: keep-all;
+
+		> li {
+			text-align: center;
+
+			a {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				width: 8em;
+				height: 100%;
+				line-height: 1.2;
+				font-size: 90%;
+			}
+		}
+	}
+
+	.SubStoryTroopIcon {
+		max-width: 64px;
+		max-height: 64px;
+		object-fit: contain;
+
+		filter: invert(1);
+	}
+}
+
+.SubStoryGroupItem {
+	word-break: break-all;
+
+	&:global(.active) > div {
+		box-shadow:
+			0 0 0.1rem 0.1rem $warning inset,
+			0 0 0.1rem 0.1rem $warning;
+	}
+
+	> div {
+		position: relative;
+		border-radius: 0.5rem;
+		background-color: $dark;
+
+		> img {
+			max-width: 100%;
+		}
+	}
+
+	.SubStoryGroupName {
+		margin-top: 0.5rem;
+		padding: 0.25rem;
+		border-radius: 0.25rem;
+		background-color: transparentize($light, 0.88);
+		word-break: keep-all;
+		text-align: center;
+		font-size: 90%;
+		color: $light;
+	}
+}
+
+.SubStorySelected {
+	top: 10px;
+}
+
+ul.SubStoryList {
+	margin: 0;
+	padding: 0;
+
+	> li {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-auto-rows: auto;
+		column-gap: 0.75rem;
+
+		border-radius: 0.5rem;
+		background-color: rgba($black, 0.34);
+
+		margin: 0.5rem 0;
+		padding: 0.5rem;
+		list-style: none;
+	}
+
+	img.SubStoryFace {
+		grid-row: 1 / 5;
+
+		max-width: 5rem;
+		max-height: 5rem;
+		object-fit: contain;
+	}
+
+	.SubStoryTitle {
+		grid-column: 2;
+		margin-bottom: 0.4rem;
+		font-weight: 500;
+		font-size: 110%;
+
+		&::after {
+			content: "";
+			clear: both;
+			display: block;
+			margin-top: 0.2rem;
+			width: 100%;
+			height: 2px;
+			background: linear-gradient(to right, rgba($secondary, 0.5) 0%, rgba($secondary, 0) 100%);
+		}
+
+		> span {
+			margin-right: 1rem;
+		}
+	}
+	.SubStoryDesc {
+		grid-column: 2;
+		grid-row: 2;
+	}
+
+	.SubStoryTriggers {
+		grid-column: 2;
+		grid-row: 3;
+
+		margin: 0.5rem 0 0;
+		padding: 0;
+		padding-left: 1.5rem;
+
+		list-style: "-  ";
+	}
+}

@@ -125,6 +125,7 @@ export default class DialogObject extends PIXI.Container {
 			fill: "#fff",
 			stroke: "#000",
 			strokeWidth: 1.5,
+			lineHeight: 1.35,
 			wrapWidth: this.WIDTH - 60,
 		});
 		this.textObject.position.set(30, 81);

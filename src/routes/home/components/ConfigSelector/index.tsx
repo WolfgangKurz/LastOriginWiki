@@ -8,15 +8,14 @@ import { cn } from "@/libs/Class";
 import { ChangeImage, isActive } from "@/libs/Functions";
 import { ChangeLanguage, CurrentLocale } from "@/libs/Locale";
 
-import IconTranslate from "@/components/bootstrap-icon/icons/Translate";
-import IconImages from "@/components/bootstrap-icon/icons/Images";
+import Icons from "@/components/bootstrap-icon";
 
 import style from "./style.module.scss";
 
 const ConfigSelector: FunctionalComponent = () => {
 	return <div class={ style.ConfigSelector }>
 		<div>
-			<IconTranslate />
+			<Icons.Translate />
 
 			<div class={ style.Buttons }>
 				{ LocaleList.map(locale => <button
@@ -29,7 +28,7 @@ const ConfigSelector: FunctionalComponent = () => {
 		</div>
 
 		<div>
-			<IconImages />
+			<Icons.Images />
 
 			<div class={ style.Buttons }>
 				{ ImageExtensionList.map(ext => <button

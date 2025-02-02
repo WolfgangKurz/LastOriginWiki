@@ -2,6 +2,7 @@ import { FunctionalComponent } from "preact";
 import { Link } from "preact-router";
 
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
+import { Consumable } from "@/types/DB/Consumable";
 
 import { CurrentEvent, CurrentDate } from "@/libs/Const";
 import EntitySource from "@/libs/EntitySource";
@@ -12,6 +13,7 @@ import { StaticDB, useDBData } from "@/libs/Loader";
 
 import Locale from "@/components/locale";
 import Badge from "@/components/Badge";
+import ItemIcon from "@/components/item-icon";
 
 import style from "./style.module.scss";
 
@@ -26,6 +28,7 @@ interface SourceBadgeProps {
 const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 	const [loc] = useLocale();
 	const FilterableUnit = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
+	const Consumable = useDBData<Consumable[]>(StaticDB.Consumable);
 
 	const Source = typeof props.source === "string"
 		? new EntitySource(props.source)
@@ -137,23 +140,35 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 			}
 			return <Locale k="COMMON_SOURCE_SUBSTORY_SINGLE" />;
 		} else if (Source.IsExchange) {
-			if (Source.IsEvent) {
+			if (Source.IsEvent || !Source.IsMonthly) {
 				const event = Source.FullEventName;
 				const data = Source.ExchangePrice || { item: "?", value: 0 };
-				const item = Source.ExchangeItemName;
+				const item = loc[Source.ExchangeItemName] ||
+					loc[`Ev_Consumable_${Source.ExchangeItemName}`] ||
+					loc[`CONSUMABLE_${Source.ExchangeItemName}`] ||
+					loc[`CONSUMABLE_Ev_Consumable_${Source.ExchangeItemName}`] ||
+					Source.ExchangeItemName;
+
+				const icon = Consumable && (
+					Consumable.find(r => r.key === Source.ExchangeItemName) ||
+					Consumable.find(r => r.key === `Ev_Consumable_${Source.ExchangeItemName}`)
+				)?.icon;
 
 				if (props.detail) {
 					return <>{
 						[
-							<Locale k={ event } />,
-							`'${item}'`, // 아이템 아이콘 컴포넌트
-							<Locale k="COMMON_SOURCE_EXCHANGE_COUNT" p={ [data.value] } />,
+							event && <Locale k={ event } />,
+							<Badge variant="light">
+								{ icon && <ItemIcon item={ icon } size={ "1em" } /> }
+								{ item }
+							</Badge>, // 아이템 아이콘 컴포넌트
+							<Locale k="COMMON_SOURCE_EXCHANGE_COUNT" p={ [FormatNumber(data.value)] } />,
 						].filter(x => x).gap(<>&nbsp;</>)
 					}</>;
 				} else if (props.minimum)
 					return <Locale k="COMMON_SOURCE_EXCHANGE_EVENT" />;
 				return <>
-					<Locale k={ event } />&nbsp;
+					{ event && <><Locale k={ event } />&nbsp;</> }
 					<Locale k="COMMON_SOURCE_EXCHANGE" />
 				</>;
 			}

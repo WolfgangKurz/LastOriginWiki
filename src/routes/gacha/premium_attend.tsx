@@ -10,8 +10,7 @@ import { useUpdate } from "@/libs/hooks";
 import { CurrentDB } from "@/libs/DB";
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
-import IconBoxSeam from "@/components/bootstrap-icon/icons/BoxSeam";
-import IconArrowCounterclockwise from "@/components/bootstrap-icon/icons/ArrowCounterclockwise";
+import Icons from "@/components/bootstrap-icon";
 import EquipIcon from "@/components/equip-icon";
 
 import { GachaSubpageProps } from ".";
@@ -154,7 +153,7 @@ const PremiumAttendGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 							class="btn btn-warning"
 							onClick={ () => Run() }
 						>
-							<IconBoxSeam class="me-2" />
+							<Icons.BoxSeam class="me-2" />
 							<Locale k="GACHA_PREMIUM_ATTEND_RESET" />
 						</button>
 						<button
@@ -166,7 +165,7 @@ const PremiumAttendGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 								Result.set([]);
 							} }
 						>
-							<IconArrowCounterclockwise class="me-2" />
+							<Icons.ArrowCounterclockwise class="me-2" />
 							<Locale k="GACHA_RESET" />
 						</button>
 					</div>

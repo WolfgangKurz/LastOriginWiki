@@ -133,6 +133,7 @@ const MapGrid: FunctionalComponent<MapGridProps> = (props) => {
 
 		const byOffset = !props.hardcoded;
 		const used: number[] = [];
+		const notFoundList: string[] = [];
 
 		const line = (x1: number, y1: number, x2: number, y2: number, from: MapNodeEntity, to: MapNodeEntity) => <line
 			x1={ x1 }
@@ -157,12 +158,20 @@ const MapGrid: FunctionalComponent<MapGridProps> = (props) => {
 			const hasPos = (wid in MapPosition) && (mid in MapPosition[wid]);
 			const vw2 = vw * 1.2;
 
+			const inPosition = hasPos && node.text in MapPosition[wid][mid];
 			if (hasPos && !byOffset) {
-				x = baseX + MapPosition[wid][mid][node.text][0] * vw2;
-				y = baseY + MapPosition[wid][mid][node.text][1] * vh;
+				if (inPosition) {
+					x = baseX + MapPosition[wid][mid][node.text][0] * vw2;
+					y = baseY + MapPosition[wid][mid][node.text][1] * vh;
+				} else {
+					x = baseX + notFoundList.length * 0.8 * vw2;
+					y = baseY + 3 * vh;
+
+					notFoundList.push(node.text);
+				}
 
 				if (type === STAGE_SUB_TYPE.STORY)
-					type = MapPosition[wid][mid][node.text][3] || STAGE_SUB_TYPE.MAIN;
+					type = (inPosition && MapPosition[wid][mid][node.text][3]) || STAGE_SUB_TYPE.MAIN;
 			} else {
 				const offsetX = ((y - 1) % 2) * vw / 2;
 
@@ -187,7 +196,7 @@ const MapGrid: FunctionalComponent<MapGridProps> = (props) => {
 						type={ type }
 						active={ props.selected === node }
 						missing={ missing }
-						icon={ hasPos && MapPosition[wid][mid][node.text][4] || undefined }
+						icon={ hasPos && inPosition && MapPosition[wid][mid][node.text][4] || undefined }
 					// byOffset={ byOffset }
 					/>
 				</g>,
@@ -204,7 +213,7 @@ const MapGrid: FunctionalComponent<MapGridProps> = (props) => {
 					}
 
 					const p = _fn(wid, mid, n.text);
-					if (!(hasPos && !byOffset) || MapPosition[wid][mid][n.text][2] !== false) {
+					if (!(hasPos && !byOffset) || (n.text in MapPosition[wid][mid] && MapPosition[wid][mid][n.text][2] !== false)) {
 						const posX2 = n.offset % 8;
 
 						if (hasPos && !byOffset) {

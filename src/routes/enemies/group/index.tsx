@@ -19,7 +19,7 @@ const EnemiesGroup: FunctionalComponent<EnemiesGroupProps> = (props) => {
 		const ret: string[][] = [];
 
 		ret.push(
-			new Array(12)
+			new Array(13)
 				.fill(0)
 				.map((_, i) => `World${i + 1}`),
 		);
@@ -45,9 +45,14 @@ const EnemiesGroup: FunctionalComponent<EnemiesGroupProps> = (props) => {
 	const EnemyGroupDB = useDBData<EnemyGroup>(StaticDB.EnemyGroup);
 	if (!EnemyGroupDB) return <Loading.Data />;
 
+	const dropsTable = EnemyGroupDB["#drops"];
+	const enemiesTable = EnemyGroupDB["#enemies"];
+
 	const groups = useMemo(
 		() => Object.values(EnemyGroupDB)
 			.filter(g => {
+				if (Array.isArray(g)) return false; // Key Table
+
 				const cat = category;
 				const wid = cat.replace(/^World([0-9]+)$/, "0$1").substr(-2);
 				const regs = [
@@ -122,7 +127,7 @@ const EnemiesGroup: FunctionalComponent<EnemiesGroupProps> = (props) => {
 		</div>
 
 		{ grouped.map(groups => <div>
-			{ groups.map(group => <EnemyGroupCard group={ group } />) }
+			{ groups.map(group => <EnemyGroupCard drops={ dropsTable } enemies={ enemiesTable } group={ group } />) }
 		</div>).gap(<hr />) }
 	</div>;
 };

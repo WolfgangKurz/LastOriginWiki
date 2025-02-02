@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "preact/hooks";
+import { useMemo } from "preact/hooks";
 
 import { CurrentEvent, PermanentEvents } from "@/libs/Const";
 import { cn } from "@/libs/Class";
@@ -8,8 +8,7 @@ import EntitySource from "@/libs/EntitySource";
 import Locale from "@/components/locale";
 import SourceBadge from "@/components/source-badge";
 
-import IconDot from "@/components/bootstrap-icon/icons/Dot";
-import IconChevronDoubleRight from "@/components/bootstrap-icon/icons/ChevronDoubleRight";
+import Icons from "@/components/bootstrap-icon";
 
 import style from "./style.module.scss";
 
@@ -93,6 +92,9 @@ const SourceTable: FunctionalComponent<SourceTableProps> = (props) => {
 				else if (f.IsNewEternalWar)
 					return <Locale k="COMMON_SOURCE_NEW" />;
 
+				else if (f.IsExchange)
+					return <Locale k="COMMON_SOURCE_EXCHANGE" />;
+
 				return <Locale k="???" fallback="???" />;
 			})();
 			const label = f.IsEvent
@@ -152,7 +154,7 @@ const SourceTable: FunctionalComponent<SourceTableProps> = (props) => {
 			<div class={ cn(style.Content, style.Available) }>
 				<div class={ style.SourceSectors }>
 					{ storySource.map((arr, i) => <>
-						{ i > 0 && <IconDot /> }
+						{ i > 0 && <Icons.Dot /> }
 						{ arr.map(s => <SourceBadge
 							class={ style.Source }
 							source={ s }
@@ -176,13 +178,13 @@ const SourceTable: FunctionalComponent<SourceTableProps> = (props) => {
 
 			<div class={ cn(style.Content, available && style.Available) }>
 				<div class={ style.SectorName }>
-					<IconChevronDoubleRight />
+					<Icons.ChevronDoubleRight />
 
 					{ label }
 				</div>
 				<div class={ style.SourceSectors }>
 					{ data.map((arr, i) => <>
-						{ i > 0 && <IconDot /> }
+						{ i > 0 && <Icons.Dot /> }
 						{ arr.map(s => <SourceBadge
 							class={ style.Source }
 							source={ s }

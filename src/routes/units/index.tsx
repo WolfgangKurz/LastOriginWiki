@@ -19,11 +19,7 @@ import { StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Button from "@/components/Button";
 import Loading from "@/components/loading";
-import IconTable from "@/components/bootstrap-icon/icons/Table";
-import IconGrid3x3GapFill from "@/components/bootstrap-icon/icons/Grid3x3GapFill";
-import IconSearch from "@/components/bootstrap-icon/icons/Search";
-import IconListCheck from "@/components/bootstrap-icon/icons/ListCheck";
-import IconFilter from "@/components/bootstrap-icon/icons/Filter";
+import Icons from "@/components/bootstrap-icon";
 import IconHanger from "@/components/Icons/IconHanger";
 
 import SimpleSearch from "./search/SimpleSearch";
@@ -386,7 +382,7 @@ const Units: FunctionalComponent = () => {
 					outline={ Store.Units.DisplayType.value !== "table" }
 					onClick={ () => Store.Units.DisplayType.value = "table" }
 				>
-					<IconTable class="mx-1" />
+					<Icons.Table class="mx-1" />
 					<Locale k="UNITS_VIEW_TABLE" />
 				</Button>
 				<Button
@@ -395,7 +391,7 @@ const Units: FunctionalComponent = () => {
 					outline={ Store.Units.DisplayType.value !== "list" }
 					onClick={ () => Store.Units.DisplayType.value = "list" }
 				>
-					<IconGrid3x3GapFill class="mx-1" />
+					<Icons.Grid_3x3GapFill class="mx-1" />
 					<Locale k="UNITS_VIEW_LIST" />
 				</Button>
 				<Button
@@ -413,7 +409,7 @@ const Units: FunctionalComponent = () => {
 					outline={ Store.Units.DisplayType.value !== "buff_grouped" }
 					onClick={ () => Store.Units.DisplayType.value = "buff_grouped" }
 				>
-					<IconFilter class="mx-1" />
+					<Icons.Filter class="mx-1" />
 					<Locale k="UNITS_VIEW_BUFF_GROUPED" />
 				</Button>
 			</Button.Group>
@@ -433,7 +429,7 @@ const Units: FunctionalComponent = () => {
 										Store.Units.SearchType.value = "simple";
 									} }
 								>
-									<IconSearch class="me-1" />
+									<Icons.Search class="me-1" />
 									<Locale k="SEARCH_SIMPLE" />
 								</a>
 							</li>
@@ -446,7 +442,7 @@ const Units: FunctionalComponent = () => {
 										Store.Units.SearchType.value = "advanced";
 									} }
 								>
-									<IconListCheck class="me-1" />
+									<Icons.ListCheck class="me-1" />
 									<Locale k="SEARCH_ADVANCED" />
 								</a>
 							</li>

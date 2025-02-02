@@ -261,6 +261,22 @@ const BGMAlbums: BGMAlbum[] = [
 				filename: "Album01/Boss_Beta.mp3",
 				lyrics: [{ time: 0, text: "Boss Beta" }],
 			},
+			{
+				type: "audio",
+				id: "track_horror2",
+				title: "Horror 2",
+				duration: 138,
+				filename: "Album01/Horror2.mp3",
+				lyrics: [{ time: 0, text: "Horror 2" }],
+			},
+			{
+				type: "audio",
+				id: "track_coldwind",
+				title: "Cold Wind",
+				duration: 55,
+				filename: "Album01/ColdWind.mp3",
+				lyrics: [{ time: 0, text: "Cold Wind" }],
+			},
 		],
 	},
 	{

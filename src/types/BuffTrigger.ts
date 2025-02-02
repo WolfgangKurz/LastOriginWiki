@@ -154,6 +154,7 @@ interface BuffTrigger_HPRange {
 type BuffTrigger_UnitIn = BuffTrigger_UnitInBattle | BuffTrigger_UnitInSquad | BuffTrigger_UnitInEnemy;
 interface BuffTrigger_UnitInBattle {
 	in_battle: string | string[];
+	more?: [number, number];
 }
 interface BuffTrigger_UnitInSquad {
 	in_squad: string | string[];

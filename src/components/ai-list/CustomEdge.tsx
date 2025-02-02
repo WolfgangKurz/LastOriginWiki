@@ -4,6 +4,10 @@ import { useNodes, BezierEdge, BezierEdgeProps, BaseEdge } from "@reactflow/core
 import { getSmartEdge } from "@tisoap/react-flow-smart-edge";
 import { BreadthFirstFinder, DiagonalMovement } from "pathfinding";
 
+const finder = new BreadthFirstFinder({
+	diagonalMovement: DiagonalMovement.Always,
+	// heuristic: (dx, dy) => Math.min(dx, dy),
+});
 const CustomEdge: FunctionalComponent<BezierEdgeProps> = (props) => {
 	const {
 		sourcePosition, targetPosition,
@@ -31,11 +35,6 @@ const CustomEdge: FunctionalComponent<BezierEdgeProps> = (props) => {
 			gridRatio,
 			generatePath: (grid, start, end) => {
 				try {
-					const finder = new BreadthFirstFinder({
-						diagonalMovement: DiagonalMovement.Always,
-						// heuristic: (dx, dy) => Math.min(dx, dy),
-					});
-
 					const p = finder.findPath(start.x, start.y, end.x, end.y, grid) as Tuple<number, 2>[];
 					if (p.length === 0) return null;
 

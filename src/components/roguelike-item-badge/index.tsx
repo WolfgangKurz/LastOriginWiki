@@ -7,7 +7,7 @@ import { objState } from "@/libs/State";
 
 import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
-import IconInfoCircleFill from "@/components/bootstrap-icon/icons/InfoCircleFill";
+import Icons from "@/components/bootstrap-icon";
 import PopupBase from "@/components/popup/base";
 import EquipIcon from "@/components/equip-icon";
 
@@ -44,7 +44,7 @@ const RoguelikeItemBadge: FunctionalComponent<RoguelikeItemBadgeProps> = (props)
 						</small>
 						: <></>
 					}
-					<IconInfoCircleFill class="float-end mt-1" />
+					<Icons.InfoCircleFill class="float-end mt-1" />
 				</div>
 			</div>
 

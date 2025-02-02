@@ -12,18 +12,12 @@ import { Enemy, EnemySkill } from "@/types/DB/Enemy";
 import { useLocale } from "@/libs/Locale";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
-import { CurrentDB } from "@/libs/DB";
 import EntitySource from "@/libs/EntitySource";
 import { FormatNumber, isActive } from "@/libs/Functions";
 
-import { GetJson, JsonLoaderCore, StaticDB, useDBData } from "@/libs/Loader";
-import Locale, { LocaleGet } from "@/components/locale";
-import IconChevronDoubleDown from "@/components/bootstrap-icon/icons/ChevronDoubleDown";
-import IconChevronDown from "@/components/bootstrap-icon/icons/ChevronDown";
-import IconChevronUp from "@/components/bootstrap-icon/icons/ChevronUp";
-import IconChevronDoubleUp from "@/components/bootstrap-icon/icons/ChevronDoubleUp";
-import IconInfoCircleFill from "@/components/bootstrap-icon/icons/InfoCircleFill";
-import IconCpuFill from "@/components/bootstrap-icon/icons/CpuFill";
+import { StaticDB, useDBData } from "@/libs/Loader";
+import Locale from "@/components/locale";
+import Icons from "@/components/bootstrap-icon";
 import PopupBase from "@/components/popup/base";
 import UnitBadge from "@/components/unit-badge";
 import RarityBadge from "@/components/rarity-badge";
@@ -192,8 +186,8 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 		const elem = table[skill.buff.type];
 
 		const k = `${skill.key}_DESC`;
-		const r = LocaleGet(k, `<edmg rate="${skill.buff.rate}" type="${elem}" />`);
-		return (r === k ? `<placeholder>${LocaleGet("ENEMY_SKILL_NO_DESCRIPTION")}</placeholder>` : r)
+		const r = loc[k].replace(/\{0\}/g, `<edmg rate="${skill.buff.rate}" type="${elem}" />`);
+		return (r === k ? `<placeholder>${loc["ENEMY_SKILL_NO_DESCRIPTION"]}</placeholder>` : r)
 			.replace(/\. /g, ".\n");
 	}
 
@@ -319,10 +313,10 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 							{ !props.noLevelChangable
 								? <div class="input-group">
 									<button class="btn btn-secondary" onClick={ (): void => setLevel(1) }>
-										<IconChevronDoubleDown />
+										<Icons.ChevronDoubleDown />
 									</button>
 									<button class="btn btn-secondary" onClick={ (): void => setLevel(Math.max(1, level - 1)) }>
-										<IconChevronDown />
+										<Icons.ChevronDown />
 									</button>
 
 									<div class="flex-1 font-exo2">
@@ -333,10 +327,10 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 									</div>
 
 									<button class="btn btn-secondary" onClick={ (): void => setLevel(Math.min(300, level + 1)) }>
-										<IconChevronUp />
+										<Icons.ChevronUp />
 									</button>
 									<button class="btn btn-secondary" onClick={ (): void => setLevel(100) }>
-										<IconChevronDoubleUp />
+										<Icons.ChevronDoubleUp />
 									</button>
 								</div>
 								:
@@ -474,7 +468,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 								role="button"
 								onClick={ (): void => setDisplayTab("ai") }
 							>
-								<IconCpuFill class="my-2" />
+								<Icons.CpuFill class="my-2" />
 							</div>
 							<div
 								class={ `col info-tab-button mt-1 ${displayTab === "desc"
@@ -483,7 +477,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 								role="button"
 								onClick={ (): void => setDisplayTab("desc") }
 							>
-								<IconInfoCircleFill class="my-2" />
+								<Icons.InfoCircleFill class="my-2" />
 							</div>
 						</div>
 
@@ -520,7 +514,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 												{ skill.target_ground
 													? <span
 														class="badge bg-danger me-1"
-														title={ LocaleGet("ENEMY_SKILL_GRID_TARGET_TIP") }
+														title={ loc["ENEMY_SKILL_GRID_TARGET_TIP"] }
 													>
 														<Locale k="ENEMY_SKILL_GRID_TARGET" />
 													</span>
@@ -590,7 +584,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 								<div class="col border border-top-0 text-start p-3">
 									<AIList
 										uid={ target.id }
-										name={ LocaleGet(`ENEMY_${target.id}`) }
+										name={ loc[`ENEMY_${target.id}`] }
 										aiKey={ targetEnemy.ai }
 										enemy
 									/>

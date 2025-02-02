@@ -44,7 +44,8 @@ export default class EntitySource {
 
 	/** 월간 교환소 획득 여부 (전투원/장비 탭) */
 	public get IsMonthly (): boolean {
-		return this.IsExchange && this.Parts.length === 3;
+		return this.IsExchange && this.Parts.length === 3 &&
+			/^[0-9]$/.test(this.Parts[1]) && /^[0-9]$/.test(this.Parts[2]);
 	}
 
 	/** 월간 교환소 정보 (전투원/장비 탭) */
@@ -59,7 +60,7 @@ export default class EntitySource {
 
 	/** 이벤트 교환소 교환에 필요한 자원 및 수량 */
 	public get ExchangePrice (): EntitySourceExchangePrice | null {
-		if (!this.IsEvent || !this.IsExchange) return null;
+		if (!this.IsExchange) return null;
 
 		const offset = this.Parts.findIndex(x => x === "Exc");
 		return {
@@ -72,24 +73,15 @@ export default class EntitySource {
 		const exc = this.ExchangePrice;
 		if (!exc) return "";
 
-		switch (exc.item) {
-			case "FixMat": return "수복 자재";
-			case "FixTool": return "수복 공구";
-			case "WorldTreeSeed": return "세계수의 씨앗";
-			case "WorldTreeTwig": return "세계수의 가지";
-			case "WorldTreeLeaf": return "세계수의 잎";
-			case "PositiveClue": return "결정적인 단서";
-			case "Battery4FM": return "대형 배터리";
-			case "BatteryFC-1": return "중형 배터리";
-			case "BatteryAA": return "소형 배터리";
-			case "NewYearTalent": return "오르카 달란트";
-			case "NewYearGoods": return "신년 행사 용품";
-			case "NewYearFood": return "신년 떡 세트";
-			case "SkyIdolGoods1": return "스카이나이츠 캔뱃지";
-			case "SkyIdolGoods10": return "스카이나이츠 응원봉";
-			case "SkyIdolGoods100": return "공연 입장 티켓";
+		switch (exc.item) { // short names
+			case "FixMat": return "RecoveryMaterial";
+			case "FixTool": return "RecoveryTool";
+			case "WorldTreeSeed": return "CurrencySeed";
+			case "WorldTreeTwig": return "CurrencyBranch";
+			case "WorldTreeLeaf": return "CurrencyLeaf";
+			case "PositiveClue": return "Evidence1st";
 		}
-		return "???";
+		return exc.item;
 	}
 
 	public get ExchangeDate (): string {

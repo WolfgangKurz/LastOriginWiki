@@ -18,9 +18,7 @@ import RarityBadge from "@/components/rarity-badge";
 import Button from "@/components/Button";
 import SkinView from "../components/skin-view";
 
-import IconThreeDots from "@/components/bootstrap-icon/icons/ThreeDots";
-import IconCheck from "@/components/bootstrap-icon/icons/Check";
-import IconX from "@/components/bootstrap-icon/icons/X";
+import Icons from "@/components/bootstrap-icon";
 
 import style from "./style.module.scss";
 
@@ -136,7 +134,7 @@ const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 					return r;
 				}) }
 			>
-				<IconThreeDots />
+				<Icons.ThreeDots />
 			</Button>
 			<Button
 				outline
@@ -148,7 +146,7 @@ const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 					return r;
 				}) }
 			>
-				<IconCheck />
+				<Icons.Check />
 			</Button>
 			<Button
 				outline
@@ -160,7 +158,7 @@ const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 					return r;
 				}) }
 			>
-				<IconX />
+				<Icons.X />
 			</Button>
 		</Button.Group>,
 		[filterPart],
@@ -307,24 +305,29 @@ const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 			</ul>
 		</div>
 		<div class={ style.SkinView }>
-			{ (currentSkin && unit) && <>
-				<SkinView
-					unit={ unit }
-					skin={ {
-						...currentSkin,
-						isDef: currentSkin.sid === 0,
-						isPro: currentSkin.sid === 20,
-					} }
-					collapsed
-					animate
-				/>
+			{ currentSkin && unit
+				? <>
+					<SkinView
+						unit={ unit }
+						skin={ {
+							...currentSkin,
+							isDef: currentSkin.sid === 0,
+							isPro: currentSkin.sid === 20,
+						} }
+						collapsed
+						animate
+					/>
 
-				<div class={ style.SkinNavigator }>
-					<Button variant="primary" onClick={ () => route(`/units/${currentSkin.uid}/s${currentSkin.sid}`) }>
-						<Locale raw={ false } k="UNIT_SKIN_NAVIGATE" />
-					</Button>
+					<div class={ style.SkinNavigator }>
+						<Button variant="light" textVariant="dark" onClick={ () => route(`/units/${currentSkin.uid}/s${currentSkin.sid}`) }>
+							<Locale raw={ false } k="UNIT_SKIN_NAVIGATE" />
+						</Button>
+					</div>
+				</>
+				: <div class={ style.SkinViewEmpty }>
+					Select skin from above
 				</div>
-			</> }
+			}
 		</div>
 	</>;
 };

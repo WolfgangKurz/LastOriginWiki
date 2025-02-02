@@ -3,9 +3,9 @@ import { Link } from "preact-router";
 
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
-import Loader, { GetJson, StaticDB } from "@/libs/Loader";
+import { StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
-import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
+import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import UnitCard from "@/components/unit-card";
 import UnitFace from "@/components/unit-face";
@@ -17,46 +17,44 @@ interface UnitReferenceProps {
 const UnitReference: FunctionalComponent<UnitReferenceProps> = (props) => {
 	const unit = props.r;
 
-	return <Loader
-		json={ StaticDB.FilterableUnit } content={ ((): preact.VNode => {
-			const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
-
-			const found = FilterableUnitDB.find(x => x.uid === unit);
-			if (!found) {
-				return <Link href={ `/units/${unit}` }>
-					<span class="badge bg-substory">
-						<Locale plain k={ `UNIT_${unit}` } />
-						<IconLink45deg class="ms-1" />
-					</span>
-				</Link>;
-			}
-
-			return <Link href={ `/units/${unit}` } >
-				<BootstrapTooltip
-					placement="top"
-					content={ <UnitCard
-						class="text-center"
-						unit={ found }
-						rarity={ found.rarity }
-						no-link
-					/> }
-				>
-					<span class="badge bg-substory mx-1">
-						<Locale plain k={ `UNIT_${unit}` } />
-						<IconLink45deg class="ms-1" />
-					</span>
-				</BootstrapTooltip>
-				<div class="preload-area">
-					<UnitFace uid={ unit } />
-				</div>
-			</Link>;
-		}) }
-		loading={ <Link href={ `/units/${unit}` }>
+	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
+	if (!FilterableUnitDB) {
+		return <Link href={ `/units/${unit}` }>
 			<span class="badge bg-substory">
 				<Locale plain k={ `UNIT_${unit}` } />
-				<IconLink45deg class="ms-1" />
+				<Icons.Link45deg class="ms-1" />
 			</span>
-		</Link> }
-	/>;
+		</Link>;
+	}
+
+	const found = FilterableUnitDB.find(x => x.uid === unit);
+	if (!found) {
+		return <Link href={ `/units/${unit}` }>
+			<span class="badge bg-substory">
+				<Locale plain k={ `UNIT_${unit}` } />
+				<Icons.Link45deg class="ms-1" />
+			</span>
+		</Link>;
+	}
+
+	return <Link href={ `/units/${unit}` } >
+		<BootstrapTooltip
+			placement="top"
+			content={ <UnitCard
+				class="text-center"
+				unit={ found }
+				rarity={ found.rarity }
+				no-link
+			/> }
+		>
+			<span class="badge bg-substory mx-1">
+				<Locale plain k={ `UNIT_${unit}` } />
+				<Icons.Link45deg class="ms-1" />
+			</span>
+		</BootstrapTooltip>
+		<div class="preload-area">
+			<UnitFace uid={ unit } />
+		</div>
+	</Link>;
 };
 export default UnitReference;

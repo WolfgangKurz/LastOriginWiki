@@ -1,9 +1,14 @@
 .SubBadge {
-	margin: 0 0.1em;
-	padding: 0em 0.35em;
-	border-radius: 0.25em;
+	margin: -1px 1px;
+	padding: 1px 3.5px;
+	border-radius: 4px;
 	background-color: transparentize($light, 0.25);
 	color: $dark;
+
+	&.DetailedBadge {
+		border: 2px solid transparentize($primary, 0.25);
+		cursor: pointer;
+	}
 
 	.SubBadgeBadge {
 		display: inline-block;
@@ -102,4 +107,53 @@
 
 .BuffName {
 	font-size: 90%;
+}
+
+.BuffFrom {
+	position: relative;
+	display: inline-block;
+	font: inherit;
+	cursor: pointer;
+}
+
+.BuffFromPopup {
+	line-height: 1.6;
+	text-align: left;
+	font-size: 15px;
+
+	.SubBadge :global(.badge) {
+		margin: 0 3px 0 0;
+		padding: 1px 4px;
+		border-radius: 3px;
+		line-height: 1.35;
+		vertical-align: text-top;
+		background-color: var(--bs-dark);
+		color: var(--bs-light);
+	}
+
+	> div + div {
+		margin-top: 10px;
+	}
+
+	.Detailed {
+		margin-bottom: 5px;
+		padding: 0;
+
+		background-color: transparent;
+		white-space: nowrap;
+		font-weight: 600;
+	}
+	.FromLine {
+		padding-right: 5px;
+		white-space: nowrap;
+		font-size: 14px;
+	}
+
+	.PopupLink {
+		cursor: pointer;
+	}
+	.EquipLevel {
+		padding: 0 5px;
+		font-size: 14px;
+	}
 }

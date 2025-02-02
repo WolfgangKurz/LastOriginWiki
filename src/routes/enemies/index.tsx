@@ -4,8 +4,7 @@ import Store from "@/store";
 import { isActive } from "@/libs/Functions";
 
 import Locale from "@/components/locale";
-import IconListUl from "@/components/bootstrap-icon/icons/ListUl";
-import IconArchiveFill from "@/components/bootstrap-icon/icons/ArchiveFill";
+import Icons from "@/components/bootstrap-icon";
 
 import EnemiesList from "./list";
 import EnemiesGroup from "./group";
@@ -26,7 +25,7 @@ const Enemies: FunctionalComponent<EnemiesProps> = (props) => {
 					class={ `btn btn-outline-primary ${isActive(Store.Enemies.DisplayType.value === "list")}` }
 					onClick={ () => Store.Enemies.DisplayType.value = "list" }
 				>
-					<IconListUl class="me-1" />
+					<Icons.ListUl class="me-1" />
 					<Locale k="ENEMIES_LIST" />
 				</button>
 				<button
@@ -34,7 +33,7 @@ const Enemies: FunctionalComponent<EnemiesProps> = (props) => {
 					class={ `btn btn-outline-primary ${isActive(Store.Enemies.DisplayType.value === "group")}` }
 					onClick={ () => Store.Enemies.DisplayType.value = "group" }
 				>
-					<IconArchiveFill class="me-1" />
+					<Icons.ArchiveFill class="me-1" />
 					<Locale k="ENEMIES_GROUP_LIST" />
 				</button>
 			</div>

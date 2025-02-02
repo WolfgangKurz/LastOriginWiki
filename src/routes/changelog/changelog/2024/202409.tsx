@@ -4,12 +4,10 @@ import { AssetsRoot } from "@/libs/Const";
 
 import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
-import IconFilter from "@/components/bootstrap-icon/icons/Filter";
-import IconArrowRight from "@/components/bootstrap-icon/icons/ArrowRight";
+import Icons from "@/components/bootstrap-icon";
 
 import Locale from "@/components/locale";
-import IconCheck from "@/components/bootstrap-icon/icons/Check";
-import IconX from "@/components/bootstrap-icon/icons/X";
+import Icons from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 12659" date="2024-09-26"
@@ -19,7 +17,7 @@ const Changelog: FunctionalComponent = () => <>
 				<ul>
 					<li class="mb-2">
 						<BB>적 처치 시</BB>
-						<IconArrowRight class="mx-1" />
+						<Icons.ArrowRight class="mx-1" />
 						<BB>적 직접 처치 시</BB>
 						<br />
 						<div
@@ -29,18 +27,18 @@ const Changelog: FunctionalComponent = () => <>
 							<Locale
 								k="BUFFTRIGGERDESC_KILL"
 								p={ [
-									<span class="text-danger"><IconX /></span>,
-									<span class="text-danger"><IconX /></span>,
-									<span class="text-danger"><IconX /></span>,
-									<span class="text-success"><IconCheck /></span>,
-									<span class="text-danger"><IconX /></span>,
+									<span class="text-danger"><Icons.X /></span>,
+									<span class="text-danger"><Icons.X /></span>,
+									<span class="text-danger"><Icons.X /></span>,
+									<span class="text-success"><Icons.Check /></span>,
+									<span class="text-danger"><Icons.X /></span>,
 								] }
 							/>
 						</div>
 					</li>
 					<li class="mb-2">
 						<BB>적 처치 시 (패시브)</BB>
-						<IconArrowRight class="mx-1" />
+						<Icons.ArrowRight class="mx-1" />
 						<BB>적 처치 시</BB>
 						<br />
 						<div
@@ -50,18 +48,18 @@ const Changelog: FunctionalComponent = () => <>
 							<Locale
 								k="BUFFTRIGGERDESC_KILL"
 								p={ [
-									<span class="text-success"><IconCheck /></span>,
-									<span class="text-success"><IconCheck /></span>,
-									<span class="text-danger"><IconX /></span>,
-									<span class="text-success"><IconCheck /></span>,
-									<span class="text-success"><IconCheck /></span>,
+									<span class="text-success"><Icons.Check /></span>,
+									<span class="text-success"><Icons.Check /></span>,
+									<span class="text-danger"><Icons.X /></span>,
+									<span class="text-success"><Icons.Check /></span>,
+									<span class="text-success"><Icons.Check /></span>,
 								] }
 							/>
 						</div>
 					</li>
 					<li class="mb-2">
 						<BB>반격으로 적 처치 시</BB>
-						<IconArrowRight class="mx-1" />
+						<Icons.ArrowRight class="mx-1" />
 						<BB>적 처치 기여 시</BB>
 						<br />
 						<div
@@ -71,11 +69,11 @@ const Changelog: FunctionalComponent = () => <>
 							<Locale
 								k="BUFFTRIGGERDESC_KILL"
 								p={ [
-									<span class="text-success"><IconCheck /></span>,
-									<span class="text-success"><IconCheck /></span>,
-									<span class="text-success"><IconCheck /></span>,
-									<span class="text-success"><IconCheck /></span>,
-									<span class="text-danger"><IconX /></span>,
+									<span class="text-success"><Icons.Check /></span>,
+									<span class="text-success"><Icons.Check /></span>,
+									<span class="text-success"><Icons.Check /></span>,
+									<span class="text-success"><Icons.Check /></span>,
+									<span class="text-danger"><Icons.X /></span>,
 								] }
 							/>
 						</div>
@@ -105,14 +103,14 @@ const Changelog: FunctionalComponent = () => <>
 			<li>
 				일부 전투원의 짧은 이름, 별명과 다국어 이름이 갱신되었습니다.
 				<ul>
-					<li><BY>T-19 픽시</BY> 짧은 이름 <IconArrowRight /> <BY>픽시</BY></li>
-					<li><BY>파니</BY> 별명 <IconArrowRight /> <BY>복실이</BY> 추가</li>
-					<li><BY>AL 팬텀</BY> 별명 <IconArrowRight /> <BY>찐텀</BY> 추가</li>
-					<li><BY>에이미 레이저</BY> 별명 <IconArrowRight /> <BY>엄마</BY> 추가</li>
-					<li><BY>C-77 홍련</BY> 별명 <IconArrowRight /> <BY>엄마</BY> 추가</li>
-					<li><BY>트리아이나</BY> 별명 <IconArrowRight /> <BY>트리케라톱스</BY> 추가</li>
-					<li><BY>포츈</BY> 별명 <IconArrowRight /> <BY>든든</BY> 추가</li>
-					<li><BY>S5 기간테스</BY> 별명 <IconArrowRight /> <BY>복실이</BY> 추가</li>
+					<li><BY>T-19 픽시</BY> 짧은 이름 <Icons.ArrowRight /> <BY>픽시</BY></li>
+					<li><BY>파니</BY> 별명 <Icons.ArrowRight /> <BY>복실이</BY> 추가</li>
+					<li><BY>AL 팬텀</BY> 별명 <Icons.ArrowRight /> <BY>찐텀</BY> 추가</li>
+					<li><BY>에이미 레이저</BY> 별명 <Icons.ArrowRight /> <BY>엄마</BY> 추가</li>
+					<li><BY>C-77 홍련</BY> 별명 <Icons.ArrowRight /> <BY>엄마</BY> 추가</li>
+					<li><BY>트리아이나</BY> 별명 <Icons.ArrowRight /> <BY>트리케라톱스</BY> 추가</li>
+					<li><BY>포츈</BY> 별명 <Icons.ArrowRight /> <BY>든든</BY> 추가</li>
+					<li><BY>S5 기간테스</BY> 별명 <Icons.ArrowRight /> <BY>복실이</BY> 추가</li>
 					<li><BY>니드호그</BY> 누락된 짧은 이름 추가</li>
 					<li><BY>디오네</BY> 누락된 짧은 이름 추가</li>
 					<li>그 외 오류가 있던 전투원 다국어 이름 수정</li>
@@ -174,7 +172,7 @@ const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 12640" date="2024-09-06"
 		new={ <>
 			<li>
-				<BY>전투원정보</BY> 페이지에 <BP><IconFilter /> 버프별 보기</BP> 표시 방식이 추가되었습니다.<br />
+				<BY>전투원정보</BY> 페이지에 <BP><Icons.Filter /> 버프별 보기</BP> 표시 방식이 추가되었습니다.<br />
 				전투원을 특정 버프 타입으로 묶어서 표시합니다.<br />
 				표시될 내용이 매우 많아 브라우저 성능 문제가 있을 수 있습니다.
 			</li>

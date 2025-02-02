@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "preact";
-import { useEffect, useRef, useState } from "preact/hooks";
+import { useCallback, useEffect, useRef, useState } from "preact/hooks";
 import renderToString from "preact-render-to-string";
 
 import { toJpeg } from "html-to-image";
@@ -11,15 +11,15 @@ import "reactflow/dist/style.css";
 
 import dagre from "@dagrejs/dagre";
 
+import BuffFrom from "@/types/DB/BuffFrom";
+
 import { useLocale } from "@/libs/Locale";
 import { FlowRoot } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
+import { StaticDB, useDBData } from "@/libs/Loader";
 
 import Locale from "@/components/locale";
-import IconDownload from "@/components/bootstrap-icon/icons/Download";
-import IconConfusedFace from "@/components/bootstrap-icon/icons/ConfusedFace";
-
-import { getBuffUid } from "@/components/buff-list/cache";
+import Icons from "@/components/bootstrap-icon";
 
 import CustomEdge from "./CustomEdge";
 
@@ -55,6 +55,14 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const captureRef = useRef<HTMLDivElement>(null);
 	const canvasRef = useRef<HTMLDivElement>(null);
+
+	const BuffFromDB = useDBData<Record<string, BuffFrom[]>>(StaticDB.BuffFrom);
+
+	const getBuffUidFactory = useCallback(() => {
+		const keys = BuffFromDB ? Object.keys(BuffFromDB) : [];
+		return (_: string, buff: string): number => keys.indexOf(buff) + 1;
+	}, [BuffFromDB]);
+	const getBuffUid = useCallback(getBuffUidFactory(), [getBuffUidFactory]);
 
 	useEffect(() => { // resetter
 		setGraph(false);
@@ -786,7 +794,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 		{ error
 			? <div>
 				<div class="mb-2">
-					<IconConfusedFace size="64" />
+					<Icons.ConfusedFace size="64" />
 				</div>
 
 				<Locale k="ENEMY_AI_INVALID" />
@@ -813,7 +821,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 					<FlowControls showInteractive={ false }>
 						<FlowControlButton onClick={ () => downloadFlow() } title="download">
 							<div>
-								<IconDownload />
+								<Icons.Download />
 							</div>
 						</FlowControlButton>
 					</FlowControls>
