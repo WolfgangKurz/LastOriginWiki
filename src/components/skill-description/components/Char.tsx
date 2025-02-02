@@ -4,8 +4,8 @@ import { route } from "preact-router";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import Locale from "@/components/locale";
-import Loader, { GetJson, StaticDB } from "@/libs/Loader";
-import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
+import { StaticDB, useDBData } from "@/libs/Loader";
+import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import RarityBadge from "@/components/rarity-badge";
 import UnitCard from "@/components/unit-card";
@@ -18,36 +18,36 @@ interface CharProps {
 	uid: string;
 }
 
-export const Char: FunctionalComponent<CharProps> = (props) =>
-	<Loader json={ StaticDB.FilterableUnit } content={ (): preact.VNode => {
-		const db = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
+export const Char: FunctionalComponent<CharProps> = (props) => {
+	const db = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
+	if (!db) return <></>;
 
-		const unit = db.find(x => x.uid === props.uid);
-		if (!unit) return <>{ props.uid }</>;
+	const unit = db.find(x => x.uid === props.uid);
+	if (!unit) return <>{ props.uid }</>;
 
-		const href = `/units/${unit.uid}`;
+	const href = `/units/${unit.uid}`;
 
-		return <>
-			<a
-				class={ props.class }
-				href={ href }
-				onClick={ (e: Event): void => {
-					e.preventDefault();
-					e.stopPropagation();
-					route(href);
-				} }
+	return <>
+		<a
+			class={ props.class }
+			href={ href }
+			onClick={ (e: Event): void => {
+				e.preventDefault();
+				e.stopPropagation();
+				route(href);
+			} }
+		>
+			<BootstrapTooltip
+				placement="top"
+				content={ <UnitCard class="text-center" unit={ unit } rarity={ unit.rarity } no-link /> }
 			>
-				<BootstrapTooltip
-					placement="top"
-					content={ <UnitCard class="text-center" unit={ unit } rarity={ unit.rarity } no-link /> }
-				>
-					<RarityBadge rarity="A">
-						<Locale plain k={ `UNIT_${unit.uid}` } fallback={ unit.uid } /> <IconLink45deg />
-					</RarityBadge>
-				</BootstrapTooltip>
-			</a>
-			<div class={ style.Preload }>
-				<UnitFace uid={ unit.uid } />
-			</div>
-		</>;
-	} } />;
+				<RarityBadge rarity="A">
+					<Locale plain k={ `UNIT_${unit.uid}` } fallback={ unit.uid } /> <Icons.Link45deg />
+				</RarityBadge>
+			</BootstrapTooltip>
+		</a>
+		<div class={ style.Preload }>
+			<UnitFace uid={ unit.uid } />
+		</div>
+	</>;
+};

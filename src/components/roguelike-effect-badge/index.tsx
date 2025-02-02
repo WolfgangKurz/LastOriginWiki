@@ -10,7 +10,7 @@ import RoguelikeLimitEffects from "@/types/DB/Roguelike.LimitEffects";
 import { objState } from "@/libs/State";
 import Loader, { GetJson, StaticDB } from "@/libs/Loader";
 import Locale from "@/components/locale";
-import IconInfoCircleFill from "@/components/bootstrap-icon/icons/InfoCircleFill";
+import Icons from "@/components/bootstrap-icon";
 import PopupBase from "@/components/popup/base";
 import EquipIcon from "@/components/equip-icon";
 import BuffList from "@/components/buff-list";
@@ -96,7 +96,7 @@ const RoguelikeEffectBadge: FunctionalComponent<RoguelikeEffectBadgeProps> = (pr
 							<small class="me-2">
 								<Locale k="ROGUELIKE_LIMITEFFECT_GRADE" p={ [found.grade] } />
 							</small>
-							<IconInfoCircleFill class="float-end mt-1" />
+							<Icons.InfoCircleFill class="float-end mt-1" />
 						</div>
 					</div>
 

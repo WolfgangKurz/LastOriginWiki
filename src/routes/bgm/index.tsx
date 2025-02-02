@@ -6,22 +6,13 @@ import throttle from "lodash.throttle";
 import { BGMAlbum, BGMInfo, BGMInfo_Youtube } from "@/types/BGM";
 
 import { AssetsRoot } from "@/libs/Const";
-import { objState } from "@/libs/State";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { BuildClass } from "@/libs/Class";
 import { parseVNode } from "@/libs/VNode";
 import BGMAlbums from "@/libs/BGM";
+import { useLocale } from "@/libs/Locale";
 
-import { LocaleGet } from "@/components/locale";
-import IconChevronCompactLeft from "@/components/bootstrap-icon/icons/ChevronCompactLeft";
-import IconChevronCompactRight from "@/components/bootstrap-icon/icons/ChevronCompactRight";
-import IconX from "@/components/bootstrap-icon/icons/X";
-import IconBoxArrowUpRight from "@/components/bootstrap-icon/icons/BoxArrowUpRight";
-import IconPause from "@/components/bootstrap-icon/icons/Pause";
-import IconPlayFill from "@/components/bootstrap-icon/icons/PlayFill";
-import IconFastForwardFill from "@/components/bootstrap-icon/icons/FastForwardFill";
-import IconList from "@/components/bootstrap-icon/icons/List";
-import IconVolumeUp from "@/components/bootstrap-icon/icons/VolumeUp";
+import Icons from "@/components/bootstrap-icon";
 import YoutubePlayer from "@/components/YoutubePlayer";
 import Marquee from "./components/Marquee";
 import ShuffleText from "./components/ShuffleText";
@@ -45,45 +36,47 @@ const DOMUpdateQueue: Array<() => void> = [];
 const BGM: FunctionalComponent = () => {
 	const appContainer = document.querySelector("#page > #app") || document.body;
 
+	const [loc] = useLocale();
+
 	const [albumsLoaded, setAlbumsLoaded] = useState(false);
 	const [pageReady, setPageReady] = useState(false);
 
-	const itemCount = objState(1);
-	const itemRows = objState(2);
-	const screenType = objState<PageType>(PageType.List);
+	const [itemCount, setItemCount] = useState(1);
+	const [itemRows, setItemRows] = useState(2);
+	const [screenType, setScreenType] = useState<PageType>(PageType.List);
 
 	const listItemRef = useRef<Array<HTMLDivElement | null>>([]);
-	const listCursor = objState(0); // 앨범 리스트 페이지
+	const [listCursor, setListCursor] = useState(0); // 앨범 리스트 페이지
 
 	// 마지막으로 선택되었던 아이템 여부
 	// (View가 닫힐 때, 닫히는 애니메이션이 종료될 때 까지 보여주지 않기 위해 필요)
-	const lastSelectedItem = objState<BGMAlbum | null>(null);
-	const lastSelectedItemTitle = objState("");
+	const [lastSelectedItem, setLastSelectedItem] = useState<BGMAlbum | null>(null);
+	const [lastSelectedItemTitle, setLastSelectedItemTitle] = useState("");
 
-	const selectedItem = objState<BGMAlbum | null>(null);
-	const selectedDisplay = objState(false);
-	const selectedImagePrepare = objState("");
+	const [selectedItem, setSelectedItem] = useState<BGMAlbum | null>(null);
+	const [selectedDisplay, setSelectedDisplay] = useState(false);
+	const [selectedImagePrepare, setSelectedImagePrepare] = useState("");
 	const [selectedImageAlt, setSelectedImageAlt] = useState<string | undefined>("");
-	const selectedImageAnimDone = objState(false);
+	const [selectedImageAnimDone, setSelectedImageAnimDone] = useState(false);
 	const selectedImagePlaceholderRef = useRef<HTMLDivElement>(null);
 	const selectedImageRef = useRef<HTMLDivElement>(null);
 
-	const listOpen = objState(false);
-	const autoPlay = objState(false);
+	const [listOpen, setListOpen] = useState(false);
+	const [autoPlay, setAutoPlay] = useState(false);
 
-	const playingAlbum = objState<BGMAlbum | null>(null);
-	const playingMusic = objState<BGMInfo | null>(null);
-	const playableMusic = objState(false);
-	const playingVolume = objState(0.5);
-	const playingTime = objState(-1);
-	const playingTimeText = objState("--:-- / --:--");
+	const [playingAlbum, setPlayingAlbum] = useState<BGMAlbum | null>(null);
+	const [playingMusic, setPlayingMusic] = useState<BGMInfo | null>(null);
+	const [playableMusic, setPlayableMusic] = useState(false);
+	const [playingVolume, setPlayingVolume] = useState(0.5);
+	const [playingTime, setPlayingTime] = useState(-1);
+	const [playingTimeText, setPlayingTimeText] = useState("--:-- / --:--");
 
 	const lyricsRef = useRef<HTMLDivElement>(null);
 	const lyricsItemRef = useRef<Array<HTMLDivElement | null>>([]);
 	const playerRef = useRef<HTMLAudioElement>(null);
 	const ytPlayerRef = useRef<YoutubePlayer>(null);
-	const isPlaying = objState<boolean>(false);
-	const currentLyrics = objState(-1);
+	const [isPlaying, setIsPlaying] = useState<boolean>(false);
+	const [currentLyric, setCurrentLyric] = useState(-1);
 
 	useEffect(() => {
 		SetMeta(["description", "twitter:description"], "라스트오리진(LastOrigin)에 사용된 BGM 목록과 플레이어입니다.");
@@ -121,18 +114,18 @@ const BGM: FunctionalComponent = () => {
 		else if (w < 1200) col = 4;
 		else if (w < 1400) col = 5;
 
-		if (itemCount.value !== col)
-			itemCount.set(col);
+		if (itemCount !== col)
+			setItemCount(col);
 
 		let rows = 2;
 		if (h < 720) rows = 1;
 
-		if (itemRows.value !== rows)
-			itemRows.set(rows);
+		if (itemRows !== rows)
+			setItemRows(rows);
 
 		const perPageItems = col * rows;
 		const maxPage = Math.floor((items.length - 1) / perPageItems);
-		listCursor.set(v => {
+		setListCursor(v => {
 			if (v > maxPage) return maxPage;
 			return v;
 		});
@@ -147,9 +140,9 @@ const BGM: FunctionalComponent = () => {
 	}, [updateItemCount]);
 
 	useEffect(() => { // non-null memoization
-		if (selectedItem.value)
-			lastSelectedItem.set(selectedItem.value);
-	}, [selectedItem.value]);
+		if (selectedItem)
+			setLastSelectedItem(selectedItem);
+	}, [selectedItem]);
 
 	useEffect(() => { // call queue after every dom updated
 		const lst = [...DOMUpdateQueue];
@@ -158,23 +151,23 @@ const BGM: FunctionalComponent = () => {
 	});
 
 	useLayoutEffect(() => {
-		playingTime.set(-1);
+		setPlayingTime(-1);
 
-		if (!playingMusic.value) {
-			playableMusic.set(false);
-			currentLyrics.set(-1);
+		if (!playingMusic) {
+			setPlayableMusic(false);
+			setCurrentLyric(-1);
 		} else {
-			setSelectedImageAlt(playingMusic.value.image);
+			setSelectedImageAlt(playingMusic.image);
 		}
-	}, [playingMusic.value]);
+	}, [playingMusic]);
 
 	useLayoutEffect(() => {
-		const t = playingTime.value;
+		const t = playingTime;
 
-		if (playingMusic.value && t >= 0) {
-			playingTimeText.set(`${toTimeText(t)} / ${toTimeText(playingMusic.value.duration)}`);
+		if (playingMusic && t >= 0) {
+			setPlayingTimeText(`${toTimeText(t)} / ${toTimeText(playingMusic.duration)}`);
 
-			const lyrics = playingMusic.value.lyrics;
+			const lyrics = playingMusic.lyrics;
 			if (lyrics) {
 				let lyricsIndex = -1;
 				for (let i = 0; i < lyrics.length; i++) {
@@ -186,8 +179,8 @@ const BGM: FunctionalComponent = () => {
 						break;
 				}
 
-				if (currentLyrics.value !== lyricsIndex) {
-					currentLyrics.set(lyricsIndex);
+				if (currentLyric !== lyricsIndex) {
+					setCurrentLyric(lyricsIndex);
 
 					const el = lyricsItemRef.current[lyricsIndex];
 					if (lyricsRef.current && el) {
@@ -201,28 +194,28 @@ const BGM: FunctionalComponent = () => {
 				}
 			}
 		} else
-			playingTimeText.set(`--:-- / --:--`);
-	}, [playingTime.value]);
+			setPlayingTimeText(`--:-- / --:--`);
+	}, [playingTime]);
 
 	useLayoutEffect(() => {
 		if (playerRef.current)
-			isPlaying.set(!playerRef.current.paused);
+			setIsPlaying(!playerRef.current.paused);
 		else if (ytPlayerRef.current)
-			isPlaying.set(ytPlayerRef.current.isLoaded && !ytPlayerRef.current.paused);
+			setIsPlaying(ytPlayerRef.current.isLoaded && !ytPlayerRef.current.paused);
 		else
-			isPlaying.set(false);
+			setIsPlaying(false);
 	}, [playerRef.current, ytPlayerRef.current]);
 
 	useLayoutEffect(() => {
-		if (lastSelectedItem.value) {
-			const t = lastSelectedItem.value.title;
+		if (lastSelectedItem) {
+			const t = lastSelectedItem.title;
 			if (t[0] === "@")
-				lastSelectedItemTitle.set(LocaleGet(t.substring(1)));
+				setLastSelectedItemTitle(loc[t.substring(1)]);
 			else
-				lastSelectedItemTitle.set(t);
+				setLastSelectedItemTitle(t);
 		} else
-			lastSelectedItemTitle.set("");
-	}, [lastSelectedItem.value]);
+			setLastSelectedItemTitle("");
+	}, [lastSelectedItem]);
 
 	function toTimeText (duration: number): string {
 		const d = Math.floor(duration);
@@ -240,51 +233,51 @@ const BGM: FunctionalComponent = () => {
 	}
 
 	function playNext (forceAutoPlay: boolean = false) {
-		const album = selectedItem.value;
+		const album = selectedItem;
 		if (!album) return;
 		if (album.songs.length === 0) return;
 
-		let idx = !playingMusic.value
+		let idx = !playingMusic
 			? -1
-			: album.songs.findIndex(r => r.id === playingMusic.value!.id);
+			: album.songs.findIndex(r => r.id === playingMusic!.id);
 		idx++;
 		if (idx >= album.songs.length) idx = 0;
 
 		const song = album.songs[idx];
-		if (song.id === playingMusic.value?.id) return;
+		if (song.id === playingMusic?.id) return;
 
-		playingAlbum.set(selectedItem.value);
-		playingMusic.set(song);
+		setPlayingAlbum(selectedItem);
+		setPlayingMusic(song);
 
-		if (forceAutoPlay || isPlaying.value)
-			autoPlay.set(true);
+		if (forceAutoPlay || isPlaying)
+			setAutoPlay(true);
 	}
 	function playPrev (forceAutoPlay: boolean = false) {
-		const album = selectedItem.value;
+		const album = selectedItem;
 		if (!album) return;
 		if (album.songs.length === 0) return;
 
-		let idx = !playingMusic.value
+		let idx = !playingMusic
 			? -1
-			: album.songs.findIndex(r => r.id === playingMusic.value!.id);
+			: album.songs.findIndex(r => r.id === playingMusic!.id);
 		idx--;
 		if (idx < 0) idx = album.songs.length - 1;
 
 		const song = album.songs[idx];
-		if (song.id === playingMusic.value?.id) return;
+		if (song.id === playingMusic?.id) return;
 
-		playingAlbum.set(selectedItem.value);
-		playingMusic.set(song);
+		setPlayingAlbum(selectedItem);
+		setPlayingMusic(song);
 
-		if (forceAutoPlay || isPlaying.value)
-			autoPlay.set(true);
+		if (forceAutoPlay || isPlaying)
+			setAutoPlay(true);
 	}
 
 	const items: BGMAlbum[] = BGMAlbums;
-	const perPageItems = itemCount.value * itemRows.value;
+	const perPageItems = itemCount * itemRows;
 	const maxPage = Math.floor((items.length - 1) / perPageItems);
 
-	const isPlayingAlbum = playingAlbum.value && playingAlbum.value === selectedItem.value;
+	const isPlayingAlbum = playingAlbum && playingAlbum === selectedItem;
 
 	return createPortal(<div
 		class={ style.BGM }
@@ -304,40 +297,40 @@ const BGM: FunctionalComponent = () => {
 
 			<div class={ style.AlbumList }>
 				<a
-					class={ BuildClass(style.PageLeft, listCursor.value === 0 && style.Disabled) }
+					class={ BuildClass(style.PageLeft, listCursor === 0 && style.Disabled) }
 					onClick={ e => {
 						e.preventDefault();
 
-						let page = listCursor.value - 1;
+						let page = listCursor - 1;
 						if (page < 0) page = maxPage;
-						listCursor.set(page);
+						setListCursor(page);
 					} }
 				>
-					<IconChevronCompactLeft />
+					<Icons.ChevronCompactLeft />
 				</a>
 				<a
-					class={ BuildClass(style.PageRight, listCursor.value === maxPage && style.Disabled) }
+					class={ BuildClass(style.PageRight, listCursor === maxPage && style.Disabled) }
 					onClick={ e => {
 						e.preventDefault();
 
-						let page = listCursor.value + 1;
+						let page = listCursor + 1;
 						if (page > maxPage) page = 0;
-						listCursor.set(page);
+						setListCursor(page);
 					} }
 				>
-					<IconChevronCompactRight />
+					<Icons.ChevronCompactRight />
 				</a>
 
-				{ items.slice(perPageItems * listCursor.value, perPageItems * (listCursor.value + 1))
+				{ items.slice(perPageItems * listCursor, perPageItems * (listCursor + 1))
 					.map((c, i) => <div class={ style.Item }>
 						<div
 							class={ BuildClass(
 								style.Album,
-								(selectedItem.value?.id === c.id || (!selectedItem.value && lastSelectedItem.value?.id === c.id && selectedDisplay.value)) && style.Selected, // 선택되었거나 감추어지고 있는 도중인 앨범아트
-								!selectedItem.value && selectedDisplay.value && style.Hiding,
+								(selectedItem?.id === c.id || (!selectedItem && lastSelectedItem?.id === c.id && selectedDisplay)) && style.Selected, // 선택되었거나 감추어지고 있는 도중인 앨범아트
+								!selectedItem && selectedDisplay && style.Hiding,
 							) }
 							onMouseEnter={ () => {
-								selectedImagePrepare.set(c.image);
+								setSelectedImagePrepare(c.image);
 							} }
 							onClick={ (e) => {
 								e.preventDefault();
@@ -373,15 +366,15 @@ const BGM: FunctionalComponent = () => {
 
 										await after(300);
 
-										selectedImageAnimDone.set(true);
-										listOpen.set(true);
+										setSelectedImageAnimDone(true);
+										setListOpen(true);
 									}); // next update
 								}
 
-								screenType.set(PageType.Album);
-								selectedItem.set(c);
-								selectedDisplay.set(true);
-								selectedImagePrepare.set(c.image);
+								setScreenType(PageType.Album);
+								setSelectedItem(c);
+								setSelectedDisplay(true);
+								setSelectedImagePrepare(c.image);
 							} }
 							ref={ el => listItemRef.current[i] = el }
 						>
@@ -392,23 +385,23 @@ const BGM: FunctionalComponent = () => {
 			</div>
 
 			<div // 앨범 뷰
-				class={ BuildClass(style.AlbumView, screenType.value === PageType.Album && style.Active) }
+				class={ BuildClass(style.AlbumView, screenType === PageType.Album && style.Active) }
 			>
 				<div // Animating 시 앨범아트 placeholder, Done
 					class={ BuildClass(
 						style.Album,
-						!!selectedItem.value && style.Selected,
-						selectedDisplay.value && style.Display,
-						!selectedItem.value && selectedDisplay.value && style.Hiding,
-						selectedImageAnimDone.value && style.Done,
+						!!selectedItem && style.Selected,
+						selectedDisplay && style.Display,
+						!selectedItem && selectedDisplay && style.Hiding,
+						selectedImageAnimDone && style.Done,
 					) }
 					ref={ selectedImageRef }
 				>
-					<img src={ `${AssetsRoot}/bgm/${selectedImagePrepare.value}.jpg` } />
+					<img src={ `${AssetsRoot}/bgm/${selectedImagePrepare}.jpg` } />
 				</div>
 
 				<div
-					class={ BuildClass(style.ViewArea, !!selectedItem.value && style.Display) }
+					class={ BuildClass(style.ViewArea, !!selectedItem && style.Display) }
 					onClick={ (e) => {
 						e.preventDefault();
 					} }
@@ -418,21 +411,21 @@ const BGM: FunctionalComponent = () => {
 						onClick={ (e) => {
 							e.preventDefault();
 
-							playingMusic.set(null);
-							isPlaying.set(false);
-							currentLyrics.set(-1);
-							playingTime.set(-1);
+							setPlayingMusic(null);
+							setIsPlaying(false);
+							setCurrentLyric(-1);
+							setPlayingTime(-1);
 
-							const fidx = items.findIndex(r => r.id === selectedItem.value?.id); // full idx
+							const fidx = items.findIndex(r => r.id === selectedItem?.id); // full idx
 							const idx = fidx % perPageItems;
 
 							const pageIdx = Math.floor(fidx / perPageItems);
-							if (listCursor.value !== pageIdx)
-								listCursor.set(pageIdx);
+							if (listCursor !== pageIdx)
+								setListCursor(pageIdx);
 
 							const el = listItemRef.current[idx];
 							if (el) { // 되돌아가는 애니메이션
-								selectedImageAnimDone.set(false);
+								setSelectedImageAnimDone(false);
 
 								const target = selectedImageRef.current;
 								const img = selectedImagePlaceholderRef.current;
@@ -467,33 +460,33 @@ const BGM: FunctionalComponent = () => {
 
 									target.style.left = "";
 									target.style.top = "";
-									lastSelectedItem.set(null);
-									selectedDisplay.set(false);
+									setLastSelectedItem(null);
+									setSelectedDisplay(false);
 								}); // next update
 							}
 
-							screenType.set(PageType.List);
-							selectedItem.set(null);
+							setScreenType(PageType.List);
+							setSelectedItem(null);
 						} }
 					>
-						<IconX />
+						<Icons.X />
 					</button>
 
 					<div
-						class={ BuildClass(style.SelectedImagePlaceholder, selectedImageAnimDone.value && style.Done) }
+						class={ BuildClass(style.SelectedImagePlaceholder, selectedImageAnimDone && style.Done) }
 						ref={ selectedImagePlaceholderRef }
 					>
 						<img // 표시용 앨범아트 (absolute)
-							src={ `${AssetsRoot}/bgm/${selectedImagePrepare.value}.jpg` }
+							src={ `${AssetsRoot}/bgm/${selectedImagePrepare}.jpg` }
 						/>
 						<img // 대체 앨범아트
-							class={ BuildClass(style.Alt, playingMusic.value?.image && style.Display) }
+							class={ BuildClass(style.Alt, playingMusic?.image && style.Display) }
 							src={ `${AssetsRoot}/bgm/${selectedImageAlt}.jpg` }
 						/>
 
 						<div class={ style.LyricHeader }>
-							{ isPlayingAlbum && playingMusic.value && playingMusic.value.headers
-								? playingMusic.value.headers.map(h => <div class={ style.Header }>
+							{ isPlayingAlbum && playingMusic && playingMusic.headers
+								? playingMusic.headers.map(h => <div class={ style.Header }>
 									{ h.raw
 										? parseVNode(h.text, [], {})
 										: h.text
@@ -506,13 +499,13 @@ const BGM: FunctionalComponent = () => {
 
 					<div class={ style.PlayerInfo }>
 						<div class={ style.PlayTimeLine }>
-							{ playingMusic.value && playingMusic.value.type !== "placeholder"
+							{ playingMusic && playingMusic.type !== "placeholder"
 								? <button
 									class={ style.Extern }
 									onClick={ e => {
 										e.preventDefault();
 
-										const playing = playingMusic.value! as BGMInfo;
+										const playing = playingMusic! as BGMInfo;
 										if (playing.type === "placeholder") return;
 
 										if (playing.type === "youtube") {
@@ -529,8 +522,8 @@ const BGM: FunctionalComponent = () => {
 										}
 									} }
 								>
-									{ playingMusic.value.type === "youtube"
-										? <IconBoxArrowUpRight />
+									{ playingMusic.type === "youtube"
+										? <Icons.BoxArrowUpRight />
 										: <svg width="1.35em" height="1.35em" viewBox="0 0 24 24">
 											<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
 										</svg>
@@ -540,25 +533,25 @@ const BGM: FunctionalComponent = () => {
 							}
 
 							<div class={ style.PlayTimeText }>
-								{ playingTimeText.value }
+								{ playingTimeText }
 							</div>
 						</div>
 
 						<Slider
 							class={ style.SeekSlider }
 							min={ 0 }
-							max={ playingMusic.value?.duration }
-							value={ playingTime.value }
-							disabled={ !playableMusic.value || !playingMusic.value || playingMusic.value.type === "placeholder" }
+							max={ playingMusic?.duration }
+							value={ playingTime }
+							disabled={ !playableMusic || !playingMusic || playingMusic.type === "placeholder" }
 
 							onChange={ t => {
-								if (playingMusic.value && playingMusic.value.type !== "placeholder") {
+								if (playingMusic && playingMusic.type !== "placeholder") {
 									if (playerRef.current)
 										playerRef.current.currentTime = t;
 									else if (ytPlayerRef.current)
 										ytPlayerRef.current.Seek(t);
 
-									playingTime.set(t);
+									setPlayingTime(t);
 								}
 							} }
 						/>
@@ -571,30 +564,30 @@ const BGM: FunctionalComponent = () => {
 									playPrev();
 								} }
 							>
-								<IconFastForwardFill />
+								<Icons.FastForwardFill />
 							</button>
 
 							<button
 								class={ style.PlayButton }
-								disabled={ !playableMusic.value }
+								disabled={ !playableMusic }
 								onClick={ (e) => {
 									e.preventDefault();
 									if (playerRef.current) {
-										if (isPlaying.value)
+										if (isPlaying)
 											playerRef.current.pause();
 										else
 											playerRef.current.play();
 									} else if (ytPlayerRef.current) {
-										if (isPlaying.value)
+										if (isPlaying)
 											ytPlayerRef.current.pause();
 										else
 											ytPlayerRef.current.play();
 									}
 								} }
 							>
-								{ isPlaying.value
-									? <IconPause />
-									: <IconPlayFill />
+								{ isPlaying
+									? <Icons.Pause />
+									: <Icons.PlayFill />
 								}
 							</button>
 
@@ -605,29 +598,29 @@ const BGM: FunctionalComponent = () => {
 									playNext();
 								} }
 							>
-								<IconFastForwardFill />
+								<Icons.FastForwardFill />
 							</button>
 
 							<button
 								class={ style.ListButton }
 								onClick={ e => {
 									e.preventDefault();
-									listOpen.set(true);
+									setListOpen(true);
 								} }
 							>
-								<IconList />
+								<Icons.List />
 							</button>
 						</div>
 
 						<div class={ style.Volume }>
-							<IconVolumeUp />
+							<Icons.VolumeUp />
 							<Slider
 								class={ style.VolumeSlider }
 								min={ 0 }
 								max={ 1 }
-								value={ playingVolume.value }
+								value={ playingVolume }
 
-								onChange={ vol => playingVolume.set(vol) }
+								onChange={ vol => setPlayingVolume(vol) }
 							/>
 						</div>
 					</div>
@@ -636,7 +629,7 @@ const BGM: FunctionalComponent = () => {
 						<div class={ style.Title }>
 							<Marquee>
 								<ShuffleText
-									text={ lastSelectedItemTitle.value }
+									text={ lastSelectedItemTitle }
 									gap={ 25 }
 								/>
 							</Marquee>
@@ -644,7 +637,7 @@ const BGM: FunctionalComponent = () => {
 						<div class={ BuildClass("pt-1", style.Author) }>
 							<Marquee>
 								<ShuffleText
-									text={ lastSelectedItem.value?.author ?? "" }
+									text={ lastSelectedItem?.author ?? "" }
 									gap={ 25 }
 								/>
 							</Marquee>
@@ -652,8 +645,8 @@ const BGM: FunctionalComponent = () => {
 
 						<div class={ style.LyricsContainer }>
 							<div class={ style.LyricHeader }>
-								{ isPlayingAlbum && playingMusic.value && playingMusic.value.headers
-									? playingMusic.value.headers.map(h => <div class={ style.Header }>
+								{ isPlayingAlbum && playingMusic && playingMusic.headers
+									? playingMusic.headers.map(h => <div class={ style.Header }>
 										{ h.raw
 											? parseVNode(h.text, [], {})
 											: h.text
@@ -664,14 +657,14 @@ const BGM: FunctionalComponent = () => {
 							</div>
 
 							<div class={ style.Lyrics } ref={ lyricsRef }>
-								{ isPlayingAlbum && playingMusic.value && playingMusic.value.lyrics
-									? playingMusic.value.lyrics.map((l, i) => {
+								{ isPlayingAlbum && playingMusic && playingMusic.lyrics
+									? playingMusic.lyrics.map((l, i) => {
 										return <div
 											class={ BuildClass(
 												style.Lyric,
 												l.color && style.Colored,
 												Array.isArray(l.color) && style.ColoredCustom,
-												currentLyrics.value === i && style.Current,
+												currentLyric === i && style.Current,
 											) }
 											style={ { "--color": Array.isArray(l.color) ? undefined : `var(--bgm-color-${l.color})` } }
 											ref={ el => lyricsItemRef.current[i] = el }
@@ -692,32 +685,32 @@ const BGM: FunctionalComponent = () => {
 
 						<div class={ style.Separator } />
 
-						<div class={ BuildClass(style.MusicListContainer, listOpen.value && style.Open) }>
+						<div class={ BuildClass(style.MusicListContainer, listOpen && style.Open) }>
 							<button
 								class={ style.ListClose }
 								onClick={ e => {
 									e.preventDefault();
-									listOpen.set(false);
+									setListOpen(false);
 								} }
 							>
-								<IconX />
+								<Icons.X />
 							</button>
 
 							<div class={ style.MusicList }>
-								{ selectedItem.value
-									? selectedItem.value.songs.map(song => {
+								{ selectedItem
+									? selectedItem.songs.map(song => {
 										return <div
 											class={ BuildClass(
 												style.ListItem,
-												!!playingMusic.value && playingMusic.value.id === song.id && style.Playing,
+												!!playingMusic && playingMusic.id === song.id && style.Playing,
 											) }
 											onClick={ (e) => {
 												e.preventDefault();
-												playingAlbum.set(selectedItem.value);
-												playingMusic.set(song);
+												setPlayingAlbum(selectedItem);
+												setPlayingMusic(song);
 
-												if (isPlaying.value)
-													autoPlay.set(true);
+												if (isPlaying)
+													setAutoPlay(true);
 											} }
 										>
 											<ShuffleText
@@ -736,32 +729,32 @@ const BGM: FunctionalComponent = () => {
 		</div>
 		<div class={ style.Typo }>the radiant sounds</div>
 
-		{ playingMusic.value && playingMusic.value.type !== "placeholder"
-			? playingMusic.value.type === "audio"
+		{ playingMusic && playingMusic.type !== "placeholder"
+			? playingMusic.type === "audio"
 				? <audio
 					class={ style.Player }
-					src={ `${AssetsRoot}/audio/bgm/${playingMusic.value.filename}` }
+					src={ `${AssetsRoot}/audio/bgm/${playingMusic.filename}` }
 					preload="auto"
-					volume={ playingVolume.value }
+					volume={ playingVolume }
 					onTimeUpdate={ (e) => {
 						if (e.currentTarget.paused) return;
 
 						const t = e.currentTarget.currentTime;
-						playingTime.set(t);
+						setPlayingTime(t);
 					} }
-					onPlay={ () => isPlaying.set(true) }
-					onPause={ () => isPlaying.set(false) }
+					onPlay={ () => setIsPlaying(true) }
+					onPause={ () => setIsPlaying(false) }
 					onEnded={ () => {
 						playNext(true);
-						isPlaying.set(false);
+						setIsPlaying(false);
 					} }
-					onEmptied={ () => isPlaying.set(false) }
+					onEmptied={ () => setIsPlaying(false) }
 					onLoadedMetadata={ (e) => {
-						playableMusic.set(true);
-						playingTime.set(0);
+						setPlayableMusic(true);
+						setPlayingTime(0);
 
-						if (autoPlay.value) {
-							autoPlay.set(false);
+						if (autoPlay) {
+							setAutoPlay(false);
 							e.currentTarget.play();
 						}
 					} }
@@ -770,27 +763,27 @@ const BGM: FunctionalComponent = () => {
 				: <YoutubePlayer
 					class={ style.Player }
 					autoPlay={ false }
-					vid={ playingMusic.value.url }
-					volume={ playingVolume.value }
+					vid={ playingMusic.url }
+					volume={ playingVolume }
 					cc={ false }
 
 					onTimeUpdate={ (player, t) => {
 						if (player.paused) return;
 
-						playingTime.set(t);
+						setPlayingTime(t);
 					} }
-					onPlay={ () => isPlaying.set(true) }
-					onPause={ () => isPlaying.set(false) }
+					onPlay={ () => setIsPlaying(true) }
+					onPause={ () => setIsPlaying(false) }
 					onEnded={ () => {
 						playNext(true);
-						isPlaying.set(false);
+						setIsPlaying(false);
 					} }
 					onReady={ (yt) => {
-						playableMusic.set(true);
-						playingTime.set(0);
+						setPlayableMusic(true);
+						setPlayingTime(0);
 
-						if (autoPlay.value) {
-							autoPlay.set(false);
+						if (autoPlay) {
+							setAutoPlay(false);
 							yt.play();
 						}
 					} }

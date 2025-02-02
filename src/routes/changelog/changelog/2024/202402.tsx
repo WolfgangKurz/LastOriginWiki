@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 
 import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
-import IconGithub from "@/components/bootstrap-icon/icons/Github";
+import Icons from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 12544" date="2024-02-29"
@@ -264,7 +264,7 @@ const Changelog: FunctionalComponent = () => <>
 						이제 <BY>전투원정보</BY>의 이름 검색이 <BO>별명</BO>에도 검색됩니다.<br />
 						별명의 추가 또는 수정 요청은&nbsp;
 						<a class="mx-1" href="https://github.com/WolfgangKurz/LastOriginWiki/issues" target="_blank">
-							<IconGithub /> Github Issue
+							<Icons.Github /> Github Issue
 						</a>
 						를 통해 가능합니다.
 					</li>

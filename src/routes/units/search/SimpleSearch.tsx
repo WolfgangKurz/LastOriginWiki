@@ -9,7 +9,7 @@ import Input from "@/components/Input";
 import UnitTypeIcon from "@/components/UnitTypeIcon";
 import UnitRoleIcon from "@/components/UnitRoleIcon";
 
-import IconEraserFill from "@/components/bootstrap-icon/icons/EraserFill";
+import Icons from "@/components/bootstrap-icon";
 
 import style from "./style.module.scss";
 
@@ -80,7 +80,7 @@ const SimpleSearch: FunctionalComponent = () => {
 				/>
 
 				<Button variant="danger" onClick={ () => (Store.Units.SearchText.value = "") }>
-					<IconEraserFill />
+					<Icons.EraserFill />
 				</Button>
 			</Button.Group>
 		</div>

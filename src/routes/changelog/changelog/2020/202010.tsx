@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 
 import RarityBadge from "@/components/rarity-badge";
 import ChangelogItem from "../../components/changelog-item";
-import IconHammer from "@/components/bootstrap-icon/icons/Hammer";
+import Icons from "@/components/bootstrap-icon";
 
 const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build r20201031" date="2020-10-31"
@@ -34,7 +34,7 @@ const Changelog: FunctionalComponent = () => <>
 			<li><span class="badge bg-warning text-dark">세계 정보</span>의 드랍 정보에 참치와 자원, 소모품 정보를 추가했습니다.</li>
 			<li>
 				모든 전투원 및 <span class="badge bg-warning text-dark">모든 장비</span>의 제조 시간 표시가 추가되었습니다.<br />
-				해당 표시는 획득처의<span class="badge bg-dark"><IconHammer class="me-1" />제조 가능</span>을 대체합니다.
+				해당 표시는 획득처의<span class="badge bg-dark"><Icons.Hammer class="me-1" />제조 가능</span>을 대체합니다.
 			</li>
 			<li><span class="badge bg-warning text-dark">장비 정보</span> 페이지의 <span class="badge bg-substory">장비 효과 필터</span>를 다시 추가했습니다.</li>
 		</> }

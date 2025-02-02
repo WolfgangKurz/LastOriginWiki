@@ -16,7 +16,7 @@ import { groupBy, isActive } from "@/libs/Functions";
 import { StaticDB, useDBData } from "@/libs/Loader";
 
 import Locale from "@/components/locale";
-import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
+import Icons from "@/components/bootstrap-icon";
 import UnitFace from "@/components/unit-face";
 import EquipIcon from "@/components/equip-icon";
 import EquipPopup from "@/components/popup/equip-popup";
@@ -180,7 +180,7 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 					else
 						route(`/worlds/${props.wid}`);
 				} }>
-					<IconArrowLeft class="me-1" />
+					<Icons.ArrowLeft class="me-1" />
 					{ props.wid === "Sub"
 						? <Locale k="WORLDS_BACK_TO_WORLDS" />
 						: <Locale k="WORLDS_BACK_TO_AREAS" />

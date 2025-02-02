@@ -16,7 +16,7 @@ import Button from "@/components/Button";
 import PopupBase from "@/components/popup/base";
 import PCIcon from "@/components/pc-icon";
 
-import IconBook from "@/components/bootstrap-icon/icons/Book";
+import Icons from "@/components/bootstrap-icon";
 
 import style from "./style.module.scss";
 
@@ -290,7 +290,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 												route(`/story/${r.key}/ED`);
 											} }
 										>
-											<IconBook class="me-1" />
+											<Icons.Book class="me-1" />
 											Story
 										</button>
 										: <div class={ cn("btn-group", style.Buttons) }>
@@ -304,7 +304,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 														route(`/story/${r.key}/OP`);
 													} }
 												>
-													<IconBook class="me-1" />
+													<Icons.Book class="me-1" />
 													OP
 												</button>
 												: <button
@@ -312,7 +312,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 													class="btn btn-sm"
 													disabled
 												>
-													<IconBook class="me-1" />
+													<Icons.Book class="me-1" />
 													OP
 												</button>
 											}
@@ -328,7 +328,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 														route(`/story/${r.key}/${v}`);
 													} }
 												>
-													<IconBook class="me-1" />
+													<Icons.Book class="me-1" />
 													MID
 												</button>),
 												() => <button
@@ -336,7 +336,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 													class="btn btn-sm"
 													disabled
 												>
-													<IconBook class="me-1" />
+													<Icons.Book class="me-1" />
 													MID
 												</button>,
 											) }
@@ -351,7 +351,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 														route(`/story/${r.key}/ED`);
 													} }
 												>
-													<IconBook class="me-1" />
+													<Icons.Book class="me-1" />
 													ED
 												</button>
 												: <button
@@ -359,7 +359,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 													class="btn btn-sm"
 													disabled
 												>
-													<IconBook class="me-1" />
+													<Icons.Book class="me-1" />
 													ED
 												</button>
 											}
@@ -411,7 +411,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 												route(`/story/${r.key}/${s.key}`);
 											} }
 										>
-											<IconBook class="me-1" />
+											<Icons.Book class="me-1" />
 											Story
 										</button>
 									</div>) }

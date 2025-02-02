@@ -19,10 +19,7 @@ import Badge from "@/components/Badge";
 import Separator from "@/components/Separator";
 import UnitFace from "@/components/unit-face";
 
-import IconBookmarksFill from "@/components/bootstrap-icon/icons/BookmarksFill";
-import IconSpellcheck from "@/components/bootstrap-icon/icons/Spellcheck";
-import IconListOl from "@/components/bootstrap-icon/icons/ListOl";
-import IconStarFill from "@/components/bootstrap-icon/icons/StarFill";
+import Icons from "@/components/bootstrap-icon";
 import IconAlphabet from "@/components/Icons/IconAlphabet";
 
 import style from "./style.module.scss";
@@ -132,7 +129,7 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 				variant="danger"
 				onClick={ () => Store.Units.SearchWithShortname.value = !withShort }
 			>
-				<IconSpellcheck />
+				<Icons.Spellcheck />
 				<Locale k="UNITS_LIST_ORDERBY_SHORTNAME" />
 			</Button>
 
@@ -143,7 +140,7 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 					outline={ Store.Units.SearchListOrder.value !== tabTypes[0] }
 					onClick={ () => Store.Units.SearchListOrder.value = tabTypes[0] }
 				>
-					<IconListOl />
+					<Icons.ListOl />
 					<Locale k="UNITS_LIST_ORDERBY_NO" />
 				</Button>
 				<Button
@@ -161,7 +158,7 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 					outline={ Store.Units.SearchListOrder.value !== tabTypes[2] }
 					onClick={ () => Store.Units.SearchListOrder.value = tabTypes[2] }
 				>
-					<IconStarFill />
+					<Icons.StarFill />
 					<Locale k="UNITS_LIST_ORDERBY_GRADE" />
 				</Button>
 			</Button.Group>
@@ -172,7 +169,7 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 				variant="danger"
 				onClick={ () => Store.Units.SearchGroupByGroup.value = nextGroupBy }
 			>
-				<IconBookmarksFill />
+				<Icons.BookmarksFill />
 				<Locale k={ `UNITS_LIST_GROUPBY_${groupByMethod.toUpperCase()}` } />
 			</Button>
 		</div>

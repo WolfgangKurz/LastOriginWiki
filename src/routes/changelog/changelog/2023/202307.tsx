@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 
-import IconArrowRight from "@/components/bootstrap-icon/icons/ArrowRight";
+import Icons from "@/components/bootstrap-icon";
 import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
@@ -109,7 +109,7 @@ const Changelog: FunctionalComponent = () => <>
 						<span class="d-inline-block border bg-rarity-S p-2">
 							<span class="badge bg-primary">버프</span>가 <span class="badge bg-dark">대상</span>에게 있는가?
 						</span>
-						<IconArrowRight class="mx-2" />
+						<Icons.ArrowRight class="mx-2" />
 						<span class="d-inline-block border bg-rarity-S p-2">
 							누군가 <span class="badge bg-primary">버프</span>가 있는가?
 						</span>
@@ -118,7 +118,7 @@ const Changelog: FunctionalComponent = () => <>
 						<span class="d-inline-block border bg-rarity-S p-2">
 							<span class="badge bg-primary">버프</span>가 <span class="badge bg-dark">자신</span>에게 있는가?
 						</span>
-						<IconArrowRight class="mx-2" />
+						<Icons.ArrowRight class="mx-2" />
 						<span class="d-inline-block border bg-rarity-S p-2">
 							자신에게 <span class="badge bg-primary">버프</span>가 있는가?
 						</span>
@@ -127,7 +127,7 @@ const Changelog: FunctionalComponent = () => <>
 						<span class="d-inline-block border bg-rarity-S p-2">
 							<span class="badge bg-primary">버프</span>가 <span class="badge bg-dark">대상</span>에게 <span class="badge bg-danger">갯수</span> 있는가?
 						</span>
-						<IconArrowRight class="mx-2" />
+						<Icons.ArrowRight class="mx-2" />
 						<span class="d-inline-block border bg-rarity-S p-2">
 							<span class="badge bg-primary">버프</span>가 총 <span class="badge bg-danger">갯수</span> 있는가?
 						</span>
@@ -136,7 +136,7 @@ const Changelog: FunctionalComponent = () => <>
 						<span class="d-inline-block border bg-rarity-S p-2">
 							<span class="badge bg-primary">버프</span>가 <span class="badge bg-dark">자신</span>에게 <span class="badge bg-danger">갯수</span> 있는가?
 						</span>
-						<IconArrowRight class="mx-2" />
+						<Icons.ArrowRight class="mx-2" />
 						<span class="d-inline-block border bg-rarity-S p-2">
 							자신에게 <span class="badge bg-primary">버프</span>가 <span class="badge bg-danger">갯수</span> 있는가?
 						</span>

@@ -17,10 +17,7 @@ import { UpdateTitle } from "@/libs/Site";
 import { StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import UnitFace from "@/components/unit-face";
-import IconGlobe2 from "@/components/bootstrap-icon/icons/Globe2";
-import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
-import IconVolumeUpFill from "@/components/bootstrap-icon/icons/VolumeUpFill";
-import IconImageFill from "@/components/bootstrap-icon/icons/ImageFill";
+import Icons from "@/components/bootstrap-icon";
 
 import Notfound from "@/routes/notfound";
 
@@ -327,7 +324,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 					e.preventDefault();
 					window.history.back();
 				} }>
-					<IconArrowLeft class="me-1" />
+					<Icons.ArrowLeft class="me-1" />
 					<Locale k="COMMON_BACK" />
 				</button>
 				: <button class="btn btn-dark" onClick={ e => {
@@ -339,7 +336,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 					else
 						route(`/worlds/${wid}/${mid}/${nid}`);
 				} }>
-					<IconArrowLeft class="me-1" />
+					<Icons.ArrowLeft class="me-1" />
 					<Locale k="WORLDS_BACK_TO_WORLDS" />
 				</button>
 			}
@@ -347,7 +344,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 
 		<div class="input-group justify-content-center my-2">
 			<div class="input-group-text">
-				<IconGlobe2 class="me-1" />
+				<Icons.Globe2 class="me-1" />
 			</div>
 
 			{ LocaleList.map(locale => <button
@@ -360,7 +357,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 
 		<div class="input-group justify-content-center my-2">
 			<div class="input-group-text">
-				<IconImageFill class="me-1" />
+				<Icons.ImageFill class="me-1" />
 			</div>
 
 			<button
@@ -538,7 +535,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 											setVoicePreview(d.voice);
 										} }
 									>
-										<IconVolumeUpFill style={ { verticalAlign: "top" } } />
+										<Icons.VolumeUpFill style={ { verticalAlign: "top" } } />
 									</a> }
 								</div> }
 

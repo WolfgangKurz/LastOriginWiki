@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 
 import Locale from "@/components/locale";
 import RarityBadge from "@/components/rarity-badge";
-import IconArrowRight from "@/components/bootstrap-icon/icons/ArrowRight";
+import Icons from "@/components/bootstrap-icon";
 
 import ChangelogItem from "../../components/changelog-item";
 
@@ -82,9 +82,9 @@ const Changelog: FunctionalComponent = () => <>
 			<li>
 				다음과 같은 일부 버프 조건이 올바르지 않게 표기되는 문제를 수정했습니다.
 				<ul>
-					<li>인접 그리드에 아군이 존재하는 경우 <IconArrowRight class="mx-1" /> 인접 그리드에 아군이 n체 이상 존재하는 경우</li>
-					<li>버프 조건에서 이로운/해로운 효과 구분이 증가/감소로 표시되는 문제 <IconArrowRight class="mx-1" /> 표기 삭제 후 증감으로 통일</li>
-					<li>??? 로 표시되는 문제 <IconArrowRight class="mx-1" /> 표시되도록 수정</li>
+					<li>인접 그리드에 아군이 존재하는 경우 <Icons.ArrowRight class="mx-1" /> 인접 그리드에 아군이 n체 이상 존재하는 경우</li>
+					<li>버프 조건에서 이로운/해로운 효과 구분이 증가/감소로 표시되는 문제 <Icons.ArrowRight class="mx-1" /> 표기 삭제 후 증감으로 통일</li>
+					<li>??? 로 표시되는 문제 <Icons.ArrowRight class="mx-1" /> 표시되도록 수정</li>
 				</ul>
 			</li>
 		</> }

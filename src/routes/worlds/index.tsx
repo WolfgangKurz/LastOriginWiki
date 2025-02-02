@@ -5,7 +5,7 @@ import { PermanentEvents, AssetsRoot, CurrentEvent, WorldIds } from "@/libs/Cons
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Locale, { LocaleGet } from "@/components/locale";
-import IconDot from "@/components/bootstrap-icon/icons/Dot";
+import Icons from "@/components/bootstrap-icon";
 import WorldItem from "@/routes/worlds/components/WorldItem";
 
 import style from "./style.module.scss";

@@ -10,12 +10,9 @@ import { ChangeLanguage, CurrentLocale, ReloadLocale } from "@/libs/Locale";
 import { ChangeDB, CurrentDB, DBList, DBTypes } from "@/libs/DB";
 
 import Locale from "@/components/locale";
-import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
-import IconServer from "@/components/bootstrap-icon/icons/Server";
-import IconTranslate from "@/components/bootstrap-icon/icons/Translate";
+import Icons from "@/components/bootstrap-icon";
 
 import style from "./style.module.scss";
-import IconList from "@/components/bootstrap-icon/icons/List";
 
 interface LinkData {
 	href: string;
@@ -47,7 +44,7 @@ const DropdownExternal: FunctionalComponent<LinkData> = (props) => (
 	<li>
 		<a href={ props.href } target="_blank" rel="noreferrer" class="dropdown-item">
 			{ props.children ? props.children : <Locale k={ props.text || "" } /> }
-			<IconLink45deg class="ms-1" />
+			<Icons.Link45deg class="ms-1" />
 		</a>
 	</li>
 );
@@ -91,7 +88,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 				aria-expanded="false"
 				aria-label="Toggle navigation"
 			>
-				<IconList />
+				<Icons.List />
 				{/* <span class="navbar-toggler-icon" /> */ }
 			</button>
 
@@ -197,7 +194,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 									data-bs-toggle="dropdown"
 									aria-expanded="false"
 								>
-									<IconServer class="me-1" />
+									<Icons.Server class="me-1" />
 									<img class="mx-1" src={ `${AssetsRoot}/flags/${DBDisp[CurrentDB]}.png` } alt={ DBDisp[CurrentDB] } />
 									{ DBDisp[CurrentDB] }
 								</a>
@@ -243,7 +240,7 @@ const Header: FunctionalComponent = (): preact.VNode => {
 									data-bs-toggle="dropdown"
 									aria-expanded="false"
 								>
-									<IconTranslate class="me-1" />
+									<Icons.Translate class="me-1" />
 									<img
 										class="mx-2"
 										src={ `${AssetsRoot}/flags/${CurrentLocale.value}.png` }

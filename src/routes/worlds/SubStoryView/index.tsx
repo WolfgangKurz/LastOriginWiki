@@ -14,9 +14,7 @@ import { isActive } from "@/libs/Functions";
 import Locale from "@/components/locale";
 import Button from "@/components/Button";
 import UnitFace from "@/components/unit-face";
-import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
-import IconBook from "@/components/bootstrap-icon/icons/Book";
-import IconCompass from "@/components/bootstrap-icon/icons/Compass";
+import Icons from "@/components/bootstrap-icon";
 
 import style from "./style.module.scss";
 
@@ -118,7 +116,7 @@ const SubStoryView: FunctionalComponent = () => {
 		<div class="row">
 			<div class="col-auto">
 				<Button variant="dark" onClick={ () => route("/worlds") }>
-					<IconArrowLeft class="me-1" />
+					<Icons.ArrowLeft class="me-1" />
 					<Locale k="WORLDS_BACK_TO_WORLDS" />
 				</Button>
 			</div>
@@ -238,7 +236,7 @@ const SubStoryView: FunctionalComponent = () => {
 															route(`/worlds/Sub/1/${SubStage(s.stage)}`);
 														} }
 													>
-														<IconCompass class="me-1" />
+														<Icons.Compass class="me-1" />
 														Stage
 													</button> }
 													<button
@@ -249,7 +247,7 @@ const SubStoryView: FunctionalComponent = () => {
 															route(`/story/${storyGroup.troop || "Story_Uncategorized"}/${s.key}-START`);
 														} }
 													>
-														<IconBook class="me-1" />
+														<Icons.Book class="me-1" />
 														{ s.end.dialog ? <>Start</> : <>Story</> }
 													</button>
 													{ s.end.dialog && <button
@@ -260,7 +258,7 @@ const SubStoryView: FunctionalComponent = () => {
 															route(`/story/${storyGroup.troop || "Story_Uncategorized"}/${s.key}-END`);
 														} }
 													>
-														<IconBook class="me-1" />
+														<Icons.Book class="me-1" />
 														End
 													</button> }
 												</div>

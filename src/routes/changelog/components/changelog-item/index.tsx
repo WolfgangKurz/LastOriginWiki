@@ -3,10 +3,10 @@ import { FunctionalComponent } from "preact";
 import { cn } from "@/libs/Class";
 
 import Locale from "@/components/locale";
-import IconTagFill from "@/components/bootstrap-icon/icons/TagFill";
+import Icons from "@/components/bootstrap-icon";
 
 import style from "./style.module.scss";
-import IconDiamondFill from "@/components/bootstrap-icon/icons/DiamondFill";
+import Icons from "@/components/bootstrap-icon";
 
 interface ChangelogItemProps {
 	tag?: string;
@@ -77,7 +77,7 @@ const ChangelogItem: FunctionalComponent<ChangelogItemProps> = (props) => {
 
 	return <div class={ style.ChangelogItem }>
 		<div class={ style.Title }>
-			<IconDiamondFill />
+			<Icons.DiamondFill />
 
 			{ props.title }
 

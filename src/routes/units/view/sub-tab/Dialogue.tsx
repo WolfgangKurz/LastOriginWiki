@@ -9,8 +9,7 @@ import { isActive } from "@/libs/Functions";
 
 import UnitDialogue, { VoiceItem } from "../../components/unit-dialogue";
 import TitleCallDisplay from "../../components/titlecall-display";
-import IconTranslate from "@/components/bootstrap-icon/icons/Translate";
-import IconMicFill from "@/components/bootstrap-icon/icons/MicFill";
+import Icons from "@/components/bootstrap-icon";
 
 import { SubpageProps } from "..";
 
@@ -58,7 +57,7 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 	return <div style={ { display: display ? "" : "none" } }>
 		<div class="input-group justify-content-center my-1">
 			<div class="input-group-text">
-				<IconTranslate class="me-1" />
+				<Icons.Translate class="me-1" />
 			</div>
 
 			{ LangList.map(lang => <button
@@ -70,7 +69,7 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 		</div>
 		<div class="input-group justify-content-center my-1">
 			<div class="input-group-text">
-				<IconMicFill class="me-1" />
+				<Icons.MicFill class="me-1" />
 			</div>
 
 			<button

@@ -19,8 +19,7 @@ import { BuildClass } from "@/libs/Class";
 import { StaticDB, useDBData } from "@/libs/Loader";
 
 import Locale from "@/components/locale";
-import IconDownload from "@/components/bootstrap-icon/icons/Download";
-import IconConfusedFace from "@/components/bootstrap-icon/icons/ConfusedFace";
+import Icons from "@/components/bootstrap-icon";
 
 import CustomEdge from "./CustomEdge";
 
@@ -795,7 +794,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 		{ error
 			? <div>
 				<div class="mb-2">
-					<IconConfusedFace size="64" />
+					<Icons.ConfusedFace size="64" />
 				</div>
 
 				<Locale k="ENEMY_AI_INVALID" />
@@ -822,7 +821,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 					<FlowControls showInteractive={ false }>
 						<FlowControlButton onClick={ () => downloadFlow() } title="download">
 							<div>
-								<IconDownload />
+								<Icons.Download />
 							</div>
 						</FlowControlButton>
 					</FlowControls>

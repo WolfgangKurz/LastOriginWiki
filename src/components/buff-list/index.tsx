@@ -21,13 +21,7 @@ import { diff2, groupBy } from "@/libs/Functions";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB, useDBData } from "@/libs/Loader";
 import LocaleBase, { LocaleProps, LocalePropsLegacy } from "@/components/locale";
-import IconQuestionCircleFill from "@/components/bootstrap-icon/icons/QuestionCircleFill";
-import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
-import IconCheck from "@/components/bootstrap-icon/icons/Check";
-import IconX from "@/components/bootstrap-icon/icons/X";
-import IconThreeDots from "@/components/bootstrap-icon/icons/ThreeDots";
-import IconDot from "@/components/bootstrap-icon/icons/Dot";
-import IconDash from "@/components/bootstrap-icon/icons/Dash";
+import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import PopupButton from "@/components/PopupButton";
 import RarityBadge from "@/components/rarity-badge";
@@ -275,7 +269,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					<Locale raw={ false } k="BUFF_UNIT_SIDE_ENEMY" />
 				</span>
 				<a class={ style.SubBadgeLink } href={ `/enemies/${ekey}` } target="_blank">
-					<IconLink45deg />
+					<Icons.Link45deg />
 					<Locale raw={ false } k={ `ENEMY_${ekey}` } />
 				</a>
 			</span>;
@@ -326,7 +320,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			const color = groups[g][0].color;
 
 			const uids = groups[g].length > 1
-				? <IconThreeDots />
+				? <Icons.ThreeDots />
 				: <>{ groups[g][0].uid }</>;
 
 			const attr = groups[g][0].attr !== undefined
@@ -349,7 +343,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 								? <a href={ `/units/${from.key}` } target="_blank">
 									<RarityBadge border rarity="A">
 										<Locale plain k={ `UNIT_${from.key}` } fallback={ from.key } />
-										<IconLink45deg />
+										<Icons.Link45deg />
 									</RarityBadge>
 								</a>
 								: <RarityBadge border rarity="A">
@@ -357,7 +351,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 								</RarityBadge>
 							}
 
-							<IconDash />
+							<Icons.Dash />
 
 							<Locale
 								raw={ false }
@@ -374,11 +368,11 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							<a href={ `/equips/${from.key}` } target="_blank">
 								<RarityBadge border rarity="A">
 									<Locale plain k={ `EQUIP_${from.key}` } />
-									<IconLink45deg />
+									<Icons.Link45deg />
 								</RarityBadge>
 							</a>
 
-							<IconDash />
+							<Icons.Dash />
 
 							<strong class={ style.EquipLevel }>
 								<Locale raw={ false } k={ "BUFFFROM_EQUIP_LEVEL" } p={ [from.level] } />
@@ -395,11 +389,11 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							<a href={ `/enemies/${from.key}` } target="_blank">
 								<RarityBadge border rarity="SSS">
 									<Locale plain k={ `ENEMY_${from.key}` } />
-									<IconLink45deg />
+									<Icons.Link45deg />
 								</RarityBadge>
 							</a>
 
-							<IconDash />
+							<Icons.Dash />
 
 							<Locale
 								raw={ false }
@@ -423,7 +417,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 								<Locale plain k={ from.key } />
 							</RarityBadge>
 
-							<IconDash />
+							<Icons.Dash />
 
 							<Locale
 								raw={ false }
@@ -448,7 +442,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						</span>
 
 						{ (BuffFromDB[b.key] || []).map(from => <div class={ style.FromLine }>
-							<IconDot />
+							<Icons.Dot />
 							{ renderFrom(from) }
 						</div>) }
 					</div>) }
@@ -842,16 +836,16 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 								<Locale
 									k="BUFFTRIGGERDESC_KILL"
 									p={ [
-										<span class="text-danger"><IconX /></span>,
-										<span class="text-danger"><IconX /></span>,
-										<span class="text-danger"><IconX /></span>,
-										<span class="text-success"><IconCheck /></span>,
-										<span class="text-danger"><IconX /></span>,
+										<span class="text-danger"><Icons.X /></span>,
+										<span class="text-danger"><Icons.X /></span>,
+										<span class="text-danger"><Icons.X /></span>,
+										<span class="text-success"><Icons.Check /></span>,
+										<span class="text-danger"><Icons.X /></span>,
 									] }
 								/>
 							</div> }
 						>
-							<IconQuestionCircleFill class="ms-1" />
+							<Icons.QuestionCircleFill class="ms-1" />
 						</BootstrapTooltip>
 					</>;
 				case "enemy_killed_passive":
@@ -864,16 +858,16 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 								<Locale
 									k="BUFFTRIGGERDESC_KILL"
 									p={ [
-										<span class="text-success"><IconCheck /></span>,
-										<span class="text-success"><IconCheck /></span>,
-										<span class="text-danger"><IconX /></span>,
-										<span class="text-success"><IconCheck /></span>,
-										<span class="text-success"><IconCheck /></span>,
+										<span class="text-success"><Icons.Check /></span>,
+										<span class="text-success"><Icons.Check /></span>,
+										<span class="text-danger"><Icons.X /></span>,
+										<span class="text-success"><Icons.Check /></span>,
+										<span class="text-success"><Icons.Check /></span>,
 									] }
 								/>
 							</div> }
 						>
-							<IconQuestionCircleFill class="ms-1" />
+							<Icons.QuestionCircleFill class="ms-1" />
 						</BootstrapTooltip>
 					</>;
 				case "enemy_killed_counter":
@@ -886,16 +880,16 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 								<Locale
 									k="BUFFTRIGGERDESC_KILL"
 									p={ [
-										<span class="text-success"><IconCheck /></span>,
-										<span class="text-success"><IconCheck /></span>,
-										<span class="text-success"><IconCheck /></span>,
-										<span class="text-success"><IconCheck /></span>,
-										<span class="text-danger"><IconX /></span>,
+										<span class="text-success"><Icons.Check /></span>,
+										<span class="text-success"><Icons.Check /></span>,
+										<span class="text-success"><Icons.Check /></span>,
+										<span class="text-success"><Icons.Check /></span>,
+										<span class="text-danger"><Icons.X /></span>,
 									] }
 								/>
 							</div> }
 						>
-							<IconQuestionCircleFill class="ms-1" />
+							<Icons.QuestionCircleFill class="ms-1" />
 						</BootstrapTooltip>
 					</>;
 				case "criticaled":
@@ -1940,7 +1934,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 								</span> }>
 									<span class={ `badge bg-orange ms-2 ${style.OverlapBadge}` }>
 										<Locale raw={ false } k={ `BUFFOVERLAP_${StackTable[overlap]}` } />
-										<IconQuestionCircleFill class={ `ms-1 ${style.QuestionIcon}` } />
+										<Icons.QuestionCircleFill class={ `ms-1 ${style.QuestionIcon}` } />
 									</span>
 								</BootstrapTooltip>
 								: <></>

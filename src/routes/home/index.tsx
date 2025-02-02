@@ -11,10 +11,7 @@ import { GetTimeAgoLocale } from "@/libs/Setup";
 import { cn } from "@/libs/Class";
 
 import Locale from "@/components/locale";
-import IconLink45deg from "@/components/bootstrap-icon/icons/Link45deg";
-import IconHourglassSplit from "@/components/bootstrap-icon/icons/HourglassSplit";
-import IconGithub from "@/components/bootstrap-icon/icons/Github";
-import IconEnvelope from "@/components/bootstrap-icon/icons/Envelope";
+import Icons from "@/components/bootstrap-icon";
 import Countdown from "@/routes/home/Countdown";
 import Changelog from "./changelog";
 
@@ -55,7 +52,7 @@ const NavItemExternal: FunctionalComponent<LinkData> = (props) => (
 		} }
 	>
 		{ props.children ? props.children : <Locale k={ props.text || "" } /> }
-		<IconLink45deg class="ms-1" />
+		<Icons.Link45deg class="ms-1" />
 	</button>
 );
 
@@ -97,7 +94,7 @@ const Home: FunctionalComponent = () => {
 				<div>
 					<img class="me-2" src={ `${AssetsRoot}/flags/KR.png` } alt="[KR]" />
 
-					<IconHourglassSplit class="me-1 mb-1" />
+					<Icons.HourglassSplit class="me-1 mb-1" />
 					<Countdown to={ EventTo } />
 				</div>
 			</Link> }
@@ -127,13 +124,13 @@ const Home: FunctionalComponent = () => {
 
 			<div class={ style.Links }>
 				<span>
-					<IconGithub class="me-1" />
+					<Icons.Github class="me-1" />
 					<a href="https://github.com/WolfgangKurz/LastOriginWiki" target="_blank" rel="noopener noreferrer">
 						Source Code
 					</a>
 				</span>
 				<span>
-					<IconEnvelope class="me-1" />
+					<Icons.Envelope class="me-1" />
 					<a href="mailto:wolfgangkurzdev@gmail.com">wolfgangkurzdev@gmail.com</a>
 				</span>
 			</div>

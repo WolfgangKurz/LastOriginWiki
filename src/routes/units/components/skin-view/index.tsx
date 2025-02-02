@@ -14,8 +14,7 @@ import { render2DModel } from "./2DModelRenderer";
 
 import Locale from "@/components/locale";
 import PopupBase from "@/components/popup/base";
-import IconEmojiSmileFill from "@/components/bootstrap-icon/icons/EmojiSmileFill";
-import IconAspectRatioFill from "@/components/bootstrap-icon/icons/AspectRatioFill";
+import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import MergedVideo from "@/components/merged-video";
 import Pinch from "@/components/pinch";
@@ -51,7 +50,6 @@ interface SkinViewProps {
 	black?: boolean;
 	hideGroup?: boolean;
 	collapsed?: boolean;
-	detailable?: boolean;
 	animate?: boolean;
 }
 
@@ -84,16 +82,10 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 	const [cameraBoundaryAvailable, setCameraBoundaryAvailable] = useState(false);
 	const [downloadPlusCameraBoundary, setDownloadPlusCameraBoundary] = useState(true);
-	const downloadPlusAble = useMemo(() => {
-		return !((skin.metadata.flags & SKIN_METADATA_FLAGS.GAMMA) != 0 && !isDamaged) &&
-			cameraBoundaryAvailable;
-	}, [skin.metadata.flags, isDamaged, cameraBoundaryAvailable]);
-
-	const [enableAnimation, setEnableAnimation] = useState(false);
-	const [asBlackBG, setAsBlackBG] = useState(false);
-	const [hideGroupLogo, setHideGroupLogo] = useState(false);
-
-	const [detailView, setDetailView] = useState(false);
+	const downloadPlusAble = useMemo(
+		() => (skin.metadata.flags & (SKIN_METADATA_FLAGS.SPINE | SKIN_METADATA_FLAGS.GAMMA)) === 0 && !isDamaged,
+		[skin.metadata.flags, isDamaged],
+	);
 
 	// const Aspect = props.collapsed ? style["ratio-2x5"] : "ratio-4x3";
 	const Aspect = "ratio-2x4 ratio-lg-5x3";
@@ -189,9 +181,13 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		SkinVideoPostfix,
 	]);
 
-	useEffect(() => { // Reset gamma hiding available
+	useEffect(() => { // Reset gamma hiding available, reset face info
 		setGammaPartAvailable(false);
 		setGammaBGAvailable(false);
+
+		setFace("");
+		setFacePrefix("");
+		setFaceList([]);
 	}, [props.unit.uid, props.skin.sid]);
 
 	useEffect(() => {
@@ -245,8 +241,8 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	]);
 
 	const DisplayGamma = useMemo( // NOTE: No animated damaged yet
-		() => (skin.metadata.flags & SKIN_METADATA_FLAGS.GAMMA) != 0 && !isDamaged,
-		[skin.metadata.flags, isDamaged],
+		() => !!props.animate && (skin.metadata.flags & SKIN_METADATA_FLAGS.GAMMA) != 0 && !isDamaged,
+		[props.animate, skin.metadata.flags, isDamaged],
 	);
 
 	const AvailableS = useMemo(() => !isDamaged
@@ -291,6 +287,9 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		),
 		[skin.metadata.flags, skin.metadata["2dmodel"], skin.metadata["2dmodel_dam"]],
 	);
+	const DisplayVideo = useMemo(() => {
+		return !!props.animate && !!modelVideoId;
+	}, [props.animate, modelVideoId]);
 
 	function download2DModel (filename: string, cropByCameraBoundary: boolean = false) {
 		if (inPlusDownload) return;
@@ -337,7 +336,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					class={ cn(style.FullUnit, style.FullUnitMarginless) }
 					ref={ FullUnitEl }
 				>
-					{ DisplayGamma
+					{ DisplayGamma && !!props.collapsed
 						? <GammaViewer
 							key="skin-gamma-viewer"
 
@@ -367,7 +366,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							onPartAvailable={ v => setGammaPartAvailable(v) }
 							onBGAvailable={ v => setGammaBGAvailable(v) }
 						/>
-						: DisplayMixed || DisplaySpine || Display2DModel || modelVideoId
+						: DisplayMixed || DisplaySpine || Display2DModel || DisplayVideo
 							? <PixiView
 								type={ DisplayMixed
 									? "mixed"
@@ -411,7 +410,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 								onCameraBoundary={ v => setCameraBoundaryAvailable(v) }
 							/>
-							: modelVideoId.length > 0
+							: DisplayVideo && modelVideoId.length > 0
 								? CanPlayWebM()
 									? <video
 										autoPlay muted loop
@@ -421,100 +420,97 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 										src={ `${AssetsRoot}/webm/HD.Legacy/${modelVideoId}.mp4` }
 										type="video/mp4"
 									/>
-								: !props.collapsed // && !AvailableAnim
-									? <Pinch
-										minScale={ 0.5 }
-										maxScale={ 3 }
-									>
-										<img src={ SkinImageURL } />
-									</Pinch>
-									: <img src={ SkinImageURL } />
+								: <Pinch
+									minScale={ 0.5 }
+									maxScale={ 3 }
+								>
+									<img src={ SkinImageURL } />
+								</Pinch>
 					}
 				</div>
 
-				{ !(DisplaySpine || DisplayGamma) && (
-					modelVideoId
-						? <a
-							class={ `${style.SkinToggle} ${style.Download}` }
-							href={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` } // download webm only
-							download={ `${modelVideoId}.webm` }
-							target="_blank"
+				{ modelVideoId
+					? <a
+						class={ `${style.SkinToggle} ${style.Download}` }
+						href={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` } // download webm only
+						download={ `${modelVideoId}.webm` }
+						target="_blank"
+					>
+						<svg width="1em" height="1em" viewBox="0 0 24 24">
+							<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+						</svg>
+					</a>
+					: <>
+						{ downloadPlusAble && cameraBoundaryAvailable && <BootstrapTooltip
+							class={ `${style.SkinToggle} ${style.DownloadPlusCameraBoundary}` }
+							tooltipClass={ style.DownloadTooltipContainer }
+							placement="left"
+							content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
+								<Locale raw k="UNIT_VIEW_SKIN_DOWNLOADPLUS_CAMERABOUNDARY" />
+							</span> }
 						>
-							<svg width="1em" height="1em" viewBox="0 0 24 24">
-								<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
-							</svg>
-						</a>
-						: <>
-							{ downloadPlusAble && <BootstrapTooltip
-								class={ `${style.SkinToggle} ${style.DownloadPlusCameraBoundary}` }
-								tooltipClass={ style.DownloadTooltipContainer }
-								placement="left"
-								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-									<Locale raw k="UNIT_VIEW_SKIN_DOWNLOADPLUS_CAMERABOUNDARY" />
-								</span> }
+							<a
+								class={ cn(
+									style.DownloadContent,
+									style.ToggleButton,
+									downloadPlusCameraBoundary && style.Active,
+								) }
+								href="#"
+								onClick={ e => {
+									e.preventDefault();
+									e.stopImmediatePropagation();
+									setDownloadPlusCameraBoundary(v => !v);
+								} }
 							>
-								<a
-									class={ cn(
-										style.DownloadContent,
-										style.ToggleButton,
-										downloadPlusCameraBoundary && style.Active,
-									) }
-									href="#"
-									onClick={ e => {
-										e.preventDefault();
-										e.stopImmediatePropagation();
-										setDownloadPlusCameraBoundary(v => !v);
-									} }
-								>
-									{/* <IconCrop /> */ }
-									<IconAspectRatioFill />
-								</a>
-							</BootstrapTooltip> }
-							<BootstrapTooltip
-								class={ `${style.SkinToggle} ${style.DownloadPlus}` }
-								tooltipClass={ style.DownloadTooltipContainer }
-								placement="left"
-								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-									<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOADPLUS" />
-								</span> }
+								{/* <Icons.Crop /> */ }
+								<Icons.AspectRatioFill />
+							</a>
+						</BootstrapTooltip> }
+						{ downloadPlusAble && <BootstrapTooltip
+							class={ `${style.SkinToggle} ${style.DownloadPlus}` }
+							tooltipClass={ style.DownloadTooltipContainer }
+							placement="left"
+							content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
+								<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOADPLUS" />
+							</span> }
+						>
+							<a
+								class={ cn(style.DownloadContent, style.DownloadPlusContent) }
+								href="#"
+								onClick={ e => {
+									e.preventDefault();
+									e.stopImmediatePropagation();
+									download2DModel(SkinImageDownloadPlusFilename, downloadPlusCameraBoundary);
+								} }
 							>
-								<a
-									class={ cn(style.DownloadContent, style.DownloadPlusContent) }
-									href="#"
-									onClick={ e => {
-										e.preventDefault();
-										e.stopImmediatePropagation();
-										download2DModel(SkinImageDownloadPlusFilename, downloadPlusCameraBoundary);
-									} }
-								>
-									<Spinner />
-									<svg width="1em" height="1em" viewBox="0 0 24 24">
-										<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
-										<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M 16 6 L 20 6 M 18 4 L 18 8" />
-									</svg>
-								</a>
-							</BootstrapTooltip>
-							<BootstrapTooltip
-								class={ `${style.SkinToggle} ${style.Download}` }
-								tooltipClass={ style.DownloadTooltipContainer }
-								placement="left"
-								content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
-									<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOAD" />
-								</span> }
+								<Spinner />
+								<svg width="1em" height="1em" viewBox="0 0 24 24">
+									<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+									<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M 16 6 L 20 6 M 18 4 L 18 8" />
+								</svg>
+							</a>
+						</BootstrapTooltip> }
+						<BootstrapTooltip
+							class={ `${style.SkinToggle} ${style.Download}` }
+							tooltipClass={ style.DownloadTooltipContainer }
+							placement="left"
+							content={ <span class={ cn(style.DownloadTooltip, "word-keep") }>
+								<Locale raw={ false } k="UNIT_VIEW_SKIN_DOWNLOAD" />
+							</span> }
+						>
+							<a
+								class={ style.DownloadContent }
+								href={ SkinImageDownloadFilename }
+								download={ SkinImageDownloadFilename.substring(SkinImageDownloadFilename.lastIndexOf("/") + 1) }
+								target="_blank"
 							>
-								<a
-									class={ style.DownloadContent }
-									href={ SkinImageDownloadFilename }
-									download={ SkinImageDownloadFilename.substring(SkinImageDownloadFilename.lastIndexOf("/") + 1) }
-									target="_blank"
-								>
-									<svg width="1em" height="1em" viewBox="0 0 24 24">
-										<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
-									</svg>
-								</a>
-							</BootstrapTooltip>
-						</>
-				) }
+								<svg width="1em" height="1em" viewBox="0 0 24 24">
+									<path fill="currentColor" d="M6 20q-.825 0-1.412-.587Q4 18.825 4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413Q18.825 20 18 20Zm6-4l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11Z" />
+								</svg>
+							</a>
+						</BootstrapTooltip>
+					</>
+				}
 
 				{ !(skin.isPro || skin.isDef) && skin.price
 					? <div class={ style.Price }>
@@ -667,7 +663,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 				/> }
 
 				{ faceList.length > 0
-					? <div class={ `${style.FaceList} ${props.collapsed ? style.FaceListMargin : ""}` }>
+					? <div class={ cn(style.FaceList, props.collapsed && style.FaceListMargin) }>
 						<select
 							class={ `form-select form-select-sm ${style.FaceList}` }
 							value={ face }
@@ -686,88 +682,11 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 								</option>;
 							}) }
 						</select>
-						<IconEmojiSmileFill />
+						<Icons.EmojiSmileFill />
 					</div>
-					: <></>
-				}
-
-				{ props.detailable
-					? <>
-						<div
-							class={ style.Detail }
-							onClick={ (e) => {
-								e.preventDefault();
-								setDetailView(true);
-							} }
-						/>
-
-						<PopupBase
-							display={ detailView }
-							size="xl"
-							header={ <>
-								<Locale
-									plain
-									k={ skin.sid ? `UNIT_SKIN_${unit.uid}_${skin.sid}` : `UNIT_${unit.uid}` }
-								/>
-								{/* <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" /> */ }
-							</> }
-							onHidden={ () => setDetailView(false) }
-						>
-							<div class="text-start mb-2">
-								<div class="form-check d-inline-block form-switch">
-									<label class="form-check-label">
-										<input
-											class="form-check-input"
-											type="checkbox"
-											disabled={ !AvailableAnim }
-											checked={ enableAnimation }
-											onClick={ (): void => setEnableAnimation(!enableAnimation) }
-										/>
-										<span class={ !AvailableAnim ? "text-secondary" : undefined }>
-											<Locale k="UNIT_VIEW_SKIN_ANIMATION_SWITCH" />
-										</span>
-									</label>
-								</div>
-
-								<span class="text-secondary px-2">|</span>
-
-								<div class="form-check d-inline-block form-switch">
-									<label class="form-check-label">
-										<input
-											class="form-check-input"
-											type="checkbox"
-											checked={ asBlackBG }
-											onClick={ (): void => setAsBlackBG(!asBlackBG) }
-										/>
-										<Locale k="UNIT_VIEW_SKIN_BLACKBG_SWITCH" />
-									</label>
-								</div>
-
-								<span class="text-secondary px-2">|</span>
-
-								<div class="form-check d-inline-block form-switch">
-									<label class="form-check-label">
-										<input
-											class="form-check-input"
-											type="checkbox"
-											checked={ hideGroupLogo }
-											onClick={ (): void => setHideGroupLogo(!hideGroupLogo) }
-										/>
-										<Locale k="UNIT_VIEW_SKIN_HIDEGROUP_SWITCH" />
-									</label>
-								</div>
-							</div>
-
-							{ detailView && <SkinView
-								unit={ unit }
-								skin={ skin }
-								animate={ enableAnimation }
-								black={ asBlackBG }
-								hideGroup={ hideGroupLogo }
-							/> }
-						</PopupBase>
-					</>
-					: <></>
+					: <div class={ cn(style.FaceList, style.NoFace) }>
+						<Locale k="UNIT_VIEW_SKIN_FACE_EMPTY" />
+					</div>
 				}
 			</div>
 		</div>

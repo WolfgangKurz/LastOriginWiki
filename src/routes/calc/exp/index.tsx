@@ -1,4 +1,5 @@
 import { FunctionalComponent } from "preact";
+import { useMemo, useState } from "preact/hooks";
 import Decimal from "decimal.js";
 
 import { ACTOR_GRADE, ITEM_GRADE, STAGE_SUB_TYPE, UNIT_POSITION } from "@/types/Enums";
@@ -9,24 +10,20 @@ import { SkillGroup } from "@/types/DB/Skill";
 
 import { CurrentDB } from "@/libs/DB";
 import { useUpdate } from "@/libs/hooks";
-import { objState } from "@/libs/State";
 import { RarityDisplay, TroopNameTable, WorldIds } from "@/libs/Const";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
-import { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
+import { GetJson, StaticDB, useDBData } from "@/libs/Loader";
+import { useLocale } from "@/libs/Locale";
 import Loading from "@/components/loading";
-import Locale, { LocaleGet } from "@/components/locale";
-import IconX from "@/components/bootstrap-icon/icons/X";
-import IconPlusSquareFill from "@/components/bootstrap-icon/icons/PlusSquareFill";
+import Locale from "@/components/locale";
+import Icons from "@/components/bootstrap-icon";
 import UnitFace from "@/components/unit-face";
 import SkillIcon from "@/components/skill-icon";
 import EquipIcon from "@/components/equip-icon";
 
 import style from "./style.module.scss";
-import ElemIcon from "@/components/elem-icon";
-import { BUFFEFFECT_TYPE } from "@/types/BuffEffect";
-import { BuffTrigger } from "@/types/BuffTrigger";
 
 interface BonusCharInfo {
 	uid: string;
@@ -64,6 +61,7 @@ interface EXPSet {
 
 const EXPCalc: FunctionalComponent = () => {
 	const update = useUpdate();
+	const [loc] = useLocale();
 
 	const linkColors = ["secondary", "success", "success", "success", "success", "primary"];
 	const rarities: ACTOR_GRADE[] = [
@@ -169,69 +167,55 @@ const EXPCalc: FunctionalComponent = () => {
 		],
 	};
 
-	const CoreLinks = objState<number>(0);
-	const baseLevel = objState<number>(1);
-	const baseExp = objState<number>(0);
-	const destLevel = objState<number>(100);
-	const unitRarity = objState<ACTOR_GRADE>(ACTOR_GRADE.SS);
+	const [CoreLinks, setCoreLinks] = useState<number>(0);
+	const [baseLevel, setBaseLevel] = useState<number>(1);
+	const [baseExp, setBaseExp] = useState<number>(0);
+	const [destLevel, setDestLevel] = useState<number>(100);
+	const [unitRarity, setUnitRarity] = useState<ACTOR_GRADE>(ACTOR_GRADE.SS);
 
-	const eventBonus = objState<number>(0);
-	const facilityLevel = objState<number[]>([0, 0, 0, 0]);
-	const boostBonus = objState<boolean>(false);
+	const [eventBonus, setEventBonus] = useState<number>(0);
+	const [facilityLevel, setFacilityLevel] = useState<number[]>([0, 0, 0, 0]);
+	const [boostBonus, setBoostBonus] = useState<boolean>(false);
 
-	const expSet = objState<EXPSet[]>([]);
+	const [expSet, setExpSet] = useState<EXPSet[]>([]);
 
 	SetMeta(["description", "twitter:description"], "목표 경험치까지의 전투원의 필요 전투 횟수를 확인할 수 있는 경험치 계산기입니다.");
 	SetMeta("keywords", ",경험치 계산기,경험치계산기", true);
 	SetMeta(["twitter:image", "og:image"], null);
 
-	UpdateTitle(LocaleGet("MENU_ETC_EXPCALC"));
+	UpdateTitle(loc["MENU_ETC_EXPCALC"]);
 
-	const targetJson = [
-		// ...WorldIdList
-		// 	.filter(wid => wid !== "Story")
-		// 	.map(wid => `map/${wid}`),
-		StaticDB.Maps,
-		...bonuses
-			.map(x => {
-				if ("skill" in x) return `unit/${x.uid}`;
-				return x.rarities.map(r => `equip/${x.uid}_T${r - 1}`);
-			})
-			.flat()
-			.unique(),
-	];
+	const targetJson = useMemo(
+		() => [
+			// ...WorldIdList
+			// 	.filter(wid => wid !== "Story")
+			// 	.map(wid => `map/${wid}`),
+			StaticDB.Maps,
+			...bonuses
+				.map(x => {
+					if ("skill" in x) return `unit/${x.uid}`;
+					return x.rarities.map(r => `equip/${x.uid}_T${r - 1}`);
+				})
+				.flat()
+				.unique(),
+		],
+		[bonuses],
+	);
 
-	{
-		const needToLoad = targetJson.filter(r => !GetJson(r));
-		if (needToLoad.length > 0) {
-			Promise.all(
-				needToLoad.map(r => new Promise<void>(resolve => JsonLoaderCore(CurrentDB, r).then(_ => resolve())))
-			).then(() => update());
-			return <Loading.Data />;
-		}
-	}
+	const targetDB = targetJson.map(r => useDBData(r));
+	if (targetDB.some(r => !r)) return <Loading.Data />;
 
-	const MapsDB = GetJson<Maps>(StaticDB.Maps);
-	{
-		const needToLoad = Object.keys(MapsDB)
-			.map(k => `map/${k}`)
-			.filter(r => !GetJson(r));
-		if (needToLoad.length > 0) {
-			Promise.all(
-				needToLoad.map(r => new Promise<void>(resolve => JsonLoaderCore(CurrentDB, r).then(_ => resolve())))
-			).then(() => update());
-			return <Loading.Data />;
-		}
-	}
+	const MapsDB = targetDB[StaticDB.Maps] as Maps;
+	const mapDB = Object.keys(MapsDB).map(k => [k, useDBData<World>(`map/${k}`)] as [string, World | null | undefined]);
+	if (mapDB.some(r => !r[1])) return <Loading.Data />;
 
-	const MapDB = (() => {
+	const MapDB = useMemo(() => {
 		const ret: Record<string, World> = {};
 		Object.keys(MapsDB).forEach(k => {
-			const dat = GetJson<World>(`map/${k}`);
-			ret[k] = dat;
+			ret[k] = mapDB.find(r => r[0] === k)![1]!;
 		});
 		return ret;
-	})();
+	}, [mapDB]);
 
 	const worlds = [
 		"Story",
@@ -250,8 +234,8 @@ const EXPCalc: FunctionalComponent = () => {
 				<div class="ms-2 mb-2">
 					<div class="btn-group">
 						{ rarities.map(x => <button
-							class={ `btn btn-outline-rarity-${RarityDisplay[x]} ${isActive(unitRarity.value === x)}` }
-							onClick={ (): void => unitRarity.set(x) }
+							class={ `btn btn-outline-rarity-${RarityDisplay[x]} ${isActive(unitRarity === x)}` }
+							onClick={ (): void => setUnitRarity(x) }
 						>{ RarityDisplay[x] }</button>) }
 					</div>
 				</div>
@@ -263,8 +247,8 @@ const EXPCalc: FunctionalComponent = () => {
 				<div class="ms-2 mb-2 text-center">
 					<div class="btn-group">
 						{ linkColors.map((x, i) => <button
-							class={ `btn btn-outline-${x} ${isActive(CoreLinks.value === i)}` }
-							onClick={ (): void => CoreLinks.set(i) }
+							class={ `btn btn-outline-${x} ${isActive(CoreLinks === i)}` }
+							onClick={ (): void => setCoreLinks(i) }
 						>{ i }</button>) }
 					</div>
 				</div>
@@ -279,8 +263,8 @@ const EXPCalc: FunctionalComponent = () => {
 						<input
 							type="text"
 							class="form-control text-end"
-							value={ baseLevel.value }
-							onInput={ (e): void => baseLevel.set(parseInt((e.target as HTMLInputElement).value, 10)) }
+							value={ baseLevel }
+							onInput={ (e): void => setBaseLevel(parseInt(e.currentTarget.value, 10)) }
 						/>
 					</div>
 					<div class="input-group mb-1">
@@ -288,8 +272,8 @@ const EXPCalc: FunctionalComponent = () => {
 						<input
 							type="text"
 							class="form-control text-end"
-							value={ baseExp.value }
-							onInput={ (e): void => baseExp.set(parseInt((e.target as HTMLInputElement).value, 10)) }
+							value={ baseExp }
+							onInput={ (e): void => setBaseExp(parseInt(e.currentTarget.value, 10)) }
 						/>
 					</div>
 				</div>
@@ -304,8 +288,8 @@ const EXPCalc: FunctionalComponent = () => {
 						<input
 							type="text"
 							class="form-control text-end"
-							value={ destLevel.value }
-							onInput={ (e): void => destLevel.set(parseInt((e.target as HTMLInputElement).value, 10)) }
+							value={ destLevel }
+							onInput={ (e): void => setDestLevel(parseInt(e.currentTarget.value, 10)) }
 						/>
 					</div>
 				</div>
@@ -320,10 +304,10 @@ const EXPCalc: FunctionalComponent = () => {
 						class="form-check-input"
 						type="checkbox"
 						value=""
-						checked={ boostBonus.value }
+						checked={ boostBonus }
 						onChange={ (e): void => {
 							e.preventDefault();
-							boostBonus.set((e.target as HTMLInputElement).checked);
+							setBoostBonus(e.currentTarget.checked);
 						} }
 					/>
 				</div>
@@ -334,7 +318,7 @@ const EXPCalc: FunctionalComponent = () => {
 				</div>
 				<div class="ms-2 mb-2">
 					<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-						{ facilityLevel.value.map((level, i) => <div class="col mb-2">
+						{ facilityLevel.map((level, i) => <div class="col mb-2">
 							<select
 								class="d-inline-block w-auto form-select form-select-sm"
 								value={ level }
@@ -342,7 +326,7 @@ const EXPCalc: FunctionalComponent = () => {
 									e.preventDefault();
 
 									const value = parseInt((e.target as HTMLSelectElement).value, 10);
-									facilityLevel.set((v) => [
+									setFacilityLevel((v) => [
 										...v.slice(0, i),
 										value,
 										...v.slice(i + 1),
@@ -371,8 +355,8 @@ const EXPCalc: FunctionalComponent = () => {
 						<input
 							type="text"
 							class="form-control text-end"
-							value={ eventBonus.value }
-							onInput={ (e): void => eventBonus.set(parseInt((e.target as HTMLInputElement).value, 10)) }
+							value={ eventBonus }
+							onInput={ (e): void => setEventBonus(parseInt(e.currentTarget.value, 10)) }
 						/>
 						<span class="input-group-text">%</span>
 					</div>
@@ -382,7 +366,7 @@ const EXPCalc: FunctionalComponent = () => {
 		<hr />
 
 		<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gx-3">
-			{ expSet.value.map((x, i) => {
+			{ expSet.map((x, i) => {
 				interface IndexedBonus<T extends BonusState = BonusState> {
 					data: T;
 					index: number;
@@ -519,20 +503,20 @@ const EXPCalc: FunctionalComponent = () => {
 					exp = SumBonusValues(exp, selectedWaves[wave]);
 
 					exp = exp.mul(
-						Decimal.div(eventBonus.value, 100).add(1),
+						Decimal.div(eventBonus, 100).add(1),
 					).floor();
 
 					exp = exp.mul(
-						Decimal.div(CoreLinks.value, 25).add(1),
+						Decimal.div(CoreLinks, 25).add(1),
 					).floor();
 
-					if (boostBonus.value)
+					if (boostBonus)
 						exp = exp.add(Decimal.div(base, 2)).floor();
 
 					exp = exp.add(
 						Decimal.mul(
 							base,
-							facilityLevel.value.reduce((p, c) => p.add(
+							facilityLevel.reduce((p, c) => p.add(
 								Decimal.div(facilityBonuses[c], 100),
 							), new Decimal(0)),
 						).floor(),
@@ -552,16 +536,16 @@ const EXPCalc: FunctionalComponent = () => {
 					// 	[ACTOR_GRADE.B]: 1,
 					// };
 					const startExp = ((): Decimal => {
-						let exp = new Decimal(baseExp.value);
-						for (let i = 0; i < baseLevel.value; i++)
-							exp = exp.add(unitEXPTable[unitRarity.value]![i] || 0);
+						let exp = new Decimal(baseExp);
+						for (let i = 0; i < baseLevel; i++)
+							exp = exp.add(unitEXPTable[unitRarity]![i] || 0);
 
 						return exp;
 					})();
 					const destExp = ((): Decimal => {
 						let exp = new Decimal(0);
-						for (let i = 0; i < destLevel.value; i++)
-							exp = exp.add(unitEXPTable[unitRarity.value]![i] || 0);
+						for (let i = 0; i < destLevel; i++)
+							exp = exp.add(unitEXPTable[unitRarity]![i] || 0);
 
 						return exp;
 					})();
@@ -575,13 +559,13 @@ const EXPCalc: FunctionalComponent = () => {
 							<button
 								class="btn btn-sm btn-danger px-2 py-0"
 								onClick={ (): void => {
-									expSet.set((v) => [
+									setExpSet((v) => [
 										...v.slice(0, i),
 										...v.slice(i + 1),
 									]);
 								} }
 							>
-								<IconX />
+								<Icons.X />
 							</button>
 						</div>
 						<div class="clearfix" />
@@ -597,7 +581,7 @@ const EXPCalc: FunctionalComponent = () => {
 									? "1"
 									: Object.keys(MapDB[world])[0];
 
-								expSet.set((v) => [
+								setExpSet((v) => [
 									...v.slice(0, i),
 									{
 										...x,
@@ -626,7 +610,7 @@ const EXPCalc: FunctionalComponent = () => {
 										e.preventDefault();
 
 										const map = (e.target as HTMLSelectElement).value;
-										expSet.set((v) => [
+										setExpSet((v) => [
 											...v.slice(0, i),
 											{
 												...x,
@@ -649,7 +633,7 @@ const EXPCalc: FunctionalComponent = () => {
 									value={ x.node }
 									onChange={ (e): void => {
 										e.preventDefault();
-										expSet.set((v) => [
+										setExpSet((v) => [
 											...v.slice(0, i),
 											{ ...x, node: (e.target as HTMLSelectElement).value },
 											...v.slice(i + 1),
@@ -672,8 +656,8 @@ const EXPCalc: FunctionalComponent = () => {
 										onChange={ (e): void => {
 											e.preventDefault();
 
-											const value = (e.target as HTMLInputElement).checked;
-											expSet.set((v) => [
+											const value = e.currentTarget.checked;
+											setExpSet((v) => [
 												...v.slice(0, i),
 												{ ...x, isLeader: value },
 												...v.slice(i + 1),
@@ -693,7 +677,7 @@ const EXPCalc: FunctionalComponent = () => {
 									class={ `nav-link text-dark ${isActive(x._tab === idx)}` }
 									onClick={ (e): void => {
 										e.preventDefault();
-										expSet.set((v) => [
+										setExpSet((v) => [
 											...v.slice(0, i),
 											{ ...x, _tab: idx },
 											...v.slice(i + 1),
@@ -722,7 +706,7 @@ const EXPCalc: FunctionalComponent = () => {
 													e.preventDefault();
 
 													const value = parseInt((e.target as HTMLSelectElement).value, 10);
-													expSet.set((v) => [
+													setExpSet((v) => [
 														...v.slice(0, i),
 														{
 															...x,
@@ -760,7 +744,7 @@ const EXPCalc: FunctionalComponent = () => {
 										<div>
 											<EquipIcon image={ `UI_Icon_Equip_${data.uid}_T${data.rarity - 1}` } />
 
-											{ LocaleGet(`EQUIP_${data.uid}_T${data.rarity - 1}`).replace(/ (RE|MP|SP|EX)$/, "") }
+											{ loc[`EQUIP_${data.uid}_T${data.rarity - 1}`].replace(/ (RE|MP|SP|EX)$/, "") }
 
 											<div class="float-end">
 												<select
@@ -770,7 +754,7 @@ const EXPCalc: FunctionalComponent = () => {
 														e.preventDefault();
 
 														const value = parseInt((e.target as HTMLSelectElement).value, 10);
-														expSet.set((v) => [
+														setExpSet((v) => [
 															...v.slice(0, i),
 															{
 																...x,
@@ -803,7 +787,7 @@ const EXPCalc: FunctionalComponent = () => {
 														e.preventDefault();
 
 														const value = parseInt((e.target as HTMLSelectElement).value, 10);
-														expSet.set((v) => [
+														setExpSet((v) => [
 															...v.slice(0, i),
 															{
 																...x,
@@ -830,7 +814,7 @@ const EXPCalc: FunctionalComponent = () => {
 																e.preventDefault();
 
 																const value = parseInt((e.target as HTMLSelectElement).value, 10);
-																expSet.set((v) => [
+																setExpSet((v) => [
 																	...v.slice(0, i),
 																	{
 																		...x,
@@ -908,7 +892,7 @@ const EXPCalc: FunctionalComponent = () => {
 			<div class={ `col p-2 ${style.addBox}` }>
 				<button class="p-3 btn btn-outline-secondary" onClick={ (e): void => {
 					e.preventDefault();
-					expSet.set((c) => {
+					setExpSet((c) => {
 						return [...c, {
 							world: "",
 							map: "",
@@ -936,7 +920,7 @@ const EXPCalc: FunctionalComponent = () => {
 					});
 				} }>
 					<div class="mb-2" style="font-size:2em">
-						<IconPlusSquareFill />
+						<Icons.PlusSquareFill />
 					</div>
 					<Locale k="EXPCALC_NEW_CALC" />
 				</button>

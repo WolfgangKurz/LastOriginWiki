@@ -8,9 +8,10 @@ import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
 import { FormatNumber } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
+import { useLocale } from "@/libs/Locale";
 
-import Locale, { LocaleGet } from "@/components/locale";
-import IconInfoCircleFill from "@/components/bootstrap-icon/icons/InfoCircleFill";
+import Locale from "@/components/locale";
+import Icons from "@/components/bootstrap-icon";
 import EquipIcon from "@/components/equip-icon";
 import PopupBase from "@/components/popup/base";
 import PCIcon from "@/components/pc-icon";
@@ -39,10 +40,11 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 	const variant = props.variant || "secondary";
 	const text = props.text || "light";
 
+	const [loc] = useLocale();
 	const [display, setDisplay] = useState(false);
 
 	const ParsedDesc = ((): preact.VNode[] => ParseDescriptionText(
-		(LocaleGet(`CONSUMABLE_DESC_${props.item.key}`) || "")
+		(loc[`CONSUMABLE_DESC_${props.item.key}`] || "")
 			.toString()
 			.replace(/&([lg]t);/g, (p0, p1) => p1 === "lt" ? "<" : ">"),
 	))();
@@ -152,7 +154,7 @@ const DropItem: FunctionalComponent<DropItemProps> = (props) => {
 					<div>
 						{ props.chancePart || (chance < 100 ? <span class="badge bg-light text-dark">{ chance }%</span> : <></>) }
 
-						{ !props.noIcon ? <IconInfoCircleFill class="float-end mt-1" /> : <></> }
+						{ !props.noIcon ? <Icons.InfoCircleFill class="float-end mt-1" /> : <></> }
 					</div>
 				</div>
 			</div>

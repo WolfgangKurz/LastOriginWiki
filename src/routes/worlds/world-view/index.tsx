@@ -10,9 +10,7 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import { useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
-import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
-import IconCompass from "@/components/bootstrap-icon/icons/Compass";
-import IconTable from "@/components/bootstrap-icon/icons/Table";
+import Icons from "@/components/bootstrap-icon";
 import WorldItem from "../components/WorldItem";
 
 import style from "./style.module.scss";
@@ -46,7 +44,7 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 		<div class="row">
 			<div class="col-auto">
 				<button class="btn btn-dark" onClick={ (): void => void (route("/worlds")) }>
-					<IconArrowLeft class="me-1" />
+					<Icons.ArrowLeft class="me-1" />
 					<Locale k="WORLDS_BACK_TO_WORLDS" />
 				</button>
 			</div>
@@ -81,13 +79,13 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 
 									<div class="btn-group mt-2">
 										<button class="btn btn-warning" onClick={ (): void => void (route(`/worlds/${wid}/${world}`)) }>
-											<IconCompass class="me-1" />
+											<Icons.Compass class="me-1" />
 											<span class="d-inline-block">
 												<Locale k="WORLDS_WORLD_MAP" />
 											</span>
 										</button>
 										<button class="btn btn-primary" onClick={ (): void => void (route(`/worlds/${wid}/${world}/drop`)) }>
-											<IconTable class="me-2" />
+											<Icons.Table class="me-2" />
 											<span class="d-inline-block">
 												<Locale k="WORLDS_DROP_TABLE" />
 											</span>

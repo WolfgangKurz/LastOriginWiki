@@ -22,22 +22,7 @@ import { CurrentDB } from "@/libs/DB";
 import { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
 import Locale, { LocaleGet } from "@/components/locale";
 import Loading from "@/components/loading";
-import IconArrowLeft from "@/components/bootstrap-icon/icons/ArrowLeft";
-import IconChatSquareTextFill from "@/components/bootstrap-icon/icons/ChatSquareTextFill";
-import IconCompass from "@/components/bootstrap-icon/icons/Compass";
-import IconCaretRightFill from "@/components/bootstrap-icon/icons/CaretRightFill";
-import IconMusicNote from "@/components/bootstrap-icon/icons/MusicNote";
-import IconAwardFill from "@/components/bootstrap-icon/icons/AwardFill";
-import IconGiftFill from "@/components/bootstrap-icon/icons/GiftFill";
-import IconBugFill from "@/components/bootstrap-icon/icons/BugFill";
-import IconSearch from "@/components/bootstrap-icon/icons/Search";
-import IconStarFill from "@/components/bootstrap-icon/icons/StarFill";
-import IconChevronLeft from "@/components/bootstrap-icon/icons/ChevronLeft";
-import IconChevronRight from "@/components/bootstrap-icon/icons/ChevronRight";
-import IconUnlockFill from "@/components/bootstrap-icon/icons/UnlockFill";
-import IconPersonBoundingBox from "@/components/bootstrap-icon/icons/PersonBoundingBox";
-import IconBook from "@/components/bootstrap-icon/icons/Book";
-import IconThreeDots from "@/components/bootstrap-icon/icons/ThreeDots";
+import Icons from "@/components/bootstrap-icon";
 import DropItem from "@/components/drop-item";
 import DropRes from "@/components/drop-res";
 import DropUnit from "@/components/drop-unit";
@@ -439,7 +424,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 					else
 						route(`/worlds/${props.wid}`);
 				} }>
-					<IconArrowLeft class="me-1" />
+					<Icons.ArrowLeft class="me-1" />
 					{ props.wid === "Sub"
 						? <Locale k="WORLDS_BACK_TO_WORLDS" />
 						: <Locale k="WORLDS_BACK_TO_AREAS" />
@@ -457,7 +442,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 								route(`/worlds/${props.wid}/${props.mid}/substory`, true);
 							} }
 						>
-							<IconChatSquareTextFill class="me-1" />
+							<Icons.ChatSquareTextFill class="me-1" />
 							<Locale k="WORLDS_SUBSTORY" />
 						</button>
 						: <></>
@@ -469,7 +454,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 							route(`/worlds/${props.wid}/${props.mid}`, true);
 						} }
 					>
-						<IconCompass class="me-1" />
+						<Icons.Compass class="me-1" />
 						<Locale k="WORLDS_WORLD_MAP" />
 					</button>
 				}
@@ -626,7 +611,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 										: <span class="font-exo2">
 											{ selectedValue.text }
 											{ selectedValue.type === STAGE_SUB_TYPE.STORY && <>
-												<IconCaretRightFill class="mx-1" />
+												<Icons.CaretRightFill class="mx-1" />
 												Story
 											</> }
 										</span>
@@ -640,7 +625,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 								{ selectedValue
 									? storyMeta === undefined
 										? <div class="float-end">
-											<IconThreeDots class="mx-4" />
+											<Icons.ThreeDots class="mx-4" />
 										</div>
 										: storyMeta !== false
 											? <div class="float-end">
@@ -653,7 +638,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 															route(`/story/${selectedValue.key}/OP`);
 														} }
 													>
-														<IconBook class="me-1" />
+														<Icons.Book class="me-1" />
 														OP
 													</button>
 													: <></>
@@ -669,7 +654,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																route(`/story/${selectedValue.key}/${k}`);
 															} }
 														>
-															<IconBook class="me-1" />
+															<Icons.Book class="me-1" />
 															{ Object.keys(storyMeta.index).filter(k => k.startsWith("mid-")).length === 1
 																? <>MID</>
 																: <>MID { k.substring(4) }</>
@@ -686,7 +671,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 															route(`/story/${selectedValue.key}/ED`);
 														} }
 													>
-														<IconBook class="me-1" />
+														<Icons.Book class="me-1" />
 														{ selectedValue.type === STAGE_SUB_TYPE.STORY
 															? <>Story</>
 															: <>ED</>
@@ -721,11 +706,11 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 								>
 									{ selectedValue && selectedValue.type === STAGE_SUB_TYPE.STORY
 										? <>
-											<IconMusicNote class="me-1" />
+											<Icons.MusicNote class="me-1" />
 											<Locale k="WORLD_VIEW_WATCH_REWARDS" />
 										</>
 										: <>
-											<IconAwardFill class="me-1" />
+											<Icons.AwardFill class="me-1" />
 											<Locale k="WORLD_VIEW_CLEAR_REWARDS" />
 										</>
 									}
@@ -742,7 +727,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												setCurrentTab("drop");
 											} }
 										>
-											<IconGiftFill class="me-1" />
+											<Icons.GiftFill class="me-1" />
 											<Locale k="WORLD_VIEW_DROPS" />
 										</a>
 									</li>
@@ -755,7 +740,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												setCurrentTab("squad");
 											} }
 										>
-											<IconPersonBoundingBox class="me-1" />
+											<Icons.PersonBoundingBox class="me-1" />
 											<Locale k="WORLD_VIEW_SQUAD" />
 										</a>
 									</li>
@@ -770,7 +755,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 														setCurrentTab("enemy");
 													} }
 												>
-													<IconBugFill class="me-1" />
+													<Icons.BugFill class="me-1" />
 													<Locale k="WORLD_VIEW_ENEMY" />
 												</a>
 											</li>
@@ -786,7 +771,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												setCurrentTab("search");
 											} }
 										>
-											<IconSearch class="me-1" />
+											<Icons.Search class="me-1" />
 											<Locale k="WORLD_VIEW_EXPLORATION" />
 										</a>
 									</li>
@@ -946,7 +931,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																{ mm.map(m => <li class="list-group-item">
 																	{/* ★ <Locale k={ m } components={ { ref: UnitReference } } /> */ }
 																	<div>
-																		<IconStarFill class="me-2" />
+																		<Icons.StarFill class="me-2" />
 																		<MissionText mission={ m } />
 																	</div>
 																	<small class="text-secondary ps-4">
@@ -1259,7 +1244,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 													setSelectedWave(selectedWave - 1);
 											} }
 										>
-											<IconChevronLeft />
+											<Icons.ChevronLeft />
 										</span>
 										<div class="enemy-grid">
 											{ CurrentWave.map((enemy, pos) => <div>
@@ -1294,7 +1279,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 													setSelectedWave(selectedWave + 1);
 											} }
 										>
-											<IconChevronRight />
+											<Icons.ChevronRight />
 										</span>
 									</div>
 								</> }
@@ -1368,7 +1353,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 													route(`/story/${x.key}/${y.key}`);
 												} }
 											>
-												<IconBook class="me-1" />
+												<Icons.Book class="me-1" />
 												Story
 											</button>
 										</div>
@@ -1381,7 +1366,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 
 										<div>
 											<div class={ style.SubStoryUnlock }>
-												<IconUnlockFill class="me-2" />
+												<Icons.UnlockFill class="me-2" />
 
 												{ y.unlock.params
 													.map(p => <span class={ style.SubStoryUnlockCond }>

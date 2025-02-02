@@ -20,12 +20,7 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 
 import Locale, { LocaleGet } from "@/components/locale";
 import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
-import IconDot from "@/components/bootstrap-icon/icons/Dot";
-import IconChevronLeft from "@/components/bootstrap-icon/icons/ChevronLeft";
-import IconChevronRight from "@/components/bootstrap-icon/icons/ChevronRight";
-import IconAwardFill from "@/components/bootstrap-icon/icons/AwardFill";
-import IconClipboardData from "@/components/bootstrap-icon/icons/ClipboardData";
-import IconBugFill from "@/components/bootstrap-icon/icons/BugFill";
+import Icons from "@/components/bootstrap-icon";
 import DropItem from "@/components/drop-item";
 import TbarIcon from "@/components/tbar-icon";
 import EnemyPopup from "@/components/popup/enemy-popup";
@@ -252,7 +247,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 						<div class={ style.ProhibitionBox }>
 							{ proh_Squads.length > 0 && <>
 								<div>
-									<IconDot />
+									<Icons.Dot />
 									<Locale plain k="EW_PROHIBITION_SQUAD" />
 								</div>
 								<div>
@@ -265,7 +260,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 							</> }
 							{ proh_Chars.length > 0 && <>
 								<div>
-									<IconDot />
+									<Icons.Dot />
 									<Locale plain k="EW_PROHIBITION_UNIT" />
 								</div>
 								<div>
@@ -419,7 +414,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 									setSelectedWave(selectedWave - 1);
 							} }
 						>
-							<IconChevronLeft />
+							<Icons.ChevronLeft />
 						</span>
 						<div class="enemy-grid">
 							{ CurrentWave.map((enemy, pos) => <div>
@@ -454,7 +449,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 									setSelectedWave(selectedWave + 1);
 							} }
 						>
-							<IconChevronRight />
+							<Icons.ChevronRight />
 						</span>
 					</div>
 				</div>
@@ -711,7 +706,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 											setCurTab("reward");
 										} }
 									>
-										<IconAwardFill class="me-1" />
+										<Icons.AwardFill class="me-1" />
 										<Locale plain k="EW_STAGE_TAB_REWARD" />
 									</a>
 								</li>
@@ -724,7 +719,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 											setCurTab("suitproh");
 										} }
 									>
-										<IconClipboardData class="me-1" />
+										<Icons.ClipboardData class="me-1" />
 										<Locale plain k="EW_STAGE_TAB_SUIT_PROH" />
 									</a>
 								</li>
@@ -737,7 +732,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 											setCurTab("enemy");
 										} }
 									>
-										<IconBugFill class="me-1" />
+										<Icons.BugFill class="me-1" />
 										<Locale plain k="EW_STAGE_TAB_ENEMY" />
 									</a>
 								</li>

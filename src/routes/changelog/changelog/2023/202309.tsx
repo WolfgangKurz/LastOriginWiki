@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 
-import IconArrowRight from "@/components/bootstrap-icon/icons/ArrowRight";
+import Icons from "@/components/bootstrap-icon";
 import ChangelogItem from "../../components/changelog-item";
 import { BY, BR, BO, BB, BG } from "../../components/badges";
 
@@ -62,12 +62,12 @@ const Changelog: FunctionalComponent = () => <>
 				<ul>
 					<li>
 						공격자의 회피 수치만큼 스킬 위력이 감소
-						<IconArrowRight class="mx-2" />
+						<Icons.ArrowRight class="mx-2" />
 						대상의 회피 수치만큼 공격자의 스킬 위력이 감소
 					</li>
 					<li>
 						공격자의 방어력 수치만큼 치명타가 감소
-						<IconArrowRight class="mx-2" />
+						<Icons.ArrowRight class="mx-2" />
 						자신의 방어력 수치만큼 공격자의 치명타가 감소
 					</li>
 				</ul>

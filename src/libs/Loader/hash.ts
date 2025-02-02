@@ -1733,7 +1733,7 @@ export default {
 		"filterable.enemy": "27a55bfc",
 		"filterable.equip": "69d619ca",
 		"filterable.facility": "b3f0e54b",
-		"filterable.unit": "9d6b4f25",
+		"filterable.unit": "a9ca4cb2",
 		"gacha": "9591957f",
 		"iw": {
 			"Colossus_01": "cdebeca4",
@@ -4887,7 +4887,7 @@ export default {
 			"PECS_PuppHead": "56b78462",
 			"PECS_QueenMane": "94a24e7f",
 			"PECS_Rena": "eb8248a7",
-			"PECS_Rhode": "afb9c597",
+			"PECS_Rhode": "a34f29c0",
 			"PECS_Sadius": "0f74792a",
 			"PECS_Saetti": "595710d6",
 			"PECS_Sekhmet": "13f3c46c",
@@ -4912,9 +4912,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "8595b1b6",
-		"JP": "c11bcc71",
-		"KR": "1af256be",
-		"TC": "9f67ea1d"
+		"EN": "33238b0e",
+		"JP": "820c9e7e",
+		"KR": "b1b71abf",
+		"TC": "2aef436a"
 	}
 } as DBHashType;

@@ -4,13 +4,13 @@ import { Link } from "preact-router";
 
 import { AssetsRoot } from "@/libs/Const.1";
 import { SkillVideo, SkinBanners } from "@/libs/Const.2";
-import { BuildClass } from "@/libs/Class";
+import { BuildClass, cn } from "@/libs/Class";
 import { FormatDate, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 import { useLocale } from "@/libs/Locale";
 
 import Locale from "@/components/locale";
-import IconQuestionCircleFill from "@/components/bootstrap-icon/icons/QuestionCircleFill";
+import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import RarityBadge from "@/components/rarity-badge";
 import UnitFace from "@/components/unit-face";
@@ -45,6 +45,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 
 	const [IsBlackBG, setIsBlackBG] = useState<boolean>(false);
 	const [HideGroup, setHideGroup] = useState<boolean>(false);
+	const [EnableAnimation, setEnableAnimation] = useState<boolean>(true);
 
 	function convertVideoName (sid: string): string {
 		const offset = sid.indexOf(".Skill");
@@ -226,7 +227,7 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 										<span class={ `badge ${style.IllustratorHidden}` }>
 											<Locale k="UNIT_VIEW_ILLUSTRATOR_HIDDEN" />
 
-											<IconQuestionCircleFill class="ms-1" />
+											<Icons.QuestionCircleFill class="ms-1" />
 										</span>
 									</BootstrapTooltip>
 									: compileArtist(skin.artist)
@@ -261,6 +262,8 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 									checked={ IsBlackBG }
 									onClick={ (): void => setIsBlackBG(!IsBlackBG) }
 								/>
+
+								<Icons.PaintBucket class={ cn(style.SkinViewerOptionIcon, "me-1") } />
 								<Locale k="UNIT_VIEW_SKIN_BLACKBG_SWITCH" />
 							</label>
 						</div>
@@ -274,7 +277,24 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 									checked={ HideGroup }
 									onClick={ (): void => setHideGroup(!HideGroup) }
 								/>
+
+								<Icons.Transparency class={ cn(style.SkinViewerOptionIcon, "me-1") } />
 								<Locale k="UNIT_VIEW_SKIN_HIDEGROUP_SWITCH" />
+							</label>
+						</div>
+					</li>
+					<li class="list-group-item">
+						<div class="form-check form-switch">
+							<label class="form-check-label">
+								<input
+									class="form-check-input"
+									type="checkbox"
+									checked={ EnableAnimation }
+									onClick={ (): void => setEnableAnimation(!EnableAnimation) }
+								/>
+
+								<Icons.PlayCircleFill class={ cn(style.SkinViewerOptionIcon, "me-1") } />
+								<Locale k="UNIT_VIEW_SKIN_ANIMATION_SWITCH" />
 							</label>
 						</div>
 					</li>
@@ -289,9 +309,8 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 						skin={ skin }
 						black={ IsBlackBG }
 						hideGroup={ HideGroup }
-						animate
+						animate={ EnableAnimation }
 						collapsed
-						detailable
 					/>
 					: <></> }
 

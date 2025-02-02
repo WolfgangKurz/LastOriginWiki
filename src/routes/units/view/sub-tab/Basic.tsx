@@ -27,13 +27,8 @@ import EquipIcon from "@/components/equip-icon";
 import PopupBase from "@/components/popup/base";
 import EquipPopup from "@/components/popup/equip-popup";
 
-import IconMicFill from "@/components/bootstrap-icon/icons/MicFill";
-import IconArrowRightShort from "@/components/bootstrap-icon/icons/ArrowRightShort";
-import IconHeartFill from "@/components/bootstrap-icon/icons/HeartFill";
-import IconX from "@/components/bootstrap-icon/icons/X";
+import Icons from "@/components/bootstrap-icon";
 import ItemIcon from "@/components/item-icon";
-import IconPersonCheckFill from "@/components/bootstrap-icon/icons/PersonCheckFill";
-import IconThreeDots from "@/components/bootstrap-icon/icons/ThreeDots";
 
 import ResearchTree from "../../components/research-tree";
 import UnitStatChart from "../../components/UnitStatChart";
@@ -42,7 +37,6 @@ import SourceTable from "../../../../components/SourceTable";
 import { SubpageProps } from "..";
 
 import style from "./Basic.module.scss";
-import IconDot from "@/components/bootstrap-icon/icons/Dot";
 
 const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 	const [loc] = useLocale();
@@ -198,7 +192,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 							</Badge>
 
 							{ promoRarity && <>
-								<IconArrowRightShort />
+								<Icons.ArrowRightShort />
 
 								<Badge variant={ `rarity-${RarityDisplay[promoRarity]}` }>
 									{ RarityDisplay[promoRarity] }
@@ -241,7 +235,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 				<div class={ style.Controls }>
 					{ unit.introVoice.length > 0
 						? <div class={ style.IntroduceVoice }>
-							<IconMicFill />
+							<Icons.MicFill />
 
 							<Button.Tab>
 								{ introVoiceTableKeys.map(vk => <Button
@@ -346,7 +340,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 				</div>
 				{ unit.body === ACTOR_BODY_TYPE.BIOROID && <>
 					<div class={ style.Summary } style={ { gridRow: "4 / 8" } }>
-						<IconHeartFill />
+						<Icons.HeartFill />
 						<Locale k="UNIT_VIEW_FAVOR" />
 					</div>
 
@@ -354,7 +348,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 						<Locale k="UNIT_VIEW_FAVOR_PRESENT" />
 					</div>
 					<div class={ cn(style.Body, style.Numeric) }>
-						<IconX />
+						<Icons.X />
 						{ unit.favor.present.toFixed(2) }
 					</div>
 
@@ -523,10 +517,10 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 					unit.cost // ags
 						? <>
 							<div class={ style.Craftable }>
-								<IconPersonCheckFill />
+								<Icons.PersonCheckFill />
 								<Locale k="UNIT_VIEW_DROPS_CRAFTABLE" />
 
-								<IconThreeDots class={ style.Dots } />
+								<Icons.ThreeDots class={ style.Dots } />
 
 								<span>{ CraftTime }</span>
 							</div>
@@ -577,7 +571,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 										<EquipIcon class="me-2 vertical-align-middle" image="UI_Icon_Consumable_AICore" size="24" />
 										<Locale k="CONSUMABLE_TestItem_4" />
 										<span class={ style.CostItemCount }>
-											<IconX />
+											<Icons.X />
 											{ FormatNumber(unit.cost.aicore) }
 										</span>
 									</Badge> }
@@ -590,7 +584,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 												<EquipIcon class="me-2 vertical-align-middle" image={ item!.icon } size="24" />
 												<Locale k={ `CONSUMABLE_${item!.key}` } />
 												<span class={ style.CostItemCount }>
-													<IconX />
+													<Icons.X />
 													{ FormatNumber(e.count) }
 												</span>
 											</Badge>;
@@ -600,10 +594,10 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 							</div>
 						</>
 						: <div class={ style.Craftable }>
-							<IconPersonCheckFill />
+							<Icons.PersonCheckFill />
 							<Locale k="UNIT_VIEW_DROPS_CRAFTABLE" />
 
-							<IconThreeDots class={ style.Dots } />
+							<Icons.ThreeDots class={ style.Dots } />
 
 							<span>{ CraftTime }</span>
 						</div>

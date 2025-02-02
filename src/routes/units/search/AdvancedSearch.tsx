@@ -15,9 +15,7 @@ import { StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import Input from "@/components/Input";
-import IconPlusCircleFill from "@/components/bootstrap-icon/icons/PlusCircleFill";
-import IconXCircleFill from "@/components/bootstrap-icon/icons/XCircleFill";
-import IconQuestionCircleFill from "@/components/bootstrap-icon/icons/QuestionCircleFill";
+import Icons from "@/components/bootstrap-icon";
 
 import style from "./style.module.scss";
 import { useMemo } from "preact/hooks";
@@ -1051,7 +1049,7 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 										/>
 									</div> }
 								>
-									<IconQuestionCircleFill class="ms-1" />
+									<Icons.QuestionCircleFill class="ms-1" />
 								</BootstrapTooltip>
 							</small>
 						</div> }
@@ -1494,7 +1492,7 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 								removeCond(idx);
 							} }
 						>
-							<IconXCircleFill />
+							<Icons.XCircleFill />
 						</a>
 					</div>
 				</>;
@@ -1534,7 +1532,7 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 					props.onUpdate([...conds, DefaultCond()]);
 				} }
 			>
-				<IconPlusCircleFill class="me-2" />
+				<Icons.PlusCircleFill class="me-2" />
 				<Locale k="SEARCH_NEW_CONDITION" />
 			</button>
 		</div>
