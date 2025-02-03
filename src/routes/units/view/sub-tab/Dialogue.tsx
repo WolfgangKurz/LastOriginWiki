@@ -79,11 +79,7 @@ const DialogueTab: FunctionalComponent<SubpageProps> = ({ display, unit, SkinLis
 			<button
 				class={ `btn btn-outline-primary ${isActive(dialogueAudio === "jp")}` }
 				onClick={ (): void => setDialogueAudio("jp") }
-			>日本語 N</button>
-			<button
-				class={ `btn btn-outline-primary ${isActive(dialogueAudio === "jpdmm")}` }
-				onClick={ (): void => setDialogueAudio("jpdmm") }
-			>日本語 R</button>
+			>日本語</button>
 		</div>
 
 		{ VoiceList.map(voice => <UnitDialogue

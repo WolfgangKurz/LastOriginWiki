@@ -135,8 +135,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 
 	const introVoiceTable: Record<UnitDialogueAudioType, string> = {
 		"ko": "한국어",
-		"jp": "日本語 N",
-		"jpdmm": "日本語 R",
+		"jp": "日本語",
 	};
 	const introVoiceTableKeys = useMemo(() => Object.keys(introVoiceTable) as UnitDialogueAudioType[], [introVoiceTable]);
 

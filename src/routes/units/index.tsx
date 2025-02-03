@@ -391,7 +391,7 @@ const Units: FunctionalComponent = () => {
 					outline={ Store.Units.DisplayType.value !== "list" }
 					onClick={ () => Store.Units.DisplayType.value = "list" }
 				>
-					<Icons.Grid_3x3GapFill class="mx-1" />
+					<Icons.Grid3x3GapFill class="mx-1" />
 					<Locale k="UNITS_VIEW_LIST" />
 				</Button>
 				<Button

@@ -4912,9 +4912,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "33238b0e",
-		"JP": "820c9e7e",
-		"KR": "b1b71abf",
-		"TC": "2aef436a"
+		"EN": "b205a395",
+		"JP": "abae0e53",
+		"KR": "8ad4f0b5",
+		"TC": "2db58610"
 	}
 } as DBHashType;

@@ -8,6 +8,12 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12895" date="2025-02-02"
+		dialogue={ <>
+			<li>누락된 일본어 음성이 추가되었습니다.</li>
+			<li>일본어 음성을 <BY>日本語 R</BY>을 기준으로 통합하였습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12893" date="2025-02-02"
 		bugfix={ <>
 			<li><BY>세계정보</BY> 페이지가 표시되지 않던 문제를 수정했습니다.</li>

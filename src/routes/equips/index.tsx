@@ -32,7 +32,7 @@ const Equips: FunctionalComponent<EquipsProps> = (props) => {
 					class={ `btn btn-outline-primary ${isActive(DisplayType === "list")}` }
 					onClick={ (): void => setDisplayType("list") }
 				>
-					<Icons.Grid_3x3GapFill class="me-1" />
+					<Icons.Grid3x3GapFill class="me-1" />
 					<Locale k="EQUIP_VIEW_LIST" />
 				</button>
 				<button
