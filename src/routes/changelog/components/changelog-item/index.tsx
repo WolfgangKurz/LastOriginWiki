@@ -6,7 +6,6 @@ import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
 
 import style from "./style.module.scss";
-import Icons from "@/components/bootstrap-icon";
 
 interface ChangelogItemProps {
 	tag?: string;

@@ -6,6 +6,18 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12895" date="2025-02-02"
+		dialogue={ <>
+			<li>누락된 일본어 음성이 추가되었습니다.</li>
+			<li>일본어 음성을 <BY>日本語 R</BY>을 기준으로 통합하였습니다.</li>
+		</> }
+	/>
+	<ChangelogItem title="Build 12893" date="2025-02-02"
+		bugfix={ <>
+			<li><BY>세계정보</BY> 페이지가 표시되지 않던 문제를 수정했습니다.</li>
+			<li><BY>Changelog</BY> 페이지지가 표시되지 않던 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12891" date="2025-02-02"
 		bugfix={ <>
 			<li>전투원 <BY>T-10 님프</BY>의 스킬 정보가 잘못된 점을 수정했습니다. (패시브 1)</li>
