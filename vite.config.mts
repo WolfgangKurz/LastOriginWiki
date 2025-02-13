@@ -129,6 +129,7 @@ export default ({ mode }) => {
 		`@import "${path.resolve(__dirname, "src", "themes", "base").replace(/\\/g, "/")}";`,
 	].join("\n")}\n`;
 
+	console.log("vite building...");
 	return defineConfig({
 		esbuild: {
 			jsxFactory: "h",

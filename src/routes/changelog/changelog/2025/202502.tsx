@@ -18,7 +18,7 @@ const Changelog: FunctionalComponent = () => <>
 			<li><BY>전투원정보</BY>의 전투원 기본 정보에 <BR>서약 가능 여부</BR> 정보가 추가되었습니다.</li>
 		</> }
 		update={ <>
-			<li>일부 장비비의 정보가 갱신되었습니다.</li>
+			<li>일부 장비의 정보가 갱신되었습니다.</li>
 			<li>일부 적의 정보가 갱신되었습니다.</li>
 		</> }
 		skin={ <>
