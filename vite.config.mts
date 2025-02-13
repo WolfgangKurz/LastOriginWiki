@@ -20,35 +20,32 @@ export default ({ mode }) => {
 	const isDev = !isProd;
 
 	// buildtime
-	if (mode !== "optimize") {
-		console.log("buildtime updating...");
-		const dest = path.resolve(__dirname, "src", "buildtime.ts");
-		const destYaml = path.resolve(__dirname, "external", "yaml", "buildtime.yml");
+	console.log("buildtime updating...");
+	const dest = path.resolve(__dirname, "src", "buildtime.ts");
+	const destYaml = path.resolve(__dirname, "external", "yaml", "buildtime.yml");
 
-		const code = fs.readFileSync(dest, { encoding: "utf-8" })
-			.toString()
-			.replace("export default ", "return ");
-		const prev = new Function(code)();
-		const buildNo = prev.build + 1;
+	const code = fs.readFileSync(dest, { encoding: "utf-8" })
+		.toString()
+		.replace("export default ", "return ");
+	const prev = new Function(code)();
+	const buildNo = prev.build + 1;
 
-		fs.writeFileSync(
-			dest,
-			(() => {
-				const dt = new Date();
-				return `// eslint-disable-next-line\nexport default ${JSON.stringify({
-					time: dt.getTime(),
-					build: buildNo,
-				})}`;
-			})(),
-			"utf-8",
-		);
-		fs.writeFileSync(
-			destYaml,
-			YAML.stringify(buildNo),
-			"utf-8",
-		);
-	} else
-		console.log("skip buildtime update - on optimize");
+	fs.writeFileSync(
+		dest,
+		(() => {
+			const dt = new Date();
+			return `// eslint-disable-next-line\nexport default ${JSON.stringify({
+				time: dt.getTime(),
+				build: buildNo,
+			})}`;
+		})(),
+		"utf-8",
+	);
+	fs.writeFileSync(
+		destYaml,
+		YAML.stringify(buildNo),
+		"utf-8",
+	);
 
 	// yaml hash
 	if (isProd) {
@@ -140,6 +137,9 @@ export default ({ mode }) => {
 			logOverride: {
 				"this-is-undefined-in-esm": "silent",
 			},
+		},
+		optimizeDeps: {
+			include: [],
 		},
 		build: {
 			assetsDir: "build",

@@ -5,8 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "yarn node tools/debug.mjs",
-		"optimize": "yarn vite optimize --mode optimize",
-		"build": "ts-node tools/sitemap && yarn optimize && vite build",
+		"build": "ts-node tools/sitemap && vite build",
 		"build-pure": "vite build",
 		"lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'"
 	},
