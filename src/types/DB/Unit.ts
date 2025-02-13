@@ -225,6 +225,7 @@ export interface Unit {
 	skins: UnitSkin;
 
 	oneoff: boolean;
+	oathable: boolean;
 	entryReqMap: string[];
 	// roguelike: RoguelikeSkill[];
 }

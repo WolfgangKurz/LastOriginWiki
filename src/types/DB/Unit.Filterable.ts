@@ -94,5 +94,7 @@ export interface FilterableUnit {
 
 	stat: UnitStats[];
 
+	oneoff: boolean;
+	oathable: boolean;
 	// roguelike: ROGUE_SKILL_TYPE[];
 }
