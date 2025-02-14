@@ -8,6 +8,13 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12903" date="2025-02-14"
+		bugfix={ <>
+			<li>이벤트 <BY>오르카 AGS여 단결하라!</BY>의 기간이 연장된 것이 반영되지 않았던 점을 수정했습니다.</li>
+			<li>이벤트 <BY>누군가 바랐던 소원</BY>이 상시 이벤트로 분류되지 않던 점을 수정했습니다.</li>
+			<li>메인스토리 13지역 3구역의 지도가 잘못 표시되던 점을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12898" date="2025-02-14"
 		bugfix={ <>
 			<li>스킨 뷰어에서 <BY>로비 애니메이션</BY>을 꺼도 애니메이션이 표시되던 문제를 수정했습니다.</li>
