@@ -3,21 +3,24 @@ import { Link } from "preact-router";
 
 import { PermanentEvents, AssetsRoot, CurrentEvent, WorldIds } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { useLocale } from "@/libs/Locale";
 
-import Locale, { LocaleGet } from "@/components/locale";
+import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
 import WorldItem from "@/routes/worlds/components/WorldItem";
 
 import style from "./style.module.scss";
 
 const Worlds: FunctionalComponent = () => {
+	const [loc] = useLocale();
+
 	const Tops = ["Story", CurrentEvent].filter(x => x);
 	const Subs = ["Sub", "Cha", "Daily"];
 	const List = WorldIds.filter(x => !x.startsWith("EvA") && !Tops.includes(x) && !Subs.includes(x) && !PermanentEvents.includes(x));
 
 	SetMeta(["description", "twitter:description"], "세계 목록을 표시합니다. 현재 진행중이거나 진행될 예정인 이벤트도 확인할 수 있습니다.");
 	SetMeta(["twitter:image", "og:image"], null);
-	UpdateTitle(LocaleGet("MENU_WORLDS"));
+	UpdateTitle(loc["MENU_WORLDS"]);
 
 	return <div class="worlds text-start">
 		<h2>

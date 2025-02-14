@@ -5,11 +5,11 @@ import Store from "@/store";
 import StoryMap, { StoryMapSubstory } from "@/types/DB/StoryMap";
 import { STAGE_SUB_TYPE } from "@/types/Enums";
 
-import { useUpdate } from "@/libs/hooks";
 import { useLocale } from "@/libs/Locale";
 import { StaticDB, useDBData } from "@/libs/Loader";
 import { AssetsRoot } from "@/libs/Const";
 import { cn } from "@/libs/Class";
+import { UpdateTitle } from "@/libs/Site";
 
 import Locale from "@/components/locale";
 import Button from "@/components/Button";
@@ -28,10 +28,11 @@ interface StoryProps {
 }
 
 const Story: FunctionalComponent<StoryProps> = (props) => {
-	const update = useUpdate();
 	const [loc] = useLocale();
 
 	const [selectedKey, setSelectedKey] = useState<[string | number, number] | null>(null);
+
+	UpdateTitle(loc["MENU_STORY"]);
 
 	useEffect(() => {
 		if (props.chapter) {
