@@ -76,6 +76,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 	const [skillLevel, setSkillLevel] = useState<LevelType>(9);
 
 	const [favorBonus, setFavorBonus] = useState<boolean>(Session.get("unit.skill-table.favorBonus", "0") === "1");
+	const [valueDetail, setValueDetail] = useState<boolean>(Session.get("unit.skill-table.valueDetail", "0") === "1");
 	const [displayBuffList, setDisplayBuffList] = useState<boolean>(Session.get("unit.skill-table.displayBuffList", "0") === "1");
 	const [displayBuffDummy, setDisplayBuffDummy] = useState<boolean>(Session.get("unit.skill-table.displayBuffDummy", "0") === "1");
 	const [displayFlavor, setDisplayFlavor] = useState<boolean>(Session.get("unit.skill-table.displayFlavor", "1") === "1");
@@ -206,6 +207,22 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 					<input
 						class="form-check-input"
 						type="checkbox"
+						checked={ valueDetail }
+						onChange={ (): void => {
+							const v = !valueDetail;
+							setValueDetail(v);
+							Session.set("unit.skill-table.valueDetail", v ? "1" : "0");
+						} }
+					/>
+					<Locale k="UNIT_SKILL_VALUE_DETAIL" />
+				</label>
+			</div>
+			<span class="text-secondary pe-2">|</span>
+			<div class="form-check d-inline-block me-2">
+				<label>
+					<input
+						class="form-check-input"
+						type="checkbox"
 						checked={ displayBuffList }
 						onChange={ (): void => {
 							const v = !displayBuffList;
@@ -250,7 +267,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 				</label>
 			</div>
 		</div>
-	</>, [skillLevel, favorBonus, displayBuffList, displayBuffList, displayBuffDummy, displayFlavor]);
+	</>, [skillLevel, favorBonus, valueDetail, displayBuffList, displayBuffList, displayBuffDummy, displayFlavor]);
 
 	const tableContent = useCallback((skill: SkillItem): preact.VNode => {
 		const flavorKey = `UNIT_SKILL_FLAVOR_${props.unit.uid}_${skill.key}`;
@@ -329,6 +346,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 							buffBonus={ props.buffBonus }
 							skillBonus={ props.skillBonus }
 							favorBonus={ favorBonus }
+							valueDetail={ valueDetail }
 						/>
 					}
 				</div>) }
@@ -360,7 +378,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 		displayFlavor, GetSkillDescriptions,
 		skillLevel, favorBonus,
 		props.buffBonus, props.skillBonus,
-		displayBuffList, displayBuffDummy,
+		valueDetail, displayBuffList, displayBuffDummy,
 	]);
 
 	const endRarity = useMemo(() => unit.promotions
@@ -433,7 +451,7 @@ const SkillTable: FunctionalComponent<SkillTableProps> = (props) => {
 						<div class={ cn(style.LeftSide, isFChange && style.SkillTableFChange) }>
 							<div class={ style.SkillNameCard }>
 								<SkillIcon icon={ skill.icon } passive={ skill.isPassive } />
-								<div class="text-bold">
+								<div class={ style.SkillName }>
 									<Locale plain k={ `UNIT_SKILL_${unit.uid}_${skill.key}` } />
 								</div>
 

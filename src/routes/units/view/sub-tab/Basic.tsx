@@ -337,7 +337,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 						</span>
 					}
 				</div>
-				{ unit.body === ACTOR_BODY_TYPE.BIOROID && <>
+				{ (unit.body === ACTOR_BODY_TYPE.BIOROID || unit.oathable) && <>
 					<div class={ style.Summary } style={ { gridRow: "4 / 8" } }>
 						<Icons.HeartFill />
 						<Locale k="UNIT_VIEW_FAVOR" />
@@ -374,7 +374,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 				</> }
 
 				<div class={ style.Summary } style={ {
-					gridRow: unit.body === ACTOR_BODY_TYPE.BIOROID
+					gridRow: unit.body === ACTOR_BODY_TYPE.BIOROID || unit.oathable
 						? "8 / 13"
 						: "4 / 9"
 				} }>
@@ -438,7 +438,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 				</div>
 
 				<div class={ style.Summary } style={ {
-					gridRow: unit.body === ACTOR_BODY_TYPE.BIOROID
+					gridRow: unit.body === ACTOR_BODY_TYPE.BIOROID || unit.oathable
 						? "13 / 15"
 						: "9 / 11"
 				} }>

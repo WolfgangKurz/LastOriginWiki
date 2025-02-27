@@ -33,6 +33,7 @@ import Badge from "@/components/Badge";
 // import { getBuffUid } from "./cache";
 
 import style from "./style.module.scss";
+import BuffIcon from "@/components/buff-icon";
 
 // default fallback ??? string
 const Locale: FunctionalComponent<LocaleProps<any> | LocalePropsLegacy<any>> = (props) =>
@@ -1913,10 +1914,8 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 
 				elems.push(<div class="clearfix">
 					<div>
-						{ buff.icon
-							? <img class="me-1" width="25" src={ `${AssetsRoot}/${ext}/buff/${buff.icon}.${ext}` } />
-							: <span class="me-1 empty-icon" />
-						}
+						<BuffIcon class={ cn(style.BuffIcon, "me-1") } inline buff={ buff.icon } />
+
 						<strong class="align-middle">
 							{ buffName }
 

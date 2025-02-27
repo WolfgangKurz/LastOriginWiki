@@ -39,6 +39,7 @@ interface SkillDescriptionProps {
 	buffBonus: boolean;
 	skillBonus: number;
 	favorBonus: boolean;
+	valueDetail: boolean;
 
 	experimentalBuffName?: boolean;
 }
@@ -163,6 +164,7 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 				signless={ _props.signless }
 				floor={ _props.floor }
 				forcePN={ _props.forcePN }
+				detail={ props.valueDetail }
 			/>;
 		};
 

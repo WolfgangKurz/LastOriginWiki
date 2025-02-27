@@ -8,6 +8,27 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12905" date="2025-02-28"
+		bugfix={ <>
+			<li>전투원 기본 정보에서 호감도 아이콘이 작게 표시되던 점을 수정했습니다.</li>
+			<li>서약 가능 AGS 전투원의 호감도 정보가 표시되지 않던 점을 수정했습니다.</li>
+		</> }
+		new={ <>
+			<li>신규 전투원 <BY>칼립소</BY>의 정보가 추가되었습니다.</li>
+			<li>신규 스토리 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>일부 장비의 정보가 갱신되었습니다.</li>
+			<li>일부 적의 정보가 갱신되었습니다.</li>
+		</> }
+		skin={ <>
+			<li>전투원 <BY>칼립소</BY>의 스킨 <BR>남국의 수국 : 아오자이</BR>의 정보가 추가되었습니다.</li>
+			<li>전투원 <BY>아크로바틱 써니</BY>의 스킨 <BR>외줄 위의 천사</BR>의 정보가 추가되었습니다.</li>
+		</> }
+		dialogue={ <>
+			<li><span class="badge bg-light text-dark">KST 2025-02-28 02:07:06</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12903" date="2025-02-14"
 		bugfix={ <>
 			<li>이벤트 <BY>오르카 AGS여 단결하라!</BY>의 기간이 연장된 것이 반영되지 않았던 점을 수정했습니다.</li>

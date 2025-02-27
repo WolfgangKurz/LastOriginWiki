@@ -285,7 +285,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			(!isDamaged && !!skin.metadata["2dmodel"]) ||
 			(isDamaged && !!skin.metadata["2dmodel_dam"])
 		),
-		[skin.metadata.flags, skin.metadata["2dmodel"], skin.metadata["2dmodel_dam"]],
+		[isDamaged, skin.metadata.flags, skin.metadata["2dmodel"], skin.metadata["2dmodel_dam"]],
 	);
 	const DisplayVideo = useMemo(() => {
 		return !!props.animate && !!modelVideoId;

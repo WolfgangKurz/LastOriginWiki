@@ -722,7 +722,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 
 							{ statList2.map(({ stat, icon, postfix }) => <>
 								<span class="body-label">
-									<BuffIcon buff={ icon } />
+									<BuffIcon buff={ `BuffIcon_${icon}` } />
 									<Locale k={ `SIMULATOR_${stat}` } />
 								</span>
 								<span class="body-value">
