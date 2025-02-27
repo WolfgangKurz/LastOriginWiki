@@ -10,6 +10,19 @@ slots:
   - 0
   - 1
   - 0
+promotions:
+  - to: 5
+    level: 90
+    favor: "100"
+    req:
+      - id: Consumable_OriginDustAdv
+        count: 450
+      - id: Consumable_OriginDustSp
+        count: 150
+      - id: Special_Module
+        count: 100
+      - id: RobotParts_SuperAlloyArmor
+        count: 150
 lvLimits:
   - level: 101
     items:
@@ -437,14 +450,12 @@ weight: 57kg
 weapon1: Performer
 weapon2: Chakram
 company: ""
-maker: ""
 country: ""
 age: ""
 secretRoomType: Adult
 marriageVoice: true
 introVoice:
   - jp
-  - jpdmm
   - ko
 favor:
   present: 1.25
@@ -511,6 +522,7 @@ source:
   - - Ev:Ev24:EV2-2Ex
   - - Ev:Ev27:EV2-5
 oneoff: false
+oathable: true
 entryReqMap: []
 research: false
 skills:
@@ -2730,6 +2742,171 @@ skills:
             base: 0.15
             per: 0.03
             chance: 1
+  "5":
+    key: "5"
+    icon: P.SelfDefBuff
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 5
+    buffs:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - rate: 0
+          type: 0
+          range: 0
+          ap: 0
+          grid: 0,0,0,1,0,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_PECS_Sunny_N_5
+              on: wave
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_PECS_Sunny_N_5_1
+                    type: 1
+                    value: "0.120000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 99
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 12%
+                      per: 2%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_PECS_Sunny_N_5_2
+                    type: 1
+                    value: "0.032000"
+                    level: "0.002000"
+                  attr: 0
+                  erase:
+                    rounds: 99
+                  value:
+                    isBuff: true
+                    type: 9
+                    critical:
+                      base: 3.2%
+                      per: 0.2%
+                  overlap: 4
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_PECS_Sunny_N_5_3
+                    type: 1
+                    value: "0.060000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 99
+                  value:
+                    isBuff: true
+                    type: 106
+                    skill_ratio:
+                      base: 6%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_DEF_All
+                  desc:
+                    desc: Effect_PECS_Sunny_N_5_4
+                    type: 0
+                    value: "3"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 99
+                  value:
+                    isBuff: true
+                    type: 33
+                    damage_immune:
+                      base: 3
+                      per: 0
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_PECS_Sunny_N_5_1
+              type: 1
+              value: "0.120000"
+              level: "0.020000"
+            base: 0.12
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_PECS_Sunny_N_5_2
+              type: 1
+              value: "0.032000"
+              level: "0.002000"
+            base: 0.032
+            per: 0.002
+            chance: 1
+          - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_PECS_Sunny_N_5_3
+              type: 1
+              value: "0.060000"
+              level: "0.010000"
+            base: 0.06
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_DEF_All
+            desc:
+              desc: Effect_PECS_Sunny_N_5_4
+              type: 0
+              value: "3"
+              level: "0"
+            base: 3
+            per: 0
+            chance: 1
 dialogue:
   KR:
     "1":
@@ -2789,6 +2966,86 @@ dialogue:
         시도를 해야하죠. 그런 의미에서,
         오늘은 요가… 같이 하실래요?
       MVP: 유연해지면~ 뭐든 가능해요, 사령관. 뭐든지... 에요...?
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: |-
+        아슬아슬해 보인다고요?
+        괜찮아요!
+        이 정도는 어렵지 않아요~
+        이것보다 더 아름다운 동작도 있는데…
+        보여드릴까요?​
+      Idle_01_02: |-
+        이 자세는 멸망 전
+        동영상 자료를 통해 익힌 기술…
+        에에에에엣?
+        이게 시티가드 심의에 어긋난다고요?!​
+      Idle_01_03: |-
+        이 공연에는
+        페어가 꼭 필요해요,
+        사령관님.
+        혹시… 오늘 밤
+        저랑 같이 곡예 연습
+        하실 생각 있으세요? ​
+      SPIdle_01_01: |-
+        그러다 힘 풀린단 말이에요,
+        지금 만지시면 안 돼요!​
+      Idle_02_01: |-
+        잘 보이세요?
+        잘 보이시죠?
+        잘 보일 거예요!
+        이 자세는 말이죠,
+        그러니까…
+        자꾸 그곳만 보진 마시고요,
+        사령관님!​
+      Idle_03_01: |-
+        헤비한
+        카마수트라 자세인데…
+        이번 공연에
+        포함 시켜 보려고요.
+        헤헹… 사령관님 표정을 보니
+        성공적일 것 같은데요?​
+      Idle_04_01: |-
+        아앗…
+        줄이 꼬여버렸는데…​
+        우, 움직일 수가…
+        안 돼요 사령관님…
+        이럴 때 더듬으시는 건
+        반칙이에요!​
+      SPIdle_02_01: |-
+        이젠… 어떻게든 좋아…
+        나… 이제… 새로운 취향에…
+        눈뜰 지도…​
+      Oath: >-
+        오늘 제 무대 괜찮았어요? 어… 이런 스페셜 퍼포먼스는 미리 얘기 들은 바 없는데… 정말 제게 주시는 건가요?
+
+        오늘 진짜 피날레는 제 공연이 아니라 사령관님의 선물이었네요! 사실 더 보여드리고 싶은 게 많은데… 오늘 밤 사령관님 앞에서 마저 보여 드릴게요!
+
+        밤은 기니까, 기대해… 주실 거죠?
+      OathIdle_01: |-
+        사령관님…
+        제 다리가 좀 굳은 것 같은데…
+        더 벌려주시겠어요?
+        어라라~?
+        사령관님께선 더 단단하게
+        굳으신 것 같은데…
+        지금 당장… 풀어드릴까요?​
+      MVP: ""
     "":
       Join: 반가워요~ 최고의 쇼를 감상할 준비는 됐어요?
       SquadJoin: 컨디션 좋아요! 바로 갈까요~?
@@ -2949,6 +3206,35 @@ dialogue:
         시도를 해야하죠. 그런 의미에서,
         오늘은 요가… 같이 하실래요?
       MVP: え、えぇ……社長がお望みなら…『ふふふ…我の寵愛をお望みかい？』
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: はじめまして～！最高のショーを楽しむ準備はできましたか～！？
       SquadJoin: ""
@@ -3063,6 +3349,35 @@ dialogue:
         with each other. We have to try something new
         not to let it happen. So, would you like to
         do yoga with me today?
+      MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: Nice to meet you. Are you ready to watch the best show?
@@ -3227,6 +3542,35 @@ dialogue:
         倦怠期的。為了避免這些，
         要挑戰一些其他新穎的。所以，
         今天要不要和我一起…試試瑜伽？
+      MVP: ""
+    "2":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: 見到你很高興~你準備好欣賞一場最棒的表演了嗎？
@@ -3398,3 +3742,37 @@ skins:
         voiceId: 1
         flags: 1
         2dmodel: 2DModel_PECS_Sunny_NS1
+    - sid: 2
+      artist: CHO!CHO!
+      price: 182
+      G: true
+      Spine: true
+      parts: 78
+      stage: false
+      subset:
+        - true
+        - true
+        - false
+        - false
+        - false
+        - true
+        - false
+        - false
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - Costume
+      facelist: []
+      releaseDate: 1740614400000
+      metadata:
+        imageId: 2
+        iconId: 2
+        tbarId: 2
+        voiceId: 2
+        flags: 2
+        2dmodel_dam: 2DModel_PECS_Sunny_NS2_Dam
+        consumableKey: Skin_PECS_Sunny_2

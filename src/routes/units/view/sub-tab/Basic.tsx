@@ -337,7 +337,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 						</span>
 					}
 				</div>
-				{ unit.body === ACTOR_BODY_TYPE.BIOROID && <>
+				{ (unit.body === ACTOR_BODY_TYPE.BIOROID || unit.oathable) && <>
 					<div class={ style.Summary } style={ { gridRow: "4 / 8" } }>
 						<Icons.HeartFill />
 						<Locale k="UNIT_VIEW_FAVOR" />
@@ -374,9 +374,9 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 				</> }
 
 				<div class={ style.Summary } style={ {
-					gridRow: unit.body === ACTOR_BODY_TYPE.BIOROID
-						? "8 / 12"
-						: "4 / 8"
+					gridRow: unit.body === ACTOR_BODY_TYPE.BIOROID || unit.oathable
+						? "8 / 13"
+						: "4 / 9"
 				} }>
 					<img src={ `${AssetsRoot}/ui/icon_unit.png` } />
 					<Locale k="UNIT_VIEW_BODY_INFO" />
@@ -393,6 +393,23 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 								<Locale plain k="UNIT_AGE_Undefined" />
 							</span>
 						: <span class="text-secondary">-</span>
+					}
+				</div>
+
+				<div class={ style.Header }>
+					<span class="text-danger">
+						<Icons.HeartFill class="me-1" />
+					</span>
+					<Locale k="UNIT_VIEW_OATHABLE" />
+				</div>
+				<div class={ style.Body }>
+					{ unit.oathable
+						? <strong class="text-danger">
+							<Locale raw={ false } k="UNIT_VIEW_ABLE" />
+						</strong>
+						: <span class="text-secondary">
+							<Locale raw={ false } k="UNIT_VIEW_UNABLE" />
+						</span>
 					}
 				</div>
 
@@ -421,9 +438,9 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 				</div>
 
 				<div class={ style.Summary } style={ {
-					gridRow: unit.body === ACTOR_BODY_TYPE.BIOROID
-						? "12 / 14"
-						: "8 / 10"
+					gridRow: unit.body === ACTOR_BODY_TYPE.BIOROID || unit.oathable
+						? "13 / 15"
+						: "9 / 11"
 				} }>
 					<img src={ `${AssetsRoot}/ui/icon_battle.png` } />
 					<Locale k="UNIT_VIEW_BATTLE_INFO" />

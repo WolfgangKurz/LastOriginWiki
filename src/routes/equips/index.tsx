@@ -24,6 +24,7 @@ const Equips: FunctionalComponent<EquipsProps> = (props) => {
 		UpdateTitle(LocaleGet("MENU_EQUIPS"));
 	}
 
+	const GridIcon = Icons["grid-3x3-gap-fill"];
 	return <>
 		<div>
 			<div class="btn-group mb-4">
@@ -32,7 +33,7 @@ const Equips: FunctionalComponent<EquipsProps> = (props) => {
 					class={ `btn btn-outline-primary ${isActive(DisplayType === "list")}` }
 					onClick={ (): void => setDisplayType("list") }
 				>
-					<Icons.Grid3x3GapFill class="me-1" />
+					<GridIcon class="me-1" />
 					<Locale k="EQUIP_VIEW_LIST" />
 				</button>
 				<button

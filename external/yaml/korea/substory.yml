@@ -247,6 +247,18 @@ group:
       - Story_Char_PECS_Sekhmet_N_36_PECS_Sunny_3
       - Story_Char_PECS_Sekhmet_N_36_PECS_Sekhmet_4
       - Story_Char_PECS_Sekhmet_N_36_PECS_Sekhmet_5
+  - troop: Story_Troop_Group_Squad_PublicServent
+    key: PCStory_CH_PECS_LemonadeBeta_1
+    type: 0
+    char: PECS_LemonadeBeta
+    skin: 2
+    group: PublicServent
+    story:
+      - Story_Char_PECS_LemonadeBeta_N_56_PECS_Audrey_1
+      - Story_Char_PECS_LemonadeBeta_N_56_PECS_LemonadeBeta_2
+      - Story_Char_PECS_LemonadeBeta_N_56_3P_Titania_3
+      - Story_Char_PECS_LemonadeBeta_N_56_3P_Rhea_4
+      - Story_Char_PECS_LemonadeBeta_N_56_PECS_LemonadeBeta_5
   - troop: Story_Troop_Group_Squad_Team080
     key: PCStory_CH_BR_Tomoe_1
     type: 0
@@ -675,15 +687,7 @@ group:
       - Story_Char_BR_Vargr_N_50_PECS_Merlin_4
       - Story_Char_BR_Vargr_N_50_BR_Vargr_5
       - Story_Char_BR_Vargr_N_50_BR_Vargr_6
-  - troop: Story_Troop_Group_Squad_Poseidon
-    key: PCStory_CH_PECS_Triton_1
-    type: 0
-    char: PECS_Triton
-    skin: 0
-    group: Poseidon
-    story:
-      - Story_Char_PECS_Triton_N_17_PECS_Triton_1
-  - troop: ""
+  - troop: Story_Troop_Group_Squad_EmpressHound
     key: PCStory_CH_BR_Fafnir_1
     type: 0
     char: BR_Fafnir
@@ -695,7 +699,7 @@ group:
       - Story_Char_BR_Fafnir_N_54_BR_Salamander_3
       - Story_Char_BR_Fafnir_N_54_BR_Vargr_4
       - Story_Char_BR_Fafnir_N_54_BR_Fafnir_5
-  - troop: ""
+  - troop: Story_Troop_Group_Squad_EmpressHound
     key: PCStory_CH_BR_Cheona_1
     type: 0
     char: BR_Cheona
@@ -707,18 +711,14 @@ group:
       - Story_Char_BR_Cheona_N_55_BR_Nereid_3
       - Story_Char_BR_Cheona_N_55_BR_Miho_4
       - Story_Char_BR_Cheona_N_55_BR_Cheona_5
-  - troop: ""
-    key: PCStory_CH_PECS_LemonadeBeta_1
+  - troop: Story_Troop_Group_Squad_Poseidon
+    key: PCStory_CH_PECS_Triton_1
     type: 0
-    char: PECS_LemonadeBeta
-    skin: 2
-    group: PublicServent
+    char: PECS_Triton
+    skin: 0
+    group: Poseidon
     story:
-      - Story_Char_PECS_LemonadeBeta_N_56_PECS_Audrey_1
-      - Story_Char_PECS_LemonadeBeta_N_56_PECS_LemonadeBeta_2
-      - Story_Char_PECS_LemonadeBeta_N_56_3P_Titania_3
-      - Story_Char_PECS_LemonadeBeta_N_56_3P_Rhea_4
-      - Story_Char_PECS_LemonadeBeta_N_56_PECS_LemonadeBeta_5
+      - Story_Char_PECS_Triton_N_17_PECS_Triton_1
 story:
   - group: PCStory_CH_BR_Brownie_1
     key: Story_Char_BR_Brownie_N_15_BR_Efreeti_1
@@ -2448,6 +2448,126 @@ story:
       trigger:
         type: 0
         value: Cut_ChCS-40Stage05_1
+  - group: PCStory_CH_PECS_LemonadeBeta_1
+    key: Story_Char_PECS_LemonadeBeta_N_56_PECS_Audrey_1
+    order: 1
+    char: PECS_Audrey
+    skin: 0
+    triggerHidden: true
+    start:
+      dialog: DG_ChCS-60Stage01_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 2
+          value: Char_PECS_LemonadeBeta_N
+          sub: "1"
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-60Stage01_1
+  - group: PCStory_CH_PECS_LemonadeBeta_1
+    key: Story_Char_PECS_LemonadeBeta_N_56_PECS_LemonadeBeta_2
+    order: 2
+    char: PECS_LemonadeBeta
+    skin: 0
+    triggerHidden: true
+    start:
+      dialog: DG_ChCS-60Stage02_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_LemonadeBeta_N_56_PECS_Audrey_1
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-60Stage02_1
+  - group: PCStory_CH_PECS_LemonadeBeta_1
+    key: Story_Char_PECS_LemonadeBeta_N_56_3P_Titania_3
+    order: 3
+    char: 3P_Titania
+    skin: 0
+    triggerHidden: true
+    start:
+      dialog: DG_ChCS-60Stage03_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_LemonadeBeta_N_56_PECS_LemonadeBeta_2
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-60Stage03_1
+  - group: PCStory_CH_PECS_LemonadeBeta_1
+    key: Story_Char_PECS_LemonadeBeta_N_56_3P_Rhea_4
+    order: 4
+    char: 3P_Rhea
+    skin: 0
+    triggerHidden: true
+    start:
+      dialog: DG_ChCS-60Stage04_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_LemonadeBeta_N_56_3P_Titania_3
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-60Stage04_1
+  - group: PCStory_CH_PECS_LemonadeBeta_1
+    key: Story_Char_PECS_LemonadeBeta_N_56_PECS_LemonadeBeta_5
+    order: 5
+    char: PECS_LemonadeBeta
+    skin: 2
+    triggerHidden: true
+    start:
+      dialog: DG_ChCS-60Stage05_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_LemonadeBeta_N_56_3P_Rhea_4
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-60Stage05_1
   - group: PCStory_CH_BR_Tomoe_1
     key: Story_Char_BR_Tomoe_N_3_BR_Tomoe_1
     order: 1
@@ -6672,30 +6792,6 @@ story:
       trigger:
         type: 0
         value: Cut_ChCS-54Stage06_1
-  - group: PCStory_CH_PECS_Triton_1
-    key: Story_Char_PECS_Triton_N_17_PECS_Triton_1
-    order: 1
-    char: PECS_Triton
-    skin: 0
-    triggerHidden: false
-    start:
-      dialog: DG_ChCS-21Stage01_1
-      trigger:
-        type: "0"
-        trigger1:
-          type: 2
-          value: Char_PECS_Triton_N
-          sub: "1"
-        trigger2:
-          type: 12
-          value: ""
-          sub: ""
-    stage: ""
-    end:
-      dialog: ""
-      trigger:
-        type: 0
-        value: Cut_ChCS-21Stage01_1
   - group: PCStory_CH_BR_Fafnir_1
     key: Story_Char_BR_Fafnir_N_54_BR_RoyalArsenal_1
     order: 1
@@ -6936,19 +7032,19 @@ story:
       trigger:
         type: 0
         value: Cut_ChCS-59Stage05_1
-  - group: PCStory_CH_PECS_LemonadeBeta_1
-    key: Story_Char_PECS_LemonadeBeta_N_56_PECS_Audrey_1
+  - group: PCStory_CH_PECS_Triton_1
+    key: Story_Char_PECS_Triton_N_17_PECS_Triton_1
     order: 1
-    char: PECS_Audrey
+    char: PECS_Triton
     skin: 0
-    triggerHidden: true
+    triggerHidden: false
     start:
-      dialog: DG_ChCS-60Stage01_1
+      dialog: DG_ChCS-21Stage01_1
       trigger:
         type: "0"
         trigger1:
           type: 2
-          value: Char_PECS_LemonadeBeta_N
+          value: Char_PECS_Triton_N
           sub: "1"
         trigger2:
           type: 12
@@ -6959,100 +7055,4 @@ story:
       dialog: ""
       trigger:
         type: 0
-        value: Cut_ChCS-60Stage01_1
-  - group: PCStory_CH_PECS_LemonadeBeta_1
-    key: Story_Char_PECS_LemonadeBeta_N_56_PECS_LemonadeBeta_2
-    order: 2
-    char: PECS_LemonadeBeta
-    skin: 0
-    triggerHidden: true
-    start:
-      dialog: DG_ChCS-60Stage02_1
-      trigger:
-        type: "0"
-        trigger1:
-          type: 6
-          value: Story_Char_PECS_LemonadeBeta_N_56_PECS_Audrey_1
-          sub: ""
-        trigger2:
-          type: 12
-          value: ""
-          sub: ""
-    stage: ""
-    end:
-      dialog: ""
-      trigger:
-        type: 0
-        value: Cut_ChCS-60Stage02_1
-  - group: PCStory_CH_PECS_LemonadeBeta_1
-    key: Story_Char_PECS_LemonadeBeta_N_56_3P_Titania_3
-    order: 3
-    char: 3P_Titania
-    skin: 0
-    triggerHidden: true
-    start:
-      dialog: DG_ChCS-60Stage03_1
-      trigger:
-        type: "0"
-        trigger1:
-          type: 6
-          value: Story_Char_PECS_LemonadeBeta_N_56_PECS_LemonadeBeta_2
-          sub: ""
-        trigger2:
-          type: 12
-          value: ""
-          sub: ""
-    stage: ""
-    end:
-      dialog: ""
-      trigger:
-        type: 0
-        value: Cut_ChCS-60Stage03_1
-  - group: PCStory_CH_PECS_LemonadeBeta_1
-    key: Story_Char_PECS_LemonadeBeta_N_56_3P_Rhea_4
-    order: 4
-    char: 3P_Rhea
-    skin: 0
-    triggerHidden: true
-    start:
-      dialog: DG_ChCS-60Stage04_1
-      trigger:
-        type: "0"
-        trigger1:
-          type: 6
-          value: Story_Char_PECS_LemonadeBeta_N_56_3P_Titania_3
-          sub: ""
-        trigger2:
-          type: 12
-          value: ""
-          sub: ""
-    stage: ""
-    end:
-      dialog: ""
-      trigger:
-        type: 0
-        value: Cut_ChCS-60Stage04_1
-  - group: PCStory_CH_PECS_LemonadeBeta_1
-    key: Story_Char_PECS_LemonadeBeta_N_56_PECS_LemonadeBeta_5
-    order: 5
-    char: PECS_LemonadeBeta
-    skin: 2
-    triggerHidden: true
-    start:
-      dialog: DG_ChCS-60Stage05_1
-      trigger:
-        type: "0"
-        trigger1:
-          type: 6
-          value: Story_Char_PECS_LemonadeBeta_N_56_3P_Rhea_4
-          sub: ""
-        trigger2:
-          type: 12
-          value: ""
-          sub: ""
-    stage: ""
-    end:
-      dialog: ""
-      trigger:
-        type: 0
-        value: Cut_ChCS-60Stage05_1
+        value: Cut_ChCS-21Stage01_1

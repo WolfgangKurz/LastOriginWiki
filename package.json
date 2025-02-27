@@ -5,10 +5,11 @@
 	"type": "module",
 	"scripts": {
 		"dev": "yarn node tools/debug.mjs",
-		"optimize": "yarn vite optimize --mode optimize",
-		"build": "ts-node tools/sitemap && yarn optimize && vite build",
+		"build": "yarn run sitemap && yarn run face-optimize && yarn run build-pure",
 		"build-pure": "vite build",
-		"lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'"
+		"lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+		"sitemap": "ts-node tools/sitemap",
+		"face-optimize": "py tools/unit-face.py"
 	},
 	"dependencies": {
 		"@dagrejs/dagre": "^1.1.2",

@@ -13,6 +13,7 @@ interface ValueProps {
 	signless?: boolean;
 	floor?: boolean;
 	forcePN?: "p" | "n";
+	detail?: boolean;
 }
 
 export const Value: FunctionalComponent<ValueProps> = (props) => {
@@ -42,6 +43,14 @@ export const Value: FunctionalComponent<ValueProps> = (props) => {
 			{ !props.signless ? signFlag : <></> }
 			{ v.toFixed(10).replace(/\.?0+$/, "") }
 			{ (props.ratio || props.ratio2) && "%" }
+
+			{ props.detail && <span class={ style.Detail }>
+				({ [
+					signFlag,
+					Decimal(props.per).mul(props.ratio2 ? 10000 : props.ratio ? 100 : 1).toNumber(),
+					(props.ratio || props.ratio2) && "%",
+				] }/Lv.)
+			</span> }
 		</span>;
 	} else if (props.forcePN) {
 		const signFlag = props.forcePN === "p" ? "+" : "-";

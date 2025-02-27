@@ -1,5 +1,5 @@
 .buff-icon {
-	$size: 20px;
+	$size: var(--size, 20px);
 
 	display: inline-block;
 	margin-right: 0.5em;
@@ -9,6 +9,7 @@
 
 	background-repeat: no-repeat;
 	background-size: 100%;
+	image-rendering: optimizequality;
 
 	&[data-inline="1"] {
 		margin-right: 0;

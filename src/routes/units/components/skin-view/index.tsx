@@ -285,7 +285,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 			(!isDamaged && !!skin.metadata["2dmodel"]) ||
 			(isDamaged && !!skin.metadata["2dmodel_dam"])
 		),
-		[skin.metadata.flags, skin.metadata["2dmodel"], skin.metadata["2dmodel_dam"]],
+		[isDamaged, skin.metadata.flags, skin.metadata["2dmodel"], skin.metadata["2dmodel_dam"]],
 	);
 	const DisplayVideo = useMemo(() => {
 		return !!props.animate && !!modelVideoId;
@@ -336,7 +336,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					class={ cn(style.FullUnit, style.FullUnitMarginless) }
 					ref={ FullUnitEl }
 				>
-					{ DisplayGamma && !!props.collapsed
+					{ DisplayGamma && !!props.collapsed && !!props.animate
 						? <GammaViewer
 							key="skin-gamma-viewer"
 
@@ -366,7 +366,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 							onPartAvailable={ v => setGammaPartAvailable(v) }
 							onBGAvailable={ v => setGammaBGAvailable(v) }
 						/>
-						: DisplayMixed || DisplaySpine || Display2DModel || DisplayVideo
+						: (DisplayMixed || DisplaySpine || Display2DModel || DisplayVideo) && !!props.animate
 							? <PixiView
 								type={ DisplayMixed
 									? "mixed"
@@ -410,7 +410,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 								onCameraBoundary={ v => setCameraBoundaryAvailable(v) }
 							/>
-							: DisplayVideo && modelVideoId.length > 0
+							: DisplayVideo && modelVideoId.length > 0 && !!props.animate
 								? CanPlayWebM()
 									? <video
 										autoPlay muted loop
@@ -656,7 +656,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					data-platform={ isCensored ? 1 : 0 }
 					onClick={ (): void => setIsCensored(!isCensored) }
 				/> }
-				{ (DisplayMixed || DisplaySpine || DisplayGamma) && <div
+				{ (DisplayMixed || DisplaySpine || DisplayGamma) && !!props.animate && <div
 					class={ `${style.SkinToggle} ${style.Touch}` }
 					data-touch={ displayTouchCollider ? 1 : 0 }
 					onClick={ (): void => setDisplayTouchCollider(!displayTouchCollider) }

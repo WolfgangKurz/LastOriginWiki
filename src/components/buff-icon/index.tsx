@@ -15,7 +15,7 @@ const BuffIcon: FunctionalComponent<BuffIconProps> = (props) => {
 	return <div
 		class={ `buff-icon ${props.class || ""}` }
 		data-inline={ props.inline ? 1 : 0 }
-		style={ { backgroundImage: `url(${AssetsRoot}/${imageExt}/buff/BuffIcon_${props.buff}.${imageExt})` } }
+		style={ { backgroundImage: `url(${AssetsRoot}/${imageExt}/buff/${props.buff}.${imageExt})` } }
 	/>;
 };
 export default BuffIcon;

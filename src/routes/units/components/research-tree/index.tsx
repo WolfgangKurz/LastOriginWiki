@@ -1,4 +1,4 @@
-import { FunctionalComponent, JSX } from "preact";
+import { FunctionalComponent } from "preact";
 import { createPortal, useEffect, useLayoutEffect, useRef, useState } from "preact/compat";
 
 import { ResearchTreeData, Unit } from "@/types/DB/Unit";
@@ -12,7 +12,7 @@ import { parseVNode } from "@/libs/VNode";
 import { TravelVDOM } from "@/libs/VDomParser";
 import { FormatNumber } from "@/libs/Functions";
 
-import Loader, { StaticDB, GetJson, JsonLoaderCore } from "@/libs/Loader";
+import { StaticDB, useDBData } from "@/libs/Loader";
 import { GetUnitFaceURL } from "@/components/unit-face";
 
 import Locale from "@/components/locale";
@@ -40,8 +40,8 @@ const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {
 	const unit = props.unit;
 	if (!unit.research) return <></>;
 
-	const ResearchDB = GetJson<Research[]>(StaticDB.Research);
-	const ConsumableDB = GetJson<Consumable[]>(StaticDB.Consumable);
+	const ResearchDB = useDBData<Research[]>(StaticDB.Research);
+	const ConsumableDB = useDBData<Consumable[]>(StaticDB.Consumable);
 
 	useEffect(() => {
 		fetch(`${AssetsRoot}/svg/${CurrentDB}/research/${unit.uid}.svg?_=0`)
@@ -69,6 +69,7 @@ const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {
 				const p = el.parentElement;
 				if (!p) return;
 
+				console.log(el);
 				const _link = el.getAttribute("href") || "";
 				if (_link.startsWith("@/")) // unit face
 					el.setAttribute("href", GetUnitFaceURL(_link.substring(2)));
@@ -88,16 +89,6 @@ const ResearchTree: FunctionalComponent<ResearchTreeProps> = (props) => {
 			});
 		}
 	}, [svgRef.current]);
-
-	useLayoutEffect(() => {
-		if (!ResearchDB)
-			JsonLoaderCore(CurrentDB, StaticDB.Research).then(() => update());
-	}, [ResearchDB]);
-
-	useLayoutEffect(() => {
-		if (!ConsumableDB)
-			JsonLoaderCore(CurrentDB, StaticDB.Consumable).then(() => update());
-	}, [ConsumableDB]);
 
 	const research = curResearch && ResearchDB && ResearchDB.find(x => x.key === curResearch);
 	const ResearchTime = ((): string => {
