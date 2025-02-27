@@ -373,6 +373,7 @@ const Units: FunctionalComponent = () => {
 		Store.Units.SearchText.value,
 	]);
 
+	const GridIcon = Icons["grid-3x3-gap-fill"];
 	return <div class="chars">
 		<div class="text-center mb-3">
 			<Button.Group>
@@ -391,7 +392,7 @@ const Units: FunctionalComponent = () => {
 					outline={ Store.Units.DisplayType.value !== "list" }
 					onClick={ () => Store.Units.DisplayType.value = "list" }
 				>
-					<Icons.Grid3x3GapFill class="mx-1" />
+					<GridIcon class="mx-1" />
 					<Locale k="UNITS_VIEW_LIST" />
 				</Button>
 				<Button
