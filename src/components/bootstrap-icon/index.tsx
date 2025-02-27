@@ -47,11 +47,12 @@ const bi = (name: string): FunctionalComponent<IconProps> => {
 	};
 };
 
-const kebab = (i: string): string => i
-	.replace(/[A-Z]/g, (p) => `-${p.toLowerCase()}`)
-	.replace(/_/g, "-")
-	.replace(/([a-zA-Z])([0-9])/, "$1-$2")
-	.replace(/^-/, "");
+const kebab = (i: string): string => i.includes("-")
+	? i
+	: i.replace(/[A-Z]/g, (p) => `-${p.toLowerCase()}`)
+		.replace(/_/g, "-")
+		.replace(/([a-zA-Z])([0-9])/, "$1-$2")
+		.replace(/^-/, "");
 const proxy = new Proxy({}, {
 	get (_, p) {
 		const k = kebab(p?.toString() ?? "");

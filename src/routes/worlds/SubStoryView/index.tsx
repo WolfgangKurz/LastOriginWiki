@@ -150,7 +150,7 @@ const SubStoryView: FunctionalComponent = () => {
 							Store.Worlds.Sub.Troop.value = troop?.key ?? null;
 						} }
 					>
-						{ troop && troop.group && <>
+						{ troop && troop.key !== "Story_Uncategorized" && <>
 							<img
 								class={ style.SubStoryTroopIcon }
 								src={ `${AssetsRoot}/${imgExt}/group/${groupTable[troop.group] || troop.group}.${imgExt}` }
@@ -159,16 +159,18 @@ const SubStoryView: FunctionalComponent = () => {
 						</> }
 
 						<span>
-							{ !troop || !troop.group
+							{ !troop
 								? <Locale plain k="WORLDS_SUBSTORY_DISPLAYALL" />
-								: <Locale
-									plain
-									k={ `UNIT_GROUP_${groupTable[troop.group] || troop.group}_1` }
-									fallback={ <Locale
+								: troop.key === "Story_Uncategorized"
+									? <Locale raw={ false } k="UNIT_GROUP_Uncategorized" />
+									: <Locale
 										plain
-										k={ `UNIT_GROUP_${groupTable[troop.group] || troop.group}` }
-									/> }
-								/>
+										k={ `UNIT_GROUP_${groupTable[troop.group] || troop.group}_1` }
+										fallback={ <Locale
+											plain
+											k={ `UNIT_GROUP_${groupTable[troop.group] || troop.group}` }
+										/> }
+									/>
 							}
 						</span>
 					</a>
