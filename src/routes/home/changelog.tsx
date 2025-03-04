@@ -6,6 +6,11 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12910" date="2025-03-05"
+		bugfix={ <>
+			<li>일부 스킨 배너가 누락된 점을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12905" date="2025-02-28"
 		bugfix={ <>
 			<li>전투원 기본 정보에서 호감도 아이콘이 작게 표시되던 점을 수정했습니다.</li>
