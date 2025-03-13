@@ -126,6 +126,7 @@ export const SkinBanners: string[] = [
 	"PECS_Rhode_1",
 	"AGS_Aeda_1",
 	"PECS_Sunny_2", "3P_Calypso_1",
+	"3P_Alcyone_2", "3P_Maria_3",
 ];
 
 type SkillVideo_Plain = string[];

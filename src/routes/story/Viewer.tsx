@@ -108,6 +108,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	}
 	function ImageToFace (model: string): { uid: string; skin: number; fallback: string; } {
 		let sid = model
+			.replace(/_N_DL/g, "_N")
 			.replace(/_DL_N/g, "")
 			.replace(/_D$/g, "") // same with _DL_N
 			.replace(/^2DModel_(.+)_([NPS])(S[0-9]+)?$/, (p, p1, p2, p3) => {

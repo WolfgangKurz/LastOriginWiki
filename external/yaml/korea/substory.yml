@@ -719,6 +719,18 @@ group:
     group: Poseidon
     story:
       - Story_Char_PECS_Triton_N_17_PECS_Triton_1
+  - troop: Story_Troop_Group_Squad_GuardianSeries
+    key: PCStory_CH_3P_Alcyone_1
+    type: 0
+    char: 3P_Alcyone
+    skin: 2
+    group: GuardianSeries
+    story:
+      - Story_Char_3P_Alcyone_N_57_3P_Melite_1
+      - Story_Char_3P_Alcyone_N_57_3P_Satgat_2
+      - Story_Char_3P_Alcyone_N_57_3P_Alcyone_3
+      - Story_Char_3P_Alcyone_N_57_AGS_Shade_4
+      - Story_Char_3P_Alcyone_N_57_3P_Alcyone_5
 story:
   - group: PCStory_CH_BR_Brownie_1
     key: Story_Char_BR_Brownie_N_15_BR_Efreeti_1
@@ -2453,7 +2465,7 @@ story:
     order: 1
     char: PECS_Audrey
     skin: 0
-    triggerHidden: true
+    triggerHidden: false
     start:
       dialog: DG_ChCS-60Stage01_1
       trigger:
@@ -2477,7 +2489,7 @@ story:
     order: 2
     char: PECS_LemonadeBeta
     skin: 0
-    triggerHidden: true
+    triggerHidden: false
     start:
       dialog: DG_ChCS-60Stage02_1
       trigger:
@@ -2501,7 +2513,7 @@ story:
     order: 3
     char: 3P_Titania
     skin: 0
-    triggerHidden: true
+    triggerHidden: false
     start:
       dialog: DG_ChCS-60Stage03_1
       trigger:
@@ -2525,7 +2537,7 @@ story:
     order: 4
     char: 3P_Rhea
     skin: 0
-    triggerHidden: true
+    triggerHidden: false
     start:
       dialog: DG_ChCS-60Stage04_1
       trigger:
@@ -2549,7 +2561,7 @@ story:
     order: 5
     char: PECS_LemonadeBeta
     skin: 2
-    triggerHidden: true
+    triggerHidden: false
     start:
       dialog: DG_ChCS-60Stage05_1
       trigger:
@@ -7056,3 +7068,123 @@ story:
       trigger:
         type: 0
         value: Cut_ChCS-21Stage01_1
+  - group: PCStory_CH_3P_Alcyone_1
+    key: Story_Char_3P_Alcyone_N_57_3P_Melite_1
+    order: 1
+    char: 3P_Melite
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-61Stage01_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 8
+          value: Char_3P_Alcyone_N
+          sub: "100"
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-61Stage01_1
+  - group: PCStory_CH_3P_Alcyone_1
+    key: Story_Char_3P_Alcyone_N_57_3P_Satgat_2
+    order: 2
+    char: 3P_Satgat
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-61Stage02_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_3P_Alcyone_N_57_3P_Melite_1
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-61Stage02_1
+  - group: PCStory_CH_3P_Alcyone_1
+    key: Story_Char_3P_Alcyone_N_57_3P_Alcyone_3
+    order: 3
+    char: 3P_Alcyone
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-61Stage03_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_3P_Alcyone_N_57_3P_Satgat_2
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-61Stage03_1
+  - group: PCStory_CH_3P_Alcyone_1
+    key: Story_Char_3P_Alcyone_N_57_AGS_Shade_4
+    order: 4
+    char: AGS_Shade
+    skin: 1
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-61Stage04_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_3P_Alcyone_N_57_3P_Alcyone_3
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-61Stage04_1
+  - group: PCStory_CH_3P_Alcyone_1
+    key: Story_Char_3P_Alcyone_N_57_3P_Alcyone_5
+    order: 5
+    char: 3P_Alcyone
+    skin: 2
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS-61Stage05_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_3P_Alcyone_N_57_AGS_Shade_4
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-61Stage05_1
