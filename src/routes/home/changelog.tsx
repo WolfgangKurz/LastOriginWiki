@@ -9,8 +9,6 @@ const Changelog: FunctionalComponent = () => <>
 	<ChangelogItem title="Build 12916" date="2025-03-14"
 		bugfix={ <>
 			<li>일부 전투원의 스킨이 잘못 표시되던 점을 수정했습니다.</li>
-			<li>신규 장식품의 정보가 추가되었습니다.</li>
-			<li>신규 소모품의 정보가 추가되었습니다.</li>
 		</> }
 		new={ <>
 			<li>전투원 및 장비 획득처에 <BR>전술 훈련실</BR>을 추가했습니다.</li>
