@@ -1276,7 +1276,7 @@ export default {
 			"Chip_AtkTypeB_T1": "c41ad93d",
 			"Chip_AtkTypeB_T2": "d12d9062",
 			"Chip_AtkTypeB_T3": "c14605e5",
-			"Chip_AtkTypeB_T4": "8f802992",
+			"Chip_AtkTypeB_T4": "b296050f",
 			"Chip_AtkTypeB_T5": "e2b066f3",
 			"Chip_Atk_T1": "09b53fa8",
 			"Chip_Atk_T2": "de2d249c",
@@ -1292,7 +1292,7 @@ export default {
 			"Chip_CriTypeB_T1": "eff024b3",
 			"Chip_CriTypeB_T2": "78116eef",
 			"Chip_CriTypeB_T3": "0912217b",
-			"Chip_CriTypeB_T4": "844f4146",
+			"Chip_CriTypeB_T4": "8698be40",
 			"Chip_CriTypeB_T5": "711d5d6e",
 			"Chip_Cri_T1": "6f823544",
 			"Chip_Cri_T2": "4bcdc281",
@@ -1302,11 +1302,11 @@ export default {
 			"Chip_Debuff_Res_T1": "0a2b8a85",
 			"Chip_Debuff_Res_T2": "787cc7f5",
 			"Chip_Debuff_Res_T3": "a2f1a3cc",
-			"Chip_Debuff_Res_T4": "091ae57c",
+			"Chip_Debuff_Res_T4": "0e447d1f",
 			"Chip_DefTypeB_T1": "6876464f",
 			"Chip_DefTypeB_T2": "96355741",
 			"Chip_DefTypeB_T3": "7eda3a56",
-			"Chip_DefTypeB_T4": "be6038dc",
+			"Chip_DefTypeB_T4": "c6dce465",
 			"Chip_DefTypeB_T5": "53c7e34a",
 			"Chip_Def_T1": "f019751e",
 			"Chip_Def_T2": "d9c05d04",
@@ -1320,7 +1320,7 @@ export default {
 			"Chip_EvTypeB_T1": "561795a8",
 			"Chip_EvTypeB_T2": "1059bd39",
 			"Chip_EvTypeB_T3": "d5916ba8",
-			"Chip_EvTypeB_T4": "955625e9",
+			"Chip_EvTypeB_T4": "defbd028",
 			"Chip_EvTypeB_T5": "fe1ff7ba",
 			"Chip_Ev_T1": "aa55711c",
 			"Chip_Ev_T2": "08258463",
@@ -1365,7 +1365,7 @@ export default {
 			"Chip_SpdTypeB_T1": "da867210",
 			"Chip_SpdTypeB_T2": "f8285c0e",
 			"Chip_SpdTypeB_T3": "179fcf0c",
-			"Chip_SpdTypeB_T4": "03f3b46d",
+			"Chip_SpdTypeB_T4": "da23b0c2",
 			"Chip_SpdTypeB_T5": "5ce03e3c",
 			"Chip_Spd_T1": "9f8e3ffb",
 			"Chip_Spd_T2": "1397df0b",
@@ -1522,7 +1522,7 @@ export default {
 			"Sub_Recycler_T4": "f623b9e2",
 			"Sub_SEyepatch_T4": "6b3de5d5",
 			"Sub_SHCA_T4": "2d80b1fd",
-			"Sub_SK14MODKit_T4": "1ec5f15c",
+			"Sub_SK14MODKit_T4": "fb98e0bd",
 			"Sub_SPACE_T4": "a222e519",
 			"Sub_STEROID_T4": "1d6a5b24",
 			"Sub_ShieldBlade_T4": "4c7e5b23",
@@ -1748,7 +1748,7 @@ export default {
 			"WoodMaking3": "6dcdaae0"
 		},
 		"filterable.enemy": "f24c7e8f",
-		"filterable.equip": "68ef60d4",
+		"filterable.equip": "b1a869e2",
 		"filterable.facility": "b3f0e54b",
 		"filterable.unit": "9c394a8f",
 		"gacha": "9591957f",
@@ -4774,6 +4774,7 @@ export default {
 			"SUMMON_SU_TestSInstall_N": "7e68d6bd",
 			"SUMMON_SU_TrenchBomb_N": "606e4ab5"
 		},
+		"training": "467c85d4",
 		"unit": {
 			"3P_Ajax": "6cd0cb8a",
 			"3P_Alcyone": "758a383a",
@@ -5002,9 +5003,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "f941e723",
-		"JP": "6e546ca9",
-		"KR": "433f6ded",
-		"TC": "2f6515d1"
+		"EN": "263c98ff",
+		"JP": "5585b97b",
+		"KR": "ffa72ade",
+		"TC": "7cdc2a46"
 	}
 } as DBHashType;

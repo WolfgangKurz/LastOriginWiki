@@ -37,6 +37,7 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 	const variant = ((): string => {
 		if (Source.IsUninstalled) return props.minimum ? "black" : "light";
 		if (Source.IsRoguelike) return "warning";
+		if (Source.IsTraining) return "danger";
 		if (Source.IsChallenge) return "primary";
 		if (Source.IsPrivateItem) return "stat-acc";
 		if (Source.IsLimited) return "secondary";
@@ -76,7 +77,12 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 				return <></>;
 		} else if (Source.IsLimited)
 			return <Locale k="COMMON_SOURCE_LIMITED" />;
-		else if (Source.IsChallenge) {
+		else if (Source.IsTraining) {
+			if (props.minimum)
+				return <Locale k="COMMON_SOURCE_TRAINING" />;
+			else
+				return <Locale k={ Source.TrainingId } />;
+		} else if (Source.IsChallenge) {
 			const key = `COMMON_CHALLENGE_${Source.ChallengeId}`;
 			const name = key in loc
 				? <Locale k={ `COMMON_CHALLENGE_${Source.ChallengeId}` } />

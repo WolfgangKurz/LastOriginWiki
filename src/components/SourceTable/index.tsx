@@ -85,6 +85,8 @@ const SourceTable: FunctionalComponent<SourceTableProps> = (props) => {
 				}
 				else if (f.IsDaily)
 					return <Locale k="WORLD_Daily" />;
+				else if (f.IsTraining)
+					return <Locale k="COMMON_SOURCE_TRAINING" />;
 				else if (f.IsChallenge)
 					return <Locale k={ `COMMON_CHALLENGE_${f.ChallengeName}` } />;
 				else if (f.IsSubStory)
