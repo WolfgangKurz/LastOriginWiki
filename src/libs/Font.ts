@@ -1,4 +1,4 @@
-import opentype from "opentype.js";
+import * as opentype from "opentype.js";
 
 import woff2dec from "@/external/woff2/woff2dec";
 
@@ -20,7 +20,10 @@ type FontMap = {
 	[family: string]: FontNonWeighted | FontNonWeightedSubset[] | FontWeighted | FontWeightedDynamicSubset;
 };
 
-const _font_priority = ["IBM Plex Sans KR", "Pretendard JP Variable", "Pretendard Variable"];
+const _font_priority = [
+	"IBM Plex Sans KR", "Pretendard JP Variable", "Pretendard Variable",
+	"Noto Sans TC", "Noto Sans SC", "Noto Sans HK",
+];
 export const FontPriority = _font_priority;
 
 const _font_callbacks: Record<string, Array<() => void>> = {};
@@ -33,11 +36,17 @@ const _font_source = {
 	"IBM Plex Sans KR": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap",
 	"Pretendard Variable": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css",
 	"Pretendard JP Variable": "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-jp-dynamic-subset.min.css",
+	"Noto Sans TC": "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap",
+	"Noto Sans SC": "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap",
+	"Noto Sans HK": "https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&display=swap",
 };
 const _font_except_chars: Record<string, string[]> = {
 	"IBM Plex Sans KR": ["中"],
 };
-const _font_list = ["IBM Plex Sans KR", "Pretendard Variable", "Pretendard JP Variable"];
+const _font_list = [
+	"IBM Plex Sans KR", "Pretendard Variable", "Pretendard JP Variable",
+	"Noto Sans TC", "Noto Sans SC", "Noto Sans HK",
+];
 Promise.all(
 	_font_list
 		.map(k => _font_source[k])
@@ -121,7 +130,7 @@ Promise.all(
 
 function charAvailableForFont (family: string, font: opentype.Font, char: string): boolean {
 	if (family in _font_except_chars && _font_except_chars[family].includes(char)) return false;
-	return font.hasChar(char);
+	return font.hasChar(char) && font.charToGlyphIndex(char) !== 0;
 }
 
 export function FontGet (family: string, weight: number, char: string): opentype.Font | null | Promise<opentype.Font | null> {

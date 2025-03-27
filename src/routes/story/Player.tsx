@@ -963,7 +963,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 					dialog.setDisplay(false);
 			}
 		}
-	}, [dialog, curData]);
+	}, [dialog, curData, LText]);
 	useEffect(() => { // Selection
 		let fn: (idx: number) => void;
 
@@ -998,7 +998,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			if (selection && fn)
 				selection.off("select", fn);
 		};
-	}, [curData, selection, props.onNext, props.onDone, sel, selDisp]);
+	}, [curData, selection, props.onNext, props.onDone, sel, selDisp, LText]);
 
 	useEffect(() => { // Screen Effect
 		let timer: number | null = null;

@@ -110,6 +110,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 		let sid = model
 			.replace(/_N_DL/g, "_N")
 			.replace(/_DL_N/g, "")
+			.replace(/_DL/g, "")
 			.replace(/_D$/g, "") // same with _DL_N
 			.replace(/^2DModel_(.+)_([NPS])(S[0-9]+)?$/, (p, p1, p2, p3) => {
 				if (p2 === "N") {
@@ -302,7 +303,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 		}
 		return storyData
 			.flatMap(r => Object.values(r.char))
-			.filter(r => r.image && !r.image.includes("_Cut"))
+			.filter(r => r.image && !r.image.includes("_Cut") && !r.image.startsWith("#"))
 			.map(r => ImageToFace(r.image))
 			.reduce<FaceMetadata[]>(
 				(p, c) => p.some(r => r.uid === c.uid && r.skin === c.skin)

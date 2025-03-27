@@ -1,5 +1,5 @@
 import * as PIXI from "pixi.js";
-import opentype from "opentype.js";
+import * as opentype from "opentype.js";
 
 import { findSpans } from "unicode-default-word-boundary";
 
@@ -30,12 +30,15 @@ interface TextStyle {
 }
 
 export default class FadeText extends FadeContainer {
+	private _text_height: number = 0;
+
 	private _text: string | undefined;
 	public get text () {
 		return this._text;
 	}
 	public set text (value: typeof this._text) {
 		this._text = value;
+		this._text_height = 0;
 		this.UpdateTexture();
 	}
 
@@ -179,12 +182,17 @@ export default class FadeText extends FadeContainer {
 									pathCacheKey = `${_font.names.fontFamily}_${fontSize}_${fontWeight}`;
 									pathCache[pathCacheKey] ||= {};
 
-									_w += _font.getAdvanceWidth(c, fontSize) + letterSpacing;
+									_w += _font.getAdvanceWidth(c, fontSize, {
+										variation: { wght: fontWeight },
+									} as any) + letterSpacing;
 									_arr.push([c, _font]);
 
-									const h = (_font.ascender - _font.descender) / _font.unitsPerEm * fontSize;
-									_bl = Math.max(_bl, h + (_font.descender) / _font.unitsPerEm * fontSize);
-									_h = Math.max(_h, h);
+									// const h = (_font.ascender - _font.descender) / _font.unitsPerEm * fontSize;
+									// _bl = Math.max(_bl, h + (_font.descender) / _font.unitsPerEm * fontSize);
+									// _h = Math.max(_h, h);
+									const h = fontSize;
+									_bl = h;
+									_h = Math.max(_h, h * lineHeight);
 								} else { // Promise
 									_font.then(() => this.markUpdateRequire());
 									_arr.push([c, null]); // font not loaded yet
@@ -214,12 +222,14 @@ export default class FadeText extends FadeContainer {
 
 								if (!(pathCacheKey in pathCache && c in pathCache[pathCacheKey])) {
 									const _path = _font.getPath(c, 0, 0, fontSize, {
+										variation: { wght: fontWeight },
+
 										kerning: true,
 										features: {
 											liga: true,
 											rlig: true,
 										},
-									});
+									} as any);
 									const _cw = _font.getAdvanceWidth(c, fontSize);
 									pathCache[pathCacheKey][c] = [_path, _cw];
 								}
@@ -255,7 +265,8 @@ export default class FadeText extends FadeContainer {
 						});
 
 					const _align = this._style?.align ?? "LT";
-					const [_g_w, _g_h] = [_right, _bottom];
+					const [_g_w, _g_h] = [_right, Math.max(this._text_height, _bottom)];
+					this._text_height = _g_h;
 					switch (_align[0]) {
 						case "L":
 							this.pivot.x = 0;

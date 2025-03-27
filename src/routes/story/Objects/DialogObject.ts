@@ -121,6 +121,7 @@ export default class DialogObject extends PIXI.Container {
 
 		this.textObject = new FadeText("", {
 			align: "LC",
+			fontWeight: 400,
 			fontSize: 28,
 			fill: "#fff",
 			stroke: "#000",
@@ -139,7 +140,7 @@ export default class DialogObject extends PIXI.Container {
 			stroke: "#000",
 			strokeWidth: 1,
 		});
-		this.speakerObject.position.set(170, 16);
+		this.speakerObject.position.set(170, 12);
 		this.charDisp.addChild(this.speakerObject);
 
 		this.setText(this._text);

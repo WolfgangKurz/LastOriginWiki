@@ -185,6 +185,7 @@ export default ({ mode }) => {
 						) return "vendor.flow";
 
 						if (id.includes("/node_modules/")) return "vendor";
+						if (id.includes("/opentype.js/")) return "vendor.opentype";
 
 						// components/bootstrap-icon/
 						if (id.includes("/src/components/bootstrap-icon/")) return "components.icon";
