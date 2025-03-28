@@ -8,7 +8,7 @@ import SubStoryDB from "@/types/DB/SubStory";
 import { LocaleList, LocaleTypes } from "@/types/Locale";
 
 import { useLocale } from "@/libs/Locale";
-import { AssetsRoot, ImageExtension, SubStoryUnit } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, IsDev, SubStoryUnit } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import { BuildClass, cn } from "@/libs/Class";
 import { parseVNode } from "@/libs/VNode";
@@ -111,6 +111,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			.replace(/_N_DL/g, "_N")
 			.replace(/_DL_N/g, "")
 			.replace(/_DL/g, "")
+			.replace(/_N_N/g, "_N")
 			.replace(/_D$/g, "") // same with _DL_N
 			.replace(/^2DModel_(.+)_([NPS])(S[0-9]+)?$/, (p, p1, p2, p3) => {
 				if (p2 === "N") {
@@ -419,7 +420,15 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 		}
 
 		<div class="my-2">
-			{ faces.map(f => <UnitFace class="mx-1" { ...f } size="3rem" />) }
+			{ faces.map(f => IsDev
+				? <div class="d-inline-block px-2">
+					<small class="d-block">
+						{ f.uid } { f.skin }
+					</small>
+					<UnitFace class="mx-1" { ...f } size="3rem" />
+				</div>
+				: <UnitFace class="mx-1" { ...f } size="3rem" />
+			) }
 		</div>
 
 		<ul class={ cn("nav nav-tabs pt-2", style.TabNav) }>
