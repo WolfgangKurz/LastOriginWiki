@@ -2,15 +2,13 @@ import { FunctionalComponent } from "preact";
 import { useMemo, useState } from "preact/hooks";
 import Decimal from "decimal.js";
 
-import { ACTOR_GRADE, ITEM_GRADE, STAGE_SUB_TYPE, UNIT_POSITION } from "@/types/Enums";
+import { ACTOR_GRADE, ITEM_GRADE, STAGE_SUB_TYPE } from "@/types/Enums";
 import { MapWaveGroup, Maps, World } from "@/types/DB/Map";
 import { Equip } from "@/types/DB/Equip";
 import { Unit } from "@/types/DB/Unit";
-import { SkillGroup } from "@/types/DB/Skill";
 
-import { CurrentDB } from "@/libs/DB";
 import { useUpdate } from "@/libs/hooks";
-import { RarityDisplay, TroopNameTable, WorldIds } from "@/libs/Const";
+import { RarityDisplay } from "@/libs/Const";
 import { FormatNumber, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
@@ -205,7 +203,7 @@ const EXPCalc: FunctionalComponent = () => {
 	const targetDB = targetJson.map(r => useDBData(r));
 	if (targetDB.some(r => !r)) return <Loading.Data />;
 
-	const MapsDB = targetDB[StaticDB.Maps] as Maps;
+	const MapsDB = targetDB[0] as Maps;
 	const mapDB = Object.keys(MapsDB).map(k => [k, useDBData<World>(`map/${k}`)] as [string, World | null | undefined]);
 	if (mapDB.some(r => !r[1])) return <Loading.Data />;
 
