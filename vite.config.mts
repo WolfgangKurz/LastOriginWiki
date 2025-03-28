@@ -167,6 +167,7 @@ export default ({ mode }) => {
 						if (id.includes("/node_modules/@popperjs/")) return "vendor.popperjs";
 						if (id.includes("/node_modules/graphlib/")) return "vendor.graphlib";
 						if (id.includes("/node_modules/lodash/")) return "vendor.lodash";
+						if (id.includes("/node_modules/opentype.js/")) return "vendor.opentype";
 
 						// not used anymore
 						if (id.includes("/node_modules/swiper/")) return "vendor.swiper";
@@ -185,7 +186,6 @@ export default ({ mode }) => {
 						) return "vendor.flow";
 
 						if (id.includes("/node_modules/")) return "vendor";
-						if (id.includes("/opentype.js/")) return "vendor.opentype";
 
 						// components/bootstrap-icon/
 						if (id.includes("/src/components/bootstrap-icon/")) return "components.icon";

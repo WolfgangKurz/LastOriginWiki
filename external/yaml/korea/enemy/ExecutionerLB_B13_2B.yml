@@ -1,0 +1,422 @@
+uid: ExecutionerLB_B13_2B
+rarity: 5
+type: 2
+role: 2
+category: 1
+stat:
+  hp:
+    - 48125
+    - 375
+  atk:
+    - 124
+    - 25
+  def:
+    - 0
+    - 0
+  spd: 4.6
+  cri: 12.5
+  acc: 175
+  eva: 120
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_MP_ExecutionerLB_B13_2B_1
+    icon: SwordAttk
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 1
+      range: 5
+      ap: 5
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ExecutionerLB_B13_2B_1
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 2
+                  - 3
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_ExecutionerLB_B13_2B_1_1
+                type: 1
+                value: "0.300000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 30%
+                  per: 1%
+              overlap: 0
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_ExecutionerLB_B13_2B_2
+    icon: WideSwordAttk
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 1.25
+      range: 4
+      ap: 8
+      grid: 6>0,0,0,1,1,1,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ExecutionerLB_B13_2B_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
+              desc:
+                desc: Effect_MP_ExecutionerLB_B13_2B_2_1
+                type: 1
+                value: "0.300000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 83
+                damage_add:
+                  base: 30%
+                  per: 1%
+              overlap: 0
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_ExecutionerLB_B13_2B_3
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ExecutionerLB_B13_2B_3
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - 0
+                  - 1
+                attr: 0
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+          target: 2
+          buffs:
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_MP_ExecutionerLB_B13_2B_3_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_ExecutionerLB_B13_2B_4
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ExecutionerLB_B13_2B_4
+          on: attack
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_ExecutionerLB_B13_2B_4_1
+                type: 1
+                value: "0.080000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                until: damaged
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 8%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_ExecutionerLB_B13_2B_11
+          on: attack
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_MP_ExecutionerLB_B13_2B_11_1
+                type: 1
+                value: "0.040000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                until: damaged
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 4%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_ExecutionerLB_B13_2B_12
+          on: attack
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_ExecutionerLB_B13_2B_4
+                stack: 3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_ExecutionerLB_B13_2B_12_1
+                type: 1
+                value: "0.500000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                until: damaged
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 50%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_BARRIER_PIERCE
+              desc:
+                desc: Effect_MP_ExecutionerLB_B13_2B_12_2
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                until: damaged
+              value:
+                isBuff: true
+                type: 94
+                penetration_force: true
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_ExecutionerLB_B13_2B_5
+    icon: P.SelfSpdBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 5
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_ExecutionerLB_B13_2B_5
+          on: damaged
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_MP_ExecutionerLB_B13_2B_5_1
+                type: 1
+                value: "1.200000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                count: 1
+                trigger: after_damaged
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 120%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_DOWN
+              desc:
+                desc: Effect_MP_ExecutionerLB_B13_2B_5_2
+                type: 1
+                value: "-0.750000"
+                level: "-0.010000"
+              attr: 3
+              erase:
+                count: 1
+                trigger: after_damaged
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: -75%
+                  per: -1%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+ai: AI_ExecutionerLB_01

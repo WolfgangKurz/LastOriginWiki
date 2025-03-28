@@ -48,7 +48,7 @@ interface MODEL_OBJECT {
 	color?: [r: number, g: number, b: number, a: number];
 	flip?: [x: boolean, y: boolean];
 	shader?: string[];
-	sprite?: number;
+	sprite?: string;
 }
 interface MODEL_DATA {
 	sprite: SPRITE_DATA[];
@@ -415,7 +415,7 @@ export default class Pixi2DModel extends FadeContainer {
 							}
 						}
 
-						if ("sprite" in o && o.sprite !== undefined) {
+						if ("sprite" in o && o.sprite !== undefined && this.isValidSpriteNode(o)) {
 							const sp = this.spMap[o.sprite];
 							let tex = this.texMap[sp.name];
 							if (o.flip && (o.flip[0] || o.flip[1])) {
@@ -515,7 +515,6 @@ export default class Pixi2DModel extends FadeContainer {
 			...(this.dialogDeactive ? this.dialogDeactiveList : []),
 		].unique();
 
-		console.log(items, namesToHide);
 		this.treeItems
 			.filter(r => items.includes(r.name))
 			.forEach(r => r.sprite.visible = !namesToHide.includes(r.name));
@@ -536,5 +535,10 @@ export default class Pixi2DModel extends FadeContainer {
 		// this._objectURLs.forEach(url => URL.revokeObjectURL(url));
 		this._sprites.forEach(key => removeCache(key));
 		// PIXI.Ticker.shared.remove(this.ticker);
+	}
+
+	private isValidSpriteNode (o: MODEL_OBJECT): boolean {
+		if (!o.sprite) return false;
+		return !["BoneJoint", "BoneScaled", "BoneNoJoint", "IKControl"].includes(o.sprite);
 	}
 }
