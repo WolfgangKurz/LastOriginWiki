@@ -2,19 +2,25 @@ import { SortieCostType } from "@/types/Cost";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, CURRENCY_TYPE, ITEM_TYPE, ROLE_TYPE } from "@/types/Enums";
 
 import { getCookie } from "@/libs/Cookie";
-
-import { LocaleGet } from "@/components/locale";
+import { useLocale } from "@/libs/Locale";
 
 export type ImageExtensionTypes = "webp" | "png";
 export const ImageExtensionList: ImageExtensionTypes[] = ["webp", "png"];
 
+export const UseCDN = import.meta.env.VITE_USE_CDN === "1";
 export const IsDev = import.meta.env.DEV;
+export const DevUseCDN = import.meta.env.VITE_DEV_USE_CDN === "1";
 
 export const Host = IsDev
-	? `http://${import.meta.env.VITE_LOCALHOST}:${import.meta.env.VITE_ASSET_PORT}`
-	: "https://lo.swaytwig.com";
-export const GammaHost = IsDev
-	? `http://${import.meta.env.VITE_LOCALHOST}:${import.meta.env.VITE_GAMMA_PORT}`
+	? DevUseCDN
+		? "https://lo-swaytwig.b-cdn.net"
+		: `http://${import.meta.env.VITE_LOCALHOST}:${import.meta.env.VITE_ASSET_PORT}`
+	: UseCDN
+		? "https://lo-swaytwig.b-cdn.net"
+		: "https://lo.swaytwig.com";
+
+export const GammaHost = UseCDN || (IsDev && DevUseCDN)
+	? "https://lo-swaytwig-gamma.b-cdn.net"
 	: "https://loskin.swaytwig.com";
 
 export const AssetsRoot = `${Host}/assets`;
@@ -635,11 +641,11 @@ export const RarityDisplay: Record<ACTOR_GRADE, string> = {
 	[ACTOR_GRADE.SSS]: "SSS",
 };
 
-export function EquipTypeDisplay (): Record<ITEM_TYPE, string> {
+export function EquipTypeDisplay (loc: ReturnType<typeof useLocale>[0]): Record<ITEM_TYPE, string> {
 	return {
-		[ITEM_TYPE.CHIP]: LocaleGet("EQUIP_FILTER_TYPE_CHIP"),
-		[ITEM_TYPE.SPCHIP]: LocaleGet("EQUIP_FILTER_TYPE_OS"),
-		[ITEM_TYPE.SUBEQ]: LocaleGet("EQUIP_FILTER_TYPE_ITEM"),
+		[ITEM_TYPE.CHIP]: loc["EQUIP_FILTER_TYPE_CHIP"],
+		[ITEM_TYPE.SPCHIP]: loc["EQUIP_FILTER_TYPE_OS"],
+		[ITEM_TYPE.SUBEQ]: loc["EQUIP_FILTER_TYPE_ITEM"],
 		[ITEM_TYPE.PCITEM]: "코어링크",
 		[ITEM_TYPE.CONSUMABLE]: "소모품",
 		[ITEM_TYPE.MATERIAL]: "재료",

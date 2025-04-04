@@ -11,14 +11,13 @@ import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
 import { useUpdate } from "@/libs/hooks";
 import { useLocale } from "@/libs/Locale";
-import { CurrentDB } from "@/libs/DB";
 import { AssetsRoot, CurrentDate, CurrentEvent, EquipTypeDisplay, ImageExtension, RarityDisplay } from "@/libs/Const";
 import { DecomposeHangulSyllable, groupBy, isActive } from "@/libs/Functions";
 import EntitySource from "@/libs/EntitySource";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
-import { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
-import Locale, { LocaleGet } from "@/components/locale";
+import { StaticDB, useDBData } from "@/libs/Loader";
+import Locale from "@/components/locale";
 import Loading from "@/components/loading";
 import EquipCard from "@/components/equip-card";
 import EffectFilterPopup from "@/components/popup/effect-filter-popup";
@@ -40,16 +39,13 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 	const [loc] = useLocale();
 	const update = useUpdate();
 
-	const FilterableUnitDB = GetJson<FilterableUnit[] | null>(StaticDB.FilterableUnit);
-	if (!FilterableUnitDB) JsonLoaderCore(CurrentDB, StaticDB.FilterableUnit).then(() => update());
-
-	const FilterableEquipDB = GetJson<FilterableEquip[] | null>(StaticDB.FilterableEquip)
+	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
+	const FilterableEquipDB = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip)
 		?.filter(r => !!r)
 		?.map(r => ({
 			...r,
 			source: r.source.map(a => a.map(b => new EntitySource(b as unknown as string))),
 		}));
-	if (!FilterableEquipDB) JsonLoaderCore(CurrentDB, StaticDB.FilterableEquip).then(() => update());
 
 	const selectedEquip = FilterableEquipDB && props.uid
 		? FilterableEquipDB.find(x => x.fullKey === props.uid) || null
@@ -88,7 +84,7 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 
 			SetMeta(
 				["description", "twitter:description"],
-				`${RarityDisplay[eq.rarity]}급 ${EquipTypeDisplay()[eq.type]} ${loc[`EQUIP_${eq.fullKey}`] || "???"}의 정보입니다. ` +
+				`${RarityDisplay[eq.rarity]}급 ${EquipTypeDisplay(loc)[eq.type]} ${loc[`EQUIP_${eq.fullKey}`] || "???"}의 정보입니다. ` +
 				"레벨별 효과, 획득처, 강화 비용을 확인할 수 있습니다.",
 			);
 			SetMeta("keywords", `,${loc[`EQUIP_${eq.fullKey}`] || "???"}`, true);
@@ -383,7 +379,7 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 								class="form-control"
 								value={ Filters.SearchText }
 								onInput={ (e) => (Filters.SearchText.value = (e.target as any).value) }
-								placeholder={ LocaleGet("EQUIP_SEARCH_PLACEHOLDER") } />
+								placeholder={ loc["EQUIP_SEARCH_PLACEHOLDER"] } />
 
 							<button class="btn btn-danger" onClick={ () => (Filters.SearchText.value = "") }>
 								<Locale k="EQUIP_SEARCH_RESET" />

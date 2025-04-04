@@ -5077,9 +5077,9 @@ export default {
 		}
 	},
 	"locale": {
-		"EN": "b8c1dad7",
-		"JP": "86f66d2e",
-		"KR": "2fcbc52e",
-		"TC": "e708cc08"
+		"EN": "7cb84c0f",
+		"JP": "c85f8c54",
+		"KR": "e7816eab",
+		"TC": "a6f27216"
 	}
 } as DBHashType;
