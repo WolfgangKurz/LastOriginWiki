@@ -8,6 +8,11 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12939" date="2025-04-06"
+		bugfix={ <>
+			<li>사이트 내 일부 이미지가 표시되지 않던 점을 수정했습니다..</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12938" date="2025-04-05"
 		knownissue={ <>
 			<li>
