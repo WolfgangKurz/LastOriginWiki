@@ -5,8 +5,8 @@ role: 2
 category: 0
 stat:
   hp:
-    - 1780000
-    - 16020
+    - 1300000
+    - 5200
   atk:
     - 2500
     - 7.5
@@ -15,14 +15,14 @@ stat:
     - 22.5
   spd: 4.9
   cri: 25
-  acc: 260
+  acc: 300
   eva: 245
   res:
     fire: 30
     chill: 30
     thunder: 30
 skills:
-  - key: Skill_PECS_LemonadeBeta_N_1
+  - key: Skill_MP_LemonadeBeta_C_1
     icon: AssaultAttack
     passive: false
     type: 0
@@ -30,9 +30,9 @@ skills:
     delayed: false
     target_ground: false
     buff:
-      rate: 0.82
-      range: 3
-      ap: 6
+      rate: 1.5
+      range: 6
+      ap: 4
       grid: 0,0,0,0,1,0,0,0,0
       summon: null
       use: null
@@ -41,93 +41,10 @@ skills:
       acc_bonus: 0
       buff_rate: 100
       buffs:
-        - key: Effect_PECS_LemonadeBeta_N_1
+        - key: Effect_MP_LemonadeBeta_C_1
           on: criticaled
           if:
             - false
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - icon: BuffIcon_REMOVE_DEBUFF
-              desc:
-                desc: Effect_PECS_LemonadeBeta_N_1_1
-                type: 1
-                value: "0"
-                level: "0"
-              attr: 0
-              erase:
-                count: 0
-                trigger:
-                  damaged: physics
-              value:
-                isBuff: true
-                chance: 0%
-                type: 69
-                off:
-                  type: 0
-              overlap: 4
-            - icon: BuffIcon_DAMAGE_REDUCE
-              desc:
-                desc: Effect_PECS_LemonadeBeta_N_1_2
-                type: 1
-                value: "0.400000"
-                level: "0.050000"
-              attr: 0
-              erase:
-                count: 1
-                trigger:
-                  damaged: physics
-              value:
-                isBuff: true
-                chance: 0%
-                type: 36
-                damage_reduce:
-                  base: 40%
-                  per: 5%
-              overlap: 4
-            - icon: BuffIcon_DEF_All
-              desc:
-                desc: Effect_PECS_LemonadeBeta_N_1_3
-                type: 0
-                value: "99"
-                level: "0"
-              attr: 0
-              erase:
-                count: 1
-                trigger:
-                  damaged: physics
-              value:
-                isBuff: true
-                chance: 0%
-                type: 33
-                damage_immune:
-                  base: 99
-                  per: 0
-              overlap: 4
-          maxStack: 1
-          overlapGroup: -1
-        - key: Effect_PECS_LemonadeBeta_N_11
-          on: criticaled
-          if:
-            - on:
-                target: target
-                func: OR
-                select:
-                  - 122
-                  - 123
-                  - 124
-                attr: 6
             - false
           body:
             - 0
@@ -142,239 +59,45 @@ skills:
             - 2
           target: 3
           buffs:
-            - icon: BuffIcon_REMOVE_DEBUFF
+            - icon: BuffIcon_SEAL_SKILL
               desc:
-                desc: Effect_PECS_LemonadeBeta_N_11_1
-                type: 1
-                value: "122"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 0
-              value:
-                isBuff: true
-                type: 69
-                off:
-                  type: 122
-              overlap: 4
-            - icon: BuffIcon_REMOVE_DEBUFF
-              desc:
-                desc: Effect_PECS_LemonadeBeta_N_11_2
-                type: 1
-                value: "123"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 0
-              value:
-                isBuff: true
-                type: 69
-                off:
-                  type: 123
-              overlap: 4
-            - icon: BuffIcon_REMOVE_DEBUFF
-              desc:
-                desc: Effect_PECS_LemonadeBeta_N_11_3
-                type: 1
-                value: "124"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 0
-              value:
-                isBuff: true
-                type: 69
-                off:
-                  type: 124
-              overlap: 4
-          maxStack: 0
-          overlapGroup: -1
-        - key: Effect_PECS_LemonadeBeta_N_12
-          on: attack_success
-          if:
-            - on:
-                func: OR
-                select:
-                  - Effect_PECS_LemonadeBeta_N_13
-                attr: 6
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - icon: BuffIcon_ACCURACY_UP
-              desc:
-                desc: Effect_PECS_LemonadeBeta_N_12_1
+                desc: Effect_MP_LemonadeBeta_C_1_1
                 type: 0
                 value: "0"
                 level: "0"
               attr: 3
               erase:
-                rounds: 1
+                rounds: 2
               value:
                 isBuff: true
-                type: 6
-                accuracy:
-                  base: 0
-                  per: 0
-              overlap: 4
-          maxStack: 1
+                type: 79
+                skill_disable: true
+              overlap: 1
+          maxStack: 0
           overlapGroup: -1
-        - key: Effect_PECS_LemonadeBeta_N_13
-          on: attack_success
-          if:
-            - false
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - icon: BuffIcon_DAMAGE_REDUCE
-              desc:
-                desc: Effect_PECS_LemonadeBeta_N_13_1
-                type: 1
-                value: "0.400000"
-                level: "0.050000"
-              attr: 0
-              erase:
-                count: 1
-                trigger:
-                  damaged: physics
-              value:
-                isBuff: true
-                type: 36
-                damage_reduce:
-                  base: 40%
-                  per: 5%
-              overlap: 4
-          maxStack: 1
-          overlapGroup: -1
-  - key: Skill_PECS_LemonadeBeta_N_2
+  - key: Skill_MP_LemonadeBeta_C_2
     icon: WideBeamShot
     passive: false
     type: 0
     target: enemy
     delayed: false
-    target_ground: false
+    target_ground: true
     buff:
-      rate: 0.76
-      range: 3
-      ap: 9
-      grid: 1,1,1,1,1,1,1,1,1
+      rate: 1.2
+      range: 6
+      ap: 7
+      grid: 0.5,0.5,0.5,0.5,1,0.5,0.5,0.5,0.5
       summon: null
       use: null
       enabled: true
-      dismiss_guard: true
-      acc_bonus: 0
+      dismiss_guard: false
+      acc_bonus: 500
       buff_rate: 100
       buffs:
-        - key: Effect_PECS_LemonadeBeta_N_2
-          on: criticaled
+        - key: Effect_MP_LemonadeBeta_C_2
+          on: attack_success
           if:
             - false
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - icon: BuffIcon_REMOVE_DEBUFF
-              desc:
-                desc: Effect_PECS_LemonadeBeta_N_2_1
-                type: 1
-                value: "0"
-                level: "0"
-              attr: 0
-              erase:
-                count: 0
-                trigger:
-                  damaged: physics
-              value:
-                isBuff: true
-                chance: 0%
-                type: 69
-                off:
-                  type: 0
-              overlap: 4
-            - icon: BuffIcon_DEBUFF_PERDOWN
-              desc:
-                desc: Effect_PECS_LemonadeBeta_N_2_2
-                type: 1
-                value: "0.400000"
-                level: "0.050000"
-              attr: 0
-              erase:
-                count: 1
-                trigger:
-                  damaged: physics
-              value:
-                isBuff: true
-                chance: 0%
-                type: 91
-                resist:
-                  type: debuff_perdown
-                  value:
-                    base: 40%
-                    per: 5%
-              overlap: 4
-            - icon: BuffIcon_AP_UP
-              desc:
-                desc: Effect_PECS_LemonadeBeta_N_2_3
-                type: 0
-                value: "3"
-                level: "0.100000"
-              attr: 0
-              erase:
-                count: 0
-                trigger:
-                  damaged: physics
-              value:
-                isBuff: true
-                chance: 0%
-                type: 20
-                ap:
-                  base: 3
-                  per: 0.1
-              overlap: 4
-          maxStack: 1
-          overlapGroup: -1
-        - key: Effect_PECS_LemonadeBeta_N_21
-          on: criticaled
-          if:
-            - on:
-                target: target
-                func: OR
-                select:
-                  - 116
-                  - 117
-                  - 118
-                attr: 6
             - false
           body:
             - 0
@@ -389,61 +112,28 @@ skills:
             - 2
           target: 3
           buffs:
-            - icon: BuffIcon_REMOVE_DEBUFF
+            - icon: BuffIcon_AP_DOWN
               desc:
-                desc: Effect_PECS_LemonadeBeta_N_21_1
-                type: 1
-                value: "116"
+                desc: Effect_MP_LemonadeBeta_C_2_1
+                type: 0
+                value: "-1.200000"
                 level: "0"
               attr: 3
               erase:
                 rounds: 0
               value:
                 isBuff: true
-                type: 69
-                off:
-                  type: 116
-              overlap: 4
-            - icon: BuffIcon_REMOVE_DEBUFF
-              desc:
-                desc: Effect_PECS_LemonadeBeta_N_21_2
-                type: 1
-                value: "117"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 0
-              value:
-                isBuff: true
-                type: 69
-                off:
-                  type: 117
-              overlap: 4
-            - icon: BuffIcon_REMOVE_DEBUFF
-              desc:
-                desc: Effect_PECS_LemonadeBeta_N_21_3
-                type: 1
-                value: "118"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 0
-              value:
-                isBuff: true
-                type: 69
-                off:
-                  type: 118
-              overlap: 4
+                type: 20
+                ap:
+                  base: -1.2
+                  per: 0
+              overlap: 3
           maxStack: 0
           overlapGroup: -1
-        - key: Effect_PECS_LemonadeBeta_N_22
-          on: attack_success
+        - key: Effect_MP_LemonadeBeta_C_21
+          on: criticaled
           if:
-            - on:
-                func: OR
-                select:
-                  - Effect_PECS_LemonadeBeta_N_23
-                attr: 6
+            - false
             - false
           body:
             - 0
@@ -456,65 +146,25 @@ skills:
             - 0
             - 1
             - 2
-          target: 0
+          target: 3
           buffs:
-            - icon: BuffIcon_ACCURACY_UP
+            - icon: BuffIcon_AP_DOWN
               desc:
-                desc: Effect_PECS_LemonadeBeta_N_22_1
+                desc: Effect_MP_LemonadeBeta_C_21_1
                 type: 0
-                value: "0"
+                value: "-1.200000"
                 level: "0"
               attr: 3
               erase:
-                rounds: 1
+                rounds: 0
               value:
                 isBuff: true
-                type: 6
-                accuracy:
-                  base: 0
+                type: 20
+                ap:
+                  base: -1.2
                   per: 0
-              overlap: 4
-          maxStack: 1
-          overlapGroup: -1
-        - key: Effect_PECS_LemonadeBeta_N_23
-          on: attack_success
-          if:
-            - false
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - icon: BuffIcon_DEBUFF_PERDOWN
-              desc:
-                desc: Effect_PECS_LemonadeBeta_N_23_1
-                type: 1
-                value: "0.400000"
-                level: "0.050000"
-              attr: 0
-              erase:
-                count: 1
-                trigger:
-                  damaged: physics
-              value:
-                isBuff: true
-                type: 91
-                resist:
-                  type: debuff_perdown
-                  value:
-                    base: 40%
-                    per: 5%
-              overlap: 4
-          maxStack: 1
+              overlap: 3
+          maxStack: 0
           overlapGroup: -1
   - key: Skill_MP_LemonadeBeta_C_3
     icon: P.Wave
@@ -828,6 +478,45 @@ skills:
               overlap: 4
           maxStack: 0
           overlapGroup: -1
+        - key: Effect_MP_LemonadeBeta_C_42
+          on:
+            damaged: ice
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_ICERES_UP
+              desc:
+                desc: Effect_MP_LemonadeBeta_C_42_1
+                type: 1
+                value: "0.200000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 17
+                resist:
+                  elem: ice
+                  value:
+                    base: 20%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
   - key: Skill_MP_LemonadeBeta_C_5
     icon: P.Beam
     passive: true
@@ -908,23 +597,43 @@ skills:
             - 2
           target: 4
           buffs:
-            - icon: BuffIcon_phyDMG_DOT
+            - icon: BuffIcon_LightningDMG_DOT
               desc:
                 desc: Effect_MP_LemonadeBeta_C_51_1
                 type: 0
-                value: "300"
+                value: "500"
                 level: "0"
               attr: 3
               erase:
-                rounds: 0
+                rounds: 3
               value:
                 isBuff: true
-                type: 65
+                type: 68
                 fixed_damage:
-                  base: 300
-                  per: 0
+                  elem: lightning
+                  damage:
+                    base: 500
+                    per: 0
               overlap: 4
-          maxStack: 0
+            - icon: BuffIcon_LIGHTNINGRES_DOWN
+              desc:
+                desc: Effect_MP_LemonadeBeta_C_51_2
+                type: 1
+                value: "-0.500000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 19
+                resist:
+                  elem: lightning
+                  value:
+                    base: -50%
+                    per: 0%
+              overlap: 4
+          maxStack: 3
           overlapGroup: -1
         - key: Effect_MP_LemonadeBeta_C_52
           on:
@@ -950,23 +659,43 @@ skills:
             - 2
           target: 4
           buffs:
-            - icon: BuffIcon_phyDMG_DOT
+            - icon: BuffIcon_FireDMG_DOT
               desc:
                 desc: Effect_MP_LemonadeBeta_C_52_1
                 type: 0
-                value: "300"
+                value: "500"
                 level: "0"
               attr: 3
               erase:
-                rounds: 0
+                rounds: 3
               value:
                 isBuff: true
-                type: 65
+                type: 66
                 fixed_damage:
-                  base: 300
-                  per: 0
+                  elem: fire
+                  damage:
+                    base: 500
+                    per: 0
               overlap: 4
-          maxStack: 0
+            - icon: "0"
+              desc:
+                desc: Effect_MP_LemonadeBeta_C_52_2
+                type: 1
+                value: "-0.500000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 15
+                resist:
+                  elem: fire
+                  value:
+                    base: -50%
+                    per: 0%
+              overlap: 4
+          maxStack: 3
           overlapGroup: -1
         - key: Effect_MP_LemonadeBeta_C_53
           on:
@@ -992,22 +721,42 @@ skills:
             - 2
           target: 4
           buffs:
-            - icon: BuffIcon_phyDMG_DOT
+            - icon: BuffIcon_IceDMG_DOT
               desc:
                 desc: Effect_MP_LemonadeBeta_C_53_1
                 type: 0
-                value: "300"
+                value: "500"
                 level: "0"
               attr: 3
               erase:
-                rounds: 0
+                rounds: 3
               value:
                 isBuff: true
-                type: 65
+                type: 67
                 fixed_damage:
-                  base: 300
-                  per: 0
+                  elem: ice
+                  damage:
+                    base: 500
+                    per: 0
               overlap: 4
-          maxStack: 0
+            - icon: "0"
+              desc:
+                desc: Effect_MP_LemonadeBeta_C_53_2
+                type: 1
+                value: "-0.500000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 17
+                resist:
+                  elem: ice
+                  value:
+                    base: -50%
+                    per: 0%
+              overlap: 4
+          maxStack: 3
           overlapGroup: -1
-ai: AI_MP_LemonadeBeta_01
+ai: AI_MP_BossNormal

@@ -20,8 +20,8 @@ export const Host = IsDev
 		: "https://lo.swaytwig.com";
 
 export const GammaHost = UseCDN || (IsDev && DevUseCDN)
-	? "https://lo-swaytwig-gamma.b-cdn.net"
-	: "https://loskin.swaytwig.com";
+	? "https://lo-swaytwig-gamma.b-cdn.net/index.html"
+	: "https://loskin.swaytwig.com/index.html";
 
 export const AssetsRoot = `${Host}/assets`;
 export const FlowRoot = `${Host}/flow`;
