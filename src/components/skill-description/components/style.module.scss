@@ -71,6 +71,7 @@ strike {
 	display: inline-block;
 	font-weight: bold;
 	text-decoration: underline;
+	white-space: initial;
 	// user-select: none !important;
 	cursor: pointer;
 
@@ -98,6 +99,7 @@ strike {
 		padding: 0.75em;
 		min-width: 20em;
 		min-height: 8em;
+		max-width: 95vw;
 		background-color: $light;
 		background-image: linear-gradient(to bottom, mix($white, $dark, 95%), mix($white, $dark, 80%));
 		box-shadow: 0 0.125em 0.5em $dark;
@@ -112,6 +114,10 @@ strike {
 		opacity: 0;
 		z-index: 100;
 		transition: opacity 0.25s ease;
+
+		@supports (max-width: 100dvw) {
+			max-width: 95dvw;
+		}
 
 		&::before {
 			position: absolute;

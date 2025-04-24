@@ -1,0 +1,320 @@
+uid: GoblinT-1MPAR_C
+rarity: 4
+type: 0
+role: 2
+category: 0
+stat:
+  hp:
+    - 127449
+    - 1147.041
+  atk:
+    - 2290
+    - 6.87
+  def:
+    - 2080
+    - 10.4
+  spd: 4.25
+  cri: 26
+  acc: 343
+  eva: 246
+  res:
+    fire: 10
+    chill: 10
+    thunder: 10
+skills:
+  - key: Skill_MP_GoblinT-1MPAR_C_1
+    icon: Snipe
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 1
+      range: 3
+      ap: 4
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_GoblinT-1MPAR_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_MARKING
+              desc:
+                desc: Effect_MP_GoblinT-1MPAR_N_1_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 87
+                attack_target: true
+              overlap: 1
+            - icon: BuffIcon_VULNERABLE
+              desc:
+                desc: Effect_MP_GoblinT-1MPAR_N_1_2
+                type: 1
+                value: "0.100000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 48
+                damage_increase:
+                  base: 10%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_GoblinT-1MPAR_C_2
+    icon: ARShot
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 0.25
+      range: 6
+      ap: 6
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_GoblinT-1MPAR_N_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_ACCURACY_DOWN
+              desc:
+                desc: Effect_MP_GoblinT-1MPAR_N_2_1
+                type: 1
+                value: "-0.300000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: -30%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_MP_GoblinT-1MPAR_N_2_2
+                type: 1
+                value: "-0.300000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: -30%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_GoblinT-1MPAR_C_3
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_GoblinT-1MPAR_N_3
+          on: round
+          if:
+            - unitCount:
+                filter: squad
+                type:
+                  - 0
+                  - 2
+                  - 1
+                count:
+                  - 3
+                  - 4
+                  - 5
+                  - 6
+                  - 7
+                  - 8
+                  - 9
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_GoblinT-1MPAR_N_3_1
+                type: 1
+                value: "0.150000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 15%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: -1
+  - key: Skill_MP_GoblinT-1AR_N_4
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_GoblinT-1AR_N_4
+          on: team_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_GoblinT-1AR_N_4_1
+                type: 1
+                value: "0.100000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 10%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_GoblinT-1AR_N_4_2
+                type: 1
+                value: "0.100000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 10%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_GoblinT-1AR_N_4_3
+                type: 1
+                value: "1"
+                level: "0.250000"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 100%
+                  per: 25%
+              overlap: 4
+          maxStack: 2
+          overlapGroup: -1
+ai: AI_MP_MarionnetteAR_01

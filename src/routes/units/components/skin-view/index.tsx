@@ -674,7 +674,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 						>
 							{ faceList.map(f => {
 								const ft = FACETYPE[f.toUpperCase()];
-								return <option value={ f }>
+								return <option value={ f } data-raw={ ft }>
 									{ ft
 										? <Locale k={ `FACE_TYPE_${ft}` } />
 										: f.toUpperCase()

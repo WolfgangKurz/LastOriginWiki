@@ -154,6 +154,7 @@ const MapPosition: MapPositionType = {
 
 			"13-4EX": [4.8, 2],
 			"13-5EX": [7.2, 2, false],
+			"13-3C": [8, 2, false],
 		},
 	},
 	Ev13: {

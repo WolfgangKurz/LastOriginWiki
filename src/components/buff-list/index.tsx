@@ -897,6 +897,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					return <Locale raw={ false } k="BUFFTRIGGER_CRITICALED" />;
 				case "revive":
 					return <Locale raw={ false } k="BUFFTRIGGER_RESURRECT" />;
+
 			}
 		} else if (trigger) {
 			if ("_comment" in trigger)
@@ -1234,13 +1235,11 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					case "passive":
 						return <Locale raw={ false } k="BUFFTRIGGER_FAIL_PASSIVE" />;
 				}
-			}
-			else if ("near" in trigger) {
+			} else if ("near" in trigger) {
 				if (trigger.near !== false)
 					return <Locale raw={ false } k="BUFFTRIGGER_NEAR_EXISTS" p={ [trigger.near] } />;
 				return <Locale raw={ false } k="BUFFTRIGGER_NEAR_NOTEXISTS" />;
-			}
-			else if ("apply_one_of" in trigger) {
+			} else if ("apply_one_of" in trigger) {
 				return <Locale
 					raw={ false }
 					k="BUFFTRIGGER_APPLY_ONE_OF"
@@ -1255,6 +1254,30 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 							.gap("・")
 					}</>
 					] } />;
+			} else if ("attack_success" in trigger) {
+				switch (trigger.attack_success) {
+					case "active":
+						return <Locale raw={ false } k="BUFFTRIGGER_ATTACK_SUCCESS_ACTIVE" />;
+					case "passive":
+						return <Locale raw={ false } k="BUFFTRIGGER_ATTACK_SUCCESS_PASSIVE" />;
+					case "ally":
+						return <Locale raw={ false } k="BUFFTRIGGER_ATTACK_SUCCESS_ALLY" />;
+				}
+			} else if ("beaten" in trigger) {
+				switch (trigger.beaten) {
+					case "ally":
+						return <Locale raw={ false } k="BUFFTRIGGER_BEATEN_ALLY" />;
+					case "ally_physics":
+						return <Locale raw={ false } k="BUFFTRIGGER_BEATEN_ALLY_PHYSICS" />;
+					case "ally_fire":
+						return <Locale raw={ false } k="BUFFTRIGGER_BEATEN_ALLY_FIRE" />;
+					case "ally_ice":
+						return <Locale raw={ false } k="BUFFTRIGGER_BEATEN_ALLY_ICE" />;
+					case "ally_lightning":
+						return <Locale raw={ false } k="BUFFTRIGGER_BEATEN_ALLY_LIGHTNING" />;
+					case "ally_active":
+						return <Locale raw={ false } k="BUFFTRIGGER_BEATEN_ALLY_ACTIVE" />;
+				}
 			}
 
 			return <>???</>;
