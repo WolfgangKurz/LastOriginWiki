@@ -25,7 +25,7 @@ const Changelog: FunctionalComponent = () => <>
 		</> }
 		skin={ <>
 			<li>전투원 <BY>스털링</BY>의 스킨 <BR>훈련은 전투다! : 육탄전 대비 트레이닝복</BR>의 정보가 추가되었습니다.</li>
-			<li>전투원 <BY>이터니티</BY>의 스킨 <BR>죽음의 반려 페르세포네 : 마지막을 장식하는 예복</BR>의 스킨 배너 이미지가 추가되었습니다.</li>
+			<li>전투원 <BY>이터니티</BY>의 스킨 <BR>죽음의 반려 페르세포네 : 마지막을 장식하는 예복</BR>의 정보가 추가되었습니다.</li>
 		</> }
 		dialogue={ <>
 			<li><span class="badge bg-light text-dark">KST 2025-04-25 04:11:08</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
