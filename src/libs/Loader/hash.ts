@@ -5025,7 +5025,7 @@ export default {
 			"BR_Sirene": "86a4eef8",
 			"BR_Sleipnir": "f68f953d",
 			"BR_Spriggan": "2f3d0000",
-			"BR_Sterling": "ef0821da",
+			"BR_Sterling": "441f8af5",
 			"BR_StratoAngel": "4971a066",
 			"BR_Sylphid": "8301e535",
 			"BR_TalonFeather": "925ee27c",
