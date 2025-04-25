@@ -4,7 +4,7 @@ import { Link, route } from "preact-router";
 
 import TimeAgo from "javascript-time-ago";
 
-import { AssetsRoot, CurrentEvent, EventTo, ImageExtension } from "@/libs/Const";
+import { AssetsRoot, CurrentEvent, EventTo, ImageExtension, IsEventRunning } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { CurrentLocale } from "@/libs/Locale";
 import { GetTimeAgoLocale } from "@/libs/Setup";
@@ -73,7 +73,7 @@ const Home: FunctionalComponent = () => {
 	const BuildTimeAgo = useMemo(() => new TimeAgo(GetTimeAgoLocale(CurrentLocale.value)).format(BuildInfo.time), []);
 	const BuildVersion = BuildInfo.build;
 
-	const eventAvailable = useMemo(() => CurrentEvent && (new Date() < EventTo), [CurrentEvent, EventTo]);
+	const eventAvailable = IsEventRunning;
 
 	SetMeta(["description", "twitter:description"], null);
 	SetMeta(["twitter:image", "og:image"], null);

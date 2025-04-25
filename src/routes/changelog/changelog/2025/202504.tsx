@@ -8,6 +8,15 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12950" date="2025-04-25"
+		bugfix={ <>
+			<li>진행중인 이벤트 정보를 수정했습니다.</li>
+			<li><BY>스털링</BY> 대사가 표시되지 않는 문제를 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li>상시 이벤트 정보가 갱신되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12948" date="2025-04-25"
 		bugfix={ <>
 			<li><BY>전투원정보</BY>에서 종종 획득처 이름이 표시되지 않던 점을 수정했습니다.</li>
