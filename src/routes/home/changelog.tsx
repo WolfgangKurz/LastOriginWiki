@@ -6,6 +6,12 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12953" date="2025-04-26"
+		bugfix={ <>
+			<li>일부 이벤트 배너가 표시되지 않던 문제를 수정했습니다.</li>
+			<li>전투원 <BY>레모네이드 엡실론</BY>의 스킬 컷씬 영상이 표시되지 않던 점을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12950" date="2025-04-25"
 		bugfix={ <>
 			<li>진행중인 이벤트 정보를 수정했습니다.</li>

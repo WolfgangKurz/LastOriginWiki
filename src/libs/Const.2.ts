@@ -145,4 +145,7 @@ export const SkillVideo: Record<string, SkillVideo_Plain | SkillVideo_Platform> 
 	BR_Fafnir_1: [true, "BR_Fafnir_1.Skill2"],
 
 	PECS_LemonadeGamma_0: ["PECS_LemonadeGamma.Skill2"],
+
+	PECS_LemonadeEpsilon_0: [true, "PECS_LemonadeEpsilon.Skill2"],
+	PECS_LemonadeEpsilon_1: [true, "PECS_LemonadeEpsilon_1.Skill2"],
 };
