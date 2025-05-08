@@ -644,3 +644,166 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 		}
 	},
 };
+
+type ArtistLinkType = "X" | "Pixiv" | "ArtStation";
+export const ArtistLinks: Record<string, Partial<Record<ArtistLinkType, string>>> = {
+	"2V": {
+		X: "https://x.com/dhxhrlflthdn",
+		Pixiv: "https://www.pixiv.net/users/17874125",
+		ArtStation: "https://www.artstation.com/joyeong",
+	},
+	"41": {
+		X: "https://x.com/41yonjuichi",
+		Pixiv: "https://www.pixiv.net/users/4156849",
+	},
+	"Axoo": {
+		X: "https://x.com/Vek_Soo",
+		Pixiv: "https://www.pixiv.net/users/11703170",
+	},
+	"BeeeeeN": {
+		X: "https://x.com/BeeeeeN_213",
+		Pixiv: "https://www.pixiv.net/users/12406994",
+	},
+	"BUMCHa": {
+		X: "https://x.com/bumch_a",
+		Pixiv: "https://www.pixiv.net/users/52638065",
+	},
+	"CHO!CHO!": {
+		X: "https://x.com/CHOiCHOi_999",
+		Pixiv: "https://www.pixiv.net/users/9899824",
+	},
+	"CHoney": {
+		X: "https://x.com/choney1108",
+		Pixiv: "https://www.pixiv.net/users/1908283",
+	},
+	"CORGI": {
+		X: "https://x.com/corgi0322",
+		ArtStation: "https://www.artstation.com/corgi0322",
+	},
+	"Cruno": {
+		X: "https://x.com/Luvents3",
+	},
+	"D-loG": {
+		X: "https://x.com/DloG56006129",
+		Pixiv: "https://www.pixiv.net/users/10920551",
+	},
+	"Henry Davis": {
+		X: "https://x.com/HenryDavistwit",
+	},
+	"Jam": {
+		X: "https://x.com/jamjamjam1620",
+		Pixiv: "https://www.pixiv.net/users/4524557",
+	},
+	"Kakiman": {
+		X: "https://x.com/u22snifer",
+		Pixiv: "https://www.pixiv.net/users/1885845",
+	},
+	"Kloah13": {
+		X: "https://x.com/Kloah13th",
+	},
+	"MAR10": {
+		X: "https://x.com/RioSquAsh",
+		ArtStation: "https://www.artstation.com/mar10",
+	},
+	"MEL": {
+		X: "https://x.com/_05565",
+	},
+	"One": {
+		X: "https://x.com/LcFC8aRS2NWcCm9",
+		Pixiv: "https://www.pixiv.net/users/2092955",
+	},
+	"PaintAle": {
+		X: "https://x.com/lyde0713",
+		Pixiv: "https://www.pixiv.net/users/8835290",
+	},
+	"Pinkmill": {
+		X: "https://x.com/pinkmill4545",
+		Pixiv: "https://www.pixiv.net/users/95105037",
+	},
+	"REN.": {
+		X: "https://x.com/SR911656337775",
+		ArtStation: "https://www.artstation.com/winterdawn1023",
+	},
+	"Rubee": {
+		X: "https://x.com/Ru_BeeAna",
+		Pixiv: "https://www.pixiv.net/users/8930920",
+	},
+	"Serin199": {
+		X: "https://x.com/serin199",
+		Pixiv: "https://www.pixiv.net/users/10410554",
+	},
+	"SIMA": {
+		X: "https://x.com/exavalon00",
+		Pixiv: "https://www.pixiv.net/users/18552713",
+	},
+	"SNOWBALL": {
+		X: "https://x.com/snowball020",
+		Pixiv: "https://www.pixiv.net/users/97687",
+	},
+	"Sol": {
+		X: "https://twitter.com/arnseo",
+		Pixiv: "https://www.pixiv.net/users/26511192",
+	},
+	"Superphotrone": {
+		X: "https://x.com/superphotrone",
+	},
+	"Taesi": {
+		X: "https://x.com/taesi3",
+		Pixiv: "https://www.pixiv.net/users/1470876",
+	},
+	"TeddYellow": {
+		X: "https://x.com/teddyellow40",
+		Pixiv: "https://www.pixiv.net/users/11759870",
+	},
+	"TunaMaYo": {
+		X: "https://x.com/dsasd751",
+		Pixiv: "https://www.pixiv.net/users/5004992",
+	},
+	"U-rix": {
+		X: "https://x.com/dbdhksgur1",
+		ArtStation: "https://www.artstation.com/u_rix",
+	},
+	"Uyu DDongkko": {
+		Pixiv: "https://www.pixiv.net/users/12428805",
+		ArtStation: "https://www.artstation.com/yoomi",
+	},
+	"WOW": {
+		X: "https://x.com/kjyeyo",
+		Pixiv: "https://www.pixiv.net/users/4173989",
+	},
+	"ZIG": {
+		X: "https://x.com/zigzag999999",
+		Pixiv: "https://www.pixiv.net/users/6117241",
+	},
+	"Zizim": {
+		Pixiv: "https://www.pixiv.net/users/6550963",
+	},
+	"おぶい(Obui)": {
+		X: "https://x.com/ovvv",
+		Pixiv: "https://www.pixiv.net/users/17606",
+	},
+	"きろめ(Kirome)": {
+		X: "https://x.com/kirome65535",
+		Pixiv: "https://www.pixiv.net/users/707293",
+	},
+	"くーろくろ(KuroKuro)": {
+		X: "https://x.com/ku_ro_kuro",
+		Pixiv: "https://www.pixiv.net/users/29389",
+	},
+	"ねろましん(Neromashin)": {
+		X: "https://x.com/neromashin001",
+		Pixiv: "https://www.pixiv.net/users/1872899",
+	},
+	"れつな(Retsuna)": {
+		X: "https://x.com/Retsuna_Blue",
+		Pixiv: "https://www.pixiv.net/users/59560",
+	},
+	"朝凪(Asanagi)": {
+		X: "https://x.com/Victim_Girls",
+		Pixiv: "https://www.pixiv.net/users/355065",
+	},
+	"혈라(血羅)": {
+		X: "https://x.com/hyulla_kot",
+		Pixiv: "https://www.pixiv.net/users/3842786",
+	},
+};

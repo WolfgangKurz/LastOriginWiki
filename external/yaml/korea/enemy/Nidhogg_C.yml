@@ -2,24 +2,24 @@ uid: Nidhogg_C
 rarity: 5
 type: 1
 role: 1
-category: 0
+category: 1
 stat:
   hp:
-    - 1600000
-    - 6400
+    - 900000
+    - 0
   atk:
-    - 3200
-    - 9.6
+    - 3100
+    - 9.3
   def:
-    - 6000
-    - 30
-  spd: 4.5
-  cri: 25
+    - 150
+    - 0
+  spd: 4.3
+  cri: 30
   acc: 280
-  eva: 150
+  eva: 190
   res:
     fire: 20
-    chill: 50
+    chill: 60
     thunder: 20
 skills:
   - key: Skill_MP_Nidhogg_C_1
@@ -28,12 +28,12 @@ skills:
     type: 0
     target: enemy
     delayed: false
-    target_ground: false
+    target_ground: true
     buff:
-      rate: 2
+      rate: 1.85
       range: 4
-      ap: 5
-      grid: 0,0,0,0,1,0,0,0,0
+      ap: 6
+      grid: 0,1,0,1,1,1,0,1,0
       summon: null
       use: null
       enabled: true
@@ -44,12 +44,7 @@ skills:
         - key: Effect_MP_Nidhogg_C_1
           on: attack_success
           if:
-            - on:
-                target: target
-                func: OR
-                select:
-                  - Effect_MP_Nidhogg_N_2
-                attr: 6
+            - false
             - false
           body:
             - 0
@@ -62,58 +57,96 @@ skills:
             - 0
             - 1
             - 2
-          target: 3
+          target: 0
           buffs:
-            - icon: BuffIcon_SKILL_DOWN
+            - icon: BuffIcon_TOGETHER_ATTACK
               desc:
                 desc: Effect_MP_Nidhogg_C_1_1
-                type: 1
-                value: "1"
+                type: 0
+                value: MOB_MP_Nidhogg_C
                 level: "0"
               attr: 3
               erase:
-                rounds: 0
+                rounds: 1
               value:
                 isBuff: true
-                type: 83
-                damage_add:
-                  base: 100%
+                type: 103
+                collaborate:
+                  skill: 2
+                  with: MOB_MP_Nidhogg_C
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Nidhogg_C_11
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_Nidhogg_C_11_1
+                type: 1
+                value: "-0.175000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -17.5%
                   per: 0%
               overlap: 4
-            - icon: BuffIcon_SKILL_UP
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Nidhogg_C_12
+          on: criticaled
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
               desc:
-                desc: Effect_MP_Nidhogg_C_1_2
-                type: 0
-                value: "0"
+                desc: Effect_MP_Nidhogg_C_12_1
+                type: 1
+                value: "-0.175000"
                 level: "0"
-              attr: 3
+              attr: 1
               erase:
-                rounds: 0
+                rounds: 2
               value:
                 isBuff: true
-                chance: 0%
-                type: 0
-                attack:
-                  base: 0
-                  per: 0
-              overlap: 0
-            - icon: BuffIcon_PhyATK_UP
-              desc:
-                desc: Effect_MP_Nidhogg_C_1_3
-                type: 0
-                value: "0"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 0
-              value:
-                isBuff: true
-                chance: 0%
-                type: 0
-                attack:
-                  base: 0
-                  per: 0
-              overlap: 0
+                type: 3
+                defense:
+                  base: -17.5%
+                  per: 0%
+              overlap: 4
           maxStack: 0
           overlapGroup: -1
   - key: Skill_MP_Nidhogg_C_2
@@ -124,14 +157,14 @@ skills:
     delayed: false
     target_ground: true
     buff:
-      rate: 1.6
+      rate: 1.85
       range: 4
-      ap: 7
+      ap: 6
       grid: 0,1,0,1,1,1,0,1,0
       summon: null
       use: null
       enabled: true
-      dismiss_guard: true
+      dismiss_guard: false
       acc_bonus: 300
       buff_rate: 100
       buffs:
@@ -151,54 +184,62 @@ skills:
             - 0
             - 1
             - 2
-          target: 3
+          target: 0
           buffs:
-            - icon: BuffIcon_ACCURACY_DOWN
+            - icon: BuffIcon_TOGETHER_ATTACK
               desc:
                 desc: Effect_MP_Nidhogg_C_2_1
-                type: 1
-                value: "-0.250000"
+                type: 0
+                value: MOB_MP_Nidhogg_C
                 level: "0"
               attr: 3
               erase:
-                rounds: 2
+                rounds: 1
               value:
                 isBuff: true
-                type: 36
-                damage_reduce:
-                  base: -25%
-                  per: 0%
+                type: 102
+                collaborate:
+                  skill: 1
+                  with: MOB_MP_Nidhogg_C
               overlap: 4
-            - icon: BuffIcon_VULNERABLE
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Nidhogg_C_21
+          on: attack_success
+          if:
+            - test: higher
+              target: target
+              operand: DEF
+              ratio: 0
+              than: DEF
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_PhyATK_UP
               desc:
-                desc: Effect_MP_Nidhogg_C_2_2
+                desc: Effect_MP_Nidhogg_C_21_1
                 type: 1
-                value: "0.250000"
+                value: "0.410000"
                 level: "0"
               attr: 3
               erase:
-                rounds: 2
+                rounds: 0
               value:
                 isBuff: true
-                type: 48
-                damage_increase:
-                  base: 25%
-                  per: 0%
-              overlap: 4
-            - icon: BuffIcon_Disallow
-              desc:
-                desc: Effect_MP_Nidhogg_C_2_3
-                type: 1
-                value: "-0.300000"
-                level: "0"
-              attr: 3
-              erase:
-                rounds: 2
-              value:
-                isBuff: true
-                type: 3
-                defense:
-                  base: -30%
+                type: 83
+                damage_add:
+                  base: 41%
                   per: 0%
               overlap: 4
           maxStack: 0
@@ -224,7 +265,7 @@ skills:
       buff_rate: 100
       buffs:
         - key: Effect_MP_Nidhogg_C_3
-          on: wave
+          on: round
           if:
             - false
             - false
@@ -239,56 +280,133 @@ skills:
             - 0
             - 1
             - 2
-          target: 4
+          target: 0
           buffs:
-            - icon: BuffIcon_phyDMG_DOT
+            - icon: BuffIcon_DEF_UP
               desc:
                 desc: Effect_MP_Nidhogg_C_3_1
                 type: 0
-                value: "15"
+                value: "150"
                 level: "0"
               attr: 3
               erase: {}
               value:
                 isBuff: true
-                type: 65
-                fixed_damage:
-                  base: 15
+                type: 2
+                defense:
+                  base: 150
                   per: 0
               overlap: 4
-            - icon: "0"
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Nidhogg_C_31
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_IMMUNITY_DEBUFF
               desc:
-                desc: Effect_MP_Nidhogg_C_3_2
+                desc: Effect_MP_Nidhogg_C_31_1
                 type: 0
-                value: "0"
+                value: "3"
                 level: "0"
               attr: 3
-              erase: {}
+              erase:
+                rounds: 1
               value:
                 isBuff: true
-                chance: 0%
-                type: 0
-                attack:
-                  base: 0
-                  per: 0
-              overlap: 0
-            - icon: "0"
+                type: 101
+                debuff_immune: 3
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Nidhogg_C_32
+          on:
+            fail: passive
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ACCURACY_UP
               desc:
-                desc: Effect_MP_Nidhogg_C_3_3
-                type: 0
-                value: "0"
+                desc: Effect_MP_Nidhogg_C_32_1
+                type: 1
+                value: "1"
                 level: "0"
               attr: 3
-              erase: {}
+              erase:
+                until:
+                  attack_success: passive
               value:
                 isBuff: true
-                chance: 0%
+                type: 7
+                accuracy:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Nidhogg_C_33
+          on:
+            fail: passive
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Nidhogg_C_33_1
                 type: 0
-                attack:
-                  base: 0
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 1
                   per: 0
               overlap: 0
-          maxStack: 1
+          maxStack: 0
           overlapGroup: -1
   - key: Skill_MP_Nidhogg_C_4
     icon: P.SelfSpdBuff
@@ -311,7 +429,7 @@ skills:
       buff_rate: 100
       buffs:
         - key: Effect_MP_Nidhogg_C_4
-          on: round
+          on: wave
           if:
             - false
             - false
@@ -326,47 +444,79 @@ skills:
             - 0
             - 1
             - 2
-          target: 0
+          target: 4
           buffs:
-            - icon: BuffIcon_AP_UP
+            - icon: BuffIcon_phyDMG_DOT
               desc:
                 desc: Effect_MP_Nidhogg_C_4_1
-                type: 1
-                value: "0.300000"
+                type: 0
+                value: "100"
                 level: "0"
               attr: 3
-              erase:
-                rounds: 5
+              erase: {}
               value:
                 isBuff: true
-                type: 13
-                turnSpeed:
-                  base: 30%
-                  per: 0%
+                type: 65
+                fixed_damage:
+                  base: 100
+                  per: 0
               overlap: 4
-            - icon: BuffIcon_ATK_UP
+          maxStack: 1
+          overlapGroup: -1
+        - key: Effect_MP_Nidhogg_C_41
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - 22
+                  - 79
+                  - 55
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_FireDMG_DOT
               desc:
-                desc: Effect_MP_Nidhogg_C_4_2
-                type: 1
-                value: "0.400000"
+                desc: Effect_MP_Nidhogg_C_41_1
+                type: 0
+                value: "500"
                 level: "0"
               attr: 3
               erase:
-                rounds: 5
+                rounds: 2
               value:
                 isBuff: true
-                type: 1
-                attack:
-                  base: 40%
-                  per: 0%
+                type: 66
+                fixed_damage:
+                  elem: fire
+                  damage:
+                    base: 500
+                    per: 0
               overlap: 4
           maxStack: 0
           overlapGroup: -1
-        - key: Effect_MP_Nidhogg_C_41
-          on:
-            damaged: physics
+        - key: Effect_MP_Nidhogg_C_42
+          on: round
           if:
-            - false
+            - on:
+                func: OR
+                select:
+                  - 22
+                  - 79
+                  - 55
+                attr: 6
             - false
           body:
             - 0
@@ -379,67 +529,38 @@ skills:
             - 0
             - 1
             - 2
-          target: 0
+          target: 4
           buffs:
-            - icon: BuffIcon_COUNTER
+            - icon: BuffIcon_LightningDMG_DOT
               desc:
-                desc: Effect_MP_Nidhogg_C_41_1
-                type: 1
-                value: "1"
+                desc: Effect_MP_Nidhogg_C_42_1
+                type: 0
+                value: "500"
                 level: "0"
               attr: 3
               erase:
-                rounds: 1
+                rounds: 2
               value:
                 isBuff: true
-                type: 29
-                counter:
-                  base: 100%
-                  per: 0%
-              overlap: 1
-          maxStack: 1
-          overlapGroup: -1
-        - key: Effect_MP_Nidhogg_C_42
-          on:
-            in_squad: MOB_MP_LemonadeBeta_C
-          if:
-            - false
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 0
-          buffs:
-            - icon: BuffIcon_DEF_RESSURRECT
-              desc:
-                desc: Effect_MP_Nidhogg_C_42_1
-                type: 1
-                value: "0.690000"
-                level: "0"
-              attr: 3
-              erase: {}
-              value:
-                isBuff: true
-                type: 98
-                revive:
-                  base: 69%
-                  per: 0%
+                type: 68
+                fixed_damage:
+                  elem: lightning
+                  damage:
+                    base: 500
+                    per: 0
               overlap: 4
-          maxStack: 1
+          maxStack: 0
           overlapGroup: -1
         - key: Effect_MP_Nidhogg_C_43
-          on: revive
+          on: round
           if:
-            - in_battle:
-                - MOB_MP_LemonadeBeta_C
+            - on:
+                func: OR
+                select:
+                  - 22
+                  - 79
+                  - 55
+                attr: 6
             - false
           body:
             - 0
@@ -452,24 +573,159 @@ skills:
             - 0
             - 1
             - 2
-          target: 0
+          target: 4
           buffs:
-            - icon: BuffIcon_DEF_RESSURRECT
+            - icon: BuffIcon_IceDMG_DOT
               desc:
                 desc: Effect_MP_Nidhogg_C_43_1
-                type: 1
-                value: "0.690000"
+                type: 0
+                value: "500"
                 level: "0"
               attr: 3
-              erase: {}
+              erase:
+                rounds: 2
               value:
                 isBuff: true
-                type: 98
-                revive:
-                  base: 69%
-                  per: 0%
+                type: 67
+                fixed_damage:
+                  elem: ice
+                  damage:
+                    base: 500
+                    per: 0
               overlap: 4
-          maxStack: 1
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Nidhogg_C_44
+          on: damaged
+          if:
+            - on:
+                func: OR
+                select:
+                  - 22
+                  - 79
+                  - 55
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_FireDMG_DOT
+              desc:
+                desc: Effect_MP_Nidhogg_C_44_1
+                type: 0
+                value: "500"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 66
+                fixed_damage:
+                  elem: fire
+                  damage:
+                    base: 500
+                    per: 0
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Nidhogg_C_45
+          on: damaged
+          if:
+            - on:
+                func: OR
+                select:
+                  - 22
+                  - 79
+                  - 55
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_LightningDMG_DOT
+              desc:
+                desc: Effect_MP_Nidhogg_C_45_1
+                type: 0
+                value: "500"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 68
+                fixed_damage:
+                  elem: lightning
+                  damage:
+                    base: 500
+                    per: 0
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Nidhogg_C_46
+          on: damaged
+          if:
+            - on:
+                func: OR
+                select:
+                  - 22
+                  - 79
+                  - 55
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_IceDMG_DOT
+              desc:
+                desc: Effect_MP_Nidhogg_C_46_1
+                type: 0
+                value: "500"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 67
+                fixed_damage:
+                  elem: ice
+                  damage:
+                    base: 500
+                    per: 0
+              overlap: 4
+          maxStack: 0
           overlapGroup: -1
   - key: Skill_MP_Nidhogg_C_5
     icon: P.SelfDefBuff
@@ -494,8 +750,8 @@ skills:
         - key: Effect_MP_Nidhogg_C_5
           on: round
           if:
-            - round:
-                operator: odd
+            - in_battle:
+                - MOB_MP_LemonadeBeta_C
             - false
           body:
             - 0
@@ -508,80 +764,155 @@ skills:
             - 0
             - 1
             - 2
-          target: 2
+          target: 0
           buffs:
-            - icon: BuffIcon_REMOVE_DEBUFF
+            - icon: BuffIcon_DEF_RESSURRECT
               desc:
                 desc: Effect_MP_Nidhogg_C_5_1
-                type: 0
-                value: "0"
-                level: "0"
-              attr: 0
-              erase:
-                rounds: 0
-              value:
-                isBuff: true
-                type: 100
-                off: 1
-              overlap: 4
-            - icon: BuffIcon_DEBUFF_PERDOWN
-              desc:
-                desc: Effect_MP_Nidhogg_C_5_2
                 type: 1
-                value: "0.300000"
-                level: "0"
-              attr: 0
-              erase:
-                rounds: 1
-              value:
-                isBuff: true
-                chance: 0%
-                type: 91
-                resist:
-                  type: debuff_perdown
-                  value:
-                    base: 30%
-                    per: 0%
-              overlap: 4
-          maxStack: 0
-          overlapGroup: -1
-        - key: Effect_MP_Nidhogg_C_51
-          on: round
-          if:
-            - round:
-                operator: even
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 2
-          buffs:
-            - icon: BuffIcon_DEBUFF_PERDOWN
-              desc:
-                desc: Effect_MP_Nidhogg_C_51_1
-                type: 1
-                value: "0.300000"
+                value: "1"
                 level: "0"
               attr: 3
               erase:
                 rounds: 1
               value:
                 isBuff: true
-                type: 91
-                resist:
-                  type: debuff_perdown
-                  value:
-                    base: 30%
-                    per: 0%
-              overlap: 4
+                type: 98
+                revive:
+                  base: 100%
+                  per: 0%
+              overlap: 1
           maxStack: 1
+          overlapGroup: -1
+        - key: Effect_MP_Nidhogg_C_51
+          on: revive
+          if:
+            - in_battle:
+                - MOB_MP_LemonadeBeta_C
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_MP_Nidhogg_C_51_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 98
+                revive:
+                  base: 100%
+                  per: 0%
+              overlap: 1
+          maxStack: 1
+          overlapGroup: -1
+        - key: Effect_MP_Nidhogg_C_52
+          on: team_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Nidhogg_C_52_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Nidhogg_C_52_2
+                type: 1
+                value: "0.700000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 70%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Nidhogg_C_52_3
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                chance: 120%
+                type: 7
+                accuracy:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_MP_Nidhogg_C_52_4
+                type: 1
+                value: "0.650000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 65%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_Guardpierce_Apply
+              desc:
+                desc: Effect_MP_Nidhogg_C_52_5
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 130
+                guardpierce_apply: true
+              overlap: 4
+          maxStack: 0
           overlapGroup: -1
 ai: AI_MP_BossNormal

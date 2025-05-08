@@ -17,7 +17,7 @@ import { ImageExtension, AssetsRoot, TroopNameTable, IsDev } from "@/libs/Const"
 import { CurrentDB } from "@/libs/DB";
 import { formatString, useLocale } from "@/libs/Locale";
 import { BuildClass, cn } from "@/libs/Class";
-import { diff2, groupBy } from "@/libs/Functions";
+import { arrayrize, diff2, groupBy } from "@/libs/Functions";
 
 import Loader, { GetJson, JsonLoaderCore, StaticDB, useDBData } from "@/libs/Loader";
 import LocaleBase, { LocaleProps, LocalePropsLegacy } from "@/components/locale";
@@ -1226,9 +1226,31 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						</span>)
 						.gap(<Locale raw={ false } k="BUFFTRIGGER_OR" />)
 				}</>] } />;
-			} else if ("use_skill" in trigger)
-				return <Locale raw={ false } k="BUFFTRIGGER_USE_SKILL" p={ [trigger.use_skill] } />;
-			else if ("fail" in trigger) {
+			} else if ("use_skill" in trigger) {
+				if (typeof trigger.use_skill === "number")
+					return <Locale raw={ false } k="BUFFTRIGGER_USE_SKILL" p={ [trigger.use_skill] } />;
+				else
+					return <Locale raw={ false } k="BUFFTRIGGER_USE_SKILL" p={ [
+						<span class={ cn("SubBadge", style.SubBadge, style.Narrow) }>
+							<span data-type="buff-uid" class="badge bg-dark">
+								{ getBuffUid(props.uid, trigger.use_skill) }
+							</span>
+							<Locale raw={ false } k={ trigger.use_skill } />
+						</span>
+					] } />;
+			} else if ("buffed" in trigger) {
+				return <Locale raw={ false } k="BUFFTRIGGER_BUFFED" p={ [<>
+					{ arrayrize(trigger.buffed)
+						.map(r => <span class={ cn("SubBadge", style.SubBadge, style.Narrow) }>
+							<span data-type="buff-uid" class="badge bg-dark">
+								{ getBuffUid(props.uid, r) }
+							</span>
+							<Locale raw={ false } k={ r } />
+						</span>)
+						.gap("・")
+					}
+				</>] } />;
+			} else if ("fail" in trigger) {
 				switch (trigger.fail) {
 					case "active":
 						return <Locale raw={ false } k="BUFFTRIGGER_FAIL_ACTIVE" />;

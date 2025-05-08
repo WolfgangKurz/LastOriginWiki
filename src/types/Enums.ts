@@ -955,6 +955,7 @@ export enum FACETYPE {
 	ORGASM,
 	FURY,
 	ANNOYANCE,
+	AROUSE,
 }
 
 /** 가챠(유산) 타입 */

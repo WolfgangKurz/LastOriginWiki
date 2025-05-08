@@ -57,15 +57,6 @@ export default class ColliderBox extends PIXI.Container {
 	}
 
 	private update () {
-		const g = this.collider;
-		g.clear();
-		g.lineStyle({
-			width: 1,
-			color: 0x00ff00,
-			alignment: 0,
-			native: true,
-		});
-
 		const [x, y, w, h] = [
 			this.center.x,
 			this.center.y,
@@ -73,10 +64,20 @@ export default class ColliderBox extends PIXI.Container {
 			Math.abs(this.size.y),
 		];
 
+		const g = this.collider;
+		g.clear();
+		g.lineStyle({
+			width: 0.01, // Math.max(2, window.devicePixelRatio || 1),
+			color: 0x00ff00,
+			alignment: 0,
+			native: true,
+		});
+
 		this.placeholder.position.set(-w / 2 + x, -h / 2 - y);
 		this.placeholder.scale.set(w / 16, h / 16);
 
 		if (!this._display) return;
+
 		g.drawRect(
 			-w / 2 + x,
 			-h / 2 - y,

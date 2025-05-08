@@ -92,4 +92,5 @@ export const FaceTable: Record<FACETYPE, string> = {
 	[FACETYPE.ORGASM]: "Orgasm",
 	[FACETYPE.FURY]: "Fury",
 	[FACETYPE.ANNOYANCE]: "Annoyance",
+	[FACETYPE.AROUSE]: "Arouse",
 };

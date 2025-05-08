@@ -59,6 +59,8 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 	const [animationIndicator, setAnimationIndicator] = useState<FadeContainer | null>(null);
 	const [animationIndicatorGraphics, setAnimationIndicatorGraphics] = useState<PIXI.Graphics | null>(null);
 
+	const _dpr = Math.max(2, window.devicePixelRatio || 1);
+
 	const uid = useMemo(
 		() => (props.type === "spine" || props.type === "video") ? props.uid : `2DModel_${props.uid}`,
 		[props.type, props.uid],
@@ -181,8 +183,8 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 			const animIndi = new FadeContainer();
 			animIndi.name = "[Animation Indicator]";
-			animIndi.x = 30;
-			animIndi.y = 30;
+			animIndi.x = 30 * _dpr;
+			animIndi.y = 30 * _dpr;
 			stage.addChild(animIndi);
 			setAnimationIndicator(animIndi);
 
@@ -218,14 +220,14 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 			ob = new ResizeObserver(e => {
 				const rc = (e[0].contentRect as DOMRectReadOnly);
 
-				const r = window.devicePixelRatio || 1;
+				const r = _dpr;
 				Shared.instance.resize(rc.width * r, rc.height * r);
 
 				if (pixi) pixi.renderer.resize(rc.width * r, rc.height * r);
 				surface.position.set(rc.width * r / 2, rc.height * r / 2);
 				surface.scale.set(rc.height * r / 720);
 
-				animationIndicator?.position.set(30, 30);
+				// animationIndicator?.position.set(30, 30);
 			});
 			ob.observe(playerRef.current);
 		}
@@ -340,15 +342,15 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 				for (let i = 0; i <= deg; i++) {
 					const rad = (i - 90) * Math.PI / 180;
 					points.push({
-						x: Math.cos(rad) * 15,
-						y: Math.sin(rad) * 15,
+						x: Math.cos(rad) * 15 * _dpr,
+						y: Math.sin(rad) * 15 * _dpr,
 					});
 				}
 				for (let i = 0; i <= deg; i++) {
 					const rad = ((deg - i) - 90) * Math.PI / 180;
 					points.push({
-						x: Math.cos(rad) * 8,
-						y: Math.sin(rad) * 8,
+						x: Math.cos(rad) * 8 * _dpr,
+						y: Math.sin(rad) * 8 * _dpr,
 					});
 				}
 
@@ -377,7 +379,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 
 	return <div
 		class={ style.PixiView }
-		style={ { transform: `scale(${1 / (window.devicePixelRatio || 1)})` } }
+		style={ { transform: `scale(${1 / _dpr})` } }
 
 		onWheel={ e => e.preventDefault() }
 

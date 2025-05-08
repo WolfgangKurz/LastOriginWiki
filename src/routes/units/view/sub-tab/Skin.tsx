@@ -5,7 +5,7 @@ import { Link } from "preact-router";
 import { AssetsRoot } from "@/libs/Const.1";
 import { SkillVideo, SkinBanners } from "@/libs/Const.2";
 import { BuildClass, cn } from "@/libs/Class";
-import { FormatDate, isActive } from "@/libs/Functions";
+import { FormatDate, isActive, map } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 import { useLocale } from "@/libs/Locale";
 
@@ -21,6 +21,7 @@ import UnitFace2 from "../../components/unit-face2";
 import { SubpageProps } from "..";
 
 import style from "./style.module.scss";
+import { ArtistLinks } from "@/libs/Const.3";
 
 const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, SkinList, onSkinIndexChange }) => {
 	if (!display) return <></>;
@@ -79,11 +80,23 @@ const SkinTab: FunctionComponent<SubpageProps> = ({ display, unit, skinIndex, Sk
 					const tag = a.substring(0, o);
 					const body = a.substring(o + 1);
 					return <Locale k={ `UNIT_VIEW_ILLUSTRATOR_TAG_${tag}` } p={ [body] } />;
-				} else {
-					return <span class="badge bg-primary">{ a }</span>;
 				}
-			})
-			.map(x => <div class="d-inline-block mx-1">{ x }</div>);
+
+				const linked = ArtistLinks[a];
+				if (linked) {
+					return <div class={ style.ArtistLinks }>
+						<div class={ style.ArtistName }>{ a }</div>
+						<div class={ style.Links }>
+							{ map(linked, (v, k) => <a href={ v! } target="_blank">
+								<img class={ style.BrandIcon } src={ `${AssetsRoot}/ui/brand/${k.toLowerCase()}.png` } />
+							</a>) }
+						</div>
+					</div>;
+				}
+				return <div class={ style.ArtistLinks }>
+					<div class={ style.ArtistName }>{ a }</div>
+				</div>;
+			});
 	}
 
 	function ParseDesc (key: string): preact.VNode[] {

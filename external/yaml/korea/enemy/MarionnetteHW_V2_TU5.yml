@@ -352,7 +352,8 @@ skills:
       buff_rate: 100
       buffs:
         - key: Effect_MP_MarionnetteHW_V2_TU_4
-          on: attack_success
+          on:
+            attack_success: passive
           if:
             - false
             - false
@@ -415,7 +416,8 @@ skills:
               attr: 0
               erase:
                 count: 1
-                trigger: attack_success
+                trigger:
+                  attack_success: passive
               value:
                 isBuff: true
                 type: 7
