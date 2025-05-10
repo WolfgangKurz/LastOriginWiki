@@ -6,6 +6,12 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12960" date="2025-05-11"
+		bugfix={ <>
+			<li>
+				<BY>전투원정보</BY>의 <BY>상세 검색</BY>에서 특정 조건을 추가하면 페이지가 동작하지 않는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12957" date="2025-05-09"
 		new={ <>
 			<li>신규 스토리 정보가 추가되었습니다.</li>
