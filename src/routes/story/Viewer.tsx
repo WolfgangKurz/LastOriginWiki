@@ -8,7 +8,7 @@ import SubStoryDB from "@/types/DB/SubStory";
 import { LocaleList, LocaleTypes } from "@/types/Locale";
 
 import { useLocale } from "@/libs/Locale";
-import { AssetsRoot, ImageExtension, SubStoryUnit } from "@/libs/Const";
+import { AssetsRoot, ImageExtension, IsDev, SubStoryUnit } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import { BuildClass, cn } from "@/libs/Class";
 import { parseVNode } from "@/libs/VNode";
@@ -108,7 +108,10 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	}
 	function ImageToFace (model: string): { uid: string; skin: number; fallback: string; } {
 		let sid = model
+			.replace(/_N_DL(_[0-9]+)?/g, "_N")
 			.replace(/_DL_N/g, "")
+			.replace(/_DL/g, "")
+			.replace(/_N_N/g, "_N")
 			.replace(/_D$/g, "") // same with _DL_N
 			.replace(/^2DModel_(.+)_([NPS])(S[0-9]+)?$/, (p, p1, p2, p3) => {
 				if (p2 === "N") {
@@ -301,7 +304,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 		}
 		return storyData
 			.flatMap(r => Object.values(r.char))
-			.filter(r => r.image && !r.image.includes("_Cut"))
+			.filter(r => r.image && !r.image.includes("_Cut") && !r.image.startsWith("#"))
 			.map(r => ImageToFace(r.image))
 			.reduce<FaceMetadata[]>(
 				(p, c) => p.some(r => r.uid === c.uid && r.skin === c.skin)
@@ -417,7 +420,15 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 		}
 
 		<div class="my-2">
-			{ faces.map(f => <UnitFace class="mx-1" { ...f } size="3rem" />) }
+			{ faces.map(f => IsDev
+				? <div class="d-inline-block px-2">
+					<small class="d-block">
+						{ f.uid } { f.skin }
+					</small>
+					<UnitFace class="mx-1" { ...f } size="3rem" />
+				</div>
+				: <UnitFace class="mx-1" { ...f } size="3rem" />
+			) }
 		</div>
 
 		<ul class={ cn("nav nav-tabs pt-2", style.TabNav) }>

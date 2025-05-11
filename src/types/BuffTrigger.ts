@@ -69,10 +69,10 @@ export enum BUFFEFFECT_TRIGGER_TYPE {
 export type BuffTrigger = BuffTrigger_Unknown | BuffTrigger_Always | BuffTrigger_After | BuffTrigger_Damaged | BuffTrigger_AttackSuccess |
 	BuffTrigger_HPDown | BuffTrigger_HPUp | BuffTrigger_HPLess | BuffTrigger_HPMore | BuffTrigger_HPRange | BuffTrigger_UnitIn | BuffTrigger_UnitDead |
 	BuffTrigger_Always | BuffTrigger_EveryWave | BuffTrigger_EveryRound | BuffTrigger_Attack | BuffTrigger_Attacked | BuffTrigger_Wait |
-	BuffTrigger_Move | BuffTrigger_Evade | BuffTrigger_WaveEnd | BuffTrigger_EnemyKilled | BuffTrigger_EnemyKilledPassive | BuffTrigger_Position |
-	BuffTrigger_Criticaled | BuffTrigger_Revive | BuffTrigger_On | BuffTrigger_Target | BuffTrigger_UnitCount | BuffTrigger_Round |
-	BuffTrigger_NotInBattle | BuffTrigger_TroopCategory | BuffTrigger_UseSkill | BuffTrigger_Test | BuffTrigger_AttackBy | BuffTrigger_Fail |
-	BuffTrigger_Near | BuffTrigger_EnemyKilledCounter | BuffTrigger_ApplyOneOf;
+	BuffTrigger_Move | BuffTrigger_Evade | BuffTrigger_WaveEnd | BuffTrigger_IfBuffed | BuffTrigger_EnemyKilled | BuffTrigger_EnemyKilledPassive |
+	BuffTrigger_Position | BuffTrigger_Criticaled | BuffTrigger_Revive | BuffTrigger_On | BuffTrigger_Target | BuffTrigger_UnitCount |
+	BuffTrigger_Round | BuffTrigger_NotInBattle | BuffTrigger_TroopCategory | BuffTrigger_UseSkill | BuffTrigger_Test | BuffTrigger_AttackBy |
+	BuffTrigger_Fail | BuffTrigger_Near | BuffTrigger_EnemyKilledCounter | BuffTrigger_ApplyOneOf | BuffTrigger_Beaten;
 
 /** 구현을 알 수 없는 발동 조건 */
 interface BuffTrigger_Unknown {
@@ -93,7 +93,12 @@ type BuffTrigger_Damaged = "damaged" | "damaged_active" | "after_damaged" | {
 };
 
 /** 대상 회피 제외 */
-type BuffTrigger_AttackSuccess = "attack_success";
+type BuffTrigger_AttackSuccess_Plain = "attack_success";
+interface BuffTrigger_AttackSuccess_Typed {
+	attack_success: "active" | "passive" | "ally";
+}
+type BuffTrigger_AttackSuccess = BuffTrigger_AttackSuccess_Plain | BuffTrigger_AttackSuccess_Typed;
+
 
 type BuffTrigger_HPDown = BuffTrigger_HPDown_Self | BuffTrigger_HPDown_Target;
 interface BuffTrigger_HPDown_Self {
@@ -176,6 +181,10 @@ type BuffTrigger_Wait = "wait";
 type BuffTrigger_Move = "move";
 type BuffTrigger_Evade = "evade";
 type BuffTrigger_WaveEnd = "wave_end";
+
+interface BuffTrigger_IfBuffed {
+	buffed: string | string[];
+}
 
 /** 본인이 처치했을 때에만 */
 type BuffTrigger_EnemyKilled = "enemy_killed";
@@ -282,7 +291,7 @@ interface BuffTrigger_TroopCategory {
 
 /** 스킬 사용시 */
 interface BuffTrigger_UseSkill {
-	use_skill: 1 | 2;
+	use_skill: 1 | 2 | string;
 }
 
 /** 값 비교 */
@@ -308,4 +317,8 @@ interface BuffTrigger_Near {
 
 interface BuffTrigger_ApplyOneOf {
 	apply_one_of: string[];
+}
+
+interface BuffTrigger_Beaten {
+	beaten: "ally" | "ally_physics" | "ally_fire" | "ally_ice" | "ally_lightning" | "ally_active";
 }

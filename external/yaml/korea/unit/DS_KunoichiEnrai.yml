@@ -491,6 +491,7 @@ cv:
   "": {}
   M: {}
 source:
+  - - 13:4:13-25
   - - Ev:Ev13:Ev2-6
   - - Ev:Ev25:EV2-2Ex
   - - Ev:Ev28:EV1-2Ex
@@ -5487,7 +5488,8 @@ skills:
                     level: "0"
                   attr: 3
                   erase:
-                    until: attack_success
+                    until:
+                      attack_success: passive
                   value:
                     isBuff: true
                     type: 6
@@ -5529,7 +5531,8 @@ skills:
                     level: "0"
                   attr: 3
                   erase:
-                    until: attack_success
+                    until:
+                      attack_success: passive
                   value:
                     isBuff: true
                     type: 6

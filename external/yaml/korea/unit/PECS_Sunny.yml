@@ -493,6 +493,23 @@ stat:
       fire: 35
       ice: 35
       lightning: 35
+  - HP:
+      - 520
+      - 3428.62
+    ATK:
+      - 78
+      - 622.5
+    DEF:
+      - 86
+      - 281.03
+    SPD: 4.25
+    CRI: 5.2
+    ACC: 150
+    EVA: 25
+    Resist:
+      fire: 35
+      ice: 35
+      lightning: 35
 chart:
   - 4
   - 7
@@ -502,6 +519,7 @@ chart:
   - 5
 cv:
   "1": {}
+  "2": {}
   "":
     ko: ""
     jp: 芹澤千佳
@@ -2205,7 +2223,8 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_PECS_Sunny_N_11
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - false
                 - false

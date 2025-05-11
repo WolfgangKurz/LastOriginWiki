@@ -2,8 +2,10 @@ import { createElement, FunctionalComponent, FunctionComponent } from "preact";
 import { useMemo, useState } from "preact/hooks";
 
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
+import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import { cn } from "@/libs/Class";
+import { StaticDB, useDBData } from "@/libs/Loader";
 import { ComponentTable, parseVNode } from "@/libs/VNode";
 import { ParamWithSlot, parseParams } from "@/libs/SkillDescription";
 
@@ -11,6 +13,7 @@ import EquipPopup from "@/components/popup/equip-popup";
 import * as Components from "./components";
 
 import experimental from "./experimental";
+import buildDefaultSection from "./section";
 
 import style from "./components/style.module.scss";
 
@@ -50,6 +53,8 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 	const [displayEquip, setDisplayEquip] = useState(false);
 	const [selectedEquip, setSelectedEquip] = useState<FilterableEquip | null>(null);
 
+	const units = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
+
 	const content = useMemo(() => {
 		let text = props.text;
 
@@ -63,10 +68,9 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 			Object.keys($ret.sections).forEach(sec => _sections[sec] = $ret.sections[sec]);
 		}
 
-		const tags: Record<string, preact.FunctionalComponent<unknown>> = {};
+		const tags: Record<string, preact.FunctionalComponent<unknown>> = buildDefaultSection(units);
 		text = text.replace(/\$\$([A-Za-z0-9\-_]+)((:?([?F0-9,@]+))\$|\$?)/g, (p0, p1, p2, p3, p4) => {
-			// eslint-disable-next-line react/display-name
-			tags[`SECTION_${p1}`] = (): preact.VNode => <>{
+			tags[`SECTION_${p1}`] ??= (): preact.VNode => <>{
 				(_sections[p1] || [])
 					.map((r, i) => <div
 						key={ `SKILL_DESCRIPTION_COMMENT_SECTION_${p1}_LINE_${i}` }
@@ -97,6 +101,7 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 						buffBonus={ props.buffBonus }
 						skillBonus={ props.skillBonus }
 						favorBonus={ props.favorBonus }
+						valueDetail={ props.valueDetail }
 					/>).gap(<hr class="my-1" />),
 				);
 			};
@@ -236,6 +241,7 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 			return [<>_</>];
 		}
 	}, [
+		units,
 		props.text, props.sections, props.boxs,
 		props.rates, props.slot, props.values, props.level,
 		props.buffBonus, props.skillBonus, props.favorBonus,

@@ -532,6 +532,7 @@ source:
   - - Ev:Ev19:EV2-4B
   - - Ev:Ev23:EV2-3Ex
   - - Ev:Ev24:EV2-3B
+  - - Ev:Ev30:EV1-3B
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -3903,6 +3904,7 @@ skills:
                     - Char_PECS_Stinger_N
                     - Char_PECS_Spartoia_N
                     - Char_PECS_Hussar_N
+                    - Char_PECS_LemonadeEpsilon_N
                 - false
               body:
                 - 0
@@ -4501,6 +4503,43 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_PECS_CoCoWhiteShell_N_39
+              on: round
+              if:
+                - in_battle:
+                    - Char_PECS_LemonadeEpsilon_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_PECS_CoCoWhiteShell_N_39_1
+                    type: 1
+                    value: "0.050000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 36
+                    damage_reduce:
+                      base: 5%
+                      per: 0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -4607,6 +4646,15 @@ skills:
           - icon: BuffIcon_DAMAGE_REDUCE
             desc:
               desc: Effect_PECS_CoCoWhiteShell_N_38_1
+              type: 1
+              value: "0.050000"
+              level: "0.005000"
+            base: 0.05
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_PECS_CoCoWhiteShell_N_39_1
               type: 1
               value: "0.050000"
               level: "0.005000"
@@ -5163,6 +5211,17 @@ skills:
                       - Effect_BUFF_Flood_N_23
                       - Effect_BUFF_Flood_N_24
                       - Effect_BUFF_Flood_N_25
+                      - Effect_BUFF_SelfFlooding_N_1
+                      - Effect_BUFF_SelfFlooding_N_2
+                      - Effect_BUFF_SelfFlooding_N_3
+                      - Effect_BUFF_SelfFlooding_N_4
+                      - Effect_BUFF_SelfFlooding_N_5
+                      - Effect_BUFF_SelfFlooding_N_6
+                      - Effect_BUFF_SelfFlooding_N_7
+                      - Effect_BUFF_SelfFlooding_N_8
+                      - Effect_BUFF_SelfFlooding_N_9
+                      - Effect_BUFF_SelfFlooding_N_10
+                      - Effect_BUFF_SelfFlooding_N_11
                     attr: 6
                 - false
               body:

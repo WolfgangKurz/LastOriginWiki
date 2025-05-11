@@ -68,7 +68,7 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 	if (props.wid === "Sub")
 		UpdateTitle(loc["MENU_WORLDS"], loc[`WORLD_${props.wid}`]);
 	else
-		UpdateTitle(loc["MENU_WORLDS"], loc[`WORLD_${props.wid}`], loc["WORLDS_WORLD_TITLE"].replace(/\{0\}/g, props.mid));
+		UpdateTitle(loc["MENU_WORLDS"], loc[`WORLD_${props.wid}`], loc["WORLDS_WORLD_TITLE"]?.replace(/\{0\}/g, props.mid));
 
 	function toggleArray<T> (list: T[], value: T): T[] {
 		if (list.includes(value)) {

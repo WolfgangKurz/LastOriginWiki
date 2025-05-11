@@ -342,7 +342,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 
 				width: 1280,
 				height: 720,
-				resolution: window.devicePixelRatio || 1,
+				resolution: 1, // Math.max(2, window.devicePixelRatio || 1),
 				autoDensity: true,
 
 				// eventMode: "passive",
@@ -747,18 +747,23 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			useEffect(() => { // Char
 				const target = chars[index];
 
+				const img = (target?.image ?? "")
+					.replace(/_N_DL_[0-9]+/, "_N_DL")
+					.replace(/_DL/, "");
+				const imgVar = target?.imageVar ?? "";
+
 				if (charRef.current[index]) {
 					const char = charRef.current[index]!;
 					if (
-						(screen && target && target.image) && // new char exists
+						(screen && target && img) && // new char exists
 
 						// U2DModel based (face changeable)
 						(char instanceof Pixi2DModel || char instanceof PixiSpineModel || char instanceof MixedModel) &&
 
-						target.image === char.model.replace(/^[OG]\//, "") // same model image
+						img === char.model.replace(/^[OG]\//, "") // same model image
 					) {
 						// reusable (only face changed)
-						char.setFace(target.imageVar);
+						char.setFace(imgVar);
 						return () => { };
 					} else {
 						charRef.current[index] = undefined;
@@ -769,12 +774,14 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 
 				let disposed = false;
 				let char: CharSpriteType | null = null;
-				if (screen && target && target.image) {
-					const c = ConvertChar(target.image);
-					const modelType = target.image in (modelList || {})
-						? modelList![target.image]
+				if (screen && target && img) {
+					const c = ConvertChar(img);
+					const modelType = img in (modelList || {})
+						? modelList![img]
 						: CharModelType.None;
-					const forCommu = isCommu(target.image);
+					const forCommu = isCommu(img);
+
+					console.log(img, modelType);
 
 					Promise.all(modelType !== CharModelType.None
 						? new Array(2).fill(Promise.resolve())
@@ -782,12 +789,12 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 							PIXI.Texture.fromURL(c
 								? `${AssetsRoot}/webp/full/${c}.webp`
 								: forCommu
-									? getCommuImage(target.image, target.imageVar)
-									: `${AssetsRoot}/story/model/${target.image}.webp`
+									? getCommuImage(img, imgVar)
+									: `${AssetsRoot}/story/model/${img}.webp`
 							),
 							forCommu
 								? Promise.resolve()
-								: fetch(`${AssetsRoot}/story/model/${c || target.image}.json`)
+								: fetch(`${AssetsRoot}/story/model/${c || img}.json`)
 									.then(meta => meta.json())
 									.then(meta => meta as StoryModelMeta[])
 									.catch(() => undefined),
@@ -802,14 +809,14 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 						const s = [index === 1 ? -1 : 1, 1];
 
 						if (modelType === CharModelType.U2DModel) {
-							char = new Pixi2DModel("O/" + target.image); // always uncensored
+							char = new Pixi2DModel("O/" + img); // always uncensored
 							char.setDialogDeactive(true);
-							char.setFace(target.imageVar);
+							char.setFace(imgVar);
 							// p[1] = 720 / 7 * 5;
 							p[1] = 360;
 						} else if (modelType === CharModelType.Spine) {
-							char = new MixedModel(target.image, `O/${target.image}`);
-							char.setFace(target.imageVar);
+							char = new MixedModel(img, `O/${img}`);
+							char.setFace(imgVar);
 							char.setDialogDeactive(true);
 							p[1] = 360;
 						} else {
@@ -823,8 +830,8 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 									s[0] *= e.scale[0];
 									s[1] *= e.scale[1];
 								});
-							} else if (isCommu(target.image)) {
-								if (!target.image.includes("Cut_")) {
+							} else if (isCommu(img)) {
+								if (!img.includes("Cut_")) {
 									p[1] -= 375;
 									s[0] = 213 / tex.width;
 									s[1] = 282 / tex.height;
@@ -963,7 +970,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 					dialog.setDisplay(false);
 			}
 		}
-	}, [dialog, curData]);
+	}, [dialog, curData, LText]);
 	useEffect(() => { // Selection
 		let fn: (idx: number) => void;
 
@@ -998,7 +1005,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 			if (selection && fn)
 				selection.off("select", fn);
 		};
-	}, [curData, selection, props.onNext, props.onDone, sel, selDisp]);
+	}, [curData, selection, props.onNext, props.onDone, sel, selDisp, LText]);
 
 	useEffect(() => { // Screen Effect
 		let timer: number | null = null;

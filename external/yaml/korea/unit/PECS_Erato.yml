@@ -496,6 +496,7 @@ source:
   - - Ev:Ev16:EV1-5Ex
   - - Ev:Ev20:*EV2-3Ex
   - - Ev:Ev24:EV3-2Ex
+  - - Ev:Ev30:EV2-3Ex
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -1800,7 +1801,8 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_PECS_Erato_N_46
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - on:
                     func: OR

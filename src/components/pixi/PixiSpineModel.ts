@@ -82,7 +82,7 @@ interface SpineCollider extends SpineTransform {
 interface SpineMetadata {
 	colliders: Record<string, SpineCollider>;
 	// transform: SpineTransform;
-	transforms: SpineTransform[];
+	transforms: Array<SpineTransform[]> | SpineTransform[];
 	specialTouch: string[];
 }
 
@@ -322,7 +322,12 @@ export default class PixiSpineModel extends FadeContainer {
 
 		let root: PIXI.Container | null = null;
 		let current: PIXI.Container = this;
-		data.metadata.transforms.forEach(tf => {
+		console.log(data.metadata);
+
+		const _tfs = Array.isArray(data.metadata.transforms[0])
+			? data.metadata.transforms[0]
+			: data.metadata.transforms as SpineTransform[];
+		_tfs.forEach(tf => {
 			const node = new PIXI.Container();
 			node.layerableChildren = true;
 			node.sortableChildren = true;

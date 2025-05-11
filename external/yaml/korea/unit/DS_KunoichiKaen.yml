@@ -539,6 +539,7 @@ source:
   - - Ev:Ev22:EV1-1Ex
   - - Ev:Ev23:EV1-3
   - - Ev:Ev25:EV1-1Ex
+  - - Ev:Ev30:EV1-2Ex
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -5057,7 +5058,8 @@ skills:
                     level: "0"
                   attr: 3
                   erase:
-                    until: attack_success
+                    until:
+                      attack_success: passive
                   value:
                     isBuff: true
                     type: 6
@@ -5074,7 +5076,8 @@ skills:
                   attr: 3
                   erase:
                     rounds: 1
-                    until: attack_success
+                    until:
+                      attack_success: passive
                   value:
                     isBuff: true
                     chance: 0%
@@ -5296,7 +5299,8 @@ skills:
                     level: "0.015000"
                   attr: 3
                   erase:
-                    until: attack_success
+                    until:
+                      attack_success: passive
                   value:
                     isBuff: true
                     type: 60

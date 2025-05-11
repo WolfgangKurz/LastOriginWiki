@@ -25,6 +25,3 @@ export function Nn (text: string) {
 		.replace(/\[-\]\[\/c\]/g, "\0")
 		.replace(/[<>]/g, (_) => `\0spchar\0${_}\0.\0`);
 }
-export const fontFamily = ["IBM Plex Sans KR", "IBM Plex Sans", "Pretendard JP Variable", "Pretendard Variable", "sans-serif"]
-	.map(r => r.includes(" ") ? `"${r}"` : r)
-	.join(", ");

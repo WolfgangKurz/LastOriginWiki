@@ -570,6 +570,8 @@ source:
   - - Ev:Ev27:EV1-3
   - - Ev:Ev28:EV1-2Ex
   - - Ev:Ev29:EV1-2Ex
+  - - Ev:Ev30:EV1-3B
+    - Ev:Ev30:EV2-6
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2925,7 +2927,8 @@ skills:
                     level: "0.100000"
                   attr: 3
                   erase:
-                    until: attack_success
+                    until:
+                      attack_success: passive
                   value:
                     isBuff: true
                     type: 7
@@ -4758,7 +4761,7 @@ skins:
     2dmodel: 2DModel_3P_Ajax_N
   skins:
     - sid: 1
-      artist: Corgi
+      artist: CORGI
       price: 114
       G: true
       Spine: false

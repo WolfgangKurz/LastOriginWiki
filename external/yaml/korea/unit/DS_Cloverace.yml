@@ -495,6 +495,7 @@ source:
   - - Ev:Ev20:EV3-3B
   - - Ev:Ev28:EV1-2Ex
   - - Ev:Ev29:EV1-2Ex
+  - - Ev:Ev30:EV1-2Ex
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -4787,7 +4788,8 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_DS_Cloverace_N_43
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - on:
                     target: target

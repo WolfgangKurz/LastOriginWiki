@@ -1,0 +1,440 @@
+uid: LemonadeZeta1_C
+rarity: 5
+type: 2
+role: 1
+category: 0
+stat:
+  hp:
+    - 243750
+    - 2193.75
+  atk:
+    - 2000
+    - 6
+  def:
+    - 2500
+    - 12.5
+  spd: 4.9
+  cri: 35
+  acc: 300
+  eva: 190
+  res:
+    fire: 30
+    chill: 30
+    thunder: 30
+skills:
+  - key: Skill_MP_LemonadeZeta1_C_1
+    icon: SwordAttk
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 3
+      range: 4
+      ap: 5
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LemonadeZeta1_C_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_SEAL_SKILL
+              desc:
+                desc: Effect_MP_LemonadeZeta1_C_1_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 79
+                skill_disable: true
+              overlap: 1
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_LemonadeZeta1_C_2
+    icon: Command
+    passive: false
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 10
+      grid: 1,1,1,1,0,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LemonadeZeta1_C_2
+          on:
+            after: use_skill
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 1
+          buffs:
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_LemonadeZeta1_C_2_1
+                type: 1
+                value: "0.400000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 40%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_LemonadeZeta1_C_2_2
+                type: 1
+                value: "0.170000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 17%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_LemonadeZeta1_C_2_3
+                type: 1
+                value: "0.180000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 18%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_MP_LemonadeZeta1_C_2_4
+                type: 1
+                value: "0.120000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 36
+                damage_reduce:
+                  base: 12%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_LemonadeZeta1_C_3
+    icon: P.Command
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 3
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LemonadeZeta1_C_3
+          on: round
+          if:
+            - unitCount:
+                filter: squad
+                type:
+                  - 0
+                  - 2
+                  - 1
+                count:
+                  - 2
+                  - 3
+                  - 4
+                  - 5
+                  - 6
+                  - 7
+                  - 8
+                  - 9
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_All
+              desc:
+                desc: Effect_MP_LemonadeZeta1_C_3_1
+                type: 0
+                value: "10"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 33
+                damage_immune:
+                  base: 10
+                  per: 0
+              overlap: 4
+          maxStack: 1
+          overlapGroup: -1
+        - key: Effect_MP_LemonadeZeta1_C_31
+          on: round
+          if:
+            - unitCount:
+                filter: squad
+                type:
+                  - 0
+                  - 2
+                  - 1
+                count:
+                  - 2
+                  - 3
+                  - 4
+                  - 5
+                  - 6
+                  - 7
+                  - 8
+                  - 9
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_LemonadeZeta1_C_31_1
+                type: 1
+                value: "0.800000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 80%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_LemonadeZeta1_C_31_2
+                type: 1
+                value: "0.450000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 45%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_LemonadeZeta1_C_31_3
+                type: 1
+                value: "0.350000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 35%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_LemonadeZeta1_C_4
+    icon: P.SelfAtkBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 4
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_LemonadeZeta1_C_4
+          on: team_dead
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_LemonadeZeta1_C_4_1
+                type: 1
+                value: "0.200000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 99
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 20%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_LemonadeZeta1_C_4_2
+                type: 1
+                value: "0.150000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 99
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 15%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_LemonadeZeta1_C_4_3
+                type: 1
+                value: "0.250000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 99
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 25%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_MP_LemonadeZeta1_C_4_4
+                type: 1
+                value: "0.100000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 99
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 10%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+ai: AI_MP_BossNormal2

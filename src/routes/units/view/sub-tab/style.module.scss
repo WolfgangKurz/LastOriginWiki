@@ -358,3 +358,47 @@ table.InfoTable {
 	width: 17px;
 	height: 17px;
 }
+
+.ArtistLinks {
+	margin-bottom: 4px;
+	text-align: left;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	.ArtistName {
+		display: inline-block;
+		line-height: 1.4;
+		font-weight: 600;
+		font-size: 95%;
+	}
+	.Links {
+		display: inline-flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		vertical-align: middle;
+		gap: 3px;
+		
+		&::before {
+			content: "";
+			display: inline-block;
+			margin: 0 4px 0 6px;
+			width: 8px;
+			height: 2px;
+			background: $primary;
+			// translate: 0 -50%;
+			align-self: center;
+			line-height: 0;
+		}
+		&:empty {
+			display: none;
+		}
+	}
+
+	.BrandIcon {
+		height: 1.4em;
+		border-radius: 0.25em;
+	}
+}

@@ -561,6 +561,8 @@ source:
   - - 8:1:8-1
   - - 9:1:9-1Ex
   - - 12:2:12-15
+  - - 13:4:13-25
+    - 13:5:13-34
   - - Ev:Ev1:Ev-1Ex
   - - Ev:Ev2:Ev2-1B
   - - Ev:Ev4:Ev-12
@@ -588,6 +590,8 @@ source:
   - - Ev:Ev27:EV1-6
     - Ev:Ev27:EV2-1Ex
   - - Ev:Ev29:EV1-3Ex
+  - - Ev:Ev30:EV1-1B
+    - Ev:Ev30:EV2-4B
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -3460,7 +3464,8 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_ST_Lancer_N_5
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - false
                 - false

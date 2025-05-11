@@ -492,6 +492,7 @@ cv:
 source:
   - - Ev:Ev20:*EV1-6
   - - Ev:Ev25:EV1-2Ex
+  - - Ev:Ev30:EV2-6
 oneoff: false
 oathable: false
 entryReqMap: []
@@ -1475,7 +1476,8 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_3P_Satgat_N_3
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - false
                 - false
@@ -2849,7 +2851,8 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_Satgat_N_52
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - on:
                     target: target
@@ -3186,7 +3189,7 @@ dialogue:
 skins:
   sid: null
   artist: |-
-    SUPERPHOTRONE
+    Superphotrone
     CONTEST:skynet
   priceEx: ""
   G: false

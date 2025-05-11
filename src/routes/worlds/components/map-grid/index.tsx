@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "preact";
-import { useEffect, useRef, useState } from "preact/hooks";
+import { useEffect, useMemo, useRef, useState } from "preact/hooks";
 
 import { MapNodeEntity } from "@/types/DB/Map";
 import { STAGE_SUB_TYPE } from "@/types/Enums";
@@ -101,33 +101,11 @@ interface MapGridProps {
 const MapGrid: FunctionalComponent<MapGridProps> = (props) => {
 	const svgRef = useRef<SVGSVGElement>(null);
 
-	useEffect(() => {
-		if (svgRef.current) {
-			const ref = svgRef.current;
-			const bound = ref.getBBox();
-			const _w = Math.max(padding * 2 + w * 8 + gx * 7, bound.x + bound.width + padding);
-			const _h = Math.max(padding * 2 + h * 3 + gy * 2, bound.y + bound.height + padding);
-			ref.setAttribute("viewBox", `0 0 ${_w} ${_h}`);
-			ref.style.minWidth = `${_w}px`;
-
-			if (props.selected) {
-				const node = props.selected;
-				if (node.text && props.onSelect) {
-					const el = svgRef.current.querySelector<HTMLAnchorElement>(`a[data-key="${node.key}"]`);
-					if (el) {
-						const x = parseFloat(el.dataset.x || "0");
-						props.onSelect(node, el, x);
-					}
-				}
-			}
-		}
-	}, []);
-
 	const wid = props.wid || "";
 	const mid = props.mid || "";
 	const nodes = props.nodes.sort((a, b) => a.offset - b.offset);
 
-	const RECTS = (() => {
+	const RECTS = useMemo(() => {
 		const ret: preact.VNode[] = [];
 		const lines: preact.VNode[] = [];
 
@@ -220,9 +198,10 @@ const MapGrid: FunctionalComponent<MapGridProps> = (props) => {
 							const toX = baseX + MapPosition[wid][mid][n.text][0] * vw2;
 							const toY = baseY + MapPosition[wid][mid][n.text][1] * vh;
 
-							if (x <= toX) {
-								const _x = Array.isArray(p) ? baseX + p[0] * vw2 : x;
-								const _y = Array.isArray(p) ? baseY + p[1] * vh : y;
+							const hardcodedPrev = Array.isArray(p);
+							if (x <= toX || hardcodedPrev) {
+								const _x = hardcodedPrev ? baseX + p[0] * vw2 : x;
+								const _y = hardcodedPrev ? baseY + p[1] * vh : y;
 
 								lines.push(line(
 									_x + ww,
@@ -276,7 +255,29 @@ const MapGrid: FunctionalComponent<MapGridProps> = (props) => {
 
 		// return [...ret, ...lines];
 		return [...lines, ...ret];
-	})();
+	}, [props.hardcoded, nodes]);
+
+	useEffect(() => {
+		if (svgRef.current) {
+			const ref = svgRef.current;
+			const bound = ref.getBBox();
+			const _w = Math.max(padding * 2 + w * 8 + gx * 7, bound.x + bound.width + padding);
+			const _h = Math.max(padding * 2 + h * 3 + gy * 2, bound.y + bound.height + padding);
+			ref.setAttribute("viewBox", `0 0 ${_w} ${_h}`);
+			ref.style.minWidth = `${_w}px`;
+
+			if (props.selected) {
+				const node = props.selected;
+				if (node.text && props.onSelect) {
+					const el = svgRef.current.querySelector<HTMLAnchorElement>(`a[data-key="${node.key}"]`);
+					if (el) {
+						const x = parseFloat(el.dataset.x || "0");
+						props.onSelect(node, el, x);
+					}
+				}
+			}
+		}
+	}, [RECTS]);
 
 	return <div class={ style.WorldsMapGrid }>
 		<div class={ style.Preload }>

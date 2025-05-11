@@ -1,10 +1,10 @@
 import { FunctionalComponent } from "preact";
+import { useMemo } from "preact/hooks";
 
 import { cn } from "@/libs/Class";
 
 import "bootstrap-icons/font/bootstrap-icons.scss";
 import "./style.scss";
-import { useMemo } from "preact/hooks";
 
 export interface IconProps {
 	class?: string;

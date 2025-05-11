@@ -625,6 +625,7 @@ source:
     - 12:1:12-1Ex
     - 12:2:12-12
     - 12:3:12-9B
+  - - 13:4:13-28
   - - Ev:Ev1:Ev-2B
     - Ev:Ev1:Ev-1Ex
   - - Ev:Ev2:Ev-1
@@ -762,6 +763,10 @@ source:
     - Ev:Ev27:EV2-1Ex
   - - Ev:Ev28:EV1-1Ex
   - - Ev:Ev29:EV1-1Ex
+  - - Ev:Ev30:EV1-2
+    - Ev:Ev30:EV1-5
+    - Ev:Ev30:EV2-5
+    - Ev:Ev30:EV2-2B
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -6033,6 +6038,17 @@ skills:
                       - Effect_BUFF_Flood_N_23
                       - Effect_BUFF_Flood_N_24
                       - Effect_BUFF_Flood_N_25
+                      - Effect_BUFF_SelfFlooding_N_1
+                      - Effect_BUFF_SelfFlooding_N_2
+                      - Effect_BUFF_SelfFlooding_N_3
+                      - Effect_BUFF_SelfFlooding_N_4
+                      - Effect_BUFF_SelfFlooding_N_5
+                      - Effect_BUFF_SelfFlooding_N_6
+                      - Effect_BUFF_SelfFlooding_N_7
+                      - Effect_BUFF_SelfFlooding_N_8
+                      - Effect_BUFF_SelfFlooding_N_9
+                      - Effect_BUFF_SelfFlooding_N_10
+                      - Effect_BUFF_SelfFlooding_N_11
                     stack: 0
                     func: UNFILLED
                     attr: 6
@@ -6167,6 +6183,17 @@ skills:
                       - Effect_BUFF_Flood_N_23
                       - Effect_BUFF_Flood_N_24
                       - Effect_BUFF_Flood_N_25
+                      - Effect_BUFF_SelfFlooding_N_1
+                      - Effect_BUFF_SelfFlooding_N_2
+                      - Effect_BUFF_SelfFlooding_N_3
+                      - Effect_BUFF_SelfFlooding_N_4
+                      - Effect_BUFF_SelfFlooding_N_5
+                      - Effect_BUFF_SelfFlooding_N_6
+                      - Effect_BUFF_SelfFlooding_N_7
+                      - Effect_BUFF_SelfFlooding_N_8
+                      - Effect_BUFF_SelfFlooding_N_9
+                      - Effect_BUFF_SelfFlooding_N_10
+                      - Effect_BUFF_SelfFlooding_N_11
                     attr: 6
                 - false
               body:
@@ -6253,7 +6280,8 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Wraithy_N_52
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - on:
                     target: target
@@ -6283,6 +6311,17 @@ skills:
                       - Effect_BUFF_Flood_N_23
                       - Effect_BUFF_Flood_N_24
                       - Effect_BUFF_Flood_N_25
+                      - Effect_BUFF_SelfFlooding_N_1
+                      - Effect_BUFF_SelfFlooding_N_2
+                      - Effect_BUFF_SelfFlooding_N_3
+                      - Effect_BUFF_SelfFlooding_N_4
+                      - Effect_BUFF_SelfFlooding_N_5
+                      - Effect_BUFF_SelfFlooding_N_6
+                      - Effect_BUFF_SelfFlooding_N_7
+                      - Effect_BUFF_SelfFlooding_N_8
+                      - Effect_BUFF_SelfFlooding_N_9
+                      - Effect_BUFF_SelfFlooding_N_10
+                      - Effect_BUFF_SelfFlooding_N_11
                     attr: 6
                 - false
               body:

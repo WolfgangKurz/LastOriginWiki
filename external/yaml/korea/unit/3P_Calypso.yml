@@ -486,6 +486,10 @@ chart:
   - 2
   - 1
   - 2
+cv:
+  "1": {}
+  "": {}
+  M: {}
 source: []
 oneoff: false
 oathable: true
@@ -1105,14 +1109,8 @@ skills:
             - key: Effect_3P_Calypso_N_21
               on: attack_success
               if:
-                - unitCount:
-                    filter: enemy
-                    type:
-                      - 0
-                      - 2
-                      - 1
-                    count:
-                      - 1
+                - hp<=:
+                    - 30%
                 - false
               body:
                 - 0
@@ -1218,14 +1216,8 @@ skills:
             - key: Effect_3P_Calypso_N_21
               on: attack_success
               if:
-                - unitCount:
-                    filter: enemy
-                    type:
-                      - 0
-                      - 2
-                      - 1
-                    count:
-                      - 1
+                - hp<=:
+                    - 30%
                 - false
               body:
                 - 0
@@ -1331,14 +1323,8 @@ skills:
             - key: Effect_3P_Calypso_N_21
               on: attack_success
               if:
-                - unitCount:
-                    filter: enemy
-                    type:
-                      - 0
-                      - 2
-                      - 1
-                    count:
-                      - 1
+                - hp<=:
+                    - 30%
                 - false
               body:
                 - 0
@@ -1444,14 +1430,8 @@ skills:
             - key: Effect_3P_Calypso_N_21
               on: attack_success
               if:
-                - unitCount:
-                    filter: enemy
-                    type:
-                      - 0
-                      - 2
-                      - 1
-                    count:
-                      - 1
+                - hp<=:
+                    - 30%
                 - false
               body:
                 - 0
@@ -1557,14 +1537,8 @@ skills:
             - key: Effect_3P_Calypso_N_21
               on: attack_success
               if:
-                - unitCount:
-                    filter: enemy
-                    type:
-                      - 0
-                      - 2
-                      - 1
-                    count:
-                      - 1
+                - hp<=:
+                    - 30%
                 - false
               body:
                 - 0
@@ -1670,14 +1644,8 @@ skills:
             - key: Effect_3P_Calypso_N_21
               on: attack_success
               if:
-                - unitCount:
-                    filter: enemy
-                    type:
-                      - 0
-                      - 2
-                      - 1
-                    count:
-                      - 1
+                - hp<=:
+                    - 30%
                 - false
               body:
                 - 0
@@ -1783,14 +1751,8 @@ skills:
             - key: Effect_3P_Calypso_N_21
               on: attack_success
               if:
-                - unitCount:
-                    filter: enemy
-                    type:
-                      - 0
-                      - 2
-                      - 1
-                    count:
-                      - 1
+                - hp<=:
+                    - 30%
                 - false
               body:
                 - 0
@@ -1896,14 +1858,8 @@ skills:
             - key: Effect_3P_Calypso_N_21
               on: attack_success
               if:
-                - unitCount:
-                    filter: enemy
-                    type:
-                      - 0
-                      - 2
-                      - 1
-                    count:
-                      - 1
+                - hp<=:
+                    - 30%
                 - false
               body:
                 - 0
@@ -2009,14 +1965,8 @@ skills:
             - key: Effect_3P_Calypso_N_21
               on: attack_success
               if:
-                - unitCount:
-                    filter: enemy
-                    type:
-                      - 0
-                      - 2
-                      - 1
-                    count:
-                      - 1
+                - hp<=:
+                    - 30%
                 - false
               body:
                 - 0
@@ -2122,14 +2072,8 @@ skills:
             - key: Effect_3P_Calypso_N_21
               on: attack_success
               if:
-                - unitCount:
-                    filter: enemy
-                    type:
-                      - 0
-                      - 2
-                      - 1
-                    count:
-                      - 1
+                - hp<=:
+                    - 30%
                 - false
               body:
                 - 0
@@ -3021,6 +2965,38 @@ skills:
                       base: 12%
                       per: 2%
                   overlap: 4
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_3P_Calypso_N_5_2
+                    type: 1
+                    value: "0.110000"
+                    level: "0.010000"
+                  attr: 3
+                  erase: {}
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 106
+                    skill_ratio:
+                      base: 11%
+                      per: 1%
+                  overlap: 4
+                - icon: BuffIcon_CRITICAL_UP
+                  desc:
+                    desc: Effect_3P_Calypso_N_5_3
+                    type: 1
+                    value: "0.021000"
+                    level: "0.001000"
+                  attr: 3
+                  erase: {}
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 9
+                    critical:
+                      base: 2.1%
+                      per: 0.1%
+                  overlap: 4
               maxStack: 1
               overlapGroup: -1
             - key: Effect_3P_Calypso_N_51
@@ -3224,6 +3200,24 @@ skills:
             chance: 1
           - icon: BuffIcon_SKILL_UP
             desc:
+              desc: Effect_3P_Calypso_N_5_2
+              type: 1
+              value: "0.110000"
+              level: "0.010000"
+            base: 0.11
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_CRITICAL_UP
+            desc:
+              desc: Effect_3P_Calypso_N_5_3
+              type: 1
+              value: "0.021000"
+              level: "0.001000"
+            base: 0.021
+            per: 0.001
+            chance: 0
+          - icon: BuffIcon_SKILL_UP
+            desc:
               desc: Effect_3P_Calypso_N_51_1
               type: 1
               value: "0.110000"
@@ -3324,7 +3318,7 @@ dialogue:
       Idle_02_01: |-
         주인님,
         하얀 아오자이는
-        아직 결혼하지 않은 처녀들이
+        아직 결혼하지 않았던 처녀들이
         입던 옷이라 하더군요…
         다음엔 색이 있는
         아오자이를 입게 해주시면

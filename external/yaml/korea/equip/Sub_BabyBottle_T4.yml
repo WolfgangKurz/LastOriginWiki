@@ -1,0 +1,626 @@
+uid: Sub_BabyBottle_T4
+type: 2
+key: BabyBottle
+rarity: 5
+craft: false
+upgrade:
+  enchant:
+    - res: 1500
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 20
+        - item: RobotParts_MPParts
+          count: 1000
+        - item: RobotParts_AlloyArmor
+          count: 1000
+        - item: RobotParts_Booster
+          count: 1000
+        - item: RobotParts_Weapon
+          count: 1000
+        - item: RobotParts_CalculationControl
+          count: 1000
+    - res: 2325
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 40
+        - item: RobotParts_MPParts
+          count: 1500
+        - item: RobotParts_AlloyArmor
+          count: 1500
+        - item: RobotParts_Booster
+          count: 1500
+        - item: RobotParts_Weapon
+          count: 1500
+        - item: RobotParts_CalculationControl
+          count: 1500
+    - res: 3150
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 60
+        - item: RobotParts_MPParts
+          count: 2000
+        - item: RobotParts_AlloyArmor
+          count: 2000
+        - item: RobotParts_Booster
+          count: 2000
+        - item: RobotParts_Weapon
+          count: 2000
+        - item: RobotParts_CalculationControl
+          count: 2000
+    - res: 3975
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 80
+        - item: RobotParts_MPParts
+          count: 2500
+        - item: RobotParts_AlloyArmor
+          count: 2500
+        - item: RobotParts_Booster
+          count: 2500
+        - item: RobotParts_Weapon
+          count: 2500
+        - item: RobotParts_CalculationControl
+          count: 2500
+    - res: 4800
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 100
+        - item: RobotParts_MPParts
+          count: 3000
+        - item: RobotParts_AlloyArmor
+          count: 3000
+        - item: RobotParts_Booster
+          count: 3000
+        - item: RobotParts_Weapon
+          count: 3000
+        - item: RobotParts_CalculationControl
+          count: 3000
+    - res: 5625
+      item:
+        - item: Consumable_EquipProPart_T2
+          count: 5
+        - item: RobotParts_ExParts
+          count: 250
+        - item: RobotParts_SuperAlloyArmor
+          count: 250
+        - item: RobotParts_HighpowerBooster
+          count: 250
+        - item: RobotParts_HeavyWeapon
+          count: 250
+        - item: RobotParts_HDCalculationControl
+          count: 250
+    - res: 6450
+      item:
+        - item: Consumable_EquipProPart_T2
+          count: 10
+        - item: RobotParts_ExParts
+          count: 500
+        - item: RobotParts_SuperAlloyArmor
+          count: 500
+        - item: RobotParts_HighpowerBooster
+          count: 500
+        - item: RobotParts_HeavyWeapon
+          count: 500
+        - item: RobotParts_HDCalculationControl
+          count: 500
+    - res: 7275
+      item:
+        - item: Consumable_EquipProPart_T2
+          count: 15
+        - item: RobotParts_ExParts
+          count: 750
+        - item: RobotParts_SuperAlloyArmor
+          count: 750
+        - item: RobotParts_HighpowerBooster
+          count: 750
+        - item: RobotParts_HeavyWeapon
+          count: 750
+        - item: RobotParts_HDCalculationControl
+          count: 750
+    - res: 8100
+      item:
+        - item: Consumable_EquipProPart_T2
+          count: 20
+        - item: RobotParts_ExParts
+          count: 1000
+        - item: RobotParts_SuperAlloyArmor
+          count: 1000
+        - item: RobotParts_HighpowerBooster
+          count: 1000
+        - item: RobotParts_HeavyWeapon
+          count: 1000
+        - item: RobotParts_HDCalculationControl
+          count: 1000
+    - res: 8925
+      item:
+        - item: Consumable_EquipProPart_T2
+          count: 25
+        - item: RobotParts_ExParts
+          count: 1250
+        - item: RobotParts_SuperAlloyArmor
+          count: 1250
+        - item: RobotParts_HighpowerBooster
+          count: 1250
+        - item: RobotParts_HeavyWeapon
+          count: 1250
+        - item: RobotParts_HDCalculationControl
+          count: 1250
+  upgrade: null
+limit:
+  - 3P_Maria
+source:
+  - - Exc:Orca_Supplies_2:5000
+stats:
+  - - type: 4
+      hp:
+        base: 500
+        per: 0
+    - type: 12
+      turnSpeed:
+        base: 0.03
+        per: 0
+    - key: Effect_Buff_FeedingBottle_N_1
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_FeedingBottle_N_1_1
+            type: 1
+            value: "0.010000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 36
+            damage_reduce:
+              base: 1%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 600
+        per: 0
+    - type: 12
+      turnSpeed:
+        base: 0.033
+        per: 0
+    - key: Effect_Buff_FeedingBottle_N_2
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_FeedingBottle_N_2_1
+            type: 1
+            value: "0.015000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 36
+            damage_reduce:
+              base: 1.5%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 700
+        per: 0
+    - type: 12
+      turnSpeed:
+        base: 0.036
+        per: 0
+    - key: Effect_Buff_FeedingBottle_N_3
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_FeedingBottle_N_3_1
+            type: 1
+            value: "0.020000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 36
+            damage_reduce:
+              base: 2%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 800
+        per: 0
+    - type: 12
+      turnSpeed:
+        base: 0.039
+        per: 0
+    - key: Effect_Buff_FeedingBottle_N_4
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_FeedingBottle_N_4_1
+            type: 1
+            value: "0.030000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 36
+            damage_reduce:
+              base: 3%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 900
+        per: 0
+    - type: 12
+      turnSpeed:
+        base: 0.042
+        per: 0
+    - key: Effect_Buff_FeedingBottle_N_5
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_FeedingBottle_N_5_1
+            type: 1
+            value: "0.040000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 36
+            damage_reduce:
+              base: 4%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 1000
+        per: 0
+    - type: 12
+      turnSpeed:
+        base: 0.045
+        per: 0
+    - key: Effect_Buff_FeedingBottle_N_6
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_FeedingBottle_N_6_1
+            type: 1
+            value: "0.050000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 36
+            damage_reduce:
+              base: 5%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 1100
+        per: 0
+    - type: 12
+      turnSpeed:
+        base: 0.048
+        per: 0
+    - key: Effect_Buff_FeedingBottle_N_7
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_FeedingBottle_N_7_1
+            type: 1
+            value: "0.060000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 36
+            damage_reduce:
+              base: 6%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 1200
+        per: 0
+    - type: 12
+      turnSpeed:
+        base: 0.051
+        per: 0
+    - key: Effect_Buff_FeedingBottle_N_8
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_FeedingBottle_N_8_1
+            type: 1
+            value: "0.070000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 36
+            damage_reduce:
+              base: 7%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 1300
+        per: 0
+    - type: 12
+      turnSpeed:
+        base: 0.054
+        per: 0
+    - key: Effect_Buff_FeedingBottle_N_9
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_FeedingBottle_N_9_1
+            type: 1
+            value: "0.080000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 36
+            damage_reduce:
+              base: 8%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 1400
+        per: 0
+    - type: 12
+      turnSpeed:
+        base: 0.057
+        per: 0
+    - key: Effect_Buff_FeedingBottle_N_10
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_FeedingBottle_N_10_1
+            type: 1
+            value: "0.090000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 36
+            damage_reduce:
+              base: 9%
+              per: 0%
+          overlap: 4
+      maxStack: 1
+  - - type: 4
+      hp:
+        base: 1500
+        per: 0
+    - type: 12
+      turnSpeed:
+        base: 0.06
+        per: 0
+    - key: Effect_Buff_FeedingBottle_N_11
+      on: round
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_FeedingBottle_N_11_1
+            type: 1
+            value: "0.100000"
+            level: "0"
+          attr: 3
+          erase:
+            rounds: 1
+          value:
+            isBuff: true
+            type: 36
+            damage_reduce:
+              base: 10%
+              per: 0%
+          overlap: 4
+      maxStack: 1

@@ -569,6 +569,8 @@ source:
     - Ev:Ev25:EV2-3Ex
   - - Ev:Ev27:EV1-1B
     - Ev:Ev27:EV2-1B
+  - - Ev:Ev30:EV1-7
+    - Ev:Ev30:EV2-5
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -3184,7 +3186,8 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_BR_Sylphid_N_3
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - false
                 - false
@@ -3273,7 +3276,8 @@ skills:
               maxStack: 3
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_13
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - false
                 - false
@@ -3309,7 +3313,8 @@ skills:
               maxStack: 3
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_14
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - false
                 - false

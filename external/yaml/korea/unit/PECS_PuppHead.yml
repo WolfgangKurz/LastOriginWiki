@@ -532,6 +532,9 @@ source:
   - - 10:1:10-7
   - - 12:2:12-15
     - 12:3:12-9B
+  - - 13:4:13-26
+    - 13:5:13-35
+    - 13:5:13-38
   - - Ev:Ev6:Ev2-6Ex
   - - Ev:Ev9:Ev1-1Ex
     - Ev:Ev9:Ev1-2Ex
@@ -552,6 +555,9 @@ source:
     - Ev:Ev25:EV2-3Ex
   - - Ev:Ev28:EV1-2Ex
   - - Ev:Ev29:EV1-2Ex
+  - - Ev:Ev30:EV2-2
+    - Ev:Ev30:EV2-1Ex
+    - Ev:Ev30:EV2-3Ex
 oneoff: false
 oathable: false
 entryReqMap: []
@@ -1755,7 +1761,8 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_PECS_PuppHead_N_3
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - false
                 - false
@@ -1842,7 +1849,8 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_PECS_PuppHead_N_12
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - false
                 - false
@@ -1922,7 +1930,8 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_PECS_PuppHead_N_3
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - false
                 - false
@@ -2009,7 +2018,8 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_PECS_PuppHead_N_12
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - false
                 - false
@@ -2089,7 +2099,8 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_PECS_PuppHead_N_3
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - false
                 - false
@@ -2176,7 +2187,8 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_PECS_PuppHead_N_12
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - false
                 - false

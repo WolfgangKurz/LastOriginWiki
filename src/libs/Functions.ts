@@ -92,9 +92,9 @@ export function Extend (): void {
 	}
 }
 
-export function map<T, K extends string, U> (object: object, callbackfn: (value: T, index: K, object: any) => U, thisArg?: any): U[] {
+export function map<T extends O[K], K extends keyof O, U, O extends {}> (object: O, callbackfn: (value: T, index: K, object: O) => U, thisArg?: O): U[] {
 	return Object.getOwnPropertyNames(object)
-		.map(k => callbackfn((object as any)[k], k as K, object));
+		.map(k => callbackfn(object[k], k as K, object));
 }
 
 export function isActive<T> (value: boolean | ObjectState<T> | Signal<T>): "active" | "";
@@ -270,4 +270,9 @@ export function clamp (value: number, min: number = 0.0, max: number = 1.0): num
 	if (value < min) return min;
 	if (value > max) return max;
 	return value;
+}
+
+export function arrayrize<T> (value: T | T[]): T[] {
+	if (Array.isArray(value)) return value;
+	return [value];
 }

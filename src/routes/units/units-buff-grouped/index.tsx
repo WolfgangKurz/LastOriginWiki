@@ -1,7 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useMemo, useRef } from "preact/hooks";
-import { Link, route } from "preact-router";
-import Store from "@/store";
+import { Link } from "preact-router";
 
 import { ACTOR_GRADE } from "@/types/Enums";
 import { BUFFEFFECT_TYPE } from "@/types/BuffEffect";
@@ -9,15 +8,11 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import BuffCategory from "@/types/DB/BuffCategory";
 import { UnitsListProps } from "..";
 
-import { useLocale } from "@/libs/Locale";
-import { useImageExtension } from "@/libs/ImageExtension";
 import { StaticDB, useDBData } from "@/libs/Loader";
-import { AssetsRoot } from "@/libs/Const";
 import { cn } from "@/libs/Class";
 
 import Locale from "@/components/locale";
 import Badge from "@/components/Badge";
-import Separator from "@/components/Separator";
 import UnitFace from "@/components/unit-face";
 import Button from "@/components/Button";
 import Icons from "@/components/bootstrap-icon";
@@ -60,7 +55,7 @@ const UnitsBuffGrouped: FunctionalComponent<UnitsListProps> = (props) => {
 		props.list.forEach(u => {
 			const buffTypes = new Set<BUFFEFFECT_TYPE>();
 			Object.values(u.skills)
-				.flatMap(s => s.buffs.flatMap(r => r.buffs.map(v => v.type)))
+				.flatMap(s => s.buffs.flatMap(r => (r.buffs || []).map(v => v.type)))
 				.forEach(v => {
 					if (v in CombinedRefs) {
 						buffTypes.add(CombinedRefs[v]!);

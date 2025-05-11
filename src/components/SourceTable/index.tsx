@@ -85,6 +85,8 @@ const SourceTable: FunctionalComponent<SourceTableProps> = (props) => {
 				}
 				else if (f.IsDaily)
 					return <Locale k="WORLD_Daily" />;
+				else if (f.IsTraining)
+					return <Locale k="COMMON_SOURCE_TRAINING" />;
 				else if (f.IsChallenge)
 					return <Locale k={ `COMMON_CHALLENGE_${f.ChallengeName}` } />;
 				else if (f.IsSubStory)
@@ -97,9 +99,7 @@ const SourceTable: FunctionalComponent<SourceTableProps> = (props) => {
 
 				return <Locale k="???" fallback="???" />;
 			})();
-			const label = f.IsEvent
-				? <Locale k={ f.EventName } />
-				: header;
+			const label = () => (f.IsEvent ? <Locale k={ f.EventName } /> : header);
 
 			const available = (f.IsEvent && (PermanentEvents.includes(f.EventId) || CurrentEvent === f.EventId)) ||
 				(!f.IsEvent && !(f.IsDaily || f.IsChallenge || f.IsSubStory || f.IsNewEternalWar));
@@ -180,7 +180,7 @@ const SourceTable: FunctionalComponent<SourceTableProps> = (props) => {
 				<div class={ style.SectorName }>
 					<Icons.ChevronDoubleRight />
 
-					{ label }
+					{ label() }
 				</div>
 				<div class={ style.SourceSectors }>
 					{ data.map((arr, i) => <>

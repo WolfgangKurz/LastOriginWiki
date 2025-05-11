@@ -510,6 +510,7 @@ source:
   - - Ev:Ev12:Bt3-3B
   - - Ev:Ev18:EV3-2Ex
   - - Ev:Ev24:EV1-2Ex
+  - - Ev:Ev30:EV2-2Ex
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -8199,7 +8200,8 @@ skills:
           buff_rate: 100
           buffs:
             - key: Effect_DS_Charlotte_N_4
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - false
                 - false
@@ -8305,7 +8307,8 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_DS_Charlotte_N_42
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - target:
                     - Char_AGS_Goltarion_N

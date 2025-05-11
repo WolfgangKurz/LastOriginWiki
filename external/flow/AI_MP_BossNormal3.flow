@@ -1,0 +1,17 @@
+start > chance_50
+	chance_50 y skill2_usable
+		skill2_usable y skill2_near_row_2
+			skill2_near_row_2 f skill2_highest-atk
+		skill2_usable n skill1_usable
+			skill1_usable y skill1_near_row_2
+				skill1_near_row_2 f skill1_highest-atk
+			skill1_usable n cond1
+				cond1 y skill2_near_row_2
+				cond1 n cell_skill2
+					cell_skill2 y move_skill2
+					cell_skill2 n cell_skill1
+						cell_skill1 y move_skill1
+						cell_skill1 n wait
+	chance_50 n skill1_usable
+
+cond1 = skill2_usable

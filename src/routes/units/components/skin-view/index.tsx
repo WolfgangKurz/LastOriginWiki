@@ -83,7 +83,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const [cameraBoundaryAvailable, setCameraBoundaryAvailable] = useState(false);
 	const [downloadPlusCameraBoundary, setDownloadPlusCameraBoundary] = useState(true);
 	const downloadPlusAble = useMemo(
-		() => (skin.metadata.flags & (SKIN_METADATA_FLAGS.SPINE | SKIN_METADATA_FLAGS.GAMMA)) === 0 && !isDamaged,
+		() => !(skin.metadata.flags & (SKIN_METADATA_FLAGS.SPINE | SKIN_METADATA_FLAGS.GAMMA)) && !isDamaged,
 		[skin.metadata.flags, isDamaged],
 	);
 
@@ -241,7 +241,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	]);
 
 	const DisplayGamma = useMemo( // NOTE: No animated damaged yet
-		() => !!props.animate && (skin.metadata.flags & SKIN_METADATA_FLAGS.GAMMA) != 0 && !isDamaged,
+		() => !!props.animate && !!(skin.metadata.flags & SKIN_METADATA_FLAGS.GAMMA) && !isDamaged,
 		[props.animate, skin.metadata.flags, isDamaged],
 	);
 
@@ -277,11 +277,11 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		[skin.metadata.flags, props.animate, isDamaged],
 	);
 	const DisplaySpine = useMemo(
-		() => (skin.metadata.flags === SKIN_METADATA_FLAGS.SPINE) && skin.Spine && (!!props.animate || !!props.collapsed) && !isDamaged,
+		() => !!(skin.metadata.flags & SKIN_METADATA_FLAGS.SPINE) && skin.Spine && (!!props.animate || !!props.collapsed) && !isDamaged,
 		[skin.metadata.flags, props.animate, props.collapsed, isDamaged],
 	);
 	const Display2DModel = useMemo(
-		() => (isDamaged || skin.metadata.flags == SKIN_METADATA_FLAGS["2DMODEL"]) && (
+		() => (isDamaged || !!(skin.metadata.flags & SKIN_METADATA_FLAGS["2DMODEL"])) && (
 			(!isDamaged && !!skin.metadata["2dmodel"]) ||
 			(isDamaged && !!skin.metadata["2dmodel_dam"])
 		),
@@ -674,7 +674,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 						>
 							{ faceList.map(f => {
 								const ft = FACETYPE[f.toUpperCase()];
-								return <option value={ f }>
+								return <option value={ f } data-raw={ ft }>
 									{ ft
 										? <Locale k={ `FACE_TYPE_${ft}` } />
 										: f.toUpperCase()

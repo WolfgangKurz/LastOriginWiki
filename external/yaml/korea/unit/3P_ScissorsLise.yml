@@ -586,6 +586,8 @@ source:
   - - Ev:Ev24:EV1-4B
   - - Ev:Ev26:EV1-9
   - - Ev:Ev27:EV2-2B
+  - - Ev:Ev30:EV1-2
+    - Ev:Ev30:EV2-2
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2958,7 +2960,8 @@ skills:
               maxStack: 0
               overlapGroup: -1
             - key: Effect_3P_ScissorsLise_N_31
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - false
                 - false
@@ -2994,7 +2997,8 @@ skills:
               maxStack: 1
               overlapGroup: -1
             - key: Effect_3P_ScissorsLise_N_32
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - false
                 - false

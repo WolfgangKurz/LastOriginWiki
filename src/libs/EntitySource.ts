@@ -127,6 +127,19 @@ export default class EntitySource {
 	}
 	// -------------- 이벤트
 
+	// -------------- 전술 훈련실
+	/** 전술 훈련실 보상 여부 */
+	public get IsTraining (): boolean {
+		return this.Parts[0].startsWith("*TR");
+	}
+
+	/** 외부 통신 요청의 챌린지 Id */
+	public get TrainingId (): string {
+		if (!this.IsTraining) return "";
+		return this.Parts[1];
+	}
+	// -------------- 전술 훈련실
+
 	// -------------- 외부 통신 요청
 	/** 외부 통신 요청의 보상 여부 */
 	public get IsChallenge (): boolean {
@@ -202,7 +215,7 @@ export default class EntitySource {
 			this.IsEternalWarExchange, this.IsNewEternalWarExchange,
 			this.IsNewEternalWar, this.IsInfiniteWar,
 			this.IsSubStory, this.IsExchange, this.IsAltiteExchange,
-			this.IsLimited, this.IsPrivateItem, this.IsChallenge,
+			this.IsLimited, this.IsPrivateItem, this.IsChallenge, this.IsTraining,
 			this.IsUninstalled, this.IsRoguelike,
 		].some(x => x);
 	}
@@ -215,6 +228,8 @@ export default class EntitySource {
 				: this.Parts[2][0] === "*";
 		} else if (this.IsChallenge)
 			return this.Parts[0][0] === "*";
+		else if (this.IsTraining)
+			return true;
 
 		return this.Parts.length > 2 && this.Parts[2][0] === "*";
 	}
@@ -361,6 +376,9 @@ export default class EntitySource {
 		if (this.IsChallenge)
 			output.push("Challenge");
 
+		if (this.IsTraining)
+			output.push("Training");
+
 		else if (this.IsEternalWarExchange)
 			output.push("EWR");
 		else if (this.IsNewEternalWarExchange)
@@ -400,6 +418,9 @@ export default class EntitySource {
 
 		if (this.IsLimited)
 			output.push("Limit");
+
+		if (this.IsTraining)
+			output.push(`*Training:${this.TrainingId}`);
 
 		if (this.IsChallenge) {
 			if (this.IsReward)

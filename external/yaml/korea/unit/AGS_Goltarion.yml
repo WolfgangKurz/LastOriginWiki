@@ -498,6 +498,7 @@ source:
   - - Ev:Ev17:EV3-2Ex
   - - Ev:Ev19:EV2-3Ex
   - - Ev:Ev22:EV1-6
+  - - Ev:Ev30:EV1-3
 oneoff: false
 oathable: false
 entryReqMap: []
@@ -3255,7 +3256,8 @@ skills:
               maxStack: 1
               overlapGroup: -1
             - key: Effect_AGS_Goltarion_N_35
-              on: attack_success
+              on:
+                attack_success: passive
               if:
                 - on:
                     func: OR

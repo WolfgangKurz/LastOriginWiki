@@ -948,6 +948,14 @@ export enum FACETYPE {
 	TEMPTATION3,
 	WINK,
 	DESPISE,
+	FIERCE,
+	CONFUSION,
+	URGENT,
+	DROWSY,
+	ORGASM,
+	FURY,
+	ANNOYANCE,
+	AROUSE,
 }
 
 /** 가챠(유산) 타입 */

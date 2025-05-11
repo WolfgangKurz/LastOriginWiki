@@ -284,7 +284,7 @@ const Units: FunctionalComponent = () => {
 					return false;
 				case ConditionCategory.Buff:
 					return GetSkills(x.skills, GetFlags(c.slot))
-						.some(s => s.buffs.some(r => {
+						.some(s => s.buffs.filter(r => !("unknown" in r)).some(r => {
 							if (c.class !== undefined && !r.class.includes(c.class)) return false;
 							if (c.role !== undefined && !r.role.includes(c.role)) return false;
 							if (c.body !== undefined && !r.body.includes(c.body)) return false;
@@ -320,7 +320,7 @@ const Units: FunctionalComponent = () => {
 						}));
 				case ConditionCategory.BuffName:
 					return GetSkills(x.skills, GetFlags(c.slot))
-						.some(s => s.buffs.some(r => {
+						.some(s => s.buffs.filter(r => !("unknown" in r)).some(r => {
 							const nameRegex = /^(.+)([：:].+)$/;
 
 							if (c.target !== undefined) {
