@@ -145,6 +145,7 @@ export enum BUFFEFFECT_TYPE {
 	WIDE_SKILL_RATIO = 138,
 	WIDE_DAMAGE_RATIO = 139,
 	STAGE_DOUBLE_ATTACK_RATIO = 140,
+	RESIST_CHECK_ATTACK_POWER = 141,
 }
 
 export type BuffEffect = BuffEffect_Base & {
@@ -168,7 +169,8 @@ type BuffEffect_Body = BuffEffect_Unknown | BuffEffect_Off | BuffEffect_Attack |
 	BuffEffect_Immovable | BuffEffect_SkillDisable | BuffEffect_Revive | BuffEffect_AttackTarget | BuffEffect_InvokeChance |
 	BuffEffect_SummonRemove | BuffEffect_PenetrationForce | BuffEffect_Exp | BuffEffect_DebuffImmune | BuffEffect_Collaborate |
 	BuffEffect_MaxHP | BuffEffect_SkillRatio | BuffEffect_SkillRange | BuffEffect_Disperse | BuffEffect_ValueBy | BuffEffect_LessTarget |
-	BuffEffect_ActCount | BuffEffect_GuardPierceApply | BuffEffect_BuffDisallow | BuffEffect_Wide | BuffEffect_ReuseSkill;
+	BuffEffect_ActCount | BuffEffect_GuardPierceApply | BuffEffect_BuffDisallow | BuffEffect_Wide | BuffEffect_ReuseSkill |
+	BuffEffect_Minimum_Resist;
 
 // #region BuffEffect
 interface BuffEffect_Unknown {
@@ -493,6 +495,10 @@ interface BuffEffect_Wide {
 
 interface BuffEffect_ReuseSkill {
 	reuse_skill: true;
+}
+
+interface BuffEffect_Minimum_Resist {
+	min_resist: "none" | "fire" | "ice" | "lightning";
 }
 //#endregion
 

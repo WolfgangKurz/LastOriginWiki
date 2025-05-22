@@ -782,6 +782,10 @@ export const ArtistLinks: Record<string, Partial<Record<ArtistLinkType, string>>
 		X: "https://x.com/ovvv",
 		Pixiv: "https://www.pixiv.net/users/17606",
 	},
+	"かえぬこ(Kaenuco)": {
+		X: "https://x.com/kaenuco",
+		Pixiv: "https://www.pixiv.net/users/6993449",
+	},
 	"きろめ(Kirome)": {
 		X: "https://x.com/kirome65535",
 		Pixiv: "https://www.pixiv.net/users/707293",
