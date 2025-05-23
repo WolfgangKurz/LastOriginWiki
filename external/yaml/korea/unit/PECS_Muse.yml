@@ -10,6 +10,19 @@ slots:
   - 0
   - 1
   - 2
+promotions:
+  - to: 5
+    level: 90
+    favor: "100"
+    req:
+      - id: Consumable_OriginDustAdv
+        count: 450
+      - id: Consumable_OriginDustSp
+        count: 150
+      - id: Special_Module
+        count: 100
+      - id: RobotParts_HDCalculationControl
+        count: 150
 lvLimits:
   - level: 101
     items:
@@ -480,6 +493,23 @@ stat:
       fire: 0
       ice: 0
       lightning: 0
+  - HP:
+      - 442
+      - 2857.6
+    ATK:
+      - 46
+      - 493.48
+    DEF:
+      - 34
+      - 243.88
+    SPD: 4.18
+    CRI: 12.5
+    ACC: 145
+    EVA: 37
+    Resist:
+      fire: 0
+      ice: 0
+      lightning: 0
 chart:
   - 2
   - 6
@@ -493,6 +523,7 @@ cv:
     jp: 紫苑雪
     jpdmm: 紫苑雪
   "2": {}
+  "3": {}
   "":
     ko: ""
     jp: 紫苑雪
@@ -1413,6 +1444,563 @@ skills:
             base: 1
             per: 0
             chance: 1
+  "5":
+    key: "5"
+    icon: P.TeamDefBuff
+    target: team
+    delayed: false
+    target_ground: true
+    leastGrade: 5
+    buffs:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - rate: 0
+          type: 0
+          range: 0
+          ap: 0
+          grid: F>1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_PECS_Muse_N_5
+              on:
+                use_skill: 2
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Muse_N_2
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_PECS_Muse_N_5_1
+                    type: 1
+                    value: "0.320000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 1
+                    attack:
+                      base: 32%
+                      per: 2%
+                  overlap: 4
+                - icon: BuffIcon_DEF_UP
+                  desc:
+                    desc: Effect_PECS_Muse_N_5_2
+                    type: 1
+                    value: "0.320000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 3
+                    defense:
+                      base: 32%
+                      per: 2%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_PECS_Muse_N_5_3
+                    type: 1
+                    value: "0.320000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 11
+                    evade:
+                      base: 32%
+                      per: 2%
+                  overlap: 4
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_PECS_Muse_N_5_4
+                    type: 1
+                    value: "0.256000"
+                    level: "0.016000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 58
+                    penetration:
+                      base: 25.6%
+                      per: 1.6%
+                  overlap: 4
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_PECS_Muse_N_5_5
+                    type: 1
+                    value: "0.110000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 13
+                    turnSpeed:
+                      base: 11%
+                      per: 1%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_PECS_Muse_N_51
+              on:
+                use_skill: 2
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Muse_N_2
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_DEF_UP
+                  desc:
+                    desc: Effect_PECS_Muse_N_51_1
+                    type: 1
+                    value: "0.320000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: 32%
+                      per: 2%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_PECS_Muse_N_52
+              on:
+                use_skill: 2
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Muse_N_2
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_EVADE_UP
+                  desc:
+                    desc: Effect_PECS_Muse_N_52_1
+                    type: 1
+                    value: "0.320000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: 32%
+                      per: 2%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_PECS_Muse_N_53
+              on:
+                use_skill: 2
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Muse_N_2
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_PECS_Muse_N_53_1
+                    type: 1
+                    value: "0.256000"
+                    level: "0.016000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: 25.6%
+                      per: 1.6%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_PECS_Muse_N_54
+              on:
+                use_skill: 2
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Muse_N_2
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_PECS_Muse_N_54_1
+                    type: 1
+                    value: "0.110000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: 11%
+                      per: 1%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_PECS_Muse_N_55
+              on:
+                beaten: ally
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Erato_N_47
+                    attr: 6
+                - on:
+                    target: target
+                    select:
+                      - Effect_PECS_Muse_N_56
+                    stack: 0
+                    func: UNFILLED
+                    attr: 6
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_DEF_RESSURRECT
+                  desc:
+                    desc: Effect_PECS_Muse_N_55_1
+                    type: 1
+                    value: "0.500000"
+                    level: "0"
+                  attr: 3
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 98
+                    revive:
+                      base: 50%
+                      per: 0%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_PECS_Muse_N_56
+              on:
+                beaten: ally
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Erato_N_47
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_PECS_Muse_N_56_1
+                    type: 1
+                    value: "0.050000"
+                    level: "0"
+                  attr: 3
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 36
+                    damage_reduce:
+                      base: 5%
+                      per: 0%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+            - key: Effect_PECS_Muse_N_57
+              on:
+                beaten: ally
+              if:
+                - on:
+                    target: target
+                    func: OR
+                    select:
+                      - Effect_PECS_Erato_N_47
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: ""
+                  desc:
+                    desc: Effect_PECS_Muse_N_57_1
+                    type: 1
+                    value: Effect_PECS_Erato_N_47
+                    level: "0"
+                  attr: 3
+                  erase: {}
+                  value:
+                    isBuff: true
+                    type: 97
+                    off: Effect_PECS_Erato_N_47
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_PECS_Muse_N_5_1
+              type: 1
+              value: "0.320000"
+              level: "0.020000"
+            base: 0.32
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_DEF_UP
+            desc:
+              desc: Effect_PECS_Muse_N_5_2
+              type: 1
+              value: "0.320000"
+              level: "0.020000"
+            base: 0.32
+            per: 0.02
+            chance: 0
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_PECS_Muse_N_5_3
+              type: 1
+              value: "0.320000"
+              level: "0.020000"
+            base: 0.32
+            per: 0.02
+            chance: 0
+          - icon: BuffIcon_DEF_PIERCE_UP
+            desc:
+              desc: Effect_PECS_Muse_N_5_4
+              type: 1
+              value: "0.256000"
+              level: "0.016000"
+            base: 0.256
+            per: 0.016
+            chance: 0
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_PECS_Muse_N_5_5
+              type: 1
+              value: "0.110000"
+              level: "0.010000"
+            base: 0.11
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_DEF_UP
+            desc:
+              desc: Effect_PECS_Muse_N_51_1
+              type: 1
+              value: "0.320000"
+              level: "0.020000"
+            base: 0.32
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_EVADE_UP
+            desc:
+              desc: Effect_PECS_Muse_N_52_1
+              type: 1
+              value: "0.320000"
+              level: "0.020000"
+            base: 0.32
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_DEF_PIERCE_UP
+            desc:
+              desc: Effect_PECS_Muse_N_53_1
+              type: 1
+              value: "0.256000"
+              level: "0.016000"
+            base: 0.256
+            per: 0.016
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_PECS_Muse_N_54_1
+              type: 1
+              value: "0.110000"
+              level: "0.010000"
+            base: 0.11
+            per: 0.01
+            chance: 1
+          - icon: BuffIcon_DEF_RESSURRECT
+            desc:
+              desc: Effect_PECS_Muse_N_55_1
+              type: 1
+              value: "0.500000"
+              level: "0"
+            base: 0.5
+            per: 0
+            chance: 1
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_PECS_Muse_N_56_1
+              type: 1
+              value: "0.050000"
+              level: "0"
+            base: 0.05
+            per: 0
+            chance: 1
+          - icon: ""
+            desc:
+              desc: Effect_PECS_Muse_N_57_1
+              type: 1
+              value: Effect_PECS_Erato_N_47
+              level: "0"
+            value: Effect_PECS_Erato_N_47
+            chance: 1
 dialogue:
   KR:
     "1":
@@ -1546,6 +2134,87 @@ dialogue:
         가사밖에 떠오르지 않아서…
         사랑 노래밖에 쓸 수 없게 되어버렸어요…
       MVP: 제, 제가 최고라고요? 와. 우와. 감사합니다. 하하하.
+    "3":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: |-
+        프로듀서…
+        이 옷은 프로듀서가
+        특히나 좋아하는 옷이라고 해서
+        입어봤어요…​
+        체중 관리를 안 하다 입어서
+        살짝 부끄러운데…
+        프로듀서가 보기엔
+        괜찮으신 거죠?
+        …네엣? 뛰, 뛰어보라고요?!​
+        깡총… 까앙… 총… 후아… 아앙…​
+      Idle_01_02: |-
+        프로듀서…
+        좋아해 주시는건 고마운데요….
+        그, 스티커는 떼지 말아줘요…​
+        이렇게까지 부끄러웠던 적은
+        없었단 말이에요…!
+      Idle_01_03: |-
+        새로운 컨셉에 팬 분들이
+        환호해주시는 건 언제나 행복하지만…
+        프로듀서가 제일 좋아해 주신다는
+        사실이 절 더욱 기쁘게 해요.​
+      SPIdle_01_01: |-
+        프로듀서…
+        공연이 끝날 때 까지만 기다려주세요…​
+      Idle_02_01: |-
+        산 토끼 토끼야아~
+        어디를 가느냐~♪
+        깡총 깡총 뛰면서…
+        어디를 가~느~냐! ♪
+        프로듀서어… 귀여운 뮤즈가…
+        프로듀서의 허벅지 위까지
+        깡총 왔어요… 헤헤…
+      Idle_03_01: |-
+        프로듀서…
+        정말 제 부끄러운 모습이
+        보고 싶으신 건가요?
+        너무 짓궂으세요…
+        알았어요…
+        어, 얼굴을 가리고오…
+        이렇게에… 흐으응…​
+      Idle_04_01: |-
+        전 누군가한테 주목 받는게… 무서웠어요…
+        모든 사람들이 싫어하고… 실망할까 봐요…
+        하지만 1호 팬만큼은 저의 이런 점까지
+        모두 응원해 주고, 지지해 줬죠.
+        오늘 밤… 그 1호 팬과 함께하는
+        듀엣 공연에 프로듀서를 초대할게요♥​
+      SPIdle_02_01: |-
+        프로듀서 달링…
+        어서 이 귀여운 토끼를…
+        앙… 하고 마구마구…
+        잡아먹어주세요오…♥​
+      Oath: |-
+        제가 처음 도전하는 컨셉의 의상이라… 걱정 됐는데… 정말 많은 환호를 받았어요.​ 프로듀서가 응원해주신 덕분에…
+        용기 낼 수 있었는걸요? 준비한 공연은 모두 끝났지만… 이대로 막을 내리긴 아쉽네요. 제 1호 팬인 프로듀서에게
+        패… 팬서비스를 해드리고 싶어요. 단 둘만의 비밀 뒷풀이… 참가를 부탁드립니다, 프로듀서 달링…♥
+      OathIdle_01: |-
+        프로듀서도 1호 팬이 생긴 거 아세요?
+        바로 만인의 아이돌인 뮤즈에요…
+        영원히 이 마음 변치 않을 게요…♥
+        달링도 몇 번이고 절… 즐겁게 해 주실 거죠?
+      MVP: ""
     "":
       Join: 뮤즈, 입니다… 잘, 잘 부탁… 부탁드립… 으...
       SquadJoin: 그, 그냥... 방에 있으면 안될까요...?
@@ -1703,6 +2372,35 @@ dialogue:
         この服を着た時から覚悟していました。い、いえ……期待、していました。
       Oath: ほ、本当に、本当ですか？本当に、私に…ですか……？ああ…、この…ドレスを着れただけでも十分だったのに、それだけでもう今日という日が…世界一幸せな日になっていたのに……こんな素敵なものまでもらえるなんて……こんなに幸せなことがあっていいのでしょうか？愛しています、ダーリン。
       OathIdle_01: ど、どうしよう……私、頭がどうにかなってしまったみたいです…だから……その、ダーリンを見ると……頭の中にロマンチックな歌詞しか浮かんでこなくて……愛の歌しか作れなくなってしまいました……
+      MVP: ""
+    "3":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: ミューズ、です……。よ、よしく…よろしく…お願いしま…うぅ…
@@ -1885,6 +2583,35 @@ dialogue:
         When I look at you… I can only think of
         romantic lyrics… I can only
         write love songs…
+      MVP: ""
+    "3":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: I am, Muse. N-nice to m-meet… Phew…
@@ -2109,6 +2836,35 @@ dialogue:
         浮現浪漫的歌詞…
         害人家只能寫情歌了啦…
       MVP: ""
+    "3":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: 我是，繆斯…請，請多多…關照…呃…
       SquadJoin: ""
@@ -2312,3 +3068,37 @@ skins:
         flags: 1
         2dmodel: 2DModel_PECS_Muse_NS2
         consumableKey: Skin_PECS_Muse_2
+    - sid: 3
+      artist: きろめ(Kirome)
+      price: 182
+      G: true
+      Spine: true
+      parts: 78
+      stage: false
+      subset:
+        - true
+        - true
+        - false
+        - false
+        - false
+        - true
+        - false
+        - false
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - Bunny_Girl
+      facelist: []
+      releaseDate: 1747872000000
+      metadata:
+        imageId: 3
+        iconId: 3
+        tbarId: 3
+        voiceId: 3
+        flags: 2
+        2dmodel_dam: 2DModel_PECS_Muse_NS3_Dam
+        consumableKey: Skin_PECS_Muse_3

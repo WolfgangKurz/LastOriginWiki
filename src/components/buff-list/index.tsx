@@ -789,6 +789,10 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						return <Locale raw={ false } k="BUFFTYPE_WIDE_SKILL_RATIO" />; // 광역 스킬 위력 증감
 					case BUFFEFFECT_TYPE.WIDE_DAMAGE_RATIO: // 139
 						return <Locale raw={ false } k="BUFFTYPE_WIDE_DAMAGE_RATIO" />; // 사용처 없음, 광역 피해량 증감?
+					case BUFFEFFECT_TYPE.STAGE_DOUBLE_ATTACK_RATIO: // 140
+						return <Locale raw={ false } k="BUFFTYPE_STAGE_DOUBLE_ATTACK_RATIO" />; // 사용처 없음, 공격력 2배?
+					case BUFFEFFECT_TYPE.RESIST_CHECK_ATTACK_POWER: // 141
+						return <Locale raw={ false } k="BUFFTYPE_RESIST_CHECK_ATTACK_POWER" />;
 				}
 				return <>{ type }</>;
 			})() }
@@ -1677,10 +1681,34 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 			/>;
 		} else if ("reuse_skill" in stat) {
 			return <Locale raw={ false } k="BUFFEFFECT_REUSE_SKILL" />;
+		} else if ("min_resist" in stat) {
+			let elem = <>???</>;
+
+			switch (stat.min_resist) {
+				case "fire":
+					elem = <>
+						<ElemIcon elem="fire" inline />
+						<Locale raw={ false } k="COMMON_ELEM_FIRE" />
+					</>;
+					break;
+				case "ice":
+					elem = <>
+						<ElemIcon elem="ice" inline />
+						<Locale raw={ false } k="COMMON_ELEM_ICE" />
+					</>;
+					break;
+				case "lightning":
+					elem = <>
+						<ElemIcon elem="lightning" inline />
+						<Locale raw={ false } k="COMMON_ELEM_ELECTRIC" />
+					</>;
+					break;
+			}
+			return <Locale raw={ false } k="BUFFEFFECT_RESIST_CHECK_ATTACK_POWER" p={ [elem] } />;
 		}
 
 		return <>{ JSON.stringify(stat) }</>; // "???";
-	}
+	};
 	function getEraseText (erase: BuffErase): preact.VNode {
 		if ("trigger" in erase) {
 			const trigger = getTriggerText(erase.trigger);

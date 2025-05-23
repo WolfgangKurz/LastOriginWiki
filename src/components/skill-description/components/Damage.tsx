@@ -13,7 +13,7 @@ interface DamageProps {
 	multiplier: number;
 	bonus?: number;
 
-	elem?: ElemType;
+	elem?: ElemType | ElemType[];
 }
 
 const elemTable: Record<string, "" | "physics" | "fire" | "ice" | "lightning"> = {
@@ -49,22 +49,29 @@ export const Damage: FunctionalComponent<DamageProps> = (props) => {
 		</span>
 		: undefined;
 
-	const el = elemTable[props.elem || "physics"];
+	const els = !props.elem
+		? [elemTable[""]]
+		: (Array.isArray(props.elem) ? props.elem : [props.elem])
+			.map(r => elemTable[r]);
 
-	let elNode: preact.VNode | undefined;
-	if (el) elNode = elDisp[el];
+	const elNodes: preact.VNode[] = els
+		.map(v => elDisp[v])
+		.gap(<>・</>);
 
 	return <Section typ="dmg">
-		{ el && <ElemIcon elem={ el } inline /> }
+		{ els
+			.map(el => el && <ElemIcon elem={ el } inline />)
+			.filter(el => el)
+		}
 
 		<Locale
-			k="skill_description_damage"
+			k={ Array.isArray(props.elem) ? "skill_description_adaptive_damage" : "skill_description_damage" }
 			p={ [
 				<span class={ style.Damage }>
 					<span data-bonus={ bonus.toNumber() }>{ v }</span>
 					{ valueHelp }
 				</span>,
-				elNode || <></>,
+				<>{ elNodes }</>,
 			] }
 		/>
 	</Section >;

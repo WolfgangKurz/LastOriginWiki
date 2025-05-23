@@ -111,7 +111,12 @@ const SkillDescription: FunctionalComponent<SkillDescriptionProps> = (props) => 
 			(p) => createElement("span", { class: "text-secondary" }, p.children);
 
 		const dmg: FunctionalComponent<unknown> =
-			(p) => createElement(Components.Damage, { ...p, multiplier: rates[props.level], bonus: props.skillBonus });
+			(p) => createElement(Components.Damage, {
+				...p,
+				elem: ((p as any).elem as (string | undefined) ?? "").split(",") as any[],
+				multiplier: rates[props.level],
+				bonus: props.skillBonus
+			});
 
 		const edmg: FunctionalComponent<unknown> =
 			(p) => createElement(Components.EnemyDamage, { ...p, multiplier: rates[props.level] });

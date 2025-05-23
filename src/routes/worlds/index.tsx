@@ -55,6 +55,16 @@ const Worlds: FunctionalComponent = () => {
 		<hr />
 
 		<h4>
+			<Locale k="WORLDS_SUBSTORY_CHALLENGE" components={ { IconDot: Icons.Dot } } />
+		</h4>
+		<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
+			{ Subs.map(item => <div class="col">
+				<WorldItem linked wid={ item } />
+			</div>) }
+		</div>
+		<hr />
+
+		<h4>
 			<Locale k="WORLDS_PERMANENT_EVENT" components={ { IconDot: Icons.Dot } } />
 		</h4>
 		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 text-center">
@@ -68,16 +78,6 @@ const Worlds: FunctionalComponent = () => {
 						<Locale k={ `WORLD_${item}` } />
 					</span>
 				</Link>
-			</div>) }
-		</div>
-		<hr />
-
-		<h4>
-			<Locale k="WORLDS_SUBSTORY_CHALLENGE" components={ { IconDot: Icons.Dot } } />
-		</h4>
-		<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
-			{ Subs.map(item => <div class="col">
-				<WorldItem linked wid={ item } />
 			</div>) }
 		</div>
 		<hr />
