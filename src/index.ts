@@ -19,7 +19,7 @@ SetupLibraries();
 
 YAML.ensure().then(() => {
 	const verCheck = () => {
-		const buildtimeYaml = `!/buildtime.yml?_=${Date.now()}`;
+		const buildtimeYaml = "!/buildtime.yml";
 		JsonLoaderCore("!", buildtimeYaml)
 			.then(() => {
 				const latestBuildNo = GetJson<number>(buildtimeYaml);
