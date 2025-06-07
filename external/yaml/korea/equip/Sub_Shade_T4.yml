@@ -1,0 +1,593 @@
+uid: Sub_Shade_T4
+type: 2
+key: Shade
+rarity: 5
+craft: false
+upgrade:
+  enchant:
+    - res: 1500
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 20
+        - item: RobotParts_MPParts
+          count: 1000
+        - item: RobotParts_AlloyArmor
+          count: 1000
+        - item: RobotParts_Booster
+          count: 1000
+        - item: RobotParts_Weapon
+          count: 1000
+        - item: RobotParts_CalculationControl
+          count: 1000
+    - res: 2325
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 40
+        - item: RobotParts_MPParts
+          count: 1500
+        - item: RobotParts_AlloyArmor
+          count: 1500
+        - item: RobotParts_Booster
+          count: 1500
+        - item: RobotParts_Weapon
+          count: 1500
+        - item: RobotParts_CalculationControl
+          count: 1500
+    - res: 3150
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 60
+        - item: RobotParts_MPParts
+          count: 2000
+        - item: RobotParts_AlloyArmor
+          count: 2000
+        - item: RobotParts_Booster
+          count: 2000
+        - item: RobotParts_Weapon
+          count: 2000
+        - item: RobotParts_CalculationControl
+          count: 2000
+    - res: 3975
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 80
+        - item: RobotParts_MPParts
+          count: 2500
+        - item: RobotParts_AlloyArmor
+          count: 2500
+        - item: RobotParts_Booster
+          count: 2500
+        - item: RobotParts_Weapon
+          count: 2500
+        - item: RobotParts_CalculationControl
+          count: 2500
+    - res: 4800
+      item:
+        - item: Consumable_EquipProPart_T1
+          count: 100
+        - item: RobotParts_MPParts
+          count: 3000
+        - item: RobotParts_AlloyArmor
+          count: 3000
+        - item: RobotParts_Booster
+          count: 3000
+        - item: RobotParts_Weapon
+          count: 3000
+        - item: RobotParts_CalculationControl
+          count: 3000
+    - res: 5625
+      item:
+        - item: Consumable_EquipProPart_T2
+          count: 5
+        - item: RobotParts_ExParts
+          count: 250
+        - item: RobotParts_SuperAlloyArmor
+          count: 250
+        - item: RobotParts_HighpowerBooster
+          count: 250
+        - item: RobotParts_HeavyWeapon
+          count: 250
+        - item: RobotParts_HDCalculationControl
+          count: 250
+    - res: 6450
+      item:
+        - item: Consumable_EquipProPart_T2
+          count: 10
+        - item: RobotParts_ExParts
+          count: 500
+        - item: RobotParts_SuperAlloyArmor
+          count: 500
+        - item: RobotParts_HighpowerBooster
+          count: 500
+        - item: RobotParts_HeavyWeapon
+          count: 500
+        - item: RobotParts_HDCalculationControl
+          count: 500
+    - res: 7275
+      item:
+        - item: Consumable_EquipProPart_T2
+          count: 15
+        - item: RobotParts_ExParts
+          count: 750
+        - item: RobotParts_SuperAlloyArmor
+          count: 750
+        - item: RobotParts_HighpowerBooster
+          count: 750
+        - item: RobotParts_HeavyWeapon
+          count: 750
+        - item: RobotParts_HDCalculationControl
+          count: 750
+    - res: 8100
+      item:
+        - item: Consumable_EquipProPart_T2
+          count: 20
+        - item: RobotParts_ExParts
+          count: 1000
+        - item: RobotParts_SuperAlloyArmor
+          count: 1000
+        - item: RobotParts_HighpowerBooster
+          count: 1000
+        - item: RobotParts_HeavyWeapon
+          count: 1000
+        - item: RobotParts_HDCalculationControl
+          count: 1000
+    - res: 8925
+      item:
+        - item: Consumable_EquipProPart_T2
+          count: 25
+        - item: RobotParts_ExParts
+          count: 1250
+        - item: RobotParts_SuperAlloyArmor
+          count: 1250
+        - item: RobotParts_HighpowerBooster
+          count: 1250
+        - item: RobotParts_HeavyWeapon
+          count: 1250
+        - item: RobotParts_HDCalculationControl
+          count: 1250
+  upgrade: null
+limit:
+  - PECS_Muse
+source:
+  - - Altite:1000
+stats:
+  - - type: 12
+      turnSpeed:
+        base: 0.08
+        per: 0
+    - key: Effect_Buff_Shade_N_1
+      on:
+        attack_success: ally
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_Shade_N_1_1
+            type: 0
+            value: "0.030000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 20
+            ap:
+              base: 0.03
+              per: 0
+          overlap: 4
+      maxStack: 0
+  - - type: 12
+      turnSpeed:
+        base: 0.088
+        per: 0
+    - key: Effect_Buff_Shade_N_2
+      on:
+        attack_success: ally
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_Shade_N_2_1
+            type: 0
+            value: "0.060000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 20
+            ap:
+              base: 0.06
+              per: 0
+          overlap: 4
+      maxStack: 0
+  - - type: 12
+      turnSpeed:
+        base: 0.096
+        per: 0
+    - key: Effect_Buff_Shade_N_3
+      on:
+        attack_success: ally
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_Shade_N_3_1
+            type: 0
+            value: "0.090000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 20
+            ap:
+              base: 0.09
+              per: 0
+          overlap: 4
+      maxStack: 0
+  - - type: 12
+      turnSpeed:
+        base: 0.104
+        per: 0
+    - key: Effect_Buff_Shade_N_4
+      on:
+        attack_success: ally
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_Shade_N_4_1
+            type: 0
+            value: "0.120000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 20
+            ap:
+              base: 0.12
+              per: 0
+          overlap: 4
+      maxStack: 0
+  - - type: 12
+      turnSpeed:
+        base: 0.112
+        per: 0
+    - key: Effect_Buff_Shade_N_5
+      on:
+        attack_success: ally
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_Shade_N_5_1
+            type: 0
+            value: "0.150000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 20
+            ap:
+              base: 0.15
+              per: 0
+          overlap: 4
+      maxStack: 0
+  - - type: 12
+      turnSpeed:
+        base: 0.12
+        per: 0
+    - key: Effect_Buff_Shade_N_6
+      on:
+        attack_success: ally
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_Shade_N_6_1
+            type: 0
+            value: "0.180000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 20
+            ap:
+              base: 0.18
+              per: 0
+          overlap: 4
+      maxStack: 0
+  - - type: 12
+      turnSpeed:
+        base: 0.128
+        per: 0
+    - key: Effect_Buff_Shade_N_7
+      on:
+        attack_success: ally
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_Shade_N_7_1
+            type: 0
+            value: "0.210000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 20
+            ap:
+              base: 0.21
+              per: 0
+          overlap: 4
+      maxStack: 0
+  - - type: 12
+      turnSpeed:
+        base: 0.136
+        per: 0
+    - key: Effect_Buff_Shade_N_8
+      on:
+        attack_success: ally
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_Shade_N_8_1
+            type: 0
+            value: "0.240000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 20
+            ap:
+              base: 0.24
+              per: 0
+          overlap: 4
+      maxStack: 0
+  - - type: 12
+      turnSpeed:
+        base: 0.144
+        per: 0
+    - key: Effect_Buff_Shade_N_9
+      on:
+        attack_success: ally
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_Shade_N_9_1
+            type: 0
+            value: "0.270000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 20
+            ap:
+              base: 0.27
+              per: 0
+          overlap: 4
+      maxStack: 0
+  - - type: 12
+      turnSpeed:
+        base: 0.152
+        per: 0
+    - key: Effect_Buff_Shade_N_10
+      on:
+        attack_success: ally
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_Shade_N_10_1
+            type: 0
+            value: "0.300000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 20
+            ap:
+              base: 0.3
+              per: 0
+          overlap: 4
+      maxStack: 0
+  - - type: 12
+      turnSpeed:
+        base: 0.16
+        per: 0
+    - key: Effect_Buff_Shade_N_11
+      on:
+        attack_success: ally
+      if:
+        - false
+        - false
+      body:
+        - 0
+        - 1
+      class:
+        - 0
+        - 1
+        - 2
+      role:
+        - 0
+        - 1
+        - 2
+      target: 0
+      buffs:
+        - icon: BuffIcon_AP_UP
+          desc:
+            desc: Effect_Buff_Shade_N_11_1
+            type: 0
+            value: "0.330000"
+            level: "0"
+          attr: 0
+          erase:
+            rounds: 0
+          value:
+            isBuff: true
+            type: 20
+            ap:
+              base: 0.33
+              per: 0
+          overlap: 4
+      maxStack: 0
