@@ -1779,7 +1779,7 @@ export default {
 		"filterable.enemy": "b4c9820a",
 		"filterable.equip": "b0364bfc",
 		"filterable.facility": "b3f0e54b",
-		"filterable.unit": "430c9a02",
+		"filterable.unit": "1e404047",
 		"gacha": "9591957f",
 		"iw": {
 			"Colossus_01": "cdebeca4",
@@ -5033,7 +5033,7 @@ export default {
 			"BR_Hyena": "2e541bf2",
 			"BR_Impet": "52e616a2",
 			"BR_InvDragon": "1a8d36ae",
-			"BR_Io": "0a0a1a96",
+			"BR_Io": "e121d320",
 			"BR_JangHwa": "b73fa2fd",
 			"BR_Khan": "6260f827",
 			"BR_Kheshig": "143cd656",
