@@ -26,7 +26,7 @@ YAML.ensure().then(() => {
 				const currentBuildNo = buildtime.build;
 
 				console.log("server:" + latestBuildNo, "client:" + currentBuildNo);
-				if (latestBuildNo !== currentBuildNo)
+				if (typeof latestBuildNo !== "number" || latestBuildNo > currentBuildNo)
 					Store.requireReload.value = true;
 			});
 	};
