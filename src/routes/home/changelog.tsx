@@ -6,10 +6,10 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12968" date="2025-06-08"
+	<ChangelogItem title="Build 12969" date="2025-06-08"
 		new={ <>
-			<li>신규 장비 <BY></BY>의 정보가 추가되었습니다.</li>
-			<li>신규 이벤트 <BY>사령관의…</BY>의 정보가 추가되었습니다.</li>
+			<li>신규 장비 <BY>사령관의…</BY>의 정보가 추가되었습니다.</li>
+			<li>신규 이벤트 <BY>대전란 ~끝없이 내려치는 자색의 번개~</BY>의 정보가 추가되었습니다.</li>
 			<li>신규 스토리 정보가 추가되었습니다.</li>
 			<li>신규 적의 정보가 추가되었습니다.</li>
 		</> }
