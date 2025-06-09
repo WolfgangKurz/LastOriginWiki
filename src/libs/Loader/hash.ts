@@ -1779,7 +1779,7 @@ export default {
 		"filterable.enemy": "b4c9820a",
 		"filterable.equip": "b0364bfc",
 		"filterable.facility": "b3f0e54b",
-		"filterable.unit": "1e404047",
+		"filterable.unit": "6d98f4a8",
 		"gacha": "9591957f",
 		"iw": {
 			"Colossus_01": "cdebeca4",
@@ -5053,7 +5053,7 @@ export default {
 			"BR_PXSilky": "21a9f6bc",
 			"BR_Pani": "775368ce",
 			"BR_Phantom": "822adba9",
-			"BR_Phoenix": "c88dd7ed",
+			"BR_Phoenix": "0769df0d",
 			"BR_Pixie": "fc196bf5",
 			"BR_PoniesAnger": "9c9a521f",
 			"BR_QuickCamel": "a2b11d15",
