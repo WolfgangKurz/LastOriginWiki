@@ -23,6 +23,18 @@ promotions:
         count: 250
       - id: RobotParts_HDCalculationControl
         count: 50
+  - to: 5
+    level: 90
+    favor: "100"
+    req:
+      - id: Consumable_OriginDustAdv
+        count: 450
+      - id: Consumable_OriginDustSp
+        count: 150
+      - id: Special_Module
+        count: 100
+      - id: RobotParts_HDCalculationControl
+        count: 150
 lvLimits:
   - level: 101
     items:
@@ -571,6 +583,7 @@ source:
     - Ev:Ev27:EV2-1B
   - - Ev:Ev30:EV1-7
     - Ev:Ev30:EV2-5
+  - - Ev:Ev31:EV1-7
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -595,7 +608,7 @@ skills:
         - 8
         - 9
       data:
-        - rate: 1.27
+        - rate: 1.524
           type: 0
           range: 3
           ap: 5
@@ -658,6 +671,21 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_1_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_11
@@ -704,6 +732,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -737,7 +766,44 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.38
+            - key: Effect_BR_Sylphid_N_18
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_18_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.634
           type: 0
           range: 3
           ap: 5
@@ -800,6 +866,21 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_1_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_11
@@ -846,6 +927,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -879,7 +961,44 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.49
+            - key: Effect_BR_Sylphid_N_18
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_18_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.744
           type: 0
           range: 3
           ap: 5
@@ -942,6 +1061,21 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_1_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_11
@@ -988,6 +1122,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -1021,7 +1156,44 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.6
+            - key: Effect_BR_Sylphid_N_18
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_18_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.854
           type: 0
           range: 3
           ap: 5
@@ -1084,6 +1256,21 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_1_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_11
@@ -1130,6 +1317,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -1163,7 +1351,44 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.71
+            - key: Effect_BR_Sylphid_N_18
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_18_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 1.964
           type: 0
           range: 3
           ap: 5
@@ -1226,6 +1451,21 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_1_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_11
@@ -1272,6 +1512,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -1305,7 +1546,44 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.82
+            - key: Effect_BR_Sylphid_N_18
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_18_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.074
           type: 0
           range: 3
           ap: 5
@@ -1368,6 +1646,21 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_1_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_11
@@ -1414,6 +1707,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -1447,7 +1741,44 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.93
+            - key: Effect_BR_Sylphid_N_18
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_18_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.184
           type: 0
           range: 3
           ap: 5
@@ -1510,6 +1841,21 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_1_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_11
@@ -1556,6 +1902,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -1589,7 +1936,44 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.04
+            - key: Effect_BR_Sylphid_N_18
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_18_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.294
           type: 0
           range: 3
           ap: 5
@@ -1652,6 +2036,21 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_1_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_11
@@ -1698,6 +2097,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -1731,7 +2131,44 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.15
+            - key: Effect_BR_Sylphid_N_18
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_18_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.404
           type: 0
           range: 3
           ap: 5
@@ -1794,6 +2231,21 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_1_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_11
@@ -1840,6 +2292,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -1873,7 +2326,44 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.26
+            - key: Effect_BR_Sylphid_N_18
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_18_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.514
           type: 0
           range: 3
           ap: 5
@@ -1936,6 +2426,21 @@ skills:
                       base: 20%
                       per: 1%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_1_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_11
@@ -1982,6 +2487,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -2012,6 +2518,43 @@ skills:
                     damage_add:
                       base: 20%
                       per: 1%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Sylphid_N_18
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_18_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2046,6 +2589,15 @@ skills:
             base: 0.2
             per: 0.01
             chance: 0
+          - icon: BuffIcon_DEF_Char
+            desc:
+              desc: Effect_BR_Sylphid_N_1_3
+              type: 0
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 0
           - icon: BuffIcon_EVADE_DOWN
             desc:
               desc: Effect_BR_Sylphid_N_11_1
@@ -2063,6 +2615,14 @@ skills:
               level: "0.010000"
             base: 0.2
             per: 0.01
+            chance: 1
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_BR_Sylphid_N_18_1
+              type: 0
+              value: Char_BR_Banshee_N
+              level: "0"
+            value: Char_BR_Banshee_N
             chance: 1
   "2":
     key: "2"
@@ -2083,7 +2643,7 @@ skills:
         - 8
         - 9
       data:
-        - rate: 2.095
+        - rate: 2.514
           type: 0
           range: 4
           ap: 7
@@ -2148,6 +2708,21 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_2_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_12
@@ -2186,7 +2761,44 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.285
+            - key: Effect_BR_Sylphid_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_21_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.704
           type: 0
           range: 4
           ap: 7
@@ -2251,6 +2863,21 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_2_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_12
@@ -2289,7 +2916,44 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.475
+            - key: Effect_BR_Sylphid_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_21_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.894
           type: 0
           range: 4
           ap: 7
@@ -2354,6 +3018,21 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_2_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_12
@@ -2392,7 +3071,44 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.665
+            - key: Effect_BR_Sylphid_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_21_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 3.084
           type: 0
           range: 4
           ap: 7
@@ -2457,6 +3173,21 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_2_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_12
@@ -2495,7 +3226,44 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.855
+            - key: Effect_BR_Sylphid_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_21_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 3.274
           type: 0
           range: 4
           ap: 7
@@ -2560,6 +3328,21 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_2_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_12
@@ -2598,7 +3381,44 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.045
+            - key: Effect_BR_Sylphid_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_21_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 3.464
           type: 0
           range: 4
           ap: 7
@@ -2663,6 +3483,21 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_2_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_12
@@ -2701,7 +3536,44 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.235
+            - key: Effect_BR_Sylphid_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_21_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 3.654
           type: 0
           range: 4
           ap: 7
@@ -2766,6 +3638,21 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_2_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_12
@@ -2804,7 +3691,44 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.425
+            - key: Effect_BR_Sylphid_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_21_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 3.844
           type: 0
           range: 4
           ap: 7
@@ -2869,6 +3793,21 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_2_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_12
@@ -2907,7 +3846,44 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.615
+            - key: Effect_BR_Sylphid_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_21_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 4.034
           type: 0
           range: 4
           ap: 7
@@ -2972,6 +3948,21 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_2_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_12
@@ -3010,7 +4001,44 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.805
+            - key: Effect_BR_Sylphid_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_21_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 4.224
           type: 0
           range: 4
           ap: 7
@@ -3075,6 +4103,21 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Sylphid_N_2_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_Sylphid_N_12
@@ -3113,6 +4156,43 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_BR_Sylphid_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Sylphid_N_21_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -3144,6 +4224,15 @@ skills:
             base: 0.3
             per: 0.015
             chance: 0
+          - icon: BuffIcon_DEF_Char
+            desc:
+              desc: Effect_BR_Sylphid_N_2_3
+              type: 0
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 0
           - icon: BuffIcon_PhyATK_UP
             desc:
               desc: Effect_BR_Sylphid_N_12_1
@@ -3152,6 +4241,14 @@ skills:
               level: "0.015000"
             base: 0.3
             per: 0.015
+            chance: 1
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_BR_Sylphid_N_21_1
+              type: 0
+              value: Char_BR_Banshee_N
+              level: "0"
+            value: Char_BR_Banshee_N
             chance: 1
   "3":
     key: "3"
@@ -3498,12 +4595,7 @@ skills:
             - key: Effect_BR_Sylphid_N_4
               on: round
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_May_N_3
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -3634,12 +4726,7 @@ skills:
             - key: Effect_BR_Sylphid_N_4
               on: round
               if:
-                - on:
-                    target: target
-                    func: OR
-                    select:
-                      - Effect_BR_May_N_3
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -3812,6 +4899,303 @@ skills:
               level: "0.005000"
             base: 0.1
             per: 0.005
+            chance: 1
+  "5":
+    key: "5"
+    icon: P.SelfAtkBuff
+    target: team
+    delayed: false
+    target_ground: false
+    leastGrade: 5
+    buffs:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 1
+      data:
+        - rate: 0
+          type: 0
+          range: 0
+          ap: 0
+          grid: 0,0,0,0,1,0,0,0,0
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Sylphid_N_5
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_BR_Sylphid_N_5_1
+                    type: 1
+                    value: "0.120000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 106
+                    skill_ratio:
+                      base: 12%
+                      per: 2%
+                  overlap: 4
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_BR_Sylphid_N_5_2
+                    type: 1
+                    value: "0.200000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: 20%
+                      per: 4%
+                  overlap: 4
+                - icon: BuffIcon_BARRIER_PIERCE
+                  desc:
+                    desc: Effect_BR_Sylphid_N_5_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 94
+                    penetration_force: true
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Sylphid_N_51
+              on: round
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_BARRIER_PIERCE
+                  desc:
+                    desc: Effect_BR_Sylphid_N_51_1
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 94
+                    penetration_force: true
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 0
+          type: 0
+          range: 0
+          ap: 0
+          grid: 1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Sylphid_N_5
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_BR_Sylphid_N_5_1
+                    type: 1
+                    value: "0.120000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 106
+                    skill_ratio:
+                      base: 12%
+                      per: 2%
+                  overlap: 4
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_BR_Sylphid_N_5_2
+                    type: 1
+                    value: "0.200000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 58
+                    penetration:
+                      base: 20%
+                      per: 4%
+                  overlap: 4
+                - icon: BuffIcon_BARRIER_PIERCE
+                  desc:
+                    desc: Effect_BR_Sylphid_N_5_3
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 94
+                    penetration_force: true
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Sylphid_N_51
+              on: round
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_BARRIER_PIERCE
+                  desc:
+                    desc: Effect_BR_Sylphid_N_51_1
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 94
+                    penetration_force: true
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_BR_Sylphid_N_5_1
+              type: 1
+              value: "0.120000"
+              level: "0.020000"
+            base: 0.12
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_DEF_PIERCE_UP
+            desc:
+              desc: Effect_BR_Sylphid_N_5_2
+              type: 1
+              value: "0.200000"
+              level: "0.040000"
+            base: 0.2
+            per: 0.04
+            chance: 1
+          - icon: BuffIcon_BARRIER_PIERCE
+            desc:
+              desc: Effect_BR_Sylphid_N_5_3
+              type: 0
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 0
+          - icon: BuffIcon_BARRIER_PIERCE
+            desc:
+              desc: Effect_BR_Sylphid_N_51_1
+              type: 0
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
             chance: 1
 dialogue:
   KR:

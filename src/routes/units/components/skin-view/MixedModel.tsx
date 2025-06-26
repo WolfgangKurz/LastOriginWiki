@@ -7,6 +7,10 @@ export default class MixedModel extends FadeContainer {
 	public get modelSpine (): string {
 		return this._modelSpine;
 	}
+	public readonly _spineAtlasId: number;
+	public get spineAtlasId (): number {
+		return this._spineAtlasId;
+	}
 
 	private readonly _model2DModel: string;
 	public get model2DModel (): string {
@@ -15,6 +19,9 @@ export default class MixedModel extends FadeContainer {
 
 	public get model (): string {
 		return this._modelSpine;
+	}
+	public get atlasId (): number {
+		return this._spineAtlasId;
 	}
 
 	private _face: string = "";
@@ -45,15 +52,16 @@ export default class MixedModel extends FadeContainer {
 	private _2DModel: Pixi2DModel;
 	private _SpineModel: PixiSpineModel;
 
-	constructor (imageSpine: string, image2DModel: string) {
+	constructor (imageSpine: string, image2DModel: string, atlasId: number) {
 		super();
 		this.sortableChildren = true;
 
 		this._modelSpine = imageSpine;
 		this._model2DModel = image2DModel;
+		this._spineAtlasId = atlasId;
 
 		this.addChild(this._2DModel = new Pixi2DModel(image2DModel));
-		this.addChild(this._SpineModel = new PixiSpineModel(imageSpine));
+		this.addChild(this._SpineModel = new PixiSpineModel(imageSpine, atlasId));
 
 		// pass-through
 		this._SpineModel.on("facelist", (...args) => {

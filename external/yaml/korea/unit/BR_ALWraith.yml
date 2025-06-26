@@ -10,6 +10,19 @@ slots:
   - 0
   - 1
   - 2
+promotions:
+  - to: 5
+    level: 90
+    favor: "100"
+    req:
+      - id: Consumable_OriginDustAdv
+        count: 450
+      - id: Consumable_OriginDustSp
+        count: 150
+      - id: Special_Module
+        count: 100
+      - id: RobotParts_HeavyWeapon
+        count: 150
 lvLimits:
   - level: 101
     items:
@@ -479,6 +492,23 @@ stat:
       fire: 0
       ice: 0
       lightning: 0
+  - HP:
+      - 295
+      - 2225.5
+    ATK:
+      - 180
+      - 1021.5
+    DEF:
+      - 40
+      - 119.2
+    SPD: 4.7
+    CRI: 25
+    ACC: 139
+    EVA: 35
+    Resist:
+      fire: 0
+      ice: 0
+      lightning: 0
 chart:
   - 7
   - 4
@@ -518,6 +548,7 @@ source:
   - - Ev:Ev24:EV2-7
   - - Ev:Ev25:EV2-4
   - - Ev:Ev30:EV2-2
+  - - Ev:Ev31:EV2-1B
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -2222,23 +2253,6 @@ skills:
                       base: 23%
                       per: 3%
                   overlap: 4
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_2_3
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_ALWraith_N_21
@@ -2276,42 +2290,6 @@ skills:
                       per: 3%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-            - key: Effect_BR_ALWraith_N_22
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_22_1
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
-              maxStack: 0
               overlapGroup: -1
         - rate: 0.1
           type: 0
@@ -2376,23 +2354,6 @@ skills:
                       base: 23%
                       per: 3%
                   overlap: 4
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_2_3
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_ALWraith_N_21
@@ -2430,42 +2391,6 @@ skills:
                       per: 3%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-            - key: Effect_BR_ALWraith_N_22
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_22_1
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
-              maxStack: 0
               overlapGroup: -1
         - rate: 0.15
           type: 0
@@ -2530,23 +2455,6 @@ skills:
                       base: 23%
                       per: 3%
                   overlap: 4
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_2_3
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_ALWraith_N_21
@@ -2584,42 +2492,6 @@ skills:
                       per: 3%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-            - key: Effect_BR_ALWraith_N_22
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_22_1
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
-              maxStack: 0
               overlapGroup: -1
         - rate: 0.2
           type: 0
@@ -2684,23 +2556,6 @@ skills:
                       base: 23%
                       per: 3%
                   overlap: 4
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_2_3
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_ALWraith_N_21
@@ -2738,42 +2593,6 @@ skills:
                       per: 3%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-            - key: Effect_BR_ALWraith_N_22
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_22_1
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
-              maxStack: 0
               overlapGroup: -1
         - rate: 0.25
           type: 0
@@ -2838,23 +2657,6 @@ skills:
                       base: 23%
                       per: 3%
                   overlap: 4
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_2_3
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_ALWraith_N_21
@@ -2892,42 +2694,6 @@ skills:
                       per: 3%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-            - key: Effect_BR_ALWraith_N_22
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_22_1
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
-              maxStack: 0
               overlapGroup: -1
         - rate: 0.3
           type: 0
@@ -2992,23 +2758,6 @@ skills:
                       base: 23%
                       per: 3%
                   overlap: 4
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_2_3
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_ALWraith_N_21
@@ -3046,42 +2795,6 @@ skills:
                       per: 3%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-            - key: Effect_BR_ALWraith_N_22
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_22_1
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
-              maxStack: 0
               overlapGroup: -1
         - rate: 0.35
           type: 0
@@ -3146,23 +2859,6 @@ skills:
                       base: 23%
                       per: 3%
                   overlap: 4
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_2_3
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_ALWraith_N_21
@@ -3200,42 +2896,6 @@ skills:
                       per: 3%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-            - key: Effect_BR_ALWraith_N_22
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_22_1
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
-              maxStack: 0
               overlapGroup: -1
         - rate: 0.4
           type: 0
@@ -3300,23 +2960,6 @@ skills:
                       base: 23%
                       per: 3%
                   overlap: 4
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_2_3
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_ALWraith_N_21
@@ -3354,42 +2997,6 @@ skills:
                       per: 3%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-            - key: Effect_BR_ALWraith_N_22
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_22_1
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
-              maxStack: 0
               overlapGroup: -1
         - rate: 0.45
           type: 0
@@ -3454,23 +3061,6 @@ skills:
                       base: 23%
                       per: 3%
                   overlap: 4
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_2_3
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_ALWraith_N_21
@@ -3508,42 +3098,6 @@ skills:
                       per: 3%
                   overlap: 4
               maxStack: 1
-              overlapGroup: -1
-            - key: Effect_BR_ALWraith_N_22
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_22_1
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
-              maxStack: 0
               overlapGroup: -1
         - rate: 0.5
           type: 0
@@ -3608,23 +3162,6 @@ skills:
                       base: 23%
                       per: 3%
                   overlap: 4
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_2_3
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BR_ALWraith_N_21
@@ -3663,42 +3200,6 @@ skills:
                   overlap: 4
               maxStack: 1
               overlapGroup: -1
-            - key: Effect_BR_ALWraith_N_22
-              on: attack_success
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_DOWN
-                  desc:
-                    desc: Effect_BR_ALWraith_N_22_1
-                    type: 1
-                    value: "-0.690000"
-                    level: "0.010000"
-                  attr: 3
-                  erase:
-                    rounds: 2
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: -69%
-                      per: 1%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
     values:
       index:
         - 0
@@ -3729,15 +3230,6 @@ skills:
             base: 0.23
             per: 0.03
             chance: 0
-          - icon: BuffIcon_AP_DOWN
-            desc:
-              desc: Effect_BR_ALWraith_N_2_3
-              type: 1
-              value: "-0.690000"
-              level: "0.010000"
-            base: -0.69
-            per: 0.01
-            chance: 0
           - icon: BuffIcon_VULNERABLE
             desc:
               desc: Effect_BR_ALWraith_N_21_1
@@ -3746,15 +3238,6 @@ skills:
               level: "0.030000"
             base: 0.23
             per: 0.03
-            chance: 1
-          - icon: BuffIcon_AP_DOWN
-            desc:
-              desc: Effect_BR_ALWraith_N_22_1
-              type: 1
-              value: "-0.690000"
-              level: "0.010000"
-            base: -0.69
-            per: 0.01
             chance: 1
   "3":
     key: "3"
@@ -4069,22 +3552,6 @@ skills:
                   desc:
                     desc: Effect_BR_ALWraith_N_41_1
                     type: 1
-                    value: "0.030000"
-                    level: "0.005000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 3%
-                      per: 0.5%
-                  overlap: 4
-                - icon: BuffIcon_ACCURACY_UP
-                  desc:
-                    desc: Effect_BR_ALWraith_N_41_2
-                    type: 1
                     value: "0.060000"
                     level: "0.010000"
                   attr: 0
@@ -4092,17 +3559,33 @@ skills:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 7
-                    accuracy:
+                    type: 1
+                    attack:
                       base: 6%
                       per: 1%
+                  overlap: 4
+                - icon: BuffIcon_ACCURACY_UP
+                  desc:
+                    desc: Effect_BR_ALWraith_N_41_2
+                    type: 1
+                    value: "0.120000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 7
+                    accuracy:
+                      base: 12%
+                      per: 2%
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_UP
                   desc:
                     desc: Effect_BR_ALWraith_N_41_3
                     type: 1
-                    value: "0.005000"
-                    level: "0.005000"
+                    value: "0.010000"
+                    level: "0.010000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -4110,8 +3593,8 @@ skills:
                     isBuff: true
                     type: 9
                     critical:
-                      base: 0.5%
-                      per: 0.5%
+                      base: 1%
+                      per: 1%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -4168,28 +3651,195 @@ skills:
             desc:
               desc: Effect_BR_ALWraith_N_41_1
               type: 1
-              value: "0.030000"
-              level: "0.005000"
-            base: 0.03
-            per: 0.005
-            chance: 1
-          - icon: BuffIcon_ACCURACY_UP
-            desc:
-              desc: Effect_BR_ALWraith_N_41_2
-              type: 1
               value: "0.060000"
               level: "0.010000"
             base: 0.06
             per: 0.01
             chance: 1
+          - icon: BuffIcon_ACCURACY_UP
+            desc:
+              desc: Effect_BR_ALWraith_N_41_2
+              type: 1
+              value: "0.120000"
+              level: "0.020000"
+            base: 0.12
+            per: 0.02
+            chance: 1
           - icon: BuffIcon_CRITICAL_UP
             desc:
               desc: Effect_BR_ALWraith_N_41_3
               type: 1
-              value: "0.005000"
-              level: "0.005000"
-            base: 0.005
-            per: 0.005
+              value: "0.010000"
+              level: "0.010000"
+            base: 0.01
+            per: 0.01
+            chance: 1
+  "5":
+    key: "5"
+    icon: P.SelfSpdBuff
+    target: team
+    delayed: false
+    target_ground: true
+    leastGrade: 5
+    buffs:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - rate: 0
+          type: 0
+          range: 0
+          ap: 0
+          grid: F>1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_ALWraith_N_5
+              on:
+                attack_success: passive
+              if:
+                - target:
+                    - Char_BR_May_N
+                    - Char_BR_ALWraith_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_ALWraith_N_5_1
+                    type: 0
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 0.1
+                      per: 0.01
+                  overlap: 4
+                - icon: ""
+                  desc:
+                    desc: Effect_BR_ALWraith_N_5_2
+                    type: 0
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 20
+                    ap:
+                      base: 0.1
+                      per: 0.01
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_ALWraith_N_51
+              on:
+                attack_success: ally
+              if:
+                - target:
+                    - Char_BR_May_N
+                    - Char_BR_ALWraith_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_ALWraith_N_51_1
+                    type: 0
+                    value: "0.100000"
+                    level: "0.010000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 0.1
+                      per: 0.01
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_ALWraith_N_5_1
+              type: 0
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 1
+          - icon: ""
+            desc:
+              desc: Effect_BR_ALWraith_N_5_2
+              type: 0
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
+            chance: 0
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_ALWraith_N_51_1
+              type: 0
+              value: "0.100000"
+              level: "0.010000"
+            base: 0.1
+            per: 0.01
             chance: 1
 dialogue:
   KR:

@@ -325,7 +325,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				: <>{ groups[g][0].uid }</>;
 
 			const attr = groups[g][0].attr !== undefined
-				? <u>
+				? <u class={ style.BuffAttr }>
 					<Locale raw={ false } k={ `BUFFEFFECT_ATTR_PREFIX_${groups[g][0].attr}` } />
 				</u>
 				: <></>;
@@ -492,7 +492,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 	}
 	function getBuffEffectTypeText (type: BUFFEFFECT_TYPE, target: BUFF_ATTR_TYPE): preact.VNode {
 		return <>
-			<u>
+			<u class={ style.BuffAttr }>
 				<Locale raw={ false } k={ `BUFFEFFECT_ATTR_PREFIX_${target}` } />
 			</u>
 
@@ -1084,7 +1084,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						? (trigger.on.select as string[])
 							.map(convertBuff)
 							.map(x => <>
-								<u>
+								<u class={ style.BuffAttr }>
 									<Locale raw={ false } k={ `BUFFEFFECT_ATTR_PREFIX_${trigger.on.attr}` } />
 								</u>
 								{ x }

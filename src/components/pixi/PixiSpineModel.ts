@@ -99,8 +99,12 @@ interface BindedCollider {
 
 export default class PixiSpineModel extends FadeContainer {
 	private readonly _model: string;
+	private readonly _atlasId: number;
 	public get model (): string {
 		return this._model;
+	}
+	public get atlasId (): number {
+		return this._atlasId;
 	}
 
 	private _face: string = "";
@@ -140,12 +144,16 @@ export default class PixiSpineModel extends FadeContainer {
 	private colliderBoxs: ColliderBox[] = [];
 	private bindedColliders: BindedCollider[] = [];
 
-	constructor (image: string) {
+	constructor (image: string, atlasId: number) {
 		super();
 		this.sortableChildren = true;
 
 		const fname = image.replace(/^2DModel_(.+)$/, "$1");
 		this._model = image;
+		this._atlasId = atlasId;
+
+		const atlasIdName = atlasId === 0 ? "" : `.${atlasId}`;
+		const modelWithAtlasId = this._model + atlasIdName;
 
 		const baseURL = `${AssetsRoot}/spine/${fname}`;
 
@@ -154,19 +162,19 @@ export default class PixiSpineModel extends FadeContainer {
 		this.scale.set(3); // base Scale
 
 		new Promise<[spine.Spine, PIXI.Container]>(async (resolve) => {
-			const cached = getCache(this._model);
+			const cached = getCache(modelWithAtlasId);
 			if (cached)
 				resolve(this.Load(cached));
 			else {
 				const changeExt = (path: string, ext: string): string => `${path.substring(0, path.lastIndexOf("."))}.${ext}`;
 
-				fetch(`${baseURL}/${fname}.json.lzma`)
+				fetch(`${baseURL}/${fname}${atlasIdName}.json.lzma`)
 					.then(r => r.arrayBuffer())
 					.then(r => LZMADecompression(r, "json"))
 					.then(r => new TextDecoder().decode(r))
 					.then(r => Promise.all([
 						r,
-						fetch(`${baseURL}/${fname}.atlas`).then(r => r.text()),
+						fetch(`${baseURL}/${fname}${atlasIdName}.atlas`).then(r => r.text()),
 						fetch(`${baseURL}/${fname}_anim.json`).then(r => r.json()),
 						fetch(`${baseURL}/${fname}_meta.json`).then(r => r.json()),
 					]))
@@ -225,14 +233,14 @@ export default class PixiSpineModel extends FadeContainer {
 						]);
 					})
 					.then(async ([skelData, atlas, anim, metadata, ...urls]) => {
-						setCache(this._model, {
+						setCache(modelWithAtlasId, {
 							skeleton: skelData,
 							urls,
 							atlas,
 							anim,
 							metadata,
 						});
-						resolve(this.Load(getCache(this._model)!));
+						resolve(this.Load(getCache(modelWithAtlasId)!));
 					});
 			}
 		}).then(([s, sw]) => {

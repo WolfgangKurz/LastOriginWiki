@@ -6,24 +6,30 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 12969" date="2025-06-08"
+	<ChangelogItem title="Build 12976" date="2025-06-26"
 		new={ <>
-			<li>신규 장비 <BY>사령관의…</BY>의 정보가 추가되었습니다.</li>
-			<li>신규 이벤트 <BY>대전란 ~끝없이 내려치는 자색의 번개~</BY>의 정보가 추가되었습니다.</li>
-			<li>신규 스토리 정보가 추가되었습니다.</li>
+			<li>신규 전투원 <BY>이레이나</BY>의 정보가 추가되었습니다.</li>
+			<li>신규 이벤트 <BY>대전란 ~끝없이 내려치는 자색의 번개~</BY>의 2부 정보가 추가되었습니다.</li>
 			<li>신규 적의 정보가 추가되었습니다.</li>
+			<li>신규 스토리 정보가 추가되었습니다.</li>
 		</> }
 		bugfix={ <>
-			<li>누락된 전투원 스킨의 배너 이미지를 추가했습니다.</li>
+			<li>
+				전투원 <BY>생명의 세레스티아</BY>의 스킨 <BR>신선도 보장! 유기농 과일 비키니</BR>의
+				소품 제거 형태를 열람할 수 없던 문제를 수정했습니다.
+			</li>
 		</> }
 		update={ <>
-			<li>일부 적의 정보가 갱신되었습니다.</li>
+			<li><BR>둠 브링어</BR> 소속 전투원의 스킬 정보가 갱신되었습니다.</li>
+			<li>이벤트 <BY>영원한 겨울의 방주</BY>가 상시 이벤트로 전환되었습니다.</li>
+			<li>총력전 정보가 갱신되었습니다.</li>
 		</> }
 		skin={ <>
-			<li>전투원 <BY>A-6 이오</BY>의 스킨 <BR>HOT STEAM MILK !! : 따끈한 우유 목욕을 위한 샤워 가운</BR>의 정보가 추가되었습니다.</li>
+			<li>전투원 <BY>B-11 나이트앤젤</BY>의 스킨 <BR>오르카 바니: 두려워 말라? 리버스 바니걸 의상</BR>의 정보가 추가되었습니다.</li>
+			<li>전투원 <BY>이레이나</BY>의 스킨 <BR>마왕(오빠) 공략을 위한 준비</BR>의 정보가 추가되었습니다.</li>
 		</> }
 		dialogue={ <>
-			<li><span class="badge bg-light text-dark">KST 2025-06-08 08:53:11</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
+			<li><span class="badge bg-light text-dark">KST 2025-06-27 00:12:13</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
 		</> }
 	/>
 </>;

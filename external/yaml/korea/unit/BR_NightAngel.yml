@@ -457,6 +457,7 @@ secretRoomType: Adult
 marriageVoice: true
 introVoice:
   - jp
+  - ko
 favor:
   present: 1.5
   clear: 1
@@ -520,6 +521,7 @@ chart:
 cv:
   "2": {}
   "3": {}
+  "4": {}
   "": {}
   M: {}
 source:
@@ -566,7 +568,7 @@ skills:
         - 8
         - 9
       data:
-        - rate: 1.75
+        - rate: 2.1
           type: 0
           range: 3
           ap: 6
@@ -716,7 +718,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2
+        - rate: 2.35
           type: 0
           range: 3
           ap: 6
@@ -866,7 +868,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.25
+        - rate: 2.6
           type: 0
           range: 3
           ap: 6
@@ -1016,7 +1018,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.5
+        - rate: 2.85
           type: 0
           range: 3
           ap: 6
@@ -1166,7 +1168,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.75
+        - rate: 3.1
           type: 0
           range: 3
           ap: 6
@@ -1316,7 +1318,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3
+        - rate: 3.35
           type: 0
           range: 3
           ap: 6
@@ -1466,7 +1468,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.25
+        - rate: 3.6
           type: 0
           range: 3
           ap: 6
@@ -1616,7 +1618,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.5
+        - rate: 3.85
           type: 0
           range: 3
           ap: 6
@@ -1766,7 +1768,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.75
+        - rate: 4.1
           type: 0
           range: 3
           ap: 6
@@ -1916,7 +1918,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 4
+        - rate: 4.35
           type: 0
           range: 3
           ap: 6
@@ -2143,7 +2145,7 @@ skills:
         - 8
         - 9
       data:
-        - rate: 1.5
+        - rate: 1.8
           type: 0
           range: 4
           ap: 9
@@ -2164,6 +2166,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -2195,9 +2198,61 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_NightAngel_N_2_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.7
+            - key: Effect_BR_NightAngel_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_NightAngel_N_21_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2
           type: 0
           range: 4
           ap: 9
@@ -2218,6 +2273,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -2249,9 +2305,61 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_NightAngel_N_2_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 1.9
+            - key: Effect_BR_NightAngel_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_NightAngel_N_21_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.2
           type: 0
           range: 4
           ap: 9
@@ -2272,6 +2380,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -2303,9 +2412,61 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_NightAngel_N_2_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.1
+            - key: Effect_BR_NightAngel_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_NightAngel_N_21_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.4
           type: 0
           range: 4
           ap: 9
@@ -2326,6 +2487,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -2357,9 +2519,61 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_NightAngel_N_2_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.3
+            - key: Effect_BR_NightAngel_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_NightAngel_N_21_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.6
           type: 0
           range: 4
           ap: 9
@@ -2380,6 +2594,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -2411,9 +2626,61 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_NightAngel_N_2_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.5
+            - key: Effect_BR_NightAngel_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_NightAngel_N_21_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 2.8
           type: 0
           range: 4
           ap: 9
@@ -2434,6 +2701,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -2465,9 +2733,61 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_NightAngel_N_2_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.7
+            - key: Effect_BR_NightAngel_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_NightAngel_N_21_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 3
           type: 0
           range: 4
           ap: 9
@@ -2488,6 +2808,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -2519,9 +2840,61 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_NightAngel_N_2_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 2.9
+            - key: Effect_BR_NightAngel_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_NightAngel_N_21_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 3.2
           type: 0
           range: 4
           ap: 9
@@ -2542,6 +2915,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -2573,9 +2947,61 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_NightAngel_N_2_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.1
+            - key: Effect_BR_NightAngel_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_NightAngel_N_21_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 3.4
           type: 0
           range: 4
           ap: 9
@@ -2596,6 +3022,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -2627,9 +3054,61 @@ skills:
                       base: 30%
                       per: 1.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_NightAngel_N_2_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 3.3
+            - key: Effect_BR_NightAngel_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_NightAngel_N_21_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+        - rate: 3.6
           type: 0
           range: 4
           ap: 9
@@ -2650,6 +3129,7 @@ skills:
                     select:
                       - 78
                       - 87
+                      - 11
                     attr: 1
                 - false
               body:
@@ -2680,6 +3160,58 @@ skills:
                     damage_add:
                       base: 30%
                       per: 1.5%
+                  overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_NightAngel_N_2_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_NightAngel_N_21
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_NightAngel_N_21_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2704,6 +3236,23 @@ skills:
               level: "0.015000"
             base: 0.3
             per: 0.015
+            chance: 1
+          - icon: BuffIcon_DEF_Char
+            desc:
+              desc: Effect_BR_NightAngel_N_2_2
+              type: 0
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 0
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_BR_NightAngel_N_21_1
+              type: 0
+              value: Char_BR_StratoAngel_N
+              level: "0"
+            value: Char_BR_StratoAngel_N
             chance: 1
   "3":
     key: "3"
@@ -3116,6 +3665,7 @@ skills:
               if:
                 - in_battle:
                     - Char_BR_May_N
+                    - Char_BR_StratoAngel_N
                 - false
               body:
                 - 0
@@ -3265,7 +3815,7 @@ skills:
         - 0
         - 0
         - 0
-        - 1
+        - 0
       data:
         - rate: 0
           type: 0
@@ -3472,211 +4022,6 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-        - rate: 0
-          type: 0
-          range: 0
-          ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
-          summon: null
-          use: null
-          enabled: true
-          dismiss_guard: false
-          acc_bonus: 0
-          buff_rate: 100
-          buffs:
-            - key: Effect_BR_NightAngel_N_52
-              on: round
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_SKILL_UP
-                  desc:
-                    desc: Effect_BR_NightAngel_N_52_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 111
-                    value: skill_ratio
-                    by:
-                      base: 20%
-                      per: 3%
-                      type: up
-                      target: self
-                      by: evade
-                  overlap: 4
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_BR_NightAngel_N_52_2
-                    type: 0
-                    value: "9999999"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 34
-                    damage_minimize:
-                      base: 9999999
-                      per: 0
-                  overlap: 4
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_NightAngel_N_52_3
-                    type: 1
-                    value: "0.110000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 1
-                    attack:
-                      base: 11%
-                      per: 1%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_NightAngel_N_51
-              on: round
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_SKILL_UP
-                  desc:
-                    desc: Effect_BR_NightAngel_N_51_1
-                    type: 1
-                    value: "0.200000"
-                    level: "0.030000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 111
-                    value: skill_ratio
-                    by:
-                      base: 20%
-                      per: 3%
-                      type: up
-                      target: self
-                      by: evade
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_NightAngel_N_54
-              on: wave
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_BR_NightAngel_N_54_1
-                    type: 0
-                    value: "9999999"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    count: 2
-                    trigger: damaged
-                  value:
-                    isBuff: true
-                    type: 34
-                    damage_minimize:
-                      base: 9999999
-                      per: 0
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_BR_NightAngel_N_55
-              on: round
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_NightAngel_N_53
-                      - Effect_BR_NightAngel_N_54
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_ATK_UP
-                  desc:
-                    desc: Effect_BR_NightAngel_N_55_1
-                    type: 1
-                    value: "0.110000"
-                    level: "0.010000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 1
-                    attack:
-                      base: 11%
-                      per: 1%
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
     values:
       index:
         - 0
@@ -3688,7 +4033,7 @@ skills:
         - 0
         - 0
         - 0
-        - 1
+        - 0
       data:
         - - icon: BuffIcon_SKILL_UP
             desc:
@@ -3729,60 +4074,6 @@ skills:
           - icon: BuffIcon_DAMAGE_REDUCE
             desc:
               desc: Effect_BR_NightAngel_N_53_1
-              type: 0
-              value: "9999999"
-              level: "0"
-            base: 9999999
-            per: 0
-            chance: 1
-          - icon: BuffIcon_ATK_UP
-            desc:
-              desc: Effect_BR_NightAngel_N_55_1
-              type: 1
-              value: "0.110000"
-              level: "0.010000"
-            base: 0.11
-            per: 0.01
-            chance: 1
-        - - icon: BuffIcon_SKILL_UP
-            desc:
-              desc: Effect_BR_NightAngel_N_52_1
-              type: 1
-              value: "0.200000"
-              level: "0.030000"
-            base: 0.2
-            per: 0.03
-            chance: 0
-          - icon: BuffIcon_DAMAGE_REDUCE
-            desc:
-              desc: Effect_BR_NightAngel_N_52_2
-              type: 0
-              value: "9999999"
-              level: "0"
-            base: 9999999
-            per: 0
-            chance: 0
-          - icon: BuffIcon_ATK_UP
-            desc:
-              desc: Effect_BR_NightAngel_N_52_3
-              type: 1
-              value: "0.110000"
-              level: "0.010000"
-            base: 0.11
-            per: 0.01
-            chance: 0
-          - icon: BuffIcon_SKILL_UP
-            desc:
-              desc: Effect_BR_NightAngel_N_51_1
-              type: 1
-              value: "0.200000"
-              level: "0.030000"
-            base: 0.2
-            per: 0.03
-            chance: 1
-          - icon: BuffIcon_DAMAGE_REDUCE
-            desc:
-              desc: Effect_BR_NightAngel_N_54_1
               type: 0
               value: "9999999"
               level: "0"
@@ -3918,6 +4209,65 @@ dialogue:
         제게 많은 관심을 주고, 이렇게
         사랑해 줘서... 정말 고마워요. 사령관.
       MVP: 만족스러운 무대였어요.
+    "4":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: |-
+        요즘 오르카 이곳저곳에서
+        러브 콜이 쇄도하고 있어요.
+        너무 많은 직책을 맡고 있으니,
+        AGS 자문위원은 물려줄 때가 오지 않았나요?
+      Idle_01_02: |-
+        부끄럽지 않냐니…
+        어째서 그런 말씀을 하시는 거죠?
+        완벽한 제 몸매를 뽐내는데
+        아주 적합한 의상이라 볼 수 있죠.
+        통풍도 잘 된답니다? 왜요? 뭐요?
+      Idle_01_03: |-
+        사령관,
+        그렇게 노골적으로 제 빈 공간을
+        관찰하는 건 참아주세요.
+      SPIdle_01_01: 컴플레인은 사양입니다.
+      Idle_02_01: |-
+        제 하체도 매력 포인트긴 하지만…
+        사령관이 원하는 건 역시,
+        그 부분이겠죠?
+        오늘을 위해서,
+        그간 연습해온 것들을
+        모두 보여드릴 때가 왔네요.
+      Idle_03_01: |-
+        바니와 역바니…
+        사령관의 취향은 어느 쪽이에요?
+      Idle_04_01: |-
+        아래쪽 씰이…
+        물기 때문에 제거돼 버렸네요.
+        개봉 후 반품은 불가하니...
+        최고품질의 샴페인을 맛보시겠어요?
+      SPIdle_02_01: 참지 말고 터트려주세요. 어서…
+      Oath: |-
+        성공이군요. 제 매력을 적극적으로 어필하는 전략이 완벽하게 먹혀 들었어요. 이제 우리 두 사람의 관계는 리버스 된 걸까요?
+        그런 의미에서 사령관을 위해, 저도 제가 할 수 있는 모든 걸 오늘 밤 전부 보여 드리겠어요.
+        CAFÉ amor의 영업이 끝나는 대로, 이 옷을 입고 늘 사령관이 저에게 주문했던 걸… 준비하고 있을 게요.
+      OathIdle_01: |-
+        사령관과 함께 할 수 있음에
+        제 자신이 완벽해지는 기분이 들어요.
+        더 이상 두려운 건 없어요.
+      MVP: ""
     "":
       Join: 전략 폭격용 바이오로이드 나이트 앤젤, 합류합니다.
       SquadJoin: 무슨 임무면 되죠?
@@ -4067,6 +4417,35 @@ dialogue:
       SPIdle_02_01: …ステージに上がるまでまだ時間があるので相手になりましょう。でもその代わり、バレないようにちゃんと元に戻してくださいね？
       Oath: ただやりたいことをやっただけで、こんなにも喜んでもらえるんですね。私なんかよりも魅力的な人がたくさんいるのに私を選ぶだなんて、司令官は本当に変わり者です。…野暮なことを言ってしまいましたね。司令官が私を好きになってくれて、そして私の魅力で司令官の心を奪うことができて本当に嬉しいです。では続けましょうか。私たちの永遠の誓約を…
       OathIdle_01: 私がここまでこれたのはすべて司令官のおかげです。私のことを気に掛けてくれて、愛してくれて…本当に感謝しています。司令官。
+      MVP: ""
+    "4":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: 戦略爆撃用バイオロイド、ナイトエンジェル、合流します。
@@ -4257,6 +4636,35 @@ dialogue:
         all thanks to you, Commander.
         Thank you so much for caring for me,
         and loving me. Commander.
+      MVP: ""
+    "4":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: Strategic Bomber Bioroid Night Angel reporting.
@@ -4466,6 +4874,35 @@ dialogue:
         全靠司令官。
         非常感謝你這麼關心我，
         這麼愛我…司令官。
+      MVP: ""
+    "4":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
       MVP: ""
     "":
       Join: 戰略轟炸專用生化人「夜天使」來加入你們了。
@@ -4696,3 +5133,40 @@ skins:
         flags: 1
         2dmodel: 2DModel_BR_NightAngel_NS3
         consumableKey: Skin_BR_NightAngel_3
+    - sid: 4
+      artist: U-rix
+      price: 182
+      G: true
+      Spine: true
+      parts: 78
+      stage: false
+      subset:
+        - true
+        - true
+        - false
+        - true
+        - false
+        - true
+        - false
+        - false
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - Bunny_Girl
+      facelist: []
+      releaseDate: 1750291200000
+      metadata:
+        imageId: 4
+        iconId: 4
+        tbarId: 4
+        voiceId: 4
+        flags: 2
+        2dmodel_dam: 2DModel_BR_NightAngel_NS4_Dam
+        consumableKey: Skin_BR_NightAngel_4
+        spine:
+          "": 0
+          S: 1

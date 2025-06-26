@@ -128,6 +128,12 @@ export interface UnitSkinEntity {
 		flags: SKIN_METADATA_FLAGS;
 		"2dmodel"?: string;
 		"2dmodel_dam"?: string;
+		spine?: Partial<{ // Spine atlas attachment
+			"": number;
+			"S": number;
+			"B": number;
+			"BS": number;
+		}>;
 	};
 }
 

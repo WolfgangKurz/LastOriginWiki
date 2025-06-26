@@ -3905,6 +3905,7 @@ skills:
                     - Char_PECS_Spartoia_N
                     - Char_PECS_Hussar_N
                     - Char_PECS_LemonadeEpsilon_N
+                    - Char_PECS_Ireina_N
                 - false
               body:
                 - 0
@@ -4540,6 +4541,43 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
+            - key: Effect_PECS_CoCoWhiteShell_N_310
+              on: round
+              if:
+                - in_battle:
+                    - Char_PECS_Ireina_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_PECS_CoCoWhiteShell_N_310_1
+                    type: 1
+                    value: "0.050000"
+                    level: "0.005000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 36
+                    damage_reduce:
+                      base: 5%
+                      per: 0.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -4655,6 +4693,15 @@ skills:
           - icon: BuffIcon_DAMAGE_REDUCE
             desc:
               desc: Effect_PECS_CoCoWhiteShell_N_39_1
+              type: 1
+              value: "0.050000"
+              level: "0.005000"
+            base: 0.05
+            per: 0.005
+            chance: 1
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_PECS_CoCoWhiteShell_N_310_1
               type: 1
               value: "0.050000"
               level: "0.005000"

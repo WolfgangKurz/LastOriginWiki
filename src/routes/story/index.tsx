@@ -74,7 +74,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		12,
 		"Ev24", "Ev25", "Ev26", "Ev27", "Ev28",
 		13,
-		"Ev29", "Ev30",
+		"Ev29", "Ev30", "Ev31",
 	];
 	const StoryList: Array<StoryKeyType | null> = useMemo(
 		() => {

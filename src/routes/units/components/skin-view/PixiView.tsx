@@ -243,8 +243,13 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 					? props.vid
 					: (props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!;
 
+			const skinPostfix = ["", "S", "B", "BS"][(props.hidePart ? 1 : 0) | (props.hideBG ? 2 : 0)];
+			const atlasId = props.U2DModelMetadata.spine && skinPostfix in props.U2DModelMetadata.spine
+				? props.U2DModelMetadata.spine[skinPostfix]!
+				: 0;
+
 			let _char: PixiSpineModel | Pixi2DModel | MixedModel | PixiVideoModel | null = char as typeof _char;
-			if (_char && _char.model !== _uid) {
+			if (_char && (_char.model !== _uid || (!("atlasId" in _char) || _char.atlasId !== atlasId))) {
 				_char.destroy();
 				_char = null;
 			}
@@ -256,9 +261,11 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 						_char = new MixedModel(
 							uid,
 							(props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!,
+							atlasId,
 						);
-					else
-						_char = new PixiSpineModel(_uid);
+					else {
+						_char = new PixiSpineModel(_uid, atlasId);
+					}
 
 					_char.on("normal-touch", (m) => {
 						const r = (m as PixiSpineModel | MixedModel).play("Tep_1");
@@ -305,7 +312,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 				surface.addChild(_char);
 			}
 		}
-	}, [props.type, props.uid, props.vid, props.google, props.damaged, surface]);
+	}, [props.type, props.uid, props.vid, props.google, props.damaged, props.hidePart, props.hideBG, surface]);
 
 	useEffect(() => {
 		if (char && ("setFace" in char)) { // type-guard not work with instanceof

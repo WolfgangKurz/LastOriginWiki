@@ -23,6 +23,18 @@ promotions:
         count: 250
       - id: RobotParts_HDCalculationControl
         count: 50
+  - to: 5
+    level: 90
+    favor: "100"
+    req:
+      - id: Consumable_OriginDustAdv
+        count: 450
+      - id: Consumable_OriginDustSp
+        count: 150
+      - id: Special_Module
+        count: 100
+      - id: RobotParts_HDCalculationControl
+        count: 150
 lvLimits:
   - level: 101
     items:
@@ -570,6 +582,7 @@ source:
     - Ev:Ev27:EV2-4B
   - - Ev:Ev30:EV1-8
     - Ev:Ev30:EV2-3B
+  - - Ev:Ev31:EV1-5
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -691,6 +704,21 @@ skills:
                       base: -10%
                       per: -0.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Daika_N_1_5
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BUFF_Confusion_N_2
@@ -800,6 +828,228 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_111
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_May_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_111_1
+                    type: 0
+                    value: Char_BR_May_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_May_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_112
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_NightAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_112_1
+                    type: 0
+                    value: Char_BR_NightAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_NightAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_113
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Sylphid_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_113_1
+                    type: 0
+                    value: Char_BR_Sylphid_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Sylphid_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_114
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_114_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_115
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_115_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_116
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_ALWraith_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_116_1
+                    type: 0
+                    value: Char_BR_ALWraith_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_ALWraith_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 0.86
           type: 0
@@ -898,6 +1148,21 @@ skills:
                       base: -10%
                       per: -0.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Daika_N_1_5
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BUFF_Confusion_N_2
@@ -1007,6 +1272,228 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_111
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_May_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_111_1
+                    type: 0
+                    value: Char_BR_May_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_May_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_112
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_NightAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_112_1
+                    type: 0
+                    value: Char_BR_NightAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_NightAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_113
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Sylphid_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_113_1
+                    type: 0
+                    value: Char_BR_Sylphid_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Sylphid_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_114
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_114_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_115
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_115_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_116
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_ALWraith_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_116_1
+                    type: 0
+                    value: Char_BR_ALWraith_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_ALWraith_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 0.92
           type: 0
@@ -1105,6 +1592,21 @@ skills:
                       base: -10%
                       per: -0.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Daika_N_1_5
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BUFF_Confusion_N_2
@@ -1214,6 +1716,228 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_111
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_May_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_111_1
+                    type: 0
+                    value: Char_BR_May_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_May_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_112
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_NightAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_112_1
+                    type: 0
+                    value: Char_BR_NightAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_NightAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_113
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Sylphid_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_113_1
+                    type: 0
+                    value: Char_BR_Sylphid_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Sylphid_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_114
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_114_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_115
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_115_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_116
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_ALWraith_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_116_1
+                    type: 0
+                    value: Char_BR_ALWraith_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_ALWraith_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 0.98
           type: 0
@@ -1312,6 +2036,21 @@ skills:
                       base: -10%
                       per: -0.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Daika_N_1_5
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BUFF_Confusion_N_2
@@ -1421,6 +2160,228 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_111
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_May_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_111_1
+                    type: 0
+                    value: Char_BR_May_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_May_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_112
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_NightAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_112_1
+                    type: 0
+                    value: Char_BR_NightAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_NightAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_113
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Sylphid_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_113_1
+                    type: 0
+                    value: Char_BR_Sylphid_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Sylphid_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_114
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_114_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_115
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_115_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_116
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_ALWraith_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_116_1
+                    type: 0
+                    value: Char_BR_ALWraith_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_ALWraith_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 1.04
           type: 0
@@ -1519,6 +2480,21 @@ skills:
                       base: -10%
                       per: -0.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Daika_N_1_5
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BUFF_Confusion_N_2
@@ -1628,6 +2604,228 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_111
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_May_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_111_1
+                    type: 0
+                    value: Char_BR_May_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_May_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_112
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_NightAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_112_1
+                    type: 0
+                    value: Char_BR_NightAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_NightAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_113
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Sylphid_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_113_1
+                    type: 0
+                    value: Char_BR_Sylphid_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Sylphid_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_114
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_114_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_115
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_115_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_116
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_ALWraith_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_116_1
+                    type: 0
+                    value: Char_BR_ALWraith_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_ALWraith_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 1.1
           type: 0
@@ -1726,6 +2924,21 @@ skills:
                       base: -10%
                       per: -0.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Daika_N_1_5
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BUFF_Confusion_N_2
@@ -1835,6 +3048,228 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_111
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_May_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_111_1
+                    type: 0
+                    value: Char_BR_May_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_May_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_112
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_NightAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_112_1
+                    type: 0
+                    value: Char_BR_NightAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_NightAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_113
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Sylphid_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_113_1
+                    type: 0
+                    value: Char_BR_Sylphid_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Sylphid_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_114
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_114_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_115
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_115_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_116
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_ALWraith_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_116_1
+                    type: 0
+                    value: Char_BR_ALWraith_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_ALWraith_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 1.16
           type: 0
@@ -1933,6 +3368,21 @@ skills:
                       base: -10%
                       per: -0.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Daika_N_1_5
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BUFF_Confusion_N_2
@@ -2042,6 +3492,228 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_111
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_May_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_111_1
+                    type: 0
+                    value: Char_BR_May_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_May_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_112
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_NightAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_112_1
+                    type: 0
+                    value: Char_BR_NightAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_NightAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_113
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Sylphid_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_113_1
+                    type: 0
+                    value: Char_BR_Sylphid_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Sylphid_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_114
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_114_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_115
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_115_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_116
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_ALWraith_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_116_1
+                    type: 0
+                    value: Char_BR_ALWraith_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_ALWraith_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 1.22
           type: 0
@@ -2140,6 +3812,21 @@ skills:
                       base: -10%
                       per: -0.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Daika_N_1_5
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BUFF_Confusion_N_2
@@ -2249,6 +3936,228 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_111
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_May_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_111_1
+                    type: 0
+                    value: Char_BR_May_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_May_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_112
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_NightAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_112_1
+                    type: 0
+                    value: Char_BR_NightAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_NightAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_113
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Sylphid_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_113_1
+                    type: 0
+                    value: Char_BR_Sylphid_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Sylphid_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_114
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_114_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_115
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_115_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_116
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_ALWraith_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_116_1
+                    type: 0
+                    value: Char_BR_ALWraith_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_ALWraith_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 1.28
           type: 0
@@ -2347,6 +4256,21 @@ skills:
                       base: -10%
                       per: -0.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Daika_N_1_5
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BUFF_Confusion_N_2
@@ -2456,6 +4380,228 @@ skills:
                       per: -0.5%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_111
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_May_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_111_1
+                    type: 0
+                    value: Char_BR_May_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_May_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_112
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_NightAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_112_1
+                    type: 0
+                    value: Char_BR_NightAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_NightAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_113
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Sylphid_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_113_1
+                    type: 0
+                    value: Char_BR_Sylphid_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Sylphid_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_114
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_114_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_115
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_115_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_116
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_ALWraith_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_116_1
+                    type: 0
+                    value: Char_BR_ALWraith_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_ALWraith_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 1.34
           type: 0
@@ -2554,6 +4700,21 @@ skills:
                       base: -10%
                       per: -0.5%
                   overlap: 4
+                - icon: BuffIcon_DEF_Char
+                  desc:
+                    desc: Effect_BR_Daika_N_1_5
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 76
+                    guard: target
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
             - key: Effect_BUFF_Confusion_N_2
@@ -2664,6 +4825,228 @@ skills:
                   overlap: 4
               maxStack: 1
               overlapGroup: -1
+            - key: Effect_BR_Daika_N_111
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_May_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_111_1
+                    type: 0
+                    value: Char_BR_May_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_May_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_112
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_NightAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_112_1
+                    type: 0
+                    value: Char_BR_NightAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_NightAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_113
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Sylphid_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_113_1
+                    type: 0
+                    value: Char_BR_Sylphid_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Sylphid_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_114
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_Banshee_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_114_1
+                    type: 0
+                    value: Char_BR_Banshee_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Banshee_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_115
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_StratoAngel_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_115_1
+                    type: 0
+                    value: Char_BR_StratoAngel_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_StratoAngel_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_116
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_ALWraith_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_BR_Daika_N_116_1
+                    type: 0
+                    value: Char_BR_ALWraith_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_ALWraith_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -2713,6 +5096,15 @@ skills:
             base: -0.1
             per: -0.005
             chance: 0
+          - icon: BuffIcon_DEF_Char
+            desc:
+              desc: Effect_BR_Daika_N_1_5
+              type: 0
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 0
           - icon: BuffIcon_ACCURACY_DOWN
             desc:
               desc: Effect_BUFF_Confusion_N_2_1
@@ -2739,6 +5131,54 @@ skills:
               level: "-0.005000"
             base: -0.1
             per: -0.005
+            chance: 1
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_BR_Daika_N_111_1
+              type: 0
+              value: Char_BR_May_N
+              level: "0"
+            value: Char_BR_May_N
+            chance: 1
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_BR_Daika_N_112_1
+              type: 0
+              value: Char_BR_NightAngel_N
+              level: "0"
+            value: Char_BR_NightAngel_N
+            chance: 1
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_BR_Daika_N_113_1
+              type: 0
+              value: Char_BR_Sylphid_N
+              level: "0"
+            value: Char_BR_Sylphid_N
+            chance: 1
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_BR_Daika_N_114_1
+              type: 0
+              value: Char_BR_Banshee_N
+              level: "0"
+            value: Char_BR_Banshee_N
+            chance: 1
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_BR_Daika_N_115_1
+              type: 0
+              value: Char_BR_StratoAngel_N
+              level: "0"
+            value: Char_BR_StratoAngel_N
+            chance: 1
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_BR_Daika_N_116_1
+              type: 0
+              value: Char_BR_ALWraith_N
+              level: "0"
+            value: Char_BR_ALWraith_N
             chance: 1
   "2":
     key: "2"
@@ -3585,21 +6025,22 @@ skills:
                       type: 7
                       target: 1
                   overlap: 4
-                - icon: BuffIcon_REMOVE_DEBUFF
+                - icon: BuffIcon_AP_UP
                   desc:
                     desc: Effect_BR_Daika_N_4_5
                     type: 0
-                    value: "11"
-                    level: "0"
+                    value: "1"
+                    level: "0.050000"
                   attr: 0
                   erase:
                     rounds: 0
                   value:
                     isBuff: true
-                    type: 89
-                    off:
-                      type: 11
-                      target: 1
+                    chance: 0%
+                    type: 20
+                    ap:
+                      base: 1
+                      per: 0.05
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3623,8 +6064,8 @@ skills:
                   desc:
                     desc: Effect_BR_Daika_N_15_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.015000"
+                    value: "0.375000"
+                    level: "0.019000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -3632,15 +6073,15 @@ skills:
                     isBuff: true
                     type: 7
                     accuracy:
-                      base: 30%
-                      per: 1.5%
+                      base: 37.5%
+                      per: 1.9%
                   overlap: 4
                 - icon: BuffIcon_EVADE_UP
                   desc:
                     desc: Effect_BR_Daika_N_15_2
                     type: 1
-                    value: "0.180000"
-                    level: "0.009000"
+                    value: "0.230000"
+                    level: "0.012000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -3648,15 +6089,15 @@ skills:
                     isBuff: true
                     type: 11
                     evade:
-                      base: 18%
-                      per: 0.9%
+                      base: 23%
+                      per: 1.2%
                   overlap: 4
                 - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
                     desc: Effect_BR_Daika_N_15_3
                     type: 1
-                    value: "0.120000"
-                    level: "0.006000"
+                    value: "0.150000"
+                    level: "0.008000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -3664,8 +6105,8 @@ skills:
                     isBuff: true
                     type: 36
                     damage_reduce:
-                      base: 12%
-                      per: 0.6%
+                      base: 15%
+                      per: 0.8%
                   overlap: 4
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
@@ -3698,6 +6139,43 @@ skills:
                     off:
                       type: 11
                       target: 1
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_41
+              on: round
+              if:
+                - notInBattle:
+                    - Char_BR_May_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_BR_Daika_N_41_1
+                    type: 0
+                    value: "1"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 1
+                      per: 0.05
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3750,41 +6228,41 @@ skills:
             base: 7
             per: 0
             chance: 1
-          - icon: BuffIcon_REMOVE_DEBUFF
+          - icon: BuffIcon_AP_UP
             desc:
               desc: Effect_BR_Daika_N_4_5
               type: 0
-              value: "11"
-              level: "0"
-            base: 11
-            per: 0
-            chance: 1
+              value: "1"
+              level: "0.050000"
+            base: 1
+            per: 0.05
+            chance: 0
           - icon: BuffIcon_ACCURACY_UP
             desc:
               desc: Effect_BR_Daika_N_15_1
               type: 1
-              value: "0.300000"
-              level: "0.015000"
-            base: 0.3
-            per: 0.015
+              value: "0.375000"
+              level: "0.019000"
+            base: 0.375
+            per: 0.019
             chance: 1
           - icon: BuffIcon_EVADE_UP
             desc:
               desc: Effect_BR_Daika_N_15_2
               type: 1
-              value: "0.180000"
-              level: "0.009000"
-            base: 0.18
-            per: 0.009
+              value: "0.230000"
+              level: "0.012000"
+            base: 0.23
+            per: 0.012
             chance: 1
           - icon: BuffIcon_DAMAGE_REDUCE
             desc:
               desc: Effect_BR_Daika_N_15_3
               type: 1
-              value: "0.120000"
-              level: "0.006000"
-            base: 0.12
-            per: 0.006
+              value: "0.150000"
+              level: "0.008000"
+            base: 0.15
+            per: 0.008
             chance: 1
           - icon: BuffIcon_REMOVE_DEBUFF
             desc:
@@ -3803,6 +6281,286 @@ skills:
               level: "0"
             base: 11
             per: 0
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_BR_Daika_N_41_1
+              type: 0
+              value: "1"
+              level: "0.050000"
+            base: 1
+            per: 0.05
+            chance: 1
+  "5":
+    key: "5"
+    icon: P.TeamDefDeBuff
+    target: enemy
+    delayed: false
+    target_ground: true
+    leastGrade: 5
+    buffs:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - rate: 0
+          type: 0
+          range: 0
+          ap: 0
+          grid: F>1,1,1,1,1,1,1,1,1
+          summon: null
+          use: null
+          enabled: true
+          dismiss_guard: false
+          acc_bonus: 0
+          buff_rate: 100
+          buffs:
+            - key: Effect_BR_Daika_N_5
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_DEBUFF_RATEUP
+                  desc:
+                    desc: Effect_BR_Daika_N_5_1
+                    type: 1
+                    value: "0.100000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 90
+                    resist:
+                      type: debuff_rateup
+                      value:
+                        base: 10%
+                        per: 3%
+                  overlap: 4
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_BR_Daika_N_5_2
+                    type: 1
+                    value: "-0.200000"
+                    level: "-0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -20%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_BR_Daika_N_5_3
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 11
+                    evade:
+                      base: -10%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_BR_Daika_N_5_4
+                    type: 1
+                    value: "-0.110000"
+                    level: "-0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 36
+                    damage_reduce:
+                      base: -11%
+                      per: -1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_51
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_EVADE_DOWN
+                  desc:
+                    desc: Effect_BR_Daika_N_51_1
+                    type: 1
+                    value: "-0.100000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 11
+                    evade:
+                      base: -10%
+                      per: -2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Daika_N_52
+              on: round
+              if:
+                - in_battle:
+                    - Char_BR_May_N
+                    - Char_BR_NightAngel_N
+                    - Char_BR_Sylphid_N
+                    - Char_BR_Djinnia_N
+                    - Char_BR_Daika_N
+                    - Char_BR_Banshee_N
+                    - Char_BR_ALWraith_N
+                    - Char_BR_StratoAngel_N
+                    - Char_BR_Sterling_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_BR_Daika_N_52_1
+                    type: 1
+                    value: "-0.110000"
+                    level: "-0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 36
+                    damage_reduce:
+                      base: -11%
+                      per: -1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+    values:
+      index:
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+      data:
+        - - icon: BuffIcon_DEBUFF_RATEUP
+            desc:
+              desc: Effect_BR_Daika_N_5_1
+              type: 1
+              value: "0.100000"
+              level: "0.030000"
+            base: 0.1
+            per: 0.03
+            chance: 1
+          - icon: BuffIcon_DEF_DOWN
+            desc:
+              desc: Effect_BR_Daika_N_5_2
+              type: 1
+              value: "-0.200000"
+              level: "-0.020000"
+            base: -0.2
+            per: -0.02
+            chance: 1
+          - icon: BuffIcon_EVADE_DOWN
+            desc:
+              desc: Effect_BR_Daika_N_5_3
+              type: 1
+              value: "-0.100000"
+              level: "-0.020000"
+            base: -0.1
+            per: -0.02
+            chance: 0
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_BR_Daika_N_5_4
+              type: 1
+              value: "-0.110000"
+              level: "-0.015000"
+            base: -0.11
+            per: -0.015
+            chance: 0
+          - icon: BuffIcon_EVADE_DOWN
+            desc:
+              desc: Effect_BR_Daika_N_51_1
+              type: 1
+              value: "-0.100000"
+              level: "-0.020000"
+            base: -0.1
+            per: -0.02
+            chance: 1
+          - icon: BuffIcon_DAMAGE_REDUCE
+            desc:
+              desc: Effect_BR_Daika_N_52_1
+              type: 1
+              value: "-0.110000"
+              level: "-0.015000"
+            base: -0.11
+            per: -0.015
             chance: 1
 dialogue:
   KR:
