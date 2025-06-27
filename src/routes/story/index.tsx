@@ -54,6 +54,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 
 	const StoryMapDB = useDBData<StoryMap>(StaticDB.StoryMap);
 	const StoryListSource: StoryKeySourceType[] = [
+		"Ev25", // 제로베이스
 		1, 2, 3, 4, 5, 6,
 		"Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6",
 		7,
@@ -72,9 +73,10 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		11,
 		"Ev20", "Ev21", "Ev23",
 		12,
-		"Ev24", "Ev25", "Ev26", "Ev27", "Ev28",
+		"Ev24",
+		"Ev31", // 대전란 ~끝없이 내리치는 자색의 번개~
+		"Ev26", "Ev27", "Ev28", "Ev29", "Ev30",
 		13,
-		"Ev29", "Ev30", "Ev31",
 	];
 	const StoryList: Array<StoryKeyType | null> = useMemo(
 		() => {
