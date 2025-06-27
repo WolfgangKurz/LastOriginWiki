@@ -348,6 +348,12 @@ export enum TARGET_TYPE {
 	/** 시스템 효과? */
 	SYSTEM = 7,
 
+	/** 모든 아군 대상 (적용 범위 무시?) */
+	OUR_ALL = 8,
+
+	/** 모든 적군 대상 (적용 범위 무시?) */
+	ENEMY_ALL = 9,
+
 	// __MAX__ = 8,
 }
 

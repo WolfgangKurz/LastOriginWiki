@@ -469,6 +469,7 @@ interface BuffEffect_ValueBy {
 		target: "self" | "target" | "attacker" | "buffer";
 		by: "evade" | "def" | "atk" | "hp";
 	};
+	r?: boolean; // is ratio value?
 }
 
 interface BuffEffect_LessTarget {
