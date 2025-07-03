@@ -5,6 +5,7 @@ import { LocaleTypes, LocaleList } from "@/types/Locale";
 
 import { getCookie, setCookie } from "@/libs/Cookie";
 import { StaticDB, unsetDBData, useDBData } from "@/libs/Loader";
+import idxs from "@/libs/Loader/locales";
 
 export function ChangeLanguage (lang: LocaleTypes): void {
 	setCookie("LO_LANG", lang);
@@ -52,8 +53,13 @@ export function useLocale (): [table: Record<string, string>, loaded: boolean] {
 		return () => unsub.forEach(fn => fn());
 	}, []);
 
-	const loc = useDBData<Record<string, string>>(StaticDB.Locale[currentLocale], undefined, requestId);
-	return [loc || {}, !!loc];
+	const count = idxs[currentLocale] || 0;
+	const loc = new Array(count).fill(0)
+		.map((_, i) => useDBData<Record<string, string>>(StaticDB.Locale[currentLocale] + `.${i}`, undefined, requestId));
+
+	if (loc.every(v => v))
+		return [Object.assign({}, ...loc), true];
+	return [{}, false];
 };
 
 export function formatString (template: string, ...p: any[]): string {
@@ -66,6 +72,8 @@ export function formatString (template: string, ...p: any[]): string {
 }
 
 export function ReloadLocale (locale: string): void {
-	unsetDBData(StaticDB.Locale[locale]);
+	const count = idxs[locale] || 0;
+	for (let i = 0; i < count; i++)
+		unsetDBData(StaticDB.Locale[locale] + `.${i}`);
 	GlobalLocaleRequestId.value++; // call changed callbacks
 }
