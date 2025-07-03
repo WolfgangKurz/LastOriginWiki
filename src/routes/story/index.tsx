@@ -77,6 +77,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		"Ev31", // 대전란 ~끝없이 내리치는 자색의 번개~
 		"Ev26", "Ev27", "Ev28", "Ev29", "Ev30",
 		13,
+		"Ev32",
 	];
 	const StoryList: Array<StoryKeyType | null> = useMemo(
 		() => {
