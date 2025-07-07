@@ -4,6 +4,7 @@ import type { LocaleTypes } from "@/types/Locale";
 
 import { CurrentLocale, useLocale } from "@/libs/Locale";
 import { GetJson, StaticDB } from "@/libs/Loader";
+import idxs from "@/libs/Loader/locales";
 
 type LocaleComponentProp<T> = Record<string, ComponentType<T>>;
 
@@ -89,8 +90,12 @@ function parseVNode<T> (template: string, p: LocaleProps<T>["p"], components: Lo
 	return ret;
 }
 
-export const GetLocaleTable = (locale: LocaleTypes) =>
-	GetJson<Record<string, string>>(StaticDB.Locale[locale]);
+export const GetLocaleTable = (locale: LocaleTypes) => {
+	const count = idxs[locale] || 0;
+	return Object.assign({}, ...new Array(count).fill(0)
+		.map((_, i) => GetJson<Record<string, string>>(StaticDB.Locale[locale] + `.${i}`))
+	);
+};
 
 export interface LocalePropsLegacy<T> {
 	k: string;

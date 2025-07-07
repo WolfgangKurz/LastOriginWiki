@@ -325,7 +325,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				: <>{ groups[g][0].uid }</>;
 
 			const attr = groups[g][0].attr !== undefined
-				? <u>
+				? <u class={ style.BuffAttr }>
 					<Locale raw={ false } k={ `BUFFEFFECT_ATTR_PREFIX_${groups[g][0].attr}` } />
 				</u>
 				: <></>;
@@ -492,7 +492,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 	}
 	function getBuffEffectTypeText (type: BUFFEFFECT_TYPE, target: BUFF_ATTR_TYPE): preact.VNode {
 		return <>
-			<u>
+			<u class={ style.BuffAttr }>
 				<Locale raw={ false } k={ `BUFFEFFECT_ATTR_PREFIX_${target}` } />
 			</u>
 
@@ -1084,7 +1084,7 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						? (trigger.on.select as string[])
 							.map(convertBuff)
 							.map(x => <>
-								<u>
+								<u class={ style.BuffAttr }>
 									<Locale raw={ false } k={ `BUFFEFFECT_ATTR_PREFIX_${trigger.on.attr}` } />
 								</u>
 								{ x }
@@ -1654,13 +1654,17 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 		else if ("disperse" in stat)
 			return <Locale raw={ false } k="BUFFEFFECT_DISPERSE" p={ [nsignedValue(stat.disperse, level)] } />;
 		else if ("by" in stat) {
-			const nonPercent: Array<typeof stat["by"]["by"]> = ["def"];
+			const forPercent = stat.r ?? false;
 
 			return <Locale raw={ false } k="BUFFEFFECT_BY" p={ [
 				<Locale raw={ false } k={ `BUFFTARGET_BY_${stat.by.target.toUpperCase()}` } />,
-				<Locale raw={ false } k={ `BUFFEFFECT_BY_${stat.by.by.toUpperCase()}` } />,
-				nsignedValue(stat.by, level, nonPercent.includes(stat.by.by)),
-				<Locale raw={ false } k={ `BUFFEFFECT_BY_${stat.value.toUpperCase()}` } />,
+				<strong class="text-danger">
+					<Locale raw={ false } k={ `BUFFEFFECT_BY_${stat.by.by.toUpperCase()}` } />
+				</strong>,
+				<strong class="text-orange">{ nsignedValue(stat.by, level, forPercent) }</strong>,
+				<strong class="text-primary">
+					<Locale raw={ false } k={ `BUFFEFFECT_BY_${stat.value.toUpperCase()}` } />
+				</strong>,
 				<Locale raw={ false } k={ `BUFFTYPE_${stat.by.type.toUpperCase()}` } />,
 			] } />;
 		}
@@ -1744,13 +1748,21 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 
 		const targetSide = target === TARGET_TYPE.SELF
 			? <Locale raw={ false } k="BUFFTARGET_SELF" />
-			: target === TARGET_TYPE.OUR || target === TARGET_TYPE.OUR_GRID
+			: target === TARGET_TYPE.OUR_ALL
 				? props.invert
-					? <Locale raw={ false } k="BUFFTARGET_ENEMY" />
-					: <Locale raw={ false } k="BUFFTARGET_TEAM" />
-				: props.invert
-					? <Locale raw={ false } k="BUFFTARGET_TEAM" />
-					: <Locale raw={ false } k="BUFFTARGET_ENEMY" />;
+					? <Locale raw={ false } k="BUFFTARGET_ENEMY_ALL" />
+					: <Locale raw={ false } k="BUFFTARGET_TEAM_ALL" />
+				: target === TARGET_TYPE.ENEMY_ALL
+					? props.invert
+						? <Locale raw={ false } k="BUFFTARGET_TEAM_ALL" />
+						: <Locale raw={ false } k="BUFFTARGET_ENEMY_ALL" />
+					: target === TARGET_TYPE.OUR || target === TARGET_TYPE.OUR_GRID
+						? props.invert
+							? <Locale raw={ false } k="BUFFTARGET_ENEMY" />
+							: <Locale raw={ false } k="BUFFTARGET_TEAM" />
+						: props.invert
+							? <Locale raw={ false } k="BUFFTARGET_TEAM" />
+							: <Locale raw={ false } k="BUFFTARGET_ENEMY" />;
 
 		const b = body.length === 2
 			? null

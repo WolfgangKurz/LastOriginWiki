@@ -19,14 +19,14 @@ SetupLibraries();
 
 YAML.ensure().then(() => {
 	const verCheck = () => {
-		const buildtimeYaml = `!/buildtime.yml?_=${Date.now()}`;
+		const buildtimeYaml = `!/buildtime.yml?from=${buildtime.build}`;
 		JsonLoaderCore("!", buildtimeYaml)
 			.then(() => {
 				const latestBuildNo = GetJson<number>(buildtimeYaml);
 				const currentBuildNo = buildtime.build;
 
 				console.log("server:" + latestBuildNo, "client:" + currentBuildNo);
-				if (latestBuildNo !== currentBuildNo)
+				if (typeof latestBuildNo !== "number" || latestBuildNo > currentBuildNo)
 					Store.requireReload.value = true;
 			});
 	};

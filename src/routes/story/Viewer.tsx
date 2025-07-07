@@ -305,6 +305,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 		return storyData
 			.flatMap(r => Object.values(r.char))
 			.filter(r => r.image && !r.image.includes("_Cut") && !r.image.startsWith("#"))
+			.filter(r => r.image !== "2DModel__N")
 			.map(r => ImageToFace(r.image))
 			.reduce<FaceMetadata[]>(
 				(p, c) => p.some(r => r.uid === c.uid && r.skin === c.skin)

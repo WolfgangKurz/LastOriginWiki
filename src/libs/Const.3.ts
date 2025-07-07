@@ -708,6 +708,10 @@ export const ArtistLinks: Record<string, Partial<Record<ArtistLinkType, string>>
 	"MEL": {
 		X: "https://x.com/_05565",
 	},
+	"Muloli": {
+		X: "https://x.com/mizuahiru",
+		Pixiv: "https://www.pixiv.net/users/7914067",
+	},
 	"One": {
 		X: "https://x.com/LcFC8aRS2NWcCm9",
 		Pixiv: "https://www.pixiv.net/users/2092955",

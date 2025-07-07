@@ -71,9 +71,9 @@ group:
     group: SteelLine
     story:
       - Story_Char_BR_Brownie_N_15_BR_Efreeti_1
-      - Story_Char_BR_Brownie_N_15_BR_Brownie_2
+      - Story_Char_BR_Brownie_N_15__2
       - Story_Char_BR_Brownie_N_15_BR_Leprechaun_3
-      - Story_Char_BR_Brownie_N_15_BR_Brownie_4
+      - Story_Char_BR_Brownie_N_15__4
       - Story_Char_BR_Brownie_N_15_BR_Impet_5
   - troop: Story_Troop_Group_Squad_SteelLine
     key: PCStory_SQ_BR_Marie_1
@@ -85,7 +85,7 @@ group:
       - Story_Char_BR_Marie_N_26_BR_Habetrot_1
       - Story_Char_BR_Marie_N_26_BR_Efreeti_2
       - Story_Char_BR_Marie_N_26_3P_Labiata_3
-      - Story_Char_BR_Marie_N_26_BR_Brownie_4
+      - Story_Char_BR_Marie_N_26__4
       - Story_Char_BR_Marie_N_26_BR_Marie_5
   - troop: Story_Troop_Group_Squad_TheSistersOfWalhalla
     key: PCStory_CH_BR_Valkyrie_1
@@ -715,7 +715,7 @@ group:
     key: PCStory_CH_BR_Cheona_1
     type: 0
     char: BR_Cheona
-    skin: 3
+    skin: 1
     group: EmpressHound
     story:
       - Story_Char_BR_Cheona_N_55_BR_Sirene_1
@@ -743,6 +743,18 @@ group:
       - Story_Char_3P_Alcyone_N_57_3P_Alcyone_3
       - Story_Char_3P_Alcyone_N_57_AGS_Shade_4
       - Story_Char_3P_Alcyone_N_57_3P_Alcyone_5
+  - troop: ""
+    key: PCStory_CH_PECS_Ireina_1
+    type: 0
+    char: PECS_Ireina
+    skin: 0
+    group: OrbitalWatcher
+    story:
+      - Story_Char_PECS_Ireina_N_59_BR_Tomoe_1
+      - Story_Char_PECS_Ireina_N_59_PECS_LemonadeEpsilon_2
+      - Story_Char_PECS_Ireina_N_59_BR_Brownie_3
+      - Story_Char_PECS_Ireina_N_59_DS_Charlotte_4
+      - Story_Char_PECS_Ireina_N_59_PECS_Ireina_5
 story:
   - group: PCStory_CH_BR_Brownie_1
     key: Story_Char_BR_Brownie_N_15_BR_Efreeti_1
@@ -769,7 +781,7 @@ story:
         type: 0
         value: Cut_ChCS-19Stage01_1
   - group: PCStory_CH_BR_Brownie_1
-    key: Story_Char_BR_Brownie_N_15_BR_Brownie_2
+    key: Story_Char_BR_Brownie_N_15__2
     order: 2
     char: BR_Brownie
     skin: 0
@@ -817,7 +829,7 @@ story:
         type: 0
         value: Cut_ChCS-19Stage03_1
   - group: PCStory_CH_BR_Brownie_1
-    key: Story_Char_BR_Brownie_N_15_BR_Brownie_4
+    key: Story_Char_BR_Brownie_N_15__4
     order: 4
     char: BR_Brownie
     skin: 0
@@ -937,7 +949,7 @@ story:
         type: 0
         value: Cut_ChCS-30Stage03_1
   - group: PCStory_SQ_BR_Marie_1
-    key: Story_Char_BR_Marie_N_26_BR_Brownie_4
+    key: Story_Char_BR_Marie_N_26__4
     order: 4
     char: BR_Brownie
     skin: 0
@@ -7320,3 +7332,123 @@ story:
       trigger:
         type: 0
         value: Cut_ChCS-61Stage05_1
+  - group: PCStory_CH_PECS_Ireina_1
+    key: Story_Char_PECS_Ireina_N_59_BR_Tomoe_1
+    order: 1
+    char: BR_Tomoe
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_63Stage_IkaGame1ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 2
+          value: Char_PECS_Ireina_N
+          sub: "1"
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS_63Stage_IkaGame1ED
+  - group: PCStory_CH_PECS_Ireina_1
+    key: Story_Char_PECS_Ireina_N_59_PECS_LemonadeEpsilon_2
+    order: 2
+    char: PECS_LemonadeEpsilon
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_63Stage_IkaGame2ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_Ireina_N_59_BR_Tomoe_1
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS_63Stage_IkaGame2ED
+  - group: PCStory_CH_PECS_Ireina_1
+    key: Story_Char_PECS_Ireina_N_59_BR_Brownie_3
+    order: 3
+    char: BR_Brownie
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_63Stage_IkaGame3ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_Ireina_N_59_PECS_LemonadeEpsilon_2
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS_63Stage_IkaGame3ED
+  - group: PCStory_CH_PECS_Ireina_1
+    key: Story_Char_PECS_Ireina_N_59_DS_Charlotte_4
+    order: 4
+    char: DS_Charlotte
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_63Stage_IkaGame4ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_Ireina_N_59_BR_Brownie_3
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS_63Stage_IkaGame4ED
+  - group: PCStory_CH_PECS_Ireina_1
+    key: Story_Char_PECS_Ireina_N_59_PECS_Ireina_5
+    order: 5
+    char: PECS_Ireina
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_63Stage_IkaGame5ED
+      trigger:
+        type: "0"
+        trigger1:
+          type: 6
+          value: Story_Char_PECS_Ireina_N_59_DS_Charlotte_4
+          sub: ""
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS_63Stage_IkaGame5ED

@@ -107,10 +107,18 @@ export function useDBData<T extends {}> (path: string | null, db: "korea" = Curr
 	const [result, setResult] = useState<T | undefined>(inCache ? Cache[path!] : undefined);
 
 	useEffect(() => {
-		// if (state === -1 && inCache) return;
-
-		setResult(undefined);
-		setState(path === null ? -1 : 0);
+		if (path !== null) {
+			if (path in Cache) {
+				setResult(path in Cache ? Cache[path] : null);
+				setState(2);
+			} else {
+				setResult(undefined);
+				setState(0);
+			}
+		} else {
+			setResult(undefined);
+			setState(-1);
+		}
 	}, [path, db, requestId]);
 
 	useEffect(() => {
@@ -138,20 +146,23 @@ export function useDBData<T extends {}> (path: string | null, db: "korea" = Curr
 }
 
 /**
- * @deprecated This method should not be used. Use `useDBData` instead.
- * @param json File to get
- * @param converter Preprocess function before return data
- * @returns Data to get. `undefined` if not loaded yet or not exists.
+ * @deprecated Using this method is not recommended. Use `useDBData` instead.
+ * @note Can use this method for non-preact lifecycle or to prevent lifecycle update.
+ * @param json JSON file path to get.
+ * @returns Data loaded from `JsonLoaderCore`. If data not exists or not loaded yet, `undefined` will returned.
  */
-export function GetJson<T> (json: string): T {
-	return Cache[json] as T;
+export function GetJson<T> (json: string): T | undefined {
+	return json in Cache
+		? Cache[json] as T
+		: undefined;
 }
 
 /**
- * @deprecated This method should not be used. Use `useDBData` instead.
+ * @deprecated Using this method is not recommended. Use `useDBData` instead.
+ * @note Can use this method for non-preact lifecycle or to prevent lifecycle update.
  * @param db DB of data
- * @param json File to load
- * @returns Loader `Promise`.
+ * @param json JSON file path to load. Array path also supported.
+ * @returns Loader `Promise`, no result data contains (void type). To get result, use `GetJson<T>` method.
  */
 export function JsonLoaderCore (db: string, json: string | string[] | undefined): Promise<void[]> {
 	const list = normalize(json);
@@ -162,9 +173,13 @@ export function JsonLoaderCore (db: string, json: string | string[] | undefined)
 	return Promise.all(list.map(x => Load(db, x)));
 }
 
-export function unsetDBData (dataname: string): void {
-	if (dataname in Cache)
-		delete Cache[dataname];
+/**
+ * Remove cached data from `useDBData` or `JsonLoaderCore` method.
+ * @param json JSON file path that same with `json` parameter of `useDBData` or `JsonLoaderCore`.
+ */
+export function unsetDBData (json: string): void {
+	if (json in Cache)
+		delete Cache[json];
 }
 
 function comp (a: string[] | readonly string[], b: string[] | readonly string[]): boolean {

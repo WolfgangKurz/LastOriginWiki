@@ -4,7 +4,9 @@ import { signal } from "@preact/signals";
 import { LocaleTypes, LocaleList } from "@/types/Locale";
 
 import { getCookie, setCookie } from "@/libs/Cookie";
-import { StaticDB, unsetDBData, useDBData } from "@/libs/Loader";
+import { GetJson, JsonLoaderCore, StaticDB, unsetDBData } from "@/libs/Loader";
+import idxs from "@/libs/Loader/locales";
+import { useUpdate } from "@/libs/hooks";
 
 export function ChangeLanguage (lang: LocaleTypes): void {
 	setCookie("LO_LANG", lang);
@@ -38,22 +40,49 @@ const DefaultLang = ((): LocaleTypes => {
 	}
 })();
 
+type CachedLocaleTableType = Record<LocaleTypes, Record<string, string> | Array<() => void>>;
+const CachedLocales: Partial<CachedLocaleTableType> = {};
+
 export const CurrentLocale = signal<LocaleTypes>(LangValidation(getCookie("LO_LANG", DefaultLang)));
 export const GlobalLocaleRequestId = signal<number>(0);
 export function useLocale (): [table: Record<string, string>, loaded: boolean] {
-	const [requestId, setRequestId] = useState(0);
+	const update = useUpdate();
 	const [currentLocale, setCurrentLocale] = useState<LocaleTypes>(CurrentLocale.peek());
 
 	useEffect(() => {
 		const unsub = [
 			CurrentLocale.subscribe(v => setCurrentLocale(v)),
-			GlobalLocaleRequestId.subscribe(() => setRequestId(v => v + 1)),
+			GlobalLocaleRequestId.subscribe(() => update()),
 		];
 		return () => unsub.forEach(fn => fn());
 	}, []);
 
-	const loc = useDBData<Record<string, string>>(StaticDB.Locale[currentLocale], undefined, requestId);
-	return [loc || {}, !!loc];
+	if (currentLocale in CachedLocales) {
+		if (Array.isArray(CachedLocales[currentLocale])) {
+			CachedLocales[currentLocale].push(() => update());
+			return [{}, false];
+		}
+
+		return [CachedLocales[currentLocale]!, true];
+	}
+
+	CachedLocales[currentLocale] = [() => update()];
+
+	const count = idxs[currentLocale] || 0;
+	JsonLoaderCore("", new Array(count).fill(0).map((_, i) => StaticDB.Locale[currentLocale] + `.${i}`))
+		.then(() => {
+			const loc = Object.assign(
+				{},
+				...new Array(count).fill(0)
+					.map((_, i) => GetJson(StaticDB.Locale[currentLocale] + `.${i}`))
+			);
+
+			const fns = CachedLocales[currentLocale] as Array<() => void>;
+			CachedLocales[currentLocale] = loc;
+
+			fns.forEach(fn => fn());
+		});
+	return [{}, false];
 };
 
 export function formatString (template: string, ...p: any[]): string {
@@ -65,7 +94,10 @@ export function formatString (template: string, ...p: any[]): string {
 	});
 }
 
-export function ReloadLocale (locale: string): void {
-	unsetDBData(StaticDB.Locale[locale]);
+export function ReloadLocale (locale: LocaleTypes): void {
+	const count = idxs[locale] || 0;
+	for (let i = 0; i < count; i++)
+		unsetDBData(StaticDB.Locale[locale] + `.${i}`);
+	delete CachedLocales[locale];
 	GlobalLocaleRequestId.value++; // call changed callbacks
 }
