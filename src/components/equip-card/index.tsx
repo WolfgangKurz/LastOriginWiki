@@ -22,7 +22,8 @@ const EquipCard: FunctionalComponent<EquipCardProps> = (props) => {
 	const [loc] = useLocale();
 	const equip = props.equip;
 
-	const Name = loc[`EQUIP_${equip.fullKey}`].replace(/ (RE|MP|SP|EX)$/, "");
+	const Name = (loc[`EQUIP_${equip.fullKey}`] || `EQUIP_${equip.fullKey}`)
+		.replace(/ (RE|MP|SP|EX)$/, "");
 
 	const Sources = (props.source || [])
 		.filter(x => {
