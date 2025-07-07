@@ -3,10 +3,10 @@ import { FunctionalComponent } from "preact";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
 import { CurrentDate, CurrentEvent } from "@/libs/Const";
+import { useLocale } from "@/libs/Locale";
 import EntitySource from "@/libs/EntitySource";
 
 import EquipIcon from "@/components/equip-icon";
-import { LocaleGet } from "@/components/locale";
 import SourceBadge from "@/components/source-badge";
 
 import "./style.scss";
@@ -19,16 +19,16 @@ interface EquipCardProps {
 }
 
 const EquipCard: FunctionalComponent<EquipCardProps> = (props) => {
+	const [loc] = useLocale();
 	const equip = props.equip;
 
-	const Name = LocaleGet(`EQUIP_${equip.fullKey}`)
-		.replace(/ (RE|MP|SP|EX)$/, "");
+	const Name = loc[`EQUIP_${equip.fullKey}`].replace(/ (RE|MP|SP|EX)$/, "");
 
 	const Sources = (props.source || [])
 		.filter(x => {
 			let b = true;
-			if(x.IsEvent && x.EventId !== CurrentEvent) b = false;
-			if(x.IsExchange && !x.IsEvent && x.ExchangeDate !== CurrentDate) b = false;
+			if (x.IsEvent && x.EventId !== CurrentEvent) b = false;
+			if (x.IsExchange && !x.IsEvent && x.ExchangeDate !== CurrentDate) b = false;
 			return b;
 		})
 		.reduce((p, c) => [...p, c], [] as EntitySource[]);
