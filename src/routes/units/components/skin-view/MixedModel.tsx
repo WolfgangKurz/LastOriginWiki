@@ -88,6 +88,7 @@ export default class MixedModel extends FadeContainer {
 	setDialogDeactive (deactive: boolean) {
 		this._dialogDeactive = deactive;
 		this._2DModel.setDialogDeactive(deactive);
+		// this._SpineModel.setDialogDeactive(deactive);
 	}
 
 	setHidePart (hide: boolean) {

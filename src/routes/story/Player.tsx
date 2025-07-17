@@ -748,7 +748,8 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				const target = chars[index];
 
 				const img = (target?.image ?? "")
-					.replace(/_N_DL_[0-9]+/, "_N_DL")
+					.replace(/_N_DL_([0-9]+)/, (_, p1) => `_${p1}`)
+					.replace(/_DL_N/, "_DL")
 					.replace(/_DL/, "");
 				const imgVar = target?.imageVar ?? "";
 
@@ -815,8 +816,9 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 							// p[1] = 720 / 7 * 5;
 							p[1] = 360;
 						} else if (modelType === CharModelType.Spine) {
-							char = new MixedModel(img, `O/${img}`);
+							char = new MixedModel(img, `O/${img}`, 0);
 							char.setFace(imgVar);
+							char.setHidePart(true);
 							char.setDialogDeactive(true);
 							p[1] = 360;
 						} else {
@@ -1017,12 +1019,14 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 				screenEffectFilter.tint(0xffffff);
 
 			if (screenEffect === SCREEN_EFFECT.FADE_IN_BLACK || screenEffect === SCREEN_EFFECT.FADE_IN_WHITE) {
-				screenEffectObject.fadeOut(1.0);
-
 				timer = setTimeout(() => {
-					if (props.onNext)
-						props.onNext(props.cursor + 1);
-				}, 1000);
+					screenEffectObject.fadeOut(1.0);
+
+					timer = setTimeout(() => {
+						if (props.onNext)
+							props.onNext(props.cursor + 1);
+					}, 1000);
+				}, 150);
 			}
 		}
 

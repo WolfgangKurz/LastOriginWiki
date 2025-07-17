@@ -391,7 +391,7 @@ export default class PixiSpineModel extends FadeContainer {
 			}
 		}
 
-		skinNames.filter(x => x.startsWith("decoration"))
+		skinNames.filter(x => x.startsWith("decoration") || x.startsWith("decocation"))
 			.forEach(skin => this.addSkin(skin));
 
 		if (skinNames.includes("breast/Unedited"))
@@ -650,7 +650,7 @@ export default class PixiSpineModel extends FadeContainer {
 		const names = this.skeletonData.skins.map(r => r.name);
 		if (!names) return;
 
-		const targets = names.filter(x => x.startsWith("decoration") && (
+		const targets = names.filter(x => (x.startsWith("decoration") || x.startsWith("decocation")) && (
 			/Background/i.test(x) || /Bcakground/i.test(x)
 		));
 		if (hide)
@@ -666,7 +666,7 @@ export default class PixiSpineModel extends FadeContainer {
 		const names = this.skeletonData.skins.map(r => r.name);
 		if (!names) return;
 
-		const targets = names.filter(x => x.startsWith("decoration") && !(
+		const targets = names.filter(x => (x.startsWith("decoration") || x.startsWith("decocation")) && !(
 			/Background/i.test(x) || /Bcakground/i.test(x)
 		));
 		if (hide)

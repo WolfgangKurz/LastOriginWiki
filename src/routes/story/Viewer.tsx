@@ -348,7 +348,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 
 		<div class="input-group justify-content-center my-2">
 			<div class="input-group-text">
-				<Icons.Globe2 class="me-1" />
+				<Icons.$globe2 class="me-1" />
 			</div>
 
 			{ LocaleList.map(locale => <button

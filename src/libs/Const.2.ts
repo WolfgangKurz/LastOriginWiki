@@ -134,6 +134,8 @@ export const SkinBanners: string[] = [
 	"PECS_Muse_3", "DS_KunoichiShiden_1",
 	"BR_Io_2",
 	"BR_NightAngel_4", "PECS_Ireina_1",
+	"BR_JangHwa_4",
+	"BR_Vargr_4",
 ];
 
 type SkillVideo_Plain = string[];

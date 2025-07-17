@@ -55,8 +55,11 @@ const kebab = (i: string): string => i.includes("-")
 		.replace(/^-/, "");
 const proxy = new Proxy({}, {
 	get (_, p) {
-		const k = kebab(p?.toString() ?? "");
-		return bi(kebab(k));
+		const k = p?.toString() ?? "";
+		if (k.startsWith("$"))
+			return bi(k.substring(1));
+		else
+			return bi(kebab(k));
 	},
 });
 Object.freeze(proxy);
