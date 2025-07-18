@@ -6,6 +6,11 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 12999" date="2025-07-19"
+		update={ <>
+			<li>이벤트 <BY>Project ORCA ~SunRising Stage~</BY> 2부의 일부 스토리가 갱신되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 12998" date="2025-07-18"
 		bugfix={ <>
 			<li>일부 전투원의 누락된 스킨 배너 이미지가 추가되었습니다.</li>
