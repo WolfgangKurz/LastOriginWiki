@@ -859,6 +859,19 @@ const MapPosition: MapPositionType = {
 			"EV2-2EX": [1.6, 2],
 			"EV2-3EX": [2.4, 2],
 		},
+		3: {
+			"EV3-1": [0, 1],
+			"EV3-2": [0.8, 1],
+			"EV3-3": [1.6, 1],
+			"EV3-4": [2.4, 1],
+
+			"EV3-1B": [0.8, 0],
+			"EV3-2B": [1.6, 0],
+			"EV3-3B": [2.4, 0],
+			"EV3-4B": [3.2, 0],
+
+			"Encore": [0, 2],
+		},
 	},
 };
 export default MapPosition;

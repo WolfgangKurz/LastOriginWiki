@@ -2498,6 +2498,7 @@ skills:
                     - Char_BR_JangHwa_N
                     - Char_BR_Vargr_N
                     - Char_BR_Fafnir_N
+                    - Char_BR_MariaGrace_N
                 - false
               body:
                 - 0
@@ -2525,6 +2526,62 @@ skills:
                     isBuff: true
                     type: 130
                     guardpierce_apply: true
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Cheona_N_33
+              on: round
+              if:
+                - on:
+                    target: self
+                    func: UNFILLED
+                    select:
+                      - Effect_BR_Cheona_N_31
+                    attr: 6
+                - in_battle:
+                    - Char_BR_MariaGrace_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_SUPPORT_ATTACK
+                  desc:
+                    desc: Effect_BR_Cheona_N_33_1
+                    type: 0
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 77
+                    attack_support:
+                      base: 100%
+                      per: 0%
+                  overlap: 4
+                - icon: BuffIcon_Action_Number_Change_Up
+                  desc:
+                    desc: Effect_BR_Cheona_N_33_2
+                    type: 0
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 127
+                    act_count: 1
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2611,6 +2668,24 @@ skills:
               value: "0"
               level: "0"
             base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_SUPPORT_ATTACK
+            desc:
+              desc: Effect_BR_Cheona_N_33_1
+              type: 0
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_Action_Number_Change_Up
+            desc:
+              desc: Effect_BR_Cheona_N_33_2
+              type: 0
+              value: "1"
+              level: "0"
+            base: 1
             per: 0
             chance: 1
   "4":
