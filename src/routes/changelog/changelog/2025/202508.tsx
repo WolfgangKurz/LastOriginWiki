@@ -8,6 +8,19 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13003" date="2025-08-05"
+		bugfix={ <>
+			<li>
+				전투원 <BY>장화</BY>의 스킨 <BR>프로젝트 오르카 : 선라이징 스테이지 Sprit and Soul</BR>의
+				스킨 배너가 표시되지 않던 점을 수정했습니다.
+			</li>
+			<li>전투원 <BY>마리아 그레이스</BY>의 기본 스킨에 장식품 숨기기가 표시되던 점을 수정했습니다.</li>
+			<li>
+				전투원 <BY>마리아 그레이스</BY>의 스킨 <BR>프로젝트 오르카 : 선라이징 스테이지 Joy</BR>를
+				장식품 숨기기 상태에서 다운로드할 수 없던 문제를 수정했습니다. (다운로드+ 가 아닌 경우)
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13002" date="2025-08-02"
 		new={ <>
 			<li>이벤트 <BY>Project ORCA ~SunRising Stage~</BY>의 3부 정보가 추가되었습니다.</li>
