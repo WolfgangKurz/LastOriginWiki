@@ -1,14 +1,15 @@
 import { FunctionComponent } from "preact";
+import { useMemo } from "preact/hooks";
 
 import { UnitDialogueAudioType } from "@/types/DB/Dialogue";
 
 import { AssetsRoot } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
+import { ParseDescriptionText } from "@/libs/FunctionsX";
 
 import Locale from "@/components/locale";
 
 import style from "./style.module.scss";
-import { useMemo } from "preact/hooks";
 
 interface DialogueRowProps {
 	type?: string;
@@ -88,7 +89,7 @@ const DialogueRow: FunctionComponent<DialogueRowProps> = (props) => {
 
 					return <div class="row mx-0">
 						<div class={ BuildClass(style.Dialogue, "col col-12 col-sm border-end border-bottom") }>
-							{ d || <span class="text-secondary">-</span> }
+							{ (d && ParseDescriptionText(d)) || <span class="text-secondary">-</span> }
 						</div>
 						<div class={ BuildClass(style.AudioColumn, "col col-12 col-sm-auto border") }>
 							<audio
@@ -104,7 +105,7 @@ const DialogueRow: FunctionComponent<DialogueRowProps> = (props) => {
 			</div>
 			: <>
 				<div class={ BuildClass(style.Dialogue, "col col-12 col-sm border") }>
-					{ dialogue || <span class="text-secondary">-</span> }
+					{ (dialogue && ParseDescriptionText(dialogue)) || <span class="text-secondary">-</span> }
 				</div>
 				<div class={ BuildClass(style.AudioColumn, "col col-12 col-sm-auto border") }>
 					<audio

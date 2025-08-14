@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "preact/hooks";
 import * as PIXI from "pixi.js";
 import { Viewport } from "pixi-viewport";
 import * as LAYERS from "@pixi/layers";
-import { Animation } from "@esotericsoftware/spine-pixi";
+import { Animation } from "@esotericsoftware/spine-pixi-v7";
 
 import ResizeObserver from "resize-observer-polyfill";
 
@@ -11,7 +11,6 @@ import { UnitSkinEntity } from "@/types/DB/Unit";
 import { IsDev } from "@/libs/Const.1";
 
 import Shared from "@/components/pixi/Shared";
-import BaseScreenInputFilter from "@/components/pixi/shaders/base";
 
 import FadeContainer from "@/components/pixi/FadeContainer";
 import PixiSpineModel from "@/components/pixi/PixiSpineModel";

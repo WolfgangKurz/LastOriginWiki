@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 import * as LAYERS from "@pixi/layers";
-import * as spine from "@esotericsoftware/spine-pixi";
+import * as spine from "@esotericsoftware/spine-pixi-v7";
 import LZMADecompression from "@/external/lzma";
 
 import { AssetsRoot, IsDev } from "@/libs/Const";
