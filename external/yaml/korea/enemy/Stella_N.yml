@@ -1,0 +1,1294 @@
+uid: Stella_N
+rarity: 5
+type: 0
+role: 2
+category: 1
+stat:
+  hp:
+    - 12000
+    - 0
+  atk:
+    - 800
+    - 0
+  def:
+    - 1000
+    - 5
+  spd: 4.3
+  cri: 0
+  acc: 300
+  eva: 0
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_MP_Stella_N_1
+    icon: Beam
+    passive: false
+    type: 3
+    target: enemy
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 1.6
+      range: 6
+      ap: 6
+      grid: F>0.5,0.75,0,1,1,1,0.5,0.75,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Stella_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_LC_Stella_N_1_1
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_LC_Stella_N_1_2
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_SNARE
+              desc:
+                desc: Effect_LC_Stella_N_1_3
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 78
+                immovable: true
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Stella_N_11
+          on: criticaled
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_SNARE
+              desc:
+                desc: Effect_LC_Stella_N_11_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 78
+                immovable: true
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_Stella_N_2
+    icon: Music
+    passive: false
+    type: 3
+    target: enemy
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 1.4
+      range: 6
+      ap: 10
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Stella_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_LC_Stella_N_2_1
+                type: 1
+                value: "-0.010000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: -1%
+                  per: -1%
+              overlap: 4
+            - icon: BuffIcon_LightningATK_UP
+              desc:
+                desc: Effect_LC_Stella_N_2_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 86
+                damage_add:
+                  elem: lightning
+                  damage:
+                    base: 2%
+                    per: 2%
+              overlap: 4
+            - icon: BuffIcon_FIRERES_DOWN
+              desc:
+                desc: Effect_LC_Stella_N_2_3
+                type: 1
+                value: "-0.500000"
+                level: "-0.025000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 0%
+                type: 15
+                resist:
+                  elem: fire
+                  value:
+                    base: -50%
+                    per: -2.5%
+              overlap: 4
+            - icon: BuffIcon_ICERES_UP
+              desc:
+                desc: Effect_LC_Stella_N_2_4
+                type: 1
+                value: "0.500000"
+                level: "0.025000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 0%
+                type: 17
+                resist:
+                  elem: ice
+                  value:
+                    base: 50%
+                    per: 2.5%
+              overlap: 4
+            - icon: BuffIcon_LIGHTNINGRES_DOWN
+              desc:
+                desc: Effect_LC_Stella_N_2_5
+                type: 1
+                value: "-0.500000"
+                level: "-0.025000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 0%
+                type: 19
+                resist:
+                  elem: lightning
+                  value:
+                    base: -50%
+                    per: -2.5%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Stella_N_21
+          on: criticaled
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_LightningATK_UP
+              desc:
+                desc: Effect_LC_Stella_N_21_1
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 86
+                damage_add:
+                  elem: lightning
+                  damage:
+                    base: 2%
+                    per: 2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_BUFF_Overheat_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_FIRERES_DOWN
+              desc:
+                desc: Effect_BUFF_Overheat_N_1_1
+                type: 1
+                value: "-0.500000"
+                level: "-0.025000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 15
+                resist:
+                  elem: fire
+                  value:
+                    base: -50%
+                    per: -2.5%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: 8
+        - key: Effect_BUFF_Overheat_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_ICERES_UP
+              desc:
+                desc: Effect_BUFF_Overheat_N_2_1
+                type: 1
+                value: "0.500000"
+                level: "0.025000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 17
+                resist:
+                  elem: ice
+                  value:
+                    base: 50%
+                    per: 2.5%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: 9
+        - key: Effect_BUFF_Overheat_N_3
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_LIGHTNINGRES_DOWN
+              desc:
+                desc: Effect_BUFF_Overheat_N_3_1
+                type: 1
+                value: "-0.500000"
+                level: "-0.025000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 19
+                resist:
+                  elem: lightning
+                  value:
+                    base: -50%
+                    per: -2.5%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: 10
+  - key: Skill_MP_Stella_N_3
+    icon: P.Vortex
+    passive: true
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Stella_N_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_LC_Stella_N_3_1
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_DOWN
+              desc:
+                desc: Effect_LC_Stella_N_3_2
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_SKILL_DOWN
+              desc:
+                desc: Effect_LC_Stella_N_3_3
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 106
+                skill_ratio:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_DEF_All
+              desc:
+                desc: Effect_LC_Stella_N_3_4
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 33
+                damage_immune:
+                  base: 1
+                  per: 0
+              overlap: 1
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Stella_N_31
+          on: damaged_active
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_All
+              desc:
+                desc: Effect_LC_Stella_N_31_1
+                type: 0
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 33
+                damage_immune:
+                  base: 1
+                  per: 0
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_Stella_N_4
+    icon: P.Music
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Stella_N_4
+          on: damaged_active
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_LC_Stella_N_4_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 100
+                off: 1
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Stella_N_4_2
+                type: 0
+                value: "0.020000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 20
+                ap:
+                  base: 0.02
+                  per: 0.02
+              overlap: 3
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Stella_N_4_3
+                type: 0
+                value: "0.040000"
+                level: "0.040000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 20
+                ap:
+                  base: 0.04
+                  per: 0.04
+              overlap: 3
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Stella_N_4_4
+                type: 0
+                value: "0.030000"
+                level: "0.030000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 20
+                ap:
+                  base: 0.03
+                  per: 0.03
+              overlap: 3
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Stella_N_4_5
+                type: 0
+                value: "0.020000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 20
+                ap:
+                  base: 0.02
+                  per: 0.02
+              overlap: 3
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Stella_N_41
+          on:
+            attack_success: passive
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Stella_N_41_1
+                type: 0
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 0.02
+                  per: 0.02
+              overlap: 3
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Stella_N_42
+          on: enemy_killed_passive
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Stella_N_42_1
+                type: 0
+                value: "0.040000"
+                level: "0.040000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 0.04
+                  per: 0.04
+              overlap: 3
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Stella_N_43
+          on: damaged_active
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Stella_N_43_1
+                type: 0
+                value: "0.030000"
+                level: "0.030000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 0.03
+                  per: 0.03
+              overlap: 3
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Stella_N_44
+          on: round
+          if:
+            - in_battle:
+                - Char_BR_Hela_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Stella_N_44_1
+                type: 0
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 0.02
+                  per: 0.02
+              overlap: 3
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Stella_N_45
+          on: round
+          if:
+            - target:
+                - Char_BR_Hela_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 1
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Stella_N_45_1
+                type: 0
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 0.02
+                  per: 0.02
+              overlap: 3
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_Stella_N_5
+    icon: P.Music
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Stella_N_5
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_SKILL_UP
+              desc:
+                desc: Effect_LC_Stella_N_5_1
+                type: 1
+                value: "0.010000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 106
+                skill_ratio:
+                  base: 1%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Stella_N_5_2
+                type: 0
+                value: "0.040000"
+                level: "0.040000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 20
+                ap:
+                  base: 0.04
+                  per: 0.04
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Stella_N_5_3
+                type: 1
+                value: "0.015000"
+                level: "0.015000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 13
+                turnSpeed:
+                  base: 1.5%
+                  per: 1.5%
+              overlap: 4
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_LC_Stella_N_5_4
+                type: 1
+                value: "0.010000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 1%
+                    per: 1%
+              overlap: 4
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_LC_Stella_N_5_5
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 36
+                damage_reduce:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: -1
+        - key: Effect_LC_Stella_N_51
+          on: round
+          if:
+            - in_battle:
+                - Char_LC_Haru_N
+              more:
+                - 1
+                - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Stella_N_51_1
+                type: 0
+                value: "0.010000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 0.01
+                  per: 0.01
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Stella_N_52
+          on: round
+          if:
+            - in_battle:
+                - Char_LC_Haru_N
+              more:
+                - 2
+                - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Stella_N_52_1
+                type: 0
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 0.02
+                  per: 0.02
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Stella_N_52_2
+                type: 1
+                value: "0.005000"
+                level: "0.005000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 0.5%
+                  per: 0.5%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Stella_N_53
+          on: round
+          if:
+            - in_battle:
+                - Char_LC_Haru_N
+              more:
+                - 3
+                - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Stella_N_53_1
+                type: 0
+                value: "0.030000"
+                level: "0.030000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 0.03
+                  per: 0.03
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Stella_N_53_2
+                type: 1
+                value: "0.010000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 1%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_LC_Stella_N_53_3
+                type: 1
+                value: "0.005000"
+                level: "0.005000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 0.5%
+                    per: 0.5%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Stella_N_54
+          on: round
+          if:
+            - in_battle:
+                - Char_LC_Haru_N
+              more:
+                - 4
+                - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Stella_N_54_1
+                type: 0
+                value: "0.040000"
+                level: "0.040000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 0.04
+                  per: 0.04
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Stella_N_54_2
+                type: 1
+                value: "0.015000"
+                level: "0.015000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 1.5%
+                  per: 1.5%
+              overlap: 4
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_LC_Stella_N_54_3
+                type: 1
+                value: "0.010000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 1%
+                    per: 1%
+              overlap: 4
+            - icon: BuffIcon_DAMAGE_REDUCE
+              desc:
+                desc: Effect_LC_Stella_N_54_4
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 36
+                damage_reduce:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Stella_N_55
+          on: round
+          if:
+            - target:
+                - Char_LC_Haru_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_LC_Stella_N_55_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+ai: AI_MP_BossNormal

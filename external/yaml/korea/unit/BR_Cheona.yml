@@ -2498,6 +2498,7 @@ skills:
                     - Char_BR_JangHwa_N
                     - Char_BR_Vargr_N
                     - Char_BR_Fafnir_N
+                    - Char_BR_MariaGrace_N
                 - false
               body:
                 - 0
@@ -2525,6 +2526,62 @@ skills:
                     isBuff: true
                     type: 130
                     guardpierce_apply: true
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_BR_Cheona_N_33
+              on: round
+              if:
+                - on:
+                    target: self
+                    func: UNFILLED
+                    select:
+                      - Effect_BR_Cheona_N_31
+                    attr: 6
+                - in_battle:
+                    - Char_BR_MariaGrace_N
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_SUPPORT_ATTACK
+                  desc:
+                    desc: Effect_BR_Cheona_N_33_1
+                    type: 0
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 77
+                    attack_support:
+                      base: 100%
+                      per: 0%
+                  overlap: 4
+                - icon: BuffIcon_Action_Number_Change_Up
+                  desc:
+                    desc: Effect_BR_Cheona_N_33_2
+                    type: 0
+                    value: "1"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 127
+                    act_count: 1
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2611,6 +2668,24 @@ skills:
               value: "0"
               level: "0"
             base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_SUPPORT_ATTACK
+            desc:
+              desc: Effect_BR_Cheona_N_33_1
+              type: 0
+              value: "1"
+              level: "0"
+            base: 1
+            per: 0
+            chance: 1
+          - icon: BuffIcon_Action_Number_Change_Up
+            desc:
+              desc: Effect_BR_Cheona_N_33_2
+              type: 0
+              value: "1"
+              level: "0"
+            base: 1
             per: 0
             chance: 1
   "4":
@@ -3185,23 +3260,23 @@ dialogue:
         이리 와서 꼭 안아봐.
       MVP: 열심히 했으니까 돌아가면 하루 종일 끌어안고 있는 거다?
     "3":
-      SquadJoin: ""
-      Leader: ""
-      SortiePick: ""
-      StageStart: ""
-      Retreat: ""
-      SearchStart: ""
-      SearchEnd: ""
-      BattleFocus: ""
-      ActionApprove: ""
-      SpSkill: ""
-      Retire: ""
-      Repair: ""
-      Reinforce: ""
-      ItemEquip: ""
-      CoreLink: ""
-      PresentGet: ""
-      Login: ""
+      SquadJoin: 어떤 애가 데이트 중에 시비 걸어? 남친, 잠깐 비켜봐. 다칠 수 있으니까.
+      Leader: 아~ 그런 쪽은 손 털었는데. 옛날 생각나네?
+      SortiePick: 타임 세일 끝나기 전에 돌아올게.
+      StageStart: 내 데이트 방해하러 온 새끼 누구냐?
+      Retreat: 아~ 뭐야~. 남친, 나한테 더 어울리는 물건 봐뒀어?
+      SearchStart: 아~ 남친, 내가 아무리 쇼핑을 좋아한다 해도 나 혼자 둘러보고 오란 거야?
+      SearchEnd: 둘러봤는데 좋은 건 없더라고. 남친, 얼른 같이 다음 층 보러 갈까?
+      BattleFocus: 응. 남친. 누가 거슬려?
+      ActionApprove: 나도 쟤 존나 싫었어.
+      SpSkill: 내 데이트를 망치게 한 벌은 받아야지?
+      Retire: 아이씨. 기껏 큰소리 쳤는데…
+      Repair: 이 침대 엄청 푹신해. 남친이랑 결혼하면 이런 침대에서 같이 자려나?
+      Reinforce: 우웅. 애기 천아는 이런 거 싫은데? 야, 남친. 너 표정이 왜 그래?
+      ItemEquip: 이 옷 남친이 직접 입혀줄래?
+      CoreLink: 남친, 지금 나한테서 한눈파는 거야?
+      PresentGet: 뭐야? 이거 설마 프로포즈 링? 아하…하. 그래 남친. 고마워.
+      Login: 야 남친, 빨리빨리 안 튀어와? 아 씨. 여친을 기다리게 해?
       Idle_01_01: |-
         남친~ 핫팩 대량 세일 한다는데 가격도 적당해!
         ​뭐 이런 걸 많이 사냐고?
@@ -3247,7 +3322,7 @@ dialogue:
         예쁜 옷 입혀주고 싶은 게 엄마 마음 아니겠어?
         뭐야… 그 표정? 부끄러워? 나랑 언젠간 애 만들 거잖아…
         그치, 애기 아빠?​
-      MVP: ""
+      MVP: 남친~ 일등 쿠폰 가져왔어. 이걸로 우리 맛난 거 사 먹을까?
     "":
       Join: 아~ 따뜻해. 이제야 좀 살 것 같네. 나는 천아. 앞으로 잘 부탁해, 핫팩♥
       SquadJoin: 지시를 받고 행동하는 건 간만이네?

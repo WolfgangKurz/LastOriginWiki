@@ -1,103 +1,117 @@
+import { createElement } from "preact";
+
+enum ParseState {
+	Idle,
+	TagIn,
+}
+interface ParseTagInfo {
+	type: string;
+	attrs: Record<string, string>;
+}
+interface ParseTreeItem {
+	tag: ParseTagInfo;
+	parent: ParseTreeItem | null;
+	children: Array<string | ParseTreeItem>;
+}
+
 export function ParseDescriptionText (text: string): preact.VNode[] {
+	const tree: ParseTreeItem = {
+		tag: { type: "root", attrs: {} },
+		parent: null,
+		children: [],
+	};
+	let current = tree;
 	const parseBuffer: string[] = [];
-	const parseMode: string[] = [];
-	let parsePhase = 0;
-	const parseColor: string[] = [];
-	let parseItalic = false;
 
-	function color (): string {
-		const m = (c: string, a?: boolean): number => parseInt(c, 16) / (a ? 255 : 1);
+	let state: ParseState = ParseState.Idle;
 
-		const c = parseColor[parseColor.length - 1];
-		if (c.length === 8) {
-			const b = m(c.substring(0, 2));
-			const g = m(c.substring(2, 4));
-			const r = m(c.substring(4, 6));
-			const a = m(c.substring(6, 8), true);
-			return `rgba(${r},${g},${b},${a})`;
-		}
-		return `#${c}`;
-	}
-	function isColorValid (): boolean {
-		return parseColor.length > 0 && !parseColor[parseColor.length - 1].startsWith("/");
+	function compileTags (tag: ParseTreeItem = tree): preact.VNode {
+		return createElement(tag.tag.type, tag.tag.attrs, tag.children.map(r => typeof r === "string" ? r : compileTags(r)));
+
+		// if (isColorValid()) { // last tag was color tag
+		// 	const c = color();
+		// 	if (parseItalic)
+		// 		ret.push(<i data-color={ c } style={ { color: c } }>{ text }</i>);
+		// 	else
+		// 		ret.push(<span data-color={ c } style={ { color: c } }>{ text }</span>);
+		// } else if (parseItalic)
+		// 	ret.push(<i>{ text }</i>);
+		// else
+		// 	ret.push(<>{ text }</>);
+
 	}
 
-	const ret: Array<preact.VNode> = [];
 	for (let i = 0; i < text.length; i++) {
 		const c = text[i];
 
-		switch (parsePhase) {
-			case 0: // Idle
+		// [-] : close tag (close last tag?)
+		// [/?] : close tag
+
+		switch (state) {
+			case ParseState.Idle: // Idle
 				if (c === "[") {
-					if (parseBuffer.length > 0) {
-						const text = parseBuffer.join("")
-							.split(/(\{[0-9]+\})/g)
-							.filter(x => typeof x === "string");
-						parseBuffer.splice(0, parseBuffer.length);
+					state = ParseState.TagIn;
 
-						if (isColorValid()) {
-							const c = color();
-							if (parseItalic)
-								ret.push(<i data-color={ c } style={ { color: c } }>{ text }</i>);
-							else
-								ret.push(<span data-color={ c } style={ { color: c } }>{ text }</span>);
-						} else if (parseItalic)
-							ret.push(<i>{ text }</i>);
-						else
-							ret.push(<>{ text }</>);
+					if (parseBuffer.length > 0) { // non-tagged buffer exists
+						current.children.push(parseBuffer.join(""));
+						parseBuffer.splice(0, parseBuffer.length); // clear buffer
 					}
-
-					parsePhase = 1;
 				} else
 					parseBuffer.push(c);
+
 				break;
-			case 1: // Tag Parsing
+			case ParseState.TagIn:
 				if (c === "]") {
-					const tag = parseBuffer.join("");
-					parseBuffer.splice(0, parseBuffer.length);
-					parsePhase = 0;
+					state = ParseState.Idle;
 
-					if (tag === "-") {
-						if (parseColor.length > 0)
-							parseColor.pop();
-					} else if (tag === "i") {
-						parseItalic = true;
-						parseMode.push("i");
-					} else if (parseMode[parseMode.length - 1] === "c")
-						parseColor.push(tag);
-					else if (tag[0] === "/") {
-						const ctag = tag.substring(1);
-						const offset = parseMode.lastIndexOf(ctag);
-						if (offset >= 0) parseMode.splice(offset, parseMode.length - offset);
+					const tag = parseBuffer.join(""); // parsed tag
+					parseBuffer.splice(0, parseBuffer.length); // clear buffer
 
-						if (ctag === "c")
-							parseColor.pop();
-						else if (ctag === "i")
-							parseItalic = false;
-					} else
-						parseMode.push(tag);
+					if (tag === "-") // close tag
+						current = current.parent!;
+					else if (tag.startsWith("/")) {
+						const target = tag.substring(1);
+						// close tag until find same tagname
+						while (current.parent !== null) {
+							let found = current.tag.type === target;
+							current = current.parent;
+							if (found) break;
+						}
+					} else if (/^[0-9A-Fa-f]{6}$/.test(tag)) { // color tag
+						const t: ParseTreeItem = {
+							tag: {
+								type: "span",
+								attrs: {
+									"data-color": `#${tag}`,
+									"style": `color:#${tag}`,
+								},
+							},
+							parent: current,
+							children: [],
+						};
+						current.children.push(t);
+						current = t;
+					} else {
+						const t: ParseTreeItem = {
+							tag: {
+								type: tag,
+								attrs: {},
+							},
+							parent: current,
+							children: [],
+						};
+						current.children.push(t);
+						current = t;
+					}
 					// parseDepth++;
 				} else
 					parseBuffer.push(c);
+
 				break;
 		}
 	}
-	if (parseBuffer.length > 0) {
-		const text = parseBuffer.join("")
-			.split(/(\{[0-9]+\})/g)
-			.filter(x => typeof x === "string");
-		parseBuffer.splice(0, parseBuffer.length);
+	if (parseBuffer.length > 0) // non-tagged buffer exists
+		current.children.push(parseBuffer.join(""));
 
-		if (isColorValid()) {
-			const c = color();
-			if (parseItalic)
-				ret.push(<i data-color={ c } style={ { color: c } }>{ text }</i>);
-			else
-				ret.push(<span data-color={ c } style={ { color: c } }>{ text }</span>);
-		} else if (parseItalic)
-			ret.push(<i>{ text }</i>);
-		else
-			ret.push(<>{ text }</>);
-	}
-	return ret;
+	return tree.children.map(r => typeof r === "string" ? <>{ r }</> : compileTags(r));
 }

@@ -8721,6 +8721,7 @@ skills:
                     rounds: 2
                   value:
                     isBuff: true
+                    chance: 0%
                     type: 36
                     damage_reduce:
                       base: 2%
@@ -8737,6 +8738,7 @@ skills:
                     rounds: 0
                   value:
                     isBuff: true
+                    chance: 0%
                     type: 20
                     ap:
                       base: 1
@@ -8819,7 +8821,7 @@ skills:
               if:
                 - round:
                     operator: odd
-                - notInBattle:
+                - in_battle:
                     - Char_3P_Alcyone_N
               body:
                 - 0
@@ -8857,7 +8859,7 @@ skills:
               if:
                 - round:
                     operator: even
-                - notInBattle:
+                - in_battle:
                     - Char_PECS_LemonadeGamma_N
               body:
                 - 0
@@ -8938,7 +8940,7 @@ skills:
               level: "0.020000"
             base: 0.02
             per: 0.02
-            chance: 1
+            chance: 0
           - icon: BuffIcon_AP_UP
             desc:
               desc: Effect_3P_Merope_N_3_5
@@ -8947,7 +8949,7 @@ skills:
               level: "0"
             base: 1
             per: 0
-            chance: 1
+            chance: 0
           - icon: BuffIcon_MARKING
             desc:
               desc: Effect_3P_Merope_N_31_1
@@ -10611,7 +10613,7 @@ skins:
   skins:
     - sid: 1
       artist: MEL
-      price: 342
+      price: 182
       G: false
       Spine: true
       parts: 14

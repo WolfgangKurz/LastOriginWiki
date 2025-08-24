@@ -1,4 +1,4 @@
-import { useEffect, useState } from "preact/hooks";
+import { useCallback, useEffect, useState } from "preact/hooks";
 import { signal } from "@preact/signals";
 
 import { LocaleTypes, LocaleList } from "@/types/Locale";
@@ -40,44 +40,55 @@ const DefaultLang = ((): LocaleTypes => {
 	}
 })();
 
-type CachedLocaleTableType = Record<LocaleTypes, Record<string, string> | Array<() => void>>;
+type CachedLocaleTableType = Record<LocaleTypes, Record<string, string> | Set<() => void>>;
 const CachedLocales: Partial<CachedLocaleTableType> = {};
+export function GetCachedLocaleTable (locale: LocaleTypes) {
+	const t = CachedLocales[locale];
+	if (t instanceof Set) return undefined;
+	return t;
+}
 
 export const CurrentLocale = signal<LocaleTypes>(LangValidation(getCookie("LO_LANG", DefaultLang)));
 export const GlobalLocaleRequestId = signal<number>(0);
 export function useLocale (): [table: Record<string, string>, loaded: boolean] {
 	const update = useUpdate();
 	const [currentLocale, setCurrentLocale] = useState<LocaleTypes>(CurrentLocale.peek());
+	const updateCallback = useCallback(() => update(), [update]);
 
 	useEffect(() => {
 		const unsub = [
 			CurrentLocale.subscribe(v => setCurrentLocale(v)),
-			GlobalLocaleRequestId.subscribe(() => update()),
+			GlobalLocaleRequestId.subscribe(updateCallback),
 		];
 		return () => unsub.forEach(fn => fn());
 	}, []);
 
 	if (currentLocale in CachedLocales) {
-		if (Array.isArray(CachedLocales[currentLocale])) {
-			CachedLocales[currentLocale].push(() => update());
+		if (CachedLocales[currentLocale] instanceof Set) {
+			CachedLocales[currentLocale].add(updateCallback);
 			return [{}, false];
 		}
 
 		return [CachedLocales[currentLocale]!, true];
 	}
 
-	CachedLocales[currentLocale] = [() => update()];
+	CachedLocales[currentLocale] = new Set([updateCallback]);
 
 	const count = idxs[currentLocale] || 0;
 	JsonLoaderCore("", new Array(count).fill(0).map((_, i) => StaticDB.Locale[currentLocale] + `.${i}`))
 		.then(() => {
+			// Merge separated locales
 			const loc = Object.assign(
 				{},
 				...new Array(count).fill(0)
-					.map((_, i) => GetJson(StaticDB.Locale[currentLocale] + `.${i}`))
+					.map((_, i) => GetJson(StaticDB.Locale[currentLocale] + `.${i}`) || {}) // safe
 			);
 
-			const fns = CachedLocales[currentLocale] as Array<() => void>;
+			// Remove from Loader cache (to reduce memory usage)
+			for (let i = 0; i < count; i++)
+				unsetDBData(StaticDB.Locale[currentLocale] + `.${i}`);
+
+			const fns = [...(CachedLocales[currentLocale] as Set<() => void>)];
 			CachedLocales[currentLocale] = loc;
 
 			fns.forEach(fn => fn());

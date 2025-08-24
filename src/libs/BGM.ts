@@ -673,6 +673,30 @@ const BGMAlbums: BGMAlbum[] = [
 			},
 		],
 	},
+	{
+		id: "album11",
+		title: "@WORLD_Ev32", // 프로젝트 오르카 2
+		author: "LastOrigin",
+		image: "album11",
+		songs: [
+			{
+				type: "audio",
+				id: "track_rising_up_mr",
+				title: "Rising Up! (MR)",
+				duration: 271,
+				filename: "Album11/Rising_Up_MR.mp3",
+				lyrics: [{ time: 0, text: "Rising Up! (MR)" }],
+			},
+			{
+				type: "audio",
+				id: "track_flame_of_bravery_mr",
+				title: "Flame of Bravery (MR)",
+				duration: 259,
+				filename: "Album11/FlameOfBravery_MR.mp3",
+				lyrics: [{ time: 0, text: "Flame of Bravery (MR)" }],
+			},
+		],
+	},
 
 	{
 		id: "album_missorca_1st",
