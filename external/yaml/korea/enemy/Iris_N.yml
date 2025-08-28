@@ -1,20 +1,20 @@
-uid: Haru_N
+uid: Iris_N
 rarity: 5
 type: 1
 role: 1
 category: 1
 stat:
   hp:
-    - 15000
+    - 13000
     - 0
   atk:
     - 1000
     - 0
   def:
-    - 900
+    - 1000
     - 5
-  spd: 4.5
-  cri: 0
+  spd: 4.3
+  cri: 30
   acc: 300
   eva: 0
   res:
@@ -22,26 +22,26 @@ stat:
     chill: 0
     thunder: 0
 skills:
-  - key: Skill_MP_Haru_N_1
-    icon: SwordAttk
+  - key: Skill_MP_Iris_N_1
+    icon: MGShot
     passive: false
-    type: 0
+    type: 1
     target: enemy
     delayed: false
     target_ground: true
     buff:
-      rate: 1.5
-      range: 3
+      rate: 1.6
+      range: 4
       ap: 5
-      grid: 0,0.75,0,0.75,1,0.75,0,0.75,0
+      grid: 4>0,0,0,1,1,1,0,0,0
       summon: null
       use: null
       enabled: true
-      dismiss_guard: true
+      dismiss_guard: false
       acc_bonus: 0
       buff_rate: 100
       buffs:
-        - key: Effect_LC_Haru_N_1
+        - key: Effect_LC_Iris_N_1
           on: attack_success
           if:
             - false
@@ -57,27 +57,29 @@ skills:
             - 0
             - 1
             - 2
-          target: 4
+          target: 3
           buffs:
-            - icon: BuffIcon_PhyATK_UP
+            - icon: BuffIcon_FireDMG_DOT
               desc:
-                desc: Effect_LC_Haru_N_1_1
+                desc: Effect_LC_Iris_N_1_1
                 type: 1
-                value: "0.030000"
-                level: "0.030000"
+                value: "100"
+                level: "100"
               attr: 1
               erase:
-                rounds: 0
+                rounds: 2
               value:
                 isBuff: true
-                type: 70
+                type: 66
                 fixed_damage:
-                  base: 3%
-                  per: 3%
-              overlap: 0
+                  elem: fire
+                  damage:
+                    base: 100
+                    per: 100
+              overlap: 4
             - icon: BuffIcon_VULNERABLE
               desc:
-                desc: Effect_LC_Haru_N_1_2
+                desc: Effect_LC_Iris_N_1_2
                 type: 1
                 value: "0.010000"
                 level: "0.010000"
@@ -92,26 +94,24 @@ skills:
                   base: 1%
                   per: 1%
               overlap: 4
-            - icon: BuffIcon_AP_DOWN
+            - icon: BuffIcon_REMOVE_DEBUFF
               desc:
-                desc: Effect_LC_Haru_N_1_3
+                desc: Effect_LC_Iris_N_1_3
                 type: 1
-                value: "-0.010000"
-                level: "-0.010000"
+                value: "0"
+                level: "0"
               attr: 1
               erase:
-                rounds: 2
+                rounds: 0
               value:
                 isBuff: true
                 chance: 0%
-                type: 13
-                turnSpeed:
-                  base: -1%
-                  per: -1%
+                type: 100
+                off: 1
               overlap: 4
           maxStack: 0
           overlapGroup: -1
-        - key: Effect_LC_Haru_N_11
+        - key: Effect_LC_Iris_N_11
           on: attack_success
           if:
             - false
@@ -127,11 +127,11 @@ skills:
             - 0
             - 1
             - 2
-          target: 4
+          target: 3
           buffs:
             - icon: BuffIcon_VULNERABLE
               desc:
-                desc: Effect_LC_Haru_N_11_1
+                desc: Effect_LC_Iris_N_11_1
                 type: 1
                 value: "0.010000"
                 level: "0.010000"
@@ -147,7 +147,7 @@ skills:
               overlap: 4
           maxStack: 0
           overlapGroup: -1
-        - key: Effect_LC_Haru_N_12
+        - key: Effect_LC_Iris_N_12
           on: criticaled
           if:
             - false
@@ -163,38 +163,150 @@ skills:
             - 0
             - 1
             - 2
-          target: 4
+          target: 0
           buffs:
-            - icon: BuffIcon_AP_DOWN
+            - icon: BuffIcon_REMOVE_DEBUFF
               desc:
-                desc: Effect_LC_Haru_N_12_1
+                desc: Effect_LC_Iris_N_12_1
                 type: 1
-                value: "-0.010000"
-                level: "-0.010000"
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 100
+                off: 1
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_BUFF_Conflict_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_FIRERES_DOWN
+              desc:
+                desc: Effect_BUFF_Conflict_N_1_1
+                type: 1
+                value: "-0.500000"
+                level: "-0.025000"
               attr: 1
               erase:
                 rounds: 2
               value:
                 isBuff: true
-                type: 13
-                turnSpeed:
-                  base: -1%
-                  per: -1%
+                type: 15
+                resist:
+                  elem: fire
+                  value:
+                    base: -50%
+                    per: -2.5%
               overlap: 4
-          maxStack: 0
-          overlapGroup: -1
-  - key: Skill_MP_Haru_N_2
-    icon: AirStrike
+          maxStack: 1
+          overlapGroup: 17
+        - key: Effect_BUFF_Conflict_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_ICERES_DOWN
+              desc:
+                desc: Effect_BUFF_Conflict_N_2_1
+                type: 1
+                value: "-0.500000"
+                level: "-0.025000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 17
+                resist:
+                  elem: ice
+                  value:
+                    base: -50%
+                    per: -2.5%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: 18
+        - key: Effect_BUFF_Conflict_N_3
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_LIGHTNINGRES_UP
+              desc:
+                desc: Effect_BUFF_Conflict_N_3_1
+                type: 1
+                value: "0.500000"
+                level: "0.025000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 19
+                resist:
+                  elem: lightning
+                  value:
+                    base: 50%
+                    per: 2.5%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: 19
+  - key: Skill_MP_Iris_N_2
+    icon: SetTurret
     passive: false
-    type: 0
+    type: 1
     target: enemy
     delayed: false
     target_ground: true
     buff:
-      rate: 1.8
+      rate: 1.4
       range: 6
-      ap: 8
-      grid: 0.5,0.75,0.5,0.75,1,0.75,0.5,0.75,0.5
+      ap: 10
+      grid: 1,0.75,0.5,1,1,1,1,0.75,0.5
       summon: null
       use: null
       enabled: true
@@ -202,7 +314,7 @@ skills:
       acc_bonus: 0
       buff_rate: 100
       buffs:
-        - key: Effect_LC_Haru_N_2
+        - key: Effect_LC_Iris_N_2
           on: attack_success
           if:
             - false
@@ -220,46 +332,62 @@ skills:
             - 2
           target: 0
           buffs:
-            - icon: BuffIcon_ARMORED_DMG_UP
+            - icon: BuffIcon_ATK_UP
               desc:
-                desc: Effect_LC_Haru_N_2_1
+                desc: Effect_LC_Iris_N_2_1
                 type: 1
-                value: "0.030000"
-                level: "0.030000"
+                value: "0.020000"
+                level: "0.020000"
               attr: 0
               erase:
-                rounds: 0
+                rounds: 2
               value:
                 isBuff: true
-                type: 61
-                damage_multiply:
-                  target: heavy
-                  value:
-                    base: 3%
-                    per: 3%
-              overlap: 4
-            - icon: BuffIcon_PhyATK_UP
-              desc:
-                desc: Effect_LC_Haru_N_2_2
                 type: 1
-                value: "0.030000"
-                level: "0.030000"
+                attack:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_LC_Iris_N_2_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_FireATK_UP
+              desc:
+                desc: Effect_LC_Iris_N_2_3
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
               attr: 0
               erase:
                 rounds: 0
               value:
                 isBuff: true
                 chance: 0%
-                type: 83
+                type: 84
                 damage_add:
-                  base: 3%
-                  per: 3%
+                  elem: fire
+                  damage:
+                    base: 2%
+                    per: 2%
               overlap: 4
             - icon: BuffIcon_TOGETHER_ATTACK
               desc:
-                desc: Effect_LC_Haru_N_2_3
+                desc: Effect_LC_Iris_N_2_4
                 type: 0
-                value: Char_LC_Lily_N
+                value: Char_LC_Stella_N
                 level: "0"
               attr: 0
               erase:
@@ -270,11 +398,11 @@ skills:
                 type: 103
                 collaborate:
                   skill: 2
-                  with: Char_LC_Lily_N
+                  with: Char_LC_Stella_N
               overlap: 4
-          maxStack: 1
+          maxStack: 0
           overlapGroup: -1
-        - key: Effect_LC_Haru_N_21
+        - key: Effect_LC_Iris_N_21
           on: criticaled
           if:
             - false
@@ -292,25 +420,101 @@ skills:
             - 2
           target: 4
           buffs:
-            - icon: BuffIcon_PhyATK_UP
+            - icon: BuffIcon_FireATK_UP
               desc:
-                desc: Effect_LC_Haru_N_21_1
+                desc: Effect_LC_Iris_N_21_1
                 type: 1
-                value: "0.030000"
-                level: "0.030000"
+                value: "0.020000"
+                level: "0.020000"
               attr: 3
               erase:
                 rounds: 0
               value:
                 isBuff: true
-                type: 83
+                type: 84
                 damage_add:
-                  base: 3%
-                  per: 3%
+                  elem: fire
+                  damage:
+                    base: 2%
+                    per: 2%
               overlap: 4
           maxStack: 0
           overlapGroup: -1
-        - key: Effect_LC_Haru_N_22
+        - key: Effect_LC_Iris_N_22
+          on: attack_success
+          if:
+            - in_battle:
+                - Char_LC_Stella_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_TOGETHER_ATTACK
+              desc:
+                desc: Effect_LC_Iris_N_22_1
+                type: 0
+                value: Char_LC_Stella_N
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 103
+                collaborate:
+                  skill: 2
+                  with: Char_LC_Stella_N
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Iris_N_23
+          on: attack_success
+          if:
+            - in_battle:
+                - Char_LC_Haru_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_TOGETHER_ATTACK
+              desc:
+                desc: Effect_LC_Iris_N_23_1
+                type: 0
+                value: Char_LC_Haru_N
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 103
+                collaborate:
+                  skill: 2
+                  with: Char_LC_Haru_N
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Iris_N_24
           on: attack_success
           if:
             - in_battle:
@@ -331,7 +535,7 @@ skills:
           buffs:
             - icon: BuffIcon_TOGETHER_ATTACK
               desc:
-                desc: Effect_LC_Haru_N_22_1
+                desc: Effect_LC_Iris_N_24_1
                 type: 0
                 value: Char_LC_Lily_N
                 level: "0"
@@ -347,8 +551,8 @@ skills:
               overlap: 4
           maxStack: 0
           overlapGroup: -1
-  - key: Skill_MP_Haru_N_3
-    icon: P.SuicideBomb
+  - key: Skill_MP_Iris_N_3
+    icon: P.MeleeAttack
     passive: true
     type: 0
     target: team
@@ -366,7 +570,7 @@ skills:
       acc_bonus: 0
       buff_rate: 100
       buffs:
-        - key: Effect_LC_Haru_N_3
+        - key: Effect_LC_Iris_N_3
           on: round
           if:
             - false
@@ -384,25 +588,9 @@ skills:
             - 2
           target: 0
           buffs:
-            - icon: BuffIcon_ATK_UP
-              desc:
-                desc: Effect_LC_Haru_N_3_1
-                type: 1
-                value: "0.030000"
-                level: "0.030000"
-              attr: 0
-              erase:
-                rounds: 1
-              value:
-                isBuff: true
-                type: 1
-                attack:
-                  base: 3%
-                  per: 3%
-              overlap: 4
             - icon: BuffIcon_ACCURACY_UP
               desc:
-                desc: Effect_LC_Haru_N_3_2
+                desc: Effect_LC_Iris_N_3_1
                 type: 1
                 value: "0.030000"
                 level: "0.030000"
@@ -416,9 +604,9 @@ skills:
                   base: 3%
                   per: 3%
               overlap: 4
-            - icon: BuffIcon_CRITICAL_UP
+            - icon: BuffIcon_ARMORED_DMG_UP
               desc:
-                desc: Effect_LC_Haru_N_3_3
+                desc: Effect_LC_Iris_N_3_2
                 type: 1
                 value: "0.030000"
                 level: "0.030000"
@@ -427,14 +615,16 @@ skills:
                 rounds: 1
               value:
                 isBuff: true
-                type: 9
-                critical:
-                  base: 3%
-                  per: 3%
+                type: 61
+                damage_multiply:
+                  target: heavy
+                  value:
+                    base: 3%
+                    per: 3%
               overlap: 4
             - icon: BuffIcon_AP_UP
               desc:
-                desc: Effect_LC_Haru_N_3_4
+                desc: Effect_LC_Iris_N_3_3
                 type: 0
                 value: "0.030000"
                 level: "0.030000"
@@ -451,7 +641,7 @@ skills:
               overlap: 3
             - icon: BuffIcon_AP_UP
               desc:
-                desc: Effect_LC_Haru_N_3_5
+                desc: Effect_LC_Iris_N_3_4
                 type: 0
                 value: "0.050000"
                 level: "0.050000"
@@ -468,7 +658,7 @@ skills:
               overlap: 3
           maxStack: 0
           overlapGroup: -1
-        - key: Effect_LC_Haru_N_31
+        - key: Effect_LC_Iris_N_31
           on:
             attack_success: passive
           if:
@@ -489,7 +679,7 @@ skills:
           buffs:
             - icon: BuffIcon_AP_UP
               desc:
-                desc: Effect_LC_Haru_N_31_1
+                desc: Effect_LC_Iris_N_31_1
                 type: 0
                 value: "0.030000"
                 level: "0.030000"
@@ -505,7 +695,7 @@ skills:
               overlap: 3
           maxStack: 0
           overlapGroup: -1
-        - key: Effect_LC_Haru_N_32
+        - key: Effect_LC_Iris_N_32
           on: enemy_killed_passive
           if:
             - false
@@ -525,7 +715,7 @@ skills:
           buffs:
             - icon: BuffIcon_AP_UP
               desc:
-                desc: Effect_LC_Haru_N_32_1
+                desc: Effect_LC_Iris_N_32_1
                 type: 0
                 value: "0.050000"
                 level: "0.050000"
@@ -541,8 +731,8 @@ skills:
               overlap: 3
           maxStack: 0
           overlapGroup: -1
-  - key: Skill_MP_Haru_N_4
-    icon: P.MeleeAttack
+  - key: Skill_MP_Iris_N_4
+    icon: P.TeamSpdBuff
     passive: true
     type: 0
     target: team
@@ -560,7 +750,7 @@ skills:
       acc_bonus: 0
       buff_rate: 100
       buffs:
-        - key: Effect_LC_Haru_N_4
+        - key: Effect_LC_Iris_N_4
           on: round
           if:
             - false
@@ -576,11 +766,11 @@ skills:
             - 0
             - 1
             - 2
-          target: 0
+          target: 2
           buffs:
-            - icon: BuffIcon_DEF_PIERCE_UP
+            - icon: BuffIcon_CRITICAL_UP
               desc:
-                desc: Effect_LC_Haru_N_4_1
+                desc: Effect_LC_Iris_N_4_1
                 type: 1
                 value: "0.020000"
                 level: "0.020000"
@@ -589,14 +779,14 @@ skills:
                 rounds: 1
               value:
                 isBuff: true
-                type: 58
-                penetration:
+                type: 9
+                critical:
                   base: 2%
                   per: 2%
               overlap: 4
-            - icon: BuffIcon_DAMAGE_REDUCE
+            - icon: BuffIcon_EVADE_UP
               desc:
-                desc: Effect_LC_Haru_N_4_2
+                desc: Effect_LC_Iris_N_4_2
                 type: 1
                 value: "0.020000"
                 level: "0.020000"
@@ -605,31 +795,14 @@ skills:
                 rounds: 1
               value:
                 isBuff: true
-                type: 36
-                damage_reduce:
+                type: 11
+                evade:
                   base: 2%
                   per: 2%
               overlap: 4
-            - icon: BuffIcon_COUNTER
+            - icon: BuffIcon_CRITICAL_UP
               desc:
-                desc: Effect_LC_Haru_N_4_3
-                type: 1
-                value: "0.120000"
-                level: "0.120000"
-              attr: 0
-              erase:
-                rounds: 1
-              value:
-                isBuff: true
-                chance: 0%
-                type: 29
-                counter:
-                  base: 12%
-                  per: 12%
-              overlap: 4
-            - icon: BuffIcon_DEF_PIERCE_UP
-              desc:
-                desc: Effect_LC_Haru_N_4_4
+                desc: Effect_LC_Iris_N_4_3
                 type: 1
                 value: "0.020000"
                 level: "0.020000"
@@ -639,14 +812,14 @@ skills:
               value:
                 isBuff: true
                 chance: 0%
-                type: 58
-                penetration:
+                type: 9
+                critical:
                   base: 2%
                   per: 2%
               overlap: 4
-            - icon: BuffIcon_DAMAGE_REDUCE
+            - icon: BuffIcon_EVADE_UP
               desc:
-                desc: Effect_LC_Haru_N_4_5
+                desc: Effect_LC_Iris_N_4_4
                 type: 1
                 value: "0.020000"
                 level: "0.020000"
@@ -656,14 +829,140 @@ skills:
               value:
                 isBuff: true
                 chance: 0%
-                type: 36
-                damage_reduce:
+                type: 11
+                evade:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_LC_Iris_N_4_5
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Iris_N_41
+          on: round
+          if:
+            - target:
+                - Char_BR_Shirayuri_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_LC_Iris_N_41_1
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_LC_Iris_N_41_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
                   base: 2%
                   per: 2%
               overlap: 4
           maxStack: 0
           overlapGroup: -1
-        - key: Effect_LC_Haru_N_41
+        - key: Effect_LC_Iris_N_42
+          on: round
+          if:
+            - target:
+                - Char_BR_Shirayuri_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_LC_Iris_N_42_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_Iris_N_5
+    icon: P.TeamSpdBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Iris_N_5
           on: damaged_active
           if:
             - false
@@ -683,7 +982,7 @@ skills:
           buffs:
             - icon: BuffIcon_COUNTER
               desc:
-                desc: Effect_LC_Haru_N_41_1
+                desc: Effect_LC_Iris_N_5_1
                 type: 1
                 value: "0.100000"
                 level: "0.100000"
@@ -697,30 +996,43 @@ skills:
                   base: 10%
                   per: 10%
               overlap: 4
-          maxStack: 0
-          overlapGroup: -1
-        - key: Effect_LC_Haru_N_42
-          on: round
-          if:
-            - target:
-                - Char_BR_Vargr_N
-            - false
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 2
-          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_LC_Iris_N_5_2
+                type: 1
+                value: "0.050000"
+                level: "0.050000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 0%
+                type: 1
+                attack:
+                  base: 5%
+                  per: 5%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_LC_Iris_N_5_3
+                type: 1
+                value: "0.050000"
+                level: "0.050000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 0%
+                type: 9
+                critical:
+                  base: 5%
+                  per: 5%
+              overlap: 4
             - icon: BuffIcon_DEF_PIERCE_UP
               desc:
-                desc: Effect_LC_Haru_N_42_1
+                desc: Effect_LC_Iris_N_5_4
                 type: 1
                 value: "0.020000"
                 level: "0.020000"
@@ -729,14 +1041,15 @@ skills:
                 rounds: 1
               value:
                 isBuff: true
+                chance: 0%
                 type: 58
                 penetration:
                   base: 2%
                   per: 2%
               overlap: 4
-            - icon: BuffIcon_DAMAGE_REDUCE
+            - icon: BuffIcon_CRITICAL_UP
               desc:
-                desc: Effect_LC_Haru_N_42_2
+                desc: Effect_LC_Iris_N_5_5
                 type: 1
                 value: "0.020000"
                 level: "0.020000"
@@ -745,34 +1058,16 @@ skills:
                 rounds: 1
               value:
                 isBuff: true
-                type: 36
-                damage_reduce:
+                chance: 0%
+                type: 9
+                critical:
                   base: 2%
                   per: 2%
               overlap: 4
           maxStack: 0
           overlapGroup: -1
-  - key: Skill_MP_Haru_N_5
-    icon: P.MeleeAttack
-    passive: true
-    type: 0
-    target: team
-    delayed: false
-    target_ground: true
-    buff:
-      rate: 0
-      range: 0
-      ap: 0
-      grid: F>1,1,1,1,1,1,1,1,1
-      summon: null
-      use: null
-      enabled: true
-      dismiss_guard: false
-      acc_bonus: 0
-      buff_rate: 100
-      buffs:
-        - key: Effect_LC_Haru_N_5
-          on: round
+        - key: Effect_LC_Iris_N_51
+          on: damaged_active
           if:
             - false
             - false
@@ -789,92 +1084,47 @@ skills:
             - 2
           target: 0
           buffs:
-            - icon: BuffIcon_DEF_RESSURRECT
+            - icon: BuffIcon_ATK_UP
               desc:
-                desc: Effect_LC_Haru_N_5_1
+                desc: Effect_LC_Iris_N_51_1
                 type: 1
                 value: "0.050000"
                 level: "0.050000"
               attr: 3
-              erase: {}
+              erase:
+                rounds: 2
               value:
                 isBuff: true
-                type: 98
-                revive:
+                type: 1
+                attack:
                   base: 5%
                   per: 5%
               overlap: 4
-            - icon: BuffIcon_ATK_UP
-              desc:
-                desc: Effect_LC_Haru_N_5_2
-                type: 1
-                value: "0.020000"
-                level: "0.020000"
-              attr: 3
-              erase: {}
-              value:
-                isBuff: true
-                chance: 0%
-                type: 1
-                attack:
-                  base: 2%
-                  per: 2%
-              overlap: 4
-            - icon: BuffIcon_DEF_PIERCE_UP
-              desc:
-                desc: Effect_LC_Haru_N_5_3
-                type: 1
-                value: "0.020000"
-                level: "0.020000"
-              attr: 3
-              erase: {}
-              value:
-                isBuff: true
-                chance: 0%
-                type: 58
-                penetration:
-                  base: 2%
-                  per: 2%
-              overlap: 4
-            - icon: BuffIcon_ACCURACY_UP
-              desc:
-                desc: Effect_LC_Haru_N_5_4
-                type: 1
-                value: "0.020000"
-                level: "0.020000"
-              attr: 3
-              erase: {}
-              value:
-                isBuff: true
-                chance: 0%
-                type: 7
-                accuracy:
-                  base: 2%
-                  per: 2%
-              overlap: 4
             - icon: BuffIcon_CRITICAL_UP
               desc:
-                desc: Effect_LC_Haru_N_5_5
+                desc: Effect_LC_Iris_N_51_2
                 type: 1
-                value: "0.020000"
-                level: "0.020000"
+                value: "0.050000"
+                level: "0.050000"
               attr: 3
-              erase: {}
+              erase:
+                rounds: 2
               value:
                 isBuff: true
-                chance: 0%
                 type: 9
                 critical:
-                  base: 2%
-                  per: 2%
+                  base: 5%
+                  per: 5%
               overlap: 4
-          maxStack: 1
+          maxStack: 2
           overlapGroup: -1
-        - key: Effect_LC_Haru_N_51
+        - key: Effect_LC_Iris_N_52
           on: round
           if:
             - in_battle:
+                - Char_LC_Haru_N
                 - Char_LC_Stella_N
+                - Char_LC_Lily_N
               more:
                 - 1
                 - 4
@@ -892,9 +1142,9 @@ skills:
             - 2
           target: 2
           buffs:
-            - icon: BuffIcon_ATK_UP
+            - icon: BuffIcon_DEF_PIERCE_UP
               desc:
-                desc: Effect_LC_Haru_N_51_1
+                desc: Effect_LC_Iris_N_52_1
                 type: 1
                 value: "0.005000"
                 level: "0.005000"
@@ -903,18 +1153,20 @@ skills:
                 rounds: 1
               value:
                 isBuff: true
-                type: 1
-                attack:
+                type: 58
+                penetration:
                   base: 0.5%
                   per: 0.5%
               overlap: 4
           maxStack: 0
           overlapGroup: -1
-        - key: Effect_LC_Haru_N_52
+        - key: Effect_LC_Iris_N_53
           on: round
           if:
             - in_battle:
+                - Char_LC_Haru_N
                 - Char_LC_Stella_N
+                - Char_LC_Lily_N
               more:
                 - 2
                 - 4
@@ -932,25 +1184,9 @@ skills:
             - 2
           target: 2
           buffs:
-            - icon: BuffIcon_ATK_UP
-              desc:
-                desc: Effect_LC_Haru_N_52_1
-                type: 1
-                value: "0.010000"
-                level: "0.010000"
-              attr: 0
-              erase:
-                rounds: 1
-              value:
-                isBuff: true
-                type: 1
-                attack:
-                  base: 1%
-                  per: 1%
-              overlap: 4
             - icon: BuffIcon_DEF_PIERCE_UP
               desc:
-                desc: Effect_LC_Haru_N_52_2
+                desc: Effect_LC_Iris_N_53_1
                 type: 1
                 value: "0.010000"
                 level: "0.010000"
@@ -964,13 +1200,31 @@ skills:
                   base: 1%
                   per: 1%
               overlap: 4
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_LC_Iris_N_53_2
+                type: 1
+                value: "0.010000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 1%
+                  per: 1%
+              overlap: 4
           maxStack: 0
           overlapGroup: -1
-        - key: Effect_LC_Haru_N_53
+        - key: Effect_LC_Iris_N_54
           on: round
           if:
             - in_battle:
+                - Char_LC_Haru_N
                 - Char_LC_Stella_N
+                - Char_LC_Lily_N
               more:
                 - 3
                 - 4
@@ -988,25 +1242,9 @@ skills:
             - 2
           target: 2
           buffs:
-            - icon: BuffIcon_ATK_UP
-              desc:
-                desc: Effect_LC_Haru_N_53_1
-                type: 1
-                value: "0.015000"
-                level: "0.015000"
-              attr: 0
-              erase:
-                rounds: 1
-              value:
-                isBuff: true
-                type: 1
-                attack:
-                  base: 1.5%
-                  per: 1.5%
-              overlap: 4
             - icon: BuffIcon_DEF_PIERCE_UP
               desc:
-                desc: Effect_LC_Haru_N_53_2
+                desc: Effect_LC_Iris_N_54_1
                 type: 1
                 value: "0.015000"
                 level: "0.015000"
@@ -1020,9 +1258,9 @@ skills:
                   base: 1.5%
                   per: 1.5%
               overlap: 4
-            - icon: BuffIcon_ACCURACY_UP
+            - icon: BuffIcon_CRITICAL_UP
               desc:
-                desc: Effect_LC_Haru_N_53_3
+                desc: Effect_LC_Iris_N_54_2
                 type: 1
                 value: "0.015000"
                 level: "0.015000"
@@ -1031,18 +1269,36 @@ skills:
                 rounds: 1
               value:
                 isBuff: true
-                type: 7
-                accuracy:
+                type: 9
+                critical:
+                  base: 1.5%
+                  per: 1.5%
+              overlap: 4
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_LC_Iris_N_54_3
+                type: 1
+                value: "0.015000"
+                level: "0.015000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
                   base: 1.5%
                   per: 1.5%
               overlap: 4
           maxStack: 0
           overlapGroup: -1
-        - key: Effect_LC_Haru_N_54
+        - key: Effect_LC_Iris_N_55
           on: round
           if:
             - in_battle:
+                - Char_LC_Haru_N
                 - Char_LC_Stella_N
+                - Char_LC_Lily_N
               more:
                 - 4
                 - 4
@@ -1060,25 +1316,9 @@ skills:
             - 2
           target: 2
           buffs:
-            - icon: BuffIcon_ATK_UP
-              desc:
-                desc: Effect_LC_Haru_N_54_1
-                type: 1
-                value: "0.020000"
-                level: "0.020000"
-              attr: 0
-              erase:
-                rounds: 1
-              value:
-                isBuff: true
-                type: 1
-                attack:
-                  base: 2%
-                  per: 2%
-              overlap: 4
             - icon: BuffIcon_DEF_PIERCE_UP
               desc:
-                desc: Effect_LC_Haru_N_54_2
+                desc: Effect_LC_Iris_N_55_1
                 type: 1
                 value: "0.020000"
                 level: "0.020000"
@@ -1092,25 +1332,9 @@ skills:
                   base: 2%
                   per: 2%
               overlap: 4
-            - icon: BuffIcon_ACCURACY_UP
-              desc:
-                desc: Effect_LC_Haru_N_54_3
-                type: 1
-                value: "0.020000"
-                level: "0.020000"
-              attr: 0
-              erase:
-                rounds: 1
-              value:
-                isBuff: true
-                type: 7
-                accuracy:
-                  base: 2%
-                  per: 2%
-              overlap: 4
             - icon: BuffIcon_CRITICAL_UP
               desc:
-                desc: Effect_LC_Haru_N_54_4
+                desc: Effect_LC_Iris_N_55_2
                 type: 1
                 value: "0.020000"
                 level: "0.020000"
@@ -1121,6 +1345,38 @@ skills:
                 isBuff: true
                 type: 9
                 critical:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_LC_Iris_N_55_3
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_LC_Iris_N_55_4
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
                   base: 2%
                   per: 2%
               overlap: 4

@@ -1,0 +1,1569 @@
+uid: Lily_N
+rarity: 5
+type: 0
+role: 1
+category: 1
+stat:
+  hp:
+    - 12000
+    - 0
+  atk:
+    - 1000
+    - 0
+  def:
+    - 1000
+    - 5
+  spd: 4.3
+  cri: 0
+  acc: 300
+  eva: 50
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_MP_Lily_N_1
+    icon: AxeAttk
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 1.4
+      range: 4
+      ap: 5
+      grid: 4>1,0.75,0,1,0.75,0,1,0.75,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Lily_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_LC_Lily_N_1_1
+                type: 1
+                value: "-0.010000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: -1%
+                  per: -1%
+              overlap: 4
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_LC_Lily_N_1_2
+                type: 1
+                value: "-0.010000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: -1%
+                  per: -1%
+              overlap: 4
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_LC_Lily_N_1_3
+                type: 1
+                value: "38"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 88
+                off:
+                  type: 38
+                  target: 0
+              overlap: 4
+            - icon: BuffIcon_DEBUFF_RATEUP
+              desc:
+                desc: Effect_LC_Lily_N_1_4
+                type: 1
+                value: "0.030000"
+                level: "0.030000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 0%
+                type: 90
+                resist:
+                  type: debuff_rateup
+                  value:
+                    base: 3%
+                    per: 3%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Lily_N_11
+          on: criticaled
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_LC_Lily_N_11_1
+                type: 1
+                value: "38"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 38
+                  target: 0
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Lily_N_12
+          on: criticaled
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_DEBUFF_RATEUP
+              desc:
+                desc: Effect_LC_Lily_N_12_1
+                type: 1
+                value: "0.030000"
+                level: "0.030000"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 90
+                resist:
+                  type: debuff_rateup
+                  value:
+                    base: 3%
+                    per: 3%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_Lily_N_2
+    icon: SatelliteBeam
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 1.5
+      range: 4
+      ap: 6
+      grid: 4>1,1,0,1,1,0,1,1,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Lily_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_LC_Lily_N_2_1
+                type: 1
+                value: "100"
+                level: "100"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 100
+                  per: 100
+              overlap: 4
+            - icon: BuffIcon_VULNERABLE
+              desc:
+                desc: Effect_LC_Lily_N_2_2
+                type: 1
+                value: "0.010000"
+                level: "0.010000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 0%
+                type: 48
+                damage_increase:
+                  base: 1%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_LC_Lily_N_2_3
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 99
+                off: 0
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Lily_N_21
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_VULNERABLE
+              desc:
+                desc: Effect_LC_Lily_N_21_1
+                type: 1
+                value: "0.010000"
+                level: "0.010000"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 48
+                damage_increase:
+                  base: 1%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Lily_N_22
+          on: criticaled
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_LC_Lily_N_22_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 99
+                off: 0
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_Lily_N_3
+    icon: P.Hang
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Lily_N_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Lily_N_3_1
+                type: 0
+                value: "0.050000"
+                level: "0.050000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 0.05
+                  per: 0.05
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Lily_N_3_2
+                type: 1
+                value: "0.030000"
+                level: "0.030000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 3%
+                  per: 3%
+              overlap: 4
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_LC_Lily_N_3_3
+                type: 1
+                value: "0.040000"
+                level: "0.040000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 3
+                defense:
+                  base: 4%
+                  per: 4%
+              overlap: 4
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_LC_Lily_N_3_4
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 11
+                evade:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_LC_Lily_N_3_5
+                type: 1
+                value: "0.010000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 1%
+                    per: 1%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: -1
+        - key: Effect_LC_Lily_N_31
+          on: round
+          if:
+            - in_battle:
+                - Char_LC_Haru_N
+                - Char_LC_Stella_N
+                - Char_LC_Iris_N
+              more:
+                - 1
+                - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_LC_Lily_N_31_1
+                type: 1
+                value: "0.010000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: 1%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Lily_N_32
+          on: round
+          if:
+            - in_battle:
+                - Char_LC_Haru_N
+                - Char_LC_Stella_N
+                - Char_LC_Iris_N
+              more:
+                - 2
+                - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_LC_Lily_N_32_1
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_LC_Lily_N_32_2
+                type: 1
+                value: "0.010000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 1%
+                  per: 1%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Lily_N_33
+          on: round
+          if:
+            - in_battle:
+                - Char_LC_Haru_N
+                - Char_LC_Stella_N
+                - Char_LC_Iris_N
+              more:
+                - 3
+                - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_LC_Lily_N_33_1
+                type: 1
+                value: "0.030000"
+                level: "0.030000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: 3%
+                  per: 3%
+              overlap: 4
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_LC_Lily_N_33_2
+                type: 1
+                value: "0.015000"
+                level: "0.015000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 1.5%
+                  per: 1.5%
+              overlap: 4
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_LC_Lily_N_33_3
+                type: 1
+                value: "0.005000"
+                level: "0.005000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 0.5%
+                    per: 0.5%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Lily_N_34
+          on: round
+          if:
+            - in_battle:
+                - Char_LC_Haru_N
+                - Char_LC_Stella_N
+                - Char_LC_Iris_N
+              more:
+                - 4
+                - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DEF_UP
+              desc:
+                desc: Effect_LC_Lily_N_34_1
+                type: 1
+                value: "0.040000"
+                level: "0.040000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: 4%
+                  per: 4%
+              overlap: 4
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_LC_Lily_N_34_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_LC_Lily_N_34_3
+                type: 1
+                value: "0.010000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 1%
+                    per: 1%
+              overlap: 4
+            - icon: BuffIcon_SKILL_UP
+              desc:
+                desc: Effect_LC_Lily_N_34_4
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 106
+                skill_ratio:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Lily_N_35
+          on: round
+          if:
+            - target:
+                - Char_LC_Haru_N
+                - Char_LC_Stella_N
+                - Char_LC_Iris_N
+                - Char_LC_Lily_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_LC_Lily_N_35_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_Lily_N_4
+    icon: P.SuicideBomb
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Lily_N_4
+          on: damaged_active
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_LC_Lily_N_4_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 100
+                off: 1
+              overlap: 4
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_LC_Lily_N_4_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 1
+                attack:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_LC_Lily_N_4_3
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 7
+                accuracy:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_SKILL_UP
+              desc:
+                desc: Effect_LC_Lily_N_4_4
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 106
+                skill_ratio:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_LC_Lily_N_4_5
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Lily_N_41
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_LC_Lily_N_41_1
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_LC_Lily_N_41_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_SKILL_UP
+              desc:
+                desc: Effect_LC_Lily_N_41_3
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 106
+                skill_ratio:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - unknown: Effect_LC_Lily_N_42
+        - key: Effect_LC_Lily_N_43
+          on: round
+          if:
+            - target:
+                - Char_3P_Eternity_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Lily_N_43_1
+                type: 0
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 0.02
+                  per: 0.02
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Lily_N_43_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Lily_N_44
+          on: round
+          if:
+            - target:
+                - Char_AGS_Shade_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Lily_N_44_1
+                type: 0
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 0.02
+                  per: 0.02
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Lily_N_44_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Lily_N_45
+          on: round
+          if:
+            - target:
+                - Char_BR_Ellie_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Lily_N_45_1
+                type: 0
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 0.02
+                  per: 0.02
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Lily_N_45_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Lily_N_46
+          on: round
+          if:
+            - target:
+                - Char_3P_Eternity_N
+                - Char_AGS_Shade_N
+                - Char_BR_Ellie_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_LC_Lily_N_46_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_Lily_N_5
+    icon: P.SuicideBomb
+    passive: true
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Lily_N_5
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_LC_Lily_N_5_1
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_LC_Lily_N_5_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_LC_Lily_N_5_3
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 11
+                evade:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_LC_Lily_N_5_4
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 3
+                defense:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_LC_Lily_N_5_5
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 1
+                attack:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Lily_N_51
+          on: round
+          if:
+            - in_battle:
+                - Char_LC_Haru_N
+                - Char_LC_Stella_N
+                - Char_LC_Iris_N
+              more:
+                - 1
+                - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_LC_Lily_N_51_1
+                type: 1
+                value: "-0.005000"
+                level: "-0.005000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: -0.5%
+                  per: -0.5%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Lily_N_52
+          on: round
+          if:
+            - in_battle:
+                - Char_LC_Haru_N
+                - Char_LC_Stella_N
+                - Char_LC_Iris_N
+              more:
+                - 2
+                - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_LC_Lily_N_52_1
+                type: 1
+                value: "-0.010000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: -1%
+                  per: -1%
+              overlap: 4
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_LC_Lily_N_52_2
+                type: 1
+                value: "-0.010000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -1%
+                  per: -1%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Lily_N_53
+          on: round
+          if:
+            - in_battle:
+                - Char_LC_Haru_N
+                - Char_LC_Stella_N
+                - Char_LC_Iris_N
+              more:
+                - 3
+                - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_LC_Lily_N_53_1
+                type: 1
+                value: "-0.015000"
+                level: "-0.015000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: -1.5%
+                  per: -1.5%
+              overlap: 4
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_LC_Lily_N_53_2
+                type: 1
+                value: "-0.015000"
+                level: "-0.015000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -1.5%
+                  per: -1.5%
+              overlap: 4
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_LC_Lily_N_53_3
+                type: 1
+                value: "-0.015000"
+                level: "-0.015000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: -1.5%
+                  per: -1.5%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Lily_N_54
+          on: round
+          if:
+            - in_battle:
+                - Char_LC_Haru_N
+                - Char_LC_Stella_N
+                - Char_LC_Iris_N
+              more:
+                - 4
+                - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_LC_Lily_N_54_1
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_LC_Lily_N_54_2
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_LC_Lily_N_54_3
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_DOWN
+              desc:
+                desc: Effect_LC_Lily_N_54_4
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+ai: AI_MP_BossNormal
