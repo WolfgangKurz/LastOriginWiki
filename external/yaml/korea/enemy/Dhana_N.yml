@@ -1,0 +1,1397 @@
+uid: Dhana_N
+rarity: 5
+type: 0
+role: 1
+category: 1
+stat:
+  hp:
+    - 12000
+    - 0
+  atk:
+    - 1000
+    - 0
+  def:
+    - 1000
+    - 5
+  spd: 4.3
+  cri: 30
+  acc: 300
+  eva: 0
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_MP_Dhana_N_1
+    icon: CruiseMissile
+    passive: false
+    type: 2
+    target: enemy
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 1.7
+      range: 3
+      ap: 6
+      grid: 4>0,0,0,1,1,1,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Dhana_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_LC_Dhana_N_1_1
+                type: 1
+                value: "-0.030000"
+                level: "-0.030000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -3%
+                  per: -3%
+              overlap: 4
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_LC_Dhana_N_1_2
+                type: 1
+                value: "-0.030000"
+                level: "-0.030000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: -3%
+                  per: -3%
+              overlap: 4
+            - icon: BuffIcon_IceDMG_DOT
+              desc:
+                desc: Effect_LC_Dhana_N_1_3
+                type: 0
+                value: "100"
+                level: "100"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 0%
+                type: 67
+                fixed_damage:
+                  elem: ice
+                  damage:
+                    base: 100
+                    per: 100
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Dhana_N_11
+          on: criticaled
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_IceDMG_DOT
+              desc:
+                desc: Effect_LC_Dhana_N_11_1
+                type: 0
+                value: "100"
+                level: "100"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 67
+                fixed_damage:
+                  elem: ice
+                  damage:
+                    base: 100
+                    per: 100
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_BUFF_Flood_N_4
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_FIRERES_UP
+              desc:
+                desc: Effect_BUFF_Flood_N_4_1
+                type: 1
+                value: "0.500000"
+                level: "0.025000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 15
+                resist:
+                  elem: fire
+                  value:
+                    base: 50%
+                    per: 2.5%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: 1
+        - key: Effect_BUFF_Flood_N_5
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_ICERES_DOWN
+              desc:
+                desc: Effect_BUFF_Flood_N_5_1
+                type: 1
+                value: "-0.500000"
+                level: "-0.025000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 17
+                resist:
+                  elem: ice
+                  value:
+                    base: -50%
+                    per: -2.5%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: 2
+        - key: Effect_BUFF_Flood_N_6
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_LIGHTNINGRES_DOWN
+              desc:
+                desc: Effect_BUFF_Flood_N_6_1
+                type: 1
+                value: "-0.500000"
+                level: "-0.025000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 19
+                resist:
+                  elem: lightning
+                  value:
+                    base: -50%
+                    per: -2.5%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: 3
+  - key: Skill_MP_Dhana_N_2
+    icon: AirStrike
+    passive: false
+    type: 2
+    target: enemy
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 1.5
+      range: 6
+      ap: 10
+      grid: 1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Dhana_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_LC_Dhana_N_2_1
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_SKILL_UP
+              desc:
+                desc: Effect_LC_Dhana_N_2_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 106
+                skill_ratio:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_IceATK_UP
+              desc:
+                desc: Effect_LC_Dhana_N_2_3
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 85
+                damage_add:
+                  elem: ice
+                  damage:
+                    base: 2%
+                    per: 2%
+              overlap: 4
+            - icon: BuffIcon_ICERES_DOWN
+              desc:
+                desc: Effect_LC_Dhana_N_2_4
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 0%
+                type: 17
+                resist:
+                  elem: ice
+                  value:
+                    base: -2%
+                    per: -2%
+              overlap: 4
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_LC_Dhana_N_2_5
+                type: 1
+                value: "0.005000"
+                level: "0.005000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 0%
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 0.5%
+                    per: 0.5%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Dhana_N_21
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - Effect_BUFF_Flood_N_1
+                  - Effect_BUFF_Flood_N_2
+                  - Effect_BUFF_Flood_N_3
+                  - Effect_BUFF_Flood_N_4
+                  - Effect_BUFF_Flood_N_5
+                  - Effect_BUFF_Flood_N_6
+                  - Effect_BUFF_Flood_N_7
+                  - Effect_BUFF_Flood_N_8
+                  - Effect_BUFF_Flood_N_9
+                  - Effect_BUFF_Flood_N_11
+                  - Effect_BUFF_Flood_N_12
+                  - Effect_BUFF_Flood_N_13
+                  - Effect_BUFF_Flood_N_14
+                  - Effect_BUFF_Flood_N_15
+                  - Effect_BUFF_Flood_N_16
+                  - Effect_BUFF_Flood_N_17
+                  - Effect_BUFF_Flood_N_18
+                  - Effect_BUFF_Flood_N_19
+                  - Effect_BUFF_Flood_N_20
+                  - Effect_BUFF_Flood_N_21
+                  - Effect_BUFF_Flood_N_22
+                  - Effect_BUFF_Flood_N_23
+                  - Effect_BUFF_Flood_N_24
+                  - Effect_BUFF_Flood_N_25
+                  - Effect_BUFF_SelfFlooding_N_1
+                  - Effect_BUFF_SelfFlooding_N_2
+                  - Effect_BUFF_SelfFlooding_N_3
+                  - Effect_BUFF_SelfFlooding_N_4
+                  - Effect_BUFF_SelfFlooding_N_5
+                  - Effect_BUFF_SelfFlooding_N_6
+                  - Effect_BUFF_SelfFlooding_N_7
+                  - Effect_BUFF_SelfFlooding_N_8
+                  - Effect_BUFF_SelfFlooding_N_9
+                  - Effect_BUFF_SelfFlooding_N_10
+                  - Effect_BUFF_SelfFlooding_N_11
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_IceATK_UP
+              desc:
+                desc: Effect_LC_Dhana_N_21_1
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 85
+                damage_add:
+                  elem: ice
+                  damage:
+                    base: 2%
+                    per: 2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Dhana_N_22
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - Effect_BUFF_Flood_N_1
+                  - Effect_BUFF_Flood_N_2
+                  - Effect_BUFF_Flood_N_3
+                  - Effect_BUFF_Flood_N_4
+                  - Effect_BUFF_Flood_N_5
+                  - Effect_BUFF_Flood_N_6
+                  - Effect_BUFF_Flood_N_7
+                  - Effect_BUFF_Flood_N_8
+                  - Effect_BUFF_Flood_N_9
+                  - Effect_BUFF_Flood_N_11
+                  - Effect_BUFF_Flood_N_12
+                  - Effect_BUFF_Flood_N_13
+                  - Effect_BUFF_Flood_N_14
+                  - Effect_BUFF_Flood_N_15
+                  - Effect_BUFF_Flood_N_16
+                  - Effect_BUFF_Flood_N_17
+                  - Effect_BUFF_Flood_N_18
+                  - Effect_BUFF_Flood_N_19
+                  - Effect_BUFF_Flood_N_20
+                  - Effect_BUFF_Flood_N_21
+                  - Effect_BUFF_Flood_N_22
+                  - Effect_BUFF_Flood_N_23
+                  - Effect_BUFF_Flood_N_24
+                  - Effect_BUFF_Flood_N_25
+                  - Effect_BUFF_SelfFlooding_N_1
+                  - Effect_BUFF_SelfFlooding_N_2
+                  - Effect_BUFF_SelfFlooding_N_3
+                  - Effect_BUFF_SelfFlooding_N_4
+                  - Effect_BUFF_SelfFlooding_N_5
+                  - Effect_BUFF_SelfFlooding_N_6
+                  - Effect_BUFF_SelfFlooding_N_7
+                  - Effect_BUFF_SelfFlooding_N_8
+                  - Effect_BUFF_SelfFlooding_N_9
+                  - Effect_BUFF_SelfFlooding_N_10
+                  - Effect_BUFF_SelfFlooding_N_11
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_ICERES_DOWN
+              desc:
+                desc: Effect_LC_Dhana_N_22_1
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 17
+                resist:
+                  elem: ice
+                  value:
+                    base: -2%
+                    per: -2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Dhana_N_23
+          on: criticaled
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DEBUFF_PERDOWN
+              desc:
+                desc: Effect_LC_Dhana_N_23_1
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 91
+                resist:
+                  type: debuff_perdown
+                  value:
+                    base: 2%
+                    per: 2%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: -1
+  - key: Skill_MP_Dhana_N_3
+    icon: P.Vortex
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Dhana_N_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_LC_Dhana_N_3_1
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_LC_Dhana_N_3_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_LC_Dhana_N_3_3
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_LC_Dhana_N_3_4
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Dhana_N_31
+          on: round
+          if:
+            - target:
+                - Char_3P_Alcyone_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_LC_Dhana_N_31_1
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_LC_Dhana_N_31_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_LC_Dhana_N_31_3
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Dhana_N_32
+          on: round
+          if:
+            - target:
+                - Char_3P_Merope_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_LC_Dhana_N_32_1
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_LC_Dhana_N_32_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_LC_Dhana_N_32_3
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Dhana_N_33
+          on: round
+          if:
+            - target:
+                - Char_3P_ScissorsLise_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_LC_Dhana_N_33_1
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_LC_Dhana_N_33_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_LC_Dhana_N_33_3
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Dhana_N_34
+          on: round
+          if:
+            - target:
+                - Char_3P_Alcyone_N
+                - Char_3P_Merope_N
+                - Char_3P_ScissorsLise_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_LC_Dhana_N_34_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_Dhana_N_4
+    icon: P.TeamAtkDeBuff
+    passive: true
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Dhana_N_4
+          on: damaged_active
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_LC_Dhana_N_4_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 100
+                off: 1
+              overlap: 4
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_LC_Dhana_N_4_2
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 1
+                attack:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_DOWN
+              desc:
+                desc: Effect_LC_Dhana_N_4_3
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 7
+                accuracy:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_SKILL_DOWN
+              desc:
+                desc: Effect_LC_Dhana_N_4_4
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 106
+                skill_ratio:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_LC_Dhana_N_4_5
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 11
+                evade:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Dhana_N_41
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_LC_Dhana_N_41_1
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_DOWN
+              desc:
+                desc: Effect_LC_Dhana_N_41_2
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_SKILL_DOWN
+              desc:
+                desc: Effect_LC_Dhana_N_41_3
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 106
+                skill_ratio:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Dhana_N_42
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_EVADE_DOWN
+              desc:
+                desc: Effect_LC_Dhana_N_42_1
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_LC_Dhana_N_42_2
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -2%
+                  per: -2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_Dhana_N_5
+    icon: P.Vortex
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Dhana_N_5
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_LC_Dhana_N_5_1
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_SKILL_UP
+              desc:
+                desc: Effect_LC_Dhana_N_5_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 106
+                skill_ratio:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_LC_Dhana_N_5_3
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 58
+                penetration:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_SKILL_UP
+              desc:
+                desc: Effect_LC_Dhana_N_5_4
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 106
+                skill_ratio:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_LC_Dhana_N_5_5
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Dhana_N_51
+          on: round
+          if:
+            - target:
+                - Char_LC_Haru_N
+                - Char_LC_Stella_N
+                - Char_LC_Lily_N
+                - Char_LC_Iris_N
+                - Char_LC_Ephnel_N
+                - Char_LC_Dhana_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_DEF_PIERCE_UP
+              desc:
+                desc: Effect_LC_Dhana_N_51_1
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 58
+                penetration:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_SKILL_UP
+              desc:
+                desc: Effect_LC_Dhana_N_51_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 106
+                skill_ratio:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Dhana_N_52
+          on: round
+          if:
+            - target:
+                - Char_LC_Haru_N
+                - Char_LC_Stella_N
+                - Char_LC_Lily_N
+                - Char_LC_Iris_N
+                - Char_LC_Ephnel_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_LC_Dhana_N_52_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+ai: AI_MP_BossNormal

@@ -441,7 +441,8 @@ country: ""
 age: ""
 secretRoomType: Adult
 marriageVoice: true
-introVoice: []
+introVoice:
+  - ko
 favor:
   present: 1
   clear: 1
@@ -485,6 +486,10 @@ chart:
   - 3
   - 2
   - 2
+cv:
+  "1": {}
+  "": {}
+  M: {}
 source: []
 oneoff: false
 oathable: true
@@ -543,7 +548,7 @@ skills:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
                     desc: Effect_LC_Iris_N_1_1
-                    type: 1
+                    type: 0
                     value: "100"
                     level: "100"
                   attr: 1
@@ -662,9 +667,120 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - unknown: Effect_BUFF_ShortCircuit_N_1
-            - unknown: Effect_BUFF_ShortCircuit_N_2
-            - unknown: Effect_BUFF_ShortCircuit_N_3
+            - key: Effect_BUFF_ShortCircuit_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_1_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 17
+            - key: Effect_BUFF_ShortCircuit_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ICERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_2_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 18
+            - key: Effect_BUFF_ShortCircuit_N_3
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_LIGHTNINGRES_UP
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_3_1
+                    type: 1
+                    value: "0.500000"
+                    level: "0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 19
+                    resist:
+                      elem: lightning
+                      value:
+                        base: 50%
+                        per: 2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 19
         - rate: 1.75
           type: 1
           range: 4
@@ -698,7 +814,7 @@ skills:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
                     desc: Effect_LC_Iris_N_1_1
-                    type: 1
+                    type: 0
                     value: "100"
                     level: "100"
                   attr: 1
@@ -817,9 +933,120 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - unknown: Effect_BUFF_ShortCircuit_N_1
-            - unknown: Effect_BUFF_ShortCircuit_N_2
-            - unknown: Effect_BUFF_ShortCircuit_N_3
+            - key: Effect_BUFF_ShortCircuit_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_1_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 17
+            - key: Effect_BUFF_ShortCircuit_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ICERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_2_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 18
+            - key: Effect_BUFF_ShortCircuit_N_3
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_LIGHTNINGRES_UP
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_3_1
+                    type: 1
+                    value: "0.500000"
+                    level: "0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 19
+                    resist:
+                      elem: lightning
+                      value:
+                        base: 50%
+                        per: 2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 19
         - rate: 1.9
           type: 1
           range: 4
@@ -853,7 +1080,7 @@ skills:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
                     desc: Effect_LC_Iris_N_1_1
-                    type: 1
+                    type: 0
                     value: "100"
                     level: "100"
                   attr: 1
@@ -972,9 +1199,120 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - unknown: Effect_BUFF_ShortCircuit_N_1
-            - unknown: Effect_BUFF_ShortCircuit_N_2
-            - unknown: Effect_BUFF_ShortCircuit_N_3
+            - key: Effect_BUFF_ShortCircuit_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_1_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 17
+            - key: Effect_BUFF_ShortCircuit_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ICERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_2_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 18
+            - key: Effect_BUFF_ShortCircuit_N_3
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_LIGHTNINGRES_UP
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_3_1
+                    type: 1
+                    value: "0.500000"
+                    level: "0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 19
+                    resist:
+                      elem: lightning
+                      value:
+                        base: 50%
+                        per: 2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 19
         - rate: 2.05
           type: 1
           range: 4
@@ -1008,7 +1346,7 @@ skills:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
                     desc: Effect_LC_Iris_N_1_1
-                    type: 1
+                    type: 0
                     value: "100"
                     level: "100"
                   attr: 1
@@ -1127,9 +1465,120 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - unknown: Effect_BUFF_ShortCircuit_N_1
-            - unknown: Effect_BUFF_ShortCircuit_N_2
-            - unknown: Effect_BUFF_ShortCircuit_N_3
+            - key: Effect_BUFF_ShortCircuit_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_1_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 17
+            - key: Effect_BUFF_ShortCircuit_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ICERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_2_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 18
+            - key: Effect_BUFF_ShortCircuit_N_3
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_LIGHTNINGRES_UP
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_3_1
+                    type: 1
+                    value: "0.500000"
+                    level: "0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 19
+                    resist:
+                      elem: lightning
+                      value:
+                        base: 50%
+                        per: 2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 19
         - rate: 2.2
           type: 1
           range: 4
@@ -1163,7 +1612,7 @@ skills:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
                     desc: Effect_LC_Iris_N_1_1
-                    type: 1
+                    type: 0
                     value: "100"
                     level: "100"
                   attr: 1
@@ -1282,9 +1731,120 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - unknown: Effect_BUFF_ShortCircuit_N_1
-            - unknown: Effect_BUFF_ShortCircuit_N_2
-            - unknown: Effect_BUFF_ShortCircuit_N_3
+            - key: Effect_BUFF_ShortCircuit_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_1_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 17
+            - key: Effect_BUFF_ShortCircuit_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ICERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_2_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 18
+            - key: Effect_BUFF_ShortCircuit_N_3
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_LIGHTNINGRES_UP
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_3_1
+                    type: 1
+                    value: "0.500000"
+                    level: "0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 19
+                    resist:
+                      elem: lightning
+                      value:
+                        base: 50%
+                        per: 2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 19
         - rate: 2.35
           type: 1
           range: 4
@@ -1318,7 +1878,7 @@ skills:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
                     desc: Effect_LC_Iris_N_1_1
-                    type: 1
+                    type: 0
                     value: "100"
                     level: "100"
                   attr: 1
@@ -1437,9 +1997,120 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - unknown: Effect_BUFF_ShortCircuit_N_1
-            - unknown: Effect_BUFF_ShortCircuit_N_2
-            - unknown: Effect_BUFF_ShortCircuit_N_3
+            - key: Effect_BUFF_ShortCircuit_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_1_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 17
+            - key: Effect_BUFF_ShortCircuit_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ICERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_2_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 18
+            - key: Effect_BUFF_ShortCircuit_N_3
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_LIGHTNINGRES_UP
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_3_1
+                    type: 1
+                    value: "0.500000"
+                    level: "0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 19
+                    resist:
+                      elem: lightning
+                      value:
+                        base: 50%
+                        per: 2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 19
         - rate: 2.5
           type: 1
           range: 4
@@ -1473,7 +2144,7 @@ skills:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
                     desc: Effect_LC_Iris_N_1_1
-                    type: 1
+                    type: 0
                     value: "100"
                     level: "100"
                   attr: 1
@@ -1592,9 +2263,120 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - unknown: Effect_BUFF_ShortCircuit_N_1
-            - unknown: Effect_BUFF_ShortCircuit_N_2
-            - unknown: Effect_BUFF_ShortCircuit_N_3
+            - key: Effect_BUFF_ShortCircuit_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_1_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 17
+            - key: Effect_BUFF_ShortCircuit_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ICERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_2_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 18
+            - key: Effect_BUFF_ShortCircuit_N_3
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_LIGHTNINGRES_UP
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_3_1
+                    type: 1
+                    value: "0.500000"
+                    level: "0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 19
+                    resist:
+                      elem: lightning
+                      value:
+                        base: 50%
+                        per: 2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 19
         - rate: 2.65
           type: 1
           range: 4
@@ -1628,7 +2410,7 @@ skills:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
                     desc: Effect_LC_Iris_N_1_1
-                    type: 1
+                    type: 0
                     value: "100"
                     level: "100"
                   attr: 1
@@ -1747,9 +2529,120 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - unknown: Effect_BUFF_ShortCircuit_N_1
-            - unknown: Effect_BUFF_ShortCircuit_N_2
-            - unknown: Effect_BUFF_ShortCircuit_N_3
+            - key: Effect_BUFF_ShortCircuit_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_1_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 17
+            - key: Effect_BUFF_ShortCircuit_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ICERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_2_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 18
+            - key: Effect_BUFF_ShortCircuit_N_3
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_LIGHTNINGRES_UP
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_3_1
+                    type: 1
+                    value: "0.500000"
+                    level: "0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 19
+                    resist:
+                      elem: lightning
+                      value:
+                        base: 50%
+                        per: 2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 19
         - rate: 2.8
           type: 1
           range: 4
@@ -1783,7 +2676,7 @@ skills:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
                     desc: Effect_LC_Iris_N_1_1
-                    type: 1
+                    type: 0
                     value: "100"
                     level: "100"
                   attr: 1
@@ -1902,9 +2795,120 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - unknown: Effect_BUFF_ShortCircuit_N_1
-            - unknown: Effect_BUFF_ShortCircuit_N_2
-            - unknown: Effect_BUFF_ShortCircuit_N_3
+            - key: Effect_BUFF_ShortCircuit_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_1_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 17
+            - key: Effect_BUFF_ShortCircuit_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ICERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_2_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 18
+            - key: Effect_BUFF_ShortCircuit_N_3
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_LIGHTNINGRES_UP
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_3_1
+                    type: 1
+                    value: "0.500000"
+                    level: "0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 19
+                    resist:
+                      elem: lightning
+                      value:
+                        base: 50%
+                        per: 2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 19
         - rate: 2.95
           type: 1
           range: 4
@@ -1938,7 +2942,7 @@ skills:
                 - icon: BuffIcon_FireDMG_DOT
                   desc:
                     desc: Effect_LC_Iris_N_1_1
-                    type: 1
+                    type: 0
                     value: "100"
                     level: "100"
                   attr: 1
@@ -2057,9 +3061,120 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - unknown: Effect_BUFF_ShortCircuit_N_1
-            - unknown: Effect_BUFF_ShortCircuit_N_2
-            - unknown: Effect_BUFF_ShortCircuit_N_3
+            - key: Effect_BUFF_ShortCircuit_N_1
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_FIRERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_1_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 15
+                    resist:
+                      elem: fire
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 17
+            - key: Effect_BUFF_ShortCircuit_N_2
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_ICERES_DOWN
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_2_1
+                    type: 1
+                    value: "-0.500000"
+                    level: "-0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 17
+                    resist:
+                      elem: ice
+                      value:
+                        base: -50%
+                        per: -2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 18
+            - key: Effect_BUFF_ShortCircuit_N_3
+              on: attack_success
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_LIGHTNINGRES_UP
+                  desc:
+                    desc: Effect_BUFF_ShortCircuit_N_3_1
+                    type: 1
+                    value: "0.500000"
+                    level: "0.025000"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 19
+                    resist:
+                      elem: lightning
+                      value:
+                        base: 50%
+                        per: 2.5%
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 19
     values:
       index:
         - 0
@@ -2076,7 +3191,7 @@ skills:
         - - icon: BuffIcon_FireDMG_DOT
             desc:
               desc: Effect_LC_Iris_N_1_1
-              type: 1
+              type: 0
               value: "100"
               level: "100"
             base: 100
@@ -2117,6 +3232,33 @@ skills:
               level: "0"
             base: 0
             per: 0
+            chance: 1
+          - icon: BuffIcon_FIRERES_DOWN
+            desc:
+              desc: Effect_BUFF_ShortCircuit_N_1_1
+              type: 1
+              value: "-0.500000"
+              level: "-0.025000"
+            base: -0.5
+            per: -0.025
+            chance: 1
+          - icon: BuffIcon_ICERES_DOWN
+            desc:
+              desc: Effect_BUFF_ShortCircuit_N_2_1
+              type: 1
+              value: "-0.500000"
+              level: "-0.025000"
+            base: -0.5
+            per: -0.025
+            chance: 1
+          - icon: BuffIcon_LIGHTNINGRES_UP
+            desc:
+              desc: Effect_BUFF_ShortCircuit_N_3_1
+              type: 1
+              value: "0.500000"
+              level: "0.025000"
+            base: 0.5
+            per: 0.025
             chance: 1
   "2":
     key: "2"
@@ -5470,6 +6612,8 @@ skills:
                     - Char_LC_Haru_N
                     - Char_LC_Stella_N
                     - Char_LC_Lily_N
+                    - Char_LC_Ephnel_N
+                    - Char_LC_Dhana_N
                   more:
                     - 1
                     - 4
@@ -5512,6 +6656,8 @@ skills:
                     - Char_LC_Haru_N
                     - Char_LC_Stella_N
                     - Char_LC_Lily_N
+                    - Char_LC_Ephnel_N
+                    - Char_LC_Dhana_N
                   more:
                     - 2
                     - 4
@@ -5570,6 +6716,8 @@ skills:
                     - Char_LC_Haru_N
                     - Char_LC_Stella_N
                     - Char_LC_Lily_N
+                    - Char_LC_Ephnel_N
+                    - Char_LC_Dhana_N
                   more:
                     - 3
                     - 4
@@ -5644,6 +6792,8 @@ skills:
                     - Char_LC_Haru_N
                     - Char_LC_Stella_N
                     - Char_LC_Lily_N
+                    - Char_LC_Ephnel_N
+                    - Char_LC_Dhana_N
                   more:
                     - 4
                     - 4
@@ -6368,7 +7518,7 @@ skins:
   skins:
     - sid: 1
       artist: TunaMaYo
-      price: 357
+      price: 197
       G: true
       Spine: true
       parts: 78

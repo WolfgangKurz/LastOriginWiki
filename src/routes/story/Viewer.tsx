@@ -111,6 +111,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			.replace(/_N_DL(_[0-9]+)?/g, "_N")
 			.replace(/_DL_N/g, "")
 			.replace(/_DL/g, "")
+			.replace(/_NDL/g, "_N")
 			.replace(/_N_N/g, "_N")
 			.replace(/_D$/g, "") // same with _DL_N
 			.replace(/^2DModel_(.+)_([NPS])(S[0-9]+)?$/, (p, p1, p2, p3) => {
@@ -478,6 +479,15 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 					</div>
 				</div> }
 			</> }
+
+			{ voicePreview && <audio
+				class={ style.BackgroundAudio }
+				src={ getVoice(voicePreview) }
+				autoplay
+				volume={ 0.25 }
+				onEnded={ () => setVoicePreview("") }
+			/> }
+
 			{ storyData && run && <Player
 				display={ tab === "player" }
 				bgStyle={ Store.Story.bgStyle.value }
@@ -490,14 +500,6 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			/> }
 
 			{ tab === "transcription" && storyData && <>
-				{ voicePreview && <audio
-					class={ style.BackgroundAudio }
-					src={ getVoice(voicePreview) }
-					autoplay
-					volume={ 0.25 }
-					onEnded={ () => setVoicePreview("") }
-				/> }
-
 				{ storyData.map((d, i) => {
 					const speaker = Speaker(d);
 					const activates = Activates(d);

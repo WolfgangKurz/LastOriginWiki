@@ -875,6 +875,7 @@ export enum FACETYPE {
 	RESOLVE,
 	CLOSEEYE,
 	EMBARRASS,
+	EMBARRASSED = 4,
 	WORRY,
 	BIGSMILE,
 	SURPRISED,
@@ -962,6 +963,8 @@ export enum FACETYPE {
 	FURY,
 	ANNOYANCE,
 	AROUSE,
+	ELIPSIS,
+	FRONT,
 }
 
 /** 가챠(유산) 타입 */

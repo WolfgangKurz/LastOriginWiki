@@ -305,6 +305,7 @@ const Player: FunctionalComponent<PlayerProps> = (props) => {
 	function getBGM (bgm: string): string {
 		if (!bgm) return "";
 		if (bgm === "15 BGM_Empty") return "";
+		console.warn(bgm);
 
 		const bgmTable: Record<string, string> = {
 			Valentine_01: "Valentine",

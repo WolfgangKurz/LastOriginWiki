@@ -1,0 +1,1377 @@
+uid: Ephnel_N
+rarity: 5
+type: 0
+role: 1
+category: 1
+stat:
+  hp:
+    - 12000
+    - 0
+  atk:
+    - 1000
+    - 0
+  def:
+    - 1000
+    - 5
+  spd: 4.3
+  cri: 0
+  acc: 300
+  eva: 50
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_MP_Ephnel_N_1
+    icon: WideSwordAttk
+    passive: false
+    type: 3
+    target: enemy
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 1.3
+      range: 3
+      ap: 6
+      grid: 4>0,0,0,1,1,1,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Ephnel_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_LightningDMG_DOT
+              desc:
+                desc: Effect_LC_Ephnel_N_1_1
+                type: 0
+                value: "100"
+                level: "100"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 68
+                fixed_damage:
+                  elem: lightning
+                  damage:
+                    base: 100
+                    per: 100
+              overlap: 4
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_LC_Ephnel_N_1_2
+                type: 1
+                value: "3"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 0
+                attack:
+                  base: 3
+                  per: 0
+              overlap: 4
+            - icon: BuffIcon_SEAL_SKILL
+              desc:
+                desc: Effect_LC_Ephnel_N_1_3
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 79
+                skill_disable: true
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Ephnel_N_11
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_LC_Ephnel_N_11_1
+                type: 1
+                value: "3"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 3
+                  target: 0
+              overlap: 4
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_LC_Ephnel_N_11_2
+                type: 0
+                value: "2"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 2
+                  target: 0
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Ephnel_N_12
+          on: criticaled
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_SEAL_SKILL
+              desc:
+                desc: Effect_LC_Ephnel_N_12_1
+                type: 0
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 50%
+                type: 79
+                skill_disable: true
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_BUFF_Overheat_N_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_FIRERES_DOWN
+              desc:
+                desc: Effect_BUFF_Overheat_N_1_1
+                type: 1
+                value: "-0.500000"
+                level: "-0.025000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 15
+                resist:
+                  elem: fire
+                  value:
+                    base: -50%
+                    per: -2.5%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: 8
+        - key: Effect_BUFF_Overheat_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_ICERES_UP
+              desc:
+                desc: Effect_BUFF_Overheat_N_2_1
+                type: 1
+                value: "0.500000"
+                level: "0.025000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 17
+                resist:
+                  elem: ice
+                  value:
+                    base: 50%
+                    per: 2.5%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: 9
+        - key: Effect_BUFF_Overheat_N_3
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_LIGHTNINGRES_DOWN
+              desc:
+                desc: Effect_BUFF_Overheat_N_3_1
+                type: 1
+                value: "-0.500000"
+                level: "-0.025000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 19
+                resist:
+                  elem: lightning
+                  value:
+                    base: -50%
+                    per: -2.5%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: 10
+  - key: Skill_MP_Ephnel_N_2
+    icon: WideLightning
+    passive: false
+    type: 3
+    target: enemy
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 1.5
+      range: 6
+      ap: 10
+      grid: 1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Ephnel_N_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_2_1
+                type: 0
+                value: "0.100000"
+                level: "0.100000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 20
+                ap:
+                  base: 0.1
+                  per: 0.1
+              overlap: 4
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_2_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_TROOPER_DMG_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_2_3
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 0%
+                type: 60
+                damage_multiply:
+                  target: light
+                  value:
+                    base: 2%
+                    per: 2%
+              overlap: 4
+            - icon: BuffIcon_LightningATK_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_2_4
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                chance: 0%
+                type: 86
+                damage_add:
+                  elem: lightning
+                  damage:
+                    base: 2%
+                    per: 2%
+              overlap: 4
+            - icon: BuffIcon_LIGHTNINGRES_DOWN
+              desc:
+                desc: Effect_LC_Ephnel_N_2_5
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 0
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 0%
+                type: 19
+                resist:
+                  elem: lightning
+                  value:
+                    base: -2%
+                    per: -2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Ephnel_N_21
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_TROOPER_DMG_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_21_1
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 60
+                damage_multiply:
+                  target: light
+                  value:
+                    base: 2%
+                    per: 2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Ephnel_N_22
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - Effect_BUFF_Overheat_N_1
+                  - Effect_BUFF_Overheat_N_2
+                  - Effect_BUFF_Overheat_N_3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_LightningATK_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_22_1
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 86
+                damage_add:
+                  elem: lightning
+                  damage:
+                    base: 2%
+                    per: 2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Ephnel_N_23
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - Effect_BUFF_Overheat_N_1
+                  - Effect_BUFF_Overheat_N_2
+                  - Effect_BUFF_Overheat_N_3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_LIGHTNINGRES_DOWN
+              desc:
+                desc: Effect_LC_Ephnel_N_23_1
+                type: 1
+                value: "-0.020000"
+                level: "-0.020000"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 19
+                resist:
+                  elem: lightning
+                  value:
+                    base: -2%
+                    per: -2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Ephnel_N_24
+          on: criticaled
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_LightningATK_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_24_1
+                type: 1
+                value: "0.030000"
+                level: "0.030000"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 86
+                damage_add:
+                  elem: lightning
+                  damage:
+                    base: 3%
+                    per: 3%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_Ephnel_N_3
+    icon: P.FormChange
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Ephnel_N_3
+          on: damaged_active
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_REMOVE_DEBUFF
+              desc:
+                desc: Effect_LC_Ephnel_N_3_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 100
+                off: 1
+              overlap: 4
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_3_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 11
+                evade:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_TROOPER_DMG_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_3_3
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 60
+                damage_multiply:
+                  target: light
+                  value:
+                    base: 2%
+                    per: 2%
+              overlap: 4
+            - icon: BuffIcon_MOBILITY_DMG_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_3_4
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 62
+                damage_multiply:
+                  target: air
+                  value:
+                    base: 2%
+                    per: 2%
+              overlap: 4
+            - icon: BuffIcon_ARMORED_DMG_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_3_5
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 61
+                damage_multiply:
+                  target: heavy
+                  value:
+                    base: 2%
+                    per: 2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Ephnel_N_31
+          on: round
+          if:
+            - in_battle:
+                - Char_LC_Haru_N
+                - Char_LC_Stella_N
+                - Char_LC_Lily_N
+                - Char_LC_Iris_N
+                - Char_LC_Dhana_N
+              more:
+                - 1
+                - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_31_1
+                type: 1
+                value: "0.005000"
+                level: "0.005000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 0.5%
+                  per: 0.5%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Ephnel_N_32
+          on: round
+          if:
+            - in_battle:
+                - Char_LC_Haru_N
+                - Char_LC_Stella_N
+                - Char_LC_Lily_N
+                - Char_LC_Iris_N
+                - Char_LC_Dhana_N
+              more:
+                - 2
+                - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_32_1
+                type: 1
+                value: "0.010000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 1%
+                  per: 1%
+              overlap: 4
+            - icon: BuffIcon_TROOPER_DMG_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_32_2
+                type: 1
+                value: "0.010000"
+                level: "0.010000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 60
+                damage_multiply:
+                  target: light
+                  value:
+                    base: 1%
+                    per: 1%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Ephnel_N_33
+          on: round
+          if:
+            - in_battle:
+                - Char_LC_Haru_N
+                - Char_LC_Stella_N
+                - Char_LC_Lily_N
+                - Char_LC_Iris_N
+                - Char_LC_Dhana_N
+              more:
+                - 3
+                - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_33_1
+                type: 1
+                value: "0.015000"
+                level: "0.015000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 1.5%
+                  per: 1.5%
+              overlap: 4
+            - icon: BuffIcon_TROOPER_DMG_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_33_2
+                type: 1
+                value: "0.015000"
+                level: "0.015000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 60
+                damage_multiply:
+                  target: light
+                  value:
+                    base: 1.5%
+                    per: 1.5%
+              overlap: 4
+            - icon: BuffIcon_MOBILITY_DMG_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_33_3
+                type: 1
+                value: "0.015000"
+                level: "0.015000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 62
+                damage_multiply:
+                  target: air
+                  value:
+                    base: 1.5%
+                    per: 1.5%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Ephnel_N_34
+          on: round
+          if:
+            - in_battle:
+                - Char_LC_Haru_N
+                - Char_LC_Stella_N
+                - Char_LC_Lily_N
+                - Char_LC_Iris_N
+                - Char_LC_Dhana_N
+              more:
+                - 4
+                - 4
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_EVADE_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_34_1
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 11
+                evade:
+                  base: 2%
+                  per: 2%
+              overlap: 4
+            - icon: BuffIcon_TROOPER_DMG_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_34_2
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 60
+                damage_multiply:
+                  target: light
+                  value:
+                    base: 2%
+                    per: 2%
+              overlap: 4
+            - icon: BuffIcon_MOBILITY_DMG_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_34_3
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 62
+                damage_multiply:
+                  target: air
+                  value:
+                    base: 2%
+                    per: 2%
+              overlap: 4
+            - icon: BuffIcon_ARMORED_DMG_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_34_4
+                type: 1
+                value: "0.020000"
+                level: "0.020000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 61
+                damage_multiply:
+                  target: heavy
+                  value:
+                    base: 2%
+                    per: 2%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_Ephnel_N_4
+    icon: P.FormChange
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Ephnel_N_4
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_DEF_RESSURRECT
+              desc:
+                desc: Effect_LC_Ephnel_N_4_1
+                type: 1
+                value: "0.050000"
+                level: "0.050000"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 98
+                revive:
+                  base: 5%
+                  per: 5%
+              overlap: 4
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_LC_Ephnel_N_4_2
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                chance: 0%
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_LC_Ephnel_N_4_3
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                chance: 0%
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: -1
+        - key: Effect_LC_Ephnel_N_41
+          on: round
+          if:
+            - target:
+                - Char_ST_Tiamat_N
+                - Char_ST_Lancer_N
+                - Char_ST_Ullr_N
+                - Char_ST_Mercury_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_LC_Ephnel_N_41_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Ephnel_N_42
+          on: round
+          if:
+            - target:
+                - Char_LC_Haru_N
+                - Char_LC_Stella_N
+                - Char_LC_Lily_N
+                - Char_LC_Iris_N
+                - Char_LC_Dhana_N
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_SUPPORT_ATTACK
+              desc:
+                desc: Effect_LC_Ephnel_N_42_1
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 77
+                attack_support:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_Ephnel_N_5
+    icon: P.TeamAtkDeBuff
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_LC_Ephnel_N_5
+          on: round
+          if:
+            - round:
+                operator: odd
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_ATK_DOWN
+              desc:
+                desc: Effect_LC_Ephnel_N_5_1
+                type: 1
+                value: "-0.030000"
+                level: "-0.030000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: -3%
+                  per: -3%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_DOWN
+              desc:
+                desc: Effect_LC_Ephnel_N_5_2
+                type: 1
+                value: "-0.030000"
+                level: "-0.030000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: -3%
+                  per: -3%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_DOWN
+              desc:
+                desc: Effect_LC_Ephnel_N_5_3
+                type: 1
+                value: "-0.030000"
+                level: "-0.030000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: -3%
+                  per: -3%
+              overlap: 4
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_5_4
+                type: 1
+                value: "0.030000"
+                level: "0.030000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 1
+                attack:
+                  base: 3%
+                  per: 3%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_5_5
+                type: 1
+                value: "0.030000"
+                level: "0.030000"
+              attr: 1
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                chance: 0%
+                type: 7
+                accuracy:
+                  base: 3%
+                  per: 3%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_LC_Ephnel_N_51
+          on: round
+          if:
+            - round:
+                operator: even
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_51_1
+                type: 1
+                value: "0.030000"
+                level: "0.030000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 3%
+                  per: 3%
+              overlap: 4
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_51_2
+                type: 1
+                value: "0.030000"
+                level: "0.030000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 3%
+                  per: 3%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_LC_Ephnel_N_51_3
+                type: 1
+                value: "0.030000"
+                level: "0.030000"
+              attr: 0
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 3%
+                  per: 3%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+ai: AI_MP_BossNormal
