@@ -257,19 +257,6 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		[skin.subset, isDamaged, hideParts, DisplayGamma, gammaBGAvailable],
 	);
 
-	const AvailableAnim = useMemo(() => {
-		if (skin.Spine) return true;
-
-		if (hideParts && hideBG)
-			return skin.anim[SKIN_ANIM_SUBSET_ENUM.BS];
-		else if (hideParts && !hideBG)
-			return skin.anim[SKIN_ANIM_SUBSET_ENUM._S];
-		else if (!hideParts && hideBG)
-			return skin.anim[SKIN_ANIM_SUBSET_ENUM.B_];
-		else
-			return skin.anim[SKIN_ANIM_SUBSET_ENUM.__];
-	}, [skin.Spine, skin.anim, hideParts, hideBG]);
-
 	const modelId = `${unit.uid}_N${skin.isDef ? "" : `S${skin.metadata.imageId}`}`;
 
 	const DisplayMixed = useMemo(
@@ -277,8 +264,11 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		[skin.metadata.flags, props.animate, isDamaged],
 	);
 	const DisplaySpine = useMemo(
-		() => !!(skin.metadata.flags & SKIN_METADATA_FLAGS.SPINE) && skin.Spine && (!!props.animate || !!props.collapsed) && !isDamaged,
-		[skin.metadata.flags, props.animate, props.collapsed, isDamaged],
+		() => !!(skin.metadata.flags & SKIN_METADATA_FLAGS.SPINE) && (
+			(skin.Spine && (!!props.animate || !!props.collapsed) && !isDamaged) ||
+			(skin.SpineDamaged && (!!props.animate || !!props.collapsed) && isDamaged)
+		),
+		[skin.metadata.flags, skin.Spine, skin.SpineDamaged, props.animate, props.collapsed, isDamaged],
 	);
 	const Display2DModel = useMemo(
 		() => (isDamaged || !!(skin.metadata.flags & SKIN_METADATA_FLAGS["2DMODEL"])) && (

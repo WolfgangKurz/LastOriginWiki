@@ -2,6 +2,13 @@
 	$sm: map-get($grid-breakpoints, "sm");
 	margin: 0 0.25rem;
 
+	&:not(:first-child) {
+		.Dialogue,
+		.AudioColumn {
+			border-top: 0 !important;
+		}
+	}
+
 	.TypeColumn,
 	.Dialogue {
 		padding-top: 0.25rem;
@@ -21,14 +28,10 @@
 
 		white-space: pre-line;
 	}
-	&:not(:first-child) .Dialogue {
-		border-top: 0 !important;
-	}
 
 	.AudioColumn {
 		display: flex;
 		padding: 0 !important;
-		border-top: 0 !important;
 		align-items: center;
 
 		> audio {

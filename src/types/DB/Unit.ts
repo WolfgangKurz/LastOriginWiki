@@ -84,6 +84,9 @@ export interface UnitSkinEntity {
 	/** animated by Spine */
 	Spine: boolean;
 
+	/** animated by Spine, for Damaged */
+	SpineDamaged: boolean;
+
 	/** has SD video */
 	// SD: false | string[];
 
@@ -133,6 +136,10 @@ export interface UnitSkinEntity {
 			"S": number;
 			"B": number;
 			"BS": number;
+			"G_": number;
+			"G_S": number;
+			"G_B": number;
+			"G_BS": number;
 		}>;
 	};
 }
