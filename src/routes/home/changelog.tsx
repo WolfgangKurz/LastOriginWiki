@@ -6,6 +6,12 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13023" date="2025-10-01"
+		bugfix={ <>
+			<li>전투원 <BY>이나비</BY>의 스킨 <BR>야전부대의 전투식량</BR>의 검열 버전 이미지가 제대로 표시되지 않는 문제를 수정했습니다.</li>
+			<li>일부 로비 애니메이션 스킨의 다운로드 버튼이 제대로 동작하지 않는 문제를 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13021" date="2025-09-26"
 		new={ <>
 			<li>신규 전투원 <BY>치이 아루엘</BY>의 정보가 추가되었습니다.</li>

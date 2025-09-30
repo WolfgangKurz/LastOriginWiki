@@ -1791,7 +1791,7 @@ export default {
 		"filterable.enemy": "3a69fe55",
 		"filterable.equip": "5c2156d0",
 		"filterable.facility": "b3f0e54b",
-		"filterable.unit": "6261064b",
+		"filterable.unit": "8685b89f",
 		"gacha": "dd593ab5",
 		"iw": {
 			"Colossus_01": "cdebeca4",
@@ -5343,7 +5343,7 @@ export default {
 			"LC_Haru": "eb92ee5e",
 			"LC_Iris": "b05eb1fc",
 			"LC_Lily": "55cb3866",
-			"LC_Nabi": "06556be2",
+			"LC_Nabi": "32cc5541",
 			"LC_Stella": "c501411a",
 			"PECS_Audrey": "ddd14686",
 			"PECS_Azaz": "b6f34e1c",
