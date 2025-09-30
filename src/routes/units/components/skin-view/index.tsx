@@ -419,7 +419,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					}
 				</div>
 
-				{ modelVideoId && !!props.animate
+				{ modelVideoId && !(DisplaySpine || DisplayMixed) && !!props.animate
 					? <a
 						class={ `${style.SkinToggle} ${style.Download}` }
 						href={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` } // download webm only
