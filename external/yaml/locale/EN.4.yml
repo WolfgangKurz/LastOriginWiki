@@ -1,3 +1,15 @@
+Effect_LC_Lily_N_3_3: "보호? : 방어력 {0}% (최대)"
+Effect_LC_Lily_N_3_4: "보호? : 행동력 {0}% (최대)"
+Effect_LC_Lily_N_3_5: "보호? : 효과 저항 {0}% (최대)"
+Effect_LC_Lily_N_31: 보호? 1
+Effect_LC_Lily_N_31_1: "보호? : 방어력 {0}%"
+Effect_LC_Lily_N_32: 보호? 2
+Effect_LC_Lily_N_32_1: "보호? : 방어력 {0}%"
+Effect_LC_Lily_N_32_2: "보호? : 회피 {0}%"
+Effect_LC_Lily_N_33: 보호? 3
+Effect_LC_Lily_N_33_1: "보호? : 방어력 {0}%"
+Effect_LC_Lily_N_33_2: "보호? : 회피 {0}%"
+Effect_LC_Lily_N_33_3: "보호? : 효과 저항 {0}%"
 Effect_LC_Lily_N_34: 보호? 4
 Effect_LC_Lily_N_34_1: "보호? : 방어력 {0}%"
 Effect_LC_Lily_N_34_2: "보호? : 회피 {0}%"
@@ -1090,6 +1102,7 @@ UNIT_SKIN_BR_Daika_1: "Dangerous Family: Daika’s Honeymoon"
 UNIT_SKIN_BR_Djinnia_1: Earth's Grace Djinnia
 UNIT_SKIN_BR_Sylphid_1: Free-Spirited Sylphid
 UNIT_SKIN_BR_Banshee_1: Meow Pow in the Midst of Summer
+UNIT_SKIN_BR_Banshee_2: "스마일은 공짜, 25시 패스트푸드점 : 매니저 유니폼"
 UNIT_SKIN_BR_StratoAngel_1: "Orca Bunny: The Best Bunny Girl!"
 UNIT_SKIN_BR_StratoAngel_2: "Aqua Land: Success? Failed?"
 UNIT_SKIN_BR_RoyalArsenal_1: "Dream-weaver Wedding Special: My Heart to You"
@@ -6891,11 +6904,21 @@ UNIT_SKILL_LC_Iris_2: 익시드 드라이버
 UNIT_SKILL_LC_Iris_3: 분노의 일격
 UNIT_SKILL_LC_Iris_4: 쾌속
 UNIT_SKILL_LC_Iris_5: 극쇄
+UNIT_SKILL_LC_Chii_1: 묘도 0식 - 칼바람 폭풍
+UNIT_SKILL_LC_Chii_2: 포식자가 부르는 종말
+UNIT_SKILL_LC_Chii_3: 열망의 도신
+UNIT_SKILL_LC_Chii_4: 고양이의 유연성
+UNIT_SKILL_LC_Chii_5: 야생의 본능
 UNIT_SKILL_LC_Ephnel_1: 버티컬 클리어
 UNIT_SKILL_LC_Ephnel_2: 슈퍼 노바
 UNIT_SKILL_LC_Ephnel_3: 출력 강화
 UNIT_SKILL_LC_Ephnel_4: 출력 격화
 UNIT_SKILL_LC_Ephnel_5: 불굴의 창
+UNIT_SKILL_LC_Nabi_1: 라스트 스트라이크
+UNIT_SKILL_LC_Nabi_2: 택티컬 에어스트라이크
+UNIT_SKILL_LC_Nabi_3: 확장 탄창
+UNIT_SKILL_LC_Nabi_4: 개량된 노리쇠
+UNIT_SKILL_LC_Nabi_5: 충심의 조준경
 UNIT_SKILL_LC_Dhana_1: 체인 피어스
 UNIT_SKILL_LC_Dhana_2: 래쉬 임페일
 UNIT_SKILL_LC_Dhana_3: 거짓의 난무
@@ -6911,16 +6934,6 @@ UNIT_SKILL_DS_Kaen_2: 만자천홍
 UNIT_SKILL_DS_Kaen_3: 홍련의 암희
 UNIT_SKILL_DS_Kaen_4: 기장닌자 카엔 2호기
 UNIT_SKILL_DS_Kaen_5: 츠바메가에시
-UNIT_SKILL_LC_Chii_1: 묘도 0식 - 칼바람 폭풍
-UNIT_SKILL_LC_Chii_2: 포식자가 부르는 종말
-UNIT_SKILL_LC_Chii_3: 열망의 도신
-UNIT_SKILL_LC_Chii_4: 고양이의 유연성
-UNIT_SKILL_LC_Chii_5: 야생의 본능
-UNIT_SKILL_LC_Nabi_1: 라스트 스트라이크
-UNIT_SKILL_LC_Nabi_2: 택티컬 에어스트라이크
-UNIT_SKILL_LC_Nabi_3: 확장 탄창
-UNIT_SKILL_LC_Nabi_4: 개량된 노리쇠
-UNIT_SKILL_LC_Nabi_5: 충심의 조준경
 UNIT_SKILL_DESC_3P_Labiata_1: >-
   Swings a greatsword to deal <dmg elem="physics" /> in the target area.
 
@@ -16234,7 +16247,7 @@ UNIT_SKILL_DESC_LC_Iris_5: >-
 
   </box>
 UNIT_SKILL_DESC_LC_Chii_1: >-
-  전방의 적들을 빠르게 베어 밀어내며 광속베기로 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="ice"
+  전방의 적들을 빠르게 베어 밀어내며 광속베기로 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="fire"
   />를 발생시킵니다.
 
   <sec typ="cond">스킬 적중 시</sec> 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="0" r /></sec>를 감소시키고 <cmt t="합선">$$_CHII_SHORT:5,6,7$</cmt> 상태로 만듭니다.
@@ -16251,7 +16264,7 @@ UNIT_SKILL_DESC_LC_Chii_1: >-
 
   ~$$_CHII_SHORT
 UNIT_SKILL_DESC_LC_Chii_2: >-
-  오른손을 귀수로 변화 후 무기를 뽑아 소울 정크화시켜 지정 범위에 <dmg elem="ice" />를 발생시킵니다.
+  오른손을 귀수로 변화 후 무기를 뽑아 소울 정크화시켜 지정 범위에 <dmg elem="fire" />를 발생시킵니다.
 
   <sec typ="cond">스킬 적중 시</sec> 자신에게 <sec typ="buff"><buff typ="ATK_UP" /> 광역 피해 집중 <val idx="0" r /></sec> 효과를 부여합니다.
 
@@ -28816,23 +28829,3 @@ Skill_MP_NightChickC_N_2: Howitzer
 Skill_MP_NightChickC_N_2_DESC: Shoots a Howitzer that impacts 1 round later and
   deals {0} damage to the target area. Deals increased damage if the target is
   Immobilized.
-Skill_MP_NightChickC_N_3: Fuel Tank Eruption
-Skill_MP_NightChickC_N_3_DESC: When killed, the fuel tank erupts and deals
-  devastating damage to the nearby area and removes Damage Decrease effects.
-Skill_MP_NightChickC_N_7: Howitzer Impact
-Skill_MP_NightChickC_N_7_DESC: Shoots a Howitzer that impacts 1 round later and
-  deals {0} damage to the target area. Deals increased damage if the target is
-  Immobilized.
-Skill_MP_Scout_N_1: Shock Missile
-Skill_MP_Scout_N_1_DESC: Shoots Shock Missiles and deals {0} damage, decreasing
-  the target’s AP by chance.
-Skill_MP_Scout_N_2: Scout Report
-Skill_MP_Scout_N_2_DESC: Sounds an enemy detected alert to target ally, increasing their AP and Range.
-Skill_MP_BigChick_N_1: Heavy Machine Gun Fire
-Skill_MP_BigChick_N_1_DESC: Attacks with a Heavy Machine Cannon and deals {0}
-  damage. Damage is increased if the target has decreased DEF.
-Skill_MP_BigChick_N_2: Zero Range Heavy Machine Gun
-Skill_MP_BigChick_N_2_DESC: Uses a Heavy Machine Cannon to attack with
-  close-range fire and deal {0} damage. Ignores a certain percentage of the
-  target’s DEF and increases damage if the target has decreased DEF.
-Skill_MP_Harvester_N_1: Waste Pulverizing

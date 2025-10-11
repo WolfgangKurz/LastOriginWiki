@@ -936,6 +936,7 @@ const MapPosition: MapPositionType = {
 			"EV4-8": [5.6, 1],
 			"EV4-9": [6.4, 1],
 			"EV4-10": [7.2, 1],
+			"EV4-11": [8, 1],
 
 			"EV4-1EX": [1.6, 2],
 			"EV4-2EX": [2.4, 2],

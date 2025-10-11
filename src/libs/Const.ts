@@ -27,12 +27,12 @@ export const SubStoryUnit: Record<string, string> = {
 
 export const PermanentEvents: string[] = [
 	"Ev1", "Ev2", "Ev3", "Ev4", "Ev5", "Ev6", "Ev7", "Ev8", "Ev9", "Ev10",
-	"Ev11", "Ev12", "Ev13", "Ev14",
+	"Ev11", "Ev12", "Ev13", "Ev14", "Ev15",
 ];
 export const NewMapList: string[] = [];
 export const CurrentEventId = "Ev33";
 export const EventFrom = new Date(2025, 8 - 1, 14);
-export const EventTo = new Date(2025, 10 - 1, 9);
+export const EventTo = new Date(2025, 10 - 1, 23);
 
 export const IsEventRunning = CurrentEventId && (d => EventFrom < d && d < EventTo)(new Date());
 export const CurrentEvent = IsEventRunning ? CurrentEventId : "";
