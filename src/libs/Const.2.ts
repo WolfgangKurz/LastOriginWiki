@@ -142,6 +142,7 @@ export const SkinBanners: string[] = [
 	"LC_Ephnel_1", "LC_Dhana_1", "DS_BunnySlayer_2",
 	"LC_Chii_1", "LC_Nabi_1", "DS_KunoichiEnrai_2",
 	"BR_Banshee_2",
+	"BR_Wistar_1", "DS_Cloverace_1",
 ];
 
 type SkillVideo_Plain = string[];
