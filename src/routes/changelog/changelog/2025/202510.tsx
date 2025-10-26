@@ -18,6 +18,7 @@ const Changelog: FunctionalComponent = () => <>
 		</> }
 		skin={ <>
 			<li>전투원 <BY>위스타</BY>의 스킨 <BR>Thriller Night Marionette : 할로윈 인형극 의상</BR>의 정보가 추가되었습니다.</li>
+			<li>전투원 <BY>클로버 에이스</BY>의 스킨 <BR>신규 의상 리허설 : 특촬물 의상</BR>의 정보가 추가되었습니다.</li>
 		</> }
 		dialogue={ <>
 			<li><span class="badge bg-light text-dark">KST 2025-10-27 00:42:39</span>까지 추가/수정된 대사들이 반영되었습니다.</li>
