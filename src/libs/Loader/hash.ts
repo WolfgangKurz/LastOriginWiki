@@ -1791,7 +1791,7 @@ export default {
 		"filterable.enemy": "c102d9f9",
 		"filterable.equip": "ccc10acd",
 		"filterable.facility": "b3f0e54b",
-		"filterable.unit": "df8f1e61",
+		"filterable.unit": "188bea19",
 		"gacha": "dd593ab5",
 		"iw": {
 			"Colossus_01": "cdebeca4",
@@ -5353,7 +5353,7 @@ export default {
 			"BR_Valkyrie": "cecb4118",
 			"BR_Vargr": "1f840472",
 			"BR_WarWolf": "dfd60b4d",
-			"BR_Wistar": "56f50d18",
+			"BR_Wistar": "feb92af5",
 			"BR_Wraithy": "db586370",
 			"DS_Angel": "86bcc5b7",
 			"DS_Arman": "cfad7990",
