@@ -6,6 +6,11 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13033" date="2025-11-01"
+		bugfix={ <>
+			<li>일부 스킨의 다운로드 기능이 작동하지 않던 점을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13029" date="2025-10-27"
 		new={ <>
 			<li>신규 전투원 <BY>위스타</BY> 정보가 추가되었습니다.</li>
