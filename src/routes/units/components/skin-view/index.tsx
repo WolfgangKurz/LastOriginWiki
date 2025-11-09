@@ -82,10 +82,6 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 	const [cameraBoundaryAvailable, setCameraBoundaryAvailable] = useState(false);
 	const [downloadPlusCameraBoundary, setDownloadPlusCameraBoundary] = useState(true);
-	const downloadPlusAble = useMemo(
-		() => !(skin.metadata.flags & (SKIN_METADATA_FLAGS.SPINE | SKIN_METADATA_FLAGS.GAMMA)) && !isDamaged,
-		[skin.metadata.flags, isDamaged],
-	);
 
 	// const Aspect = props.collapsed ? style["ratio-2x5"] : "ratio-4x3";
 	const Aspect = "ratio-2x4 ratio-lg-5x3";
@@ -280,6 +276,11 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const DisplayVideo = useMemo(() => {
 		return !!props.animate && !!modelVideoId;
 	}, [props.animate, modelVideoId]);
+
+	const downloadPlusAble = useMemo(
+		() => !(DisplayMixed || DisplaySpine || DisplayGamma || DisplayVideo),
+		[DisplayMixed, DisplaySpine, DisplayGamma, DisplayVideo],
+	);
 
 	function download2DModel (filename: string, cropByCameraBoundary: boolean = false) {
 		if (inPlusDownload) return;
