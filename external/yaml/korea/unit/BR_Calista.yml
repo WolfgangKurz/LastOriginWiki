@@ -5697,6 +5697,89 @@ skills:
                   overlap: 4
               maxStack: 2
               overlapGroup: -1
+            - key: Effect_Renew_BR_Calista_N_35
+              on: round
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Calista_N_51
+                    attr: 6
+                - round:
+                    operator: <=
+                    round:
+                      - 1
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_Renew_BR_Calista_N_35_1
+                    type: 0
+                    value: "0.500000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 0.5
+                      per: 0.05
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Calista_N_36
+              on: enemy_dead
+              if:
+                - on:
+                    func: OR
+                    select:
+                      - Effect_BR_Calista_N_51
+                    attr: 6
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_Renew_BR_Calista_N_36_1
+                    type: 0
+                    value: "0.500000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 0.5
+                      per: 0.05
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: -1
     values:
       index:
         - 0
@@ -5790,6 +5873,24 @@ skills:
               level: "0.012000"
             base: 0.012
             per: 0.012
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_Renew_BR_Calista_N_35_1
+              type: 0
+              value: "0.500000"
+              level: "0.050000"
+            base: 0.5
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_AP_UP
+            desc:
+              desc: Effect_Renew_BR_Calista_N_36_1
+              type: 0
+              value: "0.500000"
+              level: "0.050000"
+            base: 0.5
+            per: 0.05
             chance: 1
   "4":
     key: "4"

@@ -77,6 +77,12 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 			LastOrigin: ["3P_Labiata_Title-5", "3P_Labiata_Title-9"]
 		}
 	},
+	"3P_Lamia": {
+		0: {
+			LastOrigin: ["3P_Lamia_Title-1", "3P_Lamia_Title-2", "3P_Lamia_Title-3"],
+			VALOFE: ["3P_Lamia_VALOFE-1", "3P_Lamia_VALOFE-2", "3P_Lamia_VALOFE-3", "3P_Lamia_VALOFE-4"]
+		}
+	},
 	"3P_Maria": {
 		0: {
 			LastOrigin: ["3P_Maria_NS2_Title-4", "3P_Maria_NS2_Title-5"]
@@ -786,6 +792,10 @@ export const ArtistLinks: Record<string, Partial<Record<ArtistLinkType, string>>
 		X: "https://x.com/DloG56006129",
 		Pixiv: "https://www.pixiv.net/users/10920551",
 	},
+	"gonster": {
+		X: "https://x.com/gonstool",
+		Pixiv: "https://www.pixiv.net/users/114920",
+	},
 	"Henry Davis": {
 		X: "https://x.com/HenryDavistwit",
 	},
@@ -904,6 +914,10 @@ export const ArtistLinks: Record<string, Partial<Record<ArtistLinkType, string>>
 	"ねろましん(Neromashin)": {
 		X: "https://x.com/neromashin001",
 		Pixiv: "https://www.pixiv.net/users/1872899",
+	},
+	"めろん２２(Melon22)": {
+		X: "https://x.com/melonnyinyi",
+		Pixiv: "https://www.pixiv.net/users/2963688",
 	},
 	"れつな(Retsuna)": {
 		X: "https://x.com/Retsuna_Blue",
