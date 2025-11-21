@@ -7115,6 +7115,11 @@ UNIT_SKILL_3P_Calypso_2: 즈버크하우
 UNIT_SKILL_3P_Calypso_3: 폼탁
 UNIT_SKILL_3P_Calypso_4: 알버
 UNIT_SKILL_3P_Calypso_5: 플루크
+UNIT_SKILL_3P_Lamia_1: 타이탄트론
+UNIT_SKILL_3P_Lamia_2: 라미아 프로그 스플래쉬!
+UNIT_SKILL_3P_Lamia_3: 바다의 아마조네스
+UNIT_SKILL_3P_Lamia_4: 팔라이오피스
+UNIT_SKILL_3P_Lamia_5: 힘세고 강한 미녀
 UNIT_SKILL_LC_Haru_1: 리프 어택
 UNIT_SKILL_LC_Haru_2: 블레이드 샤워
 UNIT_SKILL_LC_Haru_3: 복수의 검
@@ -7165,11 +7170,6 @@ UNIT_SKILL_DS_Kaen_2: 만자천홍
 UNIT_SKILL_DS_Kaen_3: 홍련의 암희
 UNIT_SKILL_DS_Kaen_4: 기장닌자 카엔 2호기
 UNIT_SKILL_DS_Kaen_5: 츠바메가에시
-UNIT_SKILL_3P_Lamia_1: 타이탄트론
-UNIT_SKILL_3P_Lamia_2: 라미아 프로그 스플래쉬!
-UNIT_SKILL_3P_Lamia_3: 바다의 아마조네스
-UNIT_SKILL_3P_Lamia_4: 팔라이오피스
-UNIT_SKILL_3P_Lamia_5: 힘세고 강한 미녀
 UNIT_SKILL_DESC_3P_Labiata_1: >-
   Swings a greatsword to deal <dmg elem="physics" /> in the target area.
 
@@ -16288,6 +16288,64 @@ UNIT_SKILL_DESC_3P_Calypso_5: >-
   <sec typ="cond">1 개체</sec>: <sec typ="buff"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="8" r /></sec>
 
   </box>
+UNIT_SKILL_DESC_3P_Lamia_1: >-
+  라미아가 기관단총을 쉼없이 난사하여 지정 범위에 <dmg elem="physics" />를 발생시킵니다.
+
+  <sec typ="cond">스킬 적중 시</sec> 3라운드 동안 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="2" r /></sec>가 증가합니다.
+UNIT_SKILL_DESC_3P_Lamia_2: >-
+  강철이가 기관포를 난사 후 라미아의 피니시 무브 발동으로 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg
+  elem="physics" />를 발생시킵니다.
+
+  <sec typ="cond">스킬 적중 시</sec> 2라운드 동안 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec>와 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="1" r /></sec>가 감소합니다.
+
+  <sec typ="cond">치명타 시</sec> 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="4" /></sec>이(가) 감소하고 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과가 해제</sec>됩니다.
+UNIT_SKILL_DESC_3P_Lamia_3: >-
+  <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="오케아니데스
+  프로젝트">$$Oceanides:?$</cmt> 전투원이 없으면</sec> 자신의 <sec typ="buff"><buff
+  typ="ATK_UP" /> 공격력 <val idx="0" r /></sec>와 <sec typ="buff"><buff
+  typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec>, <sec typ="buff"><buff
+  typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
+
+  <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 전투원이 있으면</sec> 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력</sec>과 <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중</sec>, <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통</sec>이 <sec typ="buff">2배로 증가</sec>합니다.
+
+  <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 포함한 <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 전투원이 있으면</sec> <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 전투원은 <sec typ="dmg"><buff typ="DamageAmp_Me" /> <char uid="3P_Lamia" />의 HP 반비례 피해 <val idx="8" r /></sec>가 증가합니다.
+
+  <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 포함한 <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 소속 전투원이 있는 경우</sec> <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 전투원을 공격 지원</sec>합니다.
+UNIT_SKILL_DESC_3P_Lamia_4: >-
+  <sec typ="cond">피격 시</sec> <sec typ="chance">100% 확률</sec>로 <sec
+  typ="buff"><buff typ="COUNTER" /> <val idx="8" r signless /> 위력으로 반격</sec>합니다.
+
+  아군 공격기는 <sec typ="cond">라운드 개시 시</sec> <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <val idx="9" r /></sec>가 증가합니다.
+
+  아군 공격기는 <sec typ="cond">라운드 개시 시</sec> HP 상태에 따라 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec>가 증가합니다.
+
+  <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 전투원이 없으면</sec> 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec>와 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> 대 경장 피해량 <val idx="6" r /></sec>가 증가합니다.
+
+  <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 전투원이 있으면</sec> 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec>와 대 경장 피해량, <sec typ="dmg"><buff typ="ARMORED_DMG_UP" /> 대 중장 피해량 <val idx="7" r /></sec>가 증가합니다.
+
+  <box t="HP 상태에 따른 받는 피해 감소">
+
+  <sec typ="cond">체력이 70%이상, 89.99% 이하일 때</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <val idx="10" r /></sec>
+
+  <sec typ="cond">체력이 50%이상, 69.99% 이하일 때</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <val idx="11" r /></sec>
+
+  <sec typ="cond">체력이 30%이상, 49.99% 이하일 때</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <val idx="12" r /></sec>
+
+  <sec typ="cond">체력이 29.99% 이하일 때</sec> : <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소 <val idx="13" r /></sec>
+
+  </box>
+UNIT_SKILL_DESC_3P_Lamia_5: >-
+  <sec typ="cond">라운드 개시 시</sec> 아군 전체의 <sec typ="buff"><buff typ="ATK_UP" />
+  공격력 <val idx="0" r /></sec> 및 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어
+  관통 <val idx="1" r /></sec>가 증가합니다.
+
+  <sec typ="cond">라운드 개시 시</sec> 스쿼드의 자신을 포함한 <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 전투원에게 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 받는 피해 감소 무시</sec> 효과를 부여합니다.
+
+  <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 자신을 제외한 <cmt t="오케아니데스 프로젝트">$$Oceanides:?$</cmt> 전투원이 있으면</sec> 인원수에 따라 자신의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="6" /></sec>이(가) 증가합니다.
+
+  <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <char uid="BR_Cheona" />가 있으면</sec> 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="7" r /></sec>가 증가합니다.
+
+  <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">스쿼드에 <char uid="PECS_Rena" />이 있으면</sec> 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="8" r /></sec>가 증가합니다.
 UNIT_SKILL_DESC_LC_Haru_1: >-
   점프 하여 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" /> 발생시킵니다.
 
@@ -28455,46 +28513,3 @@ ENEMY_INTRO_NightChick_TR_1C_Middle_TU: >-
 
 
   - This is Gremlin reporting!
-ENEMY_INTRO_NightChickS_TR_1C_Middle_N: >-
-  These bastards are so annoying. They got this shield stuff and just blocks
-  your advancement. Luckily, they are dumb. They only shield the unit right
-  behind it. Anyway, eliminate the targets behind them before they get into
-  defense mode!
-
-
-
-  - This is Griffon reporting!
-ENEMY_INTRO_NightChickS_TR_1C_Middle_TU: >-
-  These bastards are so annoying. They got this shield stuff and just blocks
-  your advancement. Luckily, they are dumb. They only shield the unit right
-  behind it. Anyway, eliminate the targets behind them before they get into
-  defense mode!
-
-
-
-  - This is Griffon reporting!
-ENEMY_INTRO_NightChickS_TR_1C_Middle_TU2: >-
-  These bastards are so annoying. They got this shield stuff and just blocks
-  your advancement. Luckily, they are dumb. They only shield the unit right
-  behind it. Anyway, eliminate the targets behind them before they get into
-  defense mode!
-
-
-
-  - This is Griffon reporting!
-ENEMY_INTRO_LegionMk2_TR_1C_Middle_N: >-
-  It looks like a modified Legionnaire. It can anticipate opponent’s move so we
-  need a device to counter that. It has high Attack Combo capacity so you need
-  to kill it quickly to prevent that.
-
-
-
-  - Armand reporting!
-ENEMY_INTRO_LegionMk2_TR_1C_Middle_TU: >-
-  It looks like a modified Legionnaire. It can anticipate opponent’s move so we
-  need a device to counter that. It has high Attack Combo capacity so you need
-  to kill it quickly to prevent that.
-
-
-
-  - Armand reporting!
