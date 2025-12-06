@@ -777,6 +777,10 @@ export const ArtistLinks: Record<string, Partial<Record<ArtistLinkType, string>>
 		X: "https://x.com/CHOiCHOi_999",
 		Pixiv: "https://www.pixiv.net/users/9899824",
 	},
+	"Cho gyeong nam": {
+		X: "https://x.com/whrudska234",
+		ArtStation: "https://www.artstation.com/kyungnam234/profile",
+	},
 	"CHoney": {
 		X: "https://x.com/choney1108",
 		Pixiv: "https://www.pixiv.net/users/1908283",
