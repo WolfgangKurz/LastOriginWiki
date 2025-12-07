@@ -5262,7 +5262,7 @@ export default {
 			"3P_Ran": "38e50cbb",
 			"3P_Rhea": "5c78fc52",
 			"3P_Salacia": "010c8c10",
-			"3P_Satgat": "1400253a",
+			"3P_Satgat": "c73bcca8",
 			"3P_ScissorsLise": "b54af901",
 			"3P_SnowFeather": "a47acc1d",
 			"3P_Sowan": "5e85eef2",
