@@ -1,0 +1,10 @@
+start > cond1
+	cond1 y skill1_usable
+		skill1_usable y skill1_highest-ap
+		skill1_usable n wait
+	cond1 n cond2
+		skill2_usable y skill2_highest-atk
+		skill2_usable n wait
+
+cond1 = check_buff_self_Effect_MP_Dreadlurker_Challenge2_5
+cond2 = skill2_usable check_buff!_Effect_MP_Dreadlurker_Challenge2_2

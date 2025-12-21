@@ -1,0 +1,995 @@
+uid: Dreadlurker_Challenge4
+rarity: 5
+type: 0
+role: 2
+category: 2
+stat:
+  hp:
+    - 10
+    - 10
+  atk:
+    - 25
+    - 25
+  def:
+    - 15
+    - 15
+  spd: 7
+  cri: 40
+  acc: 400
+  eva: 200
+  res:
+    fire: 0
+    chill: 0
+    thunder: 0
+skills:
+  - key: Skill_MP_Dreadlurker_Challenge4_1
+    icon: AirStrike
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 0.01
+      range: 20
+      ap: 10
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Dreadlurker_Challenge4_1
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_1_1
+                type: 1
+                value: "-0.500000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 3
+                defense:
+                  base: -50%
+                  per: 0%
+              overlap: 4
+          maxStack: 2
+          overlapGroup: -1
+  - key: Skill_MP_Dreadlurker_Challenge4_2
+    icon: Vortex
+    passive: false
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 0.01
+      range: 20
+      ap: 10
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: true
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Dreadlurker_Challenge4_2
+          on: attack_success
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_BARRIER_PIERCE
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_2_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 94
+                penetration_force: true
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Dreadlurker_Challenge4_21
+          on: attack_success
+          if:
+            - test: lower
+              target: target
+              operand: DEF
+              ratio: 0
+              than: DEF
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_21_1
+                type: 1
+                value: "29"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 29
+                  target: 0
+              overlap: 4
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_21_2
+                type: 0
+                value: "1000"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 1000
+                  per: 0
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Dreadlurker_Challenge4_22
+          on: attack_success
+          if:
+            - test: higher
+              target: target
+              operand: DEF
+              ratio: 0
+              than: DEF
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_REMOVE_BUFF
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_22_1
+                type: 1
+                value: "29"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 88
+                off:
+                  type: 29
+                  target: 0
+              overlap: 4
+            - icon: BuffIcon_phyDMG_DOT
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_22_2
+                type: 0
+                value: "2000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 65
+                fixed_damage:
+                  base: 2000
+                  per: 0
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_Dreadlurker_Challenge4_3
+    icon: P.DefCounter
+    passive: true
+    type: 0
+    target: team
+    delayed: false
+    target_ground: false
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: 0,0,0,0,1,0,0,0,0
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Dreadlurker_Challenge4_3
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_AP_UP
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_3_1
+                type: 1
+                value: "0.500000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: 50%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Dreadlurker_Challenge4_31
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_SKILL_UP
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_31_1
+                type: 1
+                value: "0.000100"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 113
+                value: skill_ratio
+                by:
+                  base: 0.01%
+                  per: 0%
+                  type: up
+                  target: self
+                  by: def
+                r: true
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Dreadlurker_Challenge4_32
+          on: round
+          if:
+            - false
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_FireRes_Value_Fix
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_32_1
+                type: 1
+                value: "-0.100000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 119
+                resist:
+                  elem: fire
+                  fix:
+                    base: -10%
+                    per: 0%
+              overlap: 4
+            - icon: BuffIcon_IceRes_Value_Fix
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_32_2
+                type: 1
+                value: "-0.100000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 120
+                resist:
+                  elem: ice
+                  fix:
+                    base: -10%
+                    per: 0%
+              overlap: 4
+            - icon: BuffIcon_LightningRes_Value_Fix
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_32_3
+                type: 1
+                value: "-0.100000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 121
+                resist:
+                  elem: lightning
+                  fix:
+                    base: -10%
+                    per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+  - key: Skill_MP_Dreadlurker_Challenge4_4
+    icon: P.AWACS
+    passive: true
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Dreadlurker_Challenge4_4
+          on: wave
+          if:
+            - unitCount:
+                filter:
+                  - enemy
+                  - attacker
+                type:
+                  - 1
+                count:
+                  - 0
+                  - 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_CRITICAL_DOWN
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_4_1
+                type: 1
+                value: "-1.200000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: -120%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Dreadlurker_Challenge4_41
+          on: wave
+          if:
+            - unitCount:
+                filter:
+                  - enemy
+                  - defender
+                type:
+                  - 0
+                count:
+                  - 0
+                  - 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_41_1
+                type: 1
+                value: "-0.600000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: -60%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Dreadlurker_Challenge4_42
+          on: wave
+          if:
+            - unitCount:
+                filter:
+                  - enemy
+                  - supporter
+                type:
+                  - 2
+                count:
+                  - 0
+                  - 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_RANGE_DOWN
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_42_1
+                type: 0
+                value: "-3"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 1
+              value:
+                isBuff: true
+                type: 55
+                range:
+                  base: -3
+                  per: 0
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Dreadlurker_Challenge4_43
+          on: round
+          if:
+            - unitCount:
+                filter:
+                  - enemy
+                  - attacker
+                type:
+                  - 1
+                count:
+                  - 0
+                  - 1
+            - round:
+                operator: ">="
+                round:
+                  - 2
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_CRITICAL_DOWN
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_43_1
+                type: 1
+                value: "-1.200000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: -120%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: -1
+        - key: Effect_MP_Dreadlurker_Challenge4_44
+          on: round
+          if:
+            - unitCount:
+                filter:
+                  - enemy
+                  - defender
+                type:
+                  - 0
+                count:
+                  - 0
+                  - 1
+            - round:
+                operator: ">="
+                round:
+                  - 2
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_AP_DOWN
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_44_1
+                type: 1
+                value: "-0.600000"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 13
+                turnSpeed:
+                  base: -60%
+                  per: 0%
+              overlap: 4
+          maxStack: 1
+          overlapGroup: -1
+        - key: Effect_MP_Dreadlurker_Challenge4_45
+          on: round
+          if:
+            - unitCount:
+                filter:
+                  - enemy
+                  - supporter
+                type:
+                  - 2
+                count:
+                  - 0
+                  - 1
+            - round:
+                operator: ">="
+                round:
+                  - 2
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_RANGE_DOWN
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_45_1
+                type: 0
+                value: "-3"
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                type: 55
+                range:
+                  base: -3
+                  per: 0
+              overlap: 4
+          maxStack: 1
+          overlapGroup: -1
+  - key: Skill_MP_Dreadlurker_Challenge4_5
+    icon: P.Scan
+    passive: true
+    type: 0
+    target: enemy
+    delayed: false
+    target_ground: true
+    buff:
+      rate: 0
+      range: 0
+      ap: 0
+      grid: F>1,1,1,1,1,1,1,1,1
+      summon: null
+      use: null
+      enabled: true
+      dismiss_guard: false
+      acc_bonus: 0
+      buff_rate: 100
+      buffs:
+        - key: Effect_MP_Dreadlurker_Challenge4_5
+          on: damaged
+          if:
+            - on:
+                func: OR
+                select:
+                  - 22
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 1
+          target: 4
+          buffs:
+            - icon: BuffIcon_STUN
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_5_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 999%
+                type: 22
+                stun: true
+              overlap: 4
+          maxStack: 1
+          overlapGroup: -1
+        - key: Effect_MP_Dreadlurker_Challenge4_51
+          on: damaged
+          if:
+            - on:
+                func: OR
+                select:
+                  - 79
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+          target: 4
+          buffs:
+            - icon: BuffIcon_SEAL_SKILL
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_51_1
+                type: 1
+                value: "0"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 999%
+                type: 79
+                skill_disable: true
+              overlap: 4
+          maxStack: 1
+          overlapGroup: -1
+        - key: Effect_MP_Dreadlurker_Challenge4_52
+          on: damaged
+          if:
+            - on:
+                func: OR
+                select:
+                  - 131
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 2
+          target: 4
+          buffs:
+            - icon: BuffIcon_Action_Number_Change_Down
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge4_52_1
+                type: 1
+                value: "-99"
+                level: "0"
+              attr: 1
+              erase:
+                rounds: 2
+              value:
+                isBuff: true
+                chance: 999%
+                type: 127
+                act_count: -99
+              overlap: 4
+          maxStack: 1
+          overlapGroup: -1
+        - key: Effect_MP_Dreadlurker_Challenge1_51
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Dreadlurker_Challenge1_55
+                stack: 3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge1_51_1
+                type: 1
+                value: "0.300000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 30%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Dreadlurker_Challenge1_52
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Dreadlurker_Challenge1_55
+                stack: 3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: ""
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge1_52_1
+                type: 1
+                value: Effect_MP_Dreadlurker_Challenge1_55
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 97
+                off: Effect_MP_Dreadlurker_Challenge1_55
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Dreadlurker_Challenge1_53
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Dreadlurker_Challenge1_56
+                stack: 3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ACCURACY_UP
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge1_53_1
+                type: 1
+                value: "0.600000"
+                level: "0"
+              attr: 3
+              erase: {}
+              value:
+                isBuff: true
+                type: 7
+                accuracy:
+                  base: 60%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_Dreadlurker_Challenge1_54
+          on: round
+          if:
+            - on:
+                target: self
+                select:
+                  - Effect_MP_Dreadlurker_Challenge1_56
+                stack: 3
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: ""
+              desc:
+                desc: Effect_MP_Dreadlurker_Challenge1_54_1
+                type: 1
+                value: Effect_MP_Dreadlurker_Challenge1_56
+                level: "0"
+              attr: 3
+              erase:
+                rounds: 0
+              value:
+                isBuff: true
+                type: 97
+                off: Effect_MP_Dreadlurker_Challenge1_56
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+ai: AI_MP_Dreadlurker_04
