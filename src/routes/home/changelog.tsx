@@ -6,6 +6,11 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13048" date="2026-01-06"
+		bugfix={ <>
+			<li>일부 전투원의 스킨 배너가 누락된 점을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13047" date="2026-01-03"
 		new={ <>
 			<li>이벤트 <BY>오르카 크리스마스 엑스포</BY>의 2부 정보가 추가되었습니다.</li>
