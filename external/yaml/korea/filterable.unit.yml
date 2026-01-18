@@ -4739,12 +4739,12 @@
               type: 15
             - attr: 1
               erase: 0
-              overlap: 0
+              overlap: 4
               type: 7
             - attr: 1
               erase: 0
               overlap: 4
-              type: 86
+              type: 11
         - key: Effect_BUFF_Flood_N_4
           on:
             type: 2
@@ -4810,27 +4810,6 @@
               type: 19
         - key: Effect_3P_Rhea_N_11
           on:
-            type: 2
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 3
-          buffs:
-            - attr: 3
-              erase: 0
-              overlap: 0
-              type: 86
-        - key: Effect_3P_Rhea_N_12
-          on:
             type: 31
             value: "0"
           body:
@@ -4850,9 +4829,13 @@
               erase: 0
               overlap: 4
               type: 7
-        - key: Effect_3P_Rhea_N_17
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 11
+        - key: Effect_3P_Rhea_N_12
           on:
-            type: 31
+            type: 2
             value: "0"
           body:
             - 0
@@ -4870,7 +4853,35 @@
             - attr: 1
               erase: 0
               overlap: 4
+              type: 7
+            - attr: 1
+              erase: 0
+              overlap: 4
               type: 11
+        - key: Effect_3P_Rhea_N_57
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 29
+                target: 0
     "2":
       target: enemy
       delayed: false
@@ -4905,20 +4916,12 @@
               type: 48
             - attr: 1
               erase: 0
-              overlap: 0
-              type: 84
-            - attr: 1
-              erase: 0
-              overlap: 0
+              overlap: 4
               type: 88
               value:
                 type: 36
                 target: 0
-            - attr: 1
-              erase: 0
-              overlap: 0
-              type: 70
-        - key: Effect_3P_Rhea_N_13
+        - key: Effect_3P_Rhea_N_21
           on:
             type: 31
             value: "0"
@@ -4937,14 +4940,14 @@
           buffs:
             - attr: 3
               erase: 0
-              overlap: 0
+              overlap: 4
               type: 88
               value:
                 type: 36
                 target: 0
-        - key: Effect_3P_Rhea_N_14
+        - key: Effect_3P_Rhea_N_22
           on:
-            type: 0
+            type: 2
             value: "0"
           body:
             - 0
@@ -4959,10 +4962,37 @@
             - 2
           target: 3
           buffs:
-            - attr: 1
+            - attr: 3
               erase: 0
-              overlap: 3
-              type: 70
+              overlap: 4
+              type: 88
+              value:
+                type: 36
+                target: 0
+        - key: Effect_3P_Rhea_N_57
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 29
+                target: 0
     "3":
       target: team
       delayed: false
@@ -4971,6 +5001,46 @@
       guard: false
       buffs:
         - key: Effect_3P_Rhea_N_3
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 101
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 1
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 9
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 7
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 13
+                target: 0
+        - key: Effect_3P_Rhea_N_31
           on:
             type: 30
             value: "0"
@@ -4999,9 +5069,26 @@
               erase: 0
               overlap: 4
               type: 7
-            - attr: 0
+        - key: Effect_3P_Rhea_N_32
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
               erase: 0
-              overlap: 0
+              overlap: 4
               type: 88
               value:
                 type: 13
@@ -5009,7 +5096,7 @@
     "4":
       target: team
       delayed: false
-      grid: false
+      grid: true
       elem: 0
       guard: false
       buffs:
@@ -5039,10 +5126,14 @@
             - attr: 0
               erase: 0
               overlap: 4
+              type: 15
+            - attr: 0
+              erase: 0
+              overlap: 4
               type: 91
-        - key: Effect_3P_Rhea_N_15
+        - key: Effect_3P_Rhea_N_41
           on:
-            type: 13
+            type: 30
             value: "0"
           body:
             - 0
@@ -5056,25 +5147,44 @@
           target: 2
           buffs:
             - attr: 0
-              erase: 3
+              erase: 0
               overlap: 4
               type: 13
             - attr: 0
-              erase: 3
+              erase: 0
               overlap: 4
               type: 15
             - attr: 0
-              erase: 3
+              erase: 0
               overlap: 4
               type: 17
             - attr: 0
-              erase: 3
+              erase: 0
               overlap: 4
               type: 19
             - attr: 0
-              erase: 3
+              erase: 0
               overlap: 4
               type: 91
+        - key: Effect_3P_Rhea_N_42
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 13
     "5":
       target: team
       delayed: false
@@ -5084,7 +5194,7 @@
       buffs:
         - key: Effect_3P_Rhea_N_5
           on:
-            type: 15
+            type: 30
             value: "0"
           body:
             - 0
@@ -5100,16 +5210,27 @@
           target: 0
           buffs:
             - attr: 0
-              erase: 2
+              erase: 0
               overlap: 4
-              type: 1
+              type: 33
             - attr: 0
-              erase: 2
-              overlap: 0
-              type: 34
-        - key: Effect_3P_Rhea_N_16
+              erase: 0
+              overlap: 4
+              type: 15
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 91
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 29
+                target: 0
+        - key: Effect_3P_Rhea_N_51
           on:
-            type: 16
+            type: 13
             value: "0"
           body:
             - 0
@@ -5125,9 +5246,126 @@
           target: 0
           buffs:
             - attr: 0
-              erase: 2
-              overlap: 0
-              type: 34
+              erase: 1
+              overlap: 4
+              type: 33
+        - key: Effect_3P_Rhea_N_52
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 1
+              overlap: 4
+              type: 33
+        - key: Effect_3P_Rhea_N_53
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 1
+              overlap: 4
+              type: 33
+        - key: Effect_3P_Rhea_N_54
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 1
+              overlap: 4
+              type: 33
+        - key: Effect_3P_Rhea_N_55
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 1
+              overlap: 4
+              type: 33
+        - key: Effect_3P_Rhea_N_56
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 15
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 17
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 19
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 91
   skins:
     sid: null
     artist: SNOWBALL
@@ -5290,6 +5528,7 @@
   rarity: 3
   promo:
     - 4
+    - 5
   group: 3PFairy_1
   releaseDate: 1548288000000
   marriageVoice: true
@@ -5332,7 +5571,7 @@
               erase: 0
               overlap: 4
               type: 83
-        - key: Effect_3P_ScissorsLise_N_13
+        - key: Effect_3P_ScissorsLise_N_11
           on:
             type: 31
             value: "0"
@@ -5351,8 +5590,146 @@
           buffs:
             - attr: 3
               erase: 0
-              overlap: 0
+              overlap: 4
               type: 83
+        - key: Effect_3P_ScissorsLise_N_54
+          on:
+            type: 22
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 79
+        - key: Effect_3P_ScissorsLise_N_55
+          on:
+            type: 0
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 77
+                target: 0
+        - key: Effect_3P_ScissorsLise_N_56
+          on:
+            type: 0
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 102
+                target: 0
+        - key: Effect_3P_ScissorsLise_N_57
+          on:
+            type: 0
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 103
+                target: 0
+        - key: Effect_3P_ScissorsLise_N_58
+          on:
+            type: 0
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 144
+        - key: Effect_3P_Rhea_N_57
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 29
+                target: 0
     "2":
       target: enemy
       delayed: false
@@ -5406,6 +5783,144 @@
               erase: 0
               overlap: 4
               type: 83
+        - key: Effect_3P_ScissorsLise_N_54
+          on:
+            type: 22
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 79
+        - key: Effect_3P_ScissorsLise_N_55
+          on:
+            type: 0
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 77
+                target: 0
+        - key: Effect_3P_ScissorsLise_N_56
+          on:
+            type: 0
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 102
+                target: 0
+        - key: Effect_3P_ScissorsLise_N_57
+          on:
+            type: 0
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 103
+                target: 0
+        - key: Effect_3P_ScissorsLise_N_59
+          on:
+            type: 0
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 144
+        - key: Effect_3P_Rhea_N_57
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 29
+                target: 0
     "3":
       target: team
       delayed: false
@@ -5433,11 +5948,15 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 58
+              type: 1
             - attr: 0
               erase: 0
               overlap: 4
               type: 9
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 58
             - attr: 0
               erase: 0
               overlap: 4
@@ -5514,7 +6033,7 @@
           buffs:
             - attr: 0
               erase: 0
-              overlap: 0
+              overlap: 4
               type: 20
             - attr: 0
               erase: 0
@@ -5524,9 +6043,9 @@
               erase: 0
               overlap: 4
               type: 13
-        - key: Effect_3P_ScissorsLise_N_15
+        - key: Effect_3P_ScissorsLise_N_41
           on:
-            type: 24
+            type: 15
             value: "0"
           body:
             - 0
@@ -5542,10 +6061,10 @@
           target: 0
           buffs:
             - attr: 0
-              erase: 3
+              erase: 0
               overlap: 4
               type: 13
-        - key: Effect_3P_ScissorsLise_N_14
+        - key: Effect_3P_ScissorsLise_N_42
           on:
             type: 7
             value: Char_3P_BlackLilith_N
@@ -5566,7 +6085,7 @@
               erase: 3
               overlap: 4
               type: 13
-        - key: Effect_3P_ScissorsLise_N_16
+        - key: Effect_3P_ScissorsLise_N_43
           on:
             type: 7
             value: Char_3P_Sowan_N
@@ -5587,6 +6106,153 @@
               erase: 3
               overlap: 4
               type: 13
+    "5":
+      target: team
+      delayed: false
+      grid: false
+      elem: 0
+      guard: false
+      buffs:
+        - key: Effect_3P_ScissorsLise_N_5
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 98
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 80
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 140
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 144
+        - key: Effect_3P_ScissorsLise_N_51
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 80
+        - key: Effect_3P_ScissorsLise_N_52
+          on:
+            type: 17
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 6
+        - key: Effect_3P_ScissorsLise_N_53
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 1
+              type: 140
+        - key: Effect_3P_ScissorsLise_N_511
+          on:
+            type: 15
+            value: "1"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 79
+        - key: Effect_3P_ScissorsLise_N_510
+          on:
+            type: 5
+            value: "1"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 69
+              value:
+                type: 140
   skins:
     sid: null
     artist: Rorobomb
@@ -5782,6 +6448,7 @@
   rarity: 3
   promo:
     - 4
+    - 5
   group: 3PFairy_1
   releaseDate: 1548288000000
   marriageVoice: true
@@ -5819,15 +6486,15 @@
             - attr: 1
               erase: 0
               overlap: 4
+              type: 3
+            - attr: 1
+              erase: 0
+              overlap: 4
               type: 13
             - attr: 1
               erase: 0
               overlap: 4
-              type: 3
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 65
+              type: 48
             - attr: 1
               erase: 0
               overlap: 4
@@ -5835,8 +6502,8 @@
             - attr: 1
               erase: 0
               overlap: 4
-              type: 48
-        - key: Effect_3P_Daphne_N_12
+              type: 8
+        - key: Effect_BUFF_Corrosion_N_1
           on:
             type: 2
             value: "0"
@@ -5853,11 +6520,11 @@
             - 2
           target: 3
           buffs:
-            - attr: 1
+            - attr: 3
               erase: 0
               overlap: 4
               type: 70
-        - key: Effect_3P_Daphne_N_2
+        - key: Effect_BUFF_Corrosion_N_2
           on:
             type: 2
             value: "0"
@@ -5878,7 +6545,28 @@
               erase: 0
               overlap: 4
               type: 3
-        - key: Effect_3P_Daphne_N_13
+        - key: Effect_BUFF_Corrosion_N_3
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_BUFF_Corrosion_N_4
           on:
             type: 2
             value: "0"
@@ -5899,7 +6587,70 @@
               erase: 0
               overlap: 4
               type: 48
-        - key: Effect_3P_Daphne_N_11
+        - key: Effect_BUFF_Corrosion_N_5
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 3
+        - key: Effect_BUFF_Corrosion_N_6
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_BUFF_Corrosion_N_7
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 48
+        - key: Effect_BUFF_Corrosion_N_8
           on:
             type: 2
             value: "0"
@@ -5918,8 +6669,137 @@
           buffs:
             - attr: 1
               erase: 0
-              overlap: 3
-              type: 65
+              overlap: 4
+              type: 3
+        - key: Effect_BUFF_Corrosion_N_9
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_BUFF_Corrosion_N_10
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 48
+        - key: Effect_BUFF_Corrosion_N_11
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 3
+        - key: Effect_BUFF_Corrosion_N_12
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_BUFF_Corrosion_N_13
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 48
+        - key: Effect_3P_Rhea_N_57
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 29
+                target: 0
     "2":
       target: enemy
       delayed: false
@@ -5927,64 +6807,6 @@
       elem: 0
       guard: false
       buffs:
-        - key: Effect_3P_Daphne_N_1
-          on:
-            type: 2
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 3
-          buffs:
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 13
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 3
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 65
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 70
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 48
-        - key: Effect_3P_Daphne_N_12
-          on:
-            type: 2
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 3
-          buffs:
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 70
         - key: Effect_3P_Daphne_N_2
           on:
             type: 2
@@ -6006,7 +6828,107 @@
               erase: 0
               overlap: 4
               type: 3
-        - key: Effect_3P_Daphne_N_13
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 13
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 48
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 70
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 20
+        - key: Effect_3P_Daphne_N_21
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 20
+        - key: Effect_BUFF_Corrosion_N_1
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 70
+        - key: Effect_BUFF_Corrosion_N_2
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 3
+        - key: Effect_BUFF_Corrosion_N_3
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_BUFF_Corrosion_N_4
           on:
             type: 2
             value: "0"
@@ -6027,7 +6949,7 @@
               erase: 0
               overlap: 4
               type: 48
-        - key: Effect_3P_Daphne_N_11
+        - key: Effect_BUFF_Corrosion_N_8
           on:
             type: 2
             value: "0"
@@ -6046,8 +6968,74 @@
           buffs:
             - attr: 1
               erase: 0
-              overlap: 3
-              type: 65
+              overlap: 4
+              type: 3
+        - key: Effect_BUFF_Corrosion_N_9
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_BUFF_Corrosion_N_10
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 48
+        - key: Effect_3P_Rhea_N_57
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 29
+                target: 0
     "3":
       target: team
       delayed: false
@@ -6075,16 +7063,20 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 9
-            - attr: 0
-              erase: 0
-              overlap: 4
               type: 7
             - attr: 0
               erase: 0
               overlap: 4
+              type: 9
+            - attr: 0
+              erase: 0
+              overlap: 4
               type: 58
-        - key: Effect_3P_Daphne_N_14
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 55
+        - key: Effect_3P_Daphne_N_31
           on:
             type: 30
             value: "0"
@@ -6108,7 +7100,7 @@
     "4":
       target: team
       delayed: false
-      grid: false
+      grid: true
       elem: 0
       guard: false
       buffs:
@@ -6140,6 +7132,196 @@
               erase: 0
               overlap: 4
               type: 13
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 55
+        - key: Effect_3P_Daphne_N_41
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 2
+          role:
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 55
+        - key: Effect_3P_Daphne_N_42
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 7
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 9
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 58
+        - key: Effect_3P_Daphne_N_43
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 13
+    "5":
+      target: team
+      delayed: false
+      grid: true
+      elem: 0
+      guard: false
+      buffs:
+        - key: Effect_3P_Daphne_N_5
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 130
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 6
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 7
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 62
+        - key: Effect_3P_Daphne_N_51
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 6
+        - key: Effect_3P_Daphne_N_52
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 7
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 62
+        - key: Effect_3P_Daphne_N_53
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 130
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 6
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 7
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 62
   skins:
     sid: null
     artist: Rorobomb
@@ -6335,6 +7517,8 @@
   rarity: 2
   promo:
     - 3
+    - 4
+    - 5
   group: 3PFairy_1
   releaseDate: 1548288000000
   marriageVoice: true
@@ -6352,7 +7536,82 @@
       elem: 0
       guard: false
       buffs:
-        - key: Effect_3P_Daphne_N_1
+        - key: Effect_3P_Aqua_N_1
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 3
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 13
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 48
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 70
+        - key: Effect_BUFF_Corrosion_N_1
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 70
+        - key: Effect_BUFF_Corrosion_N_2
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 3
+        - key: Effect_BUFF_Corrosion_N_3
           on:
             type: 2
             value: "0"
@@ -6373,65 +7632,7 @@
               erase: 0
               overlap: 4
               type: 13
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 3
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 65
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 70
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 48
-        - key: Effect_3P_Daphne_N_12
-          on:
-            type: 2
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 3
-          buffs:
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 70
-        - key: Effect_3P_Daphne_N_2
-          on:
-            type: 2
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 3
-          buffs:
-            - attr: 1
-              erase: 0
-              overlap: 4
-              type: 3
-        - key: Effect_3P_Daphne_N_13
+        - key: Effect_BUFF_Corrosion_N_4
           on:
             type: 2
             value: "0"
@@ -6452,7 +7653,7 @@
               erase: 0
               overlap: 4
               type: 48
-        - key: Effect_3P_Daphne_N_11
+        - key: Effect_BUFF_Corrosion_N_8
           on:
             type: 2
             value: "0"
@@ -6471,8 +7672,74 @@
           buffs:
             - attr: 1
               erase: 0
-              overlap: 3
-              type: 65
+              overlap: 4
+              type: 3
+        - key: Effect_BUFF_Corrosion_N_9
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_BUFF_Corrosion_N_10
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 48
+        - key: Effect_3P_Rhea_N_57
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 29
+                target: 0
     "2":
       target: team
       delayed: false
@@ -6505,19 +7772,7 @@
               erase: 0
               overlap: 4
               type: 91
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 15
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 19
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 17
-        - key: Effect_BUFF_Flood_N_1
+        - key: Effect_3P_Aqua_N_21
           on:
             type: 0
             value: "0"
@@ -6527,18 +7782,17 @@
           class:
             - 0
             - 1
-            - 2
           role:
             - 0
             - 1
             - 2
           target: 1
           buffs:
-            - attr: 3
+            - attr: 0
               erase: 0
               overlap: 4
-              type: 15
-        - key: Effect_BUFF_Flood_N_2
+              type: 91
+        - key: Effect_3P_Aqua_N_22
           on:
             type: 0
             value: "0"
@@ -6546,8 +7800,6 @@
             - 0
             - 1
           class:
-            - 0
-            - 1
             - 2
           role:
             - 0
@@ -6555,11 +7807,11 @@
             - 2
           target: 1
           buffs:
-            - attr: 3
+            - attr: 0
               erase: 0
               overlap: 4
-              type: 17
-        - key: Effect_BUFF_Flood_N_3
+              type: 91
+        - key: Effect_3P_Aqua_N_23
           on:
             type: 0
             value: "0"
@@ -6567,8 +7819,6 @@
             - 0
             - 1
           class:
-            - 0
-            - 1
             - 2
           role:
             - 0
@@ -6576,18 +7826,49 @@
             - 2
           target: 1
           buffs:
-            - attr: 3
+            - attr: 0
               erase: 0
               overlap: 4
-              type: 19
+              type: 91
     "3":
       target: team
       delayed: false
-      grid: false
+      grid: true
       elem: 0
       guard: false
       buffs:
         - key: Effect_3P_Aqua_N_3
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 1
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 7
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 11
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 20
+        - key: Effect_3P_Aqua_N_31
           on:
             type: 30
             value: "0"
@@ -6618,9 +7899,41 @@
               type: 11
             - attr: 0
               erase: 0
-              overlap: 0
+              overlap: 4
               type: 20
-        - key: Effect_3P_Aqua_N_11
+    "4":
+      target: team
+      delayed: false
+      grid: true
+      elem: 0
+      guard: false
+      buffs:
+        - key: Effect_3P_Aqua_N_4
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 20
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 17
+        - key: Effect_3P_Aqua_N_41
           on:
             type: 30
             value: "0"
@@ -6637,10 +7950,280 @@
             - 2
           target: 2
           buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 8
+    "5":
+      target: team
+      delayed: false
+      grid: true
+      elem: 0
+      guard: false
+      buffs:
+        - key: Effect_3P_Aqua_N_5
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
             - attr: 0
               erase: 0
-              overlap: 0
-              type: 20
+              overlap: 4
+              type: 13
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 13
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 13
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 13
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 0
+        - key: Effect_3P_Aqua_N_51
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_3P_Aqua_N_52
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_3P_Aqua_N_53
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_3P_Aqua_N_54
+          on:
+            type: 51
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 100
+        - key: Effect_3P_Aqua_N_55
+          on:
+            type: 51
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 91
+        - key: Effect_3P_Aqua_N_56
+          on:
+            type: 51
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 91
+        - key: Effect_3P_Aqua_N_57
+          on:
+            type: 51
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 91
+        - key: Effect_3P_Aqua_N_58
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_BUFF_Flood_N_26
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 15
+        - key: Effect_BUFF_Flood_N_27
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 17
+        - key: Effect_BUFF_Flood_N_28
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 19
   skins:
     sid: null
     artist: PaintAle
@@ -6819,15 +8402,15 @@
             - attr: 1
               erase: 0
               overlap: 4
-              type: 67
-            - attr: 1
-              erase: 0
-              overlap: 1
-              type: 78
+              type: 17
             - attr: 1
               erase: 0
               overlap: 4
-              type: 17
+              type: 67
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 99
         - key: Effect_3P_Titania_N_11
           on:
             type: 2
@@ -6845,10 +8428,97 @@
             - 2
           target: 3
           buffs:
-            - attr: 1
+            - attr: 3
               erase: 0
               overlap: 4
-              type: 17
+              type: 99
+        - key: Effect_3P_Titania_N_12
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 99
+        - key: Effect_3P_Titania_N_510
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 85
+        - key: Effect_3P_Titania_N_511
+          on:
+            type: 22
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 97
+        - key: Effect_3P_Rhea_N_57
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 29
+                target: 0
     "2":
       target: enemy
       delayed: false
@@ -6873,15 +8543,61 @@
             - 2
           target: 3
           buffs:
-            - attr: 3
+            - attr: 1
               erase: 0
-              overlap: 0
+              overlap: 4
+              type: 13
+            - attr: 1
+              erase: 0
+              overlap: 4
               type: 85
-            - attr: 3
+            - attr: 1
               erase: 0
               overlap: 4
               type: 13
         - key: Effect_3P_Titania_N_21
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_3P_Titania_N_22
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 85
+        - key: Effect_3P_Titania_N_23
           on:
             type: 0
             value: "0"
@@ -6902,10 +8618,55 @@
               erase: 0
               overlap: 4
               type: 13
+        - key: Effect_3P_Titania_N_510
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 85
+        - key: Effect_3P_Rhea_N_57
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 29
+                target: 0
     "3":
       target: team
       delayed: false
-      grid: false
+      grid: true
       elem: 0
       guard: false
       buffs:
@@ -6929,48 +8690,16 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 61
+              type: 1
             - attr: 0
               erase: 0
               overlap: 4
               type: 1
-    "4":
-      target: team
-      delayed: false
-      grid: false
-      elem: 0
-      guard: false
-      buffs:
-        - key: Effect_3P_Titania_N_4
-          on:
-            type: 30
-            value: "0"
-          body:
-            - 0
-            - 1
-          class:
-            - 0
-            - 1
-            - 2
-          role:
-            - 0
-            - 1
-            - 2
-          target: 2
-          buffs:
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 15
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 101
             - attr: 0
               erase: 0
               overlap: 4
               type: 61
-        - key: Effect_3P_Titania_N_41
+        - key: Effect_3P_Titania_N_31
           on:
             type: 30
             value: "0"
@@ -6983,20 +8712,36 @@
             - 2
           role:
             - 0
+            - 1
+            - 2
           target: 2
           buffs:
-            - attr: 0
+            - attr: 3
               erase: 0
               overlap: 4
-              type: 101
-    "5":
-      target: team
-      delayed: false
-      grid: false
-      elem: 0
-      guard: false
-      buffs:
-        - key: Effect_3P_Titania_N_5
+              type: 10
+        - key: Effect_3P_Titania_N_32
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 10
+        - key: Effect_3P_Titania_N_33
           on:
             type: 30
             value: "0"
@@ -7016,23 +8761,344 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 55
-            - attr: 0
-              erase: 0
-              overlap: 4
               type: 1
+        - key: Effect_3P_Titania_N_34
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
             - attr: 0
               erase: 0
               overlap: 4
-              type: 11
-            - attr: 0
+              type: 61
+    "4":
+      target: team
+      delayed: false
+      grid: true
+      elem: 0
+      guard: false
+      buffs:
+        - key: Effect_3P_Titania_N_4
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
               erase: 0
               overlap: 4
-              type: 36
-            - attr: 0
+              type: 13
+            - attr: 1
               erase: 0
               overlap: 4
-              type: 29
+              type: 22
+        - key: Effect_3P_Titania_N_41
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_3P_Titania_N_42
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 22
+        - key: Effect_3P_Titania_N_43
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 4
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 22
+    "5":
+      target: team
+      delayed: false
+      grid: false
+      elem: 0
+      guard: false
+      buffs:
+        - key: Effect_3P_Titania_N_5
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 9
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 85
+        - key: Effect_3P_Titania_N_51
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 9
+        - key: Effect_3P_Titania_N_52
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 9
+        - key: Effect_3P_Titania_N_53
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 9
+        - key: Effect_3P_Titania_N_54
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 9
+        - key: Effect_3P_Titania_N_55
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 9
+        - key: Effect_3P_Titania_N_56
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 9
+        - key: Effect_3P_Titania_N_57
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 9
+        - key: Effect_3P_Titania_N_58
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 9
+        - key: Effect_3P_Titania_N_59
+          on:
+            type: 13
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 3
+              erase: 3
+              overlap: 4
+              type: 9
   skins:
     sid: null
     artist: SNOWBALL
@@ -68169,6 +70235,43 @@
       iconId: 0
       tbarId: 0
       flags: 4
+    skins:
+      - sid: 1
+        artist: Rubee
+        priceEx: Exchange
+        G: true
+        Spine: true
+        SpineDamaged: false
+        parts: 110
+        stage: false
+        subset:
+          - true
+          - true
+          - true
+          - false
+          - true
+          - true
+          - true
+          - true
+        anim:
+          - false
+          - false
+          - false
+          - false
+        category:
+          - ALL
+          - Costume
+        facelist: []
+        releaseDate: 1768435200000
+        metadata:
+          imageId: 1
+          iconId: 1
+          tbarId: 1
+          voiceId: 1
+          flags: 3
+          2dmodel: 2DModel_PECS_CoCoWhiteShell_NS1
+          2dmodel_dam: 2DModel_PECS_CoCoWhiteShell_NS1_Dam
+          consumableKey: Skin_PECS_CoCoWhiteShell_1
   stat:
     - HP:
         - 280
@@ -105359,6 +107462,543 @@
         fire: 0
         ice: 0
         lightning: 0
+- uid: PECS_LaylaCloudy
+  id: 166
+  rarity: 5
+  group: AmuseAttendant_2
+  releaseDate: 1768435200000
+  marriageVoice: true
+  type: 2
+  role: 2
+  body: 0
+  craft: 22140
+  oneoff: false
+  oathable: true
+  skills:
+    "1":
+      target: enemy
+      delayed: false
+      grid: true
+      elem: 0
+      guard: false
+      buffs:
+        - key: Effect_PECS_LaylaCloudy_N_1
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 13
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 20
+        - key: Effect_PECS_LaylaCloudy_N_11
+          on:
+            type: 31
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 20
+    "2":
+      target: team
+      delayed: false
+      grid: false
+      elem: 0
+      guard: false
+      buffs:
+        - key: Effect_PECS_LaylaCloudy_N_2
+          on:
+            type: 0
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 8
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 100
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 20
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 1
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 106
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 36
+        - key: Effect_PECS_LaylaCloudy_N_21
+          on:
+            type: 0
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 8
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 1
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 11
+        - key: Effect_PECS_LaylaCloudy_N_22
+          on:
+            type: 0
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+          role:
+            - 0
+            - 1
+            - 2
+          target: 8
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 106
+        - key: Effect_PECS_LaylaCloudy_N_23
+          on:
+            type: 0
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 1
+          role:
+            - 0
+            - 1
+            - 2
+          target: 8
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 36
+    "3":
+      target: team
+      delayed: false
+      grid: true
+      elem: 0
+      guard: false
+      buffs:
+        - key: Effect_PECS_LaylaCloudy_N_3
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 8
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 1
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 11
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 61
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 62
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 60
+        - key: Effect_PECS_LaylaCloudy_N_31
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 8
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 61
+        - key: Effect_PECS_LaylaCloudy_N_32
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+          role:
+            - 0
+            - 1
+            - 2
+          target: 8
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 62
+        - key: Effect_PECS_LaylaCloudy_N_33
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 1
+          role:
+            - 0
+            - 1
+            - 2
+          target: 8
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 60
+    "4":
+      target: enemy
+      delayed: false
+      grid: true
+      elem: 0
+      guard: false
+      buffs:
+        - key: Effect_PECS_LaylaCloudy_N_4
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 9
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 1
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 11
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 61
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 62
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 60
+        - key: Effect_PECS_LaylaCloudy_N_41
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 9
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 61
+        - key: Effect_PECS_LaylaCloudy_N_42
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+          role:
+            - 0
+            - 1
+            - 2
+          target: 9
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 62
+        - key: Effect_PECS_LaylaCloudy_N_43
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 1
+          role:
+            - 0
+            - 1
+            - 2
+          target: 9
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 60
+    "5":
+      target: team
+      delayed: false
+      grid: false
+      elem: 0
+      guard: false
+      buffs:
+        - key: Effect_PECS_LaylaCloudy_N_5
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 13
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 20
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 48
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 90
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 36
+        - key: Effect_PECS_LaylaCloudy_N_51
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 9
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 48
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 90
+        - key: Effect_PECS_LaylaCloudy_N_52
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 8
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 36
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 91
+  skins:
+    sid: null
+    artist: Bong7
+    priceEx: ""
+    G: true
+    Spine: false
+    SpineDamaged: false
+    parts: 4
+    stage: false
+    subset:
+      - true
+      - false
+      - false
+      - true
+      - false
+      - false
+      - false
+      - false
+    anim:
+      - false
+      - false
+      - false
+      - false
+    category:
+      - ""
+    facelist: []
+    releaseDate: null
+    metadata:
+      imageId: 0
+      iconId: 0
+      tbarId: 0
+      flags: 1
+      2dmodel: 2DModel_PECS_LaylaCloudy_N
+    skins:
+      - sid: 1
+        artist: Bong7
+        price: 352
+        G: true
+        Spine: true
+        SpineDamaged: false
+        parts: 78
+        stage: false
+        subset:
+          - true
+          - true
+          - false
+          - false
+          - false
+          - true
+          - false
+          - false
+        anim:
+          - false
+          - false
+          - false
+          - false
+        category:
+          - ALL
+          - Costume
+        facelist: []
+        releaseDate: 1768435200000
+        metadata:
+          imageId: 1
+          iconId: 1
+          tbarId: 1
+          voiceId: 1
+          flags: 2
+          2dmodel_dam: 2DModel_PECS_LaylaCloudy_NS1_Dam
+          consumableKey: Skin_PECS_LaylaCloudy_1
+  stat: []
 - uid: DS_Sarena
   id: 168
   rarity: 5
@@ -111880,7 +114520,149 @@
               erase: 0
               overlap: 4
               type: 48
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 1
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 13
         - key: Effect_3P_Dryad_N_11
+          on:
+            type: 0
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 1
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_3P_Dryad_N_12
+          on:
+            type: 52
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 1
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_3P_Dryad_N_31
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 83
+        - key: Effect_BUFF_Corrosion_N_1
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 70
+        - key: Effect_BUFF_Corrosion_N_14
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 3
+        - key: Effect_BUFF_Corrosion_N_15
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_BUFF_Corrosion_N_16
           on:
             type: 2
             value: "0"
@@ -111901,6 +114683,93 @@
               erase: 0
               overlap: 4
               type: 48
+        - key: Effect_BUFF_Corrosion_N_17
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 3
+        - key: Effect_BUFF_Corrosion_N_18
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_BUFF_Corrosion_N_19
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 48
+        - key: Effect_3P_Rhea_N_57
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 29
+                target: 0
     "2":
       target: enemy
       delayed: false
@@ -111950,10 +114819,202 @@
             - 2
           target: 0
           buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_3P_Dryad_N_31
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 83
+        - key: Effect_BUFF_Corrosion_N_1
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 70
+        - key: Effect_BUFF_Corrosion_N_14
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 3
+        - key: Effect_BUFF_Corrosion_N_15
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
             - attr: 1
               erase: 0
               overlap: 4
               type: 13
+        - key: Effect_BUFF_Corrosion_N_16
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 48
+        - key: Effect_BUFF_Corrosion_N_17
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 3
+        - key: Effect_BUFF_Corrosion_N_18
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 13
+        - key: Effect_BUFF_Corrosion_N_19
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 1
+              erase: 0
+              overlap: 4
+              type: 48
+        - key: Effect_3P_Rhea_N_57
+          on:
+            type: 2
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - attr: 3
+              erase: 0
+              overlap: 4
+              type: 88
+              value:
+                type: 29
+                target: 0
     "3":
       target: team
       delayed: false
@@ -111990,16 +115051,20 @@
               erase: 0
               overlap: 4
               type: 61
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 83
     "4":
       target: team
       delayed: false
-      grid: false
+      grid: true
       elem: 0
       guard: false
       buffs:
         - key: Effect_3P_Dryad_N_4
           on:
-            type: 30
+            type: 36
             value: "0"
           body:
             - 0
@@ -112012,23 +115077,23 @@
             - 0
             - 1
             - 2
-          target: 2
+          target: 0
           buffs:
             - attr: 0
               erase: 0
               overlap: 4
-              type: 7
+              type: 20
             - attr: 0
               erase: 0
               overlap: 4
-              type: 1
+              type: 20
             - attr: 0
               erase: 0
               overlap: 4
-              type: 13
+              type: 20
         - key: Effect_3P_Dryad_N_41
           on:
-            type: 30
+            type: 36
             value: "0"
           body:
             - 0
@@ -112041,20 +115106,12 @@
             - 0
             - 1
             - 2
-          target: 2
+          target: 0
           buffs:
             - attr: 0
               erase: 0
               overlap: 4
-              type: 7
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 1
-            - attr: 0
-              erase: 0
-              overlap: 4
-              type: 13
+              type: 20
         - key: Effect_3P_Dryad_N_42
           on:
             type: 30
@@ -112070,20 +115127,96 @@
             - 0
             - 1
             - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 20
+        - key: Effect_3P_Dryad_N_43
+          on:
+            type: 24
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - attr: 0
+              erase: 0
+              overlap: 4
+              type: 20
+        - key: Effect_3P_Dryad_N_44
+          on:
+            type: 36
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
           target: 2
           buffs:
             - attr: 0
               erase: 0
               overlap: 4
-              type: 7
+              type: 20
+        - key: Effect_3P_Dryad_N_45
+          on:
+            type: 30
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
             - attr: 0
               erase: 0
               overlap: 4
-              type: 1
+              type: 20
+        - key: Effect_3P_Dryad_N_46
+          on:
+            type: 24
+            value: "0"
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 2
+          buffs:
             - attr: 0
               erase: 0
               overlap: 4
-              type: 13
+              type: 20
     "5":
       target: team
       delayed: false
@@ -112106,12 +115239,12 @@
             - 0
             - 1
             - 2
-          target: 2
+          target: 0
           buffs:
             - attr: 0
               erase: 0
               overlap: 4
-              type: 11
+              type: 77
             - attr: 0
               erase: 0
               overlap: 4
@@ -112119,7 +115252,7 @@
             - attr: 0
               erase: 0
               overlap: 4
-              type: 1
+              type: 3
         - key: Effect_3P_Dryad_N_51
           on:
             type: 30
@@ -112128,19 +115261,17 @@
             - 0
             - 1
           class:
-            - 0
-            - 1
             - 2
           role:
             - 0
             - 1
             - 2
-          target: 0
+          target: 2
           buffs:
             - attr: 0
               erase: 0
               overlap: 4
-              type: 1
+              type: 61
   skins:
     sid: null
     artist: SIMA
