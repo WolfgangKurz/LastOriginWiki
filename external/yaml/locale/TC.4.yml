@@ -7392,48 +7392,89 @@ UNIT_SKILL_DESC_3P_ScissorsLise_5: >-
 
   <sec>반복 행동 중 다른 이가 개입할 수 없으며</sec>, <sec typ="cond">적 처치 시</sec> 지친 나머지 <sec typ="buff"><buff typ="SEAL_SKILL" /> 스킬 사용 불가</sec> 상태가 됩니다.
 UNIT_SKILL_DESC_3P_Daphne_1: >-
-  마이크로 페어리로 대상을 <sec typ="note">부식</sec>시켜 <dmg elem="physics" />를 주고, 3라운드 동안
-  <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="6" r /></sec> / <sec
-  typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec> 감소 / <sec
-  typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="8" signless /> 고정 물리 피해</sec>를
-  입는 상태로 만듭니다 (최대 3 중첩).
+  마이크로 페어리로 단일 대상에게 <dmg elem="physics" />를 줍니다.
 
-  해당 효과 중첩 적용 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 공격력 <val idx="5" r signless /> 고정 물리 피해</sec>를 입으며 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="7" r /></sec>가 증가합니다.
-UNIT_SKILL_DESC_3P_Daphne_2: |-
-  목표 범위에 <dmg elem="physics" />를 주고, 3라운드 동안 <sec typ="note">부식</sec> 상태로 만듭니다.
-  스킬 레벨 10부터 범위가 증가하며, 같은 <sec typ="note">부식</sec> 계통 효과가 별도로 중첩되지 않고 같이 중첩됩니다.
+  <sec typ="cond">적중 시</sec>, 3라운드 동안 대상을 <sec typ="note">부식</sec> 상태로 만들어 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="7" r /></sec>를 감소시키고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="8" r /></sec>를 증가시킵니다. (최대 3중첩)
+
+  <sec typ="cond">대상이 이미 <sec typ="note">부식</sec> 상태인 경우</sec>, 추가로 자신의 <sec typ="dmg"><buff typ="PhyATK_UP" /> 공격력의 <val idx="5" r signless /> 만큼 고정 피해</sec>를 줍니다.
+
+  <sec typ="cond">치명타 시</sec>, <sec typ="buff"><sec typ="note">부식</sec>을 1중첩 추가로 부여</sec>합니다.
+UNIT_SKILL_DESC_3P_Daphne_2: >-
+  지정 범위에 부식 용액을 분사해 <dmg elem="physics" />를 줍니다.
+
+  <sec typ="cond">적중 시</sec>, 3라운드 동안 대상을 <sec typ="note">부식</sec> 상태로 만들어 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="8" r /></sec>를 감소시키고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="9" r /></sec>를 증가시킵니다. (최대 3중첩)
+
+  <sec typ="cond">대상이 이미 <sec typ="note">부식</sec> 상태인 경우</sec>, 추가로 자신의 <sec typ="dmg"><buff typ="PhyATK_UP" /> 공격력의 <val idx="5" r signless /> 만큼 고정 피해</sec>를 줍니다.
+
+  <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="5" /></sec>이(가) 감소합니다.
+
+  <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
 UNIT_SKILL_DESC_3P_Daphne_3: >-
-  라운드 개시 시, 좋은 눈으로 적의 약점을 파악해 효과 범위 내 아군의 <sec typ="buff"><buff
-  typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec typ="buff"><buff
-  typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec> / <sec typ="buff"><buff
-  typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>를 올려줍니다.
+  <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff
+  typ="ACCURACY_UP" /> 적중 <val idx="0" r /></sec> / <sec typ="buff"><buff
+  typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec> / <sec typ="buff"><buff
+  typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec>가 증가합니다.
 
-  스킬 레벨 10에서 범위가 증가하며, 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="3" /></sec>이(가) 증가합니다.
-UNIT_SKILL_DESC_3P_Daphne_4: 라운드 개시 시, 마이크로 페어리로 범위 내 아군 바이오로이드들의 신진 대사를 촉진시켜
-  <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec
-  typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec> / <sec
-  typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>를 증가시킵니다.
-UNIT_SKILL_DESC_3P_Aqua_1: >-
-  <sec typ="note">부식</sec> 용액을 분사해 <dmg elem="physics" />를 주고, 3라운드 동안 <sec
-  typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="6" r /></sec> / <sec
-  typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec> 감소 / <sec
-  typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="8" signless /> 고정 물리 피해</sec>를
-  입는 상태로 만듭니다 (최대 3 중첩).
+  <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="4" /></sec>이(가) 증가합니다.
 
-  해당 효과 중첩 적용 시, <sec typ="dmg"><buff typ="PhyATK_UP" /> 공격력 <val idx="5" r signless /> 고정 물리 피해</sec>를 입으며 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="7" r /></sec>가 증가합니다.
-UNIT_SKILL_DESC_3P_Aqua_2: >-
-  대상 지점에 소독 용액을 분사해 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를
-  해제</sec>하고, 2라운드 동안 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val
-  idx="1" r /></sec>를 높혀주며 <sec typ="note">침수</sec> 상태로 만듭니다.
-
-  <sec typ="note">침수</sec> 상태가 되면 <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항 <val idx="5" r /></sec>가 증가하며, <sec typ="buff"><buff typ="ICERES_DOWN" />  냉기 저항 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" />  전기 저항 <val idx="7" r /></sec>가 감소합니다.
-
-  <sec>스킬 레벨 5에서 범위가 증가합니다.</sec>
-UNIT_SKILL_DESC_3P_Aqua_3: 라운드 개시 시, <sec typ="buff">소독 개시!</sec>가 적용된 아군들의 <sec
+  <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
+UNIT_SKILL_DESC_3P_Daphne_4: >-
+  <sec typ="cond">라운드 개시 시</sec>, 마이크로 페어리로 신진 대사를 촉진시켜 아군 바이오로이드의 <sec
   typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> / <sec
-  typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="1" r /></sec> / <sec
-  typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="2" r /></sec> / <sec
-  typ="buff"><buff typ="AP_UP" /> AP <val idx="3" /></sec>가 증가합니다.
+  typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="1" r /></sec> / <sec
+  typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="2" r /></sec>가 증가합니다.
+
+  <sec typ="cond">라운드 개시 시</sec>, 아군 기동형 지원기의 <sec typ="buff"><buff typ="RANGE_UP" /> 사거리 <val idx="4" /></sec>이(가) 증가합니다.
+
+  <sec><sec typ="note">민감한 눈</sec>의 효과가 이제 자신의 위치와 관계 없이 전체 적용됩니다.</sec>
+
+  <sec typ="cond">이러한 경우</sec>, <sec>상기 효과 수치는 <sec typ="note">대사 촉진</sec>의 스킬 레벨에 비례합니다.</sec>
+UNIT_SKILL_DESC_3P_Daphne_5: >-
+  <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff
+  typ="Guardpierce_Apply" /> 보호 무시 효과</sec>를 획득합니다.
+
+  <sec typ="cond">자신을 제외한 <cmt t="페어리 시리즈">$$3PFairy:?$</cmt> 소속 지원기가 있을 경우</sec>, <sec typ="buff">상기 효과를 <cmt t="페어리 시리즈">$$3PFairy:?$</cmt> 자매들에게도 공유</sec>합니다.
+
+  자신이 있는 한, <cmt t="페어리 시리즈">$$3PFairy:?$</cmt> 자매들이 부여하는 <sec typ="note">부식</sec>은 <sec>대상의 효과 저항을 무시</sec>합니다.
+
+  <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><sec typ="note">부식</sec> 상태인 적</sec>의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="MOBILITY_DMG_DOWN" /> 대 기동형 피해량 <val idx="6" r /></sec>가 감소합니다.
+UNIT_SKILL_DESC_3P_Aqua_1: >-
+  단일 대상에게 부식 용액을 분사해 <dmg elem="physics" />를 줍니다.
+
+  <sec typ="cond">적중 시</sec>, 3라운드 동안 대상을 <sec typ="note">부식</sec> 상태로 만들어 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="6" r /></sec>를 감소시키고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="7" r /></sec>를 증가시킵니다. (최대 3중첩)
+
+  <sec typ="cond">대상이 이미 <sec typ="note">부식</sec> 상태인 경우</sec>, 추가로 자신의 <sec typ="dmg"><buff typ="PhyATK_UP" /> 공격력의 <val idx="4" r signless /> 만큼 고정 피해</sec>를 줍니다.
+UNIT_SKILL_DESC_3P_Aqua_2: >-
+  대상 지점에 소독 용액을 분사해 아군의 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를
+  해제</sec>하고, 2라운드 동안 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val
+  idx="2" r /></sec>를 증가시킵니다.
+
+  <sec typ="cond">대상이 기동형인 경우</sec>, 효과의 <sec>지속 라운드가 1 증가</sec>하고 <sec typ="note">소독 개시!</sec>를 적용한 라운드에는 효과 수치가 두 배로 증폭됩니다.
+UNIT_SKILL_DESC_3P_Aqua_3: >-
+  <sec typ="cond">라운드 개시 시</sec>, 기동형 아군의 <sec typ="buff"><buff typ="ATK_UP" />
+  공격력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중
+  <val idx="1" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val
+  idx="2" r /></sec>가 증가합니다.
+
+  <sec typ="cond"><sec typ="note">소독 개시!</sec> 상태인 아군</sec>은 상기 <sec>기동형 조건을 무시하고 적용</sec>되며 <sec>효과 수치가 두 배로 증폭</sec>되고, 추가로 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="7" /></sec>이(가) 증가합니다.
+UNIT_SKILL_DESC_3P_Aqua_4: >-
+  <sec typ="cond">라운드 개시 시</sec>, <sec typ="note">부식</sec> 상태인 적의 AP / 냉기 저항이
+  감소합니다.
+
+  <sec typ="cond">자신이 있는 한</sec>, 아군이 다른 <cmt t="페어리 시리즈">$$3PFairy:?$</cmt> 자매들에게 받는 <sec typ="buff"><buff typ="AP_UP" /> 행동력 증가</sec> 효과가 두 배로 증폭됩니다.
+
+  <sec><cmt t="페어리 시리즈">$$3PFairy:?$</cmt> 자매들은 더 이상 스스로의 스킬로 인해 행동력과 관련한 부정적인 효과를 받지 않습니다.</sec>
+UNIT_SKILL_DESC_3P_Aqua_5: >-
+  <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력
+  <val idx="0" r /></sec>가 증가합니다. <sec>해당 효과는 라운드 경과에 따라 점감합니다.</sec>
+
+  <sec><sec typ="note">소독 개시!</sec>가 이제 위치 지정에 관계 없이 아군 전체에 영향을 미칩니다.</sec>
+
+  <sec>해당 효과는 <sec typ="note">아쿠아의 비행</sec> 스킬 레벨에 비례합니다.</sec>
+
+  <sec typ="cond">전투 개시 시</sec> <sec typ="cond">스쿼드 내에 <char uid="3P_Rhea" />가 있을 경우</sec>, 2라운드 동안 모든 적을 <sec typ="note">침수</sec> 상태로 만듭니다.
+
+  <sec typ="cond">전투 개시 시</sec> <sec typ="cond">스쿼드 내에 <char uid="3P_Titania" />가 있을 경우</sec>, 아쿠아가 모든 적에게 <sec typ="buff"><sec typ="note">천년서리</sec>를 1중첩 누적</sec>합니다.
 UNIT_SKILL_DESC_3P_Titania_1: >-
   단일 대상에게 <dmg elem="ice" />를 입힙니다.
 
