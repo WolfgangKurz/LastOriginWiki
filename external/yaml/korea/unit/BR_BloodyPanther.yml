@@ -3091,7 +3091,7 @@ skills:
     icon: P.FormChange
     target: team
     delayed: false
-    target_ground: false
+    target_ground: true
     leastGrade: 3
     buffs:
       index:
@@ -3110,7 +3110,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
+          grid: F>1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -3118,7 +3118,223 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_BloodyPanther_N_3
+            - key: Effect_Renew_BR_BloodyPanther_N_3
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_DEF_Line
+                  desc:
+                    desc: Effect_Renew_BR_BloodyPanther_N_3_1
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 50
+                    guard: col
+                  overlap: 1
+                - icon: BuffIcon_DEF_Side
+                  desc:
+                    desc: Effect_Renew_BR_BloodyPanther_N_3_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 75
+                    guard: row
+                  overlap: 1
+                - icon: BuffIcon_DAMAGE_REDUCE
+                  desc:
+                    desc: Effect_Renew_BR_BloodyPanther_N_3_3
+                    type: 1
+                    value: "0.050000"
+                    level: "0.050000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 36
+                    damage_reduce:
+                      base: 5%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_Renew_BR_BloodyPanther_N_3_4
+                    type: 1
+                    value: "0.020000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 106
+                    skill_ratio:
+                      base: 2%
+                      per: 2%
+                  overlap: 4
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_Renew_BR_BloodyPanther_N_3_5
+                    type: 1
+                    value: "0.020000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 106
+                    skill_ratio:
+                      base: 2%
+                      per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_BloodyPanther_N_31
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_Renew_BR_BloodyPanther_N_31_1
+                    type: 1
+                    value: "0.020000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 106
+                    skill_ratio:
+                      base: 2%
+                      per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_BloodyPanther_N_32
+              on: round
+              if:
+                - target:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_SKILL_UP
+                  desc:
+                    desc: Effect_Renew_BR_BloodyPanther_N_32_1
+                    type: 1
+                    value: "0.020000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 106
+                    skill_ratio:
+                      base: 2%
+                      per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_BloodyPanther_N_33
+              on: wave
+              if:
+                - target:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_AP_UP
+                  desc:
+                    desc: Effect_Renew_BR_BloodyPanther_N_33_1
+                    type: 0
+                    value: "0.400000"
+                    level: "0.400000"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 20
+                    ap:
+                      base: 0.4
+                      per: 0.4
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_BloodyPanther_N_34
               on: wait
               if:
                 - false
@@ -3138,140 +3354,17 @@ skills:
               buffs:
                 - icon: BuffIcon_CHANGE_CHAR
                   desc:
-                    desc: Effect_BR_BloodyPanther_N_3_1
+                    desc: Effect_Renew_BR_BloodyPanther_N_34_1
                     type: 0
                     value: "0"
                     level: "0"
                   attr: 3
-                  erase:
-                    rounds: 999
+                  erase: {}
                   value:
                     isBuff: true
                     type: 63
                     metamolphosis: true
                   overlap: 0
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_BR_BloodyPanther_N_3_2
-                    type: 1
-                    value: "0.150000"
-                    level: "0.015000"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 15%
-                      per: 1.5%
-                  overlap: 4
-                - icon: BuffIcon_DEF_Line
-                  desc:
-                    desc: Effect_BR_BloodyPanther_N_3_3
-                    type: 0
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 50
-                    guard: col
-                  overlap: 1
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_BloodyPanther_N_3_4
-                    type: 0
-                    value: "1"
-                    level: "0.100000"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 20
-                    ap:
-                      base: 1
-                      per: 0.1
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_BloodyPanther_N_31
-              on: round
-              if:
-                - round:
-                    operator: <=
-                    round:
-                      - 2
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_BloodyPanther_N_31_1
-                    type: 0
-                    value: "1"
-                    level: "0.100000"
-                  attr: 0
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 20
-                    ap:
-                      base: 1
-                      per: 0.1
-                  overlap: 0
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_BloodyPanther_N_32
-              on: round
-              if:
-                - false
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_DAMAGE_REDUCE
-                  desc:
-                    desc: Effect_BR_BloodyPanther_N_32_1
-                    type: 1
-                    value: "0.150000"
-                    level: "0.015000"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    type: 36
-                    damage_reduce:
-                      base: 15%
-                      per: 1.5%
-                  overlap: 4
               maxStack: 0
               overlapGroup: -1
     values:
@@ -3287,9 +3380,18 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_CHANGE_CHAR
+        - - icon: BuffIcon_DEF_Line
             desc:
-              desc: Effect_BR_BloodyPanther_N_3_1
+              desc: Effect_Renew_BR_BloodyPanther_N_3_1
+              type: 0
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_DEF_Side
+            desc:
+              desc: Effect_Renew_BR_BloodyPanther_N_3_2
               type: 0
               value: "0"
               level: "0"
@@ -3298,48 +3400,66 @@ skills:
             chance: 1
           - icon: BuffIcon_DAMAGE_REDUCE
             desc:
-              desc: Effect_BR_BloodyPanther_N_3_2
+              desc: Effect_Renew_BR_BloodyPanther_N_3_3
               type: 1
-              value: "0.150000"
-              level: "0.015000"
-            base: 0.15
-            per: 0.015
+              value: "0.050000"
+              level: "0.050000"
+            base: 0.05
+            per: 0.05
             chance: 1
-          - icon: BuffIcon_DEF_Line
+          - icon: BuffIcon_SKILL_UP
             desc:
-              desc: Effect_BR_BloodyPanther_N_3_3
-              type: 0
-              value: "0"
-              level: "0"
-            base: 0
-            per: 0
-            chance: 1
-          - icon: BuffIcon_AP_UP
-            desc:
-              desc: Effect_BR_BloodyPanther_N_3_4
-              type: 0
-              value: "1"
-              level: "0.100000"
-            base: 1
-            per: 0.1
+              desc: Effect_Renew_BR_BloodyPanther_N_3_4
+              type: 1
+              value: "0.020000"
+              level: "0.020000"
+            base: 0.02
+            per: 0.02
             chance: 0
+          - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_Renew_BR_BloodyPanther_N_3_5
+              type: 1
+              value: "0.020000"
+              level: "0.020000"
+            base: 0.02
+            per: 0.02
+            chance: 0
+          - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_Renew_BR_BloodyPanther_N_31_1
+              type: 1
+              value: "0.020000"
+              level: "0.020000"
+            base: 0.02
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_SKILL_UP
+            desc:
+              desc: Effect_Renew_BR_BloodyPanther_N_32_1
+              type: 1
+              value: "0.020000"
+              level: "0.020000"
+            base: 0.02
+            per: 0.02
+            chance: 1
           - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_BloodyPanther_N_31_1
+              desc: Effect_Renew_BR_BloodyPanther_N_33_1
               type: 0
-              value: "1"
-              level: "0.100000"
-            base: 1
-            per: 0.1
+              value: "0.400000"
+              level: "0.400000"
+            base: 0.4
+            per: 0.4
             chance: 1
-          - icon: BuffIcon_DAMAGE_REDUCE
+          - icon: BuffIcon_CHANGE_CHAR
             desc:
-              desc: Effect_BR_BloodyPanther_N_32_1
-              type: 1
-              value: "0.150000"
-              level: "0.015000"
-            base: 0.15
-            per: 0.015
+              desc: Effect_Renew_BR_BloodyPanther_N_34_1
+              type: 0
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
             chance: 1
   "4":
     key: "4"
@@ -5056,7 +5176,7 @@ skills:
     icon: P.SelfDefBuff
     target: team
     delayed: false
-    target_ground: false
+    target_ground: true
     leastGrade: 3
     buffs:
       index:
@@ -5075,7 +5195,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
+          grid: F>1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -5083,7 +5203,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_BloodyPanther_CH_3
+            - key: Effect_Renew_BR_BloodyPanther_CH_3
               on: round
               if:
                 - false
@@ -5103,7 +5223,7 @@ skills:
               buffs:
                 - icon: BuffIcon_DEF_Line
                   desc:
-                    desc: Effect_BR_BloodyPanther_CH_3_1
+                    desc: Effect_Renew_BR_BloodyPanther_CH_3_1
                     type: 0
                     value: "0"
                     level: "0"
@@ -5115,12 +5235,26 @@ skills:
                     type: 50
                     guard: col
                   overlap: 1
+                - icon: BuffIcon_DEF_Side
+                  desc:
+                    desc: Effect_Renew_BR_BloodyPanther_CH_3_2
+                    type: 0
+                    value: "0"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 75
+                    guard: row
+                  overlap: 1
                 - icon: BuffIcon_DAMAGE_REDUCE
                   desc:
-                    desc: Effect_BR_BloodyPanther_CH_3_2
+                    desc: Effect_Renew_BR_BloodyPanther_CH_3_3
                     type: 1
-                    value: "0.300000"
-                    level: "0.030000"
+                    value: "0.060000"
+                    level: "0.060000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -5128,15 +5262,15 @@ skills:
                     isBuff: true
                     type: 36
                     damage_reduce:
-                      base: 30%
-                      per: 3%
+                      base: 6%
+                      per: 6%
                   overlap: 4
                 - icon: BuffIcon_DEF_UP
                   desc:
-                    desc: Effect_BR_BloodyPanther_CH_3_3
+                    desc: Effect_Renew_BR_BloodyPanther_CH_3_4
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
+                    value: "0.020000"
+                    level: "0.020000"
                   attr: 0
                   erase:
                     rounds: 3
@@ -5145,15 +5279,15 @@ skills:
                     chance: 0%
                     type: 3
                     defense:
-                      base: 10%
-                      per: 0.5%
+                      base: 2%
+                      per: 2%
                   overlap: 4
                 - icon: BuffIcon_COUNTER
                   desc:
-                    desc: Effect_BR_BloodyPanther_CH_3_4
+                    desc: Effect_Renew_BR_BloodyPanther_CH_3_5
                     type: 1
-                    value: "1"
-                    level: "0"
+                    value: "0.160000"
+                    level: "0.160000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -5162,30 +5296,13 @@ skills:
                     chance: 0%
                     type: 29
                     counter:
-                      base: 100%
-                      per: 0%
-                  overlap: 4
-                - icon: BuffIcon_COUNTER
-                  desc:
-                    desc: Effect_BR_BloodyPanther_CH_3_5
-                    type: 1
-                    value: "0.200000"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                  value:
-                    isBuff: true
-                    chance: 0%
-                    type: 29
-                    counter:
-                      base: 20%
-                      per: 0%
+                      base: 16%
+                      per: 16%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_BloodyPanther_CH_31
-              on: damaged
+            - key: Effect_Renew_BR_BloodyPanther_CH_31
+              on: damaged_active
               if:
                 - false
                 - false
@@ -5204,10 +5321,10 @@ skills:
               buffs:
                 - icon: BuffIcon_DEF_UP
                   desc:
-                    desc: Effect_BR_BloodyPanther_CH_31_1
+                    desc: Effect_Renew_BR_BloodyPanther_CH_31_1
                     type: 1
-                    value: "0.100000"
-                    level: "0.005000"
+                    value: "0.020000"
+                    level: "0.020000"
                   attr: 0
                   erase:
                     rounds: 3
@@ -5215,20 +5332,15 @@ skills:
                     isBuff: true
                     type: 3
                     defense:
-                      base: 10%
-                      per: 0.5%
+                      base: 2%
+                      per: 2%
                   overlap: 4
               maxStack: 3
               overlapGroup: -1
-            - key: Effect_BR_BloodyPanther_CH_32
-              on: damaged
+            - key: Effect_Renew_BR_BloodyPanther_CH_32
+              on: damaged_active
               if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_BR_BloodyPanther_CH_31
-                    attr: 6
+                - false
                 - false
               body:
                 - 0
@@ -5245,151 +5357,97 @@ skills:
               buffs:
                 - icon: BuffIcon_COUNTER
                   desc:
-                    desc: Effect_BR_BloodyPanther_CH_32_1
+                    desc: Effect_Renew_BR_BloodyPanther_CH_32_1
                     type: 1
+                    value: "0.160000"
+                    level: "0.160000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 29
+                    counter:
+                      base: 16%
+                      per: 16%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_BloodyPanther_CH_33
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_DEF_UP
+                  desc:
+                    desc: Effect_Renew_BR_BloodyPanther_CH_33_1
+                    type: 1
+                    value: "0.040000"
+                    level: "0.040000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_BloodyPanther_CH_34
+              on: round
+              if:
+                - target:
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_DEF_All
+                  desc:
+                    desc: Effect_Renew_BR_BloodyPanther_CH_34_1
+                    type: 0
                     value: "1"
                     level: "0"
                   attr: 0
                   erase:
-                    rounds: 1
-                    until:
-                      after: counter
+                    count: 1
+                    trigger: damaged
                   value:
                     isBuff: true
-                    type: 29
-                    counter:
-                      base: 100%
-                      per: 0%
-                  overlap: 1
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_BloodyPanther_CH_33
-              on: damaged
-              if:
-                - on:
-                    target: self
-                    select:
-                      - Effect_BR_BloodyPanther_CH_31
-                    stack: 1
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_COUNTER
-                  desc:
-                    desc: Effect_BR_BloodyPanther_CH_33_1
-                    type: 1
-                    value: "1.200000"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                    until:
-                      after: counter
-                  value:
-                    isBuff: true
-                    type: 29
-                    counter:
-                      base: 120%
-                      per: 0%
-                  overlap: 1
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_BloodyPanther_CH_34
-              on: damaged
-              if:
-                - on:
-                    target: self
-                    select:
-                      - Effect_BR_BloodyPanther_CH_31
-                    stack: 2
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_COUNTER
-                  desc:
-                    desc: Effect_BR_BloodyPanther_CH_34_1
-                    type: 1
-                    value: "1.400000"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                    until:
-                      after: counter
-                  value:
-                    isBuff: true
-                    type: 29
-                    counter:
-                      base: 140%
-                      per: 0%
-                  overlap: 1
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_BloodyPanther_CH_35
-              on: damaged
-              if:
-                - on:
-                    target: self
-                    select:
-                      - Effect_BR_BloodyPanther_CH_31
-                    stack: 3
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_COUNTER
-                  desc:
-                    desc: Effect_BR_BloodyPanther_CH_35_1
-                    type: 1
-                    value: "1.600000"
-                    level: "0"
-                  attr: 0
-                  erase:
-                    rounds: 1
-                    until:
-                      after: counter
-                  value:
-                    isBuff: true
-                    type: 29
-                    counter:
-                      base: 160%
-                      per: 0%
-                  overlap: 1
+                    type: 33
+                    damage_immune:
+                      base: 1
+                      per: 0
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
     values:
@@ -5407,7 +5465,16 @@ skills:
       data:
         - - icon: BuffIcon_DEF_Line
             desc:
-              desc: Effect_BR_BloodyPanther_CH_3_1
+              desc: Effect_Renew_BR_BloodyPanther_CH_3_1
+              type: 0
+              value: "0"
+              level: "0"
+            base: 0
+            per: 0
+            chance: 1
+          - icon: BuffIcon_DEF_Side
+            desc:
+              desc: Effect_Renew_BR_BloodyPanther_CH_3_2
               type: 0
               value: "0"
               level: "0"
@@ -5416,83 +5483,65 @@ skills:
             chance: 1
           - icon: BuffIcon_DAMAGE_REDUCE
             desc:
-              desc: Effect_BR_BloodyPanther_CH_3_2
+              desc: Effect_Renew_BR_BloodyPanther_CH_3_3
               type: 1
-              value: "0.300000"
-              level: "0.030000"
-            base: 0.3
-            per: 0.03
+              value: "0.060000"
+              level: "0.060000"
+            base: 0.06
+            per: 0.06
             chance: 1
           - icon: BuffIcon_DEF_UP
             desc:
-              desc: Effect_BR_BloodyPanther_CH_3_3
+              desc: Effect_Renew_BR_BloodyPanther_CH_3_4
               type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
+              value: "0.020000"
+              level: "0.020000"
+            base: 0.02
+            per: 0.02
             chance: 0
           - icon: BuffIcon_COUNTER
             desc:
-              desc: Effect_BR_BloodyPanther_CH_3_4
+              desc: Effect_Renew_BR_BloodyPanther_CH_3_5
               type: 1
-              value: "1"
-              level: "0"
-            base: 1
-            per: 0
-            chance: 0
-          - icon: BuffIcon_COUNTER
-            desc:
-              desc: Effect_BR_BloodyPanther_CH_3_5
-              type: 1
-              value: "0.200000"
-              level: "0"
-            base: 0.2
-            per: 0
+              value: "0.160000"
+              level: "0.160000"
+            base: 0.16
+            per: 0.16
             chance: 0
           - icon: BuffIcon_DEF_UP
             desc:
-              desc: Effect_BR_BloodyPanther_CH_31_1
+              desc: Effect_Renew_BR_BloodyPanther_CH_31_1
               type: 1
-              value: "0.100000"
-              level: "0.005000"
-            base: 0.1
-            per: 0.005
+              value: "0.020000"
+              level: "0.020000"
+            base: 0.02
+            per: 0.02
             chance: 1
           - icon: BuffIcon_COUNTER
             desc:
-              desc: Effect_BR_BloodyPanther_CH_32_1
+              desc: Effect_Renew_BR_BloodyPanther_CH_32_1
               type: 1
+              value: "0.160000"
+              level: "0.160000"
+            base: 0.16
+            per: 0.16
+            chance: 1
+          - icon: BuffIcon_DEF_UP
+            desc:
+              desc: Effect_Renew_BR_BloodyPanther_CH_33_1
+              type: 1
+              value: "0.040000"
+              level: "0.040000"
+            base: 0.04
+            per: 0.04
+            chance: 1
+          - icon: BuffIcon_DEF_All
+            desc:
+              desc: Effect_Renew_BR_BloodyPanther_CH_34_1
+              type: 0
               value: "1"
               level: "0"
             base: 1
-            per: 0
-            chance: 1
-          - icon: BuffIcon_COUNTER
-            desc:
-              desc: Effect_BR_BloodyPanther_CH_33_1
-              type: 1
-              value: "1.200000"
-              level: "0"
-            base: 1.2
-            per: 0
-            chance: 1
-          - icon: BuffIcon_COUNTER
-            desc:
-              desc: Effect_BR_BloodyPanther_CH_34_1
-              type: 1
-              value: "1.400000"
-              level: "0"
-            base: 1.4
-            per: 0
-            chance: 1
-          - icon: BuffIcon_COUNTER
-            desc:
-              desc: Effect_BR_BloodyPanther_CH_35_1
-              type: 1
-              value: "1.600000"
-              level: "0"
-            base: 1.6
             per: 0
             chance: 1
   F5:
@@ -6454,6 +6503,7 @@ skins:
   priceEx: ""
   G: false
   Spine: false
+  SpineDamaged: false
   parts: 6
   stage: false
   subset:
@@ -6485,6 +6535,7 @@ skins:
       price: 205
       G: true
       Spine: false
+      SpineDamaged: false
       parts: 94
       stage: false
       subset:

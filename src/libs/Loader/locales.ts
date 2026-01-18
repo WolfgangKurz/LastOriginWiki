@@ -1,7 +1,7 @@
 // Content automatically generated
 export default {
-	"KR": 6,
-	"EN": 6,
-	"JP": 6,
-	"TC": 6
+	"KR": 7,
+	"EN": 7,
+	"JP": 7,
+	"TC": 7
 };

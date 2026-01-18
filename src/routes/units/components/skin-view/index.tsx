@@ -82,10 +82,6 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 
 	const [cameraBoundaryAvailable, setCameraBoundaryAvailable] = useState(false);
 	const [downloadPlusCameraBoundary, setDownloadPlusCameraBoundary] = useState(true);
-	const downloadPlusAble = useMemo(
-		() => !(skin.metadata.flags & (SKIN_METADATA_FLAGS.SPINE | SKIN_METADATA_FLAGS.GAMMA)) && !isDamaged,
-		[skin.metadata.flags, isDamaged],
-	);
 
 	// const Aspect = props.collapsed ? style["ratio-2x5"] : "ratio-4x3";
 	const Aspect = "ratio-2x4 ratio-lg-5x3";
@@ -257,19 +253,6 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		[skin.subset, isDamaged, hideParts, DisplayGamma, gammaBGAvailable],
 	);
 
-	const AvailableAnim = useMemo(() => {
-		if (skin.Spine) return true;
-
-		if (hideParts && hideBG)
-			return skin.anim[SKIN_ANIM_SUBSET_ENUM.BS];
-		else if (hideParts && !hideBG)
-			return skin.anim[SKIN_ANIM_SUBSET_ENUM._S];
-		else if (!hideParts && hideBG)
-			return skin.anim[SKIN_ANIM_SUBSET_ENUM.B_];
-		else
-			return skin.anim[SKIN_ANIM_SUBSET_ENUM.__];
-	}, [skin.Spine, skin.anim, hideParts, hideBG]);
-
 	const modelId = `${unit.uid}_N${skin.isDef ? "" : `S${skin.metadata.imageId}`}`;
 
 	const DisplayMixed = useMemo(
@@ -277,8 +260,11 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		[skin.metadata.flags, props.animate, isDamaged],
 	);
 	const DisplaySpine = useMemo(
-		() => !!(skin.metadata.flags & SKIN_METADATA_FLAGS.SPINE) && skin.Spine && (!!props.animate || !!props.collapsed) && !isDamaged,
-		[skin.metadata.flags, props.animate, props.collapsed, isDamaged],
+		() => !!(skin.metadata.flags & SKIN_METADATA_FLAGS.SPINE) && (
+			(skin.Spine && (!!props.animate || !!props.collapsed) && !isDamaged) ||
+			(skin.SpineDamaged && (!!props.animate || !!props.collapsed) && isDamaged)
+		),
+		[skin.metadata.flags, skin.Spine, skin.SpineDamaged, props.animate, props.collapsed, isDamaged],
 	);
 	const Display2DModel = useMemo(
 		() => (isDamaged || !!(skin.metadata.flags & SKIN_METADATA_FLAGS["2DMODEL"])) && (
@@ -290,6 +276,11 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const DisplayVideo = useMemo(() => {
 		return !!props.animate && !!modelVideoId;
 	}, [props.animate, modelVideoId]);
+
+	const downloadPlusAble = useMemo(
+		() => !(DisplayMixed || DisplaySpine || DisplayGamma || DisplayVideo),
+		[DisplayMixed, DisplaySpine, DisplayGamma, DisplayVideo],
+	);
 
 	function download2DModel (filename: string, cropByCameraBoundary: boolean = false) {
 		if (inPlusDownload) return;
@@ -429,7 +420,7 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 					}
 				</div>
 
-				{ modelVideoId && !!props.animate
+				{ modelVideoId && !(DisplaySpine || DisplayMixed) && !!props.animate
 					? <a
 						class={ `${style.SkinToggle} ${style.Download}` }
 						href={ `${AssetsRoot}/webm/HD/${modelVideoId}.webm` } // download webm only

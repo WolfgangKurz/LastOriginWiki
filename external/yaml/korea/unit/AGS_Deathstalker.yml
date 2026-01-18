@@ -422,16 +422,16 @@ weapon2: SDS installed Railgun ‘Pike’​ / Catatumbo Machine Gun
 company: ""
 country: ""
 age: ""
-secretRoomType: AGS
-marriageVoice: false
+secretRoomType: Adult
+marriageVoice: true
 introVoice:
   - jp
   - ko
 favor:
-  present: 0
-  clear: 0
-  death: 0
-  assistant: 0
+  present: 1
+  clear: 1
+  death: 1
+  assistant: 1
 linkBonus:
   - HP_20
   - ATK_20
@@ -489,13 +489,15 @@ chart:
   - 3
   - 2
 cv:
+  "1": {}
   "": {}
+  M: {}
 source:
   - - 13:4:13-27
   - - Ev:Ev30:EV2-2Ex
   - - Ev:Ev32:EV2-3EX
 oneoff: false
-oathable: false
+oathable: true
 entryReqMap: []
 cost:
   res:
@@ -3250,6 +3252,77 @@ skills:
             chance: 1
 dialogue:
   KR:
+    "1":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: |-
+        이 소체는 아자즈 님께서
+        개발 해주셨습니다.
+        기존처럼 다리가
+        더 많아야 하지 않겠냐 물으셨지만,
+        사령관님의 취향을 우선하여
+        커스터마이징을 부탁드렸습니다.
+      Idle_01_02: |-
+        이 소체의 특징은 단단한 외피 안에
+        물컹한 내피가 존재한다는 점입니다.
+        내피는 외피에 가해진 충격을
+        완화하기 위해 에이다 님과
+        비슷한 재질로 만들어졌습니다.
+      Idle_01_03: |-
+        과열된 내피를 식히기 위해,
+        외피를 해제하는 기능이 있습니다.
+        하지만 내부 구조가
+        인간을 본떠 제작되어 있어…
+        시티가드 공연 음란 가이드라인에 저촉됩니다.
+      SPIdle_01_01: |-
+        잦은 출력 상승으로 인하여
+        소체가 뜨겁습니다.
+        물러서 주십시오.
+      Idle_02_01: |-
+        본 유닛이 구애의 춤을 추고자 합니다.
+        하지만 구애의 춤은 남성과 여성,
+        모두가 필요합니다.
+        실례가 되지 않는다면,
+        사령관님과 단 둘이서
+        구애의 춤을 추고 싶습니다.
+      Idle_03_01: |-
+        사령관님의 심장 박동 수가
+        증가하고 있습니다.
+        이것이 본 유닛이 느끼는 과열과
+        같은 의미로 생각해도 되겠습니까?
+      Idle_04_01: |-
+        본 유닛의 외피를
+        '완전 해제' 원하신다면…
+        바스트에 위치한 버튼을
+        길게 눌러 주시기 바랍니다.
+      SPIdle_02_01: |-
+        소체 내부가 상당히 뜨겁습니다.
+        외피의 장갑을 해제하겠습니다.
+        과열된 본 유닛의 내피를 부드럽게
+        마사지 해주시길 요청드립니다.
+      Oath: 본 유닛이 새 소체를 바랐던 이유는, 병기가 되기 위해서가 아니라… 사령관님의 여성이 되고 싶었기 때문이었습니다. 회로와 소체 모두가
+        과열되고 있습니다. 본 유닛, 데스스토커, 애정이란 맹독에 걸린 것으로 판단됩니다. 사령관님만의 세심한 치료가 조속히 필요합니다.
+      OathIdle_01: |-
+        본 유닛의 맨 얼굴 말씀입니까?
+        원하신다면 기꺼이 보여드릴 수 있습니다.
+        하지만 본 유닛도 사령관님의 탄탄한 몸을
+        촉각 센서로 기록하고 싶습니다.
+      MVP: ""
     "":
       Join: 데스스토커, 화력 지원을 위해 합류했습니다.
       SquadJoin: 데스스토커 가동. 섬멸 프로토콜 준비 완료.
@@ -3267,6 +3340,7 @@ dialogue:
       Reinforce: 섬멸 프로토콜의 효율 증가.
       ItemEquip: 추가 무장 장착 완료.
       CoreLink: 전투 모듈 확장.
+      PresentGet: ""
       Login: 사령관님. 오늘은 어떤 목표를 제거할까요?
       Idle_01_01: |-
         본 유닛은 6족 보행형으로 설계되어 있어,
@@ -3281,8 +3355,120 @@ dialogue:
         스마트 디스트럭션 시스템이 적용된
         파이크 레일건을 막을 수 있는 것은
         별로 존재하지 않습니다.
+      SPIdle_01_01: |-
+        감전, 혹은 열상을
+        입을 염려가 있습니다.
+        그 부분은 만지지 않으시는 걸
+        추천드립니다.
+      Idle_02_01: |-
+        본 유닛은 멸망 전,
+        시위 진압을 위해
+        사용된 전적이 있습니다.
+        사령관님께선 본 유닛을
+        올바른 곳에 투입하시길
+        권유드립니다.
+      Idle_03_01: |-
+        본 유닛의 이름,
+        데스스토커는
+        맹독을 지닌 전갈이라고 합니다.
+        안심하십시오,
+        사령관님께 본 유닛은
+        해를 끼치지 않습니다.
+      Idle_04_01: |-
+        포트리스 님께서 가끔
+        본 유닛의 다리를 유심히
+        관찰하시고 계십니다.
+        가느다란 다리의 각선미가
+        아름답다… 라고 하더군요.
+      SPIdle_02_01: |-
+        그 부분은 민감한 부분입니다만,
+        …조금 더 만져 주셔도 괜찮습니다.
+      Oath: 사령관과 오르카의 질서를 지키는 것이 본 유닛에게 주어진 임무지만, 본 유닛은 사령관님께 더 큰 도움이 되고 싶습니다. 부디
+        사령관님의 특별한 임무에 알맞게 써 주시길 바랍니다.
+      OathIdle_01: |-
+        사령관님,
+        이 춤을 한 번
+        봐주시지 않겠습니까?
+        본 유닛이 추는 춤은 전갈들이
+        짝짓기 때마다 추는
+        구애의 춤이라고 합니다.
       MVP: 모든 적 섬멸 완료. 명령을 이행했습니다.
+    M:
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: |-
+        6족 보행은
+        자율적인 활동을
+        가능케하지만,
+        아라크네 님의 소체를
+        볼 때마다 본 유닛의 소체가
+        투박하게 느껴집니다.
+      Idle_01_02: |-
+        만일 소체를 바꾼다면,
+        레일건은 그대로 달려 있기를
+        희망합니다.
+        컴패니언 분들의 꼬리처럼
+        본 유닛도 레일건을
+        살랑거릴 수 있기를 희망합니다.
+      Idle_01_03: |-
+        제가 추는 구애의 춤을
+        언젠간 사령관님과 함께
+        추었으면 합니다.
+        바이오로이드 분들처럼
+        작고 아름다운,
+        여성의 소체를
+        장착하고 말입니다.
+      SPIdle_01_01: |-
+        사령관님…
+        그 부분을
+        반복적으로 만지시면…
+        사고회로에 큰 오류가…
+      MVP: ""
   JP:
+    "1":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: デスストーカー、火力支援のために合流しました。
       SquadJoin: ""
@@ -3300,12 +3486,72 @@ dialogue:
       Reinforce: ""
       ItemEquip: ""
       CoreLink: ""
+      PresentGet: ""
       Login: ""
       Idle_01_01: 本ユニットは六足歩行型として設計されており、戦車の進入が難しい市街戦の状況下でも自在に活動できます。
       Idle_01_02: 本ユニットは非致死性電気衝撃弾を装填することができ、デモの鎮圧でも優れた効果を発揮するなど、多様な弾種に対応しています。
       Idle_01_03: スマートデストラクションシステム搭載のパイクレールガンに破壊出来ない存在はないに等しいでしょう。
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
+    M:
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
       MVP: ""
   EN:
+    "1":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: Deathstalker has joined for fire support.
       SquadJoin: ""
@@ -3323,6 +3569,7 @@ dialogue:
       Reinforce: ""
       ItemEquip: ""
       CoreLink: ""
+      PresentGet: ""
       Login: ""
       Idle_01_01: |-
         This unit is designed to walk with six legs,
@@ -3337,8 +3584,67 @@ dialogue:
         There aren't many things
         that can block the Pike railgun
         with its smart destruction system.
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
+    M:
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
       MVP: ""
   TC:
+    "1":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: 死亡跟蹤狂，為了支援火力而加入。
       SquadJoin: ""
@@ -3356,6 +3662,7 @@ dialogue:
       Reinforce: ""
       ItemEquip: ""
       CoreLink: ""
+      PresentGet: ""
       Login: ""
       Idle_01_01: |-
         本單位設計為6腳步行型，
@@ -3369,6 +3676,36 @@ dialogue:
       Idle_01_03: |-
         幾乎沒有東西能夠抵擋住，
         套用智能毀滅系統的長矛軌道砲。
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
+    M:
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
       MVP: ""
 skins:
   sid: null
@@ -3376,6 +3713,7 @@ skins:
   priceEx: ""
   G: false
   Spine: false
+  SpineDamaged: false
   parts: 4
   stage: false
   subset:
@@ -3402,3 +3740,39 @@ skins:
     tbarId: 0
     flags: 1
     2dmodel: 2DModel_AGS_Deathstalker_N
+  skins:
+    - sid: 1
+      artist: Cho gyeong nam
+      price: 192
+      G: true
+      Spine: true
+      SpineDamaged: false
+      parts: 78
+      stage: false
+      subset:
+        - true
+        - true
+        - false
+        - true
+        - false
+        - true
+        - false
+        - false
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - Costume
+      facelist: []
+      releaseDate: 1767312000000
+      metadata:
+        imageId: 1
+        iconId: 1
+        tbarId: 1
+        voiceId: 1
+        flags: 2
+        2dmodel_dam: 2DModel_AGS_Deathstalker_NS1_Dam
+        consumableKey: Skin_AGS_Deathstalker_1

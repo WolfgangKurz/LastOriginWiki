@@ -1,125 +1,122 @@
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
+import crypto from "node:crypto";
+
+import { cyan, gray, lightMagenta, yellow } from "kolorist";
 
 import YAML from "yaml";
 
-import { globSync } from "glob";
-import hash from "hash.js";
-import deepmerge from "deepmerge";
+import glob from "fast-glob";
+import { createJiti } from "jiti";
 
-import { defineConfig, loadEnv } from "vite";
+import { defineConfig, loadEnv, type SassPreprocessorOptions, type UserConfig } from "vite";
 import preact from "@preact/preset-vite";
 
 import pixiUrlPatch from "./plugins/pixi-url-patch";
 
 console.log("building...");
-export default ({ mode }) => {
+export default defineConfig(async ({ mode }) => {
 	const viteEnv = loadEnv(mode, process.cwd());
 
 	const isProd = mode === "production";
 	const isDev = !isProd;
 
+	// template scripts
+	console.log(lightMagenta("  + preprocessing template scripts..."));
+	{
+		const jiti = createJiti(import.meta.url);
+		const templateScripts = await glob(
+			path.resolve(__dirname, "src", "**", "*.t.ts").replace(/\\/g, "/"),
+			{ cwd: __dirname, absolute: true },
+		);
+		for (const sc of templateScripts) {
+			console.log(yellow(`    - ${path.basename(sc)}`));
+			await jiti.import(sc);
+		}
+	}
+
 	// buildtime
-	console.log("buildtime updating...");
-	const dest = path.resolve(__dirname, "src", "buildtime.ts");
-	const destYaml = path.resolve(__dirname, "external", "yaml", "buildtime.yml");
+	console.log(lightMagenta("  + buildtime updating..."));
+	{
+		const dest = path.resolve(__dirname, "src", "buildtime.ts");
+		const destYaml = path.resolve(__dirname, "external", "yaml", "buildtime.yml");
 
-	const code = fs.readFileSync(dest, { encoding: "utf-8" })
-		.toString()
-		.replace("export default ", "return ");
-	const prev = new Function(code)();
-	const buildNo = prev.build + 1;
+		const code = fs.readFileSync(dest, { encoding: "utf-8" })
+			.toString()
+			.replace("export default ", "return ");
+		const prev = new Function(code)();
+		const buildNo = prev.build + 1;
 
-	fs.writeFileSync(
-		dest,
-		(() => {
-			const dt = new Date();
-			return `// eslint-disable-next-line\nexport default ${JSON.stringify({
-				time: dt.getTime(),
-				build: buildNo,
-			})}`;
-		})(),
-		"utf-8",
-	);
-	fs.writeFileSync(
-		destYaml,
-		YAML.stringify(buildNo),
-		"utf-8",
-	);
+		fs.writeFileSync(
+			dest,
+			(() => {
+				const dt = new Date();
+				return `// eslint-disable-next-line\nexport default ${JSON.stringify({
+					time: dt.getTime(),
+					build: buildNo,
+				})}`;
+			})(),
+			"utf-8",
+		);
+		fs.writeFileSync(
+			destYaml,
+			YAML.stringify(buildNo),
+			"utf-8",
+		);
+	}
 
 	// yaml hash
 	if (isProd) {
-		(() => {
-			console.log("yaml hash updating...");
-			interface DBHashType {
-				[K: string]: string | DBHashType;
+		console.log(lightMagenta("  + yaml hash updating..."));
+
+		interface DBHashType {
+			[K: string]: string | DBHashType;
+		}
+
+		const yamlDir = path.resolve(__dirname, "external", "yaml");
+		const list = (await glob(path.join(yamlDir, "**", "*.yml").replace(/\\/g, "/")))
+			.filter(f => !/[/\\]buildtime.yml$/.test(f));
+		list.sort();
+
+		function strip_ext (p: string): string {
+			return p.substring(0, p.length - path.extname(p).length);
+		}
+
+		const outs: DBHashType = {};
+		await Promise.all(list.map(async filePath => {
+			const name = strip_ext(path.relative(yamlDir, filePath).replace(/\\/g, "/"));
+			const hash = crypto.createHash("sha1")
+				.update(fs.readFileSync(filePath, "utf-8"))
+				.digest("hex")
+				.substring(0, 8);
+
+			const parts = name.split("/");
+			let cursor = outs;
+			for (let i = 0; i < parts.length; i++) {
+				if (i === parts.length - 1)
+					cursor[parts[i]] = hash;
+				else {
+					cursor[parts[i]] ||= {};
+					cursor = cursor[parts[i]] as DBHashType;
+				}
 			}
+		}));
 
-			const yamlDir = path.resolve(__dirname, "external", "yaml");
-			const list = (() => {
-				const baseDir = path.resolve(__dirname, "external", "yaml");
-				const globPath = path.join(baseDir, "**", "*.yml");
+		const output = [
+			"// Content automatically generated",
+			"export interface DBHashType { [K: string]: string | DBHashType; }",
+			`export default ${JSON.stringify(outs, undefined, "\t")} as DBHashType;`,
+		].join("\n");
 
-				return globSync(globPath.replace(/\\/g, "/"))
-					.filter(f => !/[/\\]buildtime.yml$/.test(f))
-					.map(f => {
-						const rel = path.relative(baseDir, f).replace(/\\/g, "/");
-						return `!/${rel.substring(0, rel.length - 4)}`;
-					});
-			})();
-
-			let outs: DBHashType = {};
-			list.forEach(item => {
-				const _item = item.substring(2);
-				const file = path.resolve(yamlDir, `${_item}.yml`);
-				if (!fs.existsSync(file)) return;
-
-				const tree = ((value: string) => {
-					const parts = _item.split("/");
-					const root: DBHashType = {};
-					let target = root;
-
-					for (let i = 0; i < parts.length; i++) {
-						const p = parts[i];
-
-						if (i === parts.length - 1) // end of parts
-							target[p] = value;
-						else
-							target = target[p] = {};
-					}
-
-					return root;
-				})(
-					hash.sha1()
-						.update(fs.readFileSync(file, "utf-8"))
-						.digest("hex")
-						.substring(0, 8),
-				);
-
-				outs = deepmerge(outs, tree);
-			});
-
-			const keys: string[] = [];
-			JSON.stringify(outs, (k, v) => (keys.push(k), v), "\t");
-			keys.sort();
-
-			const output = [
-				"// Content automatically generated",
-				"export interface DBHashType { [K: string]: string | DBHashType; }",
-				`export default ${JSON.stringify(outs, keys, "\t")} as DBHashType;`,
-			].join("\n");
-
-			fs.writeFileSync(
-				path.resolve(__dirname, "src", "libs", "Loader", "hash.ts"),
-				output,
-				"utf-8",
-			);
-		})();
+		fs.writeFileSync(
+			path.resolve(__dirname, "src", "libs", "Loader", "hash.ts"),
+			output,
+			"utf-8",
+		);
 	} else
-		console.log(`skip hash update - on ${mode}`);
+		console.log(gray(`  + skip hash update - on ${mode}`));
 
 	const prependData = `${[
-		"@charset \"UTF-8\";",
 		"@use \"sass:color\";",
 		"@use \"sass:math\";",
 		"@use \"sass:list\";",
@@ -128,13 +125,98 @@ export default ({ mode }) => {
 		`$LOCALHOST: "${viteEnv.VITE_LOCALHOST || ""}:${viteEnv.VITE_ASSET_PORT}";`,
 		`@import "${path.resolve(__dirname, "src", "themes", "base").replace(/\\/g, "/")}";`,
 	].join("\n")}\n`;
+	const cssOption: SassPreprocessorOptions = {
+		additionalData: prependData,
+		silenceDeprecations: [
+			"import",
+			"color-functions",
+			"global-builtin",
+			"if-function",
+		] as any[],
+	};
 
-	console.log("vite building...");
-	return defineConfig({
+	//#region Split Chunk config
+	interface SplitChunkGroup {
+		/**
+		 * `null` will be `undefined` return.
+		 * 
+		 * For function type, `undefined` return will make test to next group
+		 */
+		name: string | ((mid: string) => string | null | undefined) | null;
+		/** Module id's path separator is always `/` */
+		test: string | RegExp;
+	}
+	const splitChunkGroups: SplitChunkGroup[] = [
+		// entry
+		{ name: null, test: /\/src\/(index\.|app\/)/ },
+
+		// vendor
+		{ name: "vendor.bootstrap", test: "/node_modules/bootstrap" },
+		{ name: "vendor.react", test: "/node_modules/react" },
+		{ name: "vendor.spine", test: "/node_modules/@esotericsoftware/" },
+		{ name: "vendor.popperjs", test: "/node_modules/@popperjs/" },
+		{ name: "vendor.graphlib", test: "/node_modules/graphlib/" },
+		{ name: "vendor.lodash", test: "/node_modules/lodash/" },
+		{ name: "vendor.opentype", test: "/node_modules/opentype.js/" },
+
+		{ name: "vendor.pixi", test: /\/node_modules\/@?pixi[-.]?/ },
+		{ name: "vendor.flow", test: /\/node_modules\/@?(reactflow\/|tisoap\/|dagrejs\/|d3-|pathfinding\/)/ },
+
+		{ name: "vendor", test: "/node_modules/" },
+
+		// components/bootstrap-icon/
+		{ name: "components.icon", test: "/src/components/bootstrap-icon/" },
+
+		// types & libs & loader hash -> base
+		{ name: "base", test: /\/src\/(types|libs)\// },
+
+		// external -> each file
+		{
+			name: (mid) => {
+				const name = /\/src\/external\/([^./]+)/.exec(mid);
+				if (name) return `external.${name[1].replace(/[^a-zA-Z0-9_-]/g, "_")}`;
+			},
+			test: "/src/external/",
+		},
+
+		// components
+		{ name: "components.base", test: /\/src\/components\/(locale|Loader|redirect)/ },
+		{ name: "components.bootstrap", test: "/src/components/bootstrap-" },
+		{ name: "components.buff", test: "/src/components/buff-" },
+		{ name: "components.drop", test: "/src/components/drop-" },
+		{ name: "components.equip", test: "/src/components/equip-" },
+		{ name: "components.roguelike", test: "/src/components/roguelike-" },
+		{ name: "components.skill", test: "/src/components/skill-" },
+		{ name: "components.unit", test: "/src/components/unit-" },
+		{ name: "components.popup", test: "/src/components/popup-" },
+		{ name: "components", test: "/src/components/" },
+
+		// routes
+		{
+			name: (mid) => {
+				const ym = /\/changelog\/changelog\/([0-9]+)/.exec(mid);
+				if (ym) return `routes.changelog.${ym[1]}`;
+			},
+			test: /\/src\/routes\/changelog\/changelog\/[0-9]+/,
+		},
+		{ name: "routes.changelog", test: "/src/routes/changelog/" },
+
+		{
+			name: (mid) => {
+				const name = /\/src\/routes\/([^/]+)/.exec(mid);
+				if (name) return `routes.${name[1]}`;
+			},
+			test: "/src/routes/",
+		},
+	];
+	//#endregion
+
+	console.log(cyan("* vite building..."));
+	return {
 		esbuild: {
 			jsxFactory: "h",
 			jsxFragment: "Fragment",
-			// jsxInject: `import { h, Fragment } from "preact";`,
+			// @ts-ignore
 			logOverride: {
 				"this-is-undefined-in-esm": "silent",
 			},
@@ -151,88 +233,26 @@ export default ({ mode }) => {
 			sourcemap: isDev,
 
 			rollupOptions: {
+				onLog (_level, log, _handler) {
+					if (log.code === "CIRCULAR_DEPENDENCY")
+						return; // Ignore circular dependency warnings
+				},
 				output: {
 					inlineDynamicImports: false,
 					manualChunks (id) {
-						// entry
-						if (
-							id.includes("/src/index.") ||
-							id.includes("/src/app/")
-						) return undefined;
+						const mid = id.replace(/\\/g, "/");
+						for (const g of splitChunkGroups) {
+							if (typeof g.test === "string" ? mid.includes(g.test) : g.test.test(mid)) {
+								if (g.name === null) return undefined;
 
-						// vendor
-						if (id.includes("/node_modules/bootstrap")) return "vendor.bootstrap";
-						if (id.includes("/node_modules/react")) return "vendor.react";
-						if (id.includes("/node_modules/@esotericsoftware/")) return "vendor.spine";
-						if (id.includes("/node_modules/@popperjs/")) return "vendor.popperjs";
-						if (id.includes("/node_modules/graphlib/")) return "vendor.graphlib";
-						if (id.includes("/node_modules/lodash/")) return "vendor.lodash";
-						if (id.includes("/node_modules/opentype.js/")) return "vendor.opentype";
-
-						// not used anymore
-						if (id.includes("/node_modules/swiper/")) return "vendor.swiper";
-
-						if (
-							id.includes("/node_modules/pixi") ||
-							id.includes("/node_modules/@pixi/") ||
-							id.includes("/node_modules/@turf/")
-						) return "vendor.pixi";
-						if (
-							id.includes("/node_modules/@reactflow/") ||
-							id.includes("/node_modules/@tisoap/") ||
-							id.includes("/node_modules/@dagrejs/") ||
-							id.includes("/node_modules/d3-") ||
-							id.includes("/node_modules/pathfinding/")
-						) return "vendor.flow";
-
-						if (id.includes("/node_modules/")) return "vendor";
-
-						// components/bootstrap-icon/
-						if (id.includes("/src/components/bootstrap-icon/")) return "components.icon";
-
-						// types & libs & loader hash -> base
-						if (id.includes("/src/types/")) return "base";
-						if (id.includes("/src/libs/")) return "base";
-
-						// external -> each file
-						if (id.includes("/src/external/")) {
-							const _ = "/src/external/";
-							const idx = id.indexOf(_) + _.length;
-							const _name = id.substring(idx);
-							if (_name.indexOf("/") >= 0)
-								return `external.${_name.substring(0, _name.indexOf("/"))}`;
-							else
-								return `external.${_name.substring(0, _name.lastIndexOf("."))}`;
+								const r = typeof g.name === "string"
+									? g.name
+									: g.name(mid);
+								if (r === null) return undefined;
+								if (r === undefined) continue;
+								return r;
+							}
 						}
-
-						// components
-						if (
-							id.includes("/src/components/locale/") ||
-							id.includes("/src/components/Loader/") ||
-							id.includes("/src/components/redirect/")
-						) return "components.base";
-						if (id.includes("/src/components/bootstrap-")) return "components.bootstrap";
-						if (id.includes("/src/components/buff-")) return "components.buff";
-						if (id.includes("/src/components/drop-")) return "components.drop";
-						if (id.includes("/src/components/equip-")) return "components.equip";
-						if (id.includes("/src/components/roguelike-")) return "components.roguelike";
-						if (id.includes("/src/components/skill-")) return "components.skill";
-						if (id.includes("/src/components/unit-")) return "components.unit";
-						if (id.includes("/src/components/popup/")) return "components.popup";
-						if (id.includes("/src/components/")) return "components";
-
-						// // routes
-						if (id.includes("/src/routes/changelog/changelog/")) {
-							const y = id.replace(/.*\/src\/routes\/changelog\/changelog\/([0-9]+).*/g, "$1");
-							return `routes.changelog.${y}`;
-						}
-						if (id.includes("/src/routes/changelog/")) return "routes.changelog";
-
-						if (id.includes("/src/routes/")) {
-							const y = id.replace(/.*\/src\/routes\/([^/]+)\/?.*/g, "$1");
-							return `routes.${y}`;
-						}
-
 						return "chunk";
 					},
 				},
@@ -245,18 +265,8 @@ export default ({ mode }) => {
 		},
 		css: {
 			preprocessorOptions: {
-				// @ts-ignore
-				css: {
-					charset: false,
-				},
-				sass: {
-					charset: false,
-					additionalData: prependData,
-				},
-				scss: {
-					charset: false,
-					additionalData: prependData,
-				},
+				sass: cssOption,
+				scss: cssOption,
 			},
 		},
 		plugins: [
@@ -283,5 +293,5 @@ export default ({ mode }) => {
 				},
 			],
 		},
-	});
-};
+	} satisfies UserConfig as UserConfig; // to suppress return type error
+});

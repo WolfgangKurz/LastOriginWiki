@@ -237,15 +237,24 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 	useEffect(() => {
 		if (surface) {
 			const _uid = props.type === "spine" || props.type === "mixed"
-				? uid
+				? uid + (props.damaged ? "_Dam" : "")
 				: props.type === "video"
 					? props.vid
 					: (props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!;
 
+			const skinPrefix = ["", "G_"][props.google ? 1 : 0];
 			const skinPostfix = ["", "S", "B", "BS"][(props.hidePart ? 1 : 0) | (props.hideBG ? 2 : 0)];
-			const atlasId = props.U2DModelMetadata.spine && skinPostfix in props.U2DModelMetadata.spine
-				? props.U2DModelMetadata.spine[skinPostfix]!
+			const skinFixs = skinPrefix + skinPostfix;
+			const atlasId = props.U2DModelMetadata.spine
+				? skinFixs in props.U2DModelMetadata.spine
+					? props.U2DModelMetadata.spine[skinFixs]!
+					: skinPrefix in props.U2DModelMetadata.spine
+						? props.U2DModelMetadata.spine[skinPrefix]!
+						: skinPostfix in props.U2DModelMetadata.spine
+							? props.U2DModelMetadata.spine[skinPostfix]!
+							: 0
 				: 0;
+console.log(props.U2DModelMetadata.spine)
 
 			let _char: PixiSpineModel | Pixi2DModel | MixedModel | PixiVideoModel | null = char as typeof _char;
 			if (_char && (_char.model !== _uid || (!("atlasId" in _char) || _char.atlasId !== atlasId))) {

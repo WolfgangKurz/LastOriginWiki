@@ -494,6 +494,7 @@ cv:
   M: {}
 source:
   - - Ev:Ev28:EV1-1Ex
+  - - Ev:Ev34:EV1-2EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -530,7 +531,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_N_1
+            - key: Effect_Renew_BR_Nashorn_N_1
               on: attack_success
               if:
                 - false
@@ -550,7 +551,7 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_1
+                    desc: Effect_Renew_BR_Nashorn_N_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -564,7 +565,7 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_2
+                    desc: Effect_Renew_BR_Nashorn_N_1_2
                     type: 0
                     value: "0"
                     level: "0"
@@ -578,10 +579,10 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_3
+                    desc: Effect_Renew_BR_Nashorn_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -590,12 +591,29 @@ skills:
                     chance: 0%
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_1_4
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_N_11
+            - key: Effect_Renew_BR_Nashorn_N_11
               on: criticaled
               if:
                 - false
@@ -615,10 +633,10 @@ skills:
               buffs:
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_11_1
+                    desc: Effect_Renew_BR_Nashorn_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -626,8 +644,44 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_N_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -643,7 +697,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_N_1
+            - key: Effect_Renew_BR_Nashorn_N_1
               on: attack_success
               if:
                 - false
@@ -663,7 +717,7 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_1
+                    desc: Effect_Renew_BR_Nashorn_N_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -677,7 +731,7 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_2
+                    desc: Effect_Renew_BR_Nashorn_N_1_2
                     type: 0
                     value: "0"
                     level: "0"
@@ -691,10 +745,10 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_3
+                    desc: Effect_Renew_BR_Nashorn_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -703,12 +757,29 @@ skills:
                     chance: 0%
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_1_4
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_N_11
+            - key: Effect_Renew_BR_Nashorn_N_11
               on: criticaled
               if:
                 - false
@@ -728,10 +799,10 @@ skills:
               buffs:
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_11_1
+                    desc: Effect_Renew_BR_Nashorn_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -739,8 +810,44 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_N_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -756,7 +863,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_N_1
+            - key: Effect_Renew_BR_Nashorn_N_1
               on: attack_success
               if:
                 - false
@@ -776,7 +883,7 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_1
+                    desc: Effect_Renew_BR_Nashorn_N_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -790,7 +897,7 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_2
+                    desc: Effect_Renew_BR_Nashorn_N_1_2
                     type: 0
                     value: "0"
                     level: "0"
@@ -804,10 +911,10 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_3
+                    desc: Effect_Renew_BR_Nashorn_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -816,12 +923,29 @@ skills:
                     chance: 0%
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_1_4
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_N_11
+            - key: Effect_Renew_BR_Nashorn_N_11
               on: criticaled
               if:
                 - false
@@ -841,10 +965,10 @@ skills:
               buffs:
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_11_1
+                    desc: Effect_Renew_BR_Nashorn_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -852,8 +976,44 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_N_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -869,7 +1029,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_N_1
+            - key: Effect_Renew_BR_Nashorn_N_1
               on: attack_success
               if:
                 - false
@@ -889,7 +1049,7 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_1
+                    desc: Effect_Renew_BR_Nashorn_N_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -903,7 +1063,7 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_2
+                    desc: Effect_Renew_BR_Nashorn_N_1_2
                     type: 0
                     value: "0"
                     level: "0"
@@ -917,10 +1077,10 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_3
+                    desc: Effect_Renew_BR_Nashorn_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -929,12 +1089,29 @@ skills:
                     chance: 0%
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_1_4
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_N_11
+            - key: Effect_Renew_BR_Nashorn_N_11
               on: criticaled
               if:
                 - false
@@ -954,10 +1131,10 @@ skills:
               buffs:
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_11_1
+                    desc: Effect_Renew_BR_Nashorn_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -965,8 +1142,44 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_N_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -982,7 +1195,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_N_1
+            - key: Effect_Renew_BR_Nashorn_N_1
               on: attack_success
               if:
                 - false
@@ -1002,7 +1215,7 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_1
+                    desc: Effect_Renew_BR_Nashorn_N_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -1016,7 +1229,7 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_2
+                    desc: Effect_Renew_BR_Nashorn_N_1_2
                     type: 0
                     value: "0"
                     level: "0"
@@ -1030,10 +1243,10 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_3
+                    desc: Effect_Renew_BR_Nashorn_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1042,12 +1255,29 @@ skills:
                     chance: 0%
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_1_4
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_N_11
+            - key: Effect_Renew_BR_Nashorn_N_11
               on: criticaled
               if:
                 - false
@@ -1067,10 +1297,10 @@ skills:
               buffs:
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_11_1
+                    desc: Effect_Renew_BR_Nashorn_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1078,8 +1308,44 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_N_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1095,7 +1361,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_N_1
+            - key: Effect_Renew_BR_Nashorn_N_1
               on: attack_success
               if:
                 - false
@@ -1115,7 +1381,7 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_1
+                    desc: Effect_Renew_BR_Nashorn_N_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -1129,7 +1395,7 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_2
+                    desc: Effect_Renew_BR_Nashorn_N_1_2
                     type: 0
                     value: "0"
                     level: "0"
@@ -1143,10 +1409,10 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_3
+                    desc: Effect_Renew_BR_Nashorn_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1155,12 +1421,29 @@ skills:
                     chance: 0%
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_1_4
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_N_11
+            - key: Effect_Renew_BR_Nashorn_N_11
               on: criticaled
               if:
                 - false
@@ -1180,10 +1463,10 @@ skills:
               buffs:
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_11_1
+                    desc: Effect_Renew_BR_Nashorn_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1191,8 +1474,44 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_N_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1208,7 +1527,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_N_1
+            - key: Effect_Renew_BR_Nashorn_N_1
               on: attack_success
               if:
                 - false
@@ -1228,7 +1547,7 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_1
+                    desc: Effect_Renew_BR_Nashorn_N_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -1242,7 +1561,7 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_2
+                    desc: Effect_Renew_BR_Nashorn_N_1_2
                     type: 0
                     value: "0"
                     level: "0"
@@ -1256,10 +1575,10 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_3
+                    desc: Effect_Renew_BR_Nashorn_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1268,12 +1587,29 @@ skills:
                     chance: 0%
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_1_4
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_N_11
+            - key: Effect_Renew_BR_Nashorn_N_11
               on: criticaled
               if:
                 - false
@@ -1293,10 +1629,10 @@ skills:
               buffs:
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_11_1
+                    desc: Effect_Renew_BR_Nashorn_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1304,8 +1640,44 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_N_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1321,7 +1693,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_N_1
+            - key: Effect_Renew_BR_Nashorn_N_1
               on: attack_success
               if:
                 - false
@@ -1341,7 +1713,7 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_1
+                    desc: Effect_Renew_BR_Nashorn_N_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -1355,7 +1727,7 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_2
+                    desc: Effect_Renew_BR_Nashorn_N_1_2
                     type: 0
                     value: "0"
                     level: "0"
@@ -1369,10 +1741,10 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_3
+                    desc: Effect_Renew_BR_Nashorn_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1381,12 +1753,29 @@ skills:
                     chance: 0%
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_1_4
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_N_11
+            - key: Effect_Renew_BR_Nashorn_N_11
               on: criticaled
               if:
                 - false
@@ -1406,10 +1795,10 @@ skills:
               buffs:
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_11_1
+                    desc: Effect_Renew_BR_Nashorn_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1417,8 +1806,44 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_N_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1434,7 +1859,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_N_1
+            - key: Effect_Renew_BR_Nashorn_N_1
               on: attack_success
               if:
                 - false
@@ -1454,7 +1879,7 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_1
+                    desc: Effect_Renew_BR_Nashorn_N_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -1468,7 +1893,7 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_2
+                    desc: Effect_Renew_BR_Nashorn_N_1_2
                     type: 0
                     value: "0"
                     level: "0"
@@ -1482,10 +1907,10 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_3
+                    desc: Effect_Renew_BR_Nashorn_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1494,12 +1919,29 @@ skills:
                     chance: 0%
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_1_4
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_N_11
+            - key: Effect_Renew_BR_Nashorn_N_11
               on: criticaled
               if:
                 - false
@@ -1519,10 +1961,10 @@ skills:
               buffs:
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_11_1
+                    desc: Effect_Renew_BR_Nashorn_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1530,8 +1972,44 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_N_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1547,7 +2025,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_N_1
+            - key: Effect_Renew_BR_Nashorn_N_1
               on: attack_success
               if:
                 - false
@@ -1567,7 +2045,7 @@ skills:
               buffs:
                 - icon: BuffIcon_MARKING
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_1
+                    desc: Effect_Renew_BR_Nashorn_N_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -1581,7 +2059,7 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_SNARE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_2
+                    desc: Effect_Renew_BR_Nashorn_N_1_2
                     type: 0
                     value: "0"
                     level: "0"
@@ -1595,10 +2073,10 @@ skills:
                   overlap: 1
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_1_3
+                    desc: Effect_Renew_BR_Nashorn_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1607,12 +2085,29 @@ skills:
                     chance: 0%
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_1_4
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 1
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_N_11
+            - key: Effect_Renew_BR_Nashorn_N_11
               on: criticaled
               if:
                 - false
@@ -1632,10 +2127,10 @@ skills:
               buffs:
                 - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Nashorn_N_11_1
+                    desc: Effect_Renew_BR_Nashorn_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 1
                   erase:
                     rounds: 2
@@ -1643,8 +2138,44 @@ skills:
                     isBuff: true
                     type: 48
                     damage_increase:
-                      base: 20%
-                      per: 1%
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_N_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1663,7 +2194,7 @@ skills:
       data:
         - - icon: BuffIcon_MARKING
             desc:
-              desc: Effect_BR_Nashorn_N_1_1
+              desc: Effect_Renew_BR_Nashorn_N_1_1
               type: 1
               value: "0"
               level: "0"
@@ -1672,7 +2203,7 @@ skills:
             chance: 1
           - icon: BuffIcon_SNARE
             desc:
-              desc: Effect_BR_Nashorn_N_1_2
+              desc: Effect_Renew_BR_Nashorn_N_1_2
               type: 0
               value: "0"
               level: "0"
@@ -1681,21 +2212,39 @@ skills:
             chance: 1
           - icon: BuffIcon_VULNERABLE
             desc:
-              desc: Effect_BR_Nashorn_N_1_3
+              desc: Effect_Renew_BR_Nashorn_N_1_3
               type: 1
-              value: "0.200000"
-              level: "0.010000"
-            base: 0.2
-            per: 0.01
+              value: "0.030000"
+              level: "0.030000"
+            base: 0.03
+            per: 0.03
+            chance: 0
+          - icon: BuffIcon_PhyATK_UP
+            desc:
+              desc: Effect_Renew_BR_Nashorn_N_1_4
+              type: 1
+              value: "0.030000"
+              level: "0.030000"
+            base: 0.03
+            per: 0.03
             chance: 0
           - icon: BuffIcon_VULNERABLE
             desc:
-              desc: Effect_BR_Nashorn_N_11_1
+              desc: Effect_Renew_BR_Nashorn_N_11_1
               type: 1
-              value: "0.200000"
-              level: "0.010000"
-            base: 0.2
-            per: 0.01
+              value: "0.030000"
+              level: "0.030000"
+            base: 0.03
+            per: 0.03
+            chance: 1
+          - icon: BuffIcon_PhyATK_UP
+            desc:
+              desc: Effect_Renew_BR_Nashorn_N_12_1
+              type: 1
+              value: "0.030000"
+              level: "0.030000"
+            base: 0.03
+            per: 0.03
             chance: 1
   "2":
     key: "2"
@@ -2591,7 +3140,7 @@ skills:
     icon: P.FormChange
     target: team
     delayed: false
-    target_ground: false
+    target_ground: true
     leastGrade: 4
     buffs:
       index:
@@ -2610,7 +3159,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
+          grid: 1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -2618,7 +3167,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_N_4
+            - key: Effect_Renew_BR_Nashorn_N_4
               on: round
               if:
                 - false
@@ -2638,29 +3187,84 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_BR_Nashorn_N_4_1
+                    desc: Effect_Renew_BR_Nashorn_N_4_1
                     type: 1
-                    value: "0.050000"
-                    level: "0.005000"
+                    value: "0.020000"
+                    level: "0.020000"
                   attr: 0
                   erase:
-                    rounds: 3
+                    rounds: 1
                   value:
                     isBuff: true
                     type: 13
                     turnSpeed:
-                      base: 5%
-                      per: 0.5%
+                      base: 2%
+                      per: 2%
+                  overlap: 4
+                - icon: BuffIcon_ATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_4_2
+                    type: 1
+                    value: "0.020000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 1
+                    attack:
+                      base: 2%
+                      per: 2%
+                  overlap: 4
+                - icon: BuffIcon_TROOPER_DMG_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_4_3
+                    type: 1
+                    value: "0.015000"
+                    level: "0.015000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: 1.5%
+                        per: 1.5%
+                  overlap: 4
+                - icon: BuffIcon_ARMORED_DMG_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_4_4
+                    type: 1
+                    value: "0.020000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 61
+                    damage_multiply:
+                      target: heavy
+                      value:
+                        base: 2%
+                        per: 2%
                   overlap: 4
                 - icon: BuffIcon_CHANGE_CHAR
                   desc:
-                    desc: Effect_BR_Nashorn_N_4_2
+                    desc: Effect_Renew_BR_Nashorn_N_4_5
                     type: 1
                     value: "0"
                     level: "0"
                   attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 999
                   value:
                     isBuff: true
                     chance: 0%
@@ -2669,8 +3273,8 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_N_41
-              on: wave
+            - key: Effect_Renew_BR_Nashorn_N_41
+              on: round
               if:
                 - false
                 - false
@@ -2685,26 +3289,88 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 2
               buffs:
                 - icon: BuffIcon_ATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_N_41_1
+                    desc: Effect_Renew_BR_Nashorn_N_41_1
                     type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase: {}
+                    value: "0.020000"
+                    level: "0.020000"
+                  attr: 0
+                  erase:
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 0
+                    type: 1
                     attack:
-                      base: 0
-                      per: 0
+                      base: 2%
+                      per: 2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_N_42
+            - key: Effect_Renew_BR_Nashorn_N_42
+              on: round
+              if:
+                - target:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_TROOPER_DMG_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_42_1
+                    type: 1
+                    value: "0.015000"
+                    level: "0.015000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 60
+                    damage_multiply:
+                      target: light
+                      value:
+                        base: 1.5%
+                        per: 1.5%
+                  overlap: 4
+                - icon: BuffIcon_ARMORED_DMG_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_N_42_2
+                    type: 1
+                    value: "0.020000"
+                    level: "0.020000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 61
+                    damage_multiply:
+                      target: heavy
+                      value:
+                        base: 2%
+                        per: 2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_N_43
               on: wait
               if:
                 - on:
@@ -2713,78 +3379,6 @@ skills:
                     select:
                       - 64
                     attr: 6
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Nashorn_N_41
-                    attr: 6
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_CHANGE_CHAR
-                  desc:
-                    desc: Effect_BR_Nashorn_N_42_1
-                    type: 1
-                    value: "0"
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 999
-                  value:
-                    isBuff: true
-                    type: 64
-                    metamolphosis: true
-                  overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_Nashorn_N_43
-              on: wave
-              if:
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BUFF_DummyAPEq_N_1
-                      - Effect_BUFF_DummyAPEq_N_2
-                      - Effect_BUFF_DummyAPEq_N_3
-                      - Effect_BUFF_DummyAPEq_N_4
-                      - Effect_BUFF_DummyAPEq_N_5
-                      - Effect_BUFF_DummyAPEq_N_6
-                      - Effect_BUFF_DummyAPEq_N_7
-                      - Effect_BUFF_DummyAPEq_N_8
-                      - Effect_BUFF_DummyAPEq_N_9
-                      - Effect_BUFF_DummyAPEq_N_10
-                      - Effect_BUFF_DummyAPEq_N_11
-                      - Effect_BUFF_DummyAPEq_N_12
-                      - Effect_BUFF_DummyAPEq_N_13
-                      - Effect_BUFF_DummyAPEq_N_14
-                      - Effect_BUFF_DummyAPEq_N_15
-                      - Effect_BUFF_DummyAPEq_N_16
-                      - Effect_BUFF_DummyAPEq_N_17
-                      - Effect_BUFF_DummyAPEq_N_18
-                      - Effect_BUFF_DummyAPEq_N_19
-                      - Effect_BUFF_DummyAPEq_N_20
-                      - Effect_BUFF_Bedroll_N_1
-                      - Effect_BUFF_Bedroll_N_2
-                      - Effect_BUFF_Bedroll_N_3
-                      - Effect_BUFF_Bedroll_N_4
-                      - Effect_BUFF_Bedroll_N_5
-                      - Effect_BUFF_Bedroll_N_6
-                      - Effect_BUFF_Bedroll_N_7
-                      - Effect_BUFF_Bedroll_N_8
-                      - Effect_BUFF_Bedroll_N_9
-                      - Effect_BUFF_Bedroll_N_10
-                      - Effect_BUFF_Bedroll_N_11
-                    attr: 6
                 - false
               body:
                 - 0
@@ -2801,7 +3395,7 @@ skills:
               buffs:
                 - icon: BuffIcon_CHANGE_CHAR
                   desc:
-                    desc: Effect_BR_Nashorn_N_43_1
+                    desc: Effect_Renew_BR_Nashorn_N_43_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -2813,51 +3407,7 @@ skills:
                     type: 64
                     metamolphosis: true
                   overlap: 4
-              maxStack: 0
-              overlapGroup: -1
-            - key: Effect_BR_Nashorn_N_44
-              on: wait
-              if:
-                - on:
-                    target: self
-                    select:
-                      - Effect_BR_Nashorn_N_43
-                    stack: 0
-                    func: UNFILLED
-                    attr: 6
-                - on:
-                    func: OR
-                    select:
-                      - Effect_BR_Nashorn_N_41
-                    attr: 6
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: ""
-                  desc:
-                    desc: Effect_BR_Nashorn_N_44_1
-                    type: 1
-                    value: Effect_BR_Nashorn_N_41
-                    level: "0"
-                  attr: 3
-                  erase:
-                    rounds: 0
-                  value:
-                    isBuff: true
-                    type: 97
-                    off: Effect_BR_Nashorn_N_41
-                  overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
     values:
       index:
@@ -2874,16 +3424,43 @@ skills:
       data:
         - - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_Nashorn_N_4_1
+              desc: Effect_Renew_BR_Nashorn_N_4_1
               type: 1
-              value: "0.050000"
-              level: "0.005000"
-            base: 0.05
-            per: 0.005
+              value: "0.020000"
+              level: "0.020000"
+            base: 0.02
+            per: 0.02
             chance: 1
+          - icon: BuffIcon_ATK_UP
+            desc:
+              desc: Effect_Renew_BR_Nashorn_N_4_2
+              type: 1
+              value: "0.020000"
+              level: "0.020000"
+            base: 0.02
+            per: 0.02
+            chance: 0
+          - icon: BuffIcon_TROOPER_DMG_UP
+            desc:
+              desc: Effect_Renew_BR_Nashorn_N_4_3
+              type: 1
+              value: "0.015000"
+              level: "0.015000"
+            base: 0.015
+            per: 0.015
+            chance: 0
+          - icon: BuffIcon_ARMORED_DMG_UP
+            desc:
+              desc: Effect_Renew_BR_Nashorn_N_4_4
+              type: 1
+              value: "0.020000"
+              level: "0.020000"
+            base: 0.02
+            per: 0.02
+            chance: 0
           - icon: BuffIcon_CHANGE_CHAR
             desc:
-              desc: Effect_BR_Nashorn_N_4_2
+              desc: Effect_Renew_BR_Nashorn_N_4_5
               type: 1
               value: "0"
               level: "0"
@@ -2892,38 +3469,39 @@ skills:
             chance: 0
           - icon: BuffIcon_ATK_UP
             desc:
-              desc: Effect_BR_Nashorn_N_41_1
+              desc: Effect_Renew_BR_Nashorn_N_41_1
               type: 1
-              value: "0"
-              level: "0"
-            base: 0
-            per: 0
+              value: "0.020000"
+              level: "0.020000"
+            base: 0.02
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_TROOPER_DMG_UP
+            desc:
+              desc: Effect_Renew_BR_Nashorn_N_42_1
+              type: 1
+              value: "0.015000"
+              level: "0.015000"
+            base: 0.015
+            per: 0.015
+            chance: 1
+          - icon: BuffIcon_ARMORED_DMG_UP
+            desc:
+              desc: Effect_Renew_BR_Nashorn_N_42_2
+              type: 1
+              value: "0.020000"
+              level: "0.020000"
+            base: 0.02
+            per: 0.02
             chance: 1
           - icon: BuffIcon_CHANGE_CHAR
             desc:
-              desc: Effect_BR_Nashorn_N_42_1
+              desc: Effect_Renew_BR_Nashorn_N_43_1
               type: 1
               value: "0"
               level: "0"
             base: 0
             per: 0
-            chance: 1
-          - icon: BuffIcon_CHANGE_CHAR
-            desc:
-              desc: Effect_BR_Nashorn_N_43_1
-              type: 1
-              value: "0"
-              level: "0"
-            base: 0
-            per: 0
-            chance: 1
-          - icon: ""
-            desc:
-              desc: Effect_BR_Nashorn_N_44_1
-              type: 1
-              value: Effect_BR_Nashorn_N_41
-              level: "0"
-            value: Effect_BR_Nashorn_N_41
             chance: 1
   "5":
     key: "5"
@@ -3146,7 +3724,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_1
+            - key: Effect_Renew_BR_Nashorn_CH_1
               on: criticaled
               if:
                 - false
@@ -3166,7 +3744,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_1
+                    desc: Effect_Renew_BR_Nashorn_CH_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -3180,7 +3758,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_2
+                    desc: Effect_Renew_BR_Nashorn_CH_1_2
                     type: 1
                     value: "0"
                     level: "0"
@@ -3193,9 +3771,26 @@ skills:
                     type: 125
                     buff_disallow: true
                   overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_1_3
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_11
+            - key: Effect_Renew_BR_Nashorn_CH_11
               on: criticaled
               if:
                 - false
@@ -3213,7 +3808,7 @@ skills:
               buffs:
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_11_1
+                    desc: Effect_Renew_BR_Nashorn_CH_11_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -3227,7 +3822,43 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -3248,7 +3879,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -3263,7 +3894,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -3284,7 +3915,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -3311,7 +3942,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_1
+            - key: Effect_Renew_BR_Nashorn_CH_1
               on: criticaled
               if:
                 - false
@@ -3331,7 +3962,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_1
+                    desc: Effect_Renew_BR_Nashorn_CH_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -3345,7 +3976,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_2
+                    desc: Effect_Renew_BR_Nashorn_CH_1_2
                     type: 1
                     value: "0"
                     level: "0"
@@ -3358,9 +3989,26 @@ skills:
                     type: 125
                     buff_disallow: true
                   overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_1_3
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_11
+            - key: Effect_Renew_BR_Nashorn_CH_11
               on: criticaled
               if:
                 - false
@@ -3378,7 +4026,7 @@ skills:
               buffs:
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_11_1
+                    desc: Effect_Renew_BR_Nashorn_CH_11_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -3392,7 +4040,43 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -3413,7 +4097,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -3428,7 +4112,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -3449,7 +4133,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -3476,7 +4160,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_1
+            - key: Effect_Renew_BR_Nashorn_CH_1
               on: criticaled
               if:
                 - false
@@ -3496,7 +4180,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_1
+                    desc: Effect_Renew_BR_Nashorn_CH_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -3510,7 +4194,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_2
+                    desc: Effect_Renew_BR_Nashorn_CH_1_2
                     type: 1
                     value: "0"
                     level: "0"
@@ -3523,9 +4207,26 @@ skills:
                     type: 125
                     buff_disallow: true
                   overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_1_3
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_11
+            - key: Effect_Renew_BR_Nashorn_CH_11
               on: criticaled
               if:
                 - false
@@ -3543,7 +4244,7 @@ skills:
               buffs:
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_11_1
+                    desc: Effect_Renew_BR_Nashorn_CH_11_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -3557,7 +4258,43 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -3578,7 +4315,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -3593,7 +4330,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -3614,7 +4351,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -3641,7 +4378,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_1
+            - key: Effect_Renew_BR_Nashorn_CH_1
               on: criticaled
               if:
                 - false
@@ -3661,7 +4398,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_1
+                    desc: Effect_Renew_BR_Nashorn_CH_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -3675,7 +4412,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_2
+                    desc: Effect_Renew_BR_Nashorn_CH_1_2
                     type: 1
                     value: "0"
                     level: "0"
@@ -3688,9 +4425,26 @@ skills:
                     type: 125
                     buff_disallow: true
                   overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_1_3
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_11
+            - key: Effect_Renew_BR_Nashorn_CH_11
               on: criticaled
               if:
                 - false
@@ -3708,7 +4462,7 @@ skills:
               buffs:
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_11_1
+                    desc: Effect_Renew_BR_Nashorn_CH_11_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -3722,7 +4476,43 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -3743,7 +4533,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -3758,7 +4548,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -3779,7 +4569,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -3806,7 +4596,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_1
+            - key: Effect_Renew_BR_Nashorn_CH_1
               on: criticaled
               if:
                 - false
@@ -3826,7 +4616,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_1
+                    desc: Effect_Renew_BR_Nashorn_CH_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -3840,7 +4630,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_2
+                    desc: Effect_Renew_BR_Nashorn_CH_1_2
                     type: 1
                     value: "0"
                     level: "0"
@@ -3853,9 +4643,26 @@ skills:
                     type: 125
                     buff_disallow: true
                   overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_1_3
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_11
+            - key: Effect_Renew_BR_Nashorn_CH_11
               on: criticaled
               if:
                 - false
@@ -3873,7 +4680,7 @@ skills:
               buffs:
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_11_1
+                    desc: Effect_Renew_BR_Nashorn_CH_11_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -3887,7 +4694,43 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -3908,7 +4751,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -3923,7 +4766,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -3944,7 +4787,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -3971,7 +4814,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_1
+            - key: Effect_Renew_BR_Nashorn_CH_1
               on: criticaled
               if:
                 - false
@@ -3991,7 +4834,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_1
+                    desc: Effect_Renew_BR_Nashorn_CH_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -4005,7 +4848,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_2
+                    desc: Effect_Renew_BR_Nashorn_CH_1_2
                     type: 1
                     value: "0"
                     level: "0"
@@ -4018,9 +4861,26 @@ skills:
                     type: 125
                     buff_disallow: true
                   overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_1_3
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_11
+            - key: Effect_Renew_BR_Nashorn_CH_11
               on: criticaled
               if:
                 - false
@@ -4038,7 +4898,7 @@ skills:
               buffs:
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_11_1
+                    desc: Effect_Renew_BR_Nashorn_CH_11_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -4052,7 +4912,43 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -4073,7 +4969,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -4088,7 +4984,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -4109,7 +5005,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -4136,7 +5032,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_1
+            - key: Effect_Renew_BR_Nashorn_CH_1
               on: criticaled
               if:
                 - false
@@ -4156,7 +5052,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_1
+                    desc: Effect_Renew_BR_Nashorn_CH_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -4170,7 +5066,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_2
+                    desc: Effect_Renew_BR_Nashorn_CH_1_2
                     type: 1
                     value: "0"
                     level: "0"
@@ -4183,9 +5079,26 @@ skills:
                     type: 125
                     buff_disallow: true
                   overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_1_3
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_11
+            - key: Effect_Renew_BR_Nashorn_CH_11
               on: criticaled
               if:
                 - false
@@ -4203,7 +5116,7 @@ skills:
               buffs:
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_11_1
+                    desc: Effect_Renew_BR_Nashorn_CH_11_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -4217,7 +5130,43 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -4238,7 +5187,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -4253,7 +5202,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -4274,7 +5223,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -4301,7 +5250,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_1
+            - key: Effect_Renew_BR_Nashorn_CH_1
               on: criticaled
               if:
                 - false
@@ -4321,7 +5270,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_1
+                    desc: Effect_Renew_BR_Nashorn_CH_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -4335,7 +5284,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_2
+                    desc: Effect_Renew_BR_Nashorn_CH_1_2
                     type: 1
                     value: "0"
                     level: "0"
@@ -4348,9 +5297,26 @@ skills:
                     type: 125
                     buff_disallow: true
                   overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_1_3
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_11
+            - key: Effect_Renew_BR_Nashorn_CH_11
               on: criticaled
               if:
                 - false
@@ -4368,7 +5334,7 @@ skills:
               buffs:
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_11_1
+                    desc: Effect_Renew_BR_Nashorn_CH_11_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -4382,7 +5348,43 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -4403,7 +5405,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -4418,7 +5420,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -4439,7 +5441,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -4466,7 +5468,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_1
+            - key: Effect_Renew_BR_Nashorn_CH_1
               on: criticaled
               if:
                 - false
@@ -4486,7 +5488,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_1
+                    desc: Effect_Renew_BR_Nashorn_CH_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -4500,7 +5502,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_2
+                    desc: Effect_Renew_BR_Nashorn_CH_1_2
                     type: 1
                     value: "0"
                     level: "0"
@@ -4513,9 +5515,26 @@ skills:
                     type: 125
                     buff_disallow: true
                   overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_1_3
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_11
+            - key: Effect_Renew_BR_Nashorn_CH_11
               on: criticaled
               if:
                 - false
@@ -4533,7 +5552,7 @@ skills:
               buffs:
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_11_1
+                    desc: Effect_Renew_BR_Nashorn_CH_11_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -4547,7 +5566,43 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -4568,7 +5623,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -4583,7 +5638,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -4604,7 +5659,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -4631,7 +5686,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_1
+            - key: Effect_Renew_BR_Nashorn_CH_1
               on: criticaled
               if:
                 - false
@@ -4651,7 +5706,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_1
+                    desc: Effect_Renew_BR_Nashorn_CH_1_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -4665,7 +5720,7 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_1_2
+                    desc: Effect_Renew_BR_Nashorn_CH_1_2
                     type: 1
                     value: "0"
                     level: "0"
@@ -4678,9 +5733,26 @@ skills:
                     type: 125
                     buff_disallow: true
                   overlap: 4
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_1_3
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_11
+            - key: Effect_Renew_BR_Nashorn_CH_11
               on: criticaled
               if:
                 - false
@@ -4698,7 +5770,7 @@ skills:
               buffs:
                 - icon: BuffIcon_Disallow
                   desc:
-                    desc: Effect_BR_Nashorn_CH_11_1
+                    desc: Effect_Renew_BR_Nashorn_CH_11_1
                     type: 1
                     value: "0"
                     level: "0"
@@ -4712,7 +5784,43 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_12
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_PhyATK_UP
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_12_1
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 3
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    type: 83
+                    damage_add:
+                      base: 3%
+                      per: 3%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -4733,7 +5841,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -4748,7 +5856,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -4769,7 +5877,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -4799,7 +5907,7 @@ skills:
       data:
         - - icon: BuffIcon_REMOVE_BUFF
             desc:
-              desc: Effect_BR_Nashorn_CH_1_1
+              desc: Effect_Renew_BR_Nashorn_CH_1_1
               type: 1
               value: "0"
               level: "0"
@@ -4808,25 +5916,43 @@ skills:
             chance: 1
           - icon: BuffIcon_Disallow
             desc:
-              desc: Effect_BR_Nashorn_CH_1_2
+              desc: Effect_Renew_BR_Nashorn_CH_1_2
               type: 1
               value: "0"
               level: "0"
             base: 0
             per: 0
             chance: 0
+          - icon: BuffIcon_PhyATK_UP
+            desc:
+              desc: Effect_Renew_BR_Nashorn_CH_1_3
+              type: 1
+              value: "0.030000"
+              level: "0.030000"
+            base: 0.03
+            per: 0.03
+            chance: 0
           - icon: BuffIcon_Disallow
             desc:
-              desc: Effect_BR_Nashorn_CH_11_1
+              desc: Effect_Renew_BR_Nashorn_CH_11_1
               type: 1
               value: "0"
               level: "0"
             base: 0
             per: 0
             chance: 1
+          - icon: BuffIcon_PhyATK_UP
+            desc:
+              desc: Effect_Renew_BR_Nashorn_CH_12_1
+              type: 1
+              value: "0.030000"
+              level: "0.030000"
+            base: 0.03
+            per: 0.03
+            chance: 1
           - icon: BuffIcon_REMOVE_DEBUFF
             desc:
-              desc: Effect_BR_Nashorn_CH_12_1
+              desc: Effect_Renew_BR_Nashorn_CH_101_1
               type: 1
               value: "64"
               level: "0"
@@ -4835,7 +5961,7 @@ skills:
             chance: 1
           - icon: BuffIcon_REMOVE_DEBUFF
             desc:
-              desc: Effect_BR_Nashorn_CH_13_1
+              desc: Effect_Renew_BR_Nashorn_CH_102_1
               type: 1
               value: "64"
               level: "0"
@@ -4873,7 +5999,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_2
+            - key: Effect_Renew_BR_Nashorn_CH_2
               on: attack_success
               if:
                 - false
@@ -4893,7 +6019,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_1
+                    desc: Effect_Renew_BR_Nashorn_CH_2_1
                     type: 1
                     value: "36"
                     level: "0"
@@ -4909,10 +6035,10 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_2
+                    desc: Effect_Renew_BR_Nashorn_CH_2_2
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -4921,12 +6047,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_2_3
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 3
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_21
+            - key: Effect_Renew_BR_Nashorn_CH_21
               on: attack_success
               if:
                 - on:
@@ -4953,10 +6096,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_21_1
+                    desc: Effect_Renew_BR_Nashorn_CH_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -4964,12 +6107,48 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_22_1
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -4990,7 +6169,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -5005,7 +6184,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -5026,7 +6205,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -5053,7 +6232,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_2
+            - key: Effect_Renew_BR_Nashorn_CH_2
               on: attack_success
               if:
                 - false
@@ -5073,7 +6252,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_1
+                    desc: Effect_Renew_BR_Nashorn_CH_2_1
                     type: 1
                     value: "36"
                     level: "0"
@@ -5089,10 +6268,10 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_2
+                    desc: Effect_Renew_BR_Nashorn_CH_2_2
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5101,12 +6280,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_2_3
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 3
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_21
+            - key: Effect_Renew_BR_Nashorn_CH_21
               on: attack_success
               if:
                 - on:
@@ -5133,10 +6329,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_21_1
+                    desc: Effect_Renew_BR_Nashorn_CH_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5144,12 +6340,48 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_22_1
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -5170,7 +6402,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -5185,7 +6417,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -5206,7 +6438,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -5233,7 +6465,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_2
+            - key: Effect_Renew_BR_Nashorn_CH_2
               on: attack_success
               if:
                 - false
@@ -5253,7 +6485,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_1
+                    desc: Effect_Renew_BR_Nashorn_CH_2_1
                     type: 1
                     value: "36"
                     level: "0"
@@ -5269,10 +6501,10 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_2
+                    desc: Effect_Renew_BR_Nashorn_CH_2_2
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5281,12 +6513,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_2_3
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 3
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_21
+            - key: Effect_Renew_BR_Nashorn_CH_21
               on: attack_success
               if:
                 - on:
@@ -5313,10 +6562,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_21_1
+                    desc: Effect_Renew_BR_Nashorn_CH_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5324,12 +6573,48 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_22_1
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -5350,7 +6635,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -5365,7 +6650,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -5386,7 +6671,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -5413,7 +6698,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_2
+            - key: Effect_Renew_BR_Nashorn_CH_2
               on: attack_success
               if:
                 - false
@@ -5433,7 +6718,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_1
+                    desc: Effect_Renew_BR_Nashorn_CH_2_1
                     type: 1
                     value: "36"
                     level: "0"
@@ -5449,10 +6734,10 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_2
+                    desc: Effect_Renew_BR_Nashorn_CH_2_2
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5461,12 +6746,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_2_3
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 3
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_21
+            - key: Effect_Renew_BR_Nashorn_CH_21
               on: attack_success
               if:
                 - on:
@@ -5493,10 +6795,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_21_1
+                    desc: Effect_Renew_BR_Nashorn_CH_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5504,12 +6806,48 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_22_1
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -5530,7 +6868,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -5545,7 +6883,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -5566,7 +6904,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -5593,7 +6931,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_2
+            - key: Effect_Renew_BR_Nashorn_CH_2
               on: attack_success
               if:
                 - false
@@ -5613,7 +6951,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_1
+                    desc: Effect_Renew_BR_Nashorn_CH_2_1
                     type: 1
                     value: "36"
                     level: "0"
@@ -5629,10 +6967,10 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_2
+                    desc: Effect_Renew_BR_Nashorn_CH_2_2
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5641,12 +6979,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_2_3
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 3
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_21
+            - key: Effect_Renew_BR_Nashorn_CH_21
               on: attack_success
               if:
                 - on:
@@ -5673,10 +7028,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_21_1
+                    desc: Effect_Renew_BR_Nashorn_CH_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5684,12 +7039,48 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_22_1
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -5710,7 +7101,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -5725,7 +7116,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -5746,7 +7137,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -5773,7 +7164,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_2
+            - key: Effect_Renew_BR_Nashorn_CH_2
               on: attack_success
               if:
                 - false
@@ -5793,7 +7184,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_1
+                    desc: Effect_Renew_BR_Nashorn_CH_2_1
                     type: 1
                     value: "36"
                     level: "0"
@@ -5809,10 +7200,10 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_2
+                    desc: Effect_Renew_BR_Nashorn_CH_2_2
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5821,12 +7212,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_2_3
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 3
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_21
+            - key: Effect_Renew_BR_Nashorn_CH_21
               on: attack_success
               if:
                 - on:
@@ -5853,10 +7261,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_21_1
+                    desc: Effect_Renew_BR_Nashorn_CH_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -5864,12 +7272,48 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_22_1
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -5890,7 +7334,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -5905,7 +7349,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -5926,7 +7370,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -5953,7 +7397,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_2
+            - key: Effect_Renew_BR_Nashorn_CH_2
               on: attack_success
               if:
                 - false
@@ -5973,7 +7417,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_1
+                    desc: Effect_Renew_BR_Nashorn_CH_2_1
                     type: 1
                     value: "36"
                     level: "0"
@@ -5989,10 +7433,10 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_2
+                    desc: Effect_Renew_BR_Nashorn_CH_2_2
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -6001,12 +7445,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_2_3
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 3
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_21
+            - key: Effect_Renew_BR_Nashorn_CH_21
               on: attack_success
               if:
                 - on:
@@ -6033,10 +7494,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_21_1
+                    desc: Effect_Renew_BR_Nashorn_CH_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -6044,12 +7505,48 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_22_1
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -6070,7 +7567,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -6085,7 +7582,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -6106,7 +7603,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -6133,7 +7630,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_2
+            - key: Effect_Renew_BR_Nashorn_CH_2
               on: attack_success
               if:
                 - false
@@ -6153,7 +7650,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_1
+                    desc: Effect_Renew_BR_Nashorn_CH_2_1
                     type: 1
                     value: "36"
                     level: "0"
@@ -6169,10 +7666,10 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_2
+                    desc: Effect_Renew_BR_Nashorn_CH_2_2
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -6181,12 +7678,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_2_3
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 3
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_21
+            - key: Effect_Renew_BR_Nashorn_CH_21
               on: attack_success
               if:
                 - on:
@@ -6213,10 +7727,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_21_1
+                    desc: Effect_Renew_BR_Nashorn_CH_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -6224,12 +7738,48 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_22_1
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -6250,7 +7800,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -6265,7 +7815,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -6286,7 +7836,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -6313,7 +7863,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_2
+            - key: Effect_Renew_BR_Nashorn_CH_2
               on: attack_success
               if:
                 - false
@@ -6333,7 +7883,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_1
+                    desc: Effect_Renew_BR_Nashorn_CH_2_1
                     type: 1
                     value: "36"
                     level: "0"
@@ -6349,10 +7899,10 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_2
+                    desc: Effect_Renew_BR_Nashorn_CH_2_2
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -6361,12 +7911,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_2_3
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 3
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_21
+            - key: Effect_Renew_BR_Nashorn_CH_21
               on: attack_success
               if:
                 - on:
@@ -6393,10 +7960,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_21_1
+                    desc: Effect_Renew_BR_Nashorn_CH_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -6404,12 +7971,48 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_22_1
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -6430,7 +8033,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -6445,7 +8048,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -6466,7 +8069,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -6493,7 +8096,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Nashorn_CH_2
+            - key: Effect_Renew_BR_Nashorn_CH_2
               on: attack_success
               if:
                 - false
@@ -6513,7 +8116,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_BUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_1
+                    desc: Effect_Renew_BR_Nashorn_CH_2_1
                     type: 1
                     value: "36"
                     level: "0"
@@ -6529,10 +8132,10 @@ skills:
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_2_2
+                    desc: Effect_Renew_BR_Nashorn_CH_2_2
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -6541,12 +8144,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
+                  overlap: 4
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_2_3
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 3
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_21
+            - key: Effect_Renew_BR_Nashorn_CH_21
               on: attack_success
               if:
                 - on:
@@ -6573,10 +8193,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Nashorn_CH_21_1
+                    desc: Effect_Renew_BR_Nashorn_CH_21_1
                     type: 1
-                    value: "0.250000"
-                    level: "0.025000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -6584,12 +8204,48 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 25%
-                      per: 2.5%
+                      base: 5%
+                      per: 5%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_12
+            - key: Effect_Renew_BR_Nashorn_CH_22
+              on: criticaled
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 3
+              buffs:
+                - icon: BuffIcon_phyDMG_DOT
+                  desc:
+                    desc: Effect_Renew_BR_Nashorn_CH_22_1
+                    type: 0
+                    value: "100"
+                    level: "100"
+                  attr: 1
+                  erase:
+                    rounds: 2
+                  value:
+                    isBuff: true
+                    type: 65
+                    fixed_damage:
+                      base: 100
+                      per: 100
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Nashorn_CH_101
               on:
                 after: use_skill
               if:
@@ -6610,7 +8266,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_12_1
+                    desc: Effect_Renew_BR_Nashorn_CH_101_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -6625,7 +8281,7 @@ skills:
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Nashorn_CH_13
+            - key: Effect_Renew_BR_Nashorn_CH_102
               on:
                 after: counter
               if:
@@ -6646,7 +8302,7 @@ skills:
               buffs:
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
-                    desc: Effect_BR_Nashorn_CH_13_1
+                    desc: Effect_Renew_BR_Nashorn_CH_102_1
                     type: 1
                     value: "64"
                     level: "0"
@@ -6676,7 +8332,7 @@ skills:
       data:
         - - icon: BuffIcon_REMOVE_BUFF
             desc:
-              desc: Effect_BR_Nashorn_CH_2_1
+              desc: Effect_Renew_BR_Nashorn_CH_2_1
               type: 1
               value: "36"
               level: "0"
@@ -6685,25 +8341,43 @@ skills:
             chance: 1
           - icon: BuffIcon_PhyATK_UP
             desc:
-              desc: Effect_BR_Nashorn_CH_2_2
+              desc: Effect_Renew_BR_Nashorn_CH_2_2
               type: 1
-              value: "0.250000"
-              level: "0.025000"
-            base: 0.25
-            per: 0.025
+              value: "0.050000"
+              level: "0.050000"
+            base: 0.05
+            per: 0.05
+            chance: 0
+          - icon: BuffIcon_phyDMG_DOT
+            desc:
+              desc: Effect_Renew_BR_Nashorn_CH_2_3
+              type: 0
+              value: "100"
+              level: "100"
+            base: 100
+            per: 100
             chance: 0
           - icon: BuffIcon_PhyATK_UP
             desc:
-              desc: Effect_BR_Nashorn_CH_21_1
+              desc: Effect_Renew_BR_Nashorn_CH_21_1
               type: 1
-              value: "0.250000"
-              level: "0.025000"
-            base: 0.25
-            per: 0.025
+              value: "0.050000"
+              level: "0.050000"
+            base: 0.05
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_phyDMG_DOT
+            desc:
+              desc: Effect_Renew_BR_Nashorn_CH_22_1
+              type: 0
+              value: "100"
+              level: "100"
+            base: 100
+            per: 100
             chance: 1
           - icon: BuffIcon_REMOVE_DEBUFF
             desc:
-              desc: Effect_BR_Nashorn_CH_12_1
+              desc: Effect_Renew_BR_Nashorn_CH_101_1
               type: 1
               value: "64"
               level: "0"
@@ -6712,7 +8386,7 @@ skills:
             chance: 1
           - icon: BuffIcon_REMOVE_DEBUFF
             desc:
-              desc: Effect_BR_Nashorn_CH_13_1
+              desc: Effect_Renew_BR_Nashorn_CH_102_1
               type: 1
               value: "64"
               level: "0"
@@ -7322,6 +8996,7 @@ skins:
   priceEx: ""
   G: true
   Spine: false
+  SpineDamaged: false
   parts: 4
   stage: false
   subset:
@@ -7354,6 +9029,7 @@ skins:
       price: 147
       G: true
       Spine: false
+      SpineDamaged: false
       parts: 4
       stage: false
       subset:

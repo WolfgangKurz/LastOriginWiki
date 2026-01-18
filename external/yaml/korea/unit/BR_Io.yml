@@ -598,6 +598,9 @@ source:
     - Ev:Ev30:EV2-6
   - - Ev:Ev32:EV2-1
   - - Ev:Ev33:EV1-7
+  - - Ev:Ev34:EV1-8
+  - - Ev:Ev35:EV1-4
+    - Ev:Ev35:EV2-3B
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -634,7 +637,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_1
+            - key: Effect_Renew_BR_Io_N_1
               on: attack_success
               if:
                 - on:
@@ -661,10 +664,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_1
+                    desc: Effect_Renew_BR_Io_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.020000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -672,15 +675,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 30%
-                      per: 2%
+                      base: 5%
+                      per: 5%
                   overlap: 4
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_2
+                    desc: Effect_Renew_BR_Io_N_1_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -691,12 +694,29 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_1_3
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_11
+            - key: Effect_Renew_BR_Io_N_11
               on: attack_success
               if:
                 - false
@@ -716,10 +736,10 @@ skills:
               buffs:
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_11_1
+                    desc: Effect_Renew_BR_Io_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -729,10 +749,98 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_12_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 2.12
           type: 0
@@ -746,7 +854,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_1
+            - key: Effect_Renew_BR_Io_N_1
               on: attack_success
               if:
                 - on:
@@ -773,10 +881,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_1
+                    desc: Effect_Renew_BR_Io_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.020000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -784,15 +892,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 30%
-                      per: 2%
+                      base: 5%
+                      per: 5%
                   overlap: 4
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_2
+                    desc: Effect_Renew_BR_Io_N_1_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -803,12 +911,29 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_1_3
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_11
+            - key: Effect_Renew_BR_Io_N_11
               on: attack_success
               if:
                 - false
@@ -828,10 +953,10 @@ skills:
               buffs:
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_11_1
+                    desc: Effect_Renew_BR_Io_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -841,10 +966,98 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_12_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 2.29
           type: 0
@@ -858,7 +1071,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_1
+            - key: Effect_Renew_BR_Io_N_1
               on: attack_success
               if:
                 - on:
@@ -885,10 +1098,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_1
+                    desc: Effect_Renew_BR_Io_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.020000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -896,15 +1109,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 30%
-                      per: 2%
+                      base: 5%
+                      per: 5%
                   overlap: 4
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_2
+                    desc: Effect_Renew_BR_Io_N_1_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -915,12 +1128,29 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_1_3
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_11
+            - key: Effect_Renew_BR_Io_N_11
               on: attack_success
               if:
                 - false
@@ -940,10 +1170,10 @@ skills:
               buffs:
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_11_1
+                    desc: Effect_Renew_BR_Io_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -953,10 +1183,98 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_12_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 2.46
           type: 0
@@ -970,7 +1288,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_1
+            - key: Effect_Renew_BR_Io_N_1
               on: attack_success
               if:
                 - on:
@@ -997,10 +1315,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_1
+                    desc: Effect_Renew_BR_Io_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.020000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1008,15 +1326,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 30%
-                      per: 2%
+                      base: 5%
+                      per: 5%
                   overlap: 4
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_2
+                    desc: Effect_Renew_BR_Io_N_1_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1027,12 +1345,29 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_1_3
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_11
+            - key: Effect_Renew_BR_Io_N_11
               on: attack_success
               if:
                 - false
@@ -1052,10 +1387,10 @@ skills:
               buffs:
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_11_1
+                    desc: Effect_Renew_BR_Io_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1065,10 +1400,98 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_12_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 2.63
           type: 0
@@ -1082,7 +1505,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_1
+            - key: Effect_Renew_BR_Io_N_1
               on: attack_success
               if:
                 - on:
@@ -1109,10 +1532,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_1
+                    desc: Effect_Renew_BR_Io_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.020000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1120,15 +1543,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 30%
-                      per: 2%
+                      base: 5%
+                      per: 5%
                   overlap: 4
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_2
+                    desc: Effect_Renew_BR_Io_N_1_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1139,12 +1562,29 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_1_3
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_11
+            - key: Effect_Renew_BR_Io_N_11
               on: attack_success
               if:
                 - false
@@ -1164,10 +1604,10 @@ skills:
               buffs:
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_11_1
+                    desc: Effect_Renew_BR_Io_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1177,10 +1617,98 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_12_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 2.8
           type: 0
@@ -1194,7 +1722,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_1
+            - key: Effect_Renew_BR_Io_N_1
               on: attack_success
               if:
                 - on:
@@ -1221,10 +1749,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_1
+                    desc: Effect_Renew_BR_Io_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.020000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1232,15 +1760,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 30%
-                      per: 2%
+                      base: 5%
+                      per: 5%
                   overlap: 4
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_2
+                    desc: Effect_Renew_BR_Io_N_1_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1251,12 +1779,29 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_1_3
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_11
+            - key: Effect_Renew_BR_Io_N_11
               on: attack_success
               if:
                 - false
@@ -1276,10 +1821,10 @@ skills:
               buffs:
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_11_1
+                    desc: Effect_Renew_BR_Io_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1289,10 +1834,98 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_12_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 2.97
           type: 0
@@ -1306,7 +1939,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_1
+            - key: Effect_Renew_BR_Io_N_1
               on: attack_success
               if:
                 - on:
@@ -1333,10 +1966,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_1
+                    desc: Effect_Renew_BR_Io_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.020000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1344,15 +1977,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 30%
-                      per: 2%
+                      base: 5%
+                      per: 5%
                   overlap: 4
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_2
+                    desc: Effect_Renew_BR_Io_N_1_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1363,12 +1996,29 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_1_3
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_11
+            - key: Effect_Renew_BR_Io_N_11
               on: attack_success
               if:
                 - false
@@ -1388,10 +2038,10 @@ skills:
               buffs:
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_11_1
+                    desc: Effect_Renew_BR_Io_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1401,10 +2051,98 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_12_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 3.14
           type: 0
@@ -1418,7 +2156,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_1
+            - key: Effect_Renew_BR_Io_N_1
               on: attack_success
               if:
                 - on:
@@ -1445,10 +2183,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_1
+                    desc: Effect_Renew_BR_Io_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.020000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1456,15 +2194,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 30%
-                      per: 2%
+                      base: 5%
+                      per: 5%
                   overlap: 4
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_2
+                    desc: Effect_Renew_BR_Io_N_1_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1475,12 +2213,29 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_1_3
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_11
+            - key: Effect_Renew_BR_Io_N_11
               on: attack_success
               if:
                 - false
@@ -1500,10 +2255,10 @@ skills:
               buffs:
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_11_1
+                    desc: Effect_Renew_BR_Io_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1513,10 +2268,98 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_12_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 3.31
           type: 0
@@ -1530,7 +2373,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_1
+            - key: Effect_Renew_BR_Io_N_1
               on: attack_success
               if:
                 - on:
@@ -1557,10 +2400,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_1
+                    desc: Effect_Renew_BR_Io_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.020000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1568,15 +2411,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 30%
-                      per: 2%
+                      base: 5%
+                      per: 5%
                   overlap: 4
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_2
+                    desc: Effect_Renew_BR_Io_N_1_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1587,12 +2430,29 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_1_3
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_11
+            - key: Effect_Renew_BR_Io_N_11
               on: attack_success
               if:
                 - false
@@ -1612,10 +2472,10 @@ skills:
               buffs:
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_11_1
+                    desc: Effect_Renew_BR_Io_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1625,10 +2485,98 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_12_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
         - rate: 3.48
           type: 0
@@ -1642,7 +2590,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_1
+            - key: Effect_Renew_BR_Io_N_1
               on: attack_success
               if:
                 - on:
@@ -1669,10 +2617,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_1
+                    desc: Effect_Renew_BR_Io_N_1_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.020000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1680,15 +2628,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 30%
-                      per: 2%
+                      base: 5%
+                      per: 5%
                   overlap: 4
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_1_2
+                    desc: Effect_Renew_BR_Io_N_1_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1699,12 +2647,29 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_1_3
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_11
+            - key: Effect_Renew_BR_Io_N_11
               on: attack_success
               if:
                 - false
@@ -1724,10 +2689,10 @@ skills:
               buffs:
                 - icon: BuffIcon_TROOPER_DMG_UP
                   desc:
-                    desc: Effect_BR_Io_N_11_1
+                    desc: Effect_Renew_BR_Io_N_11_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1737,10 +2702,98 @@ skills:
                     damage_multiply:
                       target: light
                       value:
-                        base: 20%
-                        per: 1%
+                        base: 3%
+                        per: 3%
                   overlap: 4
               maxStack: 1
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_12_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Spriggan_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
               overlapGroup: -1
     values:
       index:
@@ -1757,30 +2810,54 @@ skills:
       data:
         - - icon: BuffIcon_PhyATK_UP
             desc:
-              desc: Effect_BR_Io_N_1_1
+              desc: Effect_Renew_BR_Io_N_1_1
               type: 1
-              value: "0.300000"
-              level: "0.020000"
-            base: 0.3
-            per: 0.02
+              value: "0.050000"
+              level: "0.050000"
+            base: 0.05
+            per: 0.05
             chance: 1
           - icon: BuffIcon_TROOPER_DMG_UP
             desc:
-              desc: Effect_BR_Io_N_1_2
+              desc: Effect_Renew_BR_Io_N_1_2
               type: 1
-              value: "0.200000"
-              level: "0.010000"
-            base: 0.2
-            per: 0.01
+              value: "0.030000"
+              level: "0.030000"
+            base: 0.03
+            per: 0.03
+            chance: 0
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_Renew_BR_Io_N_1_3
+              type: 0
+              value: Char_BR_Spriggan_N
+              level: "0"
+            value: Char_BR_Spriggan_N
             chance: 0
           - icon: BuffIcon_TROOPER_DMG_UP
             desc:
-              desc: Effect_BR_Io_N_11_1
+              desc: Effect_Renew_BR_Io_N_11_1
               type: 1
-              value: "0.200000"
-              level: "0.010000"
-            base: 0.2
-            per: 0.01
+              value: "0.030000"
+              level: "0.030000"
+            base: 0.03
+            per: 0.03
+            chance: 1
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_Renew_BR_Io_N_12_1
+              type: 0
+              value: Char_BR_Spriggan_N
+              level: "0"
+            value: Char_BR_Spriggan_N
+            chance: 1
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_Renew_BR_Io_N_13_1
+              type: 0
+              value: Char_BR_Calista_N
+              level: "0"
+            value: Char_BR_Calista_N
             chance: 1
   "2":
     key: "2"
@@ -1813,7 +2890,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_2
+            - key: Effect_Renew_BR_Io_N_2
               on: attack_success
               if:
                 - false
@@ -1833,10 +2910,10 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_BR_Io_N_2_1
+                    desc: Effect_Renew_BR_Io_N_2_1
                     type: 0
-                    value: "-0.500000"
-                    level: "-0.050000"
+                    value: "-0.100000"
+                    level: "-0.100000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -1845,15 +2922,15 @@ skills:
                     chance: 999%
                     type: 20
                     ap:
-                      base: -0.5
-                      per: -0.05
+                      base: -0.1
+                      per: -0.1
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_2_2
+                    desc: Effect_Renew_BR_Io_N_2_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -1862,12 +2939,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_21
+            - key: Effect_Renew_BR_Io_N_21
               on: criticaled
               if:
                 - false
@@ -1887,10 +2981,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_21_1
+                    desc: Effect_Renew_BR_Io_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1898,8 +2992,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_23_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1915,7 +3097,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_2
+            - key: Effect_Renew_BR_Io_N_2
               on: attack_success
               if:
                 - false
@@ -1935,10 +3117,10 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_BR_Io_N_2_1
+                    desc: Effect_Renew_BR_Io_N_2_1
                     type: 0
-                    value: "-0.500000"
-                    level: "-0.050000"
+                    value: "-0.100000"
+                    level: "-0.100000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -1947,15 +3129,15 @@ skills:
                     chance: 999%
                     type: 20
                     ap:
-                      base: -0.5
-                      per: -0.05
+                      base: -0.1
+                      per: -0.1
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_2_2
+                    desc: Effect_Renew_BR_Io_N_2_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -1964,12 +3146,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_21
+            - key: Effect_Renew_BR_Io_N_21
               on: criticaled
               if:
                 - false
@@ -1989,10 +3188,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_21_1
+                    desc: Effect_Renew_BR_Io_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2000,8 +3199,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_23_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2017,7 +3304,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_2
+            - key: Effect_Renew_BR_Io_N_2
               on: attack_success
               if:
                 - false
@@ -2037,10 +3324,10 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_BR_Io_N_2_1
+                    desc: Effect_Renew_BR_Io_N_2_1
                     type: 0
-                    value: "-0.500000"
-                    level: "-0.050000"
+                    value: "-0.100000"
+                    level: "-0.100000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -2049,15 +3336,15 @@ skills:
                     chance: 999%
                     type: 20
                     ap:
-                      base: -0.5
-                      per: -0.05
+                      base: -0.1
+                      per: -0.1
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_2_2
+                    desc: Effect_Renew_BR_Io_N_2_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -2066,12 +3353,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_21
+            - key: Effect_Renew_BR_Io_N_21
               on: criticaled
               if:
                 - false
@@ -2091,10 +3395,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_21_1
+                    desc: Effect_Renew_BR_Io_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2102,8 +3406,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_23_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2119,7 +3511,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_2
+            - key: Effect_Renew_BR_Io_N_2
               on: attack_success
               if:
                 - false
@@ -2139,10 +3531,10 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_BR_Io_N_2_1
+                    desc: Effect_Renew_BR_Io_N_2_1
                     type: 0
-                    value: "-0.500000"
-                    level: "-0.050000"
+                    value: "-0.100000"
+                    level: "-0.100000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -2151,15 +3543,15 @@ skills:
                     chance: 999%
                     type: 20
                     ap:
-                      base: -0.5
-                      per: -0.05
+                      base: -0.1
+                      per: -0.1
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_2_2
+                    desc: Effect_Renew_BR_Io_N_2_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -2168,12 +3560,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_21
+            - key: Effect_Renew_BR_Io_N_21
               on: criticaled
               if:
                 - false
@@ -2193,10 +3602,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_21_1
+                    desc: Effect_Renew_BR_Io_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2204,8 +3613,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_23_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2221,7 +3718,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_2
+            - key: Effect_Renew_BR_Io_N_2
               on: attack_success
               if:
                 - false
@@ -2241,10 +3738,10 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_BR_Io_N_2_1
+                    desc: Effect_Renew_BR_Io_N_2_1
                     type: 0
-                    value: "-0.500000"
-                    level: "-0.050000"
+                    value: "-0.100000"
+                    level: "-0.100000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -2253,15 +3750,15 @@ skills:
                     chance: 999%
                     type: 20
                     ap:
-                      base: -0.5
-                      per: -0.05
+                      base: -0.1
+                      per: -0.1
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_2_2
+                    desc: Effect_Renew_BR_Io_N_2_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -2270,12 +3767,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_21
+            - key: Effect_Renew_BR_Io_N_21
               on: criticaled
               if:
                 - false
@@ -2295,10 +3809,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_21_1
+                    desc: Effect_Renew_BR_Io_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2306,8 +3820,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_23_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2323,7 +3925,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_2
+            - key: Effect_Renew_BR_Io_N_2
               on: attack_success
               if:
                 - false
@@ -2343,10 +3945,10 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_BR_Io_N_2_1
+                    desc: Effect_Renew_BR_Io_N_2_1
                     type: 0
-                    value: "-0.500000"
-                    level: "-0.050000"
+                    value: "-0.100000"
+                    level: "-0.100000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -2355,15 +3957,15 @@ skills:
                     chance: 999%
                     type: 20
                     ap:
-                      base: -0.5
-                      per: -0.05
+                      base: -0.1
+                      per: -0.1
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_2_2
+                    desc: Effect_Renew_BR_Io_N_2_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -2372,12 +3974,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_21
+            - key: Effect_Renew_BR_Io_N_21
               on: criticaled
               if:
                 - false
@@ -2397,10 +4016,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_21_1
+                    desc: Effect_Renew_BR_Io_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2408,8 +4027,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_23_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2425,7 +4132,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_2
+            - key: Effect_Renew_BR_Io_N_2
               on: attack_success
               if:
                 - false
@@ -2445,10 +4152,10 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_BR_Io_N_2_1
+                    desc: Effect_Renew_BR_Io_N_2_1
                     type: 0
-                    value: "-0.500000"
-                    level: "-0.050000"
+                    value: "-0.100000"
+                    level: "-0.100000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -2457,15 +4164,15 @@ skills:
                     chance: 999%
                     type: 20
                     ap:
-                      base: -0.5
-                      per: -0.05
+                      base: -0.1
+                      per: -0.1
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_2_2
+                    desc: Effect_Renew_BR_Io_N_2_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -2474,12 +4181,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_21
+            - key: Effect_Renew_BR_Io_N_21
               on: criticaled
               if:
                 - false
@@ -2499,10 +4223,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_21_1
+                    desc: Effect_Renew_BR_Io_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2510,8 +4234,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_23_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2527,7 +4339,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_2
+            - key: Effect_Renew_BR_Io_N_2
               on: attack_success
               if:
                 - false
@@ -2547,10 +4359,10 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_BR_Io_N_2_1
+                    desc: Effect_Renew_BR_Io_N_2_1
                     type: 0
-                    value: "-0.500000"
-                    level: "-0.050000"
+                    value: "-0.100000"
+                    level: "-0.100000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -2559,15 +4371,15 @@ skills:
                     chance: 999%
                     type: 20
                     ap:
-                      base: -0.5
-                      per: -0.05
+                      base: -0.1
+                      per: -0.1
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_2_2
+                    desc: Effect_Renew_BR_Io_N_2_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -2576,12 +4388,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_21
+            - key: Effect_Renew_BR_Io_N_21
               on: criticaled
               if:
                 - false
@@ -2601,10 +4430,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_21_1
+                    desc: Effect_Renew_BR_Io_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2612,8 +4441,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_23_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2629,7 +4546,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_2
+            - key: Effect_Renew_BR_Io_N_2
               on: attack_success
               if:
                 - false
@@ -2649,10 +4566,10 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_BR_Io_N_2_1
+                    desc: Effect_Renew_BR_Io_N_2_1
                     type: 0
-                    value: "-0.500000"
-                    level: "-0.050000"
+                    value: "-0.100000"
+                    level: "-0.100000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -2661,15 +4578,15 @@ skills:
                     chance: 999%
                     type: 20
                     ap:
-                      base: -0.5
-                      per: -0.05
+                      base: -0.1
+                      per: -0.1
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_2_2
+                    desc: Effect_Renew_BR_Io_N_2_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -2678,12 +4595,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_21
+            - key: Effect_Renew_BR_Io_N_21
               on: criticaled
               if:
                 - false
@@ -2703,10 +4637,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_21_1
+                    desc: Effect_Renew_BR_Io_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2714,8 +4648,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_23_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2731,7 +4753,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_2
+            - key: Effect_Renew_BR_Io_N_2
               on: attack_success
               if:
                 - false
@@ -2751,10 +4773,10 @@ skills:
               buffs:
                 - icon: BuffIcon_AP_DOWN
                   desc:
-                    desc: Effect_BR_Io_N_2_1
+                    desc: Effect_Renew_BR_Io_N_2_1
                     type: 0
-                    value: "-0.500000"
-                    level: "-0.050000"
+                    value: "-0.100000"
+                    level: "-0.100000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -2763,15 +4785,15 @@ skills:
                     chance: 999%
                     type: 20
                     ap:
-                      base: -0.5
-                      per: -0.05
+                      base: -0.1
+                      per: -0.1
                   overlap: 4
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_2_2
+                    desc: Effect_Renew_BR_Io_N_2_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 1
                   erase:
                     rounds: 0
@@ -2780,12 +4802,29 @@ skills:
                     chance: 0%
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_21
+            - key: Effect_Renew_BR_Io_N_21
               on: criticaled
               if:
                 - false
@@ -2805,10 +4844,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Io_N_21_1
+                    desc: Effect_Renew_BR_Io_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2816,8 +4855,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_23_1
+                    type: 0
+                    value: Char_BR_Spriggan_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Spriggan_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2836,30 +4963,54 @@ skills:
       data:
         - - icon: BuffIcon_AP_DOWN
             desc:
-              desc: Effect_BR_Io_N_2_1
+              desc: Effect_Renew_BR_Io_N_2_1
               type: 0
-              value: "-0.500000"
-              level: "-0.050000"
-            base: -0.5
-            per: -0.05
+              value: "-0.100000"
+              level: "-0.100000"
+            base: -0.1
+            per: -0.1
             chance: 9.99
           - icon: BuffIcon_PhyATK_UP
             desc:
-              desc: Effect_BR_Io_N_2_2
+              desc: Effect_Renew_BR_Io_N_2_2
               type: 1
-              value: "0.200000"
-              level: "0.020000"
-            base: 0.2
-            per: 0.02
+              value: "0.040000"
+              level: "0.040000"
+            base: 0.04
+            per: 0.04
+            chance: 0
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_Renew_BR_Io_N_2_3
+              type: 0
+              value: Char_BR_Calista_N
+              level: "0"
+            value: Char_BR_Calista_N
             chance: 0
           - icon: BuffIcon_PhyATK_UP
             desc:
-              desc: Effect_BR_Io_N_21_1
+              desc: Effect_Renew_BR_Io_N_21_1
               type: 1
-              value: "0.200000"
-              level: "0.020000"
-            base: 0.2
-            per: 0.02
+              value: "0.040000"
+              level: "0.040000"
+            base: 0.04
+            per: 0.04
+            chance: 1
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_Renew_BR_Io_N_22_1
+              type: 0
+              value: Char_BR_Calista_N
+              level: "0"
+            value: Char_BR_Calista_N
+            chance: 1
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_Renew_BR_Io_N_23_1
+              type: 0
+              value: Char_BR_Spriggan_N
+              level: "0"
+            value: Char_BR_Spriggan_N
             chance: 1
   "3":
     key: "3"
@@ -3153,9 +5304,9 @@ skills:
   "4":
     key: "4"
     icon: P.TeamAtkBuff
-    target: team
+    target: enemy
     delayed: false
-    target_ground: false
+    target_ground: true
     leastGrade: 4
     buffs:
       index:
@@ -3174,7 +5325,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 4>0.75,0.75,0.75,1,1,1,0.75,0.75,0.75
+          grid: F>1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -3182,7 +5333,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Io_N_4
+            - key: Effect_Renew_BR_Io_N_4
               on: round
               if:
                 - false
@@ -3192,33 +5343,103 @@ skills:
                 - 1
               class:
                 - 0
+                - 1
                 - 2
               role:
                 - 0
                 - 1
-              target: 2
+                - 2
+              target: 4
               buffs:
-                - icon: BuffIcon_TROOPER_DMG_UP
+                - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Io_N_4_1
+                    desc: Effect_Renew_BR_Io_N_4_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
-                  attr: 0
+                    value: "0.015000"
+                    level: "0.015000"
+                  attr: 1
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 60
-                    damage_multiply:
-                      target: light
+                    type: 48
+                    damage_increase:
+                      base: 1.5%
+                      per: 1.5%
+                  overlap: 4
+                - icon: BuffIcon_VULNERABLE
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_4_2
+                    type: 1
+                    value: "0.015000"
+                    level: "0.015000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 48
+                    damage_increase:
+                      base: 1.5%
+                      per: 1.5%
+                  overlap: 4
+                - icon: BuffIcon_DEBUFF_RATEUP
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_4_3
+                    type: 1
+                    value: "0.050000"
+                    level: "0.050000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 90
+                    resist:
+                      type: debuff_rateup
                       value:
-                        base: 20%
-                        per: 2%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_4_4
+                    type: 1
+                    value: "-0.020000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 3
+                    defense:
+                      base: -2%
+                      per: -2%
+                  overlap: 4
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_4_5
+                    type: 1
+                    value: "-0.020000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 3
+                    defense:
+                      base: -2%
+                      per: -2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Io_N_41
+            - key: Effect_Renew_BR_Io_N_41
               on: round
               if:
                 - false
@@ -3231,25 +5452,148 @@ skills:
               role:
                 - 0
                 - 1
-              target: 2
+                - 2
+              target: 4
               buffs:
-                - icon: BuffIcon_TROOPER_DMG_UP
+                - icon: BuffIcon_VULNERABLE
                   desc:
-                    desc: Effect_BR_Io_N_41_1
+                    desc: Effect_Renew_BR_Io_N_41_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.030000"
-                  attr: 0
+                    value: "0.015000"
+                    level: "0.015000"
+                  attr: 1
                   erase:
                     rounds: 1
                   value:
                     isBuff: true
-                    type: 60
-                    damage_multiply:
-                      target: light
+                    type: 48
+                    damage_increase:
+                      base: 1.5%
+                      per: 1.5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_42
+              on: round
+              if:
+                - false
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_DEBUFF_RATEUP
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_42_1
+                    type: 1
+                    value: "0.050000"
+                    level: "0.050000"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 90
+                    resist:
+                      type: debuff_rateup
                       value:
-                        base: 30%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_43
+              on: round
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_43_1
+                    type: 1
+                    value: "-0.020000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -2%
+                      per: -2%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Io_N_44
+              on: round
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+              role:
+                - 0
+                - 1
+                - 2
+              target: 4
+              buffs:
+                - icon: BuffIcon_DEF_DOWN
+                  desc:
+                    desc: Effect_Renew_BR_Io_N_44_1
+                    type: 1
+                    value: "-0.020000"
+                    level: "-0.020000"
+                  attr: 1
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 3
+                    defense:
+                      base: -2%
+                      per: -2%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3266,23 +5610,86 @@ skills:
         - 0
         - 0
       data:
-        - - icon: BuffIcon_TROOPER_DMG_UP
+        - - icon: BuffIcon_VULNERABLE
             desc:
-              desc: Effect_BR_Io_N_4_1
+              desc: Effect_Renew_BR_Io_N_4_1
               type: 1
-              value: "0.200000"
-              level: "0.020000"
-            base: 0.2
-            per: 0.02
+              value: "0.015000"
+              level: "0.015000"
+            base: 0.015
+            per: 0.015
             chance: 1
-          - icon: BuffIcon_TROOPER_DMG_UP
+          - icon: BuffIcon_VULNERABLE
             desc:
-              desc: Effect_BR_Io_N_41_1
+              desc: Effect_Renew_BR_Io_N_4_2
               type: 1
-              value: "0.300000"
-              level: "0.030000"
-            base: 0.3
-            per: 0.03
+              value: "0.015000"
+              level: "0.015000"
+            base: 0.015
+            per: 0.015
+            chance: 0
+          - icon: BuffIcon_DEBUFF_RATEUP
+            desc:
+              desc: Effect_Renew_BR_Io_N_4_3
+              type: 1
+              value: "0.050000"
+              level: "0.050000"
+            base: 0.05
+            per: 0.05
+            chance: 0
+          - icon: BuffIcon_DEF_DOWN
+            desc:
+              desc: Effect_Renew_BR_Io_N_4_4
+              type: 1
+              value: "-0.020000"
+              level: "-0.020000"
+            base: -0.02
+            per: -0.02
+            chance: 0
+          - icon: BuffIcon_DEF_DOWN
+            desc:
+              desc: Effect_Renew_BR_Io_N_4_5
+              type: 1
+              value: "-0.020000"
+              level: "-0.020000"
+            base: -0.02
+            per: -0.02
+            chance: 0
+          - icon: BuffIcon_VULNERABLE
+            desc:
+              desc: Effect_Renew_BR_Io_N_41_1
+              type: 1
+              value: "0.015000"
+              level: "0.015000"
+            base: 0.015
+            per: 0.015
+            chance: 1
+          - icon: BuffIcon_DEBUFF_RATEUP
+            desc:
+              desc: Effect_Renew_BR_Io_N_42_1
+              type: 1
+              value: "0.050000"
+              level: "0.050000"
+            base: 0.05
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_DEF_DOWN
+            desc:
+              desc: Effect_Renew_BR_Io_N_43_1
+              type: 1
+              value: "-0.020000"
+              level: "-0.020000"
+            base: -0.02
+            per: -0.02
+            chance: 1
+          - icon: BuffIcon_DEF_DOWN
+            desc:
+              desc: Effect_Renew_BR_Io_N_44_1
+              type: 1
+              value: "-0.020000"
+              level: "-0.020000"
+            base: -0.02
+            per: -0.02
             chance: 1
   "5":
     key: "5"
@@ -4275,6 +6682,7 @@ skins:
   priceEx: ""
   G: false
   Spine: false
+  SpineDamaged: false
   parts: 4
   stage: false
   subset:
@@ -4307,6 +6715,7 @@ skins:
       price: 91
       G: true
       Spine: false
+      SpineDamaged: false
       parts: 68
       stage: false
       subset:
@@ -4341,6 +6750,7 @@ skins:
       price: 182
       G: true
       Spine: true
+      SpineDamaged: false
       parts: 78
       stage: false
       subset:

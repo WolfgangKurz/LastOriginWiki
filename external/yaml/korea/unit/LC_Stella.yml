@@ -486,6 +486,10 @@ chart:
   - 3
   - 3
   - 9
+cv:
+  "1": {}
+  "": {}
+  M: {}
 source: []
 oneoff: false
 oathable: true
@@ -1869,7 +1873,7 @@ skills:
                         base: 2%
                         per: 2%
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
             - key: Effect_BUFF_Overheat_N_1
               on: attack_success
@@ -2145,7 +2149,7 @@ skills:
                         base: 2%
                         per: 2%
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
             - key: Effect_BUFF_Overheat_N_1
               on: attack_success
@@ -2421,7 +2425,7 @@ skills:
                         base: 2%
                         per: 2%
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
             - key: Effect_BUFF_Overheat_N_1
               on: attack_success
@@ -2697,7 +2701,7 @@ skills:
                         base: 2%
                         per: 2%
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
             - key: Effect_BUFF_Overheat_N_1
               on: attack_success
@@ -2973,7 +2977,7 @@ skills:
                         base: 2%
                         per: 2%
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
             - key: Effect_BUFF_Overheat_N_1
               on: attack_success
@@ -3249,7 +3253,7 @@ skills:
                         base: 2%
                         per: 2%
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
             - key: Effect_BUFF_Overheat_N_1
               on: attack_success
@@ -3525,7 +3529,7 @@ skills:
                         base: 2%
                         per: 2%
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
             - key: Effect_BUFF_Overheat_N_1
               on: attack_success
@@ -3801,7 +3805,7 @@ skills:
                         base: 2%
                         per: 2%
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
             - key: Effect_BUFF_Overheat_N_1
               on: attack_success
@@ -4077,7 +4081,7 @@ skills:
                         base: 2%
                         per: 2%
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
             - key: Effect_BUFF_Overheat_N_1
               on: attack_success
@@ -4353,7 +4357,7 @@ skills:
                         base: 2%
                         per: 2%
                   overlap: 4
-              maxStack: 0
+              maxStack: 1
               overlapGroup: -1
             - key: Effect_BUFF_Overheat_N_1
               on: attack_success
@@ -5334,6 +5338,12 @@ skills:
               if:
                 - in_battle:
                     - Char_LC_Haru_N
+                    - Char_LC_Lily_N
+                    - Char_LC_Iris_N
+                    - Char_LC_Ephnel_N
+                    - Char_LC_Dhana_N
+                    - Char_LC_Chii_N
+                    - Char_LC_Nabi_N
                   more:
                     - 1
                     - 4
@@ -5374,6 +5384,12 @@ skills:
               if:
                 - in_battle:
                     - Char_LC_Haru_N
+                    - Char_LC_Lily_N
+                    - Char_LC_Iris_N
+                    - Char_LC_Ephnel_N
+                    - Char_LC_Dhana_N
+                    - Char_LC_Chii_N
+                    - Char_LC_Nabi_N
                   more:
                     - 2
                     - 4
@@ -5430,6 +5446,12 @@ skills:
               if:
                 - in_battle:
                     - Char_LC_Haru_N
+                    - Char_LC_Lily_N
+                    - Char_LC_Iris_N
+                    - Char_LC_Ephnel_N
+                    - Char_LC_Dhana_N
+                    - Char_LC_Chii_N
+                    - Char_LC_Nabi_N
                   more:
                     - 3
                     - 4
@@ -5504,6 +5526,12 @@ skills:
               if:
                 - in_battle:
                     - Char_LC_Haru_N
+                    - Char_LC_Lily_N
+                    - Char_LC_Iris_N
+                    - Char_LC_Ephnel_N
+                    - Char_LC_Dhana_N
+                    - Char_LC_Chii_N
+                    - Char_LC_Nabi_N
                   more:
                     - 4
                     - 4
@@ -5594,6 +5622,12 @@ skills:
               if:
                 - target:
                     - Char_LC_Haru_N
+                    - Char_LC_Lily_N
+                    - Char_LC_Iris_N
+                    - Char_LC_Ephnel_N
+                    - Char_LC_Dhana_N
+                    - Char_LC_Chii_N
+                    - Char_LC_Nabi_N
                 - false
               body:
                 - 0
@@ -6244,16 +6278,17 @@ skins:
   priceEx: ""
   G: true
   Spine: false
+  SpineDamaged: false
   parts: 4
   stage: false
   subset:
     - true
     - false
     - true
-    - true
     - false
     - false
-    - true
+    - false
+    - false
     - false
   anim:
     - false
@@ -6273,9 +6308,10 @@ skins:
   skins:
     - sid: 1
       artist: MEL
-      price: 357
+      price: 197
       G: true
       Spine: true
+      SpineDamaged: false
       parts: 78
       stage: false
       subset:

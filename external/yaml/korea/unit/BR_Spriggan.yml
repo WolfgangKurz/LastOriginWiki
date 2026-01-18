@@ -591,6 +591,9 @@ source:
     - Ev:Ev31:EV2-7
   - - Ev:Ev32:EV1-2
     - Ev:Ev32:EV2-6
+  - - Ev:Ev33:EV2-1EX
+    - Ev:Ev33:EV4-4EX
+  - - Ev:Ev35:EV1-3EX
 oneoff: false
 oathable: true
 entryReqMap: []
@@ -627,7 +630,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_1
+            - key: Effect_Renew_BR_Spriggan_N_1
               on: criticaled
               if:
                 - false
@@ -647,10 +650,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_1
+                    desc: Effect_Renew_BR_Spriggan_N_1_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -658,15 +661,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_2
+                    desc: Effect_Renew_BR_Spriggan_N_1_2
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -675,15 +678,15 @@ skills:
                     chance: 0%
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_3
+                    desc: Effect_Renew_BR_Spriggan_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -694,12 +697,29 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_1_4
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_11
+            - key: Effect_Renew_BR_Spriggan_N_11
               on: attack_success
               if:
                 - false
@@ -719,10 +739,10 @@ skills:
               buffs:
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_1
+                    desc: Effect_Renew_BR_Spriggan_N_11_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -730,15 +750,15 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_2
+                    desc: Effect_Renew_BR_Spriggan_N_11_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -748,8 +768,96 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_12_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -804,7 +912,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_1
+            - key: Effect_Renew_BR_Spriggan_N_1
               on: criticaled
               if:
                 - false
@@ -824,10 +932,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_1
+                    desc: Effect_Renew_BR_Spriggan_N_1_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -835,15 +943,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_2
+                    desc: Effect_Renew_BR_Spriggan_N_1_2
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -852,15 +960,15 @@ skills:
                     chance: 0%
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_3
+                    desc: Effect_Renew_BR_Spriggan_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -871,12 +979,29 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_1_4
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_11
+            - key: Effect_Renew_BR_Spriggan_N_11
               on: attack_success
               if:
                 - false
@@ -896,10 +1021,10 @@ skills:
               buffs:
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_1
+                    desc: Effect_Renew_BR_Spriggan_N_11_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -907,15 +1032,15 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_2
+                    desc: Effect_Renew_BR_Spriggan_N_11_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -925,8 +1050,96 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_12_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -981,7 +1194,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_1
+            - key: Effect_Renew_BR_Spriggan_N_1
               on: criticaled
               if:
                 - false
@@ -1001,10 +1214,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_1
+                    desc: Effect_Renew_BR_Spriggan_N_1_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1012,15 +1225,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_2
+                    desc: Effect_Renew_BR_Spriggan_N_1_2
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1029,15 +1242,15 @@ skills:
                     chance: 0%
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_3
+                    desc: Effect_Renew_BR_Spriggan_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1048,12 +1261,29 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_1_4
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_11
+            - key: Effect_Renew_BR_Spriggan_N_11
               on: attack_success
               if:
                 - false
@@ -1073,10 +1303,10 @@ skills:
               buffs:
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_1
+                    desc: Effect_Renew_BR_Spriggan_N_11_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1084,15 +1314,15 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_2
+                    desc: Effect_Renew_BR_Spriggan_N_11_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1102,8 +1332,96 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_12_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1158,7 +1476,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_1
+            - key: Effect_Renew_BR_Spriggan_N_1
               on: criticaled
               if:
                 - false
@@ -1178,10 +1496,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_1
+                    desc: Effect_Renew_BR_Spriggan_N_1_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1189,15 +1507,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_2
+                    desc: Effect_Renew_BR_Spriggan_N_1_2
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1206,15 +1524,15 @@ skills:
                     chance: 0%
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_3
+                    desc: Effect_Renew_BR_Spriggan_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1225,12 +1543,29 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_1_4
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_11
+            - key: Effect_Renew_BR_Spriggan_N_11
               on: attack_success
               if:
                 - false
@@ -1250,10 +1585,10 @@ skills:
               buffs:
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_1
+                    desc: Effect_Renew_BR_Spriggan_N_11_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1261,15 +1596,15 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_2
+                    desc: Effect_Renew_BR_Spriggan_N_11_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1279,8 +1614,96 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_12_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1335,7 +1758,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_1
+            - key: Effect_Renew_BR_Spriggan_N_1
               on: criticaled
               if:
                 - false
@@ -1355,10 +1778,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_1
+                    desc: Effect_Renew_BR_Spriggan_N_1_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1366,15 +1789,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_2
+                    desc: Effect_Renew_BR_Spriggan_N_1_2
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1383,15 +1806,15 @@ skills:
                     chance: 0%
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_3
+                    desc: Effect_Renew_BR_Spriggan_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1402,12 +1825,29 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_1_4
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_11
+            - key: Effect_Renew_BR_Spriggan_N_11
               on: attack_success
               if:
                 - false
@@ -1427,10 +1867,10 @@ skills:
               buffs:
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_1
+                    desc: Effect_Renew_BR_Spriggan_N_11_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1438,15 +1878,15 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_2
+                    desc: Effect_Renew_BR_Spriggan_N_11_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1456,8 +1896,96 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_12_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1512,7 +2040,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_1
+            - key: Effect_Renew_BR_Spriggan_N_1
               on: criticaled
               if:
                 - false
@@ -1532,10 +2060,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_1
+                    desc: Effect_Renew_BR_Spriggan_N_1_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1543,15 +2071,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_2
+                    desc: Effect_Renew_BR_Spriggan_N_1_2
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1560,15 +2088,15 @@ skills:
                     chance: 0%
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_3
+                    desc: Effect_Renew_BR_Spriggan_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1579,12 +2107,29 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_1_4
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_11
+            - key: Effect_Renew_BR_Spriggan_N_11
               on: attack_success
               if:
                 - false
@@ -1604,10 +2149,10 @@ skills:
               buffs:
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_1
+                    desc: Effect_Renew_BR_Spriggan_N_11_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1615,15 +2160,15 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_2
+                    desc: Effect_Renew_BR_Spriggan_N_11_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1633,8 +2178,96 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_12_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1689,7 +2322,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_1
+            - key: Effect_Renew_BR_Spriggan_N_1
               on: criticaled
               if:
                 - false
@@ -1709,10 +2342,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_1
+                    desc: Effect_Renew_BR_Spriggan_N_1_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1720,15 +2353,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_2
+                    desc: Effect_Renew_BR_Spriggan_N_1_2
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1737,15 +2370,15 @@ skills:
                     chance: 0%
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_3
+                    desc: Effect_Renew_BR_Spriggan_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1756,12 +2389,29 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_1_4
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_11
+            - key: Effect_Renew_BR_Spriggan_N_11
               on: attack_success
               if:
                 - false
@@ -1781,10 +2431,10 @@ skills:
               buffs:
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_1
+                    desc: Effect_Renew_BR_Spriggan_N_11_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1792,15 +2442,15 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_2
+                    desc: Effect_Renew_BR_Spriggan_N_11_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1810,8 +2460,96 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_12_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -1866,7 +2604,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_1
+            - key: Effect_Renew_BR_Spriggan_N_1
               on: criticaled
               if:
                 - false
@@ -1886,10 +2624,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_1
+                    desc: Effect_Renew_BR_Spriggan_N_1_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1897,15 +2635,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_2
+                    desc: Effect_Renew_BR_Spriggan_N_1_2
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1914,15 +2652,15 @@ skills:
                     chance: 0%
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_3
+                    desc: Effect_Renew_BR_Spriggan_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -1933,12 +2671,29 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_1_4
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_11
+            - key: Effect_Renew_BR_Spriggan_N_11
               on: attack_success
               if:
                 - false
@@ -1958,10 +2713,10 @@ skills:
               buffs:
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_1
+                    desc: Effect_Renew_BR_Spriggan_N_11_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1969,15 +2724,15 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_2
+                    desc: Effect_Renew_BR_Spriggan_N_11_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -1987,8 +2742,96 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_12_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2043,7 +2886,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_1
+            - key: Effect_Renew_BR_Spriggan_N_1
               on: criticaled
               if:
                 - false
@@ -2063,10 +2906,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_1
+                    desc: Effect_Renew_BR_Spriggan_N_1_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2074,15 +2917,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_2
+                    desc: Effect_Renew_BR_Spriggan_N_1_2
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2091,15 +2934,15 @@ skills:
                     chance: 0%
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_3
+                    desc: Effect_Renew_BR_Spriggan_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2110,12 +2953,29 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_1_4
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_11
+            - key: Effect_Renew_BR_Spriggan_N_11
               on: attack_success
               if:
                 - false
@@ -2135,10 +2995,10 @@ skills:
               buffs:
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_1
+                    desc: Effect_Renew_BR_Spriggan_N_11_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -2146,15 +3006,15 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_2
+                    desc: Effect_Renew_BR_Spriggan_N_11_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -2164,8 +3024,96 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_12_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2220,7 +3168,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_1
+            - key: Effect_Renew_BR_Spriggan_N_1
               on: criticaled
               if:
                 - false
@@ -2240,10 +3188,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_1
+                    desc: Effect_Renew_BR_Spriggan_N_1_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2251,15 +3199,15 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_2
+                    desc: Effect_Renew_BR_Spriggan_N_1_2
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2268,15 +3216,15 @@ skills:
                     chance: 0%
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_1_3
+                    desc: Effect_Renew_BR_Spriggan_N_1_3
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2287,12 +3235,29 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_1_4
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_11
+            - key: Effect_Renew_BR_Spriggan_N_11
               on: attack_success
               if:
                 - false
@@ -2312,10 +3277,10 @@ skills:
               buffs:
                 - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_1
+                    desc: Effect_Renew_BR_Spriggan_N_11_1
                     type: 1
-                    value: "0.300000"
-                    level: "0.040000"
+                    value: "0.070000"
+                    level: "0.070000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -2323,15 +3288,15 @@ skills:
                     isBuff: true
                     type: 58
                     penetration:
-                      base: 30%
-                      per: 4%
+                      base: 7%
+                      per: 7%
                   overlap: 4
                 - icon: BuffIcon_ARMORED_DMG_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_11_2
+                    desc: Effect_Renew_BR_Spriggan_N_11_2
                     type: 1
-                    value: "0.200000"
-                    level: "0.030000"
+                    value: "0.050000"
+                    level: "0.050000"
                   attr: 0
                   erase:
                     rounds: 0
@@ -2341,8 +3306,96 @@ skills:
                     damage_multiply:
                       target: heavy
                       value:
-                        base: 20%
-                        per: 3%
+                        base: 5%
+                        per: 5%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_12
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_12_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Io_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_13
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_13_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 102
+                    collaborate:
+                      skill: 1
+                      with: Char_BR_Calista_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2400,48 +3453,72 @@ skills:
       data:
         - - icon: BuffIcon_PhyATK_UP
             desc:
-              desc: Effect_BR_Spriggan_N_1_1
+              desc: Effect_Renew_BR_Spriggan_N_1_1
               type: 1
-              value: "0.200000"
-              level: "0.020000"
-            base: 0.2
-            per: 0.02
+              value: "0.040000"
+              level: "0.040000"
+            base: 0.04
+            per: 0.04
             chance: 1
           - icon: BuffIcon_DEF_PIERCE_UP
             desc:
-              desc: Effect_BR_Spriggan_N_1_2
+              desc: Effect_Renew_BR_Spriggan_N_1_2
               type: 1
-              value: "0.300000"
-              level: "0.040000"
-            base: 0.3
-            per: 0.04
+              value: "0.070000"
+              level: "0.070000"
+            base: 0.07
+            per: 0.07
             chance: 0
           - icon: BuffIcon_ARMORED_DMG_UP
             desc:
-              desc: Effect_BR_Spriggan_N_1_3
+              desc: Effect_Renew_BR_Spriggan_N_1_3
               type: 1
-              value: "0.200000"
-              level: "0.030000"
-            base: 0.2
-            per: 0.03
+              value: "0.050000"
+              level: "0.050000"
+            base: 0.05
+            per: 0.05
+            chance: 0
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_Renew_BR_Spriggan_N_1_4
+              type: 0
+              value: Char_BR_Io_N
+              level: "0"
+            value: Char_BR_Io_N
             chance: 0
           - icon: BuffIcon_DEF_PIERCE_UP
             desc:
-              desc: Effect_BR_Spriggan_N_11_1
+              desc: Effect_Renew_BR_Spriggan_N_11_1
               type: 1
-              value: "0.300000"
-              level: "0.040000"
-            base: 0.3
-            per: 0.04
+              value: "0.070000"
+              level: "0.070000"
+            base: 0.07
+            per: 0.07
             chance: 1
           - icon: BuffIcon_ARMORED_DMG_UP
             desc:
-              desc: Effect_BR_Spriggan_N_11_2
+              desc: Effect_Renew_BR_Spriggan_N_11_2
               type: 1
-              value: "0.200000"
-              level: "0.030000"
-            base: 0.2
-            per: 0.03
+              value: "0.050000"
+              level: "0.050000"
+            base: 0.05
+            per: 0.05
+            chance: 1
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_Renew_BR_Spriggan_N_12_1
+              type: 0
+              value: Char_BR_Io_N
+              level: "0"
+            value: Char_BR_Io_N
+            chance: 1
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_Renew_BR_Spriggan_N_13_1
+              type: 0
+              value: Char_BR_Calista_N
+              level: "0"
+            value: Char_BR_Calista_N
             chance: 1
           - icon: BuffIcon_REMOVE_DEBUFF
             desc:
@@ -2483,7 +3560,7 @@ skills:
           acc_bonus: 6
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_2
+            - key: Effect_Renew_BR_Spriggan_N_2
               on: attack_success
               if:
                 - on:
@@ -2508,10 +3585,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_1
+                    desc: Effect_Renew_BR_Spriggan_N_2_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2519,12 +3596,12 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_ACCURACY_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_2
+                    desc: Effect_Renew_BR_Spriggan_N_2_2
                     type: 1
                     value: "0.060000"
                     level: "0.060000"
@@ -2539,9 +3616,26 @@ skills:
                       base: 6%
                       per: 6%
                   overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_21
+            - key: Effect_Renew_BR_Spriggan_N_21
               on: attack_success
               if:
                 - on:
@@ -2566,10 +3660,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_21_1
+                    desc: Effect_Renew_BR_Spriggan_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2577,8 +3671,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_23_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2633,7 +3815,7 @@ skills:
           acc_bonus: 12
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_2
+            - key: Effect_Renew_BR_Spriggan_N_2
               on: attack_success
               if:
                 - on:
@@ -2658,10 +3840,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_1
+                    desc: Effect_Renew_BR_Spriggan_N_2_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2669,12 +3851,12 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_ACCURACY_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_2
+                    desc: Effect_Renew_BR_Spriggan_N_2_2
                     type: 1
                     value: "0.060000"
                     level: "0.060000"
@@ -2689,9 +3871,26 @@ skills:
                       base: 6%
                       per: 6%
                   overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_21
+            - key: Effect_Renew_BR_Spriggan_N_21
               on: attack_success
               if:
                 - on:
@@ -2716,10 +3915,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_21_1
+                    desc: Effect_Renew_BR_Spriggan_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2727,8 +3926,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_23_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2783,7 +4070,7 @@ skills:
           acc_bonus: 18
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_2
+            - key: Effect_Renew_BR_Spriggan_N_2
               on: attack_success
               if:
                 - on:
@@ -2808,10 +4095,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_1
+                    desc: Effect_Renew_BR_Spriggan_N_2_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2819,12 +4106,12 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_ACCURACY_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_2
+                    desc: Effect_Renew_BR_Spriggan_N_2_2
                     type: 1
                     value: "0.060000"
                     level: "0.060000"
@@ -2839,9 +4126,26 @@ skills:
                       base: 6%
                       per: 6%
                   overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_21
+            - key: Effect_Renew_BR_Spriggan_N_21
               on: attack_success
               if:
                 - on:
@@ -2866,10 +4170,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_21_1
+                    desc: Effect_Renew_BR_Spriggan_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2877,8 +4181,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_23_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -2933,7 +4325,7 @@ skills:
           acc_bonus: 24
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_2
+            - key: Effect_Renew_BR_Spriggan_N_2
               on: attack_success
               if:
                 - on:
@@ -2958,10 +4350,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_1
+                    desc: Effect_Renew_BR_Spriggan_N_2_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -2969,12 +4361,12 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_ACCURACY_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_2
+                    desc: Effect_Renew_BR_Spriggan_N_2_2
                     type: 1
                     value: "0.060000"
                     level: "0.060000"
@@ -2989,9 +4381,26 @@ skills:
                       base: 6%
                       per: 6%
                   overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_21
+            - key: Effect_Renew_BR_Spriggan_N_21
               on: attack_success
               if:
                 - on:
@@ -3016,10 +4425,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_21_1
+                    desc: Effect_Renew_BR_Spriggan_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3027,8 +4436,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_23_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3083,7 +4580,7 @@ skills:
           acc_bonus: 30
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_2
+            - key: Effect_Renew_BR_Spriggan_N_2
               on: attack_success
               if:
                 - on:
@@ -3108,10 +4605,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_1
+                    desc: Effect_Renew_BR_Spriggan_N_2_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3119,12 +4616,12 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_ACCURACY_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_2
+                    desc: Effect_Renew_BR_Spriggan_N_2_2
                     type: 1
                     value: "0.060000"
                     level: "0.060000"
@@ -3139,9 +4636,26 @@ skills:
                       base: 6%
                       per: 6%
                   overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_21
+            - key: Effect_Renew_BR_Spriggan_N_21
               on: attack_success
               if:
                 - on:
@@ -3166,10 +4680,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_21_1
+                    desc: Effect_Renew_BR_Spriggan_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3177,8 +4691,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_23_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3233,7 +4835,7 @@ skills:
           acc_bonus: 36
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_2
+            - key: Effect_Renew_BR_Spriggan_N_2
               on: attack_success
               if:
                 - on:
@@ -3258,10 +4860,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_1
+                    desc: Effect_Renew_BR_Spriggan_N_2_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3269,12 +4871,12 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_ACCURACY_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_2
+                    desc: Effect_Renew_BR_Spriggan_N_2_2
                     type: 1
                     value: "0.060000"
                     level: "0.060000"
@@ -3289,9 +4891,26 @@ skills:
                       base: 6%
                       per: 6%
                   overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_21
+            - key: Effect_Renew_BR_Spriggan_N_21
               on: attack_success
               if:
                 - on:
@@ -3316,10 +4935,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_21_1
+                    desc: Effect_Renew_BR_Spriggan_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3327,8 +4946,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_23_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3383,7 +5090,7 @@ skills:
           acc_bonus: 42
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_2
+            - key: Effect_Renew_BR_Spriggan_N_2
               on: attack_success
               if:
                 - on:
@@ -3408,10 +5115,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_1
+                    desc: Effect_Renew_BR_Spriggan_N_2_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3419,12 +5126,12 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_ACCURACY_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_2
+                    desc: Effect_Renew_BR_Spriggan_N_2_2
                     type: 1
                     value: "0.060000"
                     level: "0.060000"
@@ -3439,9 +5146,26 @@ skills:
                       base: 6%
                       per: 6%
                   overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_21
+            - key: Effect_Renew_BR_Spriggan_N_21
               on: attack_success
               if:
                 - on:
@@ -3466,10 +5190,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_21_1
+                    desc: Effect_Renew_BR_Spriggan_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3477,8 +5201,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_23_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3533,7 +5345,7 @@ skills:
           acc_bonus: 48
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_2
+            - key: Effect_Renew_BR_Spriggan_N_2
               on: attack_success
               if:
                 - on:
@@ -3558,10 +5370,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_1
+                    desc: Effect_Renew_BR_Spriggan_N_2_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3569,12 +5381,12 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_ACCURACY_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_2
+                    desc: Effect_Renew_BR_Spriggan_N_2_2
                     type: 1
                     value: "0.060000"
                     level: "0.060000"
@@ -3589,9 +5401,26 @@ skills:
                       base: 6%
                       per: 6%
                   overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_21
+            - key: Effect_Renew_BR_Spriggan_N_21
               on: attack_success
               if:
                 - on:
@@ -3616,10 +5445,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_21_1
+                    desc: Effect_Renew_BR_Spriggan_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3627,8 +5456,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_23_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3683,7 +5600,7 @@ skills:
           acc_bonus: 54
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_2
+            - key: Effect_Renew_BR_Spriggan_N_2
               on: attack_success
               if:
                 - on:
@@ -3708,10 +5625,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_1
+                    desc: Effect_Renew_BR_Spriggan_N_2_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3719,12 +5636,12 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_ACCURACY_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_2
+                    desc: Effect_Renew_BR_Spriggan_N_2_2
                     type: 1
                     value: "0.060000"
                     level: "0.060000"
@@ -3739,9 +5656,26 @@ skills:
                       base: 6%
                       per: 6%
                   overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_21
+            - key: Effect_Renew_BR_Spriggan_N_21
               on: attack_success
               if:
                 - on:
@@ -3766,10 +5700,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_21_1
+                    desc: Effect_Renew_BR_Spriggan_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3777,8 +5711,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_23_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3833,7 +5855,7 @@ skills:
           acc_bonus: 60
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_2
+            - key: Effect_Renew_BR_Spriggan_N_2
               on: attack_success
               if:
                 - on:
@@ -3858,10 +5880,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_1
+                    desc: Effect_Renew_BR_Spriggan_N_2_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3869,12 +5891,12 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
                   overlap: 4
                 - icon: BuffIcon_ACCURACY_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_2_2
+                    desc: Effect_Renew_BR_Spriggan_N_2_2
                     type: 1
                     value: "0.060000"
                     level: "0.060000"
@@ -3889,9 +5911,26 @@ skills:
                       base: 6%
                       per: 6%
                   overlap: 4
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_2_3
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 3
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_21
+            - key: Effect_Renew_BR_Spriggan_N_21
               on: attack_success
               if:
                 - on:
@@ -3916,10 +5955,10 @@ skills:
               buffs:
                 - icon: BuffIcon_PhyATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_21_1
+                    desc: Effect_Renew_BR_Spriggan_N_21_1
                     type: 1
-                    value: "0.200000"
-                    level: "0.020000"
+                    value: "0.040000"
+                    level: "0.040000"
                   attr: 3
                   erase:
                     rounds: 0
@@ -3927,8 +5966,96 @@ skills:
                     isBuff: true
                     type: 83
                     damage_add:
-                      base: 20%
-                      per: 2%
+                      base: 4%
+                      per: 4%
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_22
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_22_1
+                    type: 0
+                    value: Char_BR_Calista_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Calista_N
+                  overlap: 4
+              maxStack: 0
+              overlapGroup: -1
+            - key: Effect_Renew_BR_Spriggan_N_23
+              on: attack_success
+              if:
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
+                  more:
+                    - 5
+                    - 5
+                - false
+              body:
+                - 0
+                - 1
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 0
+              buffs:
+                - icon: BuffIcon_TOGETHER_ATTACK
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_23_1
+                    type: 0
+                    value: Char_BR_Io_N
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 103
+                    collaborate:
+                      skill: 2
+                      with: Char_BR_Io_N
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
@@ -3986,30 +6113,54 @@ skills:
       data:
         - - icon: BuffIcon_PhyATK_UP
             desc:
-              desc: Effect_BR_Spriggan_N_2_1
+              desc: Effect_Renew_BR_Spriggan_N_2_1
               type: 1
-              value: "0.200000"
-              level: "0.020000"
-            base: 0.2
-            per: 0.02
+              value: "0.040000"
+              level: "0.040000"
+            base: 0.04
+            per: 0.04
             chance: 1
           - icon: BuffIcon_ACCURACY_UP
             desc:
-              desc: Effect_BR_Spriggan_N_2_2
+              desc: Effect_Renew_BR_Spriggan_N_2_2
               type: 1
               value: "0.060000"
               level: "0.060000"
             base: 0.06
             per: 0.06
             chance: 0
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_Renew_BR_Spriggan_N_2_3
+              type: 0
+              value: Char_BR_Calista_N
+              level: "0"
+            value: Char_BR_Calista_N
+            chance: 0
           - icon: BuffIcon_PhyATK_UP
             desc:
-              desc: Effect_BR_Spriggan_N_21_1
+              desc: Effect_Renew_BR_Spriggan_N_21_1
               type: 1
-              value: "0.200000"
-              level: "0.020000"
-            base: 0.2
-            per: 0.02
+              value: "0.040000"
+              level: "0.040000"
+            base: 0.04
+            per: 0.04
+            chance: 1
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_Renew_BR_Spriggan_N_22_1
+              type: 0
+              value: Char_BR_Calista_N
+              level: "0"
+            value: Char_BR_Calista_N
+            chance: 1
+          - icon: BuffIcon_TOGETHER_ATTACK
+            desc:
+              desc: Effect_Renew_BR_Spriggan_N_23_1
+              type: 0
+              value: Char_BR_Io_N
+              level: "0"
+            value: Char_BR_Io_N
             chance: 1
           - icon: BuffIcon_REMOVE_DEBUFF
             desc:
@@ -4025,7 +6176,7 @@ skills:
     icon: P.SelfAtkBuff
     target: team
     delayed: false
-    target_ground: false
+    target_ground: true
     leastGrade: 3
     buffs:
       index:
@@ -4044,7 +6195,7 @@ skills:
           type: 0
           range: 0
           ap: 0
-          grid: 0,0,0,0,1,0,0,0,0
+          grid: F>1,1,1,1,1,1,1,1,1
           summon: null
           use: null
           enabled: true
@@ -4052,7 +6203,7 @@ skills:
           acc_bonus: 0
           buff_rate: 100
           buffs:
-            - key: Effect_BR_Spriggan_N_3
+            - key: Effect_Renew_BR_Spriggan_N_3
               on: round
               if:
                 - false
@@ -4068,14 +6219,14 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 2
               buffs:
                 - icon: BuffIcon_ATK_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_3_1
+                    desc: Effect_Renew_BR_Spriggan_N_3_1
                     type: 1
-                    value: "0.100000"
-                    level: "0.020000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -4083,15 +6234,15 @@ skills:
                     isBuff: true
                     type: 1
                     attack:
-                      base: 10%
-                      per: 2%
+                      base: 3%
+                      per: 3%
                   overlap: 4
                 - icon: BuffIcon_CRITICAL_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_3_2
+                    desc: Effect_Renew_BR_Spriggan_N_3_2
                     type: 1
-                    value: "0.050000"
-                    level: "0.010000"
+                    value: "0.020000"
+                    level: "0.020000"
                   attr: 0
                   erase:
                     rounds: 1
@@ -4099,69 +6250,45 @@ skills:
                     isBuff: true
                     type: 9
                     critical:
-                      base: 5%
-                      per: 1%
+                      base: 2%
+                      per: 2%
                   overlap: 4
                 - icon: BuffIcon_AP_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_3_3
+                    desc: Effect_Renew_BR_Spriggan_N_3_3
                     type: 1
-                    value: "0.100000"
-                    level: "0.010000"
+                    value: "0.020000"
+                    level: "0.020000"
                   attr: 0
                   erase:
-                    rounds: 0
+                    rounds: 1
+                  value:
+                    isBuff: true
+                    type: 13
+                    turnSpeed:
+                      base: 2%
+                      per: 2%
+                  overlap: 4
+                - icon: BuffIcon_DEF_PIERCE_UP
+                  desc:
+                    desc: Effect_Renew_BR_Spriggan_N_3_4
+                    type: 1
+                    value: "0.030000"
+                    level: "0.030000"
+                  attr: 0
+                  erase:
+                    rounds: 1
                   value:
                     isBuff: true
                     chance: 0%
-                    type: 13
-                    turnSpeed:
-                      base: 10%
-                      per: 1%
+                    type: 58
+                    penetration:
+                      base: 3%
+                      per: 3%
                   overlap: 4
               maxStack: 0
               overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_31
-              on: wave_end
-              if:
-                - on:
-                    target: self
-                    func: UNFILLED
-                    select:
-                      - Effect_BR_Spriggan_N_32
-                    attr: 6
-                - false
-              body:
-                - 0
-                - 1
-              class:
-                - 0
-                - 1
-                - 2
-              role:
-                - 0
-                - 1
-                - 2
-              target: 0
-              buffs:
-                - icon: BuffIcon_AP_UP
-                  desc:
-                    desc: Effect_BR_Spriggan_N_31_1
-                    type: 1
-                    value: "0.100000"
-                    level: "0.010000"
-                  attr: 0
-                  erase: {}
-                  value:
-                    isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 10%
-                      per: 1%
-                  overlap: 4
-              maxStack: 1
-              overlapGroup: -1
-            - key: Effect_BR_Spriggan_N_32
+            - key: Effect_Renew_BR_Spriggan_N_31
               on: round
               if:
                 - on:
@@ -4169,7 +6296,12 @@ skills:
                     select:
                       - Effect_BR_Spriggan_N_5
                     attr: 6
-                - false
+                - in_battle:
+                    - Char_BR_BloodyPanther_N
+                    - Char_BR_Io_N
+                    - Char_BR_Calista_N
+                    - Char_BR_Spriggan_N
+                    - Char_BR_Nashorn_N
               body:
                 - 0
                 - 1
@@ -4181,24 +6313,25 @@ skills:
                 - 0
                 - 1
                 - 2
-              target: 0
+              target: 2
               buffs:
-                - icon: BuffIcon_AP_UP
+                - icon: BuffIcon_DEF_PIERCE_UP
                   desc:
-                    desc: Effect_BR_Spriggan_N_32_1
+                    desc: Effect_Renew_BR_Spriggan_N_31_1
                     type: 1
-                    value: "0.100000"
-                    level: "0.010000"
+                    value: "0.030000"
+                    level: "0.030000"
                   attr: 0
-                  erase: {}
+                  erase:
+                    rounds: 1
                   value:
                     isBuff: true
-                    type: 13
-                    turnSpeed:
-                      base: 10%
-                      per: 1%
+                    type: 58
+                    penetration:
+                      base: 3%
+                      per: 3%
                   overlap: 4
-              maxStack: 1
+              maxStack: 0
               overlapGroup: -1
     values:
       index:
@@ -4215,48 +6348,48 @@ skills:
       data:
         - - icon: BuffIcon_ATK_UP
             desc:
-              desc: Effect_BR_Spriggan_N_3_1
+              desc: Effect_Renew_BR_Spriggan_N_3_1
               type: 1
-              value: "0.100000"
-              level: "0.020000"
-            base: 0.1
-            per: 0.02
+              value: "0.030000"
+              level: "0.030000"
+            base: 0.03
+            per: 0.03
             chance: 1
           - icon: BuffIcon_CRITICAL_UP
             desc:
-              desc: Effect_BR_Spriggan_N_3_2
+              desc: Effect_Renew_BR_Spriggan_N_3_2
               type: 1
-              value: "0.050000"
-              level: "0.010000"
-            base: 0.05
-            per: 0.01
+              value: "0.020000"
+              level: "0.020000"
+            base: 0.02
+            per: 0.02
             chance: 1
           - icon: BuffIcon_AP_UP
             desc:
-              desc: Effect_BR_Spriggan_N_3_3
+              desc: Effect_Renew_BR_Spriggan_N_3_3
               type: 1
-              value: "0.100000"
-              level: "0.010000"
-            base: 0.1
-            per: 0.01
+              value: "0.020000"
+              level: "0.020000"
+            base: 0.02
+            per: 0.02
+            chance: 1
+          - icon: BuffIcon_DEF_PIERCE_UP
+            desc:
+              desc: Effect_Renew_BR_Spriggan_N_3_4
+              type: 1
+              value: "0.030000"
+              level: "0.030000"
+            base: 0.03
+            per: 0.03
             chance: 0
-          - icon: BuffIcon_AP_UP
+          - icon: BuffIcon_DEF_PIERCE_UP
             desc:
-              desc: Effect_BR_Spriggan_N_31_1
+              desc: Effect_Renew_BR_Spriggan_N_31_1
               type: 1
-              value: "0.100000"
-              level: "0.010000"
-            base: 0.1
-            per: 0.01
-            chance: 1
-          - icon: BuffIcon_AP_UP
-            desc:
-              desc: Effect_BR_Spriggan_N_32_1
-              type: 1
-              value: "0.100000"
-              level: "0.010000"
-            base: 0.1
-            per: 0.01
+              value: "0.030000"
+              level: "0.030000"
+            base: 0.03
+            per: 0.03
             chance: 1
   "4":
     key: "4"
@@ -5644,6 +7777,7 @@ skins:
   priceEx: ""
   G: false
   Spine: false
+  SpineDamaged: false
   parts: 4
   stage: false
   subset:
@@ -5676,6 +7810,7 @@ skins:
       price: 136
       G: true
       Spine: false
+      SpineDamaged: false
       parts: 14
       stage: false
       subset:
@@ -5709,6 +7844,7 @@ skins:
       price: 182
       G: true
       Spine: true
+      SpineDamaged: false
       parts: 78
       stage: false
       subset:

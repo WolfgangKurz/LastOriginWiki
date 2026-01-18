@@ -36,6 +36,12 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 			LastOrigin: ["3P_BlackLilith_Title-3", "3P_BlackLilith_Title-6"]
 		}
 	},
+	"3P_Calypso": {
+		0: {
+			LastOrigin: ["3P_Calypso_N_Title1", "3P_Calypso_N_Title2", "3P_Calypso_N_Title3"],
+			VALOFE: ["3P_Calypso_N_Logo", "3P_Calypso_N_Logo2"]
+		}
+	},
 	"3P_ConstantiaS2": {
 		0: {
 			LastOrigin: ["3P_ConstantiaS2_Title-4", "3P_ConstantiaS2_Title-8"]
@@ -71,6 +77,12 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 			LastOrigin: ["3P_Labiata_Title-5", "3P_Labiata_Title-9"]
 		}
 	},
+	"3P_Lamia": {
+		0: {
+			LastOrigin: ["3P_Lamia_Title-1", "3P_Lamia_Title-2", "3P_Lamia_Title-3"],
+			VALOFE: ["3P_Lamia_VALOFE-1", "3P_Lamia_VALOFE-2", "3P_Lamia_VALOFE-3", "3P_Lamia_VALOFE-4"]
+		}
+	},
 	"3P_Maria": {
 		0: {
 			LastOrigin: ["3P_Maria_NS2_Title-4", "3P_Maria_NS2_Title-5"]
@@ -83,8 +95,8 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 	},
 	"3P_Merope": {
 		0: {
-			LastOrigin: ["Voice_3P_Merope_T-4", "Voice_3P_Merope_T-6", "Voice_3P_Merope_Title-2", "Voice_3P_Merope_Title-4"],
-			VALOFE: ["Voice_3P_Merope_V-1", "Voice_3P_Merope_V-4", "Voice_3P_Merope_V-4_2", "Voice_3P_Merope_V-5"]
+			LastOrigin: ["3P_Merope_T-4", "3P_Merope_T-6", "3P_Merope_Title-2", "3P_Merope_Title-4"],
+			VALOFE: ["3P_Merope_V-1", "3P_Merope_V-4", "3P_Merope_V-4_2", "3P_Merope_V-5"]
 		},
 	},
 	"3P_Poi": {
@@ -194,7 +206,10 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 	},
 	BR_Cheona: {
 		0: {
-			LastOrigin: ["BR_Cheona_Title-6", "BR_Cheona_Title-8"]
+			LastOrigin: ["BR_Cheona_Title-6", "BR_Cheona_Title-8", "BR_Cheona_N_Title", "BR_Cheona_N_Title2"]
+		},
+		3: {
+			VALOFE: ["BR_Cheona_NS3_Valofe1"]
 		}
 	},
 	BR_Djinnia: {
@@ -214,7 +229,8 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 	},
 	BR_Fafnir: {
 		0: {
-			LastOrigin: ["BR_Fafnir_Titlecall"],
+			LastOrigin: ["BR_Fafnir_Titlecall", "BR_Fafnir_N_Title", "BR_Fafnir_N_Title3"],
+			VALOFE: ["BR_Fafnir_N_Valofe2"]
 		},
 	},
 	BR_Habetrot: {
@@ -250,7 +266,8 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 	},
 	BR_JangHwa: {
 		0: {
-			LastOrigin: ["BR_JangHwa_Title-2", "BR_JangHwa_Title-3"]
+			LastOrigin: ["BR_JangHwa_Title-2", "BR_JangHwa_Title-3", "BR_JangHwa_N_Title", "BR_JangHwa_N_Title4"],
+			VALOFE: ["BR_Janghwa_N_Valofe3"]
 		}
 	},
 	BR_Leona: {
@@ -261,6 +278,12 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 	BR_Leprechaun: {
 		0: {
 			LastOrigin: ["BR_Leprechaun_Title-1", "BR_Leprechaun_Title-2"]
+		}
+	},
+	BR_MariaGrace: {
+		0: {
+			LastOrigin: ["BR_MariaGrace_N_Title", "BR_MariaGrace_N_Title5", "BR_MariaGrace_N_Title_01", "BR_MariaGrace_N_Title_02", "BR_MariaGrace_N_Title_03"],
+			VALOFE: ["BR_MariaGrace_N_Valofe4", "BR_MariaGrace_N_Valofe_01", "BR_MariaGrace_N_Valofe_02"]
 		}
 	},
 	BR_Marie: {
@@ -363,6 +386,12 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 			LastOrigin: ["BR_Spriggan_Title-2", "BR_Spriggan_Title-6"]
 		}
 	},
+	BR_Sterling: {
+		0: {
+			LastOrigin: ["BR_Sterling_N_Title1", "BR_Sterling_N_Title2", "BR_Sterling_N_Title3"],
+			VALOFE: ["BR_Sterling_N_Valofe1", "BR_Sterling_N_Valofe2"]
+		}
+	},
 	BR_Sylphid: {
 		0: {
 			LastOrigin: ["BR_Sylphid_NS1_Title-1", "BR_Sylphid_NS1_Title-6"]
@@ -381,6 +410,12 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 	BR_Valkyrie: {
 		0: {
 			LastOrigin: ["BR_Valkyrie_Title-1", "BR_Valkyrie_Title-2"]
+		}
+	},
+	BR_Vargr: {
+		0: {
+			LastOrigin: ["BR_Vargr_N_Title", "BR_Vargr_N_Title6"],
+			VALOFE: ["BR_Vargr_N_Valofe6"]
 		}
 	},
 	BR_WarWolf: {
@@ -428,10 +463,10 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 			LastOrigin: ["DS_KunouchiEnrai_Title-1", "DS_KunouchiEnrai_Title-9"]
 		}
 	},
-	PECS_Shepherd: {
+	DS_KunoichiShiden: {
 		0: {
-			LastOrigin: ["PECS_Shepherd_N_Title_Ciko", "PECS_Shepherd_N_Title-3", "PECS_Shepherd_N_Title-6"],
-			VALOFE: ["PECS_Shepherd_N_Valofe", "PECS_Shepherd_N_Valofe_pritty"]
+			LastOrigin: ["DS_KunoichiShiden_N_Title1", "DS_KunoichiShiden_N_Title2", "DS_KunoichiShiden_N_Title3"],
+			VALOFE: ["DS_KunoichiShiden_N_logo", "DS_KunoichiShiden_N_logo2"]
 		}
 	},
 	DS_MoMo: {
@@ -442,6 +477,54 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 	DS_Saraqael: {
 		0: {
 			LastOrigin: ["DS_Saraqael_Title-4", "DS_Saraqael_Title-7"]
+		}
+	},
+	LC_Chii: {
+		0: {
+			LastOrigin: ["LC_Chii_N_Title_01", "LC_Chii_N_Title_02", "LC_Chii_N_Title_03"],
+			VALOFE: ["LC_Chii_N_VALOFE_01", "LC_Chii_N_VALOFE_02"]
+		}
+	},
+	LC_Dhana: {
+		0: {
+			LastOrigin: ["LC_Dhana_N_Title_01", "LC_Dhana_N_Title_02", "LC_Dhana_N_Title_03"],
+			VALOFE: ["LC_Dhana_N_VALOFE_01", "LC_Dhana_N_VALOFE_02"]
+		}
+	},
+	LC_Ephnel: {
+		0: {
+			LastOrigin: ["LC_Ephnel_N_Title_01", "LC_Ephnel_N_Title_02", "LC_Ephnel_N_Title_03"],
+			VALOFE: ["LC_Ephnel_N_VALOFE_01", "LC_Ephnel_N_VALOFE_02"]
+		}
+	},
+	LC_Haru: {
+		0: {
+			LastOrigin: ["LC_Haru_N_Title_01", "LC_Haru_N_Title_02"],
+			VALOFE: ["LC_Haru_N_VALOFE_01", "LC_Haru_N_VALOFE_02"]
+		}
+	},
+	LC_Iris: {
+		0: {
+			LastOrigin: ["LC_Iris_N_Title_01", "LC_Iris_N_Title_02"],
+			VALOFE: ["LC_Iris_N_VALOFE_01", "LC_Iris_N_VALOFE_02"]
+		}
+	},
+	LC_Lily: {
+		0: {
+			LastOrigin: ["LC_Lily_N_Title_01", "LC_Lily_N_Title_02"],
+			VALOFE: ["LC_Lily_N_VALOFE_01", "LC_Lily_N_VALOFE_02"]
+		}
+	},
+	LC_Nabi: {
+		0: {
+			LastOrigin: ["LC_Nabi_N_Title_01", "LC_Nabi_N_Title_02", "LC_Nabi_N_Title_03"],
+			VALOFE: ["LC_Nabi_N_VALOFE_01", "LC_Nabi_N_VALOFE_02"]
+		}
+	},
+	LC_Stella: {
+		0: {
+			LastOrigin: ["LC_Stella_N_Title_01", "LC_Stella_N_Title_02"],
+			VALOFE: ["LC_Stella_N_VALOFE_01", "LC_Stella_N_VALOFE_02"]
 		}
 	},
 	PECS_BlindPrincess: {
@@ -525,6 +608,12 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 			LastOrigin: ["PECS_Ignis_Title-3", "PECS_Ignis_Title-4"]
 		}
 	},
+	PECS_Ireina: {
+		0: {
+			LastOrigin: ["PECS_Ireina_N_Title", "PECS_Ireina_N_Title2"],
+			VALOFE: ["PECS_Ireina_N_Valofe", "PECS_Ireina_N_Valofe2"]
+		}
+	},
 	PECS_Leanne: {
 		0: {
 			LastOrigin: ["PECS_Leanne_Title-2", "PECS_Leanne_Title-5"]
@@ -535,6 +624,12 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 			LastOrigin: ["beta_s8"],
 			VALOFE: ["beta_Valofe1", "beta_Valofe2"],
 			Uncategorized: ["beta_s1", "beta_s2", "beta_s3", "beta_s4", "beta_s5", "beta_s6", "beta_s7", "beta_s9", "beta_s10", "beta_s11"]
+		}
+	},
+	PECS_LemonadeEpsilon: {
+		0: {
+			LastOrigin: ["PECS_LemonadeEpsilon_NS_Title", "PECS_LemonadeEpsilon_NS_title2"],
+			VALOFE: ["PECS_LemonadeEpsilon_NS_v1", "PECS_LemonadeEpsilon_NS_v2"],
 		}
 	},
 	PECS_LRL: {
@@ -608,6 +703,12 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 			LastOrigin: ["PECS_Saetti_N_Title-11", "PECS_Saetti_N_Title-7"]
 		}
 	},
+	PECS_Shepherd: {
+		0: {
+			LastOrigin: ["PECS_Shepherd_N_Title_Ciko", "PECS_Shepherd_N_Title-3", "PECS_Shepherd_N_Title-6"],
+			VALOFE: ["PECS_Shepherd_N_Valofe", "PECS_Shepherd_N_Valofe_pritty"]
+		}
+	},
 	PECS_Sonia: {
 		0: {
 			LastOrigin: ["PECS_Sonia_Title-2", "PECS_Sonia_Title-5"]
@@ -668,9 +769,17 @@ export const ArtistLinks: Record<string, Partial<Record<ArtistLinkType, string>>
 		X: "https://x.com/bumch_a",
 		Pixiv: "https://www.pixiv.net/users/52638065",
 	},
+	"CheLA77": {
+		X: "https://x.com/CheLA_777",
+		Pixiv: "https://www.pixiv.net/users/44811365",
+	},
 	"CHO!CHO!": {
 		X: "https://x.com/CHOiCHOi_999",
 		Pixiv: "https://www.pixiv.net/users/9899824",
+	},
+	"Cho gyeong nam": {
+		X: "https://x.com/whrudska234",
+		ArtStation: "https://www.artstation.com/kyungnam234/profile",
 	},
 	"CHoney": {
 		X: "https://x.com/choney1108",
@@ -686,6 +795,10 @@ export const ArtistLinks: Record<string, Partial<Record<ArtistLinkType, string>>
 	"D-loG": {
 		X: "https://x.com/DloG56006129",
 		Pixiv: "https://www.pixiv.net/users/10920551",
+	},
+	"gonster": {
+		X: "https://x.com/gonstool",
+		Pixiv: "https://www.pixiv.net/users/114920",
 	},
 	"Henry Davis": {
 		X: "https://x.com/HenryDavistwit",
@@ -715,6 +828,10 @@ export const ArtistLinks: Record<string, Partial<Record<ArtistLinkType, string>>
 	"One": {
 		X: "https://x.com/LcFC8aRS2NWcCm9",
 		Pixiv: "https://www.pixiv.net/users/2092955",
+	},
+	"Orehalcon": {
+		X: "https://x.com/ore_halcon",
+		Pixiv: "https://www.pixiv.net/users/973926",
 	},
 	"PaintAle": {
 		X: "https://x.com/lyde0713",
@@ -801,6 +918,10 @@ export const ArtistLinks: Record<string, Partial<Record<ArtistLinkType, string>>
 	"ねろましん(Neromashin)": {
 		X: "https://x.com/neromashin001",
 		Pixiv: "https://www.pixiv.net/users/1872899",
+	},
+	"めろん２２(Melon22)": {
+		X: "https://x.com/melonnyinyi",
+		Pixiv: "https://www.pixiv.net/users/2963688",
 	},
 	"れつな(Retsuna)": {
 		X: "https://x.com/Retsuna_Blue",

@@ -67,17 +67,32 @@ export function ParseDescriptionText (text: string): preact.VNode[] {
 					const tag = parseBuffer.join(""); // parsed tag
 					parseBuffer.splice(0, parseBuffer.length); // clear buffer
 
-					if (tag === "-") // close tag
-						current = current.parent!;
-					else if (tag.startsWith("/")) {
+					if (tag === "-") {// close tag
+						if (current.parent !== null)
+							current = current.parent!;
+					} else if (tag.startsWith("/")) {
 						const target = tag.substring(1);
 						// close tag until find same tagname
-						while (current.parent !== null) {
+						while (current && current.parent !== null) {
 							let found = current.tag.type === target;
 							current = current.parent;
 							if (found) break;
 						}
-					} else if (/^[0-9A-Fa-f]{6}$/.test(tag)) { // color tag
+					} else if (/^[0-9A-Fa-f]{6}$/.test(tag)) { // color tag (rgb)
+						const t: ParseTreeItem = {
+							tag: {
+								type: "span",
+								attrs: {
+									"data-color": `#${tag}`,
+									"style": `color:#${tag}`,
+								},
+							},
+							parent: current,
+							children: [],
+						};
+						current.children.push(t);
+						current = t;
+					} else if (/^[0-9A-Fa-f]{8}$/.test(tag)) { // color tag (rgba)
 						const t: ParseTreeItem = {
 							tag: {
 								type: "span",

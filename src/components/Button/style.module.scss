@@ -45,7 +45,7 @@
 	@each $key, $color in $theme-colors {
 		&.Variant-#{$key} {
 			background-color: $color;
-			color: contrast-color($color);
+			color: bw-contrast-color($color);
 
 			&:not(:disabled) {
 				&:hover {

@@ -68,7 +68,7 @@ stats:
         base: 10%
         per: 0%
     - key: Effect_BUFF_VerminEliminator_N_1
-      on: round
+      on: wave
       if:
         - false
         - false
@@ -85,37 +85,35 @@ stats:
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_DEF_PIERCE_UP
+        - icon: BuffIcon_IMMUNITY_DEBUFF
           desc:
             desc: Effect_BUFF_VerminEliminator_N_1_1
+            type: 1
+            value: "1"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 101
+            debuff_immune: 1
+          overlap: 4
+        - icon: BuffIcon_DamageAmp_Opp
+          desc:
+            desc: Effect_BUFF_VerminEliminator_N_1_2
             type: 1
             value: "0.250000"
             level: "0"
           attr: 3
-          erase:
-            rounds: 1
+          erase: {}
           value:
             isBuff: true
-            type: 58
-            penetration:
-              base: 25%
-              per: 0%
-          overlap: 4
-        - icon: BuffIcon_REMOVE_DEBUFF
-          desc:
-            desc: Effect_BUFF_VerminEliminator_N_1_2
-            type: 0
-            value: "1"
-            level: "0"
-          attr: 3
-          erase:
-            rounds: 0
-          value:
-            isBuff: true
-            type: 89
-            off:
-              type: 1
-              target: 1
+            type: 81
+            damage_by_hp:
+              target: target
+              damage:
+                base: 25%
+                per: 0%
           overlap: 4
       maxStack: 0
   - - type: 0
@@ -131,7 +129,7 @@ stats:
         base: 12%
         per: 0%
     - key: Effect_BUFF_VerminEliminator_N_2
-      on: round
+      on: wave
       if:
         - false
         - false
@@ -148,37 +146,35 @@ stats:
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_DEF_PIERCE_UP
+        - icon: BuffIcon_IMMUNITY_DEBUFF
           desc:
             desc: Effect_BUFF_VerminEliminator_N_2_1
             type: 1
-            value: "0.290000"
-            level: "0"
-          attr: 3
-          erase:
-            rounds: 1
-          value:
-            isBuff: true
-            type: 58
-            penetration:
-              base: 29%
-              per: 0%
-          overlap: 4
-        - icon: BuffIcon_REMOVE_DEBUFF
-          desc:
-            desc: Effect_BUFF_VerminEliminator_N_2_2
-            type: 0
             value: "1"
             level: "0"
           attr: 3
-          erase:
-            rounds: 0
+          erase: {}
           value:
             isBuff: true
-            type: 89
-            off:
-              type: 1
-              target: 1
+            type: 101
+            debuff_immune: 1
+          overlap: 4
+        - icon: BuffIcon_DamageAmp_Opp
+          desc:
+            desc: Effect_BUFF_VerminEliminator_N_2_2
+            type: 1
+            value: "0.275000"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 81
+            damage_by_hp:
+              target: target
+              damage:
+                base: 27.5%
+                per: 0%
           overlap: 4
       maxStack: 0
   - - type: 0
@@ -194,7 +190,7 @@ stats:
         base: 14%
         per: 0%
     - key: Effect_BUFF_VerminEliminator_N_3
-      on: round
+      on: wave
       if:
         - false
         - false
@@ -211,37 +207,35 @@ stats:
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_DEF_PIERCE_UP
+        - icon: BuffIcon_IMMUNITY_DEBUFF
           desc:
             desc: Effect_BUFF_VerminEliminator_N_3_1
             type: 1
-            value: "0.330000"
-            level: "0"
-          attr: 3
-          erase:
-            rounds: 1
-          value:
-            isBuff: true
-            type: 58
-            penetration:
-              base: 33%
-              per: 0%
-          overlap: 4
-        - icon: BuffIcon_REMOVE_DEBUFF
-          desc:
-            desc: Effect_BUFF_VerminEliminator_N_3_2
-            type: 0
             value: "1"
             level: "0"
           attr: 3
-          erase:
-            rounds: 0
+          erase: {}
           value:
             isBuff: true
-            type: 89
-            off:
-              type: 1
-              target: 1
+            type: 101
+            debuff_immune: 1
+          overlap: 4
+        - icon: BuffIcon_DamageAmp_Opp
+          desc:
+            desc: Effect_BUFF_VerminEliminator_N_3_2
+            type: 1
+            value: "0.300000"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 81
+            damage_by_hp:
+              target: target
+              damage:
+                base: 30%
+                per: 0%
           overlap: 4
       maxStack: 0
   - - type: 0
@@ -257,7 +251,7 @@ stats:
         base: 16%
         per: 0%
     - key: Effect_BUFF_VerminEliminator_N_4
-      on: round
+      on: wave
       if:
         - false
         - false
@@ -274,37 +268,35 @@ stats:
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_DEF_PIERCE_UP
+        - icon: BuffIcon_IMMUNITY_DEBUFF
           desc:
             desc: Effect_BUFF_VerminEliminator_N_4_1
             type: 1
-            value: "0.370000"
-            level: "0"
-          attr: 3
-          erase:
-            rounds: 1
-          value:
-            isBuff: true
-            type: 58
-            penetration:
-              base: 37%
-              per: 0%
-          overlap: 4
-        - icon: BuffIcon_REMOVE_DEBUFF
-          desc:
-            desc: Effect_BUFF_VerminEliminator_N_4_2
-            type: 0
             value: "1"
             level: "0"
           attr: 3
-          erase:
-            rounds: 0
+          erase: {}
           value:
             isBuff: true
-            type: 89
-            off:
-              type: 1
-              target: 1
+            type: 101
+            debuff_immune: 1
+          overlap: 4
+        - icon: BuffIcon_DamageAmp_Opp
+          desc:
+            desc: Effect_BUFF_VerminEliminator_N_4_2
+            type: 1
+            value: "0.325000"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 81
+            damage_by_hp:
+              target: target
+              damage:
+                base: 32.5%
+                per: 0%
           overlap: 4
       maxStack: 0
   - - type: 0
@@ -320,7 +312,7 @@ stats:
         base: 18%
         per: 0%
     - key: Effect_BUFF_VerminEliminator_N_5
-      on: round
+      on: wave
       if:
         - false
         - false
@@ -337,37 +329,35 @@ stats:
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_DEF_PIERCE_UP
+        - icon: BuffIcon_IMMUNITY_DEBUFF
           desc:
             desc: Effect_BUFF_VerminEliminator_N_5_1
             type: 1
-            value: "0.410000"
-            level: "0"
-          attr: 3
-          erase:
-            rounds: 1
-          value:
-            isBuff: true
-            type: 58
-            penetration:
-              base: 41%
-              per: 0%
-          overlap: 4
-        - icon: BuffIcon_REMOVE_DEBUFF
-          desc:
-            desc: Effect_BUFF_VerminEliminator_N_5_2
-            type: 0
             value: "1"
             level: "0"
           attr: 3
-          erase:
-            rounds: 0
+          erase: {}
           value:
             isBuff: true
-            type: 89
-            off:
-              type: 1
-              target: 1
+            type: 101
+            debuff_immune: 1
+          overlap: 4
+        - icon: BuffIcon_DamageAmp_Opp
+          desc:
+            desc: Effect_BUFF_VerminEliminator_N_5_2
+            type: 1
+            value: "0.350000"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 81
+            damage_by_hp:
+              target: target
+              damage:
+                base: 35%
+                per: 0%
           overlap: 4
       maxStack: 0
   - - type: 0
@@ -383,7 +373,7 @@ stats:
         base: 20%
         per: 0%
     - key: Effect_BUFF_VerminEliminator_N_6
-      on: round
+      on: wave
       if:
         - false
         - false
@@ -400,37 +390,35 @@ stats:
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_DEF_PIERCE_UP
+        - icon: BuffIcon_IMMUNITY_DEBUFF
           desc:
             desc: Effect_BUFF_VerminEliminator_N_6_1
             type: 1
-            value: "0.450000"
-            level: "0"
-          attr: 3
-          erase:
-            rounds: 1
-          value:
-            isBuff: true
-            type: 58
-            penetration:
-              base: 45%
-              per: 0%
-          overlap: 4
-        - icon: BuffIcon_REMOVE_DEBUFF
-          desc:
-            desc: Effect_BUFF_VerminEliminator_N_6_2
-            type: 0
             value: "1"
             level: "0"
           attr: 3
-          erase:
-            rounds: 0
+          erase: {}
           value:
             isBuff: true
-            type: 89
-            off:
-              type: 1
-              target: 1
+            type: 101
+            debuff_immune: 1
+          overlap: 4
+        - icon: BuffIcon_DamageAmp_Opp
+          desc:
+            desc: Effect_BUFF_VerminEliminator_N_6_2
+            type: 1
+            value: "0.375000"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 81
+            damage_by_hp:
+              target: target
+              damage:
+                base: 37.5%
+                per: 0%
           overlap: 4
       maxStack: 0
   - - type: 0
@@ -446,7 +434,7 @@ stats:
         base: 22%
         per: 0%
     - key: Effect_BUFF_VerminEliminator_N_7
-      on: round
+      on: wave
       if:
         - false
         - false
@@ -463,37 +451,35 @@ stats:
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_DEF_PIERCE_UP
+        - icon: BuffIcon_IMMUNITY_DEBUFF
           desc:
             desc: Effect_BUFF_VerminEliminator_N_7_1
             type: 1
-            value: "0.490000"
-            level: "0"
-          attr: 3
-          erase:
-            rounds: 1
-          value:
-            isBuff: true
-            type: 58
-            penetration:
-              base: 49%
-              per: 0%
-          overlap: 4
-        - icon: BuffIcon_REMOVE_DEBUFF
-          desc:
-            desc: Effect_BUFF_VerminEliminator_N_7_2
-            type: 0
             value: "1"
             level: "0"
           attr: 3
-          erase:
-            rounds: 0
+          erase: {}
           value:
             isBuff: true
-            type: 89
-            off:
-              type: 1
-              target: 1
+            type: 101
+            debuff_immune: 1
+          overlap: 4
+        - icon: BuffIcon_DamageAmp_Opp
+          desc:
+            desc: Effect_BUFF_VerminEliminator_N_7_2
+            type: 1
+            value: "0.400000"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 81
+            damage_by_hp:
+              target: target
+              damage:
+                base: 40%
+                per: 0%
           overlap: 4
       maxStack: 0
   - - type: 0
@@ -509,7 +495,7 @@ stats:
         base: 24%
         per: 0%
     - key: Effect_BUFF_VerminEliminator_N_8
-      on: round
+      on: wave
       if:
         - false
         - false
@@ -526,37 +512,35 @@ stats:
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_DEF_PIERCE_UP
+        - icon: BuffIcon_IMMUNITY_DEBUFF
           desc:
             desc: Effect_BUFF_VerminEliminator_N_8_1
             type: 1
-            value: "0.530000"
-            level: "0"
-          attr: 3
-          erase:
-            rounds: 1
-          value:
-            isBuff: true
-            type: 58
-            penetration:
-              base: 53%
-              per: 0%
-          overlap: 4
-        - icon: BuffIcon_REMOVE_DEBUFF
-          desc:
-            desc: Effect_BUFF_VerminEliminator_N_8_2
-            type: 0
             value: "1"
             level: "0"
           attr: 3
-          erase:
-            rounds: 0
+          erase: {}
           value:
             isBuff: true
-            type: 89
-            off:
-              type: 1
-              target: 1
+            type: 101
+            debuff_immune: 1
+          overlap: 4
+        - icon: BuffIcon_DamageAmp_Opp
+          desc:
+            desc: Effect_BUFF_VerminEliminator_N_8_2
+            type: 1
+            value: "0.425000"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 81
+            damage_by_hp:
+              target: target
+              damage:
+                base: 42.5%
+                per: 0%
           overlap: 4
       maxStack: 0
   - - type: 0
@@ -572,7 +556,7 @@ stats:
         base: 26%
         per: 0%
     - key: Effect_BUFF_VerminEliminator_N_9
-      on: round
+      on: wave
       if:
         - false
         - false
@@ -589,37 +573,35 @@ stats:
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_DEF_PIERCE_UP
+        - icon: BuffIcon_IMMUNITY_DEBUFF
           desc:
             desc: Effect_BUFF_VerminEliminator_N_9_1
             type: 1
-            value: "0.570000"
-            level: "0"
-          attr: 3
-          erase:
-            rounds: 1
-          value:
-            isBuff: true
-            type: 58
-            penetration:
-              base: 57%
-              per: 0%
-          overlap: 4
-        - icon: BuffIcon_REMOVE_DEBUFF
-          desc:
-            desc: Effect_BUFF_VerminEliminator_N_9_2
-            type: 0
             value: "1"
             level: "0"
           attr: 3
-          erase:
-            rounds: 0
+          erase: {}
           value:
             isBuff: true
-            type: 89
-            off:
-              type: 1
-              target: 1
+            type: 101
+            debuff_immune: 1
+          overlap: 4
+        - icon: BuffIcon_DamageAmp_Opp
+          desc:
+            desc: Effect_BUFF_VerminEliminator_N_9_2
+            type: 1
+            value: "0.450000"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 81
+            damage_by_hp:
+              target: target
+              damage:
+                base: 45%
+                per: 0%
           overlap: 4
       maxStack: 0
   - - type: 0
@@ -635,7 +617,7 @@ stats:
         base: 28%
         per: 0%
     - key: Effect_BUFF_VerminEliminator_N_10
-      on: round
+      on: wave
       if:
         - false
         - false
@@ -652,37 +634,35 @@ stats:
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_DEF_PIERCE_UP
+        - icon: BuffIcon_IMMUNITY_DEBUFF
           desc:
             desc: Effect_BUFF_VerminEliminator_N_10_1
             type: 1
-            value: "0.610000"
-            level: "0"
-          attr: 3
-          erase:
-            rounds: 1
-          value:
-            isBuff: true
-            type: 58
-            penetration:
-              base: 61%
-              per: 0%
-          overlap: 4
-        - icon: BuffIcon_REMOVE_DEBUFF
-          desc:
-            desc: Effect_BUFF_VerminEliminator_N_10_2
-            type: 0
             value: "1"
             level: "0"
           attr: 3
-          erase:
-            rounds: 0
+          erase: {}
           value:
             isBuff: true
-            type: 89
-            off:
-              type: 1
-              target: 1
+            type: 101
+            debuff_immune: 1
+          overlap: 4
+        - icon: BuffIcon_DamageAmp_Opp
+          desc:
+            desc: Effect_BUFF_VerminEliminator_N_10_2
+            type: 1
+            value: "0.475000"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 81
+            damage_by_hp:
+              target: target
+              damage:
+                base: 47.5%
+                per: 0%
           overlap: 4
       maxStack: 0
   - - type: 0
@@ -698,7 +678,7 @@ stats:
         base: 30%
         per: 0%
     - key: Effect_BUFF_VerminEliminator_N_11
-      on: round
+      on: wave
       if:
         - false
         - false
@@ -715,36 +695,34 @@ stats:
         - 2
       target: 0
       buffs:
-        - icon: BuffIcon_DEF_PIERCE_UP
+        - icon: BuffIcon_IMMUNITY_DEBUFF
           desc:
             desc: Effect_BUFF_VerminEliminator_N_11_1
             type: 1
-            value: "0.650000"
-            level: "0"
-          attr: 3
-          erase:
-            rounds: 1
-          value:
-            isBuff: true
-            type: 58
-            penetration:
-              base: 65%
-              per: 0%
-          overlap: 4
-        - icon: BuffIcon_REMOVE_DEBUFF
-          desc:
-            desc: Effect_BUFF_VerminEliminator_N_11_2
-            type: 0
             value: "1"
             level: "0"
           attr: 3
-          erase:
-            rounds: 0
+          erase: {}
           value:
             isBuff: true
-            type: 89
-            off:
-              type: 1
-              target: 1
+            type: 101
+            debuff_immune: 1
+          overlap: 4
+        - icon: BuffIcon_DamageAmp_Opp
+          desc:
+            desc: Effect_BUFF_VerminEliminator_N_11_2
+            type: 1
+            value: "0.500000"
+            level: "0"
+          attr: 3
+          erase: {}
+          value:
+            isBuff: true
+            type: 81
+            damage_by_hp:
+              target: target
+              damage:
+                base: 50%
+                per: 0%
           overlap: 4
       maxStack: 0
