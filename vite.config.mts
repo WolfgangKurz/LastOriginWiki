@@ -14,7 +14,7 @@ import preact from "@preact/preset-vite";
 
 import pixiUrlPatch from "./plugins/pixi-url-patch";
 
-console.log("building...");
+console.log(cyan("* preparing..."));
 export default defineConfig(async ({ mode }) => {
 	const viteEnv = loadEnv(mode, process.cwd());
 
