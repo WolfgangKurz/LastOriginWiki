@@ -6,7 +6,7 @@ interface InputProps {
 	sm?: boolean;
 }
 
-const Input: FunctionalComponent<preact.JSX.HTMLAttributes<HTMLInputElement> & InputProps> =
+const Input: FunctionalComponent<preact.JSX.InputHTMLAttributes<HTMLInputElement> & InputProps> =
 	({ children, class: _class, ...props }) => {
 		return <input
 			class={ cn(style.Input, props.sm && style.Small, _class) }

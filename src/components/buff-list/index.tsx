@@ -11,9 +11,9 @@ import { UNIT_POSITION, BUFF_ATTR_TYPE, SKILL_ATTR, ACTOR_BODY_TYPE, ACTOR_CLASS
 import { StatPointValue } from "@/types/Stat";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { Enemy } from "@/types/DB/Enemy";
-import BuffFrom, { BuffFrom_Equip } from "@/types/DB/BuffFrom";
+import BuffFrom from "@/types/DB/BuffFrom";
 
-import { ImageExtension, AssetsRoot, TroopNameTable, IsDev } from "@/libs/Const";
+import { ImageExtension, TroopNameTable, IsDev } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 import { formatString, useLocale } from "@/libs/Locale";
 import { BuildClass, cn } from "@/libs/Class";
@@ -793,6 +793,24 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						return <Locale raw={ false } k="BUFFTYPE_STAGE_DOUBLE_ATTACK_RATIO" />; // 사용처 없음, 공격력 2배?
 					case BUFFEFFECT_TYPE.RESIST_CHECK_ATTACK_POWER: // 141
 						return <Locale raw={ false } k="BUFFTYPE_RESIST_CHECK_ATTACK_POWER" />;
+
+					case BUFFEFFECT_TYPE.DEF_DAMAGE_REDUCE: // 방어력 비례 방어막
+						return <Locale raw={ false } k="BUFFTYPE_DEF_DAMAGE_REDUCE" />;
+					case BUFFEFFECT_TYPE.DEF_DAMAGE_ADD: // 방어력 비례 피해량 증가
+						return <Locale raw={ false } k="BUFFTYPE_DEF_DAMAGE_ADD" />;
+
+					case BUFFEFFECT_TYPE.RATIO_DMG_GIVER_MAX_HP: // 버퍼 최대 HP 비례 피해
+					case BUFFEFFECT_TYPE.RATIO_DMG_GIVER_CURRENT_HP: // 버퍼 현재 HP 비례 피해
+					case BUFFEFFECT_TYPE.RATIO_DMG_TARGET_MAX_HP: // 대상 최대 HP 비례 피해
+					case BUFFEFFECT_TYPE.RATIO_DMG_TARGET_CURRENT_HP: // 대상 현재 HP 비례 피해
+						return <Locale raw={ false } k="BUFFTYPE_RATIO_DMG_OF" p={ [
+							type === BUFFEFFECT_TYPE.RATIO_DMG_GIVER_MAX_HP || type === BUFFEFFECT_TYPE.RATIO_DMG_GIVER_CURRENT_HP
+								? <Locale raw={ false } k="BUFFTARGET_BY_BUFFER" />
+								: <Locale raw={ false } k="BUFFTARGET_BY_TARGET" />,
+							type === BUFFEFFECT_TYPE.RATIO_DMG_GIVER_MAX_HP || type === BUFFEFFECT_TYPE.RATIO_DMG_TARGET_MAX_HP
+								? <Locale raw={ false } k="BUFFEFFECT_BY_MAX_HP" />
+								: <Locale raw={ false } k="BUFFEFFECT_BY_HP" />,
+						] } />;
 				}
 				return <>{ type }</>;
 			})() }
@@ -1231,9 +1249,11 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 						.gap(<Locale raw={ false } k="BUFFTRIGGER_OR" />)
 				}</>] } />;
 			} else if ("use_skill" in trigger) {
-				if (typeof trigger.use_skill === "number")
+				if (typeof trigger.use_skill === "number") {
+					if (trigger.use_skill === 0)
+						return <Locale raw={ false } k="BUFFTRIGGER_ALLY_USE_SKILL" />;
 					return <Locale raw={ false } k="BUFFTRIGGER_USE_SKILL" p={ [trigger.use_skill] } />;
-				else
+				} else
 					return <Locale raw={ false } k="BUFFTRIGGER_USE_SKILL" p={ [
 						<span class={ cn("SubBadge", style.SubBadge, style.Narrow) }>
 							<span data-type="buff-uid" class="badge bg-dark">
@@ -1709,6 +1729,14 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 					break;
 			}
 			return <Locale raw={ false } k="BUFFEFFECT_RESIST_CHECK_ATTACK_POWER" p={ [elem] } />;
+		} else if ("sudden_death" in stat) {
+			return <Locale raw={ false } k="BUFFEFFECT_RATIO_DMG_OF" p={ [
+				<Locale raw={ false } k={ `BUFFTARGET_BY_${stat.sudden_death.target.toUpperCase()}` } />,
+				<strong class="text-danger">
+					<Locale raw={ false } k={ `BUFFEFFECT_BY_${stat.sudden_death.by.toUpperCase()}` } />
+				</strong>,
+				<strong class="text-orange">{ nsignedValue(stat.sudden_death, level) }</strong>,
+			] } />;
 		}
 
 		return <>{ JSON.stringify(stat) }</>; // "???";

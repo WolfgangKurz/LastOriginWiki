@@ -63,6 +63,14 @@ export enum BUFFEFFECT_TRIGGER_TYPE {
 	ATTACK_FAIL = 54,
 	ATTACK_FAIL_PASSIVE = 55,
 	IF_ENEMYKILL_AND_IF_COUNTERKILL = 56,
+	BEATEN_ALLY = 57,
+	BEATEN_PHY_ALLY = 58,
+	BEATEN_FIRE_ALLY = 59,
+	BEATEN_ICE_ALLY = 60,
+	BEATEN_LIGHTNING_ALLY = 61,
+	BEATEN_ACTIVESKILL_ALLY = 62,
+	ATTACK_SUCCESS_SKILL_ALLY = 63,
+	USE_SKILL_ALLY = 64,
 }
 
 /** 계산된 발동 조건 */
@@ -291,7 +299,8 @@ interface BuffTrigger_TroopCategory {
 
 /** 스킬 사용시 */
 interface BuffTrigger_UseSkill {
-	use_skill: 1 | 2 | string;
+	/** `0` means "ally" */
+	use_skill: 0 | 1 | 2 | string;
 }
 
 /** 값 비교 */

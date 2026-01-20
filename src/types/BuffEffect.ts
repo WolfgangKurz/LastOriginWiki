@@ -146,6 +146,12 @@ export enum BUFFEFFECT_TYPE {
 	WIDE_DAMAGE_RATIO = 139,
 	STAGE_DOUBLE_ATTACK_RATIO = 140,
 	RESIST_CHECK_ATTACK_POWER = 141,
+	DEF_DAMAGE_REDUCE = 142,
+	DEF_DAMAGE_ADD = 143,
+	RATIO_DMG_GIVER_MAX_HP = 144,
+	RATIO_DMG_GIVER_CURRENT_HP = 145,
+	RATIO_DMG_TARGET_MAX_HP = 146,
+	RATIO_DMG_TARGET_CURRENT_HP = 147,
 }
 
 export type BuffEffect = BuffEffect_Base & {
@@ -170,7 +176,7 @@ type BuffEffect_Body = BuffEffect_Unknown | BuffEffect_Off | BuffEffect_Attack |
 	BuffEffect_SummonRemove | BuffEffect_PenetrationForce | BuffEffect_Exp | BuffEffect_DebuffImmune | BuffEffect_Collaborate |
 	BuffEffect_MaxHP | BuffEffect_SkillRatio | BuffEffect_SkillRange | BuffEffect_Disperse | BuffEffect_ValueBy | BuffEffect_LessTarget |
 	BuffEffect_ActCount | BuffEffect_GuardPierceApply | BuffEffect_BuffDisallow | BuffEffect_Wide | BuffEffect_ReuseSkill |
-	BuffEffect_Minimum_Resist;
+	BuffEffect_Minimum_Resist | BuffEffect_SuddenDeath;
 
 // #region BuffEffect
 interface BuffEffect_Unknown {
@@ -500,6 +506,13 @@ interface BuffEffect_ReuseSkill {
 
 interface BuffEffect_Minimum_Resist {
 	min_resist: "none" | "fire" | "ice" | "lightning";
+}
+
+interface BuffEffect_SuddenDeath {
+	sudden_death: BuffEffectValue & {
+		target: "target" | "buffer";
+		by: "max_hp" | "hp";
+	};
 }
 //#endregion
 

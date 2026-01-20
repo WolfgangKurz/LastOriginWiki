@@ -6,6 +6,15 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13059" date="2026-01-21"
+		bugfix={ <>
+			<li>일부 누락된 버프 정보가 추가되었습니다.</li>
+		</> }
+		update={ <>
+			<li>일부 전투원의 스킬 정보가 갱신되었습니다.</li>
+			<li>일부 전투 지역의 정보가 갱신되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13055" date="2026-01-19"
 		new={ <>
 			<li>신규 전투원 <BY>라일라 클라우디</BY>의 정보가 추가되었습니다.</li>
