@@ -8,6 +8,11 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13060" date="2026-01-21"
+		update={ <>
+			<li>전투원 <BY>오베로니아 레아</BY>의 스킬 텍스트가 갱신되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13059" date="2026-01-21"
 		bugfix={ <>
 			<li>일부 누락된 버프 정보가 추가되었습니다.</li>

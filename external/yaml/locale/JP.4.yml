@@ -7703,41 +7703,42 @@ UNIT_SKILL_DESC_3P_Vanilla_F1: >-
 
   대상이  <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 상태인 경우, <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
 UNIT_SKILL_DESC_3P_Rhea_1: >-
-  指定範囲の対象を<sec typ="note">浸水</sec>状態にして、<sec typ="attr">保護無視</sec> <dmg
-  elem="lightning" />を与えます。
+  지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 줍니다.
 
-  指定地点の周辺には<sec typ="dmg">25%のダメージ</sec>を与えます。
+  <sec typ="dmg">선택 지점 주변에는 25% 피해만 적용됩니다.</sec>
 
-  クリティカル時、2ラウンドの間、<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中率 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避率 <val idx="10" r /></sec>が減少し、<sec typ="cond">腐食</sec>状態の場合、<sec typ="dmg"><buff typ="LightningATK_UP" /> ダメージ量 <val idx="8" r /></sec>が増加します。
+  <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <cmt loc t="FLOOD">$$FLOOD:5,6,7$</cmt> 상태로 만듭니다.
 
-  <sec typ="note">浸水</sec> : <sec typ="buff"><buff typ="FIRERES_UP" /> 火炎抵抗 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="ICERES_DOWN" /> 冷気抵抗 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="LIGHTNINGRES_DOWN" /> 電気抵抗 <val idx="7" r /></sec>
+  <sec typ="cond">치명타 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="9" r /></sec>가 감소합니다.
+
+  <sec typ="cond">대상이 <sec typ="note">부식</sec> 상태인 경우</sec>, <sec>치명타 조건을 무시</sec>할 수 있습니다.
 UNIT_SKILL_DESC_3P_Rhea_2: >-
-  指定範囲に<sec typ="attr">保護無視</sec> <dmg elem="ice" />と<sec typ="dmg"><buff
-  typ="FireATK_UP" /> 追加火炎ダメージ <val idx="2" r signless /></sec>を与え、2ラウンドの間、<sec
-  typ="buff"><buff typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>が減少し<sec
-  typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="1" r /></sec>が増加します。
+  지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="ice" />를 줍니다.
 
-  クリティカル時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> ダメージ減少効果を解除</sec>し、<sec typ="cond">腐食</sec>状態の場合、追加で<sec typ="dmg"><buff typ="PhyATK_UP" /> 攻撃力 <val idx="6" r signless />の固定ダメージ</sec>を与えます。
-UNIT_SKILL_DESC_3P_Rhea_3: ラウンド開始時、自分に<sec typ="cond"><buff typ="Speed_UP" />
-  行動力増加効果</sec>がかかっている場合、<sec typ="buff"><buff typ="REMOVE_BUFF" />
-  その効果が解除</sec>され<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r
-  /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中率 <val idx="2" r
-  /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル率 <val idx="1" r
-  /></sec>が増加します。
+  <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>가 감소하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>가 증가합니다.
+
+  <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+
+  <sec typ="cond">대상이 <sec typ="note">부식</sec> 상태인 경우</sec>, <sec>치명타 조건을 무시</sec>할 수 있습니다.
+UNIT_SKILL_DESC_3P_Rhea_3: >-
+  <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff
+  typ="IMMUNITY_DEBUFF" /> 행동력 감소 효과에 면역</sec> 상태가 됩니다.
+
+  <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신에게 <buff typ="AP_UP" /> 행동력 증가 효과가 적용된 경우</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 해당 효과를 해제</sec>하고 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="7" r /></sec>가 증가합니다.
 UNIT_SKILL_DESC_3P_Rhea_4: >-
-  戦闘開始時、隣接した味方機動型の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>
-  / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="3" r /></sec> / <sec
-  typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff
-  typ="LIGHTNINGRES_UP" /> <buff typ="DEBUFF_PERDOWN" /> 全耐性 <val idx="4" r
-  /></sec>が増加します。
+  <sec typ="cond">전투 개시 시</sec>, 범위 내 기동형 아군의 <sec typ="buff"><buff typ="AP_UP"
+  /> AP <val idx="0" /></sec>이(가) 증가합니다.
 
-  <sec>スキルレベル10で範囲が増加します。</sec>
+  <sec typ="cond">라운드 개시 시</sec>, 범위 내 자신을 제외한 기동형 아군의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 속성 저항 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="8" r /></sec>가 증가합니다.
+
+  <sec>스킬 레벨 10에서 자신의 위치와 관계 없이 전체 적용됩니다.</sec>
 UNIT_SKILL_DESC_3P_Rhea_5: >-
-  攻撃時、<sec typ="chance">一定確率</sec>で<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力
-  <val idx="0" r /></sec>が大幅に増加し、被撃時、<sec typ="chance">一定確率</sec>で<sec
-  typ="buff"><buff typ="DAMAGE_REDUCE" /> ダメージを最小化</sec>します。
+  <sec typ="cond">전투 개시 시</sec>, <sec>본인을 포함</sec>한 기동형 아군 수에 따라 자신은 <sec
+  typ="buff"><buff typ="DEF_All" /> 피해 무효화 X회</sec>를 획득합니다.
 
-  <sec>スキルレベルが上がるほど発動率が増加します。</sec>
+  <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 속성 저항 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="12" r /></sec>가 증가합니다.
+
+  <sec typ="cond">자신이 있는 한</sec>, <cmt t="페어리 시리즈">$$3PFairy:?$</cmt> 자매들의 공격은 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 효과를 해제</sec>합니다.
 UNIT_SKILL_DESC_3P_ScissorsLise_1: >-
   ハサミの刃で装甲を削り <dmg elem="physics" />を与え、3ラウンドの間、<sec typ="buff"><buff
   typ="DEF_DOWN" /> 防御力 <val idx="0" r /></sec>を減少させます。

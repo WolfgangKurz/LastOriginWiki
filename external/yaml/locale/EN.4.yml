@@ -8040,38 +8040,42 @@ UNIT_SKILL_DESC_3P_Vanilla_F1: >-
 
   대상이  <sec typ="cond"><buff typ="SNARE" /> 이동 불가</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 회피 감소</sec> 상태인 경우, <sec typ="dmg"><buff typ="FireATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
 UNIT_SKILL_DESC_3P_Rhea_1: >-
-  지정 범위에 있는 대상들을 <cmt loc t="FLOOD">$$FLOOD:5,6,7$</cmt> 상태로 만들며 <sec
-  typ="attr">보호 무시</sec> <dmg elem="lightning" />를 줍니다.
+  지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="lightning" />를 줍니다.
 
-  선택 지점 주변에는 <sec typ="dmg">25% 피해</sec>만 적용됩니다.
+  <sec typ="dmg">선택 지점 주변에는 25% 피해만 적용됩니다.</sec>
 
-  치명타 시, 2라운드 동안 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="10" r /></sec>가 감소하며, <sec typ="cond">부식</sec> 상태면 <sec typ="dmg"><buff typ="LightningATK_UP" /> 피해량 <val idx="8" r /></sec>가 증가합니다.
+  <sec typ="cond">적중 시</sec>, 2라운드 동안 대상을 <cmt loc t="FLOOD">$$FLOOD:5,6,7$</cmt> 상태로 만듭니다.
+
+  <sec typ="cond">치명타 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="9" r /></sec>가 감소합니다.
+
+  <sec typ="cond">대상이 <sec typ="note">부식</sec> 상태인 경우</sec>, <sec>치명타 조건을 무시</sec>할 수 있습니다.
 UNIT_SKILL_DESC_3P_Rhea_2: >-
-  지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="ice" />와 <sec typ="dmg"><buff
-  typ="FireATK_UP" /> <val idx="2" r signless /> 추가 화염 피해</sec>를 주며, 2라운드 동안
-  <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>가 감소하고 <sec
-  typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>가 증가합니다.
+  지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="ice" />를 줍니다.
 
-  치명타 시, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 피해 감소 효과를 해제</sec>하며 <sec typ="cond">부식</sec> 상태면 <sec typ="dmg"><buff typ="PhyATK_UP" /> 공격력 <val idx="6" r signless /> 고정 물리 피해</sec>를 줍니다.
-UNIT_SKILL_DESC_3P_Rhea_3: 라운드 개시 시, 자신에게 <sec typ="cond"><buff typ="Speed_UP"
-  /> 행동력 증가 효과</sec>가 걸려있으면 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 해당 효과를
-  해제</sec>하고 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="0" r /></sec> /
-  <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="2" r /></sec> / <sec
-  typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="1" r /></sec>가 증가합니다.
+  <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>가 감소하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="1" r /></sec>가 증가합니다.
+
+  <sec typ="cond">치명타 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
+
+  <sec typ="cond">대상이 <sec typ="note">부식</sec> 상태인 경우</sec>, <sec>치명타 조건을 무시</sec>할 수 있습니다.
+UNIT_SKILL_DESC_3P_Rhea_3: >-
+  <sec typ="cond">라운드 개시 시</sec>, 자신은 <sec typ="buff"><buff
+  typ="IMMUNITY_DEBUFF" /> 행동력 감소 효과에 면역</sec> 상태가 됩니다.
+
+  <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신에게 <buff typ="AP_UP" /> 행동력 증가 효과가 적용된 경우</sec>, <sec typ="buff"><buff typ="REMOVE_BUFF" /> 해당 효과를 해제</sec>하고 자신의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="7" r /></sec>가 증가합니다.
 UNIT_SKILL_DESC_3P_Rhea_4: >-
-  전투 개시 시, 인접한 기동형 아군의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0"
-  /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="3" r /></sec> /
-  <sec typ="buff"><buff typ="FIRERES_UP" /> <buff typ="ICERES_UP" /> <buff
-  typ="LIGHTNINGRES_UP" /> <buff typ="DEBUFF_PERDOWN" /> 모든 저항 <val idx="4" r
-  /></sec>가 증가합니다.
+  <sec typ="cond">전투 개시 시</sec>, 범위 내 기동형 아군의 <sec typ="buff"><buff typ="AP_UP"
+  /> AP <val idx="0" /></sec>이(가) 증가합니다.
 
-  <sec>스킬 레벨 10에서 범위가 증가합니다.</sec>
+  <sec typ="cond">라운드 개시 시</sec>, 범위 내 자신을 제외한 기동형 아군의 <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 속성 저항 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="8" r /></sec>가 증가합니다.
+
+  <sec>스킬 레벨 10에서 자신의 위치와 관계 없이 전체 적용됩니다.</sec>
 UNIT_SKILL_DESC_3P_Rhea_5: >-
-  공격할 때 <sec typ="chance">가끔</sec> <sec typ="buff"><buff typ="ATK_UP" /> 공격력
-  <val idx="0" r /></sec>가 대폭 증가하며, 공격 받을 땐 <sec typ="chance">드물게</sec> <sec
-  typ="buff"><buff typ="DAMAGE_REDUCE" /> 최소 피해</sec>만 받습니다.
+  <sec typ="cond">전투 개시 시</sec>, <sec>본인을 포함</sec>한 기동형 아군 수에 따라 자신은 <sec
+  typ="buff"><buff typ="DEF_All" /> 피해 무효화 X회</sec>를 획득합니다.
 
-  <sec>스킬 레벨이 오를수록 발동 확률이 증가합니다.</sec>
+  <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /><buff typ="LIGHTNINGRES_UP" /> 속성 저항 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="12" r /></sec>가 증가합니다.
+
+  <sec typ="cond">자신이 있는 한</sec>, <cmt t="페어리 시리즈">$$3PFairy:?$</cmt> 자매들의 공격은 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 효과를 해제</sec>합니다.
 UNIT_SKILL_DESC_3P_ScissorsLise_1: >-
   가위날로 장갑을 깎아 <dmg elem="physics" />를 주고, 3라운드 동안 <sec typ="buff"><buff
   typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec>를 감소시킵니다.
