@@ -9,9 +9,7 @@ import { BuffStat } from "@/types/Buffs";
 
 import { useLocale } from "@/libs/Locale";
 import Session from "@/libs/Session";
-import { isActive } from "@/libs/Functions";
-import { objState } from "@/libs/State";
-import { ImageExtension, RarityDisplay } from "@/libs/Const";
+import { RarityDisplay } from "@/libs/Const";
 import { BuildClass, cn } from "@/libs/Class";
 import { GetSkillDescription } from "@/libs/SkillDescription";
 
@@ -20,13 +18,14 @@ import ElemIcon from "@/components/elem-icon";
 import RarityBadge from "@/components/rarity-badge";
 import SkillBound from "@/components/skill-bound";
 import SkillDescription, { SkillDescriptionValueData } from "@/components/skill-description";
-import SummonBadge from "../../components/summon-badge";
 import BuffList from "@/components/buff-list";
 import SkillIcon from "@/components/skill-icon";
-
-import style from "./style.module.scss";
 import Button from "@/components/Button";
 import Badge from "@/components/Badge";
+
+import SummonBadge from "../../components/summon-badge";
+
+import style from "./style.module.scss";
 
 interface SkillItem extends SkillEntity {
 	slot: string;

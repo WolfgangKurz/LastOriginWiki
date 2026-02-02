@@ -1,6 +1,6 @@
 import { createElement, FunctionalComponent } from "preact";
 import { useEffect, useMemo, useState } from "preact/hooks";
-import { route, useRouter } from "preact-router";
+import { route } from "preact-router";
 
 import { Unit, UnitSkin } from "@/types/DB/Unit";
 

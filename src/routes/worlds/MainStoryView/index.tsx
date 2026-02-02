@@ -12,10 +12,10 @@ import { cn } from "@/libs/Class";
 import { StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
+import Button from "@/components/Button";
 import WorldItem from "../components/WorldItem";
 
 import style from "./style.module.scss";
-import Button from "@/components/Button";
 
 interface WORLDViewProps {
 	wid: string;

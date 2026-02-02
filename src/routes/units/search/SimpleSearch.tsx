@@ -1,3 +1,4 @@
+import { FunctionalComponent } from "preact";
 import Store, { toggle } from "@/store";
 
 import { ACTOR_GRADE, ACTOR_CLASS, ROLE_TYPE } from "@/types/Enums";

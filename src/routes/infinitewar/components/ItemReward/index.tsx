@@ -1,3 +1,5 @@
+import { FunctionalComponent } from "preact";
+
 import { Consumable } from "@/types/DB/Consumable";
 
 import { FormatNumber } from "@/libs/Functions";

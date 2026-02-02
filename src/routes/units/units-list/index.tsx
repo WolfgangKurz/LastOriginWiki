@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useMemo } from "preact/hooks";
-import { Link, route } from "preact-router";
+import { Link } from "preact-router";
 import Store from "@/store";
 
 import { ACTOR_GRADE } from "@/types/Enums";

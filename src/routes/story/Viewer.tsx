@@ -1,3 +1,4 @@
+import { FunctionalComponent } from "preact";
 import { useCallback, useEffect, useMemo, useRef, useState } from "preact/hooks";
 import { route } from "preact-router";
 import Store from "@/store";

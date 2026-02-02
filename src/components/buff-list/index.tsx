@@ -19,8 +19,9 @@ import { formatString, useLocale } from "@/libs/Locale";
 import { BuildClass, cn } from "@/libs/Class";
 import { arrayrize, diff2, groupBy } from "@/libs/Functions";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB, useDBData } from "@/libs/Loader";
+import { GetJson, JsonLoaderCore, StaticDB, useDBData } from "@/libs/Loader";
 import LocaleBase, { LocaleProps, LocalePropsLegacy } from "@/components/locale";
+import Loading from "@/components/loading";
 import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import PopupButton from "@/components/PopupButton";
@@ -28,12 +29,12 @@ import RarityBadge from "@/components/rarity-badge";
 import StatIcon from "@/components/stat-icon";
 import ElemIcon from "@/components/elem-icon";
 import UnitLink from "@/components/unit-link";
+import BuffIcon from "@/components/buff-icon";
 import Badge from "@/components/Badge";
 
 // import { getBuffUid } from "./cache";
 
 import style from "./style.module.scss";
-import BuffIcon from "@/components/buff-icon";
 
 // default fallback ??? string
 const Locale: FunctionalComponent<LocaleProps<any> | LocalePropsLegacy<any>> = (props) =>
@@ -2191,34 +2192,35 @@ interface BuffListProps {
 }
 
 const BuffList: FunctionalComponent<BuffListProps> = (props) => {
-	return <Loader json={ StaticDB.FilterableUnit } content={ ((): preact.VNode => {
-		const list = props.list || [];
-		const level = props.level || 0;
-		const dummy = props.dummy || false;
+	const _db = useDBData(StaticDB.FilterableUnit);
+	if (!_db) return <Loading.Data />;
 
-		const staticList = list.filter(x => !("buffs" in x || "unknown" in x));
-		const dynamicList = list.filter(x => "buffs" in x || "unknown" in x).map(stat => <BuffRenderer
-			uid={ props.uid ?? "" }
-			stat={ stat }
-			level={ level }
-			invert={ props.invert }
-			dummy={ dummy }
-		/>);
-		return <div class={ `${style.BuffList} text-dark ${props.class || ""}` }>
-			{ staticList.length > 0
-				? <ul class="list-group text-start">
-					<BuffRenderer
-						uid={ props.uid ?? "" }
-						stat={ staticList }
-						level={ level }
-						invert={ props.invert }
-						dummy={ dummy }
-					/>
-				</ul>
-				: <></>
-			}
-			{ dynamicList }
-		</div>;
-	}) } />;
+	const list = props.list || [];
+	const level = props.level || 0;
+	const dummy = props.dummy || false;
+
+	const staticList = list.filter(x => !("buffs" in x || "unknown" in x));
+	const dynamicList = list.filter(x => "buffs" in x || "unknown" in x).map(stat => <BuffRenderer
+		uid={ props.uid ?? "" }
+		stat={ stat }
+		level={ level }
+		invert={ props.invert }
+		dummy={ dummy }
+	/>);
+	return <div class={ `${style.BuffList} text-dark ${props.class || ""}` }>
+		{ staticList.length > 0
+			? <ul class="list-group text-start">
+				<BuffRenderer
+					uid={ props.uid ?? "" }
+					stat={ staticList }
+					level={ level }
+					invert={ props.invert }
+					dummy={ dummy }
+				/>
+			</ul>
+			: <></>
+		}
+		{ dynamicList }
+	</div>;
 };
 export default BuffList;

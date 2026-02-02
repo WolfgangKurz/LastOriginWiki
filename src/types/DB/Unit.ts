@@ -129,6 +129,7 @@ export interface UnitSkinEntity {
 		tbarId?: number;
 		voiceId?: number;
 		flags: SKIN_METADATA_FLAGS;
+		dflags: SKIN_METADATA_FLAGS;
 		"2dmodel"?: string;
 		"2dmodel_dam"?: string;
 		spine?: Partial<{ // Spine atlas attachment

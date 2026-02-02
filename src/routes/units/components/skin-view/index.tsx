@@ -256,8 +256,11 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 	const modelId = `${unit.uid}_N${skin.isDef ? "" : `S${skin.metadata.imageId}`}`;
 
 	const DisplayMixed = useMemo(
-		() => (skin.metadata.flags === (SKIN_METADATA_FLAGS["2DMODEL"] | SKIN_METADATA_FLAGS.SPINE)) && !!props.animate && !isDamaged,
-		[skin.metadata.flags, props.animate, isDamaged],
+		() => !!props.animate && (isDamaged
+			? (skin.metadata.dflags === (SKIN_METADATA_FLAGS["2DMODEL"] | SKIN_METADATA_FLAGS.SPINE))
+			: (skin.metadata.flags === (SKIN_METADATA_FLAGS["2DMODEL"] | SKIN_METADATA_FLAGS.SPINE))
+		),
+		[skin.metadata.flags, skin.metadata.dflags, props.animate, isDamaged],
 	);
 	const DisplaySpine = useMemo(
 		() => !!(skin.metadata.flags & SKIN_METADATA_FLAGS.SPINE) && (
@@ -267,11 +270,10 @@ const SkinView: FunctionalComponent<SkinViewProps> = (props) => {
 		[skin.metadata.flags, skin.Spine, skin.SpineDamaged, props.animate, props.collapsed, isDamaged],
 	);
 	const Display2DModel = useMemo(
-		() => (isDamaged || !!(skin.metadata.flags & SKIN_METADATA_FLAGS["2DMODEL"])) && (
-			(!isDamaged && !!skin.metadata["2dmodel"]) ||
-			(isDamaged && !!skin.metadata["2dmodel_dam"])
-		),
-		[isDamaged, skin.metadata.flags, skin.metadata["2dmodel"], skin.metadata["2dmodel_dam"]],
+		() => isDamaged
+			? !!(skin.metadata.dflags & SKIN_METADATA_FLAGS["2DMODEL"]) && !!skin.metadata["2dmodel_dam"]
+			: !!(skin.metadata.flags & SKIN_METADATA_FLAGS["2DMODEL"]) && !!skin.metadata["2dmodel"],
+		[isDamaged, skin.metadata.flags, skin.metadata.dflags, skin.metadata["2dmodel"], skin.metadata["2dmodel_dam"]],
 	);
 	const DisplayVideo = useMemo(() => {
 		return !!props.animate && !!modelVideoId;

@@ -1,7 +1,6 @@
-import { ParseDescriptionText } from "@/libs/FunctionsX";
-
 import { LocaleGet } from "@/components/locale";
 
+// import { ParseDescriptionText } from "@/libs/FunctionsX";
 // export function Nn (text: string) {
 // 	return ParseDescriptionText(
 // 		text.replace(/\{0\}/g, `[c][ffffff]${LocaleGet("STORY_PLAYER")}[-][/c]`)

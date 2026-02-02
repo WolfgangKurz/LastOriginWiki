@@ -1,6 +1,6 @@
-import { useEffect, useLayoutEffect, useRef } from "preact/hooks";
+import { FunctionalComponent } from "preact";
+import { useEffect, useLayoutEffect, useRef, useState } from "preact/hooks";
 
-import { objState } from "@/libs/State";
 import cShuffleText from "@/libs/ShuffleText";
 
 interface ShuffleTextProps {
@@ -11,27 +11,25 @@ interface ShuffleTextProps {
 }
 
 const ShuffleText: FunctionalComponent<ShuffleTextProps> = (props) => {
-	const instance = objState<cShuffleText | null>(null);
+	const [instance, setInstance] = useState<cShuffleText | null>(null);
 	const ref = useRef<HTMLSpanElement>(null);
 
 	useEffect(() => () => { // dispose
-		if (instance.value)
-			instance.value.dispose();
+		instance?.dispose();
 	}, []);
 
 	useLayoutEffect(() => { // text change, before DOM update
-		const i = instance.value;
-		if (i) {
-			i.stop();
+		if (instance) {
+			instance.stop();
 			if (props.text) {
-				i.setText(props.text);
-				i.start();
+				instance.setText(props.text);
+				instance.start();
 			}
 		}
 	}, [props.text]);
 
 	useLayoutEffect(() => { // ref change
-		let after: cShuffleText | null = instance.value;
+		let after = instance;
 		if (ref.current === after) return; // same instance
 
 		if (after) {
@@ -49,15 +47,15 @@ const ShuffleText: FunctionalComponent<ShuffleTextProps> = (props) => {
 			after.start();
 		}
 
-		instance.set(after);
+		setInstance(after);
 	}, [ref.current]);
 
 	useLayoutEffect(() => {
-		if (instance.value) {
-			instance.value.duration = props.duration || 800;
-			instance.value.timeGap = props.gap || 0;
+		if (instance) {
+			instance.duration = props.duration || 800;
+			instance.timeGap = props.gap || 0;
 		}
-	}, [instance.value, props.duration, props.gap]);
+	}, [instance, props.duration, props.gap]);
 
 	return <span ref={ ref } />;
 };

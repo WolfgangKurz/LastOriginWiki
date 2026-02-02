@@ -1,22 +1,20 @@
 import { FunctionalComponent } from "preact";
-import { createPortal, useEffect, useLayoutEffect, useRef, useState } from "preact/compat";
+import { createPortal, useEffect, useRef, useState } from "preact/compat";
 
-import { ResearchTreeData, Unit } from "@/types/DB/Unit";
+import { Unit } from "@/types/DB/Unit";
 import { Research } from "@/types/DB/Research";
 import { Consumable } from "@/types/DB/Consumable";
 
 import { CurrentDB } from "@/libs/DB";
 import { useUpdate } from "@/libs/hooks";
+import { StaticDB, useDBData } from "@/libs/Loader";
 import { ImageExtension, AssetsRoot } from "@/libs/Const";
 import { parseVNode } from "@/libs/VNode";
-import { TravelVDOM } from "@/libs/VDomParser";
 import { FormatNumber } from "@/libs/Functions";
-
-import { StaticDB, useDBData } from "@/libs/Loader";
-import { GetUnitFaceURL } from "@/components/unit-face";
 
 import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
+import { GetUnitFaceURL } from "@/components/unit-face";
 import PopupBase from "@/components/popup/base";
 import EquipIcon from "@/components/equip-icon";
 

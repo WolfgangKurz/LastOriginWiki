@@ -1,3 +1,4 @@
+import { FunctionalComponent } from "preact";
 import { useMemo, useState } from "preact/hooks";
 import { route } from "preact-router";
 

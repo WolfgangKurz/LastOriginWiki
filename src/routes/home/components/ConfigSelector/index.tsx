@@ -1,11 +1,10 @@
 import { FunctionalComponent } from "preact";
-import Store from "@/store";
 
 import { LocaleList } from "@/types/Locale";
 
 import { AssetsRoot, ImageExtension, ImageExtensionList } from "@/libs/Const";
 import { cn } from "@/libs/Class";
-import { ChangeImage, isActive } from "@/libs/Functions";
+import { ChangeImage } from "@/libs/Functions";
 import { ChangeLanguage, CurrentLocale } from "@/libs/Locale";
 
 import Icons from "@/components/bootstrap-icon";

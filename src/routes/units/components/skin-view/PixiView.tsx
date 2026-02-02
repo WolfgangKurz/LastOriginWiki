@@ -1,3 +1,4 @@
+import { FunctionalComponent } from "preact";
 import { useEffect, useMemo, useRef, useState } from "preact/hooks";
 import * as PIXI from "pixi.js";
 import { Viewport } from "pixi-viewport";
@@ -254,7 +255,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 							? props.U2DModelMetadata.spine[skinPostfix]!
 							: 0
 				: 0;
-console.log(props.U2DModelMetadata.spine)
+			// console.log(_uid, props.U2DModelMetadata.spine);
 
 			let _char: PixiSpineModel | Pixi2DModel | MixedModel | PixiVideoModel | null = char as typeof _char;
 			if (_char && (_char.model !== _uid || (!("atlasId" in _char) || _char.atlasId !== atlasId))) {
@@ -264,10 +265,10 @@ console.log(props.U2DModelMetadata.spine)
 
 			if (_char === null) {
 				if (props.type === "mixed" || props.type === "spine") {
-					console.log((props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!);
+					// console.log((props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!);
 					if (props.type === "mixed")
 						_char = new MixedModel(
-							uid,
+							_uid,
 							(props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!,
 							atlasId,
 						);

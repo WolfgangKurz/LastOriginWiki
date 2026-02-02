@@ -1,3 +1,6 @@
+import { FunctionalComponent } from "preact";
+import { useMemo } from "preact/hooks";
+
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, BUFF_ATTR_TYPE, BUFF_OVERLAP_TYPE, ROLE_TYPE, TARGET_TYPE } from "@/types/Enums";
 import BuffCategory from "@/types/DB/BuffCategory";
 import { BUFFEFFECT_TYPE } from "@/types/BuffEffect";
@@ -9,7 +12,7 @@ import { CombinedBuffEffectTypes, ExcludedBuffEffectTypes } from "../common";
 import { AssetsRoot } from "@/libs/Const.1";
 import { useLocale } from "@/libs/Locale";
 import { BuildClass, cn } from "@/libs/Class";
-import { clamp, UniqueID } from "@/libs/Functions";
+import { clamp } from "@/libs/Functions";
 
 import { StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
@@ -18,7 +21,6 @@ import Input from "@/components/Input";
 import Icons from "@/components/bootstrap-icon";
 
 import style from "./style.module.scss";
-import { useMemo } from "preact/hooks";
 
 type ConditionLogical = "AND" | "OR";
 export enum ConditionCategory {

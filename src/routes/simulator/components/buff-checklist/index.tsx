@@ -1,4 +1,5 @@
 import { FunctionalComponent } from "preact";
+import { useState } from "preact/hooks";
 import Decimal from "decimal.js";
 import render from "preact-render-to-string";
 
@@ -10,12 +11,13 @@ import { UNIT_POSITION, BUFF_ATTR_TYPE, SKILL_ATTR, ACTOR_BODY_TYPE, ACTOR_CLASS
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { Enemy } from "@/types/DB/Enemy";
 
-import { objState } from "@/libs/State";
-import { ImageExtension, AssetsRoot, TroopNameTable, IsDev } from "@/libs/Const";
+import { ImageExtension, AssetsRoot, TroopNameTable } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
+import { useLocale } from "@/libs/Locale";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
-import Locale, { LocaleExists, LocaleGet } from "@/components/locale";
+import Loader, { GetJson, JsonLoaderCore, StaticDB, useDBData } from "@/libs/Loader";
+import Locale from "@/components/locale";
+import Loading from "@/components/loading";
 import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import ElemIcon from "@/components/elem-icon";
@@ -39,8 +41,12 @@ interface BuffRendererProps {
 }
 
 const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
-	const FilterableUnitDB = GetJson<FilterableUnit[]>(StaticDB.FilterableUnit);
-	const ReferencedEnemy = objState<Enemy | null>(null);
+	const [loc] = useLocale();
+
+	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
+	const [referencedEnemy, setReferencedEnemy] = useState<Enemy | null>(null);
+
+	if (!FilterableUnitDB) return <Loading.Data />;
 
 	const VNodeUnique = (entity: preact.VNode): string => render(entity);
 
@@ -119,7 +125,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 
 		if (name.startsWith("Char_")) {
 			const key = name.replace(/Char_(.+)_N/, "$1");
-			const unit = FilterableUnitDB.find(x => x.uid === key);
+			const unit = FilterableUnitDB!.find(x => x.uid === key);
 			if (!unit) return <>{ key }</>;
 
 			return <span class={ `on-subbadge ${style["on-subbadge"]} ${color ? `text-${color}` : ""}` }>
@@ -151,7 +157,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 	function convertBuffToUid (name: string): string {
 		if (name.startsWith("Char_")) {
 			const key = name.replace(/Char_(.+)_N/, "$1");
-			const unit = FilterableUnitDB.find(x => x.uid === key);
+			const unit = FilterableUnitDB!.find(x => x.uid === key);
 			if (!unit) return key;
 			return unit.uid;
 		} else if (name.startsWith("MOB_")) {
@@ -1114,10 +1120,10 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 						const detail = GetJson<Enemy>(enemyKey);
 						if (!detail) return;
 
-						ReferencedEnemy.set(detail);
+						setReferencedEnemy(detail);
 					});
 
-				if (!ReferencedEnemy.value) return <></>;
+				if (!referencedEnemy) return <></>;
 
 				return <Locale plain k="BUFFEFFECT_COOP" p={ [
 					<strong>
@@ -1125,7 +1131,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 					</strong>,
 					<span class="text-danger">#{ stat.collaborate.skill }</span>,
 					<span class="text-danger">
-						<Locale plain k={ ReferencedEnemy.value.skills[stat.collaborate.skill - 1].key } />
+						<Locale plain k={ referencedEnemy.skills[stat.collaborate.skill - 1].key } />
 					</span>,
 				] } />;
 			}
@@ -1136,7 +1142,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 				<span class="text-danger">
 					{ [
 						<Locale plain k={ `UNIT_SKILL_${uid}_${stat.collaborate.skill}` } />,
-						LocaleGet(`UNIT_SKILL_${uid}_F${stat.collaborate.skill}`).startsWith("UNIT_SKILL_F")
+						loc[`UNIT_SKILL_${uid}_F${stat.collaborate.skill}`].startsWith("UNIT_SKILL_F")
 							? <></>
 							: [" / ", <Locale plain k={ `UNIT_SKILL_${uid}_F${stat.collaborate.skill}` } />],
 					] }
@@ -1246,10 +1252,10 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 
 		if (value.startsWith("Char_")) {
 			const key = value.replace(/Char_(.+)_N/, "$1");
-			const unit = FilterableUnitDB.find(x => x.uid === key);
+			const unit = FilterableUnitDB!.find(x => x.uid === key);
 			if (!unit) return `${template} - ${key}`;
 
-			return `${template} - ${LocaleGet(`UNIT_${unit.uid}`)}`;
+			return `${template} - ${loc[`UNIT_${unit.uid}`]}`;
 		}
 
 		if (type === NUM_OUTPUTTYPE.INTEGER) {
@@ -1365,8 +1371,8 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 					<div class="clearfix">
 						<img class="me-1" width="25" src={ `${AssetsRoot}/${ext}/buff/${buff.icon}.${ext}` } />
 						{ (() => {
-							const _template = LocaleExists(buff.desc.desc)
-								? LocaleGet(buff.desc.desc, "{0}")
+							const _template = buff.desc.desc in loc
+								? loc[buff.desc.desc]
 								: "";
 							return <strong class="align-middle">
 								{ formatDesc(buff.desc.type, _template, buff.desc.value, buff.desc.level, level, 1) }
@@ -1497,6 +1503,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 interface BuffListProps {
 	class?: string;
 
+	uid: string;
 	level?: number;
 	list?: BuffStat[];
 	buffTable: Record<string, number>;
@@ -1505,45 +1512,46 @@ interface BuffListProps {
 	onStack?: (key: string, value: number) => void;
 }
 
-const BuffChecklist: FunctionalComponent<BuffListProps> = (props) =>
-	<Loader json={ StaticDB.FilterableUnit } content={ ((): preact.VNode => {
-		const list = props.list || [];
-		const level = props.level || 0;
+const BuffChecklist: FunctionalComponent<BuffListProps> = (props) => {
+	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
+	if (!FilterableUnitDB) return <Loading.Data />;
 
-		const staticList = list.filter(x => !("buffs" in x)) as BuffStat[];
-		const buffs = list
-			.filter(x => "buffs" in x)
-			.map((stat, si) => {
-				const x = stat as BuffStatBuff;
-				const enabled = x.buffs
-					.map((_, i) => `${si}_${i}`)
-					.filter(y => y in props.buffTable);
-				return <CheckableBuffRenderer
-					idx={ si }
-					stat={ x }
-					level={ level }
-					enabled={ enabled }
-					stacks={ props.buffTable }
-					onUpdate={ (key, checked): void => {
-						if (props.onUpdate)
-							props.onUpdate(key, checked);
-					} }
-					onStack={ (key, value): void => {
-						if (props.onStack)
-							props.onStack(key, value);
-					} }
-				/>;
-			});
+	const list = props.list || [];
+	const level = props.level || 0;
 
-		return <div class={ `buff-checklist text-dark ${props.class || ""}` }>
-			{ staticList.length > 0
-				? <ul class="list-group text-start">
-					<BuffRenderer stat={ staticList } level={ level } />
-				</ul>
-				: <></>
-			}
-			{ buffs }
-		</div>;
-	}) }
-	/>;
+	const staticList = list.filter(x => !("buffs" in x)) as BuffStat[];
+	const buffs = list
+		.filter(x => "buffs" in x)
+		.map((stat, si) => {
+			const x = stat as BuffStatBuff;
+			const enabled = x.buffs
+				.map((_, i) => `${si}_${i}`)
+				.filter(y => y in props.buffTable);
+			return <CheckableBuffRenderer
+				idx={ si }
+				stat={ x }
+				level={ level }
+				enabled={ enabled }
+				stacks={ props.buffTable }
+				onUpdate={ (key, checked): void => {
+					if (props.onUpdate)
+						props.onUpdate(key, checked);
+				} }
+				onStack={ (key, value): void => {
+					if (props.onStack)
+						props.onStack(key, value);
+				} }
+			/>;
+		});
+
+	return <div class={ `buff-checklist text-dark ${props.class || ""}` }>
+		{ staticList.length > 0
+			? <ul class="list-group text-start">
+				<BuffRenderer uid={ props.uid } stat={ staticList } level={ level } />
+			</ul>
+			: <></>
+		}
+		{ buffs }
+	</div>;
+};
 export default BuffChecklist;

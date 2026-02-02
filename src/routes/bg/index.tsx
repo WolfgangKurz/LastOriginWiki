@@ -1,22 +1,19 @@
+import { FunctionalComponent } from "preact";
 import { useEffect, useRef, useState } from "preact/hooks";
 import debounce from "lodash.debounce";
 
 import BG, { BGWithRequirements } from "@/types/DB/BG";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { CurrentDB } from "@/libs/DB";
-import { useUpdate } from "@/libs/hooks";
 import { isActive } from "@/libs/Functions";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
+import { StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 
 import style from "./style.module.scss";
 
 const BGPage: FunctionalComponent = () => {
 	const ext = ImageExtension();
-
-	const update = useUpdate();
 
 	const [bgSelected, setBGSelected] = useState<number>(0);
 	const [bgLoaded, setBGLoaded] = useState(false);
@@ -47,17 +44,10 @@ const BGPage: FunctionalComponent = () => {
 		};
 	}, [BGImageRef.current, bgLoaded]);
 
-	const bgs = GetJson<BG[] | null>(StaticDB.BG);
-	if (!bgs) {
-		JsonLoaderCore(CurrentDB, StaticDB.BG)
-			.then(() => update());
-	}
-
+	const bgs = useDBData<BG[]>(StaticDB.BG);
 	const isReqBG = (bg: BG): bg is BGWithRequirements => "req" in bg;
 
-	const selected: BG | null = bgs
-		? bgs[bgSelected]
-		: null;
+	const selected: BG | null = bgs?.[bgSelected] || null;
 
 	return <div class="bg">
 		<h1>BG</h1>

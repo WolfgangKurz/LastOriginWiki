@@ -3,11 +3,10 @@ import { FunctionalComponent } from "preact";
 import { Consumable } from "@/types/DB/Consumable";
 import { MapWaveDrop } from "@/types/DB/Map";
 
-import { useUpdate } from "@/libs/hooks";
-import { CurrentDB } from "@/libs/DB";
 import { FormatNumber } from "@/libs/Functions";
+import { StaticDB, useDBData } from "@/libs/Loader";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB } from "@/libs/Loader";
+import Loading from "@/components/loading";
 import Locale from "@/components/locale";
 import EquipIcon from "@/components/equip-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
@@ -17,13 +16,8 @@ import { SubpageProps } from "..";
 import style from "./style.module.scss";
 
 const LvLimitTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
-	const update = useUpdate();
-
-	const ConsumableDB = GetJson<Consumable[] | null>(StaticDB.Consumable);
-	if (!ConsumableDB) {
-		JsonLoaderCore(CurrentDB, StaticDB.Consumable)
-			.then(() => update());
-	}
+	const ConsumableDB = useDBData<Consumable[]>(StaticDB.Consumable);
+	if (!ConsumableDB) return <Loading.Data />;
 
 	if (!display || !ConsumableDB) return <></>;
 

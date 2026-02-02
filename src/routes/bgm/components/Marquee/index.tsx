@@ -1,3 +1,4 @@
+import { FunctionalComponent } from "preact";
 import { useEffect, useRef, useState } from "preact/hooks";
 
 import { BuildClass } from "@/libs/Class";

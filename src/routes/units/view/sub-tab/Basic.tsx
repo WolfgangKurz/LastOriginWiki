@@ -248,7 +248,9 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 								</Button>) }
 							</Button.Tab>
 
-							<audio src={ introVoiceUrl } type="audio/mp3" controls preload="none" volume="0.5" />
+							<audio controls preload="none" volume="0.5">
+								<source src={ introVoiceUrl } type="audio/mp3" />
+							</audio>
 						</div>
 						: <></>
 					}

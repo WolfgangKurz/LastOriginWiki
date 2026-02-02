@@ -1,97 +1,109 @@
 import { FunctionalComponent } from "preact";
+import { useState } from "preact/hooks";
 
 import { FilterableFacility } from "@/types/DB/Facility.Filterable";
 
-import { objState } from "@/libs/State";
 import { isActive } from "@/libs/Functions";
+import { StaticDB, useDBData } from "@/libs/Loader";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
+import { useLocale } from "@/libs/Locale";
 
-import Loader, { GetJson, StaticDB } from "@/libs/Loader";
+import Locale from "@/components/locale";
+import Loading from "@/components/loading";
 import FacilityCard from "./components/facility-card";
-import Locale, { LocaleGet } from "@/components/locale";
 
 const Facilities: FunctionalComponent = () => {
-	const Filters = {
-		BioroidMaking: objState<boolean>(true),
-		Cafeteria: objState<boolean>(true),
-		Equipment: objState<boolean>(true),
-		EXP: objState<boolean>(true),
-		FacilityResource: objState<boolean>(true),
-		FacilityUpgrade: objState<boolean>(true),
-		Resource: objState<boolean>(true),
-		WorkshopResource: objState<boolean>(true),
-	};
+	const [loc] = useLocale();
+
+	const [filters, setFilters] = useState(() => ({
+		BioroidMaking: true,
+		Cafeteria: true,
+		Equipment: true,
+		EXP: true,
+		FacilityResource: true,
+		FacilityUpgrade: true,
+		Resource: true,
+		WorkshopResource: true,
+	}));
 
 	SetMeta(["description", "twitter:description"], "기지 설비의 목록을 표시합니다.");
 	SetMeta(["twitter:image", "og:image"], null);
 
-	UpdateTitle(LocaleGet("MENU_FACILITIES"));
+	UpdateTitle(loc["MENU_FACILITIES"]);
 
-	return <Loader json={ StaticDB.FilterableFacility } content={ ((): preact.VNode => {
-		const FilterableFacilityDB = GetJson<FilterableFacility[]>(StaticDB.FilterableFacility);
-		const Facilities = FilterableFacilityDB
-			.filter(x => Filters[x.type].value)
-			.sort((a, b) => a.uid < b.uid ? -1 : a.uid > b.uid ? 1 : 0);
+	const FilterableFacilityDB = useDBData<FilterableFacility[]>(StaticDB.FilterableFacility);
+	if (!FilterableFacilityDB) return <Loading.Data />;
 
-		return <div class="facilities">
-			<div class="card mb-4">
-				<div class="card-body">
-					<button
-						class={ `btn btn-outline-primary m-1 ${isActive(Filters.BioroidMaking.value)}` }
-						onClick={ (): void => Filters.BioroidMaking.set(!Filters.BioroidMaking.value) }
-					>
-						<Locale k="FACILITY_FILTER_BioroidMaking" />
-					</button>
-					<button
-						class={ `btn btn-outline-primary m-1 ${isActive(Filters.Cafeteria.value)}` }
-						onClick={ (): void => Filters.Cafeteria.set(!Filters.Cafeteria.value) }
-					>
-						<Locale k="FACILITY_FILTER_Cafeteria" />
-					</button>
-					<button
-						class={ `btn btn-outline-primary m-1 ${isActive(Filters.Equipment.value)}` }
-						onClick={ (): void => Filters.Equipment.set(!Filters.Equipment.value) }
-					>
-						<Locale k="FACILITY_FILTER_Equipment" />
-					</button>
-					<button
-						class={ `btn btn-outline-primary m-1 ${isActive(Filters.EXP.value)}` }
-						onClick={ (): void => Filters.EXP.set(!Filters.EXP.value) }
-					>
-						<Locale k="FACILITY_FILTER_EXP" />
-					</button>
-					<button
-						class={ `btn btn-outline-primary m-1 ${isActive(Filters.FacilityResource.value)}` }
-						onClick={ (): void => Filters.FacilityResource.set(!Filters.FacilityResource.value) }
-					>
-						<Locale k="FACILITY_FILTER_FacilityResource" />
-					</button>
-					<button
-						class={ `btn btn-outline-primary m-1 ${isActive(Filters.FacilityUpgrade.value)}` }
-						onClick={ (): void => Filters.FacilityUpgrade.set(!Filters.FacilityUpgrade.value) }
-					>
-						<Locale k="FACILITY_FILTER_FacilityUpgrade" />
-					</button>
-					<button
-						class={ `btn btn-outline-primary m-1 ${isActive(Filters.Resource.value)}` }
-						onClick={ (): void => Filters.Resource.set(!Filters.Resource.value) }
-					>
-						<Locale k="FACILITY_FILTER_Resource" />
-					</button>
-					<button
-						class={ `btn btn-outline-primary m-1 ${isActive(Filters.WorkshopResource.value)}` }
-						onClick={ (): void => Filters.WorkshopResource.set(!Filters.WorkshopResource.value) }
-					>
-						<Locale k="FACILITY_FILTER_WorkshopResource" />
-					</button>
-				</div>
+	const Facilities = FilterableFacilityDB
+		.filter(x => filters[x.type])
+		.sort((a, b) => a.uid < b.uid ? -1 : a.uid > b.uid ? 1 : 0);
+
+	function toggleFilter<T extends keyof typeof filters> (key: T) {
+		setFilters(v => {
+			const o = Object.assign({}, v);
+			o[key] = !o[key];
+			return o;
+		});
+	}
+
+	return <div class="facilities">
+		<div class="card mb-4">
+			<div class="card-body">
+				<button
+					class={ `btn btn-outline-primary m-1 ${isActive(filters.BioroidMaking)}` }
+					onClick={ () => toggleFilter("BioroidMaking") }
+				>
+					<Locale k="FACILITY_FILTER_BioroidMaking" />
+				</button>
+				<button
+					class={ `btn btn-outline-primary m-1 ${isActive(filters.Cafeteria)}` }
+					onClick={ () => toggleFilter("Cafeteria") }
+				>
+					<Locale k="FACILITY_FILTER_Cafeteria" />
+				</button>
+				<button
+					class={ `btn btn-outline-primary m-1 ${isActive(filters.Equipment)}` }
+					onClick={ () => toggleFilter("Equipment") }
+				>
+					<Locale k="FACILITY_FILTER_Equipment" />
+				</button>
+				<button
+					class={ `btn btn-outline-primary m-1 ${isActive(filters.EXP)}` }
+					onClick={ () => toggleFilter("EXP") }
+				>
+					<Locale k="FACILITY_FILTER_EXP" />
+				</button>
+				<button
+					class={ `btn btn-outline-primary m-1 ${isActive(filters.FacilityResource)}` }
+					onClick={ () => toggleFilter("FacilityResource") }
+				>
+					<Locale k="FACILITY_FILTER_FacilityResource" />
+				</button>
+				<button
+					class={ `btn btn-outline-primary m-1 ${isActive(filters.FacilityUpgrade)}` }
+					onClick={ () => toggleFilter("FacilityUpgrade") }
+				>
+					<Locale k="FACILITY_FILTER_FacilityUpgrade" />
+				</button>
+				<button
+					class={ `btn btn-outline-primary m-1 ${isActive(filters.Resource)}` }
+					onClick={ () => toggleFilter("Resource") }
+				>
+					<Locale k="FACILITY_FILTER_Resource" />
+				</button>
+				<button
+					class={ `btn btn-outline-primary m-1 ${isActive(filters.WorkshopResource)}` }
+					onClick={ () => toggleFilter("WorkshopResource") }
+				>
+					<Locale k="FACILITY_FILTER_WorkshopResource" />
+				</button>
 			</div>
-			<div class="row row-cols-5 row-cols-md-4 row-cols-sm-3">
-				{ Facilities.map((fac, key) => <div class="col">
-					<FacilityCard class="mb-4" facility={ fac } />
-				</div>) }
-			</div>
-		</div>;
-	}) } />;
+		</div>
+		<div class="row row-cols-5 row-cols-md-4 row-cols-sm-3">
+			{ Facilities.map(fac => <div class="col">
+				<FacilityCard class="mb-4" facility={ fac } />
+			</div>) }
+		</div>
+	</div>;
 };
 export default Facilities;

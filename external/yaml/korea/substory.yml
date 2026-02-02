@@ -755,6 +755,14 @@ group:
       - Story_Char_PECS_Ireina_N_59_BR_Brownie_3
       - Story_Char_PECS_Ireina_N_59_DS_Charlotte_4
       - Story_Char_PECS_Ireina_N_59_PECS_Ireina_5
+  - troop: ""
+    key: PCStory_CH_PECS_CoCoWhiteShell_1
+    type: 0
+    char: PECS_CoCoWhiteShell
+    skin: 1
+    group: OrbitalWatcher
+    story:
+      - Story_Char_PECS_CoCoWhiteShell_60_PECS_CoCoWhiteShell_1
 story:
   - group: PCStory_CH_BR_Brownie_1
     key: Story_Char_BR_Brownie_N_15_BR_Efreeti_1
@@ -7452,3 +7460,27 @@ story:
       trigger:
         type: 0
         value: Cut_ChCS_63Stage_IkaGame5ED
+  - group: PCStory_CH_PECS_CoCoWhiteShell_1
+    key: Story_Char_PECS_CoCoWhiteShell_60_PECS_CoCoWhiteShell_1
+    order: 1
+    char: PECS_CoCoWhiteShell
+    skin: 0
+    triggerHidden: false
+    start:
+      dialog: DG_ChCS_64Stage_Story_CoCoWhiteShell_1
+      trigger:
+        type: "0"
+        trigger1:
+          type: 2
+          value: Char_PECS_CoCoWhiteShell_N
+          sub: "1"
+        trigger2:
+          type: 12
+          value: ""
+          sub: ""
+    stage: ""
+    end:
+      dialog: ""
+      trigger:
+        type: 0
+        value: Cut_ChCS-64Stage01_1

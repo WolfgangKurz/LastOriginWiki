@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "preact";
-import { useLayoutEffect, useMemo } from "preact/hooks";
+import { useMemo } from "preact/hooks";
 import { Link, route } from "preact-router";
 
 import TimeAgo from "javascript-time-ago";

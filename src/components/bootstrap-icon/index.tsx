@@ -11,7 +11,7 @@ export interface IconProps {
 	size?: string | number;
 	color?: string;
 	// viewBox?: string;
-	style?: string | JSX.CSSProperties;
+	style?: string | preact.JSX.CSSProperties;
 }
 
 const bi = (name: string): FunctionalComponent<IconProps> => {

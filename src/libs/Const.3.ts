@@ -746,8 +746,12 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 	},
 };
 
-type ArtistLinkType = "X" | "Pixiv" | "ArtStation";
-export const ArtistLinks: Record<string, Partial<Record<ArtistLinkType, string>>> = {
+type ArtistLinkType = Partial<{
+	X: `https://x.com/${string}`;
+	Pixiv: `https://www.pixiv.net/users/${string}`;
+	ArtStation: `https://www.artstation.com/${string}`;
+}>;
+export const ArtistLinks: Record<string, ArtistLinkType> = {
 	"2V": {
 		X: "https://x.com/dhxhrlflthdn",
 		Pixiv: "https://www.pixiv.net/users/17874125",
@@ -795,6 +799,11 @@ export const ArtistLinks: Record<string, Partial<Record<ArtistLinkType, string>>
 	"D-loG": {
 		X: "https://x.com/DloG56006129",
 		Pixiv: "https://www.pixiv.net/users/10920551",
+	},
+	"DUTO": {
+		X: "https://x.com/dutomaster",
+		Pixiv: "https://www.pixiv.net/users/4297330",
+		ArtStation: "https://www.artstation.com/dutomaster",
 	},
 	"gonster": {
 		X: "https://x.com/gonstool",
@@ -862,7 +871,7 @@ export const ArtistLinks: Record<string, Partial<Record<ArtistLinkType, string>>
 		Pixiv: "https://www.pixiv.net/users/97687",
 	},
 	"Sol": {
-		X: "https://twitter.com/arnseo",
+		X: "https://x.com/arnseo",
 		Pixiv: "https://www.pixiv.net/users/26511192",
 	},
 	"Superphotrone": {

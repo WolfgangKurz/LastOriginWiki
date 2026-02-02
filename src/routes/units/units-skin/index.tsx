@@ -1,3 +1,4 @@
+import { FunctionalComponent } from "preact";
 import Store from "@/store";
 
 import { isActive } from "@/libs/Functions";
