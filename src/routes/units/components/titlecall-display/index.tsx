@@ -62,9 +62,12 @@ const TitleCallDisplay: FunctionalComponent<TitleCallDisplayProps> = (props) => 
 									</div>
 									<div class={ cn(style.AudioColumn, "p-1") }>
 										{ Object.values(TitleCalls[props.unitId][sid][key]).map(name => <div>
-											<audio controls preload="none" volume="0.5">
-												<source src={ `${AssetsRoot}/audio/titlecall/${name}.mp3` } type="audio/mp3" />
-											</audio>
+											<audio
+												src={ `${AssetsRoot}/audio/titlecall/${name}.mp3` }
+												controls
+												preload="none"
+												volume="0.5"
+											/>
 										</div>) }
 									</div>
 								</div>

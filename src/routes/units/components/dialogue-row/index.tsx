@@ -92,9 +92,7 @@ const DialogueRow: FunctionComponent<DialogueRowProps> = (props) => {
 							{ (d && ParseDescriptionText(d)) || <span class="text-secondary">-</span> }
 						</div>
 						<div class={ BuildClass(style.AudioColumn, "col col-12 col-sm-auto border") }>
-							<audio controls preload="none" volume="0.5">
-								<source src={ voice } type="audio/mp3" />
-							</audio>
+							<audio src={ voice } controls preload="none" volume="0.5" />
 						</div>
 					</div>;
 				}) }
@@ -104,9 +102,7 @@ const DialogueRow: FunctionComponent<DialogueRowProps> = (props) => {
 					{ (dialogue && ParseDescriptionText(dialogue)) || <span class="text-secondary">-</span> }
 				</div>
 				<div class={ BuildClass(style.AudioColumn, "col col-12 col-sm-auto border") }>
-					<audio controls preload="none" volume="0.5">
-						<source src={ voiceUrl } type="audio/mp3" />
-					</audio>
+					<audio src={ voiceUrl } controls preload="none" volume="0.5" />
 				</div>
 			</>
 		}
