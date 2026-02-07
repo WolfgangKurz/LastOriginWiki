@@ -8,6 +8,11 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13068" date="2026-02-08"
+		dialogue={ <>
+			<li>누락된 일본어 보이스가 추가되었습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13067" date="2026-02-02"
 		new={ <>
 			<li>이벤트 <BY>별의 무대</BY>의 2부 정보가 추가되었습니다.</li>
