@@ -1738,6 +1738,11 @@ export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 				</strong>,
 				<strong class="text-orange">{ nsignedValue(stat.sudden_death, level) }</strong>,
 			] } />;
+		} else if ("adjust_ap" in stat) {
+			return <Locale raw={ false } k="BUFFEFFECT_ADJUST_AP" p={ [
+				<span class="text-danger">#{ stat.adjust_ap.skill }</span>,
+				signedValue(stat.adjust_ap, level),
+			] } />;
 		}
 
 		return <>{ JSON.stringify(stat) }</>; // "???";

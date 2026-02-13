@@ -412,15 +412,15 @@ company: ""
 country: ""
 age: ""
 secretRoomType: AGS
-marriageVoice: false
+marriageVoice: true
 introVoice:
   - jp
   - ko
 favor:
-  present: 0
-  clear: 0
-  death: 0
-  assistant: 0
+  present: 1
+  clear: 1
+  death: 1
+  assistant: 1
 linkBonus:
   - HP_20
   - ATK_20
@@ -464,7 +464,7 @@ cv:
 source:
   - - Ev:Ev35:EV2-2EX
 oneoff: false
-oathable: false
+oathable: true
 entryReqMap: []
 cost:
   res:
@@ -9593,6 +9593,72 @@ skills:
             chance: 0
 dialogue:
   KR:
+    "1":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: |-
+        미드가르드를 위협하는 악룡들을 없애는 것,
+        그것이 수호룡의 사명이다.
+      Idle_01_02: |-
+        내 누이는
+        내 지나친 심판 태도를 걱정하고 있지.
+        하지만 악을 이기기 위해선,
+        때로는 강경해질 수밖에 없는 법이니라,
+        용살자여.
+      Idle_01_03: |-
+        다음에 동료를 편성할 때에는…
+        그 수다스러운 하피는
+        빼 주었으면 하는군.
+        필요 이상으로 떠들어,
+        전투에 거슬리기만 하니까.
+      SPIdle_01_01: |-
+        용살자,
+        난 내 누이처럼 접촉을 좋아하진 않는다.
+      Idle_02_01: |-
+        묻고 싶은 게 있다, 용살자.
+        너는 폭력을 상당히 싫어하던데…
+        그러나 대의가 있는 폭력은
+        징벌과 심판이지 않은가?
+        어째서 내게 잔혹하다 말하는 거지?
+      Idle_03_01: |-
+        가끔은 내가 죽인 악룡의 피를 들이켜며
+        타락하는 모습을 상상하곤 한다.
+        …허나 그런 생각은 헛소리일 뿐이지.
+        내가 그 더러운 놈들의 편에 서는 일은,
+        네가 있는 이상 있을 수 없는 일이니까.
+      Idle_04_01: |-
+        정의롭게 행동하되,
+        폭력에 삼켜지지 않도록 스스로를 다잡아라,
+        네 조언을, 나는 수없이 외고 있다.
+        그래… 미드가르드를 지키기 위해 태어난
+        수호룡 니드호그.
+        그게 바로 나의 사명이자 이름이다.
+      SPIdle_02_01: |-
+        인간들이 유대를 표현하는 방식인가?
+        날 신뢰하는 행동이라고 생각하면 되겠군.
+      Oath: 용살자여, 적을 물리칠 때마다 한편으론 내 안의 무언가가 자라나는 느낌이노라. …필요 이상으로 잔혹한 면모를 보일 때마다, 자네가 내
+        버팀목이 되었으면 좋겠다는 생각이 커지는군. 오늘이야말로 자네의 정의를 긍정하며 따르는 나와의 맹약을 더욱 굳게 다지지 않겠나?
+      OathIdle_01: |-
+        빛의 성녀와 진조의 공주…
+        그리고 내 누이까지 모두 널 의지하더군.
+        네 뜻을 잇는 이가 누구에게서 태어나든,
+        나는 끝까지 곁에 남아 그 뜻을 지켜 줄 것이다.
+      MVP: ""
     "":
       Join: 독과 약은 한끗 차이. 내 힘을 어떻게 쓸지는 네 선택에 달려 있다. 부디 재미있는 선택을 내리길 바라지.
       SquadJoin: 흥미로운 선택이군.
@@ -9610,23 +9676,135 @@ dialogue:
       Reinforce: 더욱 강한 독을 다룰 수 있겠는데.
       ItemEquip: 다음 사냥이 한결 수월해지겠군.
       CoreLink: 새로운 독의 제조법인가. 흥미롭군.
+      PresentGet: ""
       Login: 오늘은 뭘 사냥할 생각이지.
       Idle_01_01: |-
-        도끼를 들고 다니는 꼬맹이가 나를
-        원수 보듯이 노려보더군.
-        가볍게 겁을 줬는데 벌벌 떨면서도
-        도망은 안 치더군. 핫! 당돌하긴.
+        도끼를 들고 다니는 꼬맹이가
+        나를 원수 보듯이 노려보더군.
+        가볍게 겁을 줬는데
+        벌벌 떨면서도 도망은 안 치더군.
+        핫! 당돌하긴.
       Idle_01_02: |-
-        날 글라시아스랑 같은 격납고에 넣지 마라.
+        날 글라시아스랑
+        같은 격납고에 넣지 마라.
         그 허여멀건한 동체를 보기만 해도
         회로에 거부반응이 일어날 것 같으니까.
       Idle_01_03: |-
-        내 무장의 이름이 칵테일 메이커긴 하지만
+        내 무장의 이름이
+        칵테일 메이커긴 하지만
         내게 칵테일 제조 기능은 없다.
         …아니, 없었다고 해야 맞겠군…
         빌어먹을 해체자 같으니.
+      SPIdle_01_01: |-
+        호오, 내가 가진 것이
+        독인 것을 알고도 만지다니,
+        그 용기가 가상하군.
+      Idle_02_01: |-
+        <드래곤 슬레이어>에서 스스로를
+        용살자라 자칭하는 어설픈 애송이와
+        싸운 적이 있었지.
+        끝까지 타락한 날 구원하느니
+        뭐니 하는 소릴 지껄이던데,
+        넌 어떤 판단을 내릴지 궁금하군.
+      Idle_03_01: |-
+        네가 무패의 용사란 말을 들었다.
+        하지만 조심하는 게 좋을 것이다,
+        네가 적을 오랫동안 들여다 본다면,
+        적 또한 너를 들여다 볼 것이니…
+      Idle_04_01: |-
+        힘 없는 정의는 무능이고,
+        정의 없는 힘은 폭력이지.
+        네 정의가 무르지 않다면…
+        내가 가진 힘을 어디 잘 써 보거라.
+      SPIdle_02_01: |-
+        …해체자가 내 소체에 이상한 기능을
+        달아 놨을 지도 모르니 조심해라.
+      Oath: 충성이니 맹약이니 따위는 관심 없다. 네가 이 나를 감당할 수 있느냐, 그게 전부다. 날 보고도 물러서지 않는 그 눈빛이 꽤 마음에
+        들었다. 그렇다면 말해라, 네가 가리킨 적이라면, 내가 모조리 사냥해주도록 하지.
+      OathIdle_01: |-
+        네가 무력을 자제하는 걸 보니,
+        용살자가 떠오르는군.
+        내면의 강함이 진짜라는 말…
+        인간들은 그렇게 부르던가?
+        볼수록 흥미롭구나, 인간이여.
       MVP: 멍청할 놈들이군. 내게 맞설 생각을 하다니.
+    M:
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: |-
+        요즘 내 누이가
+        이상한 생각에 빠져 있더군.
+        보아하니 너와 맹우 이상의
+        관계를 점치는 것 같던데…
+        …솔직히 말해,
+        복잡한 기분이 드는군.
+        내 누이는 절대 그런 개체가
+        아니었는데 말이지.​
+      Idle_01_02: |-
+        동료라…
+        하, 그런 뜨뜻미지근한 단어에
+        얽매이고 싶은 생각은 없다.
+        …다만, 유대가 네 신념이라면,
+        그 얼빠진 성녀 일행들에게
+        관심은 가져주도록 하지.
+      Idle_01_03: |-
+        네가 미래에 건설할
+        미드가르드는 어떤 세계일지
+        문득, 그 모습이 궁금해졌다.
+        물론 용살자가 그랬듯 터무니없는
+        이상 덩어리일지도 모르지.
+        …그래도 한 번 말해봐라.
+        제법 궁금해졌으니 말이다.
+      SPIdle_01_01: |-
+        도끼 든 꼬맹이가 안 본 사이에
+        내 몸 여기저기에 낙서를 해 놨다.
+        정말이지, 귀찮게 그지 없는 아이야.
+      MVP: ""
   JP:
+    "1":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: ""
       SquadJoin: ""
@@ -9644,12 +9822,72 @@ dialogue:
       Reinforce: ""
       ItemEquip: ""
       CoreLink: ""
+      PresentGet: ""
       Login: ""
       Idle_01_01: ""
       Idle_01_02: ""
       Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
+    M:
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
       MVP: ""
   EN:
+    "1":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: ""
       SquadJoin: ""
@@ -9667,12 +9905,72 @@ dialogue:
       Reinforce: ""
       ItemEquip: ""
       CoreLink: ""
+      PresentGet: ""
       Login: ""
       Idle_01_01: ""
       Idle_01_02: ""
       Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
+    M:
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
       MVP: ""
   TC:
+    "1":
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
     "":
       Join: ""
       SquadJoin: ""
@@ -9690,16 +9988,47 @@ dialogue:
       Reinforce: ""
       ItemEquip: ""
       CoreLink: ""
+      PresentGet: ""
       Login: ""
       Idle_01_01: ""
       Idle_01_02: ""
       Idle_01_03: ""
+      SPIdle_01_01: ""
+      Idle_02_01: ""
+      Idle_03_01: ""
+      Idle_04_01: ""
+      SPIdle_02_01: ""
+      Oath: ""
+      OathIdle_01: ""
+      MVP: ""
+    M:
+      SquadJoin: ""
+      Leader: ""
+      SortiePick: ""
+      StageStart: ""
+      Retreat: ""
+      SearchStart: ""
+      SearchEnd: ""
+      BattleFocus: ""
+      ActionApprove: ""
+      SpSkill: ""
+      Retire: ""
+      Repair: ""
+      Reinforce: ""
+      ItemEquip: ""
+      CoreLink: ""
+      PresentGet: ""
+      Login: ""
+      Idle_01_01: ""
+      Idle_01_02: ""
+      Idle_01_03: ""
+      SPIdle_01_01: ""
       MVP: ""
 skins:
   sid: null
   artist: Superphotrone
   priceEx: ""
-  G: false
+  G: true
   Spine: false
   SpineDamaged: false
   parts: 4
@@ -9729,3 +10058,40 @@ skins:
     flags: 1
     dflags: 0
     2dmodel: 2DModel_PECS_Nidhogg_N
+  skins:
+    - sid: 1
+      artist: ""
+      price: 192
+      G: false
+      Spine: true
+      SpineDamaged: false
+      parts: 78
+      stage: false
+      subset:
+        - false
+        - true
+        - false
+        - false
+        - false
+        - true
+        - false
+        - false
+      anim:
+        - false
+        - false
+        - false
+        - false
+      category:
+        - ALL
+        - Costume
+      facelist: []
+      releaseDate: null
+      metadata:
+        imageId: 1
+        iconId: 1
+        tbarId: 1
+        voiceId: 1
+        flags: 2
+        dflags: 1
+        2dmodel_dam: 2DModel_PECS_Nidhogg_NS1_Dam
+        consumableKey: Skin_PECS_Nidhogg_1

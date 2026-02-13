@@ -800,6 +800,10 @@ export const ArtistLinks: Record<string, ArtistLinkType> = {
 		X: "https://x.com/DloG56006129",
 		Pixiv: "https://www.pixiv.net/users/10920551",
 	},
+	"DiisukeHan": {
+		X: "https://x.com/DiisukeHan",
+		Pixiv: "https://www.pixiv.net/users/400511",
+	},
 	"DUTO": {
 		X: "https://x.com/dutomaster",
 		Pixiv: "https://www.pixiv.net/users/4297330",
@@ -900,6 +904,10 @@ export const ArtistLinks: Record<string, ArtistLinkType> = {
 	"WOW": {
 		X: "https://x.com/kjyeyo",
 		Pixiv: "https://www.pixiv.net/users/4173989",
+	},
+	"Yura Unni": {
+		X: "https://x.com/GoddessMechanic",
+		Pixiv: "https://www.pixiv.net/users/3491516",
 	},
 	"ZIG": {
 		X: "https://x.com/zigzag999999",
