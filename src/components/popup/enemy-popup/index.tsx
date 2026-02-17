@@ -229,6 +229,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 
 		const ret: string[][] = [];
 
+		console.log(target)
 		Object.keys(target.used)
 			.forEach(x => ret.push(target.used[x]));
 
@@ -550,6 +551,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 													slot={ idx.toString() }
 													buffBonus={ false }
 													favorBonus={ false }
+													valueDetail={ false }
 													skillBonus={ 0 }
 													experimentalBuffName
 												/>

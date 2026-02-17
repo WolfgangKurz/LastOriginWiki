@@ -6,9 +6,10 @@ import ChangelogItem from "@/routes/changelog/components/changelog-item";
 import { BY, BR, BO, BB, BG, BP } from "@/routes/changelog/components/badges";
 
 const Changelog: FunctionalComponent = () => <>
-	<ChangelogItem title="Build 13074" date="2026-02-18"
+	<ChangelogItem title="Build 13076" date="2026-02-18"
 		bugfix={ <>
 			<li><BY>시뮬레이터</BY>가 동작하지 않던 점을 수정했습니다.</li>
+			<li><BY>적 정보</BY>에서 그룹화 된 적 팝업에서 첫번째 적의 출현 스테이지가 잘못 표시되던 점을 수정했습니다.</li>
 		</> }
 		update={ <>
 			<li>

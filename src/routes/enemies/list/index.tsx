@@ -1,16 +1,17 @@
 import { FunctionalComponent } from "preact";
 import { useEffect } from "preact/hooks";
+import { produce } from "immer";
 import Store from "@/store";
 
 import { ACTOR_CLASS, ROLE_TYPE } from "@/types/Enums";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
+import { StaticDB, useDBData } from "@/libs/Loader";
+import { useLocale } from "@/libs/Locale";
 import { DecomposeHangulSyllable, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
-import { useLocale } from "@/libs/Locale";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Loading from "@/components/loading";
 import EnemyCard from "@/routes/enemies/components/enemy-card";
@@ -97,7 +98,7 @@ const EnemiesList: FunctionalComponent<EnemiesListProps> = (props) => {
 		.reduce((p, c) => {
 			const idx = p.findIndex(x => x.localeName === c.localeName);
 			if (idx >= 0) {
-				p[idx].used = Object.assign(p[idx].used, c.used);
+				p[idx].used = Object.assign({}, p[idx].used, c.used);
 				return p;
 			}
 			return [...p, c];

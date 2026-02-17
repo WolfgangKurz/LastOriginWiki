@@ -74,6 +74,7 @@ function Load (db: string, json: string): Promise<void> {
 			if (Math.floor(xhr.status / 100) === 2) {
 				const data = YAML.load(xhr.responseText, undefined);
 				Cache[json] = data;
+				Object.freeze(Cache[json]); // prevent to corrupt data
 				LoadQueue[json].forEach(c => c());
 				delete LoadQueue[json];
 			} else
