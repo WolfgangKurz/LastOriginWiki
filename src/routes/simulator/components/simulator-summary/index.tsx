@@ -12,11 +12,11 @@ import { BuffEffectValue } from "@/types/BuffEffect";
 import { SimulatorSlotType } from "../../types/Slot";
 
 import { AssetsRoot, RarityDisplay } from "@/libs/Const";
-import { CurrentDB } from "@/libs/DB";
 import { GetLinkBonus } from "@/libs/LinkBonus";
 import { GetRequireResource } from "@/libs/Cost";
 
-import Loader, { StaticDB, useDBData } from "@/libs/Loader";
+import { StaticDB, useDBData } from "@/libs/Loader";
+import Loading from "@/components/loading";
 import Locale from "@/components/locale";
 import StatIcon from "@/components/stat-icon";
 import ElemIcon from "@/components/elem-icon";
@@ -26,7 +26,6 @@ import EquipIcon from "@/components/equip-icon";
 import EquipLevel from "@/components/equip-level";
 
 import "./style.scss";
-import Loading from "@/components/loading";
 
 interface StatCalcType {
 	base: number;
@@ -55,7 +54,9 @@ interface StatsType {
 }
 
 interface SimulatorSummaryProps {
-	slot: SimulatorSlotType;
+	slot: NonNullable<SimulatorSlotType>;
+	onSlotDamaged?: (checked: boolean) => void;
+	onFavorBonus?: (bonused: boolean) => void;
 }
 
 const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => {
@@ -519,256 +520,277 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 
 	return <div class="card bg-dark text-light simulator-summary">
 		<div class="card-body text-start">
-			{ baseStats
-				? <>
-					<div class="head-grid">
-						<UnitFace uid={ unitUid } size="80" />
+			{ baseStats && <>
+				<div class="head-grid">
+					<UnitFace uid={ unitUid } size="80" />
 
-						<div class="unit-type">
-							<span class={ `badge bg-rarity-${RarityDisplay[slot.rarity]} text-dark align-text-bottom me-2` }>
-								{ RarityDisplay[slot.rarity] }
-							</span>
-							<Locale k={ `COMMON_UNIT_TYPE_SHORT_${unitType}` } />
-							&nbsp;
-							<Locale k={ `COMMON_UNIT_ROLE_${unitRole}` } />
-						</div>
-
-						<div class="unit-links">
-							{ slot.links.map((link, index) => <span
-								class={ [
-									"badge",
-									`bg-${slot.level < linksRequire[index] || link === 0
-										? "secondary"
-										: link === 100
-											? "primary"
-											: "orange"
-									}`,
-									"ms-1",
-								].join(" ") }
-							>{ link }%</span>) }
-						</div>
-
-						<div class="unit-info">
-							<div class="unit-level">
-								Lv. { level }
-							</div>
-							<Locale plain k={ `UNIT_${unitUid}` } />
-						</div>
-
-						<div class="unit-linkbonus">
-							{ slot.links.reduce((p, c) => p + c, 0) !== 500 || slot.linkBonus === ""
-								? <>
-									<span class="me-1">
-										<Locale k="UNIT_VIEW_FULL_LINKBONUS" />
-									</span>
-									<Locale k="LINKBONUS_NONE" />
-								</>
-								: ((): preact.VNode => {
-									const fl = GetLinkBonus(slot.linkBonus, 1);
-
-									return <>
-										<span class="me-1">
-											<Locale k={ fl.Name } />
-										</span>
-										{ fl.Prefix }{ fl.Value }{ fl.Postfix }
-									</>;
-								})()
-							}
-						</div>
-
-						<div class="unit-cost">
-							<span>
-								<img src={ `${AssetsRoot}/res-component.png` } />
-								{ costData.metal }
-								{/* slot.linkBonus.startsWith("Cost")
-											? <span class="value-diff diff-minus">{ costData.discountedMetal }</span>
-											: <></>*/
-								}
-							</span>
-
-							<span>
-								<img src={ `${AssetsRoot}/res-nutrition.png` } />
-								{ costData.nutrient }
-							</span>
-
-							<span>
-								<img src={ `${AssetsRoot}/res-power.png` } />
-								{ costData.power }
-							</span>
-						</div>
-
-						<div class="unit-hp">
-							<StatIcon stat="HP" class="float-start me-1" />
-							<strong>
-								{ Decimal.div(statValues.HP.final, 4).floor().toNumber() } / { statValues.HP.final }
-
-								{ statValues.HP.base !== statValues.HP.final
-									? <span class={ `value-diff diff-${statValues.HP.final > statValues.HP.base ? "plus" : "minus"}` }>
-										{ statValues.HP.up }
-									</span>
-									: <></>
-								}
-							</strong>
-							<div class="hp-bar">
-								<div
-									class="hp-progress"
-									style={ {
-										// width: `${Decimal.min(100, Decimal.div(slot.hp, statValues.HP.final).mul(100))}%`,
-										width: "25%",
-									} }
-								/>
-							</div>
-						</div>
+					<div class="unit-type">
+						<span class={ `badge bg-rarity-${RarityDisplay[slot.rarity]} text-dark align-text-bottom me-2` }>
+							{ RarityDisplay[slot.rarity] }
+						</span>
+						<Locale k={ `COMMON_UNIT_TYPE_SHORT_${unitType}` } />
+						&nbsp;
+						<Locale k={ `COMMON_UNIT_ROLE_${unitRole}` } />
 					</div>
 
-					<div class="equip-grid">
-						{ slot.equips.map((equip, i) => equip
-							? ((e: Nullish<Equip>): preact.VNode => e
-								? <div class="equip-slot" data-type={ unitInfo.slots[i] }>
-									<div class="equip-slot-icon">
-										<div class="position-relative d-inline-block">
-											<EquipIcon image={ `${FilterableEquip.find(x => x.fullKey === equip.uid)!.icon}` } size="76" />
-											<EquipLevel level={ equip.level } size={ 14 } />
-										</div>
-									</div>
-									<div>
-										<Locale k={ `EQUIP_${e.uid}` } />
+					<div class="unit-links">
+						{ slot.links.map((link, index) => <span
+							class={ [
+								"badge",
+								`bg-${slot.level < linksRequire[index] || link === 0
+									? "secondary"
+									: link === 100
+										? "primary"
+										: "orange"
+								}`,
+								"ms-1",
+							].join(" ") }
+						>{ link }%</span>) }
+					</div>
+
+					<div class="unit-info">
+						<div class="unit-level">
+							Lv. { level }
+						</div>
+						<Locale plain k={ `UNIT_${unitUid}` } />
+					</div>
+
+					<div class="unit-linkbonus">
+						{ slot.links.reduce((p, c) => p + c, 0) !== 500 || slot.linkBonus === ""
+							? <>
+								<span class="me-1">
+									<Locale k="UNIT_VIEW_FULL_LINKBONUS" />
+								</span>
+								<Locale k="LINKBONUS_NONE" />
+							</>
+							: ((): preact.VNode => {
+								const fl = GetLinkBonus(slot.linkBonus, 1);
+
+								return <>
+									<span class="me-1">
+										<Locale k={ fl.Name } />
+									</span>
+									{ fl.Prefix }{ fl.Value }{ fl.Postfix }
+								</>;
+							})()
+						}
+					</div>
+
+					<div class="unit-cost">
+						<span>
+							<img src={ `${AssetsRoot}/res-component.png` } />
+							{ costData.metal }
+							{/* slot.linkBonus.startsWith("Cost")
+											? <span class="value-diff diff-minus">{ costData.discountedMetal }</span>
+											: <></>*/
+							}
+						</span>
+
+						<span>
+							<img src={ `${AssetsRoot}/res-nutrition.png` } />
+							{ costData.nutrient }
+						</span>
+
+						<span>
+							<img src={ `${AssetsRoot}/res-power.png` } />
+							{ costData.power }
+						</span>
+					</div>
+
+					<div class="unit-hp">
+						<StatIcon stat="HP" class="float-start me-1" />
+						<div class="hp-damaged float-end ms-1">
+							<input
+								type="checkbox"
+								checked={ slot.damaged }
+								onChange={ e => {
+									e.preventDefault();
+									props.onSlotDamaged?.(e.currentTarget.checked);
+								} }
+							/>
+						</div>
+
+						<strong>
+							{ Decimal.div(statValues.HP.final, slot.damaged ? 4 : 1).floor().toNumber() } / { statValues.HP.final }
+
+							{ statValues.HP.base !== statValues.HP.final
+								? <span class={ `value-diff diff-${statValues.HP.final > statValues.HP.base ? "plus" : "minus"}` }>
+									{ statValues.HP.up }
+								</span>
+								: <></>
+							}
+						</strong>
+						<div class="hp-bar">
+							<div
+								class="hp-progress"
+								style={ {
+									// width: `${Decimal.min(100, Decimal.div(slot.hp, statValues.HP.final).mul(100))}%`,
+									width: `${slot.damaged ? 25 : 100}%`,
+								} }
+							/>
+						</div>
+					</div>
+				</div>
+
+				<div class="equip-grid">
+					{ slot.equips.map((equip, i) => equip
+						? ((e: Nullish<Equip>): preact.VNode => e
+							? <div class="equip-slot" data-type={ unitInfo.slots[i] }>
+								<div class="equip-slot-icon">
+									<div class="position-relative d-inline-block">
+										<EquipIcon image={ `${FilterableEquip.find(x => x.fullKey === equip.uid)!.icon}` } size="76" />
+										<EquipLevel level={ equip.level } size={ 14 } />
 									</div>
 								</div>
-								: <div class="equip-slot" data-type={ unitInfo.slots[i] }>
-									<div class="equip-slot-icon" />
-									<div>&nbsp;</div>
+								<div>
+									<Locale k={ `EQUIP_${e.uid}` } />
 								</div>
-							)(equipList[i])
+							</div>
 							: <div class="equip-slot" data-type={ unitInfo.slots[i] }>
 								<div class="equip-slot-icon" />
 								<div>&nbsp;</div>
-							</div>,
-						) }
+							</div>
+						)(equipList[i])
+						: <div class="equip-slot" data-type={ unitInfo.slots[i] }>
+							<div class="equip-slot-icon" />
+							<div>&nbsp;</div>
+						</div>,
+					) }
+				</div>
+
+				<div class="switches">
+					<div class="form-check d-inline-block">
+						<input
+							class="form-check-input"
+							type="checkbox"
+							id="simulator_summary_favor_bonus"
+							checked={ slot.favorBonus }
+							onClick={ (e): void => {
+								e.preventDefault();
+								props.onFavorBonus?.(e.currentTarget.checked);
+							} }
+						/>
+						<label class="form-check-label" for="simulator_summary_favor_bonus">
+							<Locale k="SIMULATOR_FAVOR_200" />
+						</label>
 					</div>
 
-					<div class="switches">
-						<div class="form-check d-inline-block">
-							<input
-								class="form-check-input"
-								type="checkbox"
-								id="simulator_summary_include_buffs"
-								checked={ includeBuffs }
-								onClick={ (e): void => {
-									// e.preventDefault();
-									// e.stopPropagation();
-
-									setIncludeBuffs(!includeBuffs);
-									// (e.target as HTMLInputElement).checked = !includeBuffs.value;
-								} }
-							/>
-							<label class="form-check-label" for="simulator_summary_include_buffs">
-								<Locale k="SIMULATOR_TOGGLE_BUFFS" />
-							</label>
-						</div>
+					<div class="form-check d-inline-block">
+						<input
+							class="form-check-input"
+							type="checkbox"
+							id="simulator_summary_include_buffs"
+							checked={ includeBuffs }
+							onClick={ (e): void => {
+								e.preventDefault();
+								setIncludeBuffs(!includeBuffs);
+							} }
+						/>
+						<label class="form-check-label" for="simulator_summary_include_buffs">
+							<Locale k="SIMULATOR_TOGGLE_BUFFS" />
+						</label>
 					</div>
+				</div>
 
-					<div class="body-grid">
-						{ statList1.map(({ stat, postfix }) => <>
-							<span class="body-label">
-								<StatIcon stat={ stat } />
-								<Locale k={ `SIMULATOR_${stat}` } />
-							</span>
-							<span class="body-value">
-								{ ((): preact.VNode => {
-									const s = statValues[stat];
-									return typeof s === "number"
-										? <>
-											{ s < 0
-												? <span class="text-danger">{ s }</span>
-												: s
-											}
-											{ postfix }
-										</>
-										: <>
-											{ s.final < s.base
-												? <span class="text-danger">{ s.final }</span>
-												: s.final
-											}
-											{ s.base !== s.final
-												? <span class={ `value-diff diff-${s.final > s.base ? "plus" : "minus"}` }>{ s.up }</span>
-												: <></>
-											}
-											{ postfix }
-										</>;
-								})() }
-							</span>
-						</>) }
-
-						<hr />
-
-						{ statList2.map(({ stat, icon, postfix }) => <>
-							<span class="body-label">
-								<BuffIcon buff={ `BuffIcon_${icon}` } />
-								<Locale k={ `SIMULATOR_${stat}` } />
-							</span>
-							<span class="body-value">
-								{ ((): preact.VNode => {
-									const s = statValues[stat];
-									return typeof s === "number"
-										? <>
-											{ s < 0
-												? <span class="text-danger">
-													{ stat === "Range"
-														? s > 0 ? "+" : s < 0 ? "" : <></>
-														: <></>
-													}
-													{ s }
-												</span>
-												: <>
-													{ stat === "Range"
-														? s > 0 ? "+" : s < 0 ? "" : <></>
-														: <></>
-													}
-													{ s }
-												</>
-											}
-
-											{ postfix }
-										</>
-										: <>
-											{ s.final < s.base
-												? <span class="text-danger">{ s.final }</span>
-												: s.final
-											}
-											{ s.base !== s.final
-												? <span class={ `value-diff diff-${s.final > s.base ? "plus" : "minus"}` }>{ s.up }</span>
-												: <></>
-											}
-											{ postfix }
-										</>;
-								})() }
-							</span>
-						</>) }
-
-						<hr />
-					</div>
-
-					<div class="resist-grid">
-						<span class="resist-label">
-							<Locale k="SIMULATOR_RESIST" />
+				<div class="body-grid">
+					{ statList1.map(({ stat, postfix }) => <>
+						<span class="body-label">
+							<StatIcon stat={ stat } />
+							<Locale k={ `SIMULATOR_${stat}` } />
 						</span>
-						<span>
-							<ElemIcon elem="fire" class="me-2" />
-							{ statValues.ResistFire }%
+						<span class="body-value">
+							{ ((): preact.VNode => {
+								const s = statValues[stat];
+								return typeof s === "number"
+									? <>
+										{ s < 0
+											? <span class="text-danger">{ s }</span>
+											: s
+										}
+										{ postfix }
+									</>
+									: <>
+										{ s.final < s.base
+											? <span class="text-danger">{ s.final }</span>
+											: s.final
+										}
+										{ s.base !== s.final
+											? <span class={ `value-diff diff-${s.final > s.base ? "plus" : "minus"}` }>{ s.up }</span>
+											: <></>
+										}
+										{ postfix }
+									</>;
+							})() }
 						</span>
-						<span>
-							<ElemIcon elem="ice" class="me-2" />
-							{ statValues.ResistIce }%
+					</>) }
+
+					<hr />
+
+					{ statList2.map(({ stat, icon, postfix }) => <>
+						<span class="body-label">
+							<BuffIcon buff={ `BuffIcon_${icon}` } />
+							<Locale k={ `SIMULATOR_${stat}` } />
 						</span>
-						<span>
-							<ElemIcon elem="lightning" class="me-2" />
-							{ statValues.ResistLightning }%
+						<span class="body-value">
+							{ ((): preact.VNode => {
+								const s = statValues[stat];
+								return typeof s === "number"
+									? <>
+										{ s < 0
+											? <span class="text-danger">
+												{ stat === "Range"
+													? s > 0 ? "+" : s < 0 ? "" : <></>
+													: <></>
+												}
+												{ s }
+											</span>
+											: <>
+												{ stat === "Range"
+													? s > 0 ? "+" : s < 0 ? "" : <></>
+													: <></>
+												}
+												{ s }
+											</>
+										}
+
+										{ postfix }
+									</>
+									: <>
+										{ s.final < s.base
+											? <span class="text-danger">{ s.final }</span>
+											: s.final
+										}
+										{ s.base !== s.final
+											? <span class={ `value-diff diff-${s.final > s.base ? "plus" : "minus"}` }>{ s.up }</span>
+											: <></>
+										}
+										{ postfix }
+									</>;
+							})() }
 						</span>
-					</div>
-				</>
-				: <></>
-			}
+					</>) }
+
+					<hr />
+				</div>
+
+				<div class="resist-grid">
+					<span class="resist-label">
+						<Locale k="SIMULATOR_RESIST" />
+					</span>
+					<span>
+						<ElemIcon elem="fire" class="me-2" />
+						{ statValues.ResistFire }%
+					</span>
+					<span>
+						<ElemIcon elem="ice" class="me-2" />
+						{ statValues.ResistIce }%
+					</span>
+					<span>
+						<ElemIcon elem="lightning" class="me-2" />
+						{ statValues.ResistLightning }%
+					</span>
+				</div>
+			</> }
 		</div>
 	</div>;
 };

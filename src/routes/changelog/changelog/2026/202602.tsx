@@ -8,6 +8,16 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13074" date="2026-02-18"
+		bugfix={ <>
+			<li><BY>시뮬레이터</BY>가 동작하지 않던 점을 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li>
+				<BY>시뮬레이터</BY>에 원활한 공유를 위한 <BR>호감도 200</BR> 및 <BR>수복 필요</BR> 설정이 추가되었습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13071" date="2026-02-14"
 		update={ <>
 			<li>이벤트 <BY>당신의 쐐기에 진심을</BY>이 복각되었습니다.</li>

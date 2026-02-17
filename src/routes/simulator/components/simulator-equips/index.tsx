@@ -17,7 +17,7 @@ import BuffChecklist from "../buff-checklist";
 import "./style.scss";
 
 interface SimulatorEquipProps {
-	slot: SimulatorSlotType;
+	slot: NonNullable<SimulatorSlotType>;
 
 	onLevel?: (index: number, value: number) => void;
 	onEquip?: (index: number, uid: string | null, buffs: Record<string, number>) => void;
@@ -28,10 +28,7 @@ interface SimulatorEquipProps {
 
 const SimulatorEquips: FunctionalComponent<SimulatorEquipProps> = (props) => {
 	const slot = props.slot;
-	if (!slot) return <></>;
-
 	const [equips, setEquips] = useState<Array<Equip | false | null>>([null, null, null, null]);
-	const equipList = slot.equips.map(e => useDBData<Equip>(e ? `equip/${e.uid}` : null));
 
 	useEffect(() => {
 		slot.equips.forEach((x, i) => {
@@ -52,7 +49,8 @@ const SimulatorEquips: FunctionalComponent<SimulatorEquipProps> = (props) => {
 
 	const FilterableEquip = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip);
 	const unit = useDBData<Unit>(`unit/${slot.uid}`);
-	if (!FilterableEquip || !unit) return <Loading.Data />;
+	const equipList = slot.equips.map(e => useDBData<Equip>(e ? `equip/${e.uid}` : null));
+	if (!FilterableEquip || !unit || equipList.some(r => r === undefined)) return <Loading.Data />;
 
 	return <div class="simulator-equips">
 		<EquipSelectorPopup

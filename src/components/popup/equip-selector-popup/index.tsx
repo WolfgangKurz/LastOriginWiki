@@ -42,19 +42,17 @@ const EquipSelectorPopup: FunctionalComponent<EquipSelectorPopupProps> = (props)
 	const TypeTable = ["Chip", "System", "Sub"];
 	const RarityTable = ["", "", "T1", "T2", "T3", "T4", "T5"];
 
-	function updateTypeKey (): void {
+	function updateTypeKey (value: string): string {
 		const kv = /^([^_]+)_(.+)_([^_]+)$/.exec(value);
-		const v = kv
-			? `${kv[1]}_${kv[2]}`
-			: "";
+		const v = kv ? `${kv[1]}_${kv[2]}` : "";
 
 		if (kv) {
 			const r = RarityTable.indexOf(kv[3]);
 			setRarity(r);
 		}
 
-		if (v !== typeKey)
-			setTypeKey(v);
+		setTypeKey(v);
+		return v;
 	}
 
 	const FilterableEquip = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip);
@@ -65,7 +63,7 @@ const EquipSelectorPopup: FunctionalComponent<EquipSelectorPopupProps> = (props)
 		: FilterableEquip;
 	const groups = groupBy(source, x => `${TypeTable[x.type]}_${x.key}` as string);
 
-	function updateRarity (): void {
+	function updateRarity (typeKey: string): void {
 		const g = groups[typeKey];
 		if (!g) return;
 
@@ -82,8 +80,9 @@ const EquipSelectorPopup: FunctionalComponent<EquipSelectorPopupProps> = (props)
 	if (latestValue !== props.value) {
 		setValue(props.value || "");
 		setLatestValue(props.value);
-		updateTypeKey();
-		updateRarity();
+
+		const tk = updateTypeKey(props.value || "");
+		updateRarity(tk);
 	}
 
 	return <PopupBase
@@ -110,7 +109,7 @@ const EquipSelectorPopup: FunctionalComponent<EquipSelectorPopupProps> = (props)
 					e.preventDefault();
 					if (props.onSelect && value) {
 						props.onSelect(value);
-						if (props.onHidden) props.onHidden();
+						props.onHidden?.();
 					}
 				} }
 			>
@@ -148,9 +147,11 @@ const EquipSelectorPopup: FunctionalComponent<EquipSelectorPopupProps> = (props)
 						onClick={ (e): void => {
 							e.preventDefault();
 
-							setValue(`${TypeTable[eq.type]}_${eq.key}_${RarityTable[rarity]}`);
-							updateTypeKey();
-							updateRarity();
+							const value = `${TypeTable[eq.type]}_${eq.key}_${RarityTable[rarity]}`;
+							setValue(value);
+
+							const tk = updateTypeKey(value);
+							updateRarity(tk);
 						} }
 					>
 						<EquipIcon class="me-3" image={ icon } />

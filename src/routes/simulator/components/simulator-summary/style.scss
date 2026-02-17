@@ -63,6 +63,14 @@
 			line-height: 1;
 			font-size: 75%;
 
+			.hp-damaged {
+				display: inline-flex;
+				width: 20px;
+				height: 20px;
+				justify-content: center;
+				align-items: center;
+			}
+
 			.hp-bar {
 				position: relative;
 				margin-top: 0.25em;
@@ -198,7 +206,11 @@
 	}
 
 	.switches {
-		text-align: right;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: start;
+
 		margin: -0.5em 0 0.5em;
 	}
 

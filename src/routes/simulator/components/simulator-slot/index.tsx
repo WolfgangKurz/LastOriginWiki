@@ -1,9 +1,11 @@
 import { FunctionalComponent } from "preact";
+import { useMemo } from "preact/hooks";
 
 import { ACTOR_GRADE } from "@/types/Enums";
 import { SimulatorSlotType } from "../../types/Slot";
 
-import { RarityDisplay } from "@/libs/Const";
+import { AssetsRoot, RarityDisplay } from "@/libs/Const";
+import { useLocale } from "@/libs/Locale";
 
 import Icons from "@/components/bootstrap-icon";
 import UnitFace from "@/components/unit-face";
@@ -21,14 +23,20 @@ interface SimulatorSlotProps {
 }
 
 const SimulatorSlot: FunctionalComponent<SimulatorSlotProps> = (props) => {
-	const slot = props.slot;
+	const [loc] = useLocale();
+	const slot = useMemo(() => props.slot ?? {
+		uid: "",
+		level: 100,
+		rarity: ACTOR_GRADE.B,
+		leader: false,
+		damaged: false,
+		favorBonus: false,
+	}, [props.slot]);
+	const { uid, level, rarity, leader, damaged } = slot;
 
-	const uid = (slot && slot.uid) || "";
-	const level = (slot && slot.level) || 100;
-	const rarity = RarityDisplay[(slot && slot.rarity) || ACTOR_GRADE.B];
-	const leader = (slot && slot.leader) || false;
+	const DAMAGED_TEXT = useMemo(() => loc["SIMULATOR_DAMAGED"].replace(/\\n/g, "\n"), [loc]);
 
-	return <div class="simulator-slot" data-empty={ slot ? undefined : true } data-selected={ props.selected ? "1" : "0" }>
+	return <div class="simulator-slot" data-empty={ !slot.uid || undefined } data-selected={ props.selected ? "1" : "0" }>
 		<div class="slot-indicator">{ props.idx }</div>
 
 		<div class="slot-face">
@@ -39,10 +47,24 @@ const SimulatorSlot: FunctionalComponent<SimulatorSlotProps> = (props) => {
 				: <></>
 			}
 			<UnitFace uid={ uid } sd />
-			<span class={ `badge bg-dark rarity-${rarity}-text flag-rarity` }>{ rarity }</span>
+			<span class={ `badge bg-dark rarity-${RarityDisplay[rarity]}-text flag-rarity` }>
+				{ RarityDisplay[rarity] }
+			</span>
+
+			{ damaged && <div class={ "overlay-damaged" }>
+				<img src={ `${AssetsRoot}/ui/need_recovery.png` } />
+				<span data-text={ DAMAGED_TEXT }>
+					{ DAMAGED_TEXT }
+				</span>
+			</div> }
 		</div>
 		<div class="slot-props">
-			<span class="badge bg-substory">lv.{ level }</span>
+			<span class="badge bg-substory p-1">
+				Lv.
+				<span class={ level > 100 && "text-orange-light" || "" }>{ level }</span>
+			</span>
+
+			{ slot.favorBonus && <span class="badge bg-danger ms-1 p-1">♥</span> }
 		</div>
 
 		{ props.settable

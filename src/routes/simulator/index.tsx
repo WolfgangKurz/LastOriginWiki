@@ -1,5 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useCallback, useEffect, useMemo, useState } from "preact/hooks";
+import { produce } from "immer";
 
 import { ROLE_TYPE } from "@/types/Enums";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
@@ -9,8 +10,8 @@ import { AssetsRoot, IsDev } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { GetRequireResource } from "@/libs/Cost";
-
 import { StaticDB, useDBData } from "@/libs/Loader";
+
 import Locale from "@/components/locale";
 import Loading from "@/components/loading";
 import Icons from "@/components/bootstrap-icon";
@@ -34,6 +35,7 @@ const Simulator: FunctionalComponent = () => {
 	const flattenGrid = useMemo(() => grid.flat(), [grid]);
 
 	const [selectedSlot, setSelectedSlot] = useState<number>(4);
+	const selectedCell = useMemo(() => flattenGrid[selectedSlot], [flattenGrid, selectedSlot]);
 
 	const FilterableUnit = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 	if (!FilterableUnit) return <Loading.Data />;
@@ -115,27 +117,37 @@ const Simulator: FunctionalComponent = () => {
 		return [x, y];
 	}
 	function setGridCell (idx: number, value: SimulatorSlotType) {
-		setGrid(v => {
-			const a = [...v];
+		setGrid(v => produce(v, a => {
 			const [x, y] = xy(idx);
 			a[y][x] = value;
 			return a;
-		});
+		}));
 	}
-	function setGridCellFor<T extends keyof SimulatorSlotEntity> (idx: number, prop: T, value: SimulatorSlotEntity[T]) {
-		setGrid(v => {
-			const a = [...v];
+
+	function setGridCellFor<T extends keyof SimulatorSlotEntity> (idx: number, prop: T, value: SimulatorSlotEntity[T]);
+	function setGridCellFor<T extends keyof SimulatorSlotEntity, K extends keyof SimulatorSlotEntity[T]> (idx: number, prop: T, propIdx: K, value: SimulatorSlotEntity[T][K]);
+	function setGridCellFor<
+		T extends keyof SimulatorSlotEntity,
+		K extends keyof SimulatorSlotEntity[T]
+	> (idx: number, prop: T, propIdx_value: K | SimulatorSlotEntity[T], value?: SimulatorSlotEntity[T][K]) {
+		setGrid(v => produce(v, a => {
 			const [x, y] = xy(idx);
-			if (a[y][x]) a[y][x][prop] = value;
+			if (a[y][x]) {
+				if (value === undefined) // no propIdx
+					a[y][x][prop] = propIdx_value as SimulatorSlotEntity[T];
+				else
+					a[y][x][prop][propIdx_value as K] = value;
+			}
+			console.log(idx, x, y, prop, propIdx_value, value);
 			return a;
-		});
+		}));
 	}
+
 	const setupGrid = useCallback((idx: number, uid: string | null) => {
 		const u = FilterableUnit.find(r => r.uid === uid);
 		if (!u) return undefined;
 
-		setGrid(v => {
-			const a = [...v];
+		setGrid(v => produce(v, a => {
 			const [x, y] = xy(idx);
 			if (!uid)
 				a[y][x] = null;
@@ -146,8 +158,11 @@ const Simulator: FunctionalComponent = () => {
 					level: 120,
 					rarity: u.rarity,
 
+					damaged: false,
+
 					links: [0, 0, 0, 0, 0],
 					linkBonus: "",
+					favorBonus: false,
 
 					equips: [null, null, null, null],
 
@@ -163,10 +178,9 @@ const Simulator: FunctionalComponent = () => {
 					},
 				};
 			return a;
-		});
+		}));
 	}, [FilterableUnit, flattenGrid, leaderIdx]);
 
-	type SSEE = SimulatorSlotEntity["equips"];
 	return <div class="simulator">
 		<h2 class="title mb-0">
 			<span>Simulator</span>
@@ -214,22 +228,28 @@ const Simulator: FunctionalComponent = () => {
 
 					<div class="col-auto">
 						<table class={ `table ${style.GridTable}` }>
-							{ grid.map((_, j) => <tr>
-								{ _.map((slot, i) => <td>
-									<SimulatorSlot
-										idx={ kidx(j, i) }
-										slot={ slot }
-										settable
-										selected={ selectedSlot === j * 3 + i }
-										onSelect={ (): void => setSelectedSlot(j * 3 + i) }
-									/>
-								</td>) }
-							</tr>) }
+							<tbody>
+								{ grid.map((_, j) => <tr>
+									{ _.map((slot, i) => <td>
+										<SimulatorSlot
+											idx={ kidx(j, i) }
+											slot={ slot }
+											settable
+											selected={ selectedSlot === j * 3 + i }
+											onSelect={ (): void => setSelectedSlot(j * 3 + i) }
+										/>
+									</td>) }
+								</tr>) }
+							</tbody>
 						</table>
 					</div>
 				</div>
 
-				<SimulatorSummary slot={ flattenGrid[selectedSlot] } />
+				{ selectedCell && <SimulatorSummary
+					slot={ selectedCell }
+					onSlotDamaged={ d => setGridCellFor(selectedSlot, "damaged", d) }
+					onFavorBonus={ b => setGridCellFor(selectedSlot, "favorBonus", b) }
+				/> }
 			</div>
 
 			<div class="col-xl-6 col-12">
@@ -276,129 +296,110 @@ const Simulator: FunctionalComponent = () => {
 						</ul>
 					</div>
 					<div class="card-body">
-						{ editTab === 0
-							? <SimulatorUpgrade
-								slot={ flattenGrid[selectedSlot] }
-								limited={ flattenGrid.filter(x => x).length >= 5 }
-								using={ flattenGrid.filter(x => x).map(x => x!.uid) }
-								onUpdateUnit={ (uid): void => {
-									const target = flattenGrid[selectedSlot];
-									if (target && target.uid === uid) return; // 같으면 무시
-									if (!uid)
-										setGridCell(selectedSlot, null);
-									else
-										setupGrid(selectedSlot, uid);
-								} }
-								onUpdateLevel={ (level): void => {
-									const target = flattenGrid[selectedSlot];
-									if (target)
-										setGridCellFor(selectedSlot, "level", isNaN(level) ? 1 : Math.max(1, Math.min(120, level)));
-								} }
-								onUpdateRarity={ (rarity): void => {
-									const target = flattenGrid[selectedSlot];
-									if (target)
-										setGridCellFor(selectedSlot, "rarity", rarity);
-								} }
-								onUpdateLink={ (index, value): void => {
-									const target = flattenGrid[selectedSlot];
-									if (target) {
-										const links = target.links;
-										links[index] = isNaN(value) ? 0 : value;
-
-										setGridCellFor(selectedSlot, "links", links);
-									}
-								} }
-								onUpdateLinkBonus={ (bonus): void => {
-									const target = flattenGrid[selectedSlot];
-									if (target)
-										setGridCellFor(selectedSlot, "linkBonus", bonus);
-								} }
-								onUpdateStat={ (t, v): void => {
-									const target = flattenGrid[selectedSlot];
-									if (target)
-										setGridCellFor(selectedSlot, t as keyof SimulatorSlotEntity, v);
-								} }
-							/>
-							: <></>
-						}
-						{ editTab === 1
-							? <SimulatorEquips
-								slot={ flattenGrid[selectedSlot] }
-								onLevel={ (idx, level): void => {
-									const target = flattenGrid[selectedSlot];
-									if (target) {
-										const e = [...target.equips];
-										if (!e[idx]) return;
-
-										e[idx]!.level = level;
-										setGridCellFor(selectedSlot, "equips", e as SSEE);
-									}
-								} }
-								onEquip={ (idx, equip, buffs): void => {
-									const target = flattenGrid[selectedSlot];
-									if (target) {
-										const e = [...target.equips];
-
-										if (e[idx] && equip)
-											e[idx]!.uid = equip;
-										else if (e[idx])
-											e.splice(idx, 1, null);
-										else if (equip) {
-											e[idx] = {
-												uid: equip,
-												level: 10,
-												buffs,
-											};
-										} // 둘 다 null이면 처리 필요 없음
-
-										setGridCellFor(selectedSlot, "equips", e as SSEE);
-									}
-								} }
-								onBuffUpdate={ (idx, key, checked): void => {
-									const target = flattenGrid[selectedSlot];
-									if (!target) return;
-
-									const n = Object.assign({}, target);
-
-									const e = n.equips[idx];
+						{ editTab === 0 && <SimulatorUpgrade
+							slot={ selectedCell }
+							limited={ flattenGrid.filter(x => x).length >= 5 }
+							using={ flattenGrid.filter(x => x).map(x => x!.uid) }
+							onUpdateUnit={ (uid): void => {
+								const target = selectedCell;
+								if (target && target.uid === uid) return; // 같으면 무시
+								if (!uid)
+									setGridCell(selectedSlot, null);
+								else
+									setupGrid(selectedSlot, uid);
+							} }
+							onUpdateLevel={ (level): void => {
+								const target = selectedCell;
+								if (target)
+									setGridCellFor(selectedSlot, "level", isNaN(level) ? 1 : Math.max(1, Math.min(120, level)));
+							} }
+							onUpdateRarity={ (rarity): void => {
+								const target = selectedCell;
+								if (target)
+									setGridCellFor(selectedSlot, "rarity", rarity);
+							} }
+							onUpdateLink={ (index, value): void => {
+								const target = selectedCell;
+								if (target)
+									setGridCellFor(selectedSlot, "links", index, isNaN(value) ? 0 : value);
+							} }
+							onUpdateLinkBonus={ (bonus): void => {
+								const target = selectedCell;
+								if (target)
+									setGridCellFor(selectedSlot, "linkBonus", bonus);
+							} }
+							onUpdateStat={ (t, v): void => {
+								const target = selectedCell;
+								if (target)
+									setGridCellFor(selectedSlot, "stats", t, v);
+							} }
+						/> }
+						{ (editTab === 1 && selectedCell) && <SimulatorEquips
+							slot={ selectedCell }
+							onLevel={ (idx, level): void => {
+								const target = selectedCell;
+								if (target) {
+									const e = target.equips[idx];
 									if (!e) return;
+									setGridCellFor(selectedSlot, "equips", idx, { ...e, level });
+								}
+							} }
+							onEquip={ (idx, equip, buffs): void => {
+								const target = selectedCell;
+								if (target) {
+									const e = target.equips[idx];
 
-									if (checked && !(key in e.buffs))
-										e.buffs[key] = 1;
+									if (equip && e)
+										setGridCellFor(selectedSlot, "equips", idx, { ...e, uid: equip });
+									else if (equip)
+										setGridCellFor(selectedSlot, "equips", idx, {
+											uid: equip,
+											level: 10,
+											buffs,
+										});
+									else if (e)
+										setGridCellFor(selectedSlot, "equips", idx, null);
+
+									// 둘 다 null이면 처리 필요 없음
+								}
+							} }
+							onBuffUpdate={ (idx, key, checked): void => {
+								const target = selectedCell;
+								if (!target) return;
+
+								const e = target.equips[idx];
+								if (!e) return;
+
+								setGridCellFor(selectedSlot, "equips", idx, produce(e, v => {
+									if (checked && !(key in v.buffs))
+										v.buffs[key] = 1;
 									else
-										delete e.buffs[key];
+										delete v.buffs[key];
 
-									setGridCell(selectedSlot, n);
-								} }
-								onStack={ (idx, key, value): void => {
-									const target = flattenGrid[selectedSlot];
-									if (!target) return;
+									return v;
+								}));
+							} }
+							onStack={ (idx, key, value): void => {
+								const target = selectedCell;
+								if (!target) return;
 
-									const n = Object.assign({}, target);
+								const e = target.equips[idx];
+								if (!e) return;
 
-									const e = n.equips[idx];
-									if (!e) return;
+								setGridCellFor(selectedSlot, "equips", idx, produce(e, v => {
+									v.buffs[key] = value;
+									return v;
+								}));
+							} }
+						/> }
 
-									e.buffs[key] = value;
-									setGridCell(selectedSlot, n);
-								} }
-							/>
-							: <></>
-						}
+						{ editTab === 2 && <div class="my-3 text-secondary">
+							<Locale k="SIMULATOR_TBA_3" />
+						</div> }
 
-						{ editTab === 2
-							? <div class="my-3 text-secondary">
-								<Locale k="SIMULATOR_TBA_3" />
-							</div>
-							: <></>
-						}
-
-						{ !flattenGrid[selectedSlot] && editTab === 1
-							? <div class="my-3 text-secondary">
-								<Locale k="SIMULATOR_SELECT_FIRST" />
-							</div>
-							: <></>
-						}
+						{ (!selectedCell && editTab === 1) && <div class="my-3 text-secondary">
+							<Locale k="SIMULATOR_SELECT_FIRST" />
+						</div> }
 					</div>
 				</div>
 			</div>

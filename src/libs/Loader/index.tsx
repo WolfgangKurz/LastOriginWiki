@@ -141,7 +141,7 @@ export function useDBData<T extends {}> (path: string | null, db: "korea" = Curr
 		}
 	}, [state]);
 
-	if (state === 3) return null;
+	if (state === 3 || state === -1) return null;
 	return result;
 }
 
