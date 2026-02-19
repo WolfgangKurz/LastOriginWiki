@@ -8,6 +8,12 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13081" date="2026-02-19"
+		bugfix={ <>
+			<li><BY>전투원정보</BY>의 <BY>상세검색</BY>의 <BG>버프 보유</BG> 선택 후 사이트가 동작하지 않던 점을 수정했습니다.</li>
+			<li>일부 전투원 스킨의 작가 및 출시일 정보가 누락된 점을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13076" date="2026-02-18"
 		bugfix={ <>
 			<li><BY>시뮬레이터</BY>가 동작하지 않던 점을 수정했습니다.</li>
