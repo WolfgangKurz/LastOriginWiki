@@ -34,7 +34,7 @@ const SimulatorSlot: FunctionalComponent<SimulatorSlotProps> = (props) => {
 	}, [props.slot]);
 	const { uid, level, rarity, leader, damaged } = slot;
 
-	const DAMAGED_TEXT = useMemo(() => loc["SIMULATOR_DAMAGED"].replace(/\\n/g, "\n"), [loc]);
+	const DAMAGED_TEXT = useMemo(() => loc["SIMULATOR_DAMAGED"]?.replace(/\\n/g, "\n") ?? "수복 필요", [loc]);
 
 	return <div class="simulator-slot" data-empty={ !slot.uid || undefined } data-selected={ props.selected ? "1" : "0" }>
 		<div class="slot-indicator">{ props.idx }</div>

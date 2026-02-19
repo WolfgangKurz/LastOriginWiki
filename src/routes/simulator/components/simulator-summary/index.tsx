@@ -665,9 +665,9 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 							type="checkbox"
 							id="simulator_summary_favor_bonus"
 							checked={ slot.favorBonus }
-							onClick={ (e): void => {
+							onChange={ (e): void => {
 								e.preventDefault();
-								props.onFavorBonus?.(e.currentTarget.checked);
+								props.onFavorBonus?.(!slot.favorBonus);
 							} }
 						/>
 						<label class="form-check-label" for="simulator_summary_favor_bonus">
@@ -681,7 +681,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 							type="checkbox"
 							id="simulator_summary_include_buffs"
 							checked={ includeBuffs }
-							onClick={ (e): void => {
+							onChange={ (e): void => {
 								e.preventDefault();
 								setIncludeBuffs(!includeBuffs);
 							} }

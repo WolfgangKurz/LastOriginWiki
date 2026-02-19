@@ -138,7 +138,6 @@ const Simulator: FunctionalComponent = () => {
 				else
 					a[y][x][prop][propIdx_value as K] = value;
 			}
-			console.log(idx, x, y, prop, propIdx_value, value);
 			return a;
 		}));
 	}
