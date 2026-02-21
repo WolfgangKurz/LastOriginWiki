@@ -1,7 +1,6 @@
 import { FunctionalComponent } from "preact";
-import { Link } from "preact-router/match";
-// import { Dropdown } from "bootstrap";
-import Store from "@/store";
+import { useLocation } from "preact-iso";
+import { exec as isoExec } from "preact-iso/router";
 
 import { LocaleList } from "@/types/Locale";
 
@@ -13,30 +12,32 @@ import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
 
 import style from "./style.module.scss";
+import { cn } from "@/libs/Class";
 
 interface LinkData {
 	href: string;
 	text?: string;
 }
 
-const NavItem: FunctionalComponent<LinkData> = (props) => (
-	<li class={ `${style["nav-item"]} nav-item` }>
-		<Link
-			class="nav-link"
-			activeClassName="active"
+const NavItem: FunctionalComponent<LinkData> = (props) => {
+	const loc = useLocation();
+	const active = !!isoExec(loc.path, props.href === "/" ? "/" : `${props.href}/:*`);
+
+	return <li class={ `${style["nav-item"]} nav-item` }>
+		<a
+			class={ cn("nav-link", active && "active") }
 			href={ props.href }
-			path={ props.href === "/" ? "/" : `${props.href}/:*` }
 		>
 			{ props.children ? props.children : <Locale k={ props.text || "" } /> }
-		</Link>
-	</li>
-);
+		</a>
+	</li>;
+};
 
 const DropdownItem: FunctionalComponent<LinkData> = (props) => (
 	<li>
-		<Link class="dropdown-item" href={ props.href }>
+		<a class="dropdown-item" href={ props.href }>
 			{ props.children ? props.children : <Locale k={ props.text || "" } /> }
-		</Link>
+		</a>
 	</li>
 );
 

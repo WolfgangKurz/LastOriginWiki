@@ -1,6 +1,5 @@
 import { Component, FunctionalComponent, RenderableProps } from "preact";
 import { useEffect, useLayoutEffect, useState } from "preact/hooks";
-import { Link } from "preact-router";
 
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, EW_STAGE_DIFFICULTY, ROLE_TYPE } from "@/types/Enums";
 import { EWChapter, EWDB } from "@/types/DB/EW";
@@ -337,7 +336,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 
 		return <div class="card">
 			<div class={ `card-body text-center ${style.Enemies}` }>
-				{ Waves.map((wave, waveIdx) => <Link
+				{ Waves.map((wave, waveIdx) => <a
 					href="#"
 					class="wave-button"
 					onClick={ (e: Event): void => {
@@ -351,7 +350,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 						src={ `${AssetsRoot}/map-current.png` }
 						style={ { display: waveIdx === selectedWave ? "" : "none" } } />
 					<TbarIcon icon="TbarIcon_MP_NightChick_RV" size={ 42 } />
-				</Link>) }
+				</a>) }
 				<div class="mt-3">
 					<div class="mb-3">
 						<div class="btn btn-group">
@@ -428,7 +427,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 											class={ `badge bg-${enemy.enemy.category === EnemyCategory.Boss ? "danger" : "substory"}` }
 										>Lv.{ enemy.lv }</span>
 
-										<Link href="#" class="stretched-link" onClick={ (e: Event): void => {
+										<a href="#" class="stretched-link" onClick={ (e: Event): void => {
 											e.preventDefault();
 											OpenEnemyInfo(enemy.enemy, enemy.lv);
 										} } />
@@ -853,7 +852,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 									</div>
 								</div>
 
-								<Link class="stretched-link unit-stretched" href={ `/eternalwar/${cid}` } />
+								<a class="stretched-link unit-stretched" href={ `/eternalwar/${cid}` } />
 							</div>
 						</div>)
 					}

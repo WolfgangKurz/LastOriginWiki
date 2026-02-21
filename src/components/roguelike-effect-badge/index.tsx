@@ -1,5 +1,4 @@
 import { FunctionalComponent } from "preact";
-import { Link } from "preact-router";
 import Decimal from "decimal.js";
 
 import { BuffStatBuff } from "@/types/Buffs";
@@ -100,7 +99,7 @@ const RoguelikeEffectBadge: FunctionalComponent<RoguelikeEffectBadgeProps> = (pr
 						</div>
 					</div>
 
-					<Link href="#" class="stretched-link" onClick={ (e): void => {
+					<a href="#" class="stretched-link" onClick={ (e): void => {
 						e.preventDefault();
 						display.set(true);
 					} } />

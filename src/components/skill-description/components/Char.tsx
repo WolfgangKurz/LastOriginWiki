@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "preact";
-import { route } from "preact-router";
+import { useLocation } from "preact-iso";
 
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
@@ -19,6 +19,8 @@ interface CharProps {
 }
 
 export const Char: FunctionalComponent<CharProps> = (props) => {
+	const location = useLocation();
+
 	const db = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 	if (!db) return <></>;
 
@@ -34,7 +36,7 @@ export const Char: FunctionalComponent<CharProps> = (props) => {
 			onClick={ (e: Event): void => {
 				e.preventDefault();
 				e.stopPropagation();
-				route(href);
+				location.route(href);
 			} }
 		>
 			<BootstrapTooltip

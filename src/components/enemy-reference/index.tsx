@@ -1,5 +1,5 @@
 import { FunctionalComponent } from "preact";
-import { Link, route } from "preact-router";
+import { useLocation } from "preact-iso";
 
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
@@ -15,30 +15,31 @@ interface EnemyReferenceProps {
 }
 
 const EnemyReference: FunctionalComponent<EnemyReferenceProps> = (props) => {
+	const loc = useLocation();
 	const enemy = props.r;
 	const ImageExt = ImageExtension();
 
 	const FilterableEnemyDB = useDBData<FilterableEnemy[]>(StaticDB.FilterableEnemy);
 	if (!FilterableEnemyDB) {
-		return <Link href={ `/enemies/${enemy}` }>
+		return <a href={ `/enemies/${enemy}` }>
 			<span class="badge bg-danger">
 				<Locale plain k={ `ENEMY_${enemy}` } />
 				<Icons.Link45deg class="ms-1" />
 			</span>
-		</Link>;
+		</a>;
 	}
 
 	const found = FilterableEnemyDB.find(x => x.id === enemy);
 	if (!found) {
-		return <Link href={ `/enemies/${enemy}` }>
+		return <a href={ `/enemies/${enemy}` }>
 			<span class="badge bg-danger">
 				<Locale plain k={ `ENEMY_${enemy}` } />
 				<Icons.Link45deg class="ms-1" />
 			</span>
-		</Link>;
+		</a>;
 	}
 
-	return <Link href={ `/enemies/${enemy}` } >
+	return <a href={ `/enemies/${enemy}` } >
 		<BootstrapTooltip
 			placement="top"
 			content={ <div>
@@ -47,9 +48,9 @@ const EnemyReference: FunctionalComponent<EnemyReferenceProps> = (props) => {
 					<Locale k={ `ENEMY_${found.id}` } />
 				</div>
 
-				<Link href="#" class="stretched-link" onClick={ (e: Event): void => {
+				<a href="#" class="stretched-link" onClick={ (e: Event): void => {
 					e.preventDefault();
-					route(`/enemies/${enemy}`);
+					loc.route(`/enemies/${enemy}`);
 				} } />
 			</div> }
 		>
@@ -61,6 +62,6 @@ const EnemyReference: FunctionalComponent<EnemyReferenceProps> = (props) => {
 		<div class="preload-area">
 			<img src={ `${AssetsRoot}/${ImageExt}/tbar/${found.icon}.${ImageExt}` } />
 		</div>
-	</Link>;
+	</a>;
 };
 export default EnemyReference;

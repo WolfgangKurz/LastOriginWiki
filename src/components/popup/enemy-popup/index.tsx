@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useEffect, useMemo, useState } from "preact/hooks";
-import { route } from "preact-router";
+import { useLocation } from "preact-iso";
 import Decimal from "decimal.js";
 
 import { SelectOption } from "@/types/Helper";
@@ -71,6 +71,7 @@ interface EnemyPopupProps {
 
 const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 	const [loc] = useLocale();
+	const location = useLocation();
 	const imageExt = ImageExtension();
 
 	const [propLevel, setPropLevel] = useState<number>(0);
@@ -247,7 +248,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 							onClick={ (e): void => {
 								setTargetId(x.value);
 								if (!props.asSub)
-									route(`/enemies/${x.value}`);
+									location.route(`/enemies/${x.value}`);
 							} }
 						>{ x.text }
 						</button>) }
@@ -761,7 +762,7 @@ const EnemyPopup: FunctionalComponent<EnemyPopupProps> = (props) => {
 		}
 		onHidden={ (): void => {
 			if (!props.asSub && window.location.pathname !== "/enemies")
-				route("/enemies");
+				location.route("/enemies");
 
 			if (props.onHidden)
 				props.onHidden();

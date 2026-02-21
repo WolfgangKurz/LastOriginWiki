@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useMemo, useState } from "preact/hooks";
-import { route } from "preact-router";
+import { useLocation } from "preact-iso";
 
 import Store from "@/store";
 
@@ -20,6 +20,7 @@ import Icons from "@/components/bootstrap-icon";
 import style from "./style.module.scss";
 
 const SubStoryView: FunctionalComponent = () => {
+	const location = useLocation();
 	const imgExt = ImageExtension();
 
 	const [selectedTroop, setSelectedTroop] = useState<string | null>(Store.Worlds.Sub.Troop.value);
@@ -116,7 +117,7 @@ const SubStoryView: FunctionalComponent = () => {
 	return <div class="worlds-world text-start">
 		<div class="row">
 			<div class="col-auto">
-				<Button variant="dark" onClick={ () => route("/worlds") }>
+				<Button variant="dark" onClick={ () => location.route("/worlds") }>
 					<Icons.ArrowLeft class="me-1" />
 					<Locale k="WORLDS_BACK_TO_WORLDS" />
 				</Button>
@@ -125,7 +126,7 @@ const SubStoryView: FunctionalComponent = () => {
 			<div class="col-auto">
 
 				<div class="text-end">
-					<Button variant="dark" onClick={ () => route("/story") }>
+					<Button variant="dark" onClick={ () => location.route("/story") }>
 						<Locale k="STORY_GOTO_STORY" />
 					</Button>
 				</div>
@@ -236,7 +237,7 @@ const SubStoryView: FunctionalComponent = () => {
 														class="me-1 btn btn-sm btn-warning"
 														onClick={ e => {
 															e.preventDefault();
-															route(`/worlds/Sub/1/${SubStage(s.stage)}`);
+															location.route(`/worlds/Sub/1/${SubStage(s.stage)}`);
 														} }
 													>
 														<Icons.Compass class="me-1" />
@@ -247,7 +248,7 @@ const SubStoryView: FunctionalComponent = () => {
 														class="me-1 btn btn-sm btn-stat-hp"
 														onClick={ e => {
 															e.preventDefault();
-															route(`/story/${storyGroup.troop || "Story_Uncategorized"}/${s.key}-START`);
+															location.route(`/story/${storyGroup.troop || "Story_Uncategorized"}/${s.key}-START`);
 														} }
 													>
 														<Icons.Book class="me-1" />
@@ -258,7 +259,7 @@ const SubStoryView: FunctionalComponent = () => {
 														class="me-1 btn btn-sm btn-stat-hp"
 														onClick={ e => {
 															e.preventDefault();
-															route(`/story/${storyGroup.troop || "Story_Uncategorized"}/${s.key}-END`);
+															location.route(`/story/${storyGroup.troop || "Story_Uncategorized"}/${s.key}-END`);
 														} }
 													>
 														<Icons.Book class="me-1" />

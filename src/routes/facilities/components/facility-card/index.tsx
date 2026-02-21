@@ -1,5 +1,4 @@
 import { FunctionalComponent } from "preact";
-import { Link } from "preact-router";
 
 import { FilterableFacility } from "@/types/DB/Facility.Filterable";
 
@@ -20,7 +19,7 @@ const FacilityCard: FunctionalComponent<FacilityCardProps> = (props) => {
 			<FacilityIcon facility={ props.facility } level={ 25 } />
 		</div>
 
-		<Link class="stretched-link" href={ `/facilities/${props.facility.uid}` } />
+		<a class="stretched-link" href={ `/facilities/${props.facility.uid}` } />
 	</div>;
 };
 export default FacilityCard;

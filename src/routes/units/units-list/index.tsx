@@ -1,6 +1,5 @@
 import { FunctionalComponent } from "preact";
 import { useMemo } from "preact/hooks";
-import { Link } from "preact-router";
 import Store from "@/store";
 
 import { ACTOR_GRADE } from "@/types/Enums";
@@ -233,12 +232,12 @@ const UnitsList: FunctionalComponent<UnitsListProps> = (props) => {
 							</>;
 
 							if (!!unit) {
-								return <Link
+								return <a
 									class={ cn(style.UnitItem, !unit && style.Placeholder) }
 									href={ `/units/${unit.uid}` }
 								>
 									{ content }
-								</Link>;
+								</a>;
 							}
 							return <div class={ cn(style.UnitItem, !unit && style.Placeholder) }>
 								{ content }

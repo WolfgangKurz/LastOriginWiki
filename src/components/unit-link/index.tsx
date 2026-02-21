@@ -1,5 +1,4 @@
 import preact, { FunctionalComponent } from "preact";
-import { Link } from "preact-router";
 
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
@@ -22,7 +21,7 @@ const UnitLink: FunctionalComponent<UnitLinkProps> = (props) => {
 
 	const unit = FilterableUnit.find(x => x.uid === id);
 	if (!unit) return <span class="badge bg-info">{ id }</span>;
-	return <Link href={ `/units/${id}` }>
+	return <a href={ `/units/${id}` }>
 		<BootstrapTooltip
 			placement="top"
 			content={ <UnitCard
@@ -40,6 +39,6 @@ const UnitLink: FunctionalComponent<UnitLinkProps> = (props) => {
 		<div class="preload-area">
 			<UnitFace uid={ id } />
 		</div>
-	</Link>;
+	</a>;
 };
 export default UnitLink;

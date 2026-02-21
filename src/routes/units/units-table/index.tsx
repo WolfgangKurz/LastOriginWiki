@@ -1,5 +1,4 @@
 import { FunctionalComponent } from "preact";
-import { Link } from "preact-router";
 import { useMemo } from "preact/hooks";
 
 import Store from "@/store";
@@ -108,7 +107,7 @@ const UnitsTable: FunctionalComponent<UnitsListProps> = (props) => {
 										UnitList(rarity, type, role),
 										x => <>{
 											x.map(unit =>
-												<Link href={ `/units/${unit.uid}` }>
+												<a href={ `/units/${unit.uid}` }>
 													<div class={ style.UnitItem }>
 														<UnitFace uid={ unit.uid } />
 														<Locale
@@ -116,7 +115,7 @@ const UnitsTable: FunctionalComponent<UnitsListProps> = (props) => {
 															k={ `UNIT_${unit.uid}` }
 														/>
 													</div>
-												</Link>
+												</a>
 											)
 										}</>,
 										<span class="small text-secondary">

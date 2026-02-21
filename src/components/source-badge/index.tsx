@@ -1,5 +1,4 @@
 import { FunctionalComponent } from "preact";
-import { Link } from "preact-router";
 
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { Consumable } from "@/types/DB/Consumable";
@@ -252,13 +251,13 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 								return ls;
 							})(Source.Map)}/${Source.Map}`;
 
-			return <Link href={ link } target="_blank">{ template }</Link>;
+			return <a href={ link } target="_blank">{ template }</a>;
 		} else if (Source.IsNewEternalWar) {
 			const link = `/eternalwar/${Source.NewEternalWar}`;
-			return <Link href={ link } target="_blank">{ template }</Link>;
+			return <a href={ link } target="_blank">{ template }</a>;
 		} else if (Source.IsInfiniteWar) {
 			const link = `/infinitewar/${Source.InfiniteWar}`;
-			return <Link href={ link } target="_blank">{ template }</Link>;
+			return <a href={ link } target="_blank">{ template }</a>;
 		}
 	}
 	return template;

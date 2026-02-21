@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "preact/hooks";
 
 import * as YAML from "@/external/yaml";
 
+import { useUpdate } from "@/libs/hooks";
 import { DataRoot } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 
@@ -30,6 +31,12 @@ enum LoaderState {
 	REQUEST = 1,
 	ERROR = 2,
 	DONE = 3,
+}
+enum DBState {
+	UNSET = -1,
+	LOADING = 0,
+	READY = 1,
+	ERROR = 2,
 }
 
 const LoadQueue: Record<string, Array<() => void>> = {};
@@ -103,46 +110,31 @@ function normalize (list: string | string[] | undefined): string[] {
  * @returns `T` if data ready, `undefined` if not ready yet, `null` if failed to get.
  */
 export function useDBData<T extends {}> (path: string | null, db: "korea" = CurrentDB, requestId?: number): T | null | undefined {
-	const inCache = !!path && (path in Cache);
-	const [state, setState] = useState(-1); // uninitialized
-	const [result, setResult] = useState<T | undefined>(inCache ? Cache[path!] : undefined);
+	const inCache = path !== null && (path in Cache);
+	const update = useUpdate();
+	const [state, setState] = useState<DBState>(() => inCache ? DBState.READY : DBState.UNSET);
+	const [result, setResult] = useState<T | undefined>(() => inCache ? Cache[path!] : undefined);
 
 	useEffect(() => {
 		if (path !== null) {
 			if (path in Cache) {
-				setResult(path in Cache ? Cache[path] : null);
-				setState(2);
+				setResult(Cache[path]);
+				setState(DBState.READY);
 			} else {
 				setResult(undefined);
-				setState(0);
+				setState(DBState.LOADING);
+
+				Load(db, path)
+					.then(() => update())
+					.catch(() => setState(DBState.ERROR));
 			}
 		} else {
 			setResult(undefined);
-			setState(-1);
+			setState(DBState.UNSET);
 		}
-	}, [path, db, requestId]);
+	}, [path, db, requestId, update.value]);
 
-	useEffect(() => {
-		if (state === 0) {
-			const _path = path!;
-			if (_path in Cache) {
-				setState(2);
-				setResult(Cache[_path]);
-			} else {
-				setState(1);
-				Load(db, _path)
-					.then(() => {
-						setState(2);
-						setResult(Cache[_path]);
-					})
-					.catch(() => {
-						setState(3);
-					});
-			}
-		}
-	}, [state]);
-
-	if (state === 3 || state === -1) return null;
+	if (state === DBState.ERROR) return null;
 	return result;
 }
 

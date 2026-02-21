@@ -1,6 +1,5 @@
 import { FunctionalComponent } from "preact";
 import { useMemo, useRef } from "preact/hooks";
-import { Link } from "preact-router";
 
 import { ACTOR_GRADE } from "@/types/Enums";
 import { BUFFEFFECT_TYPE } from "@/types/BuffEffect";
@@ -96,12 +95,12 @@ const UnitsBuffGrouped: FunctionalComponent<UnitsListProps> = (props) => {
 				</div>
 			</>;
 
-			ret[unit.uid] = <Link
+			ret[unit.uid] = <a
 				class={ cn(style.UnitItem, !unit && style.Placeholder) }
 				href={ `/units/${unit.uid}` }
 			>
 				{ content }
-			</Link>;
+			</a>;
 		});
 		return ret;
 	}, [props.list]);
@@ -113,7 +112,7 @@ const UnitsBuffGrouped: FunctionalComponent<UnitsListProps> = (props) => {
 			</div>
 			<div class={ style.List }>
 				{ GroupKeys.map(g => <div>
-					<Link
+					<a
 						href={ `#${g}` }
 						onClick={ e => {
 							e.preventDefault();
@@ -130,7 +129,7 @@ const UnitsBuffGrouped: FunctionalComponent<UnitsListProps> = (props) => {
 								fallback={ g }
 							/> }
 						/>
-					</Link>
+					</a>
 				</div>) }
 			</div>
 		</div>

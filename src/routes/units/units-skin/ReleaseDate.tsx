@@ -1,5 +1,4 @@
 import { FunctionalComponent } from "preact";
-import { Link } from "preact-router";
 
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
@@ -145,14 +144,14 @@ const ReleaseDate: FunctionalComponent<UnitsListProps> = (props) => {
 											</div>
 										</div> }
 									>
-										<Link href={ `/units/${skin.uid}/s${skin.sid || 0}` }>
+										<a href={ `/units/${skin.uid}/s${skin.sid || 0}` }>
 											<UnitFace
 												class={ skin.sid ? style.SkinFace : style.DefaultFace }
 												uid={ skin.uid }
 												skin={ skin.metadata.iconId ?? skin.metadata.imageId }
 												size={ 56 }
 											/>
-										</Link>
+										</a>
 									</BootstrapTooltip>
 								</div>) }
 								{ unitList.length > 0 && skinList.length > 0 && <hr class="my-1" /> }
@@ -172,14 +171,14 @@ const ReleaseDate: FunctionalComponent<UnitsListProps> = (props) => {
 											</div>
 										</div> }
 									>
-										<Link href={ `/units/${skin.uid}/s${skin.sid || 0}` }>
+										<a href={ `/units/${skin.uid}/s${skin.sid || 0}` }>
 											<UnitFace
 												class={ skin.sid ? style.SkinFace : style.DefaultFace }
 												uid={ skin.uid }
 												skin={ skin.metadata.iconId ?? skin.metadata.imageId }
 												size={ 56 }
 											/>
-										</Link>
+										</a>
 									</BootstrapTooltip>
 								</div>) }
 							</div>

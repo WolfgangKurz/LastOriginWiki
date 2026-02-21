@@ -1,6 +1,5 @@
 import { FunctionalComponent } from "preact";
 import { useMemo, useState } from "preact/hooks";
-import { Link } from "preact-router";
 import Decimal from "decimal.js";
 
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, CHARTYPE_GIFTITEM_DAMAGE_TYPE, ITEM_TYPE, ROLE_TYPE } from "@/types/Enums";
@@ -502,7 +501,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 				/>
 				{ ExclusiveEquip.length > 0
 					? <div class={ style.Equips }>
-						{ ExclusiveEquip.map(limited => <Link
+						{ ExclusiveEquip.map(limited => <a
 							href={ `/equips/${limited.fullKey}` }
 							onClick={ (e): void => {
 								e.preventDefault();
@@ -521,7 +520,7 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 							<div class={ style.Name }>
 								<Locale k={ `EQUIP_${limited.fullKey}` } />
 							</div>
-						</Link>) }
+						</a>) }
 					</div>
 					: <div class={ style.Empty }>
 						<Locale k="UNIT_VIEW_EXCLUSIVE_EQUIP_EMPTY" />

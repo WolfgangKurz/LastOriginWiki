@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useMemo, useState } from "preact/hooks";
-import { route } from "preact-router";
+import { useLocation } from "preact-iso";
 
 import { ROLE_TYPE } from "@/types/Enums";
 import { FacilityEntity, FacilityUpgradeRequiredMaterial, FactilityProduct } from "@/types/DB/Facility";
@@ -31,6 +31,7 @@ interface FacilityViewProps {
 }
 
 const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
+	const location = useLocation();
 	const [loc] = useLocale();
 
 	const DBKey = useMemo(() => `/facility/${props.uid}`, [props.uid]);
@@ -284,7 +285,7 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 	return <div class="facility-view">
 		<div class="row">
 			<div class="col-auto">
-				<button class="btn btn-dark" onClick={ (): void => void (route("/facilities/")) }>
+				<button class="btn btn-dark" onClick={ () => location.route("/facilities/") }>
 					<Icons.ArrowLeft class="me-1" />
 					<Locale k="FACILITY_BACK_TO_LIST" />
 				</button>

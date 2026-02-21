@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useCallback, useEffect, useMemo, useState } from "preact/hooks";
-import { route } from "preact-router";
+import { useLocation } from "preact-iso";
 
 import { SKIN_SUBSET_ENUM, UnitSkinEntity } from "@/types/DB/Unit";
 import { SKIN_IN_PARTS } from "@/types/Enums";
@@ -27,6 +27,7 @@ interface SkinData extends UnitSkinEntity {
 }
 
 const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
+	const location = useLocation();
 	const [loc] = useLocale();
 
 	const [filterPart, setFilterPart] = useState<Record<Exclude<SKIN_IN_PARTS, SKIN_IN_PARTS.NONE>, boolean | undefined>>({
@@ -319,7 +320,11 @@ const Advanced: FunctionalComponent<UnitsListProps> = (props) => {
 					/>
 
 					<div class={ style.SkinNavigator }>
-						<Button variant="light" textVariant="dark" onClick={ () => route(`/units/${currentSkin.uid}/s${currentSkin.sid}`) }>
+						<Button
+							variant="light"
+							textVariant="dark"
+							onClick={ () => location.route(`/units/${currentSkin.uid}/s${currentSkin.sid}`) }
+						>
 							<Locale raw={ false } k="UNIT_SKIN_NAVIGATE" />
 						</Button>
 					</div>

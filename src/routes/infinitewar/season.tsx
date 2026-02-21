@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useEffect, useMemo, useState } from "preact/hooks";
-import { Link, route } from "preact-router";
+import { useLocation } from "preact-iso";
 
 import { IWSeason, IWStage } from "@/types/DB/IW";
 import { Consumable } from "@/types/DB/Consumable";
@@ -28,6 +28,8 @@ interface InfiniteWarSeasonProps {
 }
 
 const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) => {
+	const location = useLocation();
+
 	const [currentTab, setCurrentTab] = useState<"stage" | "reward">("stage");
 	const [rewardTab, setRewardTab] = useState<"stage" | "battle" | "total">("stage");
 
@@ -60,7 +62,7 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 	const season = useMemo(() => seasons.find(e => e.key === props.season), [seasons, props.season]);
 	useEffect(() => {
 		if (!season)
-			route("/infinitewar", true);
+			location.route("/infinitewar", true);
 	}, [season]);
 	if (!season) return <></>;
 
@@ -355,7 +357,7 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 													class={ `badge bg-${(enemy.category & 1) ? "danger" : "substory"}` }
 												>Lv.{ selectedStage.monster.lv }</span>
 
-												<Link href="#" class="stretched-link" onClick={ (e: Event): void => {
+												<a href="#" class="stretched-link" onClick={ (e: Event): void => {
 													e.preventDefault();
 													OpenEnemyInfo(enemy, selectedStage.monster.lv);
 												} } />

@@ -1,6 +1,6 @@
 import { createElement, FunctionalComponent } from "preact";
 import { useEffect, useMemo, useState } from "preact/hooks";
-import { route } from "preact-router";
+import { useLocation } from "preact-iso";
 
 import { Unit, UnitSkin } from "@/types/DB/Unit";
 
@@ -47,6 +47,7 @@ interface UnitsViewProps {
 }
 
 const View: FunctionalComponent<UnitsViewProps> = (props) => {
+	const location = useLocation();
 	const [loc] = useLocale();
 
 	const [DisplayTab, setDisplayTab] = useState<TabTypes>(
@@ -151,12 +152,12 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 					window.history.back();
 					setTimeout(() => {
 						if (window.location.href === href) // not moved?
-							route("/units");
+							location.route("/units");
 					}, 500);
 					// if (router.previous)
 					// 	window.history.back();
 					// else
-					// 	route("/units");
+					// 	location.route("/units");
 				} }>
 					<Locale k="COMMON_BACK" />
 				</Button>

@@ -1,5 +1,4 @@
 import { FunctionalComponent } from "preact";
-import { Link } from "preact-router";
 
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
@@ -19,25 +18,25 @@ const UnitReference: FunctionalComponent<UnitReferenceProps> = (props) => {
 
 	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 	if (!FilterableUnitDB) {
-		return <Link href={ `/units/${unit}` }>
+		return <a href={ `/units/${unit}` }>
 			<span class="badge bg-substory">
 				<Locale plain k={ `UNIT_${unit}` } />
 				<Icons.Link45deg class="ms-1" />
 			</span>
-		</Link>;
+		</a>;
 	}
 
 	const found = FilterableUnitDB.find(x => x.uid === unit);
 	if (!found) {
-		return <Link href={ `/units/${unit}` }>
+		return <a href={ `/units/${unit}` }>
 			<span class="badge bg-substory">
 				<Locale plain k={ `UNIT_${unit}` } />
 				<Icons.Link45deg class="ms-1" />
 			</span>
-		</Link>;
+		</a>;
 	}
 
-	return <Link href={ `/units/${unit}` } >
+	return <a href={ `/units/${unit}` } >
 		<BootstrapTooltip
 			placement="top"
 			content={ <UnitCard
@@ -55,6 +54,6 @@ const UnitReference: FunctionalComponent<UnitReferenceProps> = (props) => {
 		<div class="preload-area">
 			<UnitFace uid={ unit } />
 		</div>
-	</Link>;
+	</a>;
 };
 export default UnitReference;

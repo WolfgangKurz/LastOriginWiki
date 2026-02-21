@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useEffect, useMemo, useState } from "preact/hooks";
-import { route } from "preact-router";
+import { useLocation } from "preact-iso";
 import Decimal from "decimal.js";
 
 import { ACTOR_GRADE, ITEM_GRADE, ITEM_TYPE } from "@/types/Enums";
@@ -54,6 +54,7 @@ interface EquipPopupProps {
 
 const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 	const [loc] = useLocale();
+	const location = useLocation();
 
 	const [latestUid, setLatestUid] = useState<string>("");
 
@@ -117,7 +118,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 		if (!props.asSub && target) {
 			const to = `/equips/${target.fullKey}`;
 			if (to !== window.location.pathname)
-				route(to);
+				location.route(to);
 		}
 	}, [props.asSub, target?.fullKey]);
 
@@ -412,7 +413,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 		}
 		onHidden={ (): void => {
 			if (!props.asSub && window.location.pathname !== "/equips")
-				route("/equips");
+				location.route("/equips");
 
 			if (props.onHidden)
 				props.onHidden();

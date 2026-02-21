@@ -1,5 +1,4 @@
 import { FunctionalComponent } from "preact";
-import { Link } from "preact-router";
 
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
@@ -63,7 +62,7 @@ const EnemyCard: FunctionalComponent<EnemyCardProps> = (props) => {
 			</div>
 		</div>
 
-		<Link
+		<a
 			class="stretched-link enemy-strected"
 			href={ `/enemies/${enemy.id}` }
 		/>

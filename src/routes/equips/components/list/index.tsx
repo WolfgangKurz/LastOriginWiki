@@ -1,6 +1,5 @@
 import { FunctionalComponent } from "preact";
 import { useEffect } from "preact/hooks";
-import { Link } from "preact-router";
 import Store, { toggle } from "@/store";
 
 import { EffectFilterListItemPM, EffectFilterListItemSingle, EffectFilterListType } from "@/types/Buff";
@@ -569,9 +568,9 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 
 				<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6 mt-4">
 					{ EquipGroups.map(group => <div class="col">
-						<Link href={ `/equips/${group.equip.fullKey}` } class={ style["equip-card-link"] }>
+						<a href={ `/equips/${group.equip.fullKey}` } class={ style["equip-card-link"] }>
 							<EquipCard class="w-100" equip={ group.equip } source={ group.source } noLink />
-						</Link>
+						</a>
 					</div>) }
 				</div>
 			</>

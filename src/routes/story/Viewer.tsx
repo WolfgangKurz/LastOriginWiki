@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useCallback, useEffect, useMemo, useRef, useState } from "preact/hooks";
-import { route } from "preact-router";
+import { useLocation } from "preact-iso";
 import Store from "@/store";
 
 import { DIALOG_SPEAKER, SCG_ACTIVATION } from "@/types/Enums";
@@ -42,6 +42,7 @@ const FaceAlias: Record<string, string> = {
 };
 
 const Viewer: FunctionalComponent<StoryProps> = (props) => {
+	const location = useLocation();
 	const [loc] = useLocale();
 
 	const [isBackMode] = useState(Store.Story.back.value);
@@ -282,7 +283,8 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 
 	const storyMetadata = useDBData<StoryMetadata>(`story/${props.id}`);
 	useEffect(() => {
-		if (storyMetadata)
+		console.log(props.id, storyMetadata);
+		if (!!storyMetadata)
 			setBGM(storyMetadata.bgm[type]);
 		else if (storyMetadata === null)  // Error
 			setError(true);
@@ -336,11 +338,11 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 				: <button class="btn btn-dark" onClick={ e => {
 					e.preventDefault();
 					if (storyType === "Sub2")
-						route(`/worlds/${wid}/${mid}/substory`);
+						location.route(`/worlds/${wid}/${mid}/substory`);
 					else if (storyType === "Sub3")
-						route("/worlds/Sub");
+						location.route("/worlds/Sub");
 					else
-						route(`/worlds/${wid}/${mid}/${nid}`);
+						location.route(`/worlds/${wid}/${mid}/${nid}`);
 				} }>
 					<Icons.ArrowLeft class="me-1" />
 					<Locale k="WORLDS_BACK_TO_WORLDS" />

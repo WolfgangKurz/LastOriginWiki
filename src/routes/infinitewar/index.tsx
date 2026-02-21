@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useMemo } from "preact/hooks";
-import { route } from "preact-router";
+import { useLocation } from "preact-iso";
 
 import { IWSeason } from "@/types/DB/IW";
 
@@ -14,6 +14,7 @@ import Loading from "@/components/loading";
 import style from "./style.module.scss";
 
 const InfiniteWar: FunctionalComponent = () => {
+	const location = useLocation();
 	const imgExt = ImageExtension();
 
 	const IWSeason = useDBData<IWSeason[]>(StaticDB.IWSeason);
@@ -46,7 +47,7 @@ const InfiniteWar: FunctionalComponent = () => {
 					class={ style.IWSeason }
 					onClick={ e => {
 						e.preventDefault();
-						route(`/infinitewar/${current.key}`);
+						location.route(`/infinitewar/${current.key}`);
 					} }
 				>
 					<img class={ style.BG } src={ `${AssetsRoot}/${imgExt}/iw/${current.monster}.${imgExt}` } />
@@ -84,7 +85,7 @@ const InfiniteWar: FunctionalComponent = () => {
 					class={ BuildClass(style.IWSeason, new Date(season.date[1]) < now && style.Ended) }
 					onClick={ e => {
 						e.preventDefault();
-						route(`/infinitewar/${season.key}`);
+						location.route(`/infinitewar/${season.key}`);
 					} }
 				>
 					<img class={ style.BG } src={ `${AssetsRoot}/${imgExt}/iw/${season.monster}.${imgExt}` } />

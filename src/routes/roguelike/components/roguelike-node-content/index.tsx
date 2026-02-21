@@ -1,5 +1,4 @@
 import { FunctionalComponent } from "preact";
-import { Link } from "preact-router";
 
 import { ROGUE_CELL_TYPE } from "@/types/Enums";
 import { RawReward, RewardTypeBase } from "@/types/Reward";
@@ -202,12 +201,12 @@ const RoguelikeNodeContent: FunctionalComponent = () => {
 									if ("power" in reward)
 										return <DropRes res="power" count={ reward.power } am />;
 									if ("unit" in reward) {
-										return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
+										return <a class="drop-unit" href={ `/units/${reward.unit.uid}` }>
 											<DropUnit id={ reward.unit.uid } />
-										</Link>;
+										</a>;
 									}
 									if ("equip" in reward) {
-										return <Link class="drop-equip"
+										return <a class="drop-equip"
 											href={ `/equips/${reward.equip.fullKey}` }
 											onClick={ (e: Event): void => {
 												e.preventDefault();
@@ -221,7 +220,7 @@ const RoguelikeNodeContent: FunctionalComponent = () => {
 												? `x${reward.count}`
 												: <></>
 											}
-										</Link>;
+										</a>;
 									}
 									return <DropItem item={ reward.consumable } count={ reward.count } />;
 								})

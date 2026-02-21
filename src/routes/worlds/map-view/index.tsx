@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useEffect, useMemo, useRef, useState } from "preact/hooks";
-import { Link, route } from "preact-router";
+import { useLocation } from "preact-iso";
 
 import { ACTOR_GRADE, STAGE_SUB_TYPE } from "@/types/Enums";
 import { MapEnemyData, MapNodeEntity, Maps, World } from "@/types/DB/Map";
@@ -58,6 +58,7 @@ interface MapViewProps {
 }
 
 const MapView: FunctionalComponent<MapViewProps> = (props) => {
+	const location = useLocation();
 	const [loc] = useLocale();
 	const ImageExt = ImageExtension();
 
@@ -342,7 +343,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 		if (node.type === STAGE_SUB_TYPE.STORY)
 			setCurrentTab("reward");
 		setSelectedWave(0);
-		route(`/worlds/${props.wid}/${props.mid}/${node ? node.text : ""}`);
+		location.route(`/worlds/${props.wid}/${props.mid}/${node ? node.text : ""}`);
 	}
 
 	function OpenEnemyInfo (enemy: FilterableEnemy, level: number): void {
@@ -372,11 +373,11 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 			<div class="col-auto">
 				<button class="btn btn-dark" onClick={ (): void => {
 					if (props.wid === "Sub")
-						route("/worlds/");
+						location.route("/worlds/");
 					else if (isStory)
-						route("/worlds/Story");
+						location.route("/worlds/Story");
 					else
-						route(`/worlds/${props.wid}`);
+						location.route(`/worlds/${props.wid}`);
 				} }>
 					<Icons.ArrowLeft class="me-1" />
 					{ props.wid === "Sub"
@@ -393,7 +394,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 							onClick={ e => {
 								e.preventDefault();
 								setCurrentMode("substory");
-								route(`/worlds/${props.wid}/${props.mid}/substory`, true);
+								location.route(`/worlds/${props.wid}/${props.mid}/substory`, true);
 							} }
 						>
 							<Icons.ChatSquareTextFill class="me-1" />
@@ -405,7 +406,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 						onClick={ e => {
 							e.preventDefault();
 							setCurrentMode("map");
-							route(`/worlds/${props.wid}/${props.mid}`, true);
+							location.route(`/worlds/${props.wid}/${props.mid}`, true);
 						} }
 					>
 						<Icons.Compass class="me-1" />
@@ -451,7 +452,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 										class={ BuildClass("btn btn-sm me-1", isActive(props.mid === k, "btn-light", "btn-outline-light")) }
 										onClick={ e => {
 											e.preventDefault();
-											route(`/worlds/${props.wid}/${k}`);
+											location.route(`/worlds/${props.wid}/${k}`);
 										} }
 									>
 										{ props.wid }-{ k }
@@ -462,7 +463,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 						}
 						<div>
 							{ props.wid === "Sub"
-								? NodeList.map(x => <Link
+								? NodeList.map(x => <a
 									href={ `/worlds/${props.wid}/${props.mid}/${x.text}` }
 									onClick={ (): void => {
 										setSelected(x);
@@ -475,9 +476,9 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 										</span>
 										<Locale k={ `WORLD_MAP_Sub_${x.text}` } />
 									</button>
-								</Link>)
+								</a>)
 								: props.wid === "Daily"
-									? NodeList.map(x => <Link
+									? NodeList.map(x => <a
 										href={ `/worlds/${props.wid}/${props.mid}/${x.text}` }
 										onClick={ (): void => {
 											setSelected(x);
@@ -487,9 +488,9 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 										<button class={ `btn btn-${selected === x ? "stat-hp" : "light"} m-2` }>
 											<Locale k={ `WORLD_MAP_Daily_${x.text}` } />
 										</button>
-									</Link>)
+									</a>)
 									: props.wid === "Cha"
-										? NodeList.map(x => <Link
+										? NodeList.map(x => <a
 											href={ `/worlds/${props.wid}/${props.mid}/${x.text}` }
 											onClick={ (): void => {
 												setSelected(x);
@@ -500,7 +501,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												<Locale k={ `WORLD_MAP_Cha_${x.text}` } />
 												{/* { x.name.replace(/.+\(([^)]+)\)$/, "$1") } */ }
 											</button>
-										</Link>)
+										</a>)
 										: <MapGrid
 											nodes={ NodeList }
 											wid={ props.wid }
@@ -589,7 +590,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 														class="me-1 btn btn-sm btn-stat-hp"
 														onClick={ e => {
 															e.preventDefault();
-															route(`/story/${selected.key}/OP`);
+															location.route(`/story/${selected.key}/OP`);
 														} }
 													>
 														<Icons.Book class="me-1" />
@@ -605,7 +606,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 															class="me-1 btn btn-sm btn-stat-hp"
 															onClick={ e => {
 																e.preventDefault();
-																route(`/story/${selected.key}/${k}`);
+																location.route(`/story/${selected.key}/${k}`);
 															} }
 														>
 															<Icons.Book class="me-1" />
@@ -622,7 +623,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 														class="me-1 btn btn-sm btn-stat-hp"
 														onClick={ e => {
 															e.preventDefault();
-															route(`/story/${selected.key}/ED`);
+															location.route(`/story/${selected.key}/ED`);
 														} }
 													>
 														<Icons.Book class="me-1" />
@@ -768,12 +769,12 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																		if ("power" in reward)
 																			return <DropRes res="power" count={ reward.power } />;
 																		if ("unit" in reward) {
-																			return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
+																			return <a class="drop-unit" href={ `/units/${reward.unit.uid}` }>
 																				<DropUnit id={ reward.unit.uid } />
-																			</Link>;
+																			</a>;
 																		}
 																		if ("equip" in reward) {
-																			return <Link class="drop-equip"
+																			return <a class="drop-equip"
 																				href={ `/equips/${reward.equip.fullKey}` }
 																				onClick={ (e: Event): void => {
 																					e.preventDefault();
@@ -783,7 +784,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																				} }
 																			>
 																				<DropEquip equip={ reward.equip } count={ reward.count } />
-																			</Link>;
+																			</a>;
 																		}
 																		return <DropItem item={ reward.consumable } count={ reward.count } />;
 																	})
@@ -815,12 +816,12 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																		if ("power" in reward)
 																			return <DropRes res="power" count={ reward.power } am />;
 																		if ("unit" in reward) {
-																			return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
+																			return <a class="drop-unit" href={ `/units/${reward.unit.uid}` }>
 																				<DropUnit id={ reward.unit.uid } />
-																			</Link>;
+																			</a>;
 																		}
 																		if ("equip" in reward) {
-																			return <Link class="drop-equip"
+																			return <a class="drop-equip"
 																				href={ `/equips/${reward.equip.fullKey}` }
 																				onClick={ (e: Event): void => {
 																					e.preventDefault();
@@ -830,7 +831,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																				} }
 																			>
 																				<DropEquip equip={ reward.equip } count={ reward.count } />
-																			</Link>;
+																			</a>;
 																		}
 																		return <DropItem item={ reward.consumable } count={ reward.count } />;
 																	})
@@ -926,12 +927,12 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																		if ("power" in reward)
 																			return <DropRes res="power" count={ reward.power } />;
 																		if ("unit" in reward) {
-																			return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
+																			return <a class="drop-unit" href={ `/units/${reward.unit.uid}` }>
 																				<DropUnit id={ reward.unit.uid } />
-																			</Link>;
+																			</a>;
 																		}
 																		if ("equip" in reward) {
-																			return <Link class="drop-equip"
+																			return <a class="drop-equip"
 																				href={ `/equips/${reward.equip.fullKey}` }
 																				onClick={ (e: Event): void => {
 																					e.preventDefault();
@@ -941,7 +942,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																				} }
 																			>
 																				<DropEquip equip={ reward.equip } count={ reward.count } />
-																			</Link>;
+																			</a>;
 																		}
 																		return <DropItem item={ reward.consumable } count={ reward.count } />;
 																	})
@@ -1011,9 +1012,9 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																if (unit.uid.startsWith("Module_"))
 																	return <DropUnit id={ unit.uid } />;
 
-																return <Link class="drop-unit" href={ `/units/${unit.uid}` }>
+																return <a class="drop-unit" href={ `/units/${unit.uid}` }>
 																	<DropUnit id={ unit.uid } />
-																</Link>;
+																</a>;
 															})
 															.map(el => <div class="p-0">{ el }</div>)
 													}
@@ -1034,7 +1035,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 														</div>
 														: ItemDrops
 															.map((item, i) => "rarity" in item
-																? <Link class="drop-equip"
+																? <a class="drop-equip"
 																	href={ `/equips/${item.fullKey}` }
 																	onClick={ (e: Event): void => {
 																		e.preventDefault();
@@ -1044,7 +1045,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 																	} }
 																>
 																	<DropEquip equip={ item } />
-																</Link>
+																</a>
 																: <DropItem item={ item } />)
 															.map(el => <div class="p-0">{ el }</div>)
 													}
@@ -1142,7 +1143,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 											/>
 										</span>
 									</div>
-									{ Waves.map((wave, waveIdx) => <Link
+									{ Waves.map((wave, waveIdx) => <a
 										href="#"
 										class="wave-button"
 										onClick={ (e: Event): void => {
@@ -1158,7 +1159,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 											src={ `${AssetsRoot}/map-current.png` }
 											style={ { display: waveIdx === selectedWave ? "" : "none" } } />
 										<TbarIcon icon="TbarIcon_MP_NightChick_RV" size={ 42 } />
-									</Link>) }
+									</a>) }
 									<div class="mt-3">
 										<div class="mb-3">
 											<div class="btn btn-group">
@@ -1212,7 +1213,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 															class={ `badge bg-${(enemy.enemy.category & 1) ? "danger" : "substory"}` }
 														>Lv.{ enemy.lv }</span>
 
-														<Link href="#" class="stretched-link" onClick={ (e: Event): void => {
+														<a href="#" class="stretched-link" onClick={ (e: Event): void => {
 															e.preventDefault();
 															OpenEnemyInfo(enemy.enemy, enemy.lv);
 														} } />
@@ -1304,7 +1305,7 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 												class="me-1 btn btn-sm btn-stat-hp"
 												onClick={ e => {
 													e.preventDefault();
-													route(`/story/${x.key}/${y.key}`);
+													location.route(`/story/${x.key}/${y.key}`);
 												} }
 											>
 												<Icons.Book class="me-1" />

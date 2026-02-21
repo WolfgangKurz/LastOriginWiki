@@ -1,5 +1,4 @@
 import { FunctionalComponent } from "preact";
-import { Link } from "preact-router";
 
 import RoguelikeQuest from "@/types/DB/Roguelike.Quest";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
@@ -200,9 +199,9 @@ const RoguelikeQuestContent: FunctionalComponent = () => {
 										if ("power" in reward)
 											return <DropRes res="power" count={ reward.power } am />;
 										if ("unit" in reward) {
-											return <Link class="drop-unit" href={ `/units/${reward.unit.uid}` }>
+											return <a class="drop-unit" href={ `/units/${reward.unit.uid}` }>
 												<DropUnit id={ reward.unit.uid } />
-											</Link>;
+											</a>;
 										}
 										if ("equip" in reward) {
 											return <>

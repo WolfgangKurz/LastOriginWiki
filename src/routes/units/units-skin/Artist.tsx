@@ -1,6 +1,5 @@
 import { FunctionalComponent } from "preact";
 import { useMemo } from "preact/hooks";
-import { Link } from "preact-router";
 
 import Store from "@/store";
 
@@ -141,14 +140,14 @@ const Artist: FunctionalComponent<UnitsListProps> = (props) => {
 										</div>
 									</div> }
 								>
-									<Link href={ `/units/${skin.uid}/s${skin.sid || 0}` }>
+									<a href={ `/units/${skin.uid}/s${skin.sid || 0}` }>
 										<UnitFace
 											class={ skin.sid ? style.SkinFace : style.DefaultFace }
 											uid={ skin.uid }
 											skin={ skin.metadata.iconId ?? skin.metadata.imageId }
 											size={ 56 }
 										/>
-									</Link>
+									</a>
 								</BootstrapTooltip>
 							</div>) }
 						</div>

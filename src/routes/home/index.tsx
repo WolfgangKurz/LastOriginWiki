@@ -1,12 +1,11 @@
 import { FunctionalComponent } from "preact";
 import { useMemo } from "preact/hooks";
-import { Link, route } from "preact-router";
 
 import TimeAgo from "javascript-time-ago";
 
 import { AssetsRoot, CurrentEvent, EventTo, ImageExtension, IsEventRunning } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
-import { CurrentLocale } from "@/libs/Locale";
+import { CurrentLocale, useLocale } from "@/libs/Locale";
 import { GetTimeAgoLocale } from "@/libs/Setup";
 import { cn } from "@/libs/Class";
 
@@ -20,23 +19,12 @@ import ConfigSelector from "./components/ConfigSelector";
 import BuildInfo from "@/buildtime";
 
 import style from "./style.module.scss";
+import { useLocation } from "preact-iso";
 
 interface LinkData {
 	href: string;
 	text?: string;
 }
-
-const NavItem: FunctionalComponent<LinkData> = (props) => (
-	<button
-		class="btn btn-rarity-A"
-		onClick={ e => {
-			e.preventDefault();
-			route(props.href);
-		} }
-	>
-		{ props.children ? props.children : <Locale k={ props.text || "" } /> }
-	</button>
-);
 
 const NavItemExternal: FunctionalComponent<LinkData> = (props) => (
 	<button
@@ -81,7 +69,7 @@ const Home: FunctionalComponent = () => {
 
 	return <div class={ style.Home }>
 		<div class={ cn(style.Header) }>
-			{ eventAvailable && <Link
+			{ eventAvailable && <a
 				class={ style.EventBanner }
 				href={ `/worlds/${CurrentEvent}` }
 			>
@@ -97,7 +85,7 @@ const Home: FunctionalComponent = () => {
 					<Icons.HourglassSplit class="me-1 mb-1" />
 					<Countdown to={ EventTo } />
 				</div>
-			</Link> }
+			</a> }
 		</div>
 
 		<div class={ style.BrandContainer }>

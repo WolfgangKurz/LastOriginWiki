@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useEffect, useMemo, useState } from "preact/hooks";
-import { Link, route } from "preact-router";
+import { useLocation } from "preact-iso";
 import Store from "@/store";
 
 import StoryMap, { StoryMapSubstory } from "@/types/DB/StoryMap";
@@ -29,6 +29,7 @@ interface StoryProps {
 }
 
 const Story: FunctionalComponent<StoryProps> = (props) => {
+	const location = useLocation();
 	const [loc] = useLocale();
 
 	const [selectedKey, setSelectedKey] = useState<[string | number, number] | null>(null);
@@ -154,7 +155,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 
 	function StoryTimeline (k: StoryKeyType): preact.VNode[] {
 		return k[1].map(s => <div class={ style.StoryMapItem }>
-			<Link
+			<a
 				class={ style.Box }
 				href={ `/story/${k[0]}_${s}` }
 			>
@@ -185,7 +186,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 				<div class={ style.StoryName }>
 					{ GetWorldLocale(k[0], s) }
 				</div>
-			</Link>
+			</a>
 		</div>);
 	}
 
@@ -207,7 +208,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		<div class="text-end">
 			<Button
 				variant="dark"
-				onClick={ () => route("/worlds/Sub") }
+				onClick={ () => location.route("/worlds/Sub") }
 			>
 				<Locale k="STORY_GOTO_UNIT_SUBSTORY" />
 			</Button>
@@ -227,7 +228,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 
 		<PopupBase
 			display={ !!selectedKey }
-			onHidden={ () => route("/story") }
+			onHidden={ () => location.route("/story") }
 			size="lg"
 
 			headerClass={ style.PopupHeader }
@@ -292,7 +293,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 											onClick={ e => {
 												e.preventDefault();
 												Store.Story.back.value = true;
-												route(`/story/${r.key}/ED`);
+												location.route(`/story/${r.key}/ED`);
 											} }
 										>
 											<Icons.Book class="me-1" />
@@ -306,7 +307,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 													onClick={ e => {
 														e.preventDefault();
 														Store.Story.back.value = true;
-														route(`/story/${r.key}/OP`);
+														location.route(`/story/${r.key}/OP`);
 													} }
 												>
 													<Icons.Book class="me-1" />
@@ -330,7 +331,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 													onClick={ e => {
 														e.preventDefault();
 														Store.Story.back.value = true;
-														route(`/story/${r.key}/${v}`);
+														location.route(`/story/${r.key}/${v}`);
 													} }
 												>
 													<Icons.Book class="me-1" />
@@ -353,7 +354,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 													onClick={ e => {
 														e.preventDefault();
 														Store.Story.back.value = true;
-														route(`/story/${r.key}/ED`);
+														location.route(`/story/${r.key}/ED`);
 													} }
 												>
 													<Icons.Book class="me-1" />
@@ -413,7 +414,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 											onClick={ e => {
 												e.preventDefault();
 												Store.Story.back.value = true;
-												route(`/story/${r.key}/${s.key}`);
+												location.route(`/story/${r.key}/${s.key}`);
 											} }
 										>
 											<Icons.Book class="me-1" />

@@ -1,6 +1,6 @@
 import { FunctionalComponent } from "preact";
 import { useEffect } from "preact/hooks";
-import { route } from "preact-router";
+import { useLocation } from "preact-iso";
 
 import { Maps } from "@/types/DB/Map";
 
@@ -22,6 +22,7 @@ interface WORLDViewProps {
 }
 
 const MainStoryView: FunctionalComponent<WORLDViewProps> = (props) => {
+	const location = useLocation();
 	const [loc] = useLocale();
 	const imgExt = ImageExtension();
 
@@ -40,7 +41,7 @@ const MainStoryView: FunctionalComponent<WORLDViewProps> = (props) => {
 
 	return <div class={ style.MainStory }>
 		<div class={ style.PageHeader }>
-			<Button variant="dark" onClick={ () => void (route("/worlds")) }>
+			<Button variant="dark" onClick={ () => { location.route("/worlds"); } }>
 				<Icons.ArrowLeft class="me-1" />
 				<Locale k="WORLDS_BACK_TO_WORLDS" />
 			</Button>
@@ -66,13 +67,13 @@ const MainStoryView: FunctionalComponent<WORLDViewProps> = (props) => {
 								</div>
 
 								<Button.Group class={ style.WorldButtons }>
-									<Button variant="warning" textVariant="dark" onClick={ () => route(`/worlds/${world}/1`) }>
+									<Button variant="warning" textVariant="dark" onClick={ () => location.route(`/worlds/${world}/1`) }>
 										<Icons.Compass class="me-1" />
 										<span class="d-inline-block">
 											<Locale k="WORLDS_WORLD_MAP" />
 										</span>
 									</Button>
-									<Button variant="primary" onClick={ () => route(`/worlds/${world}/1/drop`) }>
+									<Button variant="primary" onClick={ () => location.route(`/worlds/${world}/1/drop`) }>
 										<Icons.Table class="me-2" />
 										<span class="d-inline-block">
 											<Locale k="WORLDS_DROP_TABLE" />

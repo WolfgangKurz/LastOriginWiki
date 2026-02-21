@@ -8,6 +8,21 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13084" date="2026-02-22"
+		bugfix={ <>
+			<li><BY>스토리</BY>의 <BY>플레이어</BY>기능이 동작하지 않던 점을 수정했습니다.</li>
+		</> }
+		update={ <>
+			<li>
+				<BY>세계정보</BY>의 진행중인 이벤트의 디자인을 약간 변경했습니다.
+			</li>
+		</> }
+		site={ <>
+			<li>
+				<code>precat-router</code> + <code>preact-async-route</code> 라이브러리를 <code>preact-iso</code>로 교체했습니다.
+			</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13081" date="2026-02-19"
 		bugfix={ <>
 			<li><BY>전투원정보</BY>의 <BY>상세검색</BY>의 <BG>버프 보유</BG> 선택 후 사이트가 동작하지 않던 점을 수정했습니다.</li>
