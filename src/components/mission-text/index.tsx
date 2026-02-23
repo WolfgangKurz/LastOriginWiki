@@ -3,7 +3,7 @@ import { FunctionalComponent } from "preact";
 import { MISSION_OBJECT_TYPE, MISSION_TRIGGER_TYPE } from "@/types/Enums";
 import Mission from "@/types/DB/Mission";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { formatString, useLocale } from "@/libs/Locale";
 import { parseVNode } from "@/libs/VNode";
 
@@ -109,7 +109,7 @@ const MissionText: FunctionalComponent<MissionTextProps> & {
 	Raw: typeof MissionTextRaw,
 } = (props) => {
 	const missions = useDBData<Mission[]>(StaticDB.Mission);
-	if (!missions) return <Loading.Data />;
+	if (!assertDBData(missions)) return <Loading.Data />;
 
 	const mission = missions.find(m => m.key === props.mission);
 

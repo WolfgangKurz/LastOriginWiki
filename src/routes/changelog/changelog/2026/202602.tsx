@@ -8,6 +8,11 @@ import { BY, BR, BO, BB, BG, BP } from "../../components/badges";
 import Locale from "@/components/locale";
 
 const Changelog: FunctionalComponent = () => <>
+	<ChangelogItem title="Build 13095" date="2026-02-24"
+		bugfix={ <>
+			<li><BY>총력전</BY> 페이지가 열리지 않던 점을 수정했습니다.</li>
+		</> }
+	/>
 	<ChangelogItem title="Build 13084" date="2026-02-22"
 		bugfix={ <>
 			<li><BY>스토리</BY>의 <BY>플레이어</BY>기능이 동작하지 않던 점을 수정했습니다.</li>

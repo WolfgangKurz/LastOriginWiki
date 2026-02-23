@@ -4,7 +4,7 @@ import { useLocation } from "preact-iso";
 
 import { Unit, UnitSkin } from "@/types/DB/Unit";
 
-import { useDBData } from "@/libs/Loader";
+import { assertDBData, useDBData } from "@/libs/Loader";
 import { useLocale } from "@/libs/Locale";
 import { AssetsRoot, ImageExtension, RarityDisplay, UnitClassDisplay, UnitRoleDisplay } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
@@ -63,9 +63,8 @@ const View: FunctionalComponent<UnitsViewProps> = (props) => {
 	);
 
 	const _unit = useDBData<Unit>(`unit/${props.uid}`);
-
 	const unit = useMemo(() => {
-		if (!_unit) return null;
+		if (!assertDBData(_unit)) return null;
 		return {
 			..._unit,
 			source: _unit.source

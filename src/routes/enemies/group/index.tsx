@@ -5,7 +5,7 @@ import EnemyGroup from "@/types/DB/EnemyGroup";
 
 import { WorldIds } from "@/libs/Const";
 import { groupBy, isActive } from "@/libs/Functions";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
 import Locale from "@/components/locale";
 import Loading from "@/components/loading";
@@ -45,7 +45,7 @@ const EnemiesGroup: FunctionalComponent<EnemiesGroupProps> = (props) => {
 	const [category, setCategory] = useState<string>(Categories[0][0]);
 
 	const EnemyGroupDB = useDBData<EnemyGroup>(StaticDB.EnemyGroup);
-	if (!EnemyGroupDB) return <Loading.Data />;
+	if (!assertDBData(EnemyGroupDB)) return <Loading.Data />;
 
 	const dropsTable = EnemyGroupDB["#drops"];
 	const enemiesTable = EnemyGroupDB["#enemies"];

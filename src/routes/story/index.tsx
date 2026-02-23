@@ -7,7 +7,7 @@ import StoryMap, { StoryMapSubstory } from "@/types/DB/StoryMap";
 import { STAGE_SUB_TYPE } from "@/types/Enums";
 
 import { useLocale } from "@/libs/Locale";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { AssetsRoot } from "@/libs/Const";
 import { cn } from "@/libs/Class";
 import { UpdateTitle } from "@/libs/Site";
@@ -92,7 +92,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 				return [r, [0]];
 			});
 
-			if (StoryMapDB) {
+			if (assertDBData(StoryMapDB)) {
 				const unordered: StoryKeyType[] = Object.keys(StoryMapDB)
 					.filter(k => !arr.some(r => r[0] == k))
 					.map(k => [k, [0]]);
@@ -126,7 +126,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 	}
 
 	const Maps = useMemo(() => {
-		if (sKey !== null && sSub !== null && StoryMapDB) {
+		if (sKey !== null && sSub !== null && assertDBData(StoryMapDB)) {
 			if (sSub === 0)
 				return Object.values(StoryMapDB[sKey])
 					.map(c => c.list)
@@ -138,7 +138,7 @@ const Story: FunctionalComponent<StoryProps> = (props) => {
 		return [];
 	}, [sKey, sSub, StoryMapDB]);
 	const Substories = useMemo(() => {
-		if (sKey !== null && sSub !== null && StoryMapDB) {
+		if (sKey !== null && sSub !== null && assertDBData(StoryMapDB)) {
 			if (sSub === 0)
 				return Object.values(StoryMapDB[sKey])
 					.reduce<StoryMapSubstory[]>((p, c) => p.concat(...c.substory), []);

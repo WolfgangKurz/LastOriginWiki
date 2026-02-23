@@ -9,7 +9,7 @@ import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { cn } from "@/libs/Class";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
 import Button from "@/components/Button";
@@ -34,7 +34,7 @@ const MainStoryView: FunctionalComponent<WORLDViewProps> = (props) => {
 	}, []);
 
 	const MapsDB = useDBData<Maps>(StaticDB.Maps);
-	if (!MapsDB) return <></>;
+	if (!assertDBData(MapsDB)) return <></>;
 
 	const Worlds = Object.keys(MapsDB)
 		.filter(x => /^[0-9]+$/.test(x));
@@ -49,7 +49,7 @@ const MainStoryView: FunctionalComponent<WORLDViewProps> = (props) => {
 
 		<hr />
 
-		<WorldItem wid="Story" imageless center>
+		<WorldItem wid="Story" imageless>
 			<div class={ style.MainStoryGrid }>
 				{ Worlds.map((world, i) => <div class="col">
 					<div class={ style.StoryWorld }>

@@ -7,7 +7,7 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import BuffCategory from "@/types/DB/BuffCategory";
 import { UnitsListProps } from "..";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { cn } from "@/libs/Class";
 
 import Locale from "@/components/locale";
@@ -25,12 +25,14 @@ const UnitsBuffGrouped: FunctionalComponent<UnitsListProps> = (props) => {
 	const TabledBuffCategory = useMemo(
 		() => {
 			const ret: Record<BUFFEFFECT_TYPE, BuffCategory> = {} as typeof ret;
-			BuffCategoryDB?.forEach(c => {
-				c.buffEffectType.forEach(t => {
-					if (t in ret) return;
-					ret[t] = c;
+			if (assertDBData(BuffCategoryDB)) {
+				BuffCategoryDB.forEach(c => {
+					c.buffEffectType.forEach(t => {
+						if (t in ret) return;
+						ret[t] = c;
+					});
 				});
-			});
+			}
 			return ret;
 		},
 		[BuffCategoryDB],

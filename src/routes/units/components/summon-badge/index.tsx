@@ -9,7 +9,7 @@ import { BuffStat } from "@/types/Buffs";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { UniqueID } from "@/libs/Functions";
 import { useLocale } from "@/libs/Locale";
-import { useDBData } from "@/libs/Loader";
+import { assertDBData, useDBData } from "@/libs/Loader";
 
 import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
@@ -40,7 +40,7 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 	const [displayTab, setDisplayTab] = useState<string>("skill1");
 
 	const Summon = useDBData<Summon>(`summon/${summon.char}`);
-	if (!Summon) return <></>;
+	if (!assertDBData(Summon)) return <></>;
 
 	const uid = UniqueID("summon-badge-modal-");
 	const imageExt = ImageExtension();
@@ -58,7 +58,7 @@ const SummonBadge: FunctionalComponent<SummonBadgeProps> = (props) => {
 	}
 
 	function Description (skill: SummonSkill): string {
-		if (!Summon) return "";
+		if (!assertDBData(Summon)) return "";
 
 		const v = Decimal.mul(
 			StatValue(Summon.stat.atk),

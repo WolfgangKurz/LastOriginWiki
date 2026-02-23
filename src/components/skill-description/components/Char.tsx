@@ -4,7 +4,7 @@ import { useLocation } from "preact-iso";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import Locale from "@/components/locale";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
 import RarityBadge from "@/components/rarity-badge";
@@ -22,7 +22,7 @@ export const Char: FunctionalComponent<CharProps> = (props) => {
 	const location = useLocation();
 
 	const db = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
-	if (!db) return <></>;
+	if (!assertDBData(db)) return <></>;
 
 	const unit = db.find(x => x.uid === props.uid);
 	if (!unit) return <>{ props.uid }</>;

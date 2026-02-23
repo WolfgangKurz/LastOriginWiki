@@ -98,6 +98,12 @@ function normalize (list: string | string[] | undefined): string[] {
 	return list;
 }
 
+const DBDataSymbols = {
+	None: Symbol("None"),
+	Loading: Symbol("Loading"),
+	Failed: Symbol("Failed"),
+};
+
 /**
  * Get data from `db/json`.
  *
@@ -107,13 +113,13 @@ function normalize (list: string | string[] | undefined): string[] {
  * @param path Target path of data, after `db` directory. If set `null`, will not fetch and always returns `undefined`.
  * @param db Dataset to get. `"korea"` only available currently.
  * @param requestId Id of request. Used for re-fetch already fetched same path, same db data.
- * @returns `T` if data ready, `undefined` if not ready yet, `null` if failed to get.
+ * @returns `T` if data ready, `useDBData.Loading` if not ready yet, `useDBData.Failed` if failed to get, `useDBData.None` if `path` is `null`.
  */
-export function useDBData<T extends {}> (path: string | null, db: "korea" = CurrentDB, requestId?: number): T | null | undefined {
+export function useDBData<T extends {}> (path: string | null, db: "korea" = CurrentDB, requestId?: number): T | symbol {
 	const inCache = path !== null && (path in Cache);
 	const update = useUpdate();
 	const [state, setState] = useState<DBState>(() => inCache ? DBState.READY : DBState.UNSET);
-	const [result, setResult] = useState<T | undefined>(() => inCache ? Cache[path!] : undefined);
+	const [result, setResult] = useState<T | symbol>(() => inCache ? Cache[path!] : DBDataSymbols.None);
 
 	useEffect(() => {
 		if (path !== null) {
@@ -121,22 +127,48 @@ export function useDBData<T extends {}> (path: string | null, db: "korea" = Curr
 				setResult(Cache[path]);
 				setState(DBState.READY);
 			} else {
-				setResult(undefined);
+				setResult(DBDataSymbols.Loading);
 				setState(DBState.LOADING);
 
 				Load(db, path)
 					.then(() => update())
-					.catch(() => setState(DBState.ERROR));
+					.catch(() => {
+						setState(DBState.ERROR);
+						setResult(DBDataSymbols.Failed);
+					});
 			}
 		} else {
-			setResult(undefined);
+			setResult(DBDataSymbols.None);
 			setState(DBState.UNSET);
 		}
 	}, [path, db, requestId, update.value]);
 
-	if (state === DBState.ERROR) return null;
 	return result;
 }
+useDBData.None = DBDataSymbols.None;
+useDBData.Loading = DBDataSymbols.Loading;
+useDBData.Failed = DBDataSymbols.Failed;
+Object.freeze(useDBData); // to prevent overwrite symbols
+
+/**
+ * Check all element of `data` is not `Loading` or `Failed` or `None` state of `useDBData`.
+ * @param data Data to check, return of `useDBData`.
+ * @returns `true` if all data ready, `false` if not.
+ */
+export function assertDBData<T> (data: (T | symbol)[]): data is (T)[];
+/**
+ * Check `data` is not `Loading` or `Failed` or `None` state of `useDBData`.
+ * @param data Data to check, return of `useDBData`.
+ * @returns `true` if data ready, `false` if not.
+ */
+export function assertDBData<T> (data: T | symbol): data is T;
+export function assertDBData<T> (data: T | symbol | [T | symbol]): data is T | [T] {
+	if (Array.isArray(data))
+		return data.every(r => typeof (r) !== "symbol");
+	else
+		return typeof (data) !== "symbol";
+}
+
 
 /**
  * @deprecated Using this method is not recommended. Use `useDBData` instead.

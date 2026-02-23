@@ -3,7 +3,7 @@ import { FunctionalComponent } from "preact";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
 import Loading from "@/components/loading";
 import UnitReference from "@/components/unit-reference";
@@ -18,7 +18,7 @@ const Refernce: FunctionalComponent<RefernceProps> = (props) => {
 
 	const FilterableUnit = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 	const FilterableEnemy = useDBData<FilterableEnemy[]>(StaticDB.FilterableEnemy);
-	if (!FilterableUnit || !FilterableEnemy) return <Loading.Data />;
+	if (!assertDBData(FilterableUnit) || !assertDBData(FilterableEnemy)) return <Loading.Data />;
 
 	if (FilterableUnit.some(f => f.uid === t || `Char_${f.uid}_N` === t))
 		return <UnitReference r={ t.replace(/^Char_(.+)_N$/, "$1") } />;

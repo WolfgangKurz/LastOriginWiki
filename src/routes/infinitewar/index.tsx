@@ -6,7 +6,7 @@ import { IWSeason } from "@/types/DB/IW";
 
 import { BuildClass } from "@/libs/Class";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
 import Locale from "@/components/locale";
 import Loading from "@/components/loading";
@@ -18,9 +18,9 @@ const InfiniteWar: FunctionalComponent = () => {
 	const imgExt = ImageExtension();
 
 	const IWSeason = useDBData<IWSeason[]>(StaticDB.IWSeason);
-	if (!IWSeason) return <Loading.Data />;
+	if (!assertDBData(IWSeason)) return <Loading.Data />;
 
-	const db = useMemo(() => IWSeason.sort((a, b) => Date.parse(b.date[0]) - Date.parse(a.date[0])), [IWSeason]);
+	const db = useMemo(() => IWSeason.toSorted((a, b) => Date.parse(b.date[0]) - Date.parse(a.date[0])), [IWSeason]);
 
 	const now = useMemo(() => new Date(), []);
 	const current = useMemo(() => {

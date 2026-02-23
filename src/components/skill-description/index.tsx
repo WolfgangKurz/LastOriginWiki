@@ -5,7 +5,7 @@ import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import { cn } from "@/libs/Class";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { ComponentTable, parseVNode } from "@/libs/VNode";
 import { ParamWithSlot, parseParams } from "@/libs/SkillDescription";
 

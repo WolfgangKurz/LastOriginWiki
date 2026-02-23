@@ -15,7 +15,7 @@ import { DecomposeHangulSyllable, groupBy, isActive } from "@/libs/Functions";
 import EntitySource from "@/libs/EntitySource";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Loading from "@/components/loading";
 import EquipCard from "@/components/equip-card";
@@ -39,12 +39,16 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 	const update = useUpdate();
 
 	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
-	const FilterableEquipDB = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip)
-		?.filter(r => !!r)
-		?.map(r => ({
-			...r,
-			source: r.source.map(a => a.map(b => new EntitySource(b as unknown as string))),
-		}));
+
+	const _FilterableEquipDB = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip);
+	const FilterableEquipDB = assertDBData(_FilterableEquipDB)
+		? _FilterableEquipDB
+			.filter(r => !!r)
+			.map(r => ({
+				...r,
+				source: r.source.map(a => a.map(b => new EntitySource(b as unknown as string))),
+			}))
+		: null;
 
 	const selectedEquip = FilterableEquipDB && props.uid
 		? FilterableEquipDB.find(x => x.fullKey === props.uid) || null
@@ -163,7 +167,7 @@ const EquipList: FunctionalComponent<EquipsProps> = (props) => {
 	}
 
 	const EquipGroups = ((): EquipGroupEntity[] | undefined => {
-		if (!FilterableUnitDB || !FilterableEquipDB) return undefined;
+		if (!assertDBData(FilterableUnitDB) || !FilterableEquipDB) return undefined;
 
 		const input = Filters.SearchText.value;
 

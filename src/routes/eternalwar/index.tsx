@@ -19,7 +19,7 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { useLocale } from "@/libs/Locale";
 
 import Locale from "@/components/locale";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Loading from "@/components/loading";
 import Icons from "@/components/bootstrap-icon";
 import DropItem from "@/components/drop-item";
@@ -79,7 +79,7 @@ const EternalWar: FunctionalComponent<EternalWarProps> = (props) => {
 	const EWDB = useDBData<EWDB>(StaticDB.EW);
 	const ConsumableDB = useDBData<Consumable[]>(StaticDB.Consumable);
 	const FilterableEnemyDB = useDBData<FilterableEnemy[]>(StaticDB.FilterableEnemy);
-	if (!EWDB || !ConsumableDB || !FilterableEnemyDB) return <Loading.Data />;
+	if (!assertDBData(EWDB) || !assertDBData(ConsumableDB) || !assertDBData(FilterableEnemyDB)) return <Loading.Data />;
 
 	function GetAvailableDifficulties (ch: EWChapter): EW_STAGE_DIFFICULTY[] {
 		return Object.values(ch)

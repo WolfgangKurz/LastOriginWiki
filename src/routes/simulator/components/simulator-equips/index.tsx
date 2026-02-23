@@ -6,7 +6,7 @@ import { Equip } from "@/types/DB/Equip";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 import { SimulatorSlotType } from "../../types/Slot";
 
-import Loader, { StaticDB, useDBData } from "@/libs/Loader";
+import Loader, { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Loading from "@/components/loading";
 import EquipIcon from "@/components/equip-icon";
@@ -50,7 +50,8 @@ const SimulatorEquips: FunctionalComponent<SimulatorEquipProps> = (props) => {
 	const FilterableEquip = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip);
 	const unit = useDBData<Unit>(`unit/${slot.uid}`);
 	const equipList = slot.equips.map(e => useDBData<Equip>(e ? `equip/${e.uid}` : null));
-	if (!FilterableEquip || !unit || equipList.some(r => r === undefined)) return <Loading.Data />;
+	if (!assertDBData(FilterableEquip) || !assertDBData(unit) || !assertDBData(equipList))
+		return <Loading.Data />;
 
 	return <div class="simulator-equips">
 		<EquipSelectorPopup

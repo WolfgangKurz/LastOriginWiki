@@ -10,7 +10,7 @@ import { Consumable } from "@/types/DB/Consumable";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { FormatNumber } from "@/libs/Functions";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { useLocale } from "@/libs/Locale";
 
 import Locale from "@/components/locale";
@@ -53,7 +53,7 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 	const facility = useDBData<FacilityEntity>(DBKey);
 	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 	const ConsumableDB = useDBData<Consumable[]>(StaticDB.Consumable);
-	if (!facility || !FilterableUnitDB || !ConsumableDB) return <Loading.Data />;
+	if (!assertDBData(facility) || !assertDBData(FilterableUnitDB) || !assertDBData(ConsumableDB)) return <Loading.Data />;
 
 	SetMeta(
 		["description", "twitter:description"],
@@ -64,7 +64,7 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 
 	UpdateTitle(loc["MENU_FACILITIES"], loc[`FACILITY_${props.uid}`]);
 
-	function CombatantType (type: string): preact.VNode[][] {
+	const CombatantType = (type: string): preact.VNode[][] => {
 		const roleTable: Record<string, ROLE_TYPE> = {
 			Attacker: ROLE_TYPE.ATTACKER,
 			Defender: ROLE_TYPE.DEFENDER,
@@ -87,7 +87,7 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 					case "Supporter":
 						return <UnitBadge class="mx-1" role={ roleTable[y] } />;
 					default: {
-						const unit = FilterableUnitDB!.find(z => z.uid === y);
+						const unit = FilterableUnitDB.find(z => z.uid === y);
 						if (!unit) return <span class="badge bg-secondary">???</span>;
 
 						return <UnitLink uid={ unit.uid } />;
@@ -95,9 +95,9 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 				}
 			}),
 		);
-	}
+	};
 
-	function Results (key: string, result: FactilityProduct[]): preact.VNode[] {
+	const Results = (key: string, result: FactilityProduct[]): preact.VNode[] => {
 		const conds: Array<preact.VNode> = [];
 		result.forEach((x, i) => {
 			if (i > 0) conds.push(<hr class="my-1" />);
@@ -172,7 +172,7 @@ const FacilityView: FunctionalComponent<FacilityViewProps> = (props) => {
 		});
 
 		return conds;
-	}
+	};
 
 	const getUpgradeRequired = (m: FacilityUpgradeRequiredMaterial | null): preact.VNode => {
 		if (!m) {

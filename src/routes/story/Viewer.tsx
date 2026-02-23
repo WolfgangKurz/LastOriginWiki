@@ -15,7 +15,7 @@ import { BuildClass, cn } from "@/libs/Class";
 import { parseVNode } from "@/libs/VNode";
 import { UpdateTitle } from "@/libs/Site";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import UnitFace from "@/components/unit-face";
 import Icons from "@/components/bootstrap-icon";
@@ -269,7 +269,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 
 	const SubStoryDB = useDBData<SubStoryDB>(storyType === "Sub3" ? StaticDB.SubStory : null);
 	const subGroup = useMemo(() => {
-		if (!SubStoryDB) return null;
+		if (!assertDBData(SubStoryDB)) return null;
 		return SubStoryDB.story.find(r => r.key === wid) || null;
 	}, [SubStoryDB]);
 
@@ -284,15 +284,19 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	const storyMetadata = useDBData<StoryMetadata>(`story/${props.id}`);
 	useEffect(() => {
 		console.log(props.id, storyMetadata);
-		if (!!storyMetadata)
+		if (assertDBData(storyMetadata))
 			setBGM(storyMetadata.bgm[type]);
-		else if (storyMetadata === null)  // Error
+		else if (storyMetadata === useDBData.Failed)  // Error
 			setError(true);
 	}, [storyMetadata, type]);
 
-	const storyData = useDBData<StoryData[]>(storyMetadata ? `story/script/${storyMetadata.index[type]}` : null);
+	const storyData = useDBData<StoryData[]>(
+		assertDBData(storyMetadata)
+			? `story/script/${storyMetadata.index[type]}`
+			: null
+	);
 	useEffect(() => {
-		if (!world || !storyMetadata) {
+		if (!world || !assertDBData(storyMetadata)) {
 			UpdateTitle("Story Viewer");
 		} else {
 			UpdateTitle(LText(storyMetadata.title), world);
@@ -300,7 +304,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 	}, [lang, world, storyMetadata]);
 
 	const faces = useMemo(() => {
-		if (!storyData) return [];
+		if (!assertDBData(storyData)) return [];
 		interface FaceMetadata {
 			uid: string;
 			skin: number;
@@ -403,12 +407,12 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 		</h5>
 		{ storyType === "Sub2"
 			? <h3 class="font-ibm mb-2">
-				{ storyMetadata ? LText(storyMetadata.title) : "..." }
+				{ assertDBData(storyMetadata) ? LText(storyMetadata.title) : "..." }
 			</h3>
 			: <></>
 		}
 		<h1 class={ BuildClass("font-ibm", storyType === "Sub3" ? "mb-1" : "mb-4") }>
-			{ storyMetadata
+			{ assertDBData(storyMetadata)
 				? storyType === "Sub2"
 					? <Locale plain k={ type } />
 					: storyType === "Sub3"
@@ -502,7 +506,7 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 				onVoice={ voice => setVoicePreview(voice) }
 			/> }
 
-			{ tab === "transcription" && storyData && <>
+			{ tab === "transcription" && assertDBData(storyData) && <>
 				{ storyData.map((d, i) => {
 					const speaker = Speaker(d);
 					const activates = Activates(d);

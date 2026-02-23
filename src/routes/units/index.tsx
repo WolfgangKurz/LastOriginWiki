@@ -15,7 +15,7 @@ import { StatType } from "@/types/Stat";
 import { useLocale } from "@/libs/Locale";
 import { BuildClass } from "@/libs/Class";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Button from "@/components/Button";
 import Loading from "@/components/loading";
@@ -48,7 +48,7 @@ const Units: FunctionalComponent = () => {
 	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 
 	const UnitList = useMemo((): FilterableUnit[] => {
-		if (!FilterableUnitDB) return [];
+		if (!assertDBData(FilterableUnitDB)) return [];
 
 		const conds = Store.Units.AdvSearchConds.value;
 

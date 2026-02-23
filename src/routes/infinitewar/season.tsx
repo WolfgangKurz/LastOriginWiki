@@ -9,7 +9,7 @@ import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
 import { FormatNumber, isActive } from "@/libs/Functions";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
 import Locale from "@/components/locale";
 import Loading from "@/components/loading";
@@ -57,7 +57,8 @@ const InfiniteWarSeason: FunctionalComponent<InfiniteWarSeasonProps> = (props) =
 	const enemies = useDBData<FilterableEnemy[]>(StaticDB.FilterableEnemy);
 	const consumables = useDBData<Consumable[]>(StaticDB.Consumable);
 	const stages = useDBData<IWStage[]>(`iw/${props.season}`);
-	if (!seasons || !enemies || !consumables || !stages) return <Loading.Data />;
+	if (!assertDBData(seasons) || !assertDBData(enemies) || !assertDBData(consumables) || !assertDBData(stages))
+		return <Loading.Data />;
 
 	const season = useMemo(() => seasons.find(e => e.key === props.season), [seasons, props.season]);
 	useEffect(() => {

@@ -4,7 +4,7 @@ import { useState } from "preact/hooks";
 import { FilterableEquip } from "@/types/DB/Equip.Filterable";
 
 import { groupBy, isActive } from "@/libs/Functions";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
 import Locale from "@/components/locale";
 import Loading from "@/components/loading";
@@ -24,7 +24,7 @@ const EquipTimetable: FunctionalComponent = () => {
 	}
 
 	const list = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip);
-	if (!list) return <Loading.Data />;
+	if (!assertDBData(list)) return <Loading.Data />;
 
 	const TimeList = groupBy(
 		craftableOnly

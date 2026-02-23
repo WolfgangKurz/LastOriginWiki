@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "preact/hooks";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { ACTOR_BODY_TYPE, ACTOR_CLASS, ACTOR_GRADE, ROLE_TYPE } from "@/types/Enums";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { isActive } from "@/libs/Functions";
 
 import Locale from "@/components/locale";
@@ -64,7 +64,7 @@ const UnitSelectorPopup: FunctionalComponent<UnitSelectorPopupProps> = (props) =
 	});
 
 	const FilterableUnit = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
-	if (!FilterableUnit) return <Loading.Data />;
+	if (!assertDBData(FilterableUnit)) return <Loading.Data />;
 
 	const source = useMemo(() => {
 		return FilterableUnit

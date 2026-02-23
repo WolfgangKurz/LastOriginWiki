@@ -9,7 +9,7 @@ import { UnitDialogueAudioType } from "@/types/DB/Dialogue";
 import { Unit } from "@/types/DB/Unit";
 
 import { CurrentLocale, useLocale } from "@/libs/Locale";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { cn } from "@/libs/Class";
 import { AssetsRoot, ImageExtension, RarityDisplay } from "@/libs/Const";
 import { DecomposeHangulSyllable, FormatDate, FormatNumber } from "@/libs/Functions";
@@ -40,11 +40,13 @@ import style from "./Basic.module.scss";
 const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 	const [loc] = useLocale();
 
-	const FilterableEquipDB = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip)
-		?.map(r => ({
+	const _FilterableEquipDB = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip);
+	const FilterableEquipDB = assertDBData(_FilterableEquipDB)
+		? _FilterableEquipDB.map(r => ({
 			...r,
 			source: r.source.map(a => a.map(b => new EntitySource(b as unknown as string))),
-		}));
+		}))
+		: null;
 	const ConsumableDB = useDBData<Consumable[]>(StaticDB.Consumable);
 
 	const [selectedEquip, setSelectedEquip] = useState<FilterableEquip | null>(null);
@@ -597,7 +599,10 @@ const BasicTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 									</Badge> }
 
 									{ unit.cost.items
-										.map(e => [e, ConsumableDB?.find(c => c.key === e.item)] as [typeof e, Consumable | undefined])
+										.map(e => [
+											e,
+											assertDBData(ConsumableDB) ? ConsumableDB.find(c => c.key === e.item) : undefined,
+										] as [typeof e, Consumable | undefined])
 										.filter(r => !!r[1])
 										.map(([e, item]) => {
 											return <Badge pill variant="success">

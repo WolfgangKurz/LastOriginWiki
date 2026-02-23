@@ -4,7 +4,7 @@ import { Consumable } from "@/types/DB/Consumable";
 import { MapWaveDrop } from "@/types/DB/Map";
 
 import { FormatNumber } from "@/libs/Functions";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
 import Loading from "@/components/loading";
 import Locale from "@/components/locale";
@@ -17,7 +17,7 @@ import style from "./style.module.scss";
 
 const LvLimitTab: FunctionalComponent<SubpageProps> = ({ display, unit }) => {
 	const ConsumableDB = useDBData<Consumable[]>(StaticDB.Consumable);
-	if (!ConsumableDB) return <Loading.Data />;
+	if (!assertDBData(ConsumableDB)) return <Loading.Data />;
 
 	if (!display || !ConsumableDB) return <></>;
 

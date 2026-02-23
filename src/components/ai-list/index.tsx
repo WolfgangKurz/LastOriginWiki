@@ -16,7 +16,7 @@ import BuffFrom from "@/types/DB/BuffFrom";
 import { useLocale } from "@/libs/Locale";
 import { FlowRoot } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
 import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
@@ -59,7 +59,7 @@ const AIList: FunctionalComponent<AIListProps> = (props) => {
 	const BuffFromDB = useDBData<Record<string, BuffFrom[]>>(StaticDB.BuffFrom);
 
 	const getBuffUidFactory = useCallback(() => {
-		const keys = BuffFromDB ? Object.keys(BuffFromDB) : [];
+		const keys = assertDBData(BuffFromDB) ? Object.keys(BuffFromDB) : [];
 		return (_: string, buff: string): number => keys.indexOf(buff) + 1;
 	}, [BuffFromDB]);
 	const getBuffUid = useCallback(getBuffUidFactory(), [getBuffUidFactory]);

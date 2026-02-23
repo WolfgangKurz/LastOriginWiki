@@ -3,7 +3,7 @@ import { FunctionalComponent } from "preact";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
 import Loading from "@/components/loading";
 import UnitReference from "@/components/unit-reference";
@@ -17,7 +17,7 @@ const SkillFrom: FunctionalComponent<SkillFromProps> = (props) => {
 	const FilterableUnit = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 	const FilterableEnemy = useDBData<FilterableEnemy[]>(StaticDB.FilterableEnemy);
 	const SkillFrom = useDBData<Record<string, string>>(StaticDB.SkillFrom);
-	if (!FilterableUnit || !FilterableEnemy || !SkillFrom) return <Loading.Data />;
+	if (!assertDBData(FilterableUnit) || !assertDBData(FilterableEnemy) || !assertDBData(SkillFrom)) return <Loading.Data />;
 
 	if (props.r in SkillFrom) {
 		const t = SkillFrom[props.r];

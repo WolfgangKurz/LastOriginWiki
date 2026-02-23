@@ -5,7 +5,7 @@ import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
 import { RarityDisplay } from "@/libs/Const";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import UnitFace from "@/components/unit-face";
 import Loading from "@/components/loading";
@@ -49,7 +49,7 @@ const DropUnit: FunctionalComponent<DropUnitProps> = (props) => {
 	}
 
 	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
-	if (!FilterableUnitDB) return <Loading.Data />;
+	if (!assertDBData(FilterableUnitDB)) return <Loading.Data />;
 
 	const unit = typeof props.id === "number"
 		? FilterableUnitDB.find(x => x.id === props.id)

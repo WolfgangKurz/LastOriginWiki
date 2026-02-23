@@ -6,7 +6,7 @@ import { Consumable } from "@/types/DB/Consumable";
 import { BuildClass } from "@/libs/Class";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { isActive } from "@/libs/Functions";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { useLocale } from "@/libs/Locale";
 
 import Loading from "@/components/loading";
@@ -30,7 +30,7 @@ const ConsumableView: FunctionalComponent = () => {
 	}, []);
 
 	const consumables = useDBData<Consumable[]>(StaticDB.Consumable);
-	if (!consumables) return <Loading.Data />;
+	if (!assertDBData(consumables)) return <Loading.Data />;
 
 	return <div>
 		<h1 class="mb-4">

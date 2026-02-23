@@ -8,7 +8,7 @@ import { RarityDisplay } from "@/libs/Const";
 import { groupBy, isActive } from "@/libs/Functions";
 import { useLocale } from "@/libs/Locale";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Loading from "@/components/loading";
 import Locale from "@/components/locale";
 import EquipIcon from "@/components/equip-icon";
@@ -56,7 +56,7 @@ const EquipSelectorPopup: FunctionalComponent<EquipSelectorPopupProps> = (props)
 	}
 
 	const FilterableEquip = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip);
-	if (!FilterableEquip) return <Loading.Data />;
+	if (!assertDBData(FilterableEquip)) return <Loading.Data />;
 
 	const source = props.type !== undefined
 		? FilterableEquip.filter(x => x.type === props.type)

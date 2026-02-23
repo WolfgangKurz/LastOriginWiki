@@ -15,7 +15,7 @@ import { AssetsRoot, RarityDisplay } from "@/libs/Const";
 import { GetLinkBonus } from "@/libs/LinkBonus";
 import { GetRequireResource } from "@/libs/Cost";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Loading from "@/components/loading";
 import Locale from "@/components/locale";
 import StatIcon from "@/components/stat-icon";
@@ -124,7 +124,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 	const FilterableUnit = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 	const FilterableEquip = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip);
 	const unitInfo = useDBData<Unit>(`unit/${slot.uid}`);
-	if (!FilterableUnit || !FilterableEquip || !unitInfo) return <Loading.Data />;
+	if (!assertDBData(FilterableUnit) || !assertDBData(FilterableEquip) || !assertDBData(unitInfo)) return <Loading.Data />;
 
 	const unit = FilterableUnit.find(x => x.uid === uid);
 	if (!unit) return <Loading.Error />;
@@ -219,7 +219,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 				}, 0) +
 				slot.equips.reduce((p, c, i) => {
 					const e = equipList[i];
-					if (!e || !c) return p;
+					if (!assertDBData(e) || !c) return p;
 
 					const eq = e.stats[c.level];
 					eq.forEach((y, yi) => {
@@ -284,7 +284,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 				}, 0);
 			const bonusRatio = slot.equips.reduce((p, c, i) => {
 				const e = equipList[i];
-				if (!e || !c) return p;
+				if (!assertDBData(e) || !c) return p;
 
 				let v = 0;
 
@@ -370,7 +370,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 				}, 0) +
 				slot.equips.reduce((p, c, i) => {
 					const e = equipList[i];
-					if (!e || !c) return p;
+					if (!assertDBData(e) || !c) return p;
 
 					const eq = e.stats[c.level];
 					eq.forEach((y, yi) => {
@@ -634,7 +634,7 @@ const SimulatorSummary: FunctionalComponent<SimulatorSummaryProps> = (props) => 
 
 				<div class="equip-grid">
 					{ slot.equips.map((equip, i) => equip
-						? ((e: Nullish<Equip>): preact.VNode => e
+						? ((e): preact.VNode => assertDBData(e)
 							? <div class="equip-slot" data-type={ unitInfo.slots[i] }>
 								<div class="equip-slot-icon">
 									<div class="position-relative d-inline-block">

@@ -10,7 +10,7 @@ import { AssetsRoot, IsDev } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { GetRequireResource } from "@/libs/Cost";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
 import Locale from "@/components/locale";
 import Loading from "@/components/loading";
@@ -38,7 +38,7 @@ const Simulator: FunctionalComponent = () => {
 	const selectedCell = useMemo(() => flattenGrid[selectedSlot], [flattenGrid, selectedSlot]);
 
 	const FilterableUnit = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
-	if (!FilterableUnit) return <Loading.Data />;
+	if (!assertDBData(FilterableUnit)) return <Loading.Data />;
 
 	const [leaderIdx, setLeaderIdx] = useState(-1);
 	useEffect(() => {

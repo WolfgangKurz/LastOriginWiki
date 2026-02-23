@@ -1,14 +1,15 @@
 import { createElement } from "preact";
 
+import { ACTOR_CLASS, ROLE_TYPE } from "@/types/Enums";
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
+import { assertDBData } from "@/libs/Loader";
 import { GetSkillDescription } from "@/libs/SkillDescription";
 
 import style from "./components/style.module.scss";
-import { ACTOR_CLASS, ROLE_TYPE } from "@/types/Enums";
 
-export default function buildDefaultSection (units: FilterableUnit[] | undefined | null): Record<string, preact.FunctionalComponent<unknown>> {
-	if (!units) return {};
+export default function buildDefaultSection (units: FilterableUnit[] | symbol): Record<string, preact.FunctionalComponent<unknown>> {
+	if (!assertDBData(units)) return {};
 
 	let groupUnits: Record<string, FilterableUnit[]> = {};
 	units.forEach(u => {

@@ -6,7 +6,7 @@ import { Gacha, INNER_GACHA_CATEGORY } from "@/types/DB/Gacha";
 import { Consumable } from "@/types/DB/Consumable";
 
 import { FormatNumber, isActive, ToOrdinal } from "@/libs/Functions";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
 import Locale from "@/components/locale";
 import Loading from "@/components/loading";
@@ -43,7 +43,7 @@ const PremiumAttendGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 
 	const GachaDB = useDBData<Gacha[]>(StaticDB.Gacha);
 	const ConsumableDB = useDBData<Consumable[]>(StaticDB.Consumable);
-	if (!GachaDB || !ConsumableDB) return <Loading.Data />;
+	if (!assertDBData(GachaDB) || !assertDBData(ConsumableDB)) return <Loading.Data />;
 
 	const gacha = GachaDB.filter(x => x.category === INNER_GACHA_CATEGORY.PremiumAttend);
 

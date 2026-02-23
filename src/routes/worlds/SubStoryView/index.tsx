@@ -7,7 +7,7 @@ import Store from "@/store";
 import SubStoryDB, { SubStoryStory, SubStoryStoryTrigger } from "@/types/DB/SubStory";
 import { DLG_START_TRIGGER_TYPE } from "@/types/Enums";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { BuildClass, cn } from "@/libs/Class";
 import { isActive } from "@/libs/Functions";
@@ -27,7 +27,7 @@ const SubStoryView: FunctionalComponent = () => {
 	const [selectedGroup, setSelectedGroup] = useState<string | null>(Store.Worlds.Sub.Group.value);
 
 	const SubStoryDB = useDBData<SubStoryDB>(StaticDB.SubStory);
-	if (!SubStoryDB) return <></>;
+	if (!assertDBData(SubStoryDB)) return <></>;
 
 	const groupTable = {
 		AutoGuardSystem: "AGSRoboTech",

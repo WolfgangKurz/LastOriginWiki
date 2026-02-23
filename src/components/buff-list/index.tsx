@@ -19,7 +19,7 @@ import { formatString, useLocale } from "@/libs/Locale";
 import { BuildClass, cn } from "@/libs/Class";
 import { arrayrize, diff2, groupBy } from "@/libs/Functions";
 
-import { GetJson, JsonLoaderCore, StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, GetJson, JsonLoaderCore, StaticDB, useDBData } from "@/libs/Loader";
 import LocaleBase, { LocaleProps, LocalePropsLegacy } from "@/components/locale";
 import Loading from "@/components/loading";
 import Icons from "@/components/bootstrap-icon";
@@ -59,7 +59,7 @@ interface BuffRendererProps {
 export const BuffRenderer: FunctionalComponent<BuffRendererProps> = (props) => {
 	const _FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 	const _BuffFromDB = useDBData<Record<string, BuffFrom[]>>(StaticDB.BuffFrom);
-	if (!_FilterableUnitDB || !_BuffFromDB) return <></>;
+	if (!assertDBData(_FilterableUnitDB) || !assertDBData(_BuffFromDB)) return <></>;
 	const FilterableUnitDB = _FilterableUnitDB;
 	const BuffFromDB = _BuffFromDB;
 

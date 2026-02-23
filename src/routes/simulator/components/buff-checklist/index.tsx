@@ -15,7 +15,7 @@ import { ImageExtension, AssetsRoot, TroopNameTable } from "@/libs/Const";
 import { CurrentDB } from "@/libs/DB";
 import { useLocale } from "@/libs/Locale";
 
-import Loader, { GetJson, JsonLoaderCore, StaticDB, useDBData } from "@/libs/Loader";
+import Loader, { assertDBData, GetJson, JsonLoaderCore, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Loading from "@/components/loading";
 import Icons from "@/components/bootstrap-icon";
@@ -46,7 +46,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 	const [referencedEnemy, setReferencedEnemy] = useState<Enemy | null>(null);
 
-	if (!FilterableUnitDB) return <Loading.Data />;
+	if (!assertDBData(FilterableUnitDB)) return <Loading.Data />;
 
 	const VNodeUnique = (entity: preact.VNode): string => render(entity);
 
@@ -117,15 +117,17 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		return p ? ifTrue : ifFalse;
 	}
 
-	function convertBuff (name: string,): preact.VNode;
-	function convertBuff (name: string, color: BuffColors): preact.VNode;
-	function convertBuff (name: string, color?: BuffColors): preact.VNode {
+	type convertBuffType = {
+		(name: string,): preact.VNode;
+		(name: string, color: BuffColors): preact.VNode;
+	};
+	const convertBuff: convertBuffType = (name: string, color?: BuffColors): preact.VNode => {
 		if (![undefined, "primary", "secondary", "danger", "warning", "info", "dark", "light"].includes(color))
 			color = undefined;
 
 		if (name.startsWith("Char_")) {
 			const key = name.replace(/Char_(.+)_N/, "$1");
-			const unit = FilterableUnitDB!.find(x => x.uid === key);
+			const unit = FilterableUnitDB.find(x => x.uid === key);
 			if (!unit) return <>{ key }</>;
 
 			return <span class={ `on-subbadge ${style["on-subbadge"]} ${color ? `text-${color}` : ""}` }>
@@ -153,11 +155,11 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		return <span class={ `on-subbadge ${style["on-subbadge"]} ${color ? `text-${color}` : ""}` }>
 			<Locale plain k={ name } />
 		</span>;
-	}
-	function convertBuffToUid (name: string): string {
+	};
+	const convertBuffToUid = (name: string): string => {
 		if (name.startsWith("Char_")) {
 			const key = name.replace(/Char_(.+)_N/, "$1");
-			const unit = FilterableUnitDB!.find(x => x.uid === key);
+			const unit = FilterableUnitDB.find(x => x.uid === key);
 			if (!unit) return key;
 			return unit.uid;
 		} else if (name.startsWith("MOB_")) {
@@ -165,10 +167,8 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 			return key;
 		}
 		return name;
-	}
-	function convertChar (key: string): string {
-		return key.replace(/Char_(.+)_N/, "$1");
-	}
+	};
+	const convertChar = (key: string): string => key.replace(/Char_(.+)_N/, "$1");
 
 	function getChanceText (chance: string | undefined): preact.VNode {
 		if (!chance) chance = "100%";
@@ -1234,14 +1234,14 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		</>;
 	}
 
-	function formatDesc (
+	const formatDesc = (
 		type: NUM_OUTPUTTYPE,
 		template: string,
 		value: string,
 		per: string,
 		level: number | undefined,
 		shortize: number = 0,
-	): string {
+	): string => {
 		if (shortize === 1 || shortize === 2) {
 			const regex = /^(.+)([：:].+)$/;
 			if (regex.test(template))
@@ -1252,7 +1252,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 
 		if (value.startsWith("Char_")) {
 			const key = value.replace(/Char_(.+)_N/, "$1");
-			const unit = FilterableUnitDB!.find(x => x.uid === key);
+			const unit = FilterableUnitDB.find(x => x.uid === key);
 			if (!unit) return `${template} - ${key}`;
 
 			return `${template} - ${loc[`UNIT_${unit.uid}`]}`;
@@ -1280,7 +1280,7 @@ const CheckableBuffRenderer: FunctionalComponent<BuffRendererProps> = (props) =>
 		} catch {
 			return template;
 		}
-	}
+	};
 
 	function BuffOverlapAvailable (maxStack: number, overlap: BUFF_OVERLAP_TYPE, erase: BuffErase): BUFF_OVERLAP_TYPE | false {
 		if ([
@@ -1513,8 +1513,8 @@ interface BuffListProps {
 }
 
 const BuffChecklist: FunctionalComponent<BuffListProps> = (props) => {
-	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
-	if (!FilterableUnitDB) return <Loading.Data />;
+	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit); // Preloader
+	if (!assertDBData(FilterableUnitDB)) return <Loading.Data />;
 
 	const list = props.list || [];
 	const level = props.level || 0;

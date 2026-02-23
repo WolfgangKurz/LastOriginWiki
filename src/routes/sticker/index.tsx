@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 import { Sticker } from "@/types/DB/Sticker";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { useLocale } from "@/libs/Locale";
 
@@ -47,7 +47,7 @@ const StickerPage: FunctionalComponent = () => {
 		</PopupBase>
 
 		<div class="row row-cols-3 row-cols-md-4 row-cols-lg-6 row-cols-xl-8">
-			{ stickers?.map(s => <div class="col">
+			{ assertDBData(stickers) && stickers.map(s => <div class="col">
 				<div
 					class={ `card mb-3 ${style.StickerItem}` }
 					onClick={ (e): void => {

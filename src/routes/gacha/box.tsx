@@ -11,7 +11,7 @@ import { FormatNumber, isActive, ToOrdinal } from "@/libs/Functions";
 import { AssetsRoot } from "@/libs/Const";
 import { BuildClass } from "@/libs/Class";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Loading from "@/components/loading";
 import Icons from "@/components/bootstrap-icon";
@@ -44,7 +44,19 @@ const BoxGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 
 	const SkinChance = useMemo(() => Decimal.div(SkinCount, GachaCount).mul(100), [SkinCount, GachaCount]);
 
-	function Run (gacha: Gacha): void {
+	const GachaDB = useDBData<Gacha[]>(StaticDB.Gacha);
+	const ConsumableDB = useDBData<Consumable[]>(StaticDB.Consumable);
+	if (!assertDBData(GachaDB) || !assertDBData(ConsumableDB)) return <Loading.Data />;
+
+	const gacha = useMemo(() => GachaDB.filter(x => x.category === INNER_GACHA_CATEGORY.Box), [GachaDB]);
+	const current = useMemo(() => gacha && gacha.find(x => x.key === BoxType), [gacha, BoxType]);
+
+	useEffect(() => {
+		if (!BoxType && gacha)
+			setBoxType(gacha[0].key);
+	}, [BoxType, gacha]);
+
+	const Run = (gacha: Gacha) => {
 		const count = gacha.type === GACHA_CATEGORY.GACHA_11ST
 			? 11
 			: gacha.type === GACHA_CATEGORY.GACHA_10ST
@@ -87,7 +99,7 @@ const BoxGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 		const price = typeof gacha.price === "number"
 			? gacha.price
 			: gacha.price.map(([key, count]) => {
-				const req = ConsumableDB && ConsumableDB.find(e => e.key === key);
+				const req = ConsumableDB.find(e => e.key === key);
 				return [req || null, count] satisfies [Consumable | null, number];
 			});
 
@@ -116,19 +128,7 @@ const BoxGacha: FunctionalComponent<GachaSubpageProps> = (props) => {
 			},
 			...r,
 		]);
-	}
-
-	const GachaDB = useDBData<Gacha[]>(StaticDB.Gacha);
-	const ConsumableDB = useDBData<Consumable[]>(StaticDB.Consumable);
-	if (!GachaDB || !ConsumableDB) return <Loading.Data />;
-
-	const gacha = useMemo(() => GachaDB.filter(x => x.category === INNER_GACHA_CATEGORY.Box), [GachaDB]);
-	const current = useMemo(() => gacha && gacha.find(x => x.key === BoxType), [gacha, BoxType]);
-
-	useEffect(() => {
-		if (!BoxType && gacha)
-			setBoxType(gacha[0].key);
-	}, [BoxType, gacha]);
+	};
 
 	return <div style={ props.style }>
 		<div class={ `mb-3 flex-nowrap ${style.GachaList}` }>

@@ -11,7 +11,7 @@ import { CombinedBuffEffectTypes, ExcludedBuffEffectTypes } from "../common";
 
 import { AssetsRoot } from "@/libs/Const.1";
 import { useLocale } from "@/libs/Locale";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { BuildClass, cn } from "@/libs/Class";
 import { clamp } from "@/libs/Functions";
 
@@ -293,7 +293,9 @@ const AdvancedSearch: FunctionalComponent<AdvancedSearchProps> = (props) => {
 
 	const BuffCategoryDB = useDBData<BuffCategory[]>(StaticDB.BuffCategory);
 	const SortedBuffCategoryDB = useMemo(
-		() => BuffCategoryDB?.toSorted((a, b) => a.buffEffectType[0] - b.buffEffectType[0]),
+		() => assertDBData(BuffCategoryDB)
+			? BuffCategoryDB.toSorted((a, b) => a.buffEffectType[0] - b.buffEffectType[0])
+			: null,
 		[BuffCategoryDB],
 	);
 

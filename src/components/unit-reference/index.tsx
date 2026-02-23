@@ -2,7 +2,7 @@ import { FunctionalComponent } from "preact";
 
 import { FilterableUnit } from "@/types/DB/Unit.Filterable";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
@@ -17,7 +17,7 @@ const UnitReference: FunctionalComponent<UnitReferenceProps> = (props) => {
 	const unit = props.r;
 
 	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
-	if (!FilterableUnitDB) {
+	if (!assertDBData(FilterableUnitDB)) {
 		return <a href={ `/units/${unit}` }>
 			<span class="badge bg-substory">
 				<Locale plain k={ `UNIT_${unit}` } />

@@ -4,7 +4,7 @@ import { useState } from "preact/hooks";
 import { FilterableFacility } from "@/types/DB/Facility.Filterable";
 
 import { isActive } from "@/libs/Functions";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { useLocale } from "@/libs/Locale";
 
@@ -32,7 +32,7 @@ const Facilities: FunctionalComponent = () => {
 	UpdateTitle(loc["MENU_FACILITIES"]);
 
 	const FilterableFacilityDB = useDBData<FilterableFacility[]>(StaticDB.FilterableFacility);
-	if (!FilterableFacilityDB) return <Loading.Data />;
+	if (!assertDBData(FilterableFacilityDB)) return <Loading.Data />;
 
 	const Facilities = FilterableFacilityDB
 		.filter(x => filters[x.type])

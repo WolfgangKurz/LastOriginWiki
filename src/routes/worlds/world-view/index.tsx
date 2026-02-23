@@ -8,7 +8,7 @@ import { useLocale } from "@/libs/Locale";
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 
-import { useDBData } from "@/libs/Loader";
+import { assertDBData, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
 import WorldItem from "../components/WorldItem";
@@ -36,7 +36,7 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 	}, [wid]);
 
 	const MapDB = useDBData<World>(`map/${wid}`);
-	if (!MapDB) return <></>;
+	if (!assertDBData(MapDB)) return <></>;
 
 	const Worlds = Object.keys(MapDB);
 	const evPost = wid === "Ev14" ? "a" : "";
@@ -59,7 +59,7 @@ const WORLDView: FunctionalComponent<WORLDViewProps> = (props) => {
 			: <></>
 		}
 
-		<WorldItem wid={ wid } imageless center>
+		<WorldItem wid={ wid } imageless>
 			<div class="mt-3 row row-cols-1 row-cols-lg-2 row-cols-xl-3 justify-content-center">
 				{ Worlds.map((world, i) => <div class="col">
 					<div class="card worlds-world text-center mb-2">

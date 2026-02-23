@@ -8,7 +8,7 @@ import EntitySource from "@/libs/EntitySource";
 import { cn } from "@/libs/Class";
 import { FormatNumber } from "@/libs/Functions";
 import { useLocale } from "@/libs/Locale";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
 import Locale from "@/components/locale";
 import Badge from "@/components/Badge";
@@ -68,7 +68,7 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 		else if (Source.IsRoguelike)
 			return <Locale k="COMMON_SOURCE_ROGUELIKE" />;
 		else if (Source.IsPrivateItem) {
-			if (FilterableUnit) {
+			if (assertDBData(FilterableUnit)) {
 				const unit = FilterableUnit.find(x => x.uid === Source.PrivateId);
 				if (unit) return <Locale plain k={ `UNIT_${unit.uid}` } />;
 				return <>{ Source.PrivateId }</>;
@@ -154,7 +154,7 @@ const SourceBadge: FunctionalComponent<SourceBadgeProps> = (props) => {
 					loc[`CONSUMABLE_Ev_Consumable_${Source.ExchangeItemName}`] ||
 					Source.ExchangeItemName;
 
-				const icon = Consumable && (
+				const icon = assertDBData(Consumable) && (
 					Consumable.find(r => r.key === Source.ExchangeItemName) ||
 					Consumable.find(r => r.key === `Ev_Consumable_${Source.ExchangeItemName}`)
 				)?.icon;

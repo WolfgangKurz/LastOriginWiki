@@ -13,7 +13,7 @@ import { AssetsRoot } from "@/libs/Const";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
 import { useLocale } from "@/libs/Locale";
 import { groupBy, isActive } from "@/libs/Functions";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
 import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
@@ -156,7 +156,7 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 	const MapDB = useDBData<World>(`map/${props.wid}`);
 
 	const Maps = useMemo(() => {
-		if (!MapDB) return null;
+		if (!assertDBData(MapDB)) return null;
 		if (props.wid === "13") {
 			const w: World[""] = {
 				list: Object.values(MapDB).flatMap(r => r.list),
@@ -315,7 +315,7 @@ const DropTable: FunctionalComponent<DropTableProps> = (props) => {
 				</tr>
 			</thead>
 			<tbody>
-				{ (!FilterableUnitDB || !FilterableEquipDB || !MapDB || !groups)
+				{ (!assertDBData(FilterableUnitDB) || !assertDBData(FilterableEquipDB) || !assertDBData(MapDB) || !groups)
 					? <></>
 					: Object.keys(groups)
 						.sort((a, b) => {

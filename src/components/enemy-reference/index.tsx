@@ -4,7 +4,7 @@ import { useLocation } from "preact-iso";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
 import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
@@ -20,7 +20,7 @@ const EnemyReference: FunctionalComponent<EnemyReferenceProps> = (props) => {
 	const ImageExt = ImageExtension();
 
 	const FilterableEnemyDB = useDBData<FilterableEnemy[]>(StaticDB.FilterableEnemy);
-	if (!FilterableEnemyDB) {
+	if (!assertDBData(FilterableEnemyDB)) {
 		return <a href={ `/enemies/${enemy}` }>
 			<span class="badge bg-danger">
 				<Locale plain k={ `ENEMY_${enemy}` } />

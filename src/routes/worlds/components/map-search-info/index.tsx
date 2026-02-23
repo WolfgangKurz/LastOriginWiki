@@ -4,7 +4,7 @@ import { useCallback } from "preact/hooks";
 import { Consumable } from "@/types/DB/Consumable";
 import { MapSearch } from "@/types/DB/Map";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 
 import DropItem from "@/components/drop-item";
 import DropRes from "@/components/drop-res";
@@ -29,7 +29,7 @@ const MapSearchInfo: FunctionalComponent<MapSearchInfoProps> = (props) => {
 	})();
 
 	const ConsumableDB = useDBData<Consumable[]>(StaticDB.Consumable);
-	if (!ConsumableDB) return <Loading.Data />;
+	if (!assertDBData(ConsumableDB)) return <Loading.Data />;
 
 	const GetConsumable = useCallback((item: string): Consumable | undefined => {
 		return ConsumableDB.find(y => y.key === item);

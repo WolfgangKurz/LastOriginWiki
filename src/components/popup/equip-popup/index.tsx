@@ -17,7 +17,7 @@ import { FormatNumber, isActive } from "@/libs/Functions";
 import { ParseDescriptionText } from "@/libs/FunctionsX";
 import EntitySource from "@/libs/EntitySource";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
 import BootstrapTooltip from "@/components/bootstrap-tooltip";
@@ -82,12 +82,9 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 	const FilterableUnitDB = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 
 	const _FilterableEquipDB = useDBData<FilterableEquip[]>(StaticDB.FilterableEquip);
-	const FilterableEquipDB = useMemo(() => _FilterableEquipDB?.map(r => ({
+	const FilterableEquipDB = useMemo(() => assertDBData(_FilterableEquipDB) && _FilterableEquipDB.map(r => ({
 		...r,
-		source: r.source.map(t => t.map(s => new EntitySource(
-			// @ts-expect-error
-			s
-		))),
+		source: r.source.map(t => t.map(s => new EntitySource(s as unknown as string))),
 	})), [_FilterableEquipDB]);
 
 	const target = useMemo((): FilterableEquip | null => {
@@ -168,7 +165,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 			if (target) {
 				if (target.limit) {
 					return target.limit.map(x => {
-						const unit = FilterableUnitDB && FilterableUnitDB.find(y => y.uid === x);
+						const unit = assertDBData(FilterableUnitDB) && FilterableUnitDB.find(y => y.uid === x);
 						if (unit) return { id: x, unit };
 						return { id: x };
 					});
@@ -190,7 +187,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 
 	const detail = useDBData<Equip>(target ? `equip/${target.fullKey}` : null);
 	useEffect(() => {
-		if (detail) {
+		if (assertDBData(detail)) {
 			const stat = detail.stats[level];
 			setStatusList(stat);
 		} else
@@ -238,7 +235,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 				if (costChecks[i])
 					sums[j + 1] = sums[j + 1].add(y.count);
 
-				const item = ConsumableDB && ConsumableDB.find(z => z.key === y.item);
+				const item = assertDBData(ConsumableDB) && ConsumableDB.find(z => z.key === y.item);
 				const icon = item ? <ItemIcon item={ item.icon } /> : <>???</>;
 
 				row[j] = <BootstrapTooltip
@@ -259,7 +256,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 
 		const row = new Array(maxCols).fill(<></>);
 		for (let j = 0; j < maxCols; j++) {
-			const item = ConsumableDB && ConsumableDB.find(z => z.key === cols[j]);
+			const item = assertDBData(ConsumableDB) && ConsumableDB.find(z => z.key === cols[j]);
 			const icon = item ? <ItemIcon item={ item.icon } /> : <>???</>;
 
 			row[j] = <BootstrapTooltip
@@ -357,7 +354,7 @@ const EquipPopup: FunctionalComponent<EquipPopupProps> = (props) => {
 						</div>
 						<div>
 							{ f.upgrade.upgrade.cost.map(e => {
-								const item = ConsumableDB && ConsumableDB.find(c => c.key === e.item);
+								const item = assertDBData(ConsumableDB) && ConsumableDB.find(c => c.key === e.item);
 								if (!item) return <>-</>;
 
 								return <span class="badge bg-dark me-1 mb-1">

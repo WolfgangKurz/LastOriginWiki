@@ -7,7 +7,7 @@ import { ACTOR_CLASS, ROLE_TYPE } from "@/types/Enums";
 import { FilterableEnemy } from "@/types/DB/Enemy.Filterable";
 
 import { AssetsRoot, ImageExtension } from "@/libs/Const";
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import { useLocale } from "@/libs/Locale";
 import { DecomposeHangulSyllable, isActive } from "@/libs/Functions";
 import { SetMeta, UpdateTitle } from "@/libs/Site";
@@ -35,7 +35,7 @@ const EnemiesList: FunctionalComponent<EnemiesListProps> = (props) => {
 	}, [props?.uid]);
 
 	const FilterableEnemyDB = useDBData<FilterableEnemy[]>(StaticDB.FilterableEnemy);
-	if (!FilterableEnemyDB) return <Loading.Data />;
+	if (!assertDBData(FilterableEnemyDB)) return <Loading.Data />;
 
 	const selectedEnemy = props.uid && FilterableEnemyDB.find(x => x.id === props.uid) || null;
 

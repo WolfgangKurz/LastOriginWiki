@@ -12,7 +12,7 @@ import { RarityDisplay } from "@/libs/Const";
 import { isActive } from "@/libs/Functions";
 import { GetLinkBonus } from "@/libs/LinkBonus";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Icons from "@/components/bootstrap-icon";
 import StatIcon from "@/components/stat-icon";
@@ -82,7 +82,7 @@ const SimulatorUpgrade: FunctionalComponent<SimulatorUpgradeProps> = (props) => 
 
 	const FilterableUnit = useDBData<FilterableUnit[]>(StaticDB.FilterableUnit);
 	const unitInfo = useDBData<Unit>(`unit/${slot.uid}`);
-	if (!FilterableUnit || !unitInfo) return <Loading.Data />;
+	if (!assertDBData(FilterableUnit) || !assertDBData(unitInfo)) return <Loading.Data />;
 
 	const unit = FilterableUnit.find(x => x.uid === uid);
 	if (!unit) return <Loading.Error />;

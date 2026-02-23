@@ -18,7 +18,7 @@ import { SetMeta, UpdateTitle } from "@/libs/Site";
 import MapPosition from "@/libs/MapPosition";
 import { formatString, useLocale } from "@/libs/Locale";
 
-import { StaticDB, useDBData } from "@/libs/Loader";
+import { assertDBData, StaticDB, useDBData } from "@/libs/Loader";
 import Locale from "@/components/locale";
 import Loading from "@/components/loading";
 import Icons from "@/components/bootstrap-icon";
@@ -90,8 +90,9 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 	const ConsumableDB = useDBData<Consumable[]>(StaticDB.Consumable);
 	const storyMeta = useDBData<StoryMetadata>(selected ? `story/${selected.key}` : null);
 	if (
-		!MapDB || !MapsDB ||
-		!FilterableUnitDB || !FilterableEquipDB || !FilterableEnemyDB || !ConsumableDB
+		!assertDBData(MapDB) || !assertDBData(MapsDB) ||
+		!assertDBData(FilterableUnitDB) || !assertDBData(FilterableEquipDB) ||
+		!assertDBData(FilterableEnemyDB) || !assertDBData(ConsumableDB)
 	) return <Loading.Data />;
 
 	useEffect(() => {
@@ -325,11 +326,11 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 		? selected.search || false
 		: null;
 
-	function SubstoryName (text: string): preact.VNode {
-		const unit = FilterableUnitDB!.find(x => x.uid === SubStoryUnit[text]);
+	const SubstoryName = (text: string): preact.VNode => {
+		const unit = FilterableUnitDB.find(x => x.uid === SubStoryUnit[text]);
 		if (!unit) return <>???</>;
 		return <Locale plain k={ `UNIT_${unit.uid}` } />;
-	}
+	};
 
 	useEffect(() => {
 		if (props.node) {
@@ -578,11 +579,11 @@ const MapView: FunctionalComponent<MapViewProps> = (props) => {
 								</span>
 
 								{ selected
-									? storyMeta === undefined
+									? storyMeta === useDBData.Loading
 										? <div class="float-end">
 											<Icons.ThreeDots class="mx-4" />
 										</div>
-										: storyMeta
+										: assertDBData(storyMeta)
 											? <div class="float-end">
 												{ (storyMeta.spec & StorySpec.OP) !== 0
 													? <button
