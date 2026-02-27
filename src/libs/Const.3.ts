@@ -834,6 +834,10 @@ export const ArtistLinks: Record<string, ArtistLinkType> = {
 	"MEL": {
 		X: "https://x.com/_05565",
 	},
+	"mikemono": {
+		X: "https://x.com/mikemono_yuu",
+		Pixiv: "https://www.pixiv.net/users/1290206",
+	},
 	"Muloli": {
 		X: "https://x.com/mizuahiru",
 		Pixiv: "https://www.pixiv.net/users/7914067",
