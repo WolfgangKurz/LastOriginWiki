@@ -385,4 +385,97 @@ skills:
               overlap: 4
           maxStack: 0
           overlapGroup: -1
+        - key: Effect_MP_LightningBomberMP_N_51
+          on: round
+          if:
+            - on:
+                func: OR
+                select:
+                  - Effect_BUFF_Flood_N_1
+                  - Effect_BUFF_Flood_N_2
+                  - Effect_BUFF_Flood_N_3
+                  - Effect_BUFF_Flood_N_4
+                  - Effect_BUFF_Flood_N_5
+                  - Effect_BUFF_Flood_N_6
+                  - Effect_BUFF_Flood_N_7
+                  - Effect_BUFF_Flood_N_8
+                  - Effect_BUFF_Flood_N_9
+                  - Effect_BUFF_Flood_N_11
+                  - Effect_BUFF_Flood_N_12
+                  - Effect_BUFF_Flood_N_13
+                  - Effect_BUFF_Flood_N_14
+                  - Effect_BUFF_Flood_N_15
+                  - Effect_BUFF_Flood_N_16
+                  - Effect_BUFF_Flood_N_17
+                  - Effect_BUFF_Flood_N_18
+                  - Effect_BUFF_Flood_N_19
+                  - Effect_BUFF_Flood_N_20
+                  - Effect_BUFF_Flood_N_21
+                  - Effect_BUFF_Flood_N_22
+                  - Effect_BUFF_Flood_N_23
+                  - Effect_BUFF_Flood_N_24
+                  - Effect_BUFF_Flood_N_25
+                  - Effect_BUFF_Flood_N_26
+                  - Effect_BUFF_Flood_N_27
+                  - Effect_BUFF_Flood_N_28
+                  - Effect_BUFF_SelfFlooding_N_1
+                  - Effect_BUFF_SelfFlooding_N_2
+                  - Effect_BUFF_SelfFlooding_N_3
+                  - Effect_BUFF_SelfFlooding_N_4
+                  - Effect_BUFF_SelfFlooding_N_5
+                  - Effect_BUFF_SelfFlooding_N_6
+                  - Effect_BUFF_SelfFlooding_N_7
+                  - Effect_BUFF_SelfFlooding_N_8
+                  - Effect_BUFF_SelfFlooding_N_9
+                  - Effect_BUFF_SelfFlooding_N_10
+                  - Effect_BUFF_SelfFlooding_N_11
+                attr: 6
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 0
+          buffs:
+            - icon: BuffIcon_ATK_UP
+              desc:
+                desc: Effect_MP_LightningBomberMP_N_51_1
+                type: 1
+                value: "0.150000"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 1
+                attack:
+                  base: 15%
+                  per: 0%
+              overlap: 4
+            - icon: BuffIcon_CRITICAL_UP
+              desc:
+                desc: Effect_MP_LightningBomberMP_N_51_2
+                type: 1
+                value: "1"
+                level: "0"
+              attr: 0
+              erase:
+                rounds: 3
+              value:
+                isBuff: true
+                type: 9
+                critical:
+                  base: 100%
+                  per: 0%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
 ai: AI_LightningBomber_Normal_01

@@ -5258,7 +5258,7 @@ skills:
                     barrier:
                       base: 60
                       per: 30
-                  overlap: 1
+                  overlap: 4
                 - icon: BuffIcon_REMOVE_DEBUFF
                   desc:
                     desc: Effect_PECS_Audrey_N_5_2
@@ -5270,13 +5270,14 @@ skills:
                     rounds: 0
                   value:
                     isBuff: true
+                    chance: 0%
                     type: 89
                     off:
                       type: 3
                       target: 1
                   overlap: 4
-              maxStack: 0
-              overlapGroup: -1
+              maxStack: 1
+              overlapGroup: 41
             - key: Effect_PECS_Audrey_N_51
               on: round
               if:
@@ -5313,7 +5314,46 @@ skills:
                     barrier:
                       base: 120
                       per: 60
-                  overlap: 1
+                  overlap: 4
+              maxStack: 1
+              overlapGroup: 41
+            - key: Effect_PECS_Audrey_N_52
+              on: round
+              if:
+                - hp<=:
+                    target: target
+                    value:
+                      - 90%
+                - false
+              body:
+                - 0
+              class:
+                - 0
+                - 1
+                - 2
+              role:
+                - 0
+                - 1
+                - 2
+              target: 2
+              buffs:
+                - icon: BuffIcon_REMOVE_DEBUFF
+                  desc:
+                    desc: Effect_PECS_Audrey_N_52_1
+                    type: 0
+                    value: "3"
+                    level: "0"
+                  attr: 0
+                  erase:
+                    rounds: 0
+                  value:
+                    isBuff: true
+                    chance: 0%
+                    type: 89
+                    off:
+                      type: 3
+                      target: 1
+                  overlap: 4
               maxStack: 0
               overlapGroup: -1
     values:
@@ -5346,7 +5386,7 @@ skills:
               level: "0"
             base: 3
             per: 0
-            chance: 1
+            chance: 0
           - icon: BuffIcon_DAMAGE_ABSORB
             desc:
               desc: Effect_PECS_Audrey_N_51_1
@@ -5356,6 +5396,15 @@ skills:
             base: 120
             per: 60
             chance: 1
+          - icon: BuffIcon_REMOVE_DEBUFF
+            desc:
+              desc: Effect_PECS_Audrey_N_52_1
+              type: 0
+              value: "3"
+              level: "0"
+            base: 3
+            per: 0
+            chance: 0
 dialogue:
   KR:
     "1":
@@ -6159,7 +6208,7 @@ skins:
   skins:
     - sid: 1
       artist: Rorobomb
-      price: 127
+      price: 182
       G: true
       Spine: false
       SpineDamaged: false

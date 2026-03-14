@@ -3,6 +3,7 @@ export const SkinBanners: string[] = [
     "3P_Ajax_1",
     "3P_Alcyone_1",
     "3P_Alcyone_2",
+    "3P_Alexandra_3",
     "3P_Alice_3",
     "3P_Amphitrite_1",
     "3P_Amphitrite_2",

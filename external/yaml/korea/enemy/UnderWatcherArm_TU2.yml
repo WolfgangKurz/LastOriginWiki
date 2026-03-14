@@ -70,7 +70,7 @@ skills:
                 type: 1
                 value: "0.300000"
                 level: "0.010000"
-              attr: 1
+              attr: 3
               erase:
                 rounds: 0
               value:
@@ -86,12 +86,53 @@ skills:
                 type: 1
                 value: "-0.200000"
                 level: "-0.010000"
-              attr: 1
+              attr: 3
               erase:
                 rounds: 9
               value:
                 isBuff: true
                 chance: 0%
+                type: 3
+                defense:
+                  base: -20%
+                  per: -1%
+              overlap: 4
+          maxStack: 0
+          overlapGroup: -1
+        - key: Effect_MP_UnderWatcherArm_TU2_11
+          on: attack_success
+          if:
+            - on:
+                target: target
+                func: OR
+                select:
+                  - 87
+                attr: 1
+            - false
+          body:
+            - 0
+            - 1
+          class:
+            - 0
+            - 1
+            - 2
+          role:
+            - 0
+            - 1
+            - 2
+          target: 3
+          buffs:
+            - icon: BuffIcon_DEF_DOWN
+              desc:
+                desc: Effect_MP_UnderWatcherArm_TU2_11_1
+                type: 1
+                value: "-0.200000"
+                level: "-0.010000"
+              attr: 1
+              erase:
+                rounds: 9
+              value:
+                isBuff: true
                 type: 3
                 defense:
                   base: -20%

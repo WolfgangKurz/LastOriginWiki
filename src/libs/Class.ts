@@ -1,3 +1,4 @@
+import type { JSX } from "preact";
 type Classable = string | undefined | null | boolean | number | JSX.SignalLike<Classable>;
 
 export function BuildClass (...classNames: Array<Classable | Record<string, boolean>>): string {
