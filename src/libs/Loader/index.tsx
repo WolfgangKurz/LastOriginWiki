@@ -32,12 +32,6 @@ enum LoaderState {
 	ERROR = 2,
 	DONE = 3,
 }
-enum DBState {
-	UNSET = -1,
-	LOADING = 0,
-	READY = 1,
-	ERROR = 2,
-}
 
 interface LoadQueueEntry {
 	resolve: () => void;
@@ -130,29 +124,23 @@ const DBDataSymbols = {
 export function useDBData<T extends {}> (path: string | null, db: "korea" = CurrentDB, requestId?: number): T | symbol {
 	const inCache = path !== null && (path in Cache);
 	const update = useUpdate();
-	const [state, setState] = useState<DBState>(() => inCache ? DBState.READY : DBState.UNSET);
 	const [result, setResult] = useState<T | symbol>(() => inCache ? Cache[path!] : DBDataSymbols.None);
 
 	useEffect(() => {
 		if (path !== null) {
-			if (path in Cache) {
+			if (path in Cache)
 				setResult(Cache[path]);
-				setState(DBState.READY);
-			} else {
+			else {
 				setResult(DBDataSymbols.Loading);
-				setState(DBState.LOADING);
 
 				Load(db, path)
 					.then(() => update())
 					.catch(() => {
-						setState(DBState.ERROR);
 						setResult(DBDataSymbols.Failed);
 					});
 			}
-		} else {
+		} else
 			setResult(DBDataSymbols.None);
-			setState(DBState.UNSET);
-		}
 	}, [path, db, requestId, update.value]);
 
 	return result;

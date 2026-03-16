@@ -75,18 +75,20 @@ export function useLocale (): [table: Record<string, string>, loaded: boolean] {
 	CachedLocales[currentLocale] = new Set([updateCallback]);
 
 	const count = idxs[currentLocale] || 0;
-	JsonLoaderCore("", new Array(count).fill(0).map((_, i) => StaticDB.Locale[currentLocale] + `.${i}`))
+	const localeKeys = Array.from(
+		{ length: count }, // ArrayLike
+		(_, i) => `${StaticDB.Locale[currentLocale]}.${i}`,
+	);
+	JsonLoaderCore("", localeKeys)
 		.then(() => {
-			// Merge separated locales
-			const loc = Object.assign(
-				{},
-				...new Array(count).fill(0)
-					.map((_, i) => GetJson(StaticDB.Locale[currentLocale] + `.${i}`) || {}) // safe
-			);
+			const loc: Record<string, string> = {};
+			for (const key of localeKeys) {
+				const chunk = GetJson<Record<string, string>>(key) || {};
+				for (const chunkKey in chunk)
+					loc[chunkKey] = chunk[chunkKey];
 
-			// Remove from Loader cache (to reduce memory usage)
-			for (let i = 0; i < count; i++)
-				unsetDBData(StaticDB.Locale[currentLocale] + `.${i}`);
+				unsetDBData(key);
+			}
 
 			const fns = [...(CachedLocales[currentLocale] as Set<() => void>)];
 			CachedLocales[currentLocale] = loc;

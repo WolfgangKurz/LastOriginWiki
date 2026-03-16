@@ -55,18 +55,13 @@ export function Extend (): void {
 	if (!Array.prototype.unique) {
 		Array.prototype.unique = function <T, K> (this: T[], comparer?: (entity: T) => K): T[] {
 			if (comparer) {
-				interface KeyValuePair {
-					key: K;
-					value: T;
-				}
-				return this
-					.reduce((acc, cur) => {
-						const key = comparer(cur);
-						if (!acc.some(x => x.key === key))
-							acc.push({ key, value: cur });
-						return acc;
-					}, [] as KeyValuePair[])
-					.map(x => x.value);
+				const seen = new Set<K>();
+				return this.filter(cur => {
+					const key = comparer(cur);
+					if (seen.has(key)) return false;
+					seen.add(key);
+					return true;
+				});
 			}
 			return this.reduce((acc, cur) => {
 				if (!acc.includes(cur)) acc.push(cur);
