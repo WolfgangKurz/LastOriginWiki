@@ -64,29 +64,40 @@ function parseFontFamily (text: string | string[]): string[] {
 
 	return list.map(r => r.trim());
 }
+
+function getFontFamilies (fontFamily: string): string[] {
+	return fontFamily ? parseFontFamily(fontFamily) : [];
+}
+
+function includesFontFamily (families: readonly string[], fonts: Iterable<FontFace>): boolean {
+	return Array.from(fonts).some(font => families.includes(font.family));
+}
+
 export function useFontLoad (fontFamily: string): boolean {
 	const [ready, setReady] = useState(false);
 
-	const _doc_fonts = document.fonts as FontFaceSet;
 	const fn = useCallback((e: FontFaceSetLoadEvent) => {
-		if (fontFamily) { // target font loaded
-			const families = parseFontFamily(fontFamily ?? "sans-serif");
-			if (e.fontfaces.some(r => families.includes(r.family)))
-				setReady(true);
-		}
+		const families = getFontFamilies(fontFamily);
+		if (families.length > 0 && e.fontfaces.some(r => families.includes(r.family)))
+			setReady(true);
 	}, [fontFamily]);
 
 	useEffect(() => {
-		if (!Array.from(_doc_fonts).some(r => r.family === fontFamily)) {
-			_doc_fonts.addEventListener(
-				"loadingdone",
-				// @ts-expect-error
-				fn,
-			);
+		const families = getFontFamilies(fontFamily);
+		if (families.length === 0) {
 			setReady(false);
+			return;
+		}
+
+		const fonts = document.fonts;
+		if (!includesFontFamily(families, fonts)) {
+			setReady(false);
+
+			fonts.addEventListener("loadingdone", fn);
+			return () => fonts.removeEventListener("loadingdone", fn);
 		} else
 			setReady(true);
-	}, [fontFamily]);
+	}, [fontFamily, fn]);
 
 	return ready;
 }

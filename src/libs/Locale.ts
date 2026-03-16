@@ -92,6 +92,13 @@ export function useLocale (): [table: Record<string, string>, loaded: boolean] {
 			CachedLocales[currentLocale] = loc;
 
 			fns.forEach(fn => fn());
+		})
+		.catch(() => {
+			const pending = CachedLocales[currentLocale];
+			if (!(pending instanceof Set)) return;
+
+			delete CachedLocales[currentLocale];
+			[...pending].forEach(fn => fn());
 		});
 	return [{}, false];
 };

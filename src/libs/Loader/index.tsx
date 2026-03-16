@@ -39,7 +39,12 @@ enum DBState {
 	ERROR = 2,
 }
 
-const LoadQueue: Record<string, Array<() => void>> = {};
+interface LoadQueueEntry {
+	resolve: () => void;
+	reject: (reason?: unknown) => void;
+}
+
+const LoadQueue: Record<string, LoadQueueEntry[]> = {};
 const Cache: Record<string, any> = {};
 
 function Load (db: string, json: string): Promise<void> {
@@ -52,8 +57,17 @@ function Load (db: string, json: string): Promise<void> {
 			first = true;
 		}
 
-		LoadQueue[json].push((): void => resolve());
+		LoadQueue[json].push({ resolve, reject });
 		if (!first) return;
+
+		const flushQueue = (resolve: boolean, reason?: unknown): void => {
+			const queue = LoadQueue[json] || [];
+			delete LoadQueue[json];
+			if (resolve)
+				queue.forEach(entry => entry.resolve());
+			else
+				queue.forEach(entry => entry.reject(reason));
+		};
 
 		const _rootDB = json.startsWith("!/");
 		const _rootJson = _rootDB ? json : `!/${db}/${json}`;
@@ -75,20 +89,18 @@ function Load (db: string, json: string): Promise<void> {
 
 		const _postfix = _rootJson.includes(".yml") ? _hash : `.yml${_hash}`;
 
-		const xhr = new XMLHttpRequest();
-		xhr.open("GET", `${DataRoot}/${_rootJson.substring(2)}${_postfix}`);
-		xhr.addEventListener("load", (e) => {
-			if (Math.floor(xhr.status / 100) === 2) {
-				const data = YAML.load(xhr.responseText, undefined);
+		fetch(`${DataRoot}/${_rootJson.substring(2)}${_postfix}`)
+			.then(x => {
+				if (!x.ok) throw new Error(`Status ${x.status}`);
+				return x.text();
+			})
+			.then(x => {
+				const data = YAML.load(x, undefined);
 				Cache[json] = data;
 				Object.freeze(Cache[json]); // prevent to corrupt data
-				LoadQueue[json].forEach(c => c());
-				delete LoadQueue[json];
-			} else
-				reject(e);
-		});
-		xhr.addEventListener("error", (e) => reject(e));
-		xhr.send();
+				flushQueue(true);
+			})
+			.catch(e => flushQueue(false, e));
 	});
 }
 

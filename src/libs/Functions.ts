@@ -148,36 +148,43 @@ export function groupBy<K extends keyof any, T> (
 	return ret;
 }
 
-export function diff2<T, K> (A: T, B: K): boolean {
+/**
+ * Difference detector that returns `true` when two values are deeply different.
+ * Supports primitives, arrays, and plain objects.
+ */
+export function diff2<TA, TB> (A: TA, B: TB): boolean {
+	if (Object.is(A, B)) return false;
+	if (A == null || B == null) return true;
 	if (typeof A !== typeof B) return true;
-	if (A === undefined && B === undefined) return true;
-	if (A === null && B === null) return true;
+
+	if (typeof A !== "object" || typeof B !== "object")
+		return true;
 
 	const aA = Array.isArray(A);
 	const aB = Array.isArray(B);
 	if (aA !== aB) return true;
 
 	if (aA && aB) {
-		// B also array
 		if (A.length !== B.length) return true;
 
-		for (let i = 0; i < A.length; i++)
-			if (!diff2(A[i], B[i]))
+		for (let i = 0; i < A.length; i++) {
+			if (diff2(A[i], B[i]))
 				return true;
+		}
 
 		return false;
 	}
 
-	const kA = Object.keys(A!);
-	const kB = Object.keys(B!);
+	const kA = Object.keys(A as object);
+	const kB = Object.keys(B as object);
 	if (kA.length !== kB.length) return true;
 
-	for (let i = 0; i < kA.length; i++) {
-		const kAi = A[kA[i]];
-		const kBi = B[kB[i]];
-
-		if (!diff2(kAi, kBi)) return true;
+	for (const key of kA) {
+		if (!(key in (B as object))) return true;
+		if (diff2((A as Record<string, unknown>)[key], (B as Record<string, unknown>)[key]))
+			return true;
 	}
+
 	return false;
 }
 

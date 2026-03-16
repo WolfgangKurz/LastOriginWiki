@@ -98,7 +98,7 @@ export default function parse (source: string): ParseElement {
 					if (buffer.join("") === skipping) {
 						skipping = null;
 						last.childs.push({ content: contentBuffer.join("") });
-						contentBuffer.splice(0, contentBuffer.length - 1);
+						contentBuffer.splice(0, contentBuffer.length);
 
 						stack.pop();
 						last = stack[stack.length - 1];
