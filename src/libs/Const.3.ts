@@ -72,6 +72,12 @@ export const TitleCalls: Record<string, Record<number, Partial<Record<GameTitleV
 			LastOrigin: ["3P_Hirume_Title-2", "3P_Hirume_Title-4"]
 		}
 	},
+	"3P_KikiPeiling": {
+		0: {
+			LastOrigin: ["3P_KikiPeiling_Title-1", "3P_KikiPeiling_Title-2", "3P_KikiPeiling_Title-3"],
+			VALOFE: ["3P_KikiPeiling_Velofe1", "3P_KikiPeiling_Velofe2", "3P_KikiPeiling_Velofe3", "3P_KikiPeiling_Velofe4"]
+		}
+	},
 	"3P_Labiata": {
 		0: {
 			LastOrigin: ["3P_Labiata_Title-5", "3P_Labiata_Title-9"]
