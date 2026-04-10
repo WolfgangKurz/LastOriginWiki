@@ -1,4 +1,5 @@
 import * as PIXI from "pixi.js";
+import { Viewport } from "pixi-viewport";
 
 import Pixi2DModel from "@/components/pixi/Pixi2DModel";
 
@@ -13,6 +14,8 @@ export default class Shared {
 
 	public renderer: PIXI.Renderer | null = null;
 	public host: Pixi2DModel | null = null;
+	public viewport: Viewport | null = null;
+	public surface: PIXI.Container | null = null;
 	public inRendering: boolean = false;
 
 	private constructor () { // new guard
