@@ -108,15 +108,18 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			.filter(r => r.SCG === SCG_ACTIVATION.ACTIVATION)
 			.filter(r => !r.image.includes("_Cut"));
 	}
-	function ImageToFace (model: string): { uid: string; skin: number; fallback: string; } {
+	function ImageToFace (model: string): { uid: string; skin: number; fallback: string; } | null {
 		let sid = model
 			.replace(/_N_DL(_[0-9]+)?/g, "_N")
+			.replace(/(_[NS]S[0-9]+)_NDL/g, "$1")
+			.replace(/_SS([0-9]+)/g, (p, p1) => `_NS${parseInt(p1, 10) + 20}`)
+			.replace(/_N[0-9]+/g, "_N")
 			.replace(/_DL_N/g, "")
 			.replace(/_DL/g, "")
 			.replace(/_NDL/g, "_N")
 			.replace(/_N_N/g, "_N")
 			.replace(/_D$/g, "") // same with _DL_N
-			.replace(/^2DModel_(.+)_([NPS])(S[0-9]+)?$/, (p, p1, p2, p3) => {
+			.replace(/^2DModel_(.*)_([NPS])(S[0-9]+)?$/, (p, p1, p2, p3) => {
 				if (p2 === "N") {
 					if (p3)
 						return `${p1}_${p3.substring(1)}`;
@@ -128,6 +131,8 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 					return `${p1}_${parseInt(p3.substring(1), 10) + 20}`;
 				return `${p1}_0`;
 			});
+		if (sid[0] === "_") return null;
+
 		if (sid in FaceAlias) sid = FaceAlias[sid];
 
 		if (sid.includes("_Dialog")) { // story 2dmodel
@@ -315,10 +320,11 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 			.filter(r => r.image && !r.image.includes("_Cut") && !r.image.startsWith("#"))
 			.filter(r => r.image !== "2DModel__N")
 			.map(r => ImageToFace(r.image))
+			.filter(r => r)
 			.reduce<FaceMetadata[]>(
-				(p, c) => p.some(r => r.uid === c.uid && r.skin === c.skin)
+				(p, c) => p.some(r => r.uid === c!.uid && r.skin === c!.skin)
 					? p
-					: [...p, c],
+					: [...p, c!],
 				[],
 			);
 	}, [storyData]);
@@ -510,6 +516,9 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 				{ storyData.map((d, i) => {
 					const speaker = Speaker(d);
 					const activates = Activates(d);
+					const activateFaces = activates
+						.map(s => ImageToFace(s.image))
+						.filter(s => s) as Array<ReturnType<typeof ImageToFace> & {}>;
 
 					return <div
 						class={ BuildClass(
@@ -532,11 +541,8 @@ const Viewer: FunctionalComponent<StoryProps> = (props) => {
 						} }
 					>
 						<div class="row">
-							{ activates.length > 0 && <div class="col-auto">
-								{ activates.map(s => <UnitFace
-									{ ...ImageToFace(s.image) }
-									size="3rem"
-								/>) }
+							{ activateFaces.length > 0 && <div class="col-auto">
+								{ activateFaces.map(s => <UnitFace { ...s } size="3rem" />) }
 							</div> }
 
 							<div class="col">
