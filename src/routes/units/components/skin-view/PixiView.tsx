@@ -38,6 +38,7 @@ interface PixiViewProps {
 	damaged: boolean;
 
 	hidePart: boolean;
+	hidePart2: boolean;
 	hideBG: boolean;
 	displayTouchCollider: boolean;
 
@@ -130,6 +131,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 			setPixi(state);
 
 			Shared.instance.renderer = renderer;
+			Shared.instance.viewport = vp;
 
 			const _empty = new PIXI.Container();
 
@@ -196,6 +198,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 			vp.addChild(surface);
 			// stage.addChild(surface);
 			setSurface(surface);
+			Shared.instance.surface = surface;
 
 			playerRef.current.appendChild(renderer.view as HTMLCanvasElement);
 		}
@@ -209,6 +212,8 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 			if (ticker) ticker.destroy();
 			if (renderer) renderer.destroy(true);
 			Shared.instance.renderer = null;
+			Shared.instance.viewport = null;
+			Shared.instance.surface = null;
 			setPixi(null);
 		};
 	}, []);
@@ -244,7 +249,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 					: (props.google ? "G/" : "O/") + props.U2DModelMetadata[props.damaged ? "2dmodel_dam" : "2dmodel"]!;
 
 			const skinPrefix = ["", "G_"][props.google ? 1 : 0];
-			const skinPostfix = ["", "S", "B", "BS"][(props.hidePart ? 1 : 0) | (props.hideBG ? 2 : 0)];
+			const skinPostfix = `${props.hideBG ? "B" : ""}${props.hidePart ? "S" : ""}${props.hidePart2 ? "P" : ""}`;
 			const skinFixs = skinPrefix + skinPostfix;
 			const atlasId = props.U2DModelMetadata.spine
 				? skinFixs in props.U2DModelMetadata.spine
@@ -321,7 +326,7 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 				surface.addChild(_char);
 			}
 		}
-	}, [props.type, props.uid, props.vid, props.google, props.damaged, props.hidePart, props.hideBG, surface]);
+	}, [props.type, props.uid, props.vid, props.google, props.damaged, props.hidePart, props.hidePart2, props.hideBG, surface]);
 
 	useEffect(() => {
 		if (char && ("setFace" in char)) { // type-guard not work with instanceof
@@ -329,10 +334,11 @@ const PixiView: FunctionalComponent<PixiViewProps> = (props) => {
 				char.setFace(props.face);
 
 			char.setHidePart(props.hidePart);
+			char.setHidePart2(props.hidePart2);
 			char.setHideBG(props.hideBG);
 			char.setColliderVisible(props.displayTouchCollider);
 		}
-	}, [char, props.hidePart, props.hideBG, props.face, props.displayTouchCollider]);
+	}, [char, props.hidePart, props.hidePart2, props.hideBG, props.face, props.displayTouchCollider]);
 
 	useEffect(() => {
 		const fn = () => {

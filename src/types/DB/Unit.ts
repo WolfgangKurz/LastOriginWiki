@@ -22,32 +22,6 @@ export type LinkBonusType =
 	"Skill_2" | "Skill_5" | "Skill_10" | "Skill_15" | "Skill_20" | "Skill_25" | "Skill_30" | "Skill_35" |
 	"Cost_20" | "Cost_25" | "Cost_30" | "Cost_35";
 
-export enum SKIN_SUBSET_ENUM {
-	___ = 0,
-	Normal = 0,
-
-	D__ = 1,
-	Damaged = 1,
-
-	_B_ = 2,
-	Background = 2,
-
-	__S = 3,
-	Simplified = 3,
-
-	DB_ = 4,
-	DamagedBackground = 4,
-
-	D_S = 5,
-	DamagedSimplified = 5,
-
-	_BS = 6,
-	BackgroundSimplified = 6,
-
-	DBS = 7,
-	DamagedBackgroundSimplified = 7,
-}
-
 export enum SKIN_ANIM_SUBSET_ENUM {
 	__ = 0,
 	Normal = 0,
@@ -74,12 +48,12 @@ export enum SKIN_METADATA_FLAGS {
 	/** Should be displayed at Gamma Viewer */
 	GAMMA = 4,
 }
+
+export type UnitSkinEntitySubset = Exclude<"_" | `${"D" | ""}${"B" | ""}${"S" | ""}${"P" | ""}`, "">;
+
 export interface UnitSkinEntity {
 	/** Skin ID */
 	sid: null | number;
-
-	/** has Google CG */
-	G: boolean;
 
 	/** animated by Spine */
 	Spine: boolean;
@@ -104,7 +78,11 @@ export interface UnitSkinEntity {
 	artist: string;
 
 	/** Subset info */
-	subset: Record<SKIN_SUBSET_ENUM, boolean>;
+	subset: {
+		O: UnitSkinEntitySubset[];
+		G?: UnitSkinEntitySubset[];
+		R?: UnitSkinEntitySubset[]; // R+, placeholder
+	};
 
 	/** Animated */
 	anim: Record<SKIN_ANIM_SUBSET_ENUM, boolean>;
