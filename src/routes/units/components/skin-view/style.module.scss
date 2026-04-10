@@ -107,9 +107,9 @@
 	cursor: pointer;
 	z-index: 4;
 
-	&.Damaged {
-		$r: 36px / 68px;
+	$r: math.div(36px, 68px);
 
+	&.Damaged {
 		top: 14px;
 		right: 14px;
 		width: 36px;
@@ -122,8 +122,6 @@
 		}
 	}
 	&.BG {
-		$r: 36px / 68px;
-
 		top: 64px;
 		right: 14px;
 		width: 36px;
@@ -138,8 +136,6 @@
 	&.Props,
 	&.Props1,
 	&.Props2 {
-		$r: 36px / 68px;
-
 		top: 114px;
 		right: 14px;
 		width: 36px;
@@ -152,11 +148,9 @@
 		}
 	}
 	&.Props1 {
-		$r: 36px / 68px;
 		background-position-y: -68px * $r;
 	}
 	&.Props2 {
-		$r: 36px / 68px;
 		top: 164px;
 		background-position-y: -68px * $r * 2;
 	}

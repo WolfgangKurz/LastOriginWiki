@@ -20,27 +20,20 @@
 		"preserveConstEnums": true,
 		"allowSyntheticDefaultImports": true,
 		"useDefineForClassFields": true,
-		"downlevelIteration": true,
 		"sourceMap": true,
 
 		"declaration": true,
 		"skipLibCheck": true,
 
-		"baseUrl": "./src",
-		"types": [
-			"vite/client",
-			"vite-env",
-			"types"
-		],
 		"lib": [
 			"esnext",
 			"dom",
 			"dom.iterable"
 		],
 		"paths": {
-			"@/*": ["./*"],
-			"react": ["../node_modules/preact/compat"],
-			"react-dom": ["../node_modules/preact/compat"]
+			"@/*": ["./src/*"],
+			"react": ["./node_modules/preact/compat"],
+			"react-dom": ["./node_modules/preact/compat"]
 		}
 	},
 	"include": [

@@ -11249,43 +11249,43 @@ UNIT_SKILL_DESC_BR_Emily_1: >-
 
   <sec typ="cond"><buff typ="MARKING" /> 標的</sec>状態の対象には<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
 UNIT_SKILL_DESC_BR_Emily_2: >-
-  高出力ビームを発射し<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
+  고출력 빔을 발사해 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
 
-  クリティカル時、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" r /></sec>が増加します。
-
-  <sec typ="note">出力強化</sec>状態の場合、対象に適用中の<sec typ="buff"><buff typ="REMOVE_BUFF" /> バリア / ダメージ減少効果を解除</sec>します。
+  <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="1" r /></sec>가 증가하고 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
 UNIT_SKILL_DESC_BR_Emily_3: >-
-  待機時、レールガン出力を強化して2ラウンドの間、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="3"
-  r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル率 <val idx="0" r
-  /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="1" r
-  /></sec>が増加し、<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア /
-  ダメージ減少無視</sec>効果を獲得します。
+  <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="CRITICAL_UP" />
+  치명타 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어
+  관통 <val idx="1" r /></sec>가 증가합니다.
 
-  <sec>スキルレベル10から持続ラウンドが増加します。</sec>
+  <sec typ="cond">대기 시</sec>, 레일건 출력을 강화하여 2라운드 동안 <sec typ="buff">효과 수치가 두 배로 증폭</sec>되며 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec>가 활성화됩니다.
+
+  <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 후열에 위치한 경우</sec>, <sec typ="buff"><buff typ="CRITICAL_UP" /><buff typ="DEF_PIERCE_UP" /><buff typ="BARRIER_PIERCE" /> 레일건 출력을 자동으로 강화</sec>합니다.
 UNIT_SKILL_DESC_BR_Emily_4: >-
-  敵攻撃時、<sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 攻撃支援</sec>または<sec
-  typ="cond"><buff typ="DEF_Char" /> 指定対象保護</sec>を受けている状態の場合、急速充電を開始し<sec
-  typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>が増加します。
+  <sec typ="cond">적 공격 시</sec> <sec typ="cond"><buff typ="SUPPORT_ATTACK" /> 지원
+  공격 / <buff typ="DEF_Char" /> 지정 보호를 받고 있을 경우</sec>, 급속 충전을 개시해 자신의 <sec
+  typ="buff"><buff typ="AP_UP" /> AP <val idx="0" /></sec>이(가) 증가합니다.
 
-  各効果はスタック適用されます。
+  <sec>각 효과는 중첩 적용됩니다.</sec>
 UNIT_SKILL_DESC_BR_Emily_5: >-
-  <sec typ="cond">自分のHPが33%以下</sec>の場合は、リミッターを解除し<sec typ="buff"><buff
-  typ="ATK_UP" /> 攻撃力 <val idx="5" r /></sec> / <sec typ="buff"><buff
-  typ="EVADE_UP" /> 回避率 <val idx="7" r /></sec> / <sec typ="buff"><buff
-  typ="AP_UP" /> 行動力 <val idx="6" r /></sec>が大きく増加し、バスターキャノンの威力が増加します。
+  <sec typ="cond">자신의 HP가 33% 이하인 경우</sec>, <sec typ="buff"><buff
+  typ="CHANGE_CHAR" /> 리미터를 해제</sec>해 자신의 <sec typ="buff"><buff typ="ATK_UP" />
+  공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val
+  idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="7" r
+  /></sec>가 증가하며 <sec typ="note">버스터 캐논</sec>의 위력이 증가합니다.
 
-  この状態で攻撃時、ラウンド終了時点に過負荷による<sec typ="dmg"><buff typ="phyDMG_DOT" /> 固定持続ダメージ <val idx="1" slot="1" signless /></sec>が適用されます。
+  <sec typ="cond">상기 효과 상태에서 공격 시</sec>, <sec typ="dmg"><buff typ="HP_DOWN" /> 자신의 현재 HP <val idx="8" r signless />만큼 피해</sec>를 입습니다.
 
-  過負荷効果はスタックされます。
-UNIT_SKILL_DESC_BR_Emily_7: |-
-  高出力ビームを発射し<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
-  対象の<sec typ="buff"><buff typ="BARRIER_PIERCE" /> バリア / ダメージ減少効果を無視</sec>します。
+  <sec>해당 효과로는 전투 불능에 이르지 않습니다.</sec>
+
+  <sec typ="cond">자신의 HP가 5% 이하인 경우</sec>, 에너지가 임계점에 이르러 추가로 <sec typ="dmg"><buff typ="DamageAmp_Me" /> 자신 HP 반비례 피해량 <val idx="9" r signless /></sec> 증가 효과를 획득합니다.
+
+  <sec typ="cond">상기 효과 상태에서는</sec> <sec typ="cond">매 라운드 1회 이상 <sec typ="note">버스터 캐논</sec>으로 에너지를 방출하지 않으면</sec> 과부하로 인한 <sec typ="dmg"><buff typ="phyDMG_DOT" /> <val idx="10" signless /> 지속 물리 피해</sec>를 입습니다.
 UNIT_SKILL_DESC_BR_Emily_F2: >-
-  高出力ビームを発射し<sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
+  초고출력 빔을 발사해 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
 
-  クリティカル時、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" r /></sec>が増加します。
+  <sec typ="cond">적중 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 방어력 증가</sec> / <sec typ="buff"><buff typ="REMOVE_BUFF" />받는 피해 감소 효과를 해제</sec>합니다.
 
-  対象に適用中の<sec typ="buff"><buff typ="REMOVE_BUFF" /> バリア / ダメージ減少効果を解除</sec>します。
+  <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
 UNIT_SKILL_DESC_BR_Pani_1: >-
   HESH弾を発射して <dmg elem="physics" />を与えます。
 
@@ -14379,151 +14379,211 @@ UNIT_SKILL_DESC_ST_Tiamat_5: >-
 
   <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec>有効化状態でラウンド開始時、<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="9" r /></sec> / <sec typ="buff"><buff typ="EVADE_UP" /> 回避率 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中率 <val idx="6" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="8" r /></sec>が増加します。
 UNIT_SKILL_DESC_ST_Mercury_1: >-
-  指定範囲の敵にMAVを射出し <sec typ="attr">保護無視</sec> <dmg elem="physics"
-  />を与え、命中可否に関係なく、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" />
-  回避率増加強化効果を解除</sec>します。
+  지정 범위의 적에게 MAV를 사출하여 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 주고,
+  <sec>적중 여부와 관계없이</sec> 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 회피 강화
+  효과를 해제</sec>합니다.
 
-  命中時、2ラウンドの間、対象の<sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中率 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 回避率 <val idx="6" r /></sec>を減少させ、対象に<sec typ="note">一発お見舞い</sec>効果が適用されている場合、追加で<sec typ="buff"><buff typ="REMOVE_BUFF" /> 受けるダメージ減少効果を解除</sec>します。
+  <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="4" r /></sec> / <sec typ="buff"><buff typ="EVADE_DOWN" /> 회피 <val idx="5" r /></sec>가 감소합니다.
 
-  分隊内に<char uid="ST_Ullr" />がいる時、<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">全方位射撃</sec>協同攻撃</sec>または<sec typ="buff"><buff typ="TOGETHER_ATTACK" /> <sec typ="note">リフレクトショット</sec>協同攻撃</sec>を行います。
-
-  MAV射出量を厳格に制限するマーキュリーは<sec>いかなる状況でも反撃をしません。</sec>
+  <sec typ="cond">적중 대상에게 <sec typ="note">콧대 꺾기</sec> 효과가 적용중인 경우</sec>, 추가로 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 받는 피해 감소 효과를 해제</sec>합니다.
 UNIT_SKILL_DESC_ST_Mercury_2: >-
-  味方全体にMAVを射出し、対象の<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0"
-  /></sec>を増加させ、<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 有害な効果を解除</sec>します。
+  모든 아군에게 MAV를 사출하여 대상의 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0"
+  /></sec>을(를) 증가시키고 <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 해로운 효과를
+  해제</sec>합니다.
 
-  また対象に2ラウンドの間、<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r /></sec> / <sec typ="buff"><buff typ="SKILL_UP" /> 自分の回避率に比例したスキル威力 <val idx="3" r /></sec>増加効果を付与します。
+  또한 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="2" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 회피 <val idx="6" r signless />만큼 스킬 위력이 증가</sec>합니다.
 
-  対象が自分を除く<sec typ="note">ストライカーズ</sec>部隊員のパッシブスキル効果を受けている状態の場合、各効果が50%増加します。
-
-  <sec typ="note">ストライカーズ</sec> 部隊員 : <char uid="ST_Tiamat" />, <char uid="ST_Lancer" />, <char uid="ST_Ullr" />
+  <sec typ="cond">대상이 자신을 제외한 <cmt t="스트라이커즈">$$Strikers:?$</cmt> 부대원의 패시브 스킬 효과를 받는 상태인 경우</sec>, 상기 효과 수치가 50% 증폭됩니다.
 UNIT_SKILL_DESC_ST_Mercury_3: >-
-  戦闘開始時、自分が最初に攻撃を受けるまで解除不可の<sec typ="buff"><buff typ="EVADE_UP" /> 回避率 <val
-  idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="1" r
-  /></sec>増加効果を獲得します。
+  <sec typ="cond">전투 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피
+  <val idx="0" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val
+  idx="1" r /></sec>가 증가합니다.
 
-  <sec typ="buff"><buff typ="SCOUTING" /> 偵察</sec>で次に出現する敵を確認することができます。
+  <sec>해당 효과는 자신이 피격되기 전까지 유지됩니다.</sec>
 
-  <sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec>状態でラウンド開始時、自分の<sec typ="buff"><buff typ="EVADE_UP" /> 回避率 <val idx="6" r /></sec>が大きく増加します。
+  <sec typ="cond">전투 개시 시</sec>, <cmt t="스트라이커즈">$$Strikers:?$</cmt> 부대원에게 <sec typ="buff"><buff typ="SCOUTING" /> 정찰</sec> 정보를 공유하여 다음에 출현할 적을 확인할 수 있습니다.
 
-  ラウンド開始時、<sec typ="cond"><buff typ="SCOUTING" /> 偵察</sec>状態の味方に<sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 回避率減少デバフ免疫</sec>効果を付与します。
-
-  被撃時、自分が<sec typ="cond"><buff typ="COUNTER" /> 反撃</sec>状態の場合、自分に適用した<sec typ="buff"><buff typ="REMOVE_DEBUFF" /> 反撃効果を解除</sec>します。
+  <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><buff typ="SCOUTING" /> 정찰 상태인 아군</sec>에게 <sec typ="buff"><buff typ="IMMUNITY_DEBUFF" /> 회피 감소 면역</sec> 효과를 부여합니다.
 UNIT_SKILL_DESC_ST_Mercury_4: >-
-  ラウンド開始時、分隊内の攻撃機の数に比例して味方全体に<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val
-  idx="0" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル率 <val
-  idx="1" r /></sec>増加効果を付与します。
+  <sec typ="cond">라운드 개시 시</sec>, 아군 공격기 수에 비례하여 모든 아군의 <sec typ="buff"><buff
+  typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff
+  typ="CRITICAL_UP" /> 치명타 <val idx="6" r /></sec>가 증가합니다.
 
-  ラウンド開始時、分隊内の<sec typ="note">ストライカーズ</sec>部隊員の役割に応じて、次の効果を味方全体に付与します。
+  스쿼드 내 <cmt t="스트라이커즈">$$Strikers:?$</cmt> 부대원의 역할군에 따라, <sec typ="cond">라운드 개시 시</sec> 다음 효과를 <sec typ="buff">모든 아군에게 부여</sec>합니다.
 
-  <sec typ="note">攻撃機</sec> : <sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="13" r /></sec>増加
+  <box t="공격기">
 
-  <sec typ="note">保護機</sec> : <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 状態異常耐性 <val idx="14" r /></sec>増加
+  <sec typ="dmg"><buff typ="SKILL_UP" /> 스킬 위력 <val idx="15" r /></sec> 증가
 
-  <sec typ="note">支援機</sec> : <sec typ="buff"><buff typ="ACCURACY_UP" /> 命中率 <val idx="15" r /></sec>増加
+  </box>
+
+  <box t="보호기">
+
+  <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="16" r /></sec> 증가
+
+  </box>
+
+  <box t="지원기">
+
+  <sec typ="buff"><buff typ="ACCURACY_UP" /> 적중 <val idx="17" r /></sec> 증가
+
+  </box>
 UNIT_SKILL_DESC_ST_Mercury_5: >-
-  戦闘開始時、<sec typ="cond">自分より攻撃力が高い</sec>敵の<sec typ="buff"><buff typ="AP_DOWN" />
-  行動力 <val idx="0" r /></sec>を永久に減少させます。
+  <sec typ="cond">라운드 개시 시</sec>, <sec>자신보다 공격력이 높은 적</sec>의 <sec
+  typ="buff"><buff typ="AP_DOWN" /> 행동력 <val idx="0" r /></sec>가 감소합니다.
 
-  ラウンド開始時、<sec typ="cond"><buff typ="ATK_UP" /> <buff typ="ATK_DOWN" /> 攻撃力増減</sec> / <sec typ="cond"><buff typ="CRITICAL_UP" /> <buff typ="CRITICAL_DOWN" /> クリティカル率増減</sec> / <sec typ="cond"><buff typ="ACCURACY_UP" /> <buff typ="ACCURACY_DOWN" /> 命中率増減</sec> / <sec typ="cond"><buff typ="SKILL_UP" /><buff typ="SKILL_DOWN" /> スキル威力増減</sec>効果が適用された敵の<sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec>を減少させ、<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" r /></sec>増加効果を与えます。
+  <sec typ="cond">라운드 개시 시</sec>, <sec typ="cond"><buff typ="ATK_UP" /><buff typ="ATK_DOWN" /> 공격력 / <buff typ="CRITICAL_UP" /><buff typ="CRITICAL_DOWN" /> 치명타 / <buff typ="ACCURACY_UP" /><buff typ="ACCURACY_DOWN" /> 적중 / <buff typ="SKILL_UP" /><buff typ="SKILL_DOWN" /> 스킬 위력 증감 효과가 적용된 적</sec>의 <sec typ="buff"><buff typ="AP_DOWN" /> AP <val idx="3" /></sec>이(가) 감소하고 <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" r /></sec>가 증가합니다.
 
-  <sec>各効果は状態異常耐性の影響を受けませんが、有害な効果の解除では解除できます。</sec>
+  <sec>각 효과는 <sec typ="ref"><buff typ="BUFFEFFECTRATE_CHANGE" /><buff typ="DEBUFF_PERDOWN" /><buff typ="DEBUFF_RATEUP" /> 효과 저항</sec>의 영향을 받지는 않지만, <sec typ="ref"><buff typ="REMOVE_DEBUFF" /> 해로운 효과 해제</sec>로는 해제 가능합니다.</sec>
 UNIT_SKILL_DESC_ST_Lancer_1: >-
-  ランス突撃で対象に <dmg elem="fire" />を与え、対象の<sec typ="buff"><buff typ="DEF_DOWN" />
-  防御力 <val idx="0" r /></sec>と<sec typ="buff"><buff typ="FIRERES_DOWN" /> 火炎耐性
-  <val idx="1" r /></sec>を減少させます。
+  랜스 돌격으로 지정 범위에 <dmg elem="fire" />를 줍니다.
 
-  攻撃命中時、2ラウンドの間、自分の<sec typ="buff"><buff typ="EVADE_UP" /> 回避率 <val idx="4" r /></sec>が増加します。
+  <sec typ="cond">적중 시</sec>, 2라운드 동안 대상의 <sec typ="buff"><buff typ="DEF_DOWN" /> 방어력 <val idx="0" r /></sec> / <sec typ="buff"><buff typ="FIRERES_DOWN" /> 화염 저항 <val idx="1" r /></sec>가 감소합니다.
 
-  敵を撃破すると<sec typ="buff"><buff typ="EVADE_UP" /> 回避率 <val idx="5" r /></sec>がさらに増加します。
-UNIT_SKILL_DESC_ST_Lancer_2: 3ラウンドの間、<sec typ="buff"><buff typ="DEF_Char" />
-  指定した味方を保護</sec>して、自分の<sec typ="buff"><buff typ="DEF_UP" /> 防御力 <val idx="3" r
-  /></sec>が増加し<sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="4"
-  r inv /></sec>が減少します。
+  <sec typ="cond">치명타 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="3" r /></sec>가 증가합니다.
+UNIT_SKILL_DESC_ST_Lancer_2: >-
+  무장을 재정비하여 <sec typ="note">예리함</sec> 효과를 획득하고 자신의 <sec typ="buff"><buff
+  typ="CRITICAL_UP" /> 치명타 <val idx="0" r /></sec>가 증가합니다.
+
+  <sec>해당 효과는 3회 공격 적중 시까지 유지됩니다.</sec>
+
+  <sec typ="cond"><sec typ="note">예리함</sec> 효과가 유지되는 동안</sec>, 자신의 <sec typ="buff"><buff typ="EVADE_UP" /> 회피 <val idx="4" r /></sec>가 증가하고 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="5" r inv /></sec>가 감소합니다.
+
+  <sec typ="cond"><sec typ="note">예리함</sec> 효과를 획득할 때마다</sec>, 다음 1회 적중에 한하여 <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과가 적용됩니다.
 UNIT_SKILL_DESC_ST_Lancer_3: >-
-  ラウンド開始時、自分の<sec typ="buff"><buff typ="FIRERES_UP" /> 火炎耐性 <val idx="13" r
-  /></sec>と<sec typ="buff"><buff typ="ICERES_UP" /> 冷気耐性 <val idx="14" r
-  /></sec>が増加し、範囲内の<sec typ="buff"><buff typ="DEF_Char" />
-  攻撃機と支援機を指定保護</sec>します。
+  자신의 <strong>기본</strong> <sec typ="buff"><buff typ="FIRERES_UP" /> 화염 저항</sec>과
+  <sec typ="buff"><buff typ="ICERES_UP" /> 냉기 저항</sec>이 증가합니다.
 
-  自分と範囲内の攻撃機の<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="1" r /></sec>と<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル率 <val idx="2" r /></sec>が増加し、自分が敵を撃破した場合、2ラウンドの間、<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="7" r /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル率 <val idx="8" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 行動力 <val idx="9" r /></sec>がさらに増加します。
-UNIT_SKILL_DESC_ST_Lancer_4: ラウンド開始時、自分の<sec typ="buff"><buff typ="ATK_UP" />
-  攻撃力 <val idx="4" r /></sec>を増加させ、範囲内の味方攻撃機 / 支援機の<sec typ="buff"><buff
-  typ="ICERES_UP" /> 冷気耐性 <val idx="0" r /></sec>を増加させ自分を含む機動型の<sec
-  typ="buff"><buff typ="DAMAGE_REDUCE" /> 受けるダメージ <val idx="3" r inv
-  /></sec>を減少させます。
-UNIT_SKILL_DESC_ST_Lancer_5: ラウンド開始時、自分の<sec typ="buff"><buff typ="AP_UP" /> 行動力
-  <val idx="4" r /></sec>と<sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル率
-  <val idx="5" r /></sec>を増加させ、攻撃命中時、範囲内の味方の<sec typ="buff"><buff typ="ATK_UP"
-  /> 攻撃力 <val idx="0" r /></sec>と<sec typ="buff"><buff typ="ICERES_UP" /> 冷気耐性
-  <val idx="1" r /></sec>を増加させ、最大3スタックまで可能です。
+  <sec>승급에 따라 저항 수치가 증가합니다.</sec>
+
+  <sec typ="cond">라운드 개시 시</sec>, 범위 내 <sec typ="buff"><buff typ="DEF_Char" /> 보호기를 제외한 아군을 지정 보호</sec>합니다.
+
+  <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신과 인접한 아군이 있을 경우</sec>, 자신은 <sec typ="buff"><buff typ="DEF_Side" /> 열 보호</sec>가 활성화됩니다.
+
+  <sec typ="cond"><sec typ="note">랜스 차지</sec> 사용 시</sec>, 2라운드 동안 자신과 자신이 지정 보호 중인 아군의 <sec typ="buff"><buff typ="ATK_UP" /> 공격력 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="AP_UP" /> 행동력 <val idx="6" r /></sec>가 증가합니다.
+UNIT_SKILL_DESC_ST_Lancer_4: >-
+  <sec typ="cond">전투 개시 시</sec>, <sec typ="buff"><cmt t="예리함">$$SHARPEN:?$</cmt>
+  효과를 획득</sec>하고 <sec typ="buff"><buff typ="AP_UP" /> AP <val idx="0"
+  /></sec>이(가) 증가합니다.
+
+  <sec typ="cond">적 처치 시</sec>, <sec typ="buff"><cmt t="예리함">$$SHARPEN:?$</cmt> 효과를 획득</sec>하고 합니다.
+
+  <sec typ="cond"><cmt t="예리함">$$SHARPEN:?$</cmt> 효과를 획득할 때마다</sec>, 다음 1회 피격에 한하여 자신이 <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 <val idx="12" r inv /></sec>가 감소하고 <sec typ="buff"><buff typ="COUNTER" /> <val idx="15" r signless /> 위력으로 반격</sec>합니다.
+
+  <sec typ="cond">라운드 개시 시</sec>, 범위 내 아군의 <sec typ="buff"><buff typ="FIRERES_UP" /><buff typ="ICERES_UP" /> 화염 / 냉기 저항 <val idx="16" r /></sec>가 증가합니다.
+
+  <box t="스킬 설명과 실제 버프 동작이 다른 것으로 보이며, 문제가 있을 수도 있습니다">
+
+  <sec typ="buff"><buff typ="EVADE_UP" /> 회피 증가</sec> 효과 설명이 누락되어있습니다.
+
+  <sec typ="buff"><buff typ="BARRIER_PIERCE" /> 방어막 / 피해 감소 무시</sec> 효과 설명이 누락되어있습니다.
+
+  <sec typ="buff"><buff typ="DAMAGE_REDUCE" /> 받는 피해 감소</sec> 효과가 같은 시점에 두 종류 이상 발생하며, 서로 다른 중첩으로 <sec typ="attr">갱신</sec> 타입으로 획득합니다.
+
+  </box>
+
+  $$SHARPEN~
+
+  <sec typ="buff"><buff typ="CRITICAL_UP" /> 치명타 <val idx="5" r /></sec>
+
+  ~$$SHARPEN
+UNIT_SKILL_DESC_ST_Lancer_5: >-
+  <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력
+  <val idx="0" r /></sec> / <sec typ="dmg"><buff typ="SKILL_UP" /> 회피 <val
+  idx="5" r signless />만큼 스킬 위력이 증가</sec>합니다.
+
+  <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신에게 <sec typ="note">최상의 시간</sec> 효과가 적용된 경우</sec>, <sec typ="buff"><buff typ="SKILL_UP" /> 회피 <val idx="6" r signless />만큼 스킬 위력 감쇄</sec> 효과를 획득합니다.
+
+  <sec typ="cond"><sec typ="note">무장 재정비</sec> 사용 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="8" slot="2" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="9" slot="2" r /></sec>이 증가합니다.
+
+  <sec><cmt t="X-계열 실험기">$$X_SERIES:?$</cmt>가 스스로의 스킬로 인해 받는 일부 부작용을 자신이 대신 짊어질 수 있습니다.</sec>
+
+  <sec>이러한 경우 <sec typ="attr">해로운 효과</sec>로 적용됩니다.</sec>
+
+  $$X_SERIES~
+
+  <char uid="BR_Emily" />, <char uid="ST_Tiamat" />, <char uid="ST_Ullr" />
+
+  ~$$X_SERIES
 UNIT_SKILL_DESC_ST_Ullr_1: >-
-  指定範囲に <dmg elem="physics" />を与えます。
+  여러 갈래로 빔을 발사하여 지정 범위에 <dmg elem="physics" />를 줍니다.
 
-  <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /> <buff typ="MOBILITY_DMG_UP" /> 対軽装型 / 機動型ダメージ <val idx="3" r /></sec>が増加し、<sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 回避率減少</sec>状態の場合、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加します。
+  <sec typ="cond">적중 시</sec>, 자신의 <sec typ="dmg"><buff typ="TROOPER_DMG_UP" /><buff typ="MOBILITY_DMG_UP" /> 대 경장형 / 기동형 피해량 <val idx="0" r /></sec>가 증가합니다.
+
+  <sec typ="cond">적중 대상이 <buff typ="DEF_DOWN" /> 방어력 감소 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="3" r /></sec>가 증가합니다.
 UNIT_SKILL_DESC_ST_Ullr_2: >-
-  指定範囲に <sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
+  입자 릴레이를 통해 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를 줍니다.
 
-  <sec typ="dmg">目標地点に50%</sec>、<sec typ="dmg">最も外側に75%減少したダメージ</sec>を与えます。
+  <sec typ="dmg">목표 지점 주변은 75% 피해만 적용됩니다.</sec>
 
-  攻撃時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 回避率増加効果を解除</sec>しクリティカル時、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="3" r /></sec>が増加します。
+  <sec>적중 여부에 관계 없이</sec> 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 회피 강화 효과를 해제</sec>합니다.
 
-  対象が<sec typ="cond"><buff typ="SNARE" /> 移動不可</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 回避率減少</sec>状態の場合、2ラウンドの間、<sec typ="buff"><buff typ="VULNERABLE" /> 受けるダメージ <val idx="4" r /></sec>が増加します。
-
-  この効果はスタックされません。
+  <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
 UNIT_SKILL_DESC_ST_Ullr_3: >-
-  ラウンド開始時、隣接する味方の数に比例して<sec typ="buff"><buff typ="ATK_UP" /> 攻撃力 <val idx="0" r
-  /></sec> / <sec typ="buff"><buff typ="CRITICAL_UP" /> クリティカル率 <val idx="1" r
-  /></sec> / <sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="2" r
-  /></sec>が増加します。
+  <sec typ="cond">라운드 개시 시</sec>, 자신과 인접한 아군 수에 비례하여 자신의 <sec typ="buff"><buff
+  typ="ATK_UP" /> 공격력 <val idx="7" r /></sec>가 증가합니다.
 
-  隣接した味方がいない場合は、<sec typ="buff"><buff typ="AP_UP" /> AP <val idx="14" /></sec>が増加しますが、解除及び耐性不可の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 命中率増加効果を解除</sec> / <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 命中率 <val idx="15" r /></sec>減少効果が適用されます。
+  <sec typ="cond"><cmt t="스트라이커즈">$$Strikers:?$</cmt> 부대원 또는 <cmt t="X-계열 시험기">$$X_SERIES:?$</cmt> 전투원이 인접한 경우</sec>, <sec typ="buff"><buff typ="ATK_UP" /> 공격력 증가 효과는 최대 효율 (<val idx="6" r />)로 발동</sec>합니다.
 
-  隣接する味方が<sec typ="note">ストライカーズ</sec>部隊員または<sec typ="note">X-系列試験機</sec>戦闘員の場合、そのラウンドに最初に行動する戦闘員の<sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 攻撃を1回支援</sec>します。
+  <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">인접한 아군이 없을 경우</sec>, <sec typ="attr">해제 불가</sec>한 <sec typ="buff"><buff typ="ACCURACY_DOWN" /> 적중 <val idx="11" r /></sec> 감소 효과가 적용됩니다.
 
-  <sec typ="note">ストライカーズ</sec> 部隊員 : <char uid="ST_Lancer" />, <char uid="ST_Tiamat" />, <char uid="ST_Mercury" />
+  $$X_SERIES~
 
-  <sec typ="note">X-系列試験機</sec> 戦闘員 : <char uid="BR_Emily" />
+  <char uid="BR_Emily" />, <char uid="ST_Tiamat" />, <char uid="ST_Ullr" />
+
+  ~$$X_SERIES
 UNIT_SKILL_DESC_ST_Ullr_4: >-
-  ラウンド開始時、<sec typ="cond">前列</sec>または<sec typ="cond">中列</sec>の場合、<sec
-  typ="note">近距離対応モード</sec>になり<sec typ="buff"><buff typ="AP_UP" /> 行動力 <val
-  idx="17" slot="3" r /></sec>が増加し、<sec typ="buff"><buff typ="BARRIER_PIERCE" />
-  バリア / ダメージ減少無視</sec>効果を獲得します。
+  <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="AP_UP" /> 행동력
+  <val idx="0" r /></sec>가 증가하고 <sec typ="buff"><buff typ="BARRIER_PIERCE" />
+  방어막 / 피해 감소 무시</sec>가 활성화됩니다.
 
-  <sec typ="cond">後列</sec>でラウンド開始時、<sec typ="note">長距離狙撃モード</sec>に転換します。
+  <sec typ="cond">적중 대상이 <buff typ="DEF_DOWN" /> 방어력 감소 상태인 경우</sec>, 2라운드 동안 대상이 <sec typ="important"><char uid="ST_Ullr" />에게서</sec> <sec typ="buff"><buff typ="VULNERABLE" /> 받는 피해 <val idx="4" slot="1" r /></sec>가 증가합니다.
+
+  <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 후열에 위치한 경우</sec>, <sec typ="buff"><buff typ="CHANGE_CHAR" /> <sec typ="note">장거리 저격 모드</sec>로 변환</sec>됩니다.
 UNIT_SKILL_DESC_ST_Ullr_5: >-
-  戦闘開始時、自分を除く<sec typ="note">ストライカーズ</sec>部隊員または<sec
-  typ="note">X-系列試験機</sec>戦闘員に解除不可の<sec typ="buff"><buff typ="DEF_All" />
-  ダメージ無効化 <val idx="0" signless />回</sec>を付与します。
+  <sec typ="cond">전투 개시 시</sec>, <cmt t="스트라이커즈">$$Strikers:?$</cmt> 부대원 또는 <cmt
+  t="X-계열 시험기">$$X_SERIES:?$</cmt> 전투원에게 <sec typ="buff"><buff typ="DEF_All" />
+  피해 무효화 <val idx="0" signless />회</sec>를 부여합니다.
 
-  ラウンド開始時、自分に<sec typ="buff"><buff typ="DAMAGE_REDUCE" />  <val idx="4" signless />未満の攻撃ダメージの最小化</sec>と<sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 状態異常耐性 <val idx="5" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 強化解除耐性 <val idx="6" r /></sec>増加効果を付与します。
+  <sec typ="cond">자신이 스킬을 4회 사용할 때마다</sec>, <sec typ="buff"><buff typ="DEF_All" /> 피해 무효화 <val idx="5" signless />회</sec>를 재충전합니다.
 
-  被撃時、<sec typ="note">エネルギー集束</sec>状態になり、スタック数に比例して次の攻撃の<sec typ="buff"><buff typ="SKILL_UP" /> スキル威力 <val idx="7" r /></sec>が増加します。
+  <sec><buff typ="SUPPORT_ATTACK" /> 지원 공격 또한 스킬 사용으로 취급합니다.</sec>
 
-  <sec typ="note">エネルギー集束</sec>状態は、最大3スタックまで可能で、攻撃命中時、全てのスタックを消費します。
+  <sec typ="cond">라운드 개시 시</sec>, <sec typ="buff"><buff typ="SUPPORT_ATTACK" /> 자신을 제외한 <cmt t="스트라이커즈">$$Strikers:?$</cmt> 부대원 또는 <cmt t="X-계열 시험기">$$X_SERIES:?$</cmt> 전투원의 공격을 지원</sec>합니다.
+
+  <sec typ="cond">라운드 개시 시</sec>, 자신의 <sec typ="buff"><buff typ="DEBUFF_PERDOWN" /> 효과 저항 <val idx="12" slot="3" r /></sec> / <sec typ="buff"><buff typ="Remove_Buff_Resist" /> 강화 해제 저항 <val idx="13" slot="3" r /></sec>가 증가합니다.
+
+  $$X_SERIES~
+
+  <char uid="BR_Emily" />, <char uid="ST_Tiamat" />, <char uid="ST_Ullr" />
+
+  ~$$X_SERIES
 UNIT_SKILL_DESC_ST_Ullr_F1: >-
-  指定範囲に<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="0" r /></sec>
-  <sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
+  중계 드론으로 빔을 증폭하여 지정 범위에 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를
+  줍니다.
 
-  目標地点の後方には、<sec typ="dmg">50% / 25%減少したダメージ</sec>を与えます。
+  <sec typ="dmg">목표 지점 후방으로는 75% / 50% 피해만 적용됩니다.</sec>
 
-  クリティカル時、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃効果を解除</sec>し、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="4" r /></sec>が増加します。
+  <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
+
+  <sec>스킬 레벨당 +20%의 적중 보정이 적용됩니다.</sec>
 UNIT_SKILL_DESC_ST_Ullr_F2: >-
-  対象に <sec typ="attr">保護無視</sec> <dmg elem="physics" />を与えます。
+  중계 드론으로 빔을 굴절시켜 단일 대상에게 <sec typ="attr">보호 무시</sec> <dmg elem="physics" />를
+  줍니다.
 
-  クリティカル時、<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="0" r /></sec>が増加し、対象の<sec typ="buff"><buff typ="REMOVE_BUFF" /> 反撃 / 受けるダメージ減少効果を解除</sec>します。
+  <sec typ="cond">적중 대상이 <buff typ="EVADE_DOWN" /> 회피 감소 상태인 경우</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="0" r /></sec>가 증가합니다.
 
-  対象が<sec typ="cond"><buff typ="MARKING" /> 標的</sec> / <sec typ="cond"><buff typ="EVADE_DOWN" /> 回避率減少</sec>状態の場合、追加で<sec typ="dmg"><buff typ="PhyATK_UP" /> ダメージ量 <val idx="4" r /></sec>が増加します。
+  <sec typ="cond">치명타 시</sec>, <sec typ="dmg"><buff typ="PhyATK_UP" /> 피해량 <val idx="2" r /></sec>가 증가합니다.
+
+  <sec>스킬 레벨당 +30%의 적중 보정이 적용됩니다.</sec>
 UNIT_SKILL_DESC_ST_Ullr_F4: >-
-  ラウンド開始時、<sec typ="cond">後列</sec>の場合、<sec typ="note">長距離狙撃モード</sec>になり、<sec
-  typ="buff"><buff typ="ACCURACY_UP" /> 命中率 <val idx="24" slot="3" r
-  /></sec>が永久に増加します。
+  <sec typ="cond">라운드 개시 시</sec>, 3라운드 동안 자신의 <sec typ="buff"><buff
+  typ="DEF_PIERCE_UP" /> 방어 관통 <val idx="0" r /></sec> / <sec typ="dmg"><buff
+  typ="SKILL_UP" /> 스킬 위력 <val idx="1" r /></sec>가 증가합니다.
 
-  この効果は最大5スタックまで可能です。
+  <sec typ="cond">치명타 발생 시</sec>, 대상의 <sec typ="buff"><buff typ="REMOVE_BUFF" /> 반격 / 받는 피해 감소 효과를 해제</sec>합니다.
 
-  ラウンド開始時、<sec typ="buff"><buff typ="DEF_PIERCE_UP" /> 防御貫通 <val idx="21" slot="3" r /></sec>が増加し<sec typ="buff"><buff typ="REMOVE_BUFF" /> 命中率 / クリティカル率減少効果が解除</sec>されます。
-
-  <sec typ="cond">前列</sec>または<sec typ="cond">中列</sec>でラウンド開始時、<sec typ="note">近距離対応モード</sec>に転換されます。
+  <sec typ="cond">라운드 개시 시</sec> <sec typ="cond">자신이 전열 / 중열에 위치한 경우</sec>, <sec typ="buff"><buff typ="REMOVE_DEBUFF" /> <sec typ="note">근거리 대응 모드</sec>로 변환</sec>됩니다.
 UNIT_SKILL_DESC_BR_JangHwa_1: >-
   単一対象に <dmg elem="physics" />を与えます。
 
@@ -22182,3 +22242,4 @@ ENEMY_ScarabEX_TU2: スケロプHC
 ENEMY_ScarabEX_TU3: スケロプHC
 ENEMY_ScarabEX_TU4: スケロプHC
 ENEMY_Mammoth_TU: マンモス
+ENEMY_Mammoth_TU2: マンモス
