@@ -15,7 +15,7 @@ import preact from "@preact/preset-vite";
 import pixiUrlPatch from "./plugins/pixi-url-patch";
 
 console.log(cyan("* preparing..."));
-export default defineConfig(async ({ mode }) => {
+export default defineConfig(async ({ mode, command }) => {
 	const viteEnv = loadEnv(mode, process.cwd());
 
 	const isProd = mode === "production";
@@ -232,11 +232,13 @@ export default defineConfig(async ({ mode }) => {
 			minify: isProd,
 			sourcemap: isDev,
 
-			watch: {
-				exclude: [
-					"external/yaml/**",
-				]
-			},
+			watch: command === "serve"
+				? {
+					exclude: [
+						"external/yaml/**",
+					]
+				}
+				: undefined,
 			rollupOptions: {
 				onLog (_level, log, _handler) {
 					if (log.code === "CIRCULAR_DEPENDENCY")

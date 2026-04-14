@@ -32,8 +32,7 @@ export default {
 		"R",
 		"G",
 		"L",
-		"A",
-		"s"
+		"A"
 	],
 	"EN": [
 		"C",
@@ -67,8 +66,7 @@ export default {
 		"R",
 		"G",
 		"L",
-		"A",
-		"s"
+		"A"
 	],
 	"JP": [
 		"C",
@@ -102,8 +100,7 @@ export default {
 		"R",
 		"G",
 		"L",
-		"A",
-		"s"
+		"A"
 	],
 	"TC": [
 		"C",
@@ -137,7 +134,6 @@ export default {
 		"R",
 		"G",
 		"L",
-		"A",
-		"s"
+		"A"
 	]
 };
